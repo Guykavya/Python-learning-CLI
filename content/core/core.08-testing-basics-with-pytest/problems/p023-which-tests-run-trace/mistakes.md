@@ -1,0 +1,4 @@
+- Treating `testtriple` and `tests_helper` as not collected because there is no underscore after `test`.
+- Counting both `test_double` functions. Python keeps only the last definition.
+- Thinking the lost first `test_double` "passes silently": it simply does not exist any more.
+- Calling `test_extra_argument` FAILED. A setup problem is an ERROR, reported separately.

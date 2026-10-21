@@ -1,0 +1,6 @@
+id = "core.08.p002"
+title = "Which tests pass?"
+tier = "drill"
+kind = "trace"
+topics = ["pytest collection", "pass and fail", "test_ prefix"]
+minutes = 10

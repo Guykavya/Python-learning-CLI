@@ -1,0 +1,4 @@
+- Believing `match="a+b"` looks for the literal text. It is a regular expression.
+- Thinking `test_c` passes because a ValueError was raised. The message must match too.
+- Thinking `test_e` passes because "no error is good". With `pytest.raises` no error is a failure.
+- Assuming `pytest.raises(Exception)` is a good test: it passes for any bug that raises anything.

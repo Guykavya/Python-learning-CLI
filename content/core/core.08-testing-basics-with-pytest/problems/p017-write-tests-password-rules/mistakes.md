@@ -1,0 +1,4 @@
+- Testing only `"abc"` as an invalid password: it breaks every rule at once, so any single working rule rejects it.
+- Testing length with 3 or 20 characters instead of 7 and 8: the borders are where the off-by-one bugs live.
+- Putting a space in a password that is also too short.
+- Forgetting the positive test. A function that always returns `False` passes every "must be rejected" test.

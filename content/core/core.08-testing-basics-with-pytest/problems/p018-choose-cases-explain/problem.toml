@@ -1,0 +1,6 @@
+id = "core.08.p018"
+title = "Explain: which cases are worth testing?"
+tier = "applied"
+kind = "explain"
+topics = ["choosing useful tests", "boundary cases", "equivalence"]
+minutes = 25

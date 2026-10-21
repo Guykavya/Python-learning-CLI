@@ -1,0 +1,6 @@
+id = "core.08.p011"
+title = "Write tests: average (with an error case)"
+tier = "applied"
+kind = "code"
+topics = ["pytest.raises", "match=", "writing tests"]
+minutes = 25

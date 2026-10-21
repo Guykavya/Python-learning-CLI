@@ -1,0 +1,6 @@
+id = "core.08.p008"
+title = "Make the failing tests pass: grade"
+tier = "drill"
+kind = "code"
+topics = ["parametrize", "tests as specification", "boundaries"]
+minutes = 15

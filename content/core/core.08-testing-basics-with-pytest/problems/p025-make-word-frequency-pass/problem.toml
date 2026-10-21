@@ -1,0 +1,6 @@
+id = "core.08.p025"
+title = "Make the failing tests pass: word_frequency"
+tier = "deep"
+kind = "code"
+topics = ["tests as specification", "edge cases", "dictionaries"]
+minutes = 35

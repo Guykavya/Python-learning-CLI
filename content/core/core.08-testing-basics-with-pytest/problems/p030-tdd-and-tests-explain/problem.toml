@@ -1,0 +1,6 @@
+id = "core.08.p030"
+title = "Explain: test first, test after, and when tests mislead"
+tier = "challenge"
+kind = "explain"
+topics = ["TDD", "red green refactor", "regression", "limits of tests"]
+minutes = 40

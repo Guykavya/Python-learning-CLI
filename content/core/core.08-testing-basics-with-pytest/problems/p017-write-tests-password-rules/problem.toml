@@ -1,0 +1,6 @@
+id = "core.08.p017"
+title = "Write tests: is_valid_password"
+tier = "applied"
+kind = "code"
+topics = ["choosing tests", "one rule per test", "boundaries"]
+minutes = 30

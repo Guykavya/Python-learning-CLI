@@ -1,0 +1,6 @@
+id = "core.08.p021"
+title = "Write tests: chunk"
+tier = "deep"
+kind = "code"
+topics = ["boundary cases", "pytest.raises", "input not modified", "parametrize"]
+minutes = 35

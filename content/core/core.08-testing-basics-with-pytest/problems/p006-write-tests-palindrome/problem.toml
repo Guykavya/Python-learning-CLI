@@ -1,0 +1,6 @@
+id = "core.08.p006"
+title = "Write tests: is_palindrome"
+tier = "drill"
+kind = "code"
+topics = ["writing tests", "choosing cases", "empty input"]
+minutes = 20

@@ -1,0 +1,4 @@
+- Thinking `t3` fails. The parentheses create a tuple, which is always true. Write `assert cond, "msg"` with no parentheses around the pair.
+- Printing the message of the first assert in `t5`. Only the failing assert's message appears.
+- Believing `0.1 + 0.2 == 0.3` is true.
+- Treating `is` like `==` in `t8`.

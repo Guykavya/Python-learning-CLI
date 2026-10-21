@@ -1,0 +1,7 @@
+test_add_small PASSED
+test_add_negative FAILED
+test_add_zero PASSED
+test_add_float PASSED
+test_add_strings PASSED
+test_add_mixed FAILED
+2 failed, 4 passed

@@ -1,0 +1,6 @@
+id = "core.08.p019"
+title = "Make the failing tests pass: parse_time"
+tier = "applied"
+kind = "code"
+topics = ["tests as specification", "pytest.raises", "match=", "boundary cases"]
+minutes = 30

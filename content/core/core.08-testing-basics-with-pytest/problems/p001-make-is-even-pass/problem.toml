@@ -1,0 +1,6 @@
+id = "core.08.p001"
+title = "Make the failing tests pass: is_even"
+tier = "drill"
+kind = "code"
+topics = ["running pytest", "assert", "reading a failure"]
+minutes = 10

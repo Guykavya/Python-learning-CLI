@@ -1,0 +1,3 @@
+- Returning `n % 2` (an int, `0` or `1`) instead of a bool: `0 is True` is `False`, and the test uses `is`.
+- Keeping `== 1`: that is the test for odd numbers, and `-3 % 2 == 1` only looks right by accident.
+- Adding `if n < 0: ...` special cases that Python's `%` makes unnecessary.

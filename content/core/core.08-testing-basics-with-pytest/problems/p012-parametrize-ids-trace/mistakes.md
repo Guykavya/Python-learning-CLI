@@ -1,0 +1,4 @@
+- Writing `test_add[-1, 1, 0]` or with spaces: pytest joins values with `-` only.
+- Writing the ids of `test_positive` as `[1]` and `[2]`: the `ids=` argument replaces them.
+- Putting the `x` value first in `test_pair`. With stacked decorators the bottom one is the first part of the id.
+- Counting `test_add` as one test. Each row is reported separately.

@@ -1,0 +1,6 @@
+id = "core.08.p020"
+title = "Red, green: which version passes what?"
+tier = "applied"
+kind = "trace"
+topics = ["TDD", "red and green", "reading the summary"]
+minutes = 20

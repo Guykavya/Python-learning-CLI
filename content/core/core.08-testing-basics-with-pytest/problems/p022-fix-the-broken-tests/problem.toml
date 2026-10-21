@@ -1,0 +1,7 @@
+id = "core.08.p022"
+title = "Fix the broken test file"
+tier = "deep"
+kind = "code"
+topics = ["debugging tests", "false passes", "assert pitfalls", "test names"]
+minutes = 35
+assessment = "fix"

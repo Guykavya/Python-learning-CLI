@@ -1,0 +1,6 @@
+id = "core.08.p012"
+title = "One test function, many rows: what is reported?"
+tier = "applied"
+kind = "trace"
+topics = ["parametrize", "test ids", "stacked decorators"]
+minutes = 20

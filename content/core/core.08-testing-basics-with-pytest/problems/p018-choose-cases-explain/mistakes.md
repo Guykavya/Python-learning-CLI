@@ -1,0 +1,4 @@
+- Listing many "normal" years (2021, 2022, 2023). They test the same branch.
+- Forgetting the century years 1900 and 2000, the only ones that exercise the two exceptions.
+- Calling many cases a good suite. The count does not matter, the variety does.
+- Testing behaviour the function was never specified to have.

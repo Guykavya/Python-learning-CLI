@@ -1,0 +1,6 @@
+id = "core.08.p003"
+title = "Write tests: clamp"
+tier = "drill"
+kind = "code"
+topics = ["writing assert tests", "catching bugs", "boundary values"]
+minutes = 20

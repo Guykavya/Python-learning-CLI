@@ -1,0 +1,4 @@
+- Testing only `"level"` and `"python"`. Every buggy version gets those two right.
+- Forgetting the empty string. It is the classic input that makes `text[0]` crash.
+- Expecting `"ab"` or `"Ab"` to be a palindrome because they are short.
+- Writing `assert is_palindrome("x")` without `is True`: it hides a function that returns `"yes"` or `1`. Here the function must return a real bool, so compare with `is True` or `== True`.

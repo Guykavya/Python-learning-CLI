@@ -1,0 +1,12 @@
+False
+0.30000000000000004
+True
+True
+True
+False
+True
+True
+True
+False
+True
+True

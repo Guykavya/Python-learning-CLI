@@ -1,0 +1,4 @@
+- Saying `test_discount` "passes because the function works". It passes because it has no assert.
+- Rewriting `test_total` as `assert total(prices) == sum(prices)` when `total` itself is implemented with `sum`. That compares the code to itself again; use a number you computed by hand.
+- Blaming `test_add_two` for "being wrong". It is correct only in the lucky order; the real problem is shared state.
+- Saying six asserts are a problem "because it is long". The real problem is what you learn from the first failure.

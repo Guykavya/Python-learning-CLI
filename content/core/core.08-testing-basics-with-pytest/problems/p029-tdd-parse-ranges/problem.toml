@@ -1,0 +1,6 @@
+id = "core.08.p029"
+title = "TDD: parse_ranges"
+tier = "challenge"
+kind = "code"
+topics = ["TDD", "tests as specification", "error cases", "edge cases"]
+minutes = 45

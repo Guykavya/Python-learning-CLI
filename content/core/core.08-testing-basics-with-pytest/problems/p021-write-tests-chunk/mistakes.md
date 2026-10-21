@@ -1,0 +1,4 @@
+- Only testing lengths that divide evenly (`[1, 2, 3, 4]` with size 2): the remainder-dropping bug passes.
+- Comparing `chunk(...)` to a list of tuples or forgetting that `[1, 2] == (1, 2)` is `False`. Check the type once, then write lists.
+- Not testing that the input is unchanged. A function that empties its argument returns the right answer once.
+- Using `size = 0` only: the bug that checks `size == 0` lets `-1` through.

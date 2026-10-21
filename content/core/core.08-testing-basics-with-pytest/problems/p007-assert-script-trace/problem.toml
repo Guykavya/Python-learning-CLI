@@ -1,0 +1,6 @@
+id = "core.08.p007"
+title = "What do these asserts do?"
+tier = "drill"
+kind = "trace"
+topics = ["assert", "AssertionError", "truthiness", "assert messages"]
+minutes = 15

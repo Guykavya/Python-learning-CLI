@@ -1,0 +1,4 @@
+- Using `text.split(" ")`: tabs, new lines and doubled spaces create empty words.
+- Using `replace` to remove punctuation everywhere: `"don't"` becomes `"dont"` and `"well-known"` becomes `"wellknown"`.
+- Forgetting `.lower()` before counting.
+- Counting `"--"` as a word: strip it to `""`, then skip.

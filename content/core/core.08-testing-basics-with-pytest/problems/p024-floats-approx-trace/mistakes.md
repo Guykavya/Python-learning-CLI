@@ -1,0 +1,4 @@
+- Believing `0.1 + 0.2 == 0.3` is `True` because "it is obviously 0.3".
+- Thinking `approx` has a fixed tolerance. By default it scales with the expected value, so 100 and 100.00001 are close but 1.0 and 1.0001 are not.
+- Treating `10 / 4 == 2.5` as risky. Some decimals are exact in binary (halves, quarters, ...).
+- Writing `True` for line 2: it prints the number.
