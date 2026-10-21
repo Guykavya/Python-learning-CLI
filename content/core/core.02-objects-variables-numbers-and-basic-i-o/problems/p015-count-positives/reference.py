@@ -1,0 +1,5 @@
+a = int(input())
+b = int(input())
+c = int(input())
+print((a > 0) + (b > 0) + (c > 0))
+print((a == 0) + (b == 0) + (c == 0))

@@ -1,0 +1,3 @@
+- Writing `n =+ 5`. That is `n = (+5)`, which sets `n` to 5. The operator is `+=`.
+- Expecting `-15 // 2` to be `-7`. Floor division gives `-8`.
+- Using `/=` instead of `//=`: the result becomes a float such as `9.0`.

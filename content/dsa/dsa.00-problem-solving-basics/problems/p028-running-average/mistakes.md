@@ -1,0 +1,4 @@
+- Reading inside the loop and adding before checking for 0. The 0 is then counted, so the last average and the count are wrong (`count 4` instead of `count 3`).
+- Using `total // count`. That is floor division, so 5 / 2 shows as `2.00` instead of `2.50`.
+- Printing `round(avg, 2)`. That gives `4.0` instead of `4.00`; only a format spec like `:.2f` always shows two decimals.
+- Computing the average after the loop as well, with no data. If the first line is 0, `total / count` divides by zero and the program crashes.

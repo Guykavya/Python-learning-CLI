@@ -1,0 +1,6 @@
+- `HANDLERS[verb]` without checking the verb: an unknown verb raises `KeyError` and is reported as "no item ... in stock".
+- Putting `try` around the whole loop: the first bad command ends the processing.
+- `int(qty)` without the positive check: `remove apple -5` adds stock.
+- Subtracting before checking there is enough: the stock goes negative or is left half-changed.
+- Catching `Exception` in `process`, so corrupt data is reported to the shop assistant as a bad command.
+- Writing `{e}` for the `KeyError`: it happens to give the quoted key, because `str(KeyError)` adds quotes (section 7), but `{e.args[0]!r}` says what you mean.

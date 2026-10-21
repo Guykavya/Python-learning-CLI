@@ -1,0 +1,4 @@
+- Saying EAFP is always faster. Raising an exception costs more than an `if`.
+- Giving only inputs where A returns `None`, and missing the one where A crashes.
+- Describing the race as "the file might not exist". The point is that it existed at the check and not at the open.
+- Saying LBYL is "un-Pythonic" and never right.

@@ -1,0 +1,4 @@
+- Using `x >= first` for the first branch. A repeat of the maximum then pushes the maximum into `second`, so `5 5 3` prints 5.
+- Forgetting to move the old `first` into `second` when a new maximum arrives. For `3 1 8` the answer would stay 1 instead of 3.
+- Starting `second = 0` with no flag and treating 0 as "nothing yet". With all-negative input like `-4 -1 -7`, 0 is never beaten and is printed, although 0 is not even in the input.
+- Ignoring the case where nothing qualifies. With `6 6 6` the program must print `none`, not 0 or 6.

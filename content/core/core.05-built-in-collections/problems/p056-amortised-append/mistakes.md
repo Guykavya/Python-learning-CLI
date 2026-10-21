@@ -1,0 +1,3 @@
+- Saying append is O(1) "because the list is linked". CPython lists are arrays, not linked lists.
+- Saying each append copies the list. Only resizing appends do, and they are rare.
+- Forgetting that `pop(0)` has the same problem as `insert(0, x)`.

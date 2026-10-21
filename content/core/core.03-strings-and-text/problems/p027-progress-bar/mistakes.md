@@ -1,0 +1,3 @@
+- Dividing before multiplying, so the bar stays empty until the end.
+- Making the bar the wrong width at 100%. `"-" * 0` is `""`, so the formula is right at both ends.
+- Multiplying by 100 and then using the `%` format, giving 3333%.

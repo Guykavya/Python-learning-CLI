@@ -1,0 +1,3 @@
+- Expecting `noisy` to print during `m = map(noisy, ...)`.
+- Expecting the second `list(m)` to repeat the values.
+- Expecting `any` to consume the whole iterator.

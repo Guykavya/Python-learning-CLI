@@ -1,0 +1,4 @@
+- Thinking `items = items + [0]` changes the caller's list.
+- Thinking that after rebinding, a later `append` still reaches the caller's list.
+- Thinking `n += 1` on an int changes the caller's `n`.
+- Thinking `for row in grid: row = [...]` changes `grid`.

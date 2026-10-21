@@ -1,0 +1,3 @@
+- Using `partition`, which cuts at the **first** dot: `archive.tar.gz` would give the extension `tar.gz`.
+- Using `split(".")[1]`, which crashes when there is no dot and picks the wrong part when there are several.
+- Writing `tail or "(none)"` for the extension. For `README`, `tail` is `README`, so the extension would wrongly be `readme`.

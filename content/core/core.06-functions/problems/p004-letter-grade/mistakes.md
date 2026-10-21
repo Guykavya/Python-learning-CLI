@@ -1,0 +1,4 @@
+- Checking `score > 90` instead of `>= 90`, which makes exactly 90 a B.
+- Checking the grades from lowest to highest with `>=`: `score >= 40` is true for 95 too, so everything becomes D.
+- Forgetting the invalid check, so 150 becomes an A and -5 an F.
+- Ending with `if score >= 0: return "F"` and nothing after it. If your invalid check has a gap, some score falls through every `if` and the function returns `None`. A final unconditional `return` closes the gap.

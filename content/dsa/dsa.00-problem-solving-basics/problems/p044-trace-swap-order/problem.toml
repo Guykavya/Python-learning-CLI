@@ -1,0 +1,6 @@
+id = "dsa.00.p044"
+title = "Trace two Fibonacci loops"
+tier = "deep"
+kind = "trace"
+topics = ["tuple assignment", "order of updates", "fibonacci", "dry run"]
+minutes = 20

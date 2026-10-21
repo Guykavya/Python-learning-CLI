@@ -1,0 +1,4 @@
+- Swapping the peg roles wrongly in one of the recursive calls; the simulation test catches illegal moves.
+- Base case `n == 1` only: `hanoi(0)` then recurses forever.
+- Building the moves in a mutable default list, which keeps moves from previous calls.
+- Trying to trace all the calls in your head instead of trusting the recursion.

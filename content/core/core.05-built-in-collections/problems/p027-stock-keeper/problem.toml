@@ -1,0 +1,6 @@
+id = "core.05.p027"
+title = "Stock keeper"
+tier = "applied"
+kind = "code"
+topics = ["dicts", "dict methods"]
+minutes = 20

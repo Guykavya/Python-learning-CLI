@@ -1,0 +1,4 @@
+- Fixing `mark_present` with `if not register:`. A caller's empty register would be replaced by a new list and never filled.
+- Fixing `absent_students` with `all_students = all_students` (still an alias) instead of a real copy or a new list.
+- In `sorted_register`, writing `return register.sort(key=str.lower)`: `sort` returns `None` and still changes the register.
+- Sorting without `key=str.lower`, so 'asha' comes after 'Ravi'.

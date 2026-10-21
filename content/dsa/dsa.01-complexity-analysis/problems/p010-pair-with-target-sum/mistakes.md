@@ -1,0 +1,4 @@
+- Adding `a[j]` to the dict before looking up `t - a[j]`. When `t = 2 * a[j]`, the value then pairs with itself, giving `i == j`.
+- Overwriting the dict entry each time (`first_pos[a[j]] = j` without the check). Then a later position replaces the earlier one, and `i` is not the smallest. Test: t = 7 with values `2 2 5` must give `1 3`; overwriting gives `2 3`.
+- Using a list of seen values with `need in seen`. That is a hidden scan: O(n^2) again.
+- Printing 0-based positions. The problem counts from 1.

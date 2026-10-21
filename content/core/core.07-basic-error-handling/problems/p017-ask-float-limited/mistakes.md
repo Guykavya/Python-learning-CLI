@@ -1,0 +1,5 @@
+- Putting `text = ask(prompt)` inside the `try` with a broad handler: `EOFError` gets caught and the loop spins.
+- Writing `while True` with no counter: a script feeding bad input never ends.
+- Checking `attempts` after the first ask.
+- Special-casing `nan` with `== float("nan")`, which is never true.
+- Calling `print` inside the function instead of `tell`, so tests (and other programs) cannot capture the messages.

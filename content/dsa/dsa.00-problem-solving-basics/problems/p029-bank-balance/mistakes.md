@@ -1,0 +1,4 @@
+- Skipping the amount line for an unknown letter. Every later read is then shifted by one line: the next letter is read as an amount and `int()` crashes.
+- Using `amount >= balance` for declined. Withdrawing exactly the whole balance is allowed, so `W 120` with balance 120 must give `balance 0`.
+- Checking the balance before the amount. Then `W -5` passes the "enough money" test and is applied, raising the balance to `balance 15`.
+- Changing the balance before deciding whether the operation is allowed. A declined withdrawal must leave the balance exactly as it was.

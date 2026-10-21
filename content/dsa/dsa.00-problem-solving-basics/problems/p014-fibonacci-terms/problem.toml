@@ -1,0 +1,6 @@
+id = "dsa.00.p014"
+title = "First n Fibonacci terms"
+tier = "drill"
+kind = "code"
+topics = ["loops", "two running variables", "tuple assignment", "output formatting"]
+minutes = 15

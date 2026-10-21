@@ -1,0 +1,7 @@
+id = "core.02.p041"
+title = "Fix the fuel cost calculator"
+tier = "deep"
+kind = "code"
+topics = ["decimal", "ROUND_HALF_UP", "float conversion", "print()", "debugging"]
+minutes = 25
+assessment = "fix"

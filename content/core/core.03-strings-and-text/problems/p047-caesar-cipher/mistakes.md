@@ -1,0 +1,4 @@
+- Forgetting `% 26`, so shifts above 26 make the two strings different lengths and `maketrans` raises `ValueError`.
+- Building the uppercase part from the lowercase alphabet, so capitals turn into small letters.
+- Chaining `replace` calls, which shifts some letters twice.
+- Using `string.ascii_letters` rotated as one block, which turns `z` into `A`.

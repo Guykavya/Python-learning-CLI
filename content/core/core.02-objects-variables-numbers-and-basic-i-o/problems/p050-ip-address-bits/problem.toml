@@ -1,0 +1,6 @@
+id = "core.02.p050"
+title = "IPv4 addresses as integers"
+tier = "challenge"
+kind = "code"
+topics = ["bitwise operators", "shifts", "hex()", "operator precedence"]
+minutes = 30

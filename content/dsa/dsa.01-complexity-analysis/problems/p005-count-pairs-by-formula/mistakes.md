@@ -1,0 +1,4 @@
+- Using `n * (n + 1) // 2`. That is the sum `1 + ... + n`, one term too many. Check with `n = 2`: there is exactly one pair, (0, 1).
+- Using `/` instead of `//`. For small `n` you get `6.0` instead of `6`; for `n = 10^18` you get `5e+35`, which is rounded and wrong.
+- Writing `n * (n - 1) // 2` as `n // 2 * (n - 1)`. For odd `n` that throws away a remainder before multiplying. Multiply first, then divide (the product of two consecutive numbers is always even).
+- Keeping the loops and adding `break` to "make it faster". It changes the answer and is still O(n^2).

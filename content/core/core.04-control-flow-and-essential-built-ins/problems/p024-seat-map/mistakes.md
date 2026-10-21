@@ -1,0 +1,4 @@
+- Counting the aisle space as a seat.
+- Using `input().strip()` on the letters line, which is harmless here, but stripping the booked line and then splitting on `" "` can produce empty items. Use `split()` with no argument.
+- `str(row) + letter in booked` without brackets: `+` binds tighter than `in`, so it works, but brackets make it clearer.
+- Forgetting the 2-character width: `Row 1:` instead of `Row  1:`.

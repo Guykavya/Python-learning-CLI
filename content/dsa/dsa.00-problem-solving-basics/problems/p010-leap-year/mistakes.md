@@ -1,0 +1,4 @@
+- Only checking `year % 4 == 0`: 1900 and 2100 come out as leap years, but they are not.
+- Checking `% 100` before `% 400`: 2000 and 1600 are caught by the 100 rule and printed as `not leap`.
+- Writing the one-line version as `year % 4 == 0 or year % 100 != 0 and year % 400 == 0`: `and` is applied before `or`, so this is true for every multiple of 4, and 1900 comes out as `leap`. Put the brackets where the rule needs them and test every branch.
+- Printing `Leap` or `not a leap year`: the output must be exactly `leap` or `not leap`.

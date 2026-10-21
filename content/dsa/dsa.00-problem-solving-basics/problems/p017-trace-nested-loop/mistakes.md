@@ -1,0 +1,4 @@
+- Starting `j` at 1 instead of 0. `range(i)` begins at 0, so the first inner line of every round ends in `0`.
+- Thinking `range(1, 4)` includes 4. The stop value is never produced, so there are only three rounds.
+- Not resetting `count` each round. `count = 0` is inside the outer loop, so each `row` line shows that round's count, not a running count.
+- Printing the `row` line inside the inner loop. It is indented one level less, so it runs once per outer round, after the inner loop ends.

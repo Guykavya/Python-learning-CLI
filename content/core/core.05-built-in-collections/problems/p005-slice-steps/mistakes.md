@@ -1,0 +1,3 @@
+- Using `words[-3:-1]` for the last three. The stop is excluded, so that misses the last word.
+- Writing an `if` to guard short lists. Slices already handle short lists safely.
+- Printing the list with brackets instead of joining.

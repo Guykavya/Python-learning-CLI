@@ -1,0 +1,7 @@
+n = int(input())
+print(f"bin: {n:b}")
+print(f"oct: {n:o}")
+print(f"hex: {n:x}")
+print(f"prefixed: {n:#b} {n:#o} {n:#x}")
+print(f"byte: {n:08b}")
+print(f"grouped: {n:_b}")

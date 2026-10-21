@@ -1,0 +1,6 @@
+id = "core.02.p033"
+title = "File permission bits"
+tier = "applied"
+kind = "code"
+topics = ["bitwise operators", "bool", "bin()"]
+minutes = 20

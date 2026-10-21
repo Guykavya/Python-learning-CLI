@@ -1,0 +1,3 @@
+- `key=len()` with brackets: that calls `len` with no argument and crashes. Pass the function itself.
+- `max(len(w) for w in words)` gives the length, not the word.
+- `max(words)` without a key gives the alphabetically last word.

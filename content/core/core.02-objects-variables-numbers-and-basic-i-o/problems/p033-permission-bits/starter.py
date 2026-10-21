@@ -1,0 +1,7 @@
+mode = int(input())
+print("Binary:", bin(mode))
+print("Read:", mode & 4)
+print("Write:", mode & 2)
+print("Execute:", mode & 1)
+print("Without write:", mode - 2)
+print("With execute:", mode + 1)

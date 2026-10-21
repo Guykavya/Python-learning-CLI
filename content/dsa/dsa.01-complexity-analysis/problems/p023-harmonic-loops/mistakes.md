@@ -1,0 +1,3 @@
+- Writing `n // i + 1` steps, by counting 0 as a multiple. The range starts at `i`, not at 0.
+- Calling it O(n^2) because it is a nested loop. The inner loop shrinks fast: half the outer passes have an inner loop of 1 step.
+- Adding the terms without grouping for `n = 30` and slipping on one of them. Group equal quotients and check that the group sizes add up to `n`.

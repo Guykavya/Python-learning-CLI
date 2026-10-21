@@ -1,0 +1,4 @@
+- Reporting `X wins` on a board where O has as many moves as X: X cannot have just won then.
+- Forgetting the diagonals, or getting their positions wrong (0, 4, 8 and 2, 4, 6).
+- Stripping the lines, which hides lines with spaces or the wrong length.
+- Calling a full board with a winner a `Draw`. Check winners first.

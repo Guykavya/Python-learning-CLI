@@ -1,0 +1,6 @@
+id = "core.06.p062"
+title = "All subsets"
+tier = "challenge"
+kind = "code"
+topics = ["recursion", "power set", "combinatorics"]
+minutes = 35

@@ -1,0 +1,3 @@
+- Using `bin(n)` and forgetting it includes `0b`.
+- Writing `8b` instead of `08b`: that pads with spaces.
+- Using `X` instead of `x`; the task asks for lowercase.

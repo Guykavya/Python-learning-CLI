@@ -1,0 +1,6 @@
+id = "core.06.p063"
+title = "All orderings"
+tier = "challenge"
+kind = "code"
+topics = ["recursion", "permutations", "combinatorics"]
+minutes = 40

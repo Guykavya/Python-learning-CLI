@@ -1,0 +1,3 @@
+- Catching `Exception` or using a bare `except:`: `safe_divide("6", 2)` would return `None` and hide the caller's bug.
+- Returning `0` instead of `None`. Zero is a real result (`0 / 5`), so it cannot also mean "impossible".
+- Using `//` instead of `/`.

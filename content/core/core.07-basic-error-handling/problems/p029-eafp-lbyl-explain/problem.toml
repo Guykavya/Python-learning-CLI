@@ -1,0 +1,6 @@
+id = "core.07.p029"
+title = "Explain: look before you leap?"
+tier = "deep"
+kind = "explain"
+topics = ["EAFP vs LBYL", "race conditions", "isdigit pitfalls"]
+minutes = 25

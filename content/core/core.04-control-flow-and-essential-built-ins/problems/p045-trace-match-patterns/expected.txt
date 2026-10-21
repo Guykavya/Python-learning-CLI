@@ -1,0 +1,14 @@
+going north
+go where?
+taking 2 things: ['red', 'key']
+drop what?
+empty
+unknown verb look
+cannot go west
+0 -> nothing
+7 -> big int
+'7' -> text
+2.5 -> other
+None -> nothing
+pair 1 2
+3 -> other

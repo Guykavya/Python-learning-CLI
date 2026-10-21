@@ -1,0 +1,4 @@
+- `kwargs.update(more_kwargs)`: changes the stored dict, so an override sticks for all later calls.
+- Putting `more_args` before the stored `args`.
+- Calling `func(args + more_args, merged)` without stars.
+- Using `functools.partial`, which the exercise forbids.

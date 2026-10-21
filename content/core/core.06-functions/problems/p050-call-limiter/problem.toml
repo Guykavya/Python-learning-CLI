@@ -1,0 +1,6 @@
+id = "core.06.p050"
+title = "Allow only N calls"
+tier = "applied"
+kind = "code"
+topics = ["closures", "nonlocal", "forwarding *args/**kwargs"]
+minutes = 25

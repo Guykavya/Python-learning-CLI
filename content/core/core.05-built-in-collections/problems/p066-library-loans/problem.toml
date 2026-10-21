@@ -1,0 +1,6 @@
+id = "core.05.p066"
+title = "Library loans"
+tier = "challenge"
+kind = "code"
+topics = ["dicts", "sets", "choosing a structure"]
+minutes = 40

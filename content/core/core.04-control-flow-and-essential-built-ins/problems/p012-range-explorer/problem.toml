@@ -1,0 +1,6 @@
+id = "core.04.p012"
+title = "Range explorer"
+tier = "drill"
+kind = "code"
+topics = ["range", "negative step", "empty range", "len()"]
+minutes = 10

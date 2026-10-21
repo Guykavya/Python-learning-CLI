@@ -1,0 +1,6 @@
+id = "core.06.p027"
+title = "Which x is it?"
+tier = "drill"
+kind = "trace"
+topics = ["scope", "LEGB", "shadowing"]
+minutes = 15

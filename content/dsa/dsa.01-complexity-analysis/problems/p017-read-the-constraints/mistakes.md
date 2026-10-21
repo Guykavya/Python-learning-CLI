@@ -1,0 +1,4 @@
+- Judging an idea by how it feels ("checking pairs is simple, it will be fine") instead of computing the number of steps at the largest input.
+- Using the average input size instead of the largest. Judges always include a test at the limit.
+- Forgetting that Python is roughly ten times slower than C++. An O(n^2) idea at `n = 10^4` (10^8 steps) may pass in C++ but takes about ten seconds in Python.
+- Saying "too slow" without saying what is needed instead. The constraint tells you the target complexity, which narrows the search for an idea.

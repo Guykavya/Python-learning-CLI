@@ -1,0 +1,3 @@
+- Putting a space before the punctuation: `"Hello, Asha !"`.
+- Naming the parameters differently (`p`, `greet`), so keyword calls such as `punctuation="?"` fail with "unexpected keyword argument".
+- Trying `def make_greeting(greeting="Hello", name, ...)`: a parameter without a default cannot follow one with a default.

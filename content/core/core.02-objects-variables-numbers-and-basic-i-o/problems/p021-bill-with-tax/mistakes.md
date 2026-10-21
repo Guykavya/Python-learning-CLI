@@ -1,0 +1,4 @@
+- Using floats and `:.2f`. `0.575` is stored just below 0.575, so it prints `0.57`.
+- Writing `Decimal(0.1)` instead of `Decimal("0.1")`: the float error is copied in.
+- Forgetting `rounding=ROUND_HALF_UP`: the default half-even rule turns 0.025 into 0.02.
+- Mixing `Decimal` and `float` in one expression: `TypeError: unsupported operand type(s)`.

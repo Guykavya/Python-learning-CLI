@@ -1,0 +1,6 @@
+id = "core.07.p007"
+title = "Describe an exception object"
+tier = "drill"
+kind = "code"
+topics = ["exception objects", "args", "type(e).__name__", "KeyError str"]
+minutes = 15

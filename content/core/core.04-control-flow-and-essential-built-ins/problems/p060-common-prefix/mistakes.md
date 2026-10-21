@@ -1,0 +1,4 @@
+- Walking the first word instead of the shortest: `w[i]` raises `IndexError` on a shorter word.
+- Forgetting the no-break case, so `prefix` is undefined when all words are the same.
+- Comparing only neighbouring words, which can miss a disagreement between the first and last.
+- Lower-casing the words: the task is case-sensitive.

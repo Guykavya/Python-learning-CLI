@@ -1,0 +1,6 @@
+id = "core.02.p028"
+title = "Distance between two points"
+tier = "applied"
+kind = "code"
+topics = ["float", "math module", "abs()"]
+minutes = 15

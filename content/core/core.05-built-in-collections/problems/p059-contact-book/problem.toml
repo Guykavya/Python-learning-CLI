@@ -1,0 +1,7 @@
+id = "core.05.p059"
+title = "Contact book"
+tier = "challenge"
+kind = "code"
+topics = ["dicts", "choosing a structure", "sorting", "project"]
+minutes = 40
+assessment = "build"

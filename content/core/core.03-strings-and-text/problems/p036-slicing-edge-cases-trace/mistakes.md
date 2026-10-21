@@ -1,0 +1,3 @@
+- Expecting `s[10:]` to raise `IndexError`. Only indexing fails; slices trim.
+- Thinking `s[1:4:-1]` is `s[1:4]` reversed. It is empty. Reversing a range needs `s[3:0:-1]` or `s[1:4][::-1]`.
+- Forgetting that with a negative step, a missing stop means "go all the way to the start, including index 0".

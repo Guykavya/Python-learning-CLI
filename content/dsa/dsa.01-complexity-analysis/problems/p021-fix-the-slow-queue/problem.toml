@@ -1,0 +1,7 @@
+id = "dsa.01.p021"
+title = "Fix the slow visitor log"
+tier = "deep"
+kind = "code"
+topics = ["profiling by reasoning", "list.pop(0)", "list vs set", "hidden costs"]
+minutes = 30
+assessment = "fix"

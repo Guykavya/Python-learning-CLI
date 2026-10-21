@@ -1,0 +1,6 @@
+id = "dsa.00.p019"
+title = "Count multiples in a range"
+tier = "drill"
+kind = "code"
+topics = ["loops", "modulo", "counting", "ranges", "edge cases"]
+minutes = 15

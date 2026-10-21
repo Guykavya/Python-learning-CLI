@@ -1,0 +1,6 @@
+id = "core.06.p035"
+title = "Call every function in a list"
+tier = "drill"
+kind = "code"
+topics = ["first-class functions", "functions in collections"]
+minutes = 10

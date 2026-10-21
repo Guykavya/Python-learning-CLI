@@ -1,0 +1,3 @@
+- Using `range(len(items) // k)`, which drops the short last chunk.
+- Adding a special case for the last chunk. Slicing already handles it.
+- Numbering chunks from 0.

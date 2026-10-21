@@ -1,0 +1,6 @@
+id = "core.05.p011"
+title = "Phone lookup"
+tier = "drill"
+kind = "code"
+topics = ["dicts"]
+minutes = 10

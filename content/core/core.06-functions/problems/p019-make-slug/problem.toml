@@ -1,0 +1,6 @@
+id = "core.06.p019"
+title = "URL slugs with keyword-only options"
+tier = "applied"
+kind = "code"
+topics = ["keyword-only parameters", "positional-only parameters", "string processing"]
+minutes = 25

@@ -1,0 +1,6 @@
+id = "core.07.p008"
+title = "The order of except, else and finally"
+tier = "drill"
+kind = "trace"
+topics = ["try/except/else/finally", "execution order"]
+minutes = 15

@@ -1,0 +1,6 @@
+id = "core.02.p023"
+title = "Sum of the digits"
+tier = "applied"
+kind = "code"
+topics = ["floor division", "modulo", "abs()", "digit extraction"]
+minutes = 20

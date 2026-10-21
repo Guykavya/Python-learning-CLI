@@ -1,0 +1,3 @@
+- Saying "Python is inaccurate". The cause is the binary format, not Python.
+- Suggesting `round(a, 2) == round(b, 2)` as a general fix. It breaks near rounding boundaries.
+- Creating `Decimal(0.1)` from a float, which copies the float's error into the Decimal.

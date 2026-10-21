@@ -1,0 +1,6 @@
+id = "core.06.p054"
+title = "Reverse a string by recursion"
+tier = "applied"
+kind = "code"
+topics = ["recursion", "strings", "base case"]
+minutes = 15

@@ -1,0 +1,6 @@
+id = "core.05.p035"
+title = "Rotate a list"
+tier = "applied"
+kind = "code"
+topics = ["slicing"]
+minutes = 20

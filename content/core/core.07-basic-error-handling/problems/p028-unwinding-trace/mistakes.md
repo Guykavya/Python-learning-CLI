@@ -1,0 +1,4 @@
+- Printing `c finally` after `b`'s lines: `c`'s `finally` runs before the exception (or return value) reaches `b`.
+- Printing `b returns ...` for `n = 1`: `b` is abandoned because it has no handler for `ValueError`.
+- Printing `result` before `a finally`.
+- Writing `b caught KeyError '2'`: the key is the int 2, and `str(KeyError(2))` is `repr(2)`, which is `2`.

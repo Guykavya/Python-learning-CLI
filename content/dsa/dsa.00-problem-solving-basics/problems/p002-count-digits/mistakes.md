@@ -1,0 +1,3 @@
+- Using `while n > 0` without handling `0`: the loop never runs and the program prints `0`, but the number `0` has one digit.
+- Forgetting `abs()`: for `-450`, `while n > 0` is false at once and the count is 0. With `while n != 0`, `-450 // 10` is `-45`, then `-5`, then `-1`, then `-1` forever, because floor division rounds toward negative infinity. That is an infinite loop.
+- Using `n / 10` instead of `n // 10`: `/` gives a float, so `n` becomes `0.45`, `0.045`, ... and takes hundreds of steps to underflow to 0, giving a wildly wrong count.

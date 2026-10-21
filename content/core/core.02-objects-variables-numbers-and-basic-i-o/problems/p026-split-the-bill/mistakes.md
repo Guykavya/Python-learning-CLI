@@ -1,0 +1,3 @@
+- Using `float(input())`: values like 4.35 and 1.15 lose a paisa when multiplied by 100 and truncated.
+- Formatting the paise part without `:02d`: 5 paise prints as `.5`, which reads as 50 paise.
+- Dividing with `/`: the share becomes a float with a long tail, not a whole number of paise.

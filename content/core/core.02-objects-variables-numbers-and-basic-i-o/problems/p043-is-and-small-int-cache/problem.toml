@@ -1,0 +1,6 @@
+id = "core.02.p043"
+title = "Why `is` sometimes seems to work"
+tier = "challenge"
+kind = "explain"
+topics = ["is vs ==", "small-int caching", "everything is an object"]
+minutes = 25

@@ -1,0 +1,6 @@
+id = "core.06.p029"
+title = "Why UnboundLocalError?"
+tier = "deep"
+kind = "explain"
+topics = ["scope", "UnboundLocalError", "global"]
+minutes = 25

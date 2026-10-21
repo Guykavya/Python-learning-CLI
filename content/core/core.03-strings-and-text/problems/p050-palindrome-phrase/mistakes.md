@@ -1,0 +1,3 @@
+- Removing only spaces, so the `?` at the end breaks the comparison.
+- Using `replace(" ", "")`, which leaves tabs.
+- Forgetting to casefold, so `Was` and `saw` do not match.

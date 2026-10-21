@@ -1,0 +1,5 @@
+sentence = input()
+old = input()
+new = input()
+print(sentence.replace(old, new))
+print(f"Replacements: {sentence.count(old)}")

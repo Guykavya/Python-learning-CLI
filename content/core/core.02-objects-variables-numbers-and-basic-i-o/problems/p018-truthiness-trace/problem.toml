@@ -1,0 +1,6 @@
+id = "core.02.p018"
+title = "Truthy or falsy"
+tier = "drill"
+kind = "trace"
+topics = ["truthiness", "bool", "short-circuit"]
+minutes = 10

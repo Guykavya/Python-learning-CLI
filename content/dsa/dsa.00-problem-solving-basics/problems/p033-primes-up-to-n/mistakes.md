@@ -1,0 +1,4 @@
+- Using `while d * d < x` instead of `<=`. Squares of primes such as 9, 25 and 49 are then never tested with their square root, so they are wrongly printed as prime.
+- Trying every divisor from 2 to `x - 1`. The answers are right, but for `n = 200000` it does billions of divisions and runs out of time.
+- Starting the outer loop at 1, or forgetting that 1 is not prime. Then `count` is one too large and the line starts with `1`.
+- Forgetting to reset `is_prime = True` for each new `x`. Once one number is found composite, every later number looks composite too.

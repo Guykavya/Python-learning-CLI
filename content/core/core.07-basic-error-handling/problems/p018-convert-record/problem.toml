@@ -1,0 +1,6 @@
+id = "core.07.p018"
+title = "Convert a record, keeping the cause"
+tier = "applied"
+kind = "code"
+topics = ["raise from", "__cause__", "exception chaining", "error messages"]
+minutes = 25

@@ -1,0 +1,10 @@
+together 1 1
+together 1 2
+together 2 3
+together 3 5
+together 5 8
+one by one 1 2
+one by one 2 4
+one by one 4 8
+one by one 8 16
+one by one 16 32

@@ -1,0 +1,4 @@
+- Comparing `rev` with `n` after the loop: by then `n` is 0, so the answer is `yes` only for 0 and `no` for everything else. Save the original first.
+- Taking `abs(n)` to "handle" negatives: `-121` then prints `yes`, but negatives are never palindromes here.
+- Checking only the first and last digits: `1000021` starts and ends with 1, yet it is not a palindrome. Every pair of digits must match.
+- Converting with `str(n) == str(n)[::-1]`: it works in real code, but this exercise is about the arithmetic, and the tests reject it.

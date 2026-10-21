@@ -1,0 +1,14 @@
+# Learning module settings. Copy this file to config.toml (or use `learn config set`).
+# Edit any value by hand at any time.
+
+[accounts]
+codeforces_handle = ""
+leetcode_username = ""
+
+[plan]
+# Minutes per day for the daily plan. Change whenever your schedule changes.
+daily_minutes = 60
+focus = ["core", "dsa"]
+
+[editor]
+open_in_vscode = false

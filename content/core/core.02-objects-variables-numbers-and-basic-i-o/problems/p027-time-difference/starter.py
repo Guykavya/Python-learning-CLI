@@ -1,0 +1,6 @@
+sh = int(input())
+sm = int(input())
+eh = int(input())
+em = int(input())
+diff = (eh * 60 + em) - (sh * 60 + sm)
+print(f"{diff // 60} h {diff % 60} min")

@@ -1,0 +1,4 @@
+- Running `else` after a handled exception. `else` means "no exception at all".
+- Thinking `finally` runs only when there was an error.
+- Printing `end` for `None`: after `finally`, the unhandled `TypeError` leaves the function at once.
+- Writing `start None` as `start 'None'`: `repr(None)` has no quotes.

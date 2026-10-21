@@ -1,0 +1,103 @@
+# Real site problems for dsa.01, all verified to exist (title and difficulty or rating checked).
+# LeetCode: Easy and Medium. Codeforces: rating 800 to 1200. CSES: Sorting and Searching, Range Queries.
+# In each one the obvious solution checks every pair or rescans the data, and is too slow
+# for the given limits. The point is to read the constraints first, name the complexity you
+# need (see chapter.md, "Using constraints to choose an approach"), and only then design.
+
+[[problem]]
+site = "leetcode"
+key = "contains-duplicate"
+title = "Contains Duplicate"
+url = "https://leetcode.com/problems/contains-duplicate/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "jewels-and-stones"
+title = "Jewels and Stones"
+url = "https://leetcode.com/problems/jewels-and-stones/"
+minutes = 10
+
+[[problem]]
+site = "leetcode"
+key = "two-sum"
+title = "Two Sum"
+url = "https://leetcode.com/problems/two-sum/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "range-sum-query-immutable"
+title = "Range Sum Query - Immutable"
+url = "https://leetcode.com/problems/range-sum-query-immutable/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "maximum-average-subarray-i"
+title = "Maximum Average Subarray I"
+url = "https://leetcode.com/problems/maximum-average-subarray-i/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "longest-consecutive-sequence"
+title = "Longest Consecutive Sequence"
+url = "https://leetcode.com/problems/longest-consecutive-sequence/"
+minutes = 35
+
+[[problem]]
+site = "codeforces"
+key = "702A"
+title = "Maximum Increase"
+url = "https://codeforces.com/problemset/problem/702/A"
+minutes = 15
+
+[[problem]]
+site = "codeforces"
+key = "1985C"
+title = "Good Prefixes"
+url = "https://codeforces.com/problemset/problem/1985/C"
+minutes = 20
+
+[[problem]]
+site = "codeforces"
+key = "1690D"
+title = "Black and White Stripe"
+url = "https://codeforces.com/problemset/problem/1690/D"
+minutes = 25
+
+[[problem]]
+site = "codeforces"
+key = "1352C"
+title = "K-th Not Divisible by n"
+url = "https://codeforces.com/problemset/problem/1352/C"
+minutes = 25
+
+[[problem]]
+site = "codeforces"
+key = "1520D"
+title = "Same Differences"
+url = "https://codeforces.com/problemset/problem/1520/D"
+minutes = 30
+
+[[problem]]
+site = "cses"
+key = "1621"
+title = "Distinct Numbers"
+url = "https://cses.fi/problemset/task/1621"
+minutes = 15
+
+[[problem]]
+site = "cses"
+key = "1646"
+title = "Static Range Sum Queries"
+url = "https://cses.fi/problemset/task/1646"
+minutes = 25
+
+[[problem]]
+site = "cses"
+key = "1640"
+title = "Sum of Two Values"
+url = "https://cses.fi/problemset/task/1640"
+minutes = 30

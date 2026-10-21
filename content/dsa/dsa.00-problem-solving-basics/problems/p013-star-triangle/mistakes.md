@@ -1,0 +1,3 @@
+- Using `range(n)`: the first row then has 0 stars (an empty line) and the last row has `n - 1` stars.
+- Using `print("*", end=" ")` in a nested loop: rows come out as `* * *` with spaces between the stars.
+- Forgetting the `print()` after the inner loop in the nested version: all the stars end up on one long line.

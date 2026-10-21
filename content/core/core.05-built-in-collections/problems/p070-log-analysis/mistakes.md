@@ -1,0 +1,4 @@
+- Counting distinct users with a list and `in`: correct but far too slow.
+- Intersecting into a set taken straight from the dict with `&=`, which changes the stored set.
+- Breaking the busiest-day tie towards the larger day.
+- Forgetting the two-space indent for pages.

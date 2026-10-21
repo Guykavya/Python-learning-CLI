@@ -1,0 +1,6 @@
+id = "core.07.p004"
+title = "Friendly menu prices"
+tier = "drill"
+kind = "code"
+topics = ["KeyError", "try/except/else", "error messages"]
+minutes = 12

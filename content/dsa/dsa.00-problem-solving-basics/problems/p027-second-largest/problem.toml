@@ -1,0 +1,6 @@
+id = "dsa.00.p027"
+title = "Second largest, one pass"
+tier = "applied"
+kind = "code"
+topics = ["single pass", "running maximum", "flags", "edge cases", "duplicates"]
+minutes = 20

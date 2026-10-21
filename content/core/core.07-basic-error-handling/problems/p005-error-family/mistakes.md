@@ -1,0 +1,4 @@
+- Catching `KeyError` and `ZeroDivisionError` only, so `IndexError` and `OverflowError` escape.
+- Expecting `list.index` to raise `IndexError`. A missing item is a bad value: `ValueError`.
+- Catching `Exception` and then sorting with `isinstance`. `NameError` must not be caught at all.
+- Forgetting to pass `*args` when calling `func`.

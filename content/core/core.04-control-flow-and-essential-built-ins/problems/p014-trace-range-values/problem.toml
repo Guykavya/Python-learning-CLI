@@ -1,0 +1,6 @@
+id = "core.04.p014"
+title = "Trace range values"
+tier = "drill"
+kind = "trace"
+topics = ["range", "negative step", "empty range", "len()"]
+minutes = 10

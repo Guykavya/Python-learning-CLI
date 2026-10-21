@@ -1,0 +1,4 @@
+- Starting with `totals = counts[0]` and adding into it: that changes the caller's first dict (aliasing).
+- Removing zero totals with `del` while looping over the same dict: a `RuntimeError` (core.05).
+- Crashing on `merge_counts()` by reading `counts[0]`.
+- Starting with `totals = dict(counts[0])` (a safe copy) but then looping over all of `counts`, which counts the first dict twice.

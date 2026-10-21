@@ -1,0 +1,3 @@
+- Using `round(a + b, 2) == round(c, 2)`. Two values very close together can round to different sides.
+- Leaving out `abs_tol` when comparing with zero. `math.isclose(1e-12, 0)` is `False`.
+- Thinking `isclose` fixes the stored value. It only compares; the float is still an approximation.

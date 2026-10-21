@@ -1,0 +1,6 @@
+id = "core.07.p012"
+title = "Log it, then let it go"
+tier = "drill"
+kind = "code"
+topics = ["bare raise", "re-raising", "KeyError"]
+minutes = 12

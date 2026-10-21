@@ -1,0 +1,6 @@
+id = "core.04.p023"
+title = "Coordinate grid"
+tier = "drill"
+kind = "code"
+topics = ["nested loops", "range"]
+minutes = 10

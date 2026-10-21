@@ -1,0 +1,3 @@
+- Counting in the new sentence instead of the original.
+- Forgetting to print the result of `replace`, or calling it and throwing the result away.
+- Expecting `replace` to match whole words only. `"cat"` inside `"category"` is replaced too.

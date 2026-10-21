@@ -1,0 +1,3 @@
+- Using `n % 100` as the tens digit. That gives the last two digits, like `23`.
+- Forgetting `abs()`: `123 - 321` is `-198`.
+- Expecting `021`. A number has no leading zeros; only a string could keep them.

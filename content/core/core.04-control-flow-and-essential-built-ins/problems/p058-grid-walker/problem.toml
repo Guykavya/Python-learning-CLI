@@ -1,0 +1,6 @@
+id = "core.04.p058"
+title = "Robot grid walker"
+tier = "challenge"
+kind = "code"
+topics = ["match/case", "while True", "conditional logic", "state"]
+minutes = 40

@@ -1,0 +1,6 @@
+id = "dsa.00.p045"
+title = "Star diamond"
+tier = "deep"
+kind = "code"
+topics = ["nested loops", "patterns", "symmetry", "edge cases"]
+minutes = 25

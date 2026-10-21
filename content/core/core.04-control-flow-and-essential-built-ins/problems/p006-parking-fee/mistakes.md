@@ -1,0 +1,4 @@
+- Charging the weekend extra when hours is 0.
+- Charging a car 25 per hour from the first hour, or forgetting that 1 hour still costs 40.
+- Comparing `vehicle == "car"` without `.lower()`, so `Car` is "unknown".
+- Printing `Fee: ...` after `Unknown vehicle` as well.

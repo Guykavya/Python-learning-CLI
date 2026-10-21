@@ -1,0 +1,7 @@
+id = "core.02.p003"
+title = "Floor division with negatives"
+tier = "deep"
+kind = "trace"
+topics = ["floor division", "modulo with negatives", "int()"]
+minutes = 10
+assessment = "trace"

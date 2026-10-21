@@ -1,0 +1,4 @@
+- Writing `end="!"` on line 3. The newline is replaced, so line 4 is glued onto line 3.
+- Writing `sep=" , "` with an extra space before the comma.
+- Thinking `sep` also goes before the first item or after the last one. It only goes between items.
+- Using `+` to build the text. It works for strings but the task is to learn `sep` and `end`.

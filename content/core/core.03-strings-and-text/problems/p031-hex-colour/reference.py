@@ -1,0 +1,6 @@
+code = input().strip().removeprefix("#")
+r = int(code[0:2], 16)
+g = int(code[2:4], 16)
+b = int(code[4:6], 16)
+print(f"rgb({r}, {g}, {b})")
+print(f"#{r:02x}{g:02x}{b:02x}")

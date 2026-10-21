@@ -1,0 +1,3 @@
+- Forgetting `nonlocal` in one of the functions that assign the balance.
+- Storing the functions' results in the dict (`"balance": current()`), which freezes the starting balance.
+- Defining the three functions outside `make_account` with a global balance: two accounts then share money.

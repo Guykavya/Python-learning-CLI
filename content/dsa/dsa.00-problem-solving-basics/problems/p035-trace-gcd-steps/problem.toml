@@ -1,0 +1,6 @@
+id = "dsa.00.p035"
+title = "Trace Euclid's algorithm"
+tier = "applied"
+kind = "trace"
+topics = ["while loops", "gcd", "tuple assignment", "dry run"]
+minutes = 15

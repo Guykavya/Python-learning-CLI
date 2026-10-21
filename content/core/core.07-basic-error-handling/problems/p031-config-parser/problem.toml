@@ -1,0 +1,6 @@
+id = "core.07.p031"
+title = "A settings file parser with line numbers"
+tier = "challenge"
+kind = "code"
+topics = ["raise from", "error messages with location", "validation", "partition"]
+minutes = 45

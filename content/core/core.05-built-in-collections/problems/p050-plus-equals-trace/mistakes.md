@@ -1,0 +1,3 @@
+- Treating `a += b` and `a = a + b` as the same for lists.
+- Expecting `t += (3,)` to change `u` too.
+- Forgetting that `x * 2` repeats references to the same inner list.

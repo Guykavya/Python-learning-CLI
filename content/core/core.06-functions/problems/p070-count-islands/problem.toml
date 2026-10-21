@@ -1,0 +1,6 @@
+id = "core.06.p070"
+title = "Count the islands"
+tier = "challenge"
+kind = "code"
+topics = ["recursion", "flood fill", "nested lists", "not changing inputs"]
+minutes = 45

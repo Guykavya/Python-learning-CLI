@@ -1,0 +1,3 @@
+- `numbers = numbers + [sum(numbers)]`: rebinds the local name; the caller's list is unchanged.
+- Returning the list as well. It works, but breaks the convention that in-place functions return `None`, and the tests check it.
+- Appending first and summing afterwards, which double-counts.

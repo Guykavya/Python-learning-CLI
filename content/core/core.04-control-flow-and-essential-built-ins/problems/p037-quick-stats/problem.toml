@@ -1,0 +1,6 @@
+id = "core.04.p037"
+title = "Quick stats with built-ins"
+tier = "drill"
+kind = "code"
+topics = ["sum()", "min()", "max()", "default="]
+minutes = 10

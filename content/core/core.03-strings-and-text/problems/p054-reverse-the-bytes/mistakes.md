@@ -1,0 +1,3 @@
+- Decoding the reversed bytes without `errors="replace"`, which crashes.
+- Printing the bytes object directly instead of `hex(" ")`.
+- Concluding that UTF-8 is "broken". The bytes were valid until they were reversed.

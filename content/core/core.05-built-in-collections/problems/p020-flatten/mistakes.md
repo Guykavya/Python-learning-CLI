@@ -1,0 +1,3 @@
+- Writing `[v for v in row for row in rows]`. The order is backwards, and `row` is not defined yet.
+- Using `rows[0] + rows[1] + ...` by hand, which only works for a fixed number of rows.
+- Using `>=` for the longest row, which picks the last of tied rows.

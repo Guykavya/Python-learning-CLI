@@ -1,0 +1,6 @@
+id = "core.02.p040"
+title = "Mutable versus immutable"
+tier = "deep"
+kind = "explain"
+topics = ["mutable vs immutable", "augmented assignment", "names and binding"]
+minutes = 20

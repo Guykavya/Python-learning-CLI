@@ -1,0 +1,6 @@
+id = "core.02.p025"
+title = "Centimetres to feet and inches"
+tier = "applied"
+kind = "code"
+topics = ["unit conversion", "round()", "divmod"]
+minutes = 20

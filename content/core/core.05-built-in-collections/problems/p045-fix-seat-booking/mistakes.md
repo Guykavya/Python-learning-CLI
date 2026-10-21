@@ -1,0 +1,4 @@
+- Fixing the grid but not the snapshot. The shallow copy in `save` still shares rows.
+- Replacing `snapshot = seats` with `snapshot = seats[:]`. Still shallow.
+- Using `pop(-1)` and `pop()` interchangeably is fine; `pop(0)` is the bug.
+- Counting free seats with `str(seats).count(".")`: it works by accident but hides the real structure.

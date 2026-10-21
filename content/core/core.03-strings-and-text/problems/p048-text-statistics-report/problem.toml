@@ -1,0 +1,7 @@
+id = "core.03.p048"
+title = "Text statistics report"
+tier = "challenge"
+kind = "code"
+topics = ["translate()", "split()", "casefold()", "format spec", "text statistics"]
+minutes = 50
+assessment = "build"

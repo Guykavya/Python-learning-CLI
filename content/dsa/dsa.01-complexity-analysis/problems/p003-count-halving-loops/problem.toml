@@ -1,0 +1,6 @@
+id = "dsa.01.p003"
+title = "Count the steps: halving and doubling"
+tier = "drill"
+kind = "trace"
+topics = ["counting operations", "logarithm", "while loops"]
+minutes = 15

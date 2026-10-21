@@ -1,0 +1,4 @@
+- Treating the second loop as Fibonacci because it "looks the same". Once `a = b` runs, `a` and `b` are equal, so `b` doubles.
+- In the first loop, computing `a + b` with the new `a`. That gives `1 2` on the first line instead of `1 1`.
+- Printing the starting values `0 1` as the first line. The `print` comes after the update, so the first line already shows the updated pair.
+- Leaving out the label or adding commas. `print` with several items separates them with single spaces: `together 1 1`.

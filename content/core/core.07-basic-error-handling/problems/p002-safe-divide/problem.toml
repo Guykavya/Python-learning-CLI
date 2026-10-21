@@ -1,0 +1,6 @@
+id = "core.07.p002"
+title = "Safe division"
+tier = "drill"
+kind = "code"
+topics = ["try/except", "ZeroDivisionError", "EAFP"]
+minutes = 10

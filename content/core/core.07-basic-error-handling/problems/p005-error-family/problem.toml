@@ -1,0 +1,6 @@
+id = "core.07.p005"
+title = "Name the error family"
+tier = "drill"
+kind = "code"
+topics = ["exception hierarchy", "LookupError", "ArithmeticError", "ValueError vs TypeError"]
+minutes = 15

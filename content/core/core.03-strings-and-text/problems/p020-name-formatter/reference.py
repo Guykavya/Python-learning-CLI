@@ -1,0 +1,5 @@
+words = input().split()
+first = words[0].capitalize()
+last = words[-1].capitalize()
+print(f"{last}, {first}")
+print(f"Initials: {first[0]}.{last[0]}.")

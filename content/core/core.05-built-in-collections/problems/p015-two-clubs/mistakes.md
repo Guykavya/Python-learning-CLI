@@ -1,0 +1,3 @@
+- Printing a set directly. The order is unpredictable and the braces and quotes show.
+- Using lists and nested loops: correct, but O(n × m), and repeats are not removed.
+- Mixing up `a - b` and `b - a`.

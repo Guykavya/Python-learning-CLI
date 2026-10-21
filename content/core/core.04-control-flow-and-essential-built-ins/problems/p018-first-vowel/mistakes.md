@@ -1,0 +1,4 @@
+- Printing `No vowels` inside the loop for every consonant.
+- Forgetting `break`, so later vowels also print.
+- Forgetting capitals: `Apple` should find `A`.
+- Using `word.find(...)` for one vowel only, which misses words where another vowel comes first.

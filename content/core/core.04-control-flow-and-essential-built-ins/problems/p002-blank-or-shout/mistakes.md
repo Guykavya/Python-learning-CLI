@@ -1,0 +1,3 @@
+- Testing `if not line:` **before** stripping: a line of spaces is truthy, so it would be shouted as `!`.
+- Converting with `int()` or checking for `"0"`: the task is about text, and `"0"` is not blank.
+- Adding `!` every time, giving `WOW!!`.

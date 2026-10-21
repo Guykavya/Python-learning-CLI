@@ -1,0 +1,6 @@
+id = "core.02.p010"
+title = "Average of three numbers"
+tier = "drill"
+kind = "code"
+topics = ["float conversion", "operator precedence", "f-string formatting"]
+minutes = 10

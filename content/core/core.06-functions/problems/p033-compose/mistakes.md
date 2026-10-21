@@ -1,0 +1,3 @@
+- Applying the functions left to right, so `compose(inc, double)(5)` gives 12.
+- Returning `composed(x)` (a call) instead of `composed` (the function).
+- Calling the functions inside `compose` before any argument exists.

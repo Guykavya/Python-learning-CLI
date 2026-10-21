@@ -1,0 +1,6 @@
+id = "dsa.00.p052"
+title = "Convert to any base from 2 to 16"
+tier = "challenge"
+kind = "code"
+topics = ["number bases", "modulo", "floor division", "string building", "edge cases"]
+minutes = 40

@@ -1,0 +1,6 @@
+id = "core.06.p023"
+title = "Add totals without touching the input"
+tier = "applied"
+kind = "code"
+topics = ["not changing inputs", "shallow copies", "nested lists"]
+minutes = 20

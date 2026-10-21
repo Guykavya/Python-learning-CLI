@@ -1,0 +1,4 @@
+- Returning 0 for an empty list: an empty list is still one level.
+- Taking the depth of the first item only.
+- Counting `"abc"` as a container because it can be looped over: iterating into a one-character string recurses forever, since `"a"[0]` is `"a"`.
+- Adding the depths of the items instead of taking the maximum.

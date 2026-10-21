@@ -1,0 +1,7 @@
+id = "core.07.p025"
+title = "Fix the results summary"
+tier = "deep"
+kind = "code"
+topics = ["bare except dangers", "narrow try blocks", "error messages", "debugging"]
+minutes = 35
+assessment = "fix"

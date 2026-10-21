@@ -1,0 +1,6 @@
+id = "core.05.p036"
+title = "Split into chunks"
+tier = "applied"
+kind = "code"
+topics = ["slicing", "comprehensions"]
+minutes = 20

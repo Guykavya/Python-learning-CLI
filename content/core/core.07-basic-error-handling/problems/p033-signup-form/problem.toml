@@ -1,0 +1,6 @@
+id = "core.07.p033"
+title = "Validate a whole sign-up form"
+tier = "challenge"
+kind = "code"
+topics = ["validators that raise", "collecting errors", "dispatch tables", "error messages"]
+minutes = 45

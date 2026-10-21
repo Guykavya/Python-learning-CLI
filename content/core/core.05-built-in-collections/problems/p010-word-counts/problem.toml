@@ -1,0 +1,6 @@
+id = "core.05.p010"
+title = "Count the words"
+tier = "drill"
+kind = "code"
+topics = ["dicts", "counting"]
+minutes = 10

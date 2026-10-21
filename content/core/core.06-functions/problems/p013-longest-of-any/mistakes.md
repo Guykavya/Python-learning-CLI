@@ -1,0 +1,4 @@
+- Using `>=`, which keeps the **last** of the tied words.
+- Starting with `best = words[0]`, which crashes for `longest()`.
+- `max(words, key=len)` alone also crashes on no arguments; it needs `default=""`.
+- Returning the length instead of the word.

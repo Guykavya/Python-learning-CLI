@@ -1,0 +1,4 @@
+- Repeated subtraction (`if a > b: a -= b`): correct, but for `(10^18, 1)` it needs 10^18 steps and never finishes. With a 0 in the input it loops forever, because subtracting 0 changes nothing.
+- Trying every divisor from `min(a, b)` downward: for two large numbers whose GCD is 1, that is around 10^18 checks.
+- Updating one variable at a time, `a = b` then `b = a % b`: by the second line `a` already equals `b`, so `b` becomes 0 at once and the answer is just the old `b`.
+- Forgetting `abs()`: with `-12` and `18`, Python's `%` follows the sign of the divisor, and the answer can come out negative (for example `gcd(12, -18)` would print `-6`).

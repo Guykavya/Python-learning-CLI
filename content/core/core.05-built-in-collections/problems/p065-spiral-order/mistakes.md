@@ -1,0 +1,3 @@
+- Printing the middle row twice when the rectangle shrinks to a single row.
+- Off-by-one errors in `range` for the reverse walks: `range(right, left - 1, -1)`.
+- Swapping rows and columns in the walks.

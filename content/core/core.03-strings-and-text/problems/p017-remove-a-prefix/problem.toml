@@ -1,0 +1,5 @@
+id = "core.03.p017"
+title = "Clean a hashtag"
+tier = "drill"
+kind = "code"
+topics = ["removeprefix()", "lstrip()", "removesuffix()"]

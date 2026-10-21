@@ -1,0 +1,7 @@
+id = "dsa.01.p020"
+title = "Trace a recursion tree"
+tier = "deep"
+kind = "trace"
+topics = ["recursion tree", "divide and conquer", "n log n", "recurrence"]
+minutes = 30
+assessment = "trace"

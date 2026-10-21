@@ -1,0 +1,4 @@
+- Reading `T(n) = 2T(n/2) + 1` as O(log n) because "it halves". It halves, but it makes two calls, so the number of calls doubles per level and the leaves (about n of them) dominate.
+- Reading `T(n) = T(n/2) + n` as O(n log n). The levels do `n, n/2, n/4, ...`, a shrinking sum less than `2n`, not `n` per level.
+- Applying the master theorem to `T(n - 1)` recurrences. It needs the size to be divided, not reduced by a constant.
+- Forgetting that slicing in a recursive call adds O(n) per call, which changes recurrence 6 into 7.

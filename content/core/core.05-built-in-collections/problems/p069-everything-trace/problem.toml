@@ -1,0 +1,6 @@
+id = "core.05.p069"
+title = "Collections all together"
+tier = "challenge"
+kind = "trace"
+topics = ["dicts", "dict views", "comprehensions", "aliasing", "sets", "sorting", "unpacking"]
+minutes = 40

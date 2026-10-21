@@ -1,0 +1,4 @@
+- Reading `1 < x > 3` as "1 < 3". Only neighbours are compared.
+- Expecting `ZeroDivisionError` on `0 and 1 / 0`. Short-circuiting means the division never runs.
+- Expecting `or` and `and` to always produce `True` or `False`.
+- Forgetting that the walrus changed `x` for every later line.

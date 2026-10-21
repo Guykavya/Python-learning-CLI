@@ -1,0 +1,4 @@
+- Moving the robot first and checking the wall afterwards, leaving it outside the grid.
+- Forgetting `break` after the bump, so it keeps printing bump messages.
+- Mixing up which way `y` grows (north is `y + 1`).
+- Counting steps that were cancelled by the wall.

@@ -1,0 +1,5 @@
+id = "core.03.p046"
+title = "Unicode and bytes"
+tier = "deep"
+kind = "trace"
+topics = ["ord()", "chr()", "encode()", "bytes", "bytearray", "casefold()"]

@@ -1,0 +1,3 @@
+- Merging as `new | old`, which lets the **old** price win.
+- Comparing prices as strings: `"9" != "09"` would be a false change. Convert to int.
+- Changing `old` in place with `old |= new` and then trying to compare old and new prices.

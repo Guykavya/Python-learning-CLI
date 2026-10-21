@@ -1,0 +1,3 @@
+- Saying the base case is wrong: it is fine; the input is just too deep.
+- Recommending a higher recursion limit as the main fix.
+- Claiming Python optimises tail calls.

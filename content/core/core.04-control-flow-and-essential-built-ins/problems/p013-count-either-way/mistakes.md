@@ -1,0 +1,3 @@
+- `range(a, b)`: misses `b`.
+- `range(a, b - 1, -1)` for counting up: empty.
+- When a equals b, using step -1 and stop `b - 1` still works; using stop `b` gives nothing. Test the equal case.

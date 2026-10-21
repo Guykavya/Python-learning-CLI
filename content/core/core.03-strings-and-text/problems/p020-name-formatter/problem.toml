@@ -1,0 +1,5 @@
+id = "core.03.p020"
+title = "Format a name for a register"
+tier = "applied"
+kind = "code"
+topics = ["split()", "capitalize()", "indexing", "f-strings"]

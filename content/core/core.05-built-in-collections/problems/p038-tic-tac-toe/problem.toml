@@ -1,0 +1,6 @@
+id = "core.05.p038"
+title = "Tic-tac-toe referee"
+tier = "applied"
+kind = "code"
+topics = ["nested lists", "comprehensions"]
+minutes = 20

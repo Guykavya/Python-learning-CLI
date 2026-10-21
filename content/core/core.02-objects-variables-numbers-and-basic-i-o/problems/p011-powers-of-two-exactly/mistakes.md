@@ -1,0 +1,3 @@
+- Using `math.pow(2, n)` or `2.0 ** n`: returns a float, loses digits, and fails above about `n = 1023`.
+- Printing `p % 100` for three digits: that is only two.
+- Thinking big ints need a special library. In Python every `int` is already unlimited.

@@ -1,0 +1,5 @@
+- Counting the target with `text.count(target)`, which also counts it inside other words (`the` inside `there`).
+- Forgetting to casefold the target, so `THE` is never found among the casefolded words.
+- Dividing by `len(words)` directly, which crashes on empty text.
+- Counting characters of the cleaned text instead of the original for the first two lines.
+- Using `split(" ")`, which creates empty "words" and breaks the count and the average.

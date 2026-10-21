@@ -1,0 +1,3 @@
+- Saying "Python chose `True` arbitrarily". It follows from what "all" means.
+- Forgetting short-circuiting: `all` does not look at every item when one is false.
+- Explaining only `all` and not `any`.

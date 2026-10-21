@@ -1,0 +1,6 @@
+id = "core.04.p016"
+title = "Timetable slots"
+tier = "applied"
+kind = "code"
+topics = ["range", "step", "f-string formatting", "divmod"]
+minutes = 20

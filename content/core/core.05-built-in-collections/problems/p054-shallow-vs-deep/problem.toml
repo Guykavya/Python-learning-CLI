@@ -1,0 +1,6 @@
+id = "core.05.p054"
+title = "Shallow copy versus deep copy"
+tier = "deep"
+kind = "explain"
+topics = ["copying", "aliasing"]
+minutes = 25

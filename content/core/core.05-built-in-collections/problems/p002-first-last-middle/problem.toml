@@ -1,0 +1,6 @@
+id = "core.05.p002"
+title = "First, last and middle"
+tier = "drill"
+kind = "code"
+topics = ["lists", "indexing", "slicing"]
+minutes = 10

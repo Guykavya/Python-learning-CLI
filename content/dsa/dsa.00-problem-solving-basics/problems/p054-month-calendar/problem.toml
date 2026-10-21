@@ -1,0 +1,7 @@
+id = "dsa.00.p054"
+title = "Print a month calendar"
+tier = "challenge"
+kind = "code"
+topics = ["decomposition", "leap years", "weekday formula", "formatted output", "nested logic"]
+minutes = 60
+assessment = "build"

@@ -1,0 +1,3 @@
+- Mixing up `ljust` and `rjust`. `rjust` makes the text sit on the right.
+- Converting to `int` first. `int("007")` is 7 and the leading zeros are lost; this task works on text.
+- Passing a fill of more than one character, like `"..",` which raises `TypeError`.

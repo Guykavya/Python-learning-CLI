@@ -1,0 +1,6 @@
+id = "dsa.00.p056"
+title = "The snail in the well"
+tier = "challenge"
+kind = "code"
+topics = ["simulation to formula", "ceiling division", "edge cases", "efficiency"]
+minutes = 40

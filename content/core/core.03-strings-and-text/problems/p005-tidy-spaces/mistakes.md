@@ -1,0 +1,3 @@
+- Using `split(" ")` instead of `split()`. With an explicit space, runs of spaces give empty pieces and the join puts the extra spaces back.
+- Using `replace(" ", "")`, which deletes the spaces between words too.
+- Forgetting tabs. `strip()` and `split()` handle tabs; `replace(" ", ...)` does not.

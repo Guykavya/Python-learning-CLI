@@ -1,0 +1,6 @@
+id = "dsa.00.p013"
+title = "Star triangle"
+tier = "drill"
+kind = "code"
+topics = ["loops", "patterns", "string repetition"]
+minutes = 10

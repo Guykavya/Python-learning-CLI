@@ -1,0 +1,3 @@
+- Using a list called `seen` instead of a set. `x in seen` on a list scans it, so the program is still O(n^2), just with a different shape.
+- Putting `seen.add(x)` **before** the `x in seen` check. Then every number "has been seen" (by itself) and the answer is always YES.
+- Comparing `a[i] == a[i + 1]` without sorting first. Equal values need not be neighbours in the original order: `3 1 3` has a repeat that this misses.

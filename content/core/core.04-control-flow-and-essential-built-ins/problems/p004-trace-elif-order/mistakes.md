@@ -1,0 +1,3 @@
+- Printing `warm` as well as `hot` for 31: only one branch of a chain runs.
+- Forgetting that `fan on` and `alert` come from separate `if`s, which do not care what the chain did.
+- Expecting `no match`: `"c"` on its own is a non-empty string, so the `or` is always truthy.

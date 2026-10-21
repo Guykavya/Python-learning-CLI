@@ -1,0 +1,3 @@
+- Sorting `(score, name)` with `reverse=True`: high scores come first, but ties come out Z to A.
+- Taking `ranked[0]`, `ranked[1]`, `ranked[2]` directly, which crashes with fewer than three people.
+- Comparing scores as strings: `"9" > "10"`.

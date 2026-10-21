@@ -1,0 +1,3 @@
+- Calling `text.upper()` on its own line and then printing `text`. The result was thrown away.
+- Assuming `lower()` and `casefold()` always agree. They differ for letters like `ß`.
+- Expecting the output to have the same length as the input. `upper()` can make text longer.

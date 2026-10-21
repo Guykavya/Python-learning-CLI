@@ -1,0 +1,6 @@
+id = "core.07.p032"
+title = "All-or-nothing money transfers"
+tier = "challenge"
+kind = "code"
+topics = ["validate before changing", "rollback", "bare raise", "KeyError"]
+minutes = 40

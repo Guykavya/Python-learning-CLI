@@ -1,0 +1,7 @@
+id = "dsa.00.p040"
+title = "Explain two off-by-one bugs"
+tier = "deep"
+kind = "explain"
+topics = ["off-by-one", "dry run", "boundaries", "range", "while loops", "debugging"]
+minutes = 25
+assessment = "explain"

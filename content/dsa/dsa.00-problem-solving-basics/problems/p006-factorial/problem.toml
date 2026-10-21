@@ -1,0 +1,6 @@
+id = "dsa.00.p006"
+title = "Factorial"
+tier = "drill"
+kind = "code"
+topics = ["loops", "accumulator", "big integers"]
+minutes = 10

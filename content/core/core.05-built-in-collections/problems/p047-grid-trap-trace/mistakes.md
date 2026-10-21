@@ -1,0 +1,3 @@
+- Expecting `[[0]*3]*2` to give independent rows.
+- Thinking `m[0] = [1, 1]` changes `row`. It only replaces slot 0 of `m`.
+- Thinking `k[1] = k[1] + ["y"]` changes all three slots. `+` builds a new list.

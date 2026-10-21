@@ -1,0 +1,4 @@
+- Calling the best case "n = 1". Best and worst case compare inputs of the **same** size `n`; making `n` small is not a best case.
+- Saying the average of linear search is O(n/2). Constants are dropped: it is O(n).
+- Saying insertion sort is O(n^2) "always". On sorted input it is O(n), which is why it is used for small or nearly sorted lists.
+- Quoting the dict worst case O(n) as the normal cost. For analysis we use the O(1) average, and say so.

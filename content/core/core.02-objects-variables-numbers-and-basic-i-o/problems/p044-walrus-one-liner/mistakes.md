@@ -1,0 +1,4 @@
+- Writing `print(n := int(input()), ...)` without brackets and then `sep=...`. Bracket every walrus to avoid confusion.
+- Using `sq` before it is bound, for example putting `sq % 7` before `(sq := n * n)`.
+- Writing `n * n` again in later arguments instead of reusing `sq`.
+- Using `=` inside an expression: `print(n = 5)` passes a keyword argument named `n`, which `print` rejects.

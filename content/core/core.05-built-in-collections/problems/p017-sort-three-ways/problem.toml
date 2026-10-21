@@ -1,0 +1,6 @@
+id = "core.05.p017"
+title = "Sort words four ways"
+tier = "drill"
+kind = "code"
+topics = ["sorting", "key functions", "stability"]
+minutes = 10

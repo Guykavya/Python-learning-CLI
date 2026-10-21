@@ -1,0 +1,6 @@
+id = "core.04.p039"
+title = "Trace built-in edge cases"
+tier = "deep"
+kind = "trace"
+topics = ["any()", "all()", "sum()", "min()", "max()", "key=", "default="]
+minutes = 25

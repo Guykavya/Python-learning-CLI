@@ -1,0 +1,4 @@
+- Counting orderings (`ways(rest) = sum of ways(rest - c) for c in coins`), which counts `1+2` and `2+1` separately.
+- No memo: correct, but the number of calls explodes and the 500 test takes far too long.
+- `def count_ways(amount, coins, memo={})` keyed by `(rest, i)`: the memo survives between calls, so a second call with different coins reuses wrong answers.
+- Sorting `coins` in place: changes the caller's list.

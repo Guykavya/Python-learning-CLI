@@ -1,0 +1,3 @@
+- Including the stop index: thinking `s[0:3]` is `comp`.
+- Expecting `s[1:100]` to raise an error. Only indexing fails out of range; slices trim.
+- Reading `s[::2]` as "the first two characters". The third part is the step.

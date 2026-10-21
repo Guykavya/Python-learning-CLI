@@ -1,0 +1,6 @@
+id = "core.05.p024"
+title = "Queue at the counter"
+tier = "applied"
+kind = "code"
+topics = ["lists", "list methods"]
+minutes = 20

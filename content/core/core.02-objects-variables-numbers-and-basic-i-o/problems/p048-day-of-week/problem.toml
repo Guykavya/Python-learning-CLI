@@ -1,0 +1,6 @@
+id = "core.02.p048"
+title = "Day of the week from a date"
+tier = "challenge"
+kind = "code"
+topics = ["floor division", "modulo", "modular arithmetic", "integer arithmetic tricks"]
+minutes = 40

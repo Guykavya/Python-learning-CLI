@@ -1,0 +1,3 @@
+- Checking with `isdigit()`: `"-5"` and `" 7"` are wrongly rejected and `"²"` crashes `int`.
+- Putting the range check inside the `try`. It works, but a check that cannot raise does not belong there.
+- Appending the stripped or converted token to `rejected` instead of the original.

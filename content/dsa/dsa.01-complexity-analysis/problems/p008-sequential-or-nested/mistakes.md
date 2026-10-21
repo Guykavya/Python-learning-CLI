@@ -1,0 +1,3 @@
+- Writing `shrinking 32` by reasoning "the outer loop runs 4 times and the inner loop up to 8 times, so 4 * 8". The inner loop gets shorter each time; you must add the actual lengths.
+- Counting `size = 0` as an extra pass. The loop test `size > 0` fails, so the inner loop does not run for it.
+- In "nested constant", forgetting the `ops += 1` that sits in the outer loop, before the inner loop. That gives 40 instead of 48.

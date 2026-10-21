@@ -1,0 +1,4 @@
+- `print(n % 2 == 0)` instead of `return`. The value appears on the screen but the caller gets `None`.
+- Returning the string `"True"`. A non-empty string is always truthy, so `if is_even(3):` would run.
+- Checking `n % 2 == 1` for odd numbers and assuming negatives work like C. In Python `-3 % 2` is `1`, so it does work, but `n % 2 == 0` is the clearer test.
+- Writing `if n % 2 == 0: return True else: return False`. Correct, but four lines for what one comparison already gives you.

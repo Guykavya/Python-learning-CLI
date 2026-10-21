@@ -1,0 +1,4 @@
+- Stopping at the O(n) single loop. It passes the small tests and `10^7`, but `10^12` needs about 10^12 steps.
+- Forgetting to subtract `r * r`, which double-counts the pairs where both numbers are small.
+- Using `int(n ** 0.5)` without correcting it. For some large `n` it is off by one, and the answer is then wrong by a few.
+- Looping `i` up to `r` but adding `n // i` only once (not doubling). That counts only one side of the symmetric picture.

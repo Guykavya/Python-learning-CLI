@@ -1,0 +1,3 @@
+- Forgetting `abs()` in the Manhattan distance: `(-5) + 5` gives 0 for two different points.
+- Putting `** 2` outside `sqrt`, or adding before squaring.
+- Writing `-dx ** 2` thinking it is `(-dx) ** 2`. `**` binds tighter than unary minus, so it is `-(dx ** 2)`.

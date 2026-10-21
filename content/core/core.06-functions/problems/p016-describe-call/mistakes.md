@@ -1,0 +1,4 @@
+- Calling `func(args, kwargs)`: that passes one tuple and one dict, not the original arguments.
+- Calling `func` twice (once to show, once to return). A function with side effects would act twice.
+- Using `str` instead of `repr`: then `'a'` shows as `a` and you cannot tell strings from names.
+- Showing keywords sorted instead of in the order they were passed.

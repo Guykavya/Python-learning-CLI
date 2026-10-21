@@ -1,0 +1,3 @@
+- Using `max(counts, key=counts.get)` alone, which hides ties.
+- Sorting alphabetically only, or by votes only.
+- Crashing on `max()` of an empty dict when there are no votes.

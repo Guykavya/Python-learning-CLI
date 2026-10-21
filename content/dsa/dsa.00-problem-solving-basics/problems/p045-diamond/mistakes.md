@@ -1,0 +1,4 @@
+- Starting the bottom loop at `n`. The widest row is printed twice and the diamond has `2n` rows instead of `2n - 1`.
+- Writing `range(n - 1, 0)` without the step `-1`. A range that counts up from a bigger number is empty, so the bottom half disappears.
+- Using `range(n - 1, 1, -1)`. The stop value is excluded, so the last single-star row is missing.
+- Inventing a new formula for the bottom half (for example `2 * (n - i) - 1` stars with `i` counting up again). It is easy to be one row off at the middle or the tip; reusing the top-half formula with `i` counting down avoids new arithmetic.

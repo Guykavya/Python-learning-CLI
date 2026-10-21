@@ -1,0 +1,6 @@
+id = "core.02.p034"
+title = "Powers of two with bit tricks"
+tier = "applied"
+kind = "code"
+topics = ["bitwise operators", "bit_length", "operator precedence"]
+minutes = 20

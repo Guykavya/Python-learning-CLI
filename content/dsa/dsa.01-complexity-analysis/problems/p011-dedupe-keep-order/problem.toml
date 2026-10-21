@@ -1,0 +1,6 @@
+id = "dsa.01.p011"
+title = "Remove repeats, keep the first"
+tier = "applied"
+kind = "code"
+topics = ["sets", "order", "list membership", "O(n^2) to O(n)"]
+minutes = 20

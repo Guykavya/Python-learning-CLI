@@ -1,0 +1,4 @@
+- Removing an item when it reaches 0, so `low` and `report` miss it.
+- Sorting the report with `reverse=True` on `(value, name)`, which reverses the name order of ties.
+- Forgetting that `stock` changes the price for future sales.
+- Treating `low N` as "at most N" instead of "below N".

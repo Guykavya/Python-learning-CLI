@@ -1,0 +1,3 @@
+- Multiplying by 100 yourself before using `%`. The `%` type already does it, so you get 100 times too much.
+- Writing `.2f,` instead of `,.2f`. The grouping comes before the precision.
+- Using `int(input())`, which crashes on decimals.

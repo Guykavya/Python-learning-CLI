@@ -1,0 +1,7 @@
+id = "core.01.p013"
+title = "Fix the canteen receipt"
+tier = "applied"
+kind = "code"
+topics = ["tracebacks", "SyntaxError", "NameError", "TypeError"]
+minutes = 20
+assessment = "fix"

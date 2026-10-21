@@ -1,0 +1,6 @@
+id = "core.06.p024"
+title = "Remove negatives in place"
+tier = "applied"
+kind = "code"
+topics = ["mutation vs rebinding", "slice assignment", "in-place functions"]
+minutes = 15

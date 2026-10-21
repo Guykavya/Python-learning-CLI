@@ -1,0 +1,6 @@
+id = "core.05.p021"
+title = "What do list methods return?"
+tier = "drill"
+kind = "trace"
+topics = ["list methods", "lists"]
+minutes = 10

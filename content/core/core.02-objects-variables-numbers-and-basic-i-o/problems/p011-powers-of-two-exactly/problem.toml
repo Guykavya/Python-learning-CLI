@@ -1,0 +1,6 @@
+id = "core.02.p011"
+title = "Powers of two, exactly"
+tier = "drill"
+kind = "code"
+topics = ["int arbitrary precision", "exponent", "modulo"]
+minutes = 10

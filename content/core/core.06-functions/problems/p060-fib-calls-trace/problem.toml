@@ -1,0 +1,6 @@
+id = "core.06.p060"
+title = "Counting the calls of naive Fibonacci"
+tier = "deep"
+kind = "trace"
+topics = ["recursion", "repeated work", "memoisation"]
+minutes = 25

@@ -1,0 +1,3 @@
+- `[["."] * cols] * rows`: every row is the same list, so marks appear in every row.
+- Swapping row and column: `grid[c][r]`. The first index chooses the row.
+- Storing each row as a string. Strings are immutable, so `row[c] = "#"` fails.

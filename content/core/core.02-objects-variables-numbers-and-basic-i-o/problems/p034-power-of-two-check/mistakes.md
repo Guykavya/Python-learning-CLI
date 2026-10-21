@@ -1,0 +1,3 @@
+- Testing `n % 2 == 0`: that only checks for even numbers.
+- Writing `n & n - 1 == 0`: `-` binds tighter than `&`, but `==` also binds tighter than `&`, so this is `n & ((n - 1) == 0)`.
+- Using `math.log2(n)` and checking for a whole number: floats lose precision for huge `n`, so `2**100 + 1` looks like a power of two.

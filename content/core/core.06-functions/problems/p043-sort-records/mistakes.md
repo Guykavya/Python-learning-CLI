@@ -1,0 +1,4 @@
+- `key=lambda r: r[field]` on every record: `KeyError` for records without the field.
+- `key=lambda r: r.get(field)`: compares `None` with numbers, a `TypeError`.
+- Reversing the whole result for `descending`, which moves the missing records to the front.
+- Using `records.sort(...)`, which reorders the caller's list.

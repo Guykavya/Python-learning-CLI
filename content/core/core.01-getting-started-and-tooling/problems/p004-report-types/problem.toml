@@ -1,0 +1,6 @@
+id = "core.01.p004"
+title = "Report the types"
+tier = "drill"
+kind = "code"
+topics = ["type()", "REPL"]
+minutes = 10

@@ -1,0 +1,6 @@
+id = "dsa.00.p017"
+title = "Trace a nested loop"
+tier = "drill"
+kind = "trace"
+topics = ["nested loops", "range", "counters", "tracing"]
+minutes = 10

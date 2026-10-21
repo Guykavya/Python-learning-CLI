@@ -1,0 +1,4 @@
+- Starting a walk from every value, not just run starts: O(n²) in the worst case (one long run).
+- Walking with `in` on the list instead of the set.
+- Counting repeated values twice in a run.
+- Not handling the empty line.

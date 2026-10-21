@@ -1,0 +1,3 @@
+- Splitting before rounding, which can produce `12 in`.
+- Using `int()` instead of `round()`: `int(68.9)` is `68`, it truncates instead of rounding.
+- Forgetting that `round(x)` and `round(x, 0)` differ: `round(68.9)` is the int `69`, `round(68.9, 0)` is the float `69.0`.

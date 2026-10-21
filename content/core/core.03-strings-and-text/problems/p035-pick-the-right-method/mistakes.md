@@ -1,0 +1,3 @@
+- Answering with a tool but no reason. The reason is the point of the exercise.
+- Suggesting `split("=")[1]` for task 2, which loses everything after a second `=`.
+- Saying `rstrip(".csv")` "removes .csv". It removes any of those characters from the right, repeatedly.

@@ -1,0 +1,6 @@
+id = "core.06.p057"
+title = "Fast power that halves the problem"
+tier = "challenge"
+kind = "code"
+topics = ["recursion", "recursion limit", "divide and conquer"]
+minutes = 30

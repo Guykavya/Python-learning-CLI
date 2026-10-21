@@ -1,0 +1,6 @@
+id = "dsa.01.p023"
+title = "The loop with a growing step"
+tier = "deep"
+kind = "trace"
+topics = ["harmonic sum", "n log n", "counting operations", "divisors"]
+minutes = 25

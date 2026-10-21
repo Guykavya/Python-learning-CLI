@@ -1,0 +1,6 @@
+id = "core.02.p021"
+title = "Shop bill with exact tax"
+tier = "applied"
+kind = "code"
+topics = ["decimal", "ROUND_HALF_UP", "money"]
+minutes = 20

@@ -1,0 +1,3 @@
+- Charging **all** units at the rate of the top slab reached (250 units at 6.00 = 1500). Slabs charge only the units inside them.
+- Off-by-one at a boundary: 200 units must use the 4.50 slab and the fixed charge 50.
+- Printing `Energy: 1050.0` without the `:.2f` format spec.

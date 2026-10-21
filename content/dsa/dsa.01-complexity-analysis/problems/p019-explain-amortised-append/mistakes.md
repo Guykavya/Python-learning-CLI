@@ -1,0 +1,4 @@
+- Saying "append is O(1) because it adds to the end". That ignores the copying; the right claim is amortised O(1).
+- Saying the doubling copies add up to `n log n` (log n growths times n items). Each growth copies only the current size, and those sizes double, so the sum is less than 2n.
+- Thinking any growth rule works. Growth by a constant amount gives O(n^2); only growth by a constant factor gives amortised O(1).
+- Explaining insert(0) as slow "because Python searches for position 0". It knows where position 0 is; the cost is moving every other item.

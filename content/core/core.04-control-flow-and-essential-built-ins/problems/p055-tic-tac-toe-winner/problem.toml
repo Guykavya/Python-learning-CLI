@@ -1,0 +1,6 @@
+id = "core.04.p055"
+title = "Tic-tac-toe judge"
+tier = "challenge"
+kind = "code"
+topics = ["nested loops", "all()", "any()", "validation", "conditional logic"]
+minutes = 40

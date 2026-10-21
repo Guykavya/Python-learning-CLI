@@ -1,0 +1,17 @@
+c start 3
+c finally 3
+b else 30
+b returns 30
+a finally 3
+result 30
+c start 2
+c finally 2
+b caught KeyError 2
+b returns -1
+a finally 2
+result -1
+c start 1
+c finally 1
+a caught bad one
+a finally 1
+result 0

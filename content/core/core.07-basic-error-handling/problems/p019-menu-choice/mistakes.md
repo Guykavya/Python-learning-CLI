@@ -1,0 +1,4 @@
+- `options[int(text) - 1]` without a range check: `"0"` returns the last option and `"9"` raises `IndexError`.
+- Catching `IndexError` as the range check: it still lets `0` and negatives through.
+- Comparing names without `.lower()` on both sides.
+- Putting `ask(prompt)` inside a broad `try`, so `EOFError` makes the loop spin forever.

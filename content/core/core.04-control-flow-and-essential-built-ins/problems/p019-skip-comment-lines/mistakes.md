@@ -1,0 +1,4 @@
+- Counting the total after the `continue`, so only kept lines are counted.
+- Using `line.startswith("#")` without stripping: an indented comment is kept.
+- `text[0] == "#"` on an empty line raises `IndexError`. Test `not text` first (short-circuit).
+- Numbering with the total instead of the kept count.

@@ -1,0 +1,6 @@
+id = "core.04.p002"
+title = "Blank or shout"
+tier = "drill"
+kind = "code"
+topics = ["truthiness", "if/else", "str.strip"]
+minutes = 10

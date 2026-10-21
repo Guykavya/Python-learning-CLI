@@ -1,0 +1,4 @@
+- Checking the rules in a different order, which prints a different message.
+- Forgetting to give the copy back to `available` on return.
+- Using a list for a member's titles and allowing the same title twice.
+- Using `loans[member]` for a member who never borrowed: `KeyError`.

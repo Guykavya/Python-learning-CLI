@@ -1,0 +1,3 @@
+- Printing the area instead of returning it. The caller then receives `None`.
+- Writing the docstring as a `#` comment. Comments are discarded, so `rectangle_area.__doc__` is `None`.
+- Putting the docstring after the `return`, where it is never the first statement and never runs.

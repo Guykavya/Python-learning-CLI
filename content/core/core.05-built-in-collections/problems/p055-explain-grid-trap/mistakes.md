@@ -1,0 +1,3 @@
+- Saying "`*` copies the row three times". It repeats one reference.
+- Saying the inner `[0] * 3` is also a bug.
+- Fixing it with `[[0] * 3] * 3` followed by `.copy()` on the outer list, which is still shallow.

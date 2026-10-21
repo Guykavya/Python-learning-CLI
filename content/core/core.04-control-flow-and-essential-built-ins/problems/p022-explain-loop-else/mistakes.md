@@ -1,0 +1,3 @@
+- Repeating the classmate's model: "else runs when the loop did not run." It also runs after a full normal run.
+- Saying `continue` cancels the `else`.
+- Explaining only the rule without the use case. The search pattern is the reason it exists.

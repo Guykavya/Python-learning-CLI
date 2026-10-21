@@ -1,0 +1,6 @@
+id = "core.06.p068"
+title = "Pre-fill some arguments"
+tier = "challenge"
+kind = "code"
+topics = ["closures", "*args", "**kwargs", "forwarding"]
+minutes = 35

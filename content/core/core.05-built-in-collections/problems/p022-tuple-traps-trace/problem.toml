@@ -1,0 +1,6 @@
+id = "core.05.p022"
+title = "Tuple traps"
+tier = "drill"
+kind = "trace"
+topics = ["tuples", "unpacking"]
+minutes = 10

@@ -1,0 +1,6 @@
+id = "dsa.00.p036"
+title = "Plan before you code"
+tier = "applied"
+kind = "explain"
+topics = ["problem solving", "planning", "pseudocode", "edge cases", "estimating work"]
+minutes = 20

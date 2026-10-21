@@ -1,0 +1,3 @@
+- Forgetting the brackets, which creates a chained comparison instead of a sum.
+- Using `>= 0` for "greater than zero": zero would be counted as positive.
+- Thinking a bool cannot take part in arithmetic. `isinstance(True, int)` is `True`.

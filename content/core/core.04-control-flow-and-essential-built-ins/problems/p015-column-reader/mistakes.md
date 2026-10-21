@@ -1,0 +1,3 @@
+- Reading row by row (`range(0, len, width)` as the outer loop): that just gives the message back in pieces.
+- Using `len(message) // width` rows and losing the characters of a short last row.
+- Stripping the message: spaces are part of it.

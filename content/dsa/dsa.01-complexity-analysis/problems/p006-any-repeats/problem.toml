@@ -1,0 +1,6 @@
+id = "dsa.01.p006"
+title = "Any repeats?"
+tier = "drill"
+kind = "code"
+topics = ["sets", "O(n^2) to O(n)", "duplicates"]
+minutes = 15

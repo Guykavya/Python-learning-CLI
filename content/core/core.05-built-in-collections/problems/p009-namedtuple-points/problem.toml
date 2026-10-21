@@ -1,0 +1,6 @@
+id = "core.05.p009"
+title = "Points with names"
+tier = "drill"
+kind = "code"
+topics = ["namedtuple"]
+minutes = 10

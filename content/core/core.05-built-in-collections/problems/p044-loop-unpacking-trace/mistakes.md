@@ -1,0 +1,3 @@
+- Thinking `first = first * 10` changes the list. It only moves the name `first`.
+- Expecting `*nums` to be a tuple.
+- Forgetting that `enumerate` starts at 0 by default.

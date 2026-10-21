@@ -1,0 +1,4 @@
+- Writing `"C:\new\table"` without `r` or doubled backslashes. `\n` becomes a newline and `\t` a tab.
+- Typing spaces instead of a tab on line 3. They look similar on screen but are different characters.
+- Writing `\u20b9 500` with a space. The task shows no space between the sign and the number.
+- Ending a raw string with a backslash, like `r"C:\"`. That is a syntax error.

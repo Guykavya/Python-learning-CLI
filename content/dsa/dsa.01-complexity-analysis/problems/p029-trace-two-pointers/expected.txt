@@ -1,0 +1,3 @@
+inner 8
+pairs 7
+inner with reset 15

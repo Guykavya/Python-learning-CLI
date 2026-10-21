@@ -1,0 +1,3 @@
+- Writing `True` or `False` for `a or b`. `or` returns an operand, here `5`.
+- Predicting a `ZeroDivisionError`. Short-circuiting means the right side is never evaluated.
+- Writing `False` for `repr(s and ...)`. `and` returns the falsy left operand itself, the empty string.

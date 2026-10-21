@@ -1,0 +1,3 @@
+- Dividing the **original** amount at every step, which counts the same money many times.
+- Using `float`: 4.35 or 68.15 times 100 is just below a whole number, and `int()` truncates, losing a paisa.
+- Using `%` alone and forgetting the count, or `//` alone and forgetting to reduce the remainder.

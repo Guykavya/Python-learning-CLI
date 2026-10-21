@@ -1,0 +1,3 @@
+- `enumerate(items)` without `start=1`: numbering starts at 0.
+- Thinking `start=1` skips the first item. It only changes the numbers.
+- Printing `1. ` for a blank line, because splitting an empty string on `","` gives one empty piece.

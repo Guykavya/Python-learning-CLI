@@ -1,0 +1,3 @@
+- Thinking `c = a[:]` copies the inner list.
+- Thinking `c[2] = 400` changes `a`.
+- Treating `a += [7]` like `a = a + [7]`.

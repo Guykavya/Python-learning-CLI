@@ -1,0 +1,6 @@
+id = "core.06.p038"
+title = "Squares of the evens with map and filter"
+tier = "applied"
+kind = "code"
+topics = ["map", "filter", "lambda"]
+minutes = 15

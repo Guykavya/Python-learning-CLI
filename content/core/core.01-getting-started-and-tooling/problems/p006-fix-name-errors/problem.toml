@@ -1,0 +1,6 @@
+id = "core.01.p006"
+title = "Fix the name errors"
+tier = "drill"
+kind = "code"
+topics = ["NameError", "tracebacks"]
+minutes = 10

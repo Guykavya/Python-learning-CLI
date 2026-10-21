@@ -1,0 +1,6 @@
+id = "dsa.01.p025"
+title = "Best, average and worst case"
+tier = "deep"
+kind = "explain"
+topics = ["best case", "worst case", "average case", "early exit", "hashing"]
+minutes = 25

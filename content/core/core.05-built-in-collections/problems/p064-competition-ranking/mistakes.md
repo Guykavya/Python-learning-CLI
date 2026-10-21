@@ -1,0 +1,3 @@
+- Dense ranking (1, 1, 2, 2, 3) instead of competition ranking (1, 1, 3, 3, 5).
+- Giving tied players different ranks because they sit at different positions.
+- Counting higher scores in a nested loop.

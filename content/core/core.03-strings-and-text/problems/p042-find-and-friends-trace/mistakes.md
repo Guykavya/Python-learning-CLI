@@ -1,0 +1,3 @@
+- Expecting `s[s.find("x")]` to raise an error. `-1` silently means the last character.
+- Thinking the empty string is "not found". It is found everywhere.
+- Mixing up which end the whole string goes to when `partition` and `rpartition` do not find the separator.

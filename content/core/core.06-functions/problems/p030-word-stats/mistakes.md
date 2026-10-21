@@ -1,0 +1,4 @@
+- Dividing by `len(words)` without handling empty text: `ZeroDivisionError`.
+- Counting `'The'` and `'the'` as different unique words: lowercase first.
+- Counting a lone `'!'` as a word of length 0.
+- Stripping punctuation from the middle of words: `strip` only removes characters at the ends, which is what we want for `don't`.

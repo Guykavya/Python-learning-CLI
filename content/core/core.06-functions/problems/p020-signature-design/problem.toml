@@ -1,0 +1,6 @@
+id = "core.06.p020"
+title = "Design a signature that is hard to misuse"
+tier = "deep"
+kind = "explain"
+topics = ["signature design", "keyword-only parameters", "positional-only parameters", "default arguments"]
+minutes = 25

@@ -1,0 +1,5 @@
+x = float(input())
+print(f"{x:,.2f}")
+print(f"{x:.1%}")
+print(f"{x:.3e}")
+print(f"{x:+.1f}")

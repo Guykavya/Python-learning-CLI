@@ -1,0 +1,6 @@
+id = "core.04.p030"
+title = "Reverse words two ways"
+tier = "drill"
+kind = "code"
+topics = ["reversed()", "for loop", "str methods"]
+minutes = 10

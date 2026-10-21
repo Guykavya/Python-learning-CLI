@@ -1,0 +1,3 @@
+- Using `int(f)` as the floor: wrong for negatives.
+- Rounding with `int(f + 1/2)`: rounds ties up (and down for negatives), not to even. With `1/2` as a float, the result also becomes a float.
+- Converting to `float` first: `float(Fraction(-22, 7)) % 1` is an approximate float, not `6/7`.

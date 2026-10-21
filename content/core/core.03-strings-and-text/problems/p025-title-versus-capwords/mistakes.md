@@ -1,0 +1,3 @@
+- Writing `text.capwords()`. It is a function in the `string` module, not a method.
+- Expecting `capwords` to keep the original spacing. It collapses it.
+- Expecting `title()` to handle apostrophes.

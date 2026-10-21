@@ -1,0 +1,6 @@
+id = "core.01.p001"
+title = "Hello, World!"
+tier = "drill"
+kind = "code"
+topics = ["print()", "running scripts"]
+minutes = 5

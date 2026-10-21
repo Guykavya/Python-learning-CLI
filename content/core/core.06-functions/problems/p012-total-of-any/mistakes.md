@@ -1,0 +1,3 @@
+- Writing `def total(numbers)`: then `total(1, 2, 3)` fails with "takes 1 positional argument but 3 were given".
+- Starting the running total at `None` or at `numbers[0]`, which crashes for `total()`.
+- Thinking `numbers` is a list and calling `numbers.append`: it is a tuple.

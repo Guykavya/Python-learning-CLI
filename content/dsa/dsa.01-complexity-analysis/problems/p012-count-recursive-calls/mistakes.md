@@ -1,0 +1,4 @@
+- Counting only the calls that return a value at the bottom (the leaves). Every box in the tree is a call, including the ones that make further calls.
+- Reusing results in your head ("I already know fib(3) is 2"). The program does not remember anything; every subtree is computed again, and every call counts.
+- Forgetting `n = 0`: `fib(0)` is one call and returns 0, so the first line is `0 0 1`.
+- Mixing up the value and the count on a line. The order printed is `n`, value, calls.

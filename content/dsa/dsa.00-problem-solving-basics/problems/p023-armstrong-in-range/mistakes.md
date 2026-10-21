@@ -1,0 +1,4 @@
+- Raising every digit to the power 3. That only works for 3-digit numbers: 1634 and 9474 are missed, and so are 2 to 9 (2 cubed is 8, not 2).
+- Destroying `x` while reading its digits (`x //= 10`), then comparing the sum with the now-zero `x`. Work on a copy.
+- Setting `total = 0` (or `k = 1`) once before the outer loop instead of for each `x`. The sum then keeps growing across numbers, and almost nothing matches after the first few.
+- Printing `none` inside the loop for each non-Armstrong number. Use a flag and print `none` once, after the loop.

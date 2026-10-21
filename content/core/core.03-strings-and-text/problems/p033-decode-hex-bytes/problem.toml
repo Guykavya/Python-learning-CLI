@@ -1,0 +1,5 @@
+id = "core.03.p033"
+title = "Decode bytes from hex"
+tier = "applied"
+kind = "code"
+topics = ["bytes.fromhex()", "decode()", "UTF-8"]

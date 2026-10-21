@@ -1,0 +1,6 @@
+id = "core.01.p008"
+title = "The Zen in your own words"
+tier = "drill"
+kind = "explain"
+topics = ["Zen of Python", "PEP 8"]
+minutes = 15

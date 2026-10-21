@@ -1,0 +1,4 @@
+- Fixing only `seen` (or only `pop(0)`). Each slow spot alone makes the program O(n^2); the two large tests target them separately.
+- Replacing `queue.pop(0)` with `queue.pop()` without thinking. It is O(1), but it processes the visits in reverse order. Here the counts happen not to depend on order, but in most problems order matters. Prefer a `for` loop.
+- Using `queue.remove(user)`. It searches for the item and then shifts the rest: O(n) again.
+- Changing the output wording while fixing. A fix must keep the behaviour identical.

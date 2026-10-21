@@ -1,0 +1,6 @@
+id = "core.06.p005"
+title = "Where did None come from?"
+tier = "drill"
+kind = "trace"
+topics = ["print vs return", "None"]
+minutes = 10

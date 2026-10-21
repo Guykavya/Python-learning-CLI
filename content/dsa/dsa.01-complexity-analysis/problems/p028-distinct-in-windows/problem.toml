@@ -1,0 +1,6 @@
+id = "dsa.01.p028"
+title = "Different values in every window"
+tier = "challenge"
+kind = "code"
+topics = ["sliding window", "dicts", "counting", "O(nk) to O(n)"]
+minutes = 45

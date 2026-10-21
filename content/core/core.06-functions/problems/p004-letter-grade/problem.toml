@@ -1,0 +1,6 @@
+id = "core.06.p004"
+title = "Letter grade with early returns"
+tier = "drill"
+kind = "code"
+topics = ["return", "early return", "guard clauses"]
+minutes = 10

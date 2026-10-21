@@ -1,0 +1,3 @@
+- Saying the lambda 'stores the value of label at that moment'. It stores a reference to the variable.
+- Saying the fix is to use `def` instead of `lambda`.
+- Giving only one fix, or giving fixes without explaining why they work.

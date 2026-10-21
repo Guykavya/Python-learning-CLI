@@ -1,0 +1,3 @@
+- Thinking `round()` is broken because `round(2.675, 2)` is `2.67`. The input to `round` was already below 2.675.
+- Building `Decimal(float(text))`: the float error comes along.
+- Assuming "half up" means toward positive infinity. In `decimal`, ROUND_HALF_UP rounds ties away from zero, so `-2.675` becomes `-2.68`.

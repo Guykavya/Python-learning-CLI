@@ -1,0 +1,6 @@
+id = "dsa.01.p008"
+title = "Sequential or nested?"
+tier = "drill"
+kind = "trace"
+topics = ["counting operations", "sequential loops", "nested loops", "geometric sum"]
+minutes = 15

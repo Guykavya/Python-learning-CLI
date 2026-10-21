@@ -1,0 +1,4 @@
+- Adding the deposit before the interest: the balance grows faster than the rules say.
+- Using `<=` in the loop condition: a balance exactly equal to the goal would run one month too many.
+- Not handling a 0 deposit: the program never ends.
+- Rounding the balance every month: small errors pile up. Round only when printing.

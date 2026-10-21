@@ -1,0 +1,6 @@
+id = "core.01.p007"
+title = "Which Python am I?"
+tier = "drill"
+kind = "code"
+topics = ["sys module", "platform module", "Python versions"]
+minutes = 10

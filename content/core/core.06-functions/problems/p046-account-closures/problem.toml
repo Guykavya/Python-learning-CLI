@@ -1,0 +1,6 @@
+id = "core.06.p046"
+title = "A bank account made of closures"
+tier = "applied"
+kind = "code"
+topics = ["closures", "nonlocal", "dicts of functions"]
+minutes = 25

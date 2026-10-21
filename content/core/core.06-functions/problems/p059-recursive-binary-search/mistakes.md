@@ -1,0 +1,4 @@
+- `def binary_search(items, target, lo=0, hi=len(items))`: defaults are evaluated when `def` runs, when `items` does not exist. A `NameError`.
+- Recursing on `mid` instead of `mid + 1` for the right half: when `lo + 1 == hi` the range never shrinks, so the recursion never ends.
+- Slicing and returning the index within the slice, which is not the index in the original list.
+- Forgetting to `return` the recursive call's result.

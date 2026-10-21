@@ -1,0 +1,5 @@
+- Fixing only the typo and leaving `except Exception` around the average: the next bug will be hidden the same way.
+- Keeping one big `try` in `parse_result` and adding `except ValueError`: the unpacking error is also a `ValueError`, so three fields still gets the "whole number" message.
+- Raising the range error inside the `try` whose handler says "whole number": your own exception gets caught and relabelled.
+- Appending to `marks` inside the `try` instead of in `else`.
+- Numbering lines from 0.

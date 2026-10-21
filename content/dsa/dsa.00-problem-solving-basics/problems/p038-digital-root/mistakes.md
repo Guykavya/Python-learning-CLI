@@ -1,0 +1,4 @@
+- Using `while n > 10` for the outer loop. Then `10` is treated as a single digit and printed as the root (should be 1 after 1 round).
+- Not resetting `total = 0` inside the outer loop. The second round then adds onto the first round's sum and the answer grows instead of shrinking.
+- Counting the inner loop's passes (digits) as rounds. A round is one full digit-sum replacement, so `rounds += 1` belongs in the outer loop, after the inner loop.
+- Forgetting `n = total`. The inner loop leaves `n` at 0, so the outer loop stops at once and prints `root 0`.

@@ -1,0 +1,3 @@
+- Using only `zip` and losing the extra characters of the longer line.
+- Indexing past the end with `a[i]` in a `range(max(...))` loop without a length check.
+- Stripping the lines: spaces are characters too.

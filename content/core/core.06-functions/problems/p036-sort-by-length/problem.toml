@@ -1,0 +1,6 @@
+id = "core.06.p036"
+title = "Sort words with a lambda key"
+tier = "drill"
+kind = "code"
+topics = ["lambda", "sorted with key"]
+minutes = 10

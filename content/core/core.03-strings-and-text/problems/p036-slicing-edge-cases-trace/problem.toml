@@ -1,0 +1,5 @@
+id = "core.03.p036"
+title = "Slicing edge cases"
+tier = "deep"
+kind = "trace"
+topics = ["slicing", "negative step", "out-of-range slices"]

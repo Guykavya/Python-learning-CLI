@@ -1,0 +1,4 @@
+- Printing `invalid` inside the loop and carrying on. The program then prints several lines, or prints `invalid` and then a number as well.
+- Using `int(ch)` to get the digit without checking it first. For `102` this adds 2 and prints 10 instead of `invalid`, and for `abc` it crashes.
+- Adding `value + digit * 2` instead of `value * 2 + digit`. The earlier digits never move left, so `1101` gives 6 instead of 13.
+- Treating the first character specially (for example skipping a leading 0). Leading zeros are valid digits that simply add nothing.

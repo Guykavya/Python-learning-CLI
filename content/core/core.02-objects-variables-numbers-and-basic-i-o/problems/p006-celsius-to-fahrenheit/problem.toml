@@ -1,0 +1,6 @@
+id = "core.02.p006"
+title = "Celsius to Fahrenheit and Kelvin"
+tier = "drill"
+kind = "code"
+topics = ["input()", "float conversion", "f-string formatting", "unit conversion"]
+minutes = 10

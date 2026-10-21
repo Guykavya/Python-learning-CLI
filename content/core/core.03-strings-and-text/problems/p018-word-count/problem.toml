@@ -1,0 +1,5 @@
+id = "core.03.p018"
+title = "Count the words"
+tier = "drill"
+kind = "code"
+topics = ["split()", "len()", "count()"]

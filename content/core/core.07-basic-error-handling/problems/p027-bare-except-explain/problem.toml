@@ -1,0 +1,6 @@
+id = "core.07.p027"
+title = "Explain: the menu that will not quit"
+tier = "deep"
+kind = "explain"
+topics = ["bare except", "SystemExit", "KeyboardInterrupt", "hidden bugs"]
+minutes = 25

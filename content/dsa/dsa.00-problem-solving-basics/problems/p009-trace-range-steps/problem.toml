@@ -1,0 +1,6 @@
+id = "dsa.00.p009"
+title = "Trace range() with steps"
+tier = "drill"
+kind = "trace"
+topics = ["range", "for loops", "print end", "tracing"]
+minutes = 10

@@ -1,0 +1,6 @@
+id = "core.04.p004"
+title = "Trace an elif chain"
+tier = "drill"
+kind = "trace"
+topics = ["if/elif/else", "condition order", "or"]
+minutes = 10

@@ -1,0 +1,6 @@
+id = "dsa.00.p008"
+title = "Count even and odd numbers"
+tier = "drill"
+kind = "code"
+topics = ["loops", "modulo", "counters", "reading n lines"]
+minutes = 10

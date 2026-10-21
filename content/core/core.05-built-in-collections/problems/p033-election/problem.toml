@@ -1,0 +1,6 @@
+id = "core.05.p033"
+title = "Count the votes"
+tier = "applied"
+kind = "code"
+topics = ["dicts", "counting", "sorting"]
+minutes = 20

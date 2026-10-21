@@ -1,0 +1,6 @@
+id = "dsa.00.p034"
+title = "Alternating sum with a huge n"
+tier = "applied"
+kind = "code"
+topics = ["patterns", "formulas", "small cases", "efficiency"]
+minutes = 20

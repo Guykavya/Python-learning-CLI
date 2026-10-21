@@ -1,0 +1,4 @@
+- Thinking `IndexError` goes to the `KeyError` clause, or to no clause at all. It is a `LookupError`.
+- Thinking `list.index` raises `IndexError` when the item is missing. It raises `ValueError`; `IndexError` is for positions.
+- Treating `data["a"][-1]` as an error. Negative indexes are valid.
+- Thinking the `NameError` crashes the program. The outer `try` catches it after it leaves `attempt`.

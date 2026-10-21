@@ -1,0 +1,6 @@
+id = "core.01.p024"
+title = "Am I in a virtual environment?"
+tier = "challenge"
+kind = "code"
+topics = ["venv", "sys module"]
+minutes = 25

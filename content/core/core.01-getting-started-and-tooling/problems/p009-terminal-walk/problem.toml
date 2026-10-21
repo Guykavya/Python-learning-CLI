@@ -1,0 +1,6 @@
+id = "core.01.p009"
+title = "A walk through the terminal"
+tier = "drill"
+kind = "trace"
+topics = ["terminal", "paths", "pipes"]
+minutes = 10

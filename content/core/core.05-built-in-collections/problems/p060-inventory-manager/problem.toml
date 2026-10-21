@@ -1,0 +1,6 @@
+id = "core.05.p060"
+title = "Inventory manager"
+tier = "challenge"
+kind = "code"
+topics = ["dicts", "sorting", "tuple keys", "project"]
+minutes = 40

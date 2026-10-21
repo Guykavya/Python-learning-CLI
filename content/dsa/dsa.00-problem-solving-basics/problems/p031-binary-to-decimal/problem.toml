@@ -1,0 +1,6 @@
+id = "dsa.00.p031"
+title = "Binary to decimal with validation"
+tier = "applied"
+kind = "code"
+topics = ["number bases", "iterating a string", "accumulator", "input validation", "flags"]
+minutes = 15

@@ -1,0 +1,3 @@
+- Growing at item 1. Capacity starts at 1 and size at 0, so the first item fits.
+- Writing `capacity 16` on the last grow line. The program prints the capacity after doubling, which is 32.
+- Counting copies as the new capacity (2 + 4 + 8 + ...). Only the existing items are copied, which is the old size.

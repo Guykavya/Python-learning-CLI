@@ -1,0 +1,4 @@
+- Unpacking `op, left, right = expr` before checking for `"neg"`, which has only two parts: `ValueError`.
+- Evaluating only one level, e.g. `BINARY[op](left, right)` without recursing, which fails when `left` is a tuple.
+- Forgetting the parentheses around nested parts in `to_text`, so `2 + 3 * 4` loses its structure.
+- Writing `if op == "+": ... elif op == "-": ...`: the problem asks for a dispatch dict.

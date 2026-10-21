@@ -1,0 +1,6 @@
+id = "dsa.00.p029"
+title = "Bank account simulator"
+tier = "applied"
+kind = "code"
+topics = ["simulation", "conditionals", "order of checks", "loops", "string comparison"]
+minutes = 20

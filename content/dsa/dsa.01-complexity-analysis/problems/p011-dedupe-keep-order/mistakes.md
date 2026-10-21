@@ -1,0 +1,3 @@
+- Printing `set(a)` or `sorted(set(a))`. A set has no guaranteed order, and sorting gives a different order from first appearance.
+- Using `a.index(x)` or `a.count(x)` to check for repeats. Both are hidden O(n) scans.
+- Adding to `seen` but forgetting to append to `result` (or the other way round). The two must change together.

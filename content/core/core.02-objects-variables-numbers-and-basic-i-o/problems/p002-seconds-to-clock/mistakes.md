@@ -1,0 +1,3 @@
+- Computing minutes as `total // 60`: for 3661 that gives 61, not 1. You must remove the hours first.
+- Forgetting zero padding, which prints `1:1:1`.
+- Using `/` instead of `//`: gives floats like `1.0169...`.

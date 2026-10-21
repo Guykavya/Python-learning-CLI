@@ -1,0 +1,4 @@
+- Saying `sys.exit()` "fails" here. It works by raising `SystemExit`; the handler catches it.
+- Saying `except Exception` fixes everything. `NameError` is an `Exception`.
+- Fixing only the typo and keeping the bare except: the next bug will be hidden the same way.
+- Wrapping `int(...)` in `except Exception` in the rewrite.

@@ -1,0 +1,6 @@
+id = "core.06.p049"
+title = "Repair the late-binding handlers"
+tier = "deep"
+kind = "code"
+topics = ["closures", "late binding", "factory functions"]
+minutes = 25

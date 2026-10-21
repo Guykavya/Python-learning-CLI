@@ -1,0 +1,6 @@
+id = "core.02.p019"
+title = "print() layout"
+tier = "drill"
+kind = "trace"
+topics = ["print()", "sep and end"]
+minutes = 10

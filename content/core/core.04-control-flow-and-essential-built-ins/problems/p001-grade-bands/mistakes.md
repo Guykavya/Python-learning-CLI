@@ -1,0 +1,4 @@
+- Testing `mark >= 40` before `mark >= 90`: every good mark becomes `D`, because the first true branch wins.
+- Using `>` instead of `>=`: 90 becomes `B`, 75 becomes `C`. Always test the exact boundary marks.
+- Forgetting the validity check, so 150 prints `A` and -5 prints `F`.
+- Writing `if mark < 0 or > 100`: each side of `or` must be a full comparison.

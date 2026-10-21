@@ -1,0 +1,7 @@
+id = "core.07.p026"
+title = "Explain: assert or raise?"
+tier = "deep"
+kind = "explain"
+topics = ["assert", "-O", "raise", "programmer errors vs input errors"]
+minutes = 30
+assessment = "explain"

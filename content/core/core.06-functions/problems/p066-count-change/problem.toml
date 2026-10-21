@@ -1,0 +1,6 @@
+id = "core.06.p066"
+title = "Ways to make change"
+tier = "challenge"
+kind = "code"
+topics = ["recursion", "memoisation", "closures", "mutable default argument"]
+minutes = 45

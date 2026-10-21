@@ -1,0 +1,6 @@
+id = "core.04.p028"
+title = "Numbered list with enumerate"
+tier = "drill"
+kind = "code"
+topics = ["enumerate", "start="]
+minutes = 10

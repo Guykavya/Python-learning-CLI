@@ -1,0 +1,4 @@
+- `max("apple", "Banana")` as `Banana`: plain comparison puts all capitals before small letters.
+- `min([3, -7, 5], key=abs)` as `-7` or as `3` but printed as `abs` value. The key is only for comparing.
+- Expecting `"".isdigit()` to match `all(...)` on an empty string.
+- Writing `4 4` on line 10: the first of equal items is returned, with its own type.

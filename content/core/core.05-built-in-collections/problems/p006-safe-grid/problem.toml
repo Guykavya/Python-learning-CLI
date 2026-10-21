@@ -1,0 +1,6 @@
+id = "core.05.p006"
+title = "A grid with independent rows"
+tier = "drill"
+kind = "code"
+topics = ["nested lists", "aliasing"]
+minutes = 10

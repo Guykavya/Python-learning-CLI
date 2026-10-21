@@ -1,0 +1,6 @@
+id = "dsa.01.p017"
+title = "Read the constraints first"
+tier = "applied"
+kind = "explain"
+topics = ["constraints", "time limits", "choosing an approach", "estimation"]
+minutes = 25

@@ -1,0 +1,4 @@
+- Using `int(line)` directly: `int("+500")` works, but `int("oops")` crashes, and `int("+ 5")` too. Validate the shape first.
+- Changing the balance before checking for a decline.
+- Counting skipped lines in `K`.
+- `line[1:].isdigit()` alone: `"5"` would pass with the sign check missing. Check `line[0] in "+-"` too.

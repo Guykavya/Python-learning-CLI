@@ -1,0 +1,3 @@
+- Using `x` instead of `X`. The Unicode convention is uppercase hex.
+- Using `ord(ch) + 1` and printing the number instead of converting back with `chr`.
+- Forgetting the zero padding, so `A` shows as `U+41`.

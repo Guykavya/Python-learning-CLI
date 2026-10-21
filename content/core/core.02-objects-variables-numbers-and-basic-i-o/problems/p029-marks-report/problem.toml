@@ -1,0 +1,6 @@
+id = "core.02.p029"
+title = "Marks report with booleans"
+tier = "applied"
+kind = "code"
+topics = ["chained comparisons", "bool", "f-string formatting"]
+minutes = 15

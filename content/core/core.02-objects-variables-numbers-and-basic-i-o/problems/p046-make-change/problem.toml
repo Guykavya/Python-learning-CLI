@@ -1,0 +1,6 @@
+id = "core.02.p046"
+title = "Notes and coins for an amount"
+tier = "challenge"
+kind = "code"
+topics = ["divmod", "decimal", "integer cents", "floor division"]
+minutes = 30

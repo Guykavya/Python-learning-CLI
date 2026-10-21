@@ -1,0 +1,6 @@
+id = "core.07.p010"
+title = "Tally votes, EAFP style"
+tier = "drill"
+kind = "code"
+topics = ["EAFP", "KeyError", "dict counting"]
+minutes = 12

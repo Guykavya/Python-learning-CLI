@@ -1,0 +1,6 @@
+id = "core.04.p011"
+title = "Months to a savings goal"
+tier = "applied"
+kind = "code"
+topics = ["while loop", "accumulate", "unreachable condition"]
+minutes = 20

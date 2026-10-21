@@ -1,0 +1,6 @@
+id = "core.07.p022"
+title = "Average report with narrow try blocks"
+tier = "applied"
+kind = "code"
+topics = ["narrow try blocks", "try/except/else", "ZeroDivisionError"]
+minutes = 20

@@ -1,0 +1,6 @@
+id = "core.04.p050"
+title = "Bracket depth checker"
+tier = "challenge"
+kind = "code"
+topics = ["for loop", "enumerate", "early exit", "count", "max()"]
+minutes = 40

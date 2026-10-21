@@ -1,0 +1,6 @@
+id = "core.04.p045"
+title = "Trace match patterns"
+tier = "deep"
+kind = "trace"
+topics = ["match/case", "sequence patterns", "guards", "class patterns"]
+minutes = 25

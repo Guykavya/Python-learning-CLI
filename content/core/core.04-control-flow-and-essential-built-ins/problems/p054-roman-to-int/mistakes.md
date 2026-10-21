@@ -1,0 +1,4 @@
+- Losing the last symbol, because `zip(text, text[1:])` is one pair short.
+- Subtracting when the next value is **equal** (`II` must be 2, not 0).
+- Accepting an empty line as 0.
+- Comparing the letters themselves (`"I" < "V"` is a comparison of character codes, which happens to differ from the values: `"X" > "L"` is `True`).

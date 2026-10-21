@@ -1,0 +1,6 @@
+id = "dsa.00.p015"
+title = "GCD with Euclid's algorithm"
+tier = "drill"
+kind = "code"
+topics = ["loops", "modulo", "euclid", "tuple assignment", "efficiency"]
+minutes = 15

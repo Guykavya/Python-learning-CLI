@@ -1,0 +1,3 @@
+- Saying the file is "corrupt". It is fine; it is just not UTF-8.
+- Suggesting `errors="ignore"` as the fix. It turns `José` into `Jos`.
+- Mixing up the directions: `str` has `encode`, `bytes` has `decode`.

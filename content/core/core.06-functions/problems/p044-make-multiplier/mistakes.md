@@ -1,0 +1,2 @@
+- `return multiply(n)`: there is no `n` in the outer function, and you must return the function, not a result.
+- Making `factor` a global so all multipliers share the last factor.

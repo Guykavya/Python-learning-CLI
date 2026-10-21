@@ -1,0 +1,7 @@
+id = "core.04.p046"
+title = "The capture versus constant trap"
+tier = "deep"
+kind = "explain"
+topics = ["match/case", "capture patterns", "value patterns"]
+minutes = 25
+assessment = "explain"

@@ -1,0 +1,6 @@
+id = "dsa.00.p002"
+title = "Count the digits"
+tier = "drill"
+kind = "code"
+topics = ["loops", "floor division", "edge cases"]
+minutes = 10

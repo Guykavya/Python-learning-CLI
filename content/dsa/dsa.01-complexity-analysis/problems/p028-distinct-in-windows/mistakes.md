@@ -1,0 +1,4 @@
+- Using a set and removing the leaving code. If another copy of it is still in the block, the set loses it wrongly. Test: `k = 2`, `7 7 7 7 8`.
+- Forgetting to delete keys whose count reaches 0, so `len(count)` includes codes that have left.
+- Printing only `n - k` answers by forgetting the first block. There are `n - k + 1` blocks, and the first one is counted before the sliding starts.
+- Using `a[i - k + 1]` as the leaving code. When the block grows to include `a[i]`, the code that drops out is `a[i - k]`.

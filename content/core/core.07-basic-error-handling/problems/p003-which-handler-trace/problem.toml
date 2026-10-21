@@ -1,0 +1,6 @@
+id = "core.07.p003"
+title = "Which handler runs?"
+tier = "drill"
+kind = "trace"
+topics = ["exception hierarchy", "except order", "LookupError", "ArithmeticError"]
+minutes = 15

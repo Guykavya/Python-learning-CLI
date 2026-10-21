@@ -1,0 +1,4 @@
+- Checking `i % a == 0` first: the `FizzBuzz` branch is never reached, so 15 prints `Fizz` instead of `FizzBuzz`.
+- Testing "both" with `i % (a * b) == 0`: wrong when `a` and `b` share a factor. With `a = 2`, `b = 2`, the number 2 should be `FizzBuzz`, but `2 % 4` is not 0.
+- Using separate `if`s for every case (not `elif`): numbers divisible by both print `FizzBuzz`, then `Fizz`, then `Buzz` on three lines.
+- Using `range(n)`: it starts at 0, which is divisible by everything, and stops before `n`.

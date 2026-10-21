@@ -1,0 +1,3 @@
+- Using `before[r] - before[l]`. That drops day `l` itself. With `before[k]` meaning "first k days", the days before `l` are the first `l - 1` days.
+- Building `before` with `n` elements instead of `n + 1`. The extra leading 0 makes `l = 1` work without a special case.
+- Computing `sum(a[:r]) - sum(a[:l - 1])` inside the loop. It looks like prefix sums but still adds O(n) numbers per question.

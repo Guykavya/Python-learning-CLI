@@ -1,0 +1,3 @@
+- Forgetting `int()` on the width; `textwrap` needs a number.
+- Cutting the preview with slicing (`text[:width]`), which can split a word in half and never adds the placeholder.
+- Printing `textwrap.wrap(...)` directly, which shows a list instead of lines.

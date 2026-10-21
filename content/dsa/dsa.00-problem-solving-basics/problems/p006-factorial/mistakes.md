@@ -1,0 +1,4 @@
+- Starting the product at 0: anything times 0 is 0, so every answer prints 0.
+- Using `range(n)`: it starts at 0, so the first multiplication is by 0 and the answer is 0. It also leaves out `n`.
+- Special-casing only `n == 1` and forgetting `n == 0`: if the loop is written badly, `0` prints `0` instead of `1`.
+- Converting to `float` or dividing with `/` somewhere: floats keep only about 16 significant digits, so a big factorial prints as something like `3.06e+614` and is no longer exact.

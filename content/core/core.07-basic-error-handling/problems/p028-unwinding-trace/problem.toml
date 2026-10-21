@@ -1,0 +1,6 @@
+id = "core.07.p028"
+title = "Unwinding through three functions"
+tier = "deep"
+kind = "trace"
+topics = ["propagation", "call stack", "finally", "else", "unwinding"]
+minutes = 25

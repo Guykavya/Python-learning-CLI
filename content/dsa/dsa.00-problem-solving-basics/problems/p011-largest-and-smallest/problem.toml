@@ -1,0 +1,6 @@
+id = "dsa.00.p011"
+title = "Largest and smallest"
+tier = "drill"
+kind = "code"
+topics = ["loops", "running max and min", "initialisation"]
+minutes = 15

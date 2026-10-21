@@ -1,0 +1,3 @@
+- Using `n % 10` on a negative number: `-123 % 10` is `7` in Python, not `3`, and `while n > 0` never runs anyway. Store the sign and use `abs(n)`.
+- Writing `rev = rev + digit * 10` instead of `rev = rev * 10 + digit`: this does not shift the old digits left, so for `1234` you get `4*10 + 3*10 + ...` which is just 10 times the digit sum.
+- Printing each digit inside the loop with `print(digit, end="")`: `1200` then prints `0021`, not `21`, and `0` prints nothing.

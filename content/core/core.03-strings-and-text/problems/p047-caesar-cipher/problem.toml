@@ -1,0 +1,5 @@
+id = "core.03.p047"
+title = "Caesar cipher"
+tier = "challenge"
+kind = "code"
+topics = ["translate()", "maketrans()", "slicing", "string module", "modulo"]

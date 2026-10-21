@@ -1,0 +1,6 @@
+id = "core.02.p030"
+title = "Leap year as a bool expression"
+tier = "applied"
+kind = "code"
+topics = ["bool", "and / or", "modulo", "operator precedence"]
+minutes = 15

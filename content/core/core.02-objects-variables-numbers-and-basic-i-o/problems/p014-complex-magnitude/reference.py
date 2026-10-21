@@ -1,0 +1,6 @@
+a = float(input())
+b = float(input())
+z = complex(a, b)
+print(z)
+print(f"|z| = {abs(z):.3f}")
+print(z.conjugate())

@@ -1,0 +1,3 @@
+- `for item in fridge: ... del fridge[item]`: crashes with `RuntimeError`.
+- Printing a day's expired items in alphabetical order instead of original order.
+- Removing items with days below 0 only, and missing the ones at exactly 0.

@@ -1,0 +1,3 @@
+- Overwriting a student's mark instead of collecting all of them.
+- Sorting by the rounded text average, so `"9.5"` sorts after `"10.0"`.
+- Using `(avg, name)` with `reverse=True`: equal averages come out in reverse alphabetical order.

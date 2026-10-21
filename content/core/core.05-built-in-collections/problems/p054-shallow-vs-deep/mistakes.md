@@ -1,0 +1,3 @@
+- Saying a shallow copy "copies the first level of values". It copies references.
+- Thinking `shallow` should show Meena.
+- Recommending `deepcopy` everywhere. It is slower, and unnecessary for flat lists of numbers.

@@ -1,0 +1,4 @@
+- Reading all three attempts before checking: the program crashes with `EOFError` when the user gets it right early.
+- `2 tries left`, `1 tries left`: forgot the singular.
+- Comparing as numbers with `int()`, so `0042` would match `42`.
+- `range(2, 0, -1)` gives only two attempts.

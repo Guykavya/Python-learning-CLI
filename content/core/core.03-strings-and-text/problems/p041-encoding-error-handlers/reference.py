@@ -1,0 +1,7 @@
+text = input()
+kept = text.encode("ascii", errors="ignore").decode("ascii")
+print(f"ignore: {kept}")
+print(f"replace: {text.encode('ascii', errors='replace').decode('ascii')}")
+print(f"xml: {text.encode('ascii', errors='xmlcharrefreplace').decode('ascii')}")
+print(f"backslash: {text.encode('ascii', errors='backslashreplace').decode('ascii')}")
+print(f"Lost: {len(text) - len(kept)}")

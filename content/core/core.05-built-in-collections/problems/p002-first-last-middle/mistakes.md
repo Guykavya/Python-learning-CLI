@@ -1,0 +1,3 @@
+- Using `words[len(words)]` for the last word. That is one past the end and raises `IndexError`.
+- Writing `print("Reversed:", words.reverse())`. `reverse()` returns `None`.
+- Printing the list itself, which shows brackets and quotes. Use `" ".join(...)`.

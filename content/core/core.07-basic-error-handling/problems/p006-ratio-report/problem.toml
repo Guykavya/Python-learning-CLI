@@ -1,0 +1,6 @@
+id = "core.07.p006"
+title = "Ratio with two kinds of failure"
+tier = "drill"
+kind = "code"
+topics = ["several except clauses", "ValueError", "ZeroDivisionError", "error messages"]
+minutes = 15

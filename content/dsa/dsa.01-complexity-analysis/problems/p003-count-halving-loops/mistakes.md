@@ -1,0 +1,4 @@
+- Counting the starting value as a step. The counter goes up once per division, not once per value in the sequence. 10, 5, 2, 1 is four values but three halvings.
+- Using real division in your head: 125 / 2 = 62.5. The code uses `//`, so it is 62, and the sequence continues 31, 15, 7, 3, 1.
+- Thinking the doubling loop stops at 512 for n = 1000. The test is `p < n`; 512 < 1000 is true, so it doubles once more to 1024.
+- Forgetting that for `n = 1` neither loop runs, because `1 > 1` and `1 < 1` are both false.

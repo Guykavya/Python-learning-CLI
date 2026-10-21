@@ -1,0 +1,6 @@
+id = "core.06.p016"
+title = "Describe a forwarded call"
+tier = "challenge"
+kind = "code"
+topics = ["*args", "**kwargs", "forwarding", "first-class functions"]
+minutes = 30

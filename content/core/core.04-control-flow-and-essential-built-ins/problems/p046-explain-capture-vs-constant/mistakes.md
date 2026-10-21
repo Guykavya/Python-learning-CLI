@@ -1,0 +1,3 @@
+- Saying the variables are "not defined yet" inside `match`. They are defined; they are simply not looked up.
+- Saying "match compares with the variable's value". It never does for bare names.
+- Forgetting that the capture overwrites the old variable.

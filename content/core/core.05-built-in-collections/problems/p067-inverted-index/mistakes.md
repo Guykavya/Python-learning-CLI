@@ -1,0 +1,4 @@
+- Using `&=` on a set taken straight from the index, which corrupts it for later queries.
+- `index[word]` for an unknown word: `KeyError`.
+- Forgetting to lowercase, so `The` and `the` are different words.
+- Printing a set directly instead of sorted numbers.

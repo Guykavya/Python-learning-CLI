@@ -1,0 +1,6 @@
+id = "core.04.p048"
+title = "Shape areas from commands"
+tier = "applied"
+kind = "code"
+topics = ["match/case", "sequence patterns", "guards", "accumulate"]
+minutes = 20

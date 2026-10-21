@@ -1,0 +1,6 @@
+id = "dsa.01.p014"
+title = "Range totals"
+tier = "applied"
+kind = "code"
+topics = ["precomputation", "prefix sums", "slicing cost", "queries"]
+minutes = 25

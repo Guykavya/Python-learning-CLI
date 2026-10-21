@@ -1,0 +1,6 @@
+id = "core.06.p028"
+title = "A wallet with a global balance"
+tier = "drill"
+kind = "code"
+topics = ["global", "scope"]
+minutes = 12

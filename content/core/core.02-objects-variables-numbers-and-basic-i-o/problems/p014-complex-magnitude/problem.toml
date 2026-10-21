@@ -1,0 +1,6 @@
+id = "core.02.p014"
+title = "Complex number basics"
+tier = "drill"
+kind = "code"
+topics = ["complex numbers", "abs()"]
+minutes = 10

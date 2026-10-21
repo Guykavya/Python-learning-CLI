@@ -1,0 +1,3 @@
+- Forgetting the brackets in `for n, (subject, mark) in enumerate(zip(...))`.
+- Comparing the mark without `int()`: `"38" >= 40` raises `TypeError`, because a string cannot be compared with a number.
+- Using `> 40`: exactly 40 is a pass.

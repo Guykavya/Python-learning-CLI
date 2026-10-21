@@ -1,0 +1,6 @@
+id = "core.05.p056"
+title = "Why append is fast and insert(0) is slow"
+tier = "deep"
+kind = "explain"
+topics = ["big-o", "lists", "amortised analysis"]
+minutes = 25

@@ -1,0 +1,7 @@
+id = "dsa.01.p026"
+title = "Count the pairs that make the target"
+tier = "challenge"
+kind = "code"
+topics = ["dicts", "counting", "pairs", "design for constraints"]
+minutes = 40
+assessment = "build"

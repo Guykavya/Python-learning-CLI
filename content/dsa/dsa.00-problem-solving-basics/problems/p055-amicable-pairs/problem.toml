@@ -1,0 +1,6 @@
+id = "dsa.00.p055"
+title = "Amicable pairs"
+tier = "challenge"
+kind = "code"
+topics = ["divisors", "square root bound", "nested loops", "efficiency"]
+minutes = 45

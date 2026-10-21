@@ -1,0 +1,5 @@
+id = "core.03.p008"
+title = "Replace a word"
+tier = "drill"
+kind = "code"
+topics = ["replace()", "count()"]

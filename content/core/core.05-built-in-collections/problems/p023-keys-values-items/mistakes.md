@@ -1,0 +1,3 @@
+- `max(d)` without a key gives the alphabetically largest name, not the best score.
+- `max(d.values())` gives the best score but not whose it is.
+- Forgetting that a repeated name keeps its first position, so the order of names does not change.

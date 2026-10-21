@@ -1,0 +1,4 @@
+- `12 am` as 12:00 or `12 pm` as 24:00. Use `hour % 12` before adding 12.
+- Accepting `9:5` or `9:005`: minutes need exactly two digits.
+- Accepting `0:30 am`: in 12-hour form the hour is 1 to 12.
+- Converting with `int()` before checking `isdigit()`, which crashes on `ab:cd`.

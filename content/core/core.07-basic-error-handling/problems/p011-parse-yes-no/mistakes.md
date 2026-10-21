@@ -1,0 +1,4 @@
+- Returning `None` (or `False`) for unknown text. "maybe" is not "no".
+- Showing the cleaned word in the message instead of what the user typed.
+- Returning the strings `"True"`/`"False"` instead of the bools.
+- Skipping the type check, so `parse_yes_no(1)` crashes with `AttributeError: 'int' object has no attribute 'strip'`.

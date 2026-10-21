@@ -1,0 +1,6 @@
+id = "core.04.p003"
+title = "Plural label with a conditional expression"
+tier = "drill"
+kind = "code"
+topics = ["conditional expression"]
+minutes = 10

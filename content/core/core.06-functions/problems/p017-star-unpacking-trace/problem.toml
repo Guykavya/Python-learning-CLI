@@ -1,0 +1,6 @@
+id = "core.06.p017"
+title = "Stars in definitions and calls"
+tier = "drill"
+kind = "trace"
+topics = ["*args", "**kwargs", "unpacking with * and **"]
+minutes = 15

@@ -1,0 +1,4 @@
+- Raising the new error without `from e`: the cause is still recorded as `__context__`, but the traceback says "During handling..." which suggests a bug in the handler.
+- Letting `KeyError: 'age'` escape for a missing field. The caller asked for a `ValueError` with a clear message.
+- Looping over the record instead of the schema.
+- Writing the converter with `str(converter)`, which gives `<class 'int'>`.

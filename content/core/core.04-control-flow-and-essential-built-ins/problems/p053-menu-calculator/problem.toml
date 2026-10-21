@@ -1,0 +1,7 @@
+id = "core.04.p053"
+title = "Menu-driven calculator"
+tier = "challenge"
+kind = "code"
+topics = ["while True", "match/case", "OR patterns", "conditional expression", "count"]
+minutes = 50
+assessment = "build"

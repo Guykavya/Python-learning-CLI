@@ -1,0 +1,5 @@
+id = "core.03.p004"
+title = "Reverse a line"
+tier = "drill"
+kind = "code"
+topics = ["slicing", "negative step", "string comparison"]

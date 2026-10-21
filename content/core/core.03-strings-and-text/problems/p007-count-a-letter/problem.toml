@@ -1,0 +1,5 @@
+id = "core.03.p007"
+title = "Count a letter"
+tier = "drill"
+kind = "code"
+topics = ["count()", "casefold()"]

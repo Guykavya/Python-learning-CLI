@@ -1,0 +1,6 @@
+id = "core.05.p062"
+title = "Friend suggestions"
+tier = "challenge"
+kind = "code"
+topics = ["dicts", "sets", "sorting", "tuple keys"]
+minutes = 40

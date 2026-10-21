@@ -1,0 +1,6 @@
+- Putting `ask("> ")` inside the `try` that catches `ValueError` from `interpret`, with a broad handler: `EOFError` loops forever.
+- Catching `EOFError` inside the asking loop and `continue`-ing: with no input left, the loop never ends.
+- Telling the score after the loop instead of in `finally`: it is missing when the quiz is stopped or a bug escapes.
+- Calling `check_questions` inside the `try`: bad data would print "Score: 0/2" as if a quiz had happened.
+- Accepting `"0"` for a choice: `options[-1]` silently picks the last option.
+- Counting an invalid answer as a wrong one.

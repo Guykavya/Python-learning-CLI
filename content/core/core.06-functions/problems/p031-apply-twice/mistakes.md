@@ -1,0 +1,3 @@
+- Writing `func()(value)` or `func(value)(value)`.
+- Calling `func` only once.
+- Calling it on the original value twice: `func(value)` then `func(value)` again.

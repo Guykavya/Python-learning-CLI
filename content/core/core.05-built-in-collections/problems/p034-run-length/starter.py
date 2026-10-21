@@ -1,0 +1,1 @@
+# Compress consecutive repeated tokens.

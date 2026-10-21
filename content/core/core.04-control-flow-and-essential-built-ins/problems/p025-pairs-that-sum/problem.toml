@@ -1,0 +1,6 @@
+id = "core.04.p025"
+title = "Pairs that sum to a target"
+tier = "applied"
+kind = "code"
+topics = ["nested loops", "range", "count"]
+minutes = 20

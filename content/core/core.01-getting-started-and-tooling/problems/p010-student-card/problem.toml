@@ -1,0 +1,6 @@
+id = "core.01.p010"
+title = "Student card"
+tier = "applied"
+kind = "code"
+topics = ["input()", "print()", "string concatenation"]
+minutes = 15

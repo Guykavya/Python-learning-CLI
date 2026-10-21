@@ -1,0 +1,6 @@
+id = "core.04.p027"
+title = "Knight moves"
+tier = "challenge"
+kind = "code"
+topics = ["nested loops", "range", "validation", "abs()"]
+minutes = 40

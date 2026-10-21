@@ -1,0 +1,6 @@
+id = "core.06.p013"
+title = "Longest of any number of words"
+tier = "applied"
+kind = "code"
+topics = ["*args", "edge cases"]
+minutes = 15

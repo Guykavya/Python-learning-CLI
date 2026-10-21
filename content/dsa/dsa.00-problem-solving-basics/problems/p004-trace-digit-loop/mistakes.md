@@ -1,0 +1,4 @@
+- Reading digits left to right (5, 2, 0, 7). `% 10` gives the *last* digit, so the order is 7, 0, 2, 5.
+- Printing the "left" value before it is shortened (`left 5207` on the first line). The `print` comes after `n = n // 10`.
+- Skipping the zero digit in `5207`, or stopping the second loop early as if `m` became 0 when its last digit is 0. The loop checks `m > 0`, not the last digit, so `1000` takes 4 iterations.
+- Writing `zeros: 4`. The last iteration has `m == 1`, whose last digit is 1, not 0.

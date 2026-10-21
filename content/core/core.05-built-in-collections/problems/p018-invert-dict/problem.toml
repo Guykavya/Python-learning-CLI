@@ -1,0 +1,6 @@
+id = "core.05.p018"
+title = "Invert a dictionary"
+tier = "drill"
+kind = "code"
+topics = ["dicts", "comprehensions"]
+minutes = 10

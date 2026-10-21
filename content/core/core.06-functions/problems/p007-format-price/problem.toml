@@ -1,0 +1,6 @@
+id = "core.06.p007"
+title = "Format a price"
+tier = "applied"
+kind = "code"
+topics = ["default arguments", "keyword arguments", "string formatting"]
+minutes = 15

@@ -1,0 +1,4 @@
+- `len(str(f))`: raises `ValueError: Exceeds the limit (4300 digits) for integer string conversion` for large `n`.
+- Counting only `n // 5`: 25! has 6 trailing zeros, not 5.
+- Counting factors of 10 with `n // 10`: 5! = 120 already has a zero.
+- Using `math.log10(f) + 1` without `int()`: prints a float like `7.559...`.

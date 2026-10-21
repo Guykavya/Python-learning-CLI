@@ -1,0 +1,3 @@
+- Not handling negatives: `-305 < 10` is true, so the base case returns `-305`.
+- Using `n // 10` with negatives: floor division rounds down, so `-305 // 10` is `-31`, not `-30`.
+- Converting to a string, which the exercise forbids.

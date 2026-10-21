@@ -1,0 +1,4 @@
+- Halving with `/`. The number becomes a float, prints as `9232.0`, and for big values (above about 9 x 10^15) the float is not exact, so the steps and peak come out wrong.
+- Starting `peak` at 0 or 1 instead of `n`. Then for `n = 8` (which only goes down) the peak is reported as 4, not 8.
+- Counting the starting number as a step (starting `steps` at 1). Then `n = 1` prints `steps 1` instead of `steps 0`.
+- Looping `while n != 0` or `while n > 0`. After reaching 1 the rule goes 1 -> 4 -> 2 -> 1 forever, so the loop never ends. Stop when `n` is 1.

@@ -1,0 +1,6 @@
+id = "dsa.01.p007"
+title = "Is it on the list?"
+tier = "drill"
+kind = "code"
+topics = ["sets", "membership", "list vs set", "queries"]
+minutes = 15

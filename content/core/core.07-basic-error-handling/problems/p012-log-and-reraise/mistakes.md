@@ -1,0 +1,4 @@
+- Returning `None` after logging: the error is swallowed and the caller carries on with `None`.
+- Raising a new exception (`raise KeyError("missing")`) instead of the original.
+- Logging with `"missing score: " + name` when `name` might not be a string; an f-string is safer.
+- Catching `Exception`, so the `TypeError` for an unhashable name is logged as a missing score.

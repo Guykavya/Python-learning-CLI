@@ -1,0 +1,6 @@
+id = "dsa.00.p007"
+title = "Multiplication table"
+tier = "drill"
+kind = "code"
+topics = ["for loops", "range", "f-strings", "exact output"]
+minutes = 10

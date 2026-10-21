@@ -1,0 +1,6 @@
+id = "core.05.p063"
+title = "A huge sparse board"
+tier = "challenge"
+kind = "code"
+topics = ["dicts", "tuples", "choosing a structure"]
+minutes = 40

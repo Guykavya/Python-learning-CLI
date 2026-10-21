@@ -1,0 +1,3 @@
+- Comparing the strings: `max("10 9 100".split())` is `"9"`.
+- `if not smallest:` for the empty case, which also fires when the minimum is 0.
+- Starting a manual `largest = 0`, which is wrong for all-negative input. `max` avoids it.

@@ -1,0 +1,7 @@
+id = "dsa.00.p041"
+title = "Fix the prime counter"
+tier = "deep"
+kind = "code"
+topics = ["debugging", "dry run", "primes", "off-by-one", "nested loops"]
+minutes = 30
+assessment = "fix"

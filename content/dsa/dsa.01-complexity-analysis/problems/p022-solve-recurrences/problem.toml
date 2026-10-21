@@ -1,0 +1,6 @@
+id = "dsa.01.p022"
+title = "Solve the recurrences"
+tier = "deep"
+kind = "explain"
+topics = ["recurrence relations", "master theorem", "recursion trees"]
+minutes = 30

@@ -1,0 +1,6 @@
+id = "core.05.p048"
+title = "Changing a list while looping"
+tier = "deep"
+kind = "trace"
+topics = ["lists", "mutation during iteration"]
+minutes = 25

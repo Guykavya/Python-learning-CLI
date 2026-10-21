@@ -1,0 +1,4 @@
+- Using a bare `except:` or `except Exception:`. `to_int(None)` would then return 0 and hide the bug in the caller.
+- Using `isdigit()` to check first. It rejects `"-7"` and `" 7"`, which `int` accepts.
+- Returning `0` instead of `default` in the handler.
+- Writing `except ValueError or TypeError:`; that expression is just `ValueError`.

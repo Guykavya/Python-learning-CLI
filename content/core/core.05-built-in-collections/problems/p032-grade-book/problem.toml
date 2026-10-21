@@ -1,0 +1,6 @@
+id = "core.05.p032"
+title = "Grade book averages"
+tier = "applied"
+kind = "code"
+topics = ["dicts", "grouping", "sorting"]
+minutes = 20

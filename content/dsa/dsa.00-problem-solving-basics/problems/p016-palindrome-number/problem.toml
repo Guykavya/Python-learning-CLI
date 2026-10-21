@@ -1,0 +1,6 @@
+id = "dsa.00.p016"
+title = "Palindrome number"
+tier = "drill"
+kind = "code"
+topics = ["loops", "modulo", "building a number", "reuse an idea"]
+minutes = 15

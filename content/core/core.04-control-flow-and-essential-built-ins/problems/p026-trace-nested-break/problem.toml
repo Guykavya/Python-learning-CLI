@@ -1,0 +1,6 @@
+id = "core.04.p026"
+title = "Trace break in nested loops"
+tier = "deep"
+kind = "trace"
+topics = ["nested loops", "break", "continue"]
+minutes = 25

@@ -1,0 +1,7 @@
+id = "core.06.p021"
+title = "Does the caller's data change?"
+tier = "deep"
+kind = "trace"
+topics = ["argument passing", "mutation vs rebinding", "aliasing"]
+minutes = 30
+assessment = "trace"

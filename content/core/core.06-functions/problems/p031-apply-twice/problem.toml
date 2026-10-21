@@ -1,0 +1,6 @@
+id = "core.06.p031"
+title = "Apply a function twice"
+tier = "drill"
+kind = "code"
+topics = ["first-class functions", "higher-order functions"]
+minutes = 8

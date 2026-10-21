@@ -1,0 +1,3 @@
+- Forgetting `strip()`, so the year or day carries a space or newline.
+- Slicing with `months[m:m + 3]`, which mixes up the positions.
+- Printing the day as text `"05"` for the second form, keeping the zero.

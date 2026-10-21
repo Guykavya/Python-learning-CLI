@@ -1,0 +1,6 @@
+id = "core.02.p036"
+title = "Operator precedence"
+tier = "deep"
+kind = "trace"
+topics = ["operator precedence", "exponent", "bitwise operators", "chained comparisons"]
+minutes = 20

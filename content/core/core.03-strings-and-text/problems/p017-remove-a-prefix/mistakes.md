@@ -1,0 +1,3 @@
+- Using `tag[1:]`, which removes the first character even when it is not `#`.
+- Using `strip("#")`, which also removes `#` from the end.
+- Thinking `lstrip("#!")` removes the text `#!`. It removes any mix of `#` and `!`.

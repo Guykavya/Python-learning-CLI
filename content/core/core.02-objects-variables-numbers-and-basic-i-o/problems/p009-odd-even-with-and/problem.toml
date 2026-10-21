@@ -1,0 +1,6 @@
+id = "core.02.p009"
+title = "Odd or even with bitwise AND"
+tier = "drill"
+kind = "code"
+topics = ["bitwise operators", "bool", "operator precedence"]
+minutes = 10

@@ -1,0 +1,6 @@
+inner: L
+outer: E
+read: E2
+global: G
+shadow: 3
+module: G 3

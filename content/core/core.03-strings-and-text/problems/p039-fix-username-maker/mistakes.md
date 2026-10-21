@@ -1,0 +1,4 @@
+- Fixing only the crashes. The `[:-2]` slice and the thrown-away `lower()` give plausible wrong output.
+- Fixing the double spaces with `replace("  ", " ")`, which fails for three or more spaces.
+- Lowercasing the whole name before building the greeting; `title()` fixes the case anyway, but the username still needs `lower()` on the right parts.
+- Using `str(2026 - int(year))` with `+`: that works, but an f-string is clearer.

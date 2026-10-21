@@ -1,0 +1,3 @@
+- Using `strip(string.punctuation)` on the whole line, which only cleans the two ends.
+- Splitting with `split(" ")`, which gives empty "words" where punctuation stood between spaces, like in `a - b`.
+- Passing the punctuation as the first argument of `maketrans` with an empty second argument. The first two must have equal length; deletions go in the third argument.

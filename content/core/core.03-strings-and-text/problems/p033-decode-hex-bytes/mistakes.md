@@ -1,0 +1,3 @@
+- Calling `decode` on the hex string. A `str` has no `decode` method.
+- Decoding with `latin-1` or `ascii`, giving `cafÃ©` or a `UnicodeDecodeError`.
+- Counting characters in the hex text, which is about three times the byte count.

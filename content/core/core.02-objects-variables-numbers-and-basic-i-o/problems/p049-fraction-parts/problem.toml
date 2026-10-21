@@ -1,0 +1,6 @@
+id = "core.02.p049"
+title = "Whole part and remainder of a fraction"
+tier = "challenge"
+kind = "code"
+topics = ["fractions", "floor division", "modulo with negatives", "int()", "round()"]
+minutes = 30

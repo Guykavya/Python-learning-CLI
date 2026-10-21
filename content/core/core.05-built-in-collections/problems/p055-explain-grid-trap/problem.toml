@@ -1,0 +1,6 @@
+id = "core.05.p055"
+title = "Explain the [[0] * 3] * 3 bug"
+tier = "deep"
+kind = "explain"
+topics = ["nested lists", "aliasing"]
+minutes = 25

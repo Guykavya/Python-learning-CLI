@@ -1,0 +1,6 @@
+id = "core.04.p034"
+title = "Day-to-day temperature changes"
+tier = "applied"
+kind = "code"
+topics = ["zip", "enumerate", "slicing", "f-string formatting"]
+minutes = 20

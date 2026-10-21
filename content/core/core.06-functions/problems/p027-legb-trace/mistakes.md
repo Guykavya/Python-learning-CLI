@@ -1,0 +1,3 @@
+- Thinking an inner assignment changes the enclosing variable.
+- Thinking a local `len` inside a function hides the built-in everywhere.
+- Thinking the global `x` changes because a function assigned `x`.

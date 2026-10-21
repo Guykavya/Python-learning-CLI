@@ -1,0 +1,6 @@
+id = "core.01.p003"
+title = "Dates with sep and end"
+tier = "drill"
+kind = "code"
+topics = ["print()", "sep and end"]
+minutes = 10

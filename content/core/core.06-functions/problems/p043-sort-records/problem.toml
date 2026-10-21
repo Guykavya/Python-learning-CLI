@@ -1,0 +1,6 @@
+id = "core.06.p043"
+title = "Sort records by any field"
+tier = "applied"
+kind = "code"
+topics = ["lambda", "sorted with key", "keyword-only parameters", "edge cases"]
+minutes = 25

@@ -1,0 +1,6 @@
+id = "core.04.p041"
+title = "Why all() of nothing is True"
+tier = "deep"
+kind = "explain"
+topics = ["any()", "all()", "vacuous truth", "short-circuit evaluation"]
+minutes = 25

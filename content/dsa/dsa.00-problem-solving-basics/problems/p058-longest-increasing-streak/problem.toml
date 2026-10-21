@@ -1,0 +1,6 @@
+id = "dsa.00.p058"
+title = "Longest increasing streak"
+tier = "challenge"
+kind = "code"
+topics = ["single pass", "tracking state", "ties", "edge cases"]
+minutes = 40

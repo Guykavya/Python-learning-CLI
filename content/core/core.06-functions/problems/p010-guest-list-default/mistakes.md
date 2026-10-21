@@ -1,0 +1,3 @@
+- `def invite(name, guests=[])`: one list is shared by every call that does not pass a list.
+- `if not guests: guests = []`: a caller's empty list is replaced by a new one, so the caller's list stays empty.
+- Copying the caller's list (`guests = guests[:]`): the problem asks to fill the caller's list.

@@ -1,0 +1,3 @@
+- Using `reverse=True` on the whole sort, which also reverses department and name order.
+- Comparing salaries as text, where `"9000"` beats `"10000"`.
+- Sorting by the three keys in the wrong order of importance.

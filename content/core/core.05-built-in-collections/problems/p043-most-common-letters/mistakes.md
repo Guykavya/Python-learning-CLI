@@ -1,0 +1,3 @@
+- Counting spaces and punctuation.
+- Forgetting to lowercase, so `H` and `h` are counted separately.
+- Breaking ties by first appearance instead of alphabetically.

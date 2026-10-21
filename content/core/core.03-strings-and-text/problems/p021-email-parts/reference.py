@@ -1,0 +1,5 @@
+user, at, domain = input().strip().partition("@")
+domain = domain.lower()
+print(f"User: {user}")
+print(f"Domain: {domain}")
+print(f"Masked: {user[0]}***@{domain}")

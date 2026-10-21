@@ -1,0 +1,4 @@
+- Putting `log.append("done ...")` inside the `try` after `func()`: it works here, but `else` states the intent and keeps the `try` narrow.
+- Logging "end" after the `try` statement instead of in `finally`: it is skipped when a `KeyError` escapes.
+- Catching `Exception` to log "end", which also stops the `KeyError` from propagating.
+- Returning from inside `finally`, which would swallow the `KeyError`.

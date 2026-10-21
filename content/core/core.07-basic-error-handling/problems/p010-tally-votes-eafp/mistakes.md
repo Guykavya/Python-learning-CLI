@@ -1,0 +1,4 @@
+- Setting `counts[name] = 0` in the handler: the first vote is lost.
+- Cleaning after checking for empty, so `"   "` is counted as a vote for `""`.
+- Creating `counts = {}` outside the function, so results leak between calls.
+- Catching `Exception` around the whole loop body.

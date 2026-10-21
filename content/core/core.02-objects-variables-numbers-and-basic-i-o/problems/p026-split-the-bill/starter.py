@@ -1,0 +1,6 @@
+total = float(input())
+people = int(input())
+paise = int(total * 100)
+share, left = divmod(paise, people)
+print(f"Each pays: {share / 100:.2f}")
+print(f"Left over paise: {left}")

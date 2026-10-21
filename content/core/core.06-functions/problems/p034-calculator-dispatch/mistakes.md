@@ -1,0 +1,3 @@
+- `OPERATIONS = {"+": add(a, b)}`: calls the function while building the dict (and `a` does not exist yet).
+- Writing `if op == "+": ... elif op == "-": ...` inside `calculate`: works, but every new operator means editing that chain.
+- `OPERATIONS[op](a, b)` without checking: an unknown operator raises `KeyError`.

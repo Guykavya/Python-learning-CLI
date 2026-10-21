@@ -1,0 +1,6 @@
+id = "core.04.p044"
+title = "Counter commands"
+tier = "applied"
+kind = "code"
+topics = ["match/case", "sequence patterns", "capture patterns", "while True"]
+minutes = 20

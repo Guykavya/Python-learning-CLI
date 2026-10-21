@@ -1,0 +1,4 @@
+- Finding the port with `partition(":")` on the whole URL, which finds the `:` in `https:`.
+- Removing the path before the query, so a `/` inside the query is taken as part of the path.
+- Using `split("/")`, which cuts the path into pieces.
+- Forgetting to put the leading `/` back on the path.

@@ -1,0 +1,6 @@
+id = "core.06.p061"
+title = "Recursion or a loop?"
+tier = "deep"
+kind = "explain"
+topics = ["recursion", "call stack", "recursion limit", "iteration"]
+minutes = 25

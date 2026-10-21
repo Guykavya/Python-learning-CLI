@@ -1,0 +1,12 @@
+range(3, 30, 4)
+7 3 27 11
+True False False
+range(7, 19, 4)
+[7, 11, 15]
+9
+200000000000
+500000000000
+True
+[7, 4, 1]
+0 False True
+True

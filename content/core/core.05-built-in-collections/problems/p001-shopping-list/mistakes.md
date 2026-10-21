@@ -1,0 +1,4 @@
+- Appending `done` to the list before checking for it. Check first, then append.
+- Writing `items = items.append(line)`. `append` returns `None`, so the list is lost.
+- Numbering from 0. `enumerate(items, start=1)` starts at 1.
+- Forgetting the empty case: printing nothing at all after `Items: 0`.

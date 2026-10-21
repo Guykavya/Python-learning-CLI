@@ -1,0 +1,3 @@
+- Expecting `b` to be the list. In-place methods return `None`.
+- Expecting `sorted(a)` to change `a`.
+- Expecting `a.pop()` to print `None`. Unlike the others, `pop` returns the removed item.

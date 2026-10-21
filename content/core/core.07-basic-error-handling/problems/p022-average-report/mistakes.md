@@ -1,0 +1,4 @@
+- Wrapping the whole loop body in `try`, so the formatting line is "protected" too.
+- Forgetting `:.1f`, so an average like `78.33333333333333` is printed in full, and `90` instead of `90.0`.
+- Catching `Exception`, which hides the `TypeError` from bad data.
+- Iterating over the dict without `sorted`.

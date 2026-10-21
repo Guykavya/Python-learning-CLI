@@ -1,0 +1,3 @@
+- Writing `text[-1:]`, which is only the last character, instead of `text[::-1]`.
+- Printing `"True"` or `"False"` from guesses about the input instead of comparing.
+- Lowercasing the text first. This task asks for an exact comparison, so `Racecar` is not a palindrome here.

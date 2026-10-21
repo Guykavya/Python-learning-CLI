@@ -1,0 +1,3 @@
+- Using lists for the groups, so `cat` appears twice.
+- Printing the dict in insertion order instead of sorting the lengths.
+- Printing a set directly; its order is not alphabetical.

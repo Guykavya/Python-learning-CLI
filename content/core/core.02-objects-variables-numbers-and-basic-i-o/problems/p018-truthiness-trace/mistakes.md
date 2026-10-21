@@ -1,0 +1,3 @@
+- Thinking `bool("False")` is `False`. Only the empty string is falsy.
+- Expecting `0 or 7` to print `True`. `or` and `and` return an operand, not a bool.
+- Thinking `-1` is falsy because it is "negative". Only zero is falsy.

@@ -1,0 +1,6 @@
+id = "core.06.p003"
+title = "Smallest and largest together"
+tier = "drill"
+kind = "code"
+topics = ["return", "returning several values", "tuples"]
+minutes = 10

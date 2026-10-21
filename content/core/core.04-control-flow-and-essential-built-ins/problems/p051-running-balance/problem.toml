@@ -1,0 +1,6 @@
+id = "core.04.p051"
+title = "Running balance with early exit"
+tier = "applied"
+kind = "code"
+topics = ["while True", "break", "early exit", "validation"]
+minutes = 20

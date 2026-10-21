@@ -1,0 +1,3 @@
+- Thinking `reverse=True` equals sorting and then reversing.
+- Forgetting that `max` keeps the first of equal keys.
+- Expecting `sort()` to return the list.

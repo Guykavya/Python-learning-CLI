@@ -1,0 +1,6 @@
+id = "dsa.01.p030"
+title = "When do constants matter?"
+tier = "challenge"
+kind = "explain"
+topics = ["constant factors", "built-ins", "Big-O limits", "measurement"]
+minutes = 35

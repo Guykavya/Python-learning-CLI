@@ -1,0 +1,5 @@
+id = "core.03.p021"
+title = "Split an email address"
+tier = "applied"
+kind = "code"
+topics = ["partition()", "strip()", "lower()", "slicing"]

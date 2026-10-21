@@ -1,0 +1,4 @@
+- Checking only `a*a + b*b == c*c`. That assumes `c` is the longest side, so `5 3 4` is wrongly called `not right`.
+- Using `>` instead of `>=` in the validity test. Then `1 2 3` (a flat line) is accepted as a triangle.
+- Checking isosceles before equilateral. `7 7 7` has two equal sides too, so it is printed as `isosceles`.
+- Testing the right angle with square roots, such as `(a*a + b*b) ** 0.5 == c`. That produces a float, and for large sides the rounding can make a non-right triangle look right (or the other way round). Compare whole-number squares instead.

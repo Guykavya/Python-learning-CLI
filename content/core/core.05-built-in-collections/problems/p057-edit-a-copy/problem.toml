@@ -1,0 +1,6 @@
+id = "core.05.p057"
+title = "Edit a copy, keep the original"
+tier = "deep"
+kind = "code"
+topics = ["copying", "nested lists", "aliasing"]
+minutes = 25

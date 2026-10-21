@@ -1,0 +1,3 @@
+- Reading with `float()`: `"3/4"` raises `ValueError`, and even `0.75` loses the fraction form.
+- Using `eval()` on input: it runs any code the user types. Never do this.
+- Dividing an int by an int first: `want / have` is a float (`1.5`), and multiplying a Fraction by a float gives a float.

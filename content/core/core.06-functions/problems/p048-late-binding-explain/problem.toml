@@ -1,0 +1,7 @@
+id = "core.06.p048"
+title = "Explain the late-binding trap"
+tier = "deep"
+kind = "explain"
+topics = ["closures", "late binding", "cells", "default arguments"]
+minutes = 30
+assessment = "explain"

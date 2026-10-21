@@ -1,0 +1,5 @@
+id = "core.03.p012"
+title = "Four ways to show a number"
+tier = "drill"
+kind = "code"
+topics = ["format spec", "thousands separator", "precision", "percent", "scientific notation"]

@@ -1,0 +1,4 @@
+- Checking all four rules with separate `if`s and printing several reasons.
+- Checking the dash before the length, which crashes on short codes.
+- Using `code[3:7].isdigit()`, which accepts digits from other scripts and superscripts.
+- Forgetting to strip, so `" AB-1234"` fails the length check.

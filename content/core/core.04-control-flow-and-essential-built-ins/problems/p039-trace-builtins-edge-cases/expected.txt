@@ -1,0 +1,12 @@
+False True
+False True
+0 20
+2
+apple Banana
+3 -7
+none
+e
+bb
+4 4.0
+True False
+empty range

@@ -1,0 +1,3 @@
+- `max(scores.values())` returns the score, not the name.
+- `max(scores, key=lambda n: (scores[n], n))`: on a tie, `max` picks the alphabetically LAST name.
+- Forgetting the empty case: `max` of an empty dict raises `ValueError` (or use `default=None`).

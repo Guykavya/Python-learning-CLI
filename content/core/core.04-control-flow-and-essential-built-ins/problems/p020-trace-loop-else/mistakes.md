@@ -1,0 +1,4 @@
+- Thinking the `else` belongs to the `if` inside the loop. It belongs to the loop; look at its indentation.
+- Skipping the empty string: a loop that runs zero times still runs its `else`.
+- Thinking `continue` prevents the `else`.
+- Printing `never negative` because "the while condition became false". It did not: `break` left the loop first.

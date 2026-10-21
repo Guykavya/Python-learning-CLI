@@ -1,0 +1,6 @@
+id = "dsa.00.p032"
+title = "Star pyramid"
+tier = "applied"
+kind = "code"
+topics = ["nested loops", "patterns", "string repetition"]
+minutes = 15

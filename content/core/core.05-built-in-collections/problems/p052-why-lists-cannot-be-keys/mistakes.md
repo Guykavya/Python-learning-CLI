@@ -1,0 +1,4 @@
+- Saying "lists cannot be hashed because Python does not know how". It refuses on purpose.
+- Saying "all tuples are hashable". Only tuples whose items are all hashable.
+- Forgetting the second rule: equal objects must have equal hashes.
+- Suggesting `str([2, 5])` as a key. It works, but it hides the real reason and is fragile.

@@ -1,0 +1,3 @@
+- Thinking a view is a frozen copy taken when `keys()` was called.
+- Thinking re-adding a deleted key restores its old position.
+- Thinking `d | other` changes `d`.

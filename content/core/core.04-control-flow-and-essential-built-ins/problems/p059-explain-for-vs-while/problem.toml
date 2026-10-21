@@ -1,0 +1,6 @@
+id = "core.04.p059"
+title = "Choosing for or while"
+tier = "deep"
+kind = "explain"
+topics = ["for loop", "while loop", "range", "off-by-one"]
+minutes = 25

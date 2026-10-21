@@ -1,0 +1,6 @@
+id = "core.01.p018"
+title = "Inspect built-ins like help() does"
+tier = "deep"
+kind = "code"
+topics = ["help()/dir()", "type()", "docstrings"]
+minutes = 20

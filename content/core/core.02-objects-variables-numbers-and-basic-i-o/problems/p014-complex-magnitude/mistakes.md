@@ -1,0 +1,3 @@
+- Writing `a + bj`. Python reads `bj` as a variable name, not as b times j. Use `b * 1j` or `complex(a, b)`.
+- Computing the magnitude as `a + b` or `a * a + b * b` and forgetting the square root.
+- Using `math.sqrt(z)` on a complex number: `TypeError`. The `math` module is for real numbers; `cmath` handles complex ones.

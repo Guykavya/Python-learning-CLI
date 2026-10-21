@@ -1,0 +1,7 @@
+id = "core.05.p046"
+title = "Aliases, shallow and deep copies"
+tier = "deep"
+kind = "trace"
+topics = ["aliasing", "copying"]
+minutes = 25
+assessment = "trace"

@@ -1,0 +1,3 @@
+- Assuming `-7 // 2` is `-3` (that is truncation, as in C or Java).
+- Thinking `%` always returns a positive number. It follows the sign of the divisor.
+- Confusing `int(-3.5)` with `-3.5 // 1` (which is `-4.0`).

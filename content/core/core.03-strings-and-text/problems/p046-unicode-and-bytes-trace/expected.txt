@@ -1,0 +1,10 @@
+3 4
+b'n\xc3\xa9e'
+NÉE
+233 e9
+Aa
+195 b'\xc3\xa9'
+é
+SS ss
+bytearray(b'bat') bat
+False

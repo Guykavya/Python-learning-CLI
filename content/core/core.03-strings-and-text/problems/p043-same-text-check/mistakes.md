@@ -1,0 +1,3 @@
+- Trusting your eyes: the two strings look identical on screen.
+- Normalising only one of the strings.
+- Thinking `casefold()` also normalises. It does not.

@@ -1,0 +1,3 @@
+- `"" if n == 1 else "s"` written as `"s" if n == 1 else ""`: the condition and the values swapped.
+- Forgetting `str(n)`, so `amount` is an int in one branch and a str in the other. In an f-string it still prints, but `"no" + n` would crash.
+- Writing `x = "a" if cond` with no `else`. A conditional expression always needs an `else`.

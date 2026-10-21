@@ -1,0 +1,4 @@
+- Counting digits with `while m > 0`. For `x = 999` (that is, `0999`) the loop sees only three digits, so the zero is lost: big becomes `999` instead of `9990` and the routine goes wrong.
+- Checking `diff == 6174` (or `x == 6174`) before the first step. Then the input `6174` prints nothing but `steps 0`, instead of one step.
+- Printing with `{small}` instead of `{small:04d}`. `0378` comes out as `378` and the line no longer matches.
+- Detecting "invalid" by comparing only two digits (for example first and last). `5155` is valid; all four digits must be equal, which is exactly `x % 1111 == 0`.

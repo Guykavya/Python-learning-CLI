@@ -1,0 +1,6 @@
+id = "core.04.p001"
+title = "Grade bands"
+tier = "drill"
+kind = "code"
+topics = ["if/elif/else", "condition order"]
+minutes = 10

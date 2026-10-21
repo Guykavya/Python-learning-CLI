@@ -1,0 +1,6 @@
+id = "core.02.p045"
+title = "Facts about a huge factorial"
+tier = "challenge"
+kind = "code"
+topics = ["int arbitrary precision", "math module", "floor division", "int string limit"]
+minutes = 30

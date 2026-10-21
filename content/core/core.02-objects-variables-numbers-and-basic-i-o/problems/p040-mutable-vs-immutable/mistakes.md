@@ -1,0 +1,3 @@
+- Saying ints are "copied" by assignment and lists are "referenced". Assignment never copies anything; both are references.
+- Saying `n += 1` modifies the int 5. It cannot.
+- Thinking a list "remembers" the other name. The names simply refer to one object.

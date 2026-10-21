@@ -1,0 +1,4 @@
+- Using one width for every column (the longest word overall).
+- Aligning a whole column the same way based on only the top word.
+- Forgetting `rstrip()`, leaving trailing spaces.
+- Checking `len(top) != len(bottom)` after the loop; `zip` would silently drop words first.

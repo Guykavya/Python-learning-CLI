@@ -1,0 +1,3 @@
+- `work = grid`: every edit also changes the original, so "Changed cells" is always 0.
+- `work = grid.copy()`: a shallow copy, which still shares the rows.
+- Storing each row as a string: strings are immutable, so `row[j] = d` fails. Use `list(line)`.

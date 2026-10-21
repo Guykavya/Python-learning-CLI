@@ -1,0 +1,6 @@
+id = "core.05.p065"
+title = "Spiral order"
+tier = "challenge"
+kind = "code"
+topics = ["nested lists"]
+minutes = 40

@@ -1,0 +1,3 @@
+- Writing `best.x += 1`. Namedtuples are immutable; this raises `AttributeError`.
+- Using `>=` when comparing distances, which picks the last of equal points.
+- Printing `f"Point({x}, {y})"` by hand. Let the namedtuple print itself.

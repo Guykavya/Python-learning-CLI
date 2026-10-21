@@ -1,0 +1,3 @@
+- Checking only `% 4`: 1900 and 2100 come out wrong.
+- Writing `year % 4 == 0 and year % 100 != 0 and year % 400 == 0`: no year is ever a leap year then, because no number divisible by 400 fails `% 100`.
+- Writing `not year % 100` and getting confused: it works (`0` is falsy) but the `!= 0` form is clearer.

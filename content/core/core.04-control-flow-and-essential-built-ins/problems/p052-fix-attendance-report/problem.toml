@@ -1,0 +1,7 @@
+id = "core.04.p052"
+title = "Fix the attendance report"
+tier = "deep"
+kind = "code"
+topics = ["debugging", "range", "enumerate", "or", "loop else"]
+minutes = 25
+assessment = "fix"

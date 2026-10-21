@@ -1,0 +1,6 @@
+id = "core.07.p011"
+title = "Parse a yes/no answer"
+tier = "drill"
+kind = "code"
+topics = ["raise", "ValueError", "TypeError", "error messages"]
+minutes = 12

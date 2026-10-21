@@ -1,0 +1,3 @@
+- Skipping `abs()`: negative numbers give wrong digits.
+- Writing `n % 100` for the tens digit: that is the last **two** digits.
+- Using `n / 10 % 10`: true division gives floats like `407.1`, and `% 10` keeps the fraction.

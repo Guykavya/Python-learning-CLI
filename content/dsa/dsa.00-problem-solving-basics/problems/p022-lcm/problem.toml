@@ -1,0 +1,6 @@
+id = "dsa.00.p022"
+title = "Least common multiple"
+tier = "applied"
+kind = "code"
+topics = ["gcd", "euclid's algorithm", "lcm", "big integers", "efficiency"]
+minutes = 20

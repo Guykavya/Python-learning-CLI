@@ -1,0 +1,5 @@
+id = "core.03.p025"
+title = "title() versus capwords()"
+tier = "applied"
+kind = "code"
+topics = ["title()", "string module", "capitalize()"]

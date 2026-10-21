@@ -1,0 +1,6 @@
+id = "dsa.00.p051"
+title = "The k-th prime"
+tier = "challenge"
+kind = "code"
+topics = ["primes", "nested loops", "square root bound", "efficiency"]
+minutes = 40

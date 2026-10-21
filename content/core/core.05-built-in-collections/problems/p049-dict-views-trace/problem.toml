@@ -1,0 +1,6 @@
+id = "core.05.p049"
+title = "Dict views are live"
+tier = "deep"
+kind = "trace"
+topics = ["dict views", "dicts", "dict merging"]
+minutes = 25

@@ -1,0 +1,4 @@
+Student: Riya
+Marks: 87
+line 5
+TypeError: can only concatenate str (not "int") to str

@@ -1,0 +1,6 @@
+id = "core.02.p038"
+title = "Chains and short-circuits"
+tier = "deep"
+kind = "trace"
+topics = ["chained comparisons", "short-circuit", "truthiness", "walrus operator"]
+minutes = 20

@@ -1,0 +1,6 @@
+id = "core.06.p033"
+title = "Compose functions"
+tier = "applied"
+kind = "code"
+topics = ["first-class functions", "returning functions", "*args"]
+minutes = 20

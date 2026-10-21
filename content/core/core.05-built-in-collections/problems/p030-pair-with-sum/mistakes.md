@@ -1,0 +1,3 @@
+- Storing the current number before checking, so `5` pairs with itself when the target is 10.
+- Overwriting the stored position on repeats, which gives the largest `i`, not the smallest.
+- Two nested loops: correct, but too slow for the big test.

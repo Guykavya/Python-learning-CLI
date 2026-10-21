@@ -1,0 +1,4 @@
+- Using `/` instead of `//`. The result becomes a float: you get `12.0` instead of `12`, and big answers lose digits.
+- Running Euclid directly on `a` and `b`, then computing `a // g * b`. By then `a` and `b` have been overwritten (`b` is 0), so the answer is wrong. Work on copies.
+- Counting up through multiples of `a` until one divides by `b`. Correct, but for two large coprime numbers it needs about 10 to the power 18 steps.
+- Writing `a, b = b, a % b` as two separate lines (`a = b` then `b = a % b`). The second line then uses the new `a`, so `b` becomes 0 at once and the GCD is wrong.

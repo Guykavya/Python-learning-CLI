@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Run the learning engine from this folder without activating the virtual environment.
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+if [ ! -x "$DIR/.venv/bin/learn" ]; then
+  echo "Setting up the engine for the first time..."
+  python3 -m venv "$DIR/.venv" && "$DIR/.venv/bin/pip" install -q -e "$DIR" || exit 1
+fi
+exec "$DIR/.venv/bin/learn" "$@"

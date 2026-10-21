@@ -1,0 +1,7 @@
+/home/asha
+/home/asha/projects
+/home/asha
+/home/asha/projects
+print('hi')
+hi
+6

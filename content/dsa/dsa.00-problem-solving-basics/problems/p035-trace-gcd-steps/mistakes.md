@@ -1,0 +1,4 @@
+- Printing the pair after updating it. The `print` is the first line of the loop body, so the first line printed is the original pair, and the final pair `21 0` is never printed.
+- Updating `a` first and then using the new `a` to compute `a % b`. Tuple assignment computes both new values from the old ones.
+- Thinking `18 % 48` is 0 or an error. When the left number is smaller, the remainder is the left number itself, 18.
+- Forgetting the `gcd` line after each loop, or writing it as `gcd: 21`. `print("gcd", a)` puts a single space between the word and the number.

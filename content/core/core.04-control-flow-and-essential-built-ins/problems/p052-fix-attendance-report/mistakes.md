@@ -1,0 +1,4 @@
+- Fixing `range(1, len(names))` to `range(len(names))` but keeping `{i}.`, so numbering starts at 0.
+- Writing `mark == "P" or mark == "p"` correctly but forgetting `.strip()` matters only for spaces; marks are only P and A.
+- Changing `//` to `/` but rounding with `int()`, which truncates 66.67 to 66 instead of showing 67.
+- Moving the loop `else` around instead of replacing it with an `if` on `low`.

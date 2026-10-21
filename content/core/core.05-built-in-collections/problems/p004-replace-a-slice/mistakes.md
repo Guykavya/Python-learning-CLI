@@ -1,0 +1,3 @@
+- Writing `nums[i:j] = [new]`, which inserts the whole list as one item.
+- Using `nums[i] = ...`, which replaces exactly one item and cannot grow or shrink the list.
+- Forgetting that `j` is not included in the slice.

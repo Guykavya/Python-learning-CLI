@@ -1,0 +1,4 @@
+- Expecting `print(r)` to show the numbers. Only `list(r)` does that.
+- Writing `31` as `r[-1]`: 31 is past the stop of 30.
+- Expecting `big` to be slow or to use a lot of memory.
+- Thinking ranges are equal only when start, stop and step match. Equality compares the numbers produced.

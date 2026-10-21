@@ -1,0 +1,6 @@
+id = "core.06.p022"
+title = "Append the total in place"
+tier = "drill"
+kind = "code"
+topics = ["mutation", "in-place functions", "return None"]
+minutes = 10

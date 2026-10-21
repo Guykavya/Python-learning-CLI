@@ -1,0 +1,3 @@
+- Writing `b'c'` or `c3` for `b[1]`. Indexing bytes gives the integer 195.
+- Expecting `b"abc" == "abc"` to be `True` because they "contain the same letters".
+- Forgetting that a `bytearray` prints with its type name.

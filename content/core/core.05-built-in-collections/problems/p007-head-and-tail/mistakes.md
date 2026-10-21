@@ -1,0 +1,3 @@
+- Expecting `middle` to be a tuple. It is a list.
+- Writing two starred names, such as `*a, *b = nums`. Only one is allowed.
+- Crashing on `sum` of strings: convert the input to ints first.

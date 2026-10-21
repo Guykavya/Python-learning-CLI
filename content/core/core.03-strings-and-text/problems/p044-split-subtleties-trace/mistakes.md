@@ -1,0 +1,3 @@
+- Treating `split()` and `split(" ")` as the same.
+- Expecting `"".split(",")` to be `[]`. It is a list holding one empty string.
+- Forgetting that a trailing separator gives an empty last piece.

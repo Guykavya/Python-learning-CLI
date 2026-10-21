@@ -1,0 +1,5 @@
+id = "core.03.p029"
+title = "Wrap a paragraph"
+tier = "applied"
+kind = "code"
+topics = ["textwrap.fill()", "textwrap.shorten()"]

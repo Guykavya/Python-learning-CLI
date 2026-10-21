@@ -1,0 +1,4 @@
+- Putting the `else` under the `if`, which prints "not found" for each non-matching word.
+- Comparing without stripping punctuation, so `sat.` never matches `sat`.
+- Using `in` on the whole sentence: `"cat" in "concatenate"` is `True`, but that is not a word match.
+- Numbering words from 0.

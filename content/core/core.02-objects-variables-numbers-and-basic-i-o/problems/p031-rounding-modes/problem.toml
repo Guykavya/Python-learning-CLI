@@ -1,0 +1,6 @@
+id = "core.02.p031"
+title = "Three ways to round"
+tier = "applied"
+kind = "code"
+topics = ["round()", "banker's rounding", "decimal", "ROUND_HALF_UP"]
+minutes = 20

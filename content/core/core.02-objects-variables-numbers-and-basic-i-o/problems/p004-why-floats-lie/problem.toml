@@ -1,0 +1,7 @@
+id = "core.02.p004"
+title = "Why 0.1 + 0.2 is not 0.3"
+tier = "deep"
+kind = "explain"
+topics = ["float", "IEEE 754", "decimal", "math.isclose"]
+minutes = 15
+assessment = "explain"

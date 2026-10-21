@@ -1,0 +1,6 @@
+id = "core.06.p051"
+title = "A cache with hit counting"
+tier = "deep"
+kind = "code"
+topics = ["closures", "memoisation", "*args", "dicts"]
+minutes = 30

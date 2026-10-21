@@ -1,0 +1,4 @@
+- Using `range(len(temps))` and `temps[i + 1]`, which runs one past the end unless you stop at `len - 1`.
+- Numbering the first change as day 1.
+- Printing `+0` for no change.
+- `>=` in the best test, which reports the latest tie.

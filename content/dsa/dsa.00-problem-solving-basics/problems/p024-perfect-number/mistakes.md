@@ -1,0 +1,4 @@
+- Adding both `d` and `n // d` when they are equal. For 36 you add 6 twice, the sum becomes 61, and squares are misjudged (25 would look like 1 + 5 + 5 = 11 instead of 6).
+- Starting the loop at `d = 1` and adding the pair `(1, n)`. That adds `n` itself, which is not a proper divisor, so every number looks abundant.
+- Starting the sum at 1 for `n = 1` too. Then 1 gets sum 1 and is reported as perfect instead of deficient.
+- Looping `d` from 1 to `n - 1`. Correct, but about a trillion steps for large `n`, so it never finishes in time.

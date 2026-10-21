@@ -1,0 +1,6 @@
+id = "core.02.p044"
+title = "One print with the walrus"
+tier = "challenge"
+kind = "code"
+topics = ["walrus operator", "print()", "evaluation order"]
+minutes = 25

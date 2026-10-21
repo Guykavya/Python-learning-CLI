@@ -1,0 +1,6 @@
+id = "dsa.01.p024"
+title = "Count the doubling steps by formula"
+tier = "deep"
+kind = "code"
+topics = ["counting operations", "logarithm", "grouping", "O(log n)"]
+minutes = 35

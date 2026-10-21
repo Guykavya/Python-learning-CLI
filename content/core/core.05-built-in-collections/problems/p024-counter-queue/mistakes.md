@@ -1,0 +1,3 @@
+- Using `pop()` without an index, which serves the **last** person.
+- Calling `remove` without checking, which raises `ValueError` for someone not in the queue.
+- Printing `Queue:` with the list's brackets and quotes.

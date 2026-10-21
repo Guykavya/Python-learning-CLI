@@ -1,0 +1,3 @@
+- Masking before removing the separators, so the stars count spaces too.
+- Using `digits[len(digits) - 4:]`. For short input the start is negative and the slice takes the wrong part (for 3 digits it takes the last one only).
+- Calling `replace` but not storing the result.

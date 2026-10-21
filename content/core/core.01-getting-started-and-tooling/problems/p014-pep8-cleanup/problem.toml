@@ -1,0 +1,6 @@
+id = "core.01.p014"
+title = "PEP 8 cleanup"
+tier = "applied"
+kind = "code"
+topics = ["PEP 8", "naming"]
+minutes = 20

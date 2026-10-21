@@ -1,0 +1,6 @@
+id = "dsa.00.p033"
+title = "All primes up to n"
+tier = "applied"
+kind = "code"
+topics = ["nested loops", "primes", "trial division", "efficiency"]
+minutes = 25

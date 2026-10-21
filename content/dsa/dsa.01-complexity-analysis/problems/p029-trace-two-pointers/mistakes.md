@@ -1,0 +1,4 @@
+- Resetting `j` in your head for the first part, because that is what a nested loop "usually" does. Read the code: `j = 0` is outside the `for` loop.
+- Forgetting that the `while` test uses `< k`: for `i = 5`, `15 - 11 = 4` is not less than 4, so `j` does not move.
+- In the second part, forgetting that `j = i` itself always counts (`a[i] - a[i] = 0 < 4`), so every `i` adds at least 1.
+- Concluding "nested loops, so O(n^2)" for the first part. Count how far `j` moves in total.

@@ -1,0 +1,4 @@
+- Using `range(a, b)`. It stops before `b`, so a multiple sitting exactly at `b` is missed (`3, 9, 3` gives 2 instead of 3).
+- Testing `x // k == 0` instead of `x % k == 0`. `//` is the quotient, not the remainder, so this counts small numbers, not multiples.
+- In the formula version, writing `b // k - a // k`. That forgets `a` itself when `a` is a multiple; it must be `(a - 1) // k`.
+- Assuming negatives cannot be multiples and starting from 0 or 1. `-6, 6, 3` must give 5, not 3.

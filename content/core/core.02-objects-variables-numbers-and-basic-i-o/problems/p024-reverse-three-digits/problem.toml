@@ -1,0 +1,6 @@
+id = "core.02.p024"
+title = "Reverse a three-digit number"
+tier = "applied"
+kind = "code"
+topics = ["floor division", "modulo", "digit extraction"]
+minutes = 15

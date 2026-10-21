@@ -1,0 +1,6 @@
+id = "core.05.p029"
+title = "First repeated word"
+tier = "applied"
+kind = "code"
+topics = ["dicts", "sets", "big-o"]
+minutes = 20

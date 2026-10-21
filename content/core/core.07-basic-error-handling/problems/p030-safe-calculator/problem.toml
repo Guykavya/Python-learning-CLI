@@ -1,0 +1,6 @@
+id = "core.07.p030"
+title = "A calculator that never crashes"
+tier = "challenge"
+kind = "code"
+topics = ["several except clauses", "OverflowError", "failures without exceptions", "dispatch tables"]
+minutes = 40

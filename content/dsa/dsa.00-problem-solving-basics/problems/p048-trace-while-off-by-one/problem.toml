@@ -1,0 +1,6 @@
+id = "dsa.00.p048"
+title = "Trace: off-by-one in while loops"
+tier = "deep"
+kind = "trace"
+topics = ["while loops", "off-by-one", "loop bounds", "tracing"]
+minutes = 20

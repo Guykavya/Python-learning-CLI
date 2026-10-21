@@ -1,0 +1,6 @@
+id = "dsa.01.p012"
+title = "How many calls?"
+tier = "applied"
+kind = "trace"
+topics = ["recursion", "recursion tree", "exponential time", "counting calls"]
+minutes = 25

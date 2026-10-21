@@ -1,0 +1,6 @@
+id = "core.06.p002"
+title = "Return a bool, do not print it"
+tier = "drill"
+kind = "code"
+topics = ["return", "print vs return"]
+minutes = 8

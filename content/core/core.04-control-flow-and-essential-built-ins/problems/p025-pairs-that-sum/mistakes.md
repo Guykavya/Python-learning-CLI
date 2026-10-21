@@ -1,0 +1,3 @@
+- Inner loop from 0: duplicate pairs and self-pairs.
+- Converting with `int()` too late, so `"3" + "3"` is `"33"` and never equals the target.
+- Printing `Pairs: 0` only when there were none, and nothing otherwise. Always print the count.

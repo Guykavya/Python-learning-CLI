@@ -1,0 +1,3 @@
+- Printing `(5, 1)` as well as `(1, 5)`. Only print pairs with `a <= b`.
+- Allowing `3 + 3` when there is only one 3.
+- Looping over `nums` instead of distinct values, which prints duplicates.

@@ -1,0 +1,6 @@
+id = "core.01.p023"
+title = "A box that fits any name"
+tier = "challenge"
+kind = "code"
+topics = ["string repetition", "len()", "input()"]
+minutes = 30

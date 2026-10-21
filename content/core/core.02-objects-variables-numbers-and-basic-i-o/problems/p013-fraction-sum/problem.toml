@@ -1,0 +1,6 @@
+id = "core.02.p013"
+title = "Exact fraction arithmetic"
+tier = "drill"
+kind = "code"
+topics = ["fractions", "exact arithmetic"]
+minutes = 10

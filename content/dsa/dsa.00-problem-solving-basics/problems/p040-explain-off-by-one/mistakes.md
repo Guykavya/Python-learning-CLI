@@ -1,0 +1,4 @@
+- Finding only one bug in Program B. Changing `>` to `>=` fixes 10 and 100 but every answer is still one short; changing the start to 1 fixes 472 but leaves 100 giving 2.
+- Testing only "middle" inputs such as 472 or 1 to 5. Off-by-one bugs live at the edges: `a == b`, 0, 9, 10, 100.
+- Rewriting B as `count = 0` / `while n > 0` and declaring it fixed without trying `n = 0`, which then prints 0.
+- Saying "range is broken". `range(a, b)` excluding `b` is deliberate in Python; the program used it with the wrong end value.

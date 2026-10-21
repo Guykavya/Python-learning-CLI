@@ -1,0 +1,3 @@
+- `key=len` alone: equal-length words stay in their original order instead of alphabetical.
+- `key=lambda w: (len(w), w)`: uppercase letters sort before all lowercase ones.
+- `words.sort(...)`: changes the caller's list and returns `None`.

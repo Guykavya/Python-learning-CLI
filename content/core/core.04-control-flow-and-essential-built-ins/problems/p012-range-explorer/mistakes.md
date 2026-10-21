@@ -1,0 +1,3 @@
+- Expecting `range(5, 0)` to count down. Without a negative step it is empty.
+- Writing your own `while` loop and getting the stop condition wrong for negative steps. Let `range` decide.
+- Printing `Count:` by counting in the loop but forgetting the empty case. `len(r)` is simpler.

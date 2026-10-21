@@ -1,0 +1,6 @@
+id = "core.06.p009"
+title = "Clamp a value into a range"
+tier = "applied"
+kind = "code"
+topics = ["default arguments", "keyword arguments", "guard clauses"]
+minutes = 15

@@ -1,0 +1,6 @@
+id = "core.02.p039"
+title = "Assignment is not copying"
+tier = "deep"
+kind = "explain"
+topics = ["names and binding", "assignment is not copying", "id()"]
+minutes = 20

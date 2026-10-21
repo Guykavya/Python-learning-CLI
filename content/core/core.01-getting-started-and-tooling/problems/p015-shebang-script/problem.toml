@@ -1,0 +1,6 @@
+id = "core.01.p015"
+title = "A script that runs itself"
+tier = "applied"
+kind = "code"
+topics = ["shebang", "running scripts", "__name__"]
+minutes = 15

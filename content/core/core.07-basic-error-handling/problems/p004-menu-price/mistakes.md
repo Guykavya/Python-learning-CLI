@@ -1,0 +1,5 @@
+- Putting the whole sentence-building inside `try`. Any `KeyError` there would be reported as a missing item.
+- Printing instead of returning the sentence.
+- Forgetting `!r`, so the message says `Sorry, cake is not...` without quotes.
+- Listing the menu in dict order instead of sorted order.
+- Catching `Exception`, which would turn `price_message(menu, ["tea"])` into an apology instead of a bug report.

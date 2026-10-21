@@ -1,0 +1,4 @@
+- Thinking the `keys` view still has 3 keys.
+- Thinking `alias.append(9)` does not affect `matrix`.
+- Thinking the snapshot sees the later `5`.
+- Expecting `rest` to be a tuple or a plain number.

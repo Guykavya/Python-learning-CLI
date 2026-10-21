@@ -1,0 +1,6 @@
+id = "core.04.p017"
+title = "Trace range as a lazy sequence"
+tier = "deep"
+kind = "trace"
+topics = ["range", "lazy evaluation", "indexing", "membership"]
+minutes = 25

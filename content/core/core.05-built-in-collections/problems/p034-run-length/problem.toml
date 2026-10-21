@@ -1,0 +1,6 @@
+id = "core.05.p034"
+title = "Run-length encoding"
+tier = "applied"
+kind = "code"
+topics = ["lists", "tuples"]
+minutes = 20

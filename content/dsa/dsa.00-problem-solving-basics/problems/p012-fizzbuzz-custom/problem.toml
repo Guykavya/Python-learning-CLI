@@ -1,0 +1,6 @@
+id = "dsa.00.p012"
+title = "FizzBuzz with your own numbers"
+tier = "drill"
+kind = "code"
+topics = ["loops", "modulo", "order of conditions"]
+minutes = 15

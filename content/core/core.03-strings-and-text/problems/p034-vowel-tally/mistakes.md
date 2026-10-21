@@ -1,0 +1,3 @@
+- Forgetting to casefold, so capital vowels are missed.
+- Counting `"aeiou"` as one string, which counts that exact sequence of five letters.
+- Expecting `é` to count as `e`. It is a different code point.

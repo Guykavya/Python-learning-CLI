@@ -1,0 +1,6 @@
+id = "dsa.00.p028"
+title = "Running average until zero"
+tier = "applied"
+kind = "code"
+topics = ["while loops", "sentinel value", "accumulator", "f-string formatting"]
+minutes = 15

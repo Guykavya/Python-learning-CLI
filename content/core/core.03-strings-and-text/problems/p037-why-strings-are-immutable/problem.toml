@@ -1,0 +1,6 @@
+id = "core.03.p037"
+title = "Why strings are immutable"
+tier = "deep"
+kind = "explain"
+topics = ["immutability", "join()", "string building"]
+assessment = "explain"

@@ -1,0 +1,3 @@
+- Printing `reversed(words)` directly, which shows `<list_reverseiterator object at ...>`.
+- Reversing the whole line in one step, which mixes the two tasks.
+- Using `split(" ")`, which creates empty words for double spaces.

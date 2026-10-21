@@ -1,0 +1,4 @@
+- Adding each new bit to the end (`result = result + str(bit)`). The digits come out reversed: 6 prints as `011` instead of `110`.
+- Forgetting `n = 0`. `while n > 0` never runs, so an empty line is printed instead of `0`.
+- Using `n / 2`. `n` becomes a float such as `6.5`, `n % 2` gives values like `0.5`, and `while n > 0` keeps halving for over a thousand rounds before the float reaches 0, so the output is garbage.
+- Building the answer as a number, like `result = result * 10 + bit`. The digits end up reversed, and because it is a number the zeros at the front vanish: 6 prints as `11`.

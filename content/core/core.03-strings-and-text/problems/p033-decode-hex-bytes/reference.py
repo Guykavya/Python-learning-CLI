@@ -1,0 +1,5 @@
+data = bytes.fromhex(input())
+text = data.decode("utf-8")
+print(f"Text: {text}")
+print(f"Bytes: {len(data)}")
+print(f"Characters: {len(text)}")

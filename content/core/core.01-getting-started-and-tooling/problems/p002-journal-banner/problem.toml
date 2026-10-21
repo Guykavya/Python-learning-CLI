@@ -1,0 +1,6 @@
+id = "core.01.p002"
+title = "Journal banner"
+tier = "drill"
+kind = "code"
+topics = ["print()", "string repetition"]
+minutes = 10

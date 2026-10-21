@@ -1,0 +1,3 @@
+- Writing `a << 24 + b`: addition happens first, so the shift amount becomes `24 + b`.
+- Forgetting `& 255` when extracting: `x >> 16` still contains the higher octets.
+- Using `x >> 24 & 255 == ...` style comparisons without brackets; comparisons bind tighter than `&`.

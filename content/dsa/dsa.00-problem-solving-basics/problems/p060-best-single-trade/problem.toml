@@ -1,0 +1,6 @@
+id = "dsa.00.p060"
+title = "Best single trade"
+tier = "challenge"
+kind = "code"
+topics = ["single pass", "running minimum", "ties", "efficiency"]
+minutes = 45

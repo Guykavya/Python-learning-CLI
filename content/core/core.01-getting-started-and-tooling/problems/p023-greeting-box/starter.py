@@ -1,0 +1,6 @@
+name = input()
+print("+--------------+")
+print("|              |")
+print("| Hello, Asha! |")
+print("|              |")
+print("+--------------+")

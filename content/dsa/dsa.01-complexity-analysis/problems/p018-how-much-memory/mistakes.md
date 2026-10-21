@@ -1,0 +1,4 @@
+- Counting the input list as extra space. Space complexity in this course means auxiliary space: what the algorithm adds.
+- Calling C O(1) space "because it only has one variable". `rest[1:]` creates a new list each time.
+- Calling E O(n) because "a set grows with the input". Look at what is actually inserted: only 10 different values exist.
+- Calling F O(1) space because it creates no list. The call stack is memory too.

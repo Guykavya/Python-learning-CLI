@@ -1,0 +1,6 @@
+- Printing `from else` for `n = 0`. A `return` inside `try` skips `else`.
+- Printing the returned value before the `finally sees` line.
+- `(['a'], 1)`: the list is mutated after the tuple was built, but it is the same list.
+- `(['a', 'b'], 2)`: rebinding `count` in `finally` does not change the value already stored in the tuple.
+- A traceback for `override("five")`: the `return` in `finally` swallowed the exception.
+- Skipping `finally 1` or `finally 3` because of `continue` or `break`.

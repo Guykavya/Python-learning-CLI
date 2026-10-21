@@ -1,0 +1,6 @@
+id = "core.05.p051"
+title = "Sorting with keys"
+tier = "deep"
+kind = "trace"
+topics = ["sorting", "key functions", "stability"]
+minutes = 25

@@ -1,0 +1,4 @@
+- Base case `return []`: then every list comprehension over it is empty and the whole answer is `[]`.
+- Appending `first` to the end (`s + [first]`), which breaks the order inside subsets.
+- Building the 'with' subsets by `s.append(first)` on the 'without' lists: they are the same list objects, so both halves change.
+- Filtering by `max_size` only at the end: correct, but builds all 2ⁿ subsets first.

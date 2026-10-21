@@ -1,0 +1,3 @@
+- Forgetting negatives: `while n > 0` is false at once for `-905`, so it prints 0.
+- Using `n / 10`: gives a float and the loop never reaches exactly 0 in the way you expect.
+- Printing inside the loop instead of once at the end.

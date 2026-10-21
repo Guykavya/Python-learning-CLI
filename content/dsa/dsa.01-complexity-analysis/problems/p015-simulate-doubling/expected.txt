@@ -1,0 +1,6 @@
+grow before item 2 copy 1 capacity 2
+grow before item 3 copy 2 capacity 4
+grow before item 5 copy 4 capacity 8
+grow before item 9 copy 8 capacity 16
+grow before item 17 copy 16 capacity 32
+items 17 copies 31 capacity 32

@@ -1,0 +1,4 @@
+- Using `split()`: the name contains a space, so the fields would be cut in the wrong places.
+- Forgetting `strip()`, so the name keeps its padding spaces.
+- Printing the paise without `:02`, so 5 paise shows as `.5` instead of `.05`.
+- Off-by-one slices, such as `record[6:25]`, which cut the last letter of a 20-character name.

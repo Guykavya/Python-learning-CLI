@@ -1,0 +1,7 @@
+id = "core.02.p002"
+title = "Seconds to clock time"
+tier = "applied"
+kind = "code"
+topics = ["floor division", "modulo", "divmod", "zero padding"]
+minutes = 15
+assessment = "build"

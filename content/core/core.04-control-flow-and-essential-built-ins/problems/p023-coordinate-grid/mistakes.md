@@ -1,0 +1,3 @@
+- Creating `line = ""` outside the outer loop: rows accumulate.
+- `range(R)` gives 0 to R-1; the task counts from 1.
+- Printing inside the inner loop, one cell per line.

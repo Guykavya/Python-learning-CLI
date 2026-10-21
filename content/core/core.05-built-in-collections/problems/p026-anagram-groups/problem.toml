@@ -1,0 +1,6 @@
+id = "core.05.p026"
+title = "Anagram groups"
+tier = "applied"
+kind = "code"
+topics = ["dicts", "grouping", "sorting"]
+minutes = 20

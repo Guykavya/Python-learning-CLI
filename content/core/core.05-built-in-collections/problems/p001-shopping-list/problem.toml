@@ -1,0 +1,6 @@
+id = "core.05.p001"
+title = "Shopping list builder"
+tier = "drill"
+kind = "code"
+topics = ["lists", "list methods"]
+minutes = 10

@@ -1,0 +1,6 @@
+id = "core.06.p056"
+title = "Flatten nested lists"
+tier = "applied"
+kind = "code"
+topics = ["recursion", "nested data", "isinstance"]
+minutes = 20

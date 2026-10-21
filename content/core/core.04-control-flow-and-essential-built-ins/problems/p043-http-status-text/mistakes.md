@@ -1,0 +1,3 @@
+- Writing `case 301 or 302:`. `or` is not allowed in a pattern; use `|`.
+- Putting the guarded range before the specific codes.
+- Forgetting the wildcard, so unknown codes print nothing (or crash because `text` is undefined).

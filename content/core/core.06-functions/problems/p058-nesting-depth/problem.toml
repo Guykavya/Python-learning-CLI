@@ -1,0 +1,6 @@
+id = "core.06.p058"
+title = "How deep is the nesting?"
+tier = "challenge"
+kind = "code"
+topics = ["recursion", "nested data", "max with recursion"]
+minutes = 25

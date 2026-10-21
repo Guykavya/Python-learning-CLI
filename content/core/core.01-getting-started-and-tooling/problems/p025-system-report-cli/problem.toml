@@ -1,0 +1,7 @@
+id = "core.01.p025"
+title = "Project: personal system report"
+tier = "challenge"
+kind = "code"
+topics = ["shebang", "PEP 8", "environment variables", "platform module", "sys module"]
+minutes = 45
+assessment = "build"

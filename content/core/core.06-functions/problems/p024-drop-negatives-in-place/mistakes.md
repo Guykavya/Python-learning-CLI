@@ -1,0 +1,3 @@
+- `numbers = [n for n in numbers if n >= 0]`: correct list, wrong object; the caller sees no change.
+- `for n in numbers: if n < 0: numbers.remove(n)`: removing while looping skips the item after each removal, so `[-1, -2]` becomes `[-2]`.
+- Returning the new list instead of changing the old one.

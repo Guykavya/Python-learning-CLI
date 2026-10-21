@@ -1,0 +1,6 @@
+id = "core.04.p019"
+title = "Skip comment lines"
+tier = "drill"
+kind = "code"
+topics = ["continue", "while True", "enumerate"]
+minutes = 10

@@ -1,0 +1,5 @@
+id = "core.03.p026"
+title = "Clean words for counting"
+tier = "applied"
+kind = "code"
+topics = ["translate()", "maketrans()", "string module", "casefold()", "split()"]

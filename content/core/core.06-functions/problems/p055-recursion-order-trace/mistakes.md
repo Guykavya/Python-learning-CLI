@@ -1,0 +1,3 @@
+- Printing all the 'up' lines before any 'down' lines, or interleaving them wrongly.
+- Forgetting that `tree(0)` prints nothing and returns immediately.
+- Reading `build(n - 1) + [n]` as adding to the front.

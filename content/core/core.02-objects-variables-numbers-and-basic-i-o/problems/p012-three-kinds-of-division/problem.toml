@@ -1,0 +1,6 @@
+id = "core.02.p012"
+title = "Three kinds of division"
+tier = "drill"
+kind = "code"
+topics = ["true division", "floor division", "modulo with negatives", "divmod"]
+minutes = 10

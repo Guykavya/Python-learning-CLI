@@ -1,0 +1,4 @@
+- Updating in two separate lines `a = b` then `b = a + b`: by the second line `a` already holds the new value, so `b` becomes `b + b` and the sequence turns into 0 1 2 4 8 ...
+- Printing `0 1` before the loop and then looping `n - 2` times: for `n = 1` the output is `0 1`, one term too many, and for `n = 0` it is `0 1` instead of nothing.
+- Printing each term with a plain `print(a)`: every term lands on its own line instead of one line.
+- Starting the sequence at `1 1` instead of `0 1`: every term is shifted by one place.

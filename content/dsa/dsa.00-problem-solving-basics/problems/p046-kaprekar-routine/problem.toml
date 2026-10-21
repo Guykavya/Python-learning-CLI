@@ -1,0 +1,6 @@
+id = "dsa.00.p046"
+title = "Kaprekar's routine"
+tier = "deep"
+kind = "code"
+topics = ["nested loops", "digits", "counting", "formatting", "while loops"]
+minutes = 30

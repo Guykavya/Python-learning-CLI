@@ -1,0 +1,6 @@
+id = "dsa.00.p005"
+title = "Sum of the first n numbers"
+tier = "drill"
+kind = "code"
+topics = ["loops", "accumulator", "range"]
+minutes = 10

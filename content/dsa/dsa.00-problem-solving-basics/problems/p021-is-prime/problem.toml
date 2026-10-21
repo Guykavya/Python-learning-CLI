@@ -1,0 +1,6 @@
+id = "dsa.00.p021"
+title = "Is it prime?"
+tier = "applied"
+kind = "code"
+topics = ["loops", "modulo", "square root bound", "early exit", "efficiency"]
+minutes = 20

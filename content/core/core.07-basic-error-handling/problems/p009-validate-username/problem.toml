@@ -1,0 +1,6 @@
+id = "core.07.p009"
+title = "Validate a username"
+tier = "drill"
+kind = "code"
+topics = ["raise", "ValueError vs TypeError", "error messages"]
+minutes = 15

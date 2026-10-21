@@ -1,0 +1,9 @@
+1 -> KeyError handler
+2 -> LookupError handler
+3 -> ArithmeticError handler
+4 -> ValueError in the tuple handler
+5 -> TypeError in the tuple handler
+6 -> no error
+7 -> ValueError in the tuple handler
+8 escaped as NameError
+end

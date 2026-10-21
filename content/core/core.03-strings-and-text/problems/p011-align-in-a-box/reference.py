@@ -1,0 +1,6 @@
+word = input()
+width = int(input())
+print(f"[{word:<{width}}]")
+print(f"[{word:>{width}}]")
+print(f"[{word:^{width}}]")
+print(f"[{word:*^{width}}]")

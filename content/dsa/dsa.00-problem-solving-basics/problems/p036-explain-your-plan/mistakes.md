@@ -1,0 +1,4 @@
+- Reading "divisible by 7" as "equal to 7". This misses 59, 68, 77, 86, 95 and every other number with digit sum 14, 21, 28 or more, so the hand-worked answer for `n = 70` comes out as 8 instead of 10.
+- Writing a plan that is really vague prose ("go through the numbers and check them"). A plan should name the loops, the variables and the exact condition, so it can be typed in directly.
+- Running the digit loop on `x` itself instead of a copy. If anything after the digit loop uses `x`, it sees 0.
+- Skipping the work estimate, or guessing "10^6 is too big for Python". A million values with 7 digits each is a few million steps, which is fine. Estimate, do not guess.

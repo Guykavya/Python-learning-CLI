@@ -1,0 +1,3 @@
+- Saying "Python stores small numbers differently, so `is` is fine for them".
+- Saying `is` is "faster `==`". They answer different questions.
+- Forgetting that `1 == 1.0` is `True` while `1 is 1.0` can never be `True` (different types, different objects).

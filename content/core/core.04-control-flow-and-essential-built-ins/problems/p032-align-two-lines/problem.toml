@@ -1,0 +1,6 @@
+id = "core.04.p032"
+title = "Align two lines into columns"
+tier = "challenge"
+kind = "code"
+topics = ["zip", "max()", "f-string formatting", "str.isdigit"]
+minutes = 40

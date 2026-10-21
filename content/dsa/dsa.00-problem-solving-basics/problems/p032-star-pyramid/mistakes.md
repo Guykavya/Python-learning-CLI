@@ -1,0 +1,4 @@
+- Printing spaces after the stars to "balance" the row. The rows then have trailing spaces, which are invisible but wrong output.
+- Using `range(n)` and the formulas for `i` from 1. Row 0 then has `n` spaces and `-1` stars (which is an empty string), so you get a blank first row and miss the last row.
+- Printing `n` spaces instead of `n - i`. Every row is shifted right by the same amount and the shape becomes a right-leaning triangle, not a pyramid.
+- Writing `2 * i` stars. Every row gets an even number of stars, so there is no single centre star at the top.

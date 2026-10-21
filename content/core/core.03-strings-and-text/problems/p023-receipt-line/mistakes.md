@@ -1,0 +1,3 @@
+- Writing `{name:15}` and expecting long names to be cut. Width is only a minimum.
+- Putting the comma after the precision (`.2f,`). The grouping comes before the dot.
+- Adding spaces between the fields in the f-string, which shifts every column.

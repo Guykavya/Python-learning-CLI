@@ -1,0 +1,3 @@
+- Confusing "the name changed" with "the object changed". `s += "x"` rebinds `s` to a new object.
+- Saying `join` is faster "because it is written in C". `+` is also C. The difference is how many times characters are copied.
+- Claiming `+=` is always slow. In CPython it is often fast by luck; the point is that `join` is reliably fast.

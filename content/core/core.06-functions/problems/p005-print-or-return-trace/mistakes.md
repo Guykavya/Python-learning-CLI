@@ -1,0 +1,3 @@
+- Thinking `a = show(3)` stores `6` in `a`. It stores the return value, `None`.
+- Forgetting that the inner call's printing happens before the outer `print` prints anything.
+- Thinking the bare `return` in `maybe` returns 0 or an empty string. It returns `None`.

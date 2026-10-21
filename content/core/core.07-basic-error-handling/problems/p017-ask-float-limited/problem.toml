@@ -1,0 +1,6 @@
+id = "core.07.p017"
+title = "Ask for a number, with limited attempts"
+tier = "applied"
+kind = "code"
+topics = ["input loops", "ValueError", "testable input", "raise"]
+minutes = 25

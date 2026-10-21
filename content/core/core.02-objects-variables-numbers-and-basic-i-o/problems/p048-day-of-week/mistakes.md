@@ -1,0 +1,4 @@
+- Forgetting the January/February adjustment: dates in those months come out wrong.
+- Adjusting the month but not the year, or computing `K` and `J` from the original year.
+- Printing `h` directly: Zeller numbers days from Saturday, not Monday.
+- Using `/` instead of `//` inside the formula: floats break the `% 7`.

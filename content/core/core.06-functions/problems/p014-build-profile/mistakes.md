@@ -1,0 +1,3 @@
+- Testing `if value:` instead of `if value is not None:`. That drops real values such as `0`, `False` and `""`.
+- Returning `details` itself after adding `name`: it works, but then `name` comes last, not first.
+- Writing `def build_profile(name, details)` and expecting keyword arguments to arrive in a dict: they are rejected as unexpected keywords.

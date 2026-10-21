@@ -1,0 +1,6 @@
+id = "core.06.p041"
+title = "Lazy iterators run out"
+tier = "deep"
+kind = "trace"
+topics = ["map", "filter", "iterators", "laziness"]
+minutes = 20

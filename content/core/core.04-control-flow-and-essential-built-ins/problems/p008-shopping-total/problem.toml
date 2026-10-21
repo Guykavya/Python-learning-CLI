@@ -1,0 +1,6 @@
+id = "core.04.p008"
+title = "Shopping total with a sentinel"
+tier = "drill"
+kind = "code"
+topics = ["while loop", "sentinel loop", "accumulate"]
+minutes = 10

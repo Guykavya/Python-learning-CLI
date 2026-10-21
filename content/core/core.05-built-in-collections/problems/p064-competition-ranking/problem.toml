@@ -1,0 +1,6 @@
+id = "core.05.p064"
+title = "Competition ranking"
+tier = "challenge"
+kind = "code"
+topics = ["sorting", "dicts", "big-o"]
+minutes = 40

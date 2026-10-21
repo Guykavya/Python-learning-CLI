@@ -1,0 +1,6 @@
+id = "core.06.p037"
+title = "Rank students with a tuple key"
+tier = "applied"
+kind = "code"
+topics = ["lambda", "sorted with key", "keyword-only parameters"]
+minutes = 20

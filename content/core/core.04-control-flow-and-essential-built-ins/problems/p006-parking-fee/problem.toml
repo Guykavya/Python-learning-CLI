@@ -1,0 +1,6 @@
+id = "core.04.p006"
+title = "Parking fee rules"
+tier = "applied"
+kind = "code"
+topics = ["if/elif/else", "nested conditions", "flat logic"]
+minutes = 20

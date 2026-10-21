@@ -1,0 +1,3 @@
+- Swapping `min` and `max` thinking "min means the lower bound". `min` returns the smaller value, so it enforces the upper limit.
+- Writing `min(value, low)`: the result is always at most `low`.
+- Testing only values inside the range. Always test below, above, and on each boundary.

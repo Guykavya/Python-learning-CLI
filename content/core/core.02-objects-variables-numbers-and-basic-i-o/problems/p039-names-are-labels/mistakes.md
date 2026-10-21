@@ -1,0 +1,4 @@
+- Saying "`b = a` copies the value of `a` into `b`". Nothing is copied; both names share one object.
+- Saying "`a = a + 1` changes the object 10 into 11". Ints cannot change.
+- Saying "`b` stays 10 because it has its own copy". It stays 10 because `b` was never rebound.
+- Confusing `is` (same object) with `==` (same value).

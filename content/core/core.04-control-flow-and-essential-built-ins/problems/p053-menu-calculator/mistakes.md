@@ -1,0 +1,5 @@
+- Printing the menu inside the loop every time.
+- Reading the two numbers before checking the choice, so `q` or `?` waits for numbers.
+- Dividing first and checking for zero afterwards, which crashes.
+- Counting the declined division as a calculation.
+- `case "q" or "quit":` instead of `case "q" | "quit":`.

@@ -1,0 +1,5 @@
+words = input().split()
+print("First:", words[0])
+print("Last:", words[-1])
+print("Middle:", words[len(words) // 2])
+print("Reversed:", " ".join(words[::-1]))

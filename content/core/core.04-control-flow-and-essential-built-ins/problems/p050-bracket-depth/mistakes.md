@@ -1,0 +1,4 @@
+- Counting all `(` and all `)` and comparing the totals: `)(` passes.
+- Not stopping after the first unexpected `)`, so several messages print for one line.
+- Resetting `depth` and `deepest` only once, before the outer loop, so lines affect each other.
+- Reporting positions from 1.

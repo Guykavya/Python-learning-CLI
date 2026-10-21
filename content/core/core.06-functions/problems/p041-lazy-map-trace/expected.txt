@@ -1,0 +1,14 @@
+created
+  noisy 1
+  noisy 2
+  noisy 3
+[10, 20, 30]
+[]
+12 0
+  noisy 4
+  noisy 5
+True
+  noisy 6
+  noisy 7
+[60, 70]
+[1, 2, 3, 4]

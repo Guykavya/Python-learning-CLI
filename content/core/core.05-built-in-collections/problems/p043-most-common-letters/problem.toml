@@ -1,0 +1,6 @@
+id = "core.05.p043"
+title = "Most common letters"
+tier = "applied"
+kind = "code"
+topics = ["dicts", "counting", "sorting"]
+minutes = 20

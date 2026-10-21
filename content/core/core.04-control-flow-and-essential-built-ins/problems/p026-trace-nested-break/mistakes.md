@@ -1,0 +1,3 @@
+- Stopping everything at the first `break`. Only the inner loop stops.
+- Forgetting that `continue` on `j == i` also skips the sum test.
+- Writing `count 3`: the inner loop runs fully for each outer item.

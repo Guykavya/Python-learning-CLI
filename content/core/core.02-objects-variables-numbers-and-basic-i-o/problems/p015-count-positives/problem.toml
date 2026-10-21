@@ -1,0 +1,6 @@
+id = "core.02.p015"
+title = "Count positives without if"
+tier = "drill"
+kind = "code"
+topics = ["bool", "bool is an int", "comparison operators"]
+minutes = 10

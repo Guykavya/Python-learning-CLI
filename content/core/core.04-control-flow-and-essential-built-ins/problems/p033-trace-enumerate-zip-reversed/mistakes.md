@@ -1,0 +1,4 @@
+- Expecting `list(pairs)` to repeat the pairs. Iterators are one-use.
+- Writing `loop 0 x` as well: `next(e)` already consumed it.
+- Pairing 9 numbers with 3 letters: `zip` stops at the shortest.
+- Printing `mirror` for every letter: the pairs are h-o, e-l, l-l, l-e, o-h.

@@ -1,0 +1,6 @@
+id = "core.05.p023"
+title = "Keys, values and items"
+tier = "drill"
+kind = "code"
+topics = ["dicts", "dict views"]
+minutes = 10

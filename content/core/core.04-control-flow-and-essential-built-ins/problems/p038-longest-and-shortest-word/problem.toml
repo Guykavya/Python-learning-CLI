@@ -1,0 +1,6 @@
+id = "core.04.p038"
+title = "Longest and shortest word"
+tier = "drill"
+kind = "code"
+topics = ["max()", "min()", "key=", "default="]
+minutes = 10

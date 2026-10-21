@@ -1,0 +1,6 @@
+id = "core.07.p001"
+title = "Safe whole-number parsing"
+tier = "drill"
+kind = "code"
+topics = ["try/except", "ValueError", "catching specific exceptions"]
+minutes = 10

@@ -1,0 +1,7 @@
+id = "core.01.p017"
+title = "Read the traceback"
+tier = "deep"
+kind = "trace"
+topics = ["tracebacks", "TypeError"]
+minutes = 15
+assessment = "trace"

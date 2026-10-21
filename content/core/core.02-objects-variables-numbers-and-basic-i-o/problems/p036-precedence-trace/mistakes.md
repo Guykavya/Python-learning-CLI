@@ -1,0 +1,4 @@
+- Reading `-2 ** 2` as `(-2) ** 2 = 4`. The power binds tighter than the minus sign.
+- Reading `2 ** 3 ** 2` left to right as `8 ** 2 = 64`.
+- Reading `3 > 2 == True` as `(3 > 2) == True`. Comparisons chain instead.
+- Thinking `+` binds looser than `<<`. It is the other way round, so `1 << 2 + 1` is `1 << 3`.

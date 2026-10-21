@@ -1,0 +1,7 @@
+id = "core.07.p024"
+title = "Who has the last word: return and finally"
+tier = "deep"
+kind = "trace"
+topics = ["finally", "return in try", "else", "break and continue in try"]
+minutes = 30
+assessment = "trace"

@@ -1,0 +1,3 @@
+- Saying `while` is always wrong. Input loops and two-index walks need it.
+- Saying `for` is faster as the main reason. The main reason is fewer chances to make mistakes.
+- Forgetting that `for` cannot loop for ever over a finite sequence.

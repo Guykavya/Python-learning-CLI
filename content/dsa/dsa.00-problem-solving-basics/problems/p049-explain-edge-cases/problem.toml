@@ -1,0 +1,6 @@
+id = "dsa.00.p049"
+title = "Explain: finding the edge cases"
+tier = "deep"
+kind = "explain"
+topics = ["edge cases", "testing", "boundaries", "average min max"]
+minutes = 25

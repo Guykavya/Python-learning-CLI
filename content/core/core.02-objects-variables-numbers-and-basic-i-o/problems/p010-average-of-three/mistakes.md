@@ -1,0 +1,3 @@
+- Writing `a + b + c / 3`: only `c` gets divided.
+- Using `int(input())`: decimal input like `-1.5` crashes with `ValueError`.
+- Using `//` for the average: `5 // 3` is `1`, and with floats `5.0 // 3` is `1.0`. Floor division drops the fraction.

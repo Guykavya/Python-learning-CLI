@@ -1,0 +1,6 @@
+a = int(input())
+b = int(input())
+n = int(input())
+# Plan:
+# 1. ...
+# 2. ...

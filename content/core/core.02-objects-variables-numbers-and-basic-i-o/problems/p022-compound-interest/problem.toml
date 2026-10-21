@@ -1,0 +1,6 @@
+id = "core.02.p022"
+title = "Compound interest"
+tier = "applied"
+kind = "code"
+topics = ["float", "exponent", "f-string formatting"]
+minutes = 20

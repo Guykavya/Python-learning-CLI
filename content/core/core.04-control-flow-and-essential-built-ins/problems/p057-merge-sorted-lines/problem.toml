@@ -1,0 +1,6 @@
+id = "core.04.p057"
+title = "Merge two sorted lines"
+tier = "challenge"
+kind = "code"
+topics = ["while loop", "two indexes", "all()", "zip", "loop design"]
+minutes = 40

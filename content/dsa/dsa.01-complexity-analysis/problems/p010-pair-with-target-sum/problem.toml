@@ -1,0 +1,6 @@
+id = "dsa.01.p010"
+title = "Two numbers that make the target"
+tier = "applied"
+kind = "code"
+topics = ["dicts", "complement lookup", "O(n^2) to O(n)", "ties"]
+minutes = 25

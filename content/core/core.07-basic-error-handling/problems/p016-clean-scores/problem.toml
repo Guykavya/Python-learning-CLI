@@ -1,0 +1,6 @@
+id = "core.07.p016"
+title = "Clean scores the EAFP way"
+tier = "applied"
+kind = "code"
+topics = ["EAFP vs LBYL", "int parsing", "isdigit pitfalls"]
+minutes = 20

@@ -1,0 +1,4 @@
+- Stop `end - length`: a slot ending exactly at closing time is lost.
+- Stop `end`: slots that run past closing time are printed.
+- Printing `9:0` instead of `09:00`. Use `:02d`.
+- `int("09")` is fine (it gives 9), so no special handling for the leading zero is needed.

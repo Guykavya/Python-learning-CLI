@@ -1,0 +1,3 @@
+- Relying on `zip` to notice the mismatch. It does not, unless you pass `strict=True`.
+- Dividing by zero when both lines are empty.
+- Printing the average as `83.33333333333333`; use `:.1f`.

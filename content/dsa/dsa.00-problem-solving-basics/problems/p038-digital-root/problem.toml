@@ -1,0 +1,6 @@
+id = "dsa.00.p038"
+title = "Digital root"
+tier = "applied"
+kind = "code"
+topics = ["nested loops", "digits", "modulo", "floor division", "counters"]
+minutes = 20

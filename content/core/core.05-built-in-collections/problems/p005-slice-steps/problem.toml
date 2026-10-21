@@ -1,0 +1,6 @@
+id = "core.05.p005"
+title = "Every other word"
+tier = "drill"
+kind = "code"
+topics = ["slicing"]
+minutes = 10

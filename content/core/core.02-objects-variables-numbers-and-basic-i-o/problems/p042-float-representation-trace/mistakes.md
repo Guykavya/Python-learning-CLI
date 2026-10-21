@@ -1,0 +1,4 @@
+- Writing `0.3` for `0.1 + 0.2`. Python shows the stored value faithfully.
+- Expecting `1e16 + 1` to print `10000000000000001`.
+- Expecting `1e308 * 10` to raise an error. Float overflow in multiplication gives `inf`; only some functions like `math.exp` raise `OverflowError`.
+- Expecting `nan == nan` to be `True`.

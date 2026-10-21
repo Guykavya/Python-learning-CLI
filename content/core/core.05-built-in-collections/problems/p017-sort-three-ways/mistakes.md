@@ -1,0 +1,3 @@
+- Writing `key=len()` or `key=str.lower()`. Pass the function, do not call it.
+- Using `words.sort()` and printing its result, which is `None`.
+- Reversing the shortest-first list instead of using `reverse=True`.

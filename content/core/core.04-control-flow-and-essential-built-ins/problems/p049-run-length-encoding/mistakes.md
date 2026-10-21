@@ -1,0 +1,4 @@
+- Forgetting the last run after the loop.
+- Counting all occurrences of a character instead of runs: `aabaa` must give `a2b1a2`, not `a4b1`.
+- Crashing on an empty line with `text[0]`.
+- Resetting `count` to 0 instead of 1 when a new run starts.

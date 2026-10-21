@@ -1,0 +1,4 @@
+- Expecting `round(2.5)` to be `3`, as taught in school (half up).
+- Blaming `round()` for `round(2.675, 2)`. The float is already below 2.675 before rounding starts.
+- Expecting `round(7.6, 0)` to print `8`. With an `ndigits` argument the result stays a float.
+- Treating `int()` as rounding. It cuts off the fraction.

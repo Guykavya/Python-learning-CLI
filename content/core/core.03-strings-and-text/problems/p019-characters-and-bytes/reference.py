@@ -1,0 +1,5 @@
+text = input()
+data = text.encode("utf-8")
+print(f"Characters: {len(text)}")
+print(f"UTF-8 bytes: {len(data)}")
+print(f"Hex: {data.hex(' ')}")

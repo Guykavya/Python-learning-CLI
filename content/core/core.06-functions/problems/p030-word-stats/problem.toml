@@ -1,0 +1,6 @@
+id = "core.06.p030"
+title = "Word statistics from small functions"
+tier = "applied"
+kind = "code"
+topics = ["decomposition", "helper functions", "pure functions"]
+minutes = 30

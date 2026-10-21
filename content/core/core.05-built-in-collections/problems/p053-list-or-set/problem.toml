@@ -1,0 +1,6 @@
+id = "core.05.p053"
+title = "List or set for membership?"
+tier = "deep"
+kind = "explain"
+topics = ["big-o", "choosing a structure", "sets"]
+minutes = 25

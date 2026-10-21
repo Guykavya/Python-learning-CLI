@@ -1,0 +1,5 @@
+- One big `try` around all four checks: only the first bad field is reported.
+- `form["age"]` for a missing field: a `KeyError` escapes. Use `form.get(field, "")`.
+- Checking the email with `"@" in value and "." in value`: accepts `asha.mail@in` and `@.`.
+- Applying the "contains your username" rule when the username is empty: every password contains the empty string.
+- Catching `Exception` in the collector, so a typo in a validator shows up as a message to the user.

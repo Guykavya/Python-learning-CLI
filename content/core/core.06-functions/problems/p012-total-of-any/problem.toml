@@ -1,0 +1,6 @@
+id = "core.06.p012"
+title = "Total of any number of arguments"
+tier = "drill"
+kind = "code"
+topics = ["*args"]
+minutes = 10

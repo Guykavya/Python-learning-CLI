@@ -1,0 +1,4 @@
+- Using a list key `[r, c]`: `TypeError: unhashable type: 'list'`.
+- Forgetting to subtract the old value when a cell is overwritten.
+- Storing zeros, so `count` counts cleared cells.
+- Recomputing row and column sums by looping over all cells.

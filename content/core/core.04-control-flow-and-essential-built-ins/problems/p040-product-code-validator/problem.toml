@@ -1,0 +1,6 @@
+id = "core.04.p040"
+title = "Product code validator"
+tier = "applied"
+kind = "code"
+topics = ["all()", "slicing", "if/elif/else", "count"]
+minutes = 20

@@ -1,0 +1,4 @@
+- Reading the `else` as belonging to the `if`. Then you would print `x is prime` for every `d` that does not divide `x`, giving many lines per number.
+- Skipping `x = 1` because "1 is not prime". The program does not know that. The inner loop is empty, so the `else` runs and `1 is prime` is printed.
+- Printing all factors for 8 (`8 = 2 * 2 * 2`). The program stops at the first divisor and prints `x // d`, which is 4.
+- Writing `9 is prime` because you stopped trying divisors at 2. The inner loop keeps going until it breaks or the range ends; it finds 3.

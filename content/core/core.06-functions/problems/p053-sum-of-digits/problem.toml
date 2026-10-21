@@ -1,0 +1,6 @@
+id = "core.06.p053"
+title = "Sum of digits by recursion"
+tier = "drill"
+kind = "code"
+topics = ["recursion", "base case", "integer arithmetic"]
+minutes = 12

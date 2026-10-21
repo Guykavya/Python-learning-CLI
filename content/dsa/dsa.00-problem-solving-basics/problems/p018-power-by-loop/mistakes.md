@@ -1,0 +1,4 @@
+- Starting `result` at `a` and looping `b` times. That multiplies by `a` one extra time, giving `a` to the power `b + 1`, and `b = 0` wrongly prints `a`.
+- Starting `result` at `0`. Anything times 0 is 0, so every answer becomes 0.
+- Using `range(1, b)`. That runs only `b - 1` times, so `2` and `10` gives 512 instead of 1024.
+- Adding a special case like `if a == 0: print(0)`. That breaks `0` to the power `0`, which must be 1.

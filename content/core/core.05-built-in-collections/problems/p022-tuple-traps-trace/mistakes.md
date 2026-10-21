@@ -1,0 +1,4 @@
+- Thinking `(7)` is a tuple.
+- Thinking `*q` gives a tuple.
+- Updating `a` first and then using the new `a` to compute `b`. The right side is built first.
+- Thinking a tuple's list cannot change.

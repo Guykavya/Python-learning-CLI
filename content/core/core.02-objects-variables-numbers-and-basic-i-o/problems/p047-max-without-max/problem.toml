@@ -1,0 +1,6 @@
+id = "core.02.p047"
+title = "Larger and smaller without max()"
+tier = "challenge"
+kind = "code"
+topics = ["abs()", "arithmetic identities", "floor division", "bool is an int"]
+minutes = 30

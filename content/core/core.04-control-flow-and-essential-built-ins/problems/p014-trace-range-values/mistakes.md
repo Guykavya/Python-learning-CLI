@@ -1,0 +1,3 @@
+- Including the stop: `[3, 5, 7, 9]` or `[8, 6, 4, 2]`.
+- Thinking `range(0, -3)` counts down. Without a negative step it is empty.
+- Writing `9 6` for the last value of `i`; the loop gave 1, 3, 5 and stopped at 5.

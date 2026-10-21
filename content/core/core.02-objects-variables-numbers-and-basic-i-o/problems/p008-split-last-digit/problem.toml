@@ -1,0 +1,6 @@
+id = "core.02.p008"
+title = "Peel off the last digit"
+tier = "drill"
+kind = "code"
+topics = ["floor division", "modulo", "digit extraction"]
+minutes = 10

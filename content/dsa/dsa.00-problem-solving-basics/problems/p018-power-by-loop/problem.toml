@@ -1,0 +1,6 @@
+id = "dsa.00.p018"
+title = "Power with a loop"
+tier = "drill"
+kind = "code"
+topics = ["loops", "accumulator", "multiplication", "edge cases"]
+minutes = 10

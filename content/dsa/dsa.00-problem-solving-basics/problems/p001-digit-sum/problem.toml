@@ -1,0 +1,6 @@
+id = "dsa.00.p001"
+title = "Digit sum without strings"
+tier = "drill"
+kind = "code"
+topics = ["loops", "floor division", "modulo", "edge cases"]
+minutes = 15

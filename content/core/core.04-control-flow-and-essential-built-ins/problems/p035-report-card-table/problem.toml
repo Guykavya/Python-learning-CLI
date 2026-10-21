@@ -1,0 +1,6 @@
+id = "core.04.p035"
+title = "Report card table"
+tier = "applied"
+kind = "code"
+topics = ["enumerate", "zip", "all()", "f-string formatting"]
+minutes = 20

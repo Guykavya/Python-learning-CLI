@@ -1,0 +1,6 @@
+id = "core.06.p052"
+title = "Factorial by recursion"
+tier = "drill"
+kind = "code"
+topics = ["recursion", "base case"]
+minutes = 10

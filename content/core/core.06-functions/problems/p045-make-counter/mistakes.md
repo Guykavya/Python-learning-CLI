@@ -1,0 +1,3 @@
+- Forgetting `nonlocal`: `UnboundLocalError` on the first call.
+- Using a global: every counter shares one count.
+- Using `global count` inside the inner function: `global` does not see the enclosing function's variable.

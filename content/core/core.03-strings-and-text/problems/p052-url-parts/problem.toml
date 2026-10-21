@@ -1,0 +1,5 @@
+id = "core.03.p052"
+title = "Take apart a URL"
+tier = "challenge"
+kind = "code"
+topics = ["partition()", "and/or with strings", "lower()"]

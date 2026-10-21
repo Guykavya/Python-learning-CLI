@@ -1,0 +1,4 @@
+- Adding only one direction of each friendship.
+- Suggesting the person themselves (they are a friend of each of their friends).
+- Suggesting someone who is already a friend.
+- Using `friends[name]` for an unknown name: `KeyError`.

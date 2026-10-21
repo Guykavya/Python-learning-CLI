@@ -1,0 +1,6 @@
+id = "core.04.p047"
+title = "Parse clock times"
+tier = "challenge"
+kind = "code"
+topics = ["match/case", "sequence patterns", "guards", "validation"]
+minutes = 40

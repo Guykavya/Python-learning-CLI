@@ -1,0 +1,6 @@
+id = "core.04.p009"
+title = "Ask until valid"
+tier = "drill"
+kind = "code"
+topics = ["while True", "break", "loop-and-a-half", "short-circuit evaluation"]
+minutes = 10

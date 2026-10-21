@@ -1,0 +1,6 @@
+id = "core.05.p044"
+title = "Unpacking inside loops"
+tier = "applied"
+kind = "trace"
+topics = ["unpacking", "dict views", "aliasing"]
+minutes = 20

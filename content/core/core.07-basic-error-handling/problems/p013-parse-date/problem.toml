@@ -1,0 +1,6 @@
+id = "core.07.p013"
+title = "Parse a date with helpful errors"
+tier = "applied"
+kind = "code"
+topics = ["raise", "error messages", "raise from None", "validation"]
+minutes = 25

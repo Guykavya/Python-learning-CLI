@@ -1,0 +1,6 @@
+id = "dsa.00.p030"
+title = "Decimal to binary by hand"
+tier = "applied"
+kind = "code"
+topics = ["number bases", "repeated division", "string building", "edge cases"]
+minutes = 15

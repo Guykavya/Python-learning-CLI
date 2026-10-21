@@ -1,0 +1,4 @@
+- `def wrapper(x)`: works only for one-argument functions. Use `*args, **kwargs`.
+- `func(args, kwargs)` instead of `func(*args, **kwargs)`.
+- Checking `used > max_calls` instead of `>=`, which lets one extra call through.
+- Calling `func` and then throwing away the result after the limit: the problem says `func` must not run.

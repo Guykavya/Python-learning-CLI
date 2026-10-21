@@ -1,0 +1,3 @@
+- Reading `book[name]` without checking, which raises `KeyError` for unknown names.
+- Keeping the numbers as ints: a number with a leading zero would lose it. Keep them as text.
+- Using `in` on a list of pairs, which is O(n) per lookup.

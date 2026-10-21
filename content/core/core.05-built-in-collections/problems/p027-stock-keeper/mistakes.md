@@ -1,0 +1,4 @@
+- Reading `stock[item]` for an item never added, which raises `KeyError`.
+- Selling first and checking afterwards, which leaves a negative quantity.
+- Printing items that sold out (quantity 0) in the final report.
+- Keeping quantities as strings, so `"10" + "3"` gives `"103"`.

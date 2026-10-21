@@ -1,0 +1,4 @@
+- Formatting the negative number directly, giving `Rs -12.00` instead of `-Rs 12.00`.
+- Hard-coding `.2f`, so the `decimals` parameter is ignored.
+- Using `round(amount, decimals)` and `str()`: `str(round(12, 2))` is `12`, not `12.00`, and there are no thousands commas.
+- Making `-0.001` print as `-Rs 0.00`. It is fine either way here, but notice it: rounding happens after the sign test.

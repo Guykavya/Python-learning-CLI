@@ -1,0 +1,3 @@
+- Forgetting `global` in one of the two functions. Each function needs its own declaration.
+- Writing `global balance` after using `balance` in the function: a `SyntaxError`.
+- Returning `False` or `0` instead of `None` when there is not enough money. `0` is a real balance.

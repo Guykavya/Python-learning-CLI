@@ -1,0 +1,6 @@
+id = "core.06.p010"
+title = "Guest lists without the shared default"
+tier = "drill"
+kind = "code"
+topics = ["mutable default argument", "None sentinel"]
+minutes = 12

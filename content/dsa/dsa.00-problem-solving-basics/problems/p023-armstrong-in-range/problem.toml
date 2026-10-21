@@ -1,0 +1,6 @@
+id = "dsa.00.p023"
+title = "Armstrong numbers in a range"
+tier = "applied"
+kind = "code"
+topics = ["nested loops", "digits", "modulo", "floor division", "flags"]
+minutes = 20

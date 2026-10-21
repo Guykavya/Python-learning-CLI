@@ -1,0 +1,6 @@
+id = "core.06.p026"
+title = "Will the caller's data change?"
+tier = "deep"
+kind = "explain"
+topics = ["argument passing", "mutation vs rebinding"]
+minutes = 25

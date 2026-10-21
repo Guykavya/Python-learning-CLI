@@ -1,0 +1,6 @@
+id = "dsa.00.p037"
+title = "Judge a guessing game"
+tier = "applied"
+kind = "code"
+topics = ["while loops", "break", "counters", "input validation"]
+minutes = 20

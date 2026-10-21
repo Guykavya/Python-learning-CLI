@@ -1,0 +1,3 @@
+- Moving `max(a)` out of the loop but calling `a.count(max(a))` inside the loop. Any O(n) built-in inside an O(n) loop gives O(n^2).
+- Using `score >= best / 2`. That works, but it brings in floats. `2 * score >= best` stays in exact integers.
+- Starting `best` at 0 and updating it in the same loop that counts. Then early scores are compared with a maximum that is not final yet, and the counts are wrong.

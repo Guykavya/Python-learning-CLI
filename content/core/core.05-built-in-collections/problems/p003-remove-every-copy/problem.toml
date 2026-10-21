@@ -1,0 +1,6 @@
+id = "core.05.p003"
+title = "Remove every copy"
+tier = "drill"
+kind = "code"
+topics = ["lists", "list methods", "comprehensions"]
+minutes = 10

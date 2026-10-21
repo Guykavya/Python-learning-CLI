@@ -1,0 +1,6 @@
+id = "core.04.p056"
+title = "Greedy word wrap"
+tier = "challenge"
+kind = "code"
+topics = ["for loop", "accumulate", "loop design", "final flush"]
+minutes = 40

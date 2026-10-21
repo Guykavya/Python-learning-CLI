@@ -1,0 +1,6 @@
+id = "core.07.p015"
+title = "Dig into nested data"
+tier = "applied"
+kind = "code"
+topics = ["LookupError", "exception families", "nested data"]
+minutes = 20

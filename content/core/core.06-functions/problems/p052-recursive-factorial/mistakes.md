@@ -1,0 +1,4 @@
+- No base case: the calls go 3, 2, 1, 0, -1, ... until `RecursionError`.
+- Base case `if n == 1: return 1` only: `factorial(0)` then recurses forever.
+- Forgetting `return` before `n * factorial(n - 1)`, so the function returns `None`.
+- Calling `factorial(n)` instead of `factorial(n - 1)`: the input never shrinks.

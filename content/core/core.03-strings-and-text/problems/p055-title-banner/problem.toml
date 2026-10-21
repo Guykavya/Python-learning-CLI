@@ -1,0 +1,5 @@
+id = "core.03.p055"
+title = "Draw a title banner"
+tier = "challenge"
+kind = "code"
+topics = ["textwrap.shorten()", "nested fields", "alignment", "string repetition"]

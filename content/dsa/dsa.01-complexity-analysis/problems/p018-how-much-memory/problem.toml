@@ -1,0 +1,6 @@
+id = "dsa.01.p018"
+title = "How much extra memory?"
+tier = "applied"
+kind = "explain"
+topics = ["space complexity", "slicing", "recursion depth", "auxiliary space"]
+minutes = 20

@@ -1,0 +1,3 @@
+- Calling `float(input())` on `1/3`: `ValueError: could not convert string to float: '1/3'`.
+- Using `Fraction(0.1)` and expecting `1/10`. Use `Fraction("0.1")` or `Fraction(1, 10)`.
+- Expecting `1/1` to print. A whole-number Fraction prints like an int.

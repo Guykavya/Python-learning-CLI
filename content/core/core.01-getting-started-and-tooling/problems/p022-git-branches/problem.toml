@@ -1,0 +1,6 @@
+id = "core.01.p022"
+title = "Branches and history"
+tier = "challenge"
+kind = "trace"
+topics = ["git", "branches", "git log"]
+minutes = 25

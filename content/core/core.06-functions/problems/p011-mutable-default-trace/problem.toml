@@ -1,0 +1,6 @@
+id = "core.06.p011"
+title = "What the default remembers"
+tier = "deep"
+kind = "trace"
+topics = ["mutable default argument", "__defaults__", "mutation vs rebinding"]
+minutes = 20

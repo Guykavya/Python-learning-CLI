@@ -1,0 +1,5 @@
+- Checking and applying in one pass on the caller's dict: the first transfers stay applied when a later one fails.
+- `work = balances`: that is the same dict (aliasing, chapter 5), not a copy.
+- `work[receiver] = work.get(receiver, 0) + amount`: it silently creates new accounts.
+- Catching the exception to roll back and then forgetting to re-raise it: the caller thinks the batch succeeded.
+- Checking the balance before the batch starts instead of at each transfer.

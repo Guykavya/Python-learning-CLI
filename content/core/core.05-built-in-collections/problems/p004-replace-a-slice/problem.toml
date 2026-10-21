@@ -1,0 +1,6 @@
+id = "core.05.p004"
+title = "Replace a slice"
+tier = "drill"
+kind = "code"
+topics = ["lists", "slice assignment"]
+minutes = 10

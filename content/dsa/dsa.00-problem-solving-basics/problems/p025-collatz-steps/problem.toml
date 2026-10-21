@@ -1,0 +1,6 @@
+id = "dsa.00.p025"
+title = "Collatz steps and peak"
+tier = "applied"
+kind = "code"
+topics = ["while loops", "simulation", "running maximum", "floor division", "big integers"]
+minutes = 15

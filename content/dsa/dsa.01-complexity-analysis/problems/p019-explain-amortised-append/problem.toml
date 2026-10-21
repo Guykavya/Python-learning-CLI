@@ -1,0 +1,7 @@
+id = "dsa.01.p019"
+title = "Why is append cheap on average?"
+tier = "deep"
+kind = "explain"
+topics = ["amortised analysis", "dynamic array", "list.append", "list.insert"]
+minutes = 30
+assessment = "explain"

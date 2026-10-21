@@ -1,0 +1,6 @@
+id = "core.02.p016"
+title = "Clamp a value into a range"
+tier = "drill"
+kind = "code"
+topics = ["min and max", "built-in functions"]
+minutes = 10

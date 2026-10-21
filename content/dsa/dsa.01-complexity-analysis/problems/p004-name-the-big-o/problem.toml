@@ -1,0 +1,6 @@
+id = "dsa.01.p004"
+title = "Name the Big-O"
+tier = "drill"
+kind = "explain"
+topics = ["Big-O", "loops", "hidden loops"]
+minutes = 15

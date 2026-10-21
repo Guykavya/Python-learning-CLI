@@ -1,0 +1,6 @@
+id = "core.04.p031"
+title = "Interleave two words"
+tier = "applied"
+kind = "code"
+topics = ["zip", "slicing", "unequal lengths"]
+minutes = 20

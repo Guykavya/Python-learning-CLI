@@ -1,0 +1,3 @@
+- Expecting characters and bytes to be equal. They differ as soon as there is a non-ASCII character.
+- Printing `data` directly, which shows `b'caf\xc3\xa9'` instead of the hex dump.
+- Calling `text.hex()`. Only `bytes` has `hex()`; encode first.

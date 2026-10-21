@@ -1,0 +1,4 @@
+- Saying "a set is faster because it is sorted". A Python set is not sorted. It is fast because of hashing, which jumps straight to where a value would be.
+- Forgetting the cost of building the set. It is O(n), paid once; the point is that it replaces `m` separate O(n) scans.
+- Saying `in` on a list is O(1) because it is "one line". The line hides a loop.
+- Claiming set lookup is O(1) in every case. It is O(1) on average; the rare worst case is O(n).

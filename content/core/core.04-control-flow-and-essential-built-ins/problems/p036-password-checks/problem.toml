@@ -1,0 +1,6 @@
+id = "core.04.p036"
+title = "Password checks with any and all"
+tier = "drill"
+kind = "code"
+topics = ["any()", "all()", "generator expression"]
+minutes = 10

@@ -1,0 +1,3 @@
+- Using `/ 2`: the answer becomes a float, prints `8.0`, and is inexact for huge numbers.
+- Forgetting `abs()`: `a - b` is negative when `b` is larger, so the formula swaps the answers.
+- For three numbers, combining with `a` again instead of with the larger of `a` and `b`.

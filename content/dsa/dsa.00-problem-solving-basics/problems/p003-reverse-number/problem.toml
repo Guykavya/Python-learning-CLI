@@ -1,0 +1,6 @@
+id = "dsa.00.p003"
+title = "Reverse a number"
+tier = "drill"
+kind = "code"
+topics = ["loops", "floor division", "modulo", "building a number"]
+minutes = 15

@@ -1,0 +1,6 @@
+id = "dsa.00.p059"
+title = "The k-th digit of 123456789101112..."
+tier = "challenge"
+kind = "code"
+topics = ["counting in blocks", "floor division", "modulo", "planning", "efficiency"]
+minutes = 50

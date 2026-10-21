@@ -1,0 +1,4 @@
+- Printing the moves in jump order instead of board order.
+- Forgetting the edges: `a1` has only 2 moves.
+- Accepting `i9` or `a0`: check both characters.
+- Testing `square[1] in "12345678"` before checking the length, which crashes on `a`.

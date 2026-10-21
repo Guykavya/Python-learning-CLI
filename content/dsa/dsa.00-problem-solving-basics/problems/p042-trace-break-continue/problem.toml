@@ -1,0 +1,6 @@
+id = "dsa.00.p042"
+title = "Trace break, continue and loop else"
+tier = "deep"
+kind = "trace"
+topics = ["nested loops", "break", "continue", "loop else", "dry run"]
+minutes = 20

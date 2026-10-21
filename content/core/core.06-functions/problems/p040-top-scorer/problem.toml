@@ -1,0 +1,6 @@
+id = "core.06.p040"
+title = "Top scorer with max and a key"
+tier = "applied"
+kind = "code"
+topics = ["lambda", "min/max with key", "dicts"]
+minutes = 15

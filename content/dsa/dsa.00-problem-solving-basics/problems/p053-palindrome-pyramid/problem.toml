@@ -1,0 +1,6 @@
+id = "dsa.00.p053"
+title = "Palindrome number pyramid"
+tier = "challenge"
+kind = "code"
+topics = ["patterns", "nested loops", "range with step", "modulo"]
+minutes = 35

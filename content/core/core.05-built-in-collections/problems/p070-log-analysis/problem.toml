@@ -1,0 +1,6 @@
+id = "core.05.p070"
+title = "Analyse a web log"
+tier = "challenge"
+kind = "code"
+topics = ["choosing a structure", "dicts", "sets", "sorting", "big-o"]
+minutes = 40

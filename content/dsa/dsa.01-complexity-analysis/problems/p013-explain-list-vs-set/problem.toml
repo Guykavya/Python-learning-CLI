@@ -1,0 +1,6 @@
+id = "dsa.01.p013"
+title = "Why is `in` slow on a list?"
+tier = "applied"
+kind = "explain"
+topics = ["list vs set", "hashing", "membership", "choosing a structure"]
+minutes = 20

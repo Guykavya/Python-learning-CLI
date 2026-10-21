@@ -1,0 +1,4 @@
+- Using `range(n)`: it gives 0, 1, ..., n-1, so the last number `n` is left out. For `n = 5` you get 10 instead of 15.
+- Using `range(1, n)`: same problem, `n` is excluded.
+- Starting `total` at 1 "because we start at 1": then every answer is one too big, and `n = 0` prints 1.
+- Using `n * (n + 1) / 2`: this prints `15.0` instead of `15`, which does not match the expected output.

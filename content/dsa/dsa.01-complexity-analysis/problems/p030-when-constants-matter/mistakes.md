@@ -1,0 +1,4 @@
+- Concluding "Big-O is useless because sum is 10 times faster". Both are O(n); Big-O correctly says they scale the same. It never claimed they cost the same.
+- Saying O(n log n) is "much slower" than O(n) at contest sizes. With log n around 20 and fast C sorting, the difference is usually small.
+- Trying to rescue an O(n^2) solution at n = 10^5 with micro-optimisations. The gap is a factor of thousands; only a better algorithm helps.
+- Guessing which of two equal-Big-O versions is faster instead of measuring with `time.perf_counter`.

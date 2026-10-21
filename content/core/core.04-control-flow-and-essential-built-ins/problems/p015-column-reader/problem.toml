@@ -1,0 +1,6 @@
+id = "core.04.p015"
+title = "Read a message by columns"
+tier = "applied"
+kind = "code"
+topics = ["range", "step", "nested loops"]
+minutes = 20

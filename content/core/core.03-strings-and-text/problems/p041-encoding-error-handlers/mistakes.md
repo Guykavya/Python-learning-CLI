@@ -1,0 +1,3 @@
+- Printing the bytes directly, which shows `b'caf?'` instead of `caf?`.
+- Counting lost characters with `text.count("?")`. A real `?` in the input would be counted too.
+- Expecting `replace` to use `�` here. When **encoding**, `replace` uses `?`; the `�` character is used when **decoding**.

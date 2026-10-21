@@ -1,0 +1,4 @@
+- Checking the bounds after indexing: `grid[-1]` does not fail in Python, it wraps around to the last row, so islands on opposite edges join.
+- Marking a cell visited after recursing into its neighbours: the neighbours come straight back and recurse forever.
+- Counting diagonal neighbours.
+- Keeping `seen` as a mutable default argument of `fill`: the second grid starts with the first grid's cells marked.

@@ -1,0 +1,4 @@
+- Splitting odd padding the wrong way. With `^`, the extra space goes on the right.
+- Expecting `{n:#o}` to give `052`. Python's octal prefix is `0o`.
+- Expecting `6.3%`. The value is exactly halfway, and halves round to even.
+- Dropping the spaces around `=` in the debug form. They are copied into the output.

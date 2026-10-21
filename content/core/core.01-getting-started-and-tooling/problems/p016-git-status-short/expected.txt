@@ -1,0 +1,7 @@
+?? notes.txt
+A  notes.txt
+(clean)
+ M notes.txt
+M  notes.txt
+M  notes.txt
+?? todo.txt

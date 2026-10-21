@@ -1,0 +1,6 @@
+id = "dsa.01.p005"
+title = "Count the pairs without looping"
+tier = "drill"
+kind = "code"
+topics = ["counting operations", "formula", "nested loops", "O(1)"]
+minutes = 15

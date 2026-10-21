@@ -1,0 +1,6 @@
+id = "core.06.p065"
+title = "An event bus of closures"
+tier = "challenge"
+kind = "code"
+topics = ["closures", "first-class functions", "dicts of lists", "forwarding *args/**kwargs"]
+minutes = 40

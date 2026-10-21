@@ -1,0 +1,6 @@
+id = "dsa.00.p026"
+title = "What kind of triangle?"
+tier = "applied"
+kind = "code"
+topics = ["conditionals", "case analysis", "max", "pythagoras", "edge cases"]
+minutes = 20

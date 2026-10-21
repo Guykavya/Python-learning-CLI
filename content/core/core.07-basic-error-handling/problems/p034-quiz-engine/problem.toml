@@ -1,0 +1,7 @@
+id = "core.07.p034"
+title = "Build: a quiz engine that never crashes"
+tier = "challenge"
+kind = "code"
+topics = ["input loops", "validation", "try/except/finally", "EOFError and KeyboardInterrupt", "testable input"]
+minutes = 60
+assessment = "build"

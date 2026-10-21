@@ -1,0 +1,7 @@
+id = "core.05.p052"
+title = "Why a list cannot be a dict key"
+tier = "deep"
+kind = "explain"
+topics = ["hashability", "hashing", "dicts"]
+minutes = 25
+assessment = "explain"

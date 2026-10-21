@@ -1,0 +1,6 @@
+id = "core.05.p025"
+title = "Top three scores"
+tier = "applied"
+kind = "code"
+topics = ["sorting", "tuple keys"]
+minutes = 20

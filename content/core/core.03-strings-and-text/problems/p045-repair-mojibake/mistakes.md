@@ -1,0 +1,3 @@
+- Doing the steps in the same order as the damage: `encode("utf-8").decode("latin-1")` makes it worse.
+- Using `errors="ignore"` to hide errors, which deletes characters.
+- Trying `replace("Ã©", "é")`, which only fixes one character and misses all the others.

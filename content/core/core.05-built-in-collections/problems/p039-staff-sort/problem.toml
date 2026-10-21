@@ -1,0 +1,6 @@
+id = "core.05.p039"
+title = "Sort staff by three keys"
+tier = "applied"
+kind = "code"
+topics = ["sorting", "tuple keys", "stability"]
+minutes = 20

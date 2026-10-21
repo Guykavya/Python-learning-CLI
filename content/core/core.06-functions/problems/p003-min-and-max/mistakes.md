@@ -1,0 +1,4 @@
+- Starting `smallest = 0` and `largest = 0`. All-negative or all-positive lists then give a wrong answer.
+- Returning inside the loop, so only the first item is ever checked. The `return` belongs after the loop.
+- Returning a list `[smallest, largest]` instead of a tuple. Use `return smallest, largest`; the comma makes the tuple.
+- Sorting the list to read the ends: it changes the caller's list if you use `.sort()`, and costs O(n log n).

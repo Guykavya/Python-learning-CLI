@@ -1,0 +1,6 @@
+id = "core.07.p023"
+title = "Causes and contexts"
+tier = "deep"
+kind = "trace"
+topics = ["raise from", "implicit chaining", "__cause__", "__context__", "bare raise"]
+minutes = 25

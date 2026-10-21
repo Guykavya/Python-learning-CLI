@@ -1,0 +1,4 @@
+- Base case only for `""` or only for one character: both work for `reverse`, but `is_palindrome` must stop at length 0 **and** 1.
+- Cleaning the text inside the recursive function, so it is cleaned again on every call.
+- Writing `return reverse(text[1:]) + text[0]` without a base case: `""[0]` raises `IndexError`.
+- Comparing without lowercasing: `"Racecar"` fails.

@@ -1,0 +1,3 @@
+- Using `sorted(word)` directly as the key: `TypeError: unhashable type: 'list'`.
+- Comparing every pair of words: O(n²) comparisons.
+- Using a set for each group, which loses the input order.

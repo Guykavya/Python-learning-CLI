@@ -1,0 +1,4 @@
+- Forgetting that the root does work too. For `n = 2` the work is `2 + 1 + 1 = 4`, not 2.
+- Splitting 5 into 2 and 2. The second half is `n - n // 2`, which is 3, so no element is lost.
+- Treating `n = 1` as making two more calls. The function returns before the recursive calls when `n <= 1`.
+- Counting work as `calls * n`. Each call adds its own size, and the sizes shrink further down the tree.

@@ -1,0 +1,6 @@
+id = "core.05.p058"
+title = "Remove expired items day by day"
+tier = "deep"
+kind = "code"
+topics = ["dicts", "mutation during iteration"]
+minutes = 25

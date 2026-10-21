@@ -1,0 +1,3 @@
+- Leaving out the initial value: `product([])` raises `TypeError: reduce() of empty iterable with no initial value`.
+- Using `0` as the initial value: every product becomes 0.
+- Importing `reduce` inside a loop or forgetting to import it (`NameError`).

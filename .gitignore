@@ -1,0 +1,20 @@
+# Python and tool caches
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# Personal: each learner's own progress, kept in their private .progress.git history
+.progress.git/
+config.toml
+data/
+my-work/
+playground/*
+!playground/README.md
+library/*
+!library/README.md

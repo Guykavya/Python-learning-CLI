@@ -1,0 +1,5 @@
+- Saying "-O makes asserts faster" or "-O turns them into warnings". They are removed completely.
+- Replacing every assert with `raise AssertionError(...)`: it always runs now, but it is still the wrong type for bad input.
+- Raising `TypeError` for a negative amount: the type is fine, the value is not.
+- Forgetting the non-number case, so the user sees `invalid literal for int() with base 10`.
+- Not explaining why the third check is different from the first two.

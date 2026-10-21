@@ -1,0 +1,3 @@
+- Casefolding only the text, not the letter. Searching for `"B"` in lowercase text finds nothing.
+- Thinking `count` returns -1 when nothing is found. It returns 0.
+- Using `find`, which gives a position, not a count.

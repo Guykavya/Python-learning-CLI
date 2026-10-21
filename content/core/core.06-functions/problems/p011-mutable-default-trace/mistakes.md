@@ -1,0 +1,3 @@
+- Thinking `count` keeps growing like the list.
+- Thinking a call that passes its own list adds to the default.
+- Forgetting that `seen or ['start']` creates a new list whenever `seen` is falsy: `None`, but also a caller's empty list.

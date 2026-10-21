@@ -1,0 +1,4 @@
+- Using `mid = 50` for the first step. The indexes go 0 to 99, so `mid = 49`, and `a[49] = 50`.
+- Forgetting the final step for 100: after 99, `lo = mid + 1 = 99`, `hi = 99`, so `mid = 99` and `a[99] = 100` is checked. That is step 7.
+- Writing `100` for the linear count of 101 and then adding 1. The loop runs once per element, and there are 100 elements; it never looks at a 101st.
+- Printing `true` instead of `True`. Python prints booleans with a capital letter.

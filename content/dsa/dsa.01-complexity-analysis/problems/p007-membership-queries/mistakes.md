@@ -1,0 +1,3 @@
+- Building the set inside the query loop: `if x in set(members)`. That rebuilds a 100000-element set for every query, which is O(n) per query again, and slower than the list.
+- Reading all queries with one `input().split()`. The queries are on separate lines; read one per `input()`.
+- Thinking repeated member numbers break the set. A set simply keeps one copy, which is all you need for a yes/no question.

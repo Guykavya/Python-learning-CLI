@@ -1,0 +1,4 @@
+- Including `stop`: writing `A: 0 1 2 3 4 5` or `C: 2 5 8 11`. The stop value is a limit, never part of the output.
+- Thinking `range(5, 1)` counts down automatically. Without a negative step it is empty.
+- Expecting `D` to end at 0 or to include a negative number. It stops at the last value still greater than 0, which is 1.
+- Writing `G: 4 -5`. The loop variable is never set to a value outside the range, so after the loop `i` is -3.

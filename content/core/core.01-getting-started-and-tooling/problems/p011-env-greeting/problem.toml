@@ -1,0 +1,6 @@
+id = "core.01.p011"
+title = "Greeting from the environment"
+tier = "applied"
+kind = "code"
+topics = ["environment variables", "os module"]
+minutes = 15

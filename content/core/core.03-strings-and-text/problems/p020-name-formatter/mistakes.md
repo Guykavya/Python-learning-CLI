@@ -1,0 +1,3 @@
+- Using `words[1]` for the surname. That breaks as soon as there is a middle name.
+- Using `split(" ")`. With extra spaces, `words[0]` is an empty string and `[0]` on it crashes.
+- Taking the initial before fixing the case, so a lowercase name gives a lowercase initial.

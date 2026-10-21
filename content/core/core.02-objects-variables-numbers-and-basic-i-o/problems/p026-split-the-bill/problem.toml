@@ -1,0 +1,6 @@
+id = "core.02.p026"
+title = "Split a bill fairly"
+tier = "applied"
+kind = "code"
+topics = ["decimal", "divmod", "money", "integer cents"]
+minutes = 20

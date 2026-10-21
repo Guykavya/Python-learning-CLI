@@ -1,0 +1,6 @@
+id = "core.06.p042"
+title = "A pipeline of steps"
+tier = "applied"
+kind = "code"
+topics = ["first-class functions", "*args", "keyword-only parameters"]
+minutes = 20

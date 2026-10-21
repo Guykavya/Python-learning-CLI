@@ -1,0 +1,6 @@
+id = "core.05.p061"
+title = "Longest run of consecutive numbers"
+tier = "challenge"
+kind = "code"
+topics = ["sets", "big-o"]
+minutes = 40

@@ -1,0 +1,3 @@
+- Storing `len()` or `str.upper()` in the list: calling them with no argument fails at once.
+- Calling every function on the previous result instead of on `value`.
+- Returning after the first function, by putting `return` inside the loop.

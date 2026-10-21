@@ -1,0 +1,4 @@
+- Replacing each non-alphanumeric character with `sep` directly, giving `hello---world` for runs.
+- Cutting to `max_length` but leaving a trailing `-`, as in `functions-`.
+- Using `rstrip(sep)` with a multi-character `sep`: `rstrip` removes **characters**, not a suffix. It works for single characters only.
+- Leaving `sep` positional, so `make_slug("a b", "_")` silently works instead of failing.

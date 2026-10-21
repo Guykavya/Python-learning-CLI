@@ -1,0 +1,8 @@
+a = input()
+b = input()
+c = input()
+print(a, b, c, sep="-")
+print(a, b, c, sep="")
+print(a, b, c, sep=", ", end="!\n")
+print(a, end=" and ")
+print(c)

@@ -1,0 +1,6 @@
+id = "core.06.p069"
+title = "Towers of Hanoi"
+tier = "challenge"
+kind = "code"
+topics = ["recursion", "keyword arguments", "trusting the recursion"]
+minutes = 40

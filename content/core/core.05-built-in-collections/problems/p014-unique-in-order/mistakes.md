@@ -1,0 +1,3 @@
+- Using `set(names)` and printing it. The order is lost, and set order can change between runs.
+- Checking membership in the list: correct but O(n²), so it times out on big inputs.
+- Printing the count of all visits instead of distinct visitors.

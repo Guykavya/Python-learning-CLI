@@ -1,0 +1,3 @@
+- Writing `[n for n in nums if n >= 0 else 0]`. An `else` is not allowed in the filter position.
+- Squaring before filtering: `n * n % 2 == 0` happens to work, but it is not what was asked.
+- Printing the set directly. Sort it first.

@@ -1,0 +1,6 @@
+id = "core.05.p030"
+title = "Find a pair with a given sum"
+tier = "applied"
+kind = "code"
+topics = ["dicts", "big-o"]
+minutes = 20

@@ -1,0 +1,6 @@
+id = "core.06.p045"
+title = "Counters with nonlocal"
+tier = "drill"
+kind = "code"
+topics = ["closures", "nonlocal"]
+minutes = 12

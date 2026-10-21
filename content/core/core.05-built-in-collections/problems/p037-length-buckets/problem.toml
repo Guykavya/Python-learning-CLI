@@ -1,0 +1,6 @@
+id = "core.05.p037"
+title = "Words by length"
+tier = "applied"
+kind = "code"
+topics = ["dicts", "grouping", "sorting"]
+minutes = 20

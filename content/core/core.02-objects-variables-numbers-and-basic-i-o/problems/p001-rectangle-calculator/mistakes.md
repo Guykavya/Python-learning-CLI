@@ -1,0 +1,4 @@
+- Using `int(input())`: crashes on `4.5` with `ValueError`.
+- Forgetting conversion: `"3" * "4.5"` raises `TypeError`, and `"3" + "4.5"` silently gives `"34.5"`.
+- Using `round()` for display: `round(4.0, 2)` prints `4.0`, not `4.00`.
+- Adding a prompt like `input("Width: ")`: the prompt text ends up in the output.

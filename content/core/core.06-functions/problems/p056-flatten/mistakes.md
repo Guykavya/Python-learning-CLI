@@ -1,0 +1,4 @@
+- `result.append(flatten(item))`: adds the flattened sub-list as one item, so nesting remains.
+- `def flatten(nested, result=[])`: the default list is shared, so the second call returns the first call's items too.
+- Treating strings as nested (iterating into `"ab"`): only lists are nested here.
+- Changing the input with `pop` or `extend` on it.

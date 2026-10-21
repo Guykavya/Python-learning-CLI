@@ -1,0 +1,6 @@
+id = "core.06.p067"
+title = "Evaluate an expression tree"
+tier = "challenge"
+kind = "code"
+topics = ["recursion", "dispatch tables", "nested data"]
+minutes = 40

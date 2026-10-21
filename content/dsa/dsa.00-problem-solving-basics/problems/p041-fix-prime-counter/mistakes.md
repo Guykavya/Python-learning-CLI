@@ -1,0 +1,4 @@
+- Rewriting the program from scratch. You might write new bugs, and you lose the practice of reading someone else's code. Fix the existing lines.
+- Fixing one bug and not re-testing the other inputs. Bugs can hide each other: in the starter, `4`, `7` prints the right answer only because two bugs cancel out.
+- Fixing 1 with `range(a + 1, b + 1)` or `range(2, ...)`. That skips the real `a` whenever `a` is prime (for example `a = 2`), instead of treating 1 specially.
+- Moving `is_prime = True` inside the divisor `while` loop. Then a divisor sets it to False and the next check sets it back; it must be reset once per `x`, at the top of the outer loop.

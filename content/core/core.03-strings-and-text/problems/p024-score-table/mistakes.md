@@ -1,0 +1,3 @@
+- Forgetting to strip the name, so `"  Ravi "` shifts the column.
+- Aligning the header with different widths from the rows.
+- Using integer division `//` for the average and losing the decimal part.

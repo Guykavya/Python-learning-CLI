@@ -1,0 +1,6 @@
+id = "core.06.p055"
+title = "The order of recursive calls"
+tier = "applied"
+kind = "trace"
+topics = ["recursion", "call stack"]
+minutes = 20

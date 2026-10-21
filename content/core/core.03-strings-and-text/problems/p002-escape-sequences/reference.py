@@ -1,0 +1,5 @@
+print('She said "It\'s fine"')
+print(r"C:\new\table")
+print("Name:\tAsha")
+print("Price: \u20b9500")
+print("Tab\u2192\t\u2190Tab")

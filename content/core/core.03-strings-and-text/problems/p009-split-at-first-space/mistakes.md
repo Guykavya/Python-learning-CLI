@@ -1,0 +1,3 @@
+- Using `split()[1]`: it gives only the second word, and crashes when there is just one word.
+- Forgetting `strip()`: leading spaces make the command empty, because the first space is at index 0.
+- Using `find(" ")` and slicing: when there is no space, `find` returns -1 and the slices go wrong.

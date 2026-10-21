@@ -1,0 +1,6 @@
+id = "core.06.p032"
+title = "Apply a function to every item"
+tier = "drill"
+kind = "code"
+topics = ["first-class functions", "higher-order functions"]
+minutes = 10

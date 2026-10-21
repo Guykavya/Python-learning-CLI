@@ -1,0 +1,4 @@
+- Forgetting the last line after the loop.
+- Forgetting the space in the length check, so lines are `W + 1` long.
+- Printing an empty line first when the first word is longer than `W`.
+- Splitting a long word: the task says to keep it whole.

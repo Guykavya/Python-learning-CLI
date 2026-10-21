@@ -1,0 +1,4 @@
+- Base case `return []` instead of `[[]]`: the loops never run, and everything comes back empty.
+- Removing the item with `items.remove(x)`: changes the caller's list, and removes the first equal item, not the one at index i.
+- Using `x not in p` to avoid repeats: fails as soon as items repeat.
+- Forgetting to deduplicate anagrams of words with repeated letters.

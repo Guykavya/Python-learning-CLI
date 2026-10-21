@@ -1,0 +1,3 @@
+- Saying a set is "faster at everything". It cannot index, keeps no order and uses more memory.
+- Saying the list version is O(n). The single check is O(n); the loop makes it O(n²).
+- Forgetting that set items must be hashable.

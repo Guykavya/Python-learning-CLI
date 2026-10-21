@@ -1,0 +1,4 @@
+- Printing inside the loop: you get a pair of lines for every number instead of one pair at the end.
+- Testing odd with `x % 2 == 1` and even with `x % 2 == 0` as two separate `if`s works in Python, but the habit breaks in C or Java where `-3 % 2` is `-1`. Use `else`.
+- Treating 0 as "neither" or as odd: 0 divides by 2 exactly, so it is even.
+- Forgetting the first line is the count: if you treat `c` as one of the numbers, every answer is off by one.

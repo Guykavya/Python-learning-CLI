@@ -1,0 +1,3 @@
+- Assuming keyword arguments are matched by their position in the call.
+- Forgetting that a default is used only for slots still empty after positionals and keywords.
+- Adding spaces that `sep` does not contain.

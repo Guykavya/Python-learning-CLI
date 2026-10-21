@@ -1,0 +1,4 @@
+- Calling E O(n^2) because it is a nested loop. The outer loop has a fixed length of 100; it does not grow with the input.
+- Calling G O(n) because "there is only one loop". `in` on a list is a loop written for you inside Python. Always ask what each operation costs, not just how many loops you can see.
+- Writing O(n^2 / 2) for B. Big-O drops constant factors; write O(n^2).
+- Writing O(n) for F when `b` can be larger than `a`. With two sizes, keep both: O(n + m).

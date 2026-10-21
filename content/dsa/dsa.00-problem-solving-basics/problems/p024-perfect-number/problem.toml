@@ -1,0 +1,6 @@
+id = "dsa.00.p024"
+title = "Perfect, abundant or deficient"
+tier = "applied"
+kind = "code"
+topics = ["divisors", "divisor pairs", "square root bound", "efficiency", "edge cases"]
+minutes = 25

@@ -1,0 +1,5 @@
+id = "core.03.p054"
+title = "Reverse text or reverse bytes?"
+tier = "challenge"
+kind = "code"
+topics = ["bytes", "encode()", "decode()", "errors=", "slicing"]

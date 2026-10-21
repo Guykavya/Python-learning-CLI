@@ -1,0 +1,5 @@
+id = "core.03.p009"
+title = "First word and the rest"
+tier = "drill"
+kind = "code"
+topics = ["partition()", "strip()"]

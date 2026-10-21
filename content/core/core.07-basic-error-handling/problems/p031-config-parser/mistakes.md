@@ -1,0 +1,5 @@
+- `line.split("=")` with unpacking: a value containing `=` breaks it, and a missing `=` gives an unpacking error with a useless message.
+- Numbering only the non-blank lines, so the numbers do not match what the user sees in the editor.
+- Catching `Exception` around the converter, so a bug in a converter is reported as a bad value.
+- Raising the bad-value error without `from e`, losing the converter's explanation.
+- Detecting duplicates with `key in config`: it works, but cannot say which line had the first one.

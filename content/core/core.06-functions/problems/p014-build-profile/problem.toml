@@ -1,0 +1,6 @@
+id = "core.06.p014"
+title = "Build a profile from keyword arguments"
+tier = "applied"
+kind = "code"
+topics = ["**kwargs", "dicts", "unpacking with **"]
+minutes = 15

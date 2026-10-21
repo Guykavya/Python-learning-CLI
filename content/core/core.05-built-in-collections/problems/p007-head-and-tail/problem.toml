@@ -1,0 +1,6 @@
+id = "core.05.p007"
+title = "Head, middle and tail"
+tier = "drill"
+kind = "code"
+topics = ["unpacking", "star unpacking"]
+minutes = 10

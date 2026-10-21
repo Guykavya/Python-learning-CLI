@@ -1,0 +1,3 @@
+- Thinking `rfind` counts from the right. The index is always counted from the left.
+- Forgetting that `replace`'s third argument limits replacements, and replacing all three `l`s.
+- Ignoring case: `"World"` is not the same as `"world"`.

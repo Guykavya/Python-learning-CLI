@@ -1,0 +1,3 @@
+- Putting `c` on its own line after `a--b|`. The previous `end` had no newline.
+- Adding a space between `x` and `y`. `end=""` adds nothing.
+- Writing `total: 10` and forgetting that `sep` replaces the default space with ` = `.

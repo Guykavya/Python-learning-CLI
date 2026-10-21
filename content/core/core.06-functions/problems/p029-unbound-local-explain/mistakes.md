@@ -1,0 +1,3 @@
+- Saying Python runs line by line and 'has not seen the assignment yet'. The opposite is true: it has seen it.
+- Only offering `global` as the fix.
+- Saying that mutating a global list also needs `global`.

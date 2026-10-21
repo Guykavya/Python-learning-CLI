@@ -1,0 +1,6 @@
+id = "core.05.p016"
+title = "Filter and transform"
+tier = "drill"
+kind = "code"
+topics = ["comprehensions"]
+minutes = 10

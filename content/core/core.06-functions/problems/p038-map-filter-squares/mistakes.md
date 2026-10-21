@@ -1,0 +1,3 @@
+- Returning the map object itself: it prints as `<map object at ...>` and compares unequal to a list.
+- Filtering the strings with `lambda s: s > 0`: comparing `str` with `int` is a `TypeError`. Convert first.
+- Treating 0 as positive.

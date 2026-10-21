@@ -1,0 +1,3 @@
+- Applying every step to the original value instead of to the previous result.
+- Right-to-left order (that was `compose`); a pipeline reads left to right.
+- Putting `collect` before `*steps`, so it swallows a step function as its value.

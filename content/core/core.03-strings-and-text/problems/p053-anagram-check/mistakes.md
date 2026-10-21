@@ -1,0 +1,3 @@
+- Comparing `sorted(a) == sorted(b)` without cleaning, so spaces and `!` break the match.
+- Printing `sorted(...)` directly, which shows a list like `['d', 'i', ...]` instead of a string.
+- Using `set()` of the letters, which ignores how many times each letter appears (`aab` and `abb` would match).

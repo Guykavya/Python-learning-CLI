@@ -1,0 +1,3 @@
+- Forgetting `int()` on the width. A spec built from the text `"9"` works, but `int()` is needed if you do any arithmetic with it, and is good practice.
+- Writing the fill after the alignment, like `^*9`. The fill must come first: `*^9`.
+- Using `str.center()`, which can place the odd extra space on the other side.

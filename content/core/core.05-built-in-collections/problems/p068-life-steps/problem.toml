@@ -1,0 +1,6 @@
+id = "core.05.p068"
+title = "Game of Life"
+tier = "challenge"
+kind = "code"
+topics = ["nested lists", "copying", "aliasing"]
+minutes = 40

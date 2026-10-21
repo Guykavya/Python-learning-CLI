@@ -1,0 +1,6 @@
+id = "core.02.p020"
+title = "Exact versus close"
+tier = "drill"
+kind = "code"
+topics = ["float", "math.isclose", "rounding errors"]
+minutes = 10

@@ -1,0 +1,3 @@
+- Swapping the comprehension loops and producing the original matrix again.
+- Using `range(r)` for the outer loop. The transpose has `c` rows.
+- Printing lists with brackets instead of joining.

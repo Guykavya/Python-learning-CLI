@@ -1,0 +1,6 @@
+id = "core.05.p013"
+title = "Merge two price lists"
+tier = "drill"
+kind = "code"
+topics = ["dicts", "dict merging"]
+minutes = 10

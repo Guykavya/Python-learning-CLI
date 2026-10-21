@@ -1,0 +1,6 @@
+id = "dsa.00.p004"
+title = "Trace a digit-peeling loop"
+tier = "drill"
+kind = "trace"
+topics = ["while loops", "floor division", "modulo", "tracing"]
+minutes = 10

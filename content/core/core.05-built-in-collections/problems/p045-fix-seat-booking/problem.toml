@@ -1,0 +1,7 @@
+id = "core.05.p045"
+title = "Fix the seat booking program"
+tier = "deep"
+kind = "code"
+topics = ["aliasing", "copying", "nested lists", "debugging"]
+minutes = 25
+assessment = "fix"

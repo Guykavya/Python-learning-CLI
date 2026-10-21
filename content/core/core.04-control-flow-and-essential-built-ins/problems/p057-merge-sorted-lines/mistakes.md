@@ -1,0 +1,4 @@
+- Comparing the strings: `"10" <= "9"` is `True`.
+- Forgetting the leftovers after the first `while`.
+- Moving both positions forward when the numbers are equal, which loses a number.
+- Using `zip(a, b)`, which pairs positions, not values in order.

@@ -1,0 +1,10 @@
+words = input().split()
+total = sum(int(w) for w in words)
+smallest = min((int(w) for w in words), default=None)
+largest = max((int(w) for w in words), default=None)
+print(f"Count: {len(words)}")
+print(f"Sum: {total}")
+print(f"Min: {'none' if smallest is None else smallest}")
+print(f"Max: {'none' if largest is None else largest}")
+if smallest is not None:
+    print(f"Spread: {largest - smallest}")

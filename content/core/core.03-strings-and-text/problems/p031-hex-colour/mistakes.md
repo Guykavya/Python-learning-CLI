@@ -1,0 +1,3 @@
+- Using `lstrip("#")`. It works here, but `removeprefix` says exactly what you mean.
+- Forgetting the base: `int("ff")` raises `ValueError`.
+- Formatting with `x` but no `02`, so small values lose their leading zero.

@@ -1,0 +1,6 @@
+id = "dsa.01.p027"
+title = "The harmonic total, fast"
+tier = "challenge"
+kind = "code"
+topics = ["counting", "square root trick", "grouping", "O(sqrt n)"]
+minutes = 45

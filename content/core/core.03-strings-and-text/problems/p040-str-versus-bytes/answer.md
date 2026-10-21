@@ -1,0 +1,11 @@
+**1. str and bytes.** A `str` is text: a sequence of Unicode code points such as `c`, `é`, `🙂`. A `bytes` object is raw data: a sequence of integers from 0 to 255, which is what files, disks and networks actually store. An **encoding** (such as UTF-8) is the rule that turns code points into bytes. `"café".encode("utf-8")` gives `b'caf\xc3\xa9'`; `b'caf\xc3\xa9'.decode("utf-8")` gives back `"café"`. Python never mixes the two silently: `"a" + b"a"` is a `TypeError`.
+
+**2. Lengths.** `len` on a `str` counts code points: c, a, f, é = 4. UTF-8 uses 1 byte for ASCII characters but 2 bytes for `é` (`c3 a9`), so the encoded form has 5 bytes.
+
+**3. The error message.** `'utf-8' codec` is the decoder we asked for. `can't decode byte 0xe9` is the problem byte. `in position 3` is its index in the bytes (after `J`, `o`, `s`, so probably `José`). `invalid continuation byte` means: in UTF-8, `0xe9` announces the start of a multi-byte character, so the next byte must be a "continuation byte" (between `0x80` and `0xbf`). It was not, so these bytes cannot be UTF-8. In the old Windows encoding (cp1252) and in latin-1, `0xe9` is simply `é` on its own.
+
+**4. The fix.** Decode with the encoding the file was really written in: `data.decode("cp1252")` (or `"latin-1"`). Better still, ask the producer of the file or check its documentation. `errors="ignore"` makes the crash go away by **deleting** the byte, so `José` becomes `Jos`: customer names are silently damaged. `errors="replace"` gives `Jos�`, visible but still lost. These handlers are for showing messy logs, not for real data.
+
+**5. Mojibake.** If you decode with the wrong encoding and it happens not to fail, you get garbled text. Example: `"café".encode("utf-8").decode("latin-1")` gives `cafÃ©`, because the two UTF-8 bytes of `é` are read as two separate latin-1 characters. latin-1 accepts every byte, so this mistake never raises an error, which is why mojibake is so common. It can be reversed with `.encode("latin-1").decode("utf-8")` if nothing was lost.
+
+Key ideas to check: str is code points, bytes is 0 to 255; encode str to bytes, decode bytes to str; UTF-8 is variable length; read the codec, byte, position and reason in the error; decode with the real encoding; ignore and replace lose data; mojibake is wrong-encoding decoding without an error.

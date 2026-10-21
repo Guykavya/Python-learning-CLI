@@ -1,0 +1,6 @@
+id = "core.05.p012"
+title = "Group words by first letter"
+tier = "drill"
+kind = "code"
+topics = ["dicts", "grouping"]
+minutes = 10

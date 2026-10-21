@@ -1,0 +1,6 @@
+id = "core.06.p059"
+title = "Binary search by recursion"
+tier = "deep"
+kind = "code"
+topics = ["recursion", "default arguments", "binary search"]
+minutes = 30

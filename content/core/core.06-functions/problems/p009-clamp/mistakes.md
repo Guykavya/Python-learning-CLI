@@ -1,0 +1,4 @@
+- Comparing before swapping, so `clamp(5, 10, 1)` returns 10 or 1.
+- Returning the wrong bound, such as `high` for a value below `low`. Read each guard aloud: "too low, so give back low".
+- Writing `min(max(value, low), high)` without the swap: correct for a valid range, wrong for a reversed one.
+- Changing the defaults so `clamp(150)` no longer gives 100.

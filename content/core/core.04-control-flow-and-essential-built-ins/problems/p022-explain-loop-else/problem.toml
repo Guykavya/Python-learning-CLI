@@ -1,0 +1,6 @@
+id = "core.04.p022"
+title = "What loop else really means"
+tier = "deep"
+kind = "explain"
+topics = ["loop else", "break", "search"]
+minutes = 25

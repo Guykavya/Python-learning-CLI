@@ -1,0 +1,4 @@
+- Increasing the counter before the range check. Out-of-range guesses then count, and `K` comes out too big.
+- Checking `higher`/`lower` before the range check. A guess of `0` prints `higher` instead of `out of range`.
+- Forgetting to `break` after the correct guess. The program keeps judging the extra lines and prints more output (or crashes with EOFError when the input runs out).
+- Using `<=`/`>=` on the boundaries the wrong way, such as `guess <= 1`, which wrongly rejects the valid guess 1.

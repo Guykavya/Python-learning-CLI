@@ -1,0 +1,5 @@
+- Unpacking `year, month, day = text.split("-")` first: a wrong number of parts raises "not enough values to unpack", a confusing message.
+- Forgetting `strip()`, so `" 2024-02-29 "` fails the shape check.
+- Raising the digits error without `from None`, so the reader first sees `invalid literal for int()`.
+- The leap-year rule: 1900 is not a leap year, 2000 is.
+- Formatting the month without `:02d`, giving `2025-4` instead of `2025-04`.

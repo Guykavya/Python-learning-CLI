@@ -1,0 +1,4 @@
+- Matching `GO west` as `going`: it was lowered to `go west`, and `west` fails the guard, so the next case runs.
+- Printing `taking 3 things`: `*things` holds only the words after `"take"`.
+- Matching `"7"` with `int(n)`. Class patterns check the type, not whether the text looks like a number.
+- Forgetting that a failed guard sends the value on to the next case, so `3` ends at the wildcard.

@@ -1,0 +1,4 @@
+- Looping from 1 to `n`. It gives the right answer for small `n` but never finishes for `n = 10^18`.
+- Using `/` instead of `//`. The result is a float: it prints like `-5e+17` or `3.0`, and for big odd numbers the last digits are wrong because floats only keep about 16 significant digits.
+- Guessing the formula from only the odd cases (1, 3, 5 give 1, 2, 3, so "`(n + 1) // 2`") and using it for every `n`. It is wrong for every even `n`. Always test a pattern on cases you did not use to find it.
+- Mixing up the two cases (using the even formula for odd `n`). Test both an odd and an even input.

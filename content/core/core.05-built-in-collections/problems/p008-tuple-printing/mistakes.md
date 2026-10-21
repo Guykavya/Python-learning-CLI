@@ -1,0 +1,3 @@
+- Building the text with `"(" + ", ".join(...) + ")"`. It prints `(5)` for one item, which is not a tuple.
+- Using square brackets (a list) instead of a tuple.
+- Writing `tuple(min(nums), max(nums))`. `tuple()` takes one iterable, not two values.

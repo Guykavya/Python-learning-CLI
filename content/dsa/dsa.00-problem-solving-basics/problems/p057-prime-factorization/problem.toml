@@ -1,0 +1,6 @@
+id = "dsa.00.p057"
+title = "Prime factorization"
+tier = "challenge"
+kind = "code"
+topics = ["primes", "trial division", "square root bound", "string building"]
+minutes = 40

@@ -1,0 +1,3 @@
+- Catching only `KeyError`, so a short list crashes the program.
+- Catching `Exception` or `TypeError`, so a wrong path is silently turned into the default.
+- Checking `if result is None` or `if not result` to decide whether to use the default: a stored `0` or `None` is a real value.

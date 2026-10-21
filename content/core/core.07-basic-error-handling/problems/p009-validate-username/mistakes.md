@@ -1,0 +1,5 @@
+- Printing a message and returning `None` instead of raising.
+- Raising `ValueError` for a non-string. A wrong type is a `TypeError`.
+- Checking `name[0].isdigit()` before the length check: `""` crashes with `IndexError`.
+- Showing the bad character without `repr`, so a space appears as nothing at all.
+- Raising `Exception(...)`: callers could not catch your error without catching everything.

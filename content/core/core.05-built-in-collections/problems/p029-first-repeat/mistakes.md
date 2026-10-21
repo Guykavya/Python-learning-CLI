@@ -1,0 +1,3 @@
+- Finding the word whose **first** occurrence is earliest among repeated words (that would be `red`).
+- Using `words.index(word)` or `words.count(word)` inside the loop: O(n²).
+- Counting positions from 0.

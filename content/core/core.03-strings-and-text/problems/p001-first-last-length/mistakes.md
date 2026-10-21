@@ -1,0 +1,4 @@
+- Writing `text[len(text)]` for the last character. Valid indices stop at `len(text) - 1`, so this raises `IndexError`.
+- Writing `text[1]` for the first character, as if counting starts at 1.
+- Using `text[-0]`. Minus zero is zero, so this is the first character, not the last.
+- Adding a prompt like `input("Text: ")`. The prompt is printed and breaks the expected output.

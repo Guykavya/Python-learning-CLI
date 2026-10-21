@@ -1,0 +1,6 @@
+id = "core.04.p013"
+title = "Count either way"
+tier = "drill"
+kind = "code"
+topics = ["range", "negative step", "conditional expression"]
+minutes = 10

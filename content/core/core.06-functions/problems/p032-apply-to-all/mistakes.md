@@ -1,0 +1,3 @@
+- Replacing items in `items` itself (`items[i] = func(items[i])`), which changes the caller's list.
+- Appending `func` instead of `func(item)`.
+- Returning a map object instead of a list.

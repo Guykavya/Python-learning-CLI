@@ -1,0 +1,3 @@
+- Writing `def power(base, exp, modulo=None)`: then both forbidden calls succeed.
+- Testing `if modulo:` instead of `if modulo is not None:`. Not wrong here (modulo 0 is an error anyway), but `is None` says what you mean.
+- Putting `*` before `/`: a syntax error.

@@ -1,0 +1,6 @@
+id = "core.05.p040"
+title = "Robot path"
+tier = "applied"
+kind = "code"
+topics = ["sets", "tuples", "big-o"]
+minutes = 20

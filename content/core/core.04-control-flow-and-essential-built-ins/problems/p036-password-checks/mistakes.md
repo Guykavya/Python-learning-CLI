@@ -1,0 +1,3 @@
+- Using `password.isalnum()` for the "only" check: it says `no` for an empty password.
+- Using `all` for "has digit": that checks that **every** character is a digit.
+- Stripping the input: a space is a character that is not a letter or digit.

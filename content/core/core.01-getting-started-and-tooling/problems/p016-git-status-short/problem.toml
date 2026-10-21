@@ -1,0 +1,6 @@
+id = "core.01.p016"
+title = "Reading git status"
+tier = "applied"
+kind = "trace"
+topics = ["git", "staging area"]
+minutes = 15

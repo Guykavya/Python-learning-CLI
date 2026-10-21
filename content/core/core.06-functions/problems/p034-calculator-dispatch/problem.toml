@@ -1,0 +1,6 @@
+id = "core.06.p034"
+title = "Calculator with a dispatch table"
+tier = "applied"
+kind = "code"
+topics = ["first-class functions", "dispatch tables", "dicts of functions"]
+minutes = 25

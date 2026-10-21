@@ -1,0 +1,3 @@
+- Storing cells as lists: `TypeError: unhashable type: 'list'` when adding to a set.
+- Forgetting to count the start cell as visited.
+- Using a list for `visited`, which times out on the big test.

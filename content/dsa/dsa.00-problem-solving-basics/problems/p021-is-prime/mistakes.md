@@ -1,0 +1,4 @@
+- Looping `while d * d < n`. For a perfect square like 49 the loop stops before trying 7, so 49 is wrongly reported as prime.
+- Looping all the way up to `n` (or `n // 2`). It gives correct answers but takes hours for a 12-digit prime.
+- Forgetting `n < 2`. With no check, 1, 0 and negatives skip the loop and are reported as prime.
+- Printing inside the loop (for example `not prime` after every failed divisor). Decide first, print once at the end.

@@ -1,0 +1,6 @@
+id = "core.01.p012"
+title = "Where is my Python?"
+tier = "applied"
+kind = "code"
+topics = ["sys module", "platform module", "os module"]
+minutes = 15

@@ -1,0 +1,3 @@
+- Only saying 'use keyword arguments' without changing the signature: callers can still use positions.
+- Making `amount` keyword-only too. Allowed, but the one obvious argument does not need a name; say why you chose either way.
+- Missing that `fee=[]` is the mutable default trap, or replacing it with another mutable object.

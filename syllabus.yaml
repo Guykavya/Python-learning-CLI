@@ -1,0 +1,1621 @@
+# =====================================================================
+#  PYTHON MASTERY SYLLABUS  (DRAFT v0.2 for review)
+# ---------------------------------------------------------------------
+#  v0.2 changes: fixed learning order, basic testing and typing moved
+#  early, shared SQL and data-workflow modules, analytical-thinking and
+#  ML-evaluation modules, backend reliability, LLM route split from the
+#  deep-learning route, priorities and learning outcomes per module.
+# =====================================================================
+
+meta:
+  version: 0.2
+  status: draft
+
+  # Which tracks make up each of your four levels. DSA runs alongside all.
+  levels:
+    software_engineer: [core, shared, swe]
+    data_analyst: [core, shared, da]
+    data_scientist: [core, shared, da, ds]
+    ai_ml_engineer:
+      deep_learning_route: [core, shared, ds, ml]
+      llm_application_route: [core, shared, swe, llm]
+    always_parallel: [dsa]
+
+  priority_levels:
+    essential: Everyone on this path should master it.
+    role-specific: Needed for one level, skippable for others.
+    advanced-elective: Deep material. Valuable, never a blocker for building things.
+
+  problem_tiers:
+    drill: Exercises one concept in isolation.
+    applied: A realistic small task using the concept.
+    deep: Explain, debug, trace or compare. Edge cases and internals.
+    challenge: An unfamiliar combination with earlier topics.
+
+  # Every module is assessed with these four, on top of its problems.
+  # Finishing the problem count alone does not mark a module as mastered.
+  assessment:
+    explain: Explain the core concept in your own words (written answer).
+    trace: Predict the output of unfamiliar code without running it.
+    fix: Find and fix the bug in a provided program.
+    build: Build a small feature independently, no hints.
+
+  # common_mistakes are written per topic when the chapter is authored,
+  # and per problem in its mistakes.md file.
+
+  prerequisite_rules:
+    requires: All listed modules suggested first.
+    requires_any: Any one of the listed modules is enough.
+    note: Prerequisites are suggestions. Nothing is ever locked.
+
+tracks:
+# ---------------------------------------------------------------------
+# CORE PYTHON
+# ---------------------------------------------------------------------
+  - id: core
+    title: Core Python
+    description: The language itself, from the first program to CPython internals.
+    modules:
+      - id: core.01
+        title: Getting started and tooling
+        priority: essential
+        requires: []
+        topics:
+          - What Python is, interpreters (CPython, PyPy), Python versions
+          - Installing and managing Python versions on Linux (uv, pyenv)
+          - The REPL, running scripts, the shebang line
+          - VS Code setup (interpreter, linting, debugger)
+          - Virtual environments and pip basics
+          - Terminal basics (paths, ls, cd, pipes, environment variables)
+          - Git basics (init, add, commit, log, diff, branch)
+          - Reading a traceback, help(), dir(), type()
+          - PEP 8 and the Zen of Python
+        learning_outcomes:
+          - Create a virtual environment, install a package and run a script from the terminal
+          - Read a traceback and point to the exact failing line
+          - Commit work with Git and view its history
+        problems: 25
+        project: Personal CLI script that prints system and environment info
+
+      - id: core.02
+        title: Objects, variables, numbers and basic I/O
+        priority: essential
+        requires: [core.01]
+        topics:
+          - print() in depth (sep, end, file) and input()
+          - Converting user input and handling invalid input
+          - Everything is an object (identity, type, value)
+          - Names and binding, assignment is not copying
+          - Mutable vs immutable objects
+          - int with arbitrary precision, floor division and modulo with negatives
+          - float and IEEE 754, rounding errors, math.isclose
+          - decimal and fractions, complex numbers
+          - bool, None, truthiness
+          - Operators, precedence, chained comparisons, bitwise operators
+          - Type conversion rules
+          - Augmented assignment and the walrus operator
+          - is vs ==
+        learning_outcomes:
+          - Read numbers from the user safely and reject invalid input
+          - Explain why 0.1 + 0.2 != 0.3 and choose decimal when money is involved
+          - Predict the result of floor division and modulo with negative numbers
+        problems: 50
+        project: Unit converter and precise money calculator with input validation
+
+      - id: core.03
+        title: Strings and text
+        priority: essential
+        requires: [core.02]
+        topics:
+          - String literals, escapes, raw strings, multiline strings
+          - Indexing and slicing in depth
+          - String methods (split, join, strip, find, replace, partition and more)
+          - f-strings and the format specification mini-language
+          - Immutability and efficient string building
+          - Unicode, code points, encode/decode, UTF-8
+          - bytes and bytearray
+          - The string and textwrap modules, str.translate
+        learning_outcomes:
+          - Slice and transform strings without loops where a method exists
+          - Format numbers, dates and tables with f-strings
+          - Explain the difference between str and bytes and fix an encoding error
+        problems: 55
+        project: Text statistics tool (word counts, frequencies, formatted report)
+
+      - id: core.04
+        title: Control flow and essential built-ins
+        priority: essential
+        requires: [core.02]
+        topics:
+          - if / elif / else and conditional expressions
+          - while loops, for loops, range in depth
+          - break, continue, pass, loop else clauses
+          - Nested loops and loop design
+          - enumerate(), zip(), reversed()
+          - any(), all(), sum(), min(), max() with key functions
+          - Structural pattern matching (match / case)
+          - Common loop patterns (accumulate, search, count, flag)
+        learning_outcomes:
+          - Choose between for and while and write loops without off-by-one errors
+          - Replace manual index loops with enumerate and zip
+          - Use match/case to destructure simple data
+        problems: 60
+        project: Number guessing game and menu-driven calculator
+
+      - id: core.05
+        title: Built-in collections
+        priority: essential
+        requires: [core.04]
+        topics:
+          - Lists (methods, slicing assignment, nesting, complexity)
+          - Shallow vs deep copy, aliasing bugs
+          - "Nested-list aliasing such as [[0] * 3] * 3"
+          - Tuples, packing and unpacking, star unpacking
+          - namedtuple
+          - Dicts (hashing, insertion order, views, methods, merging)
+          - Hashability rules, what can be a dict key or set member and why
+          - Sets and frozensets, set algebra
+          - List, dict and set comprehensions, nested comprehensions
+          - Sorting (sort vs sorted, key functions, stability)
+          - Big-O of collection operations and choosing the right structure
+        learning_outcomes:
+          - Pick the right collection for a task and justify it by its operations' cost
+          - Explain and fix the [[0] * 3] * 3 bug
+          - Explain why a list cannot be a dict key but a tuple of ints can
+        problems: 70
+        project: Contact book and inventory manager (in memory)
+
+      - id: core.06
+        title: Functions
+        priority: essential
+        requires: [core.05]
+        topics:
+          - Defining and calling, return values, docstrings
+          - Positional, keyword and default arguments
+          - The mutable default argument trap
+          - "*args, **kwargs, positional-only and keyword-only parameters"
+          - Argument passing through object references
+          - Mutation vs rebinding inside a function
+          - Scope and the LEGB rule, global and nonlocal
+          - Functions as first-class objects
+          - lambda, map, filter, functools.reduce
+          - Closures and late binding
+          - Recursion, base cases, recursion limit
+        learning_outcomes:
+          - Predict whether a function call changes the caller's data
+          - Write a closure and explain the late-binding trap
+          - Design a function signature that is hard to misuse
+        problems: 70
+        project: Text-adventure engine driven by functions and dicts
+
+      - id: core.07
+        title: Basic error handling
+        priority: essential
+        requires: [core.06]
+        topics:
+          - What exceptions are, the built-in exception hierarchy
+          - try / except / else / finally
+          - Catching specific exceptions, why bare except is dangerous
+          - Raising exceptions with useful messages
+          - EAFP vs LBYL
+          - assert and when not to use it
+        learning_outcomes:
+          - Handle the exact exceptions a piece of code can raise and nothing more
+          - Explain when else and finally run
+          - Write error messages that tell the user what to do
+        problems: 35
+        project: Robust input-driven quiz program that never crashes
+
+      - id: core.08
+        title: Testing basics with pytest
+        priority: essential
+        requires: [core.07]
+        topics:
+          - Why test, what a test is
+          - Writing assert-based tests and running pytest
+          - Reading pytest failure output
+          - parametrize for many cases
+          - Testing that exceptions are raised
+          - Boundary cases and choosing useful tests
+          - Writing tests before code (TDD intro)
+        learning_outcomes:
+          - Write a pytest file for a function, covering normal, boundary and error cases
+          - Read a failing test report and locate the bug
+          - Decide which cases are worth testing
+        problems: 30
+        project: Test suite for your own earlier projects
+
+      - id: core.09
+        title: Type hints basics
+        priority: essential
+        requires: [core.06]
+        topics:
+          - Annotating variables, parameters and return values
+          - Collection annotations (list[int], dict[str, float], tuple[int, ...])
+          - Optional values and unions with the | operator
+          - Type hints do not validate input at runtime
+          - Running mypy and reading its errors
+        learning_outcomes:
+          - Annotate a module so mypy passes
+          - Explain why a wrong type still runs, and what tool would reject it at runtime
+        problems: 25
+        project: Add type hints to two earlier projects
+
+      - id: core.10
+        title: Iterators and generators
+        priority: essential
+        requires: [core.06]
+        topics:
+          - The iteration protocol (__iter__, __next__, StopIteration)
+          - Iterable vs iterator
+          - Generator functions and yield
+          - Generator expressions and lazy evaluation
+          - yield from, send, throw, close
+          - Infinite sequences and data pipelines
+          - itertools in depth (chain, islice, groupby, product, permutations and more)
+        learning_outcomes:
+          - Process data larger than memory with generators
+          - Explain why an iterator can be consumed only once
+          - Build a pipeline with itertools instead of nested loops
+        problems: 50
+        project: Lazy log-file processing pipeline
+
+      - id: core.11
+        title: Decorators and functional tools
+        priority: essential
+        requires: [core.10]
+        topics:
+          - Function decorators from scratch
+          - Decorators with arguments, stacking decorators
+          - functools.wraps and metadata
+          - functools (lru_cache, cache, partial, singledispatch)
+          - The operator module
+          - Functional programming style in Python
+        learning_outcomes:
+          - Write a decorator with arguments that preserves the wrapped function's metadata
+          - Explain the order in which stacked decorators run
+        problems: 40
+        project: Decorator toolkit (timer, retry, cache, rate limiter, logger)
+
+      - id: core.12
+        title: Files and I/O
+        priority: essential
+        requires: [core.07]
+        topics:
+          - open(), modes, text vs binary, encodings
+          - Context managers and the with statement
+          - FileNotFoundError, PermissionError and other OS errors
+          - Streaming large files line by line or in chunks
+          - Safe overwrites (write to a temp file, then replace)
+          - pathlib in depth, os and shutil, glob
+          - CSV, JSON, TOML (tomllib), configparser
+          - pickle and its security risks
+          - tempfile, standard streams (stdin, stdout, stderr)
+          - argparse for command-line tools
+        learning_outcomes:
+          - Read a multi-gigabyte file without loading it into memory
+          - Update a file so a crash midway never corrupts it
+          - Build a CLI tool with arguments and helpful errors
+        problems: 50
+        project: File organiser CLI (sort files by type, date, size)
+
+      - id: core.13
+        title: Modules, packages and environments
+        priority: essential
+        requires: [core.12]
+        topics:
+          - How import works, sys.path, module caching
+          - "The if __name__ == '__main__' idiom"
+          - Packages, __init__.py, relative imports, namespace packages
+          - __all__ and public APIs, circular imports
+          - importlib and dynamic imports
+          - pyproject.toml, building a package
+          - pip, uv, poetry, dependency pinning and lock files
+        learning_outcomes:
+          - Split a script into a package with clean imports
+          - Diagnose and fix a circular import
+          - Build an installable package from pyproject.toml
+        problems: 30
+        project: Package one of your utilities and install it in a fresh environment
+
+      - id: core.14
+        title: Object-oriented programming fundamentals
+        priority: essential
+        requires: [core.11]
+        topics:
+          - Classes, instances, attributes, methods, self
+          - __init__ and object construction
+          - Class vs instance attributes
+          - classmethod and staticmethod
+          - Properties and encapsulation conventions, name mangling
+          - Inheritance, super(), method overriding
+          - Multiple inheritance, MRO, mixins
+          - Composition vs inheritance
+          - Abstract base classes (abc), polymorphism, duck typing
+          - Custom exception classes and exception hierarchies
+          - Exception chaining (raise from), exception groups and except*
+        learning_outcomes:
+          - Model a real domain with classes and decide composition vs inheritance
+          - Design a custom exception hierarchy for a library
+          - Predict method resolution order in a diamond inheritance
+        problems: 70
+        project: Library management system with custom exceptions
+
+      - id: core.15
+        title: Python data model essentials
+        priority: essential
+        requires: [core.14]
+        topics:
+          - __repr__ vs __str__, __format__
+          - Equality and hashing (__eq__, __hash__), rich comparisons, total_ordering
+          - Operator overloading (arithmetic, reflected, in-place)
+          - Container protocols (__len__, __getitem__, __contains__, __iter__)
+          - __call__ and class-based decorators, decorating classes
+          - Context manager protocol (__enter__, __exit__) and contextlib
+          - dataclasses in depth, enum
+          - __slots__ and memory
+        learning_outcomes:
+          - Make a custom class behave like a built-in container
+          - Explain why defining __eq__ removes __hash__
+          - Write a context manager as a class and with contextlib
+        problems: 55
+        project: Vector and matrix library with operator overloading
+
+      - id: core.16
+        title: Advanced typing
+        priority: role-specific
+        requires: [core.09, core.14]
+        topics:
+          - Generics, TypeVar, the type statement and type aliases
+          - Protocols and structural typing
+          - TypedDict, Literal, Final, Callable, ParamSpec, overload
+          - Type narrowing (isinstance, guards, TypeGuard / TypeIs)
+          - Any vs object
+          - Typing third-party libraries, stub files, py.typed
+          - Gradual typing strategy for an existing codebase
+        learning_outcomes:
+          - Write a generic, fully typed container class
+          - Explain when to use Protocol instead of a base class
+          - Get a real project clean under mypy strict
+        problems: 35
+        project: Fully typed refactor of an earlier project (mypy strict clean)
+
+      - id: core.17
+        title: Standard library deep tour
+        priority: essential
+        requires: [core.12]
+        topics:
+          - collections (Counter, defaultdict, deque, OrderedDict, ChainMap)
+          - heapq and bisect
+          - datetime, zoneinfo, time
+          - math, statistics, random, secrets
+          - copy, pprint
+          - subprocess, sys, os, shlex
+          - hashlib, uuid, base64, struct
+          - sqlite3, zipfile, shutil archives
+          - urllib and http basics
+          - logging in depth
+        learning_outcomes:
+          - Reach for the right standard-library tool before writing your own
+          - Handle time zones correctly with zoneinfo
+          - Set up logging with levels, handlers and formatting
+        problems: 60
+        project: Backup and log-rotation tool
+
+      - id: core.18
+        title: Regular expressions and text processing
+        priority: essential
+        requires: [core.03, core.07]
+        topics:
+          - re module, patterns, character classes, quantifiers
+          - Groups, named groups, backreferences
+          - Lookahead and lookbehind
+          - Greedy vs lazy, flags, verbose patterns
+          - re.sub with functions, compiling patterns
+          - Catastrophic backtracking and when not to use regex
+        learning_outcomes:
+          - Extract structured fields from messy text with named groups
+          - Explain why a pattern is slow and rewrite it
+        problems: 45
+        project: Log analyser that extracts structured data with regex
+
+      - id: core.19
+        title: Advanced testing
+        priority: essential
+        requires: [core.08, core.14]
+        topics:
+          - Unit vs integration vs end-to-end tests
+          - pytest fixtures in depth, scopes, conftest.py
+          - markers, tmp_path, monkeypatch, capsys
+          - Mocking with unittest.mock and when mocking hurts
+          - Coverage and what it does not prove
+          - Property-based testing with hypothesis
+          - Testing code with time, randomness, files and network
+        learning_outcomes:
+          - Choose the right test level for a given risk
+          - Test code that talks to files, time and the network without real side effects
+        problems: 40
+        project: Write a full test suite for a provided buggy codebase
+
+      - id: core.20
+        title: Debugging, profiling and code quality
+        priority: essential
+        requires: [core.19]
+        topics:
+          - breakpoint(), pdb, VS Code debugger
+          - Logging as a debugging tool
+          - timeit, cProfile, line-level profiling
+          - Memory profiling with tracemalloc
+          - ruff, black, mypy, pre-commit hooks
+          - Reading other people's code
+        learning_outcomes:
+          - Find a bug with the debugger instead of print statements
+          - Profile a slow program, find the hot spot and measure the improvement
+        problems: 30
+        project: Profile a slow program and measurably speed it up
+
+      - id: core.21
+        title: Concurrency and parallelism
+        priority: essential
+        requires: [core.17, core.14]
+        topics:
+          - Processes vs threads, CPU-bound vs I/O-bound
+          - The GIL and free-threaded Python
+          - threading, locks, events, semaphores, queue
+          - Race conditions and deadlocks
+          - multiprocessing and shared state
+          - concurrent.futures
+          - asyncio (event loop, coroutines, tasks, gather, TaskGroup, timeouts)
+          - Cancellation and cleanup in async code
+          - Bounded concurrency with semaphores and worker pools
+          - Blocking calls inside async functions and how to offload them
+          - Async iterators and async context managers
+          - httpx for async HTTP
+        learning_outcomes:
+          - Pick threads, processes or asyncio for a given workload and justify it
+          - Limit concurrent requests and cancel work cleanly on timeout
+          - Spot a blocking call that freezes an event loop
+        problems: 50
+        project: Concurrent web downloader with limits, retries and clean cancellation
+
+      - id: core.22
+        title: Pythonic design and patterns
+        priority: essential
+        requires: [core.15, core.19]
+        topics:
+          - Pythonic idioms and anti-patterns
+          - SOLID principles applied in Python
+          - Design patterns taught problem-first (strategy, factory, observer, adapter, command)
+          - Dependency injection without frameworks
+          - Clean code and refactoring techniques
+        learning_outcomes:
+          - Name the problem a pattern solves before applying it
+          - Refactor a script safely with tests in place
+        problems: 30
+        project: Refactor a messy legacy script into a clean package
+
+      - id: core.23
+        title: Attribute machinery and metaprogramming
+        priority: advanced-elective
+        requires: [core.15]
+        topics:
+          - Attribute lookup (__getattr__, __getattribute__, __setattr__, __delattr__)
+          - Descriptors and how properties, methods and classmethods really work
+          - __init_subclass__, __class_getitem__, __set_name__
+          - Metaclasses and the class creation process
+          - When metaprogramming is the wrong choice
+        learning_outcomes:
+          - Explain how a function becomes a bound method
+          - Build a validated-field system with descriptors
+        problems: 35
+        project: Mini ORM using descriptors
+
+      - id: core.24
+        title: CPython internals
+        priority: advanced-elective
+        requires: [core.23, core.21]
+        topics:
+          - CPython architecture, source to bytecode
+          - The dis module and reading bytecode
+          - Frames, the evaluation loop, specialising adaptive interpreter
+          - Memory management, reference counting, garbage collector and cycles
+          - Interning, small-int cache, object layout, sys.getsizeof
+          - How dict, list and set are implemented
+          - The experimental JIT and free-threading internals
+          - C extensions overview, ctypes, Cython overview
+        learning_outcomes:
+          - Read bytecode for a function and explain what the interpreter does
+          - Explain why a reference cycle needs the garbage collector
+        problems: 35
+        project: Mini stack-based bytecode interpreter in Python
+    capstone: Full-featured CLI application (packaged, typed, tested, documented)
+
+# ---------------------------------------------------------------------
+# SHARED FOUNDATIONS (used by SWE, DA, DS and AI)
+# ---------------------------------------------------------------------
+  - id: shared
+    title: Shared data foundations
+    description: SQL and data workflows every level needs, taught once.
+    modules:
+      - id: shared.01
+        title: SQL foundations
+        priority: essential
+        requires: [core.12]
+        topics:
+          - Relational model, tables, primary and foreign keys
+          - SELECT, WHERE, ORDER BY, LIMIT
+          - NULL semantics and three-valued logic
+          - Joins (inner, left, full, self, cross) and join fan-out
+          - Aggregates, GROUP BY, HAVING, COUNT DISTINCT
+          - Subqueries and CTEs
+          - Window functions
+          - INSERT, UPDATE, DELETE, basic schema design
+          - Indexes and transactions (introduction)
+          - Using SQL from Python with sqlite3
+          - Dialect differences (SQLite, MySQL, PostgreSQL)
+        learning_outcomes:
+          - Answer a multi-table business question in one query
+          - Explain why a join changed a count and fix it
+          - Handle NULLs correctly in filters and aggregates
+        problems: 70
+        project: Library or store database answered entirely in SQL
+
+      - id: shared.02
+        title: Data workflows and pipelines
+        priority: essential
+        requires: [shared.01, core.17]
+        topics:
+          - Getting data from APIs with httpx, including pagination
+          - ETL vs ELT
+          - Schema checks and data-quality checks
+          - Incremental loads, deduplication, repeatable runs
+          - Retries, checkpoints, logging, failed-record handling
+          - CSV vs Parquet, basic partitioning
+          - Data access permissions and handling sensitive data
+        learning_outcomes:
+          - Build a pipeline that can be re-run safely without duplicating data
+          - Resume a failed run from a checkpoint
+          - Quarantine bad records instead of crashing
+        problems: 35
+        project: Incremental pipeline from a public API into SQLite and Parquet
+    capstone: null
+
+# ---------------------------------------------------------------------
+# DATA STRUCTURES AND ALGORITHMS
+# ---------------------------------------------------------------------
+  - id: dsa
+    title: Data Structures and Algorithms
+    description: Starts with plain problem solving early, then pattern-based DSA with LeetCode, Codeforces and CSES mapped in.
+    modules:
+      - id: dsa.00
+        title: Problem-solving basics
+        priority: essential
+        requires: [core.04]
+        topics:
+          - Reading a problem, inputs, outputs and constraints
+          - Breaking a problem into steps, pseudocode
+          - Dry runs and tracing by hand
+          - Edge-case thinking
+          - Logic problems with loops (digits, patterns, primes, series)
+        learning_outcomes:
+          - Write a plan before code for any small problem
+          - Trace a loop by hand and find an off-by-one bug
+        problems: 60
+        external: true
+
+      - id: dsa.01
+        title: Complexity analysis
+        priority: essential
+        requires: [core.05, dsa.00]
+        topics:
+          - Big-O, Big-Theta, Big-Omega
+          - Time and space complexity, amortised analysis
+          - Analysing recursion, recurrence relations, master theorem
+          - Python-specific costs of operations
+          - Using constraints to guess the required complexity
+        learning_outcomes:
+          - State the complexity of any solution you write
+          - Tell from constraints whether O(n squared) will pass
+        problems: 30
+        external: true
+
+      - id: dsa.02
+        title: Math for DSA
+        priority: essential
+        requires: [dsa.01]
+        topics:
+          - Primes, sieve of Eratosthenes, factorisation
+          - GCD, LCM, extended Euclid
+          - Modular arithmetic, fast exponentiation, modular inverse
+          - Combinatorics (nCr, Pascal triangle)
+          - Bit manipulation tricks
+        learning_outcomes:
+          - Solve counting problems under a modulus without overflow thinking errors
+        problems: 40
+        external: true
+
+      - id: dsa.03
+        title: Arrays and strings patterns
+        priority: essential
+        requires: [dsa.01]
+        topics:
+          - Prefix sums and difference arrays
+          - Two pointers
+          - Sliding window (fixed and variable)
+          - Kadane's algorithm
+          - Matrix traversal and manipulation
+        learning_outcomes:
+          - Recognise when two pointers or a sliding window applies
+          - Turn an O(n squared) scan into O(n) with prefix sums
+        problems: 60
+        external: true
+
+      - id: dsa.04
+        title: Hashing
+        priority: essential
+        requires: [dsa.03]
+        topics:
+          - Hash map and hash set patterns
+          - Frequency counting, grouping, anagrams
+          - Implementing a hash table from scratch
+          - Rolling hash and string hashing
+        learning_outcomes:
+          - Use a hash map to remove a nested loop
+        problems: 40
+        external: true
+
+      - id: dsa.05
+        title: Sorting
+        priority: essential
+        requires: [dsa.03]
+        topics:
+          - Bubble, selection, insertion sort
+          - Merge sort and quick sort (implement both)
+          - Heap sort, counting sort, radix sort
+          - Custom comparators, stability
+          - Interval problems (merge, insert, overlap)
+        learning_outcomes:
+          - Implement merge sort and quick sort from memory
+          - Solve interval problems by sorting first
+        problems: 40
+        external: true
+
+      - id: dsa.06
+        title: Binary search
+        priority: essential
+        requires: [dsa.05]
+        topics:
+          - Classic binary search and off-by-one control
+          - Lower and upper bound
+          - Binary search on the answer
+          - Rotated and unknown-size arrays
+        learning_outcomes:
+          - Write a bug-free binary search with a clear loop invariant
+          - Spot a monotonic condition and binary search on the answer
+        problems: 40
+        external: true
+
+      - id: dsa.07
+        title: Recursion and backtracking
+        priority: essential
+        requires: [dsa.01, core.06]
+        topics:
+          - Recursion trees
+          - Subsets, permutations, combinations
+          - N-Queens, Sudoku, word search
+          - Pruning techniques
+        learning_outcomes:
+          - Draw the recursion tree of a backtracking solution
+          - Generate all valid configurations with pruning
+        problems: 45
+        external: true
+
+      - id: dsa.08
+        title: Stacks and queues
+        priority: essential
+        requires: [dsa.03]
+        topics:
+          - Stacks with lists, queues with collections.deque
+          - Monotonic stack and monotonic queue
+          - Expression parsing and evaluation
+          - Next greater element family
+        learning_outcomes:
+          - Recognise next-greater style problems and solve them with a monotonic stack
+        problems: 40
+        external: true
+
+      - id: dsa.09
+        title: Linked lists
+        priority: essential
+        requires: [core.14, dsa.03]
+        topics:
+          - Singly and doubly linked lists from scratch
+          - Fast and slow pointers, cycle detection
+          - Reversal, merging, reordering
+          - Linked-list based stacks and queues
+          - LRU cache
+        learning_outcomes:
+          - Reverse and merge linked lists without losing nodes
+        problems: 35
+        external: true
+
+      - id: dsa.10
+        title: Trees
+        priority: essential
+        requires: [dsa.07, dsa.08]
+        topics:
+          - Binary tree traversals (recursive and iterative)
+          - Binary search trees (insert, delete, validate)
+          - Height, diameter, paths, lowest common ancestor
+          - Serialisation and construction from traversals
+          - Balanced trees overview (AVL, red-black)
+        learning_outcomes:
+          - Solve tree problems by defining what each recursive call returns
+        problems: 60
+        external: true
+
+      - id: dsa.11
+        title: Heaps and priority queues
+        priority: essential
+        requires: [dsa.10]
+        topics:
+          - Binary heap from scratch, heapq
+          - Top-K problems
+          - Two-heaps median, merge K sorted
+        learning_outcomes:
+          - Use a heap whenever you repeatedly need the smallest or largest item
+        problems: 30
+        external: true
+
+      - id: dsa.12
+        title: Graphs
+        priority: essential
+        requires: [dsa.10]
+        topics:
+          - Representations (adjacency list, matrix, grid as graph)
+          - BFS, DFS, connected components
+          - Topological sort, cycle detection, bipartite check
+          - Union-Find (disjoint set union)
+          - Shortest paths (Dijkstra, Bellman-Ford, Floyd-Warshall, 0-1 BFS)
+          - Minimum spanning tree (Kruskal, Prim)
+          - Strongly connected components, bridges and articulation points
+        learning_outcomes:
+          - Model a word problem as a graph and pick the right traversal
+          - Choose the right shortest-path algorithm from edge weights
+        problems: 70
+        external: true
+
+      - id: dsa.13
+        title: Greedy algorithms
+        priority: essential
+        requires: [dsa.05]
+        topics:
+          - Greedy choice and exchange arguments
+          - Interval scheduling
+          - Huffman coding
+        learning_outcomes:
+          - Argue why a greedy choice is safe, or find a counterexample
+        problems: 35
+        external: true
+
+      - id: dsa.14
+        title: Dynamic programming
+        priority: essential
+        requires: [dsa.07]
+        topics:
+          - Memoisation vs tabulation, state design
+          - 1D DP, 2D DP, grid DP
+          - Knapsack variants
+          - LIS, LCS, edit distance
+          - Interval DP, DP on trees
+          - Bitmask DP, digit DP
+        learning_outcomes:
+          - Define state, transition and base case before writing code
+          - Convert a memoised solution into a table and reduce its memory
+        problems: 80
+        external: true
+
+      - id: dsa.15
+        title: Tries and string algorithms
+        priority: role-specific
+        requires: [dsa.04, dsa.10]
+        topics:
+          - Trie from scratch and applications
+          - KMP and prefix function
+          - Z-function, Rabin-Karp
+          - Manacher's algorithm
+        learning_outcomes:
+          - Implement a trie and use it for prefix search
+        problems: 30
+        external: true
+
+      - id: dsa.16
+        title: Advanced data structures
+        priority: advanced-elective
+        requires: [dsa.12, dsa.14]
+        topics:
+          - Segment tree (with lazy propagation)
+          - Fenwick tree (binary indexed tree)
+          - Sparse table, square-root decomposition
+        learning_outcomes:
+          - Answer range queries with updates in logarithmic time
+        problems: 30
+        external: true
+
+      - id: dsa.17
+        title: Competitive programming in Python
+        priority: advanced-elective
+        requires: [dsa.06]
+        topics:
+          - Fast input and output
+          - Recursion limits and iterative DFS
+          - PyPy vs CPython for contests
+          - Contest strategy, upsolving, rating progression
+        learning_outcomes:
+          - Take part in a live Codeforces contest and upsolve afterwards
+        problems: 20
+        external: true
+    capstone: Your own algorithms library with tests and benchmarks
+
+# ---------------------------------------------------------------------
+# LEVEL: PYTHON SOFTWARE ENGINEER
+# ---------------------------------------------------------------------
+  - id: swe
+    title: Python Software Engineer
+    description: Backend engineering with Python, databases, Flask and FastAPI, built to survive real failures.
+    modules:
+      - id: swe.01
+        title: Working like an engineer
+        priority: essential
+        requires: [core.13]
+        topics:
+          - Git in depth (branching, rebase, merge conflicts, GitHub flow)
+          - Project structure and src layout
+          - Makefiles and task runners
+          - Writing documentation and READMEs
+          - Code review practice
+        learning_outcomes:
+          - Resolve a merge conflict and keep a clean history
+          - Set up a new project that others can install and test in minutes
+        problems: 20
+        project: Professional project template you reuse for every later project
+
+      - id: swe.02
+        title: Networking and HTTP
+        priority: essential
+        requires: [swe.01]
+        topics:
+          - TCP/IP, DNS, ports, sockets (socket module)
+          - HTTP methods, status codes, headers, cookies, sessions
+          - HTTPS and TLS basics
+          - REST principles and JSON APIs
+          - requests and httpx
+          - Network timeouts, retry with backoff, which requests are safe to retry
+          - Web scraping with BeautifulSoup
+        learning_outcomes:
+          - Explain what happens between typing a URL and seeing a page
+          - Call an API with timeouts and safe retries
+        problems: 35
+        project: Raw-socket HTTP server, then a resilient API client
+
+      - id: swe.03
+        title: Databases for backend engineers
+        priority: essential
+        requires: [shared.01, swe.01]
+        topics:
+          - Running PostgreSQL or MySQL, users, databases and permissions
+          - Schema design and normalisation
+          - Indexes and reading query plans
+          - Transactions and isolation levels
+          - SQLAlchemy Core and ORM
+          - N+1 queries and inspecting the SQL an ORM emits
+          - Connection pooling and connection lifecycle
+          - Alembic migrations
+          - Backups and practising a restore
+          - NoSQL overview (Redis, MongoDB)
+        learning_outcomes:
+          - Find and fix an N+1 query in an ORM-based app
+          - Write a migration that changes a column without losing data
+          - Restore a database from backup
+        problems: 55
+        project: E-commerce database with migrations, seed data and a restore drill
+
+      - id: swe.04
+        title: Flask
+        priority: role-specific
+        requires: [swe.02, swe.03]
+        topics:
+          - Routing, request and response
+          - Jinja templates and forms
+          - Blueprints, application factory, configuration
+          - Flask-SQLAlchemy
+          - Session-based authentication
+          - Building REST APIs, error handling
+          - Testing Flask apps
+        learning_outcomes:
+          - Build a multi-page app with login from an empty folder
+        problems: 40
+        project: Blog platform with auth
+
+      - id: swe.05
+        title: FastAPI
+        priority: essential
+        requires: [swe.02, swe.03, core.09, core.21]
+        topics:
+          - ASGI vs WSGI
+          - Path, query and body parameters
+          - Pydantic v2 models, runtime validation of what type hints only describe
+          - Dependency injection
+          - Async endpoints and async database access
+          - Response models, error handling, middleware, CORS
+          - SQLAlchemy async and SQLModel
+          - Background tasks and WebSockets
+          - Testing and OpenAPI docs
+          - Structuring larger FastAPI applications
+        learning_outcomes:
+          - Build a validated, documented, tested API from an empty folder
+          - Explain where validation happens and what a 422 response means
+        problems: 50
+        project: Task-management API with users, teams and real-time updates
+
+      - id: swe.06
+        title: Django essentials
+        priority: advanced-elective
+        requires: [swe.02, swe.03]
+        topics:
+          - MTV architecture, ORM, admin
+          - Django REST Framework basics
+          - When to choose Django, Flask or FastAPI
+        learning_outcomes:
+          - Choose a framework for a project and defend the choice
+        problems: 25
+        project: Admin-driven inventory app
+
+      - id: swe.07
+        title: Auth, API design and security
+        priority: essential
+        requires: []
+        requires_any: [swe.04, swe.05]
+        topics:
+          - Authentication vs authorisation
+          - Password hashing, sessions, OAuth2 and JWT
+          - Ownership checks, roles and permissions
+          - REST design, versioning, pagination, filtering
+          - Rate limiting and idempotency keys
+          - OWASP Top 10 for Python apps
+          - Input validation and secrets management
+        learning_outcomes:
+          - Prevent a user from reading another user's data, and test that it is prevented
+          - Make a payment-style endpoint safe to call twice
+        problems: 35
+        project: Security audit and hardening of your API project
+
+      - id: swe.08
+        title: Caching, queues and background work
+        priority: essential
+        requires: [swe.07]
+        topics:
+          - Redis for caching and sessions, cache invalidation
+          - Task queues (Celery, RQ, arq)
+          - Duplicate deliveries and idempotent workers
+          - Retries, dead-letter handling
+          - Scheduled jobs
+        learning_outcomes:
+          - Design a worker that gives the same result when a task runs twice
+        problems: 30
+        project: Email and report generation worker that survives crashes
+
+      - id: swe.09
+        title: Deployment, observability and operations
+        priority: essential
+        requires: [swe.07]
+        topics:
+          - Docker and docker compose
+          - Gunicorn and Uvicorn, Nginx basics
+          - Environment configuration
+          - Structured logs and request IDs
+          - Health checks and basic metrics
+          - CI with GitHub Actions
+          - Deployment, rollback, and backup/restore drills
+        learning_outcomes:
+          - Trace one failing request through logs using its request ID
+          - Roll back a bad deployment
+        problems: 30
+        project: Dockerise, deploy and monitor your API with CI
+
+      - id: swe.10
+        title: Practical architecture and system design
+        priority: role-specific
+        requires: [swe.08, core.22]
+        topics:
+          - Start from the problem, add a layer only when it pays off
+          - Service layer, repository, unit of work and the problems each solves
+          - Domain modelling, event-driven design
+          - Monolith vs microservices
+          - System design basics (scaling, load balancing, caching, CAP)
+        learning_outcomes:
+          - Explain what concrete pain a repository layer removes in your own project
+          - Sketch a system design for a common app and discuss trade-offs
+        problems: 25
+        project: Refactor the task API where it actually hurts, and document why
+
+      - id: swe.11
+        title: Automation and scripting
+        priority: role-specific
+        requires: [core.17]
+        topics:
+          - CLI apps with Typer, Click and rich
+          - File and system automation
+          - Browser automation with Playwright
+          - Scheduling scripts (cron)
+        learning_outcomes:
+          - Automate a repetitive task you really do every week
+        problems: 30
+        project: Personal automation suite
+    capstone: Production-grade backend service (FastAPI, Postgres, Redis, Docker, CI, tests, monitoring)
+
+# ---------------------------------------------------------------------
+# LEVEL: PYTHON DATA ANALYST
+# ---------------------------------------------------------------------
+  - id: da
+    title: Python Data Analyst
+    description: Turning raw data into trustworthy answers, with the reasoning behind the numbers.
+    modules:
+      - id: da.01
+        title: Analysis environment and descriptive statistics
+        priority: essential
+        requires: [core.12]
+        topics:
+          - Jupyter and VS Code notebooks
+          - Mean, median, mode, variance, percentiles
+          - Distributions and their shapes
+        learning_outcomes:
+          - Summarise a dataset and explain when the median beats the mean
+        problems: 30
+        project: Statistics summary of a real dataset
+
+      - id: da.02
+        title: NumPy
+        priority: essential
+        requires: [da.01]
+        topics:
+          - ndarray, dtypes, shapes, reshaping
+          - Indexing, slicing, boolean and fancy indexing
+          - Broadcasting and vectorisation
+          - ufuncs, aggregations, random generators
+          - Linear algebra basics, performance vs plain Python
+        learning_outcomes:
+          - Replace a Python loop with a vectorised NumPy expression
+          - Predict the shape of a broadcast result
+        problems: 50
+        project: Image manipulation with NumPy arrays
+
+      - id: da.03
+        title: pandas core
+        priority: essential
+        requires: [da.02]
+        topics:
+          - Series and DataFrame, the index
+          - Reading and writing CSV, Excel, JSON, SQL, Parquet
+          - Selection with loc and iloc, filtering
+          - dtypes, string and datetime accessors
+          - apply vs vectorised operations
+        learning_outcomes:
+          - Load, filter and summarise a dataset without loops
+        problems: 60
+        project: Explore a messy sales dataset
+
+      - id: da.04
+        title: pandas transformations
+        priority: essential
+        requires: [da.03]
+        topics:
+          - groupby and aggregation
+          - merge, join, concat
+          - pivot, melt, reshaping
+          - Rolling windows and time series
+          - Categorical data, method chaining
+          - Performance and an introduction to Polars
+        learning_outcomes:
+          - Reshape data between long and wide formats
+          - Combine multiple tables correctly
+        problems: 60
+        project: Multi-table retail analysis
+
+      - id: da.05
+        title: Data cleaning and missing-data reasoning
+        priority: essential
+        requires: [da.04, core.18]
+        topics:
+          - Duplicates, outliers, inconsistent formats
+          - Data validation (pandera)
+          - Regex inside pandas
+          - Why values are missing and how that biases results
+          - When dropping or filling changes the answer
+        learning_outcomes:
+          - Show how two reasonable missing-data choices give two different answers
+        problems: 40
+        project: Documented cleaning pipeline for a public dataset
+
+      - id: da.06
+        title: Analytical thinking and metric correctness
+        priority: essential
+        requires: [da.04, shared.01]
+        topics:
+          - Data grain, what one row represents, unique keys
+          - Join fan-out and accidentally multiplied counts
+          - Metric definitions (numerator, denominator, date basis, exclusions)
+          - Distinct counts and weighted vs simple averages
+          - "Reconciling dashboard totals with SQL and tracing mismatches to records"
+          - "Worked case: total volume by created_at vs completed volume by started_at and status, and why completed plus pending may not equal total"
+        learning_outcomes:
+          - State the grain of any table before analysing it
+          - Write an unambiguous metric definition
+          - Trace a total mismatch down to the individual records causing it
+        problems: 45
+        project: Metric definition document and reconciliation report for a sample business
+
+      - id: da.07
+        title: SQL for analysts
+        priority: essential
+        requires: [shared.01]
+        topics:
+          - Analytical SQL patterns, window functions in depth
+          - Cohort, funnel and retention queries
+          - DuckDB with pandas and Parquet
+        learning_outcomes:
+          - Build a cohort retention table in SQL
+        problems: 40
+        project: Business questions answered in SQL
+
+      - id: da.08
+        title: Statistical reasoning for analysts
+        priority: essential
+        requires: [da.01]
+        topics:
+          - Sampling and sampling bias
+          - Correlation vs causation, confounders
+          - Confidence intervals
+          - Practical vs statistical significance
+        learning_outcomes:
+          - Explain why a correlation in your data does not prove an effect
+          - Report an estimate with its uncertainty
+        problems: 35
+        project: Critique and redo a flawed analysis
+
+      - id: da.09
+        title: Data visualisation
+        priority: essential
+        requires: [da.04]
+        topics:
+          - matplotlib anatomy (figure, axes, artists)
+          - seaborn statistical plots
+          - plotly interactive charts
+          - Choosing the right chart, avoiding misleading charts
+        learning_outcomes:
+          - Pick a chart that answers the question, and label it so it cannot mislead
+        problems: 40
+        project: Visual report on a dataset of your choice
+
+      - id: da.10
+        title: EDA, reporting and communication
+        priority: essential
+        requires: [da.09, da.06]
+        topics:
+          - Hypothesis-driven exploratory data analysis
+          - KPIs and metrics
+          - "Communication flow: question, analysis, finding, recommendation, limitations"
+          - Streamlit dashboards
+        learning_outcomes:
+          - Write a one-page finding that a manager can act on
+        problems: 30
+        project: Interactive Streamlit dashboard with a written findings page
+
+      - id: da.11
+        title: Applied business analytics
+        priority: role-specific
+        requires: [da.10, da.08]
+        topics:
+          - A/B testing basics
+          - Funnel, cohort and retention analysis
+          - RFM segmentation
+        learning_outcomes:
+          - Run a full customer analysis and present recommendations with limitations
+        problems: 30
+        project: Customer analytics case study
+
+      - id: da.12
+        title: Excel for analysts
+        priority: role-specific
+        requires: [da.01]
+        topics:
+          - PivotTables
+          - Lookups (XLOOKUP, INDEX/MATCH)
+          - Conditional aggregation (SUMIFS, COUNTIFS, AVERAGEIFS)
+          - Power Query basics
+          - Automating Excel from Python with openpyxl
+        learning_outcomes:
+          - Rebuild a pandas analysis in Excel and match the numbers exactly
+        problems: 30
+        project: Excel report generated and refreshed from Python
+
+      - id: da.13
+        title: Power BI and data modelling (companion)
+        priority: advanced-elective
+        requires: [da.12, da.06]
+        topics:
+          - Star schema, facts and dimensions
+          - Relationships and filter direction
+          - DAX basics
+        learning_outcomes:
+          - Model a small business dataset as a star schema
+        problems: 20
+        project: Power BI report on your Python-cleaned data
+    capstone: End-to-end analysis of a large public dataset with reconciled metrics, dashboard and written report
+
+# ---------------------------------------------------------------------
+# LEVEL: PYTHON DATA SCIENTIST
+# ---------------------------------------------------------------------
+  - id: ds
+    title: Python Data Scientist
+    description: Statistics, machine learning and honest evaluation.
+    modules:
+      - id: ds.01
+        title: Mathematics for data science
+        priority: essential
+        requires: [da.02]
+        topics:
+          - Linear algebra (vectors, matrices, eigenvalues, SVD)
+          - Calculus (derivatives, partial derivatives, gradients)
+          - Probability (random variables, Bayes theorem, distributions)
+          - Statistical inference (confidence intervals, hypothesis tests, p-values, bootstrap)
+          - Every concept implemented in NumPy
+        learning_outcomes:
+          - Compute a gradient by hand and verify it numerically
+          - Run a bootstrap and interpret its interval
+        problems: 60
+        project: Statistics and linear-algebra toolkit from scratch
+
+      - id: ds.02
+        title: Statistical modelling
+        priority: essential
+        requires: [ds.01, da.04]
+        topics:
+          - Linear regression with statsmodels, assumptions, diagnostics
+          - Logistic regression, generalised linear models
+        learning_outcomes:
+          - Fit a regression, check its assumptions and interpret coefficients
+        problems: 35
+        project: House-price regression study
+
+      - id: ds.03
+        title: Machine learning fundamentals
+        priority: essential
+        requires: [ds.02]
+        topics:
+          - Supervised vs unsupervised learning
+          - Bias-variance trade-off, overfitting, regularisation
+          - Train, validation and test splits, cross-validation
+          - Metrics for regression and classification
+        learning_outcomes:
+          - Explain overfitting using a learning curve
+        problems: 40
+        project: Model evaluation framework
+
+      - id: ds.04
+        title: Evaluation done right
+        priority: essential
+        requires: [ds.03]
+        topics:
+          - Data leakage, including preprocessing before splitting
+          - Group-based and time-based splits
+          - Baseline models and simple business-rule baselines
+          - Class imbalance, precision-recall trade-off, threshold selection
+          - Probability calibration
+          - Error analysis by subgroup and data segment
+          - Reproducibility (seeds, environment, dataset version, experiment config)
+          - Training-serving consistency
+        learning_outcomes:
+          - Find the leak in a model that looks too good
+          - Beat a simple baseline and prove it with the right split
+          - Choose a threshold from a business cost
+        problems: 45
+        project: Audit and fix a deliberately leaky ML project
+
+      - id: ds.05
+        title: scikit-learn in depth
+        priority: essential
+        requires: [ds.04]
+        topics:
+          - The estimator API
+          - Pipelines and ColumnTransformer (leak-free preprocessing)
+          - Feature engineering
+          - Model selection and hyperparameter tuning
+        learning_outcomes:
+          - Build a single pipeline object that goes from raw data to predictions
+        problems: 45
+        project: Reusable ML pipeline for tabular data
+
+      - id: ds.06
+        title: ML algorithms (from scratch and with libraries)
+        priority: essential
+        requires: [ds.05]
+        topics:
+          - Linear and logistic regression with gradient descent
+          - k-nearest neighbours, Naive Bayes
+          - Decision trees, random forests
+          - Gradient boosting (XGBoost, LightGBM)
+          - Support vector machines
+          - Clustering (k-means, DBSCAN, hierarchical)
+          - PCA for compression and feature reduction
+          - t-SNE and UMAP for visualisation only, and how not to interpret them
+        learning_outcomes:
+          - Implement three algorithms from scratch and match sklearn's results
+          - Explain why distances in a t-SNE plot are not meaningful
+        problems: 60
+        project: Implement algorithms from scratch and compare with sklearn
+
+      - id: ds.07
+        title: Time-series forecasting
+        priority: role-specific
+        requires: [ds.04]
+        topics:
+          - Trend and seasonality
+          - Naive and seasonal-naive baselines
+          - Backtesting with rolling origins
+          - Avoiding future-data leakage
+          - Classical models and gradient boosting for forecasting
+        learning_outcomes:
+          - Backtest a forecast and show whether it beats seasonal naive
+        problems: 35
+        project: Sales forecasting with an honest backtest
+
+      - id: ds.08
+        title: Other special data
+        priority: role-specific
+        requires: [ds.05]
+        topics:
+          - Text features (bag of words, TF-IDF)
+          - Recommender system basics
+        learning_outcomes:
+          - Build a text classifier with TF-IDF and explain its errors
+        problems: 30
+        project: Movie recommender
+
+      - id: ds.09
+        title: Experimentation and causal inference
+        priority: role-specific
+        requires: [ds.02]
+        topics:
+          - A/B testing in depth, power analysis
+          - Multiple testing, peeking and sequential testing pitfalls
+          - Causal inference introduction
+        learning_outcomes:
+          - Size an experiment and analyse it without peeking errors
+        problems: 30
+        project: Analyse a simulated product experiment
+
+      - id: ds.10
+        title: Interpretation and communication
+        priority: essential
+        requires: [ds.06]
+        topics:
+          - Feature importance, SHAP values and their limits
+          - Communicating results to non-technical people
+        learning_outcomes:
+          - Explain a model's prediction to a non-technical reader
+        problems: 20
+        project: Explainable credit-risk model report
+    capstone: Kaggle-style end-to-end project from raw data to presented model, with leakage audit
+
+# ---------------------------------------------------------------------
+# LEVEL: AI/ML ENGINEER, ROUTE 1 - DEEP LEARNING
+# ---------------------------------------------------------------------
+  - id: ml
+    title: AI/ML Engineer - Deep learning route
+    description: Data science, then neural networks, PyTorch, specialist models and deployment.
+    modules:
+      - id: ml.01
+        title: Deep learning fundamentals
+        priority: essential
+        requires: [ds.06]
+        topics:
+          - Neurons, layers, activation functions
+          - Loss functions and optimisers
+          - Backpropagation and a tiny autograd engine from scratch
+          - Initialisation, regularisation, batch normalisation, dropout
+        learning_outcomes:
+          - Implement backpropagation for a small network by hand
+        problems: 40
+        project: Neural network library from scratch in NumPy
+
+      - id: ml.02
+        title: PyTorch
+        priority: essential
+        requires: [ml.01]
+        topics:
+          - Tensors and autograd
+          - nn.Module, Dataset, DataLoader
+          - Training loops, GPU usage, saving and loading
+          - Debugging training problems
+        learning_outcomes:
+          - Write a training loop from memory and diagnose a model that does not learn
+        problems: 40
+        project: Image classifier trained end to end
+
+      - id: ml.03
+        title: Computer vision
+        priority: role-specific
+        requires: [ml.02]
+        topics:
+          - Convolutional neural networks
+          - Data augmentation
+          - Transfer learning with pretrained models
+        learning_outcomes:
+          - Fine-tune a pretrained model on a small custom dataset
+        problems: 25
+        project: Fine-tuned classifier for a custom dataset
+
+      - id: ml.04
+        title: Sequence models and transformers
+        priority: role-specific
+        requires: [ml.02]
+        topics:
+          - Tokenisation and embeddings
+          - RNNs and LSTMs
+          - Attention and transformers from scratch
+        learning_outcomes:
+          - Implement self-attention and explain each tensor shape
+        problems: 35
+        project: Small character-level transformer that generates text
+
+      - id: ml.05
+        title: Fine-tuning pretrained models
+        priority: role-specific
+        requires: [ml.04]
+        topics:
+          - Hugging Face transformers and datasets
+          - Fine-tuning, LoRA and PEFT
+          - Evaluating fine-tuned models
+        learning_outcomes:
+          - Fine-tune a small model and show it beats the base model on a held-out set
+        problems: 30
+        project: Fine-tune a small model for classification
+
+      - id: ml.06
+        title: MLOps
+        priority: essential
+        requires: [ml.02, swe.09]
+        topics:
+          - Experiment tracking (MLflow)
+          - Data and model versioning (DVC)
+          - Model serving with FastAPI and Docker
+          - Training-serving consistency in production
+          - Monitoring and data drift, CI for ML
+        learning_outcomes:
+          - Reproduce any past experiment from its tracked config
+          - Detect drift in a served model
+        problems: 30
+        project: Deploy and monitor a model as a service
+
+      - id: ml.07
+        title: Model optimisation and deployment
+        priority: advanced-elective
+        requires: [ml.06]
+        topics:
+          - Quantisation and pruning
+          - ONNX export, batching, latency
+          - Running models on small devices
+        learning_outcomes:
+          - Measure size and latency before and after optimisation
+        problems: 20
+        project: Optimise a model and report the size, speed and accuracy trade-off
+    capstone: Train a model on your own learning history from this module and serve it as an API
+
+# ---------------------------------------------------------------------
+# LEVEL: AI/ML ENGINEER, ROUTE 2 - LLM APPLICATIONS
+# ---------------------------------------------------------------------
+  - id: llm
+    title: AI/ML Engineer - LLM application route
+    description: Python, APIs and validation, then LLM calls, retrieval, tools and evaluation. No model training required.
+    modules:
+      - id: llm.01
+        title: LLM fundamentals for builders
+        priority: essential
+        requires: [swe.02, core.09]
+        topics:
+          - Tokens, context windows, sampling settings
+          - Choosing a model, cost and latency trade-offs
+          - What models are bad at, hallucination
+        learning_outcomes:
+          - Estimate the cost and latency of a feature before building it
+        problems: 20
+        project: Token and cost calculator for prompts
+
+      - id: llm.02
+        title: Calling LLM APIs reliably
+        priority: essential
+        requires: [llm.01, swe.05]
+        topics:
+          - Prompt design and system prompts
+          - Structured output validated with Pydantic
+          - Streaming responses
+          - Provider errors, timeouts, retries and fallbacks
+          - Latency and cost budgets
+        learning_outcomes:
+          - Get validated structured data from a model and handle every failure path
+        problems: 30
+        project: LLM-powered extraction API with validation and retries
+
+      - id: llm.03
+        title: Retrieval-augmented generation
+        priority: essential
+        requires: [llm.02, shared.02]
+        topics:
+          - Embeddings and vector databases
+          - Chunking strategies
+          - Keyword, vector and hybrid retrieval, metadata filters
+          - Reranking
+          - Grounded answers with citations
+          - Answering "the information is not available"
+        learning_outcomes:
+          - Build a RAG system that cites sources and refuses when the answer is missing
+        problems: 35
+        project: Question-answering system over your own PDF library
+
+      - id: llm.04
+        title: Evaluating LLM applications
+        priority: essential
+        requires: [llm.03]
+        topics:
+          - Evaluating retrieval separately from generation
+          - Building evaluation datasets
+          - Automatic metrics, model-graded evaluation and their limits
+          - Regression checks in CI
+        learning_outcomes:
+          - Show with numbers that a change improved or broke your RAG system
+        problems: 25
+        project: Evaluation suite for your PDF question-answering system
+
+      - id: llm.05
+        title: Tool use and agents
+        priority: essential
+        requires: [llm.02]
+        topics:
+          - Tool and function calling
+          - Agent state and memory
+          - Stopping conditions, retries and loops
+          - Approval points before consequential actions
+          - Tool permissions and least privilege
+        learning_outcomes:
+          - Build an agent that stops reliably and asks before risky actions
+        problems: 30
+        project: Agent that manages files or tasks with human approval steps
+
+      - id: llm.06
+        title: Security for LLM applications
+        priority: essential
+        requires: [llm.03, llm.05]
+        topics:
+          - Prompt injection, direct and indirect
+          - Treating documents and tool results as untrusted
+          - Limiting tool permissions and data exposure
+          - Logging, privacy and sensitive data
+        learning_outcomes:
+          - Demonstrate a prompt-injection attack on your own app and defend against it
+        problems: 25
+        project: Red-team and harden your RAG and agent projects
+
+      - id: llm.07
+        title: Shipping LLM applications
+        priority: role-specific
+        requires: [llm.04, swe.09]
+        topics:
+          - Serving with FastAPI, caching responses
+          - Observability (traces, cost and latency dashboards)
+          - Handling model and provider changes
+        learning_outcomes:
+          - Run an LLM service with cost and latency tracked per request
+        problems: 20
+        project: Deploy your RAG system with monitoring
+    capstone: Production LLM application with retrieval, tools, evaluation suite and security review

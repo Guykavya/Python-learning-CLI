@@ -1,0 +1,6 @@
+id = "dsa.01.p016"
+title = "Linear search or binary search?"
+tier = "applied"
+kind = "trace"
+topics = ["binary search", "linear search", "O(log n)", "best and worst case"]
+minutes = 25

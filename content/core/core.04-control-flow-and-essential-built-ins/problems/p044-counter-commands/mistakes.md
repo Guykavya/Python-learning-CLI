@@ -1,0 +1,4 @@
+- `case "add":` on the whole line: it never matches `"add 5"`.
+- Forgetting `int(n)`: `n` is captured as a string, so `counter += n` crashes.
+- Putting `case _:` before the other cases: Python reports that the remaining patterns are unreachable.
+- Printing `Final:` inside the `quit` case and again after the loop.

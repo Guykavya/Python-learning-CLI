@@ -1,0 +1,5 @@
+ch = input()
+code = ord(ch)
+print(f"Code point: {code}")
+print(f"Unicode: U+{code:04X}")
+print(f"Next: {chr(code + 1)}")

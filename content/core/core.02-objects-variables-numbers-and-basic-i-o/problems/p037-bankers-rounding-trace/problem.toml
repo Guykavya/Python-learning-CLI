@@ -1,0 +1,6 @@
+id = "core.02.p037"
+title = "Banker's rounding"
+tier = "deep"
+kind = "trace"
+topics = ["round()", "banker's rounding", "float representation", "int()"]
+minutes = 15

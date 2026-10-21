@@ -1,0 +1,6 @@
+id = "core.07.p020"
+title = "Retry a flaky operation"
+tier = "applied"
+kind = "code"
+topics = ["catching a tuple of types", "re-raising", "except as e scope"]
+minutes = 25

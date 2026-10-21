@@ -1,0 +1,6 @@
+id = "core.06.p018"
+title = "Positional-only and keyword-only power"
+tier = "drill"
+kind = "code"
+topics = ["positional-only parameters", "keyword-only parameters", "signature design"]
+minutes = 12

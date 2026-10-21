@@ -1,0 +1,3 @@
+- Using `lambda name=name: ...` for the handlers: it fixes the value, but the handler now accepts an argument, which the tests reject.
+- Calling the handler while building the dict, so the dict holds strings instead of functions.
+- Thinking a comprehension creates a fresh variable for each item: it has one variable for the whole loop.

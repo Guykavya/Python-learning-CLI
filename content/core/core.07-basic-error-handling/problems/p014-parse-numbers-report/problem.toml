@@ -1,0 +1,6 @@
+id = "core.07.p014"
+title = "Parse a batch and report every problem"
+tier = "applied"
+kind = "code"
+topics = ["try in a loop", "collecting errors", "ValueError", "error messages"]
+minutes = 20

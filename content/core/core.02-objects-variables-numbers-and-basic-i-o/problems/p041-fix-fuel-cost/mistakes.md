@@ -1,0 +1,4 @@
+- Fixing only the crash and stopping. Several bugs give plausible but wrong numbers.
+- Changing to `Decimal(float(input()))` "to be safe". It brings the float error with it.
+- Rounding litres before computing the cost.
+- Removing `sep=""` but leaving the half-even default rounding in `quantize`.

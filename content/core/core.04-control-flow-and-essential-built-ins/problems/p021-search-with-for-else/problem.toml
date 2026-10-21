@@ -1,0 +1,6 @@
+id = "core.04.p021"
+title = "Search a sentence with for-else"
+tier = "applied"
+kind = "code"
+topics = ["loop else", "break", "enumerate", "str methods"]
+minutes = 20

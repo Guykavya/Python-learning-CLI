@@ -1,0 +1,6 @@
+id = "core.06.p015"
+title = "Merge any number of count dicts"
+tier = "applied"
+kind = "code"
+topics = ["*args", "dicts", "not changing inputs"]
+minutes = 20

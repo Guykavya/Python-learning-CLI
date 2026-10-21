@@ -1,0 +1,5 @@
+id = "core.03.p051"
+title = "Read a fixed-width record"
+tier = "challenge"
+kind = "code"
+topics = ["slicing", "strip()", "int conversion", "format spec"]

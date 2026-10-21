@@ -1,0 +1,6 @@
+id = "core.06.p006"
+title = "Greeting with defaults"
+tier = "drill"
+kind = "code"
+topics = ["default arguments", "keyword arguments"]
+minutes = 10

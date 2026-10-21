@@ -1,0 +1,4 @@
+- One clause `except (ValueError, ZeroDivisionError)` with one message: the user cannot tell what to fix.
+- Formatting with `round(result, 2)`: `round(3.5, 2)` is `3.5`, not `'3.50'`.
+- Checking `if b_text == "0"`: misses `"0.0"`, `" 0"` and `"00"`.
+- Catching `Exception`, which also swallows the `TypeError` for `None`.

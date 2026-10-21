@@ -1,0 +1,7 @@
+id = "core.01.p019"
+title = "Why virtual environments?"
+tier = "deep"
+kind = "explain"
+topics = ["venv", "pip", "PATH"]
+minutes = 25
+assessment = "explain"

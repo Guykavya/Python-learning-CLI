@@ -1,0 +1,4 @@
+- Using `range(n)` or `range(i)` for the loops. They start at 0, so rows begin with `0` and the last row is missing a number.
+- Adding the space after every number. The line then ends with a stray space, which a strict checker treats as a different line.
+- Forgetting to reset `line = ""` at the start of each row. Every row then contains all the earlier rows too.
+- Printing inside the inner loop without `end`. Every number lands on its own line instead of forming a row.

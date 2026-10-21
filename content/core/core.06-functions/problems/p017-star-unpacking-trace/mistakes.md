@@ -1,0 +1,3 @@
+- Thinking `args` is a list: it prints with round brackets.
+- Forgetting that a string spreads into characters.
+- Thinking `**d` binds by the dict's order rather than by names.

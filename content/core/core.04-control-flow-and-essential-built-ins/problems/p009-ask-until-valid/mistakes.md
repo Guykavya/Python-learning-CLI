@@ -1,0 +1,4 @@
+- `int(text)` before `isdigit()`: crashes on the first word.
+- Forgetting that `"-3".isdigit()` is `False` (the minus sign is not a digit). That is fine here, since negatives are invalid anyway.
+- Counting attempts only for invalid lines, so the total is one short.
+- Accepting 0 or 11 because of `<` instead of `<=`.

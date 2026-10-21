@@ -1,0 +1,6 @@
+id = "core.05.p042"
+title = "Sales by city"
+tier = "applied"
+kind = "code"
+topics = ["dicts", "nested dicts"]
+minutes = 20

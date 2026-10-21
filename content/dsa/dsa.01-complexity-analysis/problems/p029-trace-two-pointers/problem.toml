@@ -1,0 +1,6 @@
+id = "dsa.01.p029"
+title = "The loop that only looks quadratic"
+tier = "challenge"
+kind = "trace"
+topics = ["two pointers", "amortised analysis", "counting operations", "nested loops"]
+minutes = 35

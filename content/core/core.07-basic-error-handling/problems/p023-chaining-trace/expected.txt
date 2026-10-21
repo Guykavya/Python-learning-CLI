@@ -1,0 +1,22 @@
+ok 12
+ValueError | not a number: x
+  cause: ValueError
+  context: ValueError
+  suppress: True
+LookupError | no entry for b
+  cause: NoneType
+  context: KeyError
+  suppress: True
+ZeroDivisionError | division by zero
+  cause: NoneType
+  context: IndexError
+  suppress: False
+IndexError | list index out of range
+  cause: NoneType
+  context: IndexError
+  suppress: False
+  relay saw it
+ZeroDivisionError | division by zero
+  cause: NoneType
+  context: NoneType
+  suppress: False

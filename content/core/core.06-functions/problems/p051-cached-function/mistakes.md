@@ -1,0 +1,4 @@
+- Using only the first argument as the key, so `add(2, 3)` and `add(2, 4)` collide.
+- Testing `if cache.get(args):` instead of `in`: a cached result of `0` or `None` looks missing and is recomputed.
+- Returning the internal counters dict itself from `stats()`, so a caller could change it.
+- Keeping the cache in a mutable default argument, so every cached function shares it.

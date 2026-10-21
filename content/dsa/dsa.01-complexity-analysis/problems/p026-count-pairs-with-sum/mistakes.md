@@ -1,0 +1,4 @@
+- Adding `x` to the dict before looking up `t - x`. When `t = 2x`, each value then pairs with itself.
+- Storing positions in a set instead of counts in a dict. A set forgets how many times a value appeared, so `2 2 2 2` would give 3 instead of 6.
+- Counting each pair from both ends (looking up partners among all positions, earlier and later) and forgetting to halve, or halving when `v == w` incorrectly.
+- Building a list of all pairs. When the answer is 2 * 10^10, the list cannot fit in memory or time.

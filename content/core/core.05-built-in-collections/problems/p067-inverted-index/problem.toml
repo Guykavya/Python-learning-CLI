@@ -1,0 +1,6 @@
+id = "core.05.p067"
+title = "Search with an inverted index"
+tier = "challenge"
+kind = "code"
+topics = ["dicts", "sets", "set algebra"]
+minutes = 40

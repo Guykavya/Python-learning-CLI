@@ -1,0 +1,3 @@
+- No key: names starting with a capital always come before small-letter names.
+- Printing `name.lower()`: the task wants the original spelling.
+- Using `>=` in a hand-written loop, which reports the last of equal names instead of the first.

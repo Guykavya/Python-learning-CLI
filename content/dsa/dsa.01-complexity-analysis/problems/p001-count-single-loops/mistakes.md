@@ -1,0 +1,4 @@
+- Counting `range(5, n + 1)` as 15 values. An inclusive range from 5 to 20 has `20 - 5 + 1 = 16` values.
+- Forgetting 0 in `range(0, 20, 3)` or in the multiples of 4. Zero is a multiple of every number, and `range` starts at its first argument.
+- For `d`, counting the value `i = 21`. The loop checks `21 <= 20`, which is false, so the body does not run for 21.
+- Thinking that the `if` in the last loop makes it "O(n) plus something bigger". It adds at most one step per pass, so it changes only the constant.

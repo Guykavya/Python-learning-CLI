@@ -1,0 +1,5 @@
+- `except Exception: return "Error"`: it never crashes, and it also never tells anyone about a bug in the calculator.
+- Forgetting `0 ** -1`, which raises `ZeroDivisionError` from `**`.
+- Assuming every overflow raises. Float `*`, `+` and `-` overflow quietly to `inf`.
+- Accepting `nan` and `inf` as numbers because `float()` accepts them.
+- Converting with `int()`, so `"1.5 + 2"` is rejected.

@@ -1,0 +1,4 @@
+- `base * power(base, exp - 1)`: correct, but `RecursionError` for large exponents.
+- `power(base, exp // 2) * power(base, exp // 2)`: two calls per level doubles the work at every level, giving O(exp) calls again.
+- Forgetting the extra `* base` for odd exponents.
+- Using `exp / 2`, which makes a float and never reaches exactly 0.

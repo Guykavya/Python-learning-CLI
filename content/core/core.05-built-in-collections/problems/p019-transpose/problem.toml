@@ -1,0 +1,6 @@
+id = "core.05.p019"
+title = "Transpose a matrix"
+tier = "drill"
+kind = "code"
+topics = ["nested lists", "nested comprehensions"]
+minutes = 10

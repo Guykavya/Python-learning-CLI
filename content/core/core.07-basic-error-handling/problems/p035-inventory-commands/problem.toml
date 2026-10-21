@@ -1,0 +1,6 @@
+id = "core.07.p035"
+title = "An inventory command processor"
+tier = "challenge"
+kind = "code"
+topics = ["dispatch tables", "translating exceptions at a boundary", "KeyError", "validation"]
+minutes = 50

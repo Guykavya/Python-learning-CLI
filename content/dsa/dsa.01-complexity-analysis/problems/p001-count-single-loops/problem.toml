@@ -1,0 +1,6 @@
+id = "dsa.01.p001"
+title = "Count the steps: single loops"
+tier = "drill"
+kind = "trace"
+topics = ["counting operations", "loops", "range"]
+minutes = 10

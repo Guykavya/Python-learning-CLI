@@ -1,0 +1,4 @@
+- Writing `counts[w] += 1` for a new word, which raises `KeyError`.
+- Forgetting `.lower()`, so `The` and `the` are counted separately.
+- Sorting the output. The task asks for first-seen order.
+- Counting with `words.count(w)` inside a loop: O(n²).

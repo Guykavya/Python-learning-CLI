@@ -1,0 +1,4 @@
+- Using `str.center`, which may put the extra space on the other side.
+- Cutting with a slice like `title[:inner]`, which can break a word in half and never adds `...`.
+- Making the edges `W` dashes long, forgetting the two `+` corners.
+- Not collapsing spaces, so a title like `"a    b"` is wider than expected.

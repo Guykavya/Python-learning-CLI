@@ -1,0 +1,6 @@
+id = "core.07.p019"
+title = "Choose from a menu, by number or name"
+tier = "applied"
+kind = "code"
+topics = ["input loops", "EAFP", "testable input", "error messages"]
+minutes = 25

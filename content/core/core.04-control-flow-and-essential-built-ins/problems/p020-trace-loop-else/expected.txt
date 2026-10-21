@@ -1,0 +1,10 @@
+'sky' no vowel
+tree has vowel e
+'' no vowel
+moon has vowel o
+while finished, count = 3
+i = 0
+i = 2
+for finished, i = 2
+went negative: -2
+end -2

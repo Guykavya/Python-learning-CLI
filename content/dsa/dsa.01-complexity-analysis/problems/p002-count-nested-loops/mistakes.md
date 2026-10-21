@@ -1,0 +1,4 @@
+- Writing `b = n * (n + 1) / 2`. The inner `range(i)` runs `i` times starting from `i = 0`, so the largest inner count is `n - 1`, not `n`.
+- Mixing up `b` and `c`. `range(i, n)` has `n - i` values, which is largest when `i = 0`.
+- Writing `500500.0`. The program prints integers because it counts with `+= 1`; your answer must too.
+- Saying `d` is O(n^2) "because it is a nested loop". The inner loop always runs 3 times, so the total is `3n`.

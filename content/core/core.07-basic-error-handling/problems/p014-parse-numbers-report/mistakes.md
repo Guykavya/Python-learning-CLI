@@ -1,0 +1,5 @@
+- Putting the `try` around the whole loop: the first bad item ends the loop.
+- Counting positions from 0.
+- Forgetting `nan` and `inf`: `float("nan")` succeeds, so no exception tells you.
+- Testing `value == float("nan")`: nan is not equal to anything, even itself.
+- Catching `Exception`, so `None` (a bug) becomes an error message.

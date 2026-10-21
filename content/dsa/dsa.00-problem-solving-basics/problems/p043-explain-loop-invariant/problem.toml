@@ -1,0 +1,6 @@
+id = "dsa.00.p043"
+title = "Why does the loop give the right answer?"
+tier = "deep"
+kind = "explain"
+topics = ["loop invariant", "correctness", "termination", "gcd", "maximum"]
+minutes = 25

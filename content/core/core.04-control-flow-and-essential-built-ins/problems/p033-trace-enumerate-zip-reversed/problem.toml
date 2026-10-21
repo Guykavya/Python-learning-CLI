@@ -1,0 +1,6 @@
+id = "core.04.p033"
+title = "Trace enumerate, zip and reversed"
+tier = "deep"
+kind = "trace"
+topics = ["enumerate", "zip", "reversed()", "iterators"]
+minutes = 25

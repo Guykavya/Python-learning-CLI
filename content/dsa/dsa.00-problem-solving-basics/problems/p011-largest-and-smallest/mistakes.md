@@ -1,0 +1,4 @@
+- Starting `largest = 0` (and `smallest = 0`): with all-negative input it prints `max 0`; with all-positive input it prints `min 0`. Zero was never in the input.
+- Using `if x > largest: ... elif x < smallest: ...` combined with a start of 0 or infinity: the first number can only update one of the two, so the other stays wrong.
+- Looping `n` times after already reading the first number: the program waits for one more line than exists and crashes with `EOFError`.
+- Storing all numbers in a list and calling `max()` / `min()`: correct answers, but it uses memory for every number, which is exactly what this exercise trains you to avoid.

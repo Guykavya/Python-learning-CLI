@@ -1,0 +1,3 @@
+- Counting only the leaves, or only the internal calls.
+- Forgetting that `fib(1)` and `fib(0)` are also calls.
+- Forgetting that the cache is shared between the two `fast` calls.

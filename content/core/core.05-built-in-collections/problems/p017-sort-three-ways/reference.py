@@ -1,0 +1,5 @@
+words = input().split()
+print("Plain:", " ".join(sorted(words)))
+print("Ignoring case:", " ".join(sorted(words, key=str.lower)))
+print("By length:", " ".join(sorted(words, key=len)))
+print("Longest first:", " ".join(sorted(words, key=len, reverse=True)))

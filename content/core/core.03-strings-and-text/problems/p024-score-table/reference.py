@@ -1,0 +1,13 @@
+n1, c1, s1 = input().partition(",")
+n2, c2, s2 = input().partition(",")
+n3, c3, s3 = input().partition(",")
+n1, n2, n3 = n1.strip(), n2.strip(), n3.strip()
+s1, s2, s3 = int(s1), int(s2), int(s3)
+average = (s1 + s2 + s3) / 3
+print(f"{'Name':<12}{'Score':>6}")
+print("-" * 18)
+print(f"{n1:<12}{s1:>6}")
+print(f"{n2:<12}{s2:>6}")
+print(f"{n3:<12}{s3:>6}")
+print("-" * 18)
+print(f"{'Average':<12}{average:>6.1f}")

@@ -1,0 +1,3 @@
+- Forgetting the anti-diagonal (top right to bottom left).
+- Checking "full board" before checking for a winner: a full board can still have a winner.
+- Treating `...` as a winning line of dots.

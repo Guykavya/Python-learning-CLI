@@ -1,0 +1,10 @@
+5 cold
+18 mild
+25 warm
+fan on
+31 hot
+fan on
+40 hot
+fan on
+alert
+matched b

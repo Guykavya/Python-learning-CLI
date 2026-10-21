@@ -1,0 +1,6 @@
+id = "core.04.p060"
+title = "Longest common prefix"
+tier = "deep"
+kind = "code"
+topics = ["min()", "key=", "all()", "loop else", "enumerate"]
+minutes = 25

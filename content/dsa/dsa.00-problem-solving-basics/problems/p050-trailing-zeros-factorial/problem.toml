@@ -1,0 +1,6 @@
+id = "dsa.00.p050"
+title = "Trailing zeros of n!"
+tier = "deep"
+kind = "code"
+topics = ["counting factors", "floor division", "loops", "efficiency"]
+minutes = 25

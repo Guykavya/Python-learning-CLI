@@ -1,0 +1,4 @@
+- Converting before checking for `done`: `float("done")` raises `ValueError`.
+- Comparing `line == "done"` without `.strip().lower()`: `DONE` is treated as a price.
+- Counting the sentinel as an item.
+- Printing `Total: 55.75` correctly but `Total: 0.0` for no items. Use `:.2f` always.

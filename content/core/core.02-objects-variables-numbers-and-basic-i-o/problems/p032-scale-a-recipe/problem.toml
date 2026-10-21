@@ -1,0 +1,6 @@
+id = "core.02.p032"
+title = "Scale a recipe exactly"
+tier = "applied"
+kind = "code"
+topics = ["fractions", "exact arithmetic", "type conversion"]
+minutes = 15

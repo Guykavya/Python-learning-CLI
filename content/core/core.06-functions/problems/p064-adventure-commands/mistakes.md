@@ -1,0 +1,5 @@
+- Storing the world's item lists in the state without copying: taking the lamp removes it from `WORLD` itself, so the next game starts without it.
+- Keeping the game state in module-level variables or in a mutable default: a second `play` call continues the first game.
+- An `if verb == "look": ... elif ...` chain in `handle`: every new verb needs edits in two places, and the test that adds a verb to `COMMANDS` fails.
+- Handlers with different signatures, so they cannot all be called the same way from the table.
+- Writing `COMMANDS = {"look": do_look(...)}` (calling the handler while building the table).

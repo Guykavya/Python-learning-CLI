@@ -1,0 +1,7 @@
+id = "dsa.00.p039"
+title = "Trace a prime finder with for-else"
+tier = "deep"
+kind = "trace"
+topics = ["nested loops", "break", "loop else", "primes", "dry run"]
+minutes = 20
+assessment = "trace"

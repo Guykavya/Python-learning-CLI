@@ -1,0 +1,6 @@
+id = "core.04.p042"
+title = "First and last name ignoring case"
+tier = "applied"
+kind = "code"
+topics = ["min()", "max()", "key=", "str.lower"]
+minutes = 20

@@ -1,0 +1,5 @@
+- Thinking `from e` leaves `__context__` empty. Python always records the context; `from` adds a cause and suppresses the context in printouts.
+- Thinking `from None` erases `__context__`. It only sets `__suppress_context__`.
+- Expecting `careless([5])` to report `IndexError`: the handler's own `/ 0` replaced it.
+- Thinking a bare `raise` creates a new, chained exception. It re-raises the original object.
+- Forgetting the line `  relay saw it`, printed before `show` reports the exception.

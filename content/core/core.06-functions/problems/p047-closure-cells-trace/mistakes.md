@@ -1,0 +1,3 @@
+- Thinking each closure copies the value at creation time.
+- Thinking the two pairs share state.
+- Forgetting that `value` was changed after `show` was defined but before it was called.

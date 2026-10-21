@@ -1,0 +1,4 @@
+- `reverse=True` with key `(marks, name)`: reverses the names too, so ties come out Z-to-A.
+- Forgetting `.lower()`, so `'Kiran'` sorts before `'asha'`.
+- `if top:` instead of `if top is None`: `top=0` should return `[]`, but `if top:` treats 0 as 'not given'.
+- Returning the tuples instead of the names.

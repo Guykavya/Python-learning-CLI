@@ -1,0 +1,8 @@
+print("Name:", abs.__name__)
+print("Type:", type(abs).__name__)
+print("Module:", abs.__module__)
+print("Doc:", abs.__doc__)
+print("Name:", len.__name__)
+print("Type:", type(len).__name__)
+print("Module:", len.__module__)
+print("Doc:", len.__doc__)

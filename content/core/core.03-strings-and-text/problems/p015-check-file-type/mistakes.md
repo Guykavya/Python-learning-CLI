@@ -1,0 +1,3 @@
+- Passing a list instead of a tuple: `endswith([".png"])` raises `TypeError`. It must be a string or a tuple.
+- Checking `"png" in name`, which is also true for `png_notes.txt`.
+- Forgetting to lowercase, so `Holiday.JPG` is not recognised.

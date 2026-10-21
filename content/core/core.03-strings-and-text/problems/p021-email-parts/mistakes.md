@@ -1,0 +1,3 @@
+- Lowercasing the whole address. The task keeps the user part as typed.
+- Forgetting `strip()`, so the user part starts with spaces and the mask shows a space.
+- Using `find("@")` and slicing without checking: a missing `@` gives -1 and nonsense slices.

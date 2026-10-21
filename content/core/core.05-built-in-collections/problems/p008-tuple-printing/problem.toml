@@ -1,0 +1,6 @@
+id = "core.05.p008"
+title = "How tuples print"
+tier = "drill"
+kind = "code"
+topics = ["tuples"]
+minutes = 10

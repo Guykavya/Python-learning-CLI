@@ -1,0 +1,4 @@
+- Calling the handlers with `h(args, kwargs)`: two arguments, a tuple and a dict.
+- Looping over the live list in `emit` while a handler calls `on` or `off` for the same event.
+- Keeping the handlers dict at module level, so all buses share it.
+- Removing every registration in `off`, not just the first.

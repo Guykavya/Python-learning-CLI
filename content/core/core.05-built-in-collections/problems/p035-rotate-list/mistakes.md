@@ -1,0 +1,3 @@
+- Forgetting `% n`, so `k = 7` on 5 items gives the wrong slices.
+- Using `% n` on an empty list: `ZeroDivisionError`.
+- Rotating left when asked to rotate right.

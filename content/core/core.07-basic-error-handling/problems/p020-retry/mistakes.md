@@ -1,0 +1,4 @@
+- Writing `raise e` after the loop: `e` was deleted at the end of the handler, so this raises `NameError` (or `UnboundLocalError`).
+- Catching `Exception`, so a `KeyError` bug is retried and finally reported as if it were a flaky failure.
+- Raising a new exception ("all attempts failed") and losing the real error message.
+- Off-by-one: calling `func` `attempts + 1` times.

@@ -1,0 +1,6 @@
+id = "core.04.p010"
+title = "Three PIN attempts"
+tier = "applied"
+kind = "code"
+topics = ["for loop", "break", "loop else", "conditional expression"]
+minutes = 20

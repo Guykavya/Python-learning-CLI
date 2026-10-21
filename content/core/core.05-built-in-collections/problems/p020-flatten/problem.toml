@@ -1,0 +1,6 @@
+id = "core.05.p020"
+title = "Flatten a jagged list"
+tier = "drill"
+kind = "code"
+topics = ["nested lists", "nested comprehensions"]
+minutes = 10

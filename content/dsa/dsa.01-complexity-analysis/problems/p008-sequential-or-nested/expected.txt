@@ -1,0 +1,4 @@
+sequential 16
+nested 64
+nested constant 48
+shrinking 15

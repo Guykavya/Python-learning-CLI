@@ -1,0 +1,7 @@
+id = "core.04.p020"
+title = "Trace loop else clauses"
+tier = "deep"
+kind = "trace"
+topics = ["loop else", "break", "continue", "while loop"]
+minutes = 25
+assessment = "trace"

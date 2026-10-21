@@ -1,0 +1,6 @@
+id = "core.06.p039"
+title = "Product with functools.reduce"
+tier = "drill"
+kind = "code"
+topics = ["functools.reduce", "lambda"]
+minutes = 10

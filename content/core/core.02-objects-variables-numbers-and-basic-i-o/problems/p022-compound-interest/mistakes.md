@@ -1,0 +1,3 @@
+- Writing `** n * t`: Python computes `(...) ** n` and then multiplies by `t`.
+- Writing `r / 100 * n` instead of `r / (100 * n)`: this multiplies by `n` instead of dividing.
+- Forgetting the comma in the format spec: `:.2f` prints `1610.51` without separators.

@@ -1,0 +1,6 @@
+id = "dsa.01.p009"
+title = "Stop recomputing the maximum"
+tier = "drill"
+kind = "code"
+topics = ["hoisting", "hidden loops", "max", "O(n^2) to O(n)"]
+minutes = 15

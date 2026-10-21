@@ -1,0 +1,3 @@
+- Saying "Python counts wrong". It counts code points correctly; the user simply counts something else.
+- Assuming every emoji is one code point.
+- Believing normalisation turns every visible character into one code point.

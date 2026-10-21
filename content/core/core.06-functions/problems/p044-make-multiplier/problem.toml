@@ -1,0 +1,6 @@
+id = "core.06.p044"
+title = "A multiplier factory"
+tier = "drill"
+kind = "code"
+topics = ["closures", "returning functions", "factory functions"]
+minutes = 10

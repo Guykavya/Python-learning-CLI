@@ -1,0 +1,6 @@
+id = "core.07.p021"
+title = "Steps with guaranteed clean-up"
+tier = "applied"
+kind = "code"
+topics = ["finally", "else", "try/except/else/finally order"]
+minutes = 25

@@ -1,0 +1,4 @@
+- Putting `case ["rect", *_]:` before `case ["rect", w, h]:`, so every rect prints the usage.
+- Forgetting `float()`: `"3" * "4"` raises `TypeError`.
+- Counting invalid shapes in `Shapes:` or adding their areas.
+- Treating `done` with extra words as the stop command; only the exact line `done` stops.

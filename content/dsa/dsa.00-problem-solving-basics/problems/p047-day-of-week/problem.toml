@@ -1,0 +1,6 @@
+id = "dsa.00.p047"
+title = "Day of the week for any date"
+tier = "deep"
+kind = "code"
+topics = ["validation", "leap years", "modular arithmetic", "edge cases"]
+minutes = 30

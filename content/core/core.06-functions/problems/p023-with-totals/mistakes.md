@@ -1,0 +1,4 @@
+- `new = grid[:]` then `row.append(...)`: the copy is shallow, so the caller's inner rows change.
+- `new = grid` then appending: no copy at all.
+- Computing column totals from the original rows only, so the grand total is missing.
+- Crashing on an empty grid by reading `grid[0]`.

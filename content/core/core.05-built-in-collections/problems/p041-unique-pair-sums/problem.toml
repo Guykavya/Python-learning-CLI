@@ -1,0 +1,6 @@
+id = "core.05.p041"
+title = "Distinct pairs with a sum"
+tier = "applied"
+kind = "code"
+topics = ["sets", "big-o"]
+minutes = 20

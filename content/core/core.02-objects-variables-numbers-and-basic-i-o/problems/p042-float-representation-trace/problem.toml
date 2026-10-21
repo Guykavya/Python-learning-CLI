@@ -1,0 +1,6 @@
+id = "core.02.p042"
+title = "What floats really store"
+tier = "deep"
+kind = "trace"
+topics = ["float", "IEEE 754", "rounding errors", "int()"]
+minutes = 20

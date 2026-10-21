@@ -1,0 +1,5 @@
+id = "core.03.p040"
+title = "str versus bytes"
+tier = "deep"
+kind = "explain"
+topics = ["bytes", "encode()", "decode()", "UTF-8", "UnicodeDecodeError"]

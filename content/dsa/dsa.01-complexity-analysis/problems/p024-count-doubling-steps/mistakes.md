@@ -1,0 +1,4 @@
+- Using `math.log2(n)` to find the number of groups. For `n` near a power of two, like `2^60 - 1`, the float result can round up to exactly 60.0 and put `n` in the wrong group.
+- Forgetting to cut the last group at `n`, which adds steps for numbers greater than `n`.
+- Writing the group as `2^(k-1)` to `2^k`. Then powers of two are counted in two groups.
+- Still looping `for i in range(1, n + 1)` but computing the steps for each `i` by a formula. That is O(n), which is still far too slow for `n = 10^18`.

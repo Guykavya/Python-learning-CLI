@@ -1,0 +1,6 @@
+id = "dsa.01.p002"
+title = "Count the steps: nested loops"
+tier = "drill"
+kind = "trace"
+topics = ["counting operations", "nested loops", "triangular numbers"]
+minutes = 15

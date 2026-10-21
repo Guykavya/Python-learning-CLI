@@ -1,0 +1,3 @@
+- Forgetting to wrap: the starter prints `-17 h 30 min` for 22:30 to 06:00.
+- Using `% 24` on hours and `% 60` on minutes separately: the borrow between minutes and hours goes wrong.
+- Using `abs(diff)`: 22:30 to 06:00 would become 16 h 30 min, which is the wrong direction.

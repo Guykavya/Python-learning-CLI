@@ -1,0 +1,4 @@
+- Using `range(k)`: it starts at 0, so the first line is `7 x 0 = 0` and the last line `7 x k = ...` is missing.
+- Getting the spacing wrong, for example `print(n, "x", i, "=", n * i, sep="")` gives `7x1=7`. The checker compares lines exactly.
+- Using a capital `X` or the `*` symbol instead of a lowercase `x`.
+- Reading only one input line: the program then ignores `k` and prints a fixed 10 lines.

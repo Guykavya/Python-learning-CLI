@@ -1,0 +1,3 @@
+- Counting all occurrences with a dict, which merges separate runs of the same token.
+- Reading `runs[-1]` when `runs` is empty, which raises `IndexError`.
+- Forgetting to drop `*1` for single tokens.

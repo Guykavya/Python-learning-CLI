@@ -1,0 +1,3 @@
+- Treating `isdigit()` as "is this a number". It rejects `-5` and `3.14`.
+- Expecting `"".isalpha()` to be `True` because "there is nothing wrong". Empty is `False`.
+- Thinking a space or digit makes `isupper()` false.

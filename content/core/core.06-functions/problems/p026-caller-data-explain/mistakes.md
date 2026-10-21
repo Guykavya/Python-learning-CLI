@@ -1,0 +1,4 @@
+- Saying `f2` sorts the caller's list because `sorted` was called on it.
+- Saying `f3` adds 99 to the caller's list: the copy was made first.
+- Treating `f4` and `f5` alike.
+- Explaining with 'pass by reference' and then being unable to explain `f2`.

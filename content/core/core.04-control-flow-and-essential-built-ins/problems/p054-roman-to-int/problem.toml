@@ -1,0 +1,6 @@
+id = "core.04.p054"
+title = "Roman numerals to numbers"
+tier = "challenge"
+kind = "code"
+topics = ["match/case", "zip", "lookahead", "validation", "accumulate"]
+minutes = 40

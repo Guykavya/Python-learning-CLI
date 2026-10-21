@@ -1,0 +1,7 @@
+id = "core.06.p025"
+title = "Fix the attendance register"
+tier = "deep"
+kind = "code"
+topics = ["mutable default argument", "mutation vs rebinding", "debugging"]
+minutes = 30
+assessment = "fix"

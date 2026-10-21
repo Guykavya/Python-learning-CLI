@@ -1,0 +1,6 @@
+id = "core.01.p021"
+title = "Shell variables, export and pipes"
+tier = "deep"
+kind = "trace"
+topics = ["terminal", "environment variables", "pipes"]
+minutes = 20

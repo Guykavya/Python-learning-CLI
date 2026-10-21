@@ -1,0 +1,10 @@
+step 1 digit 7 left 520
+step 2 digit 0 left 52
+step 3 digit 2 left 5
+step 4 digit 5 left 0
+done after 4 steps
+m is now 100
+m is now 10
+m is now 1
+m is now 0
+zeros: 3

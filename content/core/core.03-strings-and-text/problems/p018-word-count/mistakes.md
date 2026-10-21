@@ -1,0 +1,3 @@
+- Using `split(" ")`, which counts empty pieces as words.
+- Counting spaces and adding one.
+- Forgetting that an empty line has zero words.

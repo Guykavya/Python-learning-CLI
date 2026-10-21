@@ -1,0 +1,12 @@
+1 2
+row 1 done
+2 1
+2 3
+row 2 done
+3 2
+row 3 done
+4 1
+4 3
+row 4 done
+stop at 5
+count 6

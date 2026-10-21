@@ -1,0 +1,4 @@
+- Thinking `continue` prevents the inner `else`. It does not: only `break` does, so `row i done` is printed for every row.
+- Printing `all rows done`. The outer loop ended with `break` at `i = 5`, so its `else` is skipped.
+- Running the inner loop for `i = 5`. The `if i == 5` check comes first and breaks before `for j` starts.
+- Counting every pair (count 12 for four rows of three). `continue` jumps over `count += 1` for the pairs with an even sum, so only 6 are counted.

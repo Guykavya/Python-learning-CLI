@@ -1,0 +1,3 @@
+- Expecting `-7 // 2` to be `-3` (that is how C and Java behave).
+- Expecting `%` to always be positive. `7 % -2` is `-1`.
+- Expecting `6 / 3` to print `2`. True division always returns a float: `2.0`.

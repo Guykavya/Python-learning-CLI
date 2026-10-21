@@ -1,0 +1,6 @@
+id = "dsa.01.p015"
+title = "Simulate a growing list"
+tier = "applied"
+kind = "trace"
+topics = ["amortised analysis", "dynamic array", "doubling", "geometric sum"]
+minutes = 20

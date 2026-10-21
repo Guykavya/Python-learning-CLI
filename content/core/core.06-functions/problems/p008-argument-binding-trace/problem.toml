@@ -1,0 +1,6 @@
+id = "core.06.p008"
+title = "Who gets which value?"
+tier = "drill"
+kind = "trace"
+topics = ["positional arguments", "keyword arguments", "default arguments", "argument binding"]
+minutes = 12

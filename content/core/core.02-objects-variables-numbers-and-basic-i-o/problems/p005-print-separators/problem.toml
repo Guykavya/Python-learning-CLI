@@ -1,0 +1,6 @@
+id = "core.02.p005"
+title = "Print with sep and end"
+tier = "drill"
+kind = "code"
+topics = ["print()", "sep and end"]
+minutes = 10

@@ -1,0 +1,3 @@
+- Swapping indexes: `grid[j][i]` instead of `row[j]`, which crashes on non-square grids.
+- Summing columns over `range(r)` instead of `range(c)`.
+- Printing the column sums as a list with brackets.

@@ -1,0 +1,5 @@
+id = "core.03.p049"
+title = "Three lengths of one string"
+tier = "challenge"
+kind = "explain"
+topics = ["Unicode", "code points", "UTF-8", "grapheme clusters", "len()"]

@@ -1,0 +1,3 @@
+- Assuming the first loop's correct-looking result proves the method works.
+- Thinking the loop stops at the original length. It checks the current length every turn.
+- Thinking `v = v + 1` changes the list.

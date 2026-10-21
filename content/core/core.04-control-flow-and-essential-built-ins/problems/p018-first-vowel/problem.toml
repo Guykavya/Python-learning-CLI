@@ -1,0 +1,6 @@
+id = "core.04.p018"
+title = "First vowel position"
+tier = "drill"
+kind = "code"
+topics = ["for loop", "break", "enumerate", "search"]
+minutes = 10

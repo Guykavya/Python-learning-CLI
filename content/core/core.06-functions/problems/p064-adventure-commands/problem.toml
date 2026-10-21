@@ -1,0 +1,7 @@
+id = "core.06.p064"
+title = "A text-adventure command engine"
+tier = "challenge"
+kind = "code"
+topics = ["dispatch tables", "first-class functions", "dicts", "not changing inputs", "project"]
+minutes = 60
+assessment = "build"

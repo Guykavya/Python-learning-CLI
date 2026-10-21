@@ -1,0 +1,3 @@
+- Thinking `y += 1` changes `x` too. Ints are immutable, so the name `y` is moved to a new object.
+- Thinking `is` compares values. It compares identity; use `==` for values.
+- Expecting `type(1) is type(1.0)` to be `True` because `1 == 1.0`.

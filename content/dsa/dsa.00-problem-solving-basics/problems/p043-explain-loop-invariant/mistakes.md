@@ -1,0 +1,4 @@
+- Stating the invariant about the variables alone ("a is bigger than b") instead of linking it to the answer ("the gcd of a and b equals the gcd of the original numbers"). An invariant is only useful if, at the end, it tells you the answer.
+- Saying "the loop stops because b gets smaller" without saying it stays `>= 0`. Numbers that keep getting smaller but can go negative need not ever reach 0.
+- Proving gcd(a, b) = gcd(b, a % b) in only one direction. You must show every common divisor of the old pair divides the new pair AND the other way round, or the gcd could change.
+- Testing the "start at 0" version only with positive numbers, seeing it work, and calling it fine. The failing case is all-negative input.

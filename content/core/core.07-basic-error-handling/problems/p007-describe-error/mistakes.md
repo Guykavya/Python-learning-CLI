@@ -1,0 +1,4 @@
+- Using `str(err)` for `KeyError`, which gives `'cake'` with quotes.
+- Using `str(type(err))`, which gives `<class 'ValueError'>`.
+- Returning `"ValueError: "` (with a trailing colon) when there are no arguments.
+- Joining `args` without converting to `str` first: `", ".join(("bad row", 3))` raises `TypeError`.
