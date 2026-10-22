@@ -1,0 +1,6 @@
+id = "core.09.p007"
+title = "Explain: read this mypy error"
+tier = "drill"
+kind = "explain"
+topics = ["reading mypy errors", "arg-type", "hint vs code"]
+minutes = 20

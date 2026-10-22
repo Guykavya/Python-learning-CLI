@@ -1,0 +1,5 @@
+- Catching everything with a bare `except:`. Catch `ValueError` only, so real bugs are not hidden.
+- Writing `if not n: return default` in `safe_int_or`. `safe_int_or("0", 5)` must be `0`, not `5`.
+- Hinting `safe_int` as `-> int`. It can return `None`, so mypy would flag the `return None`.
+- Forgetting `.strip()`. `int(" 42 ")` actually works in Python, but explicit stripping makes the intent clear. (The tests do not depend on it.)
+- Returning the string `"error"` instead of `None`. The tests require `None`, and a string would force every caller to use `isinstance`.

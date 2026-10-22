@@ -1,0 +1,6 @@
+id = "core.10.p012"
+title = "slice_stream with islice"
+tier = "drill"
+kind = "code"
+topics = ["itertools.islice", "lazy slicing"]
+minutes = 15

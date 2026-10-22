@@ -1,0 +1,4 @@
+- Calling `iter(iterable)` inside the loop: for a list you would restart every time and loop forever.
+- Wrapping `action(item)` in the same `try`, which can hide a `StopIteration` raised by `action`.
+- Using a `for` loop, which the test rejects.
+- Returning `len(iterable)`: generators have no length, and a partly used iterator would give the wrong count.

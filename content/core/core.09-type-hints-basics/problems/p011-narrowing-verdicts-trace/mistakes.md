@@ -1,0 +1,5 @@
+- Marking `C` as an error. Inside `if name:` the value cannot be `None`, so mypy accepts `len(name)`.
+- Marking `E` as an error. `name or "?"` always produces a `str`.
+- Marking `G` as ok. The branch that checks `is not None` does not return, so the narrowing is lost after the `if`.
+- Marking `H` as an error. `assert x is not None` is a narrowing tool that mypy understands.
+- Forgetting `F`: returning a `str | None` value from a function that promised `str` is an error even without any method call.

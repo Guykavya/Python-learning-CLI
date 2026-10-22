@@ -1,0 +1,6 @@
+id = "core.09.p018"
+title = "A hint does not fix a mutable default"
+tier = "deep"
+kind = "trace"
+topics = ["mutable default", "list[str] | None = None", "shared state", "__defaults__"]
+minutes = 15

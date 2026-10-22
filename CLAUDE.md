@@ -63,3 +63,18 @@ and report. Do not start the next module unless Kavya asks.
 - Don't re-read files already summarised in this file or in memory.
 - Use `grep`/`sed -n` for slices of `syllabus.yaml` (1,600 lines) — never read it whole.
 - Read `learn validate` output with `tail`; it lists only the failures.
+
+## Model and effort advice
+
+Claude cannot change its own model; Kavya does it with `/model`. So at the **start of a task**
+and **at the end of every report**, say in one line which model and effort fit the next task,
+and tell Kavya when to switch. Quality matters as much as tokens.
+
+- **Default: Sonnet, medium effort** — authoring a normal module, fixing validation failures, polishing content.
+- **Switch UP to Opus, high effort** — before a module with many `trace` problems or step-by-step
+  tests (grids, turns, loops, state), tricky DSA algorithms, or after the same problem failed
+  validation twice. Say so before the module starts, not halfway.
+- **Switch DOWN to Haiku, low effort** — tutor mode (hints in `my-work/`) and chores (git, config, syllabus lookups, status updates).
+- **Switch back to the default** once the special task ends. In the final report say
+  "switch back to Sonnet/medium" so the next normal task does not keep running on the expensive model.
+- If unsure, recommend the cheaper option and say what would make it worth upgrading.

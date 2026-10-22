@@ -1,0 +1,4 @@
+- Writing `return n` or `return [..]` instead of `yield`: the function then is not a generator.
+- Building a list and returning `iter(result)`: it works for the values but it is not a generator function and it is not lazy.
+- Using `while n >= 0`, which yields an extra `0`.
+- Raising `StopIteration` by hand. Just let the function end.

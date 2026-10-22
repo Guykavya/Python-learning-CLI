@@ -1,0 +1,5 @@
+- Forgetting the `bool` case. `set_age(True)` must raise, but `isinstance(True, int)` is `True`.
+- Doing the range check first. `"21" < 0` raises a different `TypeError` with an unhelpful message, and the tests look for `"int"` in the message.
+- Raising `ValueError` for a wrong type, or `TypeError` for a wrong range. Wrong type is `TypeError`, wrong value is `ValueError`.
+- Writing `isinstance(values, list[str])`. That is not allowed; check the container, then loop over the items.
+- Raising an exception with no message. The tests use `match=`, so the message must contain the key word.

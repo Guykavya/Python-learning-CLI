@@ -1,0 +1,5 @@
+- Expecting `TypeError` for `double("ab")`. Python never compares the argument with the hint, and `"ab" * 2` is legal.
+- Writing `4.0` for `double(2.5)` or `5` for the float case. `2.5 * 2` is `5.0`.
+- Thinking `shout(5)` stops at the hint. The error comes from `.upper()`, and it is an `AttributeError`, not a `TypeError`.
+- Writing `False` for the last line. Python stores the hints exactly as written, so the dict matches.
+- Printing the list without the space after the comma. Python prints `[1, 2, 1, 2]`.

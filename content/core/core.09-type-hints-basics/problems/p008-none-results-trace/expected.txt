@@ -1,0 +1,6 @@
+1 items
+None None
+['tea']
+None
+[1, 2, 3]
+[1, 2, 3]

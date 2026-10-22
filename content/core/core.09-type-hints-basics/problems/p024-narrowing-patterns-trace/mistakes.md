@@ -1,0 +1,5 @@
+- Marking `E` as ok. `dict.get` is always typed as possibly returning `None`; mypy does not use the earlier `in` test. (Use `table[key]` there, or `.get(key, "")`.)
+- Marking `H` as ok because "a and b can not both be None". mypy narrows from the direct checks, one variable at a time, and it does not reason like that.
+- Marking `D` as ok. A list of `str | None` is not a list of `str`.
+- Marking `B` or `K` as errors. `continue` and `return` inside the check both remove the unwanted case for the code that follows.
+- Marking `I` as an error. After the `if`, both paths give `text` a `str`.

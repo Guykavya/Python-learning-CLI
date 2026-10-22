@@ -1,0 +1,6 @@
+id = "core.10.p009"
+title = "lazy_squares: a generator expression"
+tier = "drill"
+kind = "code"
+topics = ["generator expression", "laziness"]
+minutes = 15

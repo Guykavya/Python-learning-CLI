@@ -1,0 +1,5 @@
+- Saying the interpreter "warns" about hints. It does nothing with them at runtime.
+- Saying Python raised no error because `"3"` "looks like" a number. It runs because `*` works on a `str` and an `int`.
+- Saying mypy runs the program. It never does; it analyses the text of the code.
+- Naming the interpreter, or `python file.py`, as the tool that rejects the call. The tool is a static checker you must run yourself.
+- Forgetting that a hint is not validation. For checks at run time you write `isinstance` (or use a library such as pydantic, which you may meet later).

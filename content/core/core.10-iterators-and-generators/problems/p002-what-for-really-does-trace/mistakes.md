@@ -1,0 +1,3 @@
+- Forgetting that the loop only ends because `StopIteration` was raised and caught: `done` is printed after the three `got` lines.
+- Thinking `next(it, "empty")` restarts the iterator. It never rewinds.
+- Expecting `list(it)` to give the items again. An exhausted iterator is empty for good.

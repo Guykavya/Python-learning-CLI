@@ -1,0 +1,6 @@
+id = "core.10.p008"
+title = "Where does a generator pause?"
+tier = "drill"
+kind = "trace"
+topics = ["generator state", "yield", "next"]
+minutes = 10

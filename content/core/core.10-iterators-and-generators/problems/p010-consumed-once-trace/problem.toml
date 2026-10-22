@@ -1,0 +1,6 @@
+id = "core.10.p010"
+title = "What is left in the generator?"
+tier = "drill"
+kind = "trace"
+topics = ["consumed once", "generator expression", "truthiness"]
+minutes = 10

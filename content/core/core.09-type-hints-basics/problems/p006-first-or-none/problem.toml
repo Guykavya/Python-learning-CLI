@@ -1,0 +1,6 @@
+id = "core.09.p006"
+title = "first_or_none: a maybe-value"
+tier = "drill"
+kind = "code"
+topics = ["int | None", "returning None", "falsy values"]
+minutes = 15

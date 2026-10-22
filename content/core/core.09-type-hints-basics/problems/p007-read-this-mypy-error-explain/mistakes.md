@@ -1,0 +1,5 @@
+- Saying mypy "ran" the program. mypy never runs it; it reads the code.
+- Saying the hint made Python raise the error. The `TypeError` comes from the `+` operator, not from the hint.
+- Blaming the function. The hint `tax: float` is right; the caller passed text.
+- Forgetting that `Argument 2` counts from 1, so it is the tax, not the prices.
+- Not saying what `[arg-type]` is. The code names the category, and stays stable between mypy versions.

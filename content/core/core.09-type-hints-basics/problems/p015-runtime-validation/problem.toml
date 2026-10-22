@@ -1,0 +1,6 @@
+id = "core.09.p015"
+title = "Hints do not validate: check at runtime"
+tier = "applied"
+kind = "code"
+topics = ["isinstance", "TypeError", "bool is an int", "runtime validation"]
+minutes = 25

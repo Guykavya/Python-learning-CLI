@@ -1,0 +1,6 @@
+id = "core.10.p014"
+title = "count_arrangements: product, permutations, combinations"
+tier = "drill"
+kind = "code"
+topics = ["product", "permutations", "combinations"]
+minutes = 20

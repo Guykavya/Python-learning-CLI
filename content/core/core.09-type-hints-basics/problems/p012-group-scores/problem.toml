@@ -1,0 +1,6 @@
+id = "core.09.p012"
+title = "Group scores: dict[str, list[int]]"
+tier = "applied"
+kind = "code"
+topics = ["dict[str, list[int]]", "setdefault", "aggregation", "list[tuple[str, int]]"]
+minutes = 25

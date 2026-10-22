@@ -1,0 +1,6 @@
+id = "core.10.p013"
+title = "cycle_labels: repeat a pattern"
+tier = "drill"
+kind = "code"
+topics = ["itertools.cycle", "islice"]
+minutes = 10

@@ -1,0 +1,5 @@
+- Writing `groups = {}` with no hint. mypy reports `Need type annotation for "groups"`, and the reader cannot tell what the dict will hold.
+- Hinting the pairs as `list[tuple]` or `list[list[str, int]]`. A list takes one type, and a pair of different types is a fixed tuple: `list[tuple[str, int]]`.
+- Using `>=` in `students_above`. The statement says strictly above, so an average equal to the limit does not count.
+- Forgetting to sort. Dict order is the order of first appearance, which the tests do not accept.
+- Returning a `dict` from `students_above`, or a `set`. The result is a list of names.

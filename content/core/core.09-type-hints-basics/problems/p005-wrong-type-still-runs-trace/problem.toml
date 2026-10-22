@@ -1,0 +1,6 @@
+id = "core.09.p005"
+title = "A wrong type still runs: what prints?"
+tier = "drill"
+kind = "trace"
+topics = ["hints ignored at runtime", "__annotations__", "wrong argument types"]
+minutes = 10

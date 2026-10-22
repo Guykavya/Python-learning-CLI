@@ -1,0 +1,4 @@
+- Calling `len(product(...))`: iterators have no length.
+- Writing `product(items, k)`: the second positional argument of `product` is another iterable, not a repeat count. Use `repeat=k`.
+- Forgetting that `k = 0` still gives one (empty) tuple.
+- Mixing up `permutations` (order matters) and `combinations` (it does not).

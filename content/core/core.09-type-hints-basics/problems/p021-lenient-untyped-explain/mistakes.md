@@ -1,0 +1,5 @@
+- Saying mypy "missed a bug". It follows its rules: unannotated functions are skipped by default.
+- Claiming hints on `total` and `average` cover `apply_discount`. Each function is checked by its own hints.
+- Saying types can prevent `ZeroDivisionError`. Types describe kinds of values, not whether a list is empty.
+- Confusing `--strict` with something that checks values. It only makes mypy insist on hints and checks more carefully.
+- Recommending removing all hints to "make mypy pass". That makes the check meaningless.

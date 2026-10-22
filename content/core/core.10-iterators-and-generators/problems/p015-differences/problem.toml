@@ -1,0 +1,6 @@
+id = "core.10.p015"
+title = "differences with pairwise"
+tier = "drill"
+kind = "code"
+topics = ["itertools.pairwise", "sliding pairs"]
+minutes = 10

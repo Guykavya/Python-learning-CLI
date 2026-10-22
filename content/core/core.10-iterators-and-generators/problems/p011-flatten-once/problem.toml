@@ -1,0 +1,6 @@
+id = "core.10.p011"
+title = "flatten_once with chain.from_iterable"
+tier = "drill"
+kind = "code"
+topics = ["itertools.chain", "chain.from_iterable"]
+minutes = 10

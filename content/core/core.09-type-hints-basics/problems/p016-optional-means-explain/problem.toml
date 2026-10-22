@@ -1,0 +1,6 @@
+id = "core.09.p016"
+title = "Explain: what does Optional really mean?"
+tier = "applied"
+kind = "explain"
+topics = ["str | None", "Optional", "default arguments", "narrowing"]
+minutes = 20

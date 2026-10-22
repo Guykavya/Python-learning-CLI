@@ -1,0 +1,5 @@
+- Writing `Callable[int, int]` without the inner brackets. The argument types are always a list: `Callable[[int], int]`.
+- Importing `Callable` from `typing`. It works in old code, but `collections.abc` is the modern place and the tests compare with it.
+- Returning `both(x)` instead of `both` in `compose`. You must return the function itself, not call it.
+- Applying the functions in the wrong order in `compose`. `compose(first, second)(x)` is `second(first(x))`.
+- Hinting `keep_if`'s `test` as returning `int`. It returns `bool`.

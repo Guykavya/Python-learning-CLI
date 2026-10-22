@@ -1,0 +1,3 @@
+- Computing `a - b` (wrong sign).
+- Adding a special case for empty and single-item lists: not needed, and a typo there is a bug.
+- Using `zip(numbers, numbers)`: that pairs each number with itself.

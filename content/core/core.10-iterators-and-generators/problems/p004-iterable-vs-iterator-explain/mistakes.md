@@ -1,0 +1,4 @@
+- Saying 'an iterator is a list that is faster'. They are different roles, not different speeds.
+- Forgetting to mention `iter()` and `next()` when describing `for`.
+- Saying the list 'is emptied' by a loop. The list is never changed, only the iterator's position.
+- Not giving a concrete consequence.

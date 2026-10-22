@@ -1,0 +1,3 @@
+- Expecting the second `sum` to give 14 again.
+- Expecting `bool` of an exhausted generator to be `False`: only containers such as lists are falsy when empty.
+- Mixing up the generator and the list version of the same expression.

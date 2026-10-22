@@ -1,0 +1,5 @@
+- Using `if not name:` instead of `if name is None:`. The user `"u3"` has an empty name that must still be greeted as `Hello, !`.
+- Writing `users[user_id]` in `find_user`. That raises `KeyError` for a missing id; the tests expect `None`.
+- Hinting `shout_name` as `-> str`. It returns `None` for a missing user, so the hint must include `None`.
+- Calling `.upper()` before the `None` check. This is the classic bug mypy catches, and it crashes at runtime for a missing user.
+- Returning the text `"None"` instead of the value `None`.

@@ -1,0 +1,7 @@
+id = "core.09.p020"
+title = "Explain: why does a wrongly typed call still run?"
+tier = "deep"
+kind = "explain"
+topics = ["hints ignored at runtime", "static vs runtime", "mypy", "isinstance"]
+minutes = 25
+assessment = "explain"

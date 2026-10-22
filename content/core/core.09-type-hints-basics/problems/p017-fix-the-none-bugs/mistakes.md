@@ -1,0 +1,5 @@
+- Making `total_cost` add `0` for `None` by writing `total += find_price(menu, item) or 0`. It happens to work here, but it also hides a real `0.0` price. Prefer `is None`.
+- Fixing `cheapest_item` by returning `""` for an empty menu. The tests require `None`, and the hint must say so: `-> str | None`.
+- Forgetting to change the hint of `cheapest_item`. The body already returns `None` in that case; the hint was the bug.
+- Using `if not price:` in `price_label`. A price of `0.0` is a real price and would be printed as `n/a`.
+- Changing `find_price`. It is correct: it really can return `None`.

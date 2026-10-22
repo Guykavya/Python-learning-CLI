@@ -1,0 +1,5 @@
+- Writing `if not first: return default`. `0` is falsy, so `first_or_default([0], 9)` would wrongly return `9`.
+- Returning `-1` or `""` as the "nothing" value instead of `None`. The tests require `None`.
+- Hinting `first_or_none` as `-> int`. mypy would then flag the `return None`.
+- Writing `Optional` without importing it, or `int or None`. The hint is `int | None`.
+- Using `items[0]` before checking for an empty list: `IndexError`.

@@ -1,0 +1,3 @@
+- Writing `chain(list_of_lists)`: that yields the inner lists themselves, one level too shallow.
+- Using `sum(list_of_lists, [])`: it works but copies the growing list again and again, so it is slow for big inputs.
+- Returning the `chain` object instead of a list.

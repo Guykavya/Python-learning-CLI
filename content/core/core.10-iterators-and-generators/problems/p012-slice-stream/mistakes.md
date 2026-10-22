@@ -1,0 +1,3 @@
+- Using `iterable[start:stop]`: generators cannot be sliced.
+- Converting to a list first: hangs on infinite input and reads more than needed.
+- Passing negative values to `islice`: it raises `ValueError`; iterators cannot count from the end.

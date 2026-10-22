@@ -1,0 +1,7 @@
+id = "core.09.p017"
+title = "Fix the functions mypy would flag"
+tier = "deep"
+kind = "code"
+topics = ["str | None", "narrowing", "missing return", "fixing code vs fixing hints"]
+minutes = 30
+assessment = "fix"

@@ -1,0 +1,6 @@
+id = "core.09.p021"
+title = "Explain: mypy passed, so is it safe?"
+tier = "deep"
+kind = "explain"
+topics = ["mypy leniency", "--strict", "Any", "type: ignore", "values vs types"]
+minutes = 25

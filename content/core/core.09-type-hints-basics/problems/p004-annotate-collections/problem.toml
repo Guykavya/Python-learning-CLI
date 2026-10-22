@@ -1,0 +1,6 @@
+id = "core.09.p004"
+title = "Annotate functions with collections"
+tier = "drill"
+kind = "code"
+topics = ["list[int]", "dict[str, float]", "tuple", "nested collections"]
+minutes = 20

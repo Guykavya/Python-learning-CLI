@@ -1,0 +1,7 @@
+id = "core.09.p024"
+title = "Which narrowing patterns does mypy accept?"
+tier = "challenge"
+kind = "trace"
+topics = ["narrowing", "loops and continue", "comprehension filters", "dict.get", "isinstance", "unions"]
+minutes = 20
+assessment = "trace"

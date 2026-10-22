@@ -1,0 +1,5 @@
+- Forgetting the `1 items` line. It is printed by `show` while the call runs, and it comes **before** `None None`.
+- Writing `['tea']` for `r1`. A `-> None` function returns `None`, even though it changed the list.
+- Writing `[1, 2, 3]` for `print(nums.sort())`. `sort()` returns `None`; the list is changed in place.
+- Thinking the program stops at the lines mypy flags. mypy never runs the code, and Python is happy to assign `None`.
+- Writing `1 item` (singular). The program prints `items` every time.

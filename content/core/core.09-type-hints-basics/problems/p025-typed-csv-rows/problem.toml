@@ -1,0 +1,6 @@
+id = "core.09.p025"
+title = "Parse and summarise typed rows"
+tier = "challenge"
+kind = "code"
+topics = ["tuple[list[tuple[str, int]], list[str]]", "float | None", "dict[str, list[str]]", "boundary validation"]
+minutes = 40

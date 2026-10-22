@@ -1,0 +1,5 @@
+- Writing `tags: list = []`. A bare `list` leaves out the item type; the test expects `list[str]`.
+- Writing `origin: tuple[int, ...] = (0, 0)`. That means "any number of ints". For a pair, use the fixed form `tuple[int, int]`.
+- Writing `nickname: str = None`. `None` is not a `str`; mypy rejects it. Use `str | None`.
+- Changing the starting values (for example `count: int` with no value). The tests also check the values.
+- Writing `stock: dict[str: int]` with a colon. Inside the brackets the two types are separated by a comma.

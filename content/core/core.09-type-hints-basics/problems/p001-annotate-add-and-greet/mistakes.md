@@ -1,0 +1,5 @@
+- Writing `def add(a, b) -> int:` and forgetting the parameters. A function is only fully annotated when **every** parameter and the return value have hints.
+- Writing `-> int` for `half`. The body `n / 2` gives `3.5` for `7`, never an int.
+- Writing `a, b: int`. There is no way to annotate two parameters at once; write `a: int, b: int`.
+- Putting quotes around the type, `a: "int"`. The tests then see a string, not the class `int`.
+- Writing the return hint as `: int` or `=> int`. It is an arrow made of a dash and a greater-than sign: `->`.

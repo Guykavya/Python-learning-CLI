@@ -1,0 +1,5 @@
+- Marking `G` as ok because "int fits float". That works for single values, not for the **contents** of a list.
+- Marking `F` as an error for the same reason. A list literal is built to fit the declared type.
+- Marking `C` or `E` as errors. A `bool` is accepted wherever an `int` (or, through it, a `float`) is expected.
+- Marking `D` as ok. The relation is one-way: every `bool` is an `int`, not every `int` is a `bool`.
+- Marking `H` as an error. Each `int` item is accepted as a `float`.

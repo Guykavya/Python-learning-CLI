@@ -1,0 +1,6 @@
+id = "core.09.p014"
+title = "Functions as parameters: Callable"
+tier = "applied"
+kind = "code"
+topics = ["Callable[[int], int]", "functions as values", "closures", "collections.abc"]
+minutes = 25
