@@ -61,7 +61,7 @@ class Problem:
 
     def read(self, name: str) -> str:
         f = self.file(name)
-        return f.read_text() if f.exists() else ""
+        return f.read_text(encoding="utf-8") if f.exists() else ""
 
     def hints(self) -> list[str]:
         return split_hints(self.read("hints.md"))

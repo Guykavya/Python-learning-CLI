@@ -74,7 +74,7 @@ class Syllabus:
 
 @lru_cache(maxsize=1)
 def load() -> Syllabus:
-    data = yaml.safe_load(paths.syllabus_path().read_text())
+    data = yaml.safe_load(paths.syllabus_path().read_text(encoding="utf-8"))
     tracks: list[Track] = []
     order = 0
     for t in data["tracks"]:

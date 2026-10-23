@@ -145,7 +145,7 @@ def _page(text: str) -> None:
     if not less or not sys.stdout.isatty():
         print(text)
         return
-    subprocess.run([less, "-R", "-F", "-X"], input=text, text=True)
+    subprocess.run([less, "-R", "-F", "-X"], input=text, text=True, encoding="utf-8")
 
 
 def contents(sections: list[Section], current: int) -> None:

@@ -58,7 +58,7 @@ def set_value(key: str, value: Any) -> None:
     if not section or not name:
         raise ValueError("Use section.name, for example plan.daily_minutes")
     path = paths.config_path()
-    lines = path.read_text().splitlines() if path.exists() else []
+    lines = path.read_text(encoding="utf-8").splitlines() if path.exists() else []
     new_line = f"{name} = {_format_value(value)}"
 
     current = None
@@ -73,7 +73,7 @@ def set_value(key: str, value: Any) -> None:
             continue
         if current == section and re.match(rf"{re.escape(name)}\s*=", stripped):
             lines[i] = new_line
-            path.write_text("\n".join(lines) + "\n")
+            path.write_text("\n".join(lines) + "\n", encoding="utf-8")
             return
     if current == section and section_end is None:
         section_end = len(lines)
@@ -87,4 +87,4 @@ def set_value(key: str, value: Any) -> None:
         if lines and lines[-1].strip():
             lines.append("")
         lines += [f"[{section}]", new_line]
-    path.write_text("\n".join(lines) + "\n")
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")

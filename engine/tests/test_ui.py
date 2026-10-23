@@ -18,6 +18,15 @@ def test_completion_candidates(home):
     assert completion.candidates(parser, ["start", "core.02.p001", ""]) == []
 
 
+def test_menu_accepts_typed_commands():
+    parser = cli.build_parser()
+    assert cli._typed_command(parser, "check") == ["check"], "a bare command should run"
+    assert cli._typed_command(parser, "./learn read core.03") == ["read", "core.03"], "drop the ./learn prefix"
+    assert cli._typed_command(parser, ".\\learn.cmd start 1") == ["start", "1"], "drop the Windows launcher too"
+    assert cli._typed_command(parser, "./learn start1") is None, "unknown words are not commands"
+    assert cli._typed_command(parser, "./learn") is None, "the launcher alone is not a command"
+
+
 def test_box_lines_have_equal_width(capsys):
     ui.box(ui.ok("✓ Solved") + " x", ["short", ui.dim("a longer line here")])
     widths = {ui.vis_len(line) for line in capsys.readouterr().out.splitlines()}

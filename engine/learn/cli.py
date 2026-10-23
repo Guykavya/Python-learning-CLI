@@ -118,7 +118,7 @@ def cmd_init(args: argparse.Namespace) -> None:
     }
     for path, text in readmes.items():
         if not path.exists():
-            path.write_text(text)
+            path.write_text(text, encoding="utf-8")
     conn = db.connect()
     if not db.get_meta(conn, "created"):
         db.set_meta(conn, "created", db.today())
@@ -231,11 +231,14 @@ def cmd_start(args: argparse.Namespace) -> None:
     if not main_file.exists():
         if prob.kind == "code":
             starter = prob.file("starter.py")
-            main_file.write_text(starter.read_text() if starter.exists() else "# Write your solution here\n")
+            main_file.write_text(
+                starter.read_text(encoding="utf-8") if starter.exists() else "# Write your solution here\n",
+                encoding="utf-8",
+            )
         elif prob.kind == "trace":
-            main_file.write_text("# Write the exact output you predict, line by line, below this comment.\n")
+            main_file.write_text("# Write the exact output you predict, line by line, below this comment.\n", encoding="utf-8")
         else:
-            main_file.write_text("<!-- Explain in your own words. At least a few sentences. -->\n\n")
+            main_file.write_text("<!-- Explain in your own words. At least a few sentences. -->\n\n", encoding="utf-8")
     shutil.copy(prob.file("problem.md"), work / "problem.md")
 
     continuing = (
@@ -292,7 +295,7 @@ def cmd_check(args: argparse.Namespace) -> None:
     else:
         result = _check_explain(prob, work, args)
 
-    (work / ".last_check.txt").write_text(result.output)
+    (work / ".last_check.txt").write_text(result.output, encoding="utf-8")
     if result.not_ready and prob.kind != "code":
         print(ui.warn(result.output))
         return
@@ -464,7 +467,7 @@ def cmd_stuck(args: argparse.Namespace) -> None:
         raise UserError(f"Start it first: learn start {prob.id}")
     work = Path(st["session_dir"])
     main_file = work / KIND_FILE.get(prob.kind, "solution.py")
-    last = (work / ".last_check.txt").read_text() if (work / ".last_check.txt").exists() else "(not checked yet)"
+    last = (work / ".last_check.txt").read_text(encoding="utf-8") if (work / ".last_check.txt").exists() else "(not checked yet)"
     seen = prob.hints()[: st["hints_used"]]
     lang = "python" if prob.kind == "code" else ""
     parts = [
@@ -477,7 +480,7 @@ def cmd_stuck(args: argparse.Namespace) -> None:
         "",
         "## My current attempt",
         f"```{lang}",
-        main_file.read_text().strip() if main_file.exists() else "(empty)",
+        main_file.read_text(encoding="utf-8").strip() if main_file.exists() else "(empty)",
         "```",
         "",
         "## Result of my last check",
@@ -489,7 +492,7 @@ def cmd_stuck(args: argparse.Namespace) -> None:
         parts += ["", "## Hints I already used"] + [f"{i}. {h}" for i, h in enumerate(seen, 1)]
     text = "\n".join(parts) + "\n"
     out = work / "stuck_prompt.md"
-    out.write_text(text)
+    out.write_text(text, encoding="utf-8")
     copied = _clipboard(text)
     print(ui.bold("Prompt ready: ") + rel(out))
     print("Paste it into any free chatbot." + (ui.ok(" (Copied to clipboard.)") if copied else ""))
@@ -501,7 +504,7 @@ def _clipboard(text: str) -> bool:
     for cmd in (["wl-copy"], ["xclip", "-selection", "clipboard"], ["xsel", "--clipboard", "--input"]):
         if shutil.which(cmd[0]):
             try:
-                subprocess.run(cmd, input=text, text=True, check=True, timeout=5)
+                subprocess.run(cmd, input=text, text=True, encoding="utf-8", check=True, timeout=5)
                 return True
             except Exception:
                 continue
@@ -594,7 +597,7 @@ def cmd_read(args: argparse.Namespace) -> None:
         print(ui.dim("Opened in VS Code. Press Ctrl+Shift+V there for the formatted preview."))
         return
     if args.print or not sys.stdin.isatty():
-        print(m.chapter_path.read_text())
+        print(m.chapter_path.read_text(encoding="utf-8"))
         return
     key = f"read_pos:{m.id}"
 
@@ -603,7 +606,7 @@ def cmd_read(args: argparse.Namespace) -> None:
         conn.commit()
 
     start = 0 if args.restart else int(db.get_meta(conn, key, "0"))
-    reader.read_chapter(f"{m.id}  {m.title}", m.chapter_path.read_text(), start, save)
+    reader.read_chapter(f"{m.id}  {m.title}", m.chapter_path.read_text(encoding="utf-8"), start, save)
 
 
 def cmd_goto(args: argparse.Namespace) -> None:
@@ -823,7 +826,8 @@ def cmd_log(args: argparse.Namespace) -> None:
     if not code_file.exists():
         code_file.write_text(
             f'"""{site}: {title or key}\n{url or ""}\nPattern: {modules or "?"}\n'
-            f'Insight: {insight or ""}\n"""\n\n# Paste your final accepted code below.\n'
+            f'Insight: {insight or ""}\n"""\n\n# Paste your final accepted code below.\n',
+            encoding="utf-8",
         )
     conn.execute(
         "INSERT INTO external_solves(site, problem_key, title, url, tags, difficulty, modules, solved_at, minutes, "
@@ -863,7 +867,7 @@ def cmd_sync(args: argparse.Namespace) -> None:
 
 def cmd_config(args: argparse.Namespace) -> None:
     if args.action == "show":
-        print(paths.config_path().read_text() if paths.config_path().exists() else "(no config.toml yet)")
+        print(paths.config_path().read_text(encoding="utf-8") if paths.config_path().exists() else "(no config.toml yet)")
     elif args.action == "get":
         print(config.get(args.key))
     else:
@@ -902,7 +906,7 @@ def cmd_new(args: argparse.Namespace) -> None:
     pid = f"{m.id}.p{n:03d}"
     from learn import templates
     for name, text in templates.problem_files(pid, args.title, args.tier, args.kind).items():
-        (folder / name).write_text(text)
+        (folder / name).write_text(text, encoding="utf-8")
     content.reload()
     print(ui.ok("Created ") + rel(folder))
     print(ui.dim("Fill in the files, then run: learn validate " + m.id))
@@ -1070,6 +1074,19 @@ def _ask_problem_id() -> str:
     return ui.ask("  Problem id (Tab completes)")
 
 
+LAUNCHERS = ("./learn", "learn", ".\\learn", "learn.cmd", ".\\learn.cmd")
+
+
+def _typed_command(parser: argparse.ArgumentParser, text: str) -> list[str] | None:
+    """A command typed at the menu prompt, like `check` or `./learn start core.01.p003`."""
+    words = text.split()
+    if words and words[0] in LAUNCHERS:
+        words = words[1:]
+    if words and words[0] in completion._subcommands(parser):
+        return words
+    return None
+
+
 def cmd_menu(parser: argparse.ArgumentParser) -> None:
     """Plain `learn` in a terminal: today's plan, then a numbered menu until q."""
     cmd_today(argparse.Namespace())
@@ -1083,10 +1100,10 @@ def cmd_menu(parser: argparse.ArgumentParser) -> None:
         if choice in ("q", "quit", "exit"):
             return
         entry = next((m for m in MENU if m[0] == choice), None)
-        if entry is None:
-            print(ui.warn("  Type a number from the menu, or q to quit."))
+        argv = entry[2] if entry else _typed_command(parser, choice)
+        if entry is None and argv is None:
+            print(ui.warn("  Type a number from the menu, a command such as `check`, or q to quit."))
             continue
-        argv = entry[2]
         if argv is None:
             pid = _ask_problem_id()
             if not pid:
@@ -1111,6 +1128,11 @@ def cmd_completion(args: argparse.Namespace) -> None:
 
 
 def main(argv: list[str] | None = None) -> int:
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(encoding="utf-8", errors="replace")
+        except (AttributeError, ValueError):
+            pass
     parser = build_parser()
     argv = sys.argv[1:] if argv is None else argv
     if argv[:1] == ["_complete"]:

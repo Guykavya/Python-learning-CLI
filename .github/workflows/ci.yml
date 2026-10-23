@@ -1,0 +1,94 @@
+# Install the course from scratch with the real launchers and check that it runs,
+# on Linux and Windows, with the oldest supported Python and the newest stable one.
+name: CI
+
+on:
+  push:
+    branches: [master, dev]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  install-and-test:
+    name: ${{ matrix.os }} / Python ${{ matrix.python }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ["3.11", "3.14"]
+    steps:
+      - uses: actions/checkout@v5
+
+      - id: py
+        uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python }}
+
+      # The launcher builds .venv on first run, exactly as for a learner.
+      # LEARN_PYTHON makes it use this job's Python instead of whatever else the runner has.
+      - name: First run (Linux launcher)
+        if: runner.os != 'Windows'
+        env:
+          LEARN_PYTHON: ${{ steps.py.outputs.python-path }}
+        run: ./learn init
+
+      - name: First run (Windows launcher)
+        if: runner.os == 'Windows'
+        shell: cmd
+        env:
+          LEARN_PYTHON: ${{ steps.py.outputs.python-path }}
+        run: learn.cmd init
+
+      # EncodingWarning as an error catches any file opened without encoding="utf-8",
+      # the bug that crashes chapters on Windows. It works on Linux too.
+      - name: Engine tests
+        shell: bash
+        run: |
+          if [ "$RUNNER_OS" = "Windows" ]; then PY=.venv/Scripts/python.exe; else PY=.venv/bin/python; fi
+          "$PY" -X warn_default_encoding -W error::EncodingWarning -m pytest engine/tests -q -p no:cacheprovider
+
+      # core.03 and core.06 hold non-ASCII text (accents, emoji, combining marks).
+      # Output goes to a file, so Windows uses a pipe encoding, not the console's.
+      - name: Read chapters and validate a module (Linux)
+        if: runner.os != 'Windows'
+        run: |
+          ./learn read core.03 --print > core03.txt
+          ./learn read core.06 --print > core06.txt
+          ./learn validate core.03
+
+      - name: Read chapters and validate a module (Windows)
+        if: runner.os == 'Windows'
+        shell: cmd
+        run: |
+          call learn.cmd read core.03 --print > core03.txt || exit /b 1
+          call learn.cmd read core.06 --print > core06.txt || exit /b 1
+          call learn.cmd validate core.03
+
+  # Early warning for the next Python release. Allowed to fail; it never blocks a merge.
+  next-python:
+    name: windows-latest / Python 3.15 (early warning)
+    runs-on: windows-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v5
+      - id: py
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.15"
+          allow-prereleases: true
+      - name: First run, engine tests, validate
+        shell: cmd
+        env:
+          LEARN_PYTHON: ${{ steps.py.outputs.python-path }}
+        run: |
+          call learn.cmd init || exit /b 1
+          .venv\Scripts\python.exe -m pytest engine/tests -q -p no:cacheprovider || exit /b 1
+          call learn.cmd validate core.03

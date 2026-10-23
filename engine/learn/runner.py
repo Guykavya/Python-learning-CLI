@@ -62,9 +62,9 @@ def run_code_tests(problem: Problem, solution_dir: Path, solution_file: Path | N
             "-q", "--no-header", "-p", "no:cacheprovider", "--tb=short",
             f"--junitxml={report}",
         ]
-        env = dict(os.environ, PYTHONDONTWRITEBYTECODE="1", PYTHONPATH=str(tmpd))
+        env = dict(os.environ, PYTHONDONTWRITEBYTECODE="1", PYTHONPATH=str(tmpd), PYTHONUTF8="1")
         try:
-            proc = subprocess.run(cmd, cwd=tmpd, capture_output=True, text=True, timeout=TIMEOUT_SECONDS, env=env)
+            proc = subprocess.run(cmd, cwd=tmpd, capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=TIMEOUT_SECONDS, env=env)
         except subprocess.TimeoutExpired:
             return CheckResult(
                 False, 0, 0,
@@ -100,7 +100,7 @@ def normalise(text: str) -> list[str]:
 
 def check_trace(problem: Problem, answer_file: Path) -> CheckResult:
     expected = normalise(problem.read("expected.txt"))
-    given = normalise(answer_file.read_text()) if answer_file.exists() else []
+    given = normalise(answer_file.read_text(encoding="utf-8")) if answer_file.exists() else []
     if not given:
         return CheckResult(False, 0, 0, f"Write your predicted output in {answer_file} first.")
     if given == expected:
@@ -116,5 +116,5 @@ def check_trace(problem: Problem, answer_file: Path) -> CheckResult:
 def explain_word_count(answer_file: Path) -> int:
     if not answer_file.exists():
         return 0
-    text = "\n".join(normalise(answer_file.read_text()))
+    text = "\n".join(normalise(answer_file.read_text(encoding="utf-8")))
     return len(text.split())
