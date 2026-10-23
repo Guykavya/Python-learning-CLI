@@ -1,0 +1,6 @@
+id = "core.10.p005"
+title = "for_each without a for loop"
+tier = "drill"
+kind = "code"
+topics = ["iter", "next", "StopIteration"]
+minutes = 20

@@ -1,0 +1,4 @@
+- Testing only values inside the range. Four of the five bugs return the right answer there.
+- Using the same number for low and high in every test (`clamp(5, 5, 5)`), which hides the bug where the two are confused.
+- Expected values copied from the buggy function's output instead of worked out by hand.
+- Writing one giant test: when it fails you cannot tell which case failed. Several small tests name the problem.

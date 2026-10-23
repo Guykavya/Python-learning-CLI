@@ -1,0 +1,6 @@
+version A: test_exact_hour_after_free_time
+version B: test_just_over_free_time, test_next_started_hour
+version C: test_daily_cap
+version D: test_negative_time
+version E: test_just_over_free_time
+version F: all pass

@@ -1,0 +1,6 @@
+id = "core.09.p001"
+title = "Annotate five small functions"
+tier = "drill"
+kind = "code"
+topics = ["parameter annotations", "return annotations", "get_type_hints"]
+minutes = 15

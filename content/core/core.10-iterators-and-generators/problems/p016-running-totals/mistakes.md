@@ -1,0 +1,3 @@
+- Using `sum` inside a loop for every prefix: O(n squared).
+- Using `reduce` and expecting the intermediate values. `reduce` gives only the final result.
+- Calling `accumulate(numbers, max())`: pass the function itself, not a call.

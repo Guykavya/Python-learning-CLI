@@ -1,0 +1,8 @@
+test_double FAILED
+testtriple PASSED
+tests_helper PASSED
+test_returns_nothing PASSED
+test_error FAILED
+test_extra_argument ERROR
+test_last PASSED
+2 failed, 4 passed, 1 error

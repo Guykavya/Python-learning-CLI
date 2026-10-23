@@ -1,0 +1,6 @@
+id = "core.08.p023"
+title = "Which tests really run?"
+tier = "deep"
+kind = "trace"
+topics = ["test collection", "naming rules", "duplicate names", "tests that check nothing"]
+minutes = 25

@@ -1,0 +1,4 @@
+- Saying TDD means "write all the tests, then all the code". The loop is one small test at a time.
+- Claiming TDD finds all bugs.
+- Treating copy-the-output tests as normal: they only freeze today's behaviour, right or wrong.
+- Fixing the bug first, then writing a test that "proves" it is fixed. Without seeing the test fail first, you do not know it can catch the bug.

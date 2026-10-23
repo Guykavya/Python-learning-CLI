@@ -1,0 +1,4 @@
+- Using `amount >= balance` for the second check: it wrongly rejects withdrawing the whole balance.
+- Returning an error string such as `"insufficient funds"` instead of raising. The tests use `pytest.raises`.
+- Raising `Exception` or `ValueError` without a message. `match=` looks inside the message.
+- Checking `amount > balance` first: `withdraw(100, -5)` then returns 105 instead of raising.

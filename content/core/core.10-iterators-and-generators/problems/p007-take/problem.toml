@@ -1,0 +1,6 @@
+id = "core.10.p007"
+title = "take: the first n items, no more"
+tier = "drill"
+kind = "code"
+topics = ["next", "iterators", "infinite iterables"]
+minutes = 15

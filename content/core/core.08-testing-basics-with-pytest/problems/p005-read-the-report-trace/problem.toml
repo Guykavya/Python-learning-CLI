@@ -1,0 +1,6 @@
+id = "core.08.p005"
+title = "Read the failure report"
+tier = "drill"
+kind = "trace"
+topics = ["reading failure output", "locating the bug"]
+minutes = 10

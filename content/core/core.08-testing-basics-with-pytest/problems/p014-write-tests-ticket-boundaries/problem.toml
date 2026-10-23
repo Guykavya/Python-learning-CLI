@@ -1,0 +1,6 @@
+id = "core.08.p014"
+title = "Write tests: ticket_price boundaries"
+tier = "applied"
+kind = "code"
+topics = ["boundary cases", "off-by-one", "pytest.raises"]
+minutes = 25

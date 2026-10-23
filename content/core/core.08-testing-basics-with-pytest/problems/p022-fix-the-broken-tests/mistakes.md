@@ -1,0 +1,4 @@
+- Changing the function (`target.py`) to make the wrong expected value pass. When a test fails, ask first who is wrong.
+- Fixing only the visible failure (`== 2.5`) and leaving the five silent faults.
+- Removing the tuple parentheses but keeping a message that no longer matches what the assert checks.
+- Giving the duplicated test the same expected value again. The two tests should cover **different** inputs.

@@ -1,0 +1,5 @@
+- Saying `Optional` means "optional argument". It means "may be `None`". An argument is optional only if it has a default.
+- Saying `send_a("hi")` works. It does not: no default, so a missing argument is a `TypeError`.
+- Forgetting that `send_c` needs **both** parts: the `| None` in the hint and the `= None` default.
+- Saying the interpreter reports the `.upper()` problem in advance. Only mypy sees it before running; Python fails at runtime, and only when `to` really is `None`.
+- Suggesting `if not to:` as the only check without thinking: it also catches the empty string, which may or may not be wanted.

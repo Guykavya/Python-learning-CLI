@@ -1,0 +1,5 @@
+- Writing `-> int` or `-> bool` for `add_stock`. It returns nothing, so `-> None`.
+- Writing `-> str` for `most_stocked`. The empty stock returns `None`.
+- Hinting `func` as `function` or `callable`. Use `Callable[[int], int]` from `collections.abc`.
+- Hinting `split_by_threshold` as `list[list[str]]`. It returns a fixed pair, `tuple[list[str], list[str]]`.
+- Hinting `price_total` as `int`. `qty * price` multiplies by a float.

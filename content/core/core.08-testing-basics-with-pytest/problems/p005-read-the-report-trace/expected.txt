@@ -1,0 +1,5 @@
+failed test: test_discount_full
+line: 14
+function returned: 0.0
+test expected: 8
+wrong one: test

@@ -1,0 +1,7 @@
+id = "core.08.p026"
+title = "Explain: tests that cannot fail"
+tier = "deep"
+kind = "explain"
+topics = ["useless tests", "false confidence", "good test properties", "test independence"]
+minutes = 40
+assessment = "explain"

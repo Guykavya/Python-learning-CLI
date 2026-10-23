@@ -1,0 +1,4 @@
+- Counting `check_add_big`: pytest collects only names starting with `test_`.
+- Calling `test_add_float` a failure because "floats are inexact". `0.5` and `0.25` are exact in binary.
+- Thinking `test_add_mixed` is an error "of a different kind". Any exception inside a test body is a FAILED test.
+- Writing the summary as `4 passed, 2 failed` instead of pytest's order, `2 failed, 4 passed`.

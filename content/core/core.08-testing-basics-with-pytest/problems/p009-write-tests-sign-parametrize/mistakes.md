@@ -1,0 +1,4 @@
+- Forgetting `0`. Two of the four bugs only show up there.
+- Testing `1` and `-1` only through big numbers like 100 and -100: the off-by-one bug at -1 survives.
+- Skipping floats. `int(0.5)` is 0, so a function that truncates first returns 0 for `0.5`.
+- Using the parameter names in the decorator string wrongly: `"n, expected"` must match the function parameters exactly.

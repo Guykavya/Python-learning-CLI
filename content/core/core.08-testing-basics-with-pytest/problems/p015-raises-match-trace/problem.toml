@@ -1,0 +1,6 @@
+id = "core.08.p015"
+title = "Which raises-tests pass?"
+tier = "applied"
+kind = "trace"
+topics = ["pytest.raises", "match=", "regular expressions in match"]
+minutes = 25

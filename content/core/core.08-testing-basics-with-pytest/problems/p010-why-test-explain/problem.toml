@@ -1,0 +1,6 @@
+id = "core.08.p010"
+title = "Explain: why write tests?"
+tier = "drill"
+kind = "explain"
+topics = ["why test", "what a test is", "regression"]
+minutes = 20

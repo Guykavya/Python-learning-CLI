@@ -1,0 +1,6 @@
+id = "core.08.p016"
+title = "TDD: grow slugify one test at a time"
+tier = "applied"
+kind = "code"
+topics = ["TDD", "red green refactor", "tests as specification"]
+minutes = 30

@@ -1,0 +1,4 @@
+- Thinking version 1 passes the "empty list" test because it returns "nothing". It returns `0`, so nothing is raised: FAILED.
+- Counting `IndexError` from version 2 as the right error. `pytest.raises(ValueError)` lets any other exception through, and it fails the test.
+- Forgetting that all `-` numbers are below the starting `0` in version 3.
+- Writing `version 4: 5 passed, 0 failed`. pytest prints only the counts that are not zero.

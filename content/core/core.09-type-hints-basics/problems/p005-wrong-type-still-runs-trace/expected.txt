@@ -1,0 +1,7 @@
+8
+abab
+[1, 2, 1, 2]
+5.0
+HEY
+AttributeError
+True

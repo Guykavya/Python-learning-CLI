@@ -1,0 +1,6 @@
+id = "core.10.p002"
+title = "What a for loop really does"
+tier = "drill"
+kind = "trace"
+topics = ["iter", "next", "StopIteration", "for loop"]
+minutes = 10

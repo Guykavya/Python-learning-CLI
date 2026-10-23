@@ -5,24 +5,47 @@ across four levels (software engineer, data analyst, data scientist, AI/ML engin
 with DSA alongside. Book-style chapters, thousands of tested problems with hints and
 walkthroughs, spaced reviews and a progress tracker, all in your terminal.
 
-It needs no AI and no internet, except to sync LeetCode and Codeforces solves.
+It needs no AI. After a one-time install it needs no internet either, except to sync
+LeetCode and Codeforces solves.
 
 ## Install
 
-You need **Python 3.11 or newer** and **Git**. Check with `python3 --version` and `git --version`.
+You need **Python 3.11 or newer** (any newer version works). Git is optional: it only
+makes downloading easier and lets `learn` keep a private history of your progress.
+Internet is needed once, to install the three packages the engine uses (PyYAML, pytest, Pygments).
 
-```bash
-git clone <repo-url> python-learning-module    # the URL is under the green "Code" button on GitHub
-cd python-learning-module
-./learn init
+**1. Get the project.** Either clone it:
+
+```
+git clone https://github.com/Guykavya/Python-learning-CLI.git
+cd Python-learning-CLI
 ```
 
-The first run creates a private Python environment in `.venv/` and installs the three
-packages it needs (PyYAML, pytest, Pygments). That takes a minute, once.
+or, without Git, click the green **Code** button on
+[the GitHub page](https://github.com/Guykavya/Python-learning-CLI), choose **Download ZIP**,
+extract it, and open a terminal in the extracted folder.
 
-**Windows:** use WSL or Git Bash and follow the steps above. From plain CMD or PowerShell,
-use `.\learn init` (the `learn.cmd` launcher) instead of `./learn init`, and `.\learn`
-wherever this page says `./learn`.
+**2. Run it.** The first run builds a private environment in `.venv/`. It takes a minute, once.
+
+| Where | Command |
+|---|---|
+| Windows PowerShell | `.\learn.cmd init` |
+| Windows CMD | `learn.cmd init` |
+| Linux / macOS | `./learn init` |
+
+Then, on Windows, type `.\learn.cmd` (PowerShell) or `learn.cmd` (CMD) wherever this page
+says `./learn`.
+
+**No Python yet, or too old?** The launcher tells you. To install it:
+
+- Windows: `winget install Python.Python.3.13`, or download it from [python.org](https://www.python.org/downloads/)
+  and tick **Add python.exe to PATH**. Open a new terminal afterwards.
+- Ubuntu / Debian: `sudo apt install python3 python3-venv`
+- macOS: download from [python.org](https://www.python.org/downloads/) or `brew install python`
+
+**Something went wrong?** Delete the `.venv` folder and run the command again; the launcher
+rebuilds it. To pick a specific Python, set `LEARN_PYTHON` to its path first
+(PowerShell: `$env:LEARN_PYTHON = "C:\path\to\python.exe"`, Linux/macOS: `LEARN_PYTHON=/path/to/python3 ./learn init`).
 
 ### Optional settings
 
@@ -134,3 +157,10 @@ your average quality is at least 0.7, and you have passed its assessment problem
 
 Everything above runs on plain Python and SQLite. To add your own problems or modules,
 see `docs/guides/authoring.md`.
+
+## Licence
+
+- **The program** (`engine/`, `learn`, `learn.cmd`) is under the [MIT licence](LICENSE).
+- **The course** (`content/`, `syllabus.yaml`, `docs/`, this README) is under
+  [Creative Commons BY-NC-SA 4.0](LICENSE-CONTENT): you may share and adapt it with credit,
+  but not for commercial use, and your changes must use the same licence.

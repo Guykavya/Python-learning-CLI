@@ -1,0 +1,3 @@
+- Expecting `start` to print when `steps()` is called: it prints only at the first `next`.
+- Forgetting that the `print(next(g))` line prints the *value* after the generator's own print, so `start` is above `1`.
+- Expecting `list(g)` to restart the generator.

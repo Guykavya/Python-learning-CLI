@@ -1,0 +1,5 @@
+- Writing `list` or `dict` without brackets. The tests check the contents, `list[int]`, `dict[str, float]`.
+- Writing `points: list[int, int]`. A list takes **one** type. For pairs use `list[tuple[int, int]]`.
+- Using `tuple[int, ...]` for a pair, or `tuple[float]` (which means a tuple of exactly **one** float).
+- Writing `-> list[str]` for `by_length`. It returns a dict.
+- Forgetting that `/` gives a float: the average of two ints is `tuple[float, float]`, not ints.

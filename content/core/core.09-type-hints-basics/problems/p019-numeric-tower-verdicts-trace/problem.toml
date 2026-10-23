@@ -1,0 +1,6 @@
+id = "core.09.p019"
+title = "int, bool, float and invariance: which lines fail?"
+tier = "deep"
+kind = "trace"
+topics = ["numeric tower", "bool is an int", "list invariance", "tuple[int, ...]", "dict values"]
+minutes = 15

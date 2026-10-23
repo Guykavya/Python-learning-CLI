@@ -1,0 +1,6 @@
+id = "core.09.p013"
+title = "Fixed tuples and tuple[int, ...]"
+tier = "applied"
+kind = "code"
+topics = ["tuple[int, int]", "tuple[int, ...]", "tuple[str, ...] shapes", "int | None in a tuple"]
+minutes = 25

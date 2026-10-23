@@ -1,0 +1,7 @@
+id = "core.10.p004"
+title = "Explain: iterable versus iterator"
+tier = "drill"
+kind = "explain"
+topics = ["iterable", "iterator", "consumed once"]
+minutes = 20
+assessment = "explain"

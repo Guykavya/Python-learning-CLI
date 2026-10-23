@@ -1,0 +1,4 @@
+- Marking a test as failing because it "uses the changed line". It fails only if the result **differs** for that input.
+- Missing that version B already passes `fee(90)`: for exact multiples, floor and ceiling division agree.
+- Forgetting that with `pytest.raises`, "no exception" is a failure (version D).
+- Listing failing tests in the wrong order. Use the order of the file.

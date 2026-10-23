@@ -1,0 +1,6 @@
+id = "core.08.p013"
+title = "Make the failing tests pass: withdraw"
+tier = "applied"
+kind = "code"
+topics = ["pytest.raises", "match=", "tests as specification"]
+minutes = 20

@@ -1,0 +1,4 @@
+- Writing `list(iterable)[:n]`: it hangs forever on an infinite generator and uses a lot of memory on a big one.
+- A `while len(result) <= n` condition, which pulls one item too many.
+- Forgetting `n = 0`: nothing may be consumed.
+- Letting `StopIteration` escape from a short input.

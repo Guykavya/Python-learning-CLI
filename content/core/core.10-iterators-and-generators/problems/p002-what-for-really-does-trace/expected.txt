@@ -1,0 +1,8 @@
+got a
+got b
+got c
+done
+empty
+[]
+True
+list_iterator

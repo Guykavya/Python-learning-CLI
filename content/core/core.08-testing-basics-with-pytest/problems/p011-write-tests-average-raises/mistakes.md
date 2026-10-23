@@ -1,0 +1,4 @@
+- Writing `average([])` inside `try/except` and no assert: the test passes even when no exception is raised. Use `pytest.raises`.
+- Putting several calls inside one `with pytest.raises` block: only the first call that raises matters, the rest never run.
+- Leaving out `match=`: a function that raises `ValueError("bad")` then passes.
+- Only testing lists where integer and true division agree, such as `[2, 4, 6]`.

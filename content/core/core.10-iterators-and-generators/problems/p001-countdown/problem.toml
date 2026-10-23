@@ -1,0 +1,6 @@
+id = "core.10.p001"
+title = "countdown: your first generator"
+tier = "drill"
+kind = "code"
+topics = ["generator function", "yield", "StopIteration"]
+minutes = 10

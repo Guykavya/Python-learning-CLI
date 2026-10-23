@@ -1,0 +1,6 @@
+id = "core.10.p003"
+title = "Iterable or iterator: who runs out?"
+tier = "drill"
+kind = "trace"
+topics = ["iterable", "iterator", "consumed once"]
+minutes = 10

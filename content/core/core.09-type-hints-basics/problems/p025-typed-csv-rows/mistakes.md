@@ -1,0 +1,6 @@
+- Hinting `parse_rows` as `-> list[...]`. It returns a pair, so `tuple[list[tuple[str, int]], list[str]]`.
+- Treating blank lines as bad. The spec says to ignore them.
+- Appending the stripped line to `bad`. Bad lines are kept exactly as given.
+- Using `>=` in `oldest`. On a tie the **first** row wins, so the comparison must be strict.
+- Returning `0.0` from `mean_age` for no rows. The answer is `None`, and the hint must include it.
+- Building `age_buckets` with `setdefault` only. The four keys must always exist, even when empty.

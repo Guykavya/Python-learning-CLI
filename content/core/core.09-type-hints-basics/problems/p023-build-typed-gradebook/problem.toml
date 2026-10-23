@@ -1,0 +1,7 @@
+id = "core.09.p023"
+title = "Build a typed gradebook module"
+tier = "challenge"
+kind = "code"
+topics = ["building an annotated module", "tuple[str, int] | None", "dict[str, list[int]]", "str | None", "sorting"]
+minutes = 45
+assessment = "build"

@@ -1,0 +1,4 @@
+- Saying tests "find all bugs". They show only that the cases you wrote give the expected result.
+- Describing a test as "running the program and looking at it". That is manual checking; an automated test decides pass or fail itself with `assert`.
+- Forgetting regression, the strongest reason: tests protect old behaviour while you change code.
+- Leaving out the cost. An honest answer admits tests take time.

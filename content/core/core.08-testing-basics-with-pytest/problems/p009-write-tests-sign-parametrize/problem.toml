@@ -1,0 +1,6 @@
+id = "core.08.p009"
+title = "Write tests: sign (with parametrize)"
+tier = "drill"
+kind = "code"
+topics = ["parametrize", "writing tests", "floats and zero"]
+minutes = 20

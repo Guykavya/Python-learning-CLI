@@ -1,0 +1,3 @@
+- Believing `list(it)` leaves `it` untouched.
+- Believing `iter(nums) is iter(nums)` is `True`: each call makes a new iterator.
+- Mixing up the list `nums` (never consumed) with the iterator `it` (consumed).

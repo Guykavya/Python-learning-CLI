@@ -1,0 +1,6 @@
+- Hinting `parse_line` as `-> tuple[str, int]`. Bad lines return `None`, so the union is needed.
+- Splitting with `line.split(", ")`. A line may be `"ravi,65"` with no space; split on `","` and strip.
+- Checking the score range **before** converting it. Convert first (inside `try`), then compare.
+- Sorting by `average` only. Ties must fall back to the name, so the key is `(-average, name)`.
+- Returning `""` from `best_student` for an empty book. The required result is `None`.
+- Using `round(avg, 1)` for the report. `f"{avg:.1f}"` always shows exactly one decimal (`60.0`, not `60`).

@@ -1,0 +1,4 @@
+- Testing only the middle of each range (10, 30, 70). The moved-border bugs pass every one of them.
+- Testing one side of a border only. Moving a border by one changes the answer for exactly one age, and it is not always the one you picked.
+- Skipping the negative age, or testing it without `pytest.raises` (so a function that returns 0 for -1 passes).
+- Expecting age 60 to be adult: the docstring says 60 **and over** is senior.

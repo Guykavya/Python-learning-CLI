@@ -1,0 +1,6 @@
+id = "core.10.p016"
+title = "running_totals and running_max with accumulate"
+tier = "drill"
+kind = "code"
+topics = ["itertools.accumulate"]
+minutes = 15

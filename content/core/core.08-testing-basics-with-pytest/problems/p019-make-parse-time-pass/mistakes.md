@@ -1,0 +1,4 @@
+- Letting `int()`'s own message escape (`invalid literal for int()`): the tests look for "whole numbers".
+- Checking only `minutes > 59`. `"1:-5"` then returns 55.
+- Forgetting `.strip()` once at the start. `int` tolerates spaces, but the `split` count and your messages do not: a text such as `" 1:30:00"` should still say `H:MM`.
+- Raising `Exception` or `TypeError` instead of `ValueError`.

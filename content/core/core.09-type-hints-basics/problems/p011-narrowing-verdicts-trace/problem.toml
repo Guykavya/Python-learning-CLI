@@ -1,0 +1,6 @@
+id = "core.09.p011"
+title = "Does mypy accept this None handling?"
+tier = "applied"
+kind = "trace"
+topics = ["narrowing", "str | None", "union-attr", "return-value"]
+minutes = 15

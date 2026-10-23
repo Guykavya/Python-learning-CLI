@@ -1,0 +1,5 @@
+- Marking `D` as an error. A `float` hint accepts an `int` value.
+- Marking `F` as an error. `True` is an `int` as far as the types go.
+- Marking `A` or `H` as an error because "a function with hints is suspicious". Those lines are correct.
+- Thinking mypy would only report lines that crash. mypy reports `B` even though Python runs it without a crash.
+- Writing `ok` for `E` because "2.5 would work in `n * 2`". mypy does not care what the body could survive; it compares the types.

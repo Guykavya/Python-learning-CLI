@@ -1,0 +1,5 @@
+- Checking only return values. A version that forgets to delete an item with quantity 0 returns the right number and leaves `{"pen": 0}` in the dict.
+- Not putting the limit exactly equal to a quantity in `low_stock`: `<` versus `<=` is invisible otherwise.
+- Sharing one `stock` dict across tests: one test's changes leak into the next.
+- Using `pytest.raises(Exception)`: a version that raises the wrong type passes.
+- One huge test. When it fails you cannot tell what broke.

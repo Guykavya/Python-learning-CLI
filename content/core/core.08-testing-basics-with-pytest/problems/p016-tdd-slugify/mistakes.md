@@ -1,0 +1,4 @@
+- Using `text.replace(" ", "-")`: it keeps double spaces as `--` and leaves `-` at the ends.
+- Dropping punctuation **before** splitting: `"Rock & Roll"` would become `"rock--roll"` or `"rockroll"`.
+- Forgetting that a word of only punctuation (`&`) must vanish, otherwise the result has `--`.
+- Writing all the code at once and ignoring which test failed. In TDD the failure message chooses your next step.

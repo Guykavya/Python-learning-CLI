@@ -3,10 +3,10 @@ from learn import config, scan, sync
 
 def test_config_set_keeps_comments_and_adds_keys(home):
     path = home / "config.toml"
-    path.write_text("# my comment\n[plan]\ndaily_minutes = 60\n")
+    path.write_text("# my comment\n[plan]\ndaily_minutes = 60\n", encoding="utf-8")
     config.set_value("plan.daily_minutes", 120)
     config.set_value("accounts.codeforces_handle", "someone")
-    text = path.read_text()
+    text = path.read_text(encoding="utf-8")
     assert "# my comment" in text
     assert config.get("plan.daily_minutes") == 120
     assert config.get("accounts.codeforces_handle") == "someone"
@@ -49,13 +49,13 @@ def test_snapshot_keeps_progress_out_of_the_course_repo(home):
         pytest.skip("git not installed")
     work = home / "my-work" / "core" / "p001"
     (work / "__pycache__").mkdir(parents=True)
-    (work / "solution.py").write_text("print('hi')\n")
+    (work / "solution.py").write_text("print('hi')\n", encoding="utf-8")
     (work / "__pycache__" / "solution.cpython-312.pyc").write_bytes(b"x")
-    (home / "content" / "draft.md").write_text("half-written module\n")
+    (home / "content" / "draft.md").write_text("half-written module\n", encoding="utf-8")
 
     assert gitsnap.snapshot("learn: solved p001"), "first snapshot should create the history and commit"
     files = subprocess.run(
-        ["git", f"--git-dir={home / '.progress.git'}", "ls-files"], capture_output=True, text=True
+        ["git", f"--git-dir={home / '.progress.git'}", "ls-files"], capture_output=True, text=True, encoding="utf-8"
     ).stdout.split()
     assert "my-work/core/p001/solution.py" in files
     assert "config.toml" in files

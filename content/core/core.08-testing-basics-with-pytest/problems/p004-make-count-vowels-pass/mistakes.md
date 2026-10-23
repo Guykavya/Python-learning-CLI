@@ -1,0 +1,4 @@
+- Checking `ch in "aeiou"` without `.lower()`: `count_vowels("AEIOU")` returns 0.
+- Counting `y` because it sounds like a vowel in "rhythm". The tests say it is not.
+- Writing `if ch == "a" or "e" or "i"...`: that is always true. Use `ch in "aeiou"`.
+- Counting words or distinct vowels. The tests expect every occurrence: `count_vowels("banana")` is 3.

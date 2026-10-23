@@ -1,0 +1,5 @@
+# Keep line endings right on every platform, also in GitHub ZIP downloads.
+*.cmd text eol=crlf
+learn text eol=lf
+*.sh text eol=lf
+*.bash text eol=lf

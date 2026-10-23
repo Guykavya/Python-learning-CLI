@@ -1,0 +1,6 @@
+id = "core.09.p009"
+title = "safe_int: parse or None"
+tier = "applied"
+kind = "code"
+topics = ["int | None", "try/except", "narrowing in a comprehension"]
+minutes = 20

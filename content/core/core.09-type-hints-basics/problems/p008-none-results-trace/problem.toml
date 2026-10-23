@@ -1,0 +1,6 @@
+id = "core.09.p008"
+title = "Functions that return None: what prints?"
+tier = "drill"
+kind = "trace"
+topics = ["-> None", "using a None result", "list.sort", "func-returns-value"]
+minutes = 10

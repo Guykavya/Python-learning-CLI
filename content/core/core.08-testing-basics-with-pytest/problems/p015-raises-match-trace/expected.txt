@@ -1,0 +1,10 @@
+test_a PASSED
+test_b PASSED
+test_c FAILED
+test_d FAILED
+test_e FAILED
+test_f PASSED
+test_g PASSED
+test_h PASSED
+test_i FAILED
+4 failed, 5 passed

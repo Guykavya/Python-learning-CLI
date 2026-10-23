@@ -1,0 +1,6 @@
+id = "core.09.p022"
+title = "Annotate a whole module"
+tier = "deep"
+kind = "code"
+topics = ["annotating a module", "dict[str, int]", "str | None", "Callable", "tuple[list[str], list[str]]"]
+minutes = 35

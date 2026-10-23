@@ -1,0 +1,6 @@
+id = "core.08.p004"
+title = "Make the failing tests pass: count_vowels"
+tier = "drill"
+kind = "code"
+topics = ["tests as a specification", "TDD", "pytest"]
+minutes = 10

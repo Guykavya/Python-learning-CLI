@@ -11,7 +11,7 @@ def home(tmp_path, monkeypatch):
     """A throwaway learning folder with the real syllabus and content."""
     shutil.copy(ROOT / "syllabus.yaml", tmp_path / "syllabus.yaml")
     shutil.copytree(ROOT / "content", tmp_path / "content")
-    (tmp_path / "config.toml").write_text('[plan]\ndaily_minutes = 60\nfocus = ["core", "dsa"]\n')
+    (tmp_path / "config.toml").write_text('[plan]\ndaily_minutes = 60\nfocus = ["core", "dsa"]\n', encoding="utf-8")
     monkeypatch.setenv("LEARN_HOME", str(tmp_path))
     from learn import content, syllabus
     content.reload()

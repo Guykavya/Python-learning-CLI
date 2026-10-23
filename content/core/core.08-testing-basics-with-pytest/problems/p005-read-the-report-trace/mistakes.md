@@ -1,0 +1,4 @@
+- Reading `0.0` as the expected value. In `assert LEFT == RIGHT` the expression you wrote on the left is evaluated and shown; the number you typed to compare against is what the test expects.
+- Reporting the line of the `def` instead of the line of the `assert`.
+- Writing `0` instead of `0.0`: the division `/` makes a float, and the answer file is compared line by line.
+- Assuming a failing test always means a bug in the function.

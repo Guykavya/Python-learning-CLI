@@ -1,0 +1,5 @@
+- Writing `['x']` for the first print. `a` and `b` are the same list object, so `print(a)` runs after both appends.
+- Expecting `a is b` to be `False`. Both names refer to the default list.
+- Thinking passing `mine` resets the default list. A passed list is used instead of the default, but the default keeps its contents.
+- Writing `['z']` for `e`. `mine` already held `"m"`.
+- Printing `(['x', 'y', 'w'])` without the comma. A one-item tuple is shown as `(item,)`.

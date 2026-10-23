@@ -41,7 +41,7 @@ def git_dir() -> Path:
 
 def _git(*args: str, stdin: str | None = None) -> subprocess.CompletedProcess:
     cmd = ["git", f"--git-dir={git_dir()}", f"--work-tree={paths.root()}", *args]
-    return subprocess.run(cmd, cwd=paths.root(), input=stdin, capture_output=True, text=True)
+    return subprocess.run(cmd, cwd=paths.root(), input=stdin, capture_output=True, text=True, encoding="utf-8")
 
 
 def is_repo() -> bool:
@@ -66,11 +66,11 @@ def _personal_files() -> list[str]:
 def init() -> str:
     gi = paths.root() / ".gitignore"
     if not gi.exists():
-        gi.write_text(GITIGNORE)
+        gi.write_text(GITIGNORE, encoding="utf-8")
     if is_repo():
         return "Your private progress history already exists."
     try:
-        r = subprocess.run(["git", "init", "-q", "--bare", str(git_dir())], capture_output=True, text=True)
+        r = subprocess.run(["git", "init", "-q", "--bare", str(git_dir())], capture_output=True, text=True, encoding="utf-8")
     except FileNotFoundError:
         return "Git is not installed, so your work will not be saved to a history."
     if r.returncode != 0:
@@ -90,6 +90,9 @@ def snapshot(message: str) -> bool:
         _git("add", "-f", "--pathspec-from-file=-", stdin="\n".join(_personal_files()))
         if _git("diff", "--cached", "--quiet").returncode == 0:
             return False
-        return _git("commit", "-q", "-m", message).returncode == 0
+        # Fresh Git installs have no name or email, and commit refuses without them.
+        # This history is private, so a placeholder identity is fine.
+        who = [] if _git("config", "user.email").stdout.strip() else ["-c", "user.name=learn", "-c", "user.email=learn@localhost"]
+        return _git(*who, "commit", "-q", "-m", message).returncode == 0
     except FileNotFoundError:
         return False

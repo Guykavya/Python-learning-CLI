@@ -1,0 +1,5 @@
+- Checking `low > high` before checking the bounds are digits: `int("")` crashes with its own message.
+- Using `"-3".split("-")` and not noticing the first bound is empty. `"".isdigit()` is `False`, which is what you want.
+- Returning a set or an unsorted list.
+- Forgetting the blank case: `"".split(",")` gives `[""]`, which is an invalid piece, but blank text must give `[]`.
+- Writing `range(low, high)`: the end of a page range is included.

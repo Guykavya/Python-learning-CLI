@@ -1,0 +1,5 @@
+- Hinting `min_max` as `tuple[int, ...]`. It always returns exactly two numbers, so the fixed form is the better description.
+- Writing `tuple[int]`. That means a tuple of **exactly one** int.
+- Returning a list from `sorted_unique`. `sorted(...)` gives a list; wrap it in `tuple(...)`.
+- Hinting `head_tail` as `tuple[int, tuple[int, ...]]` and forgetting the `None` for an empty tuple.
+- Using `numbers[1]` for "the rest". The rest is the slice `numbers[1:]`.

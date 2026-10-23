@@ -1,0 +1,6 @@
+id = "core.09.p010"
+title = "find_user and greeting"
+tier = "applied"
+kind = "code"
+topics = ["str | None", "dict.get", "narrowing with is None"]
+minutes = 20

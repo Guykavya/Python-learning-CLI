@@ -1,0 +1,7 @@
+id = "core.08.p028"
+title = "Which test catches which bug?"
+tier = "challenge"
+kind = "trace"
+topics = ["mutants", "what a test catches", "boundary tests"]
+minutes = 35
+assessment = "trace"

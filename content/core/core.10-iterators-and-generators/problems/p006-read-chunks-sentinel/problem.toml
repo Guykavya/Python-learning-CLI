@@ -1,0 +1,6 @@
+id = "core.10.p006"
+title = "read_chunks: iter(callable, sentinel)"
+tier = "drill"
+kind = "code"
+topics = ["iter(callable, sentinel)", "closures"]
+minutes = 15

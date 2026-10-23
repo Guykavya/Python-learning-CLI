@@ -1,0 +1,6 @@
+id = "core.08.p024"
+title = "Comparing floats in tests"
+tier = "deep"
+kind = "trace"
+topics = ["floats in assert", "pytest.approx", "tolerance"]
+minutes = 20

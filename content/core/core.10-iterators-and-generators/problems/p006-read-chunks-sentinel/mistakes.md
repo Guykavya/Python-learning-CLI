@@ -1,0 +1,3 @@
+- Writing `iter(read(), "")`: that calls `read()` once and passes a string, and `iter` complains that it is not callable.
+- Including the final `""` in the list.
+- Calling `read()` once too many, for example once to test and again to store.

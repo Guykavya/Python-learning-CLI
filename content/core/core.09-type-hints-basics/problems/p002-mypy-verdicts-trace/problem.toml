@@ -1,0 +1,6 @@
+id = "core.09.p002"
+title = "Which lines does mypy flag?"
+tier = "drill"
+kind = "trace"
+topics = ["reading mypy", "arg-type", "assignment", "numeric tower"]
+minutes = 10

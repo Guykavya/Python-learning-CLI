@@ -1,0 +1,4 @@
+- Using `>` instead of `>=`: 90 would become a `B`. The table rows at 90, 75, 60 and 40 catch this.
+- Checking the lowest range first (`marks >= 40` before `marks >= 90`): everyone gets `D`.
+- Returning `None` for marks out of range instead of raising `ValueError`.
+- Writing `0 < marks` for the lower check, which rejects a valid 0.

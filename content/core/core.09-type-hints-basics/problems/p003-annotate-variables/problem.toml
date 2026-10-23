@@ -1,0 +1,6 @@
+id = "core.09.p003"
+title = "Annotate the variables"
+tier = "drill"
+kind = "code"
+topics = ["variable annotations", "collection annotations", "str | None"]
+minutes = 15

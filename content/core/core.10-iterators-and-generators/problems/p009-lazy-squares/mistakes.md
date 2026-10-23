@@ -1,0 +1,3 @@
+- Using square brackets: that is a list comprehension and it computes everything immediately.
+- Calling `list(...)` on the result before returning: it defeats the laziness.
+- Returning a `map` object or a lambda: it would be lazy too, but the test wants a real generator.

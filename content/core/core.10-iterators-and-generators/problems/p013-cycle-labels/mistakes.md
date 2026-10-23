@@ -1,0 +1,3 @@
+- Calling `list(cycle(labels))`: an endless loop that fills memory.
+- Using `labels * n`: that gives n copies, not n items.
+- Not handling `n = 0`.
