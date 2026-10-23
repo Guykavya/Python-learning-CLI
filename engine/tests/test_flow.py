@@ -63,5 +63,26 @@ def test_plan_skips_modules_without_content(home):
     assert any(item.track == "dsa" for item in plan)
 
 
+def test_syllabus_is_honest_about_unwritten_modules(home, capsys):
+    run("init")
+    capsys.readouterr()
+    run("syllabus", "swe")
+    out = capsys.readouterr().out
+    assert "not written yet" in out, "a module with no problems must say so, not show 0/N"
+    assert "Written so far: 0 of" in out, "the summary line should count only modules that have problems"
+
+    run("syllabus", "dsa")
+    out = capsys.readouterr().out
+    assert "Written so far: 2 of" in out, "dsa has two written modules"
+
+
+def test_goto_warns_when_module_has_no_content(home, capsys):
+    run("init")
+    capsys.readouterr()
+    run("goto", "swe.01")
+    out = capsys.readouterr().out
+    assert "no problems written yet" in out, "jumping to an unwritten module should warn that the plan will skip it"
+
+
 def test_trace_normalise_ignores_comments_and_trailing_space():
     assert runner.normalise("# note\n1  \n2\n\n") == ["1", "2"]

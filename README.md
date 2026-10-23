@@ -1,12 +1,31 @@
 # Python Learning Module
 
-An offline system for mastering Python, from the first program to CPython internals,
-across four levels (software engineer, data analyst, data scientist, AI/ML engineer)
-with DSA alongside. Book-style chapters, thousands of tested problems with hints and
-walkthroughs, spaced reviews and a progress tracker, all in your terminal.
+Learn Python offline, with tests that explain your mistakes and reviews that make it stick.
+It runs in your terminal and needs no AI. After a one-time install it needs no internet
+either, except to sync LeetCode and Codeforces solves.
 
-It needs no AI. After a one-time install it needs no internet either, except to sync
-LeetCode and Codeforces solves.
+- **Learn:** book-style chapters in simple English. Each explains why before how, with worked examples and common traps.
+- **Practise:** problems with automatic tests, hints that go from a question to pseudocode, and
+  predict-the-output, explain-in-words and fix-the-bug exercises. A failing test names the likely mistake.
+- **Retain:** problems come back on a growing review schedule. The tracker shows your weak
+  topics and only counts a module as mastered when you really can solve it.
+
+The plan is a long path: Python from the first program to CPython internals, then four
+career tracks (software engineer, data analyst, data scientist, AI/ML engineer), with
+data structures and algorithms alongside.
+
+## What exists today
+
+The syllabus has 92 modules. **12 are written so far**, with over 500 tested problems:
+
+| Track | Written | Planned |
+|---|---|---|
+| Core Python | 10 of 24 modules (basics, strings, control flow, collections, functions, errors, testing, type hints, generators) | the rest of the language, standard library, concurrency, internals |
+| DSA | 2 of 18 modules (problem-solving basics, complexity) | arrays through dynamic programming |
+| Software engineer, data analyst, data scientist, AI/ML | none yet | planned |
+
+Unwritten modules show as "not written yet" in `learn syllabus`, and nothing is locked. Run
+`./learn syllabus` for the live numbers. New modules are added one at a time.
 
 ## Install
 
