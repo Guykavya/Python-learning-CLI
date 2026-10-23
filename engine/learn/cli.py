@@ -513,6 +513,15 @@ def _clipboard(text: str) -> bool:
 
 # ----------------------------------------------------------------- syllabus / module / read / goto / focus
 
+def _written_summary(syl: Syllabus, tracks: list) -> str:
+    """One honest line: how much of the syllabus exists as real content."""
+    modules = [m for t in tracks for m in t.modules]
+    written = [m for m in modules if content.problems_for_module(m.id)]
+    problems = sum(len(content.problems_for_module(m.id)) for m in written)
+    planned = sum(m.planned_problems for m in modules)
+    return f"Written so far: {len(written)} of {len(modules)} modules, {problems} of about {planned} planned problems."
+
+
 def cmd_syllabus(args: argparse.Namespace) -> None:
     conn, syl, cfg = ctx()
     states = db.states(conn)
@@ -524,11 +533,12 @@ def cmd_syllabus(args: argparse.Namespace) -> None:
             mp = progress.module_progress(m.id, states)
             icon = STATUS_ICON[mp.status]
             pri = {"essential": "", "role-specific": ui.dim(" role"), "advanced-elective": ui.dim(" elective")}[m.priority]
-            count = f"{mp.solved}/{mp.total}" if mp.total else ui.dim(f"0/{m.planned_problems} planned")
+            count = f"{mp.solved}/{mp.total}" if mp.total else ui.dim("not written yet")
             here = ui.accent("  ← you are here") if m.id == current.id and t.id in cfg["plan"].get("focus", []) else ""
             print(f"  {icon} {m.id:9} {m.title}{pri}")
-            print(ui.dim(f"      {count:>14}  ") + (ui.bar(mp.score) if mp.total else "") + here)
+            print(ui.dim(f"      {count:>15}  ") + (ui.bar(mp.score) if mp.total else ui.dim(f"{m.planned_problems} problems planned")) + here)
     print(ui.dim("\n  ★ mastered  ◐ in progress  ○ not started  · content not written yet"))
+    print(ui.dim("  " + _written_summary(syl, tracks)))
 
 
 def cmd_module(args: argparse.Namespace) -> None:
@@ -628,6 +638,8 @@ def cmd_goto(args: argparse.Namespace) -> None:
     db.log_event(conn, "goto", m.id)
     conn.commit()
     print(f"Track {m.track} now continues from {m.id} {m.title}.")
+    if not content.problems_for_module(m.id):
+        print(ui.warn(f"{m.id} has no problems written yet, so the daily plan will skip it for now."))
     print(ui.dim(f"Undo with: learn goto {m.track} --auto"))
 
 
