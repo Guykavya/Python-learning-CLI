@@ -1,0 +1,5 @@
+- Printing the warning to stdout. It then ends up inside the results of a pipe.
+- Binding the stream too early: `def f(items, out=sys.stderr)`. A replaced `sys.stderr` is not seen.
+- Writing `skipping x` without quotes. Use `!r` or `repr`.
+- Printing the total to stderr, or printing extra lines.
+- Catching a bare `except:` instead of `ValueError`.

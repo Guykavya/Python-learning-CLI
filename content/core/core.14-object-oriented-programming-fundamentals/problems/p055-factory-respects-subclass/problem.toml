@@ -1,0 +1,7 @@
+id = "core.14.p055"
+title = "Factories that respect subclasses"
+tier = "deep"
+kind = "code"
+topics = ["classmethod", "staticmethod", "alternative constructors", "inheritance", "type(self)"]
+minutes = 30
+difficulty = 3

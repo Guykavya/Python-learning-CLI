@@ -1,0 +1,10 @@
+init shop
+False
+load cart
+load prices
+True True
+70
+True
+shop.cart shop.prices
+open 50
+False False

@@ -10,7 +10,7 @@ import sys
 from datetime import date, datetime, timedelta
 from pathlib import Path
 
-from learn import completion, config, content, db, gitsnap, model, paths, progress, reader, runner, scan, sync, ui
+from learn import completion, config, content, db, gitsnap, model, paths, progress, reader, reset, runner, scan, sync, ui
 from learn.syllabus import Syllabus
 from learn.syllabus import load as load_syllabus
 
@@ -126,6 +126,47 @@ def cmd_init(args: argparse.Namespace) -> None:
     print(ui.ok("Folders and tracker database are ready: ") + rel(paths.db_path()))
     print(gitsnap.init())
     print("\nNext:  " + ui.accent("learn today"))
+
+
+def cmd_reset(args: argparse.Namespace) -> None:
+    items = reset.targets(args.all)
+    if not items:
+        print("Nothing to erase: there is no progress yet.")
+        return
+    interactive = sys.stdin.isatty() and not args.yes
+    if not interactive and not args.yes:
+        raise UserError("Erasing needs a person to confirm. Run it in a terminal, or add --yes.")
+    print(ui.err("Start over: this erases"))
+    for t in items:
+        print(ui.err("  ✗ ") + f"{t.name:15} {t.files:>5} files {reset.human_size(t.size):>9}   {t.what}")
+    if not args.all:
+        print(ui.dim("  Kept: config.toml, playground/ and library/ (your settings and own files). `learn reset --all` erases those too."))
+    print(ui.dim("  Kept always: the course itself (content/, syllabus.yaml) and the engine."))
+    if args.no_backup:
+        print(ui.warn("\n  No backup will be made. This cannot be undone."))
+    else:
+        print("\n  " + ui.ok("A backup zip is saved first: ") + ui.bold(f"{reset.BACKUP_DIR}/learn-backup-<date>-<time>.zip")
+              + ui.dim("  (delete it later for a full wipe)"))
+    if interactive:
+        answer = ui.ask("\n  Type " + ui.err("erase") + " to start over, anything else to cancel")
+        if answer.strip().lower() != "erase":
+            print("Cancelled. Nothing was erased.")
+            return
+    if not args.no_backup:
+        try:
+            zip_path = reset.make_backup(items)
+        except Exception as exc:
+            raise UserError(f"The backup failed ({exc}), so nothing was erased.") from None
+        print(ui.ok("Backup saved: ") + rel(zip_path))
+    try:
+        reset.erase(items)
+    except OSError as exc:
+        raise UserError(
+            f"Could not erase everything ({exc}). Close programs that use these files, then run `learn reset` again."
+        ) from None
+    print(ui.ok("Erased. You are starting over.") + "\n")
+    cmd_init(argparse.Namespace())
+    print(ui.dim("\nTo go back to the old progress, unzip the backup into this folder."))
 
 
 # ----------------------------------------------------------------- today / next / resume
@@ -536,7 +577,7 @@ def cmd_syllabus(args: argparse.Namespace) -> None:
             count = f"{mp.solved}/{mp.total}" if mp.total else ui.dim("not written yet")
             here = ui.accent("  ← you are here") if m.id == current.id and t.id in cfg["plan"].get("focus", []) else ""
             print(f"  {icon} {m.id:9} {m.title}{pri}")
-            print(ui.dim(f"      {count:>15}  ") + (ui.bar(mp.score) if mp.total else ui.dim(f"{m.planned_problems} problems planned")) + here)
+            print(ui.dim(f"      {count:>15}  ") + (ui.progress_bar(mp.score) if mp.total else ui.dim(f"{m.planned_problems} problems planned")) + here)
     print(ui.dim("\n  ★ mastered  ◐ in progress  ○ not started  · content not written yet"))
     print(ui.dim("  " + _written_summary(syl, tracks)))
 
@@ -581,14 +622,85 @@ def cmd_module(args: argparse.Namespace) -> None:
                      + (f"   still to do: {', '.join(sorted(missing))}" if missing else "")))
 
 
+def _read_module(conn, m, restart: bool = False) -> None:
+    """Open one chapter in the reader, remembering where you stopped."""
+    db.log_event(conn, "read", m.id)
+    db.mark_active(conn)
+    conn.commit()
+    key = f"read_pos:{m.id}"
+
+    def save(i: int) -> None:
+        db.set_meta(conn, key, str(i))
+        conn.commit()
+
+    start = 0 if restart else int(db.get_meta(conn, key, "0"))
+    if sys.stdout.isatty() and ui.color_enabled():
+        print("\033[2J\033[H", end="")  # leave the shelf behind: the screen is now the chapter
+    reader.read_chapter(f"{m.id}  {m.title}", m.chapter_path.read_text(encoding="utf-8"), start, save)
+
+
+def _bookshelf(conn, syl) -> None:
+    """Every written chapter in a compact grid. Pick any, any time: nothing is locked."""
+    while True:
+        print("\033[2J\033[H" if sys.stdout.isatty() and ui.color_enabled() else "", end="")
+        ui.heading("Bookshelf: pick a chapter to read")
+        numbered = []
+        for t in syl.tracks:
+            cells, coming = [], []
+            for m in t.modules:
+                if not m.chapter_path.exists():
+                    coming.append(m)
+                    continue
+                numbered.append(m)
+                total = len(reader.split_sections(m.chapter_path.read_text(encoding="utf-8")))
+                pos = int(db.get_meta(conn, f"read_pos:{m.id}", "-1")) + 1
+                where = ui.dim(f"{pos}/{total}") if pos > 0 else ui.dim("new")
+                cells.append((len(numbered), m, where))
+            if not cells:
+                continue
+            print(ui.bold(f"\n  {t.title}"))
+            cols = 2 if ui.terminal_width() >= 100 else 1
+            width = (ui.terminal_width() - 4) // cols
+            for i in range(0, len(cells), cols):
+                line = ""
+                for n, m, where in cells[i:i + cols]:
+                    title_room = width - 20
+                    title = m.title if len(m.title) <= title_room else m.title[: title_room - 1] + "…"
+                    text = f"{ui.accent(f'{n:>3}')}  {m.id:8} {title}  {where}"
+                    line += text + " " * max(2, width - ui.vis_len(text))
+                print("  " + line.rstrip())
+            if coming:
+                print(ui.dim(f"       + {len(coming)} more coming ({coming[0].id} … {coming[-1].id})"))
+        if not numbered:
+            print("  No chapters are written yet.")
+            return
+        print(ui.dim("\n  progress shows section read/total  ·  new = not opened yet"))
+        choice = ui.ask("  Chapter number or id (Enter to leave)").lower()
+        if choice in ("", "q", "quit"):
+            return
+        if choice.isdigit() and 1 <= int(choice) <= len(numbered):
+            m = numbered[int(choice) - 1]
+        else:
+            m = next((x for x in numbered if x.id == choice), None)
+        if m is None:
+            print(ui.warn("  Type a number from the list, a module id such as core.02, or Enter to leave."))
+            continue
+        _read_module(conn, m)
+
+
 def cmd_read(args: argparse.Namespace) -> None:
     conn, syl, cfg = ctx()
     module_id = args.module
+    interactive = sys.stdin.isatty() and not (args.print or args.code)
     if module_id is None:
+        if interactive:
+            return _bookshelf(conn, syl)
         last = db.get_meta(conn, "last_problem")
-        if not last:
-            raise UserError("Which module? Example: learn read core.02")
-        module_id = last.rsplit(".", 1)[0]
+        if last:
+            module_id = last.rsplit(".", 1)[0]
+        else:  # nothing started yet: read the chapter you would start with
+            focus = cfg["plan"].get("focus") or ["core"]
+            module_id = progress.current_module(conn, syl, focus[0]).id
     try:
         m = syl.module(module_id)
     except KeyError as exc:
@@ -598,25 +710,21 @@ def cmd_read(args: argparse.Namespace) -> None:
         for t in m.topics:
             print(f"  • {t}")
         return
-    db.log_event(conn, "read", m.id)
-    db.mark_active(conn)
-    conn.commit()
     if args.code:
+        db.log_event(conn, "read", m.id)
+        db.mark_active(conn)
+        conn.commit()
         print(ui.bold("Chapter: ") + rel(m.chapter_path))
         open_in_editor(m.chapter_path)
         print(ui.dim("Opened in VS Code. Press Ctrl+Shift+V there for the formatted preview."))
         return
     if args.print or not sys.stdin.isatty():
+        db.log_event(conn, "read", m.id)
+        db.mark_active(conn)
+        conn.commit()
         print(m.chapter_path.read_text(encoding="utf-8"))
         return
-    key = f"read_pos:{m.id}"
-
-    def save(i: int) -> None:
-        db.set_meta(conn, key, str(i))
-        conn.commit()
-
-    start = 0 if args.restart else int(db.get_meta(conn, key, "0"))
-    reader.read_chapter(f"{m.id}  {m.title}", m.chapter_path.read_text(encoding="utf-8"), start, save)
+    _read_module(conn, m, args.restart)
 
 
 def cmd_goto(args: argparse.Namespace) -> None:
@@ -975,6 +1083,10 @@ def build_parser() -> argparse.ArgumentParser:
         return sp
 
     add("init", cmd_init, "Create folders, the tracker database and the Git repository")
+    sp = add("reset", cmd_reset, "Start over: back up, then erase your progress and solutions")
+    sp.add_argument("--all", action="store_true", help="also erase playground/ and library/")
+    sp.add_argument("--no-backup", action="store_true", help="do not save a backup zip first")
+    sp.add_argument("--yes", action="store_true", help="do not ask for confirmation")
     add("today", cmd_today, "Show today's plan (the default command)")
     sp = add("next", cmd_next, "Start the next item in today's plan")
     sp.add_argument("--code", action="store_true", help="open files in VS Code")
@@ -999,7 +1111,7 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("track", nargs="?")
     sp = add("module", cmd_module, "Show one module: topics, outcomes, problems")
     sp.add_argument("module")
-    sp = add("read", cmd_read, "Read a module's chapter here, section by section")
+    sp = add("read", cmd_read, "Read chapters here like a book: no module = pick from the bookshelf")
     sp.add_argument("module", nargs="?")
     sp.add_argument("--restart", action="store_true", help="start from the first section")
     sp.add_argument("--print", action="store_true", help="print the raw chapter in one go")
@@ -1051,11 +1163,12 @@ MENU = [
     ("3", "Get a hint", ["hint"]),
     ("4", "Show the solution", ["solution"]),
     ("5", "Stuck: chatbot prompt", ["stuck"]),
-    ("6", "Read the chapter", ["read"]),
+    ("6", "Read the book (all chapters)", ["read"]),
     ("7", "Today's plan", ["today"]),
     ("8", "Syllabus", ["syllabus"]),
     ("9", "Stats", ["stats"]),
     ("10", "Start a problem by id", None),
+    ("11", "Start over (erase progress)", ["reset"]),
 ]
 
 
@@ -1065,11 +1178,26 @@ def _print_menu(conn: sqlite3.Connection) -> None:
     st = db.problem_state(conn, last) if last else None
     if st is not None and (st["status"] == "started" or st["is_review"]):
         print(ui.dim("  Working on: ") + ui.bold(last) + "  " + content.get(last).title)
+    # Mid-problem the next step is checking your answer; otherwise it is starting the next one.
+    midway = st is not None and st["status"] == "started"
+    best = "2" if midway else "1"
+
+    # A brand-new learner (or one who just started over) has nothing "next" yet.
+    fresh = not db.states(conn)
+    labels = {"1": "Start learning"} if fresh else {}
+
+    def cell(entry, width):
+        arrow = ui.ok("▶") if entry[0] == best else " "
+        text = f"{arrow} {ui.accent(f'{entry[0]:>2}')}  {labels.get(entry[0], entry[1])}"
+        return text + " " * (width - ui.vis_len(text)) if width else text
+
     half = (len(MENU) + 1) // 2
+    lines = []
     for left, right in zip(MENU[:half], MENU[half:] + [None]):
-        cell = f"  {ui.accent(f'{left[0]:>2}')}  {left[1]:<24}"
-        print(cell + (f"{ui.accent(f'{right[0]:>2}')}  {right[1]}" if right else ""))
-    print(f"  {ui.accent(' q')}  Quit")
+        lines.append(cell(left, 28) + (cell(right, 0) if right else ""))
+    lines.append(f"  {ui.accent(' q')}  Quit")
+    lines.append(ui.dim(f"  {ui.ok('▶')}{ui.dim(' = recommended next step')}"))
+    ui.box("Menu", lines, "cyan", indent=2)
 
 
 def _ask_problem_id() -> str:
@@ -1122,6 +1250,9 @@ def cmd_menu(parser: argparse.ArgumentParser) -> None:
                 continue
             argv = ["start", pid]
         print()
+        erasing = argv[:1] == ["reset"]
+        if erasing:
+            conn.close()  # Windows cannot delete the tracker file while it is open
         try:
             args = parser.parse_args(argv)
             args.func(args)
@@ -1131,6 +1262,9 @@ def cmd_menu(parser: argparse.ArgumentParser) -> None:
             print()
         except SystemExit:
             pass
+        finally:
+            if erasing:
+                conn = db.connect()
 
 
 def cmd_completion(args: argparse.Namespace) -> None:

@@ -1,0 +1,5 @@
+- Thinking `import shop` loads every file in the folder. It runs only `__init__.py`.
+- Printing `True` on the second line. `cart` becomes an attribute of `shop` only after `shop.cart` is imported.
+- Forgetting `load prices`. The relative import inside `cart.py` loads it.
+- Printing `cart prices` for the names. A submodule's `__name__` is the full dotted path.
+- Thinking `import *` copies everything public. When `__all__` exists, it is the exact list.

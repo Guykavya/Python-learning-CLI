@@ -1,0 +1,6 @@
+id = "core.10.p021"
+title = "A small grep for log lines"
+tier = "applied"
+kind = "code"
+topics = ["pipelines", "enumerate", "islice", "generator expressions"]
+minutes = 25

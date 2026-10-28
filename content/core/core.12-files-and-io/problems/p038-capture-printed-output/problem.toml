@@ -1,0 +1,6 @@
+id = "core.12.p038"
+title = "Capture what a function prints"
+tier = "deep"
+kind = "code"
+topics = ["contextlib.redirect_stdout", "redirect_stderr", "io.StringIO", "sys.stdout"]
+minutes = 25

@@ -1,0 +1,16 @@
+sales.2024.csv
+sales.2024
+.csv
+['.2024', '.csv']
+data/reports
+reports
+data/reports/sales.2024.json
+data/reports/totals.txt
+data/reports/q1.csv
+('data', 'reports', 'sales.2024.csv')
+a/b/c.txt
+/etc
+.gz
+True
+('a', '..', 'b')
+True

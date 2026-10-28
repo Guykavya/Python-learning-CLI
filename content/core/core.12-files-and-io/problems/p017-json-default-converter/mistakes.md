@@ -1,0 +1,5 @@
+- Returning `None` for unknown objects. The data is then lost silently. Raise `TypeError`.
+- Returning the set as a list without sorting. The order of a set is not stable, so the output changes between runs.
+- Returning the `date` object itself. JSON would call `default` again and loop.
+- Forgetting `sort_keys=True`.
+- Calling `convert(obj)` yourself: you only pass the function.

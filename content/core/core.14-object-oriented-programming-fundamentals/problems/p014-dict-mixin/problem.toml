@@ -1,0 +1,7 @@
+id = "core.14.p014"
+title = "A to_dict mixin for unrelated classes"
+tier = "drill"
+kind = "code"
+topics = ["mixins", "multiple inheritance", "vars", "encapsulation conventions"]
+minutes = 15
+difficulty = 2

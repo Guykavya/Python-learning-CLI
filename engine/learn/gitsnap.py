@@ -27,6 +27,7 @@ library/*.pdf
 config.toml
 data/
 my-work/
+backups/
 """
 
 # What belongs to the learner, relative to the project root.

@@ -1,0 +1,8 @@
+id = "core.11.p040"
+title = "Project: a decorator toolkit"
+tier = "challenge"
+kind = "code"
+topics = ["decorators with arguments", "functools.wraps", "stacking decorators", "caching", "retry and backoff", "rate limiting", "dependency injection", "closures"]
+minutes = 150
+difficulty = 5
+assessment = "build"

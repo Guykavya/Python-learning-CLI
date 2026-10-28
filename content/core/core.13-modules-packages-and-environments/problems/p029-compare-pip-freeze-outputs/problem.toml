@@ -1,0 +1,7 @@
+id = "core.13.p029"
+title = "Compare two pip freeze outputs"
+tier = "challenge"
+kind = "code"
+topics = ["pip freeze", "requirements files", "PEP 503 name normalisation", "version comparison", "dicts and sets", "parsing"]
+minutes = 50
+difficulty = 4

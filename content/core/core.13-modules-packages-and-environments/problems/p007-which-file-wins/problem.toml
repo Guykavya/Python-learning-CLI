@@ -1,0 +1,6 @@
+id = "core.13.p007"
+title = "Which file does import load?"
+tier = "drill"
+kind = "code"
+topics = ["sys.path", "search order", "shadowing", "packages vs modules"]
+minutes = 15

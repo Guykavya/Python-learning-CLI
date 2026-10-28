@@ -1,0 +1,7 @@
+id = "core.14.p063"
+title = "Atomic bank transfers with chained errors"
+tier = "challenge"
+kind = "code"
+topics = ["custom exceptions", "exception hierarchies", "raise from", "properties", "composition", "rollback", "classes"]
+minutes = 60
+difficulty = 5

@@ -1,0 +1,10 @@
+- `line.split(" ")`: double spaces give empty strings and valid lines are rejected. Use `split(maxsplit=3)`.
+- `rest.split(": ")` without a limit: a message like `timeout: upstream` is cut in two. Use `partition` or `split(": ", 1)`.
+- Raising an exception for a bad line. One broken line must not stop a whole log; return `None` and skip it.
+- Putting `yield` inside `at_least`: then `at_least(x, "LOUD")` raises nothing until the first `next()`.
+- Comparing levels as strings: `"WARNING" > "ERROR"` is `True` in alphabet order, which is wrong.
+- Calling `sorted()` before `groupby`, or `len(list(group))` on very large groups: it works, but the first loses laziness and the second stores a whole group.
+- Forgetting the date in the minute key, so 23:59 on two days becomes one group.
+- `summarize` calling `len(list(records))` and then looping again: the generator is already empty.
+- Picking the top source with `max(by_source, key=by_source.get)`: on a tie it returns the first seen, not the alphabetically first.
+- Building `first_messages` with a list of all messages and then `[:n]`: correct for short logs, but it reads every line.

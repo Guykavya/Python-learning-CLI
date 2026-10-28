@@ -1,0 +1,6 @@
+id = "core.12.p032"
+title = "Remove the BOM and fix line endings"
+tier = "applied"
+kind = "code"
+topics = ["utf-8-sig", "BOM", "newline translation", "bytes", "text mode"]
+minutes = 25

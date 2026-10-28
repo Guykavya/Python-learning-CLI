@@ -1,0 +1,6 @@
+id = "core.12.p031"
+title = "Read text with bad bytes"
+tier = "applied"
+kind = "code"
+topics = ["encodings", "UnicodeDecodeError", "errors=", "replacement character"]
+minutes = 20

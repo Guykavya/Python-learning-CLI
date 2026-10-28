@@ -1,0 +1,4 @@
+- Expecting the list comprehension to interleave with the `got` lines. It finishes all the work first.
+- Expecting `double 1`, `double 2`, `double 3` before `got 2` in the generator part.
+- Expecting `again [2, 4, 6]`: the generator was used up by the `for` loop.
+- Putting `source called` after `built c`. The first iterable of a generator expression is evaluated immediately.

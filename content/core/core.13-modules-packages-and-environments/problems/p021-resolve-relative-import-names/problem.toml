@@ -1,0 +1,7 @@
+id = "core.13.p021"
+title = "Resolve relative import names by hand"
+tier = "deep"
+kind = "code"
+topics = ["relative imports", "__package__", "dotted module names", "ImportError", "string handling"]
+minutes = 35
+difficulty = 4

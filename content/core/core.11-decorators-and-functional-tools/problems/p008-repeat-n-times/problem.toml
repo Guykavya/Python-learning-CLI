@@ -1,0 +1,6 @@
+id = "core.11.p008"
+title = "@repeat(n): a decorator with an argument"
+tier = "drill"
+kind = "code"
+topics = ["decorators with arguments", "decorator factory", "functools.wraps"]
+minutes = 20

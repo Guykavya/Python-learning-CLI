@@ -1,0 +1,6 @@
+id = "core.13.p022"
+title = "Trace: running a package file directly vs with -m"
+tier = "deep"
+kind = "trace"
+topics = ["relative imports", "python -m", "__package__", "sys.path[0]"]
+minutes = 20

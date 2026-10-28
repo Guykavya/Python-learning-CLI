@@ -1,0 +1,5 @@
+- Opening in text mode: `read` returns `str`, and `h.update` needs bytes. It raises `TypeError`.
+- Using the sentinel `""` instead of `b""`. The loop never ends because `b"" != ""`.
+- Calling `f.read()` without a size. The whole file is in memory.
+- Returning `h.digest()` (raw bytes) instead of `h.hexdigest()`.
+- Creating a new `hashlib.sha256()` inside the loop. Then you only get the hash of the last chunk.

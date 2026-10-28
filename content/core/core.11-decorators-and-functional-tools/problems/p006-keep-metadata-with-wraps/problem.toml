@@ -1,0 +1,6 @@
+id = "core.11.p006"
+title = "functools.wraps keeps the name and docstring"
+tier = "drill"
+kind = "code"
+topics = ["functools.wraps", "metadata", "__name__", "__doc__"]
+minutes = 15

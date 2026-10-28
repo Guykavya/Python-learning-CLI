@@ -1,0 +1,4 @@
+- Thinking `g.closed` is `False` after the `with` block. The block always closes the file.
+- Thinking the error skips the closing. `with` closes the file also when the block raises.
+- Expecting `AttributeError` for `g.name` after closing. The name stays.
+- Mixing up the order: `with` closes first, then the `except` runs.

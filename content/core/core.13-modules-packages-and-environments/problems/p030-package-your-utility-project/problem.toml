@@ -1,0 +1,8 @@
+id = "core.13.p030"
+title = "Project: package one of your utilities"
+tier = "challenge"
+kind = "code"
+topics = ["pyproject.toml", "src layout", "packages", "__init__.py", "__all__", "__version__", "__main__.py", "python -m", "argparse", "entry points", "console scripts", "tomllib", "virtual environments"]
+minutes = 180
+difficulty = 5
+assessment = "build"

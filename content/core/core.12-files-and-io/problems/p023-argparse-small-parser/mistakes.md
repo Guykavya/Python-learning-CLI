@@ -1,0 +1,5 @@
+- Calling `parse_args()` without the list. It reads the real `sys.argv`, which in a test is pytest's own arguments.
+- Using `nargs="*"`. It allows zero paths.
+- Forgetting `type=int`: the limit is then the string `"3"`.
+- Writing `store_true` with a default of `True`, or forgetting the short `-v`.
+- Catching `SystemExit` inside the function. Let argparse do its job.

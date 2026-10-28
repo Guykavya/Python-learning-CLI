@@ -1,0 +1,6 @@
+id = "core.12.p018"
+title = "Read a TOML config with defaults"
+tier = "applied"
+kind = "code"
+topics = ["tomllib", "binary mode", "dict merge", "defaults"]
+minutes = 20

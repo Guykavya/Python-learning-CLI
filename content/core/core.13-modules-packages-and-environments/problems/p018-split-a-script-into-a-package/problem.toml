@@ -1,0 +1,7 @@
+id = "core.13.p018"
+title = "Split a script into a package"
+tier = "applied"
+kind = "code"
+topics = ["packages", "relative imports", "__init__.py", "__all__", "__main__.py", "python -m", "refactoring"]
+minutes = 45
+difficulty = 3

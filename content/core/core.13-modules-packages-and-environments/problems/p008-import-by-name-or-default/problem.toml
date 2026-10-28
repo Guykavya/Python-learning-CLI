@@ -1,0 +1,6 @@
+id = "core.13.p008"
+title = "Import a module by name, with a default"
+tier = "drill"
+kind = "code"
+topics = ["importlib.import_module", "ModuleNotFoundError", "optional dependencies"]
+minutes = 15

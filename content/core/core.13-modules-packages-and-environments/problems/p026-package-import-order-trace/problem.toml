@@ -1,0 +1,8 @@
+id = "core.13.p026"
+title = "Trace: import order in a package with a circular import"
+tier = "challenge"
+kind = "trace"
+topics = ["import order", "circular imports", "relative imports", "__name__", "python -m", "from-import bindings", "sys.modules"]
+minutes = 40
+difficulty = 5
+assessment = "trace"

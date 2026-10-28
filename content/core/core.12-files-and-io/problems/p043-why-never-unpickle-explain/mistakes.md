@@ -1,0 +1,5 @@
+- Saying a pickle "may contain a virus" without explaining that `load` runs the instructions.
+- Saying pickle is unsafe because it is binary. Binary is not the issue; running code is.
+- Saying you can read the file first to see if it is safe. You cannot check it without loading it.
+- Saying json can keep everything pickle can. Tuples, sets and bytes are lost or refused.
+- Giving no safe alternative for the upload.

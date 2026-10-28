@@ -1,0 +1,6 @@
+id = "core.14.p033"
+title = "An error hierarchy for a web app"
+tier = "applied"
+kind = "code"
+topics = ["custom exceptions", "exception hierarchies", "class attributes", "super()", "polymorphism"]
+minutes = 35

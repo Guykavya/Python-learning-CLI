@@ -1,0 +1,6 @@
+id = "core.10.p018"
+title = "Sliding window over a stream"
+tier = "applied"
+kind = "code"
+topics = ["generators", "sliding window", "tuples"]
+minutes = 20

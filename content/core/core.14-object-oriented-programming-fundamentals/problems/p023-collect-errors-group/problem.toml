@@ -1,0 +1,7 @@
+id = "core.14.p023"
+title = "Report every problem at once with an ExceptionGroup"
+tier = "drill"
+kind = "code"
+topics = ["ExceptionGroup", "except*", "validation", "collecting errors"]
+minutes = 20
+difficulty = 2

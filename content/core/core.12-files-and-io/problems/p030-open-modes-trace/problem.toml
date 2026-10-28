@@ -1,0 +1,6 @@
+id = "core.12.p030"
+title = "Trace: w, a, x and r modes"
+tier = "applied"
+kind = "trace"
+topics = ["open modes", "truncate", "append", "FileExistsError", "UnsupportedOperation"]
+minutes = 15

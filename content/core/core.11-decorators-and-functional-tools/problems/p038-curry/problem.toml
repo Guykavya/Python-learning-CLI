@@ -1,0 +1,7 @@
+id = "core.11.p038"
+title = "curry: take the arguments a few at a time"
+tier = "challenge"
+kind = "code"
+topics = ["currying", "closures", "functools.partial", "inspect.signature", "functools.wraps"]
+minutes = 50
+difficulty = 5

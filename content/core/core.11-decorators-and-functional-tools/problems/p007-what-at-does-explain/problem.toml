@@ -1,0 +1,7 @@
+id = "core.11.p007"
+title = "Explain: what @ really does, and why wraps matters"
+tier = "drill"
+kind = "explain"
+topics = ["decorators", "@ syntax", "functools.wraps", "metadata"]
+minutes = 20
+assessment = "explain"

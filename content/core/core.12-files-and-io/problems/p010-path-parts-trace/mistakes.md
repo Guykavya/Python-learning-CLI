@@ -1,0 +1,4 @@
+- Writing `sales` for the stem. `stem` removes only the last suffix.
+- Writing `.2024.csv` for the suffix. `suffix` is only `.csv`; the full list is `suffixes`.
+- Believing `P("a/b") / "/etc"` gives `a/b/etc`. An absolute right side wins.
+- Printing `parts` as a list. It is a tuple, so it prints with round brackets.

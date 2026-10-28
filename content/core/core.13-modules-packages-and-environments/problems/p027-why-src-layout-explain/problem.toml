@@ -1,0 +1,6 @@
+id = "core.13.p027"
+title = "Explain: why the src layout prevents testing the wrong copy"
+tier = "challenge"
+kind = "explain"
+topics = ["src layout", "sys.path", "editable installs", "pyproject.toml", "packaging", "pytest"]
+minutes = 25

@@ -1,0 +1,6 @@
+id = "core.14.p035"
+title = "A parking lot with its own errors"
+tier = "applied"
+kind = "code"
+topics = ["classes", "custom exceptions", "exception hierarchies", "state", "validation"]
+minutes = 40

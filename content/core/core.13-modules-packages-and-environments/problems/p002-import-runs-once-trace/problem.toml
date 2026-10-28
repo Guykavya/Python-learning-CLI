@@ -1,0 +1,6 @@
+id = "core.13.p002"
+title = "Trace: a module runs only once"
+tier = "drill"
+kind = "trace"
+topics = ["import", "sys.modules", "module cache", "importlib.reload"]
+minutes = 12

@@ -1,0 +1,5 @@
+- Saying `"w"` clears the file only when you call `write`. It clears it at `open`.
+- Saying the temp file can be anywhere, for example in `/tmp`. It must be on the same disk for the replace to be a rename.
+- Saying `os.replace` is "fast" but not saying why it is atomic.
+- Saying the pattern makes two programs safe at the same time. It protects against a crash, not against a race.
+- Not mentioning what a reader sees during the save.

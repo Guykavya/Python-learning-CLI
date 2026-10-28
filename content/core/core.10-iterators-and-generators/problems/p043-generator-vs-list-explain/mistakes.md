@@ -1,0 +1,4 @@
+- Saying the generator is "faster". It is lighter in memory; total time is about the same.
+- Saying `getsizeof(list)` is the total memory. It does not count the objects inside.
+- Saying line 4 is 0 "because the numbers were deleted". The generator was finished, nothing was deleted.
+- Rule with no examples, or "always use generators". Lists are right when you need the data more than once.

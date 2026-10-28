@@ -1,0 +1,6 @@
+- Thinking Python picks the **best** (most specific) clause. It picks the **first** one that matches.
+- Thinking `except DbTimeout` catches a `DbError`. A parent class is not an instance of its child.
+- Forgetting the `risky ...` lines. `risky` prints before it raises.
+- Forgetting `done value`. `finally` runs even when the exception is not caught.
+- Printing `ok: ...` for kinds that raised. `else` runs only when nothing was raised.
+- Writing `app problem: AppError no route`. `type(e)` is the real class of the object, `NetworkError`.

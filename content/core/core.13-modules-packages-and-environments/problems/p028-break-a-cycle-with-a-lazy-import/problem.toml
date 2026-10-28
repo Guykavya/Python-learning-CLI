@@ -1,0 +1,7 @@
+id = "core.13.p028"
+title = "Break a circular import with a lazy import"
+tier = "challenge"
+kind = "code"
+topics = ["circular imports", "partially initialised modules", "lazy imports", "relative imports", "package design"]
+minutes = 40
+difficulty = 4

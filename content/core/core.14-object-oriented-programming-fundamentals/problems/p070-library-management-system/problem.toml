@@ -1,0 +1,8 @@
+id = "core.14.p070"
+title = "Project: a library management system"
+tier = "challenge"
+kind = "code"
+topics = ["classes", "composition", "properties", "class attributes", "custom exceptions", "exception hierarchies", "raise from", "ExceptionGroup", "__repr__", "domain modelling"]
+minutes = 180
+difficulty = 5
+assessment = "build"

@@ -1,0 +1,7 @@
+id = "core.14.p019"
+title = "Trace: which except clause catches it?"
+tier = "drill"
+kind = "trace"
+topics = ["exception hierarchies", "custom exceptions", "except order", "try/except/else/finally"]
+minutes = 15
+difficulty = 2

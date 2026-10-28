@@ -1,0 +1,4 @@
+- Using `zip`: the rows stop at the shortest column and data is lost silently.
+- `zip_longest(columns)` without the `*`: you get one-item rows holding whole columns.
+- `fill=...` as the keyword: the keyword of `zip_longest` is `fillvalue`.
+- `",".join(row)` with numbers in the row: `TypeError`, join needs strings.

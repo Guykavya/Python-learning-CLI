@@ -1,0 +1,5 @@
+- Counting only the matching lines, so the numbers are 1, 2, 3 instead of the real line numbers.
+- Comparing without lower-casing one side, so `ERROR` and `error` do not match.
+- Checking `found == max_count` at the top of the loop: the `for` has already read one extra line.
+- `max_count = 0` should yield nothing and read nothing.
+- `list(lines)` at the start: it reads the whole log, even when you only need the first match.

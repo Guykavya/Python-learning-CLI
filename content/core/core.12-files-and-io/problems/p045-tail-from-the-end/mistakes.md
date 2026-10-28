@@ -1,0 +1,7 @@
+- Reading the whole file and slicing `lines[-n:]`. It works, but it is the thing this problem asks you to avoid.
+- Decoding every block alone. A character such as `\u20b9` has three bytes and can be cut in two.
+- Putting the new block **after** `data` instead of in front.
+- Stopping at exactly `n` newlines. The first of the last `n` lines may then be only partly read.
+- Counting the final newline as an extra empty line.
+- Forgetting the very last step: `step = min(block_size, pos)`. Without it you `seek` to a negative position.
+- Opening in text mode: `seek` from the end is not allowed there.

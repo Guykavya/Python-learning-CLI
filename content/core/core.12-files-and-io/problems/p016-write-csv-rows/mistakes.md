@@ -1,0 +1,5 @@
+- Joining fields with `",".join(...)`. A comma inside a field breaks the file.
+- Forgetting `newline=""`. On Windows each line then ends with `\r\r\n` and Excel shows blank lines.
+- Writing numbers by hand with `str()`: the writer converts them already.
+- Counting the header as a data row, or returning `None`.
+- Using mode `"a"`, which would add a second header on a second call.

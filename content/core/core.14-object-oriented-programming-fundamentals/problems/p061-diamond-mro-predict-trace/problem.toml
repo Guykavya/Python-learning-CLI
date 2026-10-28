@@ -1,0 +1,8 @@
+id = "core.14.p061"
+title = "Trace: predict the MRO of a diamond with a mixin"
+tier = "challenge"
+kind = "trace"
+topics = ["MRO", "C3 linearization", "diamond inheritance", "super()", "mixins", "cooperative multiple inheritance", "inconsistent MRO"]
+minutes = 40
+difficulty = 5
+assessment = "trace"

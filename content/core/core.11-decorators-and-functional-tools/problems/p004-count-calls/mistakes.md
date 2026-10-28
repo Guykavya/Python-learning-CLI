@@ -1,0 +1,4 @@
+- Using one global counter. Every decorated function then shares it.
+- Writing `calls += 1` inside the wrapper without `nonlocal`. Python sees an assignment and treats `calls` as a new local name: `UnboundLocalError`.
+- Setting `wrapper.calls = 0` inside the wrapper. It is then reset on every call.
+- Counting after `func(...)` returns. A call that raises is then never counted.

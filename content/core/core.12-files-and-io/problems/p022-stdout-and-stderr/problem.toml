@@ -1,0 +1,6 @@
+id = "core.12.p022"
+title = "Results to stdout, warnings to stderr"
+tier = "applied"
+kind = "code"
+topics = ["stdout", "stderr", "print(file=)", "capsys"]
+minutes = 18

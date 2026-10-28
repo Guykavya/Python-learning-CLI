@@ -1,0 +1,5 @@
+- Forgetting `ensure_ascii=False`. The file then holds `\u00e9` instead of `é`.
+- Forgetting the `encoding`. With `ensure_ascii=False`, a non-UTF-8 default breaks on write.
+- Using `json.dump(f, data)`. The data comes first, the file second.
+- Using `loads` on the file object. `loads` takes a string, `load` takes a file.
+- No newline at the end: many tools expect text files to end with one.

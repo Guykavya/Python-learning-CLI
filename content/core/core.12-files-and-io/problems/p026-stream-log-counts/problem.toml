@@ -1,0 +1,6 @@
+id = "core.12.p026"
+title = "Count log levels without read()"
+tier = "applied"
+kind = "code"
+topics = ["streaming", "iterating a file", "dict counting", "memory"]
+minutes = 25

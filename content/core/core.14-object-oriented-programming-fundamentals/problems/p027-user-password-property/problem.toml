@@ -1,0 +1,6 @@
+id = "core.14.p027"
+title = "A user with a write-only password"
+tier = "applied"
+kind = "code"
+topics = ["properties", "setter", "read-only property", "encapsulation", "validation"]
+minutes = 30

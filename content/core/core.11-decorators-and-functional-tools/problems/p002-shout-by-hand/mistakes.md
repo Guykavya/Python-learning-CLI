@@ -1,0 +1,4 @@
+- `return wrapper()` instead of `return wrapper`. That calls the wrapper with no arguments at decoration time.
+- Calling `func()` without passing `*args, **kwargs`. The wrapper then works only for functions with no parameters.
+- `func(args, kwargs)` without the stars. That passes one tuple and one dict as two plain arguments.
+- Forgetting to `return` the upper-case text. The wrapper then returns `None`.

@@ -70,6 +70,13 @@ def bar(fraction: float, width: int = 10) -> str:
     return "█" * filled + "░" * (width - filled)
 
 
+def progress_bar(fraction: float, width: int = 10) -> str:
+    """A coloured bar with a percentage: green when done, yellow in progress, dim when empty."""
+    fraction = max(0.0, min(1.0, fraction))
+    colour = "green" if fraction >= 1 else "yellow" if fraction > 0 else "dim"
+    return style(bar(fraction, width), colour) + dim(f" {round(fraction * 100):>3}%")
+
+
 BANNER = r"""
  ____  __   __ _____  _   _   ___   _   _
 |  _ \ \ \ / /|_   _|| | | | / _ \ | \ | |
@@ -116,13 +123,14 @@ def table(rows: list[list[str]], header: list[str] | None = None, indent: int = 
         print(bold(line) if header and idx == 0 else line)
 
 
-def box(title: str, lines: list[str], color: str = "green") -> None:
+def box(title: str, lines: list[str], color: str = "green", indent: int = 0) -> None:
     """Print lines inside a rounded frame with the title in the top edge."""
+    pad = " " * indent
     inner = max([vis_len(title) + 4] + [vis_len(line) + 2 for line in lines])
-    print(style("╭─ ", color) + title + " " + style("─" * (inner - vis_len(title) - 3) + "╮", color))
+    print(pad + style("╭─ ", color) + title + " " + style("─" * (inner - vis_len(title) - 3) + "╮", color))
     for line in lines:
-        print(style("│", color) + " " + line + " " * (inner - 1 - vis_len(line)) + style("│", color))
-    print(style("╰" + "─" * inner + "╯", color))
+        print(pad + style("│", color) + " " + line + " " * (inner - 1 - vis_len(line)) + style("│", color))
+    print(pad + style("╰" + "─" * inner + "╯", color))
 
 
 def ask(prompt: str, default: str = "") -> str:

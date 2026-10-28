@@ -1,0 +1,6 @@
+id = "core.12.p016"
+title = "Write rows to a CSV file"
+tier = "applied"
+kind = "code"
+topics = ["csv", "writer", "quoting", "newline=''"]
+minutes = 18

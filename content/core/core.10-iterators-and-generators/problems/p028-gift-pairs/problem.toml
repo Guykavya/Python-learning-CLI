@@ -1,0 +1,6 @@
+id = "core.10.p028"
+title = "Two gifts that use the whole budget"
+tier = "applied"
+kind = "code"
+topics = ["combinations", "itertools", "tuples"]
+minutes = 15

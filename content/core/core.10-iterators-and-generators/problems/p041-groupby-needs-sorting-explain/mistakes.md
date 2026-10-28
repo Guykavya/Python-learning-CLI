@@ -1,0 +1,5 @@
+- Saying `groupby` "groups like SQL GROUP BY". It does not look at the whole input; it only merges neighbours.
+- Saying sorting is always needed. If the input is already in key order, sorting wastes time and loses laziness.
+- Saying the lists are empty "because the input was a list". The cause is that groups share one iterator.
+- Fixing part 3 by calling `list(groups)` first. That still advances past each group, so the groups are empty.
+- Forgetting the cost of `sorted`: O(n log n) and a full list in memory.

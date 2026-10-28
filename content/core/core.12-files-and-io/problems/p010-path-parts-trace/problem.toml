@@ -1,0 +1,6 @@
+id = "core.12.p010"
+title = "Trace: names, stems and suffixes of a path"
+tier = "drill"
+kind = "trace"
+topics = ["pathlib", "PurePath", "stem", "suffix", "with_suffix"]
+minutes = 15

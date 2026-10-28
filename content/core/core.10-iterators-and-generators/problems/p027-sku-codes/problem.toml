@@ -1,0 +1,6 @@
+id = "core.10.p027"
+title = "Product codes for every size and colour"
+tier = "applied"
+kind = "code"
+topics = ["product", "itertools", "generators"]
+minutes = 15

@@ -1,0 +1,5 @@
+- Calling `int("")`. It raises `ValueError`; check for the empty cell first.
+- Opening the CSV without `newline=""`. Cells with a newline inside, or Windows line ends, are then read wrongly.
+- Building the field names from the first record only. A later record can have more keys.
+- Writing `None` into the CSV. The writer turns it into an empty cell anyway, but for DictWriter with a missing key you need `restval`.
+- Forgetting `encoding="utf-8"`. Names with accents then depend on the system.

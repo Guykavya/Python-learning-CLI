@@ -1,0 +1,18 @@
+start
+make tag b
+make twice 2
+make tag i
+wrap i around word
+wrap twice around word
+wrap b around wrapper
+defined wrapper
+b in ('hi',)
+twice in ('hi',)
+i in ('hi',)
+body hi
+i out HI
+i in ('hi',)
+body hi
+i out HI
+b out ['<i>HI</i>', '<i>HI</i>']
+<b>['<i>HI</i>', '<i>HI</i>']</b>

@@ -1,0 +1,7 @@
+id = "core.13.p025"
+title = "Detect circular imports in a module graph"
+tier = "deep"
+kind = "code"
+topics = ["circular imports", "import order", "depth-first search", "recursion", "dicts and sets"]
+minutes = 45
+difficulty = 4

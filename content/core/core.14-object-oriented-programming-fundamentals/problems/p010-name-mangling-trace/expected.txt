@@ -1,0 +1,10 @@
+under the bed
+gold / 1234
+no __pin
+1234
+['_Vault__pin', 'owner']
+gold / 1234
+9999
+['_SubVault__pin', '_Vault__pin', 'owner']
+gold silver
+gold / 1234 0

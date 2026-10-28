@@ -1,0 +1,7 @@
+id = "core.14.p037"
+title = "Fix: tags that leak between notes"
+tier = "applied"
+kind = "code"
+topics = ["debugging", "class vs instance attributes", "mutable default arguments", "aliasing"]
+minutes = 25
+assessment = "fix"

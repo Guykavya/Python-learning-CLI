@@ -1,0 +1,21 @@
+Middle init start
+Base init start: RAVI
+Base init end
+Middle init end: RAVI
+Top init end: 2
+Middle greet before
+Middle greet after: hello from RAVI
+Top greet got: hello from RAVI!
+hi from RAVI!
+['Middle', 'Base', 'Top']
+run: Top>Middle>Base
+Middle greet before
+Middle greet after: hello from RAVI
+hello from RAVI!
+['Middle', 'Base', 'Top', 'Middle', 'Base']
+Middle init start
+Base init start: ASHA
+Base init end
+Middle init end: ASHA
+run: Middle>Base
+Base 1

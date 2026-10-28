@@ -1,0 +1,7 @@
+id = "core.12.p048"
+title = "A todo tool with subcommands"
+tier = "challenge"
+kind = "code"
+topics = ["argparse subparsers", "choices", "mutually exclusive options", "json storage", "exit codes"]
+minutes = 60
+difficulty = 5

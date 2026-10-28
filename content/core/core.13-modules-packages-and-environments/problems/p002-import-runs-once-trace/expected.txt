@@ -1,0 +1,10 @@
+start
+loading counter
+1
+2
+True
+True
+loading counter
+0
+True
+1

@@ -1,0 +1,11 @@
+make b
+make i
+decorate i
+decorate b
+ready
+enter b
+enter i
+body
+exit i
+exit b
+<b><i>hi</i></b>

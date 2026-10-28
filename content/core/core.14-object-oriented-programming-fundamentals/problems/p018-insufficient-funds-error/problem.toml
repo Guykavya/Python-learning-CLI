@@ -1,0 +1,7 @@
+id = "core.14.p018"
+title = "A custom exception with extra data"
+tier = "drill"
+kind = "code"
+topics = ["custom exceptions", "exception attributes", "super()", "raise"]
+minutes = 15
+difficulty = 2

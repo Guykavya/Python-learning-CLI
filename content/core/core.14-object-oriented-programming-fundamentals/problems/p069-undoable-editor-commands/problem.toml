@@ -1,0 +1,7 @@
+id = "core.14.p069"
+title = "An editor with undo and redo (the Command pattern)"
+tier = "challenge"
+kind = "code"
+topics = ["abstract base classes", "polymorphism", "composition", "custom exceptions", "stacks", "command pattern"]
+minutes = 60
+difficulty = 5

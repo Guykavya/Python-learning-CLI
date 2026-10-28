@@ -1,0 +1,6 @@
+- Converting inputs with `list(...)`. Then infinite inputs hang and big ones use a lot of memory.
+- In `my_zip`, raising `StopIteration` yourself, or letting `next()`'s `StopIteration` escape. Inside a generator that becomes `RuntimeError: generator raised StopIteration`.
+- Calling `iter(x)` inside the `while` loop. That makes a new iterator every round for lists, so the zip never ends.
+- `my_zip()` with no inputs looping for ever, yielding `()`.
+- In `my_islice`, checking `position >= stop` before the `for` loop reads, or after reading the next item: both read one item too many or too few.
+- In `my_chain`, using `yield iterable` instead of `yield from iterable`.

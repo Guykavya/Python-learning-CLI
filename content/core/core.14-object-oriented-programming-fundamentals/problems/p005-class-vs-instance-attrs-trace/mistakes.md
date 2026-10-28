@@ -1,0 +1,6 @@
+- Thinking `p.team = "blue"` changes the class, so `q.team` becomes `blue` too. Assignment writes to `p` only.
+- Thinking `Player.team = "green"` changes `p.team`. `p` has its own `team` now, which hides the class value.
+- Writing `2 2 2` after `lose_life`. `self.lives -= 1` reads the class value but writes to the instance.
+- Writing `[] 1` or `[] 0` for the badges line. `append` changes the one shared class list; `p` sees it.
+- Thinking `p.earn("bronze")` adds to the class list. After `p.badges = [...]`, `self.badges` finds p's own list first.
+- Expecting an error after `del p.team`. Only p's own attribute is removed; the class still has `team`.

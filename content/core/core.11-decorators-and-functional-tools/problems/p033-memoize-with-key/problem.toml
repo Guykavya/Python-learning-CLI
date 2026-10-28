@@ -1,0 +1,7 @@
+id = "core.11.p033"
+title = "memoize(key=...): a cache you control"
+tier = "deep"
+kind = "code"
+topics = ["memoization", "decorators with arguments", "cache keys", "hashable", "function attributes"]
+minutes = 40
+difficulty = 4

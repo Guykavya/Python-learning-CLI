@@ -1,0 +1,7 @@
+id = "core.14.p062"
+title = "An event bus with duck-typed listeners"
+tier = "challenge"
+kind = "code"
+topics = ["composition", "duck typing", "ExceptionGroup", "add_note", "callable", "classes", "dicts"]
+minutes = 50
+difficulty = 4

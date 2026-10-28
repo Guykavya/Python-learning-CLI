@@ -1,0 +1,14 @@
+Shape -> cannot instantiate
+Square -> cannot instantiate
+NamedSquare -> ok
+Triangle -> ok
+square has area 9
+triangle has area 6
+['area', 'name']
+['name']
+[]
+True False
+Blob -> ok
+True True
+False False
+0

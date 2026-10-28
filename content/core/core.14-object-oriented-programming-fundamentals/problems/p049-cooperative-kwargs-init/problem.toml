@@ -1,0 +1,7 @@
+id = "core.14.p049"
+title = "Cooperative __init__ with mixins and **kwargs"
+tier = "deep"
+kind = "code"
+topics = ["super()", "cooperative multiple inheritance", "mixins", "**kwargs", "keyword-only arguments", "MRO"]
+minutes = 35
+difficulty = 4

@@ -1,0 +1,6 @@
+id = "core.11.p015"
+title = "@register: a command table built by decorators"
+tier = "applied"
+kind = "code"
+topics = ["decorators with arguments", "registries", "functions in dicts"]
+minutes = 25

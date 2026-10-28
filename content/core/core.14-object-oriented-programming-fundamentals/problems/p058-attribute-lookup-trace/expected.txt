@@ -1,0 +1,15 @@
+grey grey
+red grey grey
+red blue
+blue ['_price', 'name']
+['new'] ['own'] ['new']
+getter runs
+price is 100
+5
+cannot set price
+replaced cup:blue
+pen:blue
+pen:blue
+class pen class cup
+getter runs
+no size True

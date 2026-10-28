@@ -1,0 +1,7 @@
+id = "core.10.p049"
+title = "Permutations by hand, lazily"
+tier = "challenge"
+kind = "code"
+topics = ["recursion", "recursive generators", "yield from", "itertools.permutations", "strings", "sets"]
+minutes = 50
+difficulty = 4

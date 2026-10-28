@@ -1,0 +1,6 @@
+id = "core.12.p036"
+title = "Explain: why save to a temp file, then replace"
+tier = "deep"
+kind = "explain"
+topics = ["safe overwrite", "os.replace", "atomic operations", "crash safety"]
+minutes = 20

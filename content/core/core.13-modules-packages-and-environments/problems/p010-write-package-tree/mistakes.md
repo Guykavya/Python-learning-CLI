@@ -1,0 +1,5 @@
+- Adding `__init__.py` only to the deepest folder. `mathkit/` needs one too, or `mathkit` becomes a namespace package.
+- Overwriting a given `__init__.py` with an empty file. Its re-exports disappear.
+- Adding `root/__init__.py`. The root is the folder on `sys.path`, not a package.
+- Changing the caller's dict while looping over it: `RuntimeError: dictionary changed size during iteration`.
+- Returning paths with `\` on Windows. Build the strings from `PurePosixPath`, or use `.as_posix()`.

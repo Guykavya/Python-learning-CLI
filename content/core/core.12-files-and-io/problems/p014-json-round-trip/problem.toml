@@ -1,0 +1,6 @@
+id = "core.12.p014"
+title = "Save and load JSON"
+tier = "drill"
+kind = "code"
+topics = ["json", "dump", "load", "indent", "sort_keys", "encoding"]
+minutes = 12

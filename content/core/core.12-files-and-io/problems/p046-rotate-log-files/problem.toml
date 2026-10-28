@@ -1,0 +1,7 @@
+id = "core.12.p046"
+title = "Rotate log files"
+tier = "challenge"
+kind = "code"
+topics = ["os.replace", "pathlib", "file naming", "loops in reverse", "unlink"]
+minutes = 40
+difficulty = 4

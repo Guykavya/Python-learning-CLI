@@ -1,0 +1,14 @@
+enter a
+got A
+enter b
+got B
+swallowed KeyError
+exit b
+after b
+exit a
+done
+enter c
+in c
+exit c
+outer caught bad
+end

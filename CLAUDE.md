@@ -54,6 +54,8 @@ and report. Do not start the next module unless Kavya asks.
   Before core.06: script style (`run()` helper, stdin → printed lines).
   From core.06 on: function style (`from solution import f`).
 - Only use Python features taught in this module or earlier ones.
+- Infinite iterators: a `starter.py` must never loop over or `list()` an input that a test makes infinite
+  (it would eat all RAM on Windows, where the runner's 1 GiB cap does not apply). Use a stub like `return []`.
 - Hand-trace any test that walks through steps (grids, turns, loops). core.04.p058 shipped with
   wrong expected output because the trace was not checked.
 - DSA modules with `external: true` also get `external.toml` (see `docs/guides/dsa-sync-guide.md`).

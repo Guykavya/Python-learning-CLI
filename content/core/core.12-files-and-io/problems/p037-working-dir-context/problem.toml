@@ -1,0 +1,6 @@
+id = "core.12.p037"
+title = "A context manager that restores the folder"
+tier = "deep"
+kind = "code"
+topics = ["contextlib.contextmanager", "os.chdir", "try/finally", "current directory"]
+minutes = 25

@@ -1,0 +1,7 @@
+id = "core.14.p060"
+title = "Explain: duck typing, EAFP, LBYL and isinstance with ABCs"
+tier = "deep"
+kind = "explain"
+topics = ["duck typing", "EAFP", "LBYL", "isinstance", "hasattr", "abstract base classes", "collections.abc", "polymorphism"]
+minutes = 30
+difficulty = 4

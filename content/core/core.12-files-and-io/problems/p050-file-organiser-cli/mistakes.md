@@ -1,0 +1,10 @@
+- Moving files with `os.rename` or `Path.rename`: they overwrite silently on some systems or fail across disks. Use `shutil.move` after you chose a free name.
+- Checking only `target.exists()`, not the names you already planned. Two files can then pick the same free name in one run, and the dry run will not match the real run.
+- Making the dry run a copy of the loop with `if` branches in many places. Plan first, then act.
+- Creating the destination folders before the dry-run check. A dry run must leave **no** trace.
+- Walking into sub-folders (`rglob`). Only the top-level files are organised, so a second run has nothing to do.
+- Forgetting hidden files: `.gitignore` or `.env` would be moved to `other`.
+- Sorting the extension with its case: `photo.JPG` goes to `other` instead of `images`.
+- Letting one failing file stop the run, or returning `0` after a failure.
+- Printing errors to stdout, or calling `sys.exit` inside `main`.
+- `st_mtime` with `datetime.utcfromtimestamp`: the month may differ from the local month near midnight.

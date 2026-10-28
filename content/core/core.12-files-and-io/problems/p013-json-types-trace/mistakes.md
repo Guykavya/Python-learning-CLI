@@ -1,0 +1,4 @@
+- Expecting `back["pair"] == (1, 2)` to be `True`. JSON has no tuples; it returns a list.
+- Writing `True` and `None` in the dumped text. JSON uses `true` and `null`.
+- Expecting `back.get(2)` to find the value. The key is now the string `"2"`.
+- Forgetting that the default escapes `é` as `\u00e9`.

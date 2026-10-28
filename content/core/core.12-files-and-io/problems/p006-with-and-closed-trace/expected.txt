@@ -1,0 +1,9 @@
+False
+True
+ValueError: file is closed
+False
+True
+hello
+caught boom
+True
+demo.txt

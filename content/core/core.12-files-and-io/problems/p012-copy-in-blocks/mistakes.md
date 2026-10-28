@@ -1,0 +1,4 @@
+- Using text mode `"r"`/`"w"`. Binary data breaks and line endings may change.
+- Using `src.read()` with no size. That loads the whole file.
+- Writing the loop as `while block:` without reading first, so it never starts, or never ends.
+- Counting a block for the final empty read. An empty file must give 0.

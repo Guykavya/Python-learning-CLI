@@ -1,0 +1,7 @@
+id = "core.12.p045"
+title = "tail -n: read a file from the end"
+tier = "challenge"
+kind = "code"
+topics = ["binary mode", "seek", "tell", "blocks", "decode", "large files"]
+minutes = 50
+difficulty = 5

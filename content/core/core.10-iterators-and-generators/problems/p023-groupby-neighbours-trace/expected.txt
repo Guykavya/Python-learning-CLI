@@ -1,0 +1,13 @@
+a ['apple', 'avocado']
+b ['banana']
+a ['apricot']
+b ['blueberry']
+c ['cherry']
+---
+a ['apple', 'apricot', 'avocado']
+b ['banana', 'blueberry']
+c ['cherry']
+---
+a []
+b []
+c []

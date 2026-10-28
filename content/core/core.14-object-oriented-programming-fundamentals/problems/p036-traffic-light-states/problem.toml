@@ -1,0 +1,7 @@
+id = "core.14.p036"
+title = "A traffic light that keeps time"
+tier = "applied"
+kind = "code"
+topics = ["classes", "state", "read-only properties", "class attributes", "__repr__", "loops"]
+minutes = 40
+difficulty = 3

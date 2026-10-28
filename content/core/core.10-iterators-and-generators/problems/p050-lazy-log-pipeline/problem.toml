@@ -1,0 +1,8 @@
+id = "core.10.p050"
+title = "Project: a lazy log-processing pipeline"
+tier = "challenge"
+kind = "code"
+topics = ["generator pipelines", "itertools.groupby", "islice", "parsing", "error handling", "dicts", "type hints"]
+minutes = 120
+difficulty = 5
+assessment = "build"

@@ -1,0 +1,7 @@
+id = "core.14.p047"
+title = "Trace: bound methods, plain functions and staticmethods"
+tier = "deep"
+kind = "trace"
+topics = ["self", "bound methods", "instance attributes", "staticmethod", "classmethod", "attribute lookup"]
+minutes = 25
+difficulty = 4

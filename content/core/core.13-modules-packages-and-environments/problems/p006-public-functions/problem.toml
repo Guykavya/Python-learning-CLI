@@ -1,0 +1,6 @@
+id = "core.13.p006"
+title = "List a module's own public functions"
+tier = "drill"
+kind = "code"
+topics = ["dir()", "module attributes", "__module__", "public names"]
+minutes = 15

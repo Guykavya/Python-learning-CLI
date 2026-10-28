@@ -1,0 +1,4 @@
+- Writing `left: [3, 4, 5]` in the first half. The 3 was taken out by `zip` and dropped.
+- Forgetting the `give 3` line in the first half: the generator really ran to produce it.
+- Writing `left:` before the `give 4` and `give 5` lines. The arguments of `print` are computed first.
+- Thinking the order of arguments to `zip` never matters. With iterators it does.

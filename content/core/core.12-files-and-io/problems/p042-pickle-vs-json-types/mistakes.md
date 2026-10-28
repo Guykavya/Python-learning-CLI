@@ -1,0 +1,5 @@
+- Opening a pickle file in text mode (`"w"` / `"r"`). It raises `TypeError` or breaks the bytes.
+- Comparing the types only at the top level. The tuple can be deep inside a list.
+- Not catching `TypeError`, so `json_loses({"s": {1}})` crashes instead of returning `True`.
+- Catching every exception with a bare `except:`. Catch only `TypeError`.
+- Loading a pickle that you did not create yourself.

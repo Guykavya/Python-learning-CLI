@@ -1,0 +1,7 @@
+id = "core.11.p039"
+title = "Trace: a counter above or below lru_cache"
+tier = "challenge"
+kind = "trace"
+topics = ["stacking decorators", "functools.lru_cache", "recursion", "functools.wraps", "__wrapped__"]
+minutes = 30
+difficulty = 5

@@ -1,0 +1,11 @@
+['one', 'two']
+14
+['one', 'two', 'three']
+0
+0
+4
+['new']
+exists
+UnsupportedOperation
+['new']
+True

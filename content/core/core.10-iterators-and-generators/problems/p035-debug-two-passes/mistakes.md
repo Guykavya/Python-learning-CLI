@@ -1,0 +1,6 @@
+- Testing only with lists. Many "consumed once" bugs only show with generators.
+- Fixing `stats` with `numbers = list(numbers)`. It works, but it breaks the O(1) memory rule.
+- Starting `largest = 0`. Then the largest of `[-5, -2]` is wrongly 0.
+- Using `if not largest` instead of `if largest is None`. Then a largest value of `0` is replaced.
+- In `shares`, calling `sum(numbers)` and then `list(numbers)`: the list is empty because sum used the generator.
+- Letting `ZeroDivisionError` escape instead of raising a clear `ValueError`.

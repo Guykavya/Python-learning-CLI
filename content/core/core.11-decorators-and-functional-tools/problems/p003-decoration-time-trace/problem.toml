@@ -1,0 +1,6 @@
+id = "core.11.p003"
+title = "When does a decorator run?"
+tier = "drill"
+kind = "trace"
+topics = ["decorators", "definition time", "call time"]
+minutes = 10

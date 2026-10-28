@@ -1,0 +1,6 @@
+id = "core.14.p034"
+title = "Retry only the errors worth retrying"
+tier = "applied"
+kind = "code"
+topics = ["custom exceptions", "exception hierarchies", "exception chaining", "raise from", "decorators"]
+minutes = 35

@@ -1,0 +1,6 @@
+id = "core.14.p026"
+title = "A stack with its own error"
+tier = "applied"
+kind = "code"
+topics = ["classes", "composition", "custom exceptions", "stack"]
+minutes = 25

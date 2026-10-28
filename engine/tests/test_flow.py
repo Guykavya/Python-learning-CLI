@@ -86,3 +86,58 @@ def test_goto_warns_when_module_has_no_content(home, capsys):
 
 def test_trace_normalise_ignores_comments_and_trailing_space():
     assert runner.normalise("# note\n1  \n2\n\n") == ["1", "2"]
+
+
+def _fake_progress(home):
+    """Run init and add the kind of files a learner builds up."""
+    run("init")
+    solution = home / "my-work" / "core" / "core.01" / "p001" / "solution.py"
+    solution.parent.mkdir(parents=True)
+    solution.write_text("print('my answer')\n", encoding="utf-8")
+    (home / "playground" / "notes.py").write_text("x = 1\n", encoding="utf-8")
+    conn = db.connect()
+    db.set_meta(conn, "marker", "old progress")
+    conn.commit()
+    conn.close()
+    return solution
+
+
+def test_reset_needs_a_person_to_confirm(home, capsys):
+    solution = _fake_progress(home)
+    code = run("reset")  # pytest has no terminal and no --yes, so nobody confirmed
+    assert code != 0, "erasing without confirmation must fail"
+    assert solution.exists(), "nothing may be erased when nobody confirmed"
+    assert "needs a person to confirm" in capsys.readouterr().err, "the message should say why nothing happened"
+
+
+def test_reset_backs_up_then_erases_progress_but_keeps_the_course(home):
+    import zipfile
+
+    solution = _fake_progress(home)
+    assert run("reset", "--yes") == 0, "reset --yes should succeed"
+
+    assert not solution.exists(), "your solutions should be erased"
+    conn = db.connect()
+    assert db.get_meta(conn, "marker") is None, "the tracker should start empty"
+    conn.close()
+    assert (home / "playground" / "notes.py").exists(), "playground is kept without --all"
+    assert (home / "content").is_dir() and (home / "syllabus.yaml").exists(), "the course must never be erased"
+
+    backups = list((home / "backups").glob("learn-backup-*.zip"))
+    assert len(backups) == 1, "a backup zip should be saved before erasing"
+    with zipfile.ZipFile(backups[0]) as zf:
+        assert "my-work/core/core.01/p001/solution.py" in zf.namelist(), "the backup should hold the solutions"
+        assert "data/progress.db" in zf.namelist(), "the backup should hold the tracker"
+
+
+def test_reset_all_also_erases_own_files(home):
+    _fake_progress(home)
+    run("reset", "--yes", "--all", "--no-backup")
+    assert not (home / "playground" / "notes.py").exists(), "--all erases the playground too"
+    assert (home / "playground" / "README.md").exists(), "init puts the folder's README back"
+    assert not (home / "backups").exists(), "--no-backup must not create a backup"
+
+
+def test_menu_offers_start_over():
+    entry = next(m for m in cli.MENU if m[2] == ["reset"])
+    assert entry[0] == "11", "the menu should list 'Start over' as item 11"

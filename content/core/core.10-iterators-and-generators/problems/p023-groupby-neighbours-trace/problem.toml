@@ -1,0 +1,6 @@
+id = "core.10.p023"
+title = "Trace: groupby only joins neighbours"
+tier = "applied"
+kind = "trace"
+topics = ["groupby", "sorted", "iterators"]
+minutes = 15

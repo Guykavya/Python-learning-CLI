@@ -1,0 +1,6 @@
+id = "core.12.p023"
+title = "Parse command-line arguments"
+tier = "applied"
+kind = "code"
+topics = ["argparse", "ArgumentParser", "sys.argv", "options"]
+minutes = 20

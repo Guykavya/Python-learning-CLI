@@ -1,0 +1,4 @@
+- Writing `return composed()` with brackets. That calls the inner function at once (with no argument) instead of returning it.
+- Writing `g(f(x))`. `compose(f, g)` means "f after g", so `g` runs first.
+- Calling `f` and `g` inside `compose` itself, before the new function is called. Building and calling are two different moments.
+- In `apply_twice`, computing `f(x)` twice from the same `x` instead of feeding the first result back in.

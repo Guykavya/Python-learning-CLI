@@ -1,0 +1,7 @@
+id = "core.14.p016"
+title = "An abstract Shape base class"
+tier = "drill"
+kind = "code"
+topics = ["abstract base classes", "abc", "abstractmethod", "polymorphism", "TypeError"]
+minutes = 20
+difficulty = 2

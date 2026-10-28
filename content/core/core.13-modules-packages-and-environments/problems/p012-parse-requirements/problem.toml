@@ -1,0 +1,6 @@
+id = "core.13.p012"
+title = "Parse a requirements.txt file"
+tier = "applied"
+kind = "code"
+topics = ["requirements.txt", "dependency pinning", "version specifiers", "text parsing"]
+minutes = 25

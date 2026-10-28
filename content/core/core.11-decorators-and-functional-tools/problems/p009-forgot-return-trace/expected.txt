@@ -1,0 +1,5 @@
+None
+TypeError: 'NoneType' object is not callable
+calling mul
+None
+wrapper

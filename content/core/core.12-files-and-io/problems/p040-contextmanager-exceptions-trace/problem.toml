@@ -1,0 +1,6 @@
+id = "core.12.p040"
+title = "Trace: @contextmanager, errors and return"
+tier = "deep"
+kind = "trace"
+topics = ["contextlib.contextmanager", "try/finally", "exceptions in with", "return inside with"]
+minutes = 20

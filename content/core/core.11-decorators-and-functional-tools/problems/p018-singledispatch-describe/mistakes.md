@@ -1,0 +1,5 @@
+- Forgetting the `bool` version: `describe(True)` gives `int 1 (odd)`.
+- Giving every registered function the name `describe`. The last `def describe` then replaces the dispatcher. Use `_` or another name.
+- Calling `str(item)` inside the list version instead of `describe(item)`.
+- Using `{x}` instead of `{x!r}` for text: the quotes disappear.
+- Writing the type checks inside the base function, so `singledispatch` does nothing.

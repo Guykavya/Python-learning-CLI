@@ -1,0 +1,5 @@
+- Evicting 2 when 4 comes in. 2 was just read by the third call, so 3 is the least recently used.
+- Treating `maxsize=2` as "remember the first two results for ever".
+- Forgetting that a hit prints no `compute` line: the body does not run.
+- Thinking `cache_clear()` keeps the old hit and miss counts. It resets them to zero.
+- Treating `square(n=4)` as a hit. The key is built from how the arguments were passed.

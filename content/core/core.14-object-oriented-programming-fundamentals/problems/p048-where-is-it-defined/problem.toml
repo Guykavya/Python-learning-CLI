@@ -1,0 +1,7 @@
+id = "core.14.p048"
+title = "Where is this attribute defined?"
+tier = "deep"
+kind = "code"
+topics = ["MRO", "__mro__", "vars", "attribute lookup", "inheritance", "overriding"]
+minutes = 25
+difficulty = 3

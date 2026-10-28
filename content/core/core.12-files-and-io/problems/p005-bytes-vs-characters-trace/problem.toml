@@ -1,0 +1,6 @@
+id = "core.12.p005"
+title = "Trace: bytes versus characters"
+tier = "drill"
+kind = "trace"
+topics = ["text vs binary", "utf-8", "encodings", "bytes"]
+minutes = 15

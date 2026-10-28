@@ -1,0 +1,6 @@
+id = "core.10.p025"
+title = "Trace: when does the work happen?"
+tier = "applied"
+kind = "trace"
+topics = ["generator expressions", "list comprehensions", "lazy evaluation"]
+minutes = 15

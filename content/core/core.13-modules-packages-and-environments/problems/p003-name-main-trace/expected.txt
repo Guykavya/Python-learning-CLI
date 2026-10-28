@@ -1,0 +1,14 @@
+app: __name__ is __main__
+tools: __name__ is tools
+HI!
+tools.__name__ = tools
+app running as a script
+---
+tools: __name__ is __main__
+tools running as a script
+DEMO!
+---
+app: __name__ is app
+tools: __name__ is tools
+HI!
+tools.__name__ = tools

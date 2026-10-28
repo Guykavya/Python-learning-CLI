@@ -1,0 +1,4 @@
+- Expecting `calling add` to print. The name `add` is `None`, so no wrapper exists to print anything.
+- Expecting `5` or `20`. Neither result is returned to the caller.
+- Expecting `print(add)` to show a function. A decorator that returns nothing replaces the function with `None`.
+- Writing `mul` for the last line. Without `functools.wraps` the name is `wrapper`.

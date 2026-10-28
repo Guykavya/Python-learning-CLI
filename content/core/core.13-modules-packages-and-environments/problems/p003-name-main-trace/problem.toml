@@ -1,0 +1,6 @@
+id = "core.13.p003"
+title = "Trace: __name__ when run or imported"
+tier = "drill"
+kind = "trace"
+topics = ["__name__", "__main__", "scripts vs modules"]
+minutes = 12

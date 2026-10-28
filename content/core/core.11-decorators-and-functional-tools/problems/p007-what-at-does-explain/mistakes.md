@@ -1,0 +1,5 @@
+- Saying the decorator runs "every time the function is called". The decorator body runs once; only the wrapper runs per call.
+- Saying `@` "edits" or "changes" the original function. It creates a new function and rebinds the name.
+- Putting `@wraps` on the outer decorator instead of on the wrapper.
+- Saying `wraps` changes behaviour or speed. It only copies metadata and sets `__wrapped__`.
+- Giving no concrete example of the harm.

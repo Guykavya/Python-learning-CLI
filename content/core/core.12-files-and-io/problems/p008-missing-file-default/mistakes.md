@@ -1,0 +1,4 @@
+- Writing `except OSError:` or a bare `except:`. A folder, a missing permission or a disk error then returns the default silently.
+- Returning `default` for an empty file because of `if not text`.
+- Checking `os.path.exists` first. It works but has a race and is longer.
+- Putting `return default` outside the `except`, so it is also returned for a good file.

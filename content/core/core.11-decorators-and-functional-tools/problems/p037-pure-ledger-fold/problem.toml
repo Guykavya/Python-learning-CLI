@@ -1,0 +1,7 @@
+id = "core.11.p037"
+title = "Refactor: from global state to a pure fold"
+tier = "challenge"
+kind = "code"
+topics = ["pure functions", "functools.reduce", "itertools.accumulate", "immutability", "refactoring"]
+minutes = 50
+difficulty = 4

@@ -1,0 +1,6 @@
+- Grouping by size only. Two files with the same size can differ.
+- Grouping by name. Duplicates usually have different names.
+- Returning absolute paths or `Path` objects. The result uses relative strings with `/`.
+- Forgetting to sort, so the answer changes with the order of the disk.
+- Calling `is_file()` on nothing: `rglob("*")` also returns folders, and `read_bytes` on a folder raises an error.
+- Hashing the name instead of the content.

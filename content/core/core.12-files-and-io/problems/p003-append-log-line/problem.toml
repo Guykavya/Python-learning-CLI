@@ -1,0 +1,6 @@
+id = "core.12.p003"
+title = "Append a line to a log file"
+tier = "drill"
+kind = "code"
+topics = ["open()", "append mode", "text files"]
+minutes = 10

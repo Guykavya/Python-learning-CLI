@@ -1,0 +1,6 @@
+id = "core.14.p030"
+title = "A registry of exporter classes"
+tier = "applied"
+kind = "code"
+topics = ["class attributes", "classmethod", "decorators", "factory", "inheritance", "KeyError"]
+minutes = 35

@@ -1,0 +1,7 @@
+id = "core.14.p056"
+title = "Explain: design the exception hierarchy of a payments library"
+tier = "deep"
+kind = "explain"
+topics = ["custom exceptions", "exception hierarchies", "exception chaining", "raise from", "library design"]
+minutes = 30
+difficulty = 4

@@ -1,0 +1,7 @@
+id = "core.14.p013"
+title = "Classify vehicles with isinstance"
+tier = "drill"
+kind = "code"
+topics = ["isinstance", "issubclass", "inheritance", "is-a"]
+minutes = 15
+difficulty = 2

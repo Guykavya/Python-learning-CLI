@@ -1,0 +1,6 @@
+- Passing the list as `ignore=patterns`. `ignore` needs a **function**: wrap the list with `shutil.ignore_patterns(*patterns)`.
+- Forgetting the `*`: `ignore_patterns(patterns)` gets one argument that is a list.
+- Matching against the whole path. The patterns match **names**, at every depth.
+- Not skipping comments and empty lines in `.copyignore`. An empty pattern matches nothing, but `# junk` would be taken as a pattern text.
+- Listing folders in the result, or returning `Path` objects instead of strings.
+- Catching `FileExistsError` and returning `[]`. The caller must see the error.

@@ -1,0 +1,6 @@
+- `return [...]` or `result.append(...)` in the recursion: the answer is right, but nothing is lazy and 10 items need millions of tuples in memory.
+- `yield _perms(rest, r - 1)`: that yields a generator object, not tuples.
+- Forgetting the base case `r == 0`, or yielding `[]` or nothing there. Without the single `()` no arrangement is ever built.
+- Using `pool.remove(x)` to make `rest`: it removes the first **equal** item, which is wrong when items repeat, and it changes the list for the next loop round.
+- Reading a generator input twice. Call `list(items)` once.
+- In `anagrams`, using `set(perms(...))`: loses the order and is not lazy.

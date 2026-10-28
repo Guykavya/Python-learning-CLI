@@ -1,0 +1,5 @@
+- Calling `time.perf_counter()` inside the wrapper instead of `clock()`. The fake clock is then ignored.
+- Writing `clock=time.perf_counter()` with brackets in the default. That stores one number, not a function.
+- Recording only after a normal return: a failing call is never timed. Use `finally`.
+- Catching the error in an `except` and not re-raising it.
+- One shared module-level list for every timed function.

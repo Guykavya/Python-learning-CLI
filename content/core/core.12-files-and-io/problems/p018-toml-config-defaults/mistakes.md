@@ -1,0 +1,5 @@
+- Opening in text mode: `tomllib.load` then raises `TypeError` ("File must be opened in binary mode").
+- Returning `DEFAULTS` itself or a shallow copy. A change to `tags` then leaks into later calls.
+- Catching every exception. A syntax error in the config must be seen.
+- Updating the file data with the defaults (wrong direction). The file must win.
+- Using `tomllib.loads(path)`: that parses a string, not a path.

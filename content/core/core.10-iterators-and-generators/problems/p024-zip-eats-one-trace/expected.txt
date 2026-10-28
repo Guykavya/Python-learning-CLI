@@ -1,0 +1,17 @@
+give 1
+(1, 'a')
+give 2
+(2, 'b')
+give 3
+give 4
+give 5
+left: [4, 5]
+---
+give 1
+('a', 1)
+give 2
+('b', 2)
+give 3
+give 4
+give 5
+left: [3, 4, 5]

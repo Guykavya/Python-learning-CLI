@@ -1,0 +1,10 @@
+made
+open
+job a
+bad job: oops
+None
+job b
+cleanup
+closed
+dead
+never started

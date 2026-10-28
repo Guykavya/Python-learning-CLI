@@ -1,0 +1,6 @@
+- Thinking `send(5)` goes to `outer`. While `yield from` is active, `outer` is frozen and `inner` gets every value.
+- Stopping the fourth call after `A ends`. A call only stops at a `yield`, so `outer` keeps running into `inner("B")`.
+- Writing `A returned None`. `yield from` gives back the sub-generator's `return` value, not `None`.
+- Forgetting that `next(g)` sends `None`, which is what makes `inner` break out of its loop.
+- Printing `finished` with no value, or `finished None`. The `return "ok"` is carried in `e.value`.
+- Expecting `outer done` before `18`. The `print` comes after `yield a + b`, so it only runs on the next call.

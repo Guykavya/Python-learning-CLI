@@ -1,0 +1,11 @@
+main: __name__ = __main__
+main: __package__ = None
+ImportError: attempted relative import with no known parent package
+helpers loaded as helpers
+HI! from helpers
+app package loaded
+main: __name__ = __main__
+main: __package__ = 'app'
+helpers loaded as app.helpers
+relative import worked
+HI! from app.helpers

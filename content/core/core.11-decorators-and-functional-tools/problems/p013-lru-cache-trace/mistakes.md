@@ -1,0 +1,4 @@
+- Printing `compute 1` twice in the first call. The second `fib(1)` is answered from the cache.
+- Counting the outer call `fib(4)` as a hit. A value is stored only after its call finishes, so the first time is always a miss.
+- Expecting `cache_clear()` to keep the counters. It resets hits and misses to 0 as well.
+- Forgetting that a hit prints nothing: `print(fib(3))` shows only `2`.

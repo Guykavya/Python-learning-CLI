@@ -1,0 +1,7 @@
+id = "core.14.p004"
+title = "Rectangle methods that read and change self"
+tier = "drill"
+kind = "code"
+topics = ["methods", "self", "mutation", "returning None"]
+minutes = 15
+difficulty = 1

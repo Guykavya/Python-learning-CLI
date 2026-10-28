@@ -146,6 +146,7 @@ Your progress is untouched, because none of it is part of the course repository.
 | `learn log lc <slug>` / `log cf 1520A` / `log cses 1068` | Record an outside solve and save its code |
 | `learn sync` | Pull solves from Codeforces and LeetCode |
 | `learn config show` / `config set plan.daily_minutes 120` | Settings |
+| `learn reset` | Start over: saves a backup zip in `backups/`, then erases your progress and solutions (`--all` also erases `config.toml`, `playground/` and `library/`) |
 | `learn new <module> "<title>"` / `learn validate` | Write your own problems |
 
 ## Folders

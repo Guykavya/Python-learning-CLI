@@ -1,0 +1,7 @@
+id = "core.12.p007"
+title = "Explain: why use with, and what if a file is never closed?"
+tier = "drill"
+kind = "explain"
+topics = ["with statement", "buffering", "close()", "resource leaks"]
+minutes = 20
+assessment = "explain"

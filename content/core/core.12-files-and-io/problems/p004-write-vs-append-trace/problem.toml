@@ -1,0 +1,6 @@
+id = "core.12.p004"
+title = "Trace: write, append and read positions"
+tier = "drill"
+kind = "trace"
+topics = ["open()", "modes w and a", "read position"]
+minutes = 12

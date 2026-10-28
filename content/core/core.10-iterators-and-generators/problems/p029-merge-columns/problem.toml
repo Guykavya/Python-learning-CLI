@@ -1,0 +1,6 @@
+id = "core.10.p029"
+title = "Merge uneven columns into CSV lines"
+tier = "applied"
+kind = "code"
+topics = ["zip_longest", "itertools", "generators", "join"]
+minutes = 20

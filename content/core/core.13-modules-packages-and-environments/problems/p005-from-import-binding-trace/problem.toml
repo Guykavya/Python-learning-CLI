@@ -1,0 +1,6 @@
+id = "core.13.p005"
+title = "Trace: from-import copies the name, not the variable"
+tier = "drill"
+kind = "trace"
+topics = ["from import", "names and binding", "module attributes", "global"]
+minutes = 15

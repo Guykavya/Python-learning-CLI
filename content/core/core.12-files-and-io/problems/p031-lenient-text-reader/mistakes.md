@@ -1,0 +1,5 @@
+- Putting only `open(...)` in the `try`. The error is raised by `f.read()`.
+- Using `except Exception`. It would also hide `FileNotFoundError`.
+- Always using `errors="replace"`. Then you can never tell that the file had bad bytes.
+- Forgetting `encoding="utf-8"`. The default depends on the system, so your result could change on another machine.
+- Using `errors="ignore"`: the bad bytes disappear silently, and the test expects the replacement character.

@@ -1,0 +1,7 @@
+id = "core.10.p047"
+title = "Lazy pagination with retries"
+tier = "challenge"
+kind = "code"
+topics = ["iter with sentinel", "closures", "nonlocal", "error handling", "lazy evaluation"]
+minutes = 45
+difficulty = 4

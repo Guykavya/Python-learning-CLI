@@ -1,0 +1,6 @@
+id = "core.12.p021"
+title = "Replace a file safely"
+tier = "applied"
+kind = "code"
+topics = ["safe overwrite", "tempfile", "os.replace", "exceptions"]
+minutes = 25

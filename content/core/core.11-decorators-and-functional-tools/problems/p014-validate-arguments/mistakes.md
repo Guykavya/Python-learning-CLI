@@ -1,0 +1,5 @@
+- Forgetting `@wraps(func)` in the inner decorator. The outer one then reads `func.__name__` as `wrapper` and every message is wrong.
+- Counting arguments from 0 in the message. People count from 1.
+- Comparing strings with numbers in `in_range` (`"a" <= 100` raises its own `TypeError`). Check the type first.
+- Calling the function before checking, so a bad call still runs the body.
+- `zip(args, types)` alone silently drops extra arguments; check the count first.

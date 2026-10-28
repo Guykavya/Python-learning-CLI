@@ -1,0 +1,6 @@
+id = "core.10.p022"
+title = "Run-length encoding with groupby"
+tier = "applied"
+kind = "code"
+topics = ["groupby", "itertools", "strings"]
+minutes = 20

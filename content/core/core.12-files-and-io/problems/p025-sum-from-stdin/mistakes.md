@@ -1,0 +1,5 @@
+- `from sys import stdin` at the top: the function then keeps the old object and ignores a replaced stdin.
+- `sys.stdin.read().split()` works for small inputs but loads everything and treats blank lines silently; the task says to stream.
+- `int("")` for a blank line raises `ValueError`. Skip blank lines first.
+- Catching `ValueError` and ignoring it. Bad input must be noticed.
+- Forgetting to print, or printing without `total: `.

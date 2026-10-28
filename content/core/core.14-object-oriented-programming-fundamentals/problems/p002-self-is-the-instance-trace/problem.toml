@@ -1,0 +1,7 @@
+id = "core.14.p002"
+title = "Trace: self is the instance"
+tier = "drill"
+kind = "trace"
+topics = ["self", "instances", "methods", "bound methods", "aliasing"]
+minutes = 10
+difficulty = 1

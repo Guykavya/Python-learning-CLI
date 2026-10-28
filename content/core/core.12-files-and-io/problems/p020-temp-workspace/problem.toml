@@ -1,0 +1,6 @@
+id = "core.12.p020"
+title = "Use a temporary folder and clean up"
+tier = "applied"
+kind = "code"
+topics = ["tempfile", "TemporaryDirectory", "cleanup", "context managers"]
+minutes = 18

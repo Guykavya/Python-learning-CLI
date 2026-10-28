@@ -1,0 +1,7 @@
+id = "core.12.p044"
+title = "safe_update_json: change a file or change nothing"
+tier = "challenge"
+kind = "code"
+topics = ["json", "atomic writes", "os.replace", "exceptions", "crash safety", "higher-order functions"]
+minutes = 45
+difficulty = 4

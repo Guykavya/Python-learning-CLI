@@ -1,0 +1,7 @@
+id = "core.14.p015"
+title = "Composition: a car has an engine"
+tier = "drill"
+kind = "code"
+topics = ["composition", "delegation", "has-a", "RuntimeError"]
+minutes = 20
+difficulty = 2

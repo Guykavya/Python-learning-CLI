@@ -1,0 +1,6 @@
+id = "core.12.p025"
+title = "Sum numbers read from stdin"
+tier = "applied"
+kind = "code"
+topics = ["stdin", "sys.stdin", "streaming", "blank lines"]
+minutes = 18

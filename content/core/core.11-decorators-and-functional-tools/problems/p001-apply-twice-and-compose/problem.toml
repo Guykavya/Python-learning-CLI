@@ -1,0 +1,6 @@
+id = "core.11.p001"
+title = "Functions as values: apply_twice and compose"
+tier = "drill"
+kind = "code"
+topics = ["first-class functions", "higher-order functions", "closures"]
+minutes = 15

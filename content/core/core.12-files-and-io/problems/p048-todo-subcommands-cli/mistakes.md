@@ -1,0 +1,7 @@
+- Forgetting `dest="command"` or `required=True`. Without them a missing subcommand is not an error and `args.command` is `None`.
+- Computing the new id as `len(todos) + 1`. After a `remove` that gives an id that already exists.
+- Printing the error for an unknown id to stdout, or returning `0`.
+- Using `type=str` for the id, then comparing `"1" == 1`: it never matches.
+- Making `--all` and `--done` normal options and testing both with `if`. Use a mutually exclusive group so argparse refuses both.
+- Calling `sys.exit(1)` inside `main`. Return the number.
+- Writing the file for `list`. A read-only command must not touch the file.

@@ -1,0 +1,7 @@
+id = "core.11.p014"
+title = "Guard decorators: @typed and @in_range"
+tier = "applied"
+kind = "code"
+topics = ["decorators with arguments", "stacking decorators", "functools.wraps", "TypeError", "ValueError"]
+minutes = 30
+difficulty = 2

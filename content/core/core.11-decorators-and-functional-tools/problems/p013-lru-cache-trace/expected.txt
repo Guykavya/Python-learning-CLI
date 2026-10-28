@@ -1,0 +1,15 @@
+compute 4
+compute 3
+compute 2
+compute 1
+compute 0
+3
+CacheInfo(hits=2, misses=5, maxsize=None, currsize=5)
+compute 5
+5
+CacheInfo(hits=4, misses=6, maxsize=None, currsize=6)
+2
+CacheInfo(hits=5, misses=6, maxsize=None, currsize=6)
+compute 1
+1
+CacheInfo(hits=0, misses=1, maxsize=None, currsize=1)

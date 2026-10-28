@@ -1,0 +1,5 @@
+- Comparing version strings directly. `"1.10" >= "1.9"` is `False`; `"10.0" < "9.0"` is `True`.
+- Checking `>` before `>=`. `">=1.2"` then looks like `>` followed by the version `"=1.2"`.
+- Forgetting to pad. Without it, `(1, 2) == (1, 2, 0)` is `False`, so `1.2` would not equal `1.2.0`.
+- Returning `True` as soon as one clause holds. A specifier is an AND of all its clauses.
+- Ignoring unknown operators. Silently treating `~=1.0` as "anything goes" lets the wrong versions in.

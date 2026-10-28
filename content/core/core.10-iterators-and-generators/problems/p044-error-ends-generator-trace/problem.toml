@@ -1,0 +1,7 @@
+id = "core.10.p044"
+title = "An error inside a generator ends it for ever"
+tier = "deep"
+kind = "trace"
+topics = ["generator state", "exceptions", "StopIteration", "try/except"]
+minutes = 15
+difficulty = 3

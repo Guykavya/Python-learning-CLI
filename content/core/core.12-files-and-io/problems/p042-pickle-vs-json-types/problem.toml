@@ -1,0 +1,6 @@
+id = "core.12.p042"
+title = "pickle keeps types, json forgets them"
+tier = "deep"
+kind = "code"
+topics = ["pickle.dump", "pickle.load", "binary mode", "json limits", "round trip"]
+minutes = 25

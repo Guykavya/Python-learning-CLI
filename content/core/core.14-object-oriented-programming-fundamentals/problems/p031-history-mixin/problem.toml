@@ -1,0 +1,6 @@
+id = "core.14.p031"
+title = "A history mixin"
+tier = "applied"
+kind = "code"
+topics = ["mixins", "multiple inheritance", "class attributes", "instance attributes", "getattr"]
+minutes = 30

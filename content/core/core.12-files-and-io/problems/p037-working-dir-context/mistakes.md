@@ -1,0 +1,5 @@
+- Putting `os.chdir(old)` after the `yield` without `try/finally`. An error in the body skips it.
+- Catching the exception inside and hiding it. The caller must still see the error.
+- Putting `os.chdir(path)` inside the `try`. If it fails, you "restore" a folder you never left (harmless here, but the habit is wrong).
+- Using a relative `old` path. `os.getcwd()` gives the absolute path, which is what you need.
+- Forgetting to yield. The tests need the new folder as a `Path`.

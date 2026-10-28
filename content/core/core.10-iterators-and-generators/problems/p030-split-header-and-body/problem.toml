@@ -1,0 +1,6 @@
+id = "core.10.p030"
+title = "Split a message into header and body"
+tier = "applied"
+kind = "code"
+topics = ["takewhile", "iterators", "one pass", "dicts"]
+minutes = 25

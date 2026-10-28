@@ -1,0 +1,10 @@
+# app dependencies
+requests>=2.31,<3   # http client
+Flask==3.0.2
+python_dateutil
+numpy >= 1.26 ; python_version >= "3.10"
+uvicorn[standard]~=0.29
+
+-r dev-requirements.txt
+--index-url https://example.org/simple
+Django.Rest_Framework!=3.14.0

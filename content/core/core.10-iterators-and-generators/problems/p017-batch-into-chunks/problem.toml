@@ -1,0 +1,6 @@
+id = "core.10.p017"
+title = "Batch a stream into chunks of n"
+tier = "applied"
+kind = "code"
+topics = ["generators", "islice", "batching"]
+minutes = 20

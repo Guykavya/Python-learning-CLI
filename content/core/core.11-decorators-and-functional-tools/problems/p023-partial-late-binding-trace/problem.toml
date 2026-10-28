@@ -1,0 +1,7 @@
+id = "core.11.p023"
+title = "Trace: lambda, partial and late binding in a loop"
+tier = "applied"
+kind = "trace"
+topics = ["functools.partial", "closures", "late binding", "default arguments"]
+minutes = 15
+difficulty = 3

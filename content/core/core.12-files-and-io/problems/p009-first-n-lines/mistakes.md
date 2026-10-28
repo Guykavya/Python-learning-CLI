@@ -1,0 +1,4 @@
+- Using `f.read().splitlines()[:n]` or `readlines()[:n]`. It loads the whole file first.
+- Using `strip()`. It removes spaces at the start and end of the line too.
+- Appending first and then checking the length, so `n = 0` returns one line.
+- Forgetting that fewer than n lines is fine: the loop just ends.

@@ -1,0 +1,4 @@
+- Writing `@wraps` without `(func)`. `wraps` needs to know which function to copy from.
+- Putting `@wraps(func)` above `def strip_result` instead of above `def wrapper`.
+- Returning `func` to keep the name. Then the decorator does nothing at all.
+- Copying only `__name__` by hand and forgetting the docstring and `__wrapped__`.

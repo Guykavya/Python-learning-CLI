@@ -1,0 +1,7 @@
+id = "core.11.p016"
+title = "@memoize by hand, with keyword arguments"
+tier = "applied"
+kind = "code"
+topics = ["memoization", "closures", "dict keys", "functools.wraps", "**kwargs"]
+minutes = 25
+difficulty = 2

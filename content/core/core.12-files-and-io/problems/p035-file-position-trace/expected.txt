@@ -1,0 +1,16 @@
+start: 0
+read: 'abc'
+tell: 3
+end: 12
+after write: 16
+line: 'abcdef\n'
+tell: 7
+all: 'abXYef\nghij\nklm\n'
+eof: ''
+append start: 16
+append tell: 18
+inside: False
+caught: 'boom'
+closed: True
+lines: ['abXYef', 'ghij', 'klm', 'Z', 'before']
+size: 25

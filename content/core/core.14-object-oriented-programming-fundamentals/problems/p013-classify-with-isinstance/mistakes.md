@@ -1,0 +1,5 @@
+- Checking `Car` before `ElectricCar`. Every electric car is then counted as `"car"`.
+- Checking `Vehicle` first. Everything that is a vehicle lands in `"other vehicle"`.
+- Using `type(item) == Car`. Subclasses like `SportsCar` are then not recognised.
+- Using separate `if` statements that all add to the count. An electric car is counted three times.
+- Building the dict only from the items seen. Categories with 0 are missing, and the order changes.

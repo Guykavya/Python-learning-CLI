@@ -1,0 +1,5 @@
+- Fixing only the `return`: `parse_price` still returns a function, because the factory was never called.
+- "Fixing" `@fallback` by changing `fallback` to take `func` directly. Then there is no way to choose the default.
+- Writing `except Exception:`. That hides real bugs such as `KeyError` or `TypeError` behind a default value.
+- Writing `return func(...) or default`. A real result of `0` or `0.0` is then replaced by the default.
+- Putting `@wraps(func)` on `decorate` instead of on `wrapper`.

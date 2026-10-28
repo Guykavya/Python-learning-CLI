@@ -1,0 +1,5 @@
+- Calling `print(out.getvalue())` inside the block. It goes into the buffer, not to the screen.
+- Reading `getvalue()` before `func` has run.
+- Setting `sys.stdout = out` and never restoring it. Everything after your function would vanish.
+- Redirecting only stdout. Output sent with `file=sys.stderr` would still reach the screen.
+- Calling `func` in a way that loses the arguments (forgetting `*args, **kwargs`).

@@ -1,0 +1,7 @@
+id = "core.14.p066"
+title = "Explain: review a God class and redesign it"
+tier = "challenge"
+kind = "explain"
+topics = ["class design", "single responsibility", "composition vs inheritance", "polymorphism", "custom exceptions", "encapsulation", "class attributes"]
+minutes = 45
+difficulty = 5

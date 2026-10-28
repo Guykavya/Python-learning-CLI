@@ -1,0 +1,7 @@
+id = "core.13.p014"
+title = "Fix: the invoices package that will not import"
+tier = "applied"
+kind = "code"
+topics = ["debugging", "circular imports", "relative imports", "shadowing the standard library", "packages"]
+minutes = 30
+assessment = "fix"

@@ -1,0 +1,6 @@
+id = "core.14.p032"
+title = "Swap the report formatter"
+tier = "applied"
+kind = "code"
+topics = ["composition", "strategy objects", "delegation", "duck typing", "string formatting"]
+minutes = 35

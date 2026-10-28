@@ -1,0 +1,7 @@
+id = "core.10.p039"
+title = "Catch the return value of a generator"
+tier = "deep"
+kind = "code"
+topics = ["StopIteration.value", "return in generators", "yield from", "iteration protocol"]
+minutes = 25
+difficulty = 3

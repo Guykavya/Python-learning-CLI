@@ -1,0 +1,7 @@
+id = "core.14.p054"
+title = "Extend a validated property in a subclass"
+tier = "deep"
+kind = "code"
+topics = ["properties", "inheritance", "overriding", "property.setter", "fset", "validation", "super()"]
+minutes = 30
+difficulty = 4

@@ -1,0 +1,11 @@
+7
+10
+b'caf\xc3\xa9'
+[195, 169]
+True
+3
+b'\xe9'
+cannot encode
+cannot decode
+10
+7

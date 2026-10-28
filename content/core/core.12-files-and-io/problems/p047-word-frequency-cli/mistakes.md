@@ -1,0 +1,7 @@
+- Reading `sys.stdin` at import time or as a default argument. A test (or a caller) that replaces `sys.stdin` is then ignored.
+- `sys.stdin.read()` on the whole input. Loop over `sys.stdin` instead.
+- Splitting with `line.split()` only. `"cat,"` and `"cat"` would be two different words.
+- Sorting only by count. Words with equal count must come in A to Z order for a stable output.
+- Calling `sys.exit(...)` inside `main`. Return the code, so the function stays easy to test.
+- Printing the error message to stdout instead of stderr.
+- Counting each input separately. The counts are for all inputs together.

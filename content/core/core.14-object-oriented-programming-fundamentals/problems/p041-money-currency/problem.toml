@@ -1,0 +1,6 @@
+id = "core.14.p041"
+title = "Money that never mixes currencies"
+tier = "applied"
+kind = "code"
+topics = ["classmethod", "alternative constructors", "read-only properties", "custom exceptions", "immutability", "__repr__"]
+minutes = 40

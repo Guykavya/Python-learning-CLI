@@ -1,0 +1,6 @@
+id = "core.10.p026"
+title = "First n valid sensor readings"
+tier = "applied"
+kind = "code"
+topics = ["chain", "islice", "generator expressions", "pipelines"]
+minutes = 20

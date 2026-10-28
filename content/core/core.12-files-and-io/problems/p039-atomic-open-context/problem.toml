@@ -1,0 +1,6 @@
+id = "core.12.p039"
+title = "atomic_open: write all or nothing"
+tier = "deep"
+kind = "code"
+topics = ["contextlib.contextmanager", "os.replace", "tempfile", "atomic writes", "cleanup on error"]
+minutes = 40

@@ -1,0 +1,5 @@
+- Expecting `try 2` and `5` after the error. A generator cannot continue after an uncaught exception.
+- Expecting `risky end`. The body never reaches the end; the error stops it first.
+- Writing the `ZeroDivisionError` again for the third `next`. A finished generator raises `StopIteration`.
+- Writing `total 15` or `total 0`. Only the first item was added before the error.
+- Printing `[2, 5]` before `skip 0`. `list()` runs the whole generator first, then `print` runs.

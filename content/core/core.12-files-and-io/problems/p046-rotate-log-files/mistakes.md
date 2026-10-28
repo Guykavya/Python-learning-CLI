@@ -1,0 +1,6 @@
+- Moving from the newest to the oldest: `.1` goes to `.2` and overwrites the old `.2`, and then `.2` goes to `.3`... all files become copies of one file.
+- Not deleting `path.<keep>`. Then the last move would overwrite it silently (fine on `os.replace`) but a `keep` smaller than before leaves old files.
+- Using `os.rename`. On Windows it fails when the target exists. `os.replace` works everywhere.
+- Forgetting that `path` may not exist, and crashing with `FileNotFoundError`.
+- Comparing the size of the old file only. You must add the size of the new line.
+- Writing the line in text mode without `newline="\n"`: on Windows the byte count would differ.

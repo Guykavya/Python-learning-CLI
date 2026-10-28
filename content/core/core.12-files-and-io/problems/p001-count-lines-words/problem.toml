@@ -1,0 +1,6 @@
+id = "core.12.p001"
+title = "Count lines, words and characters"
+tier = "drill"
+kind = "code"
+topics = ["open()", "read", "encoding", "str.split"]
+minutes = 10

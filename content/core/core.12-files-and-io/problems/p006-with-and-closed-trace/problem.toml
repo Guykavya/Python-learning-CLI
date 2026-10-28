@@ -1,0 +1,6 @@
+id = "core.12.p006"
+title = "Trace: when is a file closed?"
+tier = "drill"
+kind = "trace"
+topics = ["with statement", "file.closed", "close()", "exceptions"]
+minutes = 12

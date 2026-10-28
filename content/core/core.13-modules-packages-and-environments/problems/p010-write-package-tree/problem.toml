@@ -1,0 +1,6 @@
+id = "core.13.p010"
+title = "Write a package tree with __init__ files"
+tier = "drill"
+kind = "code"
+topics = ["packages", "__init__.py", "subpackages", "pathlib"]
+minutes = 20

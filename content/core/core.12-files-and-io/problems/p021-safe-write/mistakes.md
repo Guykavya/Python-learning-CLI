@@ -1,0 +1,5 @@
+- Opening `path` itself with `"w"`. The old content is lost at once if the write fails.
+- Creating the temp file in the system temp folder. `os.replace` can fail across drives.
+- Using `os.rename`. On Windows it fails if the target exists; `os.replace` works everywhere.
+- Catching the error and returning quietly. The caller must know the write failed: re-raise.
+- Leaving the `.tmp` file in the folder after a failure.

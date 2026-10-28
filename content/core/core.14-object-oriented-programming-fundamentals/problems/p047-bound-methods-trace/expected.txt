@@ -1,0 +1,15 @@
+Hi Ben, I am Asha
+Hi Asha, I am Ben
+Hi Cy, I am Asha K
+True True
+wave(str)
+TypeError
+wave(Greeter)
+wave(int)
+wave(Greeter)
+HEY! HO!
+Greeter Greeter
+Loud OK!
+HELLO you, I am Cy
+HELLO me, I am Cy
+method function function

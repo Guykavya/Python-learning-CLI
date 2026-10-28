@@ -1,0 +1,6 @@
+id = "core.12.p028"
+title = "Find duplicate files"
+tier = "applied"
+kind = "code"
+topics = ["rglob", "hashlib", "grouping", "relative paths", "stat"]
+minutes = 40
