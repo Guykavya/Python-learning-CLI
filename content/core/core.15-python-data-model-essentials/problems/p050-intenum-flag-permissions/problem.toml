@@ -1,0 +1,7 @@
+id = "core.15.p050"
+title = "Flag permissions and an IntEnum priority"
+tier = "applied"
+kind = "code"
+topics = ["enum.Flag", "enum.IntEnum", "bitwise operators", "auto", "permissions"]
+minutes = 35
+difficulty = 3

@@ -1,0 +1,6 @@
+id = "core.15.p054"
+title = "Explain: why defining __eq__ removes __hash__"
+tier = "challenge"
+kind = "explain"
+topics = ["__eq__", "__hash__", "hashable", "sets and dicts", "equality contract"]
+minutes = 30

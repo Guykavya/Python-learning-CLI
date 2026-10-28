@@ -1,0 +1,5 @@
+- Fixing `Cart` with `items=None` and `self.items = items or []`: it fixes the sharing but discards a list the caller passed in when it is empty (`[]` is falsy), so the caller's list is silently replaced. Use `if items is None`. (The dataclass version avoids the problem.)
+- Writing `items: list = []` in the dataclass: `ValueError: mutable default <class 'list'> for field items is not allowed: use default_factory`.
+- Leaving `SHARED_COUNTS` in place and only changing the lambda to `dict`: harmless, but the global is dead code and invites the next bug.
+- Using `default_factory=set()` or `default_factory=dict()` with parentheses: the factory must be the callable itself.
+- Thinking `@dataclass` copies the default per instance: only `default_factory` does that.

@@ -1,0 +1,6 @@
+id = "core.15.p053"
+title = "Trace: __slots__, missing __dict__ and AttributeError"
+tier = "deep"
+kind = "trace"
+topics = ["__slots__", "__dict__", "AttributeError", "inheritance", "vars"]
+minutes = 30

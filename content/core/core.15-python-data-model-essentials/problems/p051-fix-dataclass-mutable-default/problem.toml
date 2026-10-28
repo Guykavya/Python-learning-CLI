@@ -1,0 +1,8 @@
+id = "core.15.p051"
+title = "Fix: three shared defaults"
+tier = "deep"
+kind = "code"
+topics = ["debugging", "mutable default", "dataclasses.field", "default_factory", "aliasing"]
+minutes = 30
+difficulty = 3
+assessment = "fix"

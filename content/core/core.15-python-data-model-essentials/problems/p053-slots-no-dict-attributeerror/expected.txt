@@ -1,0 +1,11 @@
+1
+1 AttributeError 'P' object has no attribute 'y'
+2 AttributeError
+False True False
+ok 2
+3 4
+3 AttributeError
+1 2 {'anything': 2}
+4 TypeError vars() argument must have __dict__ attribute
+5 AttributeError
+('x', 'y') member_descriptor

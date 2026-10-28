@@ -1,0 +1,5 @@
+- Saying "Python removes `__hash__` because it is annoying". The reason is the contract `a == b` implies `hash(a) == hash(b)`.
+- Writing `__hash__` that uses fields **not** in `__eq__` (or fewer fields in `__eq__` than in `__hash__`): equal objects then have different hashes.
+- Writing `def __hash__(self): return 1` and calling it correct: it satisfies the contract but turns every set and dict into a slow list. A good hash spreads values.
+- Forgetting that a subclass that overrides `__eq__` loses `__hash__` again and has to re-define it.
+- Hashing on mutable fields of an object that is stored in a set and mutating it later.
