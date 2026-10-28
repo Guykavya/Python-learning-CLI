@@ -1,0 +1,8 @@
+id = "core.16.p035"
+title = "Project: a generic, fully typed LRU cache"
+tier = "challenge"
+kind = "code"
+topics = ["Generic[K, V]", "TypeVar", "ParamSpec", "TypedDict", "Callable", "Optional values", "property", "full annotation coverage", "mypy strict"]
+minutes = 120
+difficulty = 5
+assessment = "build"

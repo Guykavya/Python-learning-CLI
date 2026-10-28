@@ -1,0 +1,8 @@
+- Using `isinstance(value, int)` for an `int` field. `True` passes, so `{"id": true}` is accepted as an id.
+- Reading `td.__annotations__` instead of `get_type_hints(td)`: the `NotRequired[...]` wrappers are still there, and string annotations are not resolved.
+- Treating every key as required. Use `__required_keys__` (`NotRequired` and `total=False` keys may be absent).
+- Raising the same error type for everything. Missing/unknown keys are `ValueError`; a wrong type is `TypeError`.
+- Forgetting the union case: `str | None` is not a class, so `isinstance(value, str | None)` is not what you want in a recursive checker; use `get_args`.
+- Checking only that a `list[str]` value is a list, not its items.
+- Writing `isinstance(value, tp)` with `tp = list[str]`: a parametrised generic cannot be used with `isinstance` (TypeError). Use `get_origin`.
+- Forgetting that `typing.get_origin(str | None)` is `types.UnionType`, while `Optional[str]` gives `typing.Union`. Handle both.

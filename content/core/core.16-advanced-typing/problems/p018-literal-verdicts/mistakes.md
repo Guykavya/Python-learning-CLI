@@ -1,0 +1,6 @@
+- Marking `D` as `ok` because "the value is `"w"`". The checker reasons about the *type* of `m`, which is `str`. Use `Final` or a declared `Literal` type if you want it accepted.
+- Marking `A` as `ok`: the parameter `s: str` may hold any string.
+- Marking `H` as an error. A `Literal["a"]` is always a valid `str`.
+- Marking `I` as `ok`: a `str` may hold other values than `"a"`.
+- Forgetting that `Literal` checks are case-sensitive (`"R"` in `K`).
+- Marking `E` as an error because "it is a variable". `Final` keeps the exact literal type.

@@ -1,0 +1,7 @@
+- Hinting `get` as `-> V`. The key may be missing; the honest type is `V | None`.
+- Using `K` where the value belongs (or the reverse) in a hint. The order in `Generic[K, V]` is key first, value second.
+- Checking `if not self.get(key)` in `add` or `__contains__`: a stored `0`, `""` or `None` would look "missing". Use `key in self._data`.
+- Overwriting silently in `add`: `self._data[key] = value` without the duplicate check.
+- Returning `self._data.values()` from `all()`: it is a live view, not a `list`, and the caller could not safely modify the result.
+- Forgetting that `Callable[[V], bool]` has the argument types in their own brackets.
+- One shared dict as a class attribute, so every repository sees the same data.

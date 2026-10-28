@@ -1,0 +1,11 @@
+A: int
+B: str
+C: list[float]
+D: list[str]
+E: list[list[int]]
+F: list[int]
+G: error
+H: ok
+I: ok
+J: error
+K: int

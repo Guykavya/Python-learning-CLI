@@ -1,0 +1,6 @@
+- Treating `object` like `Any`. You can pass anything **to** an `object`, but you cannot use an `object` as an `int`, a `str`, or call methods on it until you narrow it.
+- Marking `A` as an error because "an `Any` might not have `upper`". `Any` turns checking off for that value.
+- Marking `D` or `F` as errors: `Any` is accepted where any type is expected.
+- Writing `int` or `object` for `J`. An attribute of an `Any` is `Any`.
+- Marking `L` as an error because the run-time call would crash. mypy only checks types, and `123` fits both parameter types.
+- Forgetting that `isinstance` narrows an `object` (line `C`).

@@ -1,0 +1,7 @@
+- Marking `B` or `C` as `ok` because "a decorator hides the signature". That is true for `Callable[..., Any]` (line `E`), not for a `ParamSpec`.
+- Marking `D` as an error. A `ParamSpec` keeps parameter names, so keyword calls are checked and accepted.
+- Marking `E` as an error. `Callable[..., Any]` turns checking off for the arguments.
+- Writing `int` for `G`. The result of `Callable[..., Any]` is `Any`.
+- Writing `int | float` for `H` or `I`. The checker picks one overload from the argument type.
+- Marking `J` as `ok` because the implementation accepts `str | bytes`. Callers only see the overloads.
+- Writing `builtins.int` instead of `int`. Use the plain hint spelling.

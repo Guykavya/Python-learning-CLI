@@ -1,0 +1,5 @@
+- Marking `C` as `ok` "because `Circle` has `area`". That is true for a Protocol, but `Shape` is an ABC, which only accepts real subclasses.
+- Marking `B` as `ok` because `Socket` "has a `close` method". A protocol also compares the **signature**: `close(force)` needs an argument the protocol caller will not pass.
+- Marking `H` as `ok`: the class is empty, but it *inherits* the protocol and does not provide `close`. mypy treats `...` bodies in a protocol as abstract.
+- Marking `E` as an error because `open()` "returns something unknown". It returns `TextIOWrapper`, which has `close(self) -> None`.
+- Forgetting `K`: protocol classes are not meant to be instantiated.

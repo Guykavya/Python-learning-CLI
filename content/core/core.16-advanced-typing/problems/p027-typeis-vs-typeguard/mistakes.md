@@ -1,0 +1,6 @@
+- Saying B shows `int` because "it is not a str". Only `TypeIs` gives that; `TypeGuard` leaves `int | str`.
+- Saying the two helpers behave differently at run time. They are the same function; only the checker's promise differs.
+- Explaining question 3 as "the code will crash". Nothing crashes: the checker is **misled**, so a later bug would go unnoticed.
+- Answering question 3 with "use `bool`". A plain `bool` return does not narrow at all.
+- Forgetting the subtype rule in question 4, and giving an example where `TypeIs` would also work.
+- Mixing up the names: `TypeGuard` (older, weaker promise) and `TypeIs` (3.13+, `isinstance`-like).

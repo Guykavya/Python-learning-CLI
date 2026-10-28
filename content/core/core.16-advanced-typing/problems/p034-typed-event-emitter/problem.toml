@@ -1,0 +1,6 @@
+id = "core.16.p034"
+title = "A typed event emitter"
+tier = "challenge"
+kind = "code"
+topics = ["Generic", "ParamSpec", "P.args", "P.kwargs", "Callable", "generic class", "Any", "callbacks"]
+minutes = 60

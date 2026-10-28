@@ -1,0 +1,5 @@
+- Saying `bound=int | str` and `TypeVar("A", int, str)` are the same. They differ for subclasses and for how the body is checked.
+- Believing a union keeps the link between input and output. It does not: `int | str -> int | str` allows `str -> int`.
+- Forgetting that the checker never runs the code. Constraints are about how the **checker** reads the body, not about the runtime.
+- Using constraints for "any subclass of a base class". That is what a bound is for; constraints are for a short closed list.
+- Using a TypeVar that appears only once in the signature (for example `def f(x: A) -> int`). It adds nothing; a plain `int | str` says the same.

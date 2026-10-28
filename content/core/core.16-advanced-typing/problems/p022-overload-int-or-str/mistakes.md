@@ -1,0 +1,7 @@
+- Putting a body in the overloads. They are signatures only: the body is `...`.
+- Forgetting the final real implementation: the checker then reports that the overloads are not implemented, and Python has no `double` that works.
+- Decorating the implementation with `@overload` too. It is the one function without the decorator.
+- Writing the implementation as `def double(x: int) -> int`. Its hints must accept every overload (`int | str`).
+- Using `bool` instead of `Literal[True]` in the overloads. A plain `bool` cannot select the result type from the value.
+- Putting `= False` on both `to_number` overloads, so a call with no flag matches two overloads.
+- Returning `x + x` for numbers: the tests do not care, but `x * 2` is simpler and works for both.

@@ -1,0 +1,6 @@
+- Forgetting `Protocol` in the base list: `class Closeable:` is then an ordinary class and `get_protocol_members` fails.
+- Giving the protocol method a real body (like `pass` with logic). It is only a description; use `...`.
+- Making your test classes inherit from `Closeable`. They do not need to; that is exactly what structural typing means.
+- Catching with a bare `except:` in `close_quietly`: it also swallows `KeyboardInterrupt`.
+- Swallowing errors in `close_all` or counting a failed close. The task says to let them go.
+- Writing `def close(self): ...` without `-> None`. The hint is part of the protocol; a type whose `close` returns an `int` would not match it.

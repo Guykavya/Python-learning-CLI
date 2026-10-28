@@ -1,0 +1,6 @@
+- Thinking `Final` makes Python raise an error on reassignment. It does nothing at run time; only a type checker (mypy) reports it.
+- Writing `MAX_RETRIES = Final(3)` or `Final = 3`. `Final` is an annotation: `MAX_RETRIES: Final = 3`.
+- Writing `Final[3]`. The brackets take a type, not a value.
+- Assigning the constant twice (once plain, once annotated). A `Final` name gets exactly one assignment.
+- Forgetting that a `Final` list can still be changed with `.append`. Use a tuple for a truly fixed collection.
+- Leaving off the function hints and thinking only the constants matter.

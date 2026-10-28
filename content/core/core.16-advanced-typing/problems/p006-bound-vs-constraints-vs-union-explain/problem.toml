@@ -1,0 +1,8 @@
+id = "core.16.p006"
+title = "Explain: bound, constraints or a plain union?"
+tier = "deep"
+kind = "explain"
+topics = ["TypeVar bound", "TypeVar constraints", "union types", "generic functions"]
+minutes = 30
+difficulty = 4
+assessment = "explain"

@@ -1,0 +1,6 @@
+- Using `Any` or `object` instead of a `TypeVar`. It "works" but the checker forgets the item type, so `first([1, 2]) + 1` is no longer checked.
+- Using two different TypeVars, one inside `Sequence[...]` and one for the return. They are then unrelated, and the result can be anything.
+- Writing `-> T` for `last_or_none`. Empty input returns `None`, which is not a `T`; the hint must be `T | None`.
+- Writing `if not items[0]` or `if not last:`: `0`, `""` and `None` are falsy but may be real items.
+- Forgetting that `str` is a `Sequence[str]`; `first("abc")` must work.
+- Hinting the parameter as `list[T]`. It would work at runtime, but `first("abc")` or `first((1, 2))` would then be flagged by mypy.

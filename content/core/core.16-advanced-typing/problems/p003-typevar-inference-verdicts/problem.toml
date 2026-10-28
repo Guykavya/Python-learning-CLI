@@ -1,0 +1,7 @@
+id = "core.16.p003"
+title = "Trace: what does the checker infer for T?"
+tier = "drill"
+kind = "trace"
+topics = ["TypeVar", "type inference", "reveal_type", "generic functions"]
+minutes = 15
+difficulty = 2

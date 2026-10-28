@@ -1,0 +1,6 @@
+id = "core.16.p031"
+title = "Read a stub file with ast"
+tier = "applied"
+kind = "code"
+topics = [".pyi stub files", "ast", "FunctionDef", "AnnAssign", "ast.unparse", "third-party typing"]
+minutes = 40

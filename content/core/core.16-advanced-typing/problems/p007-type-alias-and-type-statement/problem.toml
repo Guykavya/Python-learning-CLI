@@ -1,0 +1,7 @@
+id = "core.16.p007"
+title = "Type aliases and the type statement"
+tier = "drill"
+kind = "code"
+topics = ["type alias", "type statement", "TypeAliasType", "recursive alias", "Python 3.12+"]
+minutes = 25
+difficulty = 2

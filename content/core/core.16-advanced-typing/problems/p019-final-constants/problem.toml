@@ -1,0 +1,6 @@
+id = "core.16.p019"
+title = "Final: constants that must not change"
+tier = "drill"
+kind = "code"
+topics = ["Final", "Final[T]", "constants", "reassignment", "get_type_hints"]
+minutes = 15

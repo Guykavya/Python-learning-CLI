@@ -1,0 +1,6 @@
+id = "core.16.p032"
+title = "Explain: py.typed, stubs and untyped libraries"
+tier = "applied"
+kind = "explain"
+topics = ["py.typed", "stub files", "types- packages", "ignore_missing_imports", "third-party typing", "library authors"]
+minutes = 25

@@ -1,0 +1,7 @@
+- Hinting `find_order` as `-> Order`. The function can fall off the end and return `None`: `-> Order | None`.
+- Hinting `parse_price` as `-> int`. The `except` branch returns `None`.
+- Using `Any` (or `object`) for the parts that look hard. It silences the checker, which is the opposite of the exercise.
+- Forgetting `-> None` on `__init__`. A checker treats an unannotated `__init__` with no annotated parameters as untyped.
+- Annotating `self.items` as `list` without the item type, or leaving the empty `{}` in `totals_by_customer` unannotated (mypy: "Need type annotation").
+- Changing the behaviour while annotating (for example, making `find_order` raise an error). The tests check that nothing else changed.
+- Writing `-> Order` inside the `Order` class without quotes: before Python 3.14 the name does not exist yet while the class body runs. Use `"Order"` (a string) or `Self`.

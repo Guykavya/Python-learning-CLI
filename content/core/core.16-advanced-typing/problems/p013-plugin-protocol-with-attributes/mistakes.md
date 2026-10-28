@@ -1,0 +1,6 @@
+- Writing the attributes with values (`name: str = ""`) in the protocol. In a protocol, `name: str` only declares the shape.
+- Leaving out `Protocol` from the bases: then `Plugin` is an ordinary class, and `get_protocol_members` fails.
+- Checking duplicates after storing, so the second plugin has already replaced the first one when the error is raised.
+- Keeping the plugins in a list and searching it for `get`, or in a set (no order). A dict gives both order and lookup.
+- Forgetting to reassign `text` in `run_all` (`plugin.run(text)` without `text = ...`): every plugin then sees the original text.
+- A shared class-level dict for the registry, instead of one created in `__init__`.

@@ -1,0 +1,7 @@
+id = "core.16.p016"
+title = "TypedDict: a dict with a known shape"
+tier = "drill"
+kind = "code"
+topics = ["TypedDict", "required keys", "is_typeddict", "dict at runtime"]
+minutes = 20
+difficulty = 2

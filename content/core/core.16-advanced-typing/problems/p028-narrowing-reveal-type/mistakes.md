@@ -1,0 +1,6 @@
+- Writing `int | str | None` for `A`: you forgot that `return` removes the `None` path.
+- Writing `str | None` for `D` or `H`: the truthiness test and `is not None` both remove `None`.
+- Writing `str` for `I` because the loop narrowed `item`. The list keeps its declared type.
+- Writing `int | str` for `J`. The `int` case was converted with `str(y)`, so every path ends with a `str`.
+- Writing `str` for `K`: `x` was copied to `y`, never changed.
+- Changing the order of union members (`str | int`). Keep the parameter's order.

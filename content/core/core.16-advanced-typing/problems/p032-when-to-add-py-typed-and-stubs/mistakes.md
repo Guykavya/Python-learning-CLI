@@ -1,0 +1,7 @@
+- Saying `py.typed` contains configuration or the hints. It is an **empty** marker file; the hints stay in the source (or in `.pyi` files next to it).
+- Putting `py.typed` in the project root instead of inside the package folder.
+- Forgetting that the file must be included in the built package, or the user will not have it.
+- Describing a `types-xxx` package as "a newer version of the library". It is only type information, a separate package.
+- Saying that silencing a missing import "fixes" the types. The module becomes `Any`, so you lose checking.
+- Writing a stub for code you own, when annotating the source would be simpler.
+- Advising Isha to annotate everything in one go, or to leave `strict` off forever. Both are the opposite of gradual.

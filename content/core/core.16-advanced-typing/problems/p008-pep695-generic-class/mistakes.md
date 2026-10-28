@@ -1,0 +1,6 @@
+- Writing `class Box(Generic[T])`: it works, but `__type_params__` is empty. The task asks for the new syntax.
+- Writing the method parameter as `def map(self, func: Callable[[T], U])` without `[U]` after the name: `NameError: name 'U' is not defined`.
+- Putting the constraints in brackets: `[N: [int, float]]`. Constraints go in parentheses, `[N: (int, float)]`; without parentheses (`[N: int]`) it is a bound.
+- Returning `self` from `map` instead of a new `Box`: the type may change, so it must be a new object.
+- `__eq__` that raises `AttributeError` for `Box(1) == 1` (reading `.value` on an int). Check `isinstance` first and return `NotImplemented`.
+- Forgetting `__hash__`: defining `__eq__` makes the class unhashable, and `{Box(1)}` fails.

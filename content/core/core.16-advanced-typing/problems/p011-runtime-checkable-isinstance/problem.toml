@@ -1,0 +1,7 @@
+id = "core.16.p011"
+title = "runtime_checkable: isinstance with a Protocol"
+tier = "applied"
+kind = "code"
+topics = ["runtime_checkable", "isinstance with Protocol", "data members", "limits of runtime checks"]
+minutes = 30
+difficulty = 3

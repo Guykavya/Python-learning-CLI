@@ -1,0 +1,6 @@
+id = "core.16.p027"
+title = "Explain: TypeIs versus TypeGuard"
+tier = "deep"
+kind = "explain"
+topics = ["TypeIs", "TypeGuard", "narrowing", "else branch", "subtype rule"]
+minutes = 25

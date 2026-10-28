@@ -1,0 +1,6 @@
+id = "core.16.p025"
+title = "Narrowing with isinstance"
+tier = "drill"
+kind = "code"
+topics = ["narrowing", "isinstance", "union types", "int | str | None", "get_type_hints"]
+minutes = 20

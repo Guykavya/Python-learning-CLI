@@ -1,0 +1,8 @@
+id = "core.16.p014"
+title = "Explain: Protocol or base class?"
+tier = "deep"
+kind = "explain"
+topics = ["Protocol", "ABC", "structural vs nominal typing", "design choice", "runtime_checkable"]
+minutes = 30
+difficulty = 4
+assessment = "explain"

@@ -1,0 +1,7 @@
+id = "core.16.p010"
+title = "Your first Protocol: Closeable"
+tier = "drill"
+kind = "code"
+topics = ["Protocol", "structural typing", "duck typing with hints", "get_protocol_members"]
+minutes = 20
+difficulty = 2

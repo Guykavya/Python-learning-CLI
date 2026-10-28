@@ -1,0 +1,7 @@
+id = "core.16.p017"
+title = "Optional keys: total=False and NotRequired"
+tier = "applied"
+kind = "code"
+topics = ["TypedDict", "total=False", "NotRequired", "__required_keys__", "__optional_keys__"]
+minutes = 35
+difficulty = 3

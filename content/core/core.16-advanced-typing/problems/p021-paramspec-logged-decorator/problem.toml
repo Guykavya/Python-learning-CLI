@@ -1,0 +1,6 @@
+id = "core.16.p021"
+title = "A logging decorator that keeps its signature"
+tier = "applied"
+kind = "code"
+topics = ["ParamSpec", "P.args", "P.kwargs", "decorators", "functools.wraps", "Callable"]
+minutes = 30

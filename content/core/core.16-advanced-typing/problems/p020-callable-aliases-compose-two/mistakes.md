@@ -1,0 +1,6 @@
+- Writing `Callable[int, int]`. The parameters go in a list: `Callable[[int], int]`.
+- Using `Callable` from the wrong place and forgetting the import (`from collections.abc import Callable`).
+- Reusing one `TypeVar` for everything (`compose_two(f: Callable[[T], T], ...)`). That forbids `len` followed by `str`, where the type changes.
+- Typing the result as `Callable[[A], B]`. The result returns what **g** returns, `C`.
+- Calling `g(f)` or running `f` inside `compose_two` instead of inside the returned function.
+- Writing `apply_all` so that it applies the steps in reverse order.

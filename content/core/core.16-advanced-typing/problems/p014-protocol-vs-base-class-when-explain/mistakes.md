@@ -1,0 +1,5 @@
+- Saying "a Protocol is just an interface, same as an ABC". The difference is exactly nominal vs structural.
+- Saying Protocols are checked at runtime. They are for the type checker; `@runtime_checkable` adds only a shallow `isinstance`.
+- Claiming an ABC can never be used for third-party classes. `ABC.register()` exists, but it is a runtime promise that the checker does not verify.
+- Forgetting the "fail at creation" point for Part 2: that is the strength of `@abstractmethod`.
+- Saying a Protocol cannot have shared code. It can, but only classes that inherit from it explicitly get it, which gives up the structural benefit.

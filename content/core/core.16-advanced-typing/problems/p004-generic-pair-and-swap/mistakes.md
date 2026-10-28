@@ -1,0 +1,6 @@
+- Hinting `swap` as `-> Pair[A, B]`. The checker would think a `Pair[str, int]` stays a `Pair[str, int]` after swapping.
+- Reusing `A` or `B` for the result of `func` instead of a new `C`. Then `map_first(str.upper)` on a `Pair[int, ...]` would be rejected.
+- Forgetting that `Generic[A, B]` is ordered: `Generic[B, A]` would make `Pair[str, int]` mean the opposite.
+- Mutating `self` (the dataclass is frozen, you get `FrozenInstanceError`) instead of returning a new pair.
+- Writing `-> Pair[B, A]` without quotes on an older Python: `NameError` because `Pair` is not defined yet inside its own body.
+- Forgetting the `Callable` brackets: `Callable[A, C]` is wrong; the arguments are a list `Callable[[A], C]`.

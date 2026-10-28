@@ -1,0 +1,6 @@
+- Using `if not value:` to detect `None`. `0` and `""` are falsy, so `to_int(0)` and `first_text([3, ""])` go wrong.
+- Writing `isinstance(value, None)`. Use `value is None`.
+- Writing `isinstance(value, list[int])`. It raises `TypeError` at run time; test `isinstance(value, list)`.
+- Testing `isinstance(value, int)` first in a function that also accepts `bool`: `True` is an `int`. (Not tested here, but remember it.)
+- Hinting the result of `to_int` as `int | None` "just in case". The point of the function is that it never returns `None`.
+- Forgetting the order of the tests: after `return` in the first branch the checker removes that type from the rest of the function.

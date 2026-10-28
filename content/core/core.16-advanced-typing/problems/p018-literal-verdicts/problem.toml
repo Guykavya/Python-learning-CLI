@@ -1,0 +1,7 @@
+id = "core.16.p018"
+title = "Trace: Literal verdicts"
+tier = "drill"
+kind = "trace"
+topics = ["Literal", "Final", "str vs Literal", "mypy verdicts"]
+minutes = 15
+difficulty = 3

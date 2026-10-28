@@ -1,0 +1,7 @@
+id = "core.16.p033"
+title = "Fix: add types to a messy module, keep the behaviour"
+tier = "deep"
+kind = "code"
+topics = ["gradual typing", "annotating legacy code", "X | None", "Callable", "list[tuple[...]]", "class annotations", "refactoring safely"]
+minutes = 45
+assessment = "fix"

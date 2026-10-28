@@ -1,0 +1,6 @@
+- Writing `A: list[int]` or `A: Sequence[int]`. The result is `T`, not the container; `T` is the **item** type.
+- Writing `B: str` as `list[str]`: a `str` is a sequence whose items are `str`.
+- Marking `H` as an error. `int` is accepted where `float` is expected, so the `int` result fits.
+- Thinking `J` is fine because "`T` could be `object`". With an invariant `list[T]` mypy does not widen `T` to `object`; it reports the error.
+- Solving `E` from the outside in. Evaluate the inner call first; its result is the argument of the outer call.
+- Writing the full name `builtins.int`. Write `int`.

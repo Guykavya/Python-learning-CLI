@@ -1,0 +1,6 @@
+- Forgetting `@runtime_checkable`: `isinstance(x, HasArea)` raises `TypeError: Instance and class checks can only be used with @runtime_checkable protocols`.
+- Believing `isinstance(x, Named)` checks that `name` is a `str`. It only checks that the attribute exists; `Pet().name` is `42`.
+- Reading `thing.name` before checking that it exists (`isinstance(thing.name, str) and ...`): `AttributeError` for items without a name.
+- Using `issubclass(cls, Named)`. It raises `TypeError` for protocols with data members.
+- Treating `0.0` (an area of 0) as "no area": keep to `isinstance`, not truthiness.
+- Starting the total with `0` and expecting a `float` for an empty input: `0` is an `int`; use `0.0`.

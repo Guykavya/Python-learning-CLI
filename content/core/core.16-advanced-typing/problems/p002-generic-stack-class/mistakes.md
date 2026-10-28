@@ -1,0 +1,6 @@
+- Forgetting `Generic[T]`. A plain `class Stack:` with `item: T` hints is not generic, so `Stack[int]` fails with `TypeError: type 'Stack' is not subscriptable`.
+- Hinting `pop` as `-> Any` or `-> object`. The whole point is that the checker knows the result is a `T`.
+- Using `self._items = []` without a hint. mypy then asks "Need type annotation"; write `self._items: list[T] = []`.
+- Writing `_items = []` at class level. All stacks would share one list.
+- Returning `self._items.pop()` without checking for empty first: the message would be "pop from empty list", not the one the tests expect.
+- `peek` that removes the item (using `pop()`).
