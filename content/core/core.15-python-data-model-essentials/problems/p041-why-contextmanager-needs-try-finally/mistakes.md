@@ -1,0 +1,4 @@
+- Saying "`@contextmanager` calls the code after `yield` at the end". It does only if the generator is resumed **normally**; for a failing block it resumes it by raising at `yield`.
+- Thinking `with` itself guarantees the clean-up. `with` guarantees that `__exit__` is called; the generator is responsible for what its clean-up code does on an error.
+- Writing the fix as `except: ...` and clean-up in the `except` only: the success path then skips the clean-up. `finally` covers both.
+- Forgetting to re-raise when catching: `except Exception: cleanup()` without `raise` swallows the exception.

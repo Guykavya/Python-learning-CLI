@@ -1,0 +1,4 @@
+- Printing inside `__len__` or `__getitem__` instead of returning.
+- Returning `None` for a bad index: a `for` loop would never stop, because it waits for `IndexError`.
+- Storing the iterable itself (`self._songs = songs`): a generator would be used up and later calls see nothing. Copy it into a list.
+- Forgetting that `len(p)` must return an `int`.

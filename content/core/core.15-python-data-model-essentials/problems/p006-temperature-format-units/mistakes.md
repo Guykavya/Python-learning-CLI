@@ -1,0 +1,4 @@
+- Converting the stored value in place (`self.celsius = ...`). Formatting must never change the object.
+- Not rejecting `"X"`: `"X" in "CFK"` is False, but forgetting the check silently prints wrong units.
+- Writing `{value:.digits f}`: the nested form is `{value:.{digits}f}`.
+- Using `spec[0]` as the unit. The unit is the **last** character; the precision comes first.

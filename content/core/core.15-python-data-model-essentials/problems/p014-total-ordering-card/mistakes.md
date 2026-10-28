@@ -1,0 +1,4 @@
+- Comparing rank strings directly: `"10" < "2"` is `True` for strings. Use positions in the rank list.
+- Forgetting `__hash__`: defining `__eq__` makes the class unhashable.
+- Forgetting `@total_ordering` and then `a >= b` raises `TypeError`, or works only by accident through reflection.
+- Hashing `rank` and `suit` separately in a way that does not match `__eq__`; always hash the same data you compare.

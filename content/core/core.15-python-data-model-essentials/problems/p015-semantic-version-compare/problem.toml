@@ -1,0 +1,7 @@
+id = "core.15.p015"
+title = "Compare semantic versions"
+tier = "applied"
+kind = "code"
+topics = ["__eq__", "__lt__", "__hash__", "parsing", "total_ordering"]
+minutes = 25
+difficulty = 3

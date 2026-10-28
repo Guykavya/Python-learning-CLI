@@ -1,0 +1,5 @@
+- Reading `getvalue()` inside the `with` before the function has finished, or forgetting it and returning the `StringIO` objects.
+- Assigning `sys.stdout = ...` by hand and not restoring it when an exception happens: `redirect_stdout` does the restore for you.
+- Wrapping too much in `suppress`: if the `with suppress(ValueError):` block contains more than the one risky line, a `ValueError` from another line is hidden too.
+- Using `except:` or `suppress(Exception)` in `to_int_or`: it would hide real bugs such as the `ZeroDivisionError` in the last test.
+- In `remove_if_exists`, checking `os.path.exists` first and then removing: another process can delete the file in between (race condition); `suppress` handles it.

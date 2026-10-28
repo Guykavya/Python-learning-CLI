@@ -1,0 +1,7 @@
+id = "core.15.p018"
+title = "Unary operators: -v, abs(v), bool(v)"
+tier = "drill"
+kind = "code"
+topics = ["__neg__", "__pos__", "__abs__", "__bool__", "unary operators"]
+minutes = 12
+difficulty = 2

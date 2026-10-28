@@ -1,0 +1,5 @@
+- Raising `CurrencyMismatchError` for `m + 5`: the problem is the type, not the currency. Return `NotImplemented`.
+- Returning `NotImplemented` for a currency mismatch: the user would get a vague `TypeError` instead of a clear message.
+- Allowing `float` in `__mul__`: `Money(100, 'USD') * 0.5` would give `50.0` cents, a float inside a cents field.
+- Forgetting `__rmul__`, so `3 * m` fails.
+- Changing `self.cents` in place.

@@ -1,0 +1,7 @@
+id = "core.15.p043"
+title = "Open many files at once with ExitStack"
+tier = "applied"
+kind = "code"
+topics = ["contextlib.ExitStack", "with statement", "files", "enter_context", "zip"]
+minutes = 35
+difficulty = 3

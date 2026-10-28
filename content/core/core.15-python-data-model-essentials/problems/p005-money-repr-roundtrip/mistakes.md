@@ -1,0 +1,4 @@
+- Using `cents / 100` and printing a float: `12.5` loses the second decimal, and floats can be inexact.
+- Using `divmod(-5, 100)`: it gives `(-1, 95)`. Take `abs` first and add the sign yourself.
+- A repr like `Money(12.50, USD)` is not valid Python (no quotes, no cents). `eval` fails.
+- Forgetting `!r` on the currency string, so the quotes disappear.

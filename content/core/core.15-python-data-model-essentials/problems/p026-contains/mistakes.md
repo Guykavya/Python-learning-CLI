@@ -1,0 +1,4 @@
+- Returning the item or `None` instead of a `bool` (the result of `in` is converted to bool, but returning `None` is always `False`).
+- Comparing a string to a number: `"a" <= 10` raises `TypeError`, so check the type first.
+- Using `==` on every word for `WordSet` and forgetting case.
+- Defining `__contains__` with the wrong parameter order, `(item, self)`.

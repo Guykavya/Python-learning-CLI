@@ -1,0 +1,5 @@
+- `field(default_factory=list())`: `list()` already **is** a list, not a function; the error comes only when an object is created.
+- `songs: list = []` raises `ValueError: mutable default <class 'list'> for field songs is not allowed`.
+- Writing the fields of `Version` in another order: `order=True` compares in the written order, so `patch` first would sort wrongly.
+- Using `order=True` with the idea that `"1.10.0" < "1.2.0"` as strings: with integer fields the comparison is numeric.
+- Making `Playlist` frozen as well: the tests append to `songs` (fine, the list is not frozen) but also set `name`.

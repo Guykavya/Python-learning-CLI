@@ -1,0 +1,7 @@
+id = "core.15.p012"
+title = "Trace: the object lost in the set"
+tier = "deep"
+kind = "trace"
+topics = ["__hash__", "mutability", "set", "dict keys"]
+minutes = 20
+difficulty = 4

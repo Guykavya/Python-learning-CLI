@@ -1,0 +1,5 @@
+- Returning `True` always: every exception, even `KeyboardInterrupt`-like or wrong ones, disappears.
+- Not checking `exc_type is None` first: `issubclass(None, ...)` raises `TypeError` on the normal path.
+- Using `isinstance(exc_type, ...)`: `exc_type` is a class, so it needs `issubclass` (or use `isinstance(exc, ...)` on the object).
+- Returning `None` or forgetting the final `return False` is fine (it means "do not swallow"), but returning `True` by accident is the dangerous mistake.
+- Forgetting to reset `exception` in `__enter__` when the object is reused: `caught` stays `True` from an earlier use.

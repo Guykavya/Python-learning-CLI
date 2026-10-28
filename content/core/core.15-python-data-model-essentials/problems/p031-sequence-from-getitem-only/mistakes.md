@@ -1,0 +1,5 @@
+- Returning `None` or a default for an index past the end instead of raising `IndexError`: the fallback iterator never stops (infinite loop and growing memory in `list()`).
+- Raising `KeyError` or `ValueError` instead of `IndexError`: the loop crashes instead of ending quietly.
+- Defining `__iter__` "to make it work": it works, but you miss the point of the exercise.
+- In `Backwards.__getitem__`: using `self.seq[-index]` (wrong for index 0) or `self.seq[~index]` without a range check, so out-of-range or negative indices silently succeed and iteration never ends.
+- Believing `reversed()` works with only `__getitem__`: it also needs `__len__` to know where the end is.

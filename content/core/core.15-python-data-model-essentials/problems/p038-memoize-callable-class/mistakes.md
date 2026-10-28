@@ -1,0 +1,6 @@
+- Checking the cache with `if self.cache.get(key):` or `if cache[key]`: results like `0`, `""` and `None` are never treated as cached.
+- Using `kwargs.items()` without `sorted`: `f(a=1, b=2)` and `f(b=2, a=1)` are cached twice.
+- Storing the result before the call finishes, or in a `finally`: a failing call would cache something wrong.
+- Letting the `TypeError` for unhashable arguments escape: the function should still work with lists, it just is not cached.
+- Catching `TypeError` around the whole function call: a `TypeError` raised **inside** your function would then be mistaken for "unhashable" and the function would run twice. Keep the `try` small, around the lookup only.
+- Forgetting that in recursive functions the name `fib` refers to the Memoize object, which is what makes the recursion fast. (Inside a closure-based version this also holds; the class version just names it clearly.)

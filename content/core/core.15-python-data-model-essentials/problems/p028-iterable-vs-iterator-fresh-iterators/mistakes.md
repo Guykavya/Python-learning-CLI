@@ -1,0 +1,4 @@
+- Saying the first call "deletes" the data. Nothing is deleted; the counter has just reached 0.
+- Mixing up the words: an iterator has `__next__`; an iterable only needs `__iter__`.
+- Forgetting that a generator function's body does not run when you call it, only when it is iterated, and that each call gives a new independent generator.
+- Claiming that iterators are "bad". They are the right design for single-pass sources like files and generators.

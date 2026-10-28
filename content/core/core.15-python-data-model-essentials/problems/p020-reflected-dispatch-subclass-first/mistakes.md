@@ -1,0 +1,4 @@
+- Always trying the left operand first. The subclass-first rule is the exception that makes subclasses able to specialise operators.
+- Forgetting that `__add__` inherited from `A` still prints `A.add` when called on a `B` instance.
+- Expecting `D() + 1` to try `int.__radd__`; `int` declines (returns `NotImplemented`) so the final result is a `TypeError`.
+- Misreading the message: it is `unsupported operand type(s) for +: 'D' and 'int'`.

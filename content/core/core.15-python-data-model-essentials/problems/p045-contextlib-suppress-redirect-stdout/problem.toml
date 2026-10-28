@@ -1,0 +1,7 @@
+id = "core.15.p045"
+title = "contextlib helpers: suppress and redirect_stdout"
+tier = "applied"
+kind = "code"
+topics = ["contextlib.suppress", "contextlib.redirect_stdout", "redirect_stderr", "io.StringIO", "with statement"]
+minutes = 30
+difficulty = 3

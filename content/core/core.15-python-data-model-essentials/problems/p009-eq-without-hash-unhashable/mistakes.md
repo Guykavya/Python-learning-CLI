@@ -1,0 +1,4 @@
+- Thinking `hash(P(1))` works because `object` has a default hash. Defining `__eq__` switches it off.
+- Believing `S` inherits `Q.__hash__`. A new `__eq__` in the subclass body resets `__hash__` to `None`.
+- Expecting a set of `Q(1), Q(1)` to hold 2 items. They are equal and have equal hashes, so 1.
+- Writing the error line without the `error:` prefix or without the quotes around the class name in `unhashable type: 'P'`.

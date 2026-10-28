@@ -1,0 +1,5 @@
+- Writing `MON = 1, TUE = 2` by hand and then reordering: `auto()` removes that work, but be aware that moving members changes their values.
+- Comparing a member with its value (`Weekday.MON == 1`): it is `False` for a plain `Enum`.
+- Using `==` on strings in `from_name` instead of the name lookup `cls[key]`.
+- `Weekday.from_name("")`: `""[:3]` is `""` and `cls[""]` is a `KeyError` that must become a `ValueError`.
+- Trying to add members in a method or to assign `Weekday.MON = 5`: members are constants and cannot be changed.

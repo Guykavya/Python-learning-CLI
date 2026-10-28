@@ -1,0 +1,7 @@
+id = "core.15.p038"
+title = "A memoize decorator as a callable class"
+tier = "applied"
+kind = "code"
+topics = ["__call__", "memoization", "class-based decorators", "dict keys", "hashing"]
+minutes = 35
+difficulty = 3

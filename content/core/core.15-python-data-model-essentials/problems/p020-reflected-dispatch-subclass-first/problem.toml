@@ -1,0 +1,7 @@
+id = "core.15.p020"
+title = "Trace: which operator method runs?"
+tier = "deep"
+kind = "trace"
+topics = ["__add__", "__radd__", "operator dispatch", "subclasses"]
+minutes = 25
+difficulty = 4

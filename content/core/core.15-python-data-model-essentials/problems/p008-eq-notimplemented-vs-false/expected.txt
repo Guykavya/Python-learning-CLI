@@ -1,0 +1,16 @@
+Strict.eq
+True
+Strict.eq
+Always.eq
+True
+Always.eq
+True
+Loose.eq
+False
+Strict.eq
+False
+Strict.eq
+Always.eq
+False
+Loose.eq
+True

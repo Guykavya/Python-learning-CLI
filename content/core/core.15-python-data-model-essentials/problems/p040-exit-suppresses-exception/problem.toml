@@ -1,0 +1,7 @@
+id = "core.15.p040"
+title = "Context managers that swallow or expect exceptions"
+tier = "applied"
+kind = "code"
+topics = ["__exit__", "exception suppression", "context managers", "issubclass", "AssertionError"]
+minutes = 30
+difficulty = 3

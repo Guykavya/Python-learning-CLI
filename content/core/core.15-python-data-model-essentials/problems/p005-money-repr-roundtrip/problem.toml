@@ -1,0 +1,7 @@
+id = "core.15.p005"
+title = "A repr you can eval back"
+tier = "applied"
+kind = "code"
+topics = ["__repr__", "__str__", "eval", "round trip"]
+minutes = 15
+difficulty = 2

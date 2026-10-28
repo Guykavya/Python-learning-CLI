@@ -1,0 +1,4 @@
+- Comparing the strings directly: `"1.10.0" < "1.2.0"` is `True` for text.
+- Using `int(text.replace('.', ''))`: `1.10.0` and `11.0.0` would both become 1100 and 1100... clashes.
+- Not validating: `Version('1.2')` or `Version('a.b.c')` must raise `ValueError` (a bare `split` + `int` may raise the wrong error or unpack error).
+- Forgetting `__hash__`, so versions cannot be put in a set.

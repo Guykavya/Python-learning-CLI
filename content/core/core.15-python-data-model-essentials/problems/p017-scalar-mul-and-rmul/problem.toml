@@ -1,0 +1,7 @@
+id = "core.15.p017"
+title = "Scalar multiplication and __rmul__"
+tier = "drill"
+kind = "code"
+topics = ["__mul__", "__rmul__", "__truediv__", "reflected operators"]
+minutes = 15
+difficulty = 2

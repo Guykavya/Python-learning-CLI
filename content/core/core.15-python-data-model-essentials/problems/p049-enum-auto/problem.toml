@@ -1,0 +1,7 @@
+id = "core.15.p049"
+title = "Enums with auto(), lookups and methods"
+tier = "drill"
+kind = "code"
+topics = ["enum.Enum", "enum.auto", "members", "classmethod", "property"]
+minutes = 25
+difficulty = 2

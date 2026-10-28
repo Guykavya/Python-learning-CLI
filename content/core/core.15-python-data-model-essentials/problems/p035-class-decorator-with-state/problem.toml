@@ -1,0 +1,7 @@
+id = "core.15.p035"
+title = "A class-based decorator that records calls"
+tier = "applied"
+kind = "code"
+topics = ["__call__", "class-based decorators", "functools.update_wrapper", "property", "decorators"]
+minutes = 30
+difficulty = 3

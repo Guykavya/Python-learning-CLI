@@ -1,0 +1,4 @@
+- Thinking `t in s` becomes `True` because it is the same object. Lookup goes through the hash first.
+- Thinking the set removes or updates the element when `t.name` changes. It does not notice.
+- Expecting `len(s)` to drop to 0. The element is still stored.
+- Forgetting that a set comprehension `{x for x in s}` rehashes every element, so `t in s` is `True` again afterwards. (`set(s)` would not do: copying a set reuses the stored hashes.)

@@ -1,0 +1,7 @@
+id = "core.15.p010"
+title = "Explain: why equal objects need equal hashes"
+tier = "deep"
+kind = "explain"
+topics = ["__hash__", "__eq__", "dict", "set"]
+minutes = 20
+difficulty = 3

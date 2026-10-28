@@ -1,0 +1,5 @@
+- Forgetting `return self` in `__enter__`: `t` is `None` and `t.elapsed` fails.
+- Returning `True` from `__exit__`: it silently swallows every exception from the block.
+- Giving `__exit__` no parameters (`def __exit__(self)`): Python always passes three arguments.
+- Calling `time.perf_counter()` instead of `self.clock()`: the fake clock in the tests is ignored.
+- Reading the clock in `elapsed` after the block has finished: the value keeps growing instead of being frozen.

@@ -1,0 +1,4 @@
+- Saying "equal hashes mean equal objects". Collisions exist; `==` decides.
+- Explaining only that the hash must be "the same" without saying that a dict goes to a bucket first and compares with `==` second.
+- Suggesting `__hash__ = id(self)`-style fixes: that breaks the rule even worse for value equality.
+- Missing point 5: the `None` hash is a deliberate safety choice, not a bug.

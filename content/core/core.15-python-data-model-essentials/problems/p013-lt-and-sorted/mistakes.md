@@ -1,0 +1,4 @@
+- Returning `self.priority < other.priority` only; ties then compare as not less in both directions and keep input order instead of sorting by name.
+- Using `and`: `self.priority < other.priority and self.name < other.name` is wrong when priorities differ but names do not.
+- Returning `False` for foreign types; `Task(1, 'a') < 5` should raise `TypeError`, not quietly answer `False`.
+- Defining `__gt__` too but inconsistently with `__lt__`. One method is enough here.

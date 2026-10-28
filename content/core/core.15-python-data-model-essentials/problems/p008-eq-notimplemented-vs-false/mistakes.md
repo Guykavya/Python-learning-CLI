@@ -1,0 +1,4 @@
+- Thinking `Loose(1) == Always()` is `True` because `Always` would say so. `Loose` answered `False`, so `Always` is never asked.
+- Forgetting that the prints inside `__eq__` come before the printed result of the whole line.
+- Thinking `NotImplemented` is the final answer. It only means "try the other side".
+- Expecting `Strict(1) == 5` to raise an error. Both sides decline, so Python answers `False`.

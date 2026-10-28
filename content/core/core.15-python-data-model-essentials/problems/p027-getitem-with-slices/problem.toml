@@ -1,0 +1,7 @@
+id = "core.15.p027"
+title = "__getitem__ that understands slices"
+tier = "applied"
+kind = "code"
+topics = ["__getitem__", "slice", "isinstance", "type(self)"]
+minutes = 25
+difficulty = 3

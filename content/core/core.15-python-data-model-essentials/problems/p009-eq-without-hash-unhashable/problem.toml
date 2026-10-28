@@ -1,0 +1,7 @@
+id = "core.15.p009"
+title = "Trace: __eq__ without __hash__"
+tier = "drill"
+kind = "trace"
+topics = ["__eq__", "__hash__", "unhashable"]
+minutes = 15
+difficulty = 3

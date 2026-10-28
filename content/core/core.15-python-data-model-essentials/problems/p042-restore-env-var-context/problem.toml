@@ -1,0 +1,7 @@
+id = "core.15.p042"
+title = "Temporarily change environment variables"
+tier = "applied"
+kind = "code"
+topics = ["contextlib.contextmanager", "os.environ", "try/finally", "restoring state"]
+minutes = 30
+difficulty = 3

@@ -1,0 +1,4 @@
+- Writing exits in the same order as the enters (`exit a` before `exit b`): the exit order is reversed.
+- Forgetting that a swallowed exception makes outer managers see `None`, and that the code after the swallowing `with` runs (`after b`, `after a`).
+- In `four`: the inner `Tracer("b")` does **not** swallow; the outer `Tracer("a", swallow=True)` does. So `never` is not printed, but `after a` is, and the function finishes normally.
+- In `five`/`six`: forgetting that `finally` runs in both, and that `except KeyError` only handles the `KeyError`.

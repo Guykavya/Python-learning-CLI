@@ -1,0 +1,11 @@
+pen
+Item('pen')
+[Item('pen')]
+(Item('pen'), 1)
+{'k': Item('pen')}
+pen / Item('pen')
+[Item('pen')]
+item: pen
+<Plain>
+[<Plain>] <Plain>
+pen 'pen'

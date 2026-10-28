@@ -1,0 +1,4 @@
+- Returning `False` for foreign types instead of `NotImplemented`. It works for the simple case but blocks the other object from taking part in the comparison.
+- Accessing `other.x` before checking the type. `Point(1, 2) == 5` then raises `AttributeError`.
+- Using `is` inside `__eq__`: that is the default behaviour you are trying to replace.
+- Writing a `__ne__` that is inconsistent with `__eq__`. You do not need one.

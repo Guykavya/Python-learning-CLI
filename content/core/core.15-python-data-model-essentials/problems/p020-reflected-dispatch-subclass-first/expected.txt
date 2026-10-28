@@ -1,0 +1,15 @@
+A.add
+A+
+B.radd
+B r+
+A.add
+A+
+A.add
+A+
+D.add
+C.radd
+C r+
+A.radd
+A r+
+D.add
+error: unsupported operand type(s) for +: 'D' and 'int'

@@ -1,0 +1,5 @@
+- Restoring only in the normal path (no `finally`): an exception leaves the variable changed for the rest of the program.
+- Restoring a variable that did not exist by setting it to `None` or `""`: `os.environ[name] = None` raises `TypeError`, and `""` is not the same as "not set".
+- Saving the old values **after** changing some of them (inside the loop), so the "old" value is already new.
+- Forgetting `str()`: `os.environ["N"] = 5` raises `TypeError`.
+- Setting variables before the `try`: if the third assignment fails, the first two are never undone.

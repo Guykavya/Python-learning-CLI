@@ -1,0 +1,5 @@
+- Using the physical slot as the logical index: after wrapping, `items[0]` is no longer the oldest.
+- Letting `__iter__` loop over the whole list, so empty slots (`None`) show up in a half-full buffer.
+- Returning `iter(self)` or `self` from `__iter__` with a shared position: a second loop would start in the middle. A generator gives a fresh iterator every time.
+- Forgetting that negative indices must be shifted by `len(self)` before the range check.
+- Defining `__bool__` or `__contains__` "to make `in` work". They are not needed; `__len__` and `__iter__` are enough.

@@ -1,0 +1,4 @@
+- Thinking `Bag(0)` is true because "it is an object". An empty container is false through `__len__`.
+- Thinking `__len__` is used when `__bool__` exists too. `Flag(True, 0)` is true although its length is 0: `__bool__` wins.
+- Assuming `or` and `and` return `True`/`False`; they return one of the operands.
+- Expecting `Bad().__bool__` returning `1` to be accepted. It must return a `bool`.

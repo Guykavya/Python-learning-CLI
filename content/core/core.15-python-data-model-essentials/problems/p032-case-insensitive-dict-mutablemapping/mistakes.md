@@ -1,0 +1,6 @@
+- Storing the lowercased key only: `list(d)` then shows `content-type` and the original spelling is lost.
+- Letting `d.pop("X")` or `d["X"]` raise `KeyError("x")` (the lowercased key). Re-raise with the caller's key.
+- Calling `key.lower()` in `__contains__` for any key: `1 in d` then raises `AttributeError` instead of returning `False`.
+- Forgetting `__eq__`: the inherited one compares original-case keys, so `{"A": 1}` and `{"a": 1}` differ.
+- Using `dict` as the base class: `d.get("HOST")`, `d.update(...)` and `dict(...)` copy then bypass your `__getitem__` and `__setitem__`. That is why `MutableMapping` is safer.
+- In `__eq__`, returning `False` for a non-mapping instead of `NotImplemented`.

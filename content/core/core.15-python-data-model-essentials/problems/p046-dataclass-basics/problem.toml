@@ -1,0 +1,7 @@
+id = "core.15.p046"
+title = "Your first dataclasses"
+tier = "drill"
+kind = "code"
+topics = ["dataclasses", "@dataclass", "fields", "dataclasses.asdict", "dataclasses.replace"]
+minutes = 20
+difficulty = 1
