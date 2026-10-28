@@ -1,0 +1,7 @@
+- Passing `"out/bk.zip"` as `base_name`: you get `bk.zip.zip`.
+- Forgetting `root_dir`: the archive then contains the files of the **current folder**, not `src`.
+- Comparing `namelist()` / `getnames()` directly with a list of files: folder entries and `./` prefixes make them differ.
+- Passing `filter="data"` for a zip: `TypeError`, the zip unpacker has no such argument.
+- Unpacking an untrusted tar without a filter on older Pythons: members like `../x` or absolute paths can write outside `dest`.
+- Returning the `str` from `make_archive` when a `Path` is expected.
+- Treating `get_archive_formats()` as a list of names: it is a list of `(name, description)` pairs.

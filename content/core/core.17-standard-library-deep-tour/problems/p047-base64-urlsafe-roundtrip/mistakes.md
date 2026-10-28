@@ -1,0 +1,6 @@
+- Using `b64encode` instead of `urlsafe_b64encode`: `+` and `/` break URLs.
+- Returning bytes (`b'aGk'`) instead of `str`: forgetting `.decode("ascii")`.
+- Removing padding with `.replace("=", "")`: fine for encoding, but on decoding a `=` in the middle of a token must be an error, so use `rstrip("=")`.
+- Adding padding with `"=" * (4 - len % 4)`: when the length is already a multiple of 4 that adds four `=`. Use `-len(body) % 4`.
+- Trusting the decoder to reject bad input: it silently skips unknown characters and accepts `+` and `/`.
+- Thinking Base64 hides data. It is reversible by anyone.

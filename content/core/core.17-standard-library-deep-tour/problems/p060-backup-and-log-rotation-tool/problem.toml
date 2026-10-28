@@ -1,0 +1,8 @@
+id = "core.17.p060"
+title = "Project: a backup and log-rotation tool"
+tier = "challenge"
+kind = "code"
+topics = ["zipfile", "hashlib", "datetime", "timezone", "pathlib", "os.replace", "logging", "RotatingFileHandler", "dependency injection", "rotation"]
+minutes = 180
+difficulty = 5
+assessment = "build"

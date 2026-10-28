@@ -1,0 +1,7 @@
+id = "core.17.p014"
+title = "Trace: what the heap list looks like"
+tier = "deep"
+kind = "trace"
+topics = ["heapq", "heap invariant", "heappushpop", "heapreplace", "heapify", "max-heap by negation"]
+minutes = 30
+difficulty = 4

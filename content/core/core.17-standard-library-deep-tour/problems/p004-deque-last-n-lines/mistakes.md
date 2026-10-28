@@ -1,0 +1,6 @@
+- `f.readlines()[-n:]`: correct output but loads the whole file. Also `lines[-0:]` returns everything, so `n = 0` is wrong.
+- Appending to a plain list and calling `lines.pop(0)` when it grows past `n`. Correct, but `pop(0)` shifts every element: O(n) per line.
+- Returning the deque. Callers expect a list (`==` with a list is `False` for a deque).
+- Using `line.strip()`: it removes meaningful leading and trailing spaces, not just the newline.
+- Opening with `"rb"` and decoding by hand: you then have to deal with `\r\n` yourself.
+- Forgetting `encoding="utf-8"`. On Windows the default encoding may not be UTF-8, and non-ASCII text breaks.

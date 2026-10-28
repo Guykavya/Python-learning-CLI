@@ -1,0 +1,7 @@
+id = "core.17.p036"
+title = "pformat: width, depth, compact and sorting"
+tier = "drill"
+kind = "code"
+topics = ["pprint.pformat", "width", "depth", "compact", "sort_dicts", "readable logs"]
+minutes = 20
+difficulty = 2

@@ -1,0 +1,7 @@
+id = "core.17.p008"
+title = "Trace: reading a defaultdict creates keys"
+tier = "deep"
+kind = "trace"
+topics = ["collections.defaultdict", "__missing__", "default_factory", "dict iteration"]
+minutes = 20
+difficulty = 3

@@ -1,0 +1,7 @@
+id = "core.17.p022"
+title = "Meeting times across time zones"
+tier = "applied"
+kind = "code"
+topics = ["zoneinfo", "aware datetimes", "astimezone", "daylight saving time", "timedelta"]
+minutes = 35
+difficulty = 3

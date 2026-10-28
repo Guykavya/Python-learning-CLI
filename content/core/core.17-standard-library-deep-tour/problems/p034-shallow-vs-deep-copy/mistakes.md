@@ -1,0 +1,7 @@
+- Thinking `alias = team` makes a copy. Assignment never copies; it adds a second name.
+- Thinking a shallow copy is independent. Only the outer container is new; nested lists and dicts are shared.
+- Answering `A` with `B` for `team`: rebinding a key of the copy does not touch the original dict.
+- Forgetting that `alias` and `shallow` share the meta dict with `team`, so `D` starts with `2 2`.
+- Missing that `[[0] * 2] * 2` repeats one inner list (`I`).
+- Expecting `copy.copy` of a tuple to make a new tuple (`J`). Immutable objects are returned as they are.
+- Saying a deep copy of `(1, [2])` is the same tuple (`K`). It contains a mutable list, so it is rebuilt.

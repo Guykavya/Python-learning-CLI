@@ -1,0 +1,7 @@
+id = "core.17.p004"
+title = "deque(maxlen=n): the last n lines of a file"
+tier = "applied"
+kind = "code"
+topics = ["collections.deque", "maxlen", "streaming", "files"]
+minutes = 20
+difficulty = 2

@@ -1,0 +1,7 @@
+id = "core.17.p042"
+title = "Run a command safely: an argument list, never shell=True"
+tier = "deep"
+kind = "code"
+topics = ["subprocess.run", "shell injection", "sys.executable", "argument lists", "check=True", "timeout"]
+minutes = 30
+difficulty = 3

@@ -1,0 +1,8 @@
+id = "core.17.p024"
+title = "Fix: the naive-datetime bugs in a shift log"
+tier = "deep"
+kind = "code"
+topics = ["naive vs aware datetimes", "zoneinfo", "astimezone", "daylight saving time", "debugging"]
+minutes = 45
+difficulty = 4
+assessment = "fix"

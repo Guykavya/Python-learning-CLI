@@ -1,0 +1,7 @@
+- Committing after each `UPDATE`: if the second one fails, the first is already saved and money disappears.
+- Checking `rowcount` **after** the `with conn:` block: by then the debit is committed. Raise inside the block so it rolls back.
+- Catching the exception inside the `with` block and carrying on: the block then ends "normally" and commits half a transfer.
+- Reading the balance in Python and deciding there, without a `CHECK` or a transaction: another program can change it between your `SELECT` and `UPDATE`.
+- Building SQL with f-strings: `nobody' OR 1=1 --` rewrites the query.
+- Thinking parameters make `LIKE` literal: they stop injection, but `%` and `_` inside the value are still wildcards.
+- Accepting `2.5` or `"10"` as an amount: SQLite would store them happily (it is loosely typed), so check the type in Python.

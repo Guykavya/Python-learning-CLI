@@ -1,0 +1,6 @@
+- Writing sorted lists, like `[1, 2, 3, 5, 8, 9]`. A heap is only "parent <= children", not sorted.
+- On `heappop`, moving the **second smallest** to the top. The **last** item moves to the top and sinks.
+- Sinking by swapping with the **left** child always. Swap with the **smaller** child, or the rule `parent <= children` breaks.
+- Treating `heappushpop(h, 0)` like `heapreplace(h, 0)`. pushpop returns the new item at once when it is not bigger than the root; replace always returns the old root.
+- Running `heapify` from index 0 upward. It goes from the last parent **down to** index 0, so that each subtree is already a heap when its root is sifted.
+- Printing `m` as `[7, 2, 4]` or `-m[0]` as `-7`: the stored values are negatives; negate again when reading.

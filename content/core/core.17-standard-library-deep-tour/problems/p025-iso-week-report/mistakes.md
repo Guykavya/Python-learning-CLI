@@ -1,0 +1,6 @@
+- Using `d.year` with the ISO week. 30 Dec 2024 would become `2024-W01`, a week in January 2024. Use the year from `isocalendar()`.
+- Using `strftime("%W")` or `%U`. They count weeks differently (from the first Monday or Sunday, starting at week 00); they are not ISO weeks.
+- Writing `W1` instead of `W01`. Then `"2025-W10"` sorts before `"2025-W2"` as text.
+- Counting entries instead of different days: two entries on 30 Dec are one day.
+- Computing Monday as `d - timedelta(days=d.weekday())` from a guessed date such as `date(year, 1, 1) + 7*week`. ISO week 1 may start in the previous December; `fromisocalendar` does it right.
+- Accepting `"2024-W53"`: 2024 has only 52 ISO weeks. Let `fromisocalendar` raise.

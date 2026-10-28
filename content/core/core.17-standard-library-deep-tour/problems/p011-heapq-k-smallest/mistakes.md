@@ -1,0 +1,5 @@
+- `heapq.heapify(nums)` on the caller's list: it reorders their data. Copy first.
+- Expecting `heapify` to sort the list. `heapify` turns `[5, 4, 3, 2, 1]` into `[1, 2, 3, 5, 4]`: only `heap[0]` is guaranteed to be the minimum. Pop to get sorted order.
+- Sorting the whole list with `sorted(records, key=..., reverse=True)[:k]` is correct, but O(n log n); with `reverse=True` ties still keep input order, so it is a fine check for your heap answer.
+- Pushing `(value, record)` tuples: equal values make Python compare the dicts, which raises `TypeError`.
+- Popping k times without checking that the heap is not empty: `IndexError` when k > n.

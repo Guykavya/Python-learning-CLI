@@ -1,0 +1,7 @@
+id = "core.17.p005"
+title = "deque: a round-robin scheduler"
+tier = "applied"
+kind = "code"
+topics = ["collections.deque", "popleft", "queues", "simulation"]
+minutes = 25
+difficulty = 2

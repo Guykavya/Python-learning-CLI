@@ -1,0 +1,13 @@
+INFO DEBUG
+[shop] shop.db.pool DEBUG p1
+[shop] shop.db INFO d2
+[db] shop.db ERROR d3
+[shop] shop.db ERROR d3
+[web] shop.web INFO w1
+[web] shop.web.api WARNING a1
+shop.web True
+[shop] shop WARNING s1
+[db] shop.db.pool WARNING p2
+[shop] shop.db.pool WARNING p2
+p3
+end

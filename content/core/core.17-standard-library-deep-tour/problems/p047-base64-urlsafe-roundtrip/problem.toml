@@ -1,0 +1,7 @@
+id = "core.17.p047"
+title = "URL-safe Base64 tokens without padding"
+tier = "drill"
+kind = "code"
+topics = ["base64", "urlsafe_b64encode", "urlsafe_b64decode", "padding", "bytes vs str"]
+minutes = 20
+difficulty = 2

@@ -1,0 +1,6 @@
+- Mixing up `%m` (month) and `%M` (minute), or `%d` (day) and `%D`.
+- Using `%I` (12-hour clock) where the data is 24-hour.
+- Returning the `datetime` from `parse_us_date` instead of `.date()`: a `datetime` never equals a `date`.
+- Using `%-d` for "no leading zero": it works on Linux but raises or prints garbage on Windows.
+- Using `str(dt)` instead of `isoformat()`: `str` puts a space, not a `T`, between date and time.
+- Parsing with `split("/")` and `int()`: you lose the validation (`02/30/2025` would not fail until later).

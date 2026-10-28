@@ -1,0 +1,7 @@
+id = "core.17.p026"
+title = "Explain: why store times in UTC?"
+tier = "deep"
+kind = "explain"
+topics = ["UTC", "naive vs aware datetimes", "zoneinfo", "daylight saving time", "data design"]
+minutes = 30
+difficulty = 4

@@ -1,0 +1,7 @@
+id = "core.17.p058"
+title = "Trace: logger hierarchy, levels and propagation"
+tier = "deep"
+kind = "trace"
+topics = ["logging", "logger hierarchy", "propagate", "effective level", "handler levels", "lastResort"]
+minutes = 30
+difficulty = 4

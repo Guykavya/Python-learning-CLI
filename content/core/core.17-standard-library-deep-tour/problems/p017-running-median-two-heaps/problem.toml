@@ -1,0 +1,7 @@
+id = "core.17.p017"
+title = "Running median with two heaps"
+tier = "challenge"
+kind = "code"
+topics = ["heapq", "max-heap by negation", "invariants", "streaming statistics", "classes"]
+minutes = 45
+difficulty = 4

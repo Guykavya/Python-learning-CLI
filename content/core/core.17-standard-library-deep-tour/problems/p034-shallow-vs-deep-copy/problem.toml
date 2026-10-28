@@ -1,0 +1,7 @@
+id = "core.17.p034"
+title = "Trace: alias, shallow copy, deep copy"
+tier = "drill"
+kind = "trace"
+topics = ["copy.copy", "copy.deepcopy", "aliasing", "nested lists", "is vs =="]
+minutes = 20
+difficulty = 2

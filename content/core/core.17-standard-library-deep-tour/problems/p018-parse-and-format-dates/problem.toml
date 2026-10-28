@@ -1,0 +1,7 @@
+id = "core.17.p018"
+title = "datetime: parse and format dates"
+tier = "drill"
+kind = "code"
+topics = ["datetime", "strptime", "strftime", "fromisoformat", "isoformat", "format codes"]
+minutes = 20
+difficulty = 2

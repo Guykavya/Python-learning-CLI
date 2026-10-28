@@ -1,0 +1,7 @@
+- Fixing only `parse_local` and stopping. `shift_hours` still subtracts wall clocks, because both datetimes have the same `tzinfo`. Convert to UTC before subtracting.
+- Using `naive.astimezone(ZoneInfo(zone))` to "add" the zone. On a naive value it first assumes the computer's own zone, then converts, so 09:00 becomes some other time. Use `replace(tzinfo=...)` to attach a zone to a wall time.
+- Using a fixed offset such as `timezone(timedelta(hours=1))` for London. It is right for half the year only.
+- Making `is_overdue` "work" by stripping `tzinfo` (the original bug) or by attaching UTC to a naive `now`. A naive value is ambiguous; refuse it.
+- Testing the fix only on your own computer. A naive value read as local time hides the bug when the computer happens to be in the same zone as the data; the tests use three zones so that at least one fails anywhere.
+- Raising `ValueError` for the *repeated* hour too. It exists (twice); the docstring says to take the first one, which `fold=0` already does.
+- Using `datetime.utcnow()` anywhere. It returns a naive value and is deprecated; use `datetime.now(timezone.utc)`.

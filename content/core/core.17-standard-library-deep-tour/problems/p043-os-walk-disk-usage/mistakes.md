@@ -1,0 +1,7 @@
+- `dirnames = [d for d in dirnames if ...]`: this only rebinds your local variable; `os.walk` still visits the folders. Use `dirnames[:] = ...`.
+- Counting each file only in its own folder: `src` must include the files of `src/util` too.
+- Using `str(path)` or `os.path.relpath` keys on Windows: they contain backslashes (`src\\util`). Use `as_posix()`.
+- Forgetting empty folders: they must appear with `0`.
+- Pruning by full path instead of by folder name: `node_modules` deep inside a project must be skipped too.
+- Sorting ties by size only: equal sizes then come out in the order of the file system, which differs between computers.
+- In `human_size`, using 1000 instead of 1024 (KiB, MiB are powers of 1024), or not stopping at TiB.

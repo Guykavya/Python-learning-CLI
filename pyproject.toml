@@ -7,6 +7,8 @@ dependencies = [
     "pyyaml>=6.0",
     "pytest>=8.0",
     "pygments>=2.0",
+    # Windows ships no time-zone database; zoneinfo (core.17) needs this package there.
+    "tzdata; sys_platform == 'win32'",
 ]
 
 [project.scripts]

@@ -1,0 +1,7 @@
+id = "core.17.p028"
+title = "A statistics summary"
+tier = "drill"
+kind = "code"
+topics = ["statistics", "mean and median", "multimode", "stdev vs pstdev", "quantiles", "IQR outliers"]
+minutes = 25
+difficulty = 2

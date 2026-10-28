@@ -1,0 +1,8 @@
+- Expecting `C` to raise an error. `zoneinfo` accepts a wall time in the gap and quietly uses the offset from before the jump (with `fold=0`). Your own code must check for it if it matters.
+- Writing `D` as `02:30`. Going through UTC turns the impossible 02:30 EST into the real time it stands for, 03:30 EDT.
+- Answering `F` as `23:00:00`. When both datetimes share the same `tzinfo`, subtraction ignores the offsets and compares wall clocks. Only the UTC version (`G`) gives the real elapsed time.
+- Answering `J` as `False`. Same `tzinfo` means `fold` is ignored in the comparison, so the two different instants compare equal.
+- Mixing up which copy `fold=1` is. `fold=1` is the **second** (later) occurrence, after the clocks went back, so it has the winter offset.
+- Using the wrong jump time in UTC. New York falls back at 02:00 EDT = 06:00 UTC; London springs forward at 01:00 GMT = 01:00 UTC.
+- Writing the offset as `-0500` or `-5`. `isoformat()` always writes `-05:00`.
+- Writing `P` with `UTC` as the zone name. `P` converts back to London, so the name is `BST`.

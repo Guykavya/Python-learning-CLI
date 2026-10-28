@@ -1,0 +1,7 @@
+id = "core.17.p044"
+title = "SHA-256 of a file, read in chunks"
+tier = "drill"
+kind = "code"
+topics = ["hashlib", "sha256", "hexdigest", "update", "binary files", "chunked reading"]
+minutes = 20
+difficulty = 2

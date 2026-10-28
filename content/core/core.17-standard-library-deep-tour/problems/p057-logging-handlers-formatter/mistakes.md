@@ -1,0 +1,8 @@
+- Setting the logger's level to WARNING to quiet the console: the file loses the DEBUG and INFO lines too. Put the level on the handler.
+- Adding the filter to the logger: records from child loggers never pass through it, and the formatter then fails with a missing `request_id`.
+- Forgetting to remove old handlers: each `setup_logging` call adds two more, and every line appears two, three, four times.
+- Looping `for h in logger.handlers: logger.removeHandler(h)`: changing a list while looping over it skips every other handler. Loop over `list(logger.handlers)`.
+- Leaving `propagate` on: the root logger's handlers print the same messages again.
+- Opening the log file without `encoding="utf-8"`: non-ASCII messages fail or get mangled on Windows.
+- Forgetting `handler.close()`: the file stays open; on Windows it cannot be deleted or rotated.
+- Using `%(levelname)8s` instead of `%(levelname)-8s`: the name is padded on the left, not the right.

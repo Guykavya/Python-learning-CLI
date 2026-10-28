@@ -1,0 +1,6 @@
+- Using `perm` for handshakes (counts each handshake twice) or `comb` for podiums (ignores who won).
+- Multiplying the intervals instead of taking the lcm: 4 and 6 meet at 12, not 24.
+- Dividing with `/` after `gcd`: the result becomes `float` (`3.0`), and huge values lose digits.
+- Leaving the minus sign on the denominator: `(1, -3)` instead of `(-1, 3)`.
+- `int(math.sqrt(n)) ** 2 == n` for big `n`: `sqrt` returns a float with about 16 digits, so the root of a 41-digit square comes back wrong. `math.isqrt` is exact.
+- Writing your own factorial loops for `comb` / `perm`: slower and easy to get off by one.

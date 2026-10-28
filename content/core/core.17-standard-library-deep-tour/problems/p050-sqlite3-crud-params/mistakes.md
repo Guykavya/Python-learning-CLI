@@ -1,0 +1,7 @@
+- Building SQL with f-strings: `f"... WHERE name = '{name}'"` breaks on `O'Brien` and lets a user change the query (SQL injection).
+- Forgetting to commit: everything looks fine while the program runs, then the data is gone after reopening.
+- Thinking `with conn:` closes the connection. It only commits or rolls back; call `close()` yourself.
+- Writing `(contact_id)` instead of `(contact_id,)`: without the comma it is not a tuple.
+- Using `CREATE TABLE` without `IF NOT EXISTS`: the second time the file is opened it raises "table already exists".
+- Letting `sqlite3.IntegrityError` escape: callers then depend on the storage detail; translate it to `ValueError`.
+- Returning `sqlite3.Row` objects or tuples instead of dicts: convert with `dict(row)`.

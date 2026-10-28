@@ -1,0 +1,7 @@
+- `zf.write(path)` without `arcname`: the member name contains the whole path of your machine (`tmp/pytest-.../project/src/main.py`).
+- Using `str(relative_path)` on Windows: the name gets backslashes; use `as_posix()`.
+- Forgetting `compression=zipfile.ZIP_DEFLATED`: the default stores files uncompressed.
+- Writing the zip inside the folder being zipped and adding it to itself.
+- Checking for `".." in name` as a substring: refuses innocent names like `v1..2`. Check whole path parts.
+- Validating while extracting member by member: the safe members before the bad one are already written.
+- Comparing name lists without sorting: the order inside an archive depends on how it was made.

@@ -1,0 +1,7 @@
+id = "core.17.p048"
+title = "A binary file format with struct"
+tier = "applied"
+kind = "code"
+topics = ["struct", "pack", "unpack", "iter_unpack", "calcsize", "byte order", "binary files"]
+minutes = 40
+difficulty = 3

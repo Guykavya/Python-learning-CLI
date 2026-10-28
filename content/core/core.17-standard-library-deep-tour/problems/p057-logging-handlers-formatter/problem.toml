@@ -1,0 +1,7 @@
+id = "core.17.p057"
+title = "Two handlers, two formats, one filter"
+tier = "applied"
+kind = "code"
+topics = ["logging.Handler", "StreamHandler", "FileHandler", "Formatter", "logging.Filter", "propagate", "handler levels"]
+minutes = 40
+difficulty = 3

@@ -1,0 +1,7 @@
+id = "core.17.p043"
+title = "Disk usage per folder with os.walk"
+tier = "applied"
+kind = "code"
+topics = ["os.walk", "pruning dirnames", "os.path.getsize", "pathlib relative_to", "as_posix"]
+minutes = 35
+difficulty = 3

@@ -1,0 +1,7 @@
+id = "core.17.p023"
+title = "Stopwatch and deadline with an injected clock"
+tier = "applied"
+kind = "code"
+topics = ["time.perf_counter", "time.monotonic", "dependency injection", "testing time", "properties"]
+minutes = 35
+difficulty = 3

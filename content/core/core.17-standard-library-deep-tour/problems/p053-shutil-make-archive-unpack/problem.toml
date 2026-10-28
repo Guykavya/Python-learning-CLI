@@ -1,0 +1,7 @@
+id = "core.17.p053"
+title = "Archives the easy way: shutil.make_archive and unpack_archive"
+tier = "applied"
+kind = "code"
+topics = ["shutil.make_archive", "shutil.unpack_archive", "tarfile", "zipfile", "archive formats", "extraction filter"]
+minutes = 35
+difficulty = 3

@@ -31,7 +31,7 @@ Unwritten modules show as "not written yet" in `learn syllabus`, and nothing is 
 
 You need **Python 3.11 or newer** (any newer version works). Git is optional: it only
 makes downloading easier and lets `learn` keep a private history of your progress.
-Internet is needed once, to install the three packages the engine uses (PyYAML, pytest, Pygments).
+Internet is needed once, to install the packages the engine uses (PyYAML, pytest, Pygments, and tzdata on Windows).
 
 **1. Get the project.** Either clone it:
 

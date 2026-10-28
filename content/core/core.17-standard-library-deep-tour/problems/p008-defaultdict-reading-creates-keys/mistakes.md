@@ -1,0 +1,7 @@
+- Thinking `if stock["pear"] > 0:` is read-only. Any `d[key]` on a missing key calls the factory and **stores** the result.
+- Thinking `stock.get("plum")` returns `0`. `.get()` ignores the factory and returns `None` (or its own default).
+- Writing `2` for `len(groups)`: `groups["c"]` created a third key.
+- Writing `0` for the total, or `['x']` for the keys: the reads of `y` and `z` created them with 0.
+- Expecting `"w"` to be in `counts` after `plain.get("w", ...)`: `plain` is a separate plain dict.
+- Expecting the error on the `seen[k + "!"]` line itself. The read succeeds; the error comes when the `for` loop asks for the next key.
+- Writing `['a', 'b', 'a!', 'b!']`: the loop stops after the first new key.

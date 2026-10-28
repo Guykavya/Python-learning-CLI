@@ -1,0 +1,8 @@
+- Using `time.time()` to measure how long something took. It is the calendar clock: an automatic clock correction can make a duration negative or too long. Use `perf_counter` (durations) or `monotonic` (timeouts).
+- Calling `time.perf_counter()` inside the methods instead of `self.clock()`. The code then cannot be tested without real waiting.
+- Writing `clock=time.perf_counter()` (with brackets) as the default. That calls it once, when the function is defined, and stores a number, not a clock.
+- Measuring each lap from `start()` instead of from the previous lap.
+- Using `perf_counter()` values as if they were times of day. Their starting point is arbitrary; only differences mean something.
+- Testing with `time.sleep(...)`. Tests become slow and flaky; a fake clock gives exact numbers instantly.
+- Returning the internal list from `laps`: the caller could change the stopwatch's data. Return a copy.
+- Using `>` instead of `>=` in `expired()`, so a deadline is not expired at its exact end time.

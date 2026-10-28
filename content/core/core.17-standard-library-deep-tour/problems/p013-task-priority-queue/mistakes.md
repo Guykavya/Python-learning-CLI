@@ -1,0 +1,6 @@
+- Pushing `(priority, task)`: equal priorities make Python compare the tasks. Dicts raise `TypeError`; strings come out alphabetically instead of first-come-first-served.
+- Using `id(task)` or `random()` as the tie-breaker: it avoids the error but the order is no longer FIFO.
+- Resetting the counter, or making it a class attribute shared by every queue. Each queue needs its own counter in `__init__` (a shared counter still works but is surprising).
+- `pop()` returning the whole tuple instead of `[2]`.
+- `peek` with `min(self._heap)`: correct but O(n); `self._heap[0]` is already the minimum.
+- Sorting the list on every push: O(n log n) per push instead of O(log n).

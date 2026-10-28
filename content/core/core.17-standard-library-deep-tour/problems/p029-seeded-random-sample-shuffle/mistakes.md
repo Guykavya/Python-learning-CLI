@@ -1,0 +1,7 @@
+- `random.seed(seed)` + module functions: repeatable, but it resets the global generator that the rest of the program shares.
+- One `Random` object created at module level: the second call continues the sequence, so the same seed gives a different result.
+- Creating `Random(seed)` inside the dice loop: every roll is the first number of the same sequence.
+- `return random.Random(seed).shuffle(items)`: `shuffle` returns `None`, and it changed the caller's list.
+- `rng.choices(names, k=3)` for winners: it can pick the same person twice. `sample` cannot.
+- `rng.randrange(1, 6)`: the stop value is excluded, so a 6 never comes up.
+- Using `random` for anything secret. The Mersenne Twister can be predicted after seeing 624 outputs.

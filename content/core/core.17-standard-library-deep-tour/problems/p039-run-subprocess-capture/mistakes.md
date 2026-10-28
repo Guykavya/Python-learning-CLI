@@ -1,0 +1,8 @@
+- Starting `"python"` or `"python3"` by name. It may not exist (Windows often has only `py`), or be another Python without your packages. Use `sys.executable`.
+- Passing one string (`"python -c ..."`) or using `shell=True`. The arguments then go through a shell, which splits and interprets them: `x; echo hacked` would run a second command.
+- Forgetting `text=True`: you get `bytes` (`b'hello\n'`), and Windows line ends stay `\r\n`.
+- Forgetting `input=`: a child that reads stdin waits for the keyboard and the program hangs.
+- Leaving out `timeout=`: one stuck child blocks your program forever.
+- Using `check=True` in `run_python`: it raises on the failures the function is supposed to report.
+- Taking `stderr.splitlines()[-1]` without dropping empty lines, or when stderr is empty (`IndexError`).
+- Stripping or otherwise changing stdout in `run_python`; return exactly what the child printed.

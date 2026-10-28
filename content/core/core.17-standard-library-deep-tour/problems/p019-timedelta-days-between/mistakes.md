@@ -1,0 +1,6 @@
+- `(b - a).days` without `abs()`: negative when the arguments come in the other order.
+- Age as `(today - birth).days // 365`: leap days pile up and the answer is off by one in the days before a birthday.
+- Building this year's birthday with `birth.replace(year=today.year)`: for 29 February in a non-leap year this raises `ValueError`.
+- Counting the start day as a business day, so Friday + 1 gives Friday.
+- Using `td.seconds` as the total: it is only the part below one day. `timedelta(hours=26).seconds` is 7200. (`td.total_seconds()` is the full length, as a float.)
+- Forgetting `:02d`, which prints `1d 2:0:5`.

@@ -1,0 +1,7 @@
+id = "core.17.p050"
+title = "A contact book on sqlite3 with parameters"
+tier = "applied"
+kind = "code"
+topics = ["sqlite3", "CREATE TABLE", "parameterised queries", "commit", "row_factory", "IntegrityError", "context managers"]
+minutes = 45
+difficulty = 3

@@ -1,0 +1,7 @@
+id = "core.17.p045"
+title = "Find duplicate files: size first, then hash"
+tier = "applied"
+kind = "code"
+topics = ["hashlib", "sha256", "defaultdict", "grouping", "os.walk", "rglob"]
+minutes = 35
+difficulty = 3

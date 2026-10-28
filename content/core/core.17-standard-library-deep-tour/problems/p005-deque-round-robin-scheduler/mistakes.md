@@ -1,0 +1,6 @@
+- Using a list with `pop(0)`. It works, but every `pop(0)` shifts all the other elements. A scheduler with thousands of jobs slows to a crawl.
+- Always recording a full quantum: the last slice of a job is `min(quantum, remaining)`.
+- Putting a finished job back with 0 work, so it shows up later as `('A', 0)`.
+- Using `appendleft` or `pop()` (from the right): that is a stack, not a queue, and the order is wrong.
+- Mutating the caller's tuples or list. Build your own deque.
+- Forgetting the `quantum < 1` check: with quantum 0 the loop never ends.

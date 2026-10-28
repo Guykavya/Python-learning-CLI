@@ -1,0 +1,7 @@
+id = "core.17.p032"
+title = "comb, perm, gcd, lcm and isqrt"
+tier = "drill"
+kind = "code"
+topics = ["math.comb", "math.perm", "math.gcd", "math.lcm", "math.isqrt", "exact integer maths"]
+minutes = 20
+difficulty = 2

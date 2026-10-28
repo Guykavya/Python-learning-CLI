@@ -1,0 +1,6 @@
+- Using `str.split()`: quoted arguments with spaces are broken apart and the quote characters stay in.
+- Forgetting `comments=True`: `#` and the comment words become arguments.
+- Joining with `" ".join(args)`: arguments with spaces, quotes, `;` or `$` change meaning when the line is split or run again, and an empty argument disappears.
+- Quoting only arguments that contain a space: `;`, `*`, `$` and `'` need quoting too. Let `shlex.quote` decide.
+- Splitting `key=value` with `token.split("=")`: it fails (too many values to unpack) for `url=a=b`. Use `partition` (first `=` only).
+- Catching the `ValueError` for an unclosed quote and returning something half-parsed. Let it propagate.

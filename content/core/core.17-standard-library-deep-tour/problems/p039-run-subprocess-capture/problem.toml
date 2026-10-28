@@ -1,0 +1,7 @@
+id = "core.17.p039"
+title = "Run a child process and capture its output"
+tier = "applied"
+kind = "code"
+topics = ["subprocess.run", "capture_output", "text mode", "stdin input", "returncode", "sys.executable", "sys.argv"]
+minutes = 35
+difficulty = 3

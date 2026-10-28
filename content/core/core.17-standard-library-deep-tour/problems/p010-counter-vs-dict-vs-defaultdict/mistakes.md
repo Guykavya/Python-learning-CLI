@@ -1,0 +1,5 @@
+- Blaming the first loop. `failed[user] += 1` only runs for real failures; the extra keys come from the `if failed[user] >= 3` read in the second loop.
+- Saying a `Counter` behaves like a defaultdict on reads. A Counter returns 0 for a missing key but does not store it.
+- Choosing a defaultdict for configuration. Typos in key names then "work" and return an invented default, which hides bugs.
+- Choosing `Counter` for the word index: an index maps to **lists** of line numbers, not counts.
+- Saying `dict(result)` is needed for JSON. `json.dumps` already accepts dict subclasses; the real reason is missing-key behaviour for the caller.

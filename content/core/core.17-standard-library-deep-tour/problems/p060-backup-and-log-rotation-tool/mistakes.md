@@ -1,0 +1,10 @@
+- Calling `datetime.now()` inside the functions instead of the injected `clock`: the tests (and you) can no longer control time, and names depend on the computer's time zone.
+- Formatting the local time instead of UTC: two machines in different zones would name the same moment differently, and sorting breaks around daylight-saving changes.
+- Sorting backups by modification time: copying or restoring files changes it. The time in the name is the truth.
+- `rotate_backups` with `keep=0`: `backups[:-0]` is `[]`, so nothing is deleted while the caller expected everything to go. Refuse `keep < 1`.
+- Rotating before verifying: a broken new backup then deletes your last good one.
+- Writing the archive directly under its final name: a crash leaves a broken file that looks like a real backup, and rotation may delete good ones to make room for it.
+- Overwriting an existing backup made in the same second: refuse with `FileExistsError`.
+- Splitting manifest lines with `.split()`: names with spaces break. Split once on the two-space separator.
+- Calling `setup_log` repeatedly without removing old handlers: every line is written several times and old files stay open (on Windows, rotation then fails because the file is in use).
+- Logging with f-strings or `print`: the log file must hold the tool's story; the console belongs to the user.

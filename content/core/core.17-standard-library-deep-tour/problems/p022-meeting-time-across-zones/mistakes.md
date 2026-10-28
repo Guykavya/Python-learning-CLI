@@ -1,0 +1,6 @@
+- Hard-coding offsets (`timedelta(hours=-5)` for New York). They are wrong for half the year, and for a few weeks in March the London-New York gap is 4 hours, not 5.
+- Calling `.astimezone()` on a naive datetime. Python then assumes the time is in *this computer's* zone, so the result changes from one machine to another. Reject naive input.
+- Using `datetime.replace(tzinfo=...)` to "convert". `replace` relabels the same wall time with a new zone; it does not move to the same instant. `astimezone` converts.
+- Checking only `local.hour` between 9 and 16. For Kolkata (UTC+5:30) that lets in a slot from 16:30 to 17:30.
+- Returning naive datetimes or local times from `common_hours`. The slots are instants: give them as aware UTC datetimes.
+- Building the slots from a local midnight instead of UTC midnight. The question asks for the 24 hours of the UTC day.

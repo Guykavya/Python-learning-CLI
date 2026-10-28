@@ -1,0 +1,7 @@
+- Running helpers with `"python"` instead of `sys.executable`: on Windows or inside a virtual environment that is often a different interpreter, without your packages.
+- Using `os.environ["NAME"]` for an optional setting: it raises `KeyError` when the variable is missing.
+- Using `os.rmdir` or `os.remove` on a full folder: they only remove an empty folder or a single file.
+- Running a command as one string with `shell=True` or `os.system`: spaces split names, `;` or `&` start new commands, and it is not portable.
+- Forgetting `check=True` (or checking `returncode`): a failed program then looks like a success with empty output.
+- Printing error messages to stdout: they get mixed into the data when the output is piped into a file.
+- Answering only with the module name. The point of the exercise is the *why*.

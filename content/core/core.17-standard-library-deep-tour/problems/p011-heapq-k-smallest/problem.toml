@@ -1,0 +1,7 @@
+id = "core.17.p011"
+title = "heapq: the k smallest and k largest"
+tier = "drill"
+kind = "code"
+topics = ["heapq", "nsmallest", "nlargest", "heapify", "heappop"]
+minutes = 20
+difficulty = 2
