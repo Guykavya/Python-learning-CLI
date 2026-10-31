@@ -1,0 +1,4 @@
+- `f.read().splitlines()` or `f.readlines()`: correct for small files, but the whole file is in memory.
+- Using `"ERROR" in line`. A message can contain the word, and the level of that line is something else.
+- Indexing `parts[2]` without a length check: a blank line raises `IndexError`.
+- Catching `FileNotFoundError` and returning `{}`. The caller would never know the path was wrong.

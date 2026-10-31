@@ -1,0 +1,7 @@
+id = "core.14.p065"
+title = "Order states as objects (the State pattern)"
+tier = "challenge"
+kind = "code"
+topics = ["composition", "delegation", "polymorphism", "inheritance", "custom exceptions", "properties", "state pattern"]
+minutes = 50
+difficulty = 4

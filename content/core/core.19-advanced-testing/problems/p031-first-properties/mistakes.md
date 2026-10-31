@@ -1,0 +1,6 @@
+- Writing only "reverse twice is the original". A function that returns its input unchanged passes it.
+- Checking only that the output is ascending. `return []` is ascending. Add "same elements, same counts".
+- Checking `set(out) == set(xs)` instead of counts: it misses a function that drops duplicates.
+- Calling `xs.sort()` or `xs.append()` inside your own test. It changes the list the bug might have changed and hides the in-place bug.
+- Testing `out[0] == xs[-1]` for empty lists (IndexError). Use `min_size=1` for that property.
+- Forgetting `derandomize=True`: the run can pass today and fail tomorrow on a different random input, and a `.hypothesis` folder appears.

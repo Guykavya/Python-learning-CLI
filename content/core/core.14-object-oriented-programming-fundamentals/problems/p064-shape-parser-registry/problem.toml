@@ -1,0 +1,7 @@
+id = "core.14.p064"
+title = "Parse shapes with a class registry"
+tier = "challenge"
+kind = "code"
+topics = ["abstract base classes", "class decorators", "classmethod", "registry", "custom exceptions", "raise from", "ExceptionGroup", "polymorphism"]
+minutes = 60
+difficulty = 5

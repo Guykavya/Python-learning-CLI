@@ -1,0 +1,5 @@
+- Thinking `"w"` only clears the file at the first `write`. It clears it when the file is opened.
+- Expecting the size to be `4` straight after `f.write`. The text may still be in the buffer.
+- Writing `[Errno 17]` or `FileExistsError` for step 4. The program prints `exists`.
+- Forgetting that a second `read()` returns `""`, because the position is at the end.
+- Thinking `"x"` appends or overwrites. It only creates.

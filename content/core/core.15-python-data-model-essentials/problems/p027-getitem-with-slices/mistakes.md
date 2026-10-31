@@ -1,0 +1,4 @@
+- Returning `self._words[key]` for a slice: you get a plain `list`, not a `Sentence`.
+- Checking `type(key) == int` and rejecting `bool`/numpy-like ints; `isinstance` is friendlier. (`True` as an index is accepted by lists too.)
+- Letting `s['a']` fall through to the list: it raises `TypeError` already, but with a message about lists. Raising your own gives a clearer message (both pass).
+- Forgetting that slices never raise `IndexError`: `s[10:20]` is an empty `Sentence`.

@@ -1,0 +1,7 @@
+- Leaving out `<`: native mode adds alignment padding (24 bytes instead of 20) and uses the machine's byte order, so files differ between computers.
+- Passing a `str` to an `s` code: struct wants **bytes**; encode the name first.
+- Trusting `8s` with long names: struct cuts them to 8 bytes without any error.
+- Checking the name length in characters: `len("ñññññ")` is 5 but it is 10 UTF-8 bytes.
+- Forgetting to strip the `\x00` padding when unpacking: `'pen\x00\x00\x00\x00\x00'` is not `'pen'`.
+- Unpacking `data` instead of `data[:20]` when more bytes follow: `struct.unpack` requires the exact size.
+- Opening the file in text mode: binary data must be read and written with `"rb"` / `"wb"`.

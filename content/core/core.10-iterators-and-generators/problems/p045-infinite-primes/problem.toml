@@ -1,0 +1,7 @@
+id = "core.10.p045"
+title = "An endless stream of primes"
+tier = "challenge"
+kind = "code"
+topics = ["infinite generators", "islice", "takewhile", "dicts", "algorithms"]
+minutes = 45
+difficulty = 4

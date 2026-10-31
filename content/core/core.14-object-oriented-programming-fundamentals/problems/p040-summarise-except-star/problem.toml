@@ -1,0 +1,6 @@
+id = "core.14.p040"
+title = "Run every task, then sort the failures"
+tier = "applied"
+kind = "code"
+topics = ["ExceptionGroup", "except*", "add_note", "exception hierarchies"]
+minutes = 35

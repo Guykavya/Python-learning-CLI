@@ -1,0 +1,6 @@
+id = "core.12.p043"
+title = "Explain: why you must never unpickle unknown data"
+tier = "deep"
+kind = "explain"
+topics = ["pickle", "security", "untrusted data", "json vs pickle"]
+minutes = 20

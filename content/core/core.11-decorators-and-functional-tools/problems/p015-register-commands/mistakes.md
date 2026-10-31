@@ -1,0 +1,5 @@
+- Forgetting `return func`. The module name `add` then becomes `None`.
+- `registry[name](numbers)`: passes one list instead of separate numbers.
+- Using `registry[name]` without a check: an unknown command raises `KeyError` instead of a clear `ValueError`.
+- Silently overwriting a command that is already registered.
+- Using a global table inside `run_command` instead of the `registry` argument.

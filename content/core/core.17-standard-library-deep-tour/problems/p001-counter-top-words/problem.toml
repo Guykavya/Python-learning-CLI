@@ -1,0 +1,7 @@
+id = "core.17.p001"
+title = "Counter: the most common words"
+tier = "drill"
+kind = "code"
+topics = ["collections.Counter", "most_common", "counting"]
+minutes = 15
+difficulty = 1

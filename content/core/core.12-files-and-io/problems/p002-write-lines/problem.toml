@@ -1,0 +1,6 @@
+id = "core.12.p002"
+title = "Write a list of lines to a file"
+tier = "drill"
+kind = "code"
+topics = ["open()", "write mode", "newline", "encoding"]
+minutes = 10

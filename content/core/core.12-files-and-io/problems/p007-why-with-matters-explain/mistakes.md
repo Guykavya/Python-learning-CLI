@@ -1,0 +1,4 @@
+- Saying `write()` saves the data to disk at once. It only fills a buffer.
+- Saying `with` only makes the code shorter. Its real job is the guaranteed cleanup, also on errors.
+- Saying `with` hides or stops the error. The error still goes up after the file is closed.
+- Giving no concrete second problem (handle limits, locked files).

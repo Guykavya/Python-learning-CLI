@@ -1,0 +1,6 @@
+id = "core.12.p029"
+title = "Trace: glob, rglob and fnmatch"
+tier = "applied"
+kind = "trace"
+topics = ["pathlib glob", "rglob", "fnmatch", "wildcards"]
+minutes = 15

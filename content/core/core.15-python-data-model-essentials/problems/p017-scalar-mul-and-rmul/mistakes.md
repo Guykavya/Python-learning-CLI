@@ -1,0 +1,4 @@
+- Defining only `__mul__`: `v * 3` works, but `3 * v` raises `TypeError: unsupported operand type(s) for *: 'int' and 'Vector'`.
+- Not checking the type: `v * v` then fails inside with a confusing error (`unsupported operand ... 'int' and 'Vector'`) or returns nonsense.
+- Raising `TypeError` yourself instead of returning `NotImplemented`.
+- Using `//` in `__truediv__`: `Vector(1, 2) / 2` must be `Vector(0.5, 1.0)`.

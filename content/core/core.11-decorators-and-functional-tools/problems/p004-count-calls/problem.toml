@@ -1,0 +1,6 @@
+id = "core.11.p004"
+title = "@count_calls: state on the wrapper"
+tier = "drill"
+kind = "code"
+topics = ["decorators", "@ syntax", "function attributes", "*args and **kwargs"]
+minutes = 15

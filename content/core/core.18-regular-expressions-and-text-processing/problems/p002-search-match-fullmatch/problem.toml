@@ -1,0 +1,7 @@
+id = "core.18.p002"
+title = "Trace: search vs match vs fullmatch"
+tier = "drill"
+kind = "trace"
+topics = ["re.search", "re.match", "re.fullmatch", "Match.group", "Match.span"]
+minutes = 15
+difficulty = 1

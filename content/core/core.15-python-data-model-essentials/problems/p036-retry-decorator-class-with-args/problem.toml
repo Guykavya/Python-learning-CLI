@@ -1,0 +1,7 @@
+id = "core.15.p036"
+title = "A retry decorator written as a class with arguments"
+tier = "applied"
+kind = "code"
+topics = ["__call__", "decorators with arguments", "class-based decorators", "exceptions", "functools.wraps"]
+minutes = 35
+difficulty = 3

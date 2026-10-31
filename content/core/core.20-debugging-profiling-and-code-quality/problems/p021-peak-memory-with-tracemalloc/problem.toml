@@ -1,0 +1,7 @@
+id = "core.20.p021"
+title = "Peak memory with tracemalloc"
+tier = "applied"
+kind = "code"
+topics = ["tracemalloc", "get_traced_memory", "reset_peak", "list vs generator memory", "try/finally"]
+minutes = 30
+difficulty = 3

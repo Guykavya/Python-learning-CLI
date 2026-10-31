@@ -1,0 +1,7 @@
+id = "core.14.p058"
+title = "Trace: instance dict, class attributes and properties"
+tier = "deep"
+kind = "trace"
+topics = ["attribute lookup", "class attributes", "instance attributes", "properties", "vars", "shadowing", "hasattr", "getattr"]
+minutes = 30
+difficulty = 4

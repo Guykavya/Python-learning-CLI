@@ -1,0 +1,7 @@
+id = "core.11.p024"
+title = "operator tools: pick columns, call methods, follow a path"
+tier = "applied"
+kind = "code"
+topics = ["operator.itemgetter", "operator.methodcaller", "operator.getitem", "functools.reduce"]
+minutes = 30
+difficulty = 3

@@ -1,0 +1,6 @@
+- Opening `path` in `"w"` mode directly. The file is emptied before the new data is ready.
+- Creating the temp file before calling `fn`. If `fn` raises, the temp file is left behind.
+- Cleaning up with a bare `except:` that hides the error. Raise it again.
+- Ignoring `return None` from `fn`. Many update functions change the dict in place.
+- Not handling a missing file. The first call must work with `{}`.
+- Using `tmp.unlink()` without `missing_ok=True`. If the error happened before the temp file existed, `unlink` raises a second error.

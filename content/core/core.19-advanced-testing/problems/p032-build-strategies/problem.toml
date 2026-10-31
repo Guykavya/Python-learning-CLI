@@ -1,0 +1,7 @@
+id = "core.19.p032"
+title = "Build strategies for data shapes"
+tier = "drill"
+kind = "code"
+topics = ["hypothesis", "strategies", "integers", "text", "lists", "dictionaries", "builds", "one_of", "sampled_from"]
+minutes = 30
+difficulty = 2

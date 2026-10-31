@@ -1,0 +1,7 @@
+id = "core.11.p032"
+title = "log_arguments: name every argument with inspect.signature"
+tier = "deep"
+kind = "code"
+topics = ["inspect.signature", "__wrapped__", "functools.wraps", "default arguments", "stacking decorators"]
+minutes = 40
+difficulty = 4

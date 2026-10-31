@@ -1,0 +1,7 @@
+id = "core.18.p003"
+title = "All the numbers in a sentence"
+tier = "drill"
+kind = "code"
+topics = ["re.findall", "quantifiers", "optional sign"]
+minutes = 15
+difficulty = 1

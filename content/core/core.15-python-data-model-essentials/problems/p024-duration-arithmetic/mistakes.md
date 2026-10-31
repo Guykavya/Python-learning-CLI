@@ -1,0 +1,5 @@
+- Returning a `float` from `//`: `a // 2` must give a `Duration`.
+- Returning a `Duration` from `a / b`: dividing two durations is a plain ratio.
+- Allowing negative durations in `__sub__`; the invariant (never negative) must hold after every operation.
+- Formatting minutes as `{minutes}` without `:02d`: `1:2:3` instead of `1:02:03`.
+- Hashing `str(self)` or something other than `seconds`.

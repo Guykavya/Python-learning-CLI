@@ -1,0 +1,7 @@
+id = "core.15.p029"
+title = "A ring buffer that behaves like a container"
+tier = "applied"
+kind = "code"
+topics = ["__len__", "__getitem__", "__iter__", "container protocols", "ring buffer"]
+minutes = 35
+difficulty = 3

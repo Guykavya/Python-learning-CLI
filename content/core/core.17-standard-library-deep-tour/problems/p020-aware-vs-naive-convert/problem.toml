@@ -1,0 +1,7 @@
+id = "core.17.p020"
+title = "zoneinfo: aware vs naive, and converting zones"
+tier = "applied"
+kind = "code"
+topics = ["datetime", "zoneinfo", "aware vs naive", "astimezone", "timezone.utc", "DST"]
+minutes = 30
+difficulty = 3

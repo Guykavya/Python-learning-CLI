@@ -1,0 +1,7 @@
+id = "core.17.p040"
+title = "Timeouts and exit codes"
+tier = "applied"
+kind = "code"
+topics = ["subprocess.run", "timeout", "TimeoutExpired", "returncode", "sys.exit", "signals"]
+minutes = 30
+difficulty = 3

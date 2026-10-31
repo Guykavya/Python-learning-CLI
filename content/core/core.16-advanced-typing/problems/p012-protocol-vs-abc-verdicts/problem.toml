@@ -1,0 +1,7 @@
+id = "core.16.p012"
+title = "Trace: Protocol or ABC, who is accepted?"
+tier = "drill"
+kind = "trace"
+topics = ["Protocol", "ABC", "structural vs nominal typing", "abstract methods", "mypy verdicts"]
+minutes = 15
+difficulty = 3

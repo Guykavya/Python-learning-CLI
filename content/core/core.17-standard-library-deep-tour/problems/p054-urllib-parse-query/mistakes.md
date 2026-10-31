@@ -1,0 +1,7 @@
+- Building query strings by hand (`f"?q={q}"`): a `&` or space in the value breaks the URL or adds fake parameters.
+- Forgetting `doseq=True`: a list is encoded as its text `"['a', 'b']"`.
+- Forgetting `keep_blank_values=True`: keys like `a=` silently disappear.
+- Reading the query with `url.split("?")[1]`: breaks when there is no `?` and keeps the `#fragment`.
+- Using `.netloc` as the host: it contains the port (`localhost:8080`) and keeps the original case.
+- Using `quote(s)` for a single segment: the default `safe="/"` leaves `/` unescaped.
+- Joining API paths with `urljoin`: it drops the last segment of a base without a trailing `/`.

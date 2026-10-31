@@ -1,0 +1,7 @@
+id = "core.13.p016"
+title = "A plugin loader with importlib"
+tier = "applied"
+kind = "code"
+topics = ["importlib", "importlib.util.spec_from_file_location", "dynamic imports", "pathlib", "error handling"]
+minutes = 35
+difficulty = 3

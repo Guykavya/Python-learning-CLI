@@ -1,0 +1,4 @@
+- Accepting every `other` and returning `self + other`: then `5 + v` fails inside with an odd error instead of a clean `TypeError`.
+- Returning `0` or `other` instead of a Vector.
+- Writing `__radd__` that does `other + self`: that calls `__radd__` again, an infinite loop (RecursionError).
+- Comparing with `other is 0` (identity). Use `==`: `0.0 == 0` also works for sum of floats start values.

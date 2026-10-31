@@ -1,0 +1,7 @@
+id = "core.17.p056"
+title = "Logging levels: say the right thing at the right level"
+tier = "drill"
+kind = "code"
+topics = ["logging", "getLogger", "levels", "setLevel", "isEnabledFor", "lazy % formatting"]
+minutes = 25
+difficulty = 2

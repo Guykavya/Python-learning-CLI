@@ -1,0 +1,14 @@
+['Apple']
+['Apple', 'banana', 'Cherry']
+['tart']
+['pie', 'split', 'tart']
+['banana']
+['Apple', 'banana', 'Cherry']
+None
+'pie\nbanana'
+2 3
+['Cherry']
+['t', 't']
+['café', 'naïve']
+['caf', 'na', 've']
+True False

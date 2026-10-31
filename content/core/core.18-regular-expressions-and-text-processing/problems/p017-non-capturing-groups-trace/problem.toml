@@ -1,0 +1,7 @@
+id = "core.18.p017"
+title = "Trace: capturing vs non-capturing groups"
+tier = "drill"
+kind = "trace"
+topics = ["non-capturing groups", "re.findall", "alternation", "re.split"]
+minutes = 15
+difficulty = 2

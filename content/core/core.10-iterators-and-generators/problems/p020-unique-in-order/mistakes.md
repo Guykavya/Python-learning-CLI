@@ -1,0 +1,5 @@
+- `list(set(items))`: removes repeats but loses the order, and is not lazy.
+- Using a list for `seen`: `in` on a list is O(n), so the whole thing becomes O(n^2).
+- Yielding `key(item)` instead of the original item: the caller gets `'ann@x.in'` instead of `'Ann@x.in'`.
+- Storing the item in `seen` but testing `key(item)`, so repeats are never found.
+- Writing `if key:` and then calling `key` on every item even when it is `None`.

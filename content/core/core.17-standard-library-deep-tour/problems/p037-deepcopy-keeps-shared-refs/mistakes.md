@@ -1,0 +1,6 @@
+- Thinking `deepcopy` makes every reference independent (answering `A` as `[0]`). It keeps the internal sharing; it only cuts the links to the original.
+- Expecting `deepcopy` to repair `[[0] * 2] * 2` (`D`). The copy has the same shape, so the same bug.
+- Thinking `deepcopy` of a self-containing list loops forever. `memo` stops it: the copy contains itself (`F`).
+- Answering `H` with `False`. Reusing the same `memo` dict makes the second call return the first copy.
+- Answering `I` with `True` for `p2 is pair`. A tuple that contains a mutable list must be rebuilt.
+- Mixing up `copy.copy` and `deepcopy` in `K`: the shallow copy still holds the original `shared`.

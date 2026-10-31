@@ -1,0 +1,6 @@
+id = "core.16.p020"
+title = "Callable aliases and compose_two"
+tier = "applied"
+kind = "code"
+topics = ["Callable", "type alias", "TypeVar", "generic function", "composition"]
+minutes = 25

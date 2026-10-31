@@ -1,0 +1,6 @@
+id = "core.12.p011"
+title = "List the files with a given suffix"
+tier = "drill"
+kind = "code"
+topics = ["pathlib", "iterdir", "suffix", "sorted"]
+minutes = 12

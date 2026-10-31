@@ -1,0 +1,6 @@
+id = "core.14.p042"
+title = "An order with computed totals"
+tier = "applied"
+kind = "code"
+topics = ["properties", "computed attributes", "setter validation", "class attributes", "encapsulation"]
+minutes = 35

@@ -1,0 +1,6 @@
+- Saying the library should "set a sensible default level": any level or handler a library sets fights with the application's choice.
+- Thinking `NullHandler` hides messages from the application: it only adds a do-nothing handler; the records still propagate to the app's handlers.
+- Configuring logging at import time in the application's modules instead of in `main()`: importing a module should not change global state.
+- Using `log.error(str(e))` instead of `log.exception(...)`: the traceback, the most useful part, is lost.
+- Logging **and** re-raising in every layer: the same error appears five times in the log. Log where you handle it.
+- Forgetting that the root logger's default level is WARNING: without configuration, a library's INFO messages are not shown, which is the right default.

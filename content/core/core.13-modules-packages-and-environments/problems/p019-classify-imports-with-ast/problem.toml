@@ -1,0 +1,7 @@
+id = "core.13.p019"
+title = "Find and classify the imports of a source file"
+tier = "applied"
+kind = "code"
+topics = ["import statements", "sys.stdlib_module_names", "relative imports", "ast module", "sets"]
+minutes = 35
+difficulty = 3

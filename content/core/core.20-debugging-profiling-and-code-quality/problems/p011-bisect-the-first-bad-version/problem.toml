@@ -1,0 +1,7 @@
+id = "core.20.p011"
+title = "Bisect the first bad version"
+tier = "applied"
+kind = "code"
+topics = ["bisection", "git bisect", "binary search", "counting calls"]
+minutes = 25
+difficulty = 3

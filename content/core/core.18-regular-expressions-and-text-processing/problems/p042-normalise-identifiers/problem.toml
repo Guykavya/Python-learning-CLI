@@ -1,0 +1,7 @@
+id = "core.18.p042"
+title = "Validate and normalise identifiers"
+tier = "applied"
+kind = "code"
+topics = ["re.fullmatch", "groups", "character classes", "quantifier ranges", "normalisation", "dedupe"]
+minutes = 30
+difficulty = 3

@@ -1,0 +1,4 @@
+- Defining `__str__` on `Tag` too. It works, but it hides the fallback the problem asks you to see.
+- Writing only `__str__` on `Book`. Then `[b]` shows `<solution.Book object at ...>`, because lists use `repr`.
+- Using `{self.title}` in `__repr__`; the title loses its quotes. Use `!r`.
+- Making `__repr__` call `str(self)` while `__str__` calls `repr(self)`: an endless loop (RecursionError).

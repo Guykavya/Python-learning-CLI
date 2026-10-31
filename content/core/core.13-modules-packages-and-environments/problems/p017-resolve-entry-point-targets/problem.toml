@@ -1,0 +1,7 @@
+id = "core.13.p017"
+title = "Resolve \"module:function\" targets like entry points"
+tier = "applied"
+kind = "code"
+topics = ["importlib.import_module", "getattr", "entry points", "dynamic dispatch", "exceptions"]
+minutes = 30
+difficulty = 3

@@ -1,0 +1,7 @@
+id = "core.17.p041"
+title = "Explain: sys, os, subprocess or shutil?"
+tier = "deep"
+kind = "explain"
+topics = ["sys", "os", "subprocess", "shutil", "choosing a module"]
+minutes = 25
+difficulty = 3

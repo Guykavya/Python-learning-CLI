@@ -1,0 +1,7 @@
+id = "core.16.p005"
+title = "A bounded TypeVar: the longest item"
+tier = "applied"
+kind = "code"
+topics = ["TypeVar bound", "Sized", "Iterable[T]", "bounded generics"]
+minutes = 30
+difficulty = 3

@@ -1,0 +1,8 @@
+id = "core.17.p021"
+title = "Trace: the DST gap and the DST fold"
+tier = "deep"
+kind = "trace"
+topics = ["zoneinfo", "daylight saving time", "fold", "aware datetimes", "timedelta arithmetic"]
+minutes = 35
+difficulty = 4
+assessment = "trace"

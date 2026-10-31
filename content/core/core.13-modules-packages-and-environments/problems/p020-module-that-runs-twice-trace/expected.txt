@@ -1,0 +1,9 @@
+loading counter as __main__
+loading counter as counter
+loading helper
+main sees 1
+helper sees 1
+helper sees 2
+same module? False
+main hits: ['main']
+counter hits: ['helper', 'helper']

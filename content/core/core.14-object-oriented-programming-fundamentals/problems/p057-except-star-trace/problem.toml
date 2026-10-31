@@ -1,0 +1,7 @@
+id = "core.14.p057"
+title = "Trace: nested exception groups through except*"
+tier = "deep"
+kind = "trace"
+topics = ["ExceptionGroup", "except*", "exception hierarchies", "nested exception groups", "finally"]
+minutes = 35
+difficulty = 5

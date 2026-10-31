@@ -1,0 +1,6 @@
+- `skip` for the known bug: nobody ever notices when the bug is fixed. `xfail(strict=True)` fails loudly when it starts to pass.
+- `xfail` without `strict=True`: an unexpected pass shows as `xpassed`, which nobody reads.
+- An unconditional `skip` for an environment problem: the test is then skipped on machines where it could run. Use `skipif` with a condition.
+- Deleting the failing assertions to make the run green. That removes the test, it does not mark it.
+- Missing `reason=`: a report that says "skipped" without why is useless in three months.
+- Mis-spelling the custom marker (`@pytest.mark.slwo`): pytest only warns, and `-m "not slow"` still runs the test.

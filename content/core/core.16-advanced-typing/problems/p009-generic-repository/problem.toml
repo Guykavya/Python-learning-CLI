@@ -1,0 +1,7 @@
+id = "core.16.p009"
+title = "A generic in-memory Repository"
+tier = "applied"
+kind = "code"
+topics = ["Generic[K, V]", "generic container", "K and V", "V | None", "Callable[[V], bool]"]
+minutes = 35
+difficulty = 3

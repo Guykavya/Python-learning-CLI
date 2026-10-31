@@ -1,0 +1,7 @@
+id = "core.19.p012"
+title = "Write a fixture factory with cleanup"
+tier = "applied"
+kind = "code"
+topics = ["factory fixture", "yield + cleanup list", "fixture returning a function"]
+minutes = 30
+difficulty = 3

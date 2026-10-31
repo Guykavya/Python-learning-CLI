@@ -1,0 +1,6 @@
+id = "core.12.p013"
+title = "Trace: what JSON does to Python values"
+tier = "drill"
+kind = "trace"
+topics = ["json", "dumps", "loads", "ensure_ascii", "sort_keys"]
+minutes = 15

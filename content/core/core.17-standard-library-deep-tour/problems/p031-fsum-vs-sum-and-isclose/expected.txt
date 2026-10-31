@@ -1,0 +1,13 @@
+A 0.9999999999999999
+B 1.0
+C False
+D True
+E 0.30000000000000004
+F False
+G False
+H True
+I 0.0
+J 1.0
+K True
+L 2.67
+M -1 0 0 2 2

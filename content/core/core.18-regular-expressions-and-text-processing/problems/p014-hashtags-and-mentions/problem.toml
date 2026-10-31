@@ -1,0 +1,7 @@
+id = "core.18.p014"
+title = "Extract hashtags and mentions"
+tier = "applied"
+kind = "code"
+topics = ["re.findall", "\\B non-boundary", "capturing groups", "dedupe keeping order"]
+minutes = 25
+difficulty = 2

@@ -1,0 +1,7 @@
+id = "core.18.p011"
+title = "Trace: anchors ^ $ \\A \\Z and MULTILINE"
+tier = "drill"
+kind = "trace"
+topics = ["anchors", "^ and $", "\\A and \\Z", "re.MULTILINE"]
+minutes = 15
+difficulty = 2

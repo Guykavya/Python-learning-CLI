@@ -1,0 +1,4 @@
+- Saying `map` returns a list. That was true in Python 2, not in Python 3.
+- Saying the second call is empty because `nums` was changed. `nums` is untouched; only the iterator is used up.
+- Claiming one style is always faster. The difference is small; choose by readability.
+- Mixing up which part of the comprehension filters (`if ...` at the end) and which part transforms (the front).

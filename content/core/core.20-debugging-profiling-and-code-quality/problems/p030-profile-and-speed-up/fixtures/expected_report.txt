@@ -1,0 +1,38 @@
+SALES REPORT
+orders: 375
+skipped: 25
+revenue: 228335
+
+BY MONTH
+2025-01  47050
+2025-02  47018
+2025-03  41662
+2025-04  35918
+2025-05  25757
+2025-06  30930
+
+TOP PRODUCTS
+  1. P007  Stapler (stationery)  54332
+  2. P012  Paper clips (stationery)  40269
+  3. P016  Keyboard (electronics)  28443
+  4. P013  Desk lamp (electronics)  19461
+  5. P022  Scissors (stationery)  10750
+  6. P004  Eraser (stationery)  9250
+  7. P019  Backpack (bags)  8750
+  8. P008  Glue stick (stationery)  6840
+  9. P002  Red pen (stationery)  6660
+ 10. P017  Headphones (electronics)  5940
+ 11. P021  Marker (stationery)  5640
+ 12. P009  Ruler (stationery)  5400
+ 13. P023  Folder (stationery)  4590
+ 14. P006  Notebook A4 (stationery)  4560
+ 15. P010  Highlighter (stationery)  4410
+ 16. P024  Tape (stationery)  3900
+ 17. P003  Pencil (stationery)  3300
+ 18. P001  Blue pen (stationery)  2000
+ 19. P014  USB cable (electronics)  920
+ 20. P011  Sticky notes (stationery)  820
+ 21. P020  Calculator (electronics)  800
+ 22. P018  Water bottle (bags)  640
+ 23. P005  Notebook A5 (stationery)  330
+ 24. P015  Mouse (electronics)  330

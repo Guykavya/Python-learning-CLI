@@ -1,0 +1,7 @@
+id = "core.20.p005"
+title = "Your own breakpointhook"
+tier = "drill"
+kind = "code"
+topics = ["breakpoint()", "sys.breakpointhook", "sys.__breakpointhook__", "frames", "f_locals"]
+minutes = 20
+difficulty = 3

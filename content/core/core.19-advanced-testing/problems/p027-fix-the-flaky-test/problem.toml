@@ -1,0 +1,8 @@
+id = "core.19.p027"
+title = "Fix the flaky test"
+tier = "deep"
+kind = "code"
+topics = ["flaky tests", "test isolation", "determinism", "seeding", "injecting time"]
+minutes = 40
+difficulty = 4
+assessment = "fix"

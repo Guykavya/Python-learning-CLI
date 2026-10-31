@@ -1,0 +1,5 @@
+- Keeping the three old tests **and** adding the table. The old copies are the problem.
+- Rows for only the "happy" shape of each kind. Isosceles with the equal sides in the first two positions is correct even in the buggy `a == b` version.
+- `ids` with a different length than the rows: pytest raises an error at collection time.
+- Reusing the same id twice: pytest quietly makes them unique (`flat-line0`, `flat-line1`), which makes the report confusing.
+- Writing `expected` first and the sides second in the table but the other way in the argument string: the names must match the order of the tuple fields.

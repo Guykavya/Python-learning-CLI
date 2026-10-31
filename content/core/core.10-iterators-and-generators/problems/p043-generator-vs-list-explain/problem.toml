@@ -1,0 +1,7 @@
+id = "core.10.p043"
+title = "Explain: a generator or a list?"
+tier = "deep"
+kind = "explain"
+topics = ["generator expression", "list comprehension", "memory", "sys.getsizeof", "design"]
+minutes = 20
+difficulty = 2

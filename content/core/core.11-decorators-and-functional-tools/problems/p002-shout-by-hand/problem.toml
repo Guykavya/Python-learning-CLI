@@ -1,0 +1,6 @@
+id = "core.11.p002"
+title = "A decorator by hand, without @"
+tier = "drill"
+kind = "code"
+topics = ["decorators", "wrapper functions", "closures"]
+minutes = 15

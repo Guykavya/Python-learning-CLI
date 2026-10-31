@@ -1,0 +1,7 @@
+id = "core.18.p038"
+title = "Trace: lookbehind must have a fixed width"
+tier = "deep"
+kind = "trace"
+topics = ["lookbehind", "negative lookbehind", "re.error", "fixed-width rule", "findall"]
+minutes = 20
+difficulty = 3

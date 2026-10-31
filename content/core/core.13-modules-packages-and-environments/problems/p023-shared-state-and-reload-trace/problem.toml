@@ -1,0 +1,6 @@
+id = "core.13.p023"
+title = "Trace: shared module state, from-imports and reload"
+tier = "deep"
+kind = "trace"
+topics = ["module caching", "sys.modules", "from-import bindings", "importlib.reload", "global"]
+minutes = 25

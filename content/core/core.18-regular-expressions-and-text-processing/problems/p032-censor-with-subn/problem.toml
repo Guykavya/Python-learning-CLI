@@ -1,0 +1,7 @@
+id = "core.18.p032"
+title = "Censor words and count them with subn"
+tier = "drill"
+kind = "code"
+topics = ["re.subn", "function replacement", "re.escape", "word boundaries", "IGNORECASE"]
+minutes = 20
+difficulty = 2

@@ -1,0 +1,7 @@
+- Importing the stub (`import geometry`). A `.pyi` file is not meant to run, and it has no function bodies.
+- Using `ast.walk` and mixing methods with functions: `Shape.area` and `area` must be different keys.
+- Rebuilding the parameter list by hand and forgetting `*`, `/`, defaults, `*args` or `**kwargs`. `ast.unparse(node.args)` does it all.
+- Forgetting `ast.AsyncFunctionDef`: `async def` is a different node class than `FunctionDef`.
+- Storing only one signature per name, so the first `parse` overload is overwritten by the second.
+- Calling `self` untyped: it never needs an annotation. And counting `-> None` as "no annotation" because `None` looks empty: `node.returns` is a node, not `None`.
+- Forgetting `*args`, `**kwargs` and keyword-only parameters when looking for missing annotations.

@@ -1,0 +1,7 @@
+id = "core.17.p055"
+title = "A tiny JSON server and client on 127.0.0.1"
+tier = "challenge"
+kind = "code"
+topics = ["http.server", "BaseHTTPRequestHandler", "HTTPServer", "threading", "urllib.request", "urlopen", "HTTPError", "timeouts", "JSON over HTTP"]
+minutes = 60
+difficulty = 4

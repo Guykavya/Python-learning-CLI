@@ -1,0 +1,7 @@
+id = "core.15.p013"
+title = "Make objects sortable with __lt__"
+tier = "drill"
+kind = "code"
+topics = ["__lt__", "sorted", "ordering"]
+minutes = 15
+difficulty = 2

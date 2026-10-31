@@ -1,0 +1,7 @@
+id = "core.16.p001"
+title = "A TypeVar that keeps the element type"
+tier = "drill"
+kind = "code"
+topics = ["TypeVar", "generic functions", "Sequence[T]", "T | None"]
+minutes = 20
+difficulty = 2

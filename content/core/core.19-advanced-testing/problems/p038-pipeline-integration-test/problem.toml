@@ -1,0 +1,7 @@
+id = "core.19.p038"
+title = "An integration test across a pipeline"
+tier = "applied"
+kind = "code"
+topics = ["integration tests", "tmp_path", "pipelines", "boundary inputs", "mutation testing"]
+minutes = 40
+difficulty = 3

@@ -1,0 +1,7 @@
+id = "core.17.p049"
+title = "Trace: byte order, signedness and padding in struct"
+tier = "deep"
+kind = "trace"
+topics = ["struct", "endianness", "signed vs unsigned", "alignment padding", "bytes.hex", "int.from_bytes"]
+minutes = 25
+difficulty = 4

@@ -1,0 +1,7 @@
+id = "core.14.p051"
+title = "Fix the diamond that initialises its base twice"
+tier = "deep"
+kind = "code"
+topics = ["diamond inheritance", "super()", "MRO", "cooperative multiple inheritance", "class attributes", "**kwargs"]
+minutes = 35
+difficulty = 4

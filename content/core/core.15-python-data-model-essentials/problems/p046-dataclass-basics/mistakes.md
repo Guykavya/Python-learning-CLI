@@ -1,0 +1,5 @@
+- Writing `x = 0` without an annotation: it is a plain class attribute, **not** a field, so `Point(1, 2)` fails.
+- Putting a field without a default after one with a default (`qty: int = 0` then `name: str`): `TypeError: non-default argument follows default argument`.
+- Forgetting the parentheses-free decorator form: `@dataclass()` also works, but `@dataclass` is the usual one.
+- Writing `self` annotations or an `__init__` too: you then override the generated one and defeat the purpose.
+- Expecting `int` to be enforced: `Point("a")` works, annotations are not checked.

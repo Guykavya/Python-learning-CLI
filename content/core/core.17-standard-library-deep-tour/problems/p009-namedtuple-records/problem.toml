@@ -1,0 +1,7 @@
+id = "core.17.p009"
+title = "namedtuple: light, readable records"
+tier = "applied"
+kind = "code"
+topics = ["collections.namedtuple", "_replace", "_asdict", "_make", "defaults"]
+minutes = 25
+difficulty = 2

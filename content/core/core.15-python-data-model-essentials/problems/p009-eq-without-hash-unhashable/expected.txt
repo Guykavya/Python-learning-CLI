@@ -1,0 +1,7 @@
+None
+True True
+error: unhashable type: 'P'
+error: P cannot be a dict key
+2 True
+False True
+error: S cannot be a set element

@@ -1,0 +1,6 @@
+- Calling `Document(self.title, ...)` inside the copy methods: a subclass becomes a plain `Document`, and attributes set outside `__init__` are lost.
+- Forgetting `memo[id(self)] = new` before copying the attributes: with A -> B -> A the copy of B points to a second, different copy of A (or the copy never ends).
+- Calling `copy.deepcopy(value)` without `memo`: shared objects are copied twice, and cycles recurse until `RecursionError`.
+- Letting `deepcopy` clone `owner`. A deep copy is not "copy everything"; it is "copy what the object owns".
+- Copying `_cache`: the copy then reports stale results after it is changed, or worse, shares the cache dict with the original.
+- In `__copy__`, sharing `lines` (the default): editing the copy edits the original.

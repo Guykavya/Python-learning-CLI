@@ -1,0 +1,6 @@
+id = "core.14.p028"
+title = "Savings and checking accounts"
+tier = "applied"
+kind = "code"
+topics = ["inheritance", "overriding", "super()", "template method", "validation"]
+minutes = 35

@@ -1,0 +1,6 @@
+id = "core.10.p033"
+title = "Explain: the total that became zero"
+tier = "applied"
+kind = "explain"
+topics = ["generator expressions", "consumed once", "list vs generator"]
+minutes = 20

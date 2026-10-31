@@ -1,0 +1,4 @@
+- Defining `__eq__` only: the class becomes unhashable and `d[HeaderName('a')]` raises `TypeError: unhashable type`.
+- Hashing `self.text` but comparing `casefold()`ed text. Equal keys then land in different buckets and the dict stores both.
+- Using `.lower()`: `"STRASSE".lower()` is not equal to `"straße".lower()`, but their `casefold()`s are.
+- Returning `True` for `HeaderName('a') == 'A'`. That would break the rule `a == b` implies equal hashes unless you also hash like the string.

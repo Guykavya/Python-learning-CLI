@@ -1,0 +1,6 @@
+- Writing into the current folder or a fixed `/tmp/x.csv`: tests then share files and leave litter.
+- Only one category in every file, so "overwrites instead of adds" and "counts rows" look correct.
+- Using amounts like `10` and `5` only: `1.0 + 2.0` never shows the float rounding problem.
+- Forgetting the blank-amount row **and** the zero row. They are opposite bugs (skip too little / too much).
+- Comparing floats with `==` against sums you did not round by hand. Here the code rounds, so `0.3` is exact.
+- Passing `str(path)` and `Path` inconsistently; both work with `open`.

@@ -1,0 +1,7 @@
+- Writing `Json = dict[str, Json] | ...` as a plain assignment: `NameError: name 'Json' is not defined`. Use the `type` statement.
+- Writing `type Json = dict | list | str` without the inner `Json`. It is not recursive any more; the tests want the union to mention `Json`.
+- Iterating over a `str` in `count_leaves`: it is itself a sequence, and the recursion would never end (`"a"` contains `"a"`).
+- Counting the dict keys as well as the values.
+- Treating `None` as "no leaf". `None` is a valid JSON null and counts as 1.
+- `scale` that edits `m` in place (`row[i] *= k`): the tests require a new matrix and an untouched input.
+- Using `math.sqrt(x**2 + y**2)` is fine, but forgetting to subtract the points first is a common slip.

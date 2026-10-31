@@ -1,0 +1,7 @@
+id = "core.14.p052"
+title = "Mangle a name like Python does"
+tier = "deep"
+kind = "code"
+topics = ["name mangling", "private attributes", "encapsulation conventions", "string methods"]
+minutes = 25
+difficulty = 3

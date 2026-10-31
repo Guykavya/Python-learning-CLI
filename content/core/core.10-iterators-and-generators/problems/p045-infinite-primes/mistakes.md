@@ -1,0 +1,6 @@
+- Testing divisors with `p * p < n`: then 4, 9, 25 and other prime squares count as primes.
+- Trying every number from 2 to n - 1 as a divisor: correct, but far too slow.
+- Using `filter(lambda p: p < high, primes())` in `primes_between`: `filter` never stops on an infinite stream. `takewhile` stops at the first failure.
+- `islice(primes(), n)` and taking the first item, or an off-by-one so `nth_prime(1)` is 3.
+- Starting the stream at 1, or forgetting that 2 is prime.
+- In `twin_primes`, building a list of all primes first: the stream is infinite.

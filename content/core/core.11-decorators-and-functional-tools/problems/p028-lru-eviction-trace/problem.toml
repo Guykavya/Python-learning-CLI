@@ -1,0 +1,7 @@
+id = "core.11.p028"
+title = "Trace: lru_cache with a small maxsize"
+tier = "deep"
+kind = "trace"
+topics = ["functools.lru_cache", "maxsize", "least recently used", "cache_info", "cache keys"]
+minutes = 20
+difficulty = 3

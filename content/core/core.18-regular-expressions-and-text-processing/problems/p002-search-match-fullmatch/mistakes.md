@@ -1,0 +1,4 @@
+- Thinking `re.match` searches the whole string. It only tries position 0; that is why `"concat"` gives `None`.
+- Thinking `re.search` returns the longest or the last match. It returns the **first** place the pattern fits (`12`, not `345`).
+- Writing `False` for an empty match. An empty match is still a Match object, and Match objects are truthy.
+- Giving `(4, 6)` for the span of `boo`. The end index is one **past** the last character, like slicing: `s[4:7] == "boo"`.

@@ -1,0 +1,7 @@
+id = "core.17.p012"
+title = "heapq.merge: merge sorted log files lazily"
+tier = "applied"
+kind = "code"
+topics = ["heapq.merge", "lazy iteration", "key functions", "files"]
+minutes = 25
+difficulty = 3

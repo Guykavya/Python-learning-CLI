@@ -1,0 +1,7 @@
+id = "core.15.p014"
+title = "total_ordering for playing cards"
+tier = "applied"
+kind = "code"
+topics = ["total_ordering", "__eq__", "__lt__", "__hash__"]
+minutes = 20
+difficulty = 3

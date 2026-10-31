@@ -1,0 +1,6 @@
+A pen 30 0
+B pen 30 30
+C book 30 30
+D bag 900 150
+E ink 5 1055
+result 1055

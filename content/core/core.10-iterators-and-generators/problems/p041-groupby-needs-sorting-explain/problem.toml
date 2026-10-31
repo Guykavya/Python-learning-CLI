@@ -1,0 +1,7 @@
+id = "core.10.p041"
+title = "Explain: why groupby needs sorted input"
+tier = "deep"
+kind = "explain"
+topics = ["itertools.groupby", "sorting", "shared iterator", "lazy evaluation"]
+minutes = 20
+difficulty = 3

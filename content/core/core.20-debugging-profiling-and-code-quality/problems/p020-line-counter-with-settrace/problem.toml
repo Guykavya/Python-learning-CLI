@@ -1,0 +1,7 @@
+id = "core.20.p020"
+title = "A line counter with settrace"
+tier = "applied"
+kind = "code"
+topics = ["sys.settrace", "sys.gettrace", "frame objects", "code objects", "line profiling", "try/finally"]
+minutes = 40
+difficulty = 4

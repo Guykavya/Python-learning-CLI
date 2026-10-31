@@ -1,0 +1,6 @@
+- Calling `g.send(10)` before `next(g)`. A just-started generator raises `TypeError: can't send non-None value to a just-started generator`.
+- Writing `if not received:` for the reset. Then sending `0` resets the average. Check `received is None`.
+- Resetting `total` but not `count` (or the other way round).
+- Using `//`, which gives a whole number.
+- Keeping `total` in a global variable, so two generators mix their numbers.
+- Putting two `yield`s in the loop (one to give, one to receive). Then every second `send` is lost.

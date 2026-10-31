@@ -1,0 +1,7 @@
+id = "core.19.p017"
+title = "patch as decorator and context manager"
+tier = "applied"
+kind = "code"
+topics = ["unittest.mock.patch", "decorator", "context manager", "where to patch"]
+minutes = 30
+difficulty = 3

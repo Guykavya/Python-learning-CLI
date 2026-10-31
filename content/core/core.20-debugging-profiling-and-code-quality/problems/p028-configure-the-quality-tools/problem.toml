@@ -1,0 +1,7 @@
+id = "core.20.p028"
+title = "Configure the quality tools"
+tier = "drill"
+kind = "code"
+topics = ["pyproject.toml", "ruff configuration", "mypy configuration", ".pre-commit-config.yaml", "tomllib", "YAML"]
+minutes = 30
+difficulty = 2

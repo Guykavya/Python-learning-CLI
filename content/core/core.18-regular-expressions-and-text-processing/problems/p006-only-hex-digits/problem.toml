@@ -1,0 +1,7 @@
+id = "core.18.p006"
+title = "Character class basics: only hex digits"
+tier = "drill"
+kind = "code"
+topics = ["character classes", "ranges", "re.fullmatch", "validation"]
+minutes = 10
+difficulty = 1

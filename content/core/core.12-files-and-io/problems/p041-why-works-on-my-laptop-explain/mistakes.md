@@ -1,0 +1,5 @@
+- Saying the default is always UTF-8. It depends on the system (and on the Python version).
+- Saying a BOM is a "bug in the file". It is a legal marker; you must choose the right encoding to handle it.
+- Saying `newline=""` removes line ends. It keeps them as they are.
+- Mixing up the direction: on read `\r\n` becomes `\n`; on write `\n` becomes the system ending.
+- Giving no rule at the end, only a description of the problem.

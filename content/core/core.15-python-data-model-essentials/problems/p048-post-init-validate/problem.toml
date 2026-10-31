@@ -1,0 +1,7 @@
+id = "core.15.p048"
+title = "Validate and derive fields in __post_init__"
+tier = "deep"
+kind = "code"
+topics = ["__post_init__", "dataclasses.InitVar", "field(init=False)", "validation", "frozen dataclass"]
+minutes = 40
+difficulty = 4

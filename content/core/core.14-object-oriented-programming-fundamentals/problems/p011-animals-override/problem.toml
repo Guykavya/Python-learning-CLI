@@ -1,0 +1,7 @@
+id = "core.14.p011"
+title = "Animals: inherit and override"
+tier = "drill"
+kind = "code"
+topics = ["inheritance", "overriding", "template method", "isinstance"]
+minutes = 15
+difficulty = 1

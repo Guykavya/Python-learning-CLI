@@ -1,0 +1,5 @@
+- Running the tests in file order (`test_letter[x]`, `test_letter[y]`, then `test_number...`). Pytest regroups them by the module-scoped parameter.
+- Forgetting the autouse fixtures: `tick` appears around **every** run, even `test_plain`, which names no fixture.
+- Counting `test_number` as 2 runs. It is 2 x 2 = 4: its own `n` and the parameters of `letter` through `number`.
+- Putting `letter x down` after the first `y` run. Because the groups are separate, `x` is torn down before `y` is built.
+- Putting `module autouse down` before `letter y down`. `banner` was set up first, so it is torn down last.

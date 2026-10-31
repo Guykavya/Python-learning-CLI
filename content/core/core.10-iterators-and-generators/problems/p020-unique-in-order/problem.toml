@@ -1,0 +1,6 @@
+id = "core.10.p020"
+title = "Remove repeats from a stream, keeping order"
+tier = "applied"
+kind = "code"
+topics = ["generators", "sets", "key functions"]
+minutes = 20

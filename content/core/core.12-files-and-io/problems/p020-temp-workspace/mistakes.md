@@ -1,0 +1,5 @@
+- Using `tempfile.mkdtemp()` without deleting the folder. It stays on disk forever.
+- Writing `work.txt` in the current folder instead of the temporary one.
+- Returning the path of a folder that is still there, because the code runs after the `with`, or never used `with`.
+- Forgetting the file must exist while you read it back: do the read inside the `with` block.
+- Returning lines with the newline still attached.

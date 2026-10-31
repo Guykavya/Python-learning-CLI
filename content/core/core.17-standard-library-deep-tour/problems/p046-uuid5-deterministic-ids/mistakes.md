@@ -1,0 +1,7 @@
+- Using `uuid4` for `user_id`: the id changes on every run, so you can never find the user again.
+- Using `uuid1`: it is built from the computer's MAC address and the time, so it leaks information and is not repeatable.
+- Forgetting to normalise: `Kavya@x.com` and `kavya@x.com` become two different users.
+- Returning the `UUID` object instead of `str(...)`: equal-looking but not equal to a string.
+- Trusting `uuid.UUID(text)` alone as a format check: it also accepts braces, `urn:uuid:` and no hyphens.
+- Letting `ValueError` escape from `is_canonical_uuid`: a checker function should answer `False`, not crash.
+- Using a UUID4 as a **security token**: it is unique but use `secrets.token_urlsafe` for secrets; that is what it is made for.

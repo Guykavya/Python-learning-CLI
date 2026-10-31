@@ -1,0 +1,4 @@
+- Printing 7 for the byte count. Characters and bytes are different things once a character is not ASCII.
+- Writing `b'caf\xe9'` for the first five bytes. That is Latin-1. UTF-8 uses two bytes for `é`: `\xc3\xa9`.
+- Forgetting that `print` of bytes shows the `b'...'` form, with the escapes.
+- Thinking Latin-1 can hold `₹`. It has only 256 characters.

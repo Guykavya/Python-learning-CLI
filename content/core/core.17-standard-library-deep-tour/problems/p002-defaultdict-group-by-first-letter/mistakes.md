@@ -1,0 +1,5 @@
+- Writing `defaultdict([])` or `defaultdict(0)`. The argument is a **factory** (something callable), not a default value: `defaultdict(list)`, `defaultdict(int)`.
+- Returning the defaultdict itself. It prints almost the same, but a caller's typo `result["z"]` now silently creates `"z": []`.
+- Lower-casing the stored word as well as the key. Only the grouping key is lower-case.
+- Forgetting to skip `""`: `""[0]` raises `IndexError`.
+- Reading `groups[key]` just to check it (for example `if groups[key]:`). On a defaultdict that read creates the key. Use `key in groups`.

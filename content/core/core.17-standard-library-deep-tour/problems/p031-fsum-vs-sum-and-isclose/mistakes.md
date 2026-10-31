@@ -1,0 +1,8 @@
+- Writing `A 1.0`. Repeated `+` collects rounding error; only `fsum` (or a compensated method) brings it back to `1.0`.
+- Expecting `F` to be `True` because "fsum is exact". `fsum` is exact about the *adding*; the stored `0.1` and `0.2` are already not exact.
+- Answering `G` with `True`. With the default `abs_tol=0.0`, `isclose(x, 0.0)` is `False` for every non-zero `x`.
+- Writing `I 1.0`. In the plain loop the `1.0` is swallowed by `1e16`.
+- Writing `L 2.68`. The stored value is just below the halfway point.
+- Writing `round(2.5)` as `3`. Python rounds exact halves to the even integer ("banker's rounding").
+- Writing `ceil(-0.5)` as `-0` or `-1`. It is `0` (the smallest integer that is >= -0.5).
+- Using `sum()` on your own machine to check `A` or `I`: since Python 3.12 `sum()` compensates and gives `1.0` for both.

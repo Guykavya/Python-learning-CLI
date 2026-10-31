@@ -1,0 +1,10 @@
+- Binding to `""` or `"0.0.0.0"`: the server is then reachable from the whole network. Use `"127.0.0.1"`.
+- Calling `serve_forever()` in the main thread: it never returns, so your code after it never runs.
+- Calling `server.shutdown()` when `serve_forever` was never started: it waits forever. And forgetting `server_close()` keeps the port busy.
+- Calling `shutdown()` from inside a handler: the handler runs in the serving thread, which deadlocks waiting for itself.
+- Forgetting `Content-Length` or `end_headers()`: the client waits for more data or misreads the answer.
+- Writing a `str` to `self.wfile`: it needs bytes, so encode the JSON.
+- `self.rfile.read()` without a length: it waits for the client to close the connection, which it never does.
+- Not catching `HTTPError`: a 404 is a normal answer for an API, not a crash.
+- Leaving out `timeout=`: one silent server freezes your whole program.
+- Using `self.path` directly as the key: it still contains `?query` and `%20` escapes.

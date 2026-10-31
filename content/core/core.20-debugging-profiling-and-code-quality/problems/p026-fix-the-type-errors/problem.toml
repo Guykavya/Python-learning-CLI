@@ -1,0 +1,7 @@
+id = "core.20.p026"
+title = "Fix the type errors"
+tier = "applied"
+kind = "code"
+topics = ["mypy", "reading type checker output", "Optional / X | None", "narrowing with is None", "typing.get_type_hints"]
+minutes = 30
+difficulty = 3

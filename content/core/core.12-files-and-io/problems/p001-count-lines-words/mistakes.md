@@ -1,0 +1,4 @@
+- Counting `text.split("\n")`. A file that ends with `\n` then has one extra empty line.
+- Using `split(" ")` for words. Tabs, newlines and double spaces then give wrong counts.
+- Forgetting `encoding="utf-8"`. On some systems the default encoding is not UTF-8 and `é` breaks.
+- Opening in `"rb"` mode. Then `len` counts bytes, and `é` counts as 2.

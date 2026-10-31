@@ -1,0 +1,5 @@
+- Splitting lines on commas: `"Doe, Jane"` breaks into two fields.
+- Forgetting `newline=""` when opening. Quoted fields with line breaks are then read wrongly.
+- Forgetting that all cells are strings: you must call `float`.
+- `float("")` raises `ValueError`. Skip blank cells first.
+- Starting the sum at `0`: the result for an empty column would be `int`, not `float`.

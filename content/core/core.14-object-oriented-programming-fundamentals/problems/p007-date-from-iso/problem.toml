@@ -1,0 +1,7 @@
+id = "core.14.p007"
+title = "A date with an alternative constructor"
+tier = "drill"
+kind = "code"
+topics = ["classmethod", "staticmethod", "alternative constructors", "validation"]
+minutes = 25
+difficulty = 2

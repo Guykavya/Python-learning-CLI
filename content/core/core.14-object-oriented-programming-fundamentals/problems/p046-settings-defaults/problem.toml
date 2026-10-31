@@ -1,0 +1,6 @@
+id = "core.14.p046"
+title = "Settings with class-level defaults"
+tier = "applied"
+kind = "code"
+topics = ["class attributes", "instance attributes", "attribute lookup", "inheritance", "classmethod", "**kwargs"]
+minutes = 35

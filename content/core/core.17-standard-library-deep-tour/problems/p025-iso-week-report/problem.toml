@@ -1,0 +1,7 @@
+id = "core.17.p025"
+title = "Weekly report by ISO week"
+tier = "applied"
+kind = "code"
+topics = ["datetime.date", "isocalendar", "fromisocalendar", "grouping", "date formatting"]
+minutes = 30
+difficulty = 3

@@ -1,0 +1,7 @@
+id = "core.15.p022"
+title = "A Fraction class"
+tier = "applied"
+kind = "code"
+topics = ["__add__", "__radd__", "__eq__", "__hash__", "__lt__", "operators"]
+minutes = 35
+difficulty = 4

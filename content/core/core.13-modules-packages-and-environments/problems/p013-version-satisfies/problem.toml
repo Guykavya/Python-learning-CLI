@@ -1,0 +1,6 @@
+id = "core.13.p013"
+title = "Does a version satisfy a specifier?"
+tier = "applied"
+kind = "code"
+topics = ["version specifiers", "dependency pinning", "tuple comparison", "string parsing"]
+minutes = 25

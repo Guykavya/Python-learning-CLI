@@ -1,0 +1,7 @@
+id = "core.14.p020"
+title = "Turn low-level errors into a ConfigError with raise from"
+tier = "drill"
+kind = "code"
+topics = ["exception chaining", "raise from", "__cause__", "custom exceptions"]
+minutes = 20
+difficulty = 2

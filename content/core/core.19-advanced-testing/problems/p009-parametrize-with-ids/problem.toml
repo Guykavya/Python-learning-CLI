@@ -1,0 +1,7 @@
+id = "core.19.p009"
+title = "Write tests: parametrize with ids"
+tier = "drill"
+kind = "code"
+topics = ["@pytest.mark.parametrize", "ids", "table-driven tests"]
+minutes = 25
+difficulty = 2

@@ -1,0 +1,8 @@
+id = "core.17.p059"
+title = "Explain: logging in a library versus in an application"
+tier = "challenge"
+kind = "explain"
+topics = ["logging", "NullHandler", "getLogger(__name__)", "basicConfig", "dictConfig", "propagation", "logger.exception"]
+minutes = 35
+difficulty = 4
+assessment = "explain"

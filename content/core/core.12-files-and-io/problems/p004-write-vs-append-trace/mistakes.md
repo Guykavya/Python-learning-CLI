@@ -1,0 +1,4 @@
+- Thinking `"w"` appends. It truncates the file the moment it opens, before any write.
+- Forgetting that `write` returns the number of characters written (2 for `"!!"`).
+- Writing `fo` and `ur!!` on one line. They are two separate `print` calls.
+- Missing the empty line from the second `readline()`: at the end of the file it returns `""`.

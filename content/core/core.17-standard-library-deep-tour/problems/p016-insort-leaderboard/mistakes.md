@@ -1,0 +1,7 @@
+- Storing `(score, name)` and reading the list backwards: names with equal scores then come out Z→A.
+- Forgetting to remove the old tuple on `add`: the player appears twice.
+- Keeping the old score when the new one is lower ("best score" logic). The task says the new score replaces it.
+- `rank` as "position in the list + 1": equal scores then get ranks 2 and 3 instead of 2 and 2.
+- `count_at_least` with `bisect_left`: players exactly at the score are not counted.
+- Returning `-score` from `top`: remember to negate back.
+- Calling `self._entries.sort()` after `append`: correct but O(n log n) per add; `insort` exists for this.

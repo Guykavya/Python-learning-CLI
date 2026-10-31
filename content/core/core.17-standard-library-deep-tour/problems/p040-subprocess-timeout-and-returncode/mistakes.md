@@ -1,0 +1,7 @@
+- No `timeout=`: one hanging child blocks the whole program (and the tests wait for 10 seconds).
+- Catching every exception with a bare `except:` or `except Exception:`. It hides real bugs, such as a typo in your own code. Catch `subprocess.TimeoutExpired`.
+- Treating `TimeoutExpired` as "failed" with some made-up exit code. The child never exited normally; there is no code: `None`.
+- `check=True`: a non-zero exit raises `CalledProcessError` instead of being reported as `"failed"`.
+- Comparing `returncode > 0` before checking for `None`: `None > 0` raises `TypeError`.
+- Running all snippets and picking the first success afterwards. Later snippets must not run.
+- Implementing a timeout with `time.sleep` and polling. `subprocess.run(timeout=...)` already does it correctly, including killing the child.

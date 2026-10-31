@@ -1,0 +1,10 @@
+" hi
+' yo
+" it's
+['o', 'k', 'e']
+abcd
+True False
+None '
+<i>it</i> 12
+aA
+[] ['a']

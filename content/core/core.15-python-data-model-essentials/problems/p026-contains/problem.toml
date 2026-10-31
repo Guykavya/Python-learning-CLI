@@ -1,0 +1,7 @@
+id = "core.15.p026"
+title = "Membership tests with __contains__"
+tier = "drill"
+kind = "code"
+topics = ["__contains__", "in operator", "container protocol"]
+minutes = 15
+difficulty = 2

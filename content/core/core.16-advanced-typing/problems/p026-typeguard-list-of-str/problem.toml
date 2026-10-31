@@ -1,0 +1,6 @@
+id = "core.16.p026"
+title = "TypeGuard: is this a list of str?"
+tier = "applied"
+kind = "code"
+topics = ["TypeGuard", "user-defined narrowing", "list[object]", "isinstance", "all()"]
+minutes = 25

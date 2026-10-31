@@ -1,0 +1,6 @@
+id = "core.15.p052"
+title = "Explain: when is __slots__ worth it?"
+tier = "deep"
+kind = "explain"
+topics = ["__slots__", "memory", "__dict__", "attributes", "trade-offs"]
+minutes = 25

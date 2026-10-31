@@ -1,0 +1,7 @@
+id = "core.15.p004"
+title = "A custom format spec with __format__"
+tier = "drill"
+kind = "code"
+topics = ["__format__", "format spec", "f-strings"]
+minutes = 15
+difficulty = 2

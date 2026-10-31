@@ -1,0 +1,7 @@
+id = "core.18.p028"
+title = "Template filling with re.sub"
+tier = "applied"
+kind = "code"
+topics = ["re.sub", "replacement functions", "escaping", "dict lookup"]
+minutes = 25
+difficulty = 3

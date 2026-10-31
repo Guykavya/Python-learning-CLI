@@ -1,0 +1,7 @@
+id = "core.19.p033"
+title = "Round-trip properties: run-length encoding"
+tier = "applied"
+kind = "code"
+topics = ["hypothesis", "round-trip property", "custom strategies", "example tests"]
+minutes = 35
+difficulty = 3

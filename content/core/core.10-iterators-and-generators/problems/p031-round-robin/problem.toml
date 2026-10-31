@@ -1,0 +1,7 @@
+id = "core.10.p031"
+title = "Round-robin: take turns between streams"
+tier = "applied"
+kind = "code"
+topics = ["iterators", "next", "StopIteration", "generators"]
+minutes = 25
+difficulty = 3

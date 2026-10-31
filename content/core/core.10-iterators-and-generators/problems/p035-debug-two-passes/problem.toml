@@ -1,0 +1,7 @@
+id = "core.10.p035"
+title = "Debug: functions that read a generator twice"
+tier = "deep"
+kind = "code"
+topics = ["consumed once", "debugging", "single pass", "iterables"]
+minutes = 25
+difficulty = 3

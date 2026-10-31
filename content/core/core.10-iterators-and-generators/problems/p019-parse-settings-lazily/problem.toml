@@ -1,0 +1,6 @@
+id = "core.10.p019"
+title = "Parse key=value settings lazily"
+tier = "applied"
+kind = "code"
+topics = ["generators", "enumerate", "parsing", "pipelines"]
+minutes = 25

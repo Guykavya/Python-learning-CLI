@@ -1,0 +1,6 @@
+- Putting the wrapping logic into `__init__` and not defining `__call__(self, func)`: `@Retry(times=3)` then fails, because the object is not callable.
+- Treating `times` as the number of **retries** (so `times=3` gives 4 attempts). The spec says total attempts.
+- Catching `Exception` instead of `self.exceptions`: bugs such as `KeyError` are silently retried.
+- Not re-raising after the last attempt: the function then returns `None` and hides the problem.
+- Making `wrapper` a method (taking `self`) instead of a plain closure: the wrapper must behave like the original function.
+- Creating the counter in `__call__` or in the wrapper: it would reset for each decorated function or call, instead of belonging to the `Retry` object.

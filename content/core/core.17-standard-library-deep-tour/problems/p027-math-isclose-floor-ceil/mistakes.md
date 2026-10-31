@@ -1,0 +1,6 @@
+- Using `int(x)` as "floor". `int(-2.3)` is `-2`, not `-3`: it truncates towards zero.
+- `math.ceil(n / per_page)` for big integers: the `/` makes a float and loses the last digits. Stay in integers with `-(-n // per_page)`.
+- `n // per_page + 1`: adds an empty page when the items fit exactly (9 items, 3 per page).
+- `a == b` for floats: `0.1 + 0.2 == 0.3` is `False`.
+- `math.isclose(x, 0.0)` without `abs_tol`: always `False` for any non-zero `x`, however tiny.
+- `abs(a - b) < 1e-9` alone: too strict for big numbers (1e10 and 1e10 + 1 differ by 1 only because of float spacing).

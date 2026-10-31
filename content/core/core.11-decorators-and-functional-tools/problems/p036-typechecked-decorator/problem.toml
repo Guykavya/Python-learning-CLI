@@ -1,0 +1,7 @@
+id = "core.11.p036"
+title = "typechecked: enforce type hints at call time"
+tier = "challenge"
+kind = "code"
+topics = ["type hints", "typing.get_type_hints", "inspect.signature", "decorators", "isinstance"]
+minutes = 50
+difficulty = 5

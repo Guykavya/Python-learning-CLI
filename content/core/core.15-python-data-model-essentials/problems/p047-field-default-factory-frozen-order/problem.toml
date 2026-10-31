@@ -1,0 +1,7 @@
+id = "core.15.p047"
+title = "Dataclass options: default_factory, frozen, order"
+tier = "applied"
+kind = "code"
+topics = ["dataclasses.field", "default_factory", "frozen", "order", "hashing", "FrozenInstanceError"]
+minutes = 30
+difficulty = 3

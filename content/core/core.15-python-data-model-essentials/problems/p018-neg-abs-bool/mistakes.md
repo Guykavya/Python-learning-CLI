@@ -1,0 +1,4 @@
+- Returning a tuple or a number from `__neg__`; it must be a `Vector` so you can keep using operators.
+- Making `__abs__` return a Vector (component-wise abs). `abs(v)` is the *length* here.
+- Returning `self.x and self.y` from `__bool__`: that returns a number and is `False` for `Vector(0, 5)`. Use `or` and compare to 0, and return a `bool`.
+- Changing `self` inside `__neg__`.

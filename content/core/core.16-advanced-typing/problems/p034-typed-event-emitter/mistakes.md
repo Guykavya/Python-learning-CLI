@@ -1,0 +1,9 @@
+- Looping directly over `self._handlers` in `emit`. A handler that calls `on` or `off` then changes the list under the loop and handlers are skipped or repeated.
+- Wrapping a `once` handler in a new function: then `off(handler)` cannot find it, and the returned function is not the one the caller gave.
+- Removing the `once` handler *after* the call: it stays registered if it raises, and it runs twice if it emits the same event again.
+- Removing a `once` registration with `list.remove(handler)`, which removes the first equal handler and may remove a different registration of the same function.
+- Using `is` in `off`: a bound method (`obj.handle`) is a fresh object each time, so `is` fails. Use `==`.
+- A class-level `_handlers = []`: all emitters would share one list.
+- Typing `emit` as `(*args: Any, **kwargs: Any)`. It runs, but the emitter then checks nothing; the point is `P.args` and `P.kwargs`.
+- Writing `Callable[[P], None]` (P in a list). A `ParamSpec` goes in directly: `Callable[P, None]`.
+- Making `EventBus.emit` raise for an unknown event or register it. It returns `0` and changes nothing.

@@ -1,0 +1,7 @@
+id = "core.15.p016"
+title = "Add and subtract vectors"
+tier = "drill"
+kind = "code"
+topics = ["__add__", "__sub__", "operator overloading", "NotImplemented"]
+minutes = 12
+difficulty = 1

@@ -1,0 +1,7 @@
+id = "core.18.p016"
+title = "Groups and groups(): parse a version number"
+tier = "drill"
+kind = "code"
+topics = ["capturing groups", "Match.groups", "re.fullmatch"]
+minutes = 15
+difficulty = 1

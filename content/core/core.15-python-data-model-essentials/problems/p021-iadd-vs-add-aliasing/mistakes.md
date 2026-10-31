@@ -1,0 +1,4 @@
+- Thinking `a += b` is always the same as `a = a + b`. For mutable objects with `__iadd__` it is not.
+- Expecting `b` to change after `a = a + Bag([2])`: `+` made a new Bag, `b` still points to the old one.
+- Forgetting that `__iadd__` must `return self`; the `Buggy` class shows the result `None`.
+- Expecting tuples to change in place: `u` keeps the old tuple.

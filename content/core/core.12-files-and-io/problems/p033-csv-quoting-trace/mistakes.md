@@ -1,0 +1,4 @@
+- Counting lines instead of rows. One row can use several lines.
+- Writing `'say \"hi\"'` for the quote. The csv rule is to **double** the quote inside a quoted cell.
+- Thinking `None` is kept. The writer writes an empty cell, and the reader gives back `''`.
+- Expecting numbers back. `csv.reader` returns only strings.

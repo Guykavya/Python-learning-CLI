@@ -1,0 +1,6 @@
+id = "core.12.p019"
+title = "Read an INI file with configparser"
+tier = "applied"
+kind = "code"
+topics = ["configparser", "sections", "getint", "missing files"]
+minutes = 18

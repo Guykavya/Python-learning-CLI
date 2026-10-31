@@ -1,0 +1,7 @@
+- Building one string with an f-string and passing `shell=True`: the user's text is read by the shell, so `;`, `&`, `|`, `$( )` and `>` run commands or redirect output.
+- Passing one string **without** `shell=True` on Linux: Python looks for a program literally named `python tool.py a`, which does not exist.
+- Splitting user text with `.split()` to make a list: `"Asha Rao"` becomes two arguments. Keep each user value as one item.
+- Starting `"python"` instead of `sys.executable`: may be another interpreter, or not found on Windows.
+- Forgetting `check=True`: a helper that crashes returns empty output and your program carries on as if all was well.
+- Forgetting `text=True`: `stdout` is then `bytes`, not `str`.
+- Thinking `shlex.quote` makes `shell=True` safe everywhere: it quotes for POSIX shells, not for Windows `cmd.exe`.

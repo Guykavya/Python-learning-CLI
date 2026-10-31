@@ -1,0 +1,7 @@
+id = "core.14.p021"
+title = "Explain: what self is and why Python makes it explicit"
+tier = "drill"
+kind = "explain"
+topics = ["self", "methods", "bound methods", "instance attributes"]
+minutes = 15
+difficulty = 2

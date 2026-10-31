@@ -1,0 +1,7 @@
+id = "core.14.p017"
+title = "Duck-typed speakers"
+tier = "drill"
+kind = "code"
+topics = ["duck typing", "polymorphism", "EAFP", "AttributeError", "getattr"]
+minutes = 15
+difficulty = 2

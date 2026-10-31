@@ -1,0 +1,7 @@
+id = "core.12.p047"
+title = "A word-frequency tool that reads stdin"
+tier = "challenge"
+kind = "code"
+topics = ["sys.stdin", "argparse", "streaming", "exit codes", "monkeypatch", "str.isalpha"]
+minutes = 50
+difficulty = 4

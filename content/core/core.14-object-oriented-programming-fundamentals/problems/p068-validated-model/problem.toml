@@ -1,0 +1,7 @@
+id = "core.14.p068"
+title = "A tiny validated model with Field classes"
+tier = "challenge"
+kind = "code"
+topics = ["class attributes", "inheritance", "super()", "MRO", "vars", "custom exceptions", "ExceptionGroup", "classmethod", "polymorphism"]
+minutes = 70
+difficulty = 5

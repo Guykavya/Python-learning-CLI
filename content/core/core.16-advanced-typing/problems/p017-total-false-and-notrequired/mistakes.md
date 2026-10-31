@@ -1,0 +1,6 @@
+- Writing `class Config(TypedDict, total=False)` with all four keys: then `host` and `port` are optional too, and `__required_keys__` is empty.
+- Using `NotRequired` in `Patch` for every key but leaving the class total: it works, but `total=False` says the same in one place.
+- `if not cfg.get("timeout")` to test presence: `0.0` and `False` are present but falsy.
+- `with_defaults` that changes `cfg` (using `cfg.setdefault(...)` on the input). The task wants a new dict.
+- Forgetting that `NotRequired` is imported from `typing` (3.11+), not `typing_extensions`, on current Python.
+- Reading an optional key with `cfg["timeout"]` when it may be missing: `KeyError` at runtime and an error in the checker.

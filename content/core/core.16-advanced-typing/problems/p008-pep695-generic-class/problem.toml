@@ -1,0 +1,7 @@
+id = "core.16.p008"
+title = "Generic class with the Python 3.12 syntax"
+tier = "applied"
+kind = "code"
+topics = ["class Box[T]", "PEP 695", "method type parameters", "constrained type parameters", "__type_params__"]
+minutes = 30
+difficulty = 3

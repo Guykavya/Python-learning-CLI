@@ -1,0 +1,7 @@
+id = "core.20.p017"
+title = "Trace: how many times does it run?"
+tier = "drill"
+kind = "trace"
+topics = ["timeit.Timer", "setup vs stmt", "number and repeat", "globals=", "gc during timeit"]
+minutes = 15
+difficulty = 2

@@ -1,0 +1,6 @@
+- Using an unbounded `T`. `len(item)` is then an error for the checker, and the test finds `__bound__ is None`.
+- Returning `Sized` instead of `S`: `longest(["a"]).upper()` would then be an error, because the checker no longer knows it is a `str`.
+- Using `>=` for the comparison: on a tie the last item wins, but the first is required.
+- Calling `len(items)` or `items[0]` on the input: it breaks for iterators and generators.
+- `if not result: return None` in `longest_or_none`: `""` and `[]` are real (empty) items.
+- Writing `bound=len` or `bound="Sized"` (a string): the bound must be a type.

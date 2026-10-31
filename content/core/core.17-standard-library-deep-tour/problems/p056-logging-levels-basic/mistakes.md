@@ -1,0 +1,6 @@
+- Logging with f-strings: the text is built even when the message is dropped, and `record.args` is empty.
+- Logging everything as `info` or `warning`: then the level cannot filter anything useful.
+- Using `print` for diagnostics: it cannot be turned off and mixes with the program's real output.
+- Adding a handler or calling `logging.basicConfig` inside a function like `make_logger`: every call adds another handler and each message appears several times.
+- Using `logging.debug(...)` (the module function): it logs through the **root** logger, not the one you were given.
+- Treating 100 as a large order: the rule is "more than 100".

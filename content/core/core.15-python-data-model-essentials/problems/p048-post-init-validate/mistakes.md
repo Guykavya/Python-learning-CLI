@@ -1,0 +1,5 @@
+- Validating before the `strip()` and then storing a blank-after-strip owner, or calling `.strip()` on a non-string and getting an `AttributeError` instead of `ValueError`. Check the type first.
+- Writing `history: list = []`: rejected by dataclass. Use `field(default_factory=list, init=False)`.
+- Assigning `self.low = ...` in the frozen `Range`'s `__post_init__`: raises `FrozenInstanceError`. A frozen class can only check.
+- Forgetting the extra parameter of `__post_init__` for an `InitVar`: `TypeError: __post_init__() missing 1 required positional argument`.
+- Setting `self.unit_scale = unit_scale`: it works, but it is not a field and the tests check it is absent.

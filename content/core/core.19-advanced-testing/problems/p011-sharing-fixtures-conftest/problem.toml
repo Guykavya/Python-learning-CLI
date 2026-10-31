@@ -1,0 +1,7 @@
+id = "core.19.p011"
+title = "Sharing fixtures with conftest.py"
+tier = "applied"
+kind = "code"
+topics = ["conftest.py", "fixture discovery by folder", "overriding a fixture", "fixture dependencies"]
+minutes = 30
+difficulty = 3

@@ -1,0 +1,7 @@
+id = "core.11.p030"
+title = "Explain: one counter for every function"
+tier = "deep"
+kind = "explain"
+topics = ["decorator state", "closures", "nonlocal", "global", "function attributes"]
+minutes = 20
+difficulty = 3

@@ -1,0 +1,6 @@
+id = "core.12.p033"
+title = "Trace: how csv quotes cells"
+tier = "applied"
+kind = "trace"
+topics = ["csv.writer", "quoting", "embedded newlines", "csv.reader"]
+minutes = 15

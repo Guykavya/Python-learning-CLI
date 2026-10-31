@@ -1,0 +1,6 @@
+id = "core.14.p024"
+title = "A shopping cart class"
+tier = "applied"
+kind = "code"
+topics = ["classes", "instance attributes", "methods", "validation", "ValueError", "KeyError"]
+minutes = 25

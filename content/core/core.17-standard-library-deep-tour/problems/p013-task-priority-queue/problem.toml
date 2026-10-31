@@ -1,0 +1,7 @@
+id = "core.17.p013"
+title = "heapq: a priority queue with a tie-break counter"
+tier = "applied"
+kind = "code"
+topics = ["heapq", "heappush", "heappop", "priority queue", "itertools.count", "tuple comparison"]
+minutes = 25
+difficulty = 3

@@ -1,0 +1,6 @@
+id = "core.16.p030"
+title = "Explain: when to use Any and when object"
+tier = "deep"
+kind = "explain"
+topics = ["Any", "object", "json.loads", "narrowing", "gradual typing", "type safety"]
+minutes = 25

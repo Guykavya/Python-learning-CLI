@@ -1,0 +1,9 @@
+registry runs
+a sees ['a'] 1
+b sees ['a', 'b', 'b2'] 101
+main sees ['a', 'b', 'b2'] 2
+b.count = 101 | same list? True
+registry runs
+after reload: ['c'] 1
+b still has ['a', 'b', 'b2'] | same list? False
+b.add went to ['c', 'd'] | b.items is ['a', 'b', 'b2']

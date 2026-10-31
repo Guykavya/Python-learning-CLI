@@ -1,0 +1,7 @@
+id = "core.17.p003"
+title = "Trace: Counter arithmetic"
+tier = "drill"
+kind = "trace"
+topics = ["collections.Counter", "Counter arithmetic", "subtract", "most_common", "total"]
+minutes = 15
+difficulty = 2

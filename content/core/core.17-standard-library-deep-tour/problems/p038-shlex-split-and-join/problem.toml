@@ -1,0 +1,7 @@
+id = "core.17.p038"
+title = "shlex: split and join command lines"
+tier = "drill"
+kind = "code"
+topics = ["shlex.split", "shlex.join", "shlex.quote", "quoting", "command lines"]
+minutes = 20
+difficulty = 2

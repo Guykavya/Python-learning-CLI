@@ -1,0 +1,5 @@
+- Only two levels: `def repeat(func)`. Then `@repeat(3)` passes 3 as the function and breaks.
+- Returning `wrapper` from `repeat` instead of returning `decorate`.
+- Checking `n` inside the wrapper. The error then appears at call time, not at decoration time.
+- Putting `@wraps(func)` on `decorate`. It belongs on the innermost function, the one that replaces `func`.
+- Returning only the last result instead of a list.

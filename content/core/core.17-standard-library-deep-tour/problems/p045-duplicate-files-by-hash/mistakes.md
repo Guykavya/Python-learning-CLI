@@ -1,0 +1,7 @@
+- Hashing every file: correct but slow; the size filter skips most of the reading.
+- Comparing file **names**: two `report.txt` in different folders are often different files, and copies often have different names.
+- Forgetting to drop groups of one after hashing: same size but different content is not a duplicate.
+- Using absolute paths or `str(path)` with backslashes on Windows in the result; use `relative_to(root).as_posix()`.
+- Not sorting: `rglob` order depends on the file system, so tests (and users) see a random order.
+- Counting all files of a group in `wasted_bytes`: you keep one, so it is `size * (len(group) - 1)`.
+- Calling `hashlib` directly inside `find_duplicates` instead of `file_hash`: the code works but the helper is not reused (and the tests cannot count the hashing).

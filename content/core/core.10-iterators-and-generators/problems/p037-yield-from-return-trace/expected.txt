@@ -1,0 +1,17 @@
+A starts
+0
+A got 5
+5
+A got 3
+8
+A ends
+A returned 8
+B starts
+0
+B got 10
+10
+B ends
+B returned 10
+18
+outer done
+finished ok

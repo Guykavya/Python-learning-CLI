@@ -1,0 +1,6 @@
+id = "core.15.p033"
+title = "Trace: truthiness, __bool__ and __len__"
+tier = "deep"
+kind = "trace"
+topics = ["__bool__", "__len__", "truthiness", "or", "not"]
+minutes = 25

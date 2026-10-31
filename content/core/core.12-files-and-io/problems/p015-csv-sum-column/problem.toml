@@ -1,0 +1,6 @@
+id = "core.12.p015"
+title = "Sum a column of a CSV file"
+tier = "drill"
+kind = "code"
+topics = ["csv", "DictReader", "newline=''", "float"]
+minutes = 15

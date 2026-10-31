@@ -1,0 +1,7 @@
+id = "core.17.p046"
+title = "UUIDs: random (uuid4) and repeatable (uuid5)"
+tier = "drill"
+kind = "code"
+topics = ["uuid", "uuid4", "uuid5", "namespaces", "canonical form"]
+minutes = 20
+difficulty = 2

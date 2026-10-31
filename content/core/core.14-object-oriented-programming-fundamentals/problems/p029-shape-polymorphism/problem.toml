@@ -1,0 +1,6 @@
+id = "core.14.p029"
+title = "Shapes: one report for every kind"
+tier = "applied"
+kind = "code"
+topics = ["polymorphism", "inheritance", "overriding", "class attributes", "sorting"]
+minutes = 30

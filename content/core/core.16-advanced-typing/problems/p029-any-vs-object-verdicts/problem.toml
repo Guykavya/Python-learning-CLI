@@ -1,0 +1,6 @@
+id = "core.16.p029"
+title = "Trace: Any versus object"
+tier = "deep"
+kind = "trace"
+topics = ["Any", "object", "attr-defined", "gradual typing", "isinstance narrowing", "reveal_type"]
+minutes = 25

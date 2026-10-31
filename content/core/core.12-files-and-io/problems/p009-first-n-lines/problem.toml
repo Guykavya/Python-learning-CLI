@@ -1,0 +1,6 @@
+id = "core.12.p009"
+title = "Read the first n lines only"
+tier = "drill"
+kind = "code"
+topics = ["streaming", "iterating a file", "itertools.islice", "memory"]
+minutes = 12

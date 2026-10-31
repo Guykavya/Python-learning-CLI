@@ -1,0 +1,27 @@
+main: start, name = __main__
+shop: start
+config: loading as shop.config
+cart: start
+models: start
+models: no add yet
+models: cart has add? False
+models: done
+cart: models has price? True
+cart: done
+shop: done, name = shop
+total: 209
+same cart? True True
+TAX now: 0 10
+total after TAX = 0: 209
+shop: start
+config: loading as shop.config
+cart: start
+models: start
+models: no add yet
+models: cart has add? False
+models: done
+cart: models has price? True
+cart: done
+shop: done, name = shop
+config: loading as __main__
+config: run directly, TAX = 10

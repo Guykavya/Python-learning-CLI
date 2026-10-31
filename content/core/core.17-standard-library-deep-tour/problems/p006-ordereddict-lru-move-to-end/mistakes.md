@@ -1,0 +1,6 @@
+- `popitem()` with no argument removes the **newest** item (`last=True`). An LRU must remove the oldest: `popitem(last=False)`.
+- Forgetting `move_to_end` in `get`: reads no longer count as "use", so a hot key gets evicted.
+- Forgetting `move_to_end` in `put` for an existing key: `od[key] = value` keeps the old position.
+- `if not self._data.get(key):` to detect a miss: `0`, `""` and `None` are valid values.
+- Evicting **before** inserting: when the key already exists you evict something that did not need to go.
+- Creating the OrderedDict as a class attribute: all caches then share one dict.

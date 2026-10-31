@@ -1,0 +1,6 @@
+id = "core.10.p024"
+title = "Trace: zip and the lost item"
+tier = "applied"
+kind = "trace"
+topics = ["zip", "iterators", "generators", "consumed once"]
+minutes = 15

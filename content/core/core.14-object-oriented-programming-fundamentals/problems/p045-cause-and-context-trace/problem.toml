@@ -1,0 +1,6 @@
+id = "core.14.p045"
+title = "Trace: __cause__, __context__ and from None"
+tier = "applied"
+kind = "trace"
+topics = ["exception chaining", "raise from", "__cause__", "__context__", "__suppress_context__"]
+minutes = 25

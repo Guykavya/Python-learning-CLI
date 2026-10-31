@@ -1,0 +1,7 @@
+id = "core.15.p024"
+title = "A Duration type with arithmetic"
+tier = "applied"
+kind = "code"
+topics = ["__add__", "__sub__", "__mul__", "__floordiv__", "__truediv__", "__format__", "total_ordering"]
+minutes = 30
+difficulty = 4

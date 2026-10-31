@@ -1,0 +1,4 @@
+- Saying the list `readings` was emptied. It was not; only the generator is used up.
+- Saying "sum has a bug". `sum([])` is `0` by design; the problem is the empty input.
+- Giving only one fix, or saying "never use generators". Both tools have their place.
+- Fixing by writing `big = readings` and losing the `> 12` filter.

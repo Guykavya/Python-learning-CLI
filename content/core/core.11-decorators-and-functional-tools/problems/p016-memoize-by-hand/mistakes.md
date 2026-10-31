@@ -1,0 +1,5 @@
+- Creating `cache = {}` inside the wrapper: the cache is empty on every call.
+- Using one global dict for all functions: `a(1)` and `b(1)` then share a key.
+- `tuple(kwargs.items())` without `sorted`: keyword order changes the key.
+- `if cache.get(key):` fails for results like `None`, `0` or `""`, which are falsy.
+- Writing `cache[key] = None` before calling `func`: an error then leaves a wrong entry behind.

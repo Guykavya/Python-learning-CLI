@@ -1,0 +1,5 @@
+- Writing to a hard-coded path like `"notes.txt"` in the current folder. Tests then leave files behind and interfere with each other.
+- Testing only the round trip: it passes even when the saved file is malformed, as long as `load_notes` copes.
+- Calling `save_notes` once per test with fresh data and never saving twice, so the "append instead of replace" bug survives.
+- Forgetting the missing-file case: it is the only way to see the `FileNotFoundError` bug.
+- Using `str(tmp_path)` plus string concatenation instead of `tmp_path / "name"`: it breaks on Windows separators.

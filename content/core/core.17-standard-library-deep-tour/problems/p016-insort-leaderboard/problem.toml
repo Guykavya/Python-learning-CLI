@@ -1,0 +1,7 @@
+id = "core.17.p016"
+title = "bisect.insort: a leaderboard that stays sorted"
+tier = "applied"
+kind = "code"
+topics = ["bisect.insort", "bisect_left", "bisect key=", "sorted containers", "tuple ordering"]
+minutes = 30
+difficulty = 3

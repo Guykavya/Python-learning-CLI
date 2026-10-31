@@ -1,0 +1,17 @@
+{"id": 1, "2": "two", "ok": true, "none": null, "pair": [1, 2], "price": 9.5}
+{'id': 1, '2': 'two', 'ok': True, 'none': None, 'pair': [1, 2], 'price': 9.5}
+False
+None two
+"caf\u00e9"
+"café"
+{
+ "a": [
+  1,
+  {
+   "z": 0
+  }
+ ],
+ "b": 1
+}
+set is not serialisable
+[1, 2.0, '3', None, True]

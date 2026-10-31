@@ -1,0 +1,6 @@
+- `sorted(a + b)`: reads everything into memory and is not lazy. It also compares whole lines.
+- Leaving out `key=`: ties at the same second are ordered by message text, not by source.
+- Parsing every timestamp with `datetime.strptime` just to compare: it works but is slow; fixed-width ISO strings already sort correctly.
+- Closing the input files before the merge has been consumed (for example by returning the iterator from inside a `with` block): reading then fails with `ValueError: I/O operation on closed file`.
+- Writing lines as read, with their own `"\n"`: a last line without a newline gets glued to the next line in the output.
+- Forgetting `encoding="utf-8"` on either side.

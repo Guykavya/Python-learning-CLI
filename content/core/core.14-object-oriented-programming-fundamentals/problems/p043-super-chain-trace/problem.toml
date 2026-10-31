@@ -1,0 +1,6 @@
+id = "core.14.p043"
+title = "Trace: a chain of super() calls"
+tier = "applied"
+kind = "trace"
+topics = ["super()", "inheritance", "overriding", "method lookup", "template method"]
+minutes = 20

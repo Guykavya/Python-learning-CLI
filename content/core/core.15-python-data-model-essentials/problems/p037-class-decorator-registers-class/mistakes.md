@@ -1,0 +1,6 @@
+- Forgetting `return klass` in the inner decorator: the class name becomes `None`.
+- Only supporting `@reg(name="x")` (or only `@reg`): the other form calls `__call__` with a different shape and fails.
+- Using `name or ...` is fine here, but checking `if name:` for the duplicate check or forgetting that `name=""` is a (bad) name: stay with `is not None` if you want an empty name to be an error.
+- Putting the dict in the class body (`_classes = {}`): every Registry shares it.
+- In `auto_repr`, hard-coding `cls.__name__` in the repr: a subclass would then print its parent's name. Use `type(self).__name__`.
+- Reading the field values once when the class is decorated instead of when `repr` is called.

@@ -1,0 +1,7 @@
+id = "core.17.p031"
+title = "Trace: float sums, fsum and isclose"
+tier = "deep"
+kind = "trace"
+topics = ["float precision", "math.fsum", "math.isclose", "rounding", "banker's rounding"]
+minutes = 25
+difficulty = 4

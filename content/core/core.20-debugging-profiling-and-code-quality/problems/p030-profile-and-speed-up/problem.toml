@@ -1,0 +1,8 @@
+id = "core.20.p030"
+title = "Project: profile and speed up a slow program"
+tier = "challenge"
+kind = "code"
+topics = ["cProfile", "finding hot spots", "dict index instead of list scan", "single pass", "sort once", "measuring a speed-up", "same output before and after"]
+minutes = 120
+difficulty = 5
+assessment = "build"

@@ -1,0 +1,7 @@
+id = "core.19.p019"
+title = "Dependency injection beats patching"
+tier = "applied"
+kind = "code"
+topics = ["dependency injection", "fake client", "seams", "constructor injection"]
+minutes = 30
+difficulty = 3

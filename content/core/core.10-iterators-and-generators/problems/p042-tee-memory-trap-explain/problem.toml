@@ -1,0 +1,7 @@
+id = "core.10.p042"
+title = "Explain: the hidden memory cost of tee"
+tier = "deep"
+kind = "explain"
+topics = ["itertools.tee", "memory", "consumed once", "buffering"]
+minutes = 20
+difficulty = 3

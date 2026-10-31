@@ -1,0 +1,6 @@
+id = "core.11.p011"
+title = "itemgetter for sorting, reduce for folding"
+tier = "drill"
+kind = "code"
+topics = ["operator.itemgetter", "operator.mul", "functools.reduce", "sorted key"]
+minutes = 20

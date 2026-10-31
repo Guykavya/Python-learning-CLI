@@ -1,0 +1,4 @@
+- Skipping `is_file()`. A folder called `data.txt` is then listed.
+- Not sorting. The order of `iterdir()` is different on different systems.
+- Using `endswith` on the whole name without a dot, so `.txt` also matches `mytxt`. Or matching `x.txt.bak`.
+- Returning `Path` objects or full paths instead of names.

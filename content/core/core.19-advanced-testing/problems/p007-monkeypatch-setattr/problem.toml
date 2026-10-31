@@ -1,0 +1,7 @@
+id = "core.19.p007"
+title = "Write tests: monkeypatch.setattr"
+tier = "drill"
+kind = "code"
+topics = ["monkeypatch.setattr", "replacing a module constant", "replacing a helper function"]
+minutes = 25
+difficulty = 3

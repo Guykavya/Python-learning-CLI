@@ -1,0 +1,6 @@
+id = "core.14.p038"
+title = "Count lines from anything that gives lines"
+tier = "applied"
+kind = "code"
+topics = ["duck typing", "polymorphism", "iterables", "__iter__", "io.StringIO", "TypeError"]
+minutes = 30

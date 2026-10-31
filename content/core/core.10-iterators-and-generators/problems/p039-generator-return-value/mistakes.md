@@ -1,0 +1,6 @@
+- Using `list(iterator)` or a `for` loop in `drain`: the return value is lost.
+- Writing `except StopIteration:` without `as e`, so there is no way to read `.value`.
+- Writing `raise StopIteration(n)` inside a generator. Since Python 3.7 that becomes a `RuntimeError`. Use `return n`.
+- Putting `return n` inside the loop, which stops after the first item.
+- Starting the count only when the first item arrives, so an empty input returns `None` instead of `0`.
+- Testing `if e.value:` and turning a return value of `0` into `None`.

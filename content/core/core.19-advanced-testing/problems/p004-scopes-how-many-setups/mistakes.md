@@ -1,0 +1,5 @@
+- Counting `per_test` setups for tests that do not use it (`test_c`): a fixture only runs for tests that ask for it (unless it is autouse).
+- Printing the module teardown right after `test_c`, the last test that **uses** it. It waits for the end of the module.
+- Expecting `per_module` to be set up before collection starts. It is lazy: first use.
+- Setting up `per_test` first because it is the first parameter. Wider scopes are always set up before narrower ones.
+- Mixing up the two counters: only the function-scoped one counts to 3.

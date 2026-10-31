@@ -1,0 +1,6 @@
+- Saying "`Any` and `object` are the same". Their effect on the checker is the opposite.
+- Saying `object` "is not allowed to be used". It can be passed around and printed; you just have to narrow it before using it as something specific.
+- Answering question 3 with "mypy will report an error". It will not; that is exactly the danger.
+- Recommending `Any` for `log` "because it is simpler". `object` is just as easy to write and safer.
+- Saying `Any` should never be used. It has legitimate uses at dynamic boundaries and during migration.
+- Forgetting that `Any` spreads: `config["server"]` is `Any`, and so is everything derived from it.

@@ -1,0 +1,6 @@
+- Thinking `write("XY")` after `seek(2)` inserts the letters. It overwrites, so the text keeps its length.
+- Forgetting that after `write` the position moves, so `read()` without a `seek` returns `''`.
+- Believing `seek(0)` makes an `"a"` file write at the start. Append mode always writes at the end.
+- Writing the stderr line in the answer. Only standard output counts.
+- Thinking the text written inside a failing `with` block is lost. It was written; the `with` closes the file.
+- Forgetting that `f` still exists after the `with` block, with `closed == True`.

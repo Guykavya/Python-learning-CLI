@@ -1,0 +1,4 @@
+- Printing instead of returning. `__format__` must return a `str`.
+- Forgetting the empty spec. `f"{c}"` calls `__format__("")`, so it must still work.
+- Writing `hex(self.r)`: that gives `0xff`, and `0x0` for 0 (no padding). Use `f"{self.r:02x}"`.
+- Silently returning `None` for unknown specs instead of raising `ValueError`.

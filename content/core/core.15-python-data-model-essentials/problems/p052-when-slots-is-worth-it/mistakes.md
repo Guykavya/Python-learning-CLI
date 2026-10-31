@@ -1,0 +1,4 @@
+- Claiming `__slots__` makes the program faster in general. Attribute access is slightly faster; the main gain is memory.
+- Using `__slots__` everywhere "for performance" without measuring: it also removes `__dict__`, `vars()` and (without `"__weakref__"`) weak references.
+- Forgetting that a subclass without its own `__slots__` has a `__dict__` again, so the saving is lost.
+- Thinking `__slots__` makes attributes private or read-only. It only restricts **which names** may be set.

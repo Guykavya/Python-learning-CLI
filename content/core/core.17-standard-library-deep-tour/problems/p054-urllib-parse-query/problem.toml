@@ -1,0 +1,7 @@
+id = "core.17.p054"
+title = "Build and take apart URLs with urllib.parse"
+tier = "drill"
+kind = "code"
+topics = ["urllib.parse", "urlencode", "parse_qs", "urlsplit", "quote", "percent-encoding"]
+minutes = 25
+difficulty = 2

@@ -1,0 +1,16 @@
+--- part 1
+V: batch ['bad age', 'bad zip']
+A: batch ['db down', 'timeout']
+A nested: ['DbError', 'ExceptionGroup']
+left: batch ["'id'", 'not int']
+--- part 2
+solo: ExceptionGroup '' ['solo']
+--- part 3
+handling V
+handling T
+finally
+outer: '' ['RuntimeError', 'ExceptionGroup']
+inner: g ['3']
+--- part 4
+caught 2
+after

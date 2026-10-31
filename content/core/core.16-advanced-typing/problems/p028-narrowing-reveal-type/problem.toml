@@ -1,0 +1,6 @@
+id = "core.16.p028"
+title = "Trace: what type does reveal_type show?"
+tier = "drill"
+kind = "trace"
+topics = ["narrowing", "reveal_type", "is None", "isinstance", "truthiness", "union types"]
+minutes = 20

@@ -1,0 +1,7 @@
+id = "core.15.p002"
+title = "str() falls back to repr()"
+tier = "drill"
+kind = "code"
+topics = ["__str__", "__repr__", "fallback"]
+minutes = 12
+difficulty = 1

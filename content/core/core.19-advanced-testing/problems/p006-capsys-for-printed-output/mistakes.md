@@ -1,0 +1,5 @@
+- Asserting `"tea" in out`: nearly every buggy version still contains the name.
+- Calling `capsys.readouterr()` twice and being surprised the second `.out` is empty.
+- Only testing one sale: sorting and summing bugs need at least three rows in a different order than sorted.
+- Using amounts like `2.0` only: `{amount}` and `{amount:.2f}` differ for `4.5`, and `2.0` is not enough for the total check either.
+- Never looking at `.err`: output on the wrong stream is a real bug that `.out` checks can miss when the line is simply absent.

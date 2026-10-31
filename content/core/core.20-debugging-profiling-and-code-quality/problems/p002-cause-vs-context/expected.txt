@@ -1,0 +1,7 @@
+explicit KeyError ValueError ValueError True
+implicit TypeError NoneType KeyError False
+hidden ValueError NoneType ZeroDivisionError True
+broken_handler NameError NoneType IndexError False
+plain RuntimeError NoneType NoneType False
+reraise OSError NoneType NoneType False
+cause_only LookupError AttributeError NoneType True

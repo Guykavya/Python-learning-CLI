@@ -1,0 +1,6 @@
+id = "core.11.p009"
+title = "Two forgotten returns"
+tier = "drill"
+kind = "trace"
+topics = ["decorators", "return values", "debugging", "TypeError"]
+minutes = 15

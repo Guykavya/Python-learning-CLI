@@ -1,0 +1,7 @@
+id = "core.18.p023"
+title = "Thousands separators with lookaround"
+tier = "deep"
+kind = "code"
+topics = ["lookahead", "lookbehind", "zero-width matches", "re.sub"]
+minutes = 30
+difficulty = 4

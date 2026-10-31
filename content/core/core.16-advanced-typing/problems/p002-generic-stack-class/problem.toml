@@ -1,0 +1,7 @@
+id = "core.16.p002"
+title = "A generic Stack class"
+tier = "drill"
+kind = "code"
+topics = ["Generic[T]", "generic classes", "TypeVar", "methods using T"]
+minutes = 25
+difficulty = 2

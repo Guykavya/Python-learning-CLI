@@ -1,0 +1,7 @@
+id = "core.15.p019"
+title = "__radd__ so sum() works"
+tier = "applied"
+kind = "code"
+topics = ["__radd__", "sum", "reflected operators"]
+minutes = 15
+difficulty = 3

@@ -1,0 +1,7 @@
+id = "core.10.p034"
+title = "A running average you feed with send()"
+tier = "deep"
+kind = "code"
+topics = ["send", "coroutine", "priming", "generator state"]
+minutes = 25
+difficulty = 3

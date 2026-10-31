@@ -1,0 +1,11 @@
+- Testing a miss with `value is None` (or `if not value`). A cache that stores `None` or `0` then reports false misses.
+- Making `peek`, `in` or `pop` refresh recency or change the counters.
+- Evicting when an **existing** key is updated while the cache is full, or forgetting to refresh its recency.
+- Evicting the wrong end of the dict: the most recently used key is last, the oldest is `next(iter(d))`.
+- Returning `list(self._data)` from `keys()`: that is oldest-first. Reverse it.
+- Calling `on_evict` before the old entry is removed, or for `pop`/`clear`/updates.
+- Making `stats()` return the live counters object, or a plain `dict` hint instead of `CacheStats`.
+- Hinting `__contains__(self, key: K)`. `x in cache` can be asked about any object; use `object`.
+- Using `Any` (or leaving parameters unannotated) to "finish quickly". The completeness check is the point of this project.
+- In `lru_memoize`, using `str(args)` as the key, or leaving `sorted(kwargs.items())` out so `f(a=1, b=2)` and `f(b=2, a=1)` do not share a result.
+- Using `@wraps` wrongly or not at all: the memoized function then loses its name, doc and signature.

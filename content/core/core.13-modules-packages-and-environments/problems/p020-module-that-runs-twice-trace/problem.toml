@@ -1,0 +1,6 @@
+id = "core.13.p020"
+title = "Trace: the module that runs twice"
+tier = "applied"
+kind = "trace"
+topics = ["__name__", "__main__", "sys.modules", "module caching"]
+minutes = 15

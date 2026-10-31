@@ -1,0 +1,7 @@
+id = "core.14.p053"
+title = "Trace: which abstract classes can be instantiated?"
+tier = "deep"
+kind = "trace"
+topics = ["abstract base classes", "abc", "abstractmethod", "__abstractmethods__", "register", "virtual subclasses", "isinstance"]
+minutes = 25
+difficulty = 4

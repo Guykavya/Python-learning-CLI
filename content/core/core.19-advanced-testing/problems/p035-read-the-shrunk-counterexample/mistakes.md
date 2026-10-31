@@ -1,0 +1,6 @@
+- Reading `items=[0], size=1` as "the bug is in size 1". The comment `# or any other generated value` says every size fails.
+- Thinking the first test passing means the function is mostly right. It is a weak property: dropping pieces cannot make a piece too long.
+- Saying hypothesis "got lucky": it generates many inputs and then shrinks; with `derandomize=True` it finds the same one every time.
+- Fixing by special-casing (`if len(items) == 1: return [items]`). The real mistake is the `- size` in the loop limit; every list is affected, not only one-item lists.
+- Forgetting to trace the code by hand. The shrunk input is small enough to do it in a minute, which is the whole point of shrinking.
+- Using the failing input from the first, long, failing run instead of the shrunk one when writing the regression test.

@@ -1,0 +1,7 @@
+id = "core.13.p004"
+title = "Explain: what import does, and why the __main__ guard exists"
+tier = "drill"
+kind = "explain"
+topics = ["import", "sys.modules", "sys.path", "__name__", "__main__"]
+minutes = 20
+assessment = "explain"

@@ -1,0 +1,7 @@
+id = "core.11.p019"
+title = "@timed(clock=...): a testable timer"
+tier = "applied"
+kind = "code"
+topics = ["decorators with arguments", "dependency injection", "try/finally", "function attributes"]
+minutes = 25
+difficulty = 2

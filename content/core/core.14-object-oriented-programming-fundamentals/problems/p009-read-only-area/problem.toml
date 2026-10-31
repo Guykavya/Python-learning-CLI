@@ -1,0 +1,7 @@
+id = "core.14.p009"
+title = "A circle with read-only computed properties"
+tier = "drill"
+kind = "code"
+topics = ["properties", "read-only attributes", "computed attributes", "validation", "AttributeError"]
+minutes = 15
+difficulty = 2

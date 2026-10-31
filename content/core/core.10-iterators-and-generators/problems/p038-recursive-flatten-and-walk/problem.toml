@@ -1,0 +1,7 @@
+id = "core.10.p038"
+title = "Recursive generators: deep flatten and folder walk"
+tier = "deep"
+kind = "code"
+topics = ["yield from", "recursion", "nested data", "lazy evaluation"]
+minutes = 30
+difficulty = 3

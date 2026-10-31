@@ -1,0 +1,6 @@
+id = "core.16.p022"
+title = "overload: one name, different result types"
+tier = "applied"
+kind = "code"
+topics = ["@overload", "get_overloads", "Literal", "implementation signature", "union return"]
+minutes = 30

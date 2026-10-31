@@ -1,0 +1,4 @@
+- Using `"w"`: every call wipes the earlier lines. The log keeps only the last line.
+- Using `"r+"` or `"a+"` and forgetting the position. `"r+"` fails on a missing file.
+- Forgetting the newline. Lines glue together.
+- Reading the whole file, adding the line and writing everything back. It works, but it is slow for big logs and loses data if it crashes in between.

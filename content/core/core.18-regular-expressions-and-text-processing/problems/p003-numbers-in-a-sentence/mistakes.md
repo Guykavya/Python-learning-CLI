@@ -1,0 +1,5 @@
+- Using `[0-9]` without `+`: every digit becomes its own number, so `101` turns into `[1, 0, 1]`.
+- Using `*` instead of `+`: `-?[0-9]*` can match an empty string, and `int("")` crashes; a lone `-` would also match and `int("-")` crashes.
+- Forgetting `int()`: the test wants `[101, -2, 3]`, not `['101', '-2', '3']`.
+- Writing `-*` for the sign: `--4` would match as `--4` and `int("--4")` crashes.
+- Splitting on spaces and calling `int()` on each piece: `"101,"` and `"x9y"` break that approach.

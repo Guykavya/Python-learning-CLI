@@ -1,0 +1,7 @@
+id = "core.14.p022"
+title = "Trace: classmethod and staticmethod through subclasses"
+tier = "drill"
+kind = "trace"
+topics = ["classmethod", "staticmethod", "cls", "inheritance", "class attributes"]
+minutes = 15
+difficulty = 2

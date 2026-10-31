@@ -1,0 +1,11 @@
+yes no yes
+no yes
+True True True
+5
+fallback
+second
+Bag
+['no', 'no', 'no', 'no', 'no', 'no', 'yes', 'yes']
+False True True
+TypeError: __bool__ should return bool, returned int
+TypeError: object of type 'Plain' has no len()

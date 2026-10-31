@@ -1,0 +1,7 @@
+id = "core.19.p018"
+title = "spec and autospec"
+tier = "applied"
+kind = "code"
+topics = ["create_autospec", "spec", "signature checking", "mocks that lie"]
+minutes = 30
+difficulty = 3

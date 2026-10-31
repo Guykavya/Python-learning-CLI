@@ -1,0 +1,7 @@
+id = "core.18.p024"
+title = "Trace: IGNORECASE, MULTILINE, DOTALL and ASCII"
+tier = "drill"
+kind = "trace"
+topics = ["re.IGNORECASE", "re.MULTILINE", "re.DOTALL", "re.ASCII", "inline flags", "Pattern.flags"]
+minutes = 15
+difficulty = 2

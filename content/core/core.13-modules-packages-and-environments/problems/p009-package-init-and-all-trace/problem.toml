@@ -1,0 +1,6 @@
+id = "core.13.p009"
+title = "Trace: packages, submodules and __all__"
+tier = "drill"
+kind = "trace"
+topics = ["packages", "__init__.py", "submodules", "relative imports", "__all__", "from import *"]
+minutes = 15

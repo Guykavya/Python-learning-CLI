@@ -1,0 +1,6 @@
+id = "core.12.p041"
+title = "Explain: it works on my laptop, but not on the server"
+tier = "deep"
+kind = "explain"
+topics = ["encodings", "default encoding", "newline translation", "BOM", "utf-8-sig"]
+minutes = 20

@@ -1,0 +1,7 @@
+- `list(set(items))`: loses the order and is not lazy.
+- Storing items in a list and checking `if item not in seen_list`: O(n) per check, very slow on long streams.
+- Yielding the key instead of the item.
+- Creating `seen` at module level or as a default argument (`seen=set()`), so calls share it.
+- `if key:` instead of `if key is None` for the default. (A key function is never falsy, but a habit of `is None` avoids bugs.)
+- Splitting on `" "` instead of `.split()`: double spaces and tabs then give empty pieces.
+- Removing all punctuation with `replace`, which also removes the apostrophe inside `don't`.

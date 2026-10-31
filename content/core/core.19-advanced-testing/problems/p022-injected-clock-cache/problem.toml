@@ -1,0 +1,7 @@
+id = "core.19.p022"
+title = "Testing time: an injected clock"
+tier = "applied"
+kind = "code"
+topics = ["injected clock", "fake clock", "time without sleeping", "expiring cache"]
+minutes = 30
+difficulty = 3

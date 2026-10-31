@@ -1,0 +1,6 @@
+- `f.read()` with no size: it reads the whole file into memory, which fails for big files.
+- Opening the file in text mode: line endings may be translated and some bytes cannot be decoded, so the digest is wrong or it crashes.
+- Creating a new `hashlib.sha256()` inside the loop: each chunk is then hashed separately and only the last one counts.
+- Stopping when a chunk is shorter than `chunk_size`: some streams return short reads before the end. Stop only on `b""`.
+- Using `.digest()` (raw bytes) where a hex string is expected; use `.hexdigest()`.
+- Comparing with the expected value as typed: upper case or a trailing newline makes equal digests look different.

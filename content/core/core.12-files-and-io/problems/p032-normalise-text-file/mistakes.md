@@ -1,0 +1,5 @@
+- Reading with `"utf-8"`. The BOM stays as an invisible `\ufeff` at the start of the first line.
+- Writing with `"utf-8-sig"`. That would **add** a BOM.
+- Forgetting `newline="\n"` when writing. On Windows `\n` would become `\r\n` again.
+- Adding `"\n"` at the end. The file did not have a final newline, so the output must not have one.
+- Replacing `\r` before `\r\n` (in the bytes way). `\r\n` then becomes two newlines.

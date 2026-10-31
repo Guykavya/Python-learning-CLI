@@ -1,0 +1,6 @@
+id = "core.12.p012"
+title = "Copy a file in blocks"
+tier = "drill"
+kind = "code"
+topics = ["binary mode", "read(size)", "chunks", "streaming"]
+minutes = 15

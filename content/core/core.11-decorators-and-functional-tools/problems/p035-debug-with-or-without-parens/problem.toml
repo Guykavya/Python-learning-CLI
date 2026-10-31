@@ -1,0 +1,7 @@
+id = "core.11.p035"
+title = "debug: a decorator that works with or without parentheses"
+tier = "challenge"
+kind = "code"
+topics = ["decorators with arguments", "keyword-only arguments", "callable", "functools.wraps"]
+minutes = 45
+difficulty = 4

@@ -1,0 +1,13 @@
+start
+decorating hello
+returning wrapper
+defined
+before hello
+hello body
+after hello
+hi
+before hello
+hello body
+after hello
+hi
+wrapper

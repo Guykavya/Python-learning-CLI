@@ -1,0 +1,39 @@
+== one
+enter a
+body A
+exit a None
+finished normally
+== two
+enter a
+enter b
+body A B
+exit b ValueError
+exit a ValueError
+escaped ValueError
+== three
+enter a
+enter b
+exit b ValueError
+after b
+exit a None
+finished normally
+== four
+enter a
+enter b
+body
+exit b KeyError
+exit a KeyError
+after a
+finished normally
+== five
+setup p
+body pp
+gen caught KeyError p
+cleanup p
+after p
+finished normally
+== six
+setup q
+body qq
+cleanup q
+escaped ValueError

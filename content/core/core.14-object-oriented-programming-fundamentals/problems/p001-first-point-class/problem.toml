@@ -1,0 +1,7 @@
+id = "core.14.p001"
+title = "Your first class: a Point"
+tier = "drill"
+kind = "code"
+topics = ["classes", "instances", "attributes", "methods", "self", "__init__"]
+minutes = 15
+difficulty = 1

@@ -1,0 +1,6 @@
+['one', 'two', 'three']
+2
+fo
+ur!!
+
+True

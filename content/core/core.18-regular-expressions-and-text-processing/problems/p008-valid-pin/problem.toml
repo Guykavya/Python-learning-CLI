@@ -1,0 +1,7 @@
+id = "core.18.p008"
+title = "Quantifier ranges: a valid PIN"
+tier = "drill"
+kind = "code"
+topics = ["{m,n} quantifier", "re.fullmatch", "[0-9] vs \\d", "validation"]
+minutes = 10
+difficulty = 1

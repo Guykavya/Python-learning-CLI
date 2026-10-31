@@ -1,0 +1,7 @@
+id = "core.20.p014"
+title = "Rewrite unreadable code"
+tier = "applied"
+kind = "code"
+topics = ["reading code", "refactoring", "naming", "characterisation tests", "specific exceptions"]
+minutes = 35
+difficulty = 3

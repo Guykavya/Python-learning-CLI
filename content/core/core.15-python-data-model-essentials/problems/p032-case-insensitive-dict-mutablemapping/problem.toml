@@ -1,0 +1,7 @@
+id = "core.15.p032"
+title = "A case-insensitive dict with MutableMapping"
+tier = "challenge"
+kind = "code"
+topics = ["collections.abc", "MutableMapping", "mapping protocol", "__eq__", "__contains__"]
+minutes = 50
+difficulty = 5

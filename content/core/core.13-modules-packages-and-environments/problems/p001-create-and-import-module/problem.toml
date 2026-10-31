@@ -1,0 +1,6 @@
+id = "core.13.p001"
+title = "Write a helper module and import it"
+tier = "drill"
+kind = "code"
+topics = ["import", "sys.path", "importlib", "module cache"]
+minutes = 15

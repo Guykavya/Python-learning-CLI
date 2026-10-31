@@ -1,0 +1,10 @@
+cat cat cat cat
+concat cat None None
+cats cat cat None
+a cat cat None None
+42 None
+12
+None
+cat None
+True True
+1 (4, 7)

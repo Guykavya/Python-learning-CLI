@@ -1,0 +1,5 @@
+- Printing `exit a` before `done` is missing. The `return` value is only printed after `exit a`.
+- Thinking an error always stops the program. The generator swallowed the `KeyError`.
+- Printing `not printed`. After the error the rest of the with-body is skipped.
+- Thinking `swallow=KeyError` also swallows the `ValueError` in section `c`. It does not match.
+- Writing `exit c` after `outer caught bad`. The generator's `finally` runs first, while the error moves up.

@@ -1,0 +1,7 @@
+id = "core.19.p020"
+title = "Explain: the test that cannot fail"
+tier = "deep"
+kind = "explain"
+topics = ["over-mocking", "testing the implementation", "mocks that lie", "fakes"]
+minutes = 25
+difficulty = 4

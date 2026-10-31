@@ -1,0 +1,7 @@
+id = "core.17.p027"
+title = "floor, ceil, trunc and isclose"
+tier = "drill"
+kind = "code"
+topics = ["math.floor", "math.ceil", "math.trunc", "math.isclose", "integer ceiling division", "float precision"]
+minutes = 20
+difficulty = 2

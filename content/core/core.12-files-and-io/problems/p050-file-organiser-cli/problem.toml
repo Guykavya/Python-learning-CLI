@@ -1,0 +1,8 @@
+id = "core.12.p050"
+title = "Project: a file organiser CLI"
+tier = "challenge"
+kind = "code"
+topics = ["argparse", "pathlib", "shutil.move", "dry run", "never overwrite", "exit codes", "idempotence", "stdout and stderr"]
+minutes = 150
+difficulty = 5
+assessment = "build"

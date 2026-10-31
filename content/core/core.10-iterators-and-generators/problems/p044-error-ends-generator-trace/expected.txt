@@ -1,0 +1,11 @@
+try 5
+2
+try 0
+error!
+g is finished
+try 1
+try 0
+loop stopped, total 10
+skip 0
+safe end
+[2, 5]

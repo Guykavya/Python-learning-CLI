@@ -1,0 +1,7 @@
+id = "core.15.p023"
+title = "Money that refuses to mix currencies"
+tier = "applied"
+kind = "code"
+topics = ["__add__", "__sub__", "__mul__", "__rmul__", "__neg__", "custom exceptions"]
+minutes = 25
+difficulty = 3

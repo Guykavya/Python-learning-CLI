@@ -1,0 +1,20 @@
+risky timeout
+timeout: query took too long
+done timeout
+risky db
+db problem: table missing
+done db
+risky net
+app problem: NetworkError no route
+done net
+risky none
+ok: fine
+done none
+risky timeout
+caught as AppError
+risky value
+done value
+outside: bad number
+True False
+risky db
+generic: DbError

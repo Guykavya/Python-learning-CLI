@@ -1,0 +1,8 @@
+id = "core.14.p050"
+title = "Explain: why Stack(list) is a leaky stack"
+tier = "deep"
+kind = "explain"
+topics = ["composition vs inheritance", "is-a vs has-a", "delegation", "encapsulation", "inheritance"]
+minutes = 30
+difficulty = 4
+assessment = "explain"

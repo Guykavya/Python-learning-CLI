@@ -1,0 +1,9 @@
+- Raising `TypeError` yourself inside `__add__` for an unknown type: it works for `v + 5` but blocks Python from trying the other operand's reflected method (a subclass or another library may know how to add itself to a Vector). Return `NotImplemented`.
+- Defining `__eq__` without `__hash__` (the class becomes unhashable) or with a hash that uses different data than `__eq__`.
+- Returning a list or a tuple from `__getitem__` with a slice: the contract here is a `Vector`.
+- Storing the caller's list (`self._rows = rows`): a later change from outside silently changes the matrix. Copy into tuples.
+- `__rmul__` missing: `3 * v` raises `TypeError` although `v * 3` works.
+- `sum([v1, v2])` failing with `unsupported operand type(s) for +: 'int' and 'Vector'`: add `__radd__` that accepts `0`, and make it return `NotImplemented` for any other left operand.
+- Using `*` for the dot product or the matrix product: `*` is scalar multiplication here; `@` is the product.
+- Making the matrix power by a loop of `n` multiplications: it passes the small tests but is slow for big `n`. Repeated squaring needs about log2(n) multiplications.
+- `bool(v)` falling back to `__len__`: a vector with components has a length of at least 1, so it would always be true. Define `__bool__` for the zero vector.

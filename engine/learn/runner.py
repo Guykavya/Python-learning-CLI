@@ -14,7 +14,18 @@ from pathlib import Path
 from learn.content import Problem
 
 TIMEOUT_SECONDS = 60
+MEMORY_LIMIT_BYTES = 1 << 30  # 1 GiB: list() on an infinite iterator fails fast instead of freezing the machine
 COPY_SUFFIXES = {".py", ".txt", ".csv", ".json", ".md", ".toml", ".yaml", ".yml"}
+
+
+def _limit_memory() -> None:
+    """Runs in the test process before pytest starts (Linux/macOS only)."""
+    try:
+        import resource
+
+        resource.setrlimit(resource.RLIMIT_AS, (MEMORY_LIMIT_BYTES, MEMORY_LIMIT_BYTES))
+    except (ImportError, ValueError, OSError):
+        pass
 
 
 @dataclass
@@ -64,7 +75,10 @@ def run_code_tests(problem: Problem, solution_dir: Path, solution_file: Path | N
         ]
         env = dict(os.environ, PYTHONDONTWRITEBYTECODE="1", PYTHONPATH=str(tmpd), PYTHONUTF8="1")
         try:
-            proc = subprocess.run(cmd, cwd=tmpd, capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=TIMEOUT_SECONDS, env=env)
+            proc = subprocess.run(
+                cmd, cwd=tmpd, capture_output=True, text=True, encoding="utf-8", errors="replace",
+                timeout=TIMEOUT_SECONDS, env=env, preexec_fn=_limit_memory if os.name == "posix" else None,
+            )
         except subprocess.TimeoutExpired:
             return CheckResult(
                 False, 0, 0,
@@ -72,6 +86,11 @@ def run_code_tests(problem: Problem, solution_dir: Path, solution_file: Path | N
                 "or input() waiting for typing inside a function the tests call.",
             )
         output = (proc.stdout + proc.stderr).replace(str(tmpd), str(solution_dir))
+        if "MemoryError" in output:
+            output += (
+                f"\nStopped at the {MEMORY_LIMIT_BYTES >> 20} MB memory limit. Look for list(), sum() or a loop "
+                "over an infinite iterator, or a list that keeps growing."
+            )
         total, failed = _parse_junit(report)
 
     if total == 0:

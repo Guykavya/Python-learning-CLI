@@ -1,0 +1,7 @@
+id = "core.18.p035"
+title = "Explain: why (a+)+b explodes"
+tier = "deep"
+kind = "explain"
+topics = ["catastrophic backtracking", "nested quantifiers", "atomic groups", "possessive quantifiers", "ReDoS"]
+minutes = 25
+difficulty = 4

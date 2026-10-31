@@ -1,0 +1,7 @@
+id = "core.11.p026"
+title = "Group and count with reduce, without mutation"
+tier = "applied"
+kind = "code"
+topics = ["functools.reduce", "pure functions", "dict merging", "immutability"]
+minutes = 30
+difficulty = 3

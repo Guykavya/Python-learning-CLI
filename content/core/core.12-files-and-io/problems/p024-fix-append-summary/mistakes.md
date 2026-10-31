@@ -1,0 +1,4 @@
+- Mode `"w"` on the summary file: every call wipes the history. Use `"a"`.
+- A missing `"\n"` at the end of the summary: the next summary is glued to it (`errors=2errors=0`).
+- `line.startswith("ERROR")` only finds lines where the word is first. Log lines start with a time.
+- `open()` without `with` or `close()`: the handle leaks and the data may not be flushed in time.

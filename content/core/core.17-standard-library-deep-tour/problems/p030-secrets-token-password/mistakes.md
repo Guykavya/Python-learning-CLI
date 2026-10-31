@@ -1,0 +1,7 @@
+- Using `random.choice` or `random.random` for passwords or tokens. The Mersenne Twister is predictable: after 624 outputs the whole future sequence can be computed.
+- Seeding anything for secrets ("so it is reproducible"). A reproducible secret is not a secret.
+- Choosing all characters from the full alphabet and hoping every kind appears. It often does not.
+- Putting the guaranteed characters in fixed positions (lower, upper, digit, symbol, then the rest). An attacker then knows the pattern of the first four characters.
+- Shuffling with `random.shuffle`. Use `secrets.SystemRandom().shuffle`.
+- Comparing with `==`. Use `compare_digest`, and encode text to bytes, because `compare_digest("café", "café")` raises `TypeError` (non-ASCII `str` is refused).
+- Testing secrets against fixed expected values. They change every run; test properties.

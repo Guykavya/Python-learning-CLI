@@ -1,0 +1,6 @@
+- Keeping `.filter` because "it works": the data is right but hypothesis wastes most of its effort, and for `multiples_of_1000` it raises a health-check error.
+- Doubling a number with the same range as the final result: `integers(-1000, 1000).map(lambda n: n * 2)` goes up to 2000, outside the allowed range.
+- `sorted_lists` built with `st.lists(...).map(sorted)` but with unbounded `st.integers()`: values outside -50..50.
+- `ordered_pairs` as `tuples(integers(), integers())` followed by `.map(lambda t: tuple(sorted(t)))`: equal numbers appear (`a == b`), and the gap is unbounded.
+- Forgetting `unique=True` and removing duplicates with `.map(lambda xs: list(set(xs)))`: the lists can then be shorter than `min_size`, and set order is not stable.
+- Using `assume(...)` in a strategy: `assume` belongs inside a test body, and it is another way to reject, not to construct.

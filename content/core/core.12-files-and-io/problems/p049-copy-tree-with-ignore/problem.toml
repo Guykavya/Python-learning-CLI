@@ -1,0 +1,7 @@
+id = "core.12.p049"
+title = "Copy a project tree, skipping junk"
+tier = "challenge"
+kind = "code"
+topics = ["shutil.copytree", "ignore_patterns", "fnmatch patterns", "reading a config file", "FileExistsError"]
+minutes = 50
+difficulty = 4

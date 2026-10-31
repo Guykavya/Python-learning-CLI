@@ -1,0 +1,6 @@
+- Keeping negative results for `a - b`. The `-` **operator** drops anything that is zero or less; only the `subtract()` **method** keeps negatives.
+- Thinking `&` and `|` mean "keys in both" / "keys in either" with counts added. They are **min** and **max** of the counts.
+- Printing counters in insertion order. A Counter's printout is sorted by count, highest first.
+- Writing `0 True` on the `zzz` line. Reading a missing key in a Counter returns 0 but does not store it; that is the difference from `defaultdict`.
+- Picking `q` for the second `most_common` slot. Ties keep insertion order, and `b` was inserted long before `q`.
+- Counting negative counts in `elements()`. It skips counts below one.

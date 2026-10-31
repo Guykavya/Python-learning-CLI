@@ -1,0 +1,11 @@
+A: int | str
+B: str
+C: int | None
+D: str
+E: str
+F: int | str
+G: list[int]
+H: str
+I: list[str | None]
+J: str
+K: int | str

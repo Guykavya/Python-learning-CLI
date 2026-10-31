@@ -1,0 +1,7 @@
+id = "core.15.p011"
+title = "A case-insensitive key for dicts"
+tier = "applied"
+kind = "code"
+topics = ["__eq__", "__hash__", "dict keys", "casefold"]
+minutes = 20
+difficulty = 3

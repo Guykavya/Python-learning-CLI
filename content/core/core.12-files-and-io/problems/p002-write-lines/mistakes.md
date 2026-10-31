@@ -1,0 +1,4 @@
+- Forgetting `"\n"`. All lines then glue together into one long line.
+- Using mode `"a"`. Old content stays, but the task says to replace it.
+- Writing `"\n".join(lines)` only. The last line then has no newline.
+- Forgetting to return the count.

@@ -1,0 +1,7 @@
+id = "core.11.p018"
+title = "describe() with functools.singledispatch"
+tier = "applied"
+kind = "code"
+topics = ["functools.singledispatch", "dispatch on type", "recursion", "bool is an int"]
+minutes = 25
+difficulty = 2

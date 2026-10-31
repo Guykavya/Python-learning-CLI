@@ -1,0 +1,6 @@
+- Not removing the variables: a developer who has `APP_PORT` set in their shell sees different results from the CI machine. The checker runs your tests with junk values set to catch this.
+- `monkeypatch.delenv("APP_MODE")` without `raising=False`: it raises `KeyError` when the variable is not set.
+- Writing `config.txt` into `tmp_path` but forgetting `monkeypatch.chdir(tmp_path)`: `load_config` looks in the current folder, not in your temp folder.
+- `os.environ["APP_PORT"] = "9000"` directly: it leaks into every later test. `setenv` restores the old value.
+- Only testing env **or** file, never both: the bug "file beats env" survives.
+- Comparing the port with the string `"9000"`: the correct code returns the int `9000`.

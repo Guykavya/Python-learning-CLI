@@ -1,0 +1,7 @@
+id = "core.15.p034"
+title = "A callable object that counts its calls"
+tier = "drill"
+kind = "code"
+topics = ["__call__", "callable objects", "decorators", "instance state"]
+minutes = 15
+difficulty = 2

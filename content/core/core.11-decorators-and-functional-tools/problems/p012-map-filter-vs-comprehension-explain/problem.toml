@@ -1,0 +1,6 @@
+id = "core.11.p012"
+title = "Explain: map and filter versus a comprehension"
+tier = "drill"
+kind = "explain"
+topics = ["map", "filter", "comprehensions", "functional style", "laziness"]
+minutes = 15

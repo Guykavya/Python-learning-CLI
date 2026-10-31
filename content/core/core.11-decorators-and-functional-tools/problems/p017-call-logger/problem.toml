@@ -1,0 +1,6 @@
+id = "core.11.p017"
+title = "@logged(log): record every call"
+tier = "applied"
+kind = "code"
+topics = ["decorators with arguments", "repr", "**kwargs", "re-raising exceptions", "functools.wraps"]
+minutes = 25

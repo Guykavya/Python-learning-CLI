@@ -1,0 +1,7 @@
+id = "core.12.p024"
+title = "Fix: the error summary appender"
+tier = "applied"
+kind = "code"
+topics = ["debugging", "append mode", "with statement", "resource leaks", "newlines"]
+minutes = 25
+assessment = "fix"

@@ -1,0 +1,5 @@
+- Thinking `*` skips names that start with a dot. That is a shell habit (`ls`). `pathlib` includes them.
+- Forgetting that `glob("*")` also returns folders, so the count is 5, not 4.
+- Reading `*/*.py` as "any depth". It means exactly one folder level.
+- Thinking `fnmatch` stops `*` at a slash. It does not; it is only text matching.
+- Forgetting that `fnmatchcase` is case sensitive.

@@ -1,0 +1,7 @@
+id = "core.17.p051"
+title = "Bank transfers: transactions, rollback and SQL injection"
+tier = "deep"
+kind = "code"
+topics = ["sqlite3", "transactions", "commit", "rollback", "CHECK constraint", "rowcount", "SQL injection", "parameterised queries"]
+minutes = 45
+difficulty = 4

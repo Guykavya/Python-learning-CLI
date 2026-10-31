@@ -1,0 +1,7 @@
+id = "core.15.p025"
+title = "len() and indexing for your class"
+tier = "drill"
+kind = "code"
+topics = ["__len__", "__getitem__", "container protocol", "iteration"]
+minutes = 15
+difficulty = 2

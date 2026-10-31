@@ -1,0 +1,7 @@
+id = "core.14.p006"
+title = "Numbered tickets with a class counter"
+tier = "drill"
+kind = "code"
+topics = ["class attributes", "instance attributes", "classmethod", "shadowing"]
+minutes = 15
+difficulty = 2

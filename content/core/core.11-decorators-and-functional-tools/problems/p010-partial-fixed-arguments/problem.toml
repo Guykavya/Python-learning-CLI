@@ -1,0 +1,6 @@
+id = "core.11.p010"
+title = "functools.partial: fix some arguments"
+tier = "drill"
+kind = "code"
+topics = ["functools.partial", "keyword arguments", "int with base"]
+minutes = 15

@@ -1,0 +1,7 @@
+id = "core.10.p040"
+title = "Rebuild chain, zip, enumerate and islice"
+tier = "deep"
+kind = "code"
+topics = ["generators", "itertools internals", "iteration protocol", "lazy evaluation"]
+minutes = 40
+difficulty = 4

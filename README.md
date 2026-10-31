@@ -31,7 +31,7 @@ Unwritten modules show as "not written yet" in `learn syllabus`, and nothing is 
 
 You need **Python 3.11 or newer** (any newer version works). Git is optional: it only
 makes downloading easier and lets `learn` keep a private history of your progress.
-Internet is needed once, to install the three packages the engine uses (PyYAML, pytest, Pygments).
+Internet is needed once, to install the packages the engine uses (PyYAML, pytest, Pygments, and tzdata on Windows).
 
 **1. Get the project.** Either clone it:
 
@@ -146,6 +146,7 @@ Your progress is untouched, because none of it is part of the course repository.
 | `learn log lc <slug>` / `log cf 1520A` / `log cses 1068` | Record an outside solve and save its code |
 | `learn sync` | Pull solves from Codeforces and LeetCode |
 | `learn config show` / `config set plan.daily_minutes 120` | Settings |
+| `learn reset` | Start over: saves a backup zip in `backups/`, then erases your progress and solutions (`--all` also erases `config.toml`, `playground/` and `library/`) |
 | `learn new <module> "<title>"` / `learn validate` | Write your own problems |
 
 ## Folders

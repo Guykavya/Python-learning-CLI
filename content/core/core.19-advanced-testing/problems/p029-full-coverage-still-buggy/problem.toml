@@ -1,0 +1,8 @@
+id = "core.19.p029"
+title = "Explain: 100% coverage, still buggy"
+tier = "deep"
+kind = "explain"
+topics = ["coverage", "branch coverage", "boundary values", "combinations", "missing code"]
+minutes = 25
+difficulty = 4
+assessment = "explain"

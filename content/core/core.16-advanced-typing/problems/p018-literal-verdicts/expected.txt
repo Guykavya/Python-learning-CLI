@@ -1,0 +1,11 @@
+A: error
+B: ok
+C: error
+D: error
+E: ok
+F: ok
+G: error
+H: ok
+I: error
+J: ok
+K: error

@@ -1,0 +1,7 @@
+id = "core.17.p052"
+title = "Zip a folder, list it, extract it safely"
+tier = "applied"
+kind = "code"
+topics = ["zipfile", "ZIP_DEFLATED", "arcname", "namelist", "zip slip", "PurePosixPath"]
+minutes = 40
+difficulty = 3

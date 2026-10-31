@@ -1,0 +1,7 @@
+id = "core.14.p044"
+title = "A list with undo and redo"
+tier = "applied"
+kind = "code"
+topics = ["composition", "delegation", "encapsulation", "stacks", "negative indexes"]
+minutes = 40
+difficulty = 3

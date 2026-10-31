@@ -1,0 +1,7 @@
+id = "core.17.p033"
+title = "Explain: random or secrets?"
+tier = "deep"
+kind = "explain"
+topics = ["random", "secrets", "Mersenne Twister", "seeding", "SystemRandom", "security"]
+minutes = 25
+difficulty = 3

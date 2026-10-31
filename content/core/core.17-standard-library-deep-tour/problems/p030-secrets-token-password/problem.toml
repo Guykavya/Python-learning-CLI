@@ -1,0 +1,7 @@
+id = "core.17.p030"
+title = "Tokens and passwords with secrets"
+tier = "applied"
+kind = "code"
+topics = ["secrets", "token_urlsafe", "secrets.choice", "SystemRandom", "compare_digest", "testing by properties"]
+minutes = 30
+difficulty = 3

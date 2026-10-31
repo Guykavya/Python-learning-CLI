@@ -1,0 +1,6 @@
+id = "core.13.p011"
+title = "A package with a clean public API"
+tier = "applied"
+kind = "code"
+topics = ["packages", "__init__.py", "re-exports", "__all__", "relative imports", "__version__", "private modules"]
+minutes = 25

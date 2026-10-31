@@ -1,0 +1,7 @@
+id = "core.11.p031"
+title = "trace_calls: show every recursive call as a tree"
+tier = "deep"
+kind = "code"
+topics = ["decorators with arguments", "recursion", "nonlocal", "try/finally", "name lookup"]
+minutes = 40
+difficulty = 4

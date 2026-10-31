@@ -1,0 +1,6 @@
+id = "core.12.p034"
+title = "Convert between CSV and JSON"
+tier = "deep"
+kind = "code"
+topics = ["csv.DictReader", "csv.DictWriter", "json", "type conversion", "newline=''"]
+minutes = 40

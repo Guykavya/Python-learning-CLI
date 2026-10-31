@@ -1,0 +1,5 @@
+- Creating `calls = []` in the class body: all decorated functions share one list.
+- Recording only successes, or recording the error and swallowing it (no `raise`): callers never see the failure.
+- Writing `raise err` instead of `raise`: it works but adds a confusing extra line to the traceback; a bare `raise` is the normal form.
+- Forgetting `update_wrapper`: `help(add)` and `add.__name__` then describe the `Recorder` class, not your function.
+- Making `last_result` a method (`add.last_result()`) when the tests and the use case read it like an attribute.

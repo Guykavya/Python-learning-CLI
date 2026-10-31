@@ -1,0 +1,7 @@
+- Typing the wrapper as `(*args: Any, **kwargs: Any)` and the result as `Callable[..., Any]`. It runs, but a checker no longer sees the real signature, so a call like `add("x")` is not reported.
+- Using `P` without `ParamSpec`: `P = TypeVar("P")`. A `ParamSpec` is a different kind of variable.
+- Writing `*args: P` instead of `*args: P.args` and `**kwargs: P.kwargs`. Both halves are needed.
+- Forgetting `functools.wraps`. Then `add.__name__` becomes `"wrapper"` and the signature is lost.
+- Logging after the call, so a call that raises is never logged.
+- Using `str(arg)` instead of `repr(arg)`: `'Ada'` becomes `Ada`.
+- In `logged_as`, returning `wrapper` directly instead of a decorator. `@logged_as("db")` calls `logged_as("db")` first, then the result is applied to the function.

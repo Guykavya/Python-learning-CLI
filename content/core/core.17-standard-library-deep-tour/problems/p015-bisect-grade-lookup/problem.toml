@@ -1,0 +1,7 @@
+id = "core.17.p015"
+title = "bisect: grade lookup and counting in a range"
+tier = "drill"
+kind = "code"
+topics = ["bisect", "bisect_left", "bisect_right", "binary search", "boundaries"]
+minutes = 20
+difficulty = 2

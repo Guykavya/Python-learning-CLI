@@ -1,0 +1,7 @@
+id = "core.15.p021"
+title = "Trace: += and shared objects"
+tier = "applied"
+kind = "trace"
+topics = ["__iadd__", "__add__", "aliasing", "mutability"]
+minutes = 20
+difficulty = 3

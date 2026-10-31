@@ -1,0 +1,6 @@
+- Making `Permission` a plain `Enum` with values `1, 2, 4`: `READ | WRITE` then raises `TypeError`.
+- Testing with `==` (`granted == needed`): that is true only for exactly the same combination, not for "includes".
+- In `parse`, accepting any order (`"xwr"` would set bits by letter): the format is positional.
+- Forgetting the length check: `"rwxx"` or `"rw"` must be rejected.
+- Comparing priorities with strings or by name: `IntEnum` is for numeric comparison; with a plain `Enum`, `Priority.LOW < Priority.HIGH` raises `TypeError`.
+- Expecting `Priority.MEDIUM + 1` to be `Priority.HIGH`: it is the plain int `3`, which is *equal* to `Priority.HIGH`.

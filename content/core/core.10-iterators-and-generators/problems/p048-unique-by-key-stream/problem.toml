@@ -1,0 +1,7 @@
+id = "core.10.p048"
+title = "First of each kind in an endless stream"
+tier = "challenge"
+kind = "code"
+topics = ["sets", "key functions", "strings", "generator pipelines", "infinite iterators"]
+minutes = 35
+difficulty = 3

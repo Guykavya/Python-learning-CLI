@@ -1,0 +1,7 @@
+id = "core.14.p059"
+title = "Flatten a nested exception group"
+tier = "deep"
+kind = "code"
+topics = ["ExceptionGroup", "BaseExceptionGroup", "split", "subgroup", "recursion", "nested exception groups"]
+minutes = 35
+difficulty = 4

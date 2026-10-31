@@ -1,0 +1,7 @@
+id = "core.18.p004"
+title = "Trace: raw strings and escaping"
+tier = "drill"
+kind = "trace"
+topics = ["raw strings", "backslash escapes", "re.escape", "\\b"]
+minutes = 15
+difficulty = 2

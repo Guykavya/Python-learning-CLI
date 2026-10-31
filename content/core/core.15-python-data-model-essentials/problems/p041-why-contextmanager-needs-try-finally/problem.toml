@@ -1,0 +1,6 @@
+id = "core.15.p041"
+title = "Explain: why @contextmanager needs try/finally"
+tier = "deep"
+kind = "explain"
+topics = ["contextlib.contextmanager", "try/finally", "generators", "exception propagation"]
+minutes = 25

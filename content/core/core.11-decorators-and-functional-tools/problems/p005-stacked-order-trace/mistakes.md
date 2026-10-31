@@ -1,0 +1,4 @@
+- Writing `decorate b` before `decorate i`. The decorator closest to `def` is applied first.
+- Writing `make i` before `make b`. The `tag(...)` calls themselves are ordinary expressions, run top to bottom.
+- Writing `exit b` before `exit i`. The inner wrapper must return before the outer one can continue.
+- Getting `<i><b>hi</b></i>`. The outer decorator wraps the text last, so its tag is on the outside.

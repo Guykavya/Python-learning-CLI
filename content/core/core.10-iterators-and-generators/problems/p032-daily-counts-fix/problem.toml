@@ -1,0 +1,7 @@
+id = "core.10.p032"
+title = "Fix: logins per day are too low"
+tier = "applied"
+kind = "code"
+topics = ["groupby", "sorted", "debugging", "pipelines"]
+minutes = 20
+assessment = "fix"

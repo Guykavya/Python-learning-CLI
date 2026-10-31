@@ -1,0 +1,7 @@
+id = "core.15.p003"
+title = "Trace: repr or str?"
+tier = "drill"
+kind = "trace"
+topics = ["__repr__", "__str__", "containers", "f-strings"]
+minutes = 10
+difficulty = 2

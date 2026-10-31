@@ -1,0 +1,7 @@
+id = "core.14.p010"
+title = "Trace: name mangling with double underscores"
+tier = "drill"
+kind = "trace"
+topics = ["name mangling", "encapsulation conventions", "private attributes", "vars", "inheritance"]
+minutes = 15
+difficulty = 2

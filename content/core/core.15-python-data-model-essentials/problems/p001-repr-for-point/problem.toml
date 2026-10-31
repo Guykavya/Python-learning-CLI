@@ -1,0 +1,7 @@
+id = "core.15.p001"
+title = "Give Point a useful repr"
+tier = "drill"
+kind = "code"
+topics = ["__repr__", "repr", "debugging"]
+minutes = 10
+difficulty = 1

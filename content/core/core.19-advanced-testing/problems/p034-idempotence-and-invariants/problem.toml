@@ -1,0 +1,7 @@
+id = "core.19.p034"
+title = "Idempotence and invariants"
+tier = "applied"
+kind = "code"
+topics = ["hypothesis", "idempotence", "invariants", "stability", "custom alphabet"]
+minutes = 35
+difficulty = 3

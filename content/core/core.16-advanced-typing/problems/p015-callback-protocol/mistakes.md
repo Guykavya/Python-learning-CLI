@@ -1,0 +1,6 @@
+- Writing `def fixed(value, precision=2)` without the `*`: `precision` is then positional-or-keyword, not the same signature as the protocol (and the test says so).
+- Calling `fmt(v, precision)` positionally in `format_all`: `TypeError` for keyword-only parameters.
+- Not forwarding `precision`: `fmt(v)` silently uses the formatter's own default.
+- Using `Callable[[float], str]` for `fmt`: the checker would then reject the call `fmt(v, precision=precision)`, because that type has no keyword `precision`.
+- Forgetting to multiply by 100 in `percent`, or rounding with `round()` first (`round(25.6)` gives `26`, losing the digits requested).
+- Writing `value:.precisionf` in the f-string. The nested braces are needed: `{value:.{precision}f}`.

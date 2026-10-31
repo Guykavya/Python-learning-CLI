@@ -1,0 +1,7 @@
+id = "core.19.p037"
+title = "Oracle testing: fast against slow"
+tier = "deep"
+kind = "code"
+topics = ["hypothesis", "oracle", "model-based testing", "Kadane", "small inputs"]
+minutes = 40
+difficulty = 4

@@ -1,0 +1,7 @@
+- Answering `NOTSET` for `db.getEffectiveLevel()`: `NOTSET` means "ask my parent", and the parent `shop` is INFO.
+- Dropping `p1` because `shop` is at INFO: parent **logger** levels are not checked when a record propagates; only handler levels are.
+- Printing `d3` once: it passes both the `[db]` handler (WARNING) and the `[shop]` handler.
+- Expecting `[shop]` lines for `w1` and `a1`: `shop.web` has `propagate = False`, so the climb stops there.
+- Dropping `p2` because `db` was set to ERROR: `pool` has its own DEBUG level.
+- Writing nothing for `p3`: with no handler found at all, `lastResort` prints the bare message to stderr.
+- Writing `[shop] shop.db.pool CRITICAL p3`: `lastResort` uses no formatter tag, just the message.

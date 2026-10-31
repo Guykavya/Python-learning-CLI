@@ -1,0 +1,7 @@
+id = "core.19.p002"
+title = "Your first fixture: cart"
+tier = "drill"
+kind = "code"
+topics = ["@pytest.fixture", "fixture as test input", "fresh state per test"]
+minutes = 20
+difficulty = 2

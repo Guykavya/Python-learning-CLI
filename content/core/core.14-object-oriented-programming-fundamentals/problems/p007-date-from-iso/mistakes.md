@@ -1,0 +1,7 @@
+- Returning `SimpleDate(...)` in `from_iso`. Subclasses then get the wrong type back.
+- Repeating all the date checks inside `from_iso`. Let it call `cls(...)`, and `__init__` checks once.
+- Forgetting `int(...)`. `"03"` stays a string, and the month check `1 <= "03"` fails with `TypeError`.
+- Writing the leap rule as `year % 4 == 0` only. 1900 and 2100 are not leap years.
+- Checking the day before the month. `MONTH_DAYS[13 - 1]` raises `IndexError` instead of the right message.
+- Using `str(self.month)` in `iso`. March prints as `3`, not `03`.
+- Forgetting the decorator: a plain `def is_leap(year)` called as `d.is_leap(2024)` gets `d` as `year`.

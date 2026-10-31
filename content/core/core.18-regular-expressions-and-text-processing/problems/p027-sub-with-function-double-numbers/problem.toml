@@ -1,0 +1,7 @@
+id = "core.18.p027"
+title = "re.sub with a function: double every integer"
+tier = "applied"
+kind = "code"
+topics = ["re.sub", "replacement functions", "lookaround", "Match objects"]
+minutes = 25
+difficulty = 3

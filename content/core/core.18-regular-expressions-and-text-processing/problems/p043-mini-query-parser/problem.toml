@@ -1,0 +1,7 @@
+id = "core.18.p043"
+title = "Mini search-query parser"
+tier = "challenge"
+kind = "code"
+topics = ["re.finditer", "named groups", "optional groups", "alternation", "defaultdict", "order of alternatives"]
+minutes = 40
+difficulty = 4

@@ -1,0 +1,5 @@
+- `users = {}` in the class body: every repo shares one dict, and tests leak into each other.
+- Returning `list(self._users.values())`: that is ordered by insertion, not by `user_id`.
+- Returning the internal list or dict from `names()`/`get()` so callers can change the repo.
+- Validating after storing: a failed `add` with a blank name must leave nothing behind.
+- Making the fake smarter than the real repo (extra features). The fake must obey the contract, no more.

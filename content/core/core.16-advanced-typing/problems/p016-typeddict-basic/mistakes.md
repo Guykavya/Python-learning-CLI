@@ -1,0 +1,6 @@
+- Forgetting the base class: `class Movie:` with annotations is a normal class, not a dict.
+- Writing values in the class body (`title: str = ""`). A TypedDict cannot have default values.
+- Using attribute access, `movie.title`. A TypedDict instance is a dict: `movie["title"]`.
+- `retitle` that does `movie["title"] = new_title; return movie`: it changes the caller's dict.
+- Expecting `Movie("Alien", 1979, 8.5)` to work. A TypedDict is created with keywords or a dict literal.
+- Believing Python checks the types of the values: `make_movie("x", "not a year", 1)` runs fine; only the checker complains.

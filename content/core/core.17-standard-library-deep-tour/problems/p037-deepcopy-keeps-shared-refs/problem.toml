@@ -1,0 +1,7 @@
+id = "core.17.p037"
+title = "Trace: deepcopy keeps the shape of sharing"
+tier = "deep"
+kind = "trace"
+topics = ["copy.deepcopy", "memo dict", "shared references", "cycles", "object identity"]
+minutes = 25
+difficulty = 4

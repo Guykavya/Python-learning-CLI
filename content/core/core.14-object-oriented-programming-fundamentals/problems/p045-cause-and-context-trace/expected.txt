@@ -1,0 +1,25 @@
+a: ConfigError - bad number
+  cause: None
+  context: ValueError
+  suppress: False
+b: ConfigError - missing port
+  cause: KeyError
+  context: KeyError
+  suppress: True
+c: ConfigError - empty list
+  cause: None
+  context: IndexError
+  suppress: True
+d: ConfigError - direct
+  cause: OSError
+  context: None
+  suppress: True
+e: NameError - name 'totl' is not defined
+  cause: None
+  context: ZeroDivisionError
+  suppress: False
+f: ConfigError - after
+  cause: None
+  context: None
+  suppress: False
+RuntimeError -> ConfigError -> KeyError

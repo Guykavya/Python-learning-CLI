@@ -1,0 +1,7 @@
+id = "core.18.p034"
+title = "Split a CSV-like line with quoted fields"
+tier = "applied"
+kind = "code"
+topics = ["re.finditer", "alternation", "lookahead", "lazy quantifiers", "quoting"]
+minutes = 35
+difficulty = 3

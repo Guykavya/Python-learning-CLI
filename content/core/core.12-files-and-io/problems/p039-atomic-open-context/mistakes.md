@@ -1,0 +1,5 @@
+- Calling `os.replace` before the temp file is closed. The data may still be in a buffer.
+- Creating the temp file in the system temp folder. It may be on another disk, and the replace is then not atomic.
+- Forgetting to delete the temp file after an error, so junk files pile up.
+- Catching the error and not raising it again. The caller must know that the write failed.
+- Writing straight into `path` and only copying a backup. That is not atomic.

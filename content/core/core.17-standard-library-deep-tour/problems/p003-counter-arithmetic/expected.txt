@@ -1,0 +1,12 @@
+Counter({'a': 3, 'n': 2, 'b': 1})
+Counter({'n': 7, 'a': 4, 'x': 2, 'b': 1})
+Counter({'a': 2, 'b': 1})
+Counter({'n': 3, 'x': 2})
+Counter({'n': 2, 'a': 1})
+Counter({'n': 5, 'a': 3, 'x': 2, 'b': 1})
+Counter({'a': 2, 'b': 1, 'x': -2, 'n': -3})
+Counter({'a': 2, 'b': 1})
+0 False
+[('a', 3), ('b', 1)]
+6 8
+['a', 'a', 'a', 'b', 'n', 'n']

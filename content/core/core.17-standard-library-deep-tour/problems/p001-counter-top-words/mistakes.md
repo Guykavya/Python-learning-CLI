@@ -1,0 +1,6 @@
+- Returning a plain `dict`. It looks the same when printed, but `d["missing"]` raises `KeyError` and there is no `most_common()`.
+- Forgetting `.lower()`, so `The` and `the` are counted apart.
+- Using `word.replace(".", "")` instead of `strip`. That also removes punctuation from the middle, and you need one `replace` per character.
+- Counting the empty string: `"!".strip(PUNCT)` is `""`, and `Counter` happily counts `""`.
+- Sorting ties alphabetically with `sorted(..., key=lambda kv: (-kv[1], kv[0]))`. The task asks for first-seen order, which `most_common` already gives.
+- Slicing by hand with `sorted(...)[:n]` for a negative `n`: `[:-3]` drops the last three items instead of giving `[]`. `most_common(-3)` happens to give `[]`, but a hand-written slice does not.

@@ -1,0 +1,7 @@
+id = "core.14.p008"
+title = "Temperature with validated and computed properties"
+tier = "drill"
+kind = "code"
+topics = ["properties", "setters", "validation", "computed attributes", "encapsulation"]
+minutes = 20
+difficulty = 2

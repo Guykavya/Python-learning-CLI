@@ -1,0 +1,7 @@
+id = "core.18.p007"
+title = "Word boundaries: count a whole word"
+tier = "drill"
+kind = "code"
+topics = ["\\b word boundary", "re.escape", "re.IGNORECASE", "re.findall"]
+minutes = 15
+difficulty = 2

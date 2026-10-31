@@ -1,0 +1,7 @@
+id = "core.11.p021"
+title = "retry: try again when a call fails"
+tier = "applied"
+kind = "code"
+topics = ["decorators with arguments", "functools.wraps", "exceptions", "dependency injection"]
+minutes = 30
+difficulty = 3

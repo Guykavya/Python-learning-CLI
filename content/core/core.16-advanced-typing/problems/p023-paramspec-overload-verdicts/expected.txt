@@ -1,0 +1,10 @@
+A: ok
+B: error
+C: error
+D: ok
+E: ok
+F: int
+G: Any
+H: int
+I: float
+J: error

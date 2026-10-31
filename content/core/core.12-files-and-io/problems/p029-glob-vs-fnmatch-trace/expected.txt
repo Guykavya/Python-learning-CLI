@@ -1,0 +1,10 @@
+['.hidden.py', 'a.py', 'ab.py']
+['c.py']
+['.hidden.py', 'a.py', 'ab.py', 'c.py']
+['d.txt', 'notes.txt']
+5
+['a.py']
+['a.py', 'ab.py']
+True
+False
+True True True

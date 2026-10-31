@@ -1,0 +1,7 @@
+id = "core.19.p016"
+title = "Patch the name where it is used"
+tier = "deep"
+kind = "code"
+topics = ["unittest.mock.patch", "where to patch", "from-import vs import", "name lookup"]
+minutes = 30
+difficulty = 4

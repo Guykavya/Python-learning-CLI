@@ -1,0 +1,5 @@
+- Saying `random` is "not random enough" for secrets. Its output looks perfectly random statistically; the problem is that it is *predictable*.
+- Thinking a secret seed (or the current time as seed) makes `random` safe. The time is guessable, and even a secret seed does not hide the state once 624 outputs are seen.
+- Using `secrets` for simulations and tests: they become impossible to reproduce and debug.
+- Forgetting that the module-level functions share one global generator; `random.seed` in a library changes everyone's numbers.
+- Choosing `secrets` for job 5 "to be safe". It works, but nothing needs protecting there; the question asks *why*.

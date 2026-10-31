@@ -1,0 +1,8 @@
+5 9
+5 10
+CacheInfo(hits=4, misses=6, maxsize=None, currsize=6)
+5 6
+5 6
+CacheInfo(hits=4, misses=6, maxsize=None, currsize=6)
+5 1
+fib_b 0

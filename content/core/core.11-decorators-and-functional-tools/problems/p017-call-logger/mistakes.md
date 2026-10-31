@@ -1,0 +1,5 @@
+- Using `str` instead of `repr`: `greet(Ann)` loses the quotes and looks like a variable name.
+- Logging before the call with "-> ?" and fixing it later. Build the call text first, log once at the end.
+- `raise error` or raising a new exception instead of a bare `raise`. A bare `raise` keeps the original traceback.
+- Swallowing the error (no re-raise): the caller gets `None` and never learns the call failed.
+- Creating a new list inside the decorator instead of appending to the one passed in.

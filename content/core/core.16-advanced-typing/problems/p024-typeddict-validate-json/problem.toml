@@ -1,0 +1,6 @@
+id = "core.16.p024"
+title = "Validate JSON against a TypedDict"
+tier = "applied"
+kind = "code"
+topics = ["TypedDict", "NotRequired", "__required_keys__", "get_type_hints", "is_typeddict", "json", "runtime validation"]
+minutes = 40

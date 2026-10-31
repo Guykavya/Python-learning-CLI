@@ -1,0 +1,7 @@
+id = "core.14.p012"
+title = "A chain of __init__ methods with super()"
+tier = "drill"
+kind = "code"
+topics = ["inheritance", "super()", "__init__", "overriding", "extending methods"]
+minutes = 25
+difficulty = 2

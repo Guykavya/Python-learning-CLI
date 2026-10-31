@@ -1,0 +1,5 @@
+- Answering "e2e" for everything because it feels the most thorough. It is also the slowest and the most fragile.
+- Answering "unit" for the file round-trip: if the disk is faked there is nothing left to test. The agreement between save and load **is** the behaviour.
+- Forgetting to say what is faked. "Integration" does not mean "no fakes": the network and the clock are still faked.
+- Calling a test with a real network call a unit test. It will fail on a train and slow down every run.
+- Giving no reason. A level without a reason cannot be checked by a teammate.

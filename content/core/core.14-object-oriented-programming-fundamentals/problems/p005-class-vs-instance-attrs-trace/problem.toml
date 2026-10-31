@@ -1,0 +1,7 @@
+id = "core.14.p005"
+title = "Trace: class attributes and instance attributes"
+tier = "drill"
+kind = "trace"
+topics = ["class attributes", "instance attributes", "attribute lookup", "shadowing", "mutable class attribute"]
+minutes = 15
+difficulty = 2

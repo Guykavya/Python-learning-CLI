@@ -1,0 +1,6 @@
+- Saying "UTC avoids DST" without showing what goes wrong: the answer should name a repeated hour and a skipped hour, and a wrong result each one causes.
+- Thinking a single-city app is safe. The city itself changes offset twice a year, and servers often run in UTC.
+- Storing UTC as a naive string (`"2024-10-27 00:30"`) with no offset. The next reader cannot tell it is UTC; include `+00:00` or use a timestamp.
+- Converting to local time in the middle of the program (for a comparison) instead of only at the output edge.
+- Claiming UTC is always enough. For future appointments fixed to a local wall time, store the wall time and the zone name.
+- Confusing a zone (`Europe/London`, with rules) with an offset (`+01:00`, one moment's value). Storing only the offset of a future event has the same problem as storing only UTC.

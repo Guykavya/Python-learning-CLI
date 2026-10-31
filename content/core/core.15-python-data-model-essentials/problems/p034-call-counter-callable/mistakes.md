@@ -1,0 +1,4 @@
+- Forgetting `return` in `__call__`: every call gives `None`.
+- Making `count` a class attribute (`count = 0` and `CallCounter.count += 1`): all counters share it.
+- Increasing the counter after the call: an exception skips the line and the failed call is not counted.
+- Writing `def __call__(self, args)`: the call `c(1, 2)` then fails. Use `*args, **kwargs`.

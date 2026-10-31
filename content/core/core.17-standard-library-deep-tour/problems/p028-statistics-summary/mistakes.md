@@ -1,0 +1,6 @@
+- Using `stdev` where `pstdev` is meant, or the other way round. Sample stdev (`n - 1`) is the right choice when the data is a sample of something bigger; the test data shows they differ.
+- Calling `statistics.stdev` on one value: it raises `StatisticsError`. Check the length first.
+- Using `statistics.mode` for `"modes"`: it returns one value even when two are equally common.
+- Writing `sorted(data)[len(data) // 2]` as the median: wrong for an even count (it must average the two middle values).
+- Sorting the caller's list with `data.sort()`. Use functions that do not change their input.
+- Building the outlier list from the sorted data: the result must keep the original order.

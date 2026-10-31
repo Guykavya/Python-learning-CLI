@@ -1,0 +1,7 @@
+id = "core.16.p023"
+title = "Trace: what does mypy say about ParamSpec and overloads?"
+tier = "deep"
+kind = "trace"
+topics = ["ParamSpec", "@overload", "Callable[..., Any]", "reveal_type", "call-arg", "call-overload"]
+minutes = 25
+assessment = "trace"

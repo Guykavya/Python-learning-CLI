@@ -1,0 +1,7 @@
+id = "core.17.p007"
+title = "ChainMap: layered configuration"
+tier = "applied"
+kind = "code"
+topics = ["collections.ChainMap", "maps", "configuration", "environment variables"]
+minutes = 25
+difficulty = 2

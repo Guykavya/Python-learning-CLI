@@ -1,0 +1,6 @@
+- `naive.astimezone(ZoneInfo(zone))`: the naive time is taken as **your computer's** local time, then converted. Works on your laptop in one zone, wrong everywhere else.
+- `aware.replace(tzinfo=ZoneInfo(other))` to "convert": the clock reading stays the same and the instant changes. Use `astimezone` to convert.
+- Using a fixed offset like `timezone(timedelta(hours=1))` for London: right in summer, wrong in winter.
+- `datetime.utcnow()`: it returns a **naive** datetime that only looks like UTC. Use `datetime.now(timezone.utc)`.
+- Comparing a naive and an aware datetime with `==`: always `False`, no error. With `<` you get a `TypeError`.
+- On Windows: `ZoneInfoNotFoundError` means the `tzdata` package is missing, not that the zone name is wrong.

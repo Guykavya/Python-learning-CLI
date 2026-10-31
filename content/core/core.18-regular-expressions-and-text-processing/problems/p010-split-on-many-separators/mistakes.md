@@ -1,0 +1,5 @@
+- `re.split(r"[,;\s]", s)` without `+`: two separators in a row produce an empty string between them.
+- Forgetting the filter: `" a"` splits into `['', 'a']`.
+- `re.split(r",|;|\s+", s)`: a comma followed by a space is two separate splits, which again leaves an empty string.
+- `s.split(",;")`: `str.split` looks for the two-character string `",;"`, not "either character".
+- `[,; ]` with a literal space: tabs and newlines are not split. Use `\s`.

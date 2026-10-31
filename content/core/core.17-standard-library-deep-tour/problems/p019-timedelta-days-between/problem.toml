@@ -1,0 +1,7 @@
+id = "core.17.p019"
+title = "timedelta: days between, business days, age"
+tier = "drill"
+kind = "code"
+topics = ["datetime.date", "timedelta", "weekday", "date arithmetic", "leap years"]
+minutes = 25
+difficulty = 2

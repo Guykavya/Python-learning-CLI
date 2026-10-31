@@ -1,0 +1,7 @@
+- `+91` without a backslash: `+` is a quantifier, so `r"+91"` raises `re.error` ("nothing to repeat"), and `r"(+91)?"` likewise.
+- Two separate optional prefixes, `(\+91[ -]?)?0?`, which accepts `"+91 09876543210"`.
+- `[ -]*` instead of `[ -]?`: accepts several separators.
+- Putting the hyphen between two other characters in a class, like `[ -.]`: that is a **range** from space to dot. Keep the hyphen first or last: `[ -]` or `[- ]`.
+- Allowing the middle separator anywhere, for example by deleting all spaces and hyphens first. Then `"9876 543210"` wrongly passes.
+- Forgetting `strip()`, or using `re.search`, which accepts `"call 9876543210"`.
+- `\d` instead of `[0-9]`: accepts digits from other scripts.

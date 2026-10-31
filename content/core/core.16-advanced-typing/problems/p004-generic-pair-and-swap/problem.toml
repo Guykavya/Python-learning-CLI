@@ -1,0 +1,7 @@
+id = "core.16.p004"
+title = "A generic Pair with swap and map_first"
+tier = "applied"
+kind = "code"
+topics = ["Generic[A, B]", "two TypeVars", "dataclass", "Callable[[A], C]", "returning generic types"]
+minutes = 30
+difficulty = 3

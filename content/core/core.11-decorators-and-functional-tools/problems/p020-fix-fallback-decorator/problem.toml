@@ -1,0 +1,7 @@
+id = "core.11.p020"
+title = "Fix: the @fallback decorator"
+tier = "applied"
+kind = "code"
+topics = ["debugging", "decorators with arguments", "functools.wraps", "return values"]
+minutes = 25
+assessment = "fix"

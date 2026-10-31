@@ -1,0 +1,7 @@
+id = "core.17.p029"
+title = "Seeded shuffle, sample and dice"
+tier = "applied"
+kind = "code"
+topics = ["random.Random", "seeding", "shuffle", "sample", "randint", "reproducibility"]
+minutes = 25
+difficulty = 2

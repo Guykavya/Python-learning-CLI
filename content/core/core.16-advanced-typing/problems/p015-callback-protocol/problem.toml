@@ -1,0 +1,7 @@
+id = "core.16.p015"
+title = "A callback Protocol with __call__"
+tier = "applied"
+kind = "code"
+topics = ["Protocol", "__call__", "callback protocol", "keyword-only parameters", "inspect.signature"]
+minutes = 30
+difficulty = 3

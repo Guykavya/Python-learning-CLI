@@ -1,0 +1,5 @@
+- Saying "the mock is wrong". Mocks are fine; the problem is what the test asserts.
+- Saying "add more `assert_called` lines". More wiring checks give the same blindness.
+- Proposing a better test whose expected value is copied from running the code. Work it out by hand.
+- Believing that 100% coverage means the logic is checked. It means every line ran once.
+- Concluding "never mock". Mock the outside world (email, payment, clock); not the logic.

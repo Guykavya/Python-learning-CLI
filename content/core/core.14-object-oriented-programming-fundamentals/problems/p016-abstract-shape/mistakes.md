@@ -1,0 +1,5 @@
+- Using `@abstractmethod` without inheriting from `ABC`. The decorator then does nothing, and `Shape()` works.
+- Marking `describe` abstract too. Then every subclass must write it, and the shared code is lost.
+- Hard-coding the name: `"Shape: area ..."`. Use `type(self).__name__` so each subclass shows its own name.
+- Calling `Shape.area(self)` inside `describe`. That runs the empty abstract body and returns `None`.
+- Forgetting `:.2f`. `9` prints as `9`, not `9.00`, and `math.pi` prints with 15 decimals.

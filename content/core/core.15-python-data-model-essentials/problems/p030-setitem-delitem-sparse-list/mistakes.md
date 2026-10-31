@@ -1,0 +1,5 @@
+- Storing the normalised index in `__setitem__` but not in `__getitem__` (or the other way round), so `s[-1]` and `s[2]` disagree.
+- Not removing the entry when the default value is assigned: `stored_count` keeps growing and the list stops being sparse.
+- In `__delitem__`: only deleting the key and forgetting to shift the later keys, or shifting keys **equal** to the index.
+- Modifying the dict while looping over it. Build a new dict instead.
+- Building `[default] * size` in `__init__`: a size of a billion uses all your memory.

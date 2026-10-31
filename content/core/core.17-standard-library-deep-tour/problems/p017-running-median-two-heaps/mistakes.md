@@ -1,0 +1,6 @@
+- Forgetting the negation on one side: pushing `x` into `low` but reading `-low[0]`, or the other way round.
+- Comparing the new number with `high[0]` when `high` is empty: `IndexError`. Decide with `low` first, which is never empty after the first number.
+- Rebalancing by sizes only, without moving the **top**: the "low <= high" rule breaks and the median is wrong on descending input.
+- Returning `(a + b) // 2` for an even count: integer division gives 4 instead of 4.5 for 4 and 5.
+- Returning `float(...)` for an odd count too. `statistics.median([4, 8, 6])` is `6`, not `6.0`.
+- Making `low` and `high` class attributes: all keepers share the same heaps.

@@ -1,0 +1,7 @@
+id = "core.14.p003"
+title = "A bank account that checks its input"
+tier = "drill"
+kind = "code"
+topics = ["__init__", "default arguments", "validation", "methods", "ValueError"]
+minutes = 20
+difficulty = 2

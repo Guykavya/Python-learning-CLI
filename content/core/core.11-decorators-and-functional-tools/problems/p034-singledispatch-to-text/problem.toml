@@ -1,0 +1,7 @@
+id = "core.11.p034"
+title = "singledispatch: turn any value into text"
+tier = "deep"
+kind = "code"
+topics = ["functools.singledispatch", "register", "recursion", "bool is an int", "type dispatch"]
+minutes = 40
+difficulty = 4

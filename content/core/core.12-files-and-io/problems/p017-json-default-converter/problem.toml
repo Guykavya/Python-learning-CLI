@@ -1,0 +1,6 @@
+id = "core.12.p017"
+title = "Dump JSON with sets and dates"
+tier = "applied"
+kind = "code"
+topics = ["json", "default=", "datetime.date", "pathlib", "TypeError"]
+minutes = 18

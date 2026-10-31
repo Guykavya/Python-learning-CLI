@@ -1,0 +1,18 @@
+double 1
+double 2
+double 3
+built a
+got 2
+got 4
+got 6
+built b
+double 1
+got 2
+double 2
+got 4
+double 3
+got 6
+again []
+source called
+built c
+11

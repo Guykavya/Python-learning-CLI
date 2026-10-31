@@ -1,0 +1,7 @@
+id = "core.15.p031"
+title = "A sequence from __getitem__ alone"
+tier = "deep"
+kind = "code"
+topics = ["__getitem__", "old iteration protocol", "IndexError", "reversed", "sequence protocol"]
+minutes = 35
+difficulty = 4

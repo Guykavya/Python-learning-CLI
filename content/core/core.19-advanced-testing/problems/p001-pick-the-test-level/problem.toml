@@ -1,0 +1,7 @@
+id = "core.19.p001"
+title = "Explain: pick the test level"
+tier = "drill"
+kind = "explain"
+topics = ["test pyramid", "unit vs integration vs end-to-end", "what to fake"]
+minutes = 20
+difficulty = 2

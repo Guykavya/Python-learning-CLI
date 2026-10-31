@@ -1,0 +1,5 @@
+- Expecting an error for a missing file: `read()` ignores it. (`read_file(f)` with `open()` would raise.)
+- Looking for the key `Port`. It is stored as `port`.
+- Returning `cp` objects instead of plain dicts.
+- Converting the value with `int(cp[section][option])` and getting `KeyError` for missing options. `getint(..., fallback=)` is safer.
+- Forgetting that a value that is not a number still raises `ValueError` in `getint`; the fallback is only for missing options.

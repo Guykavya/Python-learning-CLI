@@ -1,0 +1,7 @@
+id = "core.20.p019"
+title = "Explain: read the profile"
+tier = "deep"
+kind = "explain"
+topics = ["cProfile output", "ncalls", "tottime vs cumtime", "percall", "choosing what to optimise"]
+minutes = 25
+difficulty = 3

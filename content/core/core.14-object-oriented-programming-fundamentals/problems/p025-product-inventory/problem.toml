@@ -1,0 +1,6 @@
+id = "core.14.p025"
+title = "Products and an inventory"
+tier = "applied"
+kind = "code"
+topics = ["classmethod", "alternative constructors", "composition", "csv", "validation"]
+minutes = 35

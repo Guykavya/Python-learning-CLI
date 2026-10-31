@@ -1,0 +1,7 @@
+id = "core.18.p033"
+title = "Compile once: a tokenizer with a master pattern"
+tier = "applied"
+kind = "code"
+topics = ["re.compile", "named groups", "Match.lastgroup", "alternation", "generators", "classes"]
+minutes = 35
+difficulty = 3

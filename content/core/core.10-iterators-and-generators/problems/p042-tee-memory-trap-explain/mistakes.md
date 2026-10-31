@@ -1,0 +1,5 @@
+- Saying `tee` "copies the iterator" or "rewinds" it. It buffers items; it cannot rewind anything.
+- Saying `tee` always saves memory compared with `list()`. It only does when the copies stay close.
+- Not explaining why the order of use matters (gap between copies).
+- Forgetting the rule about the original iterator: reading it after `tee` makes the copies miss items.
+- Presenting the 400 MB as a fixed fact. It is a machine-specific measurement; the idea is "it grows with n".

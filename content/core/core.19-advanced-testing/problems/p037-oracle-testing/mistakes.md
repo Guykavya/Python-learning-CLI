@@ -1,0 +1,6 @@
+- Starting the oracle's best at `0`. For `[-3, -1]` it answers 0 (an empty run), the very mistake you are hunting.
+- Making the oracle a copy of the fast code. Then both are wrong in the same way and the test always passes. The oracle must use a different idea, even a slow one.
+- Using large lists: an O(n^3) oracle on 1,000 numbers makes the test crawl, and a failing example is unreadable.
+- Using `st.integers()` with no bounds. Big numbers rarely give running sums like -1 or 0, so `restarts_too_late` survives.
+- Allowing empty lists in the `@given` test: the oracle returns `None` while the real code raises. Use `min_size=1` and test the empty list separately.
+- Comparing floats with `==`. Here everything is an integer, so it is safe; with floats use `pytest.approx`.

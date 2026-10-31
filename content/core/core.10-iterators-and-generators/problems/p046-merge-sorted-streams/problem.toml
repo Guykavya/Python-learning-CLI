@@ -1,0 +1,7 @@
+id = "core.10.p046"
+title = "Merge sorted streams lazily"
+tier = "challenge"
+kind = "code"
+topics = ["merging", "next", "key functions", "infinite iterators", "lazy evaluation"]
+minutes = 45
+difficulty = 4

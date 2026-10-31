@@ -1,0 +1,8 @@
+id = "core.15.p055"
+title = "Project: a Vector and Matrix library"
+tier = "challenge"
+kind = "code"
+topics = ["operator overloading", "__add__", "__radd__", "__mul__", "__rmul__", "__matmul__", "__rmatmul__", "__pow__", "__eq__", "__hash__", "__getitem__", "__iter__", "__len__", "__repr__", "__format__", "__bool__", "NotImplemented"]
+minutes = 150
+difficulty = 5
+assessment = "build"

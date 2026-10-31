@@ -1,0 +1,7 @@
+id = "core.19.p003"
+title = "Trace: fixture teardown order"
+tier = "drill"
+kind = "trace"
+topics = ["yield fixtures", "setup and teardown order", "fixture dependencies"]
+minutes = 15
+difficulty = 2

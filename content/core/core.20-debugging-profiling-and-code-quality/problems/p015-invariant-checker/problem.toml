@@ -1,0 +1,7 @@
+id = "core.20.p015"
+title = "Invariant checker"
+tier = "applied"
+kind = "code"
+topics = ["invariants", "assertions while debugging", "single pass", "sets", "ISO dates"]
+minutes = 30
+difficulty = 3

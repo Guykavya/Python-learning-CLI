@@ -1,0 +1,7 @@
+id = "core.18.p018"
+title = "Named groups to a dict: parse key = value"
+tier = "drill"
+kind = "code"
+topics = ["named groups", "Match.groupdict", "lazy quantifier", "re.fullmatch"]
+minutes = 15
+difficulty = 2

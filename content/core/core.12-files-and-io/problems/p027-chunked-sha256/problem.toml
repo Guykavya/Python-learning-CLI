@@ -1,0 +1,6 @@
+id = "core.12.p027"
+title = "A checksum of a file in chunks"
+tier = "applied"
+kind = "code"
+topics = ["hashlib", "binary mode", "iter(callable, sentinel)", "chunked reading"]
+minutes = 25

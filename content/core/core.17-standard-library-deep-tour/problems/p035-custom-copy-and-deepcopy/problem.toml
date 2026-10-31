@@ -1,0 +1,7 @@
+id = "core.17.p035"
+title = "Custom __copy__ and __deepcopy__"
+tier = "applied"
+kind = "code"
+topics = ["copy.copy", "copy.deepcopy", "__copy__", "__deepcopy__", "memo dict", "object cycles"]
+minutes = 40
+difficulty = 4

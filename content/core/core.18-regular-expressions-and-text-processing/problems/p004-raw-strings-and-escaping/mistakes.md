@@ -1,0 +1,5 @@
+- Counting `"C:\\new"` as 7 characters. Inside a normal string, `\\` is **one** backslash.
+- Thinking `r"\\d"` means "digit". In a raw string both backslashes reach the engine, which reads `\\` as a literal backslash.
+- Thinking `"\bcat"` and `r"\bcat"` are the same. `\b` is a valid Python escape (backspace), so without `r` it never reaches the engine as a word boundary. This is the classic raw-string bug, and Python gives no warning for it.
+- Expecting `re.escape` to escape `=` or `_`. Since Python 3.7 it only escapes characters that are special in a regex (plus whitespace).
+- Writing `['.', '.', '.']` for `findall(".", "a.b")`. An unescaped dot is "any character", so the result is the three characters of the string.

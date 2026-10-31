@@ -1,0 +1,6 @@
+- Using `bisect_left` for the grade: a score exactly on a breakpoint drops to the lower grade (60 → F).
+- `bisect_left(a, hi) - bisect_left(a, lo)`: the items equal to `hi` are left out.
+- `bisect_right(a, hi) - bisect_right(a, lo)`: the items equal to `lo` are left out.
+- Forgetting the `lo > hi` case: the formula can then return a negative number.
+- Calling bisect on an **unsorted** list. It does not check; it just returns a wrong position.
+- Looping over the list to count: correct but O(n), which defeats the point of keeping it sorted.

@@ -1,0 +1,4 @@
+- `partial(power, 2)`: this fixes `base=2`, so "square" computes powers of two (`square(5)` gives 32).
+- `partial(power(5), exp=2)`: that calls `power` too early. Pass the function itself, without brackets.
+- `partial(int, 2)`: this fixes the first argument of `int`, the text, not the base.
+- Writing a `lambda`. It works, but the task asks for `partial` objects, which you can inspect.

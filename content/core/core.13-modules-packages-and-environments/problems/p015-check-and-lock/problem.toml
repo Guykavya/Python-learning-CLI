@@ -1,0 +1,6 @@
+id = "core.13.p015"
+title = "Check installed versions and write lock lines"
+tier = "applied"
+kind = "code"
+topics = ["dependency pinning", "lock files", "version specifiers", "pip freeze", "dicts"]
+minutes = 30

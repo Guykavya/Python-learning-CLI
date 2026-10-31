@@ -1,0 +1,8 @@
+id = "core.20.p004"
+title = "Trace: a scripted pdb session"
+tier = "deep"
+kind = "trace"
+topics = ["pdb", "conditional breakpoints", "next", "continue", "clear", "line events"]
+minutes = 25
+difficulty = 4
+assessment = "trace"

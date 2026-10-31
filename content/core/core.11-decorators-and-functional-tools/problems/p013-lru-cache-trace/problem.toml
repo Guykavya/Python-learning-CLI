@@ -1,0 +1,7 @@
+id = "core.11.p013"
+title = "What does lru_cache remember?"
+tier = "drill"
+kind = "trace"
+topics = ["functools.lru_cache", "cache_info", "recursion", "memoization"]
+minutes = 20
+difficulty = 2

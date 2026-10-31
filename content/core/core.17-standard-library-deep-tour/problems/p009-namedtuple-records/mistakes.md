@@ -1,0 +1,6 @@
+- `defaults=[0, 0]` or putting the default on `name`: defaults apply to the rightmost fields only.
+- `emp.salary = ...`: a namedtuple is immutable (`AttributeError`). Use `_replace`, which returns a new object.
+- Expecting `_replace` to change `emp` in place and ignoring its return value.
+- `int(" 40000 ")` works, but forgetting `strip()` on the text fields leaves `" Ben "`.
+- Using `salary * 1.1`: floats creep in (`55000.00000000001`). Use integer arithmetic.
+- Forgetting that a namedtuple equals a plain tuple with the same values: `Employee("A", "x", 1) == ("A", "x", 1)` is `True`. That is why the tests also check `type(...)`.

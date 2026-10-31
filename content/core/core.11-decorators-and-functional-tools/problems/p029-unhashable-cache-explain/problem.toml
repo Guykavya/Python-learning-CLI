@@ -1,0 +1,7 @@
+id = "core.11.p029"
+title = "Explain: why lru_cache rejects a list"
+tier = "deep"
+kind = "explain"
+topics = ["functools.lru_cache", "hashable", "mutability", "pure functions"]
+minutes = 20
+difficulty = 3

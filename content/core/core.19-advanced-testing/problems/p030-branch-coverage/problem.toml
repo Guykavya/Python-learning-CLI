@@ -1,0 +1,7 @@
+id = "core.19.p030"
+title = "Reach every branch"
+tier = "applied"
+kind = "code"
+topics = ["branch coverage", "coverage.py", "boundary values", "assertions"]
+minutes = 35
+difficulty = 3

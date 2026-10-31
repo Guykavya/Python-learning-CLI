@@ -1,0 +1,6 @@
+id = "core.14.p039"
+title = "An abstract storage and two backends"
+tier = "applied"
+kind = "code"
+topics = ["abstract base classes", "abc", "abstractmethod", "composition", "template method", "EAFP"]
+minutes = 40

@@ -1,0 +1,7 @@
+id = "core.18.p022"
+title = "Lookbehind: pull out prices in rupees"
+tier = "applied"
+kind = "code"
+topics = ["lookbehind", "fixed-width lookbehind", "re.findall", "non-capturing groups"]
+minutes = 25
+difficulty = 3

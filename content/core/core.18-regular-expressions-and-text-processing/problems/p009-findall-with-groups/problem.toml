@@ -1,0 +1,7 @@
+id = "core.18.p009"
+title = "Trace: findall with and without groups"
+tier = "drill"
+kind = "trace"
+topics = ["re.findall", "capturing groups", "empty matches"]
+minutes = 15
+difficulty = 2

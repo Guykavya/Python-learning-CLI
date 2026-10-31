@@ -1,0 +1,4 @@
+- Thinking `print([item])` shows `__str__` of the item. Containers always use `repr` for their contents.
+- Forgetting that `f"{item}"` is `str`, not `repr`. Only `{item!r}` forces `repr`.
+- Expecting an error for `Plain` because it has no `__str__`. It silently uses `__repr__`.
+- Writing the dict as `{k: v}` without quotes. A dict shows string keys with `repr`, so quotes appear.

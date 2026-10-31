@@ -1,0 +1,5 @@
+- `items.sort(...)`: it changes the caller's list and returns `None`.
+- `key=itemgetter(0)`: that sorts by name.
+- Two separate sorts in the wrong order (`by age`, then `by city` is right; the other way round is wrong). One tuple key avoids the trap.
+- `reduce(mul, nums)` without a start value: `TypeError` on an empty list.
+- Starting `largest` at 0: wrong for a list of negative numbers.

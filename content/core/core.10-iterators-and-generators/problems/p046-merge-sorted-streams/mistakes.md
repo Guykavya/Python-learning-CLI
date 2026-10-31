@@ -1,0 +1,6 @@
+- `sorted(itertools.chain(*iterables))`: correct for small data, but not lazy and hangs on infinite inputs.
+- Using `<=` while scanning: on ties the **later** input wins, so the merge is not stable.
+- Calling `iter(iterable)` again each round: for a list that restarts from the beginning.
+- Stopping the whole merge when one input ends, instead of removing just that input.
+- Reading two items ahead from an input (for example to "peek"): the tests count how many items are taken.
+- Forgetting the `key is None` case, or calling `key(None)` when an input is empty.

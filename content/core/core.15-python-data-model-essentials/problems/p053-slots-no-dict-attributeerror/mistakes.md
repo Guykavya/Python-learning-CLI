@@ -1,0 +1,5 @@
+- Assuming `p.y` is `None` or `0` because `y` is in `__slots__`: an unset slot raises `AttributeError`.
+- Thinking `Q` (subclass without `__slots__`) has no `__dict__`: it does, so `q.extra = "ok"` works.
+- Thinking `R` (slots in a subclass of a slotted class) can take any attribute: it only gets the extra slot `z`; `r.w = 0` fails.
+- Forgetting `vars(s)` of `S` shows only the dict attributes (`anything`), not the slot `a`.
+- Not noticing the output line for statement `2` has no message (the code prints only the type there).

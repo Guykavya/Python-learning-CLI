@@ -1,0 +1,3 @@
+- Expecting part 1 to give one `a` group with three words. `groupby` is not SQL `GROUP BY`; it does not sort.
+- Writing the sorted words in the original order in part 2: inside each group the words are in sorted order too.
+- Expecting part 3 to print the same as part 2. A saved group object is empty once `groupby` has moved past it.

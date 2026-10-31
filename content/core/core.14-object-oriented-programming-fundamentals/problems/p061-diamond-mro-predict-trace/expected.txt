@@ -1,0 +1,22 @@
+Bottom init start
+Left init start
+Right init start
+Base init
+Right init end
+Left init end
+Bottom init end
+['Bottom', 'Log', 'Left', 'Right', 'Base']
+['Bottom', 'LogMixin', 'Left', 'Right', 'Base', 'object']
+['Left', 'Right', 'Base']
+Left init start
+Base init
+Left init end
+['Left', 'Base']
+Right init start
+Left init start
+Base init
+Left init end
+Right init end
+['Right', 'Left', 'Base']
+Broken: no consistent MRO
+Mixed: no consistent MRO

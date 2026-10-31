@@ -1,0 +1,4 @@
+- Printing inside `__repr__` instead of returning. `repr(p)` then gives an error: `__repr__ returned non-string`.
+- Using `{self.x}` instead of `{self.x!r}`. Numbers look fine, but `Point('a', 'b')` would show as `Point(a, b)`.
+- Defining `__str__` only. Then `print(p)` works but lists still show the ugly default, because lists use `repr` for their items.
+- Returning a tuple like `(self.x, self.y)`. `__repr__` must return a `str`.

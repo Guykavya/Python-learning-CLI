@@ -1,0 +1,7 @@
+id = "core.20.p010"
+title = "A call-tracing decorator"
+tier = "applied"
+kind = "code"
+topics = ["decorators", "functools.wraps", "logging", "isEnabledFor", "lazy formatting"]
+minutes = 30
+difficulty = 3

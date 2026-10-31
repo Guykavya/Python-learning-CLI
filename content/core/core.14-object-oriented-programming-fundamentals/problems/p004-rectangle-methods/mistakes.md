@@ -1,0 +1,5 @@
+- Saving `self.area = width * height` in `__init__`. After `scale`, the saved number is out of date.
+- Writing `width = width * factor` inside `scale`. That changes a local name, not the object.
+- Returning `self` or a new `Rectangle` from `scale`. The problem asks for in-place change and `None`.
+- Writing `2 * self.width + self.height` for the perimeter. Brackets matter: `2 * (w + h)`.
+- Returning `None` from `is_square` when it is not a square (an `if` with no `else`). Return a bool.

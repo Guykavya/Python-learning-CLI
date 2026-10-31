@@ -1,0 +1,5 @@
+- Reusing `__sub__` as `__rsub__`: `1 - Frac(1, 4)` would give `-3/4` instead of `3/4`. Same for `/`.
+- Not fixing the sign: `Frac(1, -2)` should be `-1/2`, and comparisons by cross-multiplication break with a negative denominator.
+- Hashing `(num, den)` always: then `Frac(2, 1) == 2` but `hash(Frac(2, 1)) != hash(2)`. Equal objects need equal hashes.
+- Accepting floats silently; `Frac(1, 2) + 0.5` should raise `TypeError` because float arithmetic is inexact.
+- Forgetting `bool` is an `int` subclass; excluding it is a choice, but be consistent.

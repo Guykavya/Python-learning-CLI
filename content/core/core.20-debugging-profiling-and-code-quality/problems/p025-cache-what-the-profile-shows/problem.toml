@@ -1,0 +1,7 @@
+id = "core.20.p025"
+title = "Cache what the profile shows"
+tier = "applied"
+kind = "code"
+topics = ["cProfile ncalls", "memoisation", "functools.cache", "lru_cache", "hashable arguments"]
+minutes = 30
+difficulty = 3

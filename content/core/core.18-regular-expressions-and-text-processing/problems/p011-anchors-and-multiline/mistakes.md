@@ -1,0 +1,5 @@
+- Thinking `abc$` fails on `"abc\n"`. Without MULTILINE, `$` matches before a final newline. This lets `"1234\n"` pass a `^\d{4}$` check.
+- Thinking `\A` or `\Z` follow MULTILINE. They always mean the start / end of the whole string.
+- Thinking `\Z` behaves like `$`. In Python, `\Z` is the absolute end. (Some other regex languages use `\z` for that; Python 3.14 also accepts `\z`.)
+- Answering 1 for `$` on `"a\nb\n"`. Count the position before the final newline **and** the very end.
+- Answering 2 for `^` with `re.M` on `"a\nb\n"`. `^` also matches right after the last newline, at the end of the string.

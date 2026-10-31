@@ -1,0 +1,6 @@
+id = "core.11.p005"
+title = "Stacked decorators: who wraps whom?"
+tier = "drill"
+kind = "trace"
+topics = ["stacking decorators", "decorators with arguments", "call order"]
+minutes = 15

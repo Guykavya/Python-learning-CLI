@@ -1,0 +1,7 @@
+id = "core.17.p010"
+title = "Explain: Counter, defaultdict or a plain dict?"
+tier = "deep"
+kind = "explain"
+topics = ["collections.Counter", "collections.defaultdict", "dict", "choosing a container"]
+minutes = 25
+difficulty = 3

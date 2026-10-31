@@ -1,0 +1,6 @@
+id = "core.13.p024"
+title = "Explain: version ranges, pins and lock files"
+tier = "deep"
+kind = "explain"
+topics = ["dependency pinning", "version specifiers", "lock files", "pip freeze", "uv", "poetry", "reproducible environments"]
+minutes = 25

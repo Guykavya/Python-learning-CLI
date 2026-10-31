@@ -1,0 +1,6 @@
+- Thinking little-endian reverses the hex **digits** (`87 65 43 21`). It reverses whole **bytes**: `78 56 34 12`.
+- Writing `-2` as `fe ff` for big-endian too. Little-endian puts the low byte (`fe`) first; big-endian would be `ff fe`.
+- Expecting an error when unpacking with the wrong byte order or signedness: struct just gives another number.
+- Adding padding at the end for `@IB` (answering 8): struct only pads before a field, never after the last one.
+- Forgetting that `s` silently cuts long values and pads short ones with `\x00`.
+- Writing `b'ab   '` (spaces) instead of `\x00` bytes for the padding.

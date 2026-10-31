@@ -1,0 +1,7 @@
+id = "core.15.p030"
+title = "A sparse list with item assignment and deletion"
+tier = "applied"
+kind = "code"
+topics = ["__setitem__", "__delitem__", "__getitem__", "__len__", "container protocols", "dict"]
+minutes = 40
+difficulty = 3

@@ -1,0 +1,5 @@
+- Using `st.text()` with no alphabet: it mostly produces strange Unicode, digits that `encode` rejects (the test crashes on the correct code), and almost never a run of 10 equal letters.
+- Trusting the round trip alone. Encoder and decoder can be wrong in a matching way, or the encoder can be wrong in a way the decoder forgives.
+- Writing `assert decode(encode(text)) == text` and nothing else about `encode`: no test pins down what the code looks like.
+- Leaving out the empty text: it is the classic crash, and `min_size=1` hides it.
+- Using `assume(text.isalpha())` on a wide text strategy instead of choosing `alphabet="abc"`: most examples are thrown away (p036).

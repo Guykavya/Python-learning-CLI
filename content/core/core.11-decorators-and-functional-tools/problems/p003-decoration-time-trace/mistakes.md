@@ -1,0 +1,4 @@
+- Thinking that `decorating hello` prints on every call. The decorator body runs once, at definition time.
+- Printing `hi` before `after hello`. The outer `print(hello())` can print only after `wrapper` has returned.
+- Writing `hello` for the last line. Without `functools.wraps` the new function keeps the name `wrapper`.
+- Putting `defined` before the decorator lines. The `def` with `@` is above `print("defined")`.

@@ -1,0 +1,7 @@
+- Checking only the first item (`isinstance(value[0], str)`). That also crashes on an empty list.
+- Returning `False` for an empty list. `all([])` is `True`, and "every item is a str" is true for no items.
+- Writing `-> bool` and expecting the checker to narrow. Only `TypeGuard[...]` narrows.
+- Writing `TypeGuard(list[str])` (parentheses) instead of `TypeGuard[list[str]]`.
+- Using `isinstance(value, list[str])`: it raises `TypeError` at run time. A guard exists exactly because this does not work.
+- Accepting `True`/`False` as ints in `is_int_dict`.
+- Putting the guard on the wrong function, or forgetting to call it inside `join_if_strings`.

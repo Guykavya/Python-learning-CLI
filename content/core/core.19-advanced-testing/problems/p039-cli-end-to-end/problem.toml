@@ -1,0 +1,7 @@
+id = "core.19.p039"
+title = "End-to-end test of a command-line tool"
+tier = "deep"
+kind = "code"
+topics = ["end-to-end tests", "argparse", "main(argv)", "capsys", "tmp_path", "subprocess", "exit codes"]
+minutes = 45
+difficulty = 4

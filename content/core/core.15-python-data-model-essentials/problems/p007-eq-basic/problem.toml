@@ -1,0 +1,7 @@
+id = "core.15.p007"
+title = "Equal by value with __eq__"
+tier = "drill"
+kind = "code"
+topics = ["__eq__", "NotImplemented", "equality"]
+minutes = 12
+difficulty = 1

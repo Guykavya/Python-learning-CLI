@@ -1,0 +1,8 @@
+id = "core.19.p040"
+title = "Project: a test suite for a buggy shop"
+tier = "challenge"
+kind = "code"
+topics = ["test design", "fixtures", "parametrize", "boundary values", "mutation testing", "specifications"]
+minutes = 120
+difficulty = 5
+assessment = "build"

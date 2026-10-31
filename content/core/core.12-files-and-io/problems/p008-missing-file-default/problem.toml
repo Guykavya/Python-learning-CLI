@@ -1,0 +1,6 @@
+id = "core.12.p008"
+title = "Read a file or fall back to a default"
+tier = "drill"
+kind = "code"
+topics = ["FileNotFoundError", "try/except", "OSError", "open()"]
+minutes = 12

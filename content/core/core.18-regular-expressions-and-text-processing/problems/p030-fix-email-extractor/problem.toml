@@ -1,0 +1,8 @@
+id = "core.18.p030"
+title = "Fix: the broken email extractor"
+tier = "deep"
+kind = "code"
+topics = ["debugging regex", "greedy quantifiers", "escaping", "character classes", "word boundaries"]
+minutes = 35
+difficulty = 4
+assessment = "fix"

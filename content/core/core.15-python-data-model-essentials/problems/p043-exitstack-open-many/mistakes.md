@@ -1,0 +1,5 @@
+- Opening files with `open(p)` in a list and closing them yourself in a loop: if the third `open` fails, the first two are never closed.
+- Using one `with open(p) as f:` per file inside a loop: only one file is open at a time, so you cannot `zip` them.
+- Reading lazily after the stack has closed: `zip(*files)` is lazy; build the list inside the `with` block.
+- Forgetting to strip the newline in `merge_lines`: lines come with `"\n"` at the end.
+- Writing `from io import open` or `io.open(...)`: the tests watch the name `open` in your module.

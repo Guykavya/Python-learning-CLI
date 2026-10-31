@@ -1,0 +1,7 @@
+id = "core.15.p006"
+title = "Temperature with unit format specs"
+tier = "applied"
+kind = "code"
+topics = ["__format__", "format spec", "parsing"]
+minutes = 20
+difficulty = 3

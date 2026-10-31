@@ -1,0 +1,7 @@
+- Calling only `main()` and never starting the program. The `sys.exit(main())` bug is invisible to every direct call.
+- Using `"python"` or `"python3"` in the subprocess call. The test may then run a different interpreter, or fail on a machine where that name does not exist. Use `sys.executable`.
+- Testing every case through `subprocess`: slow, and a failure shows only text. Keep process tests to one or two.
+- Reading `capsys.readouterr().out` twice: the second call returns an empty string, because the first one cleared the buffer. Store the result.
+- Not checking the stream: a message on standard output would still pass `"nope.txt" in captured.out + captured.err`. Check `err` and `out` separately.
+- Tests where all words have different counts: the tie order never matters, so `ties_in_first_seen_order` survives.
+- Forgetting a timeout on `subprocess.run`: a hung child would freeze your test run.

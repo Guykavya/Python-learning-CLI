@@ -1,0 +1,4 @@
+- Changing `self.x += other.x` and returning `self`: the left operand is modified, which surprises callers (`+` should not mutate).
+- Raising `TypeError` manually instead of returning `NotImplemented`: this blocks the reflected method from running.
+- Returning a tuple instead of a `Vector`.
+- Writing `self - other` as `self + (-other)` without defining `__neg__`.

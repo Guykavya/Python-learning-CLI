@@ -1,0 +1,6 @@
+- Splitting on `"=="` only. Specifiers also use `>=`, `<`, `~=`, `!=` and commas.
+- Keeping the inline comment: `requests>=2.31,<3   # http client` must not end up in the specifier.
+- Treating `-r other.txt` as a package named `-r`.
+- Leaving spaces inside the specifier: `>= 1.26` and `>=1.26` are the same and should compare equal.
+- Comparing names without normalising: `Flask` and `flask` would look like two different packages.
+- Sorting the result. Order in the file is meaningful to a reader; keep it.

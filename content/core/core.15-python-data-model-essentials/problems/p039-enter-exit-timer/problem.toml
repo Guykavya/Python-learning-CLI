@@ -1,0 +1,7 @@
+id = "core.15.p039"
+title = "A timer as a context manager"
+tier = "drill"
+kind = "code"
+topics = ["__enter__", "__exit__", "with statement", "context managers", "time"]
+minutes = 20
+difficulty = 2

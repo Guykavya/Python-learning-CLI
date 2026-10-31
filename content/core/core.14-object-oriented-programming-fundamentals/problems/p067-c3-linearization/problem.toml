@@ -1,0 +1,7 @@
+id = "core.14.p067"
+title = "Implement C3 linearization"
+tier = "challenge"
+kind = "code"
+topics = ["MRO", "C3 linearization", "multiple inheritance", "inconsistent MRO", "recursion", "lists"]
+minutes = 60
+difficulty = 5

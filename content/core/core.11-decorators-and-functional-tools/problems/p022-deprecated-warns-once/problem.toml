@@ -1,0 +1,7 @@
+id = "core.11.p022"
+title = "deprecated: warn once per function"
+tier = "applied"
+kind = "code"
+topics = ["decorators with arguments", "closures", "nonlocal", "functools.wraps"]
+minutes = 25
+difficulty = 2

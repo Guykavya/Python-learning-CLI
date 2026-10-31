@@ -1,0 +1,6 @@
+- Using `pprint.pprint` (prints, returns `None`) where `pformat` (returns text) is needed.
+- Forgetting that pprint sorts dict keys by default; pass `sort_dicts=False` to keep insertion order.
+- Ignoring the `width` parameter and using pprint's default of 80, so nothing wraps.
+- Indenting only the first line of a multi-line block in `log_block`.
+- Adding a trailing `"\n"` to `log_block`; logging adds its own line end.
+- Thinking `sort_dicts=True` changes the dict. It only changes the text.

@@ -1,0 +1,5 @@
+- `if not m.group():` as the "no match" check. It treats the empty match from `x*` as a failure.
+- `if m == None:` works, but `is None` is the correct way to test for `None`.
+- Using `m.end() - 1` as the end. Regex spans work like slices: the end is one past the last character.
+- Using `re.match`: it only looks at position 0, so `span_info(r"b", "abc")` would return `None`.
+- Calling `m.group(1)`: the pattern may have no groups, and `group(1)` then raises `IndexError`.

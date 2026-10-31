@@ -1,0 +1,7 @@
+id = "core.17.p002"
+title = "defaultdict: group words by first letter"
+tier = "drill"
+kind = "code"
+topics = ["collections.defaultdict", "default_factory", "grouping"]
+minutes = 15
+difficulty = 1

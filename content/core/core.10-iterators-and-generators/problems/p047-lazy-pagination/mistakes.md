@@ -1,0 +1,7 @@
+- Increasing the page number before the fetch succeeds, so a retry skips a page.
+- Forgetting `nonlocal`: `page_number += 1` then raises `UnboundLocalError`.
+- Keeping the page number in a global variable, so two `pages()` iterators share it.
+- `except Exception:` for retries. A real bug (like `ValueError`) is retried and hidden. Catch only `ConnectionError`.
+- Counting retries wrongly: `retries=2` means up to 3 calls in total for one page.
+- Building `items` as `[x for page in pages(...) for x in page]`: correct values, but all pages are fetched at once.
+- Using `None` as the sentinel: an empty page is `[]`, not `None`, so the loop never stops.

@@ -1,0 +1,7 @@
+id = "core.20.p002"
+title = "Trace: cause vs context"
+tier = "drill"
+kind = "trace"
+topics = ["exception chaining", "__cause__", "__context__", "raise from", "from None"]
+minutes = 15
+difficulty = 2

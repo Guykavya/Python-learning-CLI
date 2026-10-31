@@ -1,0 +1,7 @@
+id = "core.17.p006"
+title = "OrderedDict: an LRU cache with move_to_end"
+tier = "drill"
+kind = "code"
+topics = ["collections.OrderedDict", "move_to_end", "popitem(last=False)", "LRU cache"]
+minutes = 20
+difficulty = 2

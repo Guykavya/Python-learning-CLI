@@ -1,0 +1,7 @@
+- Putting the layers in the wrong order, `ChainMap(defaults, file_cfg, env, cli)`: the **first** map wins, so defaults would beat everything.
+- Merging into one dict with `dict(...)` or `{**a, **b}`: you lose the live view and `source_of`.
+- Copying every layer "to be safe": later changes to `defaults` or `env` are then invisible.
+- Not adding the runtime dict: `cfg["port"] = 1` then writes into the caller's `cli` dict.
+- Keeping `None` values from the cli: a `None` port hides the real port from the file.
+- Using `prefix in key` instead of `key.startswith(prefix)`: `XAPP_Y` would match.
+- Reading `os.environ` inside the function: the tests (and other callers) cannot control it.

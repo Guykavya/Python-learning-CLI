@@ -1,0 +1,7 @@
+id = "core.15.p037"
+title = "Decorators that receive classes"
+tier = "deep"
+kind = "code"
+topics = ["class decorators", "__call__", "decorator factories", "registry pattern", "decorating classes"]
+minutes = 40
+difficulty = 4

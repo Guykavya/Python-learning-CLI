@@ -1,0 +1,7 @@
+id = "core.20.p016"
+title = "timeit the right way"
+tier = "drill"
+kind = "code"
+topics = ["timeit", "time.perf_counter", "min not mean", "benchmark design", "dependency injection"]
+minutes = 20
+difficulty = 2

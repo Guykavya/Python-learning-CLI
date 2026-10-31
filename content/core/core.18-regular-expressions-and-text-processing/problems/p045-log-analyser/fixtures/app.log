@@ -1,0 +1,25 @@
+2025-03-01 09:00:01,004 INFO [app] Server starting on port 8000
+2025-03-01 09:00:01,210 DEBUG [db.pool] Opened 5 connections
+[2025-03-01T09:00:02] info auth: Loaded 3 OAuth providers
+2025-03-01 09:01:15,553 WARNING [payments] Gateway slow: 2300 ms
+
+2025-03-01 09:01:16,001 ERROR [payments] Card declined for order 17
+[2025-03-01T09:01:17] ERROR payments: Retry failed for order 17
+Traceback (most recent call last):
+  File "app/payments.py", line 88, in charge
+ValueError: amount must be positive
+2025-03-01 09:02:00 ERROR [db.pool] Connection lost: timeout after 30s
+[2025-03-01T09:02:01] WARN db.pool: Reconnecting (attempt 1)
+2025-03-01 09:02:03,120 error [auth] Invalid token for user 42
+2025-03-01 09:02:04,500 VERBOSE [app] This level does not exist
+   
+2025-03-01 09:03:10,777 CRITICAL [app] Out of memory, shutting down
+[2025-03-01T09:03:11] ERROR auth: Too many failed logins from 10.0.0.7
+2025-03-01 09:03:12,000 ERROR [db.pool] Pool exhausted
+2025-3-01 09:03:13,000 INFO [app] single-digit month is not valid
+[2025-03-01 09:03:14] INFO app: brackets need the T form
+2025-03-01 09:03:15,001 INFO [app]
+2025-03-01 09:03:16,002 INFO [notifications.email] Sent 12 emails: [ok] 
+2025-03-01 09:03:17,003 Error [notifications.email] SMTP refused connection
+[2025-03-01T09:03:18] ERROR payments: Refund failed for order 9
+-- end of log --

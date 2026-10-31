@@ -1,0 +1,6 @@
+- Writing `flatten(item)` without `yield from`. That only creates a generator and throws it away.
+- Writing `yield flatten(item)`. That yields the generator object itself, not its items.
+- Testing "is it iterable" instead of "is it a list or tuple". Then strings are split into letters, and a one-letter string recurses for ever.
+- Building `result = []` and returning it. It works for small data but is not lazy.
+- In `walk`, adding the `/` in the wrong place, which gives `/src/main.py` or `src//main.py`.
+- Using `if value:` to decide if something is a folder. A size of 0 and an empty folder are both falsy.
