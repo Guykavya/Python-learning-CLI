@@ -1,0 +1,25 @@
+id,name,category,price
+P001,Blue pen,stationery,40
+P002,Red pen,stationery,90
+P003,Pencil,stationery,60
+P004,Eraser,stationery,250
+P005,Notebook A5,stationery,10
+P006,Notebook A4,stationery,120
+P007,Stapler,stationery,799
+P008,Glue stick,stationery,120
+P009,Ruler,stationery,90
+P010,Highlighter,stationery,90
+P011,Sticky notes,stationery,20
+P012,Paper clips,stationery,1299
+P013,Desk lamp,electronics,499
+P014,USB cable,electronics,40
+P015,Mouse,electronics,15
+P016,Keyboard,electronics,499
+P017,Headphones,electronics,90
+P018,Water bottle,bags,10
+P019,Backpack,bags,250
+P020,Calculator,electronics,25
+P021,Marker,stationery,120
+P022,Scissors,stationery,250
+P023,Folder,stationery,90
+P024,Tape,stationery,60

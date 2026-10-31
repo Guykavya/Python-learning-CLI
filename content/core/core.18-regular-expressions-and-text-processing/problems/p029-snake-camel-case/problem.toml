@@ -1,0 +1,7 @@
+id = "core.18.p029"
+title = "snake_case and camelCase conversion"
+tier = "applied"
+kind = "code"
+topics = ["re.sub", "backreferences in replacement", "replacement functions", "lookbehind"]
+minutes = 30
+difficulty = 3

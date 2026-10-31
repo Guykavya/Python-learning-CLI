@@ -1,0 +1,7 @@
+id = "core.20.p007"
+title = "Build a logger"
+tier = "drill"
+kind = "code"
+topics = ["logging.getLogger", "StreamHandler", "Formatter", "propagate", "duplicate handlers"]
+minutes = 20
+difficulty = 2

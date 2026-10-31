@@ -1,0 +1,8 @@
+id = "core.18.p045"
+title = "Project: a log analyser"
+tier = "challenge"
+kind = "code"
+topics = ["re.VERBOSE", "named groups", "re.IGNORECASE", "fullmatch", "dataclasses", "Counter", "pathlib", "text processing"]
+minutes = 120
+difficulty = 5
+assessment = "build"

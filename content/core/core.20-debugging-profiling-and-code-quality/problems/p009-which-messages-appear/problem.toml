@@ -1,0 +1,7 @@
+id = "core.20.p009"
+title = "Trace: which log messages appear?"
+tier = "drill"
+kind = "trace"
+topics = ["logger levels", "handler levels", "propagation", "effective level", "disabled loggers"]
+minutes = 20
+difficulty = 3

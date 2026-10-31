@@ -1,0 +1,7 @@
+id = "core.19.p026"
+title = "Testing network code without network"
+tier = "deep"
+kind = "code"
+topics = ["fake http client", "socket guard", "monkeypatch urlopen", "dependency injection"]
+minutes = 40
+difficulty = 4

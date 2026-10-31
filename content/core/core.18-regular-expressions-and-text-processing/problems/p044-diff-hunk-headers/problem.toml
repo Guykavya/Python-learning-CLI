@@ -1,0 +1,7 @@
+id = "core.18.p044"
+title = "Parse unified-diff hunk headers"
+tier = "challenge"
+kind = "code"
+topics = ["re.MULTILINE", "anchors", "optional groups", "finditer", "None defaults"]
+minutes = 35
+difficulty = 3

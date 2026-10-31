@@ -1,0 +1,6 @@
+- Using `st.text()` with the default alphabet: tabs, newlines and runs of spaces are rare, so the whitespace bugs pass.
+- Using `st.integers()` for `dedupe`: with a huge range the list almost never contains a repeat, so "keeps last" and "sorts" go unnoticed.
+- Writing the property as the implementation: `assert normalise_whitespace(t) == " ".join(t.split())` only tests the code against a copy of itself.
+- Checking idempotence alone. `return ""` is idempotent. Pair it with a property that says what the result contains.
+- Checking stability with `sorted(out, key=len) == out`: that holds for any length-sorted list, stable or not. Compare the groups of equal length with the input.
+- Forgetting that `0` and `""` are falsy: a test with only non-zero numbers misses `dedupe_drops_zero`.

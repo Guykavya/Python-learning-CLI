@@ -1,0 +1,9 @@
+app INFO 2
+app WARNING 3
+app WARNING 3
+app.db INFO 4
+app.db ERROR 6
+app.db ERROR 6
+app.web ERROR 8
+other ERROR 10
+done

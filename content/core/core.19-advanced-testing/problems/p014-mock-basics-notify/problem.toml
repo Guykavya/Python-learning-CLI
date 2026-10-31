@@ -1,0 +1,7 @@
+id = "core.19.p014"
+title = "Mock basics: test notify"
+tier = "drill"
+kind = "code"
+topics = ["Mock", "return_value", "assert_called_once_with", "assert_not_called"]
+minutes = 20
+difficulty = 2

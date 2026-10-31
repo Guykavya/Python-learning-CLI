@@ -1,0 +1,11 @@
+open db
+start session
+fill cache
+test_one runs
+clear cache
+end session
+close db
+fill cache
+test_two runs
+clear cache
+pytest exit code 1

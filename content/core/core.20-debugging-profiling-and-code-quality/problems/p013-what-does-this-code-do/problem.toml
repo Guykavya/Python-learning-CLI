@@ -1,0 +1,7 @@
+id = "core.20.p013"
+title = "Explain: what does this code do?"
+tier = "deep"
+kind = "explain"
+topics = ["reading code", "naming", "sliding window", "edge cases", "off-by-one"]
+minutes = 25
+difficulty = 3

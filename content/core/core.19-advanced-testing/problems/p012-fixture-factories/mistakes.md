@@ -1,0 +1,6 @@
+- Returning a user from the fixture instead of a function. Then `make_user("ann")` raises `TypeError: 'dict' object is not callable`.
+- Using `return make` instead of `yield make`: nothing after it runs, so nothing is cleaned up.
+- Appending the name to the list **before** `create_user` succeeds: if `create_user` raises, cleanup tries to delete a user that never existed.
+- Remembering only the last user (`last = name`) instead of a list.
+- Deleting without the guard: a test that deletes its user itself turns into a teardown ERROR.
+- Cleaning up at the start of the next test instead of after the test: it hides which test leaked.

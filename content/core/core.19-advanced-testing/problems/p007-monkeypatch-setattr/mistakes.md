@@ -1,0 +1,5 @@
+- Writing `from target import checkout` and patching `target.fetch_discount`: that still works here (checkout reads the global in its own module), but patching `solution.fetch_discount` would not. Patch the module where the name is **looked up**.
+- Not patching at all: the correct code raises `RuntimeError` and your tests fail on it.
+- Patching `TAX_RATE` to the same value as the default (0.2): a hard-coded 1.2 then survives.
+- Undoing the patch yourself with `try/finally`. `monkeypatch` does that for you.
+- A stub that ignores its argument and never checking the code that was passed: the "wrong code sent" bug survives.

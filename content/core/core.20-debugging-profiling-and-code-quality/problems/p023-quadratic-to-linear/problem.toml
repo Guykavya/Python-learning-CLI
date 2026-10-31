@@ -1,0 +1,7 @@
+id = "core.20.p023"
+title = "Quadratic to linear"
+tier = "applied"
+kind = "code"
+topics = ["big-O", "membership in list vs set", "counting work", "keeping order while deduplicating"]
+minutes = 25
+difficulty = 3

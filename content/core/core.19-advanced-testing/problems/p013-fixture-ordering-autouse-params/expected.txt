@@ -1,0 +1,32 @@
+module autouse up
+  tick up
+  test_plain
+  tick down
+  letter x up
+  tick up
+  test_letter x
+  tick down
+  tick up
+  number for x
+  test_number 1
+  tick down
+  tick up
+  number for x
+  test_number 2
+  tick down
+  letter x down
+  letter y up
+  tick up
+  test_letter y
+  tick down
+  tick up
+  number for y
+  test_number 1
+  tick down
+  tick up
+  number for y
+  test_number 2
+  tick down
+  letter y down
+module autouse down
+pytest exit code 0

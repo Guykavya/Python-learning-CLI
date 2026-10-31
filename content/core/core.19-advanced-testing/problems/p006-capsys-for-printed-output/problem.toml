@@ -1,0 +1,7 @@
+id = "core.19.p006"
+title = "Write tests: capsys and a printed report"
+tier = "drill"
+kind = "code"
+topics = ["capsys", "testing print", "stdout vs stderr"]
+minutes = 25
+difficulty = 2

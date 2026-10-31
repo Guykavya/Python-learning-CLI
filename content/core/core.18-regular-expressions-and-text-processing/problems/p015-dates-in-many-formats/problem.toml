@@ -1,0 +1,7 @@
+id = "core.18.p015"
+title = "Dates in many formats"
+tier = "applied"
+kind = "code"
+topics = ["re.finditer", "alternation", "capturing groups", "\\b", "normalising data"]
+minutes = 30
+difficulty = 3

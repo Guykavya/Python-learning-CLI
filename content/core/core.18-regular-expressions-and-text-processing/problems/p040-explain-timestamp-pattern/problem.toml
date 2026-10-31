@@ -1,0 +1,8 @@
+id = "core.18.p040"
+title = "Explain a real-world pattern: ISO-8601 timestamps"
+tier = "challenge"
+kind = "explain"
+topics = ["re.VERBOSE", "named groups", "alternation", "optional groups", "anchors", "validation limits"]
+minutes = 35
+difficulty = 4
+assessment = "explain"

@@ -1,0 +1,7 @@
+id = "core.18.p041"
+title = "Markdown links to HTML"
+tier = "applied"
+kind = "code"
+topics = ["re.sub", "backreferences in replacement", "negated classes", "negative lookbehind", "greedy vs lazy"]
+minutes = 25
+difficulty = 2

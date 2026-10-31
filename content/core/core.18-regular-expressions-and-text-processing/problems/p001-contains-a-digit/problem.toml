@@ -1,0 +1,7 @@
+id = "core.18.p001"
+title = "Does it contain a digit?"
+tier = "drill"
+kind = "code"
+topics = ["re.search", "\\d", "Match object truthiness"]
+minutes = 10
+difficulty = 1

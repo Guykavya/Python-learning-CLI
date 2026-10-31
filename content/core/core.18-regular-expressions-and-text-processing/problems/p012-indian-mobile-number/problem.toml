@@ -1,0 +1,7 @@
+id = "core.18.p012"
+title = "Indian mobile number validator"
+tier = "applied"
+kind = "code"
+topics = ["re.fullmatch", "optional parts", "alternation", "character classes", "validation"]
+minutes = 25
+difficulty = 2

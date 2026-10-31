@@ -1,0 +1,7 @@
+id = "core.18.p031"
+title = "finditer with positions"
+tier = "drill"
+kind = "code"
+topics = ["re.finditer", "Match.span", "zero-width matches"]
+minutes = 15
+difficulty = 1

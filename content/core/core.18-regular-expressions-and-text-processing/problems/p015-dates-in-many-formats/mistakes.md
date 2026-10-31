@@ -1,0 +1,7 @@
+- Two separate `findall` calls, one per form, then joining the lists: the order of the text is lost.
+- Forgetting the `\b` at one end: `12/05/20245` yields `12/05/2024`, and `112/05/2024` yields `12/05/2024`.
+- `findall` with six groups returns 6-tuples full of `''` for the missing branch. It works, but `finditer` with `m.group(1) is not None` is clearer.
+- Comparing strings for the range check: `"9" <= "12"` is `False` as text. Convert with `int()` first.
+- Forgetting to pad: `2024-3-5` is not ISO format, and it sorts wrongly next to `2024-12-01`.
+- Reading `05/03/2024` as May 3 (US style). The task says day first.
+- `\d` instead of `[0-9]`: accepts digits from other scripts.

@@ -1,0 +1,7 @@
+- Leaving a strategy without limits (`st.integers()`): hypothesis tries numbers like 2^63 and a function that expects 1..100 fails for the wrong reason.
+- `st.text(max_size=12)` without an `alphabet`: it produces emoji, accents and control characters, not lowercase letters.
+- Using `min_value=1, max_value=99` or `range(1, 100)` for "1 to 100 inclusive": `max_value` is inclusive, so `max_value=100`.
+- `st.floats()` without limits can produce `nan` and `inf`, which break most arithmetic. Give `min_value` and `max_value`, or `allow_nan=False, allow_infinity=False`.
+- `st.lists(st.integers(0, 9))` without `min_size=1`: empty lists appear, but the spec says 1 to 5 digits.
+- Filtering instead of constructing (`st.integers().filter(lambda n: 1 <= n <= 100)`): most examples are thrown away (see p036).
+- Calling a strategy like a function or drawing from it by hand (`small_ints.example()`): the variable must hold the strategy itself, and tests use it through `@given`.

@@ -1,0 +1,7 @@
+id = "core.19.p023"
+title = "Testing time: monkeypatching"
+tier = "applied"
+kind = "code"
+topics = ["monkeypatch.setattr", "time.monotonic", "module-level helper", "rate limiting"]
+minutes = 30
+difficulty = 3

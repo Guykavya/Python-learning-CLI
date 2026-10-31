@@ -1,0 +1,7 @@
+id = "core.20.p003"
+title = "Explain: which pdb command?"
+tier = "drill"
+kind = "explain"
+topics = ["pdb", "breakpoint()", "stepping", "post-mortem", "conditional breakpoints"]
+minutes = 20
+difficulty = 2

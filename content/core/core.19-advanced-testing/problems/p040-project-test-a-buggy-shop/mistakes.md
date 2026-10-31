@@ -1,0 +1,8 @@
+- Testing only values in the middle of a range (a subtotal of 7000). The off-by-one bugs live exactly on 5000, 1000 and 4999.
+- Expected values copied from the buggy code's output. Work them out by hand from the specification; the test then disagrees with the bug.
+- Checking that an error is raised but not that nothing changed. "All or nothing" is two claims: the exception and the untouched stock and cart.
+- Putting the out-of-stock item **first** in the all-or-nothing test: the code then fails before touching anything, so a version that removes stock while checking looks fine. Put the good item first.
+- Testing `shipping_cents`, `tax_cents` and `discount_cents` alone and never a whole `checkout`. The combination bugs only show in the receipt.
+- Using one item at one price so every sum is a round number: rounding bugs (half up versus down, 5019 and 1007) need awkward amounts.
+- Forgetting the error cases: zero and negative quantities, unknown sku, unknown code, empty cart, removing an item that is not there.
+- Forgetting the last half of the rules: the cart must be empty after a successful checkout.

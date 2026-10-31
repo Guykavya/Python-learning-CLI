@@ -1,0 +1,7 @@
+id = "core.18.p019"
+title = "Backreferences: find doubled words"
+tier = "applied"
+kind = "code"
+topics = ["backreferences", "word boundaries", "IGNORECASE", "re.finditer"]
+minutes = 20
+difficulty = 2

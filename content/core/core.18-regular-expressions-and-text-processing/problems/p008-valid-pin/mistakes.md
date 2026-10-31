@@ -1,0 +1,5 @@
+- `re.match(r"[0-9]{4,6}", s)`: accepts `"1234567"` (it matches the first six digits) and `"1234abc"`.
+- `re.match(r"^[0-9]{4,6}$", s)`: closer, but `$` also matches before a final newline, so `"1234\n"` passes.
+- `{4-6}`: not a quantifier. Inside braces the separator is a comma, `{4,6}`. Python treats `{4-6}` as the literal text `{4-6}`.
+- `{4, 6}` with a space: also not a quantifier, again treated as literal text.
+- `\d` without `re.ASCII`: accepts digits from other scripts.

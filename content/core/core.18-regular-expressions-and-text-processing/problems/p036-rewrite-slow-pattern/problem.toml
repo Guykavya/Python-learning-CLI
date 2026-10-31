@@ -1,0 +1,7 @@
+id = "core.18.p036"
+title = "Rewrite a slow pattern"
+tier = "deep"
+kind = "code"
+topics = ["catastrophic backtracking", "nested quantifiers", "re.fullmatch", "time.perf_counter"]
+minutes = 30
+difficulty = 4

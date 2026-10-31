@@ -1,0 +1,4 @@
+- Tearing down in the same order as the setup. It is last in, first out, like a stack of plates.
+- Forgetting that `db` is set up first. Parameter order is a hint, dependencies decide.
+- Thinking a failing test skips teardown. It does not: teardown runs even after an exception.
+- Printing the pytest report. With `-p no:terminal` there is none; only the `print` lines appear.

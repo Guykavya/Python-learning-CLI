@@ -1,0 +1,5 @@
+- Expecting `['id=7', 'id=42']` from `id=(\d+)`. With one group, `findall` returns the group, not the whole match.
+- Writing `None` for a group that did not take part. `findall` uses `''` (a Match object's `group()` would give `None`).
+- Writing `['12']` for `\d*` on `"a12"`. A `*` pattern can match zero characters, and `findall` reports those empty matches too.
+- Writing `['123', '45']` for `(\d)+`. A repeated group remembers only its last repetition.
+- Counting groups by `(` characters inside a character class or after a backslash. `\(` and `[(]` are literal brackets, not groups.

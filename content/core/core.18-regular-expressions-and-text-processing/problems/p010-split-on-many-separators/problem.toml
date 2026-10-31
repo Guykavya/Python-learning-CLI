@@ -1,0 +1,7 @@
+id = "core.18.p010"
+title = "Split on many separators"
+tier = "drill"
+kind = "code"
+topics = ["re.split", "character classes", "\\s", "empty strings"]
+minutes = 15
+difficulty = 1

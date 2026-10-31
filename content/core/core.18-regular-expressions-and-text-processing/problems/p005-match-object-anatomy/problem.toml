@@ -1,0 +1,7 @@
+id = "core.18.p005"
+title = "Match object anatomy"
+tier = "drill"
+kind = "code"
+topics = ["Match object", "Match.group", "Match.start", "Match.end", "empty match"]
+minutes = 15
+difficulty = 1

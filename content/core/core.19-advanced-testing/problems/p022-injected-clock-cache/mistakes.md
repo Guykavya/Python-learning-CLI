@@ -1,0 +1,5 @@
+- Calling `time.time()` inside the class: the tests then need real sleeping or patching.
+- `<=` instead of `<`: an entry would live one instant too long (the border belongs to expired).
+- Not restarting the lifetime on a second `set` of the same key.
+- Counting expired entries in `len`.
+- Reading the clock once per entry in `__len__`: the clock can move between reads. Read it once.

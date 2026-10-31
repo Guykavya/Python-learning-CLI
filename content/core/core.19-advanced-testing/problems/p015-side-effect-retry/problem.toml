@@ -1,0 +1,7 @@
+id = "core.19.p015"
+title = "side_effect: test a retry loop"
+tier = "drill"
+kind = "code"
+topics = ["Mock.side_effect", "exceptions in mocks", "call_count", "pytest.raises"]
+minutes = 25
+difficulty = 3

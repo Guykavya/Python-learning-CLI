@@ -1,0 +1,10 @@
+per_module setup 1
+per_test setup 1
+a: 1 1
+per_test setup 2
+b: 2 1
+c: 1
+per_test setup 3
+d: 3
+per_module teardown
+pytest exit code 0

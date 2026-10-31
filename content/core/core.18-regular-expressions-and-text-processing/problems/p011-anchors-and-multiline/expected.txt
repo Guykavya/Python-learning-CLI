@@ -1,0 +1,11 @@
+True False
+False True
+['one']
+['one', 'two', 'three']
+['three']
+['one', 'two', 'three']
+['one']
+['three']
+['two', 'three']
+2
+3

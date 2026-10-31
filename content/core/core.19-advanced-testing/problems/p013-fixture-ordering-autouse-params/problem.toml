@@ -1,0 +1,8 @@
+id = "core.19.p013"
+title = "Trace: autouse fixtures and parametrized scope"
+tier = "deep"
+kind = "trace"
+topics = ["autouse", "parametrized fixtures", "fixture reordering", "setup and teardown order"]
+minutes = 30
+difficulty = 4
+assessment = "trace"

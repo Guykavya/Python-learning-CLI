@@ -1,0 +1,4 @@
+- Returning `re.search(...)` directly. It "works" in an `if`, but the caller gets a Match object or `None`, not `True` / `False`.
+- Using `re.match`. It only tries position 0, so `has_digit("room 101")` would be `False`.
+- Writing `"\d"` without the `r`. It happens to work today, but Python 3.12+ warns about the invalid escape `\d`, and other patterns like `"\b"` silently mean something else (a backspace).
+- Checking `m.group()` for truthiness instead of `m`. For `\d` it is fine, but for patterns that can match the empty string, an empty group is falsy while the match is real.

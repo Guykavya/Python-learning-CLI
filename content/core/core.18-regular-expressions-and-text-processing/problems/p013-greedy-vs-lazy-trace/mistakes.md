@@ -1,0 +1,6 @@
+- Expecting `<.*>` to find the tags one by one. `.*` is greedy and ends at the **last** `>`.
+- Thinking lazy means "shortest match anywhere in the string". It still starts at the leftmost possible position: `<(.+?)>` on `"<<a>>"` gives `<a`, not `a`.
+- Expecting `['12', '34', '56', '7']` from the lazy `findall`. Even a lazy `{2,4}?` needs at least 2 digits.
+- Writing `x` for `x.*?$`. The lazy part grows until the rest of the pattern (`$`) succeeds.
+- Writing `a_b` for the `re.sub` line. `\s+?` matches a single space each time, so two matches, two underscores.
+- Writing `color` for `colou??r`. Lazy `??` only changes the order of tries; at index 0 `colour` still matches.

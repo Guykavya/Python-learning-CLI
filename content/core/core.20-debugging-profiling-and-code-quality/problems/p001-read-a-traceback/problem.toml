@@ -1,0 +1,7 @@
+id = "core.20.p001"
+title = "Read a traceback"
+tier = "drill"
+kind = "code"
+topics = ["tracebacks", "innermost frame", "chained exceptions", "re"]
+minutes = 20
+difficulty = 2

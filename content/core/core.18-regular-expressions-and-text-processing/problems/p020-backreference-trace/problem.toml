@@ -1,0 +1,7 @@
+id = "core.18.p020"
+title = "Trace: backreferences on quotes, tags and repeats"
+tier = "deep"
+kind = "trace"
+topics = ["backreferences", "named backreferences", "lazy quantifier", "raw strings", "re.sub"]
+minutes = 20
+difficulty = 3

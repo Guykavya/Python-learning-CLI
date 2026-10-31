@@ -1,0 +1,7 @@
+id = "core.20.p008"
+title = "Log exceptions properly"
+tier = "applied"
+kind = "code"
+topics = ["logger.exception", "exc_info", "lazy %-formatting", "log levels", "caplog"]
+minutes = 25
+difficulty = 3

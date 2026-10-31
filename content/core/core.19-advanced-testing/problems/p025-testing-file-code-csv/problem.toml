@@ -1,0 +1,7 @@
+id = "core.19.p025"
+title = "Testing file code: a CSV summariser"
+tier = "applied"
+kind = "code"
+topics = ["tmp_path", "parametrize", "testing file code", "csv"]
+minutes = 30
+difficulty = 3

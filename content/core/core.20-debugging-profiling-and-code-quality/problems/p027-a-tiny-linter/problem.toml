@@ -1,0 +1,7 @@
+id = "core.20.p027"
+title = "A tiny linter"
+tier = "drill"
+kind = "code"
+topics = ["ast", "ast.walk", "how linters work", "F401 unused import", "E722 bare except", "B006 mutable default"]
+minutes = 35
+difficulty = 3

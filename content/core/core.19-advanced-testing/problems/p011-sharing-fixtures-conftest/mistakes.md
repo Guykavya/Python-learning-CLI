@@ -1,0 +1,6 @@
+- Defining the dict at module level (`CONFIG = {...}` and `return CONFIG`). One test changes it and the next one sees the change.
+- Writing `from conftest import app_config` in a test file. You never import from conftest; pytest injects by name.
+- Forgetting `import pytest` inside the conftest text.
+- Copying `user` into the api conftest "to be safe". It is not needed and it defeats the point: the inherited `user` already uses the overridden `app_config`.
+- Putting test functions in a conftest: pytest does not collect tests from `conftest.py`.
+- Giving the override a different name (`api_config`): it then adds a new fixture instead of replacing `app_config`.

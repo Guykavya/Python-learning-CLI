@@ -1,0 +1,7 @@
+id = "core.18.p021"
+title = "Lookahead: password rules in one pattern"
+tier = "applied"
+kind = "code"
+topics = ["lookahead", "negative lookahead", "re.compile", "re.fullmatch", "validation"]
+minutes = 25
+difficulty = 3

@@ -1,0 +1,11 @@
+['ab', 'ab', 'ab']
+['ababab', 'ab', 'ab']
+ababab ab (1, 7) (5, 7)
+[('a', 'b'), ('a', 'b')]
+['b', 'b']
+['red', 'green']
+['red apple', 'green apple']
+['red', 'green apple']
+abab (None,) 1
+['a', '-', 'b', '-', 'c']
+['a', 'b', 'c']

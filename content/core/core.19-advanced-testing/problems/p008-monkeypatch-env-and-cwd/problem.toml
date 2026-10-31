@@ -1,0 +1,7 @@
+id = "core.19.p008"
+title = "Write tests: monkeypatch env and cwd"
+tier = "applied"
+kind = "code"
+topics = ["monkeypatch.setenv", "monkeypatch.delenv", "monkeypatch.chdir", "configuration precedence"]
+minutes = 30
+difficulty = 3

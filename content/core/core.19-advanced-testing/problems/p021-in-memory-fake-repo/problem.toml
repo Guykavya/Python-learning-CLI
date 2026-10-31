@@ -1,0 +1,7 @@
+id = "core.19.p021"
+title = "Write an in-memory fake"
+tier = "applied"
+kind = "code"
+topics = ["fakes", "protocols", "contract tests", "test doubles"]
+minutes = 30
+difficulty = 3

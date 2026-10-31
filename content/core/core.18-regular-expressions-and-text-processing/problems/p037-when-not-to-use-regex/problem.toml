@@ -1,0 +1,7 @@
+id = "core.18.p037"
+title = "Explain: when not to use a regex"
+tier = "deep"
+kind = "explain"
+topics = ["choosing tools", "nested structure", "json", "html.parser", "str methods"]
+minutes = 25
+difficulty = 3

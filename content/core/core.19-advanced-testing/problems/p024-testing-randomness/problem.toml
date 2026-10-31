@@ -1,0 +1,7 @@
+id = "core.19.p024"
+title = "Testing randomness"
+tier = "applied"
+kind = "code"
+topics = ["random.Random", "seeding", "injecting rng", "global random state"]
+minutes = 30
+difficulty = 3

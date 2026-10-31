@@ -1,0 +1,7 @@
+id = "core.18.p026"
+title = "re.sub with backreferences: swap Last, First"
+tier = "drill"
+kind = "code"
+topics = ["re.sub", "backreferences in replacement", "re.MULTILINE", "anchors"]
+minutes = 20
+difficulty = 2

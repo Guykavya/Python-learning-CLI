@@ -1,0 +1,7 @@
+id = "core.20.p022"
+title = "Find the memory leak"
+tier = "deep"
+kind = "code"
+topics = ["memory leaks", "unbounded caches", "LRU eviction", "listeners and unsubscribe", "weakref", "tracemalloc"]
+minutes = 45
+difficulty = 4

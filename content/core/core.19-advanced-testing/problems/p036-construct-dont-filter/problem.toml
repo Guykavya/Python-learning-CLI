@@ -1,0 +1,7 @@
+id = "core.19.p036"
+title = "Construct, do not filter"
+tier = "applied"
+kind = "code"
+topics = ["hypothesis", ".filter", "assume", "map", "health checks", "constructive strategies"]
+minutes = 35
+difficulty = 3

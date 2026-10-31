@@ -1,0 +1,7 @@
+id = "core.20.p012"
+title = "Shrink a failing input"
+tier = "challenge"
+kind = "code"
+topics = ["delta debugging", "minimising test cases", "slicing", "loop invariants"]
+minutes = 40
+difficulty = 4

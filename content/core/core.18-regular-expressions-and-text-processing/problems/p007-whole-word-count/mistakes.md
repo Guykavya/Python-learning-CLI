@@ -1,0 +1,6 @@
+- `text.lower().count(word.lower())`: counts `the` inside `theme` and `other`.
+- `\b` on one side only: `\bcat` still matches the start of `cats`.
+- Forgetting `re.escape`: `.` matches any character and `+` becomes a quantifier.
+- `"\b" + word + "\b"` without `r`: `"\b"` is a backspace character, so nothing ever matches. Use `r"\b"`.
+- Lower-casing the text but not the word (or the other way round). `re.IGNORECASE` handles both.
+- Splitting on spaces and comparing: `"go!"` and `"(go)"` are not equal to `"go"`.

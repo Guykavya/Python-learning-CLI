@@ -1,0 +1,7 @@
+- `#\w+` without a group: the result includes the `#`.
+- `\b#`: the opposite of what you want. `\b` before `#` needs a word character before it, so it matches **only** the glued cases like `a#b`.
+- No guard at all: `kavya@example.com` produces the mention `example`.
+- `(?:^|\s)#(\w+)`: misses tags after punctuation or a bracket, like `(#x)`.
+- `\w*` instead of `\w+`: a lone `#` produces an empty tag `''`.
+- `list(set(items))` to remove repeats: a set has no order, so the result order is unpredictable.
+- Lower-casing mentions too: `@Ana` and `@ana` must stay different.

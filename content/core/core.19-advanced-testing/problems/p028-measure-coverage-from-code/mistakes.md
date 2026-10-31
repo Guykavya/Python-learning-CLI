@@ -1,0 +1,8 @@
+- Calling `cov.start()` after `exec_module`: the `def` line (and any module-level code) already ran unmeasured, so it shows up as missing.
+- Using `exec(source)` instead of a file: coverage reports on files, and `exec` code has no file, so nothing is measured.
+- Forgetting `data_file=None`: coverage writes a `.coverage` file into the current folder, which the checker finds.
+- Not catching exceptions per call: one raising call stops the loop and later calls never run.
+- Putting the `try` / `except` around the whole loop instead of each call.
+- Forgetting `cov.stop()` when something fails: the tracer stays on and slows everything that follows.
+- Leaving out `include=`: percent would be computed over every file coverage saw, not only `source`.
+- Counting percent over lines of text (`len(source.splitlines())`): blank lines and comments are not statements. Use the `statements` list.

@@ -1,0 +1,7 @@
+id = "core.19.p004"
+title = "Trace: how many times does setup run?"
+tier = "drill"
+kind = "trace"
+topics = ["fixture scope", "module scope", "lazy setup"]
+minutes = 15
+difficulty = 2

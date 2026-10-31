@@ -1,0 +1,6 @@
+- Saying "the tests are bad because they are only three". Count is not the problem: ten more tests of the same kind would still be 100% and still miss all three bugs.
+- Answering that coverage should be higher: it is already 100%, the maximum.
+- Saying branch coverage would find the boundary bug. It did not: the branch ran both ways and is reported as covered.
+- Writing the new tests from the code instead of the spec: `assert shipping(12, True) == 30` makes the bug part of the test.
+- Forgetting the "missing code" case. No tool that looks at the existing code can find a rule that was never implemented.
+- Concluding "coverage is useless". It is useful in one direction: low coverage reliably shows untested code.

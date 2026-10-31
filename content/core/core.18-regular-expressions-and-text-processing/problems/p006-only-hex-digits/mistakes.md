@@ -1,0 +1,6 @@
+- `re.match(r"[0-9a-fA-F]+", s)`: it only checks that the string **starts** with hex digits, so `"abcdefg"` passes.
+- `re.search(...)`: it accepts any string that contains one hex digit somewhere.
+- `re.match(r"[0-9a-fA-F]+$", s)`: `$` also matches just before a final newline, so `"abc\n"` passes. `fullmatch` (or `\Z`) does not have this hole.
+- `*` instead of `+`: the empty string becomes valid.
+- `[0-9a-F]` as a range: `a-F` is backwards (`F` comes before `a` in Unicode) and raises `re.error`.
+- `\w+`: `\w` includes every letter, digit and `_`, not just `a`–`f`.

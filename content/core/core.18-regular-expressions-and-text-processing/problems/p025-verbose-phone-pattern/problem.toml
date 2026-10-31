@@ -1,0 +1,7 @@
+id = "core.18.p025"
+title = "Verbose patterns: a readable phone number parser"
+tier = "applied"
+kind = "code"
+topics = ["re.VERBOSE", "named groups", "groupdict", "re.compile", "validation"]
+minutes = 30
+difficulty = 3

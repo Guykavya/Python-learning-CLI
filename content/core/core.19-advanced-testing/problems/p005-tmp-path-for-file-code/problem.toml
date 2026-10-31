@@ -1,0 +1,7 @@
+id = "core.19.p005"
+title = "Write tests: save and load notes with tmp_path"
+tier = "drill"
+kind = "code"
+topics = ["tmp_path", "testing file code", "no leftovers on disk"]
+minutes = 25
+difficulty = 2

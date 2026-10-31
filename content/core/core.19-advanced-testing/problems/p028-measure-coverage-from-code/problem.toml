@@ -1,0 +1,7 @@
+id = "core.19.p028"
+title = "Measure coverage from code"
+tier = "drill"
+kind = "code"
+topics = ["coverage", "coverage API", "line coverage", "tempfile", "importlib"]
+minutes = 35
+difficulty = 3

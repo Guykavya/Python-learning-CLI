@@ -1,0 +1,8 @@
+id = "core.20.p029"
+title = "Explain: why a quality pipeline?"
+tier = "challenge"
+kind = "explain"
+topics = ["ruff", "black", "mypy", "pre-commit", "pytest", "CI", "what each tool can and cannot catch"]
+minutes = 35
+difficulty = 4
+assessment = "explain"

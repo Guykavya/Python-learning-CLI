@@ -1,0 +1,7 @@
+id = "core.19.p031"
+title = "First properties: reverse and sort"
+tier = "drill"
+kind = "code"
+topics = ["hypothesis", "@given", "properties", "mutation testing"]
+minutes = 25
+difficulty = 2

@@ -1,0 +1,7 @@
+- Chasing the coverage number only: calling `parcel_fee(...)` without an `assert` reaches every branch and catches no bug.
+- Stopping at line coverage: a single `if` with no `else` is fully "covered" by one call where it is true. Branch coverage also needs a call where it is false.
+- Forgetting the loop's three outcomes: skipped (`[]`), run to the end without a match, and left early by `return` or `break`.
+- Testing only 25 kg and 10 kg: the borders (5, 20, 21) are where `>` versus `>=` mistakes live.
+- Expected values copied from the function's output instead of worked out by hand from the rules in the docstring.
+- Using `pytest.raises` without checking that the call that **should not** raise really returns the right value.
+- Reading 100% as "tested": coverage proves lines ran, not that the results were right (see p029).

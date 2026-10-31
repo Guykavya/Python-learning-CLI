@@ -1,0 +1,6 @@
+- Creating `Cart()` inside each test and calling the fixture "setup" in a comment. The fixture is the setup.
+- Forgetting `import pytest`, or writing `@fixture` without importing it.
+- Calling the fixture like a function (`cart()`): pytest 8 and later raises an error. Take it as a parameter.
+- Making the cart a module-level variable "to share it". One test's `add` then leaks into the next and results depend on test order.
+- Testing only `total()` with quantity 1, where "ignores the quantity" gives the right answer too.
+- Never trying the error paths (`KeyError`, `ValueError`): two of the six bugs hide there.

@@ -1,0 +1,7 @@
+id = "core.20.p024"
+title = "Stop repeating work"
+tier = "drill"
+kind = "code"
+topics = ["repeated work in loops", "grouping with a dict", "sorting once", "heapq.nlargest", "measuring a speed-up"]
+minutes = 25
+difficulty = 2

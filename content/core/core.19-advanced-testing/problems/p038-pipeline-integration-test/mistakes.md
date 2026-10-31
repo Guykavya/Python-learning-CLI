@@ -1,0 +1,7 @@
+- Testing each function alone and never `run`. Both glue bugs pass every unit test.
+- Checking only the return value of `run`. It does not look at the file that was written.
+- Using only tidy input. The messy rows (mixed case, spaces, blank, text, negative) are the whole point.
+- Expected output copied from what the code printed instead of worked out by hand: the test then agrees with the bug.
+- Forgetting the empty and all-invalid files: the header must still be written.
+- Writing the input to a fixed path such as `"in.csv"` in the current folder instead of `tmp_path`: tests leave files behind and can disturb each other.
+- Forgetting `newline` problems: compare with `read_text().splitlines()` so line endings do not matter.

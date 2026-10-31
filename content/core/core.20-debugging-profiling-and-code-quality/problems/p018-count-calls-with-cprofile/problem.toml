@@ -1,0 +1,7 @@
+id = "core.20.p018"
+title = "Count calls with cProfile"
+tier = "applied"
+kind = "code"
+topics = ["cProfile", "pstats", "ncalls", "recursion in profiles", "try/finally"]
+minutes = 30
+difficulty = 3

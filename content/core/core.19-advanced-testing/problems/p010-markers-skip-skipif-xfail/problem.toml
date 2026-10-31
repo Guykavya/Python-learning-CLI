@@ -1,0 +1,7 @@
+id = "core.19.p010"
+title = "Markers: skip, skipif, xfail"
+tier = "applied"
+kind = "code"
+topics = ["skip", "skipif", "xfail strict", "custom markers", "-m selection"]
+minutes = 25
+difficulty = 3
