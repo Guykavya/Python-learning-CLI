@@ -120,9 +120,12 @@ def cmd_init(args: argparse.Namespace) -> None:
         if not path.exists():
             path.write_text(text, encoding="utf-8")
     conn = db.connect()
-    if not db.get_meta(conn, "created"):
-        db.set_meta(conn, "created", db.today())
-    conn.commit()
+    try:
+        if not db.get_meta(conn, "created"):
+            db.set_meta(conn, "created", db.today())
+        conn.commit()
+    finally:
+        conn.close()  # Windows cannot delete the tracker file while it is open (learn reset)
     print(ui.ok("Folders and tracker database are ready: ") + rel(paths.db_path()))
     print(gitsnap.init())
     print("\nNext:  " + ui.accent("learn today"))
