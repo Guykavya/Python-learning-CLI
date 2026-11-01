@@ -1,0 +1,7 @@
+id = "core.24.p034"
+title = "Trace: run the mini VM by hand"
+tier = "challenge"
+kind = "trace"
+topics = ["stack machine", "evaluation loop", "frames", "CALL and RET", "jumps", "bytecode"]
+minutes = 35
+difficulty = 4

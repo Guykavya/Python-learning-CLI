@@ -1,0 +1,6 @@
+- Storing the value on the descriptor (`self.value = value`). One `Field` serves every `Book`, so all books share one title.
+- Using `setattr(instance, self.name, value)` inside `__set__`. That calls `__set__` again: `RecursionError`.
+- Expecting `__set_name__` to run when an instance is created. It runs once, when the `class` statement finishes.
+- Letting `KeyError` escape from `__delete__`. Attribute operations signal "not there" with `AttributeError`.
+- Forgetting `if instance is None: return self`. `Book.title` would then try `None.__dict__`.
+- Storing a shared mutable default (like `[]`) and handing the same list to every instance. Here defaults are returned, not copied, so prefer immutable defaults.

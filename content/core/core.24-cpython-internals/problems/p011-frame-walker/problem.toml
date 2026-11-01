@@ -1,0 +1,7 @@
+id = "core.24.p011"
+title = "Walk the call stack"
+tier = "drill"
+kind = "code"
+topics = ["frames", "sys._getframe", "f_back", "f_code", "co_qualname", "call stack"]
+minutes = 20
+difficulty = 2

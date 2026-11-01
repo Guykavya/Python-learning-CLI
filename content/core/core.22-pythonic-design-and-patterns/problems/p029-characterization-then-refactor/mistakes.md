@@ -1,0 +1,8 @@
+- Refactoring first and writing the golden table afterwards. If you only compare against your own new code you will never notice the changes.
+- Changing too much between test runs. When 14 cases go red you cannot tell which edit broke them.
+- Treating `True` as a valid amount (`bool` is a subclass of `int`) or `"12"` (a string) as one.
+- Skipping `void` rows *after* validation, so an invalid void row is wrongly counted as skipped.
+- Breaking tie-breaking: on equal amounts the alphabetically first name wins, but a **later** row with a bigger amount must still replace the top.
+- Changing rounding or the order in which sums are added (floating-point sums can differ in the last digit).
+- Passing the line-count rule by cramming statements onto one line with `;`, or by deleting the docstrings but keeping the nesting.
+- Renaming or removing `legacy_report`; callers and tests import that name.

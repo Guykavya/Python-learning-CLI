@@ -1,0 +1,7 @@
+id = "core.21.p041"
+title = "Stop the pool at the first error"
+tier = "deep"
+kind = "code"
+topics = ["ThreadPoolExecutor", "as_completed", "Future.cancel", "shutdown(cancel_futures=True)", "fail fast"]
+minutes = 35
+difficulty = 4

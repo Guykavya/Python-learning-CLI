@@ -1,0 +1,7 @@
+- Writing `self._target = target` in `__init__`: your own `__setattr__` refuses it, so not even the constructor works.
+- Reading `self._target` inside `__getattr__`: fine in normal use, `RecursionError` the moment `copy`, `pickle` or a half-built object asks for a missing name.
+- Counting in `__getattr__` before `getattr(target, name)` succeeds, so failed reads are counted.
+- Keeping the counts in a class attribute (`_counts = {}` in the class body): all proxies share one dict.
+- Copying the target's values in `__init__` instead of forwarding each time: the view goes stale.
+- Catching the target's `AttributeError` and returning `None`: `hasattr(proxy, "x")` is then always `True` and typos go unnoticed.
+- Expecting `len(proxy)` or `proxy == x` to be forwarded by `__getattr__`. Implicit special-method lookup goes to the type and skips `__getattr__`.

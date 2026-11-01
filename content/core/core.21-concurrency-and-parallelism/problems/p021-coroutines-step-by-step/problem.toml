@@ -1,0 +1,7 @@
+id = "core.21.p021"
+title = "Trace: coroutines step by step"
+tier = "drill"
+kind = "trace"
+topics = ["async def", "coroutine objects", "await", "asyncio.run", "sequential awaits"]
+minutes = 15
+difficulty = 2

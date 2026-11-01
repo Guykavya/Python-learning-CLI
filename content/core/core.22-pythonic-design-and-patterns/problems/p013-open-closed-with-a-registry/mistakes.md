@@ -1,0 +1,6 @@
+- Forgetting `return func` in the decorator: the decorated name becomes `None`.
+- Writing `@register` without the parentheses and the name: `register(func)` then returns a decorator, not your function.
+- Putting the registry dict **inside** `area` so it is rebuilt on every call, and not extendable from outside.
+- Letting the `KeyError` escape: callers should catch `ValueError` for bad input, and the message should name the type.
+- Replacing the `if/elif` with a long chain of separate `if` statements. That is the same problem.
+- Silently overwriting a name on a second `register`: a copy-paste mistake becomes a wrong area.

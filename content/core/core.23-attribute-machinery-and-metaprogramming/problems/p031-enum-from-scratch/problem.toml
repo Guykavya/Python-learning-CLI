@@ -1,0 +1,7 @@
+id = "core.23.p031"
+title = "An enum from scratch"
+tier = "challenge"
+kind = "code"
+topics = ["metaclasses", "metaclass __call__", "metaclass __iter__ and __len__", "metaclass __setattr__", "descriptors", "enum"]
+minutes = 50
+difficulty = 5

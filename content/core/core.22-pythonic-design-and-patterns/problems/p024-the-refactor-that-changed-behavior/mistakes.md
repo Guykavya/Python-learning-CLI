@@ -1,0 +1,7 @@
+- Fixing only the rows of the table that fail and missing the two bugs that need a *sequence* of calls (mutated input, shared default).
+- Switching `<` to `<=` but also changing the heavy test `weight_kg > 20` to `>=`. The original keeps `> 20`.
+- Replacing `int(total * 100) / 100` with `math.floor`/`math.ceil`, or with `round(total)` (no decimals).
+- Using `extras = extras or []` and then appending: if the caller passed a non-empty list you still modify it.
+- Copying with `extras.copy()` but keeping `extras=[]` as the default (harmless once you copy, but a trap for the next edit).
+- "Fixing" by going back to `if/elif` for the bands. That throws away the cleanup; fix the operators, not the structure.
+- Forgetting duplicates count once (`set`) so `["fragile", "fragile"]` is charged twice.

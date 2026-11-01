@@ -1,0 +1,7 @@
+id = "core.21.p026"
+title = "A timeout with a fallback value"
+tier = "drill"
+kind = "code"
+topics = ["asyncio.timeout", "TimeoutError", "cancellation", "default values"]
+minutes = 15
+difficulty = 2

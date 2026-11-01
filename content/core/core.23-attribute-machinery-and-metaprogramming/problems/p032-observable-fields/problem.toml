@@ -1,0 +1,7 @@
+id = "core.23.p032"
+title = "Observable fields with history and undo"
+tier = "challenge"
+kind = "code"
+topics = ["descriptors", "__set_name__", "__init_subclass__", "observer pattern", "instance __dict__", "undo"]
+minutes = 50
+difficulty = 5

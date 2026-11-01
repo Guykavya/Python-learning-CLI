@@ -1,0 +1,14 @@
+before run
+main() gave a coroutine
+main start
+made coroutine
+greet start A
+greet end A
+result: hi A
+greet start B
+greet end B
+greet start C
+greet end C
+hi B | hi C
+main end
+run returned 42

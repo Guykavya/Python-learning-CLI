@@ -1,0 +1,7 @@
+- Answering `[0, 10, 20]` for the first lambda list: lambdas read `i` when called, not when created.
+- Printing `['a'] ['a', 'b']` for the shared default: `print` runs both calls first, and both results are the same list object.
+- Forgetting that `sum` consumes a generator, so `max` sees nothing and returns the default `-1`.
+- Thinking a comprehension variable leaks (that was Python 2). In Python 3 it does not; a `for` loop does leak.
+- Believing `v == None` is `True` for `0` or `""`. Falsy is not the same as equal to `None`.
+- Missing that the last line continues the shared list from pair 2 (`['a', 'b', 'c']`).
+- Concluding "all five are unsafe". Pair 5 is a true refactor for these inputs.

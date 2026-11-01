@@ -1,0 +1,7 @@
+- Writing `strategy=no_discount()` (a call) as the default instead of the function itself.
+- Returning `total - p` from `percent_off` instead of a function; the test then calls a number.
+- Calling `percent_off(10, total)`: it takes only `p`, and returns a function that takes the total.
+- Keeping an `if strategy == "ten"` inside `checkout` "for backward compatibility". The point is to remove it.
+- Letting `flat_off` produce negative totals.
+- Forgetting to round in `checkout`, so `16.9915` comes out.
+- Using a loop variable in a closure created in a loop (all strategies share the last value). Here the factory function gives each closure its own `p`.

@@ -1,0 +1,8 @@
+- Showing the caller's stack on the lines after `CALL`. While the function runs, the current frame is the new one, whose stack holds only the two arguments.
+- Leaving the arguments on the caller's stack as well. `CALL` *moves* them: after offset 5 the caller has only `[n]` left.
+- Computing `n - 10` in the function. The arguments keep their order, so the new stack is `[n, 10]`; `SWAP` makes it `[10, n]` and `SUB` computes `10 - n`.
+- Forgetting that `JUMP_IF_FALSE` pops even when it does not jump, so the loop starts each round with one copy of `n`, not two.
+- Printing `out 8` after `6 PRINT ...`. `PRINT`'s own `print("out", ...)` runs while the instruction executes; the trace line comes at the end of the loop body.
+- Writing `PUSH` lines with the operand (`0 PUSH 2 ...`): the trace prints only offset, op, depth and stack.
+- Stopping before the last round's `DUP` and `JUMP_IF_FALSE`: the loop test runs a third time with `n = 0`, and only then does it jump to `HALT`.
+- Showing `depth=2` on the `RET` line. The frame is removed during `RET`, so the line already shows depth 1 and the caller's stack with the result on top.

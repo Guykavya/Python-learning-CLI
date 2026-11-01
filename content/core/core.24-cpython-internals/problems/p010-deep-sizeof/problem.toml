@@ -1,0 +1,7 @@
+id = "core.24.p010"
+title = "Deep size of a container"
+tier = "drill"
+kind = "code"
+topics = ["sys.getsizeof", "object memory", "containers hold references", "id", "cycle-safe traversal"]
+minutes = 20
+difficulty = 2

@@ -1,0 +1,7 @@
+id = "core.23.p003"
+title = "Lock attributes after __init__"
+tier = "drill"
+kind = "code"
+topics = ["__setattr__", "__delattr__", "object.__setattr__", "immutability", "AttributeError"]
+minutes = 20
+difficulty = 2

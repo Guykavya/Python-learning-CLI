@@ -1,0 +1,7 @@
+id = "core.23.p004"
+title = "Explain: __getattr__ or __getattribute__?"
+tier = "drill"
+kind = "explain"
+topics = ["__getattr__", "__getattribute__", "attribute lookup", "recursion", "AttributeError contract"]
+minutes = 20
+difficulty = 2

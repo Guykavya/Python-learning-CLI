@@ -1,0 +1,7 @@
+id = "core.24.p001"
+title = "Code object facts"
+tier = "drill"
+kind = "code"
+topics = ["code objects", "__code__", "co_varnames", "co_names", "co_consts", "co_argcount"]
+minutes = 15
+difficulty = 1

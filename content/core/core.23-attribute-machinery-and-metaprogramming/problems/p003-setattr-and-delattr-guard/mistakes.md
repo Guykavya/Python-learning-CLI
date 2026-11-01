@@ -1,0 +1,7 @@
+- Writing `self.name = value` inside `__setattr__`. It calls `__setattr__` again: `RecursionError`.
+- Storing the flag on the class (`Locked.locked = True`). The first object locks every later object, even during their own `__init__`.
+- Reading the flag with `self._locked` in `__setattr__`. On a new object it does not exist yet; use `self.__dict__.get("_locked", False)` (or `getattr` with a default).
+- Forgetting that `object.__setattr__` skips your guard, so a second `p.__init__(...)` silently rewrites a "locked" object.
+- Making `__delattr__` do nothing instead of raising. The caller thinks the delete worked.
+- Raising `TypeError` or `ValueError`. Read-only attributes raise `AttributeError` everywhere in Python (properties without a setter, frozen dataclasses).
+- Showing `_locked=True` in the repr.

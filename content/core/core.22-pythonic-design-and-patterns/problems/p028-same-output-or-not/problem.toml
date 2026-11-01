@@ -1,0 +1,8 @@
+id = "core.22.p028"
+title = "Trace: same output or not?"
+tier = "deep"
+kind = "trace"
+topics = ["refactoring", "behavior preservation", "late binding", "mutable default argument", "generators", "comprehension scope", "None checks"]
+minutes = 30
+difficulty = 4
+assessment = "trace"

@@ -1,0 +1,19 @@
+P done before it ran? False
+P: working
+S: working
+cancel P: True
+cancel S: True
+P done right after cancel? False
+P: cancelled, cleaning up
+P: finally
+S: cancelled, but I swallow it
+results: ['CancelledError', 'S result']
+P cancelled? True | S cancelled? False
+cancel P again: False
+slow: finally
+main: TimeoutError from asyncio.timeout
+W: working
+W: cancelled, cleaning up
+W: finally
+main: wait_for raised TimeoutError
+main: end

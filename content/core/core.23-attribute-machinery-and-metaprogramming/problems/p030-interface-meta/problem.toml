@@ -1,0 +1,7 @@
+id = "core.23.p030"
+title = "An interface checker metaclass"
+tier = "challenge"
+kind = "code"
+topics = ["metaclasses", "metaclass keyword arguments", "metaclass __call__", "metaclass properties", "__mro__", "class creation process"]
+minutes = 45
+difficulty = 5

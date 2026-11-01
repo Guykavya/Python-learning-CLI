@@ -1,0 +1,7 @@
+id = "core.21.p038"
+title = "Retry with exponential backoff"
+tier = "applied"
+kind = "code"
+topics = ["httpx", "retries", "exponential backoff", "HTTPStatusError", "TransportError", "dependency injection"]
+minutes = 30
+difficulty = 3

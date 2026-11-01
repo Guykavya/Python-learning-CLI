@@ -1,0 +1,8 @@
+- Storing the value and then validating. A rejected value has then already overwritten the good one.
+- Putting the storage in each subclass: three copies of the same `__get__`/`__set__`, and one of them will have a bug.
+- Forgetting `@abstractmethod` (or `ABC`), so `Validator()` can be created and silently accepts everything.
+- `Range` checking `isinstance(value, int)` only: floats are rejected. Or forgetting that `True` is an `int`.
+- Writing `if self.min_value and value < self.min_value`: a limit of `0` is falsy, so the check is skipped. Compare with `is not None`.
+- `NonEmptyStr` testing `if not value` only: `"   "` passes. Use `value.strip()`.
+- Messages without the field name ("must be >= 0"): in a class with ten fields nobody knows which one failed.
+- Using `<` where the limits are inclusive, so `price = 500` is rejected.

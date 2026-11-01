@@ -1,0 +1,7 @@
+id = "core.23.p033"
+title = "A cached generic Box with __class_getitem__"
+tier = "challenge"
+kind = "code"
+topics = ["__class_getitem__", "dynamic class creation", "type()", "types.GenericAlias", "caching", "runtime type checks"]
+minutes = 45
+difficulty = 5

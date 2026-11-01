@@ -1,0 +1,5 @@
+- Calling `store(obj)` without keeping the result. The container is freed immediately and the delta is 0.
+- Measuring with `7`, `"abc"` or `None`. On 3.12+ these can be immortal (the count never changes), and small ints and short strings are shared with the rest of the program anyway.
+- Returning `sys.getrefcount(obj)` itself. The absolute number depends on the version and on how the call is made.
+- Measuring the two counts in different ways (for example one through a helper function). Then the temporary references do not cancel.
+- Creating the object once at module level: earlier calls may still hold references to it.

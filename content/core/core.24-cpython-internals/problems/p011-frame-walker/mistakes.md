@@ -1,0 +1,6 @@
+- Starting from `sys._getframe(0)`: the list then begins with `call_chain` itself.
+- Reading `frame.f_code.co_filename` or `frame.f_lineno` instead of `co_name`.
+- Checking for `<module>` only after appending, so `<module>` (or the `stop` frame) ends up in the list.
+- Looping `while frame.f_back:` and missing the outermost frame when there is no module frame.
+- Keeping frames in a list or global. Frames keep every local variable of that call alive, and a frame stored in its own locals forms a reference cycle.
+- Using `co_name` when `qualified=True`: methods lose their class name and nested functions their `<locals>` path.

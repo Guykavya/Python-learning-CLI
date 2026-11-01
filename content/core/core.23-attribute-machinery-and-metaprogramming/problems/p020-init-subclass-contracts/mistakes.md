@@ -1,0 +1,8 @@
+- Checking `"table" in cls.__dict__`: inherited values are rejected, so `class Admin(User)` fails although it has a table.
+- Stopping at the first missing attribute, so the user fixes `fields`, runs again and only then learns about `table`.
+- Forgetting `super().__init_subclass__(**kwargs)`: other bases never get their keywords (`tag=` is lost), and typos in class keywords are silently accepted.
+- Writing `def __init_subclass__(cls, abstract=False)` with no `**kwargs`: combining with another base that takes a keyword raises `TypeError`.
+- Storing `cls.abstract = True` and checking `getattr(cls, "abstract")`: the flag is inherited and the concrete subclasses are never checked.
+- Checking the contract in `__init__` (when an instance is created) instead of at class creation. The point is to fail at the `class` statement.
+- Assigning `cls.__repr__ = ...` unconditionally, which overwrites a subclass's own `__repr__`.
+- Accepting a list for `fields`: a list can be changed later by anyone, so the checked contract would not stay true.

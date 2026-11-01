@@ -1,0 +1,7 @@
+id = "core.21.p024"
+title = "A report that survives failures"
+tier = "applied"
+kind = "code"
+topics = ["asyncio.gather", "return_exceptions", "error handling", "dict building"]
+minutes = 25
+difficulty = 3

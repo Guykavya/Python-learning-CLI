@@ -1,0 +1,7 @@
+id = "core.22.p026"
+title = "Dependency injection by hand"
+tier = "challenge"
+kind = "code"
+topics = ["dependency injection", "composition root", "constructor injection", "fakes", "global state", "dependency inversion"]
+minutes = 50
+difficulty = 4

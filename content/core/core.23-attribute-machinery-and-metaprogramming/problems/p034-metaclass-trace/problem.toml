@@ -1,0 +1,7 @@
+id = "core.23.p034"
+title = "Trace: metaclass inheritance and instance creation"
+tier = "challenge"
+kind = "trace"
+topics = ["metaclasses", "metaclass resolution", "metaclass conflict", "metaclass __call__", "__new__ and __init__", "__init_subclass__ keyword arguments"]
+minutes = 35
+difficulty = 5

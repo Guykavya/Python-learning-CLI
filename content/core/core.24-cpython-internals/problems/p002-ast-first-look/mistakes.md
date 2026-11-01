@@ -1,0 +1,6 @@
+- Using `ast.iter_child_nodes(tree)` or `tree.body`: that only sees the top level and misses everything inside functions and expressions.
+- Counting `node.__class__` objects or `str(node)` instead of `type(node).__name__`; the keys must be plain strings like `"BinOp"`.
+- Checking `name in source`. That finds the name inside strings, attributes, parameters and longer names like `totals`.
+- Forgetting the root: `ast.walk` yields the `Module` node itself.
+- Catching `SyntaxError` and returning an empty Counter. Bad source is an error the caller needs to see.
+- Returning `None` instead of `False` when the name is not found.

@@ -1,0 +1,5 @@
+- Reading the first column as an instruction counter. It is the source line number, printed once per line.
+- Thinking `STORE_FAST` leaves the value on the stack. It pops it; the next line has to load `result` again.
+- Saying `result` is looked up by name in a dict. Function locals are numbered slots in the frame; the name is only for `dis` and debuggers.
+- Treating the 3.14 instruction names as part of Python. They are CPython implementation details and change between versions.
+- Thinking `LOAD_SMALL_INT 1` means "load constant number 1 from co_consts". For this opcode the argument *is* the value.

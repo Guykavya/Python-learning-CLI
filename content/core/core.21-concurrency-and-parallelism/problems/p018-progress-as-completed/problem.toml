@@ -1,0 +1,7 @@
+id = "core.21.p018"
+title = "Progress reports with as_completed"
+tier = "applied"
+kind = "code"
+topics = ["concurrent.futures", "ThreadPoolExecutor", "as_completed", "Future", "result order"]
+minutes = 25
+difficulty = 3

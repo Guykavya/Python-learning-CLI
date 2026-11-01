@@ -1,0 +1,8 @@
+- Saying `del a` kills the object. It deletes the name `a`; the object lives on while `b` refers to it.
+- Missing that `b = Node("b")` kills the first object: rebinding drops the old reference just like `del`.
+- Thinking `box.pop()` frees the object. The list held it twice; one slot is left.
+- Thinking a weak reference keeps the object alive. `weakref.ref` does not add to the refcount; that is its whole purpose.
+- Expecting the local in `make()` to survive. Locals are references held by the frame, and the frame is gone when the function returns. Only the weak reference was returned.
+- Expecting `del y` to free the cycle. `x.other` and `y.other` still point at each other, so both counts are 1; reference counting alone can never free a cycle.
+- Expecting the automatic collector to clean up line 12. It was turned off with `gc.disable()`; without that, *when* it runs would depend on allocation counts, which is why the program turns it off.
+- Printing a number for `found`. The exact count is version dependent (it can include each instance's `__dict__`), so the program prints only `found > 0`.

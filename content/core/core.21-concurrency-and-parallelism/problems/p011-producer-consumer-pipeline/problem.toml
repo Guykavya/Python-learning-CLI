@@ -1,0 +1,7 @@
+id = "core.21.p011"
+title = "Producer-consumer pipeline with a Queue"
+tier = "applied"
+kind = "code"
+topics = ["queue.Queue", "worker threads", "sentinel", "producer-consumer", "input order"]
+minutes = 30
+difficulty = 3

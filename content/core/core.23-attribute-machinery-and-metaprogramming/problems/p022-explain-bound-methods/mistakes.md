@@ -1,0 +1,6 @@
+- Saying "Python passes `self` automatically" without saying **who** does it. The bound method object inserts it; the function's `__get__` creates that object.
+- Saying the method is "copied into the instance". Nothing is copied; `g.__dict__` contains only `greeting`.
+- Calling functions data descriptors. They have only `__get__`; that is why an instance attribute with the same name wins.
+- Claiming `Greeter.greet` is an "unbound method". That type existed in Python 2. In Python 3 it is the plain function.
+- Thinking `g.greet is g.greet` is `False` because "methods are copied for each instance". It is because each *lookup* builds a new bound method.
+- Expecting the lambda in 6c to receive `self`. Values found in the instance dict are returned as they are, without `__get__`.

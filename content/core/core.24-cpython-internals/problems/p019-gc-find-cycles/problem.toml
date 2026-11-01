@@ -1,0 +1,7 @@
+id = "core.24.p019"
+title = "Find the reference cycle"
+tier = "applied"
+kind = "code"
+topics = ["garbage collector", "reference cycles", "gc.get_referents", "graph search", "BFS"]
+minutes = 35
+difficulty = 3

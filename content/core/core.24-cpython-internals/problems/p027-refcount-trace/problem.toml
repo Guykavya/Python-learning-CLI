@@ -1,0 +1,7 @@
+id = "core.24.p027"
+title = "Trace: when does an object die?"
+tier = "deep"
+kind = "trace"
+topics = ["reference counting", "del", "weakref", "containers", "frames", "reference cycles", "gc.collect"]
+minutes = 25
+difficulty = 3

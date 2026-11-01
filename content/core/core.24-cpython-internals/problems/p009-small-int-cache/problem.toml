@@ -1,0 +1,7 @@
+id = "core.24.p009"
+title = "Trace: the small-int cache and interning"
+tier = "drill"
+kind = "trace"
+topics = ["is vs ==", "small int cache", "string interning", "sys.intern", "object identity"]
+minutes = 15
+difficulty = 2

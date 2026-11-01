@@ -1,0 +1,9 @@
+- Recording events in the global trace function. It only ever sees `"call"` events; line events go to the **local** function it returns.
+- A local trace function that returns `None`. Tracing of that frame stops after the first event.
+- Returning the local tracer only for `func.__code__`. Helpers, recursive calls and generators are new frames with their own `"call"` event; they need the local tracer too.
+- No file filter: every `json.dumps`, `print` helper or `Counter` written in Python shows up in the events, and the trace becomes huge and slow.
+- Absolute line numbers (`frame.f_lineno`). They change whenever the file above the function is edited; relative numbers do not.
+- Restoring with `sys.settrace(None)` instead of the saved tracer. Running your tool inside a debugger or under coverage would silently switch those off.
+- Restoring after the call without `try`/`finally`. If `func` raises, tracing stays on for the rest of the program.
+- Swallowing the exception from `func` (a bare `except:`). A tracer must not change what the program does.
+- Expecting an exact list of events for loops and generators that is the same on every version. Count what is stable (body lines), not the `for` line.

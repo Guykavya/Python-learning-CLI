@@ -1,0 +1,7 @@
+- Not passing `**kwargs` to `super().__init_subclass__()`. Another base's keywords then cause `TypeError` (or are silently lost).
+- Swallowing unknown keywords (accepting `**kwargs` and not passing them on). A typo like `kee="csv"` must fail loudly; `object.__init_subclass__` does that for you.
+- Creating `cls.registry = {}` in the hook. Each subclass would get its own empty dict and `Plugin.registry` would stay empty.
+- Registering when `key` is `None` (for example under the class name), so helper bases show up as plugins.
+- Silently overwriting a duplicate key. The second plugin replaces the first and nobody notices.
+- Adding `@classmethod` to `__init_subclass__`. It is allowed but unnecessary: Python makes it a classmethod automatically.
+- Expecting `Plugin` itself to be registered: the hook runs for subclasses only.

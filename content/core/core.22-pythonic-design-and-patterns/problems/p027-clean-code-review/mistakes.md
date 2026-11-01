@@ -1,0 +1,7 @@
+- Only saying "unclear" or "ugly" without naming the principle or the cost.
+- Missing the flag argument because `x == True` looks like the only problem with `x`.
+- Forgetting the hidden outputs: mutation of the caller's rows, the global `LOG`, the `print`.
+- Proposing a split where the helpers still open files or print. Keep one place for I/O.
+- Choosing as the first step "rewrite it". The first step is a test that records the current behavior.
+- Replacing the bare `except` without noticing it changes behavior (silent 0 becomes an exception). Name the change.
+- Writing long comments to replace the useless ones; better names remove the need.

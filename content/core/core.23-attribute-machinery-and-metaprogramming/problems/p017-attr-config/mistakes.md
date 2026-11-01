@@ -1,0 +1,7 @@
+- Letting `KeyError` escape from `__getattr__`. `hasattr(cfg, "x")` then raises instead of returning `False`, and `getattr(cfg, "x", 0)` crashes.
+- Writing `__getattribute__` instead of `__getattr__`: it runs for every name, including `_data` and `to_dict`, and the first `self._data` inside it recurses.
+- Returning the raw nested dict, so `cfg.db.host` fails with "'dict' object has no attribute 'host'".
+- `to_dict()` returning `self._data` or `dict(self._data)`. The caller can then change your config through the nested parts.
+- `__dir__` returning only the keys: `to_dict` and the other methods disappear from `dir()` and tab completion.
+- Losing the path, so the error says `'prt'` and the user has to guess which section it belongs to.
+- Expecting `cfg.to_dict` to return the key `"to_dict"`. Methods are found before `__getattr__` is ever called.

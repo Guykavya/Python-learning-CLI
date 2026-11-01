@@ -1,0 +1,7 @@
+id = "core.23.p027"
+title = "Trace: __getattribute__ traps"
+tier = "deep"
+kind = "trace"
+topics = ["__getattribute__", "__getattr__", "property", "AttributeError", "hasattr", "special method lookup"]
+minutes = 30
+difficulty = 4

@@ -1,0 +1,11 @@
+canine canine
+wolf canine canine
+{'name': 'Rex', 'kind': 'wolf'}
+canine {'name': 'Rex'}
+['sit'] ['sit']
+['sit'] ['roll'] ['sit']
+['name', 'tricks']
+dog dog
+False True
+AttributeError
+True False

@@ -1,0 +1,6 @@
+- Recording every length (`list(range(1, n + 1))`): that is the "grow by one" array, the opposite of what CPython does.
+- Comparing each size with the size of the *empty* list instead of the previous size: every append after the first then looks like a change.
+- Recording `len(lst) - 1` or the size in bytes instead of the length right after the append that changed the size.
+- Building the list with `[None] * n` or `list(range(n))`. Those allocate the exact size in one go; only repeated `append` shows over-allocation.
+- Hard-coding the numbers you saw (`[1, 5, 9, 17, ...]`). They are a CPython detail of one version and one platform; only the shape (few, widening jumps) is guaranteed.
+- Dividing by 8 instead of `struct.calcsize("P")`: correct on 64-bit only. On a 32-bit Python a pointer is 4 bytes.

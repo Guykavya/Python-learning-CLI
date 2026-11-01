@@ -1,0 +1,7 @@
+id = "core.24.p021"
+title = "How much do __slots__ save?"
+tier = "applied"
+kind = "code"
+topics = ["__slots__", "sys.getsizeof", "instance __dict__", "memory", "object layout"]
+minutes = 25
+difficulty = 3

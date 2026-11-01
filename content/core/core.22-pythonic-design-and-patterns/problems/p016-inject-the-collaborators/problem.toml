@@ -1,0 +1,7 @@
+id = "core.22.p016"
+title = "Inject the collaborators"
+tier = "applied"
+kind = "code"
+topics = ["dependency inversion", "dependency injection", "default arguments", "testability", "fakes"]
+minutes = 30
+difficulty = 3

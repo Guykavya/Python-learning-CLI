@@ -1,0 +1,8 @@
+id = "core.22.p027"
+title = "Explain: review this function"
+tier = "deep"
+kind = "explain"
+topics = ["clean code", "naming", "code review", "flag arguments", "side effects", "levels of abstraction", "characterization tests"]
+minutes = 35
+difficulty = 4
+assessment = "explain"

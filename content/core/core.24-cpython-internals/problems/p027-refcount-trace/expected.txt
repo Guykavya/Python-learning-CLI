@@ -1,0 +1,13 @@
+1 alive a
+2 dead True
+3 alive 2
+4 alive
+5 dead
+6 alive
+7 dead
+8 dead
+9 alive kept
+10 dead
+11 alive alive
+12 alive alive
+13 dead dead True

@@ -1,0 +1,7 @@
+id = "core.24.p030"
+title = "Build a hash set: open addressing, tombstones and resizing"
+tier = "challenge"
+kind = "code"
+topics = ["set internals", "hash tables", "open addressing", "linear probing", "tombstones", "load factor", "special methods"]
+minutes = 60
+difficulty = 5

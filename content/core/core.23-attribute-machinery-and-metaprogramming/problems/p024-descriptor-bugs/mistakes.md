@@ -1,0 +1,7 @@
+- Fixing bug 1 with a fixed key such as `instance.__dict__["value"]`: two fields in one object then overwrite each other. The key must be the field's own name.
+- Keeping `self.value` "as a cache" next to the per-instance storage: the shared copy comes back the next time someone reads it.
+- Fixing bug 2 by passing `name="price"` everywhere (`price = Field(float, name="price")`). It repeats every name and one typo brings the bug back; `__set_name__` gets it from Python.
+- Handling `instance is None` in `Field` (already done) and forgetting `Alias`: **every** descriptor needs it.
+- "Fixing" bug 4 with `try: return self.extras[name] except KeyError`: `self.extras` still recurses when `extras` is missing.
+- Using `self.__dict__["extras"]` without a default: on a blank object it raises `KeyError`, and `hasattr`/`copy` only understand `AttributeError`.
+- Catching `RecursionError` in `__getattr__`. Recursion is the symptom; stop calling `__getattr__` from inside itself.

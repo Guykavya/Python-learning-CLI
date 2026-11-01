@@ -1,0 +1,7 @@
+id = "core.22.p018"
+title = "Strategy as a function"
+tier = "drill"
+kind = "code"
+topics = ["strategy pattern", "first-class functions", "functools.partial", "open/closed principle", "closures"]
+minutes = 20
+difficulty = 2

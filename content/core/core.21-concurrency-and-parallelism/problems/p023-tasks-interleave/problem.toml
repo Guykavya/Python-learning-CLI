@@ -1,0 +1,7 @@
+id = "core.21.p023"
+title = "Trace: tasks take turns"
+tier = "applied"
+kind = "trace"
+topics = ["asyncio.create_task", "event loop", "await asyncio.sleep(0)", "task scheduling", "task.done()"]
+minutes = 25
+difficulty = 3

@@ -1,0 +1,11 @@
+loading module as __main__
+parent before ['start', 'parent']
+loading module as __mp_main__
+child sees ['start', 'one']
+exit code 0
+parent after ['start', 'parent']
+child sees ['start', 'parent', 'main']
+parent now ['start', 'parent', 'main']
+loading module as __mp_main__
+child sees ['start', 'two']
+parent end ['start', 'parent', 'main']

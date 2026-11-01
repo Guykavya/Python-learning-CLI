@@ -1,0 +1,8 @@
+id = "core.22.p030"
+title = "Project: from legacy script to clean module"
+tier = "challenge"
+kind = "code"
+topics = ["refactoring", "dataclass", "registry", "dependency injection", "pure core / imperative shell", "characterization tests", "clean code"]
+minutes = 90
+difficulty = 5
+assessment = "build"

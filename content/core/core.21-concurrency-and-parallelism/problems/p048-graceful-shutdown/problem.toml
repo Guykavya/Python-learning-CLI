@@ -1,0 +1,7 @@
+id = "core.21.p048"
+title = "A service that shuts down gracefully"
+tier = "challenge"
+kind = "code"
+topics = ["background tasks", "cancellation", "finally", "gather(return_exceptions=True)", "async context managers", "idempotent stop"]
+minutes = 45
+difficulty = 4

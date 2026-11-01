@@ -1,0 +1,7 @@
+id = "core.21.p015"
+title = "Trace: what a child process changes"
+tier = "drill"
+kind = "trace"
+topics = ["multiprocessing.Process", "separate memory", "spawn start method", "__main__ guard", "exitcode"]
+minutes = 20
+difficulty = 3

@@ -1,0 +1,6 @@
+- Forgetting `@runtime_checkable`: `isinstance(x, Reader)` raises `TypeError`.
+- Putting `read`, `keys` and `write` together in one Protocol. That is the same fat interface with a new name.
+- Making test classes inherit from the Protocol. Not needed: having the methods is enough.
+- Keeping `NotImplementedError` stubs "just in case". A class should only have methods it can really do.
+- Expecting `isinstance` to check argument names or types. It only checks that the attributes exist.
+- Annotating `src: Reader` but then calling `src.delete(...)` in the body: the annotation promises less than the code needs.

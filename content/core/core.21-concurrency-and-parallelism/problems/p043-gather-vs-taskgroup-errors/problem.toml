@@ -1,0 +1,7 @@
+id = "core.21.p043"
+title = "Trace: one failure under gather and under TaskGroup"
+tier = "deep"
+kind = "trace"
+topics = ["asyncio.gather", "return_exceptions", "TaskGroup", "ExceptionGroup", "except*", "cancellation"]
+minutes = 25
+difficulty = 4

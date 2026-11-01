@@ -1,0 +1,12 @@
+log: 0 -> 4
+log: 4 -> 11
+big!
+log: 11 -> 9
+value: 9
+double 18
+negate -9
+lambda 10
+log: 9 -> 11
+big!
+log: 11 -> 4
+final: 0

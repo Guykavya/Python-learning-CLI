@@ -1,0 +1,7 @@
+id = "core.24.p006"
+title = "Measure extra references"
+tier = "drill"
+kind = "code"
+topics = ["reference counting", "sys.getrefcount", "immortal objects", "containers hold references"]
+minutes = 15
+difficulty = 2

@@ -1,0 +1,7 @@
+id = "core.22.p009"
+title = "Use the standard library"
+tier = "applied"
+kind = "code"
+topics = ["collections.Counter", "defaultdict", "deque", "itertools.groupby", "itertools.chain", "functools.cache"]
+minutes = 35
+difficulty = 3

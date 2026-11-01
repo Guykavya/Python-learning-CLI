@@ -1,0 +1,7 @@
+id = "core.23.p002"
+title = "Settings with defaults via __getattr__"
+tier = "drill"
+kind = "code"
+topics = ["__getattr__", "AttributeError contract", "hasattr", "copy", "pickle"]
+minutes = 20
+difficulty = 2

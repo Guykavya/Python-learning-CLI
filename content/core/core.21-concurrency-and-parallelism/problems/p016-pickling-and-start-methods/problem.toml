@@ -1,0 +1,7 @@
+id = "core.21.p016"
+title = "Explain: pickling, the main guard and start methods"
+tier = "deep"
+kind = "explain"
+topics = ["pickle", "multiprocessing start methods", "spawn", "fork", "forkserver", "__main__ guard", "process cost"]
+minutes = 30
+difficulty = 4

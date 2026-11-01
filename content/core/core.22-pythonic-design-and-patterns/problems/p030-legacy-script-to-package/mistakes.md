@@ -1,0 +1,10 @@
+- Rewriting first and only then comparing with the legacy script. Record the legacy behavior (the golden scripts) before the first edit.
+- Keeping `DATA` and `BAD` as module-level lists "for now". The second `main` call then sees the first call's records.
+- Calling `print` or `input` in a handler or in `build_report`. Handlers return lines; only the shell writes them.
+- Calling `date.today()` in the core. Tests pass `today`; the real date appears only as `main`'s default.
+- Forgetting the details the legacy had: header skipped only on line 1, blank lines not counted as bad, `bool`-like surprises are not an issue here but negative numbers are bad lines.
+- Changing the sort orders (`low` sorts by qty then sku, `expired` by date then sku, `list` by sku).
+- Using `<=` where the legacy used `<` for `low` and `expired`. "Expires today" is not expired yet.
+- Registering `quit` as a normal command, which makes `help` print it twice or lets a handler stop the loop. Keep loop control in `main`.
+- Ending the session on a blank line instead of ignoring it, or crashing on `EOFError`.
+- A `main` that grows past 20 lines. Move the command loop into its own function.

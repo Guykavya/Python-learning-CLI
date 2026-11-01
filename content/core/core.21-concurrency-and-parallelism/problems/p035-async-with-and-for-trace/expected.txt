@@ -1,0 +1,23 @@
+enter a
+body A
+exit a None
+enter b
+body b
+exit b ValueError
+caught bad
+enter c
+exit c KeyError
+after c
+yield 0
+got 0
+yield 1
+got 1
+generator finished
+generator cleanup
+yield 0
+got 0
+yield 1
+got 1
+after break
+generator cleanup
+closed

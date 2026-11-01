@@ -1,0 +1,9 @@
+- Testing the node before visiting its children. `(1 + 2) * (3 + 4)` then sees two `BinOp` children, folds nothing at the top, and leaves `3 * 7`.
+- Returning `ast.Constant(-3)` for a negative result. `ast.unparse` writes `-3 ** 2` for `(1 - 4) ** 2`, which changes the result from 9 to -9.
+- Not treating `-3` (a `UnaryOp`) as a number, so `2 * -3` is never folded.
+- Using `isinstance(value, int)`, which accepts `True` and `False`.
+- Writing `if not a or not b:` to mean "not a number". It also rejects the literal `0`.
+- Reordering `x + 1 + 2` into `x + 3`. That is the tree `(x + 1) + 2`; changing it is not constant folding and can change behaviour for objects with their own `__add__` (or for floats, where `(x + 0.1) + 0.2` and `x + 0.3` can differ).
+- Folding `/`, `//`, `%` or `**`. They are allowed in real compilers but not in this exercise; `1 // 0` or a huge `**` would also raise or blow up at compile time.
+- Forgetting `ast.fix_missing_locations`: `ast.unparse` does not need line numbers, but `compile()` on the tree does.
+- Returning `None` from `visit_BinOp` when nothing is folded. In a `NodeTransformer`, returning `None` **deletes** the node.

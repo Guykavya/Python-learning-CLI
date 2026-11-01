@@ -1,0 +1,7 @@
+id = "core.23.p029"
+title = "Instrument every method with a class decorator"
+tier = "deep"
+kind = "code"
+topics = ["class decorators", "descriptors", "classmethod", "staticmethod", "vars", "functools.wraps"]
+minutes = 40
+difficulty = 4

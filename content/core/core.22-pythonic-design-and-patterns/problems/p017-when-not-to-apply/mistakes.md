@@ -1,0 +1,6 @@
+- Saying "these patterns are bad". They are fine when the problem exists; the answer must name when.
+- Only criticizing ("too many classes") without writing the simple replacement.
+- Giving a vague "worth it" case such as "in big projects". Name the real need: many implementations, shared state, families, exclusivity.
+- Forgetting that a module is a singleton in Python, or that `Greeter` (a class) is already a factory.
+- Replacing four ABCs with nothing and ignoring that a caller may still want a type hint: one small `Protocol` covers it.
+- Removing the pattern but also removing a real behavior (for example the shared configuration in C must stay shared).

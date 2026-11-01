@@ -1,0 +1,7 @@
+id = "core.24.p032"
+title = "A line tracer with sys.settrace"
+tier = "challenge"
+kind = "code"
+topics = ["sys.settrace", "frames", "f_lineno", "f_code", "trace functions", "generators", "debuggers and coverage"]
+minutes = 45
+difficulty = 4

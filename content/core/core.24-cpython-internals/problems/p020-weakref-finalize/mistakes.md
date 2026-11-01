@@ -1,0 +1,6 @@
+- `weakref.finalize(self, self._cleanup)`: the bound method holds `self`, the finalizer holds the bound method, so the object is never freed and "close" only happens at interpreter exit. The same happens with `weakref.finalize(self, cleanup, self)`.
+- Keeping your own `_closed` flag next to the finalizer and forgetting to update one of them. Use `not self._finalizer.alive` as the single source of truth.
+- Appending "close" in `close()` *and* letting the finalizer run later: the log then says "close" twice. Calling the finalizer from `close()` avoids that.
+- Tracking instances in a normal `list` or `set`. That is a strong reference: nothing is ever collected, and `live_resources()` lists deleted resources forever.
+- Returning `True` from `__exit__`, which silently swallows exceptions from the `with` block.
+- Expecting cleanup at `del r` when there is a reference cycle (`r.me = r`). Reference counting cannot free a cycle; the cyclic garbage collector does it later, and only then does the finalizer run.

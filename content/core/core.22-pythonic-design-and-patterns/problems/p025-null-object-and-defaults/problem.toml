@@ -1,0 +1,7 @@
+id = "core.22.p025"
+title = "Null object: kill the None checks"
+tier = "deep"
+kind = "code"
+topics = ["null object pattern", "default collaborators", "None checks", "polymorphism", "refactoring"]
+minutes = 35
+difficulty = 4

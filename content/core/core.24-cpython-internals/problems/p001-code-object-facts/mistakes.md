@@ -1,0 +1,6 @@
+- Swapping `co_varnames` and `co_names`. `co_varnames` is locals (parameters included); `co_names` is globals, built-ins and attribute names.
+- Expecting `co_argcount` to count every parameter. `*args`, keyword-only parameters and `**kwargs` are not counted (they are in `co_varnames`, though).
+- Filtering with `if c` instead of `if c is not None`. That also drops `""`, `0.0` and `()` constants.
+- Looking for default values in `co_consts`. Defaults are evaluated by the `def` statement and stored on the function (`__defaults__`, `__kwdefaults__`).
+- Returning tuples instead of lists, or forgetting to sort. The problem asks for sorted lists so the result does not depend on compiler order.
+- Using `co_nlocals` (a count) where the names are needed.

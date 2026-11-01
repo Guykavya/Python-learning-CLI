@@ -1,0 +1,8 @@
+id = "core.24.p028"
+title = "Explain: code that only works on CPython"
+tier = "deep"
+kind = "explain"
+topics = ["implementation details", "language guarantees", "interning", "reference counting", "sys.getsizeof", "hash randomisation", "PyPy"]
+minutes = 35
+difficulty = 4
+assessment = "explain"

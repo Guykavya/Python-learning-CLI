@@ -1,0 +1,10 @@
+- Storing the value on the descriptor (`self.value = value`). There is one descriptor per class, so every object would share one value.
+- Finding fields with `__annotations__`. Fields without type hints are missed, annotated plain values are wrongly included, and on Python 3.14 annotations are not in the class namespace during class creation at all.
+- Keeping one subscriber list or history list for the whole class instead of per object.
+- Using `setattr` in `__init__`, which records the initial values in history and makes `undo` revert to the default.
+- Using `self.volume = old` inside `undo`: that goes through `__set__` and adds a new history entry, so undo never ends.
+- Notifying `(obj, name, old, new)` on undo instead of the reverse change `(obj, name, new, old)`.
+- Forgetting to compare with the current value, so `s.volume = 5` (unchanged) fires an event.
+- Returning the real history list from `history(obj)`, so a caller can clear it.
+- Rebuilding `cls._fields` from `vars(cls)` only, so a subclass loses the parent's fields; or modifying the parent's list in place, so the parent gains the child's fields.
+- Forgetting `super().__init_subclass__(**kwargs)` in `__init_subclass__`.

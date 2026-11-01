@@ -1,0 +1,7 @@
+id = "core.23.p005"
+title = "Trace: which hook fires?"
+tier = "drill"
+kind = "trace"
+topics = ["__getattribute__", "__getattr__", "property", "getattr default", "hasattr", "vars"]
+minutes = 20
+difficulty = 2

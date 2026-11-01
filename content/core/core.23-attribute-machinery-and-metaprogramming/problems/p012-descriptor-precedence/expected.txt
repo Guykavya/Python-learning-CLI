@@ -1,0 +1,11 @@
+from Data from NonData class attr
+Data.__set__ 1
+from Data 2 3
+['n', 'plain']
+from Data 99
+from NonData
+AttributeError
+Data on class NonData on class
+99
+replaced
+class attr class attr

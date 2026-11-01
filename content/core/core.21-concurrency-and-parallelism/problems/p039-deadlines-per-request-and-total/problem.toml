@@ -1,0 +1,7 @@
+id = "core.21.p039"
+title = "Two deadlines: per request and for the whole batch"
+tier = "deep"
+kind = "code"
+topics = ["asyncio.timeout", "TaskGroup", "cancellation", "httpx", "deadlines"]
+minutes = 35
+difficulty = 4

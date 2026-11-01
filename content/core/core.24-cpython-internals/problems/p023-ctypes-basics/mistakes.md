@@ -1,0 +1,7 @@
+- Using `ctypes.c_long` "because Python ints are big": `c_long` is 8 bytes on Linux/macOS but 4 on Windows, so the size would depend on the platform. `c_int` is 4 bytes everywhere Python runs.
+- Returning a Python list of `Point` objects from `make_points`. It works for reading, but it is not one contiguous block, `bytes()` of it fails, and C code could not use it.
+- `Point * pairs` or `(Point * len(pairs))(pairs)`: the array constructor takes one argument *per element*, so unpack the list with `*pairs`.
+- Using `from_buffer_copy` in `view_points`: changes to the view then do not reach the bytearray.
+- `from_buffer` on a `bytes` object: it raises `TypeError` because `bytes` is read-only. Shared memory needs a writable buffer such as `bytearray`.
+- Expecting ctypes to raise on overflow. C ints wrap silently, which is why `fits_c_int` exists.
+- Hard-coding `b"\x01\x00\x00\x00..."` in your own checks: that is the little-endian layout; on a big-endian machine the bytes inside each int are reversed.

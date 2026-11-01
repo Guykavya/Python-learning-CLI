@@ -1,0 +1,9 @@
+- Following everything `gc.get_referents` returns. Every instance refers to its class, the class to its module's functions and globals, and soon you are walking the whole program.
+- Counting dicts. Whether an instance has a separate `__dict__` object changed between Python versions (and changes when you call `vars(obj)`), so counts would differ from run to run.
+- No `seen` set: a cycle never ends.
+- Remembering objects themselves in a set instead of their `id()`: lists are unhashable, and equal objects would be merged although they are different objects.
+- Marking an object as seen only when it is taken out of the queue, or filtering a whole referents list against `seen` before adding any of them. An object that appears twice in one list (`[x, x]`) is then queued twice and counted twice. Add each id to `seen` the moment you queue it.
+- Recursion instead of a queue: a chain of a few thousand objects raises `RecursionError`.
+- Checking `max_nodes` only at the end, so the walk still visits a million objects before cutting the list.
+- Checking `isinstance(obj, dict)` for "follow": a dict subclass written in Python (like `collections.Counter`) is a user object and should be counted.
+- Forgetting that `id()` values are only unique among objects alive at the same time. That is fine here, because every object in the walk is kept alive by the root.

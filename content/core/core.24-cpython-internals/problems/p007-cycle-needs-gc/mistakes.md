@@ -1,0 +1,5 @@
+- Printing `freed` right after `del a` or `del b`. The cycle keeps both counts at 1; reference counting alone never frees them.
+- Forgetting that the callback prints *inside* `gc.collect()`, so both `freed` lines come before `collected: True`.
+- Expecting only one `freed` at collect time. Both nodes had a weak reference with a callback.
+- Writing `freed` after `no cycle: True`. Without a cycle the object is freed during `del c`, before the print runs.
+- Thinking `gc.disable()` stops all freeing. It only stops the automatic cycle collector; reference counting still works.

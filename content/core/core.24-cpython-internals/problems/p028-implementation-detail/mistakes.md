@@ -1,0 +1,7 @@
+- Saying "`is` is just slower than `==`". The problem is correctness: `is` compares identity, and equal strings are not guaranteed to be the same object.
+- Explaining B with "the file is never closed". On CPython it *is* closed at once, which is exactly the detail; the bug appears where objects are freed later (PyPy, a lingering reference).
+- Thinking `sys.getsizeof` gets the right number if you just call it recursively. A deep walk is better for exploring, but its result still varies by version and platform; for a limit, count entries or measure with `tracemalloc`.
+- Fixing D with `list(set(tags))[0]` plus `PYTHONHASHSEED=0` in the test setup. That hides the bug in tests and keeps it in production. Pick a defined order instead.
+- Claiming sets keep insertion order "since 3.7". Only **dicts** guarantee insertion order; sets never did.
+- Giving fixes that rely on another detail (for example `sys.intern(role) is "admin"`, or `del f` to "force" closing on PyPy).
+- Not giving a concrete failing example. "It might break on other implementations" without saying what input or situation breaks it does not prove understanding.

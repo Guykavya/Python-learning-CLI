@@ -1,0 +1,8 @@
+- Storing the value on the descriptor (`self.value = value`). The descriptor is shared by every instance, so all points end up with the same `x`.
+- Checking `isinstance(value, self.types)` first: `True` passes as an `int` before your bool check is ever reached.
+- Testing `type(value) in self.types` instead of `isinstance`: a subclass of `str` is then wrongly rejected (and `bool` is accepted for `int` only by accident of how you wrote it).
+- Converting (`int(value)`) instead of checking. Silent conversion hides the bug the field exists to catch.
+- Storing first and checking afterwards, so a rejected value has already replaced the good one.
+- Letting `KeyError` escape from `__get__` for an unset field: `hasattr(p, "x")` then raises instead of returning `False`.
+- Forgetting `if instance is None: return self`, so `Point.x` crashes instead of giving the descriptor.
+- Joining the type names with `", "` or showing `<class 'int'>`: use `t.__name__` and `" or "`.

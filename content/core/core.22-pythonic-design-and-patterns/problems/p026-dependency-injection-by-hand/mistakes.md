@@ -1,0 +1,7 @@
+- Calling `SystemClock()` or `ConsoleMailer()` inside `signup` "as a default". The service must receive them.
+- A module-level `USERS = []` or a mutable default argument `def __init__(self, users=[])`: shared between services.
+- Making `build_app` return one cached service, so two calls share a repo.
+- Checking `repo.exists` before validating the email (or sending the mail before `repo.add`). Validate, check duplicates, save, then mail.
+- Not normalising the email before the duplicate check: `ANA@x.io` and `ana@x.io` become two users.
+- Putting the concrete class choice in the tests instead of in `build_app`.
+- Using `print` inside the service. Printing is the console mailer's job.

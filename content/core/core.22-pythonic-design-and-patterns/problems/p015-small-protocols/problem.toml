@@ -1,0 +1,7 @@
+id = "core.22.p015"
+title = "Small protocols"
+tier = "applied"
+kind = "code"
+topics = ["SOLID", "interface segregation", "typing.Protocol", "runtime_checkable", "duck typing", "ABC"]
+minutes = 30
+difficulty = 3

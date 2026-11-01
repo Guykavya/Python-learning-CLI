@@ -1,0 +1,8 @@
+id = "core.22.p024"
+title = "Fix: the refactor that changed behavior"
+tier = "deep"
+kind = "code"
+topics = ["refactoring", "characterization tests", "behavior preservation", "mutable default argument", "rounding", "boundaries"]
+minutes = 40
+difficulty = 4
+assessment = "fix"

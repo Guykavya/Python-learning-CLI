@@ -1,0 +1,7 @@
+id = "core.21.p007"
+title = "A cache that computes each key only once"
+tier = "applied"
+kind = "code"
+topics = ["threading.Lock", "per-key locks", "check-then-act", "double-checked locking", "caching"]
+minutes = 35
+difficulty = 3

@@ -1,0 +1,7 @@
+id = "core.21.p005"
+title = "Explain: what the GIL does and does not protect"
+tier = "deep"
+kind = "explain"
+topics = ["GIL", "race conditions", "bytecode", "I/O releases the GIL", "free-threaded Python"]
+minutes = 30
+difficulty = 4

@@ -1,0 +1,7 @@
+id = "core.21.p032"
+title = "Explain: does it block the event loop?"
+tier = "drill"
+kind = "explain"
+topics = ["blocking calls", "event loop", "asyncio.to_thread", "run_in_executor", "async libraries"]
+minutes = 20
+difficulty = 2

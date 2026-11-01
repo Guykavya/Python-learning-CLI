@@ -1,0 +1,6 @@
+- Saying `limit3` should fail. With 3 pushes and a limit of 3 no push is refused; the problem shows up only with `limit2`.
+- Reading `dedup-repeat` as `ok`: `[1, 2, 1]` reversed is `[1, 2, 1]`, but the stack held `[1, 2]` so the pops give `[2, 1]`.
+- Forgetting that `check` catches any exception and prints only its class name, not the message.
+- Thinking `CountingStack.push is Stack.push` is `True` because it calls `super().push`. It defines its own function.
+- Calling `CountingStack` a violation because it overrides `push`. Overriding is fine; changing the promise is not.
+- Looking at the printed lines but never answering "which classes are safe substitutes?".

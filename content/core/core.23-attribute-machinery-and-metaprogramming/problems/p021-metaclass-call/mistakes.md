@@ -1,0 +1,7 @@
+- `if not hasattr(cls, "_instance")`: a subclass finds the parent's `_instance` through the MRO and returns the parent object.
+- Overriding `__new__` in the class to return the stored instance: `__init__` still runs on every call and resets the state.
+- Storing the instance before `__init__` succeeded (calling `cls.__new__` yourself, saving, then `__init__`), so a failed initialisation leaves a broken singleton behind.
+- Putting `instance_count = 0` only on the base class or on the metaclass: subclasses then start from the parent's count.
+- Counting before `super().__call__(...)`: an `__init__` that raises is still counted.
+- Defining `__call__` as a normal method of the class instead of the metaclass. A method on the class makes the *instances* callable, not the class.
+- Forgetting `return` in `__call__`: `Point(1, 2)` then gives `None`.

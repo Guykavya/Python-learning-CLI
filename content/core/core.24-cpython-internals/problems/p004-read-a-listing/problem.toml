@@ -1,0 +1,7 @@
+id = "core.24.p004"
+title = "Explain: read a bytecode listing"
+tier = "drill"
+kind = "explain"
+topics = ["dis", "bytecode", "stack machine", "evaluation stack", "superinstructions"]
+minutes = 20
+difficulty = 2

@@ -1,0 +1,6 @@
+- Popping in the wrong order for `ADD`/`MUL`: the first pop is the TOP value (`b`), the second is `a`. It does not matter for `+` and `*`, but it will for `SUB` and `DIV` in later problems.
+- Letting `list.pop()` raise `IndexError` instead of checking the depth first. The user gets no offset, and `SWAP` may already have popped one value.
+- Using a stack defined at module level: the second call starts with leftovers from the first.
+- Returning the final size from `max_depth`. The deepest point is usually in the middle of the program.
+- Using `enumerate(ops, 1)`: offsets start at 0, like list indexes and CPython bytecode offsets.
+- Writing `stack.append(stack.pop())` for `DUP`: that pushes the value back once, not twice.

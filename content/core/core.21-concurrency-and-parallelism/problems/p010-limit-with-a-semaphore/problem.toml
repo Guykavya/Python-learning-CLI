@@ -1,0 +1,7 @@
+id = "core.21.p010"
+title = "Limit how many run at once with a Semaphore"
+tier = "drill"
+kind = "code"
+topics = ["threading.Semaphore", "BoundedSemaphore", "limiting concurrency", "with statement"]
+minutes = 20
+difficulty = 2

@@ -1,0 +1,7 @@
+- Thinking a closure copies the value when the inner function is created. It shares the cell, so it sees later changes (`[12, 12, 12]`, and `101` after the cell was written).
+- Thinking `c` and `d` share a counter because they come from the same function. Every *call* of `make_counter` creates a new cell.
+- Writing `()` for `middle`'s freevars because `middle` never uses `x`. A function that passes a variable down to a nested function needs it as a free variable too.
+- Putting `x` in `middle`'s cellvars. The cell belongs to `outer`, which created it; `middle` only receives it.
+- Expecting the fixed lambdas to have a closure. With `n=n`, `n` is a parameter (a local), so `__closure__` is `None`.
+- Answering `UnboundLocalError` for `show()`. That error is for a function's own local; a free variable whose cell is empty raises `NameError`.
+- Thinking the cell does not exist until `later` is assigned. The cell is made when `early` starts; only its content is missing.

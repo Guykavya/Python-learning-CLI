@@ -1,0 +1,15 @@
+f1 result: 10
+f1 exception: None
+f2 raised: bad 3
+f2 exception: ValueError('bad 3')
+f2 done: True
+cancel q: True
+q cancelled: True q done: True
+cancel b: False
+q.result() raised CancelledError
+b result: blocker done
+map returned an iterator
+got 10
+got 20
+map raised: bad 3
+end

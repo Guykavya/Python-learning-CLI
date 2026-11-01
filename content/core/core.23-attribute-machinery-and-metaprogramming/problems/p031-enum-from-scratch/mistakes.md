@@ -1,0 +1,9 @@
+- Deciding membership with `callable(value)`: `classmethod`, `staticmethod` and `property` objects are not callable, so they become members by mistake. Ask whether the type has `__get__`.
+- Reading member names from `__annotations__` or expecting type hints. Members are plain assignments in the namespace.
+- Creating members with `cls(value)`: once `__call__` is a lookup, that recurses or fails. Use `object.__new__(cls)`.
+- Setting `member._name = key` while `MiniEnum.__setattr__` blocks all assignments. Use `object.__setattr__`.
+- Defining `__len__`, `__iter__` or `__call__` on `MiniEnum` instead of the metaclass. Methods on `MiniEnum` act on members, not on the class.
+- Calling `super().__call__(value)` when the value is unknown, which creates a new, half-built member.
+- Forgetting `__bool__` on the metaclass, so an empty enum class is falsy.
+- `__contains__` comparing with `==` against values, so `1 in Color` is `True`. Membership is about member objects.
+- Blocking every `Color.x = ...` assignment: only member names are protected.

@@ -1,0 +1,8 @@
+- `check_hashable` via `isinstance(obj, (list, dict, set))` or `obj.__hash__ is not None`: both say "hashable" for `(1, [2])`, whose `__hash__` exists but fails on the list inside.
+- Catching every exception in `check_hashable`. A `__hash__` with a bug (say `ZeroDivisionError`) is not "unhashable"; catch `TypeError` only.
+- Hashing `id(self)` in `Point`: two equal points then have different hashes and `d[Point(1, 2)]` raises `KeyError`. This breaks promise 1.
+- Hashing `self.x + self.y`. It is *correct* (equal points give equal sums) but `Point(1, 2)` and `Point(2, 1)` always collide; hashing the tuple spreads values better.
+- Making `Point` "immutable" by convention only. If `p.x = 5` works, a point used as a key can be lost exactly as in `lost_keys`.
+- Setting `self.x = x` in `__init__` when `__setattr__` raises: your own constructor fails. Use `object.__setattr__`.
+- In `hash_collisions`, appending every value to its hash group without dropping the ones equal to an earlier value, or dropping duplicates with a `set` (which loses the input order).
+- Reporting `[1, 1.0, True]` as a collision: they are equal, so sharing a hash is required, not a collision.

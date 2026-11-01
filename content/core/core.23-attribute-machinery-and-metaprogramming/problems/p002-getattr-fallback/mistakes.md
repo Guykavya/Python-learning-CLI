@@ -1,0 +1,6 @@
+- Letting `KeyError` escape (`return self._defaults[name]`). `getattr(s, "x", 30)` then crashes instead of returning 30, and `hasattr` raises.
+- No underscore guard. `copy.copy`, `deepcopy` and `pickle` build an object without `__init__`, ask for `__setstate__`, and your hook recurses until `RecursionError`.
+- Returning `None` for unknown names. `hasattr` then says `True` for everything, and typos go unnoticed.
+- Writing `return getattr(self, name)` inside `__getattr__` "to try the normal lookup first". The normal lookup already failed; this calls `__getattr__` again and recurses.
+- Storing the defaults as a class attribute (`Settings.defaults = ...`). Every Settings object would share the last one.
+- Defining `__getattribute__` instead. It runs for every read, including `self._defaults`, and needs much more care.

@@ -1,0 +1,7 @@
+id = "core.21.p004"
+title = "Catch errors that happen inside threads"
+tier = "drill"
+kind = "code"
+topics = ["threading.Thread", "exceptions in threads", "threading.excepthook", "result passing"]
+minutes = 25
+difficulty = 2

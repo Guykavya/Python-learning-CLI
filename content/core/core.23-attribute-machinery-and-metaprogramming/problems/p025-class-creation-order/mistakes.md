@@ -1,0 +1,8 @@
+- Forgetting that `Base` is also created by `Meta`, so the program starts with four lines about `Base`.
+- Printing `init_subclass Base ...`: `Base.__init_subclass__` runs only for *subclasses* of `Base`.
+- Putting `set_name` and `init_subclass` after `3 meta new done Point`. They run inside `super().__new__`, so they come before it.
+- Putting `init_subclass` before `set_name`. `type.__new__` calls every `__set_name__` first, then `__init_subclass__`.
+- Putting `decorate Point` first because the `@deco` line is at the top. The expression is evaluated first; the call happens last.
+- Listing `__init__` and `__new__` in `own`, or listing the names in alphabetical order. The filter drops `__` names and the namespace keeps definition order.
+- Expecting `Field(...)` to print at `set_name` time. `field first` prints while the body runs, long before `__set_name__`.
+- Skipping `Point new` or `Point init`: `type.__call__` (reached through `super().__call__()`) is what calls both.

@@ -1,0 +1,7 @@
+id = "core.23.p026"
+title = "Classify attributes without triggering them"
+tier = "deep"
+kind = "code"
+topics = ["descriptors", "data vs non-data descriptors", "__mro__", "vars", "__slots__", "attribute lookup"]
+minutes = 35
+difficulty = 4

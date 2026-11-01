@@ -1,0 +1,8 @@
+- Undoing a macro in the same order it ran. Positions in later steps assume the earlier steps happened, so the text gets corrupted.
+- Saving `removed` in `__init__` instead of `do()`. The text may have changed since the command was created.
+- Forgetting to clear the redo stack in `run`; redo then replays commands from a future that no longer exists.
+- `undo()` on an empty history raising `IndexError` from `pop()` instead of returning `False`.
+- Checking the range after changing the text, so a failing command leaves a half-done edit.
+- Recording a command in the history before `do()` succeeded.
+- Replace's undo cutting out `len(old)` characters instead of `len(new)`.
+- Catching `Exception` in `Macro.do` but forgetting to `raise` again: the error disappears.

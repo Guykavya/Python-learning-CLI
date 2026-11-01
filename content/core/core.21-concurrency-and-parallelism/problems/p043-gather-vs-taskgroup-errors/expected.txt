@@ -1,0 +1,14 @@
+-- gather
+a done
+caught ValueError('b')
+c done
+gather over
+-- return_exceptions
+d done
+f done
+['d', ValueError('e'), 'f']
+-- taskgroup
+g done
+i cancelled
+caught ExceptionGroup ['h']
+taskgroup over

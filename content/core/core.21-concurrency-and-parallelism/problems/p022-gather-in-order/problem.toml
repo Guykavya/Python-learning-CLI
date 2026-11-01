@@ -1,0 +1,7 @@
+id = "core.21.p022"
+title = "Fetch everything at once with gather"
+tier = "drill"
+kind = "code"
+topics = ["asyncio.gather", "coroutines", "concurrency", "result order"]
+minutes = 15
+difficulty = 2

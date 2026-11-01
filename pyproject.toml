@@ -10,6 +10,8 @@ dependencies = [
     # core.19 (advanced testing): property-based tests and coverage measurement.
     "hypothesis>=6.100",
     "coverage>=7.0",
+    # core.21 (concurrency): async HTTP client; tests use httpx.MockTransport, never the network.
+    "httpx>=0.27",
     # Windows ships no time-zone database; zoneinfo (core.17) needs this package there.
     "tzdata; sys_platform == 'win32'",
 ]

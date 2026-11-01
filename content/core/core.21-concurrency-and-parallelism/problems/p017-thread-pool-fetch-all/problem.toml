@@ -1,0 +1,7 @@
+id = "core.21.p017"
+title = "Fetch everything with a thread pool"
+tier = "drill"
+kind = "code"
+topics = ["ThreadPoolExecutor", "submit", "Future", "as_completed", "exceptions from futures"]
+minutes = 25
+difficulty = 2

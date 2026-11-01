@@ -1,0 +1,8 @@
+id = "core.21.p028"
+title = "Trace: what cancellation really does"
+tier = "deep"
+kind = "trace"
+topics = ["task.cancel()", "CancelledError", "try/finally", "task.cancelled()", "asyncio.timeout", "asyncio.wait_for", "gather return_exceptions"]
+minutes = 35
+difficulty = 4
+assessment = "trace"

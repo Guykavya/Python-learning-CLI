@@ -1,0 +1,10 @@
+- Expecting `"ab"` in `co_consts` next to `"ababab"`. The compiler folds `"ab" * 3` first and stores only the result.
+- Forgetting the docstring: the first string expression of a function body is stored in its `co_consts`.
+- Putting `a` and `b` after the other locals, or sorting `co_varnames` alphabetically. Parameters come first, then locals in order of first appearance.
+- Listing `a`, `b` or `total` in `co_names`. Locals are in `co_varnames`; `co_names` holds the global `where`.
+- Printing `GEN_CREATED True`: a generator that has not started yet already has a frame; only a finished generator has `gi_frame` set to `None`.
+- Giving the line of the `while` (1) for the paused frame. The frame stops *at* the `yield`, two lines below the `def`.
+- Printing `1 2` for `next(g), g.gi_frame.f_locals["n"]`: Python evaluates the tuple items left to right, so `next(g)` has already set `n` to 1 when `f_locals` is read.
+- Expecting `StopIteration` to carry `None`: a generator's `return "done"` becomes `StopIteration.value`.
+- Saying `1000 in make_helper.__code__.co_consts` is `True`. The outer code object holds only the inner *code object*; the inner one holds `1000`.
+- Expecting the snapshot to show 2. `dict(...)` copied the values while `x` was 1. (Without the `dict()` copy the answer would depend on the Python version: since 3.13 `f_locals` is a live view; before it was a snapshot.)

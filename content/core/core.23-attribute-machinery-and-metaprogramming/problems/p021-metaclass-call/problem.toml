@@ -1,0 +1,7 @@
+id = "core.23.p021"
+title = "Controlling instance creation with a metaclass __call__"
+tier = "applied"
+kind = "code"
+topics = ["metaclasses", "metaclass __call__", "singleton", "instance counting", "class attributes and inheritance"]
+minutes = 35
+difficulty = 3

@@ -1,0 +1,7 @@
+id = "core.24.p026"
+title = "Measure it: which list operations are O(n)?"
+tier = "deep"
+kind = "code"
+topics = ["list internals", "dynamic array", "amortised O(1)", "deque", "timeit", "complexity measurement"]
+minutes = 35
+difficulty = 3

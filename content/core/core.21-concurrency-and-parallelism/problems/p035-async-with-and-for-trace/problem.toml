@@ -1,0 +1,7 @@
+id = "core.21.p035"
+title = "Trace: async with and async for, step by step"
+tier = "applied"
+kind = "trace"
+topics = ["async with", "__aenter__/__aexit__", "async for", "async generators", "aclose", "finally"]
+minutes = 20
+difficulty = 3

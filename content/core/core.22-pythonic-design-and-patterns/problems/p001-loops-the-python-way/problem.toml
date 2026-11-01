@@ -1,0 +1,7 @@
+id = "core.22.p001"
+title = "Loops the Python way"
+tier = "drill"
+kind = "code"
+topics = ["enumerate", "zip", "any/all", "sum", "range(len(...))"]
+minutes = 15
+difficulty = 2

@@ -1,0 +1,7 @@
+id = "core.21.p003"
+title = "Trace: start, run, join and Event"
+tier = "drill"
+kind = "trace"
+topics = ["threading.Thread", "start vs run", "join", "is_alive", "threading.Event"]
+minutes = 15
+difficulty = 2

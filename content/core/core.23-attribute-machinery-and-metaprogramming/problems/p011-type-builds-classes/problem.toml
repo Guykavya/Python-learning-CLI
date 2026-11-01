@@ -1,0 +1,7 @@
+id = "core.23.p011"
+title = "Build a record class with type()"
+tier = "drill"
+kind = "code"
+topics = ["type()", "dynamic class creation", "__slots__", "__eq__", "NotImplemented", "closures"]
+minutes = 25
+difficulty = 2

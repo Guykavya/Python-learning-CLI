@@ -1,0 +1,6 @@
+- Thinking `a.kind = "wolf"` changes `Dog.kind`. Assignment through an instance only writes to that instance's `__dict__`.
+- Thinking `del a.kind` deletes the class attribute. It removes the instance entry; the class value becomes visible again.
+- Treating `a.tricks.append("sit")` as an assignment. It is a read (which finds the class list) plus a method call, so every dog without its own `tricks` sees the change.
+- Thinking `b.tricks = ["roll"]` changes the class list. It creates a new list on `b` only.
+- Expecting the second `del a.kind` to work because `a.kind` can still be read. `del` through an instance never reaches the class.
+- Answering `True True` for the last line: `hasattr` follows the full lookup, `vars(a)` only shows the instance's own attributes.

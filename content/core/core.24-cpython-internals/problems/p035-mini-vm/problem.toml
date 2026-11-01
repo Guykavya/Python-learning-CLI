@@ -1,0 +1,8 @@
+id = "core.24.p035"
+title = "Project: a mini stack-based bytecode VM"
+tier = "challenge"
+kind = "code"
+topics = ["bytecode", "stack machine", "evaluation loop", "frames", "assembler", "ast", "compiler", "interpreter design"]
+minutes = 150
+difficulty = 5
+assessment = "build"

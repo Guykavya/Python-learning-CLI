@@ -1,0 +1,7 @@
+id = "core.22.p010"
+title = "Dataclass instead of dict"
+tier = "applied"
+kind = "code"
+topics = ["dataclasses", "frozen", "field(default_factory)", "__post_init__", "order=True", "dataclasses.replace"]
+minutes = 35
+difficulty = 3

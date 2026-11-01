@@ -1,0 +1,8 @@
+- Storing `weakref.ref(callback)` for a bound method. The bound method is a temporary object: the weak reference is dead immediately and the subscriber never gets any event.
+- Making *every* subscriber weak. A lambda or a local function usually has no other reference, so it disappears at once. Only bound methods should be weak.
+- Calling `weakref.WeakMethod` on `some_list.append`: builtin methods raise `TypeError`. `inspect.ismethod` is `False` for them, so it is the right test.
+- Leaving `unsubscribe` as `self._subscribers.remove(callback)`: the list now holds `WeakMethod` objects, which are never equal to a bound method, so unsubscribing silently breaks (`ValueError` for everything).
+- Thinking bug 2 is fixed because `gc.collect()` frees the document. It always did (since Python 3.4, cycles with `__del__` are collected); the bug is that it waits for the collector. Remove the cycle.
+- Making `pages` a list of weak references instead. Then the pages die immediately, because nothing else holds them. The parent should own its children strongly; the child should point back weakly.
+- Keying the cache by `id(obj)`. Objects are freed, but the entries stay forever, and a new object that gets a reused id receives an old object's summary.
+- Catching the problem with `gc.collect()` calls sprinkled in the app. It hides bug 2 for a moment and does nothing for bugs 1 and 3, which are real strong references, not cycles.

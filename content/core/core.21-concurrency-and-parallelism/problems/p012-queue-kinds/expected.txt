@@ -1,0 +1,10 @@
+Queue: a b left 1
+LifoQueue: c b left 1
+PriorityQueue: ['also urgent', 'urgent', 'normal', 'low']
+full? True size 2
+Full raised, size 2
+got x
+now y z
+Empty raised
+Empty after timeout, empty? True
+maxsize 0 full? False

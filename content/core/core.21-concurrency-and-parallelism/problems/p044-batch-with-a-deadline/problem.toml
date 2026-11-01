@@ -1,0 +1,7 @@
+id = "core.21.p044"
+title = "Whatever finishes in time"
+tier = "challenge"
+kind = "code"
+topics = ["asyncio.wait", "timeouts", "cancellation", "cleanup", "finally"]
+minutes = 40
+difficulty = 4

@@ -1,0 +1,7 @@
+id = "core.22.p029"
+title = "Characterize, then refactor"
+tier = "challenge"
+kind = "code"
+topics = ["refactoring", "characterization tests", "extract function", "guard clauses", "nesting depth", "golden table"]
+minutes = 55
+difficulty = 5

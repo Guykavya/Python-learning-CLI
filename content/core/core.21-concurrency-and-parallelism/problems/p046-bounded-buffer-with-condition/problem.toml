@@ -1,0 +1,7 @@
+id = "core.21.p046"
+title = "Build a bounded buffer with Condition"
+tier = "deep"
+kind = "code"
+topics = ["threading.Condition", "wait_for", "notify_all", "producer-consumer", "timeouts"]
+minutes = 40
+difficulty = 4

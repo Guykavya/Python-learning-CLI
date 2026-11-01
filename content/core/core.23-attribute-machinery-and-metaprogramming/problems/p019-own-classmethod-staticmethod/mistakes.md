@@ -1,0 +1,6 @@
+- Binding to `instance or owner`: called on an instance, the "class method" then receives the instance.
+- Binding to the class where the descriptor was defined (stored in `__set_name__`) instead of `owner`: subclasses get the parent class and alternative constructors build the wrong type.
+- Returning `lambda *a: func(owner, *a)`: it works for calls but is not a bound method (no `__self__`, no `__func__`), and keyword arguments are easily lost.
+- Crashing when `owner` is `None`. The descriptor protocol allows `__get__(instance)` with no owner.
+- Making `StaticMethod.__get__` return `MethodType(func, instance)`: the function then receives the instance like a normal method.
+- Forgetting `__call__` on `StaticMethod`, so `Temperature.__dict__["c_to_f"](1)` fails.

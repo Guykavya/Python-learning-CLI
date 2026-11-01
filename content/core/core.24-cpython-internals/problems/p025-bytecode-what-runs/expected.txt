@@ -1,0 +1,15 @@
+measure 2 ('a', 'b', 'first', 'total', 'label', 'second')
+True False True
+('where',)
+(3, 7, 'ababab')
+GEN_CREATED False
+2 GEN_SUSPENDED
+2 2
+1 1
+stop done
+GEN_CLOSED True
+True False
+1 helper make_helper.<locals>.helper
+False True
+['inner', 'outer', '<module>']
+(1, 2)
