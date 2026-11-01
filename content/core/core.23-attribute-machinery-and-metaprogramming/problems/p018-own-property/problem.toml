@@ -1,0 +1,7 @@
+id = "core.23.p018"
+title = "Build your own property"
+tier = "applied"
+kind = "code"
+topics = ["property", "descriptors", "data descriptor", "__set_name__", "decorators", "immutability of descriptor objects"]
+minutes = 35
+difficulty = 3

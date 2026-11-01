@@ -1,0 +1,7 @@
+id = "core.23.p015"
+title = "A family of validators"
+tier = "applied"
+kind = "code"
+topics = ["descriptors", "abstract base classes", "template method", "__set_name__", "validation", "error messages"]
+minutes = 35
+difficulty = 3

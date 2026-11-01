@@ -1,0 +1,7 @@
+id = "core.21.p040"
+title = "A sliding-window rate limiter"
+tier = "challenge"
+kind = "code"
+topics = ["rate limiting", "async context managers", "asyncio.Lock", "collections.deque", "injectable clock"]
+minutes = 45
+difficulty = 4

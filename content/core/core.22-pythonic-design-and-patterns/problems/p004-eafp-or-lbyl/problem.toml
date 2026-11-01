@@ -1,0 +1,7 @@
+id = "core.22.p004"
+title = "EAFP or LBYL?"
+tier = "drill"
+kind = "code"
+topics = ["EAFP", "LBYL", "dict.get", "setdefault", "hasattr", "getattr", "try/except"]
+minutes = 25
+difficulty = 3

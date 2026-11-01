@@ -1,0 +1,7 @@
+id = "core.22.p020"
+title = "Observer: an event bus"
+tier = "applied"
+kind = "code"
+topics = ["observer pattern", "callbacks", "event bus", "iteration while mutating", "error isolation"]
+minutes = 35
+difficulty = 3

@@ -1,0 +1,7 @@
+id = "core.21.p045"
+title = "Heavy work from async code with run_in_executor"
+tier = "applied"
+kind = "code"
+topics = ["run_in_executor", "executors", "blocking the event loop", "asyncio.gather", "ProcessPoolExecutor"]
+minutes = 25
+difficulty = 3

@@ -1,0 +1,7 @@
+id = "core.21.p013"
+title = "Parallel sum of squares with processes"
+tier = "applied"
+kind = "code"
+topics = ["ProcessPoolExecutor", "chunking work", "pickling", "top-level functions", "__main__ guard"]
+minutes = 35
+difficulty = 3

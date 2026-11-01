@@ -1,0 +1,8 @@
+id = "core.23.p028"
+title = "Explain: the wrong tool for the job"
+tier = "deep"
+kind = "explain"
+topics = ["when not to use metaprogramming", "metaclasses", "__getattr__", "dataclasses", "property", "__init_subclass__", "readability"]
+minutes = 35
+difficulty = 4
+assessment = "explain"

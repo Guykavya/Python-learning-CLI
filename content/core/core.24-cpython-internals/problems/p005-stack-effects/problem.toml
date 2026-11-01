@@ -1,0 +1,7 @@
+id = "core.24.p005"
+title = "Simulate a tiny stack machine"
+tier = "drill"
+kind = "code"
+topics = ["stack machine", "stack effect", "bytecode", "co_stacksize", "custom exceptions"]
+minutes = 20
+difficulty = 2

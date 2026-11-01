@@ -1,0 +1,7 @@
+id = "core.23.p010"
+title = "TypedList[int] with __class_getitem__"
+tier = "drill"
+kind = "code"
+topics = ["__class_getitem__", "types.GenericAlias", "dynamic subclasses", "caching", "subclassing list"]
+minutes = 25
+difficulty = 3

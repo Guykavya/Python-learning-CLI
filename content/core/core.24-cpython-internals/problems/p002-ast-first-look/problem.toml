@@ -1,0 +1,7 @@
+id = "core.24.p002"
+title = "A first look at the AST"
+tier = "drill"
+kind = "code"
+topics = ["ast", "ast.parse", "ast.walk", "abstract syntax tree", "Counter"]
+minutes = 15
+difficulty = 1

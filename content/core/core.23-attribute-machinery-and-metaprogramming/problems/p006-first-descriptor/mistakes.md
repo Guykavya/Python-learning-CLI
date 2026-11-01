@@ -1,0 +1,6 @@
+- Forgetting the `instance is None` case. `Person.shout` then calls `getattr(None, "name")` and raises `AttributeError`.
+- Storing the value on the descriptor (`self.value = ...`). There is one descriptor for the whole class, so every instance would share it.
+- Giving `Upper` a `__set__` "to be safe". It becomes a data descriptor, and `p.shout = "custom"` no longer shadows it.
+- Forgetting `__set__` on `Fahrenheit`. Then `t.fahrenheit = 212` just stores `212` in the instance dict and `celsius` never changes.
+- Computing `Upper` once in `__init__` of the descriptor. The descriptor is created when the class is defined, long before any instance exists.
+- Using `self.source.upper()`: that upper-cases the string `"name"`, not the person's name.

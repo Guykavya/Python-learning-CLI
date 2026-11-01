@@ -1,0 +1,7 @@
+id = "core.23.p006"
+title = "Your first descriptors"
+tier = "drill"
+kind = "code"
+topics = ["descriptors", "__get__", "__set__", "data descriptor", "non-data descriptor", "computed attributes"]
+minutes = 20
+difficulty = 2

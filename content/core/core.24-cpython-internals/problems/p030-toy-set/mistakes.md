@@ -1,0 +1,9 @@
+- Setting a removed slot back to `None`. Any item that had probed past it can no longer be found (`remove(a)` loses `b` and `c` in a collision chain).
+- Inserting into the first tombstone without probing further. If the item is already stored later in the chain, it is now in the set twice.
+- Counting only live items for the load. Tombstones still occupy slots: with enough add/remove cycles every slot is live or deleted, and a lookup for a missing item loops forever.
+- Always doubling on resize. The new size should come from the live items; otherwise add/remove cycles make the table grow without limit.
+- Comparing items with `==` only. Without the stored hash you call `__eq__` on items that cannot match (slow for big objects), and without `is` you can never find `float("nan")` again.
+- Using `hash(item) % capacity` with a capacity that is not a power of two together with `& (capacity - 1)`: the mask only equals the modulo for powers of two.
+- Re-inserting during a resize with `add()` while still iterating the old slots, or keeping the old `fill`. Build the new table first, then set `fill = used = number of live items`.
+- Returning `self` from `union` after adding into it. The set operations must leave both operands unchanged and return a new `ToySet`.
+- Resizing when the item is already present: check for it first, then decide whether a resize is needed.

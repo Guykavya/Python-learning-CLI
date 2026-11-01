@@ -1,0 +1,7 @@
+id = "core.22.p007"
+title = "Context managers for cleanup"
+tier = "applied"
+kind = "code"
+topics = ["with statement", "contextlib.contextmanager", "try/finally", "cleanup", "resources", "locks"]
+minutes = 30
+difficulty = 3

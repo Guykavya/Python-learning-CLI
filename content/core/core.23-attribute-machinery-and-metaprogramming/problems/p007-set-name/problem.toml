@@ -1,0 +1,7 @@
+id = "core.23.p007"
+title = "A field that knows its own name"
+tier = "drill"
+kind = "code"
+topics = ["descriptors", "__set_name__", "instance __dict__", "__delete__", "per-instance storage"]
+minutes = 20
+difficulty = 2

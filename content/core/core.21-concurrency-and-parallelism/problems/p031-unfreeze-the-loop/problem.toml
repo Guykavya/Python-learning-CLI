@@ -1,0 +1,7 @@
+id = "core.21.p031"
+title = "Unfreeze the event loop"
+tier = "applied"
+kind = "code"
+topics = ["blocking calls", "asyncio.to_thread", "event loop responsiveness", "asyncio.gather"]
+minutes = 25
+difficulty = 3

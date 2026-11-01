@@ -1,0 +1,7 @@
+id = "core.23.p001"
+title = "Trace: where does the attribute come from?"
+tier = "drill"
+kind = "trace"
+topics = ["attribute lookup", "instance __dict__", "class attributes", "shadowing", "vars"]
+minutes = 15
+difficulty = 2

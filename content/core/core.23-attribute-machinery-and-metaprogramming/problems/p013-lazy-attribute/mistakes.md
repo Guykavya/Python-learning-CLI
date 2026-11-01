@@ -1,0 +1,7 @@
+- Caching on the descriptor (`self.value = ...`). There is one descriptor per class, so every instance would share the first value computed.
+- Adding `__set__` "to be safe". It turns `lazy` into a data descriptor, which beats the instance dict, so `__get__` runs on every read and assignment stops working the simple way.
+- Using `func.__name__` as the cache key. With `total = lazy(_compute_total)` the cache goes under the wrong name and the value is recomputed on every read.
+- Forgetting the `instance is None` case: `Circle.area` then calls `func(None)` and crashes with a confusing error.
+- Testing "already computed" with `if cached is None`. A function that legitimately returns `None` would run every time.
+- Wrapping the computation in `try/except` and caching a default when it fails. A failed computation must not be remembered.
+- Expecting it to work with `__slots__`: there is no instance dict to cache into.

@@ -1,0 +1,6 @@
+- Returning `co_names`. It mixes globals with attribute names (`cost`, `sqrt`) and misses names used only in nested functions.
+- Matching `"GLOBAL" in ins.opname`. That also matches `STORE_GLOBAL` and `DELETE_GLOBAL`; in an adaptive listing it would match specialised forms. Compare with `== "LOAD_GLOBAL"`.
+- Using `ins.arg` instead of `ins.argval`. `arg` is a number, and since 3.11 it is `index * 2 + flag` for `LOAD_GLOBAL`, so it does not even index `co_names` directly.
+- Searching only one level of nested code: the generator expression inside the lambda inside `middle` is three levels down.
+- Checking `name in dir()` or `name in globals()` inside your solution: that is *your* module's namespace, not the module where `func` was defined. Use `func.__globals__`.
+- Forgetting builtins in `undefined_globals`, which then reports `len` and `round` as typos.

@@ -1,0 +1,7 @@
+- Thinking an instance can see metaclass attributes because "the metaclass is above the class". Instance reads search `type(obj).__mro__` only.
+- Expecting `Plain.kind` to fail. Class reads fall back to the metaclass.
+- Treating `c.shared.append(1)` as a write to `c`. It reads `c.shared` (the class's list) and changes that list; `vars(c)` stays empty of `shared`.
+- Believing `c.shared = [2]` replaces `Base.shared`. Assignment always goes to the instance's own dict.
+- Expecting the second `del c.kind` to delete the class attribute. `del` on an instance never reaches the class.
+- Answering `True` for `Plain.describe is Plain.describe`. Every lookup creates a fresh bound method.
+- Writing `<class 'Meta'>` instead of `Meta`: the program prints `__name__`.

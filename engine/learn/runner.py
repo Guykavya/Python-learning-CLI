@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -74,6 +75,9 @@ def run_code_tests(problem: Problem, solution_dir: Path, solution_file: Path | N
             f"--junitxml={report}",
         ]
         env = dict(os.environ, PYTHONDONTWRITEBYTECODE="1", PYTHONPATH=str(tmpd), PYTHONUTF8="1")
+        # glibc gives every thread its own 64 MB malloc arena; under the 1 GiB cap that allows
+        # only ~18 threads. Two shared arenas allow ~110 (core.21 concurrency problems need them).
+        env.setdefault("MALLOC_ARENA_MAX", "2")
         try:
             proc = subprocess.run(
                 cmd, cwd=tmpd, capture_output=True, text=True, encoding="utf-8", errors="replace",
@@ -83,13 +87,27 @@ def run_code_tests(problem: Problem, solution_dir: Path, solution_file: Path | N
             return CheckResult(
                 False, 0, 0,
                 f"Stopped after {TIMEOUT_SECONDS} seconds. Look for an infinite loop, "
-                "or input() waiting for typing inside a function the tests call.",
+                "or input() waiting for typing inside a function the tests call. In concurrent "
+                "code also look for a deadlock, a thread that is never joined or never told to "
+                "stop (missing Event.set() or sentinel), or an await that never finishes.",
             )
         output = (proc.stdout + proc.stderr).replace(str(tmpd), str(solution_dir))
         if "MemoryError" in output:
             output += (
                 f"\nStopped at the {MEMORY_LIMIT_BYTES >> 20} MB memory limit. Look for list(), sum() or a loop "
                 "over an infinite iterator, or a list that keeps growing."
+            )
+        if "can't start new thread" in output:
+            output += (
+                "\nToo many threads at once for the memory limit. Use a pool or a semaphore to keep "
+                "the number of threads small (a few dozen at most)."
+            )
+        missing = re.search(r"No module named '(\w+)'", output)
+        if missing and missing.group(1) in {"httpx", "hypothesis", "coverage", "pytest", "yaml"}:
+            output += (
+                f"\nThe package '{missing.group(1)}' is not installed in this environment. In the course "
+                "folder run `.venv/bin/python -m pip install -e .` (Windows: "
+                "`.venv\\Scripts\\python -m pip install -e .`) once with internet, then try again."
             )
         total, failed = _parse_junit(report)
 

@@ -1,0 +1,7 @@
+id = "core.21.p006"
+title = "Lock the counter"
+tier = "drill"
+kind = "code"
+topics = ["race condition", "threading.Lock", "critical section", "with lock", "property"]
+minutes = 20
+difficulty = 2

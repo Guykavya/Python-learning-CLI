@@ -1,0 +1,6 @@
+- Thinking `is` compares values. It compares identity; equal ints outside -5..256 are usually different objects.
+- Forgetting that arithmetic results are cached too: `200 + int("56")` gives the cached 256.
+- Placing the cache boundary at 255 or at -6. The range is -5 to 256, inclusive.
+- Expecting floats or joined strings to be shared like small ints. Only interning makes equal strings one object.
+- Answering `3` for the number of ids in `[int("5000")] * 3`. Multiplying a list copies references, not objects.
+- Relying on any of this in real code. These are implementation details; use `==`.

@@ -1,0 +1,7 @@
+id = "core.21.p037"
+title = "Fetch many URLs, at most N at a time"
+tier = "applied"
+kind = "code"
+topics = ["httpx", "asyncio.Semaphore", "asyncio.gather", "bounded concurrency"]
+minutes = 25
+difficulty = 2

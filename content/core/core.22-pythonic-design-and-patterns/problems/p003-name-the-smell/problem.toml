@@ -1,0 +1,7 @@
+id = "core.22.p003"
+title = "Explain: name the smell"
+tier = "drill"
+kind = "explain"
+topics = ["code smells", "mutable default", "bare except", "isinstance", "string building", "naming"]
+minutes = 20
+difficulty = 2

@@ -1,0 +1,7 @@
+id = "core.24.p016"
+title = "Watch a list grow"
+tier = "applied"
+kind = "code"
+topics = ["list internals", "over-allocation", "amortised O(1)", "sys.getsizeof", "dynamic array"]
+minutes = 25
+difficulty = 3

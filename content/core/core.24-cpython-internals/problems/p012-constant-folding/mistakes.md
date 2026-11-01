@@ -1,0 +1,6 @@
+- Looking only at the top-level `co_consts`. Functions, class bodies and lambdas keep their constants in their own nested code objects.
+- Putting code objects in the result instead of opening them.
+- Using `value in consts`: `1000 == 1000.0` and `1 == True`, so a value of the wrong type is reported as folded.
+- Compiling `expr` in `"exec"` mode in `is_folded`. It happens to work for these expressions, but the problem asks for `"eval"`, and `"exec"` adds unrelated constants such as `None`.
+- Testing for small ints (like `2 * 3` giving `6`). On 3.14 they are loaded by a special instruction and may not be in `co_consts`.
+- Testing that an operand (like `24`) is *gone*. 3.14 can leave unused operands behind in `co_consts`.

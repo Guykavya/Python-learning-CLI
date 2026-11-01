@@ -1,0 +1,5 @@
+- Returning `functools.partial(func, obj)` or `lambda *a: func(obj, *a)`. They call correctly but are not methods: no `__self__`, no `__func__`.
+- Doing `setattr(obj, func.__name__, func)` and then reading it back. An instance attribute is never bound (only class attributes go through `__get__`), it changes the object, and it fails for `__slots__` objects.
+- Calling `method.__get__(other)` in `rebind`. A bound method's `__get__` just returns the same bound method; unwrap `__func__` first.
+- Thinking `method_parts(a.deposit)[0]` is a bound method. `__func__` is the plain function, the same object as `Account.deposit`.
+- Trying to change `m.__self__ = b`. Bound methods are read-only; build a new one.

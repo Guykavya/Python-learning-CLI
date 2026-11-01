@@ -1,0 +1,7 @@
+id = "core.24.p020"
+title = "Clean up with weakref.finalize"
+tier = "applied"
+kind = "code"
+topics = ["weakref", "weakref.finalize", "WeakSet", "garbage collector", "context managers", "resource cleanup"]
+minutes = 30
+difficulty = 3

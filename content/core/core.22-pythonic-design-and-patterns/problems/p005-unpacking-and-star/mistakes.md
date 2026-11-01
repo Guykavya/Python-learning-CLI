@@ -1,0 +1,6 @@
+- `first, *rest = items` on an empty list raises `ValueError`. Handle the empty case first.
+- Expecting `*rest` to stay a tuple or a string. It is always a list.
+- `a = b; b = a + b`: the second line sees the new `a`, so the values are wrong. Use one tuple assignment.
+- `defaults.update(user)` on the caller's dict: the inputs change. `|` and `{**a, **b}` make a new dict.
+- Writing `x = p[0]; y = p[1]` as "unpacking". Same index numbers, just more lines.
+- Using `_, *middle, _` on a one-item list: it raises. The length check comes first.

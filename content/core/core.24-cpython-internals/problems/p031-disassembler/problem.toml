@@ -1,0 +1,7 @@
+id = "core.24.p031"
+title = "A disassembler for the mini VM"
+tier = "challenge"
+kind = "code"
+topics = ["disassembler", "bytecode", "jump targets", "labels", "string formatting", "dis"]
+minutes = 40
+difficulty = 4

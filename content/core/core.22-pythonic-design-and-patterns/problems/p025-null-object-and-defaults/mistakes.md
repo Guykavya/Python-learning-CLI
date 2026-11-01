@@ -1,0 +1,7 @@
+- Replacing `if logger is not None:` with `if logger:` or `logger = logger or NullLogger()`. The check is still there, just spelled differently.
+- Keeping `logger=None` in the signature and creating `NullLogger()` in the body: still a `None` default and still a hidden check.
+- Giving `NullCache.get_or_compute` a different signature from `DictCache`. A null object must match the real interface.
+- A `NullCache` that stores values (it then caches when the caller asked for no cache).
+- Using a *stateful* object as a default (for example `cache=DictCache()`): the same cache would be shared by every call.
+- Changing log text or the order of messages while "tidying".
+- Removing the `sku not in PRICES` check together with the None checks. That one is business logic.

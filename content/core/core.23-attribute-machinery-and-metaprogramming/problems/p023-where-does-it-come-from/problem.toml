@@ -1,0 +1,7 @@
+id = "core.23.p023"
+title = "Trace: where does this attribute come from?"
+tier = "applied"
+kind = "trace"
+topics = ["attribute lookup", "metaclass attributes", "class attributes", "instance __dict__", "shadowing", "bound methods"]
+minutes = 25
+difficulty = 3

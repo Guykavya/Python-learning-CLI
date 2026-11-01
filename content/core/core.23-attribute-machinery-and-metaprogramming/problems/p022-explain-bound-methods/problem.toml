@@ -1,0 +1,7 @@
+id = "core.23.p022"
+title = "Explain: how obj.method(1) becomes func(obj, 1)"
+tier = "applied"
+kind = "explain"
+topics = ["bound methods", "descriptors", "function.__get__", "attribute lookup", "__self__", "__func__"]
+minutes = 25
+difficulty = 3

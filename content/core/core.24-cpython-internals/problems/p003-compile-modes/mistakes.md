@@ -1,0 +1,6 @@
+- Writing `42` for `print(exec(prog, ns))`. `exec` never returns a value; it prints `None`.
+- Expecting `eval` of an exec-mode `"x * 2"` to give `42`. In exec mode an expression is a statement whose value is thrown away.
+- Forgetting the `42` printed by `exec(single)` on its own line, before `result: None`.
+- Writing `<calc>` as the `co_name`. The filename goes to `co_filename`; code made by `compile` is always named `<module>`.
+- Answering `False` for `"__builtins__" in ns`: `exec` inserts it when it is missing.
+- Copying the SyntaxError message text. The program prints only the exception type name and the filename.

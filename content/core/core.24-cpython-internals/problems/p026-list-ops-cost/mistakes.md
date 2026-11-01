@@ -1,0 +1,8 @@
+- Building the container inside the timed code (`lambda: op(list(range(n)))`). You then measure `list(range(n))`, which is O(n), and even `append` looks linear.
+- An operation that does not undo itself (`c.append(0)` alone). The list grows during the measurement, so you are no longer timing a list of n items (and for `insert(0)` it gets slower and slower).
+- Returning the total time instead of the time per call: divide by `number`.
+- Taking the average, or the first repeat. A busy moment makes one repeat slower; the average keeps that disturbance, the minimum removes it.
+- Using absolute limits like "must be under 1 microsecond". They pass on your machine and fail on a slower one. Compare two sizes on the same machine instead.
+- Using `>` instead of "at least" (`>=`) in `growth_kind`.
+- Thinking `deque` is always better. It is O(1) at both ends, but `d[i]` in the middle is O(n), while `list[i]` is O(1). Pick the structure for the operations you do most.
+- Concluding that `in` is slow in general. It is O(n) for lists and deques, but O(1) on average for sets and dict keys.

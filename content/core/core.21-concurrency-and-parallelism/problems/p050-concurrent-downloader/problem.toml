@@ -1,0 +1,8 @@
+id = "core.21.p050"
+title = "Project: a concurrent downloader"
+tier = "challenge"
+kind = "code"
+topics = ["httpx", "asyncio.Semaphore", "retries with backoff", "asyncio.timeout", "cancellation", "atomic file writes", "TaskGroup", "streaming"]
+minutes = 120
+difficulty = 5
+assessment = "build"

@@ -1,0 +1,7 @@
+id = "core.22.p002"
+title = "None, truthiness and the zero that vanished"
+tier = "drill"
+kind = "code"
+topics = ["is None", "truthiness", "== True", "falsy values", "default values"]
+minutes = 20
+difficulty = 2

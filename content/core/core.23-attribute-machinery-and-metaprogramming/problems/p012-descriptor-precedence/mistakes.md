@@ -1,0 +1,6 @@
+- Thinking `t.d = 1` stores `1` somewhere. `Data.__set__` only prints; nothing is saved, so `vars(t)` has no `d`.
+- Thinking the instance dict wins over every descriptor. Only non-data descriptors and plain attributes lose to it; data descriptors win.
+- Expecting `99` from `t.d` right after `t.__dict__["d"] = 99`. Writing to `__dict__` directly bypasses `__set__`, but reads still go through the data descriptor.
+- Expecting `del t.d` to delete the instance's `99`. With a data descriptor in place, `del` needs `__delete__`; without it, `AttributeError`.
+- Forgetting the `obj is None` branch: class access calls `__get__(None, Thing)`.
+- Expecting `replaced` right after `Thing.d = "replaced"`. A plain class attribute loses to the instance dict, which still holds `99`.

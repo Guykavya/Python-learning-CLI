@@ -7,6 +7,8 @@ set "DIR=%~dp0"
 set "VENV=%DIR%.venv"
 set "VPY=%VENV%\Scripts\python.exe"
 set "STAMP=%VENV%\learn-root.txt"
+rem Copy of the pyproject.toml the .venv packages were installed from.
+set "DEPS=%VENV%\learn-deps.toml"
 rem Read and print text as UTF-8 everywhere.
 set "PYTHONUTF8=1"
 set "CHECK=import sys; sys.exit(sys.version_info < (3, 11))"
@@ -76,7 +78,21 @@ exit /b 1
 :installed
 set "PYYAML_FORCE_LIBYAML="
 <nul set /p "=%DIR%" >"%STAMP%"
+copy /y "%DIR%pyproject.toml" "%DEPS%" >nul
 
 :run
+rem After a git pull, pyproject.toml may list new packages (hypothesis, httpx, ...): install them once.
+rem One try only, so an offline machine is not slowed down on every run; never during Tab completion.
+if "%~1"=="_complete" goto launch
+fc /b "%DIR%pyproject.toml" "%DEPS%" >nul 2>&1
+if not errorlevel 1 goto launch
+echo The course lists new packages. Installing them (needs internet once)...
+set "PYYAML_FORCE_LIBYAML=0"
+"%VPY%" -m pip install -q --disable-pip-version-check -e "%DIR%."
+if errorlevel 1 echo Could not install them. Later, with internet, run: .venv\Scripts\python -m pip install -e . 1>&2
+set "PYYAML_FORCE_LIBYAML="
+copy /y "%DIR%pyproject.toml" "%DEPS%" >nul
+
+:launch
 "%VPY%" -m learn %*
 exit /b %errorlevel%

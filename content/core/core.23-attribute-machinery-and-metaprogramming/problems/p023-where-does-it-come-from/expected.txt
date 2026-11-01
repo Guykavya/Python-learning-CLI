@@ -1,0 +1,16 @@
+base meta
+class Child class Plain
+False False True
+AttributeError
+base base
+instance base base
+[1] False
+[1] [2] True
+base
+AttributeError
+child base child
+base base
+Meta type Child
+True False False
+False True
+True

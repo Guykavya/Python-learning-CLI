@@ -1,0 +1,23 @@
+1 prepare Base {}
+2 meta new Base []
+3 meta new done Base
+4 meta init Base
+--- define Point
+1 prepare Point {'tag': 'p'}
+body start
+field first
+field second
+body end
+2 meta new Point ['x', 'y', 'norm']
+set_name Point.x (first)
+set_name Point.y (second)
+init_subclass Point {'tag': 'p'}
+3 meta new done Point
+4 meta init Point
+decorate Point
+--- make a Point
+5 meta call Point (1, 2)
+Point new
+Point init 1 2
+6 meta call done Point
+--- done Meta Point

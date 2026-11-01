@@ -1,0 +1,7 @@
+id = "core.23.p020"
+title = "Class contracts with __init_subclass__"
+tier = "applied"
+kind = "code"
+topics = ["__init_subclass__", "class creation", "cooperative super", "class keyword arguments", "fail fast", "__repr__"]
+minutes = 35
+difficulty = 3

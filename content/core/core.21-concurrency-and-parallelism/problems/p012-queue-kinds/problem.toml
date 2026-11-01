@@ -1,0 +1,7 @@
+id = "core.21.p012"
+title = "Trace: Queue, LifoQueue and PriorityQueue"
+tier = "drill"
+kind = "trace"
+topics = ["queue.Queue", "LifoQueue", "PriorityQueue", "queue.Full", "queue.Empty", "maxsize"]
+minutes = 15
+difficulty = 2

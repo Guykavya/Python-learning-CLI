@@ -1,0 +1,7 @@
+id = "core.21.p019"
+title = "Trace: what a Future does with errors and cancel"
+tier = "deep"
+kind = "trace"
+topics = ["Future", "result()", "exception()", "cancel()", "executor.map", "CancelledError"]
+minutes = 25
+difficulty = 4

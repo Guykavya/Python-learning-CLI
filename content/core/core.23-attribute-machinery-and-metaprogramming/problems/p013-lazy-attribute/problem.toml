@@ -1,0 +1,7 @@
+id = "core.23.p013"
+title = "Your own lazy attribute"
+tier = "applied"
+kind = "code"
+topics = ["descriptors", "non-data descriptor", "__set_name__", "instance __dict__", "lazy evaluation", "cached_property"]
+minutes = 30
+difficulty = 3

@@ -1,0 +1,7 @@
+id = "core.23.p009"
+title = "A plugin registry with __init_subclass__"
+tier = "drill"
+kind = "code"
+topics = ["__init_subclass__", "class keyword arguments", "registry pattern", "cooperative super", "classmethod"]
+minutes = 20
+difficulty = 2

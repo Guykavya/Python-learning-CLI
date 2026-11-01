@@ -1,0 +1,6 @@
+- Calling snippet 2 "S". The function has one job; the problem is that it cannot be extended without editing (O).
+- Calling snippet 3 "O". Nothing is being extended; a subclass breaks the parent's contract (L).
+- Saying the fix for 3 is to override `set_height` in `Square`. It repeats the problem in another method.
+- Writing "use dependency injection" for 5 without showing the one-line change (a constructor parameter).
+- Naming only L for snippet 4 and missing that the interface itself is too fat (I).
+- Answering with a principle name and no reason. Always add the concrete cost: what is hard now.

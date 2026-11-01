@@ -1,0 +1,22 @@
+MetaA.__new__ mcls=MetaA class=A
+MetaA.__new__ mcls=MetaB class=B
+MetaA.__new__ mcls=MetaB class=C
+init_subclass C label=x-C
+MetaA.__new__ mcls=MetaB class=D
+init_subclass D label=D
+E failed: TypeError
+MetaA MetaB MetaB MetaB
+x-C D True
+MetaB.__call__ C(5,)
+C.__new__ 5
+C.__init__ 5
+got C
+MetaB.__call__ C(-1,)
+C.__new__ -1
+got str
+negative False
+MetaB.__call__ D(2,)
+C.__new__ 2
+C.__init__ 2
+got D
+D 2 D

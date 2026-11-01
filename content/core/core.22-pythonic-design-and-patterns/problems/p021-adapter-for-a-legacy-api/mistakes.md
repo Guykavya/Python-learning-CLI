@@ -1,0 +1,6 @@
+- Adding `celsius()` to `LegacyTemperatureSensor` (monkeypatching): the vendor class must stay untouched.
+- Reading the sensor once in `__init__` and returning the stored value forever.
+- Inheriting from the legacy class instead of holding one; the adapter then inherits its whole surface.
+- Forgetting to strip whitespace or the unit letter, so `float("72.5F")` raises `ValueError`.
+- Using integer division or the wrong formula (`F - 32 * 5 / 9` without brackets).
+- Making `monitor` check `isinstance(sensor, FahrenheitAdapter)`. The point of the pattern is that `monitor` does not care.

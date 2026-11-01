@@ -1,0 +1,7 @@
+- Returning `True` as soon as *any* object is seen twice. That detects "there is a cycle somewhere below", not "obj is in a cycle" (`x` pointing into the `y`/`z` loop).
+- Using `ref == obj` or `ref in seen_list`. Equality is the wrong question (`[] == []` is `True`) and is slow; compare identity with `is` and track `id(...)`.
+- Putting lists or dicts into a `set` of visited objects: they are unhashable. Key by `id`.
+- Following into classes, modules and functions. The search becomes slow and finds fake cycles through module globals.
+- Depth-first search with a single visited set and a depth limit: an object first reached on a long route is never tried on the short one, so the answer near the limit is wrong.
+- An off-by-one in the depth: the direct referents are 1 step away, so a ring of 100 lists needs `max_depth=100`.
+- Writing the path in reverse or without the final `obj`.

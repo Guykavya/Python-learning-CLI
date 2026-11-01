@@ -1,0 +1,6 @@
+- Keeping `print` in `process_order` and returning `None`. The result can then only be read from the screen.
+- Letting `parse_order` reject bad rows. Parsing turns text into rows; judging them is `validate_order`'s job.
+- Calling `price_order` on rows that were not validated. It assumes valid data.
+- Numbering the rows from 0, or counting blank lines. Number the rows that remain after parsing, from 1.
+- Splitting into many functions that all share a global list. Pass data in and return it out.
+- Making `validate_order` change the rows (for example by removing bad ones): it should only report.

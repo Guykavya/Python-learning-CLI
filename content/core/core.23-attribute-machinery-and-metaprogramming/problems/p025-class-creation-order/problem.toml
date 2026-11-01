@@ -1,0 +1,8 @@
+id = "core.23.p025"
+title = "Trace: the order of class creation"
+tier = "deep"
+kind = "trace"
+topics = ["metaclasses", "__prepare__", "__set_name__", "__init_subclass__", "class decorators", "metaclass __call__", "class creation process"]
+minutes = 30
+difficulty = 4
+assessment = "trace"

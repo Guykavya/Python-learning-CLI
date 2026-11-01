@@ -1,0 +1,5 @@
+- Saying `__getattr__` runs on every access. It runs only when the normal lookup raised `AttributeError`.
+- Choosing `__getattribute__` for a proxy. It works, but every read of the proxy's own attributes then needs special care and pays the cost.
+- Writing `return self.__dict__[name]` inside `__getattribute__`: reading `self.__dict__` calls the hook again.
+- Raising `KeyError` (or returning `None`) for unknown names. `hasattr` and `getattr(obj, name, default)` only understand `AttributeError`.
+- Forgetting that dunder lookups for operators (`len(obj)`, `obj + 1`) go to the class and skip both hooks; neither hook can add operators to an object.

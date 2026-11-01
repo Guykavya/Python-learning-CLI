@@ -1,0 +1,13 @@
+- Building SQL with f-strings around **values** (`f"WHERE name = '{name}'"`). `O'Brien` breaks the query and `' OR '1'='1` returns every row. Values go in `params`, always.
+- Storing values on the descriptor (`self.value = value`): all users then share one name.
+- Discovering fields from `__annotations__`. Fields without type hints are missed, annotated plain values are taken as fields, and on 3.14 annotations are not in the class namespace during class creation.
+- Adding the automatic `id` with `setattr` and forgetting `pk.__set_name__(cls, "id")`: the field's `name` stays `None` and every query says `None` instead of `id`.
+- Adding the `id` at the end of the columns instead of first, or creating it for a model that already has a primary key.
+- Reading `table_name` with `getattr`/`hasattr`: a subclass inherits the parent's table name and writes into the wrong table.
+- Building `cls._fields` only from `vars(cls)` (a subclass loses the parent's fields), or updating the parent's dict in place (the parent gains the child's fields).
+- Treating `True` as a valid integer: `isinstance(True, int)` is `True`, so check `bool` separately.
+- Validating only in `save`: then a bad value sits in the object until much later. Validate in `__set__`.
+- Writing `email = ?` with `None`: in SQL `NULL = NULL` is not true. Use `IS NULL`.
+- Inserting a second row on every `save` because the key is never set from `cursor.lastrowid`.
+- Using `conn.cursor()` or `executescript`: the tests wrap the connection in a spy that only offers `execute(sql, params)`.
+- Running the INSERT before checking required fields, so a half-valid row is written and then an error is raised.

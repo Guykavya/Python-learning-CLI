@@ -1,0 +1,7 @@
+id = "core.22.p006"
+title = "Comprehension or loop?"
+tier = "applied"
+kind = "code"
+topics = ["list comprehension", "dict comprehension", "generator expression", "any/all", "laziness", "side effects"]
+minutes = 35
+difficulty = 3

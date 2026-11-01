@@ -1,0 +1,7 @@
+id = "core.22.p008"
+title = "Trace: what do these idioms print?"
+tier = "drill"
+kind = "trace"
+topics = ["chained comparisons", "or-default", "eager arguments", "sorted stability", "zip", "tuple assignment", "aliasing", "any/all"]
+minutes = 25
+difficulty = 3

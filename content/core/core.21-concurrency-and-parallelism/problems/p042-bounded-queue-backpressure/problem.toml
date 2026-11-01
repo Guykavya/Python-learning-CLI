@@ -1,0 +1,7 @@
+id = "core.21.p042"
+title = "Backpressure with a bounded queue"
+tier = "challenge"
+kind = "code"
+topics = ["asyncio.Queue", "maxsize", "backpressure", "producer-consumer", "sentinels", "lazy iteration"]
+minutes = 45
+difficulty = 4

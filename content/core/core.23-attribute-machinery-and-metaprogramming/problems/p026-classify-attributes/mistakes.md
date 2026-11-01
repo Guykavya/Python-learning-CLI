@@ -1,0 +1,9 @@
+- Using `getattr(cls, name)`: it runs `__get__` (a property on the metaclass, a counting descriptor) and a metaclass `__getattr__`, and it returns the *result* of `__get__`, not the descriptor. For a function looked up on a class that result is still a function, so the bug hides until a property or classmethod appears.
+- Using `hasattr(cls, name)` to decide "missing": it also sees metaclass attributes and invented ones.
+- Checking `hasattr(raw, "__set__")` on the object instead of its type. An object with a `__set__` attribute in its own dict is not a descriptor.
+- Checking only `"__set__" in vars(type(raw))`: a descriptor class that inherits `__set__` from a parent descriptor is still a data descriptor.
+- Forgetting `__delete__`: a descriptor with `__get__` and `__delete__` but no `__set__` is a data descriptor too.
+- Thinking a property without a setter is non-data. `property` always defines `__set__` and `__delete__`; they raise `AttributeError` when no setter or deleter was given.
+- Treating `None` stored in a class as "missing". The name exists; its value is `None`.
+- Walking `cls.__mro__` to the end and keeping the *last* match. The first class in the MRO wins.
+- In `describe`, skipping every name that starts with `_` (single-underscore names are real attributes) or including inherited names.

@@ -1,0 +1,7 @@
+id = "core.21.p047"
+title = "A race condition in single-threaded asyncio"
+tier = "applied"
+kind = "code"
+topics = ["race conditions", "asyncio.Lock", "check-then-act", "await points"]
+minutes = 25
+difficulty = 3

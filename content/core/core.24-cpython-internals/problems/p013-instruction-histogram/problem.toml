@@ -1,0 +1,7 @@
+id = "core.24.p013"
+title = "An instruction histogram"
+tier = "applied"
+kind = "code"
+topics = ["dis", "get_instructions", "bytecode", "code objects", "co_consts", "Counter"]
+minutes = 25
+difficulty = 3

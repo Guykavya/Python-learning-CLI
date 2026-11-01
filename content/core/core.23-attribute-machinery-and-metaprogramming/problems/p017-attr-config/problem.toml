@@ -1,0 +1,7 @@
+id = "core.23.p017"
+title = "Config with dotted access"
+tier = "applied"
+kind = "code"
+topics = ["__getattr__", "__dir__", "AttributeError vs KeyError", "nested data", "deep copy"]
+minutes = 30
+difficulty = 3

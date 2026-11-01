@@ -1,0 +1,7 @@
+- Comparing against a listing copied from your own machine. `RESUME`, `LOAD_FAST_LOAD_FAST`, `LOAD_FAST_BORROW`, `RETURN_CONST` and others exist only in some versions; test properties, not exact names.
+- Counting `Instruction` objects instead of their `opname`: every instruction is a different object, so each count is 1.
+- Calling `dis.dis(f)` and parsing the printed text. `dis.dis` prints for humans; `get_instructions` gives you data.
+- Passing `show_caches=True` (or counting `CACHE` entries by hand). The task says default arguments; caches are hidden by default.
+- Recursing only one level: `two_levels` hides a lambda inside `middle`, two levels down.
+- Scanning `co_consts` without checking the type. Constants also include numbers, strings and `None`; only `types.CodeType` items have bytecode.
+- Mutating the Counter you were given in `by_prefix`, or using `name.split("_")[-1]` (the text after the *last* underscore).

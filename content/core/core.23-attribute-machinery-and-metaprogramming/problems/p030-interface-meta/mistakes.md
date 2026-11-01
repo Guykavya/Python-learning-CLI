@@ -1,0 +1,9 @@
+- Passing `abstract=True` on to `super().__new__`: `type.__new__` forwards it to `__init_subclass__`, and `object.__init_subclass__` raises `TypeError` because it takes no keywords.
+- Dropping *all* keywords instead of only `abstract`, so a base class's `__init_subclass__(tag=...)` never gets its arguments.
+- Storing the flag as a class attribute and reading it with `cls._abstract`: a subclass without its own flag inherits the parent's `True` and is never checked.
+- Reading only `cls.required` (normal lookup finds the nearest tuple), so a subclass that adds `required = ("name",)` forgets the parent's requirements.
+- Checking only the new class's namespace `ns`, so implementations inherited from a parent or a mixin are reported as missing.
+- Using `hasattr(cls, name)`: it says `True` for `area = None` and also sees attributes defined on the metaclass.
+- Raising the error before calling `super().__new__`, then trying to walk an MRO that does not exist yet. Create the class first, or compute the MRO yourself from `bases`.
+- Implementing `is_abstract` as a normal class attribute: then instances can read it too, and every class gets a copy in its `__dict__`.
+- Forgetting to sort the missing names, so the message depends on the order of the `required` tuples.

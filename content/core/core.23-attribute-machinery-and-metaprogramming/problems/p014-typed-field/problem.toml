@@ -1,0 +1,7 @@
+id = "core.23.p014"
+title = "A typed field descriptor"
+tier = "applied"
+kind = "code"
+topics = ["descriptors", "data descriptor", "__set_name__", "__set__", "__delete__", "isinstance", "bool is int"]
+minutes = 30
+difficulty = 3

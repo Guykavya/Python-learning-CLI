@@ -1,0 +1,7 @@
+id = "core.21.p030"
+title = "A worker pool with asyncio.Queue"
+tier = "deep"
+kind = "code"
+topics = ["asyncio.Queue", "worker tasks", "task_done", "queue.join", "cancelling workers", "error collection"]
+minutes = 40
+difficulty = 4

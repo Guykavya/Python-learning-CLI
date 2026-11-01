@@ -1,0 +1,7 @@
+id = "core.21.p020"
+title = "First success wins"
+tier = "deep"
+kind = "code"
+topics = ["concurrent.futures", "wait", "FIRST_COMPLETED", "cancel", "timeouts", "exception chaining"]
+minutes = 35
+difficulty = 4

@@ -5,12 +5,26 @@
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 VENV="$DIR/.venv"
 STAMP="$VENV/learn-root.txt"   # the folder this .venv was built for
+DEPS="$VENV/learn-deps.toml"   # copy of the pyproject.toml its packages were installed from
 export PYTHONUTF8=1            # read and print text as UTF-8 everywhere
 
 supported() { "$@" -c 'import sys; sys.exit(sys.version_info < (3, 11))' >/dev/null 2>&1; }
 
+# After a git pull, pyproject.toml may list new packages (hypothesis, httpx, ...): install them once.
+# One try only, so an offline machine is not slowed down on every run; never during Tab completion.
+sync_deps() {
+  [ "$1" = "_complete" ] && return
+  cmp -s "$DIR/pyproject.toml" "$DEPS" && return
+  echo "The course lists new packages. Installing them (needs internet once)..."
+  if ! PYYAML_FORCE_LIBYAML=0 "$VENV/bin/python" -m pip install -q --disable-pip-version-check -e "$DIR"; then
+    echo "Could not install them. Later, with internet, run: .venv/bin/python -m pip install -e ." >&2
+  fi
+  cp "$DIR/pyproject.toml" "$DEPS"
+}
+
 # Fast path (Tab completion runs this on every key): .venv exists and was built for this folder.
 if [ -x "$VENV/bin/python" ] && [ "$(cat "$STAMP" 2>/dev/null)" = "$DIR" ]; then
+  sync_deps "$@"
   exec "$VENV/bin/python" -m learn "$@"
 fi
 
@@ -18,6 +32,7 @@ fi
 OURS='import os, sys, learn; sys.exit(os.path.normcase(learn.__file__).find(os.path.normcase(sys.argv[1])) != 0)'
 if [ -x "$VENV/bin/python" ] && "$VENV/bin/python" -c "$OURS" "$DIR/engine" >/dev/null 2>&1; then
   echo "$DIR" > "$STAMP"
+  sync_deps "$@"
   exec "$VENV/bin/python" -m learn "$@"
 fi
 
@@ -66,4 +81,5 @@ if ! PYYAML_FORCE_LIBYAML=0 "$VENV/bin/python" -m pip install -q --disable-pip-v
 fi
 
 echo "$DIR" > "$STAMP"
+cp "$DIR/pyproject.toml" "$DEPS"
 exec "$VENV/bin/python" -m learn "$@"

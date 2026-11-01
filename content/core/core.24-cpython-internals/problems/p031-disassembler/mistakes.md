@@ -1,0 +1,8 @@
+- Naming labels in the order the jumps appear. A backward jump at the end of a loop would then get `L1` although its target comes later in the listing than another target. Sort the targets first.
+- Forgetting the target `len(program)`. A forward jump to the end of the program is common (`JUMP_IF_FALSE end` with `end:` as the last line); without its label the listing and the assembly text lose information.
+- Treating `PUSH`'s operand as a target. Only `JUMP`, `JUMP_IF_FALSE` and `CALL` jump.
+- Reading `CALL`'s target as `arg` instead of `arg[0]`.
+- Leaving trailing spaces after ops without an operand (`"   6  PRINT         "`). Strip the line.
+- Counting a label twice when two jumps share a target. Use a set (or check before adding).
+- Writing two separate label-naming rules for `disassemble` and `to_assembly` that drift apart. Compute the label dictionary in one helper.
+- Raising for the target `len(program)`: it is valid and means "stop".

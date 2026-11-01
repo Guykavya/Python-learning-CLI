@@ -1,0 +1,9 @@
+True b a
+after del a: False
+after del b: False False
+freed
+freed
+collected: True
+after collect: True True
+freed
+no cycle: True

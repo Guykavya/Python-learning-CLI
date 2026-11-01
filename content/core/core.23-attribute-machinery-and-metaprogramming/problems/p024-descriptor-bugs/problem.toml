@@ -1,0 +1,8 @@
+id = "core.23.p024"
+title = "Fix: four descriptor bugs"
+tier = "deep"
+kind = "code"
+topics = ["descriptors", "__set_name__", "instance None", "__getattr__ recursion", "per-instance storage", "debugging"]
+minutes = 40
+difficulty = 4
+assessment = "fix"

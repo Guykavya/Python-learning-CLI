@@ -1,0 +1,6 @@
+- Passing a list as `bases`: `type(name, [], ns)` is a `TypeError`; bases must be a tuple, here `()`.
+- Comparing only the values in `__eq__`, so a `Vector(1, 2)` equals a `Point(1, 2)`. Check `type(other) is type(self)` first.
+- Returning `False` instead of `NotImplemented` for other types. It works here, but it stops the other object from answering the comparison.
+- Keeping a reference to the caller's list. If they append to it later, `__init__` and `__repr__` change behaviour.
+- Writing `self.__dict__[field] = value` in `__init__`: slotted instances have no `__dict__`. Use `setattr`.
+- Hard-coding the class name in `__repr__` text is fine here, but `type(self).__name__` keeps working for subclasses.

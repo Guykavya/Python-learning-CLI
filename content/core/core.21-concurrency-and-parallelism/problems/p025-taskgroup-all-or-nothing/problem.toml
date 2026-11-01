@@ -1,0 +1,7 @@
+id = "core.21.p025"
+title = "All or nothing with TaskGroup"
+tier = "applied"
+kind = "code"
+topics = ["asyncio.TaskGroup", "ExceptionGroup", "except*", "cancellation", "structured concurrency"]
+minutes = 25
+difficulty = 3

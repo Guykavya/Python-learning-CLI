@@ -1,0 +1,7 @@
+id = "core.22.p014"
+title = "Trace: Liskov in action"
+tier = "deep"
+kind = "trace"
+topics = ["SOLID", "Liskov substitution", "inheritance", "contracts", "exceptions"]
+minutes = 30
+difficulty = 4

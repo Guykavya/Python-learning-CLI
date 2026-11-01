@@ -1,0 +1,7 @@
+id = "core.24.p012"
+title = "Spot constant folding"
+tier = "drill"
+kind = "code"
+topics = ["constant folding", "co_consts", "compile", "nested code objects", "peephole optimizer"]
+minutes = 20
+difficulty = 2

@@ -1,0 +1,7 @@
+id = "core.21.p033"
+title = "Lazy pagination with an async generator"
+tier = "applied"
+kind = "code"
+topics = ["async generators", "async for", "lazy evaluation", "pagination", "APIs"]
+minutes = 20
+difficulty = 3

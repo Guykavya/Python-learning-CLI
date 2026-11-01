@@ -1,0 +1,7 @@
+id = "core.22.p017"
+title = "Explain: when NOT to apply the pattern"
+tier = "deep"
+kind = "explain"
+topics = ["over-engineering", "YAGNI", "abstract factory", "singleton", "strategy", "ABC", "simplicity"]
+minutes = 30
+difficulty = 4

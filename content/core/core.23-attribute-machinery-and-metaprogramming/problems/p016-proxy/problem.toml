@@ -1,0 +1,7 @@
+id = "core.23.p016"
+title = "A read-only proxy that counts reads"
+tier = "applied"
+kind = "code"
+topics = ["__getattr__", "__setattr__", "__delattr__", "object.__setattr__", "delegation", "proxy pattern", "recursion trap"]
+minutes = 35
+difficulty = 3

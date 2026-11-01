@@ -1,0 +1,7 @@
+id = "core.21.p036"
+title = "GET JSON with httpx"
+tier = "drill"
+kind = "code"
+topics = ["httpx", "AsyncClient", "raise_for_status", "response.json", "MockTransport"]
+minutes = 15
+difficulty = 1

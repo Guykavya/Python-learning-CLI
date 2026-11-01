@@ -1,0 +1,10 @@
+- Using `getattr(cls, name)` instead of `vars(cls)[name]`. For a classmethod you get a bound method (frozen to `cls`), for a staticmethod a bare function; storing a wrapped version back breaks both.
+- Wrapping the `classmethod` object itself, so the wrapper calls `raw(*args)`. A `classmethod` object is not callable (that raises `TypeError`); the class is only passed when the descriptor is looked up. Wrap `raw.__func__`.
+- Storing the wrapped function without putting it back inside `classmethod(...)` / `staticmethod(...)`.
+- Using `callable(raw)` as the test for "method": nested classes are callable too, and `classmethod`/`staticmethod` objects need special handling.
+- Wrapping properties. A property is not called like a method; leave it alone.
+- Iterating over `vars(cls).items()` directly while calling `setattr`: changing a dict while iterating it can raise `RuntimeError`. Copy with `list(...)` first.
+- Creating the closure inside the loop without a helper function or default argument: every wrapper then counts under the last name.
+- Counting after the call returns, so calls that raise are missed.
+- Making `reset_counts` assign a brand-new dict while the wrappers still update the old one.
+- Wrapping inherited methods by walking the MRO: the decorator should only change what the class itself defines.

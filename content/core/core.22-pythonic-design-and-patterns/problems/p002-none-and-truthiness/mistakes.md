@@ -1,0 +1,5 @@
+- `if not value:` for "missing". It also catches `0`, `""`, `[]` and `False`.
+- `value == None`. It works until a class defines `__eq__` in a strange way; `is None` cannot be fooled.
+- `value == True`: `1`, `1.0` and `True` are all equal to `True`. Use `is True`.
+- Checking `value == 0` before `value is False`: `False == 0`, so `False` becomes "zero".
+- `config.get(key) or default`. It is the same bug as `if not value`: a stored `0` becomes the default.

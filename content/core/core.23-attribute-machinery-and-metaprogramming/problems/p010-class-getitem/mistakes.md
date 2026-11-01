@@ -1,0 +1,6 @@
+- Not defining `__class_getitem__` at all. `list`'s version returns a `GenericAlias`; `TypedList[int]()` is then an ordinary `TypedList` that checks nothing.
+- Building a new class on every subscription. `TypedList[int] is TypedList[int]` becomes `False`, and `isinstance(old_list, TypedList[int])` fails.
+- Storing the item type on `TypedList` itself (`cls.item_type = item_type`). That changes the base class for everyone; the last subscription wins.
+- Looping over `items` to check them and then passing the same generator to `list.__init__`: it is already used up, so the list is empty.
+- Checking with `type(item) is self.item_type`. A subclass instance (a `Dog` for `Animal`) is then rejected; use `isinstance`.
+- Appending first and checking afterwards, which leaves the bad item in the list.

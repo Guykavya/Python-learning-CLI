@@ -1,0 +1,7 @@
+id = "core.24.p017"
+title = "Model a compact dict"
+tier = "applied"
+kind = "code"
+topics = ["dict internals", "hash table", "open addressing", "linear probing", "tombstones", "resize", "insertion order"]
+minutes = 50
+difficulty = 4

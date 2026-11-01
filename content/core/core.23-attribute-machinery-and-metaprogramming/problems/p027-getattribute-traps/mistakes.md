@@ -1,0 +1,8 @@
+- Writing `A 3` before `get size`. The argument is evaluated first, so the hook prints first.
+- Missing `get width` and `fallback width` in line C: lookups on `self` inside a property also go through the hooks.
+- Expecting line D to crash with `AttributeError: broken inside`. A getter that raises `AttributeError` triggers `__getattr__`.
+- Writing `get __len__` for `len(t)` or `get __repr__` for `repr(t)`. Special methods are found on the type and skip `__getattribute__`.
+- Answering `H True`: the fallback raises for names starting with `_`, so `hasattr` is `False`.
+- Answering `I False`: `__getattr__` returned a value, so for `hasattr` the attribute exists.
+- Printing `fallback color` in line K: after `t.color = "red"` the normal lookup succeeds.
+- Printing a `get` line for `t.color = "red"` or for the assignment in `__init__`. Setting uses `__setattr__`, not the get hooks.

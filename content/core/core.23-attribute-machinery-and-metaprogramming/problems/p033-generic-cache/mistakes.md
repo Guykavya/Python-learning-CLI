@@ -1,0 +1,9 @@
+- Returning `cls` itself or a `types.GenericAlias`: then nothing is checked at run time.
+- Creating a new class on every subscription, so `Box[int] is Box[int]` is `False` and a box made earlier is not an instance of "the same" `Box[int]`.
+- Keying the cache by the parameter only. `Box._cache` is shared by subclasses, so `Special[int]` returns `Box[int]` and loses `Special`'s methods.
+- Treating `Box[int, str]` as two arguments. `__class_getitem__` receives a single tuple.
+- Calling `isinstance(value, list[int])`: generic aliases cannot be used with `isinstance`. Check the alias's `__origin__`.
+- Naming the class with `str(param)`, which gives `"<class 'int'>"`. Use `__name__` for classes and `repr` for aliases.
+- Using `None` to mean "empty": then a stored `None` looks like an empty box. Use a private sentinel object.
+- Building the error message with `self.item_type.__name__` for an alias: it says `list`, not `list[int]` (the alias forwards `__name__` to its origin).
+- Forgetting the "already parameterised" check, so `Box[int][str]` silently makes a box that accepts only strings and is still a `Box[int]` subclass.

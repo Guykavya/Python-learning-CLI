@@ -1,0 +1,6 @@
+- Forgetting that undoing also calls `set`, so the logger prints for undo steps too.
+- Undoing in the wrong order (first command first). Undo is last in, first out.
+- Undoing all three commands: the loop stops when one is left (`> 1`).
+- Missing that the first watcher is removed before the last undo, so no `log:` line appears for it.
+- Printing `big!` for `new >= 10` using the old value, or for exactly 10 being excluded (10 is included, but never occurs here).
+- Writing `<lambda>` instead of `lambda`: the program replaces that name.

@@ -1,0 +1,6 @@
+- Forgetting the `__dict__` in `instance_size`: then a plain object can even look *smaller* than a slotted one, because `getsizeof` never counts the separate dictionary.
+- `obj.__dict__` without checking: slotted objects raise `AttributeError`. Use `hasattr(obj, "__dict__")` (or `getattr(obj, "__dict__", None)`).
+- Measuring one instance and multiplying by `n`. The reported dict size differs between instances of the same class (shared keys are counted for some and not for others), so the task measures `n` real, live objects.
+- Writing `__slots__ = "x", "y", "z"` inside `__init__`: slots must be declared in the class body, before the class is created.
+- Hard-coding the sizes you saw (56, 344, ...): they change between Python versions and platforms.
+- Concluding "slots always save 85%". The saving depends on the version, the number of attributes and whether anything ever touches `__dict__`; measure in your own program.

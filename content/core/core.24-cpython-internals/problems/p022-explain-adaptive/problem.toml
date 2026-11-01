@@ -1,0 +1,7 @@
+id = "core.24.p022"
+title = "Explain: the specialising adaptive interpreter"
+tier = "applied"
+kind = "explain"
+topics = ["specialising adaptive interpreter", "PEP 659", "inline caches", "dis adaptive", "performance"]
+minutes = 25
+difficulty = 3

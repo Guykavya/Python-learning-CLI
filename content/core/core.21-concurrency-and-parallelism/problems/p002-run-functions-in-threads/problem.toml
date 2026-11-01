@@ -1,0 +1,7 @@
+id = "core.21.p002"
+title = "Run a function in many threads"
+tier = "drill"
+kind = "code"
+topics = ["threading.Thread", "start", "join", "collecting results", "input order"]
+minutes = 20
+difficulty = 2

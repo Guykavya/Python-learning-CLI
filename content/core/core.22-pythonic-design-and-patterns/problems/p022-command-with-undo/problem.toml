@@ -1,0 +1,7 @@
+id = "core.22.p022"
+title = "Command pattern with undo and redo"
+tier = "challenge"
+kind = "code"
+topics = ["command pattern", "undo/redo", "composite", "history stacks", "atomicity"]
+minutes = 50
+difficulty = 4

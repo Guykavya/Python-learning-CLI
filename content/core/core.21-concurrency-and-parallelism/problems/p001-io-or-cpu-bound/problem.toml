@@ -1,0 +1,7 @@
+id = "core.21.p001"
+title = "Explain: I/O-bound or CPU-bound?"
+tier = "drill"
+kind = "explain"
+topics = ["I/O-bound", "CPU-bound", "threads vs processes vs asyncio", "choosing a tool"]
+minutes = 20
+difficulty = 2

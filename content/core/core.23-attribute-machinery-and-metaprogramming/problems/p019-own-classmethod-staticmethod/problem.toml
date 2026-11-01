@@ -1,0 +1,7 @@
+id = "core.23.p019"
+title = "Build your own classmethod and staticmethod"
+tier = "applied"
+kind = "code"
+topics = ["classmethod", "staticmethod", "descriptors", "bound methods", "types.MethodType", "__func__", "__self__"]
+minutes = 30
+difficulty = 3

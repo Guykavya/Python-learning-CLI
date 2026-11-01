@@ -1,0 +1,7 @@
+id = "core.24.p023"
+title = "C structs from Python with ctypes"
+tier = "applied"
+kind = "code"
+topics = ["ctypes", "Structure", "c_int", "arrays", "from_buffer", "memory layout"]
+minutes = 30
+difficulty = 3

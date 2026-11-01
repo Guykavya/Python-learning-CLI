@@ -1,0 +1,7 @@
+id = "core.23.p008"
+title = "How a function becomes a method"
+tier = "drill"
+kind = "code"
+topics = ["bound methods", "function.__get__", "types.MethodType", "__self__", "__func__", "descriptors"]
+minutes = 20
+difficulty = 2

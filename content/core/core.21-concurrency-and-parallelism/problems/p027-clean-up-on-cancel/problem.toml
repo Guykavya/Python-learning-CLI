@@ -1,0 +1,7 @@
+id = "core.21.p027"
+title = "Always give the connection back"
+tier = "deep"
+kind = "code"
+topics = ["CancelledError", "try/finally", "resource cleanup", "task.cancel()", "task.cancelled()"]
+minutes = 30
+difficulty = 4

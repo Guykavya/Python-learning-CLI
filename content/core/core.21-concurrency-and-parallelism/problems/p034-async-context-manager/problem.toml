@@ -1,0 +1,7 @@
+id = "core.21.p034"
+title = "An async context manager that always closes"
+tier = "drill"
+kind = "code"
+topics = ["async with", "contextlib.asynccontextmanager", "__aenter__", "__aexit__", "try/finally"]
+minutes = 15
+difficulty = 2

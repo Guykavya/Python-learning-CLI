@@ -1,0 +1,9 @@
+- Setting the slot back to `None` on delete. Every key that probed past that slot becomes unreachable (`d[9]` raises `KeyError` after `del d[1]`).
+- Stopping a lookup at a tombstone. Same symptom: tombstones mean "keep going", only `None` means "absent".
+- Inserting into the first tombstone without a full lookup first, which creates a second entry for a key that already exists further along.
+- Comparing only hashes (`stored_hash == h`). Different keys can share a hash (`Collide`, or `hash(-1) == hash(-2)`); you must also check `==`.
+- Comparing only with `==` and never with `is`: works here, but CPython checks identity first because it is faster and makes `nan` keys findable.
+- Counting `len(self.entries)` as the length: it includes `None` holes.
+- Resizing on the number of live keys instead of `len(entries)`: holes left by deletions also use up the table, so the 2/3 rule must count them.
+- Forgetting the mask on the next slot (`slot + 1`), which runs off the end of `indices` instead of wrapping to slot 0.
+- Rebuilding a resized table by appending entries in hash order: insertion order must survive a resize.

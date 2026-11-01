@@ -1,0 +1,14 @@
+- Popping the operands in the wrong order. The top of the stack is the **right** operand: `PUSH 10, PUSH 3, SUB` is `10 - 3`. Write `b = pop(); a = pop()` and then use `a - b`.
+- `JUMP_IF_FALSE` that only pops when it jumps (or peeks with `stack[-1]`). The condition is then left on the stack whenever the test is true, and loops slowly fill the stack with garbage.
+- Reporting `pc` in errors after you already advanced it. Save `offset = pc` at the start of `step()` and use it everywhere.
+- Checking the step limit after running the instruction, or with `>` instead of `>=`. A program that needs exactly `max_steps` steps must finish, and the next one must be refused before it runs.
+- No step limit at all, or building it last. Every bug in a jump then freezes your computer instead of raising a clear error.
+- `RET` that pushes the value but forgets to remove the callee's frame (or to set `pc` to the return address). The next instruction then runs in the wrong frame.
+- One shared variables dict for every frame. Recursion breaks: `fact(4)` overwrites the `n` of `fact(5)`.
+- Moving the CALL arguments in reverse order. The last argument must end up on top, so the function stores its parameters from last to first (`STORE b`, then `STORE a`).
+- Resolving labels in a single pass: a jump to a label defined further down cannot be resolved yet. Collect labels first.
+- Counting label lines or comment lines as instructions, so every offset after them is wrong.
+- Pushing `True`/`False` from `LT`/`EQ`. It happens to work with `ADD` (because `bool` is a subclass of `int`) but the VM's values should all be ints.
+- In the compiler, emitting the op before its operands (prefix order). A stack machine needs postfix: left, right, op.
+- Forgetting to patch the forward jump of a `while` or `if`, so it still holds `None` and the VM raises a bad jump target.
+- Treating `True` as an int literal in the compiler: `type(node.value) is int` rejects `bool`, `isinstance` does not.

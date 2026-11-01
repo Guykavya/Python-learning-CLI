@@ -1,0 +1,7 @@
+id = "core.24.p033"
+title = "What does this object keep alive? Walking the object graph"
+tier = "challenge"
+kind = "code"
+topics = ["gc.get_referents", "object graph", "breadth-first search", "reference counting", "memory leaks", "managed dicts"]
+minutes = 45
+difficulty = 4

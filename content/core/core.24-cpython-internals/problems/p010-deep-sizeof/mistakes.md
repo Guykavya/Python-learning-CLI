@@ -1,0 +1,5 @@
+- Remembering objects in a set *by value* (`seen.add(item)`): lists crash with `TypeError`, and two equal ints that are separate objects are counted once.
+- Forgetting dict keys. Keys are objects in memory too.
+- No visited check: shared objects are counted many times and a self-containing list loops forever.
+- Opening every object with `vars()` or `__dict__`. The problem limits the walk to the five container types.
+- Asserting on exact byte counts in your own tests. They change between versions and platforms; compare against `sys.getsizeof` sums instead.

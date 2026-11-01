@@ -1,0 +1,7 @@
+id = "core.23.p012"
+title = "Trace: data vs non-data descriptors"
+tier = "drill"
+kind = "trace"
+topics = ["descriptors", "data descriptor", "non-data descriptor", "precedence", "instance __dict__", "__delete__"]
+minutes = 20
+difficulty = 3

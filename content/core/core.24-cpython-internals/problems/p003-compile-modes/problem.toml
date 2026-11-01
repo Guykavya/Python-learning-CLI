@@ -1,0 +1,7 @@
+id = "core.24.p003"
+title = "Trace: compile, eval and exec"
+tier = "drill"
+kind = "trace"
+topics = ["compile", "eval", "exec", "code objects", "compile modes", "namespaces"]
+minutes = 15
+difficulty = 2

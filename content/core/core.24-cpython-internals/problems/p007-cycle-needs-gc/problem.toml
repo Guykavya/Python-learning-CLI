@@ -1,0 +1,7 @@
+id = "core.24.p007"
+title = "Trace: a cycle needs the garbage collector"
+tier = "drill"
+kind = "trace"
+topics = ["reference cycles", "garbage collector", "gc.collect", "weakref callbacks", "reference counting"]
+minutes = 15
+difficulty = 2

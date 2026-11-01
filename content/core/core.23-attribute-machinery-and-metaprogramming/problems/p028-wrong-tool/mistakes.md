@@ -1,0 +1,7 @@
+- Saying only "metaclasses are complicated" without naming what breaks or who cannot see what.
+- Choosing a metaclass-free version that still uses `__getattr__` for B. Two known attributes are exactly what `property` is for.
+- Missing the `return None` bug in B. A `__getattr__` must raise `AttributeError` for names it does not handle.
+- Replacing C with `__init_subclass__` but forgetting `super().__init_subclass__(**kwargs)`, which breaks cooperative inheritance.
+- Checking `hasattr(cls, "extension")` instead of `"extension" in vars(cls)`: a sub-subclass would silently inherit the parent's extension and overwrite the registry entry.
+- Giving as a "justified metaclass" something `__init_subclass__` does (a registry, a required attribute). The justified case must need the class object's own behaviour or `__prepare__`.
+- Forgetting that `@dataclass` also gives you defaults, keyword arguments and a correct `__repr__` for free, which the metaclass does not.

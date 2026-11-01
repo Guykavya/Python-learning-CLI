@@ -1,0 +1,8 @@
+id = "core.21.p049"
+title = "Explain: choose the concurrency tool"
+tier = "deep"
+kind = "explain"
+topics = ["threads vs processes vs asyncio", "I/O-bound vs CPU-bound", "bounded concurrency", "timeouts", "cancellation", "design"]
+minutes = 40
+difficulty = 4
+assessment = "explain"

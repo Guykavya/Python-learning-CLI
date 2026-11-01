@@ -1,0 +1,7 @@
+id = "core.21.p009"
+title = "Stop a worker with an Event"
+tier = "drill"
+kind = "code"
+topics = ["threading.Event", "Event.wait(timeout)", "stopping threads", "background workers"]
+minutes = 20
+difficulty = 2

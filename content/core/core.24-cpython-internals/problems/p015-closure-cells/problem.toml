@@ -1,0 +1,7 @@
+id = "core.24.p015"
+title = "Trace: closures, cells and late binding"
+tier = "applied"
+kind = "trace"
+topics = ["closures", "cells", "co_freevars", "co_cellvars", "__closure__", "late binding"]
+minutes = 20
+difficulty = 3

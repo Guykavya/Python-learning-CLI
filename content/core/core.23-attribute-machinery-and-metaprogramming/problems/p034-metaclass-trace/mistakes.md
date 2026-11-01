@@ -1,0 +1,7 @@
+- Writing `mcls=MetaA` for `B`, `C` and `D`. The method is inherited from `MetaA`, but `mcls` is the metaclass being used, `MetaB`.
+- Choosing `MetaA` for `C` because `A` is listed first. The most derived metaclass wins, whatever the order of the bases.
+- Printing `init_subclass A ...` or `init_subclass B ...`. The hook runs for subclasses of `A` only.
+- Giving `D` the label `x-D`. Class keywords are not inherited; `D` gets the default `prefix=""`.
+- Printing a `MetaA.__new__ ... class=E` line before the error. The metaclass conflict is detected before `__new__` is called.
+- Printing `C.__init__ -1`. `__init__` runs only when `__new__` returns an instance of the class.
+- Answering `got C` for `D(2)`. The object is built with `cls` = `D`, so its type is `D`.

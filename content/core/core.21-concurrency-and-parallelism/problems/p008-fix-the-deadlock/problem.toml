@@ -1,0 +1,8 @@
+id = "core.21.p008"
+title = "Fix: the bank that freezes"
+tier = "deep"
+kind = "code"
+topics = ["deadlock", "lock ordering", "RLock", "check-then-act", "debugging threads"]
+minutes = 45
+difficulty = 4
+assessment = "fix"

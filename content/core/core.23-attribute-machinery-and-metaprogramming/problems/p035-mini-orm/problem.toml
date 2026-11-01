@@ -1,0 +1,8 @@
+id = "core.23.p035"
+title = "Project: a Mini ORM with descriptors"
+tier = "challenge"
+kind = "code"
+topics = ["descriptors", "__set_name__", "__init_subclass__", "validated fields", "sqlite3", "parameterised queries", "ORM design"]
+minutes = 120
+difficulty = 5
+assessment = "build"

@@ -1,0 +1,7 @@
+id = "core.24.p018"
+title = "The rules of hashing"
+tier = "applied"
+kind = "code"
+topics = ["hash", "__hash__", "__eq__", "hashable", "dict internals", "hash collisions", "immutability"]
+minutes = 30
+difficulty = 3

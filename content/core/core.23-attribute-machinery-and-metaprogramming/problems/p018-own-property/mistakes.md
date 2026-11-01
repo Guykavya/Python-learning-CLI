@@ -1,0 +1,7 @@
+- Leaving out `__set__` when there is no setter. `Prop` becomes a non-data descriptor and `c.area = 1` silently creates an instance attribute that hides the property.
+- `.setter()` that sets `self.fset = fset` and returns `self`. It seems to work in one class, but `@Base.v.setter` in a subclass then gives `Base` a setter too.
+- Building the copy with `Prop(...)` instead of `type(self)(...)`, which turns a subclass of `Prop` back into a plain `Prop`.
+- Forgetting to carry `__doc__` into the new object: after `@x.setter` the docstring is gone.
+- Returning `self.fget` instead of calling it (`self.fget(instance)`), so `c.radius` gives a function.
+- Calling `self.fset(value)` without the instance: the setter's `self` parameter would receive the value.
+- Not handling `instance is None`, so `Circle.radius` runs the getter with `None` and crashes.

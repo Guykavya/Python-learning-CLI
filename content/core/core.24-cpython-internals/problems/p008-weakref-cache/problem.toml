@@ -1,0 +1,7 @@
+id = "core.24.p008"
+title = "A cache that does not keep objects alive"
+tier = "drill"
+kind = "code"
+topics = ["weakref", "WeakValueDictionary", "caching", "object lifetime", "gc.collect"]
+minutes = 20
+difficulty = 2

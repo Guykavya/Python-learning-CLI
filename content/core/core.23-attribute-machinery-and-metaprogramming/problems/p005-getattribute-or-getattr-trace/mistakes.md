@@ -1,0 +1,7 @@
+- Printing `getattr ...` for attributes that exist. `__getattr__` runs only after the normal lookup fails.
+- Forgetting the `getattribute` line for properties and class attributes. It runs for every read, wherever the attribute lives.
+- Thinking `p.broken` shows an error. The property's `AttributeError` is taken as "missing", so `__getattr__` answers instead.
+- Answering `0` for `getattr(p, "y", 0)`. The default is used only when `AttributeError` reaches `getattr`, and the fallback prevented that.
+- Printing hook lines for `self.x = 1` or `p.y = 5`. Writes call `__setattr__`, not the reading hooks.
+- Missing the `getattribute __dict__` line: `vars(p)` is just a read of `p.__dict__`.
+- Writing the value before the hook lines. The attribute is read (and the hooks print) before `print` itself runs.

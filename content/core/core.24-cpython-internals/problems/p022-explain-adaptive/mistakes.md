@@ -1,0 +1,6 @@
+- Calling it a JIT compiler. The adaptive interpreter still interprets bytecode; it only swaps in more specific instructions. Machine code generation is the separate, experimental JIT (3.13+).
+- Thinking specialisation can change results. A failed guard falls back to the generic behaviour, so `add(1.5, 2.5)` is always `4.0`.
+- Thinking the code is specialised at compile time or from type hints. It is based on what actually happened at run time; annotations play no part.
+- Quoting exact warm-up counts or instruction names as facts about "Python". They are CPython details and differ between 3.11, 3.12, 3.13 and 3.14.
+- Expecting `dis.dis(f, adaptive=True)` to show specialised names before `f` has run. It shows only what has happened so far.
+- Forgetting the cost side: code whose types keep changing pays for failed guards and gets little or no speed-up.

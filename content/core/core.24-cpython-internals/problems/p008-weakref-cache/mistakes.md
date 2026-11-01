@@ -1,0 +1,6 @@
+- Using a normal dict. Every object stays alive forever, and the cache grows without limit.
+- Writing `self._entries[key] = self.factory(key)` and then `return self._entries[key]`. Between the two lines the new object has only a weak reference, so CPython frees it at once and the lookup raises `KeyError`.
+- Checking `if key in self._entries:` and then reading `self._entries[key]`. In theory the object can die between the two steps; one `.get(key)` is safe.
+- Keeping a separate list of keys for `len`. The weak dictionary already drops dead entries; a separate list goes stale.
+- Testing liveness without `gc.collect()` on other Pythons: only CPython frees objects the moment their count reaches zero.
+- Expecting ints or strings to work as values. They do not support weak references (`TypeError`).

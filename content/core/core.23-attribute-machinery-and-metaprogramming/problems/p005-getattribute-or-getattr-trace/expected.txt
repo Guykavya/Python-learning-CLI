@@ -1,0 +1,22 @@
+getattribute x
+1
+getattribute kind
+probe
+getattribute area
+10
+getattribute missing
+getattr missing
+fallback-missing
+getattribute broken
+getattr broken
+fallback-broken
+getattribute y
+getattr y
+fallback-y
+getattribute z
+getattr z
+True
+getattribute y
+5
+getattribute __dict__
+2

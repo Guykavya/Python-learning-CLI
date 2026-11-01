@@ -1,0 +1,12 @@
+created, alive: False
+A runs in worker-A
+A joined, alive: False
+B runs in MainThread
+after b.run(), alive: False
+C: started
+main: C alive? True
+main: keeps going while C waits
+C: finished
+main: C alive? False
+result from d: [10]
+end of MainThread

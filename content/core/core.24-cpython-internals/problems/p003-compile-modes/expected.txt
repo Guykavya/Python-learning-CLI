@@ -1,0 +1,10 @@
+code <module> <calc>
+42 abab
+None
+10 15 True
+<module> ['y', 'z']
+None
+SyntaxError <bad>
+42
+result: None
+[1, 2, 3] 3

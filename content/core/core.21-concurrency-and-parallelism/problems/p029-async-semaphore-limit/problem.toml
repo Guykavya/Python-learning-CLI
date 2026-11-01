@@ -1,0 +1,7 @@
+id = "core.21.p029"
+title = "At most N at a time with asyncio.Semaphore"
+tier = "applied"
+kind = "code"
+topics = ["asyncio.Semaphore", "bounded concurrency", "asyncio.gather", "async with"]
+minutes = 20
+difficulty = 3

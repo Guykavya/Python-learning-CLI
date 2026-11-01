@@ -1,0 +1,15 @@
+tasks created
+A step 0
+B step 0
+main after sleep(0)
+A step 1
+B step 1
+A done
+B step 2
+main got A
+B done
+main got B
+C done? False
+C step 0
+C done
+C done? True

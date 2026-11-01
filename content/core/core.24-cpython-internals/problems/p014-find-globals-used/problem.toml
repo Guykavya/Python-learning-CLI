@@ -1,0 +1,7 @@
+id = "core.24.p014"
+title = "Which globals does a function use?"
+tier = "applied"
+kind = "code"
+topics = ["dis", "LOAD_GLOBAL", "co_names", "co_consts", "builtins", "static analysis"]
+minutes = 25
+difficulty = 3

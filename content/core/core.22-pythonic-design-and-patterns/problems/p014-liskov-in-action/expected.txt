@@ -1,0 +1,14 @@
+plain ok [3, 2, 1]
+limit3 ok [3, 2, 1]
+limit2 raised OverflowError
+dedup ok [3, 2, 1]
+dedup-repeat wrong [2, 1]
+counting ok [5, 4]
+pushes 2
+frozen raised TypeError
+frozen-empty ok []
+Stack True True
+LimitedStack True False
+DedupStack True False
+CountingStack True False
+FrozenStack True False

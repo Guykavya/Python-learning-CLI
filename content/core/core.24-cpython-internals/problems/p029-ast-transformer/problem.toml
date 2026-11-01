@@ -1,0 +1,7 @@
+id = "core.24.p029"
+title = "Your own constant folder with ast.NodeTransformer"
+tier = "deep"
+kind = "code"
+topics = ["ast", "NodeTransformer", "constant folding", "ast.unparse", "operator precedence", "compiler optimisation"]
+minutes = 40
+difficulty = 4

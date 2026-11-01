@@ -1,0 +1,7 @@
+id = "core.21.p014"
+title = "A counter shared between processes"
+tier = "deep"
+kind = "code"
+topics = ["multiprocessing.Process", "multiprocessing.Value", "get_lock", "separate memory", "shared state"]
+minutes = 30
+difficulty = 4
