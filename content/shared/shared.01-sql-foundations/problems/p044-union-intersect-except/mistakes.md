@@ -1,0 +1,4 @@
+- Using `UNION ALL` for `QUERY_A`: addresses on both lists (and repeated ones) appear several times.
+- Swapping the two sides of `EXCEPT`: `buyers EXCEPT newsletter` answers a different question (who bought but is not subscribed).
+- Putting `ORDER BY` after the first `SELECT` of the compound: SQLite reports an error, because only the last position may sort.
+- Selecting different numbers of columns on the two sides.

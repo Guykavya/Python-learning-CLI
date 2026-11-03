@@ -1,0 +1,8 @@
+- Using `hashlib.sha256(email)` without a key. Anyone can hash a list of known emails and match them: a dictionary attack. Use HMAC with a secret.
+- `hashlib.sha256(key + email)` instead of HMAC. It is a home-made construction with known weaknesses (length extension) and gives different values; use the `hmac` module.
+- A default key in the code (`os.environ.get(NAME, "dev-key")`). The default ends up in git and in production, and the pseudonyms become recomputable by everyone.
+- Putting the key's value in an error or log message. Logs are read by many more people than the secret's owners.
+- Forgetting to normalise. `Asha@Example.com` and `asha@example.com` become two customers.
+- Not stripping the variable: a trailing newline from a `.env` file changes every pseudonym, and old and new runs no longer join.
+- Adding randomness (a salt per call, `uuid4`). The value is then unlinkable even for you, and joins and counts break.
+- Thinking pseudonymised data is anonymous. With the key it can be linked back, so it still needs protection.

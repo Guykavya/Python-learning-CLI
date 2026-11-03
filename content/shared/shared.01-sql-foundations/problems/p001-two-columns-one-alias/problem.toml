@@ -1,0 +1,7 @@
+id = "shared.01.p001"
+title = "Two columns and one alias"
+tier = "drill"
+kind = "code"
+topics = ["SELECT", "column alias", "projection"]
+minutes = 10
+difficulty = 1

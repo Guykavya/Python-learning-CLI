@@ -1,0 +1,7 @@
+id = "shared.01.p055"
+title = "Streaks of consecutive days (gaps and islands)"
+tier = "challenge"
+kind = "code"
+topics = ["gaps and islands", "ROW_NUMBER", "date()", "GROUP BY"]
+minutes = 35
+difficulty = 4

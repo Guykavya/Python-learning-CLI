@@ -1,0 +1,7 @@
+id = "shared.01.p042"
+title = "Chained CTEs: customers with above-average orders"
+tier = "applied"
+kind = "code"
+topics = ["chained CTEs", "WITH a, b", "scalar subquery", "layered aggregation"]
+minutes = 30
+difficulty = 3

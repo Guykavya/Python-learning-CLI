@@ -1,0 +1,5 @@
+- Using `<= 10` for budget. A book at exactly 10.00 is `standard`.
+- Wrong order of branches (`price < 20` first): everything under 20 becomes `standard`.
+- Forgetting `END`, or writing `END CASE` (that is another dialect's syntax).
+- Forgetting `AS band`: the column is then named after the whole expression.
+- Returning only the band. The statement wants `title` first.

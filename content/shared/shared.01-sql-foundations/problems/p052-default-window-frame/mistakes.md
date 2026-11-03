@@ -1,0 +1,5 @@
+- Predicting 30 for both 20 rows. That is the `ROWS` answer; the default is `RANGE`, which includes peers.
+- Thinking `ORDER BY` inside `OVER` is only about display order. It also defines peers and the frame.
+- Assuming `SUM(...) OVER ()` is a running total. Without `ORDER BY` the frame is the whole partition.
+- Forgetting that `by_rows` was told to break ties by `id`, so id 2 comes before id 3.
+- Writing the header line or quotes in `answer.txt`.

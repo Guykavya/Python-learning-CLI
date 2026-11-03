@@ -1,0 +1,8 @@
+- Moving the token to a config file that is also committed. It must be outside the repository (environment variable or secret store), and the leaked token must be rotated.
+- Missing that the token also leaks through the DEBUG header log, not only through the source code.
+- Saying "turn logging off". Logs are needed; log ids, counts and the run id, never whole records or secrets.
+- Masking the emails in the marketing export and calling it done. Marketing needs totals per city; the right export has no customer-level rows at all.
+- Hashing emails with plain sha256 and calling them anonymous. A dictionary attack reverses them; use HMAC with a secret, and it is still personal data.
+- Forgetting that SQLite has no users: anyone who can read the `.db` file can read every table, so the folder and file permissions are the boundary.
+- Writing generic advice ("follow GDPR", "be careful") without saying what is wrong in this code and who could see the data.
+- No retention rule. "We might need it one day" is how old data ends up in a breach.

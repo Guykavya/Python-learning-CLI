@@ -1,0 +1,7 @@
+id = "shared.01.p023"
+title = "Explain: FULL JOIN and how to emulate it"
+tier = "deep"
+kind = "explain"
+topics = ["FULL JOIN", "LEFT JOIN", "UNION ALL", "reconciliation", "SQLite versions"]
+minutes = 30
+difficulty = 4

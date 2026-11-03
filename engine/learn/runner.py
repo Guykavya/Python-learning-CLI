@@ -78,6 +78,10 @@ def run_code_tests(problem: Problem, solution_dir: Path, solution_file: Path | N
         # glibc gives every thread its own 64 MB malloc arena; under the 1 GiB cap that allows
         # only ~18 threads. Two shared arenas allow ~110 (core.21 concurrency problems need them).
         env.setdefault("MALLOC_ARENA_MAX", "2")
+        # pyarrow (shared.02) sizes its thread pools by CPU count; on many-core machines the cap
+        # then stops it with "Failed to launch worker thread". Small pools are plenty for tests.
+        env.setdefault("OMP_NUM_THREADS", "2")
+        env.setdefault("ARROW_IO_THREADS", "2")
         try:
             proc = subprocess.run(
                 cmd, cwd=tmpd, capture_output=True, text=True, encoding="utf-8", errors="replace",

@@ -1,0 +1,8 @@
+id = "shared.01.p033"
+title = "Fix: the order count is too high"
+tier = "deep"
+kind = "code"
+topics = ["join fan-out", "COUNT(DISTINCT)", "debugging queries"]
+minutes = 25
+difficulty = 3
+assessment = "fix"

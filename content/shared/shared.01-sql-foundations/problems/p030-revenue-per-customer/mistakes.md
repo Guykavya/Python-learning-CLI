@@ -1,0 +1,5 @@
+- Summing `unit_price` alone, or `qty` alone, instead of `qty * unit_price`.
+- Putting `status <> 'cancelled'` in `ON` of a later `LEFT JOIN` and keeping customers who should have disappeared (or the reverse).
+- Grouping by `name` when two customers can share a name: their revenues merge. Group by `customer_id` (and select `name` too).
+- Using `status != 'cancelled'` on data with NULL status: NULL status rows are dropped (NULL comparison is unknown). Not an issue here, but remember it.
+- Forgetting the tie-break: two customers with equal revenue need a fixed order.

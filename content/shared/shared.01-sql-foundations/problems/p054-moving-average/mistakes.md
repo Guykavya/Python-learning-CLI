@@ -1,0 +1,5 @@
+- Writing `ROWS BETWEEN 3 PRECEDING AND CURRENT ROW`: that is four rows.
+- Forgetting the frame: with only `ORDER BY` the default frame is a running average from the start (see p052).
+- Dividing by 3 yourself for the first rows (so day 1 would be 3.33 instead of 10.0).
+- Using `1 PRECEDING AND 1 FOLLOWING`: a centred window, which peeks at the future day.
+- Not rounding: 21.666666 does not match 21.67.

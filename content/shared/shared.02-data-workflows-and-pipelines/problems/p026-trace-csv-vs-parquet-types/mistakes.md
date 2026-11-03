@@ -1,0 +1,8 @@
+- Writing `id 7 int` for the CSV half. `csv.DictReader` never converts anything; every field is a `str`.
+- Expecting `None` back for the empty CSV field. CSV cannot tell "missing" from "empty string"; you get `''`.
+- Answering `paid? no` for CSV. `bool('False')` is `True`: any non-empty string is truthy. This exact bug ships in real pipelines.
+- Answering `8` for `back["id"] + back["zip"]`. Two strings are concatenated: `7007`.
+- Writing the CSV timestamp with a `T`. `csv` uses `str(value)`, and `str()` of a datetime puts a space between date and time.
+- Writing `zip 7 int` for Parquet. The schema says `string`, so `"007"` keeps its leading zeros.
+- Writing `39.8` for `got["amount"] * 2`. `Decimal("19.90") * 2` keeps the scale of `19.90`: `39.80`.
+- Writing `timestamp[us, tz=UTC]` as `timestamp("us", tz="UTC")`. `print` shows pyarrow's own display form with square brackets.

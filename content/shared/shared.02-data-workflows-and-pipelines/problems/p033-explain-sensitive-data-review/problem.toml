@@ -1,0 +1,7 @@
+id = "shared.02.p033"
+title = "Explain: a privacy review of a pipeline"
+tier = "deep"
+kind = "explain"
+topics = ["sensitive data", "secrets", "logging", "least privilege", "retention", "data minimisation", "file permissions"]
+minutes = 35
+difficulty = 4

@@ -1,0 +1,8 @@
+id = "shared.01.p045"
+title = "Trace: UNION vs UNION ALL (and NULL)"
+tier = "deep"
+kind = "trace"
+topics = ["UNION vs UNION ALL", "INTERSECT", "EXCEPT", "duplicates", "ORDER BY on compound query"]
+minutes = 25
+difficulty = 3
+assessment = "trace"

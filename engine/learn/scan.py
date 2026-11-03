@@ -22,7 +22,7 @@ IMPORT_MODULES = {
     "threading": "core.21", "multiprocessing": "core.21", "asyncio": "core.21", "concurrent": "core.21",
     "unittest": "core.19", "pytest": "core.08", "hypothesis": "core.19",
     "dis": "core.24", "ctypes": "core.24",
-    "sqlite3": "shared.01", "httpx": "swe.02", "requests": "swe.02", "socket": "swe.02",
+    "sqlite3": "shared.01", "pyarrow": "shared.02", "httpx": "swe.02", "requests": "swe.02", "socket": "swe.02",
     "bs4": "swe.02", "sqlalchemy": "swe.03", "psycopg": "swe.03", "pymysql": "swe.03",
     "flask": "swe.04", "fastapi": "swe.05", "pydantic": "swe.05", "django": "swe.06",
     "redis": "swe.08", "celery": "swe.08", "typer": "swe.11", "click": "swe.11", "playwright": "swe.11",

@@ -1,0 +1,7 @@
+id = "shared.02.p016"
+title = "Trace: > versus >= at the watermark"
+tier = "deep"
+kind = "trace"
+topics = ["incremental loads", "watermark", "late data", "overlap window", "idempotent upsert"]
+minutes = 25
+difficulty = 4

@@ -1,0 +1,4 @@
+- Joining everything in one query without `DISTINCT`: Asha appears twice.
+- Selecting more than one column in the subquery: `IN` compares to one column.
+- Comparing the wrong ids: `customer_id IN (SELECT order_id ...)` type-checks silently and returns nonsense.
+- Writing `category = 'Tech'` (capital T): text comparison is case sensitive in SQLite for `=`.

@@ -1,0 +1,4 @@
+- Applying `HAVING` to the original rows: counting tech as 2 books (D and E) although E was already removed by `WHERE`.
+- Writing `15` instead of `15.0`: the column is `REAL`, so the value prints as a float.
+- Listing the tech group because it had 2 books "in the table". `HAVING` only sees the groups made from rows that survived `WHERE`.
+- Forgetting that `ORDER BY category` sorts the text, so `fiction` comes before `food`.

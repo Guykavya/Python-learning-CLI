@@ -1,0 +1,7 @@
+id = "shared.01.p024"
+title = "COUNT(*), COUNT(col) and COUNT(DISTINCT col)"
+tier = "drill"
+kind = "code"
+topics = ["COUNT", "COUNT DISTINCT", "NULL in aggregates"]
+minutes = 12
+difficulty = 1

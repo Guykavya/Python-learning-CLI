@@ -1,0 +1,4 @@
+- Forgetting the correlation (`WHERE o.status = 'shipped'` without `o.customer_id = c.customer_id`): the subquery is then true for everyone or no one.
+- Writing `NOT EXISTS` for `QUERY_A` or the opposite: read it aloud: "customers for whom a shipped order exists".
+- `SELECT *` vs `SELECT 1` inside `EXISTS`: both work; it is not a bug.
+- Using an inner join for `QUERY_B`: it can only return books that *do* have order lines.

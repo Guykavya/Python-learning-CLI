@@ -1,0 +1,5 @@
+- Saying "the problem is the quote character, so escape it". Hand-written escaping always misses a case (encodings, comments, numbers without quotes). The fix is to stop mixing data into code.
+- Believing `?` is just a safer way to insert text into the string. The database receives the SQL and the values separately; no text splicing happens.
+- Trying `SELECT * FROM ?` or `ORDER BY ?` and being surprised: placeholders are for values only; `ORDER BY ?` sorts by a constant (no effect).
+- Thinking injection only affects login forms. Any query built from input is open, including `DELETE` and `UPDATE`.
+- Assuming a read-only user makes it harmless; the attacker can still read every table the user can read.

@@ -1,0 +1,4 @@
+- Using `o.ordered = (SELECT MAX(o2.ordered) ...)` without a tie-break: two orders on the latest date both appear.
+- Forgetting the correlation `o2.customer_id = c.customer_id`: the subquery returns the single latest order of the whole shop, and every customer gets only that.
+- Comparing dates as numbers or reformatting them. `YYYY-MM-DD` text sorts correctly as text.
+- Using `LIMIT 1` in the outer query: that returns one row in total, not one per customer.

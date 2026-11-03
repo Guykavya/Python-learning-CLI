@@ -1,0 +1,7 @@
+id = "shared.02.p031"
+title = "Pseudonymise customer emails with HMAC"
+tier = "applied"
+kind = "code"
+topics = ["pseudonymisation", "hmac", "hashlib.sha256", "secrets from environment", "os.environ", "PII", "dictionary attack"]
+minutes = 30
+difficulty = 3

@@ -1,0 +1,7 @@
+id = "shared.01.p009"
+title = "IS NULL and IS NOT NULL"
+tier = "drill"
+kind = "code"
+topics = ["NULL", "IS NULL", "IS NOT NULL"]
+minutes = 10
+difficulty = 2

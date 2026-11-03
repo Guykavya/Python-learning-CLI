@@ -1,0 +1,4 @@
+- Writing `WHERE price > AVG(price)`: "misuse of aggregate". Aggregates need a subquery here.
+- Using `>=`: a book priced exactly at the average is not "above" it.
+- Hard-coding the average number. The test uses different data.
+- A subquery that returns several columns or rows, e.g. `(SELECT price FROM books)`. A scalar subquery must give one value.

@@ -1,0 +1,5 @@
+- `LIKE 'S'` without `%` matches only a title that is exactly `S`.
+- `LIKE '%S%'` matches an S anywhere ("Night Train" has none, but "Data Basics" has one), not just at the start.
+- `BETWEEN 18 AND 10` (low and high swapped) matches nothing.
+- Thinking `BETWEEN 10 AND 18` excludes 18. It includes both ends.
+- `IN ('tech, cooking')`: one string, not two values.

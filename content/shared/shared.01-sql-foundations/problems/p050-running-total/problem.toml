@@ -1,0 +1,7 @@
+id = "shared.01.p050"
+title = "Running total per store"
+tier = "applied"
+kind = "code"
+topics = ["SUM OVER", "running total", "PARTITION BY", "window frame"]
+minutes = 20
+difficulty = 2

@@ -1,0 +1,10 @@
+(['id', 'status', 'city', 'email'], [(101, 'shipped', 'Pune', 'a***@example.com')])
+DENIED support -> orders
+ERROR no such column: amount_cents
+(['customer_key', 'n'], [('k1', 1), ('k2', 1)])
+(['id', 'city'], [(101, 'Pune'), (102, None)])
+DENIED intern -> analyst_orders
+(['SUM(amount_cents)'], [(27499,)])
+(['COUNT(DISTINCT email)', 'COUNT(DISTINCT customer_key)'], [(2, 2)])
+ERROR cannot modify support_orders because it is a view
+(['COUNT(*)'], [(3,)])

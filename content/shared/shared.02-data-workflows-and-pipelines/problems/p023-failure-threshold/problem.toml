@@ -1,0 +1,7 @@
+id = "shared.02.p023"
+title = "Bad records: skip a few, abort on too many"
+tier = "applied"
+kind = "code"
+topics = ["failed-record handling", "failure threshold", "data-quality checks", "custom exceptions", "transactions", "run summary"]
+minutes = 40
+difficulty = 3

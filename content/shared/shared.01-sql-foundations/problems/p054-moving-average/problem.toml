@@ -1,0 +1,7 @@
+id = "shared.01.p054"
+title = "Three-day moving average with ROWS BETWEEN"
+tier = "deep"
+kind = "code"
+topics = ["frames", "ROWS BETWEEN", "AVG OVER", "ROUND"]
+minutes = 25
+difficulty = 3

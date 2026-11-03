@@ -1,0 +1,5 @@
+- Computing `LAG(revenue) - revenue` (the sign is reversed).
+- Replacing the first `NULL` with 0 using `COALESCE`; the statement asks for NULL, and 0 would claim "no change".
+- Not ordering inside `OVER`: `LAG` then looks at an unspecified previous row.
+- Using `GROUP BY` plus a join to get previous values; far more code for the same result.
+- Naming the column `diff` instead of `change`.

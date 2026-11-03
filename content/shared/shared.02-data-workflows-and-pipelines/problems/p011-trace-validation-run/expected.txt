@@ -1,0 +1,13 @@
+OK 1 shipped 10.50 2024-06-01T10:00:00+00:00
+OK True pending 0 2024-06-02T09:00:00+05:30
+BAD {"id": "2", "reason": "id: not int"}
+BAD {"id": 3, "reason": "status: null; amount: not str"}
+BAD {"id": 5, "reason": "KeyError"}
+batch1 2 3 ABORT
+OK 6 cancelled 4.25 2024-06-03T00:00:00
+OK 8 shipped 1E+3 2024-06-03T08:00:00+00:00
+BAD {"id": 7, "reason": "ValueError"}
+batch2 2 1 ABORT
+OK 9 shipped 2.50 2024-06-04T08:00:00+00:00
+CRASH InvalidOperation at id 10
+BAD {"id": 11, "reason": "KeyError"}

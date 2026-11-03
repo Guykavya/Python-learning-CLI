@@ -1,0 +1,4 @@
+- `WHERE pages = NULL` or `pages == NULL`: returns no rows (the comparison is unknown, not true).
+- `WHERE pages = ''` or `= 0`: NULL is not empty text and not zero. A book with 0 pages is not unknown.
+- `WHERE pages <> NULL` for the "known" query: also returns nothing.
+- Counting on `NOT pages IS NULL` precedence tricks. Use `IS NOT NULL`.

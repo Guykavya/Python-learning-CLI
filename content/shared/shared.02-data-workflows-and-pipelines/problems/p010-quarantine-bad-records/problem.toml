@@ -1,0 +1,7 @@
+id = "shared.02.p010"
+title = "Quarantine bad records instead of crashing"
+tier = "applied"
+kind = "code"
+topics = ["quarantine", "JSON Lines", "error handling", "except Exception", "pathlib", "bad records"]
+minutes = 35
+difficulty = 3

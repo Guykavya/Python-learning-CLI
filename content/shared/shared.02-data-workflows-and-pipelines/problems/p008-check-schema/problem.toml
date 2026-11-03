@@ -1,0 +1,7 @@
+id = "shared.02.p008"
+title = "A schema check that lists every problem"
+tier = "drill"
+kind = "code"
+topics = ["schema check", "data contract", "isinstance", "bool is an int", "validation"]
+minutes = 25
+difficulty = 2

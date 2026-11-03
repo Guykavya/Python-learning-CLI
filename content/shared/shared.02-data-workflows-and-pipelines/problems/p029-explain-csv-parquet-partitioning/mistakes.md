@@ -1,0 +1,7 @@
+- Choosing Parquet for everything because it is "better". A file the reader cannot open is not better.
+- Saying "Parquet is faster" without the reason: columnar reads (only the needed columns), compression, and no re-parsing of text.
+- Partitioning by a column the queries never filter on. Nothing gets skipped; you only get more files.
+- Partitioning by a high-cardinality key (customer id, order id, exact timestamp). Each folder holds a few rows, and the cost of listing and opening thousands of files beats the cost of reading the data.
+- Partitioning tiny data at all. A few megabytes are read faster as one file than as 43,800.
+- Forgetting the auditor's CSV traps: leading zeros, local date formats, floats for money, and sending emails or other PII that were not needed.
+- Ignoring re-runs in B: appending a re-run day's files duplicates the day; overwrite the partition instead.

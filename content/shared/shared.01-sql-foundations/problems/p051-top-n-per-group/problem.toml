@@ -1,0 +1,7 @@
+id = "shared.01.p051"
+title = "Top 2 earners in each department"
+tier = "applied"
+kind = "code"
+topics = ["ROW_NUMBER", "PARTITION BY", "top-N per group", "subquery or CTE"]
+minutes = 25
+difficulty = 3

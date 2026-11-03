@@ -1,0 +1,7 @@
+id = "shared.01.p019"
+title = "Anti-join: customers with no orders"
+tier = "applied"
+kind = "code"
+topics = ["anti-join", "LEFT JOIN", "IS NULL", "NOT EXISTS", "NOT IN"]
+minutes = 20
+difficulty = 3

@@ -1,0 +1,7 @@
+id = "shared.01.p064"
+title = "transfer() with a transaction and rollback"
+tier = "deep"
+kind = "code"
+topics = ["transactions", "sqlite3 context manager", "commit and rollback", "atomicity", "exceptions"]
+minutes = 40
+difficulty = 4

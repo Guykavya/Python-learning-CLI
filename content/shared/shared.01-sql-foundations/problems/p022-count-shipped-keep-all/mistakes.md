@@ -1,0 +1,4 @@
+- `WHERE o.status = 'shipped'` instead of the condition in `ON`: customers with zero shipped orders vanish (Ben, Dia, Eli).
+- `COUNT(*)`: a customer with no match has one NULL row, and `COUNT(*)` counts it as 1.
+- `INNER JOIN`: same loss as the WHERE mistake.
+- Grouping by `o.customer_id`: customers with no orders all fall into one NULL group.

@@ -1,0 +1,7 @@
+id = "shared.01.p026"
+title = "Books per category"
+tier = "drill"
+kind = "code"
+topics = ["GROUP BY", "COUNT", "AVG", "ROUND"]
+minutes = 12
+difficulty = 1

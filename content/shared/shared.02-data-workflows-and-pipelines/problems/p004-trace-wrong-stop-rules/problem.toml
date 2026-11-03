@@ -1,0 +1,7 @@
+id = "shared.02.p004"
+title = "Trace: five pagination loops"
+tier = "drill"
+kind = "trace"
+topics = ["pagination", "stopping rule", "off-by-one", "slicing", "trace"]
+minutes = 20
+difficulty = 2

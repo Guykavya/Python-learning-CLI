@@ -1,0 +1,7 @@
+id = "shared.01.p059"
+title = "DELETE, then UPSERT"
+tier = "applied"
+kind = "code"
+topics = ["DELETE", "UPSERT", "ON CONFLICT DO UPDATE", "excluded", "statement order"]
+minutes = 30
+difficulty = 3

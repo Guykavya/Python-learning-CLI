@@ -1,0 +1,7 @@
+id = "shared.01.p028"
+title = "Trace: WHERE before, HAVING after"
+tier = "drill"
+kind = "trace"
+topics = ["WHERE vs HAVING", "logical query order", "GROUP BY"]
+minutes = 15
+difficulty = 2

@@ -1,0 +1,7 @@
+id = "shared.02.p019"
+title = "Resume a cursor fetch from a checkpoint"
+tier = "applied"
+kind = "code"
+topics = ["cursor pagination", "checkpoints", "resume", "crash recovery", "idempotent upsert", "atomic writes", "sqlite3"]
+minutes = 45
+difficulty = 4

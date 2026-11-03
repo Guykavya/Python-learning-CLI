@@ -1,0 +1,7 @@
+id = "shared.02.p018"
+title = "Checkpoint files: atomic save, safe load"
+tier = "applied"
+kind = "code"
+topics = ["checkpoints", "atomic writes", "os.replace", "json", "pathlib", "corrupt files", "logging"]
+minutes = 35
+difficulty = 3

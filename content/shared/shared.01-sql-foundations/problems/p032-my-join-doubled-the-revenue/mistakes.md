@@ -1,0 +1,4 @@
+- Saying "the join is wrong". The join is correct; it is the *aggregate* that assumes one row per order.
+- Fixing it with `SUM(DISTINCT o.total)`. It works on this data by luck and fails when two orders have equal totals.
+- Believing `LEFT JOIN` would change this. It keeps unmatched rows, it never removes duplicates.
+- Only checking the final number against a guess. Compare row counts before and after each join: that finds the fan-out.

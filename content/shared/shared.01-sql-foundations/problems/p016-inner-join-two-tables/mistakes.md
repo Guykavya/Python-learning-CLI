@@ -1,0 +1,4 @@
+- Forgetting `ON` (SQLite then makes a cross join, 8 x 5 = 40 rows).
+- Joining on the wrong columns (`b.book_id = a.author_id`) matches by accident for small ids and gives wrong pairs.
+- Writing `SELECT name`: ambiguous or the wrong table's column. Qualify with the alias.
+- Expecting authors without books (Zed Park) in the result. INNER JOIN drops them.

@@ -1,0 +1,7 @@
+id = "shared.01.p039"
+title = "Latest order per customer"
+tier = "applied"
+kind = "code"
+topics = ["correlated subquery", "ORDER BY ... LIMIT 1", "tie-breaking"]
+minutes = 25
+difficulty = 3

@@ -1,0 +1,7 @@
+id = "shared.01.p032"
+title = "Explain: my join doubled the revenue"
+tier = "deep"
+kind = "explain"
+topics = ["join fan-out", "one-to-many", "SUM over joined rows", "grain"]
+minutes = 25
+difficulty = 4

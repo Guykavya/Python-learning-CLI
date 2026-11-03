@@ -1,0 +1,5 @@
+- Running the upsert before the delete: book 2 would get `0 + 3 = 3`, be treated as existing, and the delete would remove it afterwards.
+- `DELETE FROM stock` without `WHERE`: empties the table.
+- Writing `SET qty = excluded.qty`: replaces instead of adding.
+- Skipping `GROUP BY`: without it two rows for the same book hit the upsert one after another; it works, but aggregating first is clearer and does less work.
+- Using `INSERT OR REPLACE`: it would replace (7+1 never added, existing 10 lost).

@@ -1,0 +1,7 @@
+id = "shared.01.p061"
+title = "Normalise a flat table into three tables"
+tier = "deep"
+kind = "code"
+topics = ["normalisation", "CREATE TABLE", "INSERT ... SELECT", "foreign keys", "PRIMARY KEY"]
+minutes = 40
+difficulty = 4

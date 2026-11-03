@@ -1,0 +1,7 @@
+id = "shared.01.p010"
+title = "Trace: comparisons with NULL"
+tier = "drill"
+kind = "trace"
+topics = ["NULL", "three-valued logic", "NOT IN", "IN"]
+minutes = 20
+difficulty = 3

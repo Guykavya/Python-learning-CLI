@@ -1,0 +1,6 @@
+- Calling `con.commit()` after the first `UPDATE` and before the second: the transaction is split and a later failure cannot be undone.
+- Catching the exception inside the `with` block and returning quietly: `with` then commits the half-done work.
+- Checking the target account only before the debit and not at all afterwards (or the reverse), so one of the failure paths leaves money missing.
+- Letting `sqlite3.IntegrityError` from the `CHECK` constraint escape, when the statement says `ValueError`.
+- Building SQL with f-strings.
+- Believing `with con:` closes the connection (it does not) or that it starts a transaction before any change is made (it does not matter here).

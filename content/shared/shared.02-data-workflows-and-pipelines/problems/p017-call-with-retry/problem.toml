@@ -1,0 +1,7 @@
+id = "shared.02.p017"
+title = "call_with_retry: backoff, jitter and Retry-After"
+tier = "drill"
+kind = "code"
+topics = ["retries", "exponential backoff", "jitter", "Retry-After", "429", "5xx", "httpx", "dependency injection", "logging"]
+minutes = 35
+difficulty = 3

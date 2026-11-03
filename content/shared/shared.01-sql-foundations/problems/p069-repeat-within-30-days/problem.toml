@@ -1,0 +1,7 @@
+id = "shared.01.p069"
+title = "Share of customers who ordered again within 30 days"
+tier = "challenge"
+kind = "code"
+topics = ["CTE", "MIN per group", "julianday", "funnel", "conditional count"]
+minutes = 45
+difficulty = 5

@@ -1,0 +1,7 @@
+id = "shared.02.p001"
+title = "get_json: one safe API call"
+tier = "drill"
+kind = "code"
+topics = ["httpx", "raise_for_status", "JSON", "status codes", "raise from", "MockTransport"]
+minutes = 20
+difficulty = 2

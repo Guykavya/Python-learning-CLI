@@ -1,0 +1,7 @@
+id = "shared.02.p012"
+title = "ELT in SQLite: raw JSON in, clean table out"
+tier = "applied"
+kind = "code"
+topics = ["ELT", "raw layer", "sqlite3", "json_extract", "json_valid", "CREATE TABLE AS SELECT", "money in cents"]
+minutes = 40
+difficulty = 3

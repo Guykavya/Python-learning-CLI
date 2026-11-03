@@ -1,0 +1,7 @@
+id = "shared.01.p062"
+title = "Explain: when does an index help?"
+tier = "deep"
+kind = "explain"
+topics = ["indexes", "EXPLAIN QUERY PLAN", "SCAN vs SEARCH", "composite index", "covering index"]
+minutes = 30
+difficulty = 4

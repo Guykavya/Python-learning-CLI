@@ -1,0 +1,7 @@
+id = "shared.01.p041"
+title = "A first CTE: units sold per book"
+tier = "drill"
+kind = "code"
+topics = ["WITH", "CTE", "GROUP BY", "JOIN"]
+minutes = 20
+difficulty = 2

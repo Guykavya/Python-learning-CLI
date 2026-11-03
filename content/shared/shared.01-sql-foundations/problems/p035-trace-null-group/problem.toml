@@ -1,0 +1,7 @@
+id = "shared.01.p035"
+title = "Trace: the NULL group and the three COUNTs"
+tier = "drill"
+kind = "trace"
+topics = ["GROUP BY with NULL", "COUNT(*) vs COUNT(col)", "ORDER BY NULL"]
+minutes = 15
+difficulty = 2

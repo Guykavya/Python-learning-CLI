@@ -1,0 +1,5 @@
+- Omitting `PARTITION BY store`: the total then runs across stores (A's 35 flows into B's rows).
+- Omitting `ORDER BY` inside `OVER`: every row gets the full store total, not a running one.
+- Using `GROUP BY store, day` plus `SUM`: that gives one number per day, not a cumulative one.
+- Putting the order in the outer `ORDER BY` only. The outer one sorts the result; the one inside `OVER` defines the accumulation.
+- Sorting by `amount` instead of `day` inside the window.

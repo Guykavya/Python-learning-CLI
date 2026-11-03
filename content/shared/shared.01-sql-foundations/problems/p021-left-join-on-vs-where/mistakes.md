@@ -1,0 +1,4 @@
+- Thinking `ON` and `WHERE` are interchangeable. For an INNER JOIN they are, for a LEFT JOIN they are not.
+- Forgetting that Ben still has an order (cancelled): in Q1 he gets `NULL` because the *shipped* match fails, not because he has no orders.
+- In Q2, keeping Ben or Dia. Their `o.status` is `cancelled` or NULL, neither equals `'shipped'`.
+- Printing a header line, quotes, or spaces around `|`.

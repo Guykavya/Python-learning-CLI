@@ -1,0 +1,7 @@
+id = "shared.01.p014"
+title = "CREATE TABLE with constraints"
+tier = "applied"
+kind = "code"
+topics = ["CREATE TABLE", "PRIMARY KEY", "NOT NULL", "UNIQUE", "CHECK", "DEFAULT"]
+minutes = 25
+difficulty = 3

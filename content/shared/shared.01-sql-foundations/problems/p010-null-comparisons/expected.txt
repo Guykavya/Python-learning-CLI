@@ -1,0 +1,14 @@
+(no rows)
+---
+Chen
+---
+Asha
+Eli
+---
+(no rows)
+---
+Asha|1
+Ben|NULL
+Chen|0
+Dia|NULL
+Eli|1

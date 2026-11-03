@@ -1,0 +1,7 @@
+id = "shared.02.p027"
+title = "Write a dataset partitioned by order date"
+tier = "applied"
+kind = "code"
+topics = ["partitioning", "hive partitioning", "pq.write_to_dataset", "pyarrow.dataset", "partition pruning", "UTC dates"]
+minutes = 35
+difficulty = 3

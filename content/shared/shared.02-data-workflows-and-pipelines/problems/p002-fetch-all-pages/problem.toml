@@ -1,0 +1,7 @@
+id = "shared.02.p002"
+title = "Page-number pagination"
+tier = "drill"
+kind = "code"
+topics = ["httpx", "pagination", "page numbers", "stopping rule", "MockTransport"]
+minutes = 20
+difficulty = 2

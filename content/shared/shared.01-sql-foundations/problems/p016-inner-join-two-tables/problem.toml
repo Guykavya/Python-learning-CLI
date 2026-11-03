@@ -1,0 +1,7 @@
+id = "shared.01.p016"
+title = "INNER JOIN: books with their authors"
+tier = "drill"
+kind = "code"
+topics = ["INNER JOIN", "ON", "table aliases", "foreign key"]
+minutes = 15
+difficulty = 2

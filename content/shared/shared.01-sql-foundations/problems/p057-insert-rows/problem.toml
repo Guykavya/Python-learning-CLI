@@ -1,0 +1,7 @@
+id = "shared.01.p057"
+title = "INSERT rows and INSERT ... SELECT"
+tier = "drill"
+kind = "code"
+topics = ["INSERT", "INSERT ... SELECT", "column list", "NULL"]
+minutes = 20
+difficulty = 2

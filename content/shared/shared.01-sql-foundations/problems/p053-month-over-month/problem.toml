@@ -1,0 +1,7 @@
+id = "shared.01.p053"
+title = "Month-over-month change with LAG"
+tier = "applied"
+kind = "code"
+topics = ["LAG", "window functions", "NULL for first row", "default value"]
+minutes = 20
+difficulty = 3

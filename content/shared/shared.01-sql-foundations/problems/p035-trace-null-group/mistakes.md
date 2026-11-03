@@ -1,0 +1,4 @@
+- Dropping the NULL group because "NULL is nothing". It is a group with its own row, printed as `NULL`.
+- Answering `NULL|2|2|2`: `COUNT(email)` and `COUNT(city)` skip NULL values.
+- Putting the NULL row last (PostgreSQL's habit). In SQLite ascending order has NULL first.
+- Quoting the strings or adding a header line: the expected format has neither.

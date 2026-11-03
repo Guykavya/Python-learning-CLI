@@ -1,0 +1,7 @@
+id = "shared.01.p058"
+title = "UPDATE with WHERE and a subquery"
+tier = "drill"
+kind = "code"
+topics = ["UPDATE", "WHERE", "subquery in UPDATE", "IN"]
+minutes = 25
+difficulty = 3

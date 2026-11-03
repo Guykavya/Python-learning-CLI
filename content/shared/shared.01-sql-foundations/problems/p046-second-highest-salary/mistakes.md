@@ -1,0 +1,5 @@
+- Using `LIMIT 1 OFFSET 1` without `DISTINCT`: with salaries 90, 90 the "second" is a copy of the first.
+- Returning no row instead of `NULL` for `QUERY_A` when there is no second salary (leaving out the outer `SELECT (...)`).
+- Counting `COUNT(*)` of higher *employees* instead of `COUNT(DISTINCT salary)`: ties push the second salary to "third place".
+- Forgetting the `e2.dept = e.dept` correlation, so the answer is for the whole company.
+- Using `=` against a value that can be NULL (`salary = (SELECT MAX(...) ...)` with an empty subquery) and silently getting no rows.

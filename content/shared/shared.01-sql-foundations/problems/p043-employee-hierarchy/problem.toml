@@ -1,0 +1,7 @@
+id = "shared.01.p043"
+title = "Employee hierarchy with depth"
+tier = "challenge"
+kind = "code"
+topics = ["recursive CTE", "WITH RECURSIVE", "hierarchy", "depth"]
+minutes = 35
+difficulty = 4

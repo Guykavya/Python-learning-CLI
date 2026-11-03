@@ -1,0 +1,4 @@
+- `ORDER BY category, price, title DESC` sorts title descending, not price. `DESC` applies to one key.
+- Forgetting the title tie-break. The two cooking books then come back in an undefined order.
+- Sorting by `price DESC, category`. Then the cheapest category is not grouped together.
+- Returning columns in a different order than the statement (`title, category, price`).

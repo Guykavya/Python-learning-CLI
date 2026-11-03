@@ -1,0 +1,4 @@
+- Using `COALESCE(city, 'unknown')` for C: `''` is not NULL, so Chen keeps an empty city.
+- Swapping the order in C (`NULLIF(COALESCE(city,'unknown'), '')`): the default is applied before cleaning, so `''` becomes NULL and stays NULL.
+- `NULLIF(city, NULL)`: never matches, because `x = NULL` is unknown.
+- Not naming the output column `city`.

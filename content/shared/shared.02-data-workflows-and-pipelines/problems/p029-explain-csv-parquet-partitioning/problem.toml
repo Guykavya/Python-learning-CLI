@@ -1,0 +1,7 @@
+id = "shared.02.p029"
+title = "Explain: CSV or Parquet, and how to partition"
+tier = "deep"
+kind = "explain"
+topics = ["csv vs parquet", "columnar storage", "partitioning", "small-files problem", "partition key choice", "data exchange"]
+minutes = 30
+difficulty = 3

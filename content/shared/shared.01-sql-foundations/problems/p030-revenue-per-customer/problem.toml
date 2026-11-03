@@ -1,0 +1,7 @@
+id = "shared.01.p030"
+title = "Revenue per customer"
+tier = "applied"
+kind = "code"
+topics = ["JOIN", "GROUP BY", "SUM", "expression in aggregate"]
+minutes = 20
+difficulty = 2

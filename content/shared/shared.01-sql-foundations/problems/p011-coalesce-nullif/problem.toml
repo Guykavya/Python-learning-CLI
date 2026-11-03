@@ -1,0 +1,7 @@
+id = "shared.01.p011"
+title = "COALESCE and NULLIF"
+tier = "drill"
+kind = "code"
+topics = ["COALESCE", "NULLIF", "NULL", "empty string"]
+minutes = 15
+difficulty = 2

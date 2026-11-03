@@ -1,0 +1,7 @@
+id = "shared.01.p049"
+title = "RANK versus DENSE_RANK with ties"
+tier = "drill"
+kind = "code"
+topics = ["RANK", "DENSE_RANK", "ties", "window functions"]
+minutes = 15
+difficulty = 2

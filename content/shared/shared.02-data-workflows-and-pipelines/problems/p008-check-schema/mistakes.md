@@ -1,0 +1,8 @@
+- Plain `isinstance(value, int)`. It accepts `True` and `False`, because `bool` is a subclass of `int`.
+- Checking the type before checking for `None`: a null becomes `expected str, got NoneType` instead of `null`.
+- `if not value:` to detect null. That treats `0`, `""` and `False` as missing data.
+- Stopping at the first error (`return [error]`). The person fixing the source wants the full list.
+- Reporting two errors for one field (for example `null` and a type error). Use `continue` after each case.
+- Skipping the type check for optional fields that are present. "Optional" only allows missing or `None`.
+- Sorting the unexpected fields. The problem asks for record order, which also helps you find them in the raw JSON.
+- `str(rule["type"])` in the message, which gives `<class 'int'>`. Use `.__name__`.

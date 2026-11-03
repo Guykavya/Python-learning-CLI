@@ -1,0 +1,5 @@
+- Believing "SQL is SQL". The core (SELECT/JOIN/GROUP BY/CASE/COALESCE/windows) is common; dates, strings, upserts, auto-increment and types differ.
+- Testing only on SQLite and assuming the same row counts. The silent differences (division, case, NULL order) do not raise errors.
+- Using `||` in MySQL for concatenation without checking `sql_mode`; by default it means logical OR.
+- Relying on SQLite's permission to select columns that are not in `GROUP BY` (it picks an arbitrary row's value). PostgreSQL rejects it; MySQL with the default mode too.
+- Treating this table as authoritative. It is from memory (not run here): verify version-specific details in the vendor docs.

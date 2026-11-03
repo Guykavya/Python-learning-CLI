@@ -1,0 +1,4 @@
+- Writing `COALESCE(AVG(pages), 0)` for `avg_if_zero`. That only replaces an all-NULL result; it does not count the unknown rows as zeros.
+- Writing `SUM(pages) / COUNT(*)`: this is integer division in some databases and gives NULL when all pages are NULL.
+- Expecting `SUM` of an all-NULL column to be 0. It is NULL. Use `COALESCE(SUM(pages), 0)` when you need a number.
+- Expecting `MIN`/`MAX` to treat NULL as the smallest value. They skip NULL.

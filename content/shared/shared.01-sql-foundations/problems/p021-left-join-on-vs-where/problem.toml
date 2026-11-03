@@ -1,0 +1,7 @@
+id = "shared.01.p021"
+title = "Trace: LEFT JOIN, condition in ON or in WHERE"
+tier = "deep"
+kind = "trace"
+topics = ["LEFT JOIN", "ON vs WHERE", "logical order", "unmatched rows"]
+minutes = 25
+difficulty = 4

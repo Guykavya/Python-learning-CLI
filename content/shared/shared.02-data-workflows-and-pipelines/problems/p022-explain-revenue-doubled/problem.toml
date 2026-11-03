@@ -1,0 +1,8 @@
+id = "shared.02.p022"
+title = "Explain: we re-ran the job and revenue doubled"
+tier = "deep"
+kind = "explain"
+topics = ["idempotency", "at-least-once", "exactly-once", "retries", "UPSERT", "delete+insert", "incident review"]
+minutes = 30
+difficulty = 4
+assessment = "explain"

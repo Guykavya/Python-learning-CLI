@@ -1,0 +1,4 @@
+- Grouping by `customer_id` only: the statuses of one customer are mixed and `status` becomes an arbitrary value.
+- Grouping by `status` only: you get one row per status for the whole shop.
+- Sorting only by `n_orders`: tied groups come out in an unspecified order and the test compares exact rows.
+- Writing `ORDER BY n_orders` without `DESC`: the smallest groups come first.

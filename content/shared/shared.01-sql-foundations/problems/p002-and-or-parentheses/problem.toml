@@ -1,0 +1,7 @@
+id = "shared.01.p002"
+title = "AND, OR and parentheses"
+tier = "drill"
+kind = "code"
+topics = ["WHERE", "AND", "OR", "parentheses", "precedence"]
+minutes = 10
+difficulty = 2

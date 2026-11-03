@@ -1,0 +1,6 @@
+- Using `with sqlite3.connect(path) as con:` and believing the file is closed afterwards. It is only committed; the connection stays open until garbage collection.
+- A Python `for` loop with `execute` and one `commit()` per row: slow, and a failure half-way leaves the first rows inserted.
+- Changing `con.row_factory` and never restoring it: the next code that expects tuples breaks.
+- Catching the `IntegrityError` and returning 0: the statement says it must propagate.
+- Forgetting that `executemany` needs a *sequence of tuples*; one flat tuple is not enough.
+- Returning `sqlite3.Row` objects instead of real dicts (they print differently and are not JSON-friendly).

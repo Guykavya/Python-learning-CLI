@@ -1,0 +1,6 @@
+- Creating `lines` before `customers` and `books`: harmless in SQLite, but the habit breaks in other databases.
+- Filling `lines` by typing ids, or by assuming the ids come in the same order as the flat rows. Join on the natural keys.
+- Forgetting `DISTINCT`: Ada appears three times and the `UNIQUE` constraint stops the script.
+- Joining on `city` too: a NULL city never equals anything with `=`, so rows for customers without a city vanish.
+- Forgetting the `REFERENCES` clauses: the tables work, but the database no longer protects you from a line pointing to a missing book.
+- Dropping `orders_flat` (the statement says to leave it).
