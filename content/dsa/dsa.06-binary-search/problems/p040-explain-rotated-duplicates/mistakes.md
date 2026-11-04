@@ -1,0 +1,3 @@
+- Saying the algorithm becomes "unusable": it is still `O(log n)` on most inputs and `O(n)` only in the worst case.
+- Claiming `hi -= 1` loses the minimum: it only discards one copy of a value that also sits at `mid`.
+- Forgetting to mention that the problem is about the minimum **value**; the index of the minimum is ambiguous with duplicates.

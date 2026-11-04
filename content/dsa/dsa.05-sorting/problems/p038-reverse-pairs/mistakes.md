@@ -1,0 +1,5 @@
+- Merging and counting in the same loop with the `<=`/`>` order of the merge: the threshold `2 * right[j]` does not follow the merge order.
+- Using `a[i] >= 2 * a[j]` instead of `>`.
+- Using integer division or `a[j] * 2` on negatives incorrectly (for example `a[i] > 2 * a[j]` written as `a[i] / 2 > a[j]` is fine, but `a[i] // 2 > a[j]` is not).
+- Resetting the pointer `i` to 0 for every `j`: that is O(n^2).
+- Brute force over all pairs: 5 * 10^9 pairs for n = 100000.

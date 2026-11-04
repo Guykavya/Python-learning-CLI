@@ -1,0 +1,5 @@
+- Moving `i` when the sum is too big. A bigger `a[i]` makes the sum bigger still.
+- Moving both pointers after each step. Exactly one pointer moves per step.
+- Forgetting the lines printed by `print(pair(...))`: the tuple `(2, 3)` and `None`.
+- Writing values instead of indices in the first two columns: `1 11 12 j-1` is wrong, it is `0 5 12 j-1`.
+- Adding a fourth step to the second call. With `i = 1` and `j = 1` the condition `i < j` is false.

@@ -1,0 +1,4 @@
+- Starting each pass from the original list instead of the result of the previous pass.
+- Treating `2` as having no tens digit and dropping it: it has tens digit 0 and stays in bucket 0.
+- Writing the same bucket contents in decreasing order inside a bucket: buckets keep the current input order.
+- Forgetting the `done` line.

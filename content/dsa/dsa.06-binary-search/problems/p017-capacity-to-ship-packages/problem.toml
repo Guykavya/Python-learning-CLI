@@ -1,0 +1,6 @@
+id = "dsa.06.p017"
+title = "Capacity to ship packages"
+tier = "applied"
+kind = "code"
+topics = ["binary search on the answer", "greedy check", "feasible predicate"]
+minutes = 35

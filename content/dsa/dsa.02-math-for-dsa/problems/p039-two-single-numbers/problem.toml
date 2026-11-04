@@ -1,0 +1,6 @@
+id = "dsa.02.p039"
+title = "Two single numbers"
+tier = "challenge"
+kind = "code"
+topics = ["xor", "lowest set bit", "partitioning by a bit"]
+minutes = 40

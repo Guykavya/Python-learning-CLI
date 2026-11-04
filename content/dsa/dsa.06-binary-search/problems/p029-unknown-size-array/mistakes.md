@@ -1,0 +1,4 @@
+- Starting the search with a fixed `hi = 10^9`: it is allowed by the rules but costs 30 questions even for tiny arrays, and fails the limit for tiny `n` where `2 * bit_length(n) + 6` is small.
+- Doubling from `hi = 0`: `0 * 2` is 0 forever.
+- Forgetting that the first doubling step can already pass the end: the reply `2147483647` must count as "too large", not as an error.
+- Not flushing, or printing debug lines.

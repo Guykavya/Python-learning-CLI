@@ -1,0 +1,6 @@
+id = "dsa.03.p013"
+title = "Trace a fixed sliding window"
+tier = "drill"
+kind = "trace"
+topics = ["sliding window", "fixed window", "trace"]
+minutes = 10

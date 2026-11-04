@@ -1,0 +1,6 @@
+id = "dsa.03.p057"
+title = "Maximum score taking cards from both ends"
+tier = "challenge"
+kind = "code"
+topics = ["sliding window", "fixed window", "complement", "prefix sums"]
+minutes = 35

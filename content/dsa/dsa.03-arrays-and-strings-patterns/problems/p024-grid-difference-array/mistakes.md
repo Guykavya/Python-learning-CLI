@@ -1,0 +1,5 @@
+- Getting one sign wrong: the corner `(r2+1, c2+1)` takes `+v`, because the two `-v` marks both cancel that block.
+- Putting the closing marks at `r2` and `c2` instead of `r2 + 1` and `c2 + 1`. Then the last row and the last column of every rectangle miss the update.
+- Making `D` only `(r+1) x (c+1)`. A rectangle that reaches the last row or column then writes outside the grid (an `IndexError`), or, with negative indices, silently into the wrong cell.
+- Taking only a prefix sum along each row, and forgetting the second direction. The values then appear only in row `r1` of each rectangle.
+- Printing the marks `D` instead of the prefix sums.

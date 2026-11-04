@@ -1,0 +1,6 @@
+id = "dsa.03.p017"
+title = "Spiral order of a grid"
+tier = "drill"
+kind = "code"
+topics = ["grid", "spiral", "boundaries", "simulation"]
+minutes = 25

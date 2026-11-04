@@ -1,0 +1,6 @@
+id = "dsa.03.p005"
+title = "Reverse parts of an array in place"
+tier = "drill"
+kind = "code"
+topics = ["two pointers", "in place", "swap", "reverse"]
+minutes = 15

@@ -1,0 +1,5 @@
+- Listing every multiple, including the ones an earlier prime already crossed. The list holds only the **new** crossings.
+- Starting the walk at `2 * p` (so `5` would list 10, 15, 20...). The code starts at `p * p`.
+- Treating 4 as a prime to process. By the time the loop reaches `p = 4`, it is already crossed, so it is skipped silently.
+- Running the loop to 11 or 13. At `p = 8`, `64 > 50` and the loop breaks (7 is the last prime used).
+- Counting 1 as a prime in the final count. It was set to `False`.

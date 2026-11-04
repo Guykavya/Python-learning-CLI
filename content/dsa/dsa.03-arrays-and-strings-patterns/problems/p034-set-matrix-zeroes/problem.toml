@@ -1,0 +1,6 @@
+id = "dsa.03.p034"
+title = "Set matrix zeroes"
+tier = "applied"
+kind = "code"
+topics = ["grids", "two passes", "marking", "in-place updates"]
+minutes = 25

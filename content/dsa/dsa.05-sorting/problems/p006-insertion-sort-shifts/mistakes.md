@@ -1,0 +1,4 @@
+- Using `>=` in the while condition: equal values then move, the sort is no longer stable and shifts are over-counted.
+- Checking `a[j] > key` before `j >= 0`: for `j = -1` Python reads `a[-1]`, the last element, silently giving wrong answers.
+- Swapping instead of shifting: it works, but does about 3 times more writes and the 'shift count' changes meaning.
+- Overwriting `a[i]` before saving it in `key`.

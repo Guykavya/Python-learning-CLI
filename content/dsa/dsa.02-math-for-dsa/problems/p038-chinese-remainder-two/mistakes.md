@@ -1,0 +1,6 @@
+- Assuming the moduli are coprime and always printing an answer. If `gcd(m1, m2)` does not divide `a2 - a1`, there is none.
+- Computing the inverse of `m1` modulo `m2` instead of the inverse of `m1 / g` modulo `m2 / g`. If `g > 1` the first does not exist.
+- Not dividing `a2 - a1` by `g` (or dividing a negative number and a non-multiple: check divisibility first).
+- Not reducing `k` modulo `m2 / g`. Then `a1 + m1 * k` is still a solution, but not the smallest one (it can be larger than the lcm).
+- Looping `k` from 0 to `m2`. That is the right idea in a tiny case, but O(m2) = 10^9 steps in the worst case.
+- Using floats for `lcm` or `a2 - a1`: numbers reach 10^18.

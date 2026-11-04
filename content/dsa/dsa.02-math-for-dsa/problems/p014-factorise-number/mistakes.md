@@ -1,0 +1,6 @@
+- Forgetting the leftover. For `n = 14`: the loop divides out 2, `n` becomes 7, `3 * 3 > 7` stops the loop, and 7 must still be added.
+- Adding the leftover even when it is 1, which prints `1^1`. Check `n > 1`.
+- Using `if n % i == 0` once instead of `while`. For `12 = 2 * 2 * 3`, a single `if` finds 2 only once, and 2 shows up again in a later step or is lost.
+- Looping `i` up to `n`. For `n = 10^12` that never ends. Stop at `i * i > n`.
+- Printing `1` as the factorisation of 1 is correct, but printing an empty line is not. Handle the empty list.
+- Printing the factors in decreasing order, or the exponent only when it is above 1. The format here is strict: `5^1`.

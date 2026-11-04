@@ -1,0 +1,6 @@
+id = "dsa.03.p044"
+title = "Count subarrays with exactly k distinct values"
+tier = "deep"
+kind = "code"
+topics = ["sliding window", "at most k trick", "counting subarrays", "dictionary counts"]
+minutes = 40

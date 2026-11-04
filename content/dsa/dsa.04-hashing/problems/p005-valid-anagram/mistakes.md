@@ -1,0 +1,4 @@
+- Comparing only the **sets** of letters: `aab` and `abb` have the same set but are not anagrams.
+- Comparing only the lengths, or only the sums of character codes (`ad` and `bc` have the same sum).
+- Ignoring case rules: here `Ab` and `ab` are **not** anagrams.
+- Forgetting that `input()` keeps no newline but may keep spaces; use `.strip()` if your tests put none.

@@ -1,0 +1,23 @@
+0 p 0 p 1
+1 w 0 pw 2
+drop p
+drop w
+2 w 2 w 2
+3 k 2 wk 2
+4 e 2 wke 3
+drop w
+5 w 3 kew 3
+answer 3
+0 d 0 d 1
+1 v 0 dv 2
+drop d
+2 d 1 vd 2
+3 f 1 vdf 3
+answer 3
+0 a 0 a 1
+1 b 0 ab 2
+drop a
+drop b
+2 b 2 b 2
+3 a 2 ba 2
+answer 2

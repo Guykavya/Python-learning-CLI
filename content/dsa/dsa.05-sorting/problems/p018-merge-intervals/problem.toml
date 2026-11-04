@@ -1,0 +1,6 @@
+id = "dsa.05.p018"
+title = "Merge overlapping intervals"
+tier = "applied"
+kind = "code"
+topics = ["intervals", "sort first", "merge"]
+minutes = 35

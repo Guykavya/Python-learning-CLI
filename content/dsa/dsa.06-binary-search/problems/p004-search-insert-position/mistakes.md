@@ -1,0 +1,4 @@
+- Starting with `hi = n - 1` in the half-open template: a query larger than every element then returns `n - 1` instead of `n`.
+- Using `a[mid] <= x` in the test: that gives the **upper** bound (insert after the equals), which is wrong for this problem when duplicates exist.
+- Writing `lo = mid` (without `+ 1`): the loop can run forever when `hi = lo + 1`.
+- Stopping when `a[mid] == x`: with duplicates that finds an arbitrary 3, not the first one.

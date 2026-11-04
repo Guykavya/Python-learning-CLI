@@ -1,0 +1,5 @@
+- Using the previous meeting's end instead of the **maximum** end so far: a long early meeting can cover several later ones.
+- Forgetting the gap at the start (`0` to the first start) or at the end (`last end` to `T`).
+- Not sorting: the single-pass logic needs the meetings ordered by start.
+- Allocating an array of size `T` (10^9): impossible. Work with the interval endpoints only.
+- Returning a negative number when meetings overlap: take the maximum with 0, as `best` starts at 0.

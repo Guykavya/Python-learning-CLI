@@ -1,0 +1,6 @@
+id = "dsa.06.p013"
+title = "First bad version (interactive)"
+tier = "drill"
+kind = "code"
+topics = ["binary search on the answer", "interactive", "predicate"]
+minutes = 30

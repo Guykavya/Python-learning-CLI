@@ -1,0 +1,6 @@
+id = "dsa.04.p015"
+title = "Group the anagrams"
+tier = "applied"
+kind = "code"
+topics = ["grouping", "anagram key", "dictionary of lists"]
+minutes = 25

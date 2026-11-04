@@ -1,0 +1,7 @@
+id = "dsa.06.p037"
+title = "Build a sorted multiset"
+tier = "challenge"
+kind = "code"
+topics = ["lower bound", "upper bound", "design", "build"]
+minutes = 90
+assessment = "build"

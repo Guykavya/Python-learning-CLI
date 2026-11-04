@@ -1,0 +1,6 @@
+id = "dsa.03.p011"
+title = "Largest sum of a window of size k"
+tier = "drill"
+kind = "code"
+topics = ["sliding window", "fixed window", "running sum"]
+minutes = 15

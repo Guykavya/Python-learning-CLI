@@ -1,0 +1,4 @@
+- Printing before the key is placed (the list would show a duplicated value).
+- Counting a shift when the key lands in place with no larger neighbour.
+- Mixing up `shifts so far` (running total) with the shifts of the current round.
+- Forgetting the formatting: `print` puts spaces between arguments and shows the list as `[3, 4, 2, 10, 12, 1]`.

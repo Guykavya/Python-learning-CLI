@@ -1,0 +1,4 @@
+- Searching the lower bound (`<`) instead of the upper bound (`<=`): a `get` at exactly the time of a `set` then returns the previous value.
+- Scanning the history list of a key for every `get`: 10^5 sets and 10^5 gets on one key is 10^10 steps.
+- Crashing on a key that never had a `set`: use `.get(key, [])` and guard `vals[key]`.
+- Reading the input with `input()` 200000 times works but is slow; `sys.stdin` is faster (not required).

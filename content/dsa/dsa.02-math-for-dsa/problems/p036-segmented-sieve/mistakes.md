@@ -1,0 +1,6 @@
+- Starting at `2 * p` or at the first multiple `>= l` without `max(p*p, ...)`. If `p` itself is in `l..r`, it gets crossed off and is lost (wrong for small `l`).
+- Forgetting that 0 and 1 stay marked "prime" in the table when `l <= 1`.
+- Computing the square root with `r ** 0.5` and not correcting it: for numbers near 10^10 floats are fine, but an off-by-one for perfect squares is common. A correcting loop is safer.
+- Sieving all the way to `r` (10^10 bytes): memory error. Only `r - l + 1` cells are needed.
+- Writing the index as `m` instead of `m - l`: index error or wrong crossing.
+- Stopping the base primes at `sqrt(r) - 1`: a prime square such as `r = 49` needs the prime 7.

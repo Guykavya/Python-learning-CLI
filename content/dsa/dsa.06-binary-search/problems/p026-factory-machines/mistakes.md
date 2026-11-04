@@ -1,0 +1,4 @@
+- Using a float division or `ceil`: whole products only, use `T // k[i]`.
+- Choosing a too small `hi` (for example `max(k)`): the answer can be bigger. Use `min(k) * t`.
+- Simulating second by second: up to 10^18 steps.
+- Stopping the sum early is fine as an optimisation, but forgetting to compare `>= t` (and writing `==`) breaks the monotone predicate.

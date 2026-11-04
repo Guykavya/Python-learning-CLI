@@ -1,0 +1,6 @@
+id = "dsa.06.p035"
+title = "Trace a loop that never ends"
+tier = "deep"
+kind = "trace"
+topics = ["infinite loop", "lo = mid", "trace"]
+minutes = 20

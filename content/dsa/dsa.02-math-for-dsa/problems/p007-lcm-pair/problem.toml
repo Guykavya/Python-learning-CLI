@@ -1,0 +1,6 @@
+id = "dsa.02.p007"
+title = "LCM of two numbers"
+tier = "drill"
+kind = "code"
+topics = ["lcm", "gcd", "big numbers"]
+minutes = 15

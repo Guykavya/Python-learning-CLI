@@ -1,0 +1,6 @@
+id = "dsa.03.p016"
+title = "Transpose a grid"
+tier = "drill"
+kind = "code"
+topics = ["2D lists", "grid", "transpose", "nested loops"]
+minutes = 15

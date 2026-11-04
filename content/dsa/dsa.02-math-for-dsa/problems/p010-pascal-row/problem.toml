@@ -1,0 +1,6 @@
+id = "dsa.02.p010"
+title = "Binomial coefficients from Pascal's triangle"
+tier = "drill"
+kind = "code"
+topics = ["combinatorics", "nCr", "Pascal's triangle", "dynamic programming"]
+minutes = 20

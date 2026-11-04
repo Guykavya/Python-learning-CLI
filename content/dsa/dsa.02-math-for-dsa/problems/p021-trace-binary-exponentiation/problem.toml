@@ -1,0 +1,7 @@
+id = "dsa.02.p021"
+title = "Trace binary exponentiation"
+tier = "applied"
+kind = "trace"
+topics = ["fast exponentiation", "binary exponent", "trace"]
+minutes = 25
+assessment = "trace"

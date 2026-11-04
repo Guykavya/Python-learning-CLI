@@ -1,0 +1,6 @@
+id = "dsa.03.p020"
+title = "Explain: prefix sums versus re-adding"
+tier = "drill"
+kind = "explain"
+topics = ["prefix sums", "complexity", "precomputation", "reasoning"]
+minutes = 15

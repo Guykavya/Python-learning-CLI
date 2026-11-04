@@ -1,0 +1,6 @@
+id = "dsa.02.p031"
+title = "Explain a x = b (mod m)"
+tier = "deep"
+kind = "explain"
+topics = ["linear congruence", "gcd", "number of solutions"]
+minutes = 25

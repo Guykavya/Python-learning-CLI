@@ -1,0 +1,6 @@
+id = "dsa.03.p023"
+title = "Rectangle sums with 2D prefix sums"
+tier = "applied"
+kind = "code"
+topics = ["2D prefix sums", "inclusion-exclusion", "grids", "range queries"]
+minutes = 35

@@ -1,0 +1,6 @@
+id = "dsa.05.p010"
+title = "Trace the merge step"
+tier = "drill"
+kind = "trace"
+topics = ["merge", "two pointers", "trace"]
+minutes = 15

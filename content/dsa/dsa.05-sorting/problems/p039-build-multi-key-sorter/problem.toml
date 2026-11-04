@@ -1,0 +1,7 @@
+id = "dsa.05.p039"
+title = "Build a multi-key sorter"
+tier = "challenge"
+kind = "code"
+topics = ["merge sort", "comparator", "stability", "build"]
+minutes = 120
+assessment = "build"

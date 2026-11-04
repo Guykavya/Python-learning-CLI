@@ -1,0 +1,6 @@
+id = "dsa.06.p012"
+title = "Integer square root"
+tier = "drill"
+kind = "code"
+topics = ["binary search on the answer", "monotonic predicate", "sqrt"]
+minutes = 25

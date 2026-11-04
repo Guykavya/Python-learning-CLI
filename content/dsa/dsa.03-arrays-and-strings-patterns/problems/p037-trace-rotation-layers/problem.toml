@@ -1,0 +1,6 @@
+id = "dsa.03.p037"
+title = "Trace an in-place rotation, layer by layer"
+tier = "applied"
+kind = "trace"
+topics = ["matrix rotation", "in-place", "layers", "index arithmetic", "trace"]
+minutes = 30

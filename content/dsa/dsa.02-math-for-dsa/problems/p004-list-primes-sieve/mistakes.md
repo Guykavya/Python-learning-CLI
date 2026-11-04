@@ -1,0 +1,5 @@
+- `is_prime = [True] * n`. The list needs `n + 1` entries so that index `n` exists. Otherwise `n` is never printed when it is prime.
+- Forgetting to mark 0 and 1 as not prime. They are never crossed off by anything, so they would be printed.
+- Starting the inner loop at `2 * p`. It still works, but it does a lot of repeated crossing. Starting at `p * p` is the standard saving.
+- Crossing off multiples of every `p`, even composite ones. It is correct but wasteful. Check `if is_prime[p]` first.
+- Looping `p` all the way to `n`. Stop when `p * p > n`; larger primes have no unmarked multiples left to remove.

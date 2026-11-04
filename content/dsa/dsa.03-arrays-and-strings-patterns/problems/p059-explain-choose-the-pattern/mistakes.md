@@ -1,0 +1,5 @@
+- Choosing a sliding window for scenario 1. With losses (negative values) a window has no valid shrink rule; Kadane does not need one.
+- Saying "prefix sums" for scenario 5. Prefix sums answer range **queries**; the difference array handles range **updates**. They are inverses of each other.
+- Choosing two pointers without mentioning that the list is sorted. The sortedness is the whole reason it works.
+- Giving the time of the clever method without the brute force. The point is the jump from O(n q) or O(n^2) to O(n).
+- Giving a "trap" that does not break the method (for example "the list is long"). A real trap changes a property: sign, order, size, or when the reads happen.

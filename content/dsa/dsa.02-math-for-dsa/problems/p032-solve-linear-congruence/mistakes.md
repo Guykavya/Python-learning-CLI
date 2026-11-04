@@ -1,0 +1,5 @@
+- Dividing by `g` but keeping `m` as the modulus: the inverse of `a/g` modulo `m` may not exist, and the solution is wrong.
+- Printing `-1` whenever `gcd(a, m) != 1`. When `g` divides `b` there are solutions: only when it does **not** divide `b` is it `-1`.
+- Forgetting that `a = 0` (or `a % m = 0`) is not "no solution": it has `g = m`, and works when `m` divides `b` (answer 0).
+- Not reducing negative `b` first: Python's `%` gives the right non-negative remainder; `b // g` on a negative number gives a different result if you skip this.
+- Searching `x` from 0 to `m - 1`. It is O(m), hopeless for `m = 10^18`.

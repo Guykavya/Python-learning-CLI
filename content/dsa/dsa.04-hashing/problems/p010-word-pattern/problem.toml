@@ -1,0 +1,6 @@
+id = "dsa.04.p010"
+title = "Word pattern"
+tier = "drill"
+kind = "code"
+topics = ["dictionary", "bijection", "pattern matching"]
+minutes = 15

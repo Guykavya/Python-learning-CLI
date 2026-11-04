@@ -1,0 +1,4 @@
+- Printing before the swap instead of after.
+- Forgetting the final pivot swap, so the pivot stays at the end.
+- Updating `i` when the value is equal to the pivot: the test is strict `<`.
+- Writing the final `print(partition(b, 0, 3), b)` order wrong: the arguments are evaluated left to right, so the three `j` lines print first and then the result line.

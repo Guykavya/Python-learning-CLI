@@ -1,0 +1,5 @@
+- Clearing rows and columns during the same scan that looks for zeros. New zeros then look original and spread; in the example row 2 is wiped out.
+- Recording the zero positions but then clearing only the cells at those positions, not their whole rows and columns.
+- Marking only rows (or only columns).
+- Copying the grid and, for every zero of the copy, clearing its row and column in the original. Correct, but it costs `r * c` extra memory and O(r + c) work per zero.
+- Mixing up `r` and `c` in a non-square grid: `zero_col` needs `c` entries.

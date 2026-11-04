@@ -1,0 +1,10 @@
+- Converting the arguments with `int(...)` before checking they are digits: `gcd a b` crashes with `ValueError` instead of printing `error`.
+- Using Fermat's inverse (`pow(a, m - 2, m)`) for `inv`: wrong for composite `m`, and it never prints `none`.
+- Using a Fermat inverse in `ncr` with a modulus that is not prime. Compute the exact number instead (n <= 5000).
+- `isprime` or `factor` with `i * i < n` instead of `<=`: squares of primes (4, 9, 25, 49) are reported prime.
+- `pow` starting `result = 1` and never reducing: `pow 5 0 1` must be `0`. Start with `1 % m`.
+- `factor n` leaving out the leftover prime after the loop (`factor 14` printing only `2^1`).
+- Counting `popcount` bits with a fixed 32-iteration loop: inputs have up to 64 bits.
+- Using floats in `phi` (`n * (1 - 1 / p)`): it can round wrongly and prints `1.0`-style numbers. Keep it in integers: `result // p * (p - 1)`.
+- Printing nothing for `sieve 1` or `factor 1`, or printing a blank line. The statement gives `none` and `1`.
+- Leaving state (a list, a counter) from one command to the next.

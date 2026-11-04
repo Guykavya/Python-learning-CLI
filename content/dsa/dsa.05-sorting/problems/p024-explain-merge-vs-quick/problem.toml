@@ -1,0 +1,6 @@
+id = "dsa.05.p024"
+title = "Explain: merge sort versus quick sort"
+tier = "applied"
+kind = "explain"
+topics = ["merge sort", "quick sort", "comparison", "reasoning"]
+minutes = 30

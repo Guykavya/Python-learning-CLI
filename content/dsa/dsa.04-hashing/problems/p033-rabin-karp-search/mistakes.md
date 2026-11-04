@@ -1,0 +1,5 @@
+- Forgetting to take `% M` after the subtraction: the value can be negative in other languages; in Python `%` keeps it in range, but omitting it lets numbers grow.
+- Using `B ** m` instead of `B ** (m - 1)` for the leaving letter: the first letter of a window has weight `B^(m-1)`.
+- Skipping verification: with unlucky data an equal hash is a false match.
+- Updating the hash after the last window: `t[i + m]` is out of range. Guard with `if i + m < n`.
+- Comparing slices at every position: `O(n * m)`.

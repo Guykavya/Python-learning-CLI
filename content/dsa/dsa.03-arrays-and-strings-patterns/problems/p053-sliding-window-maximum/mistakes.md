@@ -1,0 +1,7 @@
+- Calling `max(a[i:i + k])` for each window: O(n k), which times out when `k` is large.
+- Storing values in the deque instead of indices. Then you cannot tell whether the front has left the window.
+- Forgetting to drop the front (`dq[0] <= i - k`). An old big value stays the "maximum" forever.
+- An off-by-one in the drop test: `dq[0] < i - k` keeps an index that is already one step outside.
+- Starting the output at `i == k` instead of `i == k - 1`: the first window is lost.
+- Popping from the **front** when a bigger element arrives. Dominated elements are at the back.
+- Using a list with `pop(0)`. That is O(k) per call; `deque.popleft()` is O(1).

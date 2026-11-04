@@ -1,0 +1,4 @@
+- Fixing only one bug and calling it done: the three bugs hide each other on small examples.
+- Using `i - seen[...] + 1` after switching the empty prefix to index -1: the length is `i - seen[...]`.
+- Storing `seen[total] = i` before the lookup: for `k = 0` the block would match itself.
+- Replacing the dictionary with a list scan: O(n^2).

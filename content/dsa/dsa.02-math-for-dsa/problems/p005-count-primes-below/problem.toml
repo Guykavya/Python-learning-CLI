@@ -1,0 +1,6 @@
+id = "dsa.02.p005"
+title = "How many primes up to n?"
+tier = "drill"
+kind = "code"
+topics = ["sieve", "prime counting", "prefix counts"]
+minutes = 20

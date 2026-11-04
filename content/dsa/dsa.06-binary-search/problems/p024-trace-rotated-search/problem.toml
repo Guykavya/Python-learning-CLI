@@ -1,0 +1,6 @@
+id = "dsa.06.p024"
+title = "Trace a search in a rotated array"
+tier = "applied"
+kind = "trace"
+topics = ["rotated array", "sorted half", "trace"]
+minutes = 20

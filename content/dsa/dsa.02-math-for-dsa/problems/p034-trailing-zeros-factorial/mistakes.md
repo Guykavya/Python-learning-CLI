@@ -1,0 +1,5 @@
+- Counting only `n // p`. For `100!` that gives 20, but multiples of 25 each contribute two factors of 5: the answer is 24.
+- Looping over every number from 1 to `n` and dividing out `p`. That is O(n): impossible for `n = 10^18`.
+- Using `n / p` (float division) or `int(n / p)`: floats are inexact above 2^53, so the counts for `n = 10^18` are wrong.
+- Computing `p ** k` for growing `k` and stopping when it passes `n`, but with an off-by-one so the last power is skipped. Dividing `n` repeatedly avoids this.
+- Forgetting that `p > n` gives 0 (the loop body gives `n // p = 0` immediately, so it is naturally right).

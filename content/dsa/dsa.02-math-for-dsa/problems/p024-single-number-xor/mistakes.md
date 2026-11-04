@@ -1,0 +1,5 @@
+- Using `a.count(x)` for each `x`. It is a hidden loop, so the total is O(n^2): 10^6 numbers would take hours.
+- Starting `ans` at 1 instead of 0. `1 ^ x` flips the lowest bit, so the answer is off. The neutral value of XOR is 0.
+- Using `+` or `-` instead of `^`. Pairs do not cancel with `+`.
+- Confusing `^` with power. In Python `2 ^ 3` is 1 (XOR), not 8.
+- Sorting and scanning in pairs works (O(n log n)) but is more code and more room for off-by-one errors.

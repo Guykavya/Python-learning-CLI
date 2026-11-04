@@ -1,0 +1,6 @@
+id = "dsa.03.p046"
+title = "Maximum subarray with its bounds"
+tier = "deep"
+kind = "code"
+topics = ["Kadane", "maximum subarray", "tie-breaking", "indices"]
+minutes = 40

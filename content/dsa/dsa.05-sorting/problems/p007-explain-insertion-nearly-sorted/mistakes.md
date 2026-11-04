@@ -1,0 +1,3 @@
+- Saying insertion sort is `O(n)` in general. It is O(n) only when inversions are O(n).
+- Confusing 'sorted' with 'few inversions': a list rotated by one position, `[2, 3, 4, 5, 1]`, has 4 inversions, still cheap, while `[5, 1, 2, 3, 4]` has 4 as well.
+- Forgetting the outer loop: even with 0 inversions the loop checks all `n - 1` elements.

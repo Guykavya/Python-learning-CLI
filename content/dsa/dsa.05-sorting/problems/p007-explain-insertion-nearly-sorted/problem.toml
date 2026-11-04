@@ -1,0 +1,6 @@
+id = "dsa.05.p007"
+title = "Explain: why insertion sort loves nearly sorted data"
+tier = "drill"
+kind = "explain"
+topics = ["insertion sort", "inversions", "reasoning"]
+minutes = 20

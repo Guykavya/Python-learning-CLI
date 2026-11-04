@@ -1,0 +1,4 @@
+- Forgetting `% 97` and printing large numbers.
+- Using the leaving digit's weight `10` instead of `top = 3` (`10^2 mod 97`).
+- Printing the last column as the window digits. The line shows `window rolling direct comparison`.
+- Treating `h - d * top` as an error when it is negative: the final `%` fixes it.

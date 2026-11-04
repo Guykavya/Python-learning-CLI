@@ -1,0 +1,6 @@
+id = "dsa.04.p008"
+title = "Ransom note"
+tier = "drill"
+kind = "code"
+topics = ["frequency counting", "multiset", "strings"]
+minutes = 15

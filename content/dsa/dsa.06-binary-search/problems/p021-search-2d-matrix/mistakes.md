@@ -1,0 +1,4 @@
+- Dividing by `R` instead of `C`: `row = i // C`, because every row holds `C` numbers.
+- Searching each row with a binary search after a linear walk over the rows: `O(R + log C)` per query, too slow for many queries.
+- Flattening once per query: `O(R*C)` per query. Flatten at most once, or better not at all.
+- Printing `col row` instead of `row col`.

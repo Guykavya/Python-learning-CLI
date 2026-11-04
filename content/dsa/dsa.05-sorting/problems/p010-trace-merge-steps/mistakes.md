@@ -1,0 +1,4 @@
+- Printing a line for the leftover values: the `extend` calls do not print.
+- Taking from `right` on a tie: the code says `<=`, so `left` wins.
+- Forgetting that `i` and `j` are printed after the increment.
+- Printing the lists without brackets.

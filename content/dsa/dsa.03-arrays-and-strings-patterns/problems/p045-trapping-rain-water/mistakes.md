@@ -1,0 +1,6 @@
+- Taking the maxima strictly to the left and right of bar `i`. A bar higher than both walls then gets negative water (`[1, 5, 2]` gives -4 for the middle bar). Include `h[i]` in both maxima.
+- Using `max` of the two walls instead of `min`. Water spills over the lower wall.
+- In the two-pointer version, moving the side with the **larger** maximum. The side you settle must be the one whose wall is the limit: the smaller maximum.
+- `max(h[:i + 1])` and `max(h[i:])` inside the loop. Each slice is O(n), so the whole thing is O(n^2) and times out at 200000 bars.
+- Indexing `h[0]` or `h[n - 1]` before checking `n = 0`.
+- Counting water over the first or last bar. Nothing holds it there; with the formula above it is 0 automatically.

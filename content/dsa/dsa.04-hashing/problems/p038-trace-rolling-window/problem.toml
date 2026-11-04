@@ -1,0 +1,7 @@
+id = "dsa.04.p038"
+title = "Trace a rolling hash window"
+tier = "challenge"
+kind = "trace"
+topics = ["rolling hash", "Rabin-Karp", "modular arithmetic", "trace"]
+minutes = 30
+assessment = "trace"

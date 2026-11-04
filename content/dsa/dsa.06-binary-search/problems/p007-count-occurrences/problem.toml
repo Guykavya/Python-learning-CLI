@@ -1,0 +1,6 @@
+id = "dsa.06.p007"
+title = "Count occurrences of x"
+tier = "drill"
+kind = "code"
+topics = ["lower bound", "upper bound", "counting"]
+minutes = 25

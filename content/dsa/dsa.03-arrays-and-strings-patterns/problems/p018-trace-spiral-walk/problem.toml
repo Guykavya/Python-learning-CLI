@@ -1,0 +1,6 @@
+id = "dsa.03.p018"
+title = "Trace the spiral boundaries"
+tier = "drill"
+kind = "trace"
+topics = ["grid", "spiral", "boundaries", "trace"]
+minutes = 20

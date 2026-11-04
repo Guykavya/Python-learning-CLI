@@ -1,0 +1,6 @@
+id = "dsa.06.p011"
+title = "Floor and ceiling"
+tier = "drill"
+kind = "code"
+topics = ["lower bound", "upper bound", "floor", "ceiling"]
+minutes = 25

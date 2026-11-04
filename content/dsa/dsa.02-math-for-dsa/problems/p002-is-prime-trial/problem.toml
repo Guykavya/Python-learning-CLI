@@ -1,0 +1,6 @@
+id = "dsa.02.p002"
+title = "Is it prime?"
+tier = "drill"
+kind = "code"
+topics = ["primes", "trial division", "sqrt bound"]
+minutes = 15

@@ -1,0 +1,5 @@
+- Starting at the top-left (or bottom-right) corner. Both neighbours there move the same way, so one comparison does not tell you which line to drop.
+- Swapping the moves: going down when the value is too big. Then the walk leaves the grid without seeing the target.
+- Binary searching the first column for a row and then searching only that row. The target can be in a different row: for 5, the last row starting at or below 5 is row 3 (it starts with 3), but 5 is in row 2.
+- Loop conditions `i <= r` or `j > 0`. The first reads past the bottom; the second never checks column 0.
+- Assuming the values are distinct. Equal values are allowed; the comparisons above handle them.

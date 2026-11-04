@@ -1,0 +1,6 @@
+id = "dsa.02.p017"
+title = "LCM of 1..n modulo 10^9+7"
+tier = "applied"
+kind = "code"
+topics = ["lcm", "prime powers", "sieve", "modular arithmetic"]
+minutes = 30

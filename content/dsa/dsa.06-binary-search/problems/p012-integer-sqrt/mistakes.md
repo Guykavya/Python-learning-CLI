@@ -1,0 +1,4 @@
+- Using `int(n ** 0.5)`: floats have 53 bits, so near 10^18 the result can be off by one.
+- Searching `r` from 1 to `n` with a linear loop: 10^9 steps for a single big query.
+- Returning the first `r` with `r * r > n` instead of one less (an off-by-one between "first False" and "last True").
+- Setting `hi = n` for `n = 0` or `1` and getting `mid = 0` forever; check the tiny cases.

@@ -1,0 +1,4 @@
+- Taking the leaving element as `a[r - k + 1]` (the first element of the **new** window) instead of `a[r - k]`.
+- Getting the sign wrong when a negative element leaves: removing `-1` makes the sum 1 bigger.
+- Printing the window before the slide instead of after: for `r = 3` the slice is `a[1:4]`, which already contains 3.
+- Updating `best` to the last sum instead of the largest one.

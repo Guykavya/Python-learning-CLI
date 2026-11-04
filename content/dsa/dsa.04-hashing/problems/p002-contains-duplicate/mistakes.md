@@ -1,0 +1,4 @@
+- Two nested loops over all pairs: O(n^2). It passes the examples and times out on 200000 numbers.
+- Using `a.count(x) > 1` inside a loop: each `count` scans the whole list, so it is O(n^2) again.
+- Adding `x` to the set **before** checking `x in seen`: then every value looks like a repeat.
+- Printing inside the loop for every duplicate, so `YES` appears several times. Print once.

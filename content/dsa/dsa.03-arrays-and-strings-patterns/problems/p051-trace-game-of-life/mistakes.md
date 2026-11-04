@@ -1,0 +1,6 @@
+- Counting the cell itself. Then every alive cell's count is one too high (the blinker's middle shows 3).
+- Applying the rules while you fill the counts and then using the new values for later cells. All counts come from the starting grid.
+- Treating cells outside the grid as alive, or wrapping around to the other side.
+- Using the "born" rule for alive cells: an alive cell with count 2 stays alive; a dead cell with count 2 stays dead.
+- Forgetting the label lines `counts` and `next`, or printing the digit rows with spaces.
+- Mixing up rows and columns: `(1, 2)` means row 1, column 2.

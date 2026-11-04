@@ -1,0 +1,4 @@
+- Sorting the whole array instead of the distinct values: the sort key would not be a count.
+- Printing the counts instead of the values.
+- Forgetting the tie rule: sorting only by `-count` leaves ties in first-appearance order, not by smaller value.
+- `most_common(k)` alone: its ties follow insertion order, not the smaller value. Sort explicitly.

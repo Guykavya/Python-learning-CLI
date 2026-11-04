@@ -1,0 +1,6 @@
+id = "dsa.05.p016"
+title = "Count inversions"
+tier = "applied"
+kind = "code"
+topics = ["merge sort", "inversions", "divide and conquer"]
+minutes = 45

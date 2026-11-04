@@ -1,0 +1,6 @@
+id = "dsa.05.p029"
+title = "Trace radix sort passes"
+tier = "deep"
+kind = "trace"
+topics = ["radix sort", "stability", "trace"]
+minutes = 25

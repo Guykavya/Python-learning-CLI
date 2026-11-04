@@ -1,0 +1,5 @@
+- A fixed pivot (first or last element): sorted input then gives recursion depth `n`, a `RecursionError` at depth 1000, and `O(n^2)` time.
+- Two-way partition (`< pivot` and `>= pivot`): all-equal input puts everything on one side every time, again `O(n^2)`.
+- Raising the recursion limit to hide the problem: the program becomes slow or runs out of memory.
+- Forgetting `import random`, or using a pivot **value** from outside the list.
+- Calling `sorted` on small parts: banned, and it hides bugs. Use insertion sort for pieces under 16 if you want a cutoff.

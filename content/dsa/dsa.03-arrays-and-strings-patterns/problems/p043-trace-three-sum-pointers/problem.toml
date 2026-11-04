@@ -1,0 +1,7 @@
+id = "dsa.03.p043"
+title = "Trace three-sum pointers with duplicate skips"
+tier = "deep"
+kind = "trace"
+topics = ["two pointers", "three sum", "duplicates", "sorting", "trace"]
+minutes = 35
+assessment = "trace"

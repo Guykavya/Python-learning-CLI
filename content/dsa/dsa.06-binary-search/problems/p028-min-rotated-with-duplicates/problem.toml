@@ -1,0 +1,6 @@
+id = "dsa.06.p028"
+title = "Minimum in a rotated array with duplicates"
+tier = "deep"
+kind = "code"
+topics = ["rotated array", "duplicates", "worst case"]
+minutes = 45

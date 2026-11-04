@@ -1,0 +1,6 @@
+id = "dsa.03.p002"
+title = "Range sum queries"
+tier = "drill"
+kind = "code"
+topics = ["prefix sums", "range queries", "1-based indexing"]
+minutes = 15

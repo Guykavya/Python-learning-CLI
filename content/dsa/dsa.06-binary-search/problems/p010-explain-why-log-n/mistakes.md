@@ -1,0 +1,3 @@
+- Saying `log n` without the base or without explaining halving. The base 2 comes from "one comparison, two outcomes".
+- Believing binary search works on any list. It needs sorted data (more exactly: a monotonic predicate).
+- Claiming that sort-then-search beats a single linear scan: for one query it does not.

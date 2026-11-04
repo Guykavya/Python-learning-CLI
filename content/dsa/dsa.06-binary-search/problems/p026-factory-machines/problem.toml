@@ -1,0 +1,6 @@
+id = "dsa.06.p026"
+title = "Factory machines"
+tier = "applied"
+kind = "code"
+topics = ["binary search on the answer", "huge range", "CSES"]
+minutes = 40

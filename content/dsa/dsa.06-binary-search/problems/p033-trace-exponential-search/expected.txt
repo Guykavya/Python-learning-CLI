@@ -1,0 +1,11 @@
+double: f( 1 ) = 1
+double: f( 2 ) = 4
+double: f( 4 ) = 16
+double: f( 8 ) = 64
+double: f( 16 ) = 256
+bound 32
+lo 16 hi 32 mid 24 f(mid) 576 ok True
+lo 16 hi 24 mid 20 f(mid) 400 ok False
+lo 21 hi 24 mid 22 f(mid) 484 ok False
+lo 23 hi 24 mid 23 f(mid) 529 ok True
+answer 23

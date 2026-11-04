@@ -1,0 +1,5 @@
+- Moving `mid` forward after swapping a `2` to the back. The value that came from `high` was never examined; if it is a `0`, it stays in the middle. `1 2 0` then prints `1 0 2`.
+- Using `while mid < high`. The last unknown cell (`mid == high`) is then never examined.
+- Starting `high` at `n` instead of `n - 1`, which reads past the end.
+- Sorting with two separate passes (all 0s first, then all 2s). That works, but it is two passes; the exercise asks for one.
+- Swapping a `0` with `a[mid]` but forgetting to move `low`, so the next `0` overwrites the same front position.

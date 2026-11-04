@@ -1,0 +1,5 @@
+- Multiplying every prime once: `2 * 3 * 5 * 7 = 210`, not 2520. Powers of the primes matter (8 and 9 are in `1..10`).
+- Using `pk <= n` in the loop and multiplying one extra time. The loop must keep `pk` as the largest power that is `<= n`: test `pk * p <= n` before multiplying.
+- Folding `ans = lcm(ans, i)` with big integers. Correct, but 10^6 multiplications of numbers with up to 1.4 million bits is too slow.
+- Doing the fold with `ans` reduced modulo 10^9 + 7. The gcd of a remainder says nothing about the real number, so it gives wrong answers.
+- Forgetting the `% MOD` after each product, so the number grows large and slow (or the final line prints a giant number).

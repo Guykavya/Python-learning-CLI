@@ -1,0 +1,6 @@
+id = "dsa.06.p029"
+title = "Search in an array of unknown size (interactive)"
+tier = "deep"
+kind = "code"
+topics = ["exponential search", "doubling", "interactive"]
+minutes = 45

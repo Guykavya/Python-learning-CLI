@@ -1,0 +1,7 @@
+id = "dsa.03.p060"
+title = "Build a sensor log analyser"
+tier = "challenge"
+kind = "code"
+topics = ["prefix sums", "sliding window", "Kadane", "monotonic deque", "command interpreter", "input validation"]
+minutes = 120
+assessment = "build"

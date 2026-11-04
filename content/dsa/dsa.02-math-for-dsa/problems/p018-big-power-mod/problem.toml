@@ -1,0 +1,6 @@
+id = "dsa.02.p018"
+title = "Power with a huge exponent"
+tier = "applied"
+kind = "code"
+topics = ["modular exponentiation", "big exponent", "digit by digit", "Fermat"]
+minutes = 35

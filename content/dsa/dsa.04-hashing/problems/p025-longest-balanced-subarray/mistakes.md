@@ -1,0 +1,4 @@
+- Overwriting `first[s]` every time: you then measure the **shortest** block, not the longest.
+- Forgetting `first = {0: -1}`: a balanced block starting at index 0 is missed.
+- Computing the length as `i - first[s] + 1`. With the empty prefix at index -1 the length is `i - first[s]`.
+- Counting zeros and ones separately and printing the smaller of the two counts: the blocks must be contiguous.

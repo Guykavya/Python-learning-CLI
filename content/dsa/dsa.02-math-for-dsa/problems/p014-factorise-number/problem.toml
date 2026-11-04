@@ -1,0 +1,6 @@
+id = "dsa.02.p014"
+title = "Prime factorisation"
+tier = "applied"
+kind = "code"
+topics = ["factorisation", "trial division", "primes"]
+minutes = 25

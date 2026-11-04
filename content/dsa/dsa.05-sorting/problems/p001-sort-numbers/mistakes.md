@@ -1,0 +1,4 @@
+- Printing `a.sort()`: the method sorts in place and returns `None`, so the program prints `None`.
+- Reversing with `a[::-1]` after sorting works, but forgetting to sort first prints the input backwards.
+- Printing a list with `print(sorted(a))` shows brackets and commas. Join the numbers with spaces.
+- Sorting strings instead of ints: `'10' < '9'`, so the numbers must be converted with `int` first.

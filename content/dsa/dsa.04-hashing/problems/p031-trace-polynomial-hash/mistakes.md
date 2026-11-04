@@ -1,0 +1,4 @@
+- Computing `h * 31 + value` without the `% 101`. The `%` happens at every step.
+- Using `ord(ch)` directly (97 for `a`). The code subtracts 96.
+- Treating `abc` and `ga` as different because the strings differ. The hash is the same, 16: a collision.
+- Adding the values instead of multiplying: `cab` and `abc` would then agree.

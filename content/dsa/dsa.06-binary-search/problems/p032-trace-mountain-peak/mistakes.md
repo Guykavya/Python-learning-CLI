@@ -1,0 +1,3 @@
+- Rounding `mid` the wrong way: `(lo + hi) // 2` rounds down, so with two candidates `mid` is `lo`.
+- Moving `lo` to `mid` instead of `mid + 1` (or `hi` to `mid - 1` instead of `mid`), which belongs to a different template.
+- Stopping the trace one step early or late: write the loop condition next to every line.

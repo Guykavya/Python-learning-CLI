@@ -1,0 +1,3 @@
+- Using `<` instead of `<=`: that computes the lower bound (the count of elements smaller than x), which is wrong when x occurs in the list.
+- Starting with `hi = n - 1`: queries `>=` the maximum then answer `n - 1` instead of `n`.
+- Counting with a loop `for v in a: if v <= x` for every query: correct, but 10^10 steps in total.

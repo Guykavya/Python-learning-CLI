@@ -1,0 +1,6 @@
+id = "dsa.03.p007"
+title = "Pair with a given sum in a sorted array"
+tier = "drill"
+kind = "code"
+topics = ["two pointers", "sorted array", "pair sum"]
+minutes = 15

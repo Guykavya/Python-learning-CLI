@@ -1,0 +1,6 @@
+id = "dsa.04.p007"
+title = "Values in both lists"
+tier = "drill"
+kind = "code"
+topics = ["set", "intersection", "membership"]
+minutes = 12

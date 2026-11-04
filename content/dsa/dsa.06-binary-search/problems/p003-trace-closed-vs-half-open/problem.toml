@@ -1,0 +1,6 @@
+id = "dsa.06.p003"
+title = "Trace: closed against half-open"
+tier = "drill"
+kind = "trace"
+topics = ["templates", "probes", "trace"]
+minutes = 20

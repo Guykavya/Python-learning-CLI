@@ -1,0 +1,6 @@
+id = "dsa.06.p020"
+title = "Aggressive cows"
+tier = "applied"
+kind = "code"
+topics = ["binary search on the answer", "maximise the minimum", "round-up mid"]
+minutes = 40

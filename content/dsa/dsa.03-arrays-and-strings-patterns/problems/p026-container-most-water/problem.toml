@@ -1,0 +1,6 @@
+id = "dsa.03.p026"
+title = "Container with the most water"
+tier = "applied"
+kind = "code"
+topics = ["two pointers", "greedy", "arrays"]
+minutes = 30

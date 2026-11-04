@@ -1,0 +1,6 @@
+id = "dsa.03.p054"
+title = "Count subarrays with sum divisible by k"
+tier = "challenge"
+kind = "code"
+topics = ["prefix sums", "modular arithmetic", "dictionary counts", "negative numbers"]
+minutes = 35

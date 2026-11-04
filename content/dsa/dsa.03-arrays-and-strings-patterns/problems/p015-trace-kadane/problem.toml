@@ -1,0 +1,6 @@
+id = "dsa.03.p015"
+title = "Trace Kadane's algorithm"
+tier = "drill"
+kind = "trace"
+topics = ["Kadane", "maximum subarray", "trace"]
+minutes = 10

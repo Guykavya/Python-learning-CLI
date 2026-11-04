@@ -1,0 +1,7 @@
+step 1 mid 1 lo 1 hi 3
+step 2 mid 2 lo 2 hi 3
+step 3 mid 2 lo 2 hi 3
+step 4 mid 2 lo 2 hi 3
+step 5 mid 2 lo 2 hi 3
+step 6 mid 2 lo 2 hi 3
+stopped: lo 2 hi 3 steps 6

@@ -1,0 +1,6 @@
+- Forgetting the empty prefix (`seen = {0: 1}`). Subarrays that start at the first element and are divisible by `k` are missed (`[9]` with `k = 9` gives 0).
+- Using `abs(prefix) % k`. `-1` and `1` have remainders 2 and 1 modulo 3, but `abs` puts them in the same bucket.
+- Using `math.fmod` or copying C/Java code without the `+ k` fix. Those return negative remainders, so `-2` and `3` land in different buckets.
+- Adding to the total **after** increasing the count. Then each prefix pairs with itself and the answer grows by `n`.
+- Checking every subarray: O(n^2), too slow for 200000.
+- Keeping the full prefix sum in the dictionary instead of its remainder: the keys never match when they should.

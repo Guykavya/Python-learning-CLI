@@ -1,0 +1,6 @@
+id = "dsa.05.p002"
+title = "Sort words by length"
+tier = "drill"
+kind = "code"
+topics = ["key=", "stability", "sorted"]
+minutes = 10

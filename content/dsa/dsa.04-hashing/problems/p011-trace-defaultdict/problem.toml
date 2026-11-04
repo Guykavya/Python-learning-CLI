@@ -1,0 +1,6 @@
+id = "dsa.04.p011"
+title = "Trace defaultdict"
+tier = "drill"
+kind = "trace"
+topics = ["defaultdict", "grouping", "side effects", "trace"]
+minutes = 15

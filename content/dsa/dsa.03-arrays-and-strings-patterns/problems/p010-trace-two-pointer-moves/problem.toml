@@ -1,0 +1,6 @@
+id = "dsa.03.p010"
+title = "Trace two-pointer moves"
+tier = "drill"
+kind = "trace"
+topics = ["two pointers", "pair sum", "trace"]
+minutes = 10

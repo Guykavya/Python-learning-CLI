@@ -1,0 +1,4 @@
+- Saying a set is "O(1)" with no word about average cases and collisions.
+- Saying a set stores items sorted. A set has no useful order.
+- Forgetting that the hash only narrows the search to a slot; equality is still checked.
+- Claiming a set is always better. For a handful of items, or when you need order or indexing, a list is fine.

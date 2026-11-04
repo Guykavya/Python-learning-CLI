@@ -1,0 +1,10 @@
+['fig', 'pear', 'kiwi', 'date', 'plum', 'apple']
+['apple', 'pear', 'kiwi', 'date', 'plum', 'fig']
+['plum', 'pear', 'kiwi', 'fig', 'date', 'apple']
+['fig', 'date', 'kiwi', 'pear', 'plum', 'apple']
+['apple', 'date', 'kiwi', 'pear', 'plum', 'fig']
+['apple', 'date', 'fig', 'kiwi', 'plum', 'pear']
+['pear', 'fig', 'apple', 'kiwi', 'date', 'plum']
+[-1, 2, 3, -4]
+None
+[-4, -1, 2, 3]

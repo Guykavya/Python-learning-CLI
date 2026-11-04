@@ -1,0 +1,6 @@
+id = "dsa.05.p022"
+title = "Trace building a max-heap"
+tier = "applied"
+kind = "trace"
+topics = ["heap", "sift down", "heapify", "trace"]
+minutes = 25

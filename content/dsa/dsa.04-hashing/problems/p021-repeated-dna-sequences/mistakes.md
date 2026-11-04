@@ -1,0 +1,4 @@
+- Using only one `seen` set and printing a segment every time it is found again: a segment seen three times is printed twice.
+- Off-by-one in the loop: the last window starts at `n - L`, so `range(n - L + 1)`; `range(n - L)` loses it.
+- Counting non-overlapping occurrences. Here overlaps count, so `AA` in `AAAA` occurs three times.
+- Printing the segments in set order. Sort them.

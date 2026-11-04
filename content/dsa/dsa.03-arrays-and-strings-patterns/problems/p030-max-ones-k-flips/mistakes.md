@@ -1,0 +1,5 @@
+- Deciding which zeros to flip ahead of time, such as the ones in the smallest gaps. The window finds the best choice for you.
+- Decreasing `zeros` for every element that leaves, even a `1`. Only a leaving zero lowers the count.
+- Moving `l` to `r + 1` (emptying the window) when a zero too many arrives. That throws away the ones between the old zeros: `1 0 1 1 0 1` with `k = 1` must still find `1 1 0 1` (length 4).
+- Forgetting `k = 0`: then the answer is just the longest run of ones, and an all-zero array gives 0.
+- Recording the length before the shrinking loop: the window may still hold `k + 1` zeros.

@@ -1,0 +1,5 @@
+- Forgetting the shrinking size: sifting inside the whole list can pull the sorted maximums back into the heap.
+- Starting the build at `n - 1`: leaves need no sift. Start at `n // 2 - 1`.
+- Choosing the left child without comparing the two children: the heap rule breaks.
+- Wrong child indices: children of `i` are `2i + 1` and `2i + 2` (0-based lists).
+- Using `heapq.heappop` n times: that is a heap sort in 3 lines, but it is the banned shortcut.

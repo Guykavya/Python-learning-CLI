@@ -1,0 +1,6 @@
+- Using Fermat: `pow(a, m - 2, m)` gives wrong values for composite `m` and never prints `-1`.
+- Looping `x` from 1 to `m - 1` and testing. It is O(m): with `m = 10^18` it never finishes.
+- Printing `x` straight from extended Euclid. It can be negative (like `-9` in the last problem). Use `x % m`.
+- Not reducing `a` first. A negative or huge `a` works with ext, but `gcd` checks and the result are easier to trust after `a % m`.
+- Printing 0 or -1 for `m = 1`. The inverse modulo 1 is 0, because 1 % 1 is 0.
+- Printing `-1` when `a % m == 0` and `m > 1`: correct. But printing it for `m == 1` is wrong.

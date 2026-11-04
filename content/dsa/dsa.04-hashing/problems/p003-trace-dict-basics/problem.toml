@@ -1,0 +1,6 @@
+id = "dsa.04.p003"
+title = "Trace dictionary basics"
+tier = "drill"
+kind = "trace"
+topics = ["dictionary", "get", "pop", "membership", "trace"]
+minutes = 10

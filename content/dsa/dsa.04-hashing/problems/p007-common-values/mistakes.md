@@ -1,0 +1,4 @@
+- Counting `2` twice because it appears twice in each list. The task asks for **distinct** values.
+- `for x in a: if x in b` where `b` is a list: each `in` scans the list, so O(n * m). Make `b` a set.
+- Printing the values in set order. A set has no meaningful order; sort before printing.
+- Printing `[2, 7]` with brackets. Use `print(*common)`.

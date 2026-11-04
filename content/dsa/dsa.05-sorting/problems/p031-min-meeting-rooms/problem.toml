@@ -1,0 +1,6 @@
+id = "dsa.05.p031"
+title = "Minimum meeting rooms"
+tier = "deep"
+kind = "code"
+topics = ["intervals", "sweep line", "sort starts and ends"]
+minutes = 40

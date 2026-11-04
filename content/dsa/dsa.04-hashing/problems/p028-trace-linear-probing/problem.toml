@@ -1,0 +1,6 @@
+id = "dsa.04.p028"
+title = "Trace linear probing"
+tier = "deep"
+kind = "trace"
+topics = ["open addressing", "linear probing", "collisions", "trace"]
+minutes = 25

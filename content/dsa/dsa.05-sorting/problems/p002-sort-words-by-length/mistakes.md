@@ -1,0 +1,4 @@
+- Using `key=lambda w: (len(w), w)`: ties are then broken alphabetically, but the problem wants input order.
+- Using `reverse=True` by mistake. Shortest first is the default direction.
+- Sorting without a key: that orders alphabetically (`'apple' < 'fig'`) and ignores length.
+- Writing your own sort that is not stable (for example a plain selection sort) can reorder equal-length words.

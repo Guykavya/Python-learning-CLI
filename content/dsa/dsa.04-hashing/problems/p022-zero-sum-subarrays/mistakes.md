@@ -1,0 +1,4 @@
+- Forgetting `{0: 1}`: subarrays that start at the first element (prefix sum 0 before them) are missed.
+- Counting 1 for a repeated prefix instead of the number of earlier occurrences: three equal prefixes make three pairs, not one.
+- Recording `s` before the lookup: every prefix would match itself and add a fake subarray.
+- Two loops over `l` and `r`: O(n^2) is far too slow for 200000.

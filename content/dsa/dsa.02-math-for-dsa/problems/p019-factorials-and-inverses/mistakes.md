@@ -1,0 +1,6 @@
+- Dividing: `fact[n] // (fact[r] * fact[n - r]) % MOD` with already-reduced factorials. The result is a different number: the remainder of a quotient is not the quotient of remainders.
+- Using `/` and getting floats. Never write `/` in modular code.
+- Computing `fact` per query (a loop of `n` steps each). With 10^5 queries that is 10^11 steps. Build the table once.
+- Forgetting one `% MOD` between multiplications. The answer is still right in Python, but numbers get big and slow. In C++ it overflows.
+- Returning `fact[n] * ...` for `r > n` where `n - r` is negative: Python happily reads `inv_fact[-3]` from the end of the list and gives a wrong number. Test `r > n` first.
+- Using `MOD - 2` as a plain number without `pow(x, MOD - 2, MOD)`: `x ** (MOD - 2)` has billions of digits.

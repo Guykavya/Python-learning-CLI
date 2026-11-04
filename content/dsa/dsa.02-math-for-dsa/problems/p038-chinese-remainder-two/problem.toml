@@ -1,0 +1,6 @@
+id = "dsa.02.p038"
+title = "Two congruences at once"
+tier = "challenge"
+kind = "code"
+topics = ["Chinese remainder theorem", "non-coprime moduli", "extended Euclid", "gcd"]
+minutes = 50

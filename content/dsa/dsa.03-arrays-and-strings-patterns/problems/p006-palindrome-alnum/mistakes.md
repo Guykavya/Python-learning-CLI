@@ -1,0 +1,5 @@
+- Removing only spaces. Commas, colons and quotes must be skipped too: use `isalnum()`.
+- Using `isalpha()`: digits count as well, so `"1a1"` is a palindrome and `"12"` is not.
+- Forgetting `lower()`: `N` and `n` are different characters.
+- Skipping without the `i < j` guard. On a line like `",.!"` the pointer runs off the end of the string.
+- Printing `True`/`False` or `Yes`/`No`: the output must be exactly `yes` or `no`.

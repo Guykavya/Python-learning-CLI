@@ -1,0 +1,5 @@
+- A base case of `len(a) == 0` only: a one-element list splits into `[]` and itself forever (RecursionError).
+- Forgetting to extend with the leftovers in `merge`: the output loses the largest values.
+- Splitting at `mid` but recursing on `a[:mid]` and `a[mid + 1:]`: one element disappears.
+- Merging with `pop(0)`: each pop is O(n), the merge becomes O(n^2).
+- Printing the result of a recursive function that returns `None` (sorting in place but returning nothing).

@@ -1,0 +1,6 @@
+id = "dsa.02.p019"
+title = "nCr mod p with factorial tables"
+tier = "applied"
+kind = "code"
+topics = ["nCr", "modular inverse", "Fermat", "factorials", "precomputation"]
+minutes = 40

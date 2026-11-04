@@ -1,0 +1,6 @@
+id = "dsa.05.p035"
+title = "Trace sorting by two keys in two passes"
+tier = "deep"
+kind = "trace"
+topics = ["stability", "multi-key sort", "sorted", "trace"]
+minutes = 25

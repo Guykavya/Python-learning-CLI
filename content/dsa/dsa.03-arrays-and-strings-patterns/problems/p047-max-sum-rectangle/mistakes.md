@@ -1,0 +1,6 @@
+- Starting `best` (or Kadane's `cur`) at 0. An all-negative grid must give its largest cell, not 0: the rectangle is non-empty.
+- Creating `col` once outside the `top` loop. The sums then carry rows from earlier bands, and the bands stop being contiguous.
+- Rebuilding the column sums from scratch for each `(top, bottom)` pair. Correct, but O(r^3 c).
+- Only trying square rectangles, or only rectangles that start at the top row.
+- Trying every rectangle with 2D prefix sums. Each rectangle is O(1), but there are about `r^2 c^2 / 4` of them: far too many at 150 x 150.
+- Mixing up rows and columns when reading: `r` lines of `c` numbers each.

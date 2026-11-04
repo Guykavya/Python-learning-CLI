@@ -1,0 +1,6 @@
+id = "dsa.02.p004"
+title = "List the primes with a sieve"
+tier = "drill"
+kind = "code"
+topics = ["sieve of Eratosthenes", "primes"]
+minutes = 20

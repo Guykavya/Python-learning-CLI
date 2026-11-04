@@ -1,0 +1,6 @@
+id = "dsa.05.p032"
+title = "Minimum arrows to burst balloons"
+tier = "deep"
+kind = "code"
+topics = ["intervals", "greedy", "sort by end"]
+minutes = 45

@@ -1,0 +1,4 @@
+- Using `s.remove(x)` or `s.index(x)`: a linear scan; 100000 commands on a big list time out (and are banned here).
+- Removing every copy of `x`, or removing without checking `s[i] == x` first (then you delete the next larger value).
+- Calling `sorted(s)` after every insert: `O(n log n)` per command.
+- `kth` with a 0-based index, or without checking `k > len(s)`.

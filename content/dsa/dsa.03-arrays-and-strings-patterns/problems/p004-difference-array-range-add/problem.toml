@@ -1,0 +1,6 @@
+id = "dsa.03.p004"
+title = "Range additions with a difference array"
+tier = "drill"
+kind = "code"
+topics = ["difference array", "prefix sums", "range updates"]
+minutes = 20

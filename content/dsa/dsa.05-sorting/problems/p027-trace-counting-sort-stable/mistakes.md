@@ -1,0 +1,4 @@
+- Printing `start` after the third loop instead of the value computed in the second loop.
+- Forgetting `None` in the printed list while slots are still empty.
+- Placing records by `count[key]` instead of by the running `start[key]`.
+- Printing the line before the placement.

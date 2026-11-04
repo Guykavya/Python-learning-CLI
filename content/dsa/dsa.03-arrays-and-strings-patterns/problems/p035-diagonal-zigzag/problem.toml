@@ -1,0 +1,6 @@
+id = "dsa.03.p035"
+title = "Zigzag diagonal order"
+tier = "applied"
+kind = "code"
+topics = ["grids", "diagonals", "index arithmetic", "traversal"]
+minutes = 35

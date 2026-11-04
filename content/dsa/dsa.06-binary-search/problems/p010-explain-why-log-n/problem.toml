@@ -1,0 +1,6 @@
+id = "dsa.06.p010"
+title = "Explain: why halving is so fast"
+tier = "drill"
+kind = "explain"
+topics = ["logarithm", "halving", "sorted precondition"]
+minutes = 20

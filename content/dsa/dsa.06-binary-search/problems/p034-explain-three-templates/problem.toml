@@ -1,0 +1,7 @@
+id = "dsa.06.p034"
+title = "Explain: the three binary search templates"
+tier = "deep"
+kind = "explain"
+topics = ["templates", "loop invariant", "off-by-one"]
+minutes = 30
+assessment = "explain"

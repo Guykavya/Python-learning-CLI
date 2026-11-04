@@ -1,0 +1,6 @@
+id = "dsa.02.p029"
+title = "Extended Euclid"
+tier = "deep"
+kind = "code"
+topics = ["extended Euclid", "Bezout", "recursion", "gcd"]
+minutes = 35

@@ -1,0 +1,6 @@
+id = "dsa.05.p017"
+title = "Sort colors (Dutch flag)"
+tier = "applied"
+kind = "code"
+topics = ["counting", "three-way partition", "in-place"]
+minutes = 30

@@ -1,0 +1,6 @@
+id = "dsa.06.p006"
+title = "Upper bound: how many are at most x"
+tier = "drill"
+kind = "code"
+topics = ["upper bound", "half-open", "counting"]
+minutes = 20

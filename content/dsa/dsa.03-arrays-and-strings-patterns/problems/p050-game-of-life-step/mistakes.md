@@ -1,0 +1,7 @@
+- Updating the grid in place. Cells you already changed are then read as neighbours, so the result depends on the scan order (the blinker comes out lopsided).
+- `new = grid` or `new = grid[:]`. The first is the same list; the second copies only the outer list, and the rows are shared. Build fresh rows.
+- Checking only `ni < r`. Then `ni = -1` reads the last row: Python's negative indices make the grid wrap silently.
+- Wrapping on purpose with `% r`. This problem says the edges are dead.
+- Counting the cell itself as its own neighbour (forgetting to skip `(0, 0)`).
+- Mixing up the rules: a dead cell needs **exactly** 3; an alive cell survives with 2 **or** 3.
+- Running the generation loop `k + 1` times, or once even when `k = 0`.

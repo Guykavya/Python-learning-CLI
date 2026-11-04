@@ -1,0 +1,5 @@
+- Forgetting the line printed before the loop (`2 2 2` and `-4 -4 -4`).
+- Writing `cur + x` instead of the maximum: for `x = 4` the new `cur` is 4, not 3.
+- Letting `best` drop: after `x = -5`, `cur` is 0 but `best` stays 5.
+- Answering 0 for the all-negative list. The code never compares with 0.
+- Leaving out the `--` header lines, or printing the list without its brackets and commas.

@@ -1,0 +1,6 @@
+id = "dsa.03.p012"
+title = "Count windows with a high average"
+tier = "drill"
+kind = "code"
+topics = ["sliding window", "fixed window", "integer arithmetic"]
+minutes = 15

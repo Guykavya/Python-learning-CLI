@@ -1,0 +1,4 @@
+- Making the count array of size `k` instead of `k + 1`: the value `k` itself is out of range.
+- Using a dictionary or sorting the dictionary keys: you are back to a comparison sort of the distinct values.
+- Calling `sorted`. The point of this problem is the `O(n + k)` bound.
+- `out += [v] * count[v]` inside nested loops that append one by one is fine; `out = out + ...` builds a new list each time and is slow.

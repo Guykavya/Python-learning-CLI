@@ -1,0 +1,5 @@
+- Using C-style truncation: `-17 // 5 = -3` and `-17 % 5 = -2`. In Python `//` floors, so it is `-4` and `3`.
+- Believing `-17 // 5` and `int(-17 / 5)` give the same result. The first floors, the second truncates toward zero.
+- Reading `-3 % 10` as `-(3 % 10)`. Unary minus binds tighter than `%`, so it is `(-3) % 10 = 7`.
+- Reading `-2 ** 2` as 4. The power is computed first.
+- Forgetting that `divmod` prints a tuple with parentheses, and that float inputs give float outputs (`10.0`).

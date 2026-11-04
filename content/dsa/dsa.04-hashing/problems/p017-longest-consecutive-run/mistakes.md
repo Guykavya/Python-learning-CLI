@@ -1,0 +1,4 @@
+- Starting the inner walk from every value: a run of length `m` is walked `m + (m - 1) + ... = m^2/2` steps. 200000 consecutive values then take 2 * 10^10 steps.
+- Forgetting that repeats exist: iterate over `set(a)`, not over `a`, or count a value twice in a run.
+- Returning 1 for an empty input. With `n = 0` the answer is 0.
+- Treating `1, 3` as consecutive. The difference must be exactly 1.

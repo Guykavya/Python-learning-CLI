@@ -1,0 +1,5 @@
+- Saying "the `-v` stops the update" without saying from which position. It stops it from `r + 1` on, because `r` is still inside the range.
+- Describing `d` as "the final array" or "the updates list". It is the array of **changes between neighbours** of the added amounts.
+- Thinking the updates must be applied in order. Addition does not care about order; that is why one pass works.
+- Forgetting that the method gives values only after the prefix pass. It fits "many updates, then read", not "update, read, update, read".
+- Claiming the difference array is always faster. For two or three short updates the plain loop is simpler and just as quick.

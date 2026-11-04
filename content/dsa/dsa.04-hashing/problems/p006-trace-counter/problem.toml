@@ -1,0 +1,6 @@
+id = "dsa.04.p006"
+title = "Trace a Counter"
+tier = "drill"
+kind = "trace"
+topics = ["Counter", "most_common", "frequency counting", "trace"]
+minutes = 12

@@ -1,0 +1,6 @@
+id = "dsa.03.p050"
+title = "Game of Life generations"
+tier = "deep"
+kind = "code"
+topics = ["matrix", "simulation", "neighbours", "grid boundaries", "copy before update"]
+minutes = 40

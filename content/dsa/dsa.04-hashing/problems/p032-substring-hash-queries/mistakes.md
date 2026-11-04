@@ -1,0 +1,5 @@
+- Forgetting the factor `B^(r-l+1)`: `P[r] - P[l-1]` is not the hash of the block.
+- Using `P[l]` instead of `P[l-1]` with 1-based indices. The block starts at letter `l`, so remove the first `l - 1` letters.
+- Using `ord(ch)` (97 for `a`) instead of `ord(ch) - 96`. The tests use `a = 1`.
+- Computing `pow(B, k, M)` with plain `B ** k` and then `% M`: correct but huge numbers; use `pow(B, k, M)` or a list.
+- Recomputing the hash from scratch per query: O(n) each, 4 * 10^10 steps in total.

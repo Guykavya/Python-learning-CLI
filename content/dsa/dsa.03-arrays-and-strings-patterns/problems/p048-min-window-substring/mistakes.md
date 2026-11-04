@@ -1,0 +1,7 @@
+- Decreasing `missing` for every character of `t` that enters, even when the window already has enough of it. Extra copies then make the window look good too early (or `missing` goes negative).
+- Treating `t` as a set of letters. `t = "aa"` needs two `a`s.
+- Shrinking with `if` instead of `while`. The window keeps extra characters on the left and the answer is too long.
+- Recording the window **after** removing `s[left]`. At that point the window may no longer be good; record first, then remove.
+- Using `<=` when comparing lengths. A later window of the same length replaces the earlier one.
+- Building the answer with slicing inside the loop. Each slice copies up to `n` characters, which can make the run O(n^2).
+- Starting a fresh scan from every `left`. Correct, but O(n^2): it times out on `aaaa...ab`.

@@ -1,0 +1,4 @@
+- Reversing the whole list for `reverse=True`: that would reverse ties too, which Python does not do.
+- Thinking `sorted(words, ...)` changed `words`: line 7 prints the original order.
+- Expecting `nums.sort()` to print the list: it prints `None`, and the list is then sorted in place.
+- Sorting `-1` by its sign: `key=abs` compares 1, 4, 2, 3.

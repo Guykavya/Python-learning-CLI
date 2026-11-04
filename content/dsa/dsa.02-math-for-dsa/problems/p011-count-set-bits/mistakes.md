@@ -1,0 +1,5 @@
+- Writing `while n > 1`. The last 1-bit (when `n` is a single 1, or a power of two) is then never counted.
+- Using `n ^= n - 1` (XOR) in the loop. For `n = 1` it gives `1 ^ 0 = 1` again, so the loop never ends. Only `&` clears the lowest set bit.
+- Counting with `n % 2` but dividing with `n // 2` only while `n > 1`. The final bit of `n` is lost.
+- Printing `n.bit_length()`. That is the position of the highest bit, not how many bits are set (for 8 it gives 4, not 1).
+- Using `n ^ (n - 1)` or `n | (n - 1)`: those are different tricks. Only `&` clears the lowest set bit.

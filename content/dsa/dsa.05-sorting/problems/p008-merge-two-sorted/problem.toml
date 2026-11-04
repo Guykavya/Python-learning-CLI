@@ -1,0 +1,6 @@
+id = "dsa.05.p008"
+title = "Merge two sorted lists"
+tier = "drill"
+kind = "code"
+topics = ["merge", "two pointers", "sorted lists"]
+minutes = 20

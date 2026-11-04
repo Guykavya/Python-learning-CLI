@@ -1,0 +1,6 @@
+id = "dsa.04.p014"
+title = "Two sum"
+tier = "applied"
+kind = "code"
+topics = ["two sum", "complement", "dictionary"]
+minutes = 25

@@ -1,0 +1,4 @@
+- Saying a bigger modulus removes collisions. It only makes them rarer.
+- Estimating the colliding pairs as `n / M`: the number of **pairs** is about `n^2 / 2`.
+- Saying double hashing is the same as running the same hash twice. The two hashes must use different `B` or `M`.
+- Forgetting the verification step after a match.

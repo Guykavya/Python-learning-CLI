@@ -1,0 +1,6 @@
+id = "dsa.03.p022"
+title = "Equilibrium index"
+tier = "applied"
+kind = "code"
+topics = ["prefix sums", "running total", "arrays"]
+minutes = 20

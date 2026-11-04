@@ -1,0 +1,6 @@
+id = "dsa.03.p031"
+title = "Trace a variable sliding window"
+tier = "applied"
+kind = "trace"
+topics = ["sliding window", "variable window", "sets", "trace"]
+minutes = 25

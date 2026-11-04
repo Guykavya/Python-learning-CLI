@@ -1,0 +1,219 @@
+# Real site problems for dsa.04 (Hashing).
+# Verified online (web search, Nov 2026): Codeforces 4C "Registration system" only.
+# All other LeetCode slugs, CSES task ids and Codeforces id 1520D were written from memory of the sites and not re-fetched online.
+# Titles and ids that failed to open should be fixed here; no Codeforces id was invented, only ones recalled with confidence.
+# Already in dsa.03 and therefore left out: subarray-sum-equals-k, find-all-anagrams-in-a-string,
+# longest-substring-without-repeating-characters, CSES 1661 Subarray Sums II.
+# LeetCode: Easy, Medium and a few Hard. Codeforces: rating about 1200 to 1300. CSES: Sorting and Searching.
+# Order follows the chapter: sets and counting (sections 2-5), complement and prefix dictionaries (6-7),
+# hash tables and caches (9-10), string hashing (11-12). Write the brute force first, then the hash idea.
+
+[[problem]]
+site = "leetcode"
+key = "contains-duplicate"
+title = "Contains Duplicate"
+url = "https://leetcode.com/problems/contains-duplicate/"
+minutes = 10
+
+[[problem]]
+site = "leetcode"
+key = "valid-anagram"
+title = "Valid Anagram"
+url = "https://leetcode.com/problems/valid-anagram/"
+minutes = 10
+
+[[problem]]
+site = "leetcode"
+key = "two-sum"
+title = "Two Sum"
+url = "https://leetcode.com/problems/two-sum/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "ransom-note"
+title = "Ransom Note"
+url = "https://leetcode.com/problems/ransom-note/"
+minutes = 10
+
+[[problem]]
+site = "leetcode"
+key = "first-unique-character-in-a-string"
+title = "First Unique Character in a String"
+url = "https://leetcode.com/problems/first-unique-character-in-a-string/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "intersection-of-two-arrays"
+title = "Intersection of Two Arrays"
+url = "https://leetcode.com/problems/intersection-of-two-arrays/"
+minutes = 10
+
+[[problem]]
+site = "leetcode"
+key = "isomorphic-strings"
+title = "Isomorphic Strings"
+url = "https://leetcode.com/problems/isomorphic-strings/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "word-pattern"
+title = "Word Pattern"
+url = "https://leetcode.com/problems/word-pattern/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "happy-number"
+title = "Happy Number"
+url = "https://leetcode.com/problems/happy-number/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "group-anagrams"
+title = "Group Anagrams"
+url = "https://leetcode.com/problems/group-anagrams/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "top-k-frequent-elements"
+title = "Top K Frequent Elements"
+url = "https://leetcode.com/problems/top-k-frequent-elements/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "sort-characters-by-frequency"
+title = "Sort Characters By Frequency"
+url = "https://leetcode.com/problems/sort-characters-by-frequency/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "longest-consecutive-sequence"
+title = "Longest Consecutive Sequence"
+url = "https://leetcode.com/problems/longest-consecutive-sequence/"
+minutes = 30
+
+[[problem]]
+site = "cses"
+key = "1621"
+title = "Distinct Numbers"
+url = "https://cses.fi/problemset/task/1621"
+minutes = 10
+
+[[problem]]
+site = "cses"
+key = "1640"
+title = "Sum of Two Values"
+url = "https://cses.fi/problemset/task/1640"
+minutes = 20
+
+[[problem]]
+site = "codeforces"
+key = "4C"
+title = "Registration system"
+url = "https://codeforces.com/problemset/problem/4/C"
+minutes = 20
+
+[[problem]]
+site = "codeforces"
+key = "1520D"
+title = "Same Differences"
+url = "https://codeforces.com/problemset/problem/1520/D"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "4sum-ii"
+title = "4Sum II"
+url = "https://leetcode.com/problems/4sum-ii/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "contiguous-array"
+title = "Contiguous Array"
+url = "https://leetcode.com/problems/contiguous-array/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "continuous-subarray-sum"
+title = "Continuous Subarray Sum"
+url = "https://leetcode.com/problems/continuous-subarray-sum/"
+minutes = 35
+
+[[problem]]
+site = "leetcode"
+key = "repeated-dna-sequences"
+title = "Repeated DNA Sequences"
+url = "https://leetcode.com/problems/repeated-dna-sequences/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "brick-wall"
+title = "Brick Wall"
+url = "https://leetcode.com/problems/brick-wall/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "design-hashset"
+title = "Design HashSet"
+url = "https://leetcode.com/problems/design-hashset/"
+minutes = 25
+
+[[problem]]
+site = "cses"
+key = "1141"
+title = "Playlist"
+url = "https://cses.fi/problemset/task/1141"
+minutes = 25
+
+[[problem]]
+site = "cses"
+key = "1642"
+title = "Sum of Four Values"
+url = "https://cses.fi/problemset/task/1642"
+minutes = 35
+
+[[problem]]
+site = "leetcode"
+key = "design-hashmap"
+title = "Design HashMap"
+url = "https://leetcode.com/problems/design-hashmap/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "lru-cache"
+title = "LRU Cache"
+url = "https://leetcode.com/problems/lru-cache/"
+minutes = 40
+
+[[problem]]
+site = "leetcode"
+key = "insert-delete-getrandom-o1"
+title = "Insert Delete GetRandom O(1)"
+url = "https://leetcode.com/problems/insert-delete-getrandom-o1/"
+minutes = 35
+
+[[problem]]
+site = "leetcode"
+key = "longest-duplicate-substring"
+title = "Longest Duplicate Substring"
+url = "https://leetcode.com/problems/longest-duplicate-substring/"
+minutes = 60
+
+[[problem]]
+site = "leetcode"
+key = "shortest-palindrome"
+title = "Shortest Palindrome"
+url = "https://leetcode.com/problems/shortest-palindrome/"
+minutes = 60

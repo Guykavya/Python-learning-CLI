@@ -1,0 +1,6 @@
+id = "dsa.04.p013"
+title = "Explain: why is a hash lookup fast?"
+tier = "drill"
+kind = "explain"
+topics = ["hashing", "complexity", "set vs list", "reasoning"]
+minutes = 20

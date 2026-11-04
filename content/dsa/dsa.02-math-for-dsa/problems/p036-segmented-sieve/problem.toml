@@ -1,0 +1,6 @@
+id = "dsa.02.p036"
+title = "Primes in a far-away range"
+tier = "challenge"
+kind = "code"
+topics = ["segmented sieve", "sieve", "ranges", "sqrt"]
+minutes = 50

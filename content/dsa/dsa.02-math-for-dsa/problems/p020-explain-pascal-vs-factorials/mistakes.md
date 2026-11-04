@@ -1,0 +1,4 @@
+- Picking B for a composite modulus. Division by remainders needs an inverse, and a number sharing a factor with the modulus has none.
+- Picking Pascal for `n = 10^6`: `n^2 / 2` is 5 * 10^11 entries, beyond any memory.
+- Forgetting that Pascal's triangle only needs addition, so it works for every modulus (that is its strength).
+- Saying "Python has big ints, so no modulus is needed". The true value of `C(10^6, 5 * 10^5)` has 300000 digits; the modulus asks for the remainder only.

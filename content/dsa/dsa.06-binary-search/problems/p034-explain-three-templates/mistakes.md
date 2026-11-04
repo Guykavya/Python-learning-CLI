@@ -1,0 +1,3 @@
+- Describing the templates by their code only, without the invariant: the invariant is what makes the updates obvious.
+- Forgetting what the final `lo` means in the half-open template (the insertion point, which may be `n`).
+- Saying the closed template is "wrong for first/last occurrence": it works too, with an answer variable.

@@ -1,0 +1,4 @@
+- Using `>` instead of `>=`: a window whose average is exactly `t` must be counted.
+- Forgetting to check the first window, before the slide loop starts.
+- Comparing `s / k >= t` and getting float rounding surprises on other inputs. Multiply instead: `s >= t * k`.
+- Re-summing each window: O(n * k), too slow for big `k`.

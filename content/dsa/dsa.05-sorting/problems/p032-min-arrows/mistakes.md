@@ -1,0 +1,4 @@
+- Sorting by start: the greedy argument needs the earliest **end**. A long first balloon with an early neighbour breaks the start-based version unless you also track the minimum end.
+- Using `xs >= last` for 'new arrow': touching balloons share the point `last`, so the same arrow bursts them; the test must be strict `xs > last`.
+- Starting with `last = 0`: negative coordinates exist. Use a very small number such as `-10**18`.
+- Counting the balloons that overlap instead of the arrows: arrows = size of a minimum set of points hitting all intervals.

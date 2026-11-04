@@ -1,0 +1,4 @@
+- Claiming the sum of letter codes works because anagrams have equal sums: that is true one way only; different words can also share a sum.
+- Calling `key4` correct because anagrams have equal letter sets. Equal sets do not imply equal counts.
+- Forgetting that the key must be hashable.
+- Saying `key2` is always faster. For tiny words the 26-element tuple costs more than sorting 3 letters.

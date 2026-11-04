@@ -1,0 +1,4 @@
+- Using `a[lo] < a[mid]` (strict): when `lo == mid` (two elements left) the left "half" is a single element and it is sorted; strict `<` sends you into the wrong branch.
+- Writing `a[lo] <= x <= a[mid]` after the equality check: it is harmless but hides that you did the check; writing `x < a[hi]` instead of `x <= a[hi]` is a real bug that skips `a[hi]`.
+- Finding the rotation point first with one search and then searching twice is fine, but forgetting to map indices back gives answers shifted by the rotation.
+- A linear scan per query: 10^10 steps for the big test.

@@ -1,0 +1,4 @@
+- Sorting ties alphabetically. Ties keep the order of first appearance, so `to` comes before `be`.
+- Expecting `c["zzz"]` to raise `KeyError`. A Counter gives 0.
+- Mixing up `len(c)` (8 distinct words) with the number of words (11).
+- Thinking `update` replaces the count with the number of new items instead of adding to it.

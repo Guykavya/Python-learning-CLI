@@ -1,0 +1,6 @@
+id = "dsa.03.p024"
+title = "Rectangle updates with a 2D difference array"
+tier = "applied"
+kind = "code"
+topics = ["2D difference array", "prefix sums", "grids", "range updates"]
+minutes = 35

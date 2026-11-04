@@ -1,0 +1,6 @@
+id = "dsa.04.p020"
+title = "Trace anagram grouping"
+tier = "applied"
+kind = "trace"
+topics = ["grouping", "anagram key", "dictionary", "trace"]
+minutes = 15

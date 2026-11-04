@@ -1,0 +1,4 @@
+- Forgetting the leftovers: when one list is exhausted the other still has values. Always copy `a[i:]` and `b[j:]` after the loop.
+- Using `<` instead of `<=`: values stay correct, but equal values from the second list jump ahead of the first, which breaks stability later in merge sort.
+- Calling `(a + b).sort()`: correct output but a banned shortcut, and it hides what the merge step is.
+- Using `a.pop(0)`: each pop shifts the whole list, so the loop becomes O(n^2).

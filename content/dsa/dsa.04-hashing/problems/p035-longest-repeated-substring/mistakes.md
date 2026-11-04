@@ -1,0 +1,4 @@
+- Testing lengths from `n - 1` down to 1 one by one: `O(n^2)` total.
+- Binary search with `mid = (lo + hi) // 2` when moving `lo = mid`: it never ends. Use `(lo + hi + 1) // 2`.
+- Letting `hi = n`: a window of length `n` fits only once, so the answer is at most `n - 1`.
+- Using `v('a') = 0`: then `a`, `aa`, `aaa` have the same hash 0 and the answer is wrong.

@@ -1,0 +1,4 @@
+- Starting `lo` at 1 or 0: for a capacity below `max(w)` the greedy loop gives a wrong day count (a package that never fits still gets "loaded" on its own day).
+- Starting a new day with `load = x` but forgetting to count the new day, or counting 0 days for an empty list.
+- Sorting the weights: the order is fixed by the problem, sorting changes the answer.
+- Checking every capacity from `max(w)` to `sum(w)`: up to 10^14 candidates.

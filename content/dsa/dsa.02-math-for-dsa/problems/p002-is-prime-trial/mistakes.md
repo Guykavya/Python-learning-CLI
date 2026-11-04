@@ -1,0 +1,5 @@
+- Writing `i * i < n`. Then squares of primes like 9, 25, 49 are reported as prime because `i = 3, 5, 7` is never tested.
+- Forgetting that 1 (and 0) is not prime. A loop that finds no divisor says "prime" for 1.
+- Treating 2 as composite because the loop never runs for it. `2 * 2 <= 2` is false, so the loop is skipped and the default must be "prime".
+- Using `int(n ** 0.5)` or `math.sqrt`. For numbers near 10^15 and more the float is not exact. `i * i <= n` uses only integers.
+- Looping `for i in range(2, n)`. It is correct but needs a billion steps for a large prime.

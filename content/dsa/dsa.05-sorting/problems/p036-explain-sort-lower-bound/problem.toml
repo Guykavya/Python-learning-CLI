@@ -1,0 +1,6 @@
+id = "dsa.05.p036"
+title = "Explain: why can't comparison sorts beat n log n?"
+tier = "deep"
+kind = "explain"
+topics = ["lower bound", "decision tree", "counting sort", "reasoning"]
+minutes = 30

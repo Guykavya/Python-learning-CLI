@@ -1,0 +1,5 @@
+- Printing `max(prices) - min(prices)`. The maximum may come **before** the minimum, and you cannot sell before you buy.
+- Updating `cheapest` before computing today's profit. Harmless here (the profit is then 0), but in variants with fees it means buying and selling on the same day.
+- Starting `best` at `-infinity` or at `prices[1] - prices[0]`, and printing a negative profit for falling prices. Not trading earns 0.
+- Comparing only neighbouring days. The best trade can span many days.
+- Two nested loops over buy and sell days: correct but O(n^2).

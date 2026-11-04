@@ -1,0 +1,6 @@
+id = "dsa.03.p027"
+title = "Longest substring without repeats"
+tier = "applied"
+kind = "code"
+topics = ["sliding window", "variable window", "sets", "strings"]
+minutes = 30

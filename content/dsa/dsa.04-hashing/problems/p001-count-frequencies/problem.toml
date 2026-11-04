@@ -1,0 +1,6 @@
+id = "dsa.04.p001"
+title = "Count how often each value appears"
+tier = "drill"
+kind = "code"
+topics = ["dictionary", "frequency counting", "insertion order"]
+minutes = 10

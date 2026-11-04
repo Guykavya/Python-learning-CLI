@@ -1,0 +1,4 @@
+lo 0 mid 3 hi 6 12 > 9 go left
+lo 0 mid 1 hi 3 3 < 8 go right
+lo 2 mid 2 hi 3 8 < 12 go right
+peak index 3 value 12

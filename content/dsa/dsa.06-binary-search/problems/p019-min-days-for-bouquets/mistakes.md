@@ -1,0 +1,4 @@
+- Not resetting the run to 0 after making a bouquet (flowers are not reusable) or after a flower that has not bloomed.
+- Forgetting the impossible case `m * k > n`; the search would then return `max(bloom)` as if it worked.
+- Overflow worries: `m * k` can be 10^10, but Python integers are exact, so no special care is needed (in C++ you would need `long long`).
+- Counting bloomed flowers in total instead of runs of `k` adjacent ones: `[1, 10, 3, 10, 2]` with `k = 2` needs day 10, not day 3.

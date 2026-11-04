@@ -1,0 +1,6 @@
+id = "dsa.02.p023"
+title = "Count subsets with a given sum"
+tier = "applied"
+kind = "code"
+topics = ["bitmask", "subsets", "lowest set bit"]
+minutes = 30

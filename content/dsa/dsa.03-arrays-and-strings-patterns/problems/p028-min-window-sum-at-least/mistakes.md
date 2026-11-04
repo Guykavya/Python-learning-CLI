@@ -1,0 +1,6 @@
+- Shrinking with `if` instead of `while`. One large new element can allow several cuts: `1 1 1 10` with `s = 10` needs `l` to move three times to find length 1.
+- Recording `r - l` instead of `r - l + 1`.
+- Shrinking first and recording afterwards. The window you record is then already too small (its sum may be below `s`).
+- Printing `n + 1` (or `inf`) when no window reaches `s`. The problem asks for `0`.
+- Using `> s` instead of `>= s`: a window with sum exactly `s` counts.
+- Starting `best` at `n`. Then a window of length exactly `n` (the whole array) looks like "not found".

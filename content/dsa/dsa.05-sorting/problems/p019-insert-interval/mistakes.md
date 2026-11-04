@@ -1,0 +1,5 @@
+- Using `r <= a` for the left group: an interval touching `a` should merge but would be copied instead.
+- Absorbing with `l < b` instead of `l <= b`: an interval starting exactly at `b` should merge.
+- Forgetting `min`/`max` while absorbing: the new start or end can be smaller/larger than `a`/`b`.
+- Appending the new interval inside the middle loop (once per absorbed interval) instead of once after it.
+- An empty list (`n = 0`): the answer is just the new interval.

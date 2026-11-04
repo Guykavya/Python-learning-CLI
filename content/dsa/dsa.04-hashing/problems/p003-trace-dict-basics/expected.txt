@@ -1,0 +1,9 @@
+{'ana': 31, 'ben': 25}
+2
+None
+0
+True False
+ana 31
+dev 40
+[('ana', 31), ('dev', 40)]
+31 {'dev': 40}

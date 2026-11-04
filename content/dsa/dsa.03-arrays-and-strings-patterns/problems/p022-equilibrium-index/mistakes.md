@@ -1,0 +1,5 @@
+- Adding `a[i]` to `left` **before** comparing. Then the element counts on the left side, and position 4 in the example is missed.
+- Forgetting that an empty side has sum 0. `[1]` has answer 1, and `[3, -3, 5]` has answer 3.
+- Printing the last equilibrium index instead of the first, or a 0-based position.
+- Calling `sum(a[:i])` and `sum(a[i+1:])` inside the loop. Each call walks the list, so the whole thing is O(n^2).
+- Printing `0` instead of `-1` when there is no answer.

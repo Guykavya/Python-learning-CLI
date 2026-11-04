@@ -1,0 +1,4 @@
+- Not deleting keys at count 0: `len(count)` then counts values that left the window.
+- Removing the old element before adding the new one when `k = 1` or when both are equal: it can delete the key and add it back, which is still correct, but a missing `get` default would crash.
+- Building a `set` per window: O(n * k).
+- Printing `n` numbers instead of `n - k + 1`.

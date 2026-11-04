@@ -1,0 +1,5 @@
+- Saying "the inverse exists when `a` is not a multiple of `m`". That is the condition for a **prime** `m` only. Modulo 10, the number 4 is not a multiple of 10 and still has no inverse.
+- Using Fermat's method for a composite modulus.
+- Saying extended Euclid needs a prime modulus. It only needs `gcd = 1`.
+- Forgetting that the result of extended Euclid can be negative; take `% m` at the end.
+- Confusing the inverse modulo `m` with `1 / a`. There are no fractions here: the inverse is an integer between 0 and `m - 1`.

@@ -1,0 +1,4 @@
+- Using `ends[j] < s`: a meeting ending exactly when another begins would wrongly need a second room.
+- Pairing each start with its own end after sorting both lists separately: that is fine for counting, but do not try to read the meetings back from it.
+- Sorting the meetings by start and comparing with only the previous one: three meetings can overlap even when neighbours do not, as in `[1,10] [2,3] [4,5]` (2 rooms, not 3).
+- A nested loop counting overlaps for each meeting: O(n^2).

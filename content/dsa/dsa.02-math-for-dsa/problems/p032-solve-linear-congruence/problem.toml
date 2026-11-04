@@ -1,0 +1,6 @@
+id = "dsa.02.p032"
+title = "Solve a x = b (mod m)"
+tier = "deep"
+kind = "code"
+topics = ["linear congruence", "modular inverse", "gcd"]
+minutes = 40

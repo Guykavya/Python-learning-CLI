@@ -1,0 +1,6 @@
+id = "dsa.05.p020"
+title = "Can one person attend every meeting?"
+tier = "applied"
+kind = "code"
+topics = ["intervals", "sort first", "overlap"]
+minutes = 25

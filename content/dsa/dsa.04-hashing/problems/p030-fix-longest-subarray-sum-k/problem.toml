@@ -1,0 +1,7 @@
+id = "dsa.04.p030"
+title = "Fix the longest subarray with sum k"
+tier = "deep"
+kind = "code"
+topics = ["prefix sums", "dictionary", "first occurrence", "debugging"]
+minutes = 40
+assessment = "fix"

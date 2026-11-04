@@ -1,0 +1,3 @@
+- Checking `a[lo] == x` without first checking `lo < n`: for `x` bigger than everything `lo == n` and `a[n]` raises IndexError.
+- Printing `upper_bound(x)` as the last index: it is one past the last.
+- Using a classic search that stops at any hit, which returns an arbitrary occurrence.

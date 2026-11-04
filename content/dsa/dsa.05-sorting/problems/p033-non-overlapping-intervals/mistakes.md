@@ -1,0 +1,4 @@
+- Sorting by start and keeping the interval that starts first: one very long early interval can block many short ones.
+- Using `l > last_end`: touching intervals are allowed, so the test is `l >= last_end`.
+- Returning `kept` instead of `n - kept`.
+- Tie-breaking on equal ends: it does not matter for the count, but sorting by `(end, start)` is deterministic.

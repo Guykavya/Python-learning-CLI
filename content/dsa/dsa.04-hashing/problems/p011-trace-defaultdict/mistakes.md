@@ -1,0 +1,4 @@
+- Printing `len(total)` as 4 for the `z` line. The read of `total["z"]` ran first and added a key.
+- Thinking `"q" in total` creates `q`. Membership tests never create keys.
+- Ordering the keys by sorted order. A dictionary keeps first-appearance order.
+- Forgetting that `defaultdict(int)` gives 0 for a missing key, so `+= 1` works the first time.

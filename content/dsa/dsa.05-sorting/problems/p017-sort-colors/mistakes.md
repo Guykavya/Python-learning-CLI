@@ -1,0 +1,4 @@
+- After swapping a `2` to the back, advancing `i`: the value that came from the back is unchecked.
+- Stopping the loop at `i < n` instead of `i <= hi`: you reprocess values already placed at the back.
+- Calling `sorted`: simple and correct, but the point is O(n) with no comparison sort.
+- Reading values as a string (`'012'`): spaces then break the counting.

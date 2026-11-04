@@ -1,0 +1,6 @@
+id = "dsa.06.p032"
+title = "Trace the search for a mountain peak"
+tier = "deep"
+kind = "trace"
+topics = ["peak finding", "slope test", "trace"]
+minutes = 20

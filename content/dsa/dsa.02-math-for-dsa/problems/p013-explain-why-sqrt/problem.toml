@@ -1,0 +1,6 @@
+id = "dsa.02.p013"
+title = "Why stop at the square root?"
+tier = "drill"
+kind = "explain"
+topics = ["trial division", "sqrt bound", "reasoning"]
+minutes = 15

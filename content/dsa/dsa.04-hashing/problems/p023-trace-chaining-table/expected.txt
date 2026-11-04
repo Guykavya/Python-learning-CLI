@@ -1,0 +1,13 @@
+put 5 bucket 1 chain length 1
+put 9 bucket 1 chain length 2
+put 12 bucket 0 chain length 1
+put 13 bucket 1 chain length 3
+put 5 bucket 1 already there
+put 7 bucket 3 chain length 1
+put 16 bucket 0 chain length 2
+put 1 bucket 1 chain length 4
+put 20 bucket 0 chain length 3
+[[12, 16, 20], [5, 9, 13, 1], [], [7]]
+find 13 found after 3 steps
+find 100 missing after 3 steps
+find 7 found after 1 steps

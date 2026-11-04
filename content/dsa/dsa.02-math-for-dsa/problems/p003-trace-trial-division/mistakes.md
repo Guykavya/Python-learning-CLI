@@ -1,0 +1,4 @@
+- Trying `i = 5` for 17. `5 * 5 = 25` is bigger than 17, so the loop has already stopped.
+- Forgetting that `check(1)` prints "no divisor found for 1" and returns `True`. The `n > 1` test in the last `print` is what fixes the answer.
+- Printing `try 2 on 2`. For `n = 2` the condition `4 <= 2` is false, so nothing is tried.
+- Forgetting the line `-- n` printed before each number.

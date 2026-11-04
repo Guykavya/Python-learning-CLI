@@ -1,0 +1,6 @@
+id = "dsa.02.p024"
+title = "The single number"
+tier = "applied"
+kind = "code"
+topics = ["xor", "parity", "O(1) space"]
+minutes = 25

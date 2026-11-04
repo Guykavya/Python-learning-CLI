@@ -1,0 +1,6 @@
+- Not skipping duplicates. `0 0 0 0` then prints `0 0 0` several times. Skip an `i` equal to the previous one, and skip `l` past equal values after a match.
+- Skipping duplicates **before** using them: `if a[i] == a[i+1]: continue` throws away `-1 -1 2`, because the second `-1` was needed as `y`.
+- Moving only one pointer after a match. Then the loop finds the same pair again, or never ends.
+- Forgetting to sort, so the pointer rule ("too small, move `l`") makes no sense.
+- Printing the triplets in a different order, or forgetting the count line.
+- Three nested loops with a set: correct but O(n^3), far too slow for `n = 2000`.

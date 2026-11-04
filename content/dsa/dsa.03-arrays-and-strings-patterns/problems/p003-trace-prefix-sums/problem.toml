@@ -1,0 +1,6 @@
+id = "dsa.03.p003"
+title = "Trace prefix sums and range queries"
+tier = "drill"
+kind = "trace"
+topics = ["prefix sums", "range queries", "trace"]
+minutes = 10

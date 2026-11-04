@@ -1,0 +1,6 @@
+- Printing `atMost(k)` alone. That also counts subarrays with fewer than `k` distinct values (12 instead of 7 in the example).
+- Adding 1 each time the window has exactly `k` keys. That counts one subarray per `right`, but several starts can give exactly `k` for the same `right`.
+- Not deleting a key when its count drops to 0. `len(count)` then counts values that left the window, and the window shrinks too far (or crashes).
+- Computing `atMost(k - 1)` with a special case for `k - 1 = 0` that returns something other than 0. With `m = 0` no non-empty window is allowed, so it is 0, and the general code already gives that.
+- An off-by-one `right - left` inside `at_most` happens to cancel out in the difference (both terms lose exactly `n`). Do not rely on luck like that: write `right - left + 1` and check `atMost` on its own.
+- Using a list and `x in window` to test membership. That makes each step O(k) or worse; use a dictionary.

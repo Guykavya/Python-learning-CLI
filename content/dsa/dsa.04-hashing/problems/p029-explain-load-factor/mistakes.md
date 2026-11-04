@@ -1,0 +1,4 @@
+- Saying a resize makes every insert O(n). It is O(n) **once in a while**, which averages out to O(1).
+- Saying chaining cannot go above load factor 1. It can: chains simply get longer than 1.
+- Mixing up the table size (`m`) and the number of keys (`n`) in the load factor.
+- Forgetting that rehashing is needed because the bucket depends on `m`.

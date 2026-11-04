@@ -1,0 +1,6 @@
+id = "dsa.03.p040"
+title = "Product of everything except self"
+tier = "applied"
+kind = "code"
+topics = ["prefix products", "suffix products", "modular arithmetic", "zeros"]
+minutes = 30

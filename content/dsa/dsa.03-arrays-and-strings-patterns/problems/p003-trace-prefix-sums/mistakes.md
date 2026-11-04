@@ -1,0 +1,4 @@
+- Writing the `add` line with the old total. The `append` runs before the `print`, so `p[-1]` is already the new total.
+- Reading `p[l]` instead of `p[l - 1]` in the query lines: for `(2, 5)` the second number is `p[1] = 3`, not `p[2] = 2`.
+- Forgetting the commas and brackets in `p = [0, 3, 2, 6, 7, 12]`. Printing a list shows it in Python's list form.
+- Answering `5 5` for the last line. `p` has the extra 0 at the front, so it has 6 cells.

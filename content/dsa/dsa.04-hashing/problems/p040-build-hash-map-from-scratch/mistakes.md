@@ -1,0 +1,5 @@
+- Resizing on every `put`, including updates of existing keys. The statement says only a **new** key can trigger it.
+- Checking the load factor before the insert, or with `>=`: it is `size * 4 > m * 3` after inserting.
+- Forgetting to rehash: after doubling `m`, old buckets would be wrong for every key.
+- Modifying `size` on updates or forgetting to decrease it on delete.
+- Using `dict` or `set`: the test rejects it. Chains are lists of `[key, value]` pairs.
