@@ -1179,15 +1179,21 @@ def _print_menu(conn: sqlite3.Connection) -> None:
     print()
     last = db.get_meta(conn, "last_problem")
     st = db.problem_state(conn, last) if last else None
-    if st is not None and (st["status"] == "started" or st["is_review"]):
-        print(ui.dim("  Working on: ") + ui.bold(last) + "  " + content.get(last).title)
-    # Mid-problem the next step is checking your answer; otherwise it is starting the next one.
-    midway = st is not None and st["status"] == "started"
+    in_review = st is not None and bool(st["is_review"])
+    if st is not None and (st["status"] == "started" or in_review):
+        tag = ui.warn("[REVIEW] ") if in_review else ""
+        print(ui.dim("  Working on: ") + tag + ui.bold(last) + "  " + content.get(last).title)
+        if in_review and st["session_dir"]:
+            print(ui.dim("  Checking folder: ") + rel(Path(st["session_dir"])))
+    # Mid-problem (or mid-review) the next step is checking your answer; otherwise starting the next one.
+    midway = st is not None and (st["status"] == "started" or in_review)
     best = "2" if midway else "1"
 
     # A brand-new learner (or one who just started over) has nothing "next" yet.
     fresh = not db.states(conn)
     labels = {"1": "Start learning"} if fresh else {}
+    if in_review:
+        labels["2"] = "Check my review"
 
     def cell(entry, width):
         arrow = ui.ok("▶") if entry[0] == best else " "
