@@ -1,0 +1,10 @@
+{% extends "inventory/base.html" %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block content %}
+<h1>{{ product.name }}</h1>
+<p>SKU {{ product.sku }} | {{ product.category }} | {{ product.price }} | {{ product.quantity }} in stock</p>
+<p><a href="{% url 'inventory:product-update' pk=product.pk %}">Edit</a>
+ <a href="{% url 'inventory:product-delete' pk=product.pk %}">Delete</a></p>
+{% endblock %}

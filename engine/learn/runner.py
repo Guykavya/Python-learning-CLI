@@ -107,7 +107,8 @@ def run_code_tests(problem: Problem, solution_dir: Path, solution_file: Path | N
                 "the number of threads small (a few dozen at most)."
             )
         missing = re.search(r"No module named '(\w+)'", output)
-        if missing and missing.group(1) in {"httpx", "hypothesis", "coverage", "pytest", "yaml"}:
+        if missing and missing.group(1) in {"httpx", "hypothesis", "coverage", "pytest", "yaml", "flask", "fastapi", "sqlalchemy",
+                                                  "alembic", "sqlmodel", "aiosqlite", "django", "rest_framework", "jwt"}:
             output += (
                 f"\nThe package '{missing.group(1)}' is not installed in this environment. In the course "
                 "folder run `.venv/bin/python -m pip install -e .` (Windows: "

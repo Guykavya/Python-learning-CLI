@@ -1,0 +1,10 @@
+{% extends "inventory/base.html" %}
+
+{% block content %}
+<h1>Delete {{ product.name }}?</h1>
+<form method="post">
+  {% csrf_token %}
+  <button type="submit">Yes, delete it</button>
+  <a href="{{ product.get_absolute_url }}">Cancel</a>
+</form>
+{% endblock %}

@@ -1,0 +1,8 @@
+<!doctype html>
+<html>
+<head><title>{% block title %}Inventory{% endblock %}</title></head>
+<body>
+  <nav><a href="{% url 'inventory:home' %}">Home</a></nav>
+  <main>{% block content %}{% endblock %}</main>
+</body>
+</html>

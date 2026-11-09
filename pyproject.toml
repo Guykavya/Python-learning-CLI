@@ -14,6 +14,29 @@ dependencies = [
     "httpx>=0.27",
     # shared.02 (data pipelines): read and write Parquet files and partitioned datasets.
     "pyarrow>=17",
+    # swe.02 (networking): examples talk to a local server on 127.0.0.1, never the internet.
+    "requests>=2.32",
+    "beautifulsoup4>=4.12",
+    # swe.03 (databases): ORM and migrations; exercises run on SQLite, never a server.
+    "sqlalchemy[asyncio]>=2.0",
+    "alembic>=1.13",
+    "aiosqlite>=0.20",
+    # swe.04 (Flask): tests use Flask's built-in test client, never a real server.
+    "flask>=3.0",
+    "flask-sqlalchemy>=3.1",
+    # swe.05 (FastAPI): pydantic v2 comes with it; tests use TestClient (needs httpx, above).
+    "fastapi>=0.110",
+    # FastAPI/Starlette TestClient prefers httpx2; without it a deprecation warning shows. Core keeps httpx.
+    "httpx2>=2.0",
+    # swe.05: the server that runs FastAPI apps, and form/file-upload parsing (Form, File, OAuth2 login form).
+    "uvicorn>=0.30",
+    "python-multipart>=0.0.9",
+    "sqlmodel>=0.0.16",
+    # swe.06 (Django): tests use Django's test client with an in-memory SQLite database.
+    "django>=5.0",
+    "djangorestframework>=3.15",
+    # swe.07 (auth): JWT encode/decode. Password hashing uses the standard library (hashlib).
+    "pyjwt>=2.8",
     # Windows ships no time-zone database; zoneinfo (core.17) needs this package there.
     "tzdata; sys_platform == 'win32'",
 ]
