@@ -37,8 +37,60 @@ dependencies = [
     "djangorestframework>=3.15",
     # swe.07 (auth): JWT encode/decode. Password hashing uses the standard library (hashlib).
     "pyjwt>=2.8",
+    # da.01 (notebooks): kernel and notebook file format. Chapters use the standard library until da.02.
+    "ipykernel>=6.29",
+    "nbformat>=5.10",
+    "jupyterlab>=4.2",
+    # da.02-da.05 (NumPy, pandas, cleaning): the core data stack; pandera validates data frames.
+    "numpy>=2.0",
+    "pandas>=2.2",
+    "polars>=1.0",
+    "pandera>=0.20",
+    # da.03 (pandas I/O): Excel files, and da.12 (Excel from Python).
+    "openpyxl>=3.1",
+    # da.07 (SQL for analysts): DuckDB queries pandas and Parquet directly.
+    "duckdb>=1.0",
+    # da.08, ds.01, ds.02 (inference, models): SciPy for tests and distributions, statsmodels for regression.
+    "scipy>=1.13",
+    "statsmodels>=0.14",
+    # da.09 (visualisation): charts are saved to files in exercises; plotly for interactive ones.
+    "matplotlib>=3.9",
+    "seaborn>=0.13",
+    "plotly>=5.22",
+    # da.10 (dashboards): Streamlit app tests use its AppTest helper, never a browser.
+    "streamlit>=1.36",
+    # ds.03-ds.04 (classical machine learning): scikit-learn only; boosting libraries are in the "ml" extra.
+    "scikit-learn>=1.5",
     # Windows ships no time-zone database; zoneinfo (core.17) needs this package there.
     "tzdata; sys_platform == 'win32'",
+]
+
+[project.optional-dependencies]
+# Heavy packages (large downloads). Install only when you reach the module:  pip install -e ".[ml]"
+ml = [
+    # ds.04 / ml.*: gradient boosting, and ml.07 experiment tracking and versioning.
+    "xgboost>=2.0",
+    "lightgbm>=4.3",
+    "mlflow>=2.14",
+    "dvc>=3.50",
+    "shap>=0.45",
+    "umap-learn>=0.5",
+    # ml.01-ml.05: deep learning, Hugging Face, ONNX.
+    "torch>=2.3",
+    "torchvision>=0.18",
+    "transformers>=4.42",
+    "datasets>=2.20",
+    "peft>=0.11",
+    "onnx>=1.16",
+    "onnxruntime>=1.18",
+]
+# llm.*: exercises use fake model clients; real providers are only "try it on your machine" steps.
+llm = [
+    "anthropic>=0.30",
+    "openai>=1.35",
+    "chromadb>=0.5",
+    "sentence-transformers>=3.0",
+    "tiktoken>=0.7",
 ]
 
 [project.scripts]
