@@ -80,6 +80,11 @@ and report. Do not start the next module unless Kavya asks.
   Before core.06: script style (`run()` helper, stdin → printed lines).
   From core.06 on: function style (`from solution import f`).
 - Only use Python features taught in this module or earlier ones.
+- **Chapter code must parse on Python 3.11** (the course's oldest supported version; CI runs it). Python 3.12 relaxed
+  f-strings, so code that looks fine on a newer Python fails on 3.11: never put a backslash, or the same quote character
+  that opens the f-string, inside `{...}`. Compute the value in a variable first, then use `{value}`. (Plain teaching
+  blocks that show 3.12+ features on purpose, like core.16's `type` statement, are not `python run` blocks.) A quick check
+  without a 3.11 install: the CI job "Python 3.11" runs `pytest`, which lints every chapter and parses every extracted file.
 - Infinite iterators: a `starter.py` must never loop over or `list()` an input that a test makes infinite
   (it would eat all RAM on Windows, where the runner's 1 GiB cap does not apply). Use a stub like `return []`.
 - Hand-trace any test that walks through steps (grids, turns, loops). core.04.p058 shipped with
