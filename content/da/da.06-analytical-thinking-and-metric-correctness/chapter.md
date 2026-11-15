@@ -253,6 +253,9 @@ sum of the line amounts (also right)   : 8,557,500
 
 Sums over `items["amount"]` are correct because `amount` is a property of a line item. Sums over `quote_total` are correct only on the `jobs` table. **A column has a grain too: the grain of the table it was born in.** Whenever you move a column to a table with a finer grain, its values are repeated, and a sum or a count over it is multiplied. This single rule explains most wrong dashboard numbers.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two small tables side by side. Left: 'jobs' with one row per job (job_id, quote_total), three jobs. Right: 'items' with one row per line item, where job 1 has 3 lines, job 2 has 2, job 3 has 1. Show arrows copying each job's quote_total onto every line row. Colour the repeated copies red and add a total that goes from 8,557,500 to 23,742,100, labelled 'inflation x2.77'."
+
 ### 2.3 Different kinds of grain
 
 Most tables fall into one of four shapes. Naming the shape tells you what to expect.
@@ -460,6 +463,9 @@ average quote per job, after join  : 3143
 
 The average after the join is higher, since jobs with more lines (more parts, higher total) appear more times and pull the average toward themselves. This is a *weighting* effect: each job is weighted by its number of lines. Sections 5 and 6 return to it.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a join between 'jobs' (3000 rows, one per job) and 'items' (7554 rows, many per job). Show one job box splitting into three identical copies, one per line item. Label the row count growing from 3000 to 7554 while 'distinct jobs' stays 3000. Highlight the repeated quote_total and status columns in red, and show the average quote rising from 2852 to 3143."
+
 ### 4.3 Three habits that prevent fan-out
 
 **Habit 1: state the grain you want, then reach it.** If the question is about jobs, the final table must have one row per job. If you need a fact from a finer table (items, payments), **aggregate it first** to the job grain, and then join.
@@ -523,6 +529,9 @@ paid money after the join: 21,291,630  vs the truth: 7,656,860
 ```
 
 The joined result has more rows than either input, and the money reported as paid is inflated by about 2.8 times (21.3 million against 7.7 million). **A many-to-many join is almost never what you want**; it is the sign that you joined on a column that is not the key of either side, or that you skipped the aggregation step. If you see a row count that is bigger than either input, stop and look.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a many-to-many join. Left: payments for one job (2 rows). Right: line items for the same job (3 rows). Connect every payment to every item with lines, giving 6 result rows. Label each payment amount being repeated 3 times. Add a bar chart: true paid money 7,656,860 against joined paid money 21,291,630, marked 'about 2.8 times too high'."
 
 ### 4.5 Fan-out that hides: the left join
 
@@ -629,6 +638,9 @@ Yes, they are equal here, because a customer belongs to exactly one segment, so 
 
 </details>
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a Venn diagram of customers who booked in a week for five weeks in February (weekly distinct counts 76, 207, 183, 197, 133, sum 796). Show circles overlapping because the same customer returns in several weeks. Mark the union as 549 distinct customers. Highlight the overlap and label 'sum of distinct counts is not the distinct count of the sum'."
+
 ### 5.3 Denominators
 
 Every percentage has two counts, and the second one is where people disagree. "What share of customers booked at least once in February?" depends on the denominator: all 800 customers ever, customers that exist at the start of February, or customers who were active in the last 90 days?
@@ -682,6 +694,9 @@ The rule, in general:
 > **Never average rates or averages. Add the numerators, add the denominators, and divide once.**
 
 An average is `sum / count`. To combine groups you need the sums and counts, not the averages. This is true for the mean, for rates ("completion rate"), for ratios ("revenue per job") and for percentages.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a bar chart of four cities with job counts (Delhi 998, Jaipur 253, Mumbai 946, Pune 803) as bar widths and average quotes (2823, 2814, 2882, 2866) as bar heights. Show two results: the plain average of four heights (2846) and the width-weighted average (2852). Highlight that Jaipur's narrow bar counts less in the weighted answer."
 
 ### 6.2 Which average? The unit of analysis
 
@@ -784,6 +799,9 @@ B   77.70
 Team A: 83.1 percent, Team B: 77.7 percent. With the same mix, A wins, which agrees with the two comparisons *within* each kind. This technique is called **standardisation**: choose a fixed set of weights, apply it to every group, and compare fairly. It is how hospitals, schools and sales teams are compared without being punished for taking on the hardest cases.
 
 </details>
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw Simpson's paradox with two panels. Panel 1: success rate by job kind, Team A beats Team B for easy (93.1 vs 86.7) and hard (73.0 vs 68.8). Panel 2: overall, Team B wins (82.6 vs 78.0). Make each team's bubble size equal its number of jobs per kind (A: 87 easy, 263 hard; B: 270 easy, 80 hard). Annotate that A did mostly hard jobs and B mostly easy ones."
 
 ## 7. Metric definitions
 
@@ -993,6 +1011,9 @@ jobs lost on the last day     : 22
 
 The half-open interval also has the nice property that consecutive periods join with no gap and no overlap: the end of February is the start of March.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a timeline for 28 February 2025 from 00:00 to 24:00 and the start of 1 March. Show the wrong filter 'created_at <= 2025-02-28' cutting the line at 00:00 on the 28th so the whole day is lost, with 22 jobs falling after the cut. Beside it show the half-open interval '>= 2025-02-01 and < 2025-03-01' covering the whole day, with February ending exactly where March starts, no gap and no overlap."
+
 ### 8.3 Time zones
 
 All our timestamps are UTC, but the business lives in IST, which is 5 hours 30 minutes ahead. A job created at 20:00 UTC on 31 January is, for the customer, 01:30 on 1 February. If you cut the month on UTC and the manager cuts it on IST, their Februaries differ.
@@ -1050,6 +1071,9 @@ The last weeks show a lower completion rate, only because many of their jobs are
 The rate for the last week of March will go **up**, since some of its pending jobs will have been completed (cancellations among them will pull a little the other way). The rate for January will hardly change, because almost nothing is pending there. This is why a dashboard that shows only the latest period is often misleading, and why many teams freeze reports ("as of the 5th of the next month") for the official numbers.
 
 </details>
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a line chart of weekly completion rate by creation week: about 90, 92, 92, then 88, 76, 86 for the last weeks (24 March, 31 March). Shade the last weeks as 'immature cohort, data extracted 5 April'. Show each weekly bar split into completed (green) and pending (grey), with the pending slice big in the newest weeks. Add an arrow showing the recent rates will rise as pending jobs finish."
 
 ### 8.5 Partial periods
 

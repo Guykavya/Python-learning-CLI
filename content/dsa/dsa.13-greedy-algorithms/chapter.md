@@ -358,6 +358,9 @@ for s, e in sorted(events, key=lambda ev: (ev[1], ev[0])):
 
 Read the trace as a story. We take `(1, 4)` because it finishes first. Then everything that starts before 4 is skipped (`(3, 5)`, `(0, 6)` and so on). `(5, 7)` is the first event starting at or after 4, so we take it, and so on. We never go back.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a timeline from 0 to 16 with these eleven events as bars: (1,4) (3,5) (0,6) (5,7) (3,9) (5,9) (6,10) (8,11) (8,12) (2,14) (12,16). Sort them by end time and walk through them one by one with a vertical line at last_end. Colour taken bars green (1,4), (5,7), (8,11), (12,16) and skipped bars grey, and show last_end moving 4, 7, 11, 16."
+
 ### Why earliest finish is safe: the exchange argument
 
 Let `g` be the event that finishes first. Take **any** optimal schedule `O`, sorted by end time, and let `f` be its first event.
@@ -367,6 +370,9 @@ Let `g` be the event that finishes first. Take **any** optimal schedule `O`, sor
 - Replace `f` with `g`. The schedule is still valid (no overlaps) and has the same size.
 
 So there is an optimal schedule that contains `g`. After taking `g`, the remaining problem is "choose the most events that start at or after `g`'s end", the same problem on a subset of the events. Induction finishes the proof.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two timelines, one for an optimal schedule O and one for the greedy schedule G. Put O's first event f as a long bar ending at 6, say (0,6), with a second event (7,9) after it. Put greedy's first event g as the earliest-ending bar (1,4) above it. Animate swapping f for g and show the second event still fits with no overlap, so the schedule stays valid with the same size."
 
 ### Why it is safe: the stay-ahead argument
 
@@ -673,6 +679,9 @@ print(min_rooms([(1, 5), (2, 6), (3, 7), (4, 8)]))
 
 The heap size is the number of rooms in use right now, and the final size is the maximum ever needed, since a room is only freed when a new meeting takes it. This was one of the greedy-with-a-heap examples in dsa.11 section 10. Complexity: `O(n log n)` time and `O(n)` space.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate the min-heap room method for meetings (1,5), (2,6), (3,7), (4,8) sorted by start. For each meeting show the heap of end times, ends[0], and whether ends[0] <= start. Show the heap growing 5, then 5 6, then 5 6 7, then 5 6 7 8, with no room ever reused. Also show the case (0,30), (5,10), (15,20) where the room ending at 10 is reused at start 15, so the final answer is 2 rooms."
+
 ### Interval partitioning: why the count is exactly the maximum depth
 
 The **depth** at a moment is how many intervals cover it. Clearly you need at least `max depth` rooms, because at the busiest moment that many meetings run together. The two algorithms above show you need **no more** than the max depth: they place every meeting in some room and never open a new room unless every existing room is busy at that moment. So:
@@ -741,6 +750,9 @@ Densities: item 0 is `60/10 = 6`, item 1 is `100/20 = 5`, item 2 is `120/30 = 4`
 3. Item 2 weighs 30 but only 20 fits: take `20/30 = 2/3` of it, worth `120 * 2/3 = 80`. Room left: 0.
 
 Total: `60 + 100 + 80 = 240`, and the fractions printed are `1.0, 1.0, 0.666...`.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a knapsack of capacity 50 and three items (value, weight): (60,10), (100,20), (120,30). Label densities 6, 5 and 4 and sort by density. Animate filling the bag as a bar: add all of item 0 (room left 40), all of item 1 (room left 20), then 20/30 of item 2, shown as a partly filled block. Show running value 60, 160, 240."
 
 ### Why it is correct
 
@@ -845,6 +857,9 @@ greedy by density: 10  best: 14
 
 The first item has the highest density, `10/6 = 1.67`, against `7/5 = 1.4` for the others, so greedy takes it. Then neither 5-kilogram item fits (6 + 5 = 11 > 10), leaving value 10. The best is the two smaller items together: weight 10, value 14. One dense but awkward item blocks two items that fit together perfectly.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a 0/1 knapsack with capacity 10 and items (value, weight): A=(10,6), B=(7,5), C=(7,5). Show two side-by-side bags. The greedy-by-density bag takes A (density 1.67) and then neither B nor C fits since 6+5=11, so value 10. The best bag takes B and C together with weight 10 and value 14. Highlight the wasted space and the winning pair."
+
 ### Summary of the difference
 
 | | Fractional knapsack | 0/1 knapsack |
@@ -899,6 +914,9 @@ print("9  with (1,3,4)   : greedy", min_coins_greedy(9, [1, 3, 4]), " true", min
 ```
 
 Note how `amount // c` and `amount %= c` replace the inner `while` loop of section 1: taking as many of the coin as possible in one step (integer division, then the remainder). Same algorithm, faster.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Show greedy largest-first coin change for amount 6 with coins 1, 3, 4. Draw a row of coins: greedy picks 4, then 1, then 1 (3 coins), while the best picks 3 and 3 (2 coins). Below it, show amount 30 with coins 1, 10, 25: greedy gives 25+1+1+1+1+1 (6 coins) versus 10+10+10 (3 coins). Highlight the first greedy choice that causes the loss."
 
 ### Greedy can also fail to find any answer
 
@@ -1287,6 +1305,9 @@ Trace `[3, 2, 1, 0, 4]`: i=0, farthest becomes 3. i=1: 1+2=3. i=2: 2+1=3. i=3: 3
 
 Why a single number is enough: the set of reachable indices is always a prefix `0..farthest` with no gaps (if you can reach index 5 with a jump of at most `nums[k]`, you can also land on every index between `k` and 5). So knowing only the far end loses nothing. Time `O(n)`, space `O(1)`.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate the farthest-reach scan on the array [3, 2, 1, 0, 4]. Draw the indices 0 to 4 as boxes with their values. Move a pointer i from left to right and draw an arrow showing farthest = max(farthest, i + nums[i]), which stays at 3 from i=0 to i=3. At i=4 show 4 > 3 and mark 'stuck'. Shade the reachable prefix 0..3 and highlight the zero at index 3 as a wall."
+
 ### Jump game II: the fewest jumps
 
 Same array, but now count the **minimum number of jumps** to reach the last index (assume it is reachable). Think of it as BFS in layers: the indices reachable in 1 jump, then those reachable in 2 jumps, and so on. Each layer is an interval, so we need only its end.
@@ -1354,6 +1375,9 @@ print(can_complete_circuit([5], [4]))
 Trace the first one. Net gain per station (`gas - cost`) is `[-2, -2, -2, 3, 3]`. Total 0 >= 0, so a solution exists. i=0: tank -2 < 0, start = 1, tank 0. i=1: -2, start 2. i=2: -2, start 3. i=3: tank 3. i=4: tank 6. Return 3. (From station 3, the tank goes 3, 6, then it reaches stations 0, 1, 2 with 6 - 2 = 4, 2, 0, never negative.)
 
 Why is the final `start` right? The total is nonnegative, so the stretch after the last failing point must hold enough surplus to pay for all earlier deficits. Time `O(n)`, space `O(1)`.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw 5 stations on a circle with gas [1,2,3,4,5] and cost [3,4,5,1,2]. Show the net gain for each station: -2, -2, -2, 3, 3. Animate the one-pass scan: the tank goes negative at stations 0, 1 and 2, so the start moves to 1, 2, then 3 and the tank resets to 0. From start 3 plot the tank 3, 6, 4, 2, 0 as a line that never dips below zero."
 
 ### Best time to buy and sell stock (many trades)
 
@@ -1602,6 +1626,9 @@ final weights: [100] | sum of all joins: 224
 ```
 
 The sum of all joins, 224, is the cost of the tree: 224 bits to store 100 letters, an average of 2.24 bits per letter. A fixed-length code for 6 letters needs 3 bits each: 300 bits. The saving is about 25 percent.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate Huffman tree building for frequencies a:45, b:13, c:12, d:16, e:9, f:5. Show a sorted list at each round and merge the two smallest into a new parent node: 5+9=14, 12+13=25, 14+16=30, 25+30=55, 45+55=100. Draw the growing tree, with left edges 0 and right edges 1, and show the common letter a ending up closest to the root with a one-bit code."
 
 ### The implementation with `heapq`
 

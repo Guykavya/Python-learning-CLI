@@ -1,0 +1,6 @@
+id = "dsa.07.p036"
+title = "N-Queens boards"
+tier = "deep"
+kind = "code"
+topics = ["n-queens", "backtracking", "output format"]
+minutes = 30

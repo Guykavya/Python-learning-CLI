@@ -241,6 +241,9 @@ b b 1
 
 </details>
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a pandas Series named odd with values 'a','b','c' and index labels 2,1,0, as three boxes in a row. Under each box show its position (0,1,2) in blue and above it its label (2,1,0) in orange. Animate three lookups: odd[0] jumps to the orange label 0 and returns 'c'; odd.iloc[0] jumps to blue position 0 and returns 'a'; odd.loc[1] returns 'b'. Highlight the box each time."
+
 ### 2.3 Operations are vectorised, and align on the index
 
 Arithmetic works on the whole Series (da.02 ideas). The new part: when you combine two Series, pandas **matches them by label**, not by position. Labels with no partner become `NaN`.
@@ -287,6 +290,9 @@ print((c + d.to_numpy()).tolist())
 ```
 
 The first line matched labels (0 with 0, so `1 + 3`, then `2 + 2`, then `3 + 1`), giving `[4, 4, 4]`. The second line dropped the labels with `.to_numpy()` and added by position, giving `[2, 4, 6]`.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two pandas Series, a (index x,y,z, values 1,2,3) and b (index y,z,w, values 10,20,30), side by side. Draw lines connecting equal labels, so y joins y and z joins z. Labels x and w have no partner, so mark them with red crosses and put NaN in the result. Show the result of a+b as w NaN, x NaN, y 12.0, z 23.0, and note that the integers became floats."
 
 ### 2.4 Useful Series basics
 
@@ -452,6 +458,9 @@ A list inside `[]` always returns a DataFrame, even with one name, so the shape 
 
 </details>
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a pandas DataFrame with columns name, age, score and rows 0,1,2 (Asha 31 88.5, Ben 25 92.0, Chitra 40 79.5). Label the row index on the left, column names on top, and the dtype under each column (str, int64, float64). Then show df['age'] as one highlighted column called a Series with shape (3,), and df[['age']] as the same column called a DataFrame with shape (3,1). Use different colours."
+
 ## 4. The index
 
 ### 4.1 Row labels you choose
@@ -525,6 +534,9 @@ Asha <- position 0
 ```
 
 `reset_index(drop=True)` renumbers from 0 and throws the old labels away (without `drop=True` the old labels would become a new column).
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a pandas DataFrame with index 0,1,2 and columns name, age, score (Asha 31, Ben 25, Chitra 40). Filter with age > 30: the Ben row fades out, leaving rows labelled 0 and 2 (Asha, Chitra). Highlight that the old labels 0 and 2 stay. Then show reset_index(drop=True) changing the labels to 0 and 1. Show that iloc[0] means the first row by position."
 
 ### 4.4 A MultiIndex, lightly
 
@@ -731,6 +743,9 @@ dtype: int64
 
 `value_counts` counts each distinct value (most frequent first); `normalize=True` gives proportions. `nunique` counts distinct values. `isna()` makes a table of `True`/`False`, and since `True` counts as 1, `.sum()` counts missing values per column and `.mean()` gives the *fraction* missing.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a bar chart from value_counts of an orders table's city column: Pune 135, Delhi 115, Agra 62, Jaipur 56, Surat 32, sorted from most to least frequent. Put the proportion above each bar (0.338, 0.288, 0.155, 0.140, 0.080). Next to it draw a small grid of True/False cells for isna() on the discount column, showing that 38 values are missing, so sum() gives 38 and mean() gives 0.095."
+
 ### 5.4 pandas agrees with da.01 and da.02
 
 The `describe` numbers are exactly the ones you computed by hand earlier. Let us prove it for `unit_price` with NumPy and with the standard library:
@@ -802,7 +817,7 @@ Data lives in files. pandas has a `read_*` function for each format and a matchi
 ```python run
 csv_path = tmp / "orders.csv"
 orders.to_csv(csv_path, index=False)
-print(csv_path.read_text().splitlines()[:3])
+print(csv_path.read_text(encoding="utf-8").splitlines()[:3])
 back = pd.read_csv(csv_path)
 print(dts(back))
 ```
@@ -1189,6 +1204,9 @@ order_id
 
 Rows and columns come as `[rows, columns]`, like NumPy. The column part is optional: `t.loc[1374]` takes the whole row.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a small DataFrame t with an index named order_id (1042, 1085, 1374 and others) and columns city, category, qty, unit_price. Show two overlays. In orange, loc[[1042,1374],['city','qty']] picks rows by label and columns by name. In blue, iloc[1:3, 0:2] picks rows at positions 1 and 2 and columns at positions 0 and 1. Show position numbers along the edges and labels beside them."
+
 ### 7.3 Slices: label-inclusive, position-exclusive
 
 This is the rule to learn by heart. A **label** slice with `loc` includes both ends (labels have no natural "one past the end"). A **position** slice with `iloc` works like a list slice and excludes the stop.
@@ -1309,6 +1327,9 @@ print(orders.loc[mask, ["order_id", "qty"]].head(3))
 4       1334    7
 12      1009    7
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate boolean filtering on a pandas DataFrame called orders with columns order_id and qty. Show the Series mask = orders['qty'] >= 7 as a column of True/False cells beside the table. Rows with False fade out, and rows with True stay (order_id 1374, 1334, 1009 have qty 7). Show the count: mask.sum() is 63, so the result shape is (63, 9). Label the mask as a sieve."
 
 ### 8.2 Combining conditions: `&`, `|`, `~` and brackets
 
@@ -1472,6 +1493,9 @@ print(base["qty"].tolist(), col.tolist())
 ```text
 [5, 2, 7, 6] [1000, 2, 7, 6]
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two boxes: a DataFrame base with columns order_id and qty (qty 5,2,7,6), and a derived frame sub made from it. Show that with Copy-on-Write, changing sub's first qty to -1 only changes sub, so base still shows [5,2,7,6] while sub shows [-1,2,7,6]. Show a dashed link between them that breaks at the moment of the change, as pandas copies the data lazily."
 
 ### 9.3 Chained assignment no longer works (and says so)
 
@@ -1719,6 +1743,9 @@ print(f"{before/1e6:.2f} MB -> {after/1e6:.2f} MB")
 ```
 
 Machine-specific numbers, but the idea is general: small integer types and categories can cut a table to a fraction of its size. Do this *after* cleaning, and only when memory is a real problem.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two side-by-side memory bars for a table m with 100,000 rows and columns qty and city. Left bar: qty as int64 and city as text, about 2.03 MB. Right bar: qty as int8 and city as category, about 0.20 MB. Show city as three repeated words (Pune, Delhi, Agra) replaced by small codes 0,1,2 and a lookup list. Label the numbers as machine-specific."
 
 ## 11. Missing data: the basics
 
@@ -2782,7 +2809,7 @@ def load_sales(path, texts=(), lowers=(), money=(), percents=(), dates=(), bools
     return df
 
 tiny = tmp / "tiny.csv"
-tiny.write_text("id,when,who,price,paid\n1,2025-03-01, asha ,\"₹1,200.50\",Y\n2,02/03/2025,BEN,Rs. 80,no\n2,02/03/2025,BEN,Rs. 80,no\n3,??,chitra,free,\n")
+tiny.write_text("id,when,who,price,paid\n1,2025-03-01, asha ,\"₹1,200.50\",Y\n2,02/03/2025,BEN,Rs. 80,no\n2,02/03/2025,BEN,Rs. 80,no\n3,??,chitra,free,\n", encoding="utf-8")
 t3 = load_sales(tiny, texts=["who"], money=["price"], dates=["when"], bools=["paid"], ints=["id"],
                 drop_exact_duplicates=True)
 print(t3)

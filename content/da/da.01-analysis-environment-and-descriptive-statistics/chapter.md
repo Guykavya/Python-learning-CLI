@@ -1097,6 +1097,9 @@ wild: mean= 122.29  median= 52.0  data=[48, 50, 51, 52, 52, 53, 550]
 
 One mistyped value moved the mean by about 70, and moved the median by 0. This is called **robustness**: the median can survive up to half the data being corrupted before it breaks, the mean can be broken by a single value. Neither is "better" in general; they answer different questions (section 10).
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a number line with the list calm = [48, 50, 51, 52, 52, 53, 55] as dots. Mark its mean 51.57 and median 52. Then animate the last dot sliding from 55 out to 550 (a typing mistake). Show the mean marker running far right to 122.29 while the median marker stays still at 52. Label the two markers and the word 'robust' beside the median."
+
 ### 8.7 Errors and edge cases
 
 - An empty list has no centre: `statistics.mean([])` raises `StatisticsError`. Check `if not data` first and decide what you want to report.
@@ -1495,6 +1498,9 @@ class B: mean=60.0  median=60  marks=[20, 35, 50, 60, 70, 85, 100]
 
 Same mean, same median, completely different classes: in A everybody is close to 60, in B somebody has failed and somebody has 100. The missing information is the **spread**: how far values typically lie from the centre. A good summary always has a centre and a spread.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two number lines for exam marks. Class A: 58, 59, 60, 60, 60, 61, 62 as tight dots. Class B: 20, 35, 50, 60, 70, 85, 100 as widely scattered dots. Mark the same mean 60 and median 60 on both with a vertical line. Add a double arrow under each showing the typical distance from 60. Title: same centre, different spread."
+
 ### 11.2 Range
 
 The simplest spread: `max - min`. It is easy to understand and it uses only two values, so one wild value ruins it.
@@ -1600,6 +1606,9 @@ for name, marks in [("A", [58, 59, 60, 60, 60, 61, 62]), ("B", [20, 35, 50, 60, 
 class A: mean=60.0  sd=1.29  within one sd: 5 of 7
 class B: mean=60.0  sd=27.84  within one sd: 5 of 7
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a bell-shaped curve with the mean at 60. Shade the band from mean minus one standard deviation to mean plus one standard deviation. Do it twice: a narrow, tall curve for class A (sd 1.29) and a wide, flat curve for class B (sd 27.84), both on the same axis from 0 to 120. Label the sd as an arrow from the mean to the band edge."
 
 ### 11.6 Spread measures that resist outliers
 
@@ -1722,6 +1731,9 @@ Percentiles are everywhere:
 - "Your child is in the 90th percentile for height" (taller than about 90% of children of that age).
 - "p99 latency is 800 ms" (99 out of 100 requests finished in 800 ms or less; the slowest 1% took longer).
 - Entrance exams report percentile *ranks* (what percent of candidates scored below you).
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a sorted row of 100 small squares in a line, from smallest to largest value. Colour the first 25 blue, the next 25 green, the next 25 orange and the last 25 red. Mark the cut points as Q1 (25th percentile), Q2 (the median, 50th percentile) and Q3 (75th percentile). Add a label on the 99th square: 'p99, only 1% are slower'."
 
 ### 12.2 There is no single definition
 
@@ -2059,6 +2071,9 @@ response times        72.8       174.1    1    25  5.2%
 
 Notice that for right-skewed data (incomes, prices) the flagged values are on the high side only, and that the lower fence for incomes is **negative** (-35,600): no household can earn that, so the rule's lower half is meaningless here. That is the skew showing itself again: the box plot rule is mildly unfair to skewed data, because a genuinely ordinary long tail gets flagged. For these data a log transform before drawing helps (you will see why in the pandas chapters).
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a horizontal box plot for a dataset with Q1, median and Q3. Show IQR as the box width. Draw the fences at Q1 minus 1.5 x IQR and Q3 plus 1.5 x IQR as dashed lines. Whiskers stop at the last ordinary point inside the fences. Draw outliers beyond a fence as separate dots. Then show a right-skewed income example where the low fence is negative (-35,600), shaded as an impossible zone."
+
 ### 13.4 What to do with an outlier
 
 1. **Check for an error**: a typo, a unit mix-up, a sensor fault. Trace the value back to its source. If it is an error, fix or remove it, and write down that you did.
@@ -2128,6 +2143,9 @@ robust (modified) z of 100: 16.5
 ```
 
 A single outlier of 95 among values near 50 gets a z-score of 2.99, just under the "3" line. With three outliers (95, 98, 100) the plain z-scores shrink to 1.62 and 1.86, nowhere near 3, although those values are far from the other ten. The **modified z-score**, based on the median (51) and the MAD (2), gives 14.8 and 16.5 instead. The rule of thumb for the modified z-score is to flag `> 3.5`. The constant 0.6745 rescales the MAD to be comparable with a standard deviation for bell-shaped data.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a number line with ten values near 50 and three outliers at 95, 98 and 100. Show a plain z-score scale (mean 61.23, sd 20.86) where 95 only reaches z = 1.62 because the outliers inflate the sd. Below it show the median 51 and MAD 2 scale, where 95 gets a modified z-score of 14.8. Highlight that outliers hide themselves in the plain z-score."
 
 ### Exercise 13
 
@@ -2272,6 +2290,9 @@ values not shown (700 ms or more): 23
 - **Bimodal**: two humps. This usually means **two groups are mixed** (here, a class of two kinds of students; in real life: two machine types, two customer segments). The mean sits in the valley between the humps, where almost nobody is: for these data the mean is 60.2, and only 13 of the 120 students scored between 52 and 68, around that mean. The right response is to find and separate the groups, not to report one centre.
 - **Heavy tails**: the bulk is compact and a few values are enormous (the response times). Statisticians say the distribution has "fat" or "heavy" tails. Averages are unstable, because the next extreme value can change them a lot.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a histogram of 120 exam marks from two groups mixed: a hump near 40 and a second hump near 80, with a valley near 60. Mark the mean 60.2 with a vertical line in the valley and label 'almost nobody scored here'. Add a note that only 13 of 120 students scored between 52 and 68. Colour the two humps differently as two hidden groups."
+
 ### 14.3 Shape and the mean-median gap
 
 | Shape | Tail | Mean vs median | Better centre | Better spread |
@@ -2358,6 +2379,9 @@ response times  n= 500  {'sqrt': 23, 'sturges': 10, 'fd_width': 6.4, 'fd_bins': 
 ```
 
 For the response times, Freedman-Diaconis wants a very narrow bin (the IQR is only 25 ms), which, applied over the whole range up to 2,436 ms, gives hundreds of bins. This is the heavy tail again. The practical solution is what we did in 14.2: zoom to the bulk, count the tail separately, and say so. Rules of thumb are starting points; always try two or three bin counts and look.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the same histogram of 120 two-group exam marks (range 20 to 100) three times side by side: with 3 bins, 10 bins and 12 bins. Show that 3 bins hide the two humps, and 12 bins show them clearly but look a bit noisy. Label each panel with its bin count and the title 'too few, about right, many'."
 
 ### 14.5 Skewness: a number for the shape
 
@@ -2491,6 +2515,9 @@ share of B's patients with large stones: 23%
 ```
 
 Treatment A is better for small stones **and** better for large stones, yet B looks better overall. The reason is in the last two lines: A was given mostly to the hard cases (75% large stones) and B mostly to the easy cases (23%). The overall rate mixes the group rates using different weights. This is **Simpson's paradox**. The lesson is not "ignore totals" but: *before trusting a comparison of overall averages, check whether the groups being compared are made of the same kinds of cases.* Always ask: is there a hidden variable that splits the data into groups of different difficulty, size or type?
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two side-by-side groups of bars for kidney stone treatments. Left panel: success rates for small stones (A 93.1%, B 86.7%) and large stones (A 73.0%, B 68.8%), A winning both. Right panel: overall rates (A 78.0%, B 82.6%), B winning. Add boxes showing that 75% of A's patients had large stones and only 23% of B's. Title: Simpson's paradox."
 
 ### 15.2 Same summary, different data
 
@@ -2669,6 +2696,9 @@ Four warnings in one block:
 2. Pearson's `r` measures *straight-line* association. A perfect curve (`x ** 3`) gives 0.9284, less than 1; the **rank** correlation (Spearman, `method="ranked"`, available in Python 3.12 and later) gives exactly 1 for any steadily increasing relationship.
 3. A perfect U shape gives `r` = 0: strongly related, zero correlation. Always draw the scatter plot (you will in the matplotlib chapter).
 4. **Correlation is not causation.** Ice-cream sales and drowning both rise in summer; neither causes the other.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw four small scatter plots in a row. First: hours studied (0 to 10) against marks, rising with points scattered, r = 0.87. Second: y = x cubed for x from 1 to 10, curved but rising, Pearson r = 0.9284 and Spearman 1.0. Third: a perfect U shape y = (x - 5.5) squared, Pearson r = 0.0. Fourth: a flat random cloud. Label each with its r."
 
 ### Exercise 16
 

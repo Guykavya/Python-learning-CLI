@@ -10,7 +10,7 @@ import sys
 from datetime import date, datetime, timedelta
 from pathlib import Path
 
-from learn import completion, config, content, db, gitsnap, model, paths, progress, reader, reset, runner, scan, sync, ui
+from learn import chapters, completion, config, content, db, doctor, gitsnap, model, paths, progress, reader, reset, runner, scan, sync, ui
 from learn.syllabus import Syllabus
 from learn.syllabus import load as load_syllabus
 
@@ -518,6 +518,7 @@ def cmd_stuck(args: argparse.Namespace) -> None:
         "I am learning Python and I am stuck on a practice problem.",
         "Please act as a tutor. Do NOT give me the full solution or full code.",
         "Ask me one guiding question or give one small hint about what I am missing, then stop.",
+        "If a picture would help me see it (a small diagram, a table, or a step-by-step trace of my code with the values at each step), include one.",
         "",
         "## Problem",
         prob.read("problem.md").strip(),
@@ -560,10 +561,12 @@ def _clipboard(text: str) -> bool:
 def _written_summary(syl: Syllabus, tracks: list) -> str:
     """One honest line: how much of the syllabus exists as real content."""
     modules = [m for t in tracks for m in t.modules]
+    chapters = [m for m in modules if m.chapter_path.exists()]
     written = [m for m in modules if content.problems_for_module(m.id)]
     problems = sum(len(content.problems_for_module(m.id)) for m in written)
     planned = sum(m.planned_problems for m in modules)
-    return f"Written so far: {len(written)} of {len(modules)} modules, {problems} of about {planned} planned problems."
+    return (f"Chapters written: {len(chapters)} of {len(modules)} modules. "
+            f"Problems written: {len(written)} of {len(modules)} modules, {problems} of about {planned} planned problems.")
 
 
 def cmd_syllabus(args: argparse.Namespace) -> None:
@@ -577,11 +580,15 @@ def cmd_syllabus(args: argparse.Namespace) -> None:
             mp = progress.module_progress(m.id, states)
             icon = STATUS_ICON[mp.status]
             pri = {"essential": "", "role-specific": ui.dim(" role"), "advanced-elective": ui.dim(" elective")}[m.priority]
-            count = f"{mp.solved}/{mp.total}" if mp.total else ui.dim("not written yet")
+            if mp.total:
+                count = f"{mp.solved}/{mp.total}"
+            else:
+                count = ui.dim("chapter ready" if m.chapter_path.exists() else "not written yet")
             here = ui.accent("  ← you are here") if m.id == current.id and t.id in cfg["plan"].get("focus", []) else ""
             print(f"  {icon} {m.id:9} {m.title}{pri}")
             print(ui.dim(f"      {count:>15}  ") + (ui.progress_bar(mp.score) if mp.total else ui.dim(f"{m.planned_problems} problems planned")) + here)
-    print(ui.dim("\n  ★ mastered  ◐ in progress  ○ not started  · content not written yet"))
+    print(ui.dim("\n  ★ mastered  ◐ in progress  ○ not started"))
+    print(ui.dim("  'chapter ready' = you can read it (learn read), its problems are still being written"))
     print(ui.dim("  " + _written_summary(syl, tracks)))
 
 
@@ -1074,6 +1081,191 @@ def cmd_validate(args: argparse.Namespace) -> None:
         raise SystemExit(1)
 
 
+# ----------------------------------------------------------------- chapter tools: lint, verify, extract, doctor, cards, capstone
+
+def _chapters_for(target: str | None) -> list[tuple[str, Path]]:
+    """Chapters of one module, one track, or (no target) every module that has one."""
+    syl = load_syllabus()
+    if target is None:
+        mods = syl.modules()
+    elif target in syl.track_ids():
+        mods = syl.track(target).modules
+    else:
+        try:
+            mods = [syl.module(target)]
+        except KeyError as exc:
+            raise UserError(str(exc.args[0])) from None
+    return [(m.id, m.chapter_path) for m in mods if m.chapter_path.exists()]
+
+
+def cmd_lint(args: argparse.Namespace) -> None:
+    targets = _chapters_for(args.target)
+    errors = warnings = 0
+    for mid, path in targets:
+        text = path.read_text(encoding="utf-8")
+        if args.fix_encoding:
+            text, n = chapters.fix_chapter_encoding(text)
+            if n:
+                path.write_text(text, encoding="utf-8", newline="\n")
+                print(f"{mid}: added encoding='utf-8' in {n} code block(s)")
+        issues = chapters.lint_chapter(text)
+        e = [i for i in issues if i.level == "error"]
+        w = [i for i in issues if i.level == "warning"]
+        errors, warnings = errors + len(e), warnings + len(w)
+        if e or (w and args.warnings):
+            print(ui.err("✗ ") + f"{mid}  {rel(path)}")
+            for i in e + (w if args.warnings else []):
+                print(f"    {i}")
+        elif args.verbose:
+            print(ui.ok("✓ ") + mid + (ui.dim(f"  ({len(w)} warnings)") if w else ""))
+    print(f"\n{len(targets)} chapters checked: {errors} errors, {warnings} warnings.")
+    if not args.warnings and warnings:
+        print(ui.dim("Warnings are hidden; add --warnings to see them (they are Windows text-encoding risks and missing optional parts)."))
+    if errors or (args.strict and warnings):
+        raise SystemExit(1)
+
+
+def cmd_verify(args: argparse.Namespace) -> None:
+    targets = _chapters_for(args.target)
+    bad = 0
+    for mid, path in targets:
+        text = path.read_text(encoding="utf-8")
+        r = chapters.verify_chapter(text, timeout=args.timeout, diff=args.diff, strict_encoding=args.strict_encoding)
+        if r.blocks == 0:
+            if args.verbose:
+                print(ui.dim(f"- {mid}: no 'python run' blocks"))
+            continue
+        line = f"{mid}: {r.ran}/{r.blocks} code blocks ran in {r.seconds:.1f} s"
+        if args.diff:
+            line += f"; output same as the chapter in {r.same_output}, different in {len(r.different_output)}"
+        if r.failed:
+            bad += 1
+            print(ui.err("✗ ") + line)
+            for ln, msg in r.failed:
+                print(f"    block at line {ln}: {msg}")
+        else:
+            print(ui.ok("✓ ") + line)
+        if args.diff and r.different_output:
+            print(ui.dim("    (timings, ids and paths legitimately differ; lines: " + ", ".join(map(str, r.different_output[:12])) + ")"))
+    if not targets:
+        print("No chapters found.")
+    if bad:
+        raise SystemExit(1)
+
+
+def cmd_extract(args: argparse.Namespace) -> None:
+    targets = _chapters_for(args.module)
+    if len(targets) != 1:
+        raise UserError("Give one module, for example: learn extract llm.07")
+    mid, path = targets[0]
+    files = chapters.extract_files(path.read_text(encoding="utf-8"))
+    if not files:
+        print(f"{mid} does not write project files from its code blocks, so there is nothing to extract.")
+        return
+    out = Path(args.out).resolve() if args.out else paths.playground_dir() / mid
+    written, skipped = chapters.write_extracted(files, out, force=args.force)
+    for p in written:
+        print(ui.ok("  wrote ") + rel(p) if out.is_relative_to(paths.root()) else f"  wrote {p}")
+    for p in skipped:
+        print(ui.warn("  kept  ") + f"{p.name} (already there; use --force to overwrite)")
+    roots = sorted({f.root for f in files})
+    print(f"\n{len(written)} file(s) written under {out}")
+    tests = [f for f in files if Path(f.relpath).name.startswith("test_")]
+    if tests:
+        r = roots[0]
+        print(ui.dim(f"Run the project's tests:  cd {out / r}  and then  python -m pytest -q"))
+
+
+def cmd_doctor(args: argparse.Namespace) -> None:
+    req = doctor.load_requirements()
+    mark = {"ok": ui.ok("✓"), "warn": ui.warn("!"), "bad": ui.err("✗")}
+    ui.heading("This machine")
+    problems = 0
+    for label, status, detail in doctor.environment_report():
+        print(f"  {mark[status]} {label:<26}{detail}")
+        problems += status == "bad"
+    print(ui.bold("\nPackages"))
+    for group, have, total in doctor.group_status(req):
+        hint = "" if group == "base" else f'   pip install -e ".[{group}]"'
+        print(f"  {mark['ok'] if have == total else mark['warn']} {group:<10}{have}/{total} installed" + ui.dim(hint))
+    targets = _chapters_for(args.target) if (args.target or args.all) else []
+    undeclared_total = 0
+    if targets:
+        print(ui.bold("\nWhat the chapters import"))
+    missing_by_group: dict[str, set[str]] = {}
+    for mid, path in targets:
+        needs = doctor.chapter_needs(path.read_text(encoding="utf-8"), req)
+        undeclared_total += len(needs.undeclared)
+        for dist, group in needs.missing.items():
+            missing_by_group.setdefault(group, set()).add(dist)
+        if args.target and not args.all or needs.missing or needs.undeclared:
+            status = "ok" if not (needs.missing or needs.undeclared) else "warn"
+            print(f"  {mark[status]} {mid}" + ui.dim(f"  {len(needs.installed)} installed"
+                  + (f", missing: {', '.join(sorted(needs.missing))}" if needs.missing else "")
+                  + (f", optional and missing: {', '.join(needs.optional_missing)}" if needs.optional_missing else "")
+                  + (f", NOT LISTED IN pyproject.toml: {', '.join(needs.undeclared)}" if needs.undeclared else "")))
+    for group, dists in sorted(missing_by_group.items()):
+        sizes = [f"{d} ({doctor.SIZE_HINT[d]})" for d in sorted(dists) if d in doctor.SIZE_HINT]
+        cmd = 'pip install -e .' if group == "base" else f'pip install -e ".[{group}]"'
+        print(ui.bold(f"\nTo install what is missing for group '{group}':  ") + cmd)
+        if sizes:
+            print(ui.dim("  large downloads: " + ", ".join(sizes)))
+    if args.strict and (problems or undeclared_total):
+        raise SystemExit(1)
+
+
+def cmd_cards(args: argparse.Namespace) -> None:
+    import csv
+    targets = _chapters_for(args.target)
+    rows = []
+    for mid, path in targets:
+        for c in chapters.make_cards(path.read_text(encoding="utf-8")):
+            rows.append((c.front, c.back, mid, c.section))
+    if not rows:
+        print("No question-and-answer boxes found.")
+        return
+    name = (args.target or "all").replace(".", "-")
+    out = Path(args.out) if args.out else paths.library_dir() / "cards" / f"{name}{'.tsv' if args.anki else '.csv'}"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    with out.open("w", encoding="utf-8", newline="") as f:
+        if args.anki:
+            w = csv.writer(f, delimiter="\t")                                   # Anki: Import file, tab-separated, front then back then tags
+            for front, back, mid, section in rows:
+                w.writerow([front, back, f"{mid} {section.split()[0] if section else ''}".strip()])
+        else:
+            w = csv.writer(f)
+            w.writerow(["front", "back", "module", "section"])
+            w.writerows(rows)
+    print(f"{len(rows)} cards from {len(targets)} chapter(s) written to {rel(out) if out.is_relative_to(paths.root()) else out}")
+    if args.anki:
+        print(ui.dim("In Anki: File > Import, choose the file, fields separated by Tab, field 1 = Front, field 2 = Back, field 3 = Tags."))
+
+
+CAPSTONE_FILES = {t: f"capstone-{t}.md" for t in ("core", "dsa", "swe", "da", "ds", "ml", "llm")}
+
+
+def cmd_capstone(args: argparse.Namespace) -> None:
+    syl = load_syllabus()
+    guides = paths.root() / "docs" / "guides"
+    if args.track is None:
+        ui.heading("Capstone projects")
+        for t in syl.tracks:
+            f = CAPSTONE_FILES.get(t.id)
+            ok = f is not None and (guides / f).exists()
+            print(f"  {t.id:<7}{(t.capstone or 'no capstone for this track')}" + (ui.dim(f"   learn capstone {t.id}") if ok else ""))
+        return
+    if args.track not in CAPSTONE_FILES:
+        raise UserError(f"No capstone guide for '{args.track}'. Tracks with one: {', '.join(CAPSTONE_FILES)}")
+    path = guides / CAPSTONE_FILES[args.track]
+    if not path.exists():
+        raise UserError(f"The guide {rel(path)} is missing.")
+    text = path.read_text(encoding="utf-8")
+    if args.print or not (sys.stdin.isatty() and sys.stdout.isatty()):
+        print(text)
+        return
+    reader.read_chapter(f"capstone  {syl.track(args.track).title}", text, 0, lambda i: None)
+
+
 # ----------------------------------------------------------------- parser
 
 def build_parser() -> argparse.ArgumentParser:
@@ -1155,6 +1347,34 @@ def build_parser() -> argparse.ArgumentParser:
     sp = add("validate", cmd_validate, "Check problems are complete and their tests work (authoring)")
     sp.add_argument("target", nargs="?", help="problem, module or track id")
     sp.add_argument("-v", "--verbose", action="store_true")
+
+    sp = add("lint", cmd_lint, "Check chapters: fences, answer boxes, prompt boxes, Windows text-encoding (authoring)")
+    sp.add_argument("target", nargs="?", help="module or track id (default: every chapter)")
+    sp.add_argument("--strict", action="store_true", help="warnings also fail")
+    sp.add_argument("--warnings", action="store_true", help="show warnings, not only errors")
+    sp.add_argument("--fix-encoding", action="store_true", help="add encoding='utf-8' to text-file calls in code blocks")
+    sp.add_argument("-v", "--verbose", action="store_true")
+    sp = add("verify", cmd_verify, "Run the code blocks of chapters and report failures (authoring)")
+    sp.add_argument("target", nargs="?", help="module or track id (default: every chapter; slow)")
+    sp.add_argument("--diff", action="store_true", help="also compare the output with the output pasted in the chapter")
+    sp.add_argument("--strict-encoding", action="store_true", help="run without UTF-8 mode and fail on text files opened without an encoding (Windows check)")
+    sp.add_argument("--timeout", type=float, default=900.0, help="seconds allowed per chapter")
+    sp.add_argument("-v", "--verbose", action="store_true")
+    sp = add("extract", cmd_extract, "Write the project files that a chapter builds into playground/<module>/")
+    sp.add_argument("module")
+    sp.add_argument("--out", help="another folder")
+    sp.add_argument("--force", action="store_true", help="overwrite files that already exist")
+    sp = add("doctor", cmd_doctor, "Check this machine and which packages a module needs")
+    sp.add_argument("target", nargs="?", help="module or track id")
+    sp.add_argument("--all", action="store_true", help="check the imports of every chapter")
+    sp.add_argument("--strict", action="store_true", help="exit with an error if something is wrong or undeclared")
+    sp = add("cards", cmd_cards, "Export the chapters' question-and-answer boxes as flashcards (CSV or Anki)")
+    sp.add_argument("target", nargs="?", help="module or track id (default: all chapters)")
+    sp.add_argument("--out", help="output file")
+    sp.add_argument("--anki", action="store_true", help="tab-separated file for Anki's Import")
+    sp = add("capstone", cmd_capstone, "Show a track's capstone project guide")
+    sp.add_argument("track", nargs="?")
+    sp.add_argument("--print", action="store_true", help="print it in one go")
     return p
 
 

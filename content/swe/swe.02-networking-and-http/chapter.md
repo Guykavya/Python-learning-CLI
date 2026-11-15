@@ -166,6 +166,9 @@ The names you will see again and again:
 - A **segment** is a TCP packet. A **datagram** is a UDP packet. For us the words are almost the same.
 - The **payload** is the data a layer carries for the layer above.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw nested envelopes for one web request, 'GET /hello HTTP/1.1'. The innermost box is the HTTP message (application layer). Around it wrap a TCP header (transport, programs), then an IP header (internet, computers), then a Link header (one hop: Wi-Fi or Ethernet). Label each layer with the question it answers. Animate the envelopes being added when sending and peeled off in reverse at the receiver."
+
 ### 2.3 What each layer promises
 
 | Layer | Promise | What it does NOT promise |
@@ -367,6 +370,9 @@ Expected shape of the output (the addresses, the number of lines and the order a
 
 If you also have the `dig` or `nslookup` tool you can see the TTL and the record type: `dig example.com A +noall +answer` prints a line like `example.com. 300 IN A 203.0.113.7`. Here `300` is the TTL in seconds and `A` is the record type.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a DNS lookup for 'example.com' on port 443 with Python's socket.getaddrinfo. Show the program asking the operating system, which checks the hosts file first, then its cache, then asks the network. Show it returning a list of address tuples (IPv6 and IPv4), and a client trying them in order. Mark 'localhost' answered from the hosts file with no network. Highlight the TTL of 300 seconds."
+
 ### 4.3 What DNS means for your code
 
 - **A lookup takes time**, often 10 to 100 ms the first time. HTTP clients keep connections open to avoid repeating it (section 18).
@@ -559,6 +565,9 @@ refused: ConnectionRefusedError | is OSError: True
 
 "Refused" is actually a *good* kind of failure: the other computer answered immediately and said "no". The bad kind is silence (a timeout), because you wait the whole timeout before you know.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate the TCP three-way handshake and an echo exchange between a client and a server on 127.0.0.1. The server runs bind, listen, then accept and blocks. The client calls create_connection. Show SYN, then SYN+ACK, then ACK arrows, and a clock marking one round trip. Then show sendall(b'hello') and the reply b'HELLO', then FIN and the server seeing recv return b''."
+
 ### 5.4 TCP and UDP compared
 
 | | TCP | UDP |
@@ -696,6 +705,9 @@ no piece larger than asked: True
 The number of pieces is **machine-specific**; only the total is guaranteed. So the rule is:
 
 > **One `send` does not equal one `recv`.** Never assume it. You must mark where messages start and end yourself. That is called **framing**.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw TCP as a pipe of water. Three sendall calls pour in b'hello', b'world' and b'!' as separate coloured cups. On the other end a single recv(1024) scoops out the blended stream b'helloworld!' with no boundaries. Add a second panel where one 100,000-byte message comes out in several recv(4096) pieces. Label 'boundaries are gone' and 'one send is not one recv'."
 
 ### 6.2 Three ways to frame
 
@@ -1160,7 +1172,7 @@ if shutil.which("curl") is None:
     print("curl is not installed here: skip this example")
 else:
     with serve(Hello) as base:
-        out = subprocess.run(["curl", "-si", base + "/hello"], capture_output=True, text=True, timeout=10)
+        out = subprocess.run(["curl", "-si", base + "/hello"], capture_output=True, text=True, timeout=10, encoding="utf-8")
     print(out.stdout.replace("\r", ""))
 ```
 ```text
@@ -1487,6 +1499,9 @@ The status code is a three-digit number. The first digit is the family, and it i
 | `4xx` | **Client** error | **you** (bad request) | fix the request; **do not retry blindly** |
 | `5xx` | **Server** error | the server | maybe retry later |
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a five-row chart of HTTP status code families: 1xx informational, 2xx success, 3xx redirection, 4xx client error, 5xx server error. Colour them differently. For each row show who is responsible (nobody, you, the server) and the typical client reaction: use the result, go elsewhere or use cache, fix the request and do not retry blindly, maybe retry later. Make the 4xx and 5xx rows stand out."
+
 ### 10.2 The codes to know
 
 | Code | Name | When |
@@ -1776,6 +1791,9 @@ with serve(Cached) as base:
 ```
 
 The hash of the content is a simple, honest ETag: same content, same tag. Browsers and good API clients do this dance automatically. For you as an API client, the rule is: **respect `Cache-Control` for data that rarely changes, and use `ETag` to make polling cheap**.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate HTTP validation caching between a client and a server. Request 1: GET / returns 200, ETag 938fe718, Cache-Control max-age=60, body 'version one'. Request 2: client sends If-None-Match with that tag; server returns 304 with an empty body, so nothing is re-sent. Then the page changes to 'version two'; the same request now returns 200 with a new ETag and full body. Show body sizes as bars."
 
 #### Try it 11.1
 
@@ -2488,6 +2506,9 @@ Plain HTTP uses port 80, HTTPS port 443.
 
 The clever part, key exchange, lets two strangers agree on a secret key **while an eavesdropper watches every message** and still cannot compute it (it uses mathematics such as elliptic-curve Diffie-Hellman). The rest of the conversation is encrypted with that key. TLS 1.3 needs one round trip for this on top of the TCP handshake (TLS 1.2 needed two), and later connections can resume faster.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate the TLS handshake on top of an already open TCP connection. Show ClientHello, ServerHello, the server's Certificate, the client checking the signature chain, name and dates (stopping with an error if bad), then key exchange data in both directions. Show an eavesdropper seeing every message but unable to compute the secret key. After that, show the HTTP request and response travelling inside a locked, encrypted tunnel."
+
 ### 17.3 Certificates and trust
 
 A **certificate** says "this public key belongs to *these names*", valid *between these dates*, signed by an issuer. You trust it because the issuer, a **certificate authority (CA)**, is trusted by your operating system or by the `certifi` bundle that `requests` uses. Certificates form a chain:
@@ -3161,6 +3182,9 @@ total deadline: True
 
 The first call succeeded although it took about a second: every single wait was under 0.5 s. A **total deadline** needs your own clock, as in `get_with_deadline`, or a wrapper such as `asyncio.timeout` in async code (core.21 section 12). For a whole *operation* with retries, also keep a total budget (section 22).
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a timeline showing a per-wait read timeout versus a total deadline. A server sends five bytes, one every 0.2 seconds, about 1 second in all. Use a 0.5 s read timeout that resets to full after every byte, so the request succeeds. Beneath it draw a separate total-deadline clock of 0.5 s that is not reset and fires partway. Label 'timeout restarts on each byte' and 'total deadline needs your own clock'."
+
 #### Try it on your machine: a connect timeout (needs a network)
 
 A connect timeout needs an address that never answers. On many networks the "documentation" or unrouted ranges silently drop packets:
@@ -3226,6 +3250,9 @@ attempt  ceiling  chosen wait
 ```
 
 The *ceiling* column is exact. The *chosen wait* column is random: with a different seed you see other numbers, always inside the ceiling. Seeding is only for tests and books; in production use the default random generator.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a chart of exponential backoff with full jitter. The x-axis is retry attempts 0 to 5. Show the ceiling as a stepped line: 0.5, 1, 2, 4, 8, 8 seconds, from the formula min(8, 0.5 * 2 ** attempt). At each attempt plot a random dot chosen anywhere between 0 and the ceiling. Add a second small panel contrasting a thousand clients retrying in a herd at fixed times with the spread-out jittered retries."
 
 ### 21.4 `Retry-After`
 

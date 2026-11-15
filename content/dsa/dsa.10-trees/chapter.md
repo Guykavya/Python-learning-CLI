@@ -38,6 +38,9 @@ In a **binary tree**, every item has **at most two** children, called the **left
 
 A subtle point: **"height" is counted in two ways.** Many textbooks count *edges* (the arrows between nodes), so a single node has height 0 and an empty tree has height -1. Many coding problems count *nodes* on the path, so a single node has height 1 and an empty tree has height 0. This chapter counts **nodes** (the second way, because it makes the code simpler: `height(None) = 0`). Whenever a problem says "depth" or "height", check which way it counts.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a binary tree with root 4, children 2 and 6, and leaves 1, 3, 5, 7. Show it with a slider for the words: root, parent, child, sibling, leaf, subtree, depth, level. When I pick a word, highlight the matching nodes. For example, 'leaf' lights up 1, 3, 5, 7, and 'subtree of 2' lights up 2, 1, 3. Show depth next to each node: root 0, leaves 2."
+
 ### What you can do after this module
 
 1. **Solve tree problems by defining what each recursive call returns**, the one idea that makes most of them short.
@@ -229,6 +232,9 @@ print(size(bst), size(example), size(None))
 ```text
 7 5 0
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate the recursive function size(node) = 1 + size(left) + size(right), with size(None) = 0, on the tree with root 4, children 2 and 6, and leaves 1, 3, 5, 7. Step by step, go down to each leaf, show its two None calls returning 0, then show each node returning its number up: leaves return 1, node 2 returns 3, node 6 returns 3, root returns 7. Write the returned number beside each node."
 
 ### More examples with the same shape
 
@@ -438,6 +444,9 @@ Imagine walking around the outside of the tree, hugging the lines, starting at t
 - **Postorder** records it the **third** time (after both subtrees are done).
 
 This is why the three orders always contain the same nodes, only listed at different moments.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the tree with root 4, children 2 and 6, leaves 1, 3, 5, 7. Animate a dot walking around the outside of the tree, keeping the tree on its left. Mark a node with a colour the first, second or third time the dot touches it. Show three lists building up at once: preorder [4, 2, 1, 3, 6, 5, 7], inorder [1, 2, 3, 4, 5, 6, 7], postorder [1, 3, 2, 5, 7, 6, 4]."
 
 ### What each order is good for
 
@@ -673,6 +682,9 @@ pop  3   visit, stack=[]
 
 At every moment the stack holds exactly the **ancestors that are still waiting for their turn** (those whose left subtree is being processed). Its size never exceeds the height of the tree.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate iterative inorder traversal with an explicit stack on the tree with root 2, left child 1, right child 3. Show the tree, the stack, and the output list side by side. Steps: push 2, push 1, pop 1 and visit, pop 2 and visit, move to right child 3, push 3, pop 3 and visit. Highlight the current node, and show the output ending as [1, 2, 3]."
+
 ### Postorder with a stack
 
 Postorder is the hardest: a node is visited only after **both** subtrees are done. Two ways to do it.
@@ -848,6 +860,9 @@ print(level_order(None))
 ```
 
 The key detail is `for _ in range(len(queue))`: read the size of the queue **before** the loop starts, so that you handle only the nodes of the current level while their children go to the back of the queue.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate level-order traversal with a queue on the tree with root 3, left child 9, right child 20, and 20 has children 15 and 7. Show the tree and the queue. Step by step: queue [3]; pop 3, queue [9, 20]; pop 9, pop 20, queue [15, 7]; pop 15, pop 7. Draw a coloured band for each level and show the result [[3], [9, 20], [15, 7]]."
 
 Once you have the levels, many questions become short:
 
@@ -1063,6 +1078,9 @@ print(diameter(example), diameter(bst), diameter(build_tree([1])), diameter(None
 ```
 
 For `example` (`3, 9, 20, 15, 7`) the longest path is `9 - 3 - 20 - 15`: three edges. For `bst` it is `1 - 2 - 4 - 6 - 7`: four edges. A chain of 5 nodes has a diameter of 4.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the tree with root 3, left child 9, right child 20, and 20 has children 15 and 7. Animate a function that returns each node's height (counted in nodes) up the tree, and at each node records left height plus right height as a candidate diameter. Show 9: 1, 15: 1, 7: 1, 20: 2, root 3: left 1 + right 2 = 3. Highlight the longest path 9 - 3 - 20 - 15 (3 edges)."
 
 To be sure, compare it with a **brute force**: build the tree as an undirected graph, run a BFS from every node, and take the largest distance.
 
@@ -1456,6 +1474,9 @@ print(to_level_list(tree))
 
 Notice that the **shape** depends on the **order** of the insertions. The same keys inserted in a different order give a different tree.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate inserting the keys 5, 3, 8, 1, 4, 7, 9, 2 one by one into an empty binary search tree. For each key, show a path of arrows from the root, comparing it with each node (smaller goes left, bigger goes right), until it reaches an empty spot and a new node appears. For example, 2 goes 5, left to 3, left to 1, then right of 1."
+
 ### Delete: three cases
 
 Deleting is the hard one. First find the node, then:
@@ -1499,6 +1520,9 @@ after delete 42: [7, 3, 8, 2, None, None, 9]
 Follow the three real cases above. Deleting `4` (a leaf) just removes it. Deleting `1` (one child, `2`) lifts `2` into its place. Deleting `5`, the root with two children, copies the successor `7` into the root and removes the old `7`. Deleting `42`, which is not in the tree, changes nothing.
 
 The two bugs people write: forgetting the assignment (`delete(root.left, key)` without `root.left = ...`, so the removal is lost), and forgetting to remove the successor node after copying its value (so the value is now in the tree twice).
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Start with the binary search tree built from 5, 3, 8, 1, 4, 7, 9, 2 (5 is the root; 3 has children 1 and 4; 1 has right child 2; 8 has children 7 and 9). Animate deleting 4 (a leaf, just removed), then 1 (one child: 2 moves up), then 5 (two children: copy the smallest value of the right subtree, 7, into the root, then remove the old 7). Label each case."
 
 ### Check it against a set
 
@@ -1937,6 +1961,9 @@ print(lca(t2, find(t2, 2), ghost).val)            # the "answer" is just node 2
 ```
 
 The time is `O(n)` (every node may be visited) and the space is `O(h)`.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the tree built from the level list [3, 5, 1, 6, 2, 0, 8, None, None, 7, 4]: 3 has children 5 and 1; 5 has children 6 and 2; 1 has children 0 and 8; 2 has children 7 and 4. Animate the lowest common ancestor search for nodes 6 and 4: each call returns a found node or None upward. Show node 5 getting an answer from both sides, so 5 is the LCA. Highlight 5."
 
 ### In a BST: use the order
 
@@ -2786,6 +2813,9 @@ order before: A  x  B  y  C      order after: A  x  B  y  C   (the same)
 ```
 
 A **left rotation** is the mirror image. A rotation changes only three pointers and costs `O(1)`.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a right rotation in a binary search tree. Before: y on top, left child x, right subtree C; x has left subtree A and right subtree B. After: x on top, left subtree A, right child y; y has left subtree B and right subtree C. Show B moving from x to y, and show the in-order line A x B y C staying the same under both trees."
 
 ### AVL trees
 

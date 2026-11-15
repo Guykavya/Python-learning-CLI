@@ -1,0 +1,6 @@
+id = "dsa.07.p011"
+title = "Fibonacci with a memo dictionary"
+tier = "applied"
+kind = "code"
+topics = ["memoisation", "recursion tree", "dictionary"]
+minutes = 20

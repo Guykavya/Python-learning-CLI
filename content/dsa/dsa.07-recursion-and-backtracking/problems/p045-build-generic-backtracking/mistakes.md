@@ -1,0 +1,5 @@
+- Recording `path` instead of `path[:]`: every recorded answer becomes the same (empty) list.
+- Returning right after recording: then `subsets` with `is_done = True` stops at `[]`. The engine must keep going.
+- Calling `is_valid` after appending the option: the callbacks then see invalid paths.
+- Writing `subsets` with its own recursion: the exercise is to use the engine.
+- Using values instead of indexes for `permutations` with `option not in path`: works for distinct items, but fails as soon as two items are equal.

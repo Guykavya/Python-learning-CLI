@@ -1,0 +1,4 @@
+- Stopping only at `lo == hi`: for even lengths the indexes cross (`lo > hi`) without ever being equal, and you then compare characters twice or index out of range.
+- Returning `True` as soon as the two ends match, without checking the inside.
+- Lower-casing the string or removing spaces: this problem compares the string exactly.
+- Slicing `s[1:-1]` at every call: correct but `O(n^2)`.

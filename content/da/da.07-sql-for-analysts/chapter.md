@@ -264,6 +264,9 @@ referral    597       364   61.00
 
 `COUNT(*) FILTER (WHERE ...)` is the readable form; `SUM(CASE WHEN ... THEN 1 ELSE 0 END)` is the portable form that works in every database. The average of a 0/1 flag is a **percentage**: a very common trick for rates.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw one picture of the SQL idea GROUP BY with conditional aggregation. A users table has a channel column (organic, ads, referral) and a country column. Show the rows sorted into three buckets by channel. Inside each bucket, colour rows with country 'IN' green and the others grey. Beside each bucket show users (all rows), users_in (green rows) and pct_in = green divided by all. Example: organic 1976 users, 1141 in IN, 57.7 percent."
+
 ### 2.2 Safe division and `NULL`
 
 A rate divides by a count that may be zero. `NULLIF(x, 0)` turns a zero into `NULL`, so the division gives `NULL` (unknown) instead of an error or a wrong number. `COALESCE(x, default)` replaces `NULL` for display.
@@ -432,6 +435,9 @@ FROM exists_by_month e JOIN active a USING (month) ORDER BY e.month
 
 Now the denominators grow month by month, and the active share is much higher. The first version divided by a number that included people who did not yet exist; its percentages were too small, most of all for January. That is a **denominator error**, and no SQL error message will warn you. (One more detail: July is missing from the second table, because the list of months came from the *signup* months. The first query, built from the events, shows July. Where a list of periods comes from is a decision, too.)
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a pipeline diagram of a SQL query built from CTEs. Boxes in a row: 'months' and 'exists_by_month' (one row per month, users who signed up by the month's end) and 'active' (one row per month, users who logged in). Arrows flow into a final SELECT that divides active by existing. Show a small table under each box with January 644 and 644, February 1262 and 1127. Highlight that the denominator grows each month."
+
 ### 3.2 CTE rules of thumb
 
 1. **One idea per CTE**, named for what it contains (`first_login`, `cohort_size`), not for how it is built (`temp1`).
@@ -511,6 +517,9 @@ Meera     85           3     2           2     1
 | `ntile(n)` | -- | -- | split into `n` equal buckets (quartiles) |
 
 Watch `row_number` with ties: Ravi and Meera have the same score, and the database may number them either way. If a query must be reproducible, add a **tie-breaker** to `ORDER BY` (`ORDER BY score DESC, name`).
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a table of five students: Asha 90, Ravi 85, Meera 85, Dev 70, Isha 60, sorted by score descending. Add four columns: row_number, rank, dense_rank and ntile(2). Fill them in (rank: 1, 2, 2, 4, 5; dense_rank: 1, 2, 2, 3, 4). Highlight the tied rows Ravi and Meera and use arrows to show where each function skips a number or does not."
 
 ### 4.3 Looking at neighbours: `lag`, `lead`, `first_value`
 
@@ -611,6 +620,9 @@ ORDER BY day
 2025-03-02      20            20         15
 2025-03-03      15            15         15
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a running total over four sales rows: 1 March 10, 2 March 5, 2 March 20, 3 March 15. Show two side-by-side lanes. Lane one uses the default RANGE frame: the two 2 March rows are peers, so both show 35 and the total jumps from 10 to 35. Lane two uses a ROWS frame with a tie-breaker: totals go 10, 15, 35, 50 one row at a time. Draw the frame as a bracket growing down the rows."
 
 ### 4.5 Running totals and moving averages
 
@@ -909,6 +921,9 @@ The first 6 days of the series have a window with fewer than 7 days; many teams 
 
 **Which is right, zero or absent?** For revenue, a day without orders is a true zero. For a metric such as "average order value", an empty day is *not* zero but undefined: averaging zeros in would drag the value down. As in da.05: ask what the missing row means.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a date spine LEFT JOIN. On the left, a calendar column with every day from 10 July to 15 July 2025. On the right, a revenue table that only has rows for days with orders (some days missing). Draw lines joining matching days, and show the missing days getting NULL, then turning into 0 after COALESCE. Add a 7-row sliding window bracket over the filled series to show the moving average."
+
 ### 5.2 Active users per day, week and month: DAU, WAU, MAU
 
 "Active user" needs a definition: here, **a user with a `login` event in the period**. Because users repeat, the counts are distinct counts, and (da.06) distinct counts are not additive: the 7 daily counts of a week do not add up to the weekly count.
@@ -1197,6 +1212,9 @@ cohort_month
 ```
 
 The lower-right corner is full of zeros: the cells for months that have not happened. A chart of this matrix shows a cliff along the diagonal, and someone will ask what went wrong in May. The fix is a rule, written in SQL: a cell exists only if its month is complete.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a cohort retention triangle as a coloured grid. Rows are signup cohorts Jan to Jun 2025, columns are months since signup M0 to M5. Fill each cell with a retention percent (Jan: 100, 79, 57.5, 40.7, 39, 32.3). Cells for months that have not happened yet (below the diagonal) must be hatched grey and labelled 'not yet observed'. Show a second copy where those cells wrongly show 0 percent, with a red cliff along the diagonal."
 
 ```python run
 fixed = q("""
@@ -1519,6 +1537,9 @@ print(funnel.to_string(index=False))
 
 The window functions of section 4 do all the work: `lag` for the previous step, `first_value` for the top. Read the funnel from the "pct_of_previous" column: the biggest relative loss is between view and cart (most viewers never add to cart), and only about two thirds of the people who start checkout complete it. The "pct_of_top" column tells how many views it takes to make a sale. Each ratio has a number behind it; show both.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a funnel chart for four steps: view_course 3332, add_to_cart 1312, checkout_start 798, purchase 528 users. Label each bar with its percent of the previous step (39.4, 60.8, 66.2) and percent of the top (100, 39.4, 23.9, 15.8). Add a small side branch labelled 'direct-link buyers' that enters at purchase and skips the first three steps, to show why ordered and unordered counts differ."
+
 ### 7.4 By segment
 
 A funnel by channel shows where each channel leaks. Do it in one query with the same conditions, grouped by channel.
@@ -1680,6 +1701,9 @@ Both identities hold for every month. The table is a story: MAU grows because th
 
 The pattern uses `lag` over months **that exist for the user**: `prev_month = month - INTERVAL 1 MONTH` tests that the previous *active* month is exactly the previous *calendar* month. If it is further back, the user was away, so they are resurrected. This is the case where an off-by-one in month arithmetic would silently turn retained users into resurrected ones.
 
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a month-to-month user flow diagram with two columns, May 2025 active users and June 2025 active users. Show four arrow types: retained (active in both), churned (active in May only), new (first ever active month is June) and resurrected (returning after a gap longer than one month). Use June figures: new 615, retained 1347, resurrected 329, and 2291 active in total. Show MAU = new + retained + resurrected."
 
 ## 9. DuckDB with pandas and Parquet
 
@@ -2306,12 +2330,12 @@ out = tmp / "learnloop_report"
 (out / "sql").mkdir(parents=True)
 (out / "results").mkdir()
 for name, sql in QUESTIONS.items():
-    (out / "sql" / f"{name}.sql").write_text(sql.strip() + "\n")
+    (out / "sql" / f"{name}.sql").write_text(sql.strip() + "\n", encoding="utf-8")
     RESULTS[name].to_parquet(out / "results" / f"{name}.parquet", index=False)
 print(sorted(p.name for p in (out / "sql").iterdir())[:4], "...")
 print(len(list((out / "sql").iterdir())), "sql files,", len(list((out / "results").iterdir())), "result files")
 # re-run from the files: the saved SQL must give the saved result
-rerun = q((out / "sql" / "q06_revenue_by_month_plan.sql").read_text())
+rerun = q((out / "sql" / "q06_revenue_by_month_plan.sql").read_text(encoding="utf-8"))
 saved = pd.read_parquet(out / "results" / "q06_revenue_by_month_plan.parquet")
 print("saved SQL reproduces the saved result:", rerun.equals(saved))
 ```

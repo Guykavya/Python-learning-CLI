@@ -1,0 +1,5 @@
+- No base case, or `if len(xs) == 1: return xs[0]` as the only base case: the empty list then crashes with `IndexError` (or recurses forever).
+- Returning `None` from the base case (a bare `return`): `5 + None` raises `TypeError`.
+- Forgetting the `return` in front of the recursive call: the function returns `None`.
+- Using `xs.pop()` to shrink the list: it destroys the caller's list.
+- Slicing at every call is correct but `O(n^2)`; prefer an index.

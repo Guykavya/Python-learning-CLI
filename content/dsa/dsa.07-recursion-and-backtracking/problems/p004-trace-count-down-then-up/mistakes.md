@@ -1,0 +1,3 @@
+- Printing `up 3` first: the `up` lines come out in the reverse order of the `down` lines, because the innermost call finishes first.
+- Forgetting the `base` line or the final `done`.
+- Writing `down 0`: `show(0)` returns before reaching the `down` print.

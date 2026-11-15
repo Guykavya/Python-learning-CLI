@@ -88,6 +88,9 @@ a good algorithm from a bad one by trying it. At `n = 1,000,000` the double loop
 others need a fraction of a second. No amount of faster hardware closes that gap: a computer 10 times faster
 turns 18 hours into 2 hours.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Make a chart of measured running time against n (1,000 / 10,000 / 100,000 / 1,000,000) on log-log axes for three Python jobs. One loop: 0.00009, 0.00167, 0.0087, 0.076 seconds. Sorting: 0.00017, 0.00288, 0.02895, 0.35319. Loop inside a loop: 0.071 and 6.656 seconds for the first two sizes, then extend to about 11 minutes and 18 hours as dashed estimates. Label slopes: 10x, about 12x, 100x per step."
+
 The estimates come from the growth rule, not from guessing: 6.7 seconds at `n = 10^4`, times 100 for each
 further factor of 10, gives 670 seconds at `10^5` and 67,000 seconds (about 18.6 hours) at `10^6`.
 
@@ -154,6 +157,9 @@ With `m = n - 1`, the total is `n (n - 1) / 2`. For `n = 4`: `4 * 3 / 2 = 6`. Ch
 (0,1) (0,2) (0,3) (1,2) (1,3) (2,3). Six pairs. This loop visits every **pair** of positions once, and the
 number of pairs from `n` things is `n (n - 1) / 2`, about `n^2 / 2`.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a 4 by 4 grid, rows i = 0..3 and columns j = 0..3, for two Python loops. First loop: for j in range(n) for every i; colour all 16 cells (n * n). Second loop: for j in range(i + 1, n); colour only cells above the diagonal: (0,1) (0,2) (0,3) (1,2) (1,3) (2,3). Label the row counts 3, 2, 1, 0 and the total 6 = n(n-1)/2."
+
 ### Counting a halving loop
 
 ```python
@@ -176,6 +182,9 @@ before reaching 1 is the **logarithm base 2** of `n`, written `log2 n` (rounded 
 
 Logarithms grow incredibly slowly. A loop that halves its range is almost free even for gigantic `n`. A loop that
 **doubles** a variable from 1 up to `n` takes the same number of steps, also about `log2 n`.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate this Python loop: while n > 1: n = n // 2; steps += 1, starting at n = 1000. Show n as a shrinking bar at each step: 1000, 500, 250, 125, 62, 31, 15, 7, 3, 1, with the steps counter going up to 9. Then show a second bar for n = 1,000,000 needing only about 20 halvings, to show how slowly log2 n grows."
 
 <details><summary>Try it: how many times does <code>count += 1</code> run, for n = 10?</summary>
 
@@ -315,6 +324,9 @@ at the start gave about 1.3 * 10^7 for the single loop and 1.5 * 10^7 for the do
 - O(2^n) is fine for `n = 20` (a million) and absurd for `n = 100` (10^30 steps would outlast the universe).
 - O(n!) is fine for `n = 10` and hopeless beyond about 12.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Plot step counts against n for log2 n, n, n log2 n, n^2, 2^n and n!, for n from 1 to 20, with a log-scale y-axis and one colour per curve. Mark n = 10 and n = 20 with their values (n^2 = 100 and 400, 2^n = 1,024 and about 1.05 million). Draw a horizontal line at 10^7 steps, about one second in plain Python."
+
 ## Analysing code
 
 Here are the rules, all of which follow from counting.
@@ -447,6 +459,9 @@ the sort-based one can use O(1) extra space (sorting the list in place with `a.s
 Usually memory is cheaper than time, so we accept O(n) extra space for a faster algorithm, but not O(n^2) space at
 `n = 10^5`.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a time versus space comparison for checking a list of n numbers for duplicates. Method A: put items in a set, O(n) extra space and O(n) time; show the list plus a second growing box for the set. Method B: sort the list in place with a.sort(), O(1) extra space and O(n log n) time; show one list only, rearranging. Use a small example list of 6 numbers."
+
 <details><summary>Try it: what is the extra space of this code?</summary>
 
 ```python
@@ -537,6 +552,9 @@ shifts `i` items, so `n` inserts cost `n (n - 1) / 2`: O(n^2). Measured here: 10
 100,000 inserts at the front took 1.38 s. When `n` went from 10,000 to 100,000, append's time grew 10 times and
 insert's grew about 90 times.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a Python list as a row of slots that doubles its capacity when full, starting at capacity 1, over 17 appends. Show each append as a new item dropping in. When the list is full (appends 2, 3, 5, 9, 17) show all old items copying into a bigger row, with a counter of copies: 1, 3, 7, 15, 31. Add a bar chart of the cost of each append, mostly 1 with rare tall bars."
+
 <details><summary>Try it: a dynamic array starts with capacity 1 and triples when full. How many copies do 28 appends cause?</summary>
 
 It grows before appends 2 (copy 1, capacity 3), 4 (copy 3, capacity 9) and 10 (copy 9, capacity 27), and
@@ -573,6 +591,9 @@ Two accepted exceptions:
 
 Some algorithms have very different best and worst cases. Insertion sort (move each element left until it is in
 place) does `n - 1` comparisons on an already sorted list (O(n)) but `n (n - 1) / 2` swaps on a reversed one (O(n^2)).
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate linear search on the list a = [7, 3, 9, 1, 5, 8] with a pointer moving right, counting comparisons. Run it three times: target 7 (found at position 0, 1 comparison, best case), target 5 (position 4, 5 comparisons), target 4 (missing, 6 comparisons, worst case). Show the running comparison count and label each run best, average-ish or worst."
 
 ## Analysing recursion
 
@@ -613,6 +634,9 @@ computed 34 times. The number of calls `C(n)` satisfies `C(n) = 1 + C(n - 1) + C
 times for each step of `n`: `fib(10)` makes 177 calls, `fib(30)` makes about 2.7 million, `fib(40)` about 330
 million. That is exponential, O(1.62^n), often loosely written O(2^n). A loop that keeps the last two values
 does the same job in O(n).
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate the call tree of the naive recursive Python function fib(n) = fib(n-1) + fib(n-2), with base case n < 2. Build the tree for fib(4) (nine boxes) one call at a time. Colour every repeated call the same colour, for example fib(2) twice. Then show how the call count grows: fib(10) makes 177 calls, fib(30) about 2.7 million."
 
 ### Recurrence relations
 
@@ -676,6 +700,9 @@ The theorem only covers problems that shrink by a **factor**. For subtract-by-on
 - `T(n) = T(n - 1) + n` gives `n + (n - 1) + ... + 1`: O(n^2). (A recursive function that slices off the first
   element, `rest = a[1:]`, is this: each slice costs O(n).)
 - `T(n) = 2 T(n - 1) + 1` gives `1 + 2 + 4 + ... + 2^(n - 1)`: O(2^n).
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the recursion tree for merge sort, T(n) = 2T(n/2) + n, with n = 8. Show levels: 1 box of size 8, 2 boxes of size 4, 4 boxes of size 2, 8 boxes of size 1. Next to each level write its total work (8 each time). Label the number of levels (log2 8 = 3, plus the leaves) and show that total work = work per level times levels, which is O(n log n)."
 
 <details><summary>Try it: solve T(n) = 3 T(n/3) + n and T(n) = 8 T(n/2) + n^2.</summary>
 

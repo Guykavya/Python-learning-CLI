@@ -1,0 +1,4 @@
+- Using `append(flatten(item))`: the inner result is added as one nested list, so nothing gets flatter.
+- Treating strings as lists (checking "is it iterable?"): a string of length 1 contains itself, so the recursion never ends. Test with `isinstance(item, list)`.
+- Opening tuples too: here only lists are opened.
+- Building the result with a mutable default argument `def flatten(xs, out=[])`: the list is shared between calls, so a second call returns old values too.

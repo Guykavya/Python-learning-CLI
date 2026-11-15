@@ -1,0 +1,6 @@
+id = "dsa.07.p030"
+title = "Explain: why does sorting help here?"
+tier = "applied"
+kind = "explain"
+topics = ["pruning", "sorting", "break"]
+minutes = 15

@@ -140,6 +140,9 @@ A <-- B <-- C <-- F          (F has two parents: C and E)
 
 You will draw graphs like this many times. They are the most useful tool for understanding what a command does.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a git history as a directed acyclic graph. Commits A, B, C, D, E sit left to right, oldest first, each with an arrow pointing back to its parent. Add a side line D, E that forks from B. Then add a merge commit F with two arrows going back to C and E. Label F 'two parents' and the fork point 'two children'. Show there are no loops."
+
 ### 2.3 A branch is just a sticky note
 
 A **branch** is a name that points at one commit. That is all. It is a 41-byte file. Creating a branch costs nothing, which is why git users create them freely.
@@ -179,6 +182,9 @@ Git keeps your files in three places. This is the thing beginners find strangest
 Why the middle step? Because it lets you **choose what goes in a commit**. You may have changed five files for two different reasons. With the index you can commit the first reason (two files), then the second (three files). Two small, clear commits instead of one confusing one.
 
 The four states of a file therefore are: *untracked* (git has never seen it), *modified* (changed in the working tree), *staged* (copied into the index) and *committed*.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw three boxes in a row: 'working tree (files you edit)', 'index / staging area (next commit, drafted)', 'repository (committed history)'. Draw arrows: 'git add' from working tree to index, 'git commit' from index to repository, 'git restore' going back from index to working tree, 'git reset' going back from repository to index. Show a file moving through the states: untracked, modified, staged, committed."
 
 ### 2.6 Commands as moves on the picture
 
@@ -766,6 +772,9 @@ $ git rev-parse --short HEAD~1
 a9d3e0b
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a git merge where both lines moved. Start with commits A, B, C, D on main. Branch 'docs' forks from D and adds E. Main adds F. Show that a fast-forward is impossible, mark D as the 'merge base', then add merge commit M with two parents: F and E. Label the branch pointers main (HEAD) and docs, and name it a 'three-way merge'."
+
 ### 5.6 Forcing a merge commit: `--no-ff`
 
 A fast-forward leaves no trace that a branch existed. Some teams prefer to always record a merge commit so that the feature is visible as a unit:
@@ -971,6 +980,9 @@ Git wrote **conflict markers** around the disputed lines:
 
 Everything outside the markers is merged already. Inside, you see both versions. The `juice` line has no markers because it did not conflict.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Show a file menu.py during a merge conflict. On the left, main (HEAD) changed 'tea' to 15. On the right, branch feature changed 'tea' to 25. In the middle, draw the file with the markers '<<<<<<< HEAD', '=======' and '>>>>>>> feature' around the two tea lines. Colour your side and their side differently, and show that the 'juice' line merged cleanly with no markers."
+
 ### 6.4 Resolving
 
 Resolving means: edit the file until it contains exactly what you want, with **all marker lines removed**. You have three choices: keep yours, keep theirs, or write something new. Here the shop owner decides the winter sale price (15) should win, but keep `juice`. Write the final file:
@@ -1148,6 +1160,9 @@ $ git lg
 ```
 
 `--ff-only` says "only merge if it is a pure fast-forward, otherwise fail". It is a safe habit: it refuses to create surprise merge commits.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate 'git rebase main' on a branch. Before: A -- B -- C on main, and D -- E on feature forking from B. Show D and E lifted off, then replayed after C as new commits D' and E' with new hashes. Fade the old D and E out as 'no longer pointed to'. Finish with a straight line A B C D' E', and main fast-forwarding to E'."
 
 ### 7.2 Merge or rebase?
 
@@ -1609,6 +1624,9 @@ two.txt
 
 Two commits and their files are gone from the branch **and** from the disk. That is why `--hard` is the dangerous one: it also throws away uncommitted changes in tracked files, and those can never be recovered. But the *commits* are not truly gone yet. See the next part.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a row of four commits: one, two, three, four, with 'main' and HEAD on four. Show three versions of the picture for 'git reset --soft HEAD~1', 'git reset HEAD~1' (mixed) and 'git reset --hard HEAD~2'. In each, show where the branch pointer moves, and show what happens to four.txt in the working tree and the index (staged, untracked, or deleted)."
+
 ### 9.3 `reflog`: the safety net under the safety net
 
 Git keeps a private diary called the **reflog**: every position `HEAD` has been at, with a reason. Commits that no branch points to are not deleted for a long time (about 30 to 90 days by default), so the reflog can bring them back.
@@ -2048,6 +2066,9 @@ Other workflows exist (git-flow with `develop` and `release` branches, trunk-bas
 
 **Forks.** In open source you usually cannot push to someone's repository. You **fork** it (your own copy on GitHub), push branches to your fork, and open a PR from your fork to the original ("upstream"). Locally you then have two remotes: `origin` (your fork) and `upstream` (the original).
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the GitHub flow as a timeline. A line 'main' runs left to right with commits A and then M, always working. A short-lived 'feature' branch forks from A with commits B, C, D, then E, and merges back as M. Mark the point where a pull request is opened, a review step, 'CI green' and 'approved' before the merge, then 'delete branch'. Add a small side panel for 'squash and merge'."
+
 ### 10.6 A good pull request
 
 - **Small.** Under about 400 lines of changes is reviewable; a 3,000-line PR gets a quick "looks fine" and hides bugs.
@@ -2195,6 +2216,9 @@ That failure is a feature. With the flat layout, your tests pass on your machine
 - It prevents accidentally importing a stale local copy.
 
 The cost is one extra folder and, for tests, one line of configuration (`pythonpath = ["src"]` in section 12, or `pip install -e .`).
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two folder trees side by side. Left, 'flat layout': pyproject.toml and a pricekit/ folder next to each other. Right, 'src layout': pyproject.toml and src/pricekit/. Under each, show the command 'python -c import pricekit' run from the project folder: it works for flat (prints 118.0) because the current folder is on sys.path, and fails for src with ModuleNotFoundError until installed."
 
 ### 11.3 What goes where
 
@@ -2538,6 +2562,9 @@ f7c4a0f Add app
 The first commit was cancelled with our message; the second passed. In an emergency `git commit --no-verify` skips hooks, so hooks are a **help, not a wall**. The wall is CI, which checks the same things on the server where nobody can skip them.
 
 Plain hooks have a weakness: `.git/hooks/` is **not** part of the repository, so teammates do not receive it.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a git commit being stopped by a hook. Show steps: edit app.py with a line 'breakpoint()', 'git add app.py', 'git commit'. Between commit and history, draw a gate '.git/hooks/pre-commit'. The first try fails with exit code 1 and the message 'remove the breakpoint() call', so the commit is cancelled. After the line is fixed to print('hi'), the gate passes and commit f7c4a0f appears in history."
 
 ### 14.2 The `pre-commit` framework
 

@@ -1,0 +1,6 @@
+id = "dsa.07.p042"
+title = "Palindrome partitioning"
+tier = "deep"
+kind = "code"
+topics = ["backtracking", "partitions", "palindromes"]
+minutes = 30

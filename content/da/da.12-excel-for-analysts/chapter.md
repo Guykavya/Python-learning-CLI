@@ -144,6 +144,9 @@ serial 1 is 1 January 1900; serial 60 is the day Excel invented (29 Feb 1900 nev
 
 A date is `days since 1900`, and a **time** is the fraction of a day (0.5 is noon). That makes date arithmetic easy (`=B2+30`) and it makes dates fragile when a cell is formatted as a number or text. In pandas a date is a `datetime64`; when Python writes it, openpyxl converts it to the serial number and attaches a date format. (Excel treats 1900 as a leap year, a bug kept for compatibility with an older program; it matters only for dates before March 1900.)
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw one picture of how Excel stores dates. Show a number line of days counted from serial 1 (1 January 1900). Mark serial 45366 as '15 March 2024', and serial 45366 + 100 as '10 April 2024'. Show a second small line where 0.5 means noon, the fraction of one day. Use arrows for '+30 days' (=B2+30). Label the same cell showing '45366' as a number and '2024-03-15' as a date format."
+
 ### 2.3 Formulas have no result until Excel calculates them
 
 This surprises every new user of openpyxl. When Python writes `=A1*2`, the file contains the **formula**, but no **cached result**. Excel calculates it when it opens the file. Anything that reads the file *without* calculating sees an empty cell.
@@ -1069,6 +1072,9 @@ copy from L2 to M2 : =G2*H2*(1-$H$1)+SUMIFS(Rev,Region,$A8,Category,C$7)
 
 Moving down one row changes `F2` to `F3` and `G2` to `G3` (relative), leaves `$H$1` alone (absolute), and leaves `$A8` and `B$7` partly fixed: `$A8` keeps its column but moves down, `B$7` keeps its row but moves right. A two-dimensional report grid uses exactly this mixed pattern: row labels in column A (`$A8`), column labels in row 7 (`B$7`), and a single formula that is copied to every cell of the grid.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate copying the formula =F2*G2*(1-$H$1)+SUMIFS(Rev,Region,$A8,Category,B$7) from L2 down to L3 and right to M2. Draw a small grid. Show F2 and G2 sliding to F3 and G3 (or G2 and H2), while $H$1 stays pinned with a lock icon, $A8 locks its column only, and B$7 locks its row only. Colour relative, absolute and mixed parts differently and show the new formula beneath."
+
 ### 5.2 A workbook of order lines with calculated columns
 
 We now build the first real workbook. The `Orders` sheet holds the raw columns (A to I) and six **calculated columns** (J to O): category and unit cost looked up from `Products`, then revenue, cost, margin and the first day of the month. Each calculated cell is a formula that refers to its own row, which is the pattern of *fill down*.
@@ -1201,6 +1207,9 @@ total revenue of the damaged workbook 1,282,727.68 against the truth 1,282,055.9
 ```
 
 Both tampered cells are found, with their row numbers and contents. Inside Excel the same check is "Go To Special, Row differences" or the green-triangle warning *Inconsistent formula*; here it is code that runs on every build. The two tampered cells together moved the total by 672 rupees on 1.28 million (0.05 percent), which is exactly why nobody would notice by eye.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a spreadsheet column L (revenue) on the Orders sheet, rows 2 to 6 and then row 100. Every cell shows the same formula pattern =F{r}*G{r}..., except L100 which holds the typed number 999.99. Highlight L100 in red with a note 'typed over the formula'. Show a checker arrow translating row 2's formula to each row and flagging the one that differs."
 
 ### 5.4 Practices that make workbooks auditable
 
@@ -1348,6 +1357,9 @@ West    76,066.28 67,604.98 56,126.27 41,152.95
 
 The 20 cells are one formula copied. The check `max difference` is the whole reconciliation; if it were large, the first questions would be: does every row of `Orders` have a region that exactly matches a label (spaces, case)? Does the category come from a lookup that found every code? Both are tested in section 11.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the Summary sheet grid: row labels Central, East, North, South, West in A8:A12 and category labels Bedroom, Kitchen, Living, Outdoor in B7:E7. Highlight cell C9 with its formula =SUMIFS(Rev,Region,$A9,Category,C$7). Draw one arrow from $A9 back to the row label North and one from C$7 back to Kitchen. Beside it, show the Orders rows filtered by both criteria feeding the sum."
+
 ### 6.4 Averages: the average of averages again
 
 da.06 warned that you must never average averages. Excel makes the mistake easy, because `AVERAGEIFS` and a column of averages are one click away.
@@ -1466,6 +1478,9 @@ correct use of approximate match: price bands (sorted lower bounds)
 
 The rule: **always write the fourth argument** (`FALSE` or `0`) for ID lookups, or use `XLOOKUP`, whose default is exact. Approximate match is for bands, and then the table must be sorted. In pandas the equivalent of a band lookup is `pd.cut` or `merge_asof`.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a table with ids 101 Asha, 102 Ravi, 104 Meera in A2:B4. Show two lookups for id 103. VLOOKUP(103,A2:B4,2) with approximate match slides down the sorted ids, stops at the largest id not above 103 (102) and wrongly returns Ravi. VLOOKUP(103,A2:B4,2,FALSE) checks for exact equality and returns #N/A. Use a green tick and a red cross."
+
 ### 7.3 Duplicate and dirty keys
 
 pandas protects you with `merge(..., validate="m:1")`: a duplicate key on the lookup side raises an error (da.04, da.06). Excel does not. If `Products` had the code `P05` twice with different costs, `XLOOKUP` would return the first and every revenue figure that depends on cost would be quietly wrong. The defence is a **uniqueness check** beside the lookup table.
@@ -1549,6 +1564,9 @@ same customers and order as pandas: True | largest revenue difference: 1.8189894
 
 The five customers and their totals equal pandas' `nlargest`. One caution: if two customers have the *same* total, `MATCH` finds the first for both ranks and the list shows a duplicate and misses a customer. A tie-breaker (add `ROW()/1E9` to the helper totals) makes the values distinct. pandas handles ties by position, which may differ from Excel's choice: another reason to decide the tie rule in the specification.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a grid with row labels Central, East, North, South, West in A8:A12 and column labels Bedroom, Kitchen, Living, Outdoor in B7:E7. For =INDEX(B8:E12,MATCH('North',A8:A12,0),MATCH('Kitchen',B7:E7,0)) show MATCH('North') giving row 3, MATCH('Kitchen') giving column 2, and INDEX landing on the crossing cell, value 75105.97. Use a row band, a column band and a highlighted crossing."
+
 ### 7.5 Lookups are left joins: know the fan-out rules
 
 | | pandas `merge(how="left", validate="m:1")` | Excel lookup column |
@@ -1575,6 +1593,9 @@ A **PivotTable** summarises a table by dragging fields into four areas. It is `g
 | **Filters** / slicers | restrict the rows used | a boolean mask before the pivot |
 
 Excel adds a few things pandas does not have built in: **grouping** dates into months, quarters and years with a click; **Show Values As** (percent of grand total, of row total, running total, difference from the previous); **calculated fields** (a formula over the summed fields); **slicers** (clickable filter buttons); and **drill-down** (double-click a number to see the rows behind it).
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a PivotTable field list on the left with fields region, category, revenue, order_date. Show four drop zones: Rows gets region, Columns gets category, Values gets 'Sum of revenue', Filters is empty. On the right show the resulting table with regions down the side, categories across the top and sums inside. Animate dragging each field into its zone and the table building up."
 
 ### 8.2 The click path
 
@@ -1812,6 +1833,9 @@ order_id order_date region    units  unit_price  discount  revenue
 ```
 
 Compare the two: `Text.Trim` and `Text.Proper` are `str.strip` and `str.title`; `Table.TransformColumnTypes` is the dtype conversion with `errors="coerce"`; `Table.RemoveRowsWithErrors` is `dropna` on the converted column; `Table.AddColumn` is a new column. Note what the pipeline **does** to the data: row `O3` (units `n/a`) disappears, and row `O4` (no price) stays with a missing revenue. Both are decisions. In Power Query they are hidden in two steps of a list; in pandas they are in two visible lines; in either case they belong in the **log**: "removed 1 row with a non-numeric quantity" (da.05).
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a Power Query pipeline on five messy order rows O1 to O5. Show the table after each step: Trim and Proper (' north ' becomes 'North'), remove the comma from '1,200', change types, then Remove Rows With Errors. Row O3 (units 'n/a') drops out and O4 (no unit_price) stays with an empty revenue. Show the step list on the right and add a revenue column last."
 
 ### 9.4 A dictionary of steps
 
@@ -2346,6 +2370,9 @@ print(f"\n= SUM(Rev) {bk_d.value('Summary', 'G8'):,.2f} | difference left unexpl
 ```
 
 The bridge closes to zero. Every rupee is accounted for, and each step names a fault and the number of lines behind it. That is a reconciliation a finance colleague can accept.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a waterfall (bridge) chart in rupees. Start with a bar 'grid total in Excel' 1,250,888.28. Add a step '+ trailing-space regions' 25,800.25, then a step '+ unknown or malformed product codes' 5,367.42. The final bar is 'SUM(Rev)' 1,282,055.95. Label each step with its fault and show that the gap left unexplained is zero."
 
 ### 11.5 Clean once, in Python, with a log
 

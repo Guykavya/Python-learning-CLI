@@ -1,0 +1,5 @@
+value 5
+calls 9
+max depth 4
+deepest stack [5, 4, 3, 2]
+stack at the end []

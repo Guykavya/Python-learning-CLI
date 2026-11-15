@@ -98,6 +98,9 @@ Here is the map for this chapter. Each row is a pain you will meet in real proje
 
 Notice what is *not* in the first column: "my code does not look like the book". Style is not pain.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a ladder diagram with two columns. Left column: pains in a Python web app called Taskboard, such as 'same rule copied into several routes', 'business code full of SQL', 'writes must succeed together', 'send e-mail after a task is assigned', 'one part needs 50 servers'. Right column: the smallest remedy beside each, namely service layer, repository, unit of work, domain events and outbox, separate services. Show an arrow starting at the top and a stop sign where the pain ends."
+
 ### 1.5 Costs of a layer
 
 Every layer you add has a bill. Here is a realistic one for adding a repository layer to a small CRUD route:
@@ -2352,6 +2355,9 @@ Guarantees, stated precisely:
 
 The last row is the price. Cure it as in swe.08: make the consumer **idempotent**. We send each e-mail with a key derived from the outbox row (`outbox-17`), and the mailer ignores a key it has already seen. A real provider would store that key (many accept an idempotency or message-ID header).
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a timeline for a Taskboard request that assigns a task. Inside one database transaction (BEGIN to COMMIT), two rows are saved together: the task row and an outbox row. After COMMIT, a separate dispatcher box reads pending outbox rows, sends the e-mail, then marks the row sent. Show a failure case: the provider is down, so the row stays 'pending' and the dispatcher retries later. Label 'at-least-once' on the send step."
+
 ### 9.3 Domain events
 
 A **domain event** is a small immutable record of something that happened, named in the past tense: `TaskAssigned`, `TaskStatusChanged`. The task *records* its events as it changes, and the service *publishes* them (writes them to the outbox) before committing. The task still knows nothing about e-mail or databases:
@@ -3103,7 +3109,7 @@ ALLOWED = {
 
 def imports(path):
     found = set()
-    for node in ast.walk(ast.parse(Path(path).read_text())):
+    for node in ast.walk(ast.parse(Path(path).read_text(encoding="utf-8"))):
         if isinstance(node, ast.Import):
             found.update(a.name.split(".")[0] for a in node.names)
         elif isinstance(node, ast.ImportFrom):
@@ -3154,6 +3160,9 @@ violations: ['.repo', 'sqlite3']
 ```
 
 The test turns a design principle into something that fails in CI, which is the only way principles survive.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the dependency rule as layers with arrows meaning 'imports'. Top: main.py (composition root and HTTP). Middle row: services, dispatch and notifications, and infrastructure (uow, repo, db, mailer; SQLite and e-mail). Bottom: domain.py (Task, events, rules) and errors.py, which import nothing else. All arrows point inwards towards the domain. Highlight one forbidden arrow from domain.py to SQLite, crossed out in red."
 
 ### 10.3 The bill
 
@@ -3592,6 +3601,9 @@ t=  20s  normal call              -> sent                       state after: clo
 
 Calls 1 to 3 each waited for a real timeout. Calls 4 and 5 failed **instantly** without touching the provider, protecting both sides. After the pause, one probe succeeded and traffic resumed.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a circuit breaker state machine with three states: CLOSED, OPEN, HALF-OPEN. Settings: 3 failures in a row opens it; after 10 seconds it allows one probe call. Replay this timeline on a clock: t=0,1,2 calls time out (slow) and the circuit opens; t=3,4 calls fail instantly; at t=20 a probe succeeds and it closes. Color each state and show the current state beside every call."
+
 ### 12.4 Fallbacks and graceful degradation
 
 When a dependency is unavailable, decide **in advance** what the user sees:
@@ -3907,6 +3919,9 @@ When some requests are heavy, counting what is *currently running* beats blind r
 
 Balancers also need **health checks** (stop sending to a dead server; swe.09 section 9) and **connection draining** (let in-flight requests finish before removing a server during a deploy).
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a hash ring, a circle, with nodes A, B, C each having many small virtual points. Keys such as 'user:1' land on the circle and belong to the next point clockwise. Then animate adding node D: only the keys in the arcs D takes over change color and move. Beside it, show a bar comparing 'hash % N' (about 75% of keys move) with the ring (about 24%)."
+
 ### 14.4 Consistent hashing: spreading *data* so that adding a server moves little
 
 Load balancing a stateless tier needs no memory of past requests. But when servers hold **data** (cache nodes, database shards), a key must always go to the same node. The obvious method is `node = hash(key) % number_of_nodes`. It works until the number changes:
@@ -3961,6 +3976,9 @@ keys per node with 100 virtual point(s) each: {'A': 5200, 'B': 5002, 'C': 5002, 
 ```
 
 With `hash % N`, going from 3 to 4 nodes remaps about three quarters of all keys; for a cache that means three quarters of lookups suddenly miss and hit the database together (a stampede, swe.08 section 6). A **hash ring** moves only about the new node's fair share. **Virtual nodes** (many points per server on the ring) are what keep the shares even: with one point each, the split is lumpy. This idea underlies Redis Cluster-like sharding, Cassandra, DynamoDB, memcached client libraries and CDNs.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a load balancer sending requests to 3 servers, where each handles one request at a time. About 3% of requests are slow (400 ms) and the rest take 10 ms. Show two side-by-side runs: round robin keeps stacking new requests behind a server stuck on a slow one, while least connections sends work to the server with the fewest requests in flight. Show queue lengths and a small p99 latency number for each."
 
 ### 14.5 What about the database tier?
 
@@ -4043,6 +4061,9 @@ The fix is called **read-your-writes** consistency. Other techniques: send a wri
 
 Also: replicas give **availability** (promote one if the primary dies, a process called failover) but failover has its own risks: writes acknowledged by the dead primary but not yet copied are lost, and a "split brain" (two primaries) must never happen. Use the database's managed failover rather than inventing it.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a sequence diagram with a user, a primary database and one read replica. At t=2.0 the user saves a new title and the primary acknowledges at once. The change reaches the replica 0.3 seconds later. At t=2.05 the page reloads from the replica and shows 'old title'. Then show the fix, read-your-writes: for 5 seconds after a user's own write, read from the primary. Mark the stale window in red."
+
 ### 15.3 Consistency, in plain words
 
 | Level | Promise | Example |
@@ -4074,6 +4095,9 @@ What you lose when you shard:
 - **Resharding** (adding shards) is a project in itself; plan the ring or a large fixed number of logical shards from day one.
 
 Many products never need sharding. A single PostgreSQL primary with replicas, good indexes and a cache carries a very large number of users. Treat sharding as a response to a measured limit.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a database sharded by project_id across three shard boxes. Requests with project_id values route to the shard owning that key. Show a normal query 'list a project's tasks' hitting one shard. Then show the alternative key task_id spreading evenly, so the same query must ask all three shards. Include one giant customer project that makes one shard glow red as a hot shard."
 
 ### 15.5 CAP: what happens when the network splits
 
@@ -4528,6 +4552,9 @@ Typical solutions in large systems combine both (**hybrid**): fan out on write f
 | Mute / leave project | instant (just stop querying) | must delete or filter inbox rows |
 | Best for | few sources per user, huge audiences | many reads, bounded audiences |
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two panels for an activity feed. Panel 1, fan-out on read: one event stored once; when Ana opens her feed, the query merges events from her projects. Panel 2, fan-out on write: one event in a project with 30 members creates 30 inbox rows, and reading is just 'my inbox'. Show the measured numbers: 599,352 extra inbox rows for 20,000 events, and write time 24 ms versus 572 ms."
+
 ### 17.3 Notifications
 
 Notifications are not the feed. They are **reactions** with extra rules, which is why they fit the event + outbox pattern: the Taskboard domain publishes `TaskAssigned`; a notification handler decides what to do.
@@ -4803,7 +4830,7 @@ def need(ok, message):
 adrs = sorted(pathlib.Path("docs/adr").glob("0*.md"))
 need(len(adrs) >= 2, f"at least 2 ADRs in docs/adr (found {len(adrs)})")
 for f in adrs:
-    text = f.read_text()
+    text = f.read_text(encoding="utf-8")
     missing = [h for h in ("Status", "Context", "Decision", "Consequences")
                if not re.search(rf"^##\s+{h}\b", text, re.M)]
     need(not missing, f"{f.name} has Status, Context, Decision, Consequences" +
@@ -4812,7 +4839,7 @@ for f in adrs:
 rows = []
 log = pathlib.Path("docs/pain-log.md")
 if log.exists():
-    for line in log.read_text().splitlines():
+    for line in log.read_text(encoding="utf-8").splitlines():
         cells = [c.strip() for c in line.strip().strip("|").split("|")]
         if len(cells) >= 4 and re.fullmatch(r"P\d+", cells[0]):
             rows.append(cells)
@@ -4823,7 +4850,7 @@ need(all(r[3] for r in rows) and bool(rows), "every pain names a remedy")
 need(pathlib.Path("tests/test_architecture.py").exists(), "an architecture test exists")
 
 result = subprocess.run([sys.executable, "-m", "pytest", "-q", "-p", "no:cacheprovider", "tests"],
-                        capture_output=True, text=True)
+                        capture_output=True, text=True, encoding="utf-8")
 need(result.returncode == 0, "the full test suite passes")
 print()
 print("all mechanical checks passed" if not problems else f"{len(problems)} check(s) failed")

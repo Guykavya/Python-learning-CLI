@@ -61,6 +61,9 @@ DP is not a data structure and not one algorithm. It is a **way of designing alg
 
 When both hold, a problem that looks exponential often collapses to a polynomial one. Subset-style brute force `O(2^n)` becomes `O(n * W)`. Trying all ways to cut a string becomes `O(n^2)`.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two pictures side by side for fib(5), where fib(n) = fib(n-1) + fib(n-2) and fib(0)=0, fib(1)=1. Left: the full recursion tree, with repeated calls such as fib(3) and fib(2) coloured the same. Right: the memoised version as a small graph with one node per value fib(0) to fib(5), each computed once, arrows pointing to its two inputs. Label the node counts of both pictures."
+
 ### What you can do after this module
 
 1. **Write the three parts of a DP before any code**: the state, the transition and the base case.
@@ -350,6 +353,9 @@ The states are all pairs `(i, j)` with `0 <= i, j <= 3`: 16 pairs, but `(0, 0)` 
 
 Top-down starts from the question and recurses. **Bottom-up** starts from the smallest sub-problems and fills a **table** towards the answer. No recursion, so no recursion limit and no call overhead. The price is that **you** must choose the order.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate the memoised call order for counting paths in a 3 by 3 grid, where G(r,c) = G(r-1,c) + G(r,c-1) and G(0,c) = G(r,0) = 1. Start at G(2,2) and step through G(1,2), G(0,2), G(1,1), G(0,1), G(1,0), then G(2,1). Show a notebook of stored answers growing. Highlight the moment G(1,1)=2 is asked twice but only computed once, the second time marked 'cached'. The final answer is 6."
+
 ### The conversion recipe
 
 You have a memoised function. To turn it into a table:
@@ -395,6 +401,9 @@ print(top_down(3, 4), t[3][4])
 ```
 
 Look at the table. Every cell is the sum of the cell above and the cell to the left, the Pascal's-triangle pattern. The recursion `top_down(3, 4)` and the table corner `t[3][4]` agree.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the bottom-up table for counting grid paths with 4 rows and 5 columns, where table[r][c] = table[r-1][c] + table[r][c-1], and the first row and column are all 1. Animate the cells filling row by row, left to right, with two arrows into each new cell (from above and from the left). The rows end as 1,4,10,20,35 on the last row. Highlight the corner 35 as the answer."
 
 ### Top-down or bottom-up?
 
@@ -759,6 +768,9 @@ The one-row version is the tricky one. Before the update, `row[c]` holds the cel
 
 Memory: `O(rows * cols)` becomes `O(cols)`. Pick the shorter side as the row length when you can.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate the one-row rolling array for counting grid paths with 5 rows and 6 columns. Start with row = [1,1,1,1,1,1]. For each new row, go left to right: row[c] = row[c] + row[c-1]. Show row[c] before the update as the cell above, and row[c-1] as the already-updated cell on the left. Show the array after each of 4 passes. The last value is 126. Add a note that looping right to left breaks it."
+
 ### The window of a "look-back" DP
 
 If a transition looks back at most `k` rows, keep `k` rows, using a small list or `i % k` indexing. In the LCS and edit distance problems (sections 14 and 15) `k = 1`, so two rows suffice.
@@ -834,6 +846,9 @@ For `a = 7`: options are `f(6)+1 = 3`, `f(5)+1 = 2`, `f(2)+1 = 2`. Best 2 (a 5 a
 Time `O(amount * len(coins))`, space `O(amount)`. Compare with brute force, which would try all sequences of coins and is exponential.
 
 The reason infinity is used (and not -1 or 0) is arithmetic: `INF + 1` is still `INF`, and `INF` never wins a `min`. If you used `-1` for "impossible" you would have to special-case it in every transition. A very large integer such as `10**9` also works, but must be bigger than any real answer.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate the coin change table f for coins [1, 2, 5] and amount 11, where f(a) = 1 + min(f(a-c)) over coins c <= a, and f(0) = 0. Show a row of 12 boxes filled left to right: 0,1,1,2,2,1,2,2,3,3,2,3. For a=7 and a=11, draw arrows back to the cells tried (f(6), f(5), f(2) for 7) and highlight the winning one. Label the final answer 3 as 5+5+1."
 
 ### Counting the ways (combinations)
 
@@ -997,6 +1012,9 @@ print(min_path_sum2([[1, 2, 3]]))
 ```
 
 The sentinel border (a "guard") removes three `if` branches. The line `f[0][1] = 0` seeds the start. Many people prefer the explicit `if` version because the base cases are visible; choose one and be consistent.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the 3 by 3 min path sum grid [[1,3,1],[1,5,1],[4,2,1]] next to its DP table [[1,4,5],[2,7,6],[6,8,7]]. Animate the table filling in row order: each cell is its grid cost plus the smaller of the cell above and the cell to the left. Show the two candidates for cell (1,1): 4 and 2, giving 5+2=7. Finally highlight the best path 1,3,1,1,1 with total 7."
 
 ### Unique paths with obstacles
 
@@ -1350,6 +1368,9 @@ answer: 9
 Read the table row by row. Row 0 is all zeros. Row 1 allows only item 0 (weight 1, value 1): from `w = 1` onwards the best is 1. Row 2 adds item 1 (weight 3, value 4): `f[2][3] = max(f[1][3] = 1, f[1][0] + 4 = 4) = 4` and `f[2][4] = max(1, f[1][1] + 4 = 5) = 5`. Row 3 adds item 2 (weight 4, value 5): `f[3][7] = max(f[2][7] = 5, f[2][3] + 5 = 9) = 9`. Row 4 adds item 3 (weight 5, value 7): `f[4][7] = max(f[3][7] = 9, f[3][2] + 7 = 1 + 7 = 8) = 9`. The best is 9: items 1 and 2 (weights 3 + 4, values 4 + 5).
 
 Time `O(n * W)`, space `O(n * W)`. This is called **pseudo-polynomial**: the running time depends on the *number* `W`, not on how many digits `W` has. If `W` is `10^12` this table is impossible, even though the input is short. Knapsack is NP-hard; the DP is fast only when `W` is moderate.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate the 0/1 knapsack table for weights [1,3,4,5], values [1,4,5,7], capacity 7. Draw 5 rows (items 0 to 4) and 8 columns (w 0 to 7), filled row by row. For cell f[3][7] show two arrows: leave the item (f[2][7]=5) or take it (f[2][3]+5=9). Highlight the max 9. Mark the final answer f[4][7]=9, which uses items of weight 3 and 4."
 
 ### Which items were taken?
 
@@ -1881,6 +1902,9 @@ Read the table (rows are prefixes of `"abcde"`, columns prefixes of `"ace"`). Ro
 
 Why is it right to match equal last characters immediately? If both strings end in the same character, there is always an optimal common subsequence that uses both (exchange argument: if it used neither, appending the match makes it longer; if it used one, re-point it to the other equal character). Time `O(n * m)`, space `O(n * m)`.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the LCS table for a='abcde' and b='ace'. Rows are prefixes of a, columns prefixes of b, and row 0 and column 0 are zeros. Fill it cell by cell: when letters match, draw a diagonal arrow and add 1; otherwise take the max of above and left. Final rows: a 1,1,1; b 1,1,1; c 1,2,2; d 1,2,2; e 1,2,3. Highlight the three matched cells and the answer 3."
+
 ### Rebuilding the LCS string
 
 Walk backwards from `f[n][m]`: if the characters are equal, that character is in the answer: move diagonally. Otherwise move toward the larger neighbour.
@@ -2030,6 +2054,9 @@ distance: 3
 Trace a few cells for `"horse"` and `"ros"`. The first row and column are the base cases `0 1 2 3` and `0 1 2 3 4 5`. Cell `f[1][1]`: 'h' vs 'r' differ, so `1 + min(f[0][0]=0, f[0][1]=1, f[1][0]=1) = 1`. Cell `f[2][1]`: 'o' vs 'r' differ, `1 + min(f[1][0]=1, f[1][1]=1, f[2][0]=2) = 2`. Cell `f[2][2]`: 'o' = 'o', so copy the diagonal `f[1][1] = 1`. The corner is 3 (horse -> rorse -> rose -> ros).
 
 Time `O(n * m)`, space `O(n * m)`, or `O(min(n, m))` with two rows.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the edit distance table for 'horse' to 'ros'. The first row is 0,1,2,3 and the first column is 0 to 5. Fill each cell: if letters match, copy the diagonal; else 1 plus the min of diagonal (replace), above (delete) and left (insert). Show the three arrows for cell (1,1) and (2,2). Rows: h 1,1,2,3; o 2,2,1,2; r 3,2,2,2; s 4,3,3,2; e 5,4,4,3. Highlight the answer 3."
 
 ### Why the three moves are right
 

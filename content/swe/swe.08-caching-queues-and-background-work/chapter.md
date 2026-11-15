@@ -153,6 +153,9 @@ Every cached value should have a **time to live (TTL)**: after that many seconds
 | **TTL** only | whatever expires | simple |
 | **FIFO** | the oldest inserted | rarely best |
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a small cache that holds only 3 entries, using LRU eviction and a TTL. Show keys A, B, C stored in a row, ordered from most recently used to least recently used. Step through: get A (A moves to the front), then add D (C, the least recently used, is evicted), then a clock runs and B's TTL of 5 seconds hits zero so B expires. Highlight each evicted or expired key in red with a reason label."
+
 ### 2.5 An in-process TTL + LRU cache
 
 Python's `functools.lru_cache` (swe.05 section 18) is an in-process LRU cache with no expiry. A small class adds the time to live. The clock is a parameter, so tests move time instead of sleeping:
@@ -583,6 +586,9 @@ The most common way to use a cache is **cache-aside** (also called lazy loading)
 
 Other patterns exist: **read-through** (the cache library loads missing values itself), **write-through** (writes go to the cache and the database together), and **write-behind** (writes go to the cache first and reach the database later, which is fast and risky, since a crash loses writes).
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a cache-aside flow diagram with three boxes: App, Cache (Redis) and Database. Animate two requests for the same product. Request 1 is a miss: App asks Cache, gets nothing, reads the Database, stores the result in Cache with a TTL, returns it. Request 2 is a hit: App asks Cache and returns at once. Then show a write: App updates the Database and deletes the cached key. Colour hits green and misses orange, and number the arrows."
+
 ### 4.2 A product catalogue with a cache
 
 ```python
@@ -862,6 +868,9 @@ delete-on-write: 1 of 6 interleavings leave stale data
 generation key : 0 of 10 interleavings leave stale data
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a two-lane timeline (swim lanes) for a cache race. Lane 'reader': read database gets OLD, then later store OLD in cache. Lane 'writer': update database to NEW, then delete cache key 'p'. Place the writer's steps between the reader's two steps, with time flowing left to right. Show the cache contents after each step and highlight the final state, where the cache holds stale OLD, in red."
+
 Study the second scheme, because the same idea fixes many races. The reader **reads the generation first**, then the database, and stores under the generation it started with. If a writer changes the data in the meantime, the reader's late store goes into the *old* generation's key, which nobody reads any more. The writer's order matters: **update the database first, then bump the generation**. A model-checking script like this one is worth keeping in your toolbox for any "can these two things interleave badly?" question.
 
 Practical consequences:
@@ -1003,6 +1012,9 @@ single flight  20 simultaneous misses -> database loads: 1 | all 20 callers got 
 ```
 
 The naive version hammers the database with (nearly) one load per caller. **Single flight** lets exactly one caller load, using `SET key value NX EX` as a lock; the others poll the cache for the result. (The exact count in the naive case varies with scheduling, usually close to 20, which is why the output says "many".) Note the safety net: if the loading caller dies, its lock expires (`lock_ttl`) and waiters fall back to loading themselves instead of hanging.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a cache stampede, side by side. Left panel 'naive': 20 requests arrive at the same instant after the hot key expires, all miss the cache, and 20 arrows hit the Database, which turns red. Right panel 'single flight': the same 20 requests, but one wins the lock (SET lock:hot NX EX), loads once from the Database, writes the cache, and the other 19 wait and then read the cache."
 
 ### 6.2 More defences
 
@@ -1363,6 +1375,9 @@ Pick a Redis structure for: (a) "how many times has this IP called the login end
 
 The usual shape is a **work queue** with competing consumers: any number of workers take jobs from the same queue, each job goes to one worker, and you add workers to add capacity. This is different from **publish/subscribe**, where one message is copied to every subscriber.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a work queue. A web app (the producer) enqueues 'email' jobs, each with a kind and a payload, into a queue stored in a broker such as Redis. Three worker processes compete: each takes one job, runs it, and sends an ack back to the broker, which then forgets the job. Show each job going to exactly one worker, and show a button that adds a fourth worker to drain the queue faster."
+
 ### 8.2 What belongs in a job
 
 Move work out of the request when it is **slow** (reports, video, large imports), **unreliable** (external APIs, e-mail), or a **side effect** that the user does not need to wait for (receipt, analytics, search-index update). Keep in the request whatever the user needs **now** and whatever must be **atomic** with the main action.
@@ -1690,6 +1705,9 @@ final state       : done
 ```
 
 Look at the middle: A's job is given to B after the lease expires, so **a crash does not lose the job** (at least once). But if A was not dead, only slow, then A and B **both** ran the job: this is exactly why workers must be idempotent. A's late `complete` is refused because B holds the lease now. For long jobs, the worker calls `heartbeat` to extend the lease while it is making progress, and the lease length is a trade-off: short leases recover from crashes fast but cause duplicate runs of slow jobs; long leases are safer for slow jobs but delay recovery.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a timeline of a job lease with two workers. Worker-A reserves a 'report' job with a 30 second lease (state running, attempts 1) and then crashes. At 31 seconds the lease expires, so worker-B reserves the same job (attempts 2) and completes it (state done). Then worker-A wakes up and tries to complete; show that call refused with a red cross because it no longer owns the job."
 
 ### 9.4 Attempts, dedupe keys and the dead state
 
@@ -2385,6 +2403,9 @@ outbox, no crash            : (orders, receipt jobs) = (2, 1)
 
 With Redis or RabbitMQ the broker is a *different* system from your database, so a single transaction cannot span both. Then you write the job into an **outbox table** in your database, and a small relay process copies outbox rows to the broker, marking them sent (at-least-once, so the consumer is idempotent). That is the same pattern with one more hop.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Compare two ways to place an order, in two panels. Panel 1: step 'INSERT order' commits, a crash happens, and 'enqueue receipt job' never runs, leaving an order with no receipt. Panel 2 (outbox): one transaction box holds both 'INSERT order' and 'INSERT receipt job'; a crash inside rolls back both, so the tables stay unchanged. Show the orders and jobs tables with row counts after each case."
+
 ### 11.8 The report worker: deterministic and atomic
 
 A report job has two awkward properties: the result is a **file**, and a crash can leave a **half-written** file that a reader might open. Two rules make it idempotent:
@@ -2556,6 +2577,9 @@ five attempts (four waits) are over after at most 30 seconds
 
 For a provider outage that may last an hour, five attempts over half a minute is far too short; the policy must match the failure you expect. A common choice for e-mail and webhooks is a long tail, such as retrying for up to a day or two, which needs a higher cap and `max_attempts` of 10 to 20.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Plot retry backoff as a chart. X axis is attempt number 1 to 9, Y axis is wait in seconds. Use equal jitter with base 2 seconds and a cap of 300 seconds: the lowest wait is 1, 2, 4, 8, 16, 32, 64, 128, 150 and the highest is 2, 4, 8, 16, 32, 64, 128, 256, 300. Draw the range for each attempt as a vertical bar, and draw the cap as a dashed horizontal line at 300."
+
 ### 12.2 Retry storms and the circuit breaker
 
 When a dependency is down, **every** job calls it, fails, waits, and calls it again. The retries pile load on a system that is already struggling and fill your workers with doomed work. A **circuit breaker** notices repeated failures and stops calling for a while:
@@ -2689,6 +2713,9 @@ the dead-letter inbox:
    {'id': 3, 'kind': 'newsletter', 'attempts': 1, 'last_error': 'permanent: template not configured'}
 stats after the redrive   : {'queued': 0, 'running': 0, 'done': 3, 'dead': 0, 'oldest_ready_age': 0.0}
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a job state diagram with boxes queued, running, done and dead. Three 'newsletter' jobs move from queued to running, then fail with a permanent error 'template not configured' and land in the dead-letter box. Show an operator fixing the config, then pressing 'redrive' (requeue_dead), which moves all three jobs back to queued with a fresh attempt count and then on to done. Label each arrow."
 
 ### 12.4 Crash loops and timeouts
 
@@ -3557,7 +3584,7 @@ def make_report_handler(ctx, queue):
             raise PermanentError(f"invalid month {month!r}")
         crash = EnvCrash()
         if os.environ.get("SENTINEL_DIR"):                                       # lets a test know the job is running
-            open(os.path.join(os.environ["SENTINEL_DIR"], f"started-{job['id']}-{job['attempts']}"), "w").close()
+            open(os.path.join(os.environ["SENTINEL_DIR"], f"started-{job['id']}-{job['attempts']}"), "w", encoding="utf-8").close()
         time.sleep(float(os.environ.get("SLOW_SECONDS", "0")))                    # stands in for heavy work
         data = build_report(orders_for(ctx, month), month)
         path = os.path.join(ctx.out_dir, f"report-{month}.csv")
@@ -3747,7 +3774,7 @@ with tempfile.TemporaryDirectory() as tmp:
     path = os.path.join(out, "report-2026-10.csv")
     print("5. result      : report", os.path.getsize(path), "bytes |", SqliteMailProvider(provider_db).count(), "e-mail sent")
     print("   report row  :", client.get("/reports/2026-10").json()["status"])
-    print(open(path).read().strip())
+    print(open(path, encoding="utf-8").read().strip())
 ```
 ```text
 1. request     : {'month': '2026-10', 'status': 'queued', 'status_url': '/reports/2026-10'}

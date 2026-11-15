@@ -1,0 +1,4 @@
+- Using `c - r` instead of `r - c` for the diagonal: the signs flip and the wrong columns are blocked.
+- Forgetting to add the new queen to the sets before the next row.
+- Taking the first free column (`free[0]`) instead of the last (`free[-1]`).
+- Printing the sets unsorted: `sorted` gives the increasing order shown by `print`.

@@ -159,6 +159,9 @@ Gunicorn starts one **master** process that does no request work. It **forks** s
 
 Because a *sync* worker handles **one request at a time**, the number of workers is your concurrency. With `--threads N` each worker runs N threads (the `gthread` worker class). Async worker classes exist for many concurrent connections.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw one diagram of Gunicorn's pre-fork model. A box 'gunicorn master' listens on a port and does no request work. It forks three boxes 'worker 1', 'worker 2', 'worker 3', each running the app and handling one request at a time. Show three requests arriving, one per worker. Then animate worker 2 hanging: the master kills it and starts a replacement. Label 'workers = concurrency'."
+
 ### 2.3 Tutorial: Gunicorn, hands on
 
 A tiny Flask application with two endpoints, one that reports the process id and one that sleeps:
@@ -591,6 +594,9 @@ Three words you must keep apart:
 A container is **not a virtual machine**. It is an ordinary process on your computer's kernel, wrapped in isolation: its own view of the filesystem, process list and network (Linux *namespaces*) and limits on memory and CPU (*cgroups*). That is why containers start in a fraction of a second and are small, and also why they are **not a security boundary as strong as a VM**.
 
 An image is built from **layers**. Each Dockerfile instruction adds a layer; layers are stored once and shared (two images built on `python:3.14-slim` share its layers), and Docker caches them so a rebuild only redoes what changed. Section 5 shows this working.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two side-by-side stacks to compare a virtual machine and a Docker container. Left, VM: hardware, host OS, hypervisor, then two guest operating systems, each with its own app. Right, container: hardware, ONE shared Linux kernel, Docker, then containers with only Python and the app. Mark 'namespaces' (isolated view) and 'cgroups' (memory/CPU limits). Highlight that containers share the kernel, so they start fast but isolate less than a VM."
 
 ### 4.2 Tutorial A: your first containers
 
@@ -1300,6 +1306,9 @@ CACHED  7/7   RUN mkdir /data && chown app:app /data
 
 In case 2 the expensive `pip install` step is **CACHED** because `requirements.txt` did not change, and only the copy of the application code is rebuilt (a second or two). In case 3 the `COPY requirements.txt` layer changes, and every layer **after** it is invalid, including the install. That is the reason for the order in the Dockerfile: **things that change rarely come first.** If you wrote `COPY . .` before `pip install`, every code change would reinstall every dependency.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate Docker layer caching for a Dockerfile with 7 steps: FROM python:3.14-slim, RUN useradd, WORKDIR /srv, COPY requirements.txt, RUN pip install -r requirements.txt, COPY app ./app, RUN mkdir /data. Stack them as layers. Scenario 1: only app code changes, so layers 1-5 stay green CACHED and only layer 6 and 7 rebuild. Scenario 2: requirements.txt changes, so layers 4-7 turn red, including pip install. Caption: 'rarely changing steps first'."
+
 ### 5.4 Run it
 
 ```bash run
@@ -1808,6 +1817,9 @@ distinct instances: 3
      12 200
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate Nginx as a load balancer. A client sends 12 requests to nginx on port 18080, which forwards to a Docker name 'api'. Part 1: nginx resolved 'api' once at startup to one address, so all 12 requests go to one container while two new containers (api=3) sit idle. Part 2: after 'nginx -s reload', or after using 'resolver 127.0.0.11 valid=5s' with a variable in proxy_pass, requests spread over all three. Label the instances."
+
 ### 7.4 When the backend is down: 502 and 504
 
 Two errors you will read in Nginx logs for years:
@@ -2076,6 +2088,9 @@ You have already read the implementation in section 5: `request_id_var` in `logs
  client <-- X-Request-ID: R in the response headers and in the error body
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a flow diagram of one request ID through a system. A client sends a request to nginx, which creates request ID R (nginx's $request_id). It passes header 'X-Request-ID: R' to the API. The API stores R in a context variable, so every log line has R. Show three log lines tagged R, and the response returning with 'X-Request-ID: R' and an error body containing request_id R. Highlight R in the same colour everywhere."
+
 ### 8.3 `jq`, the tool for reading JSON logs
 
 `jq` filters and reshapes JSON. A few forms cover most of what you need. First, bring the stack to a clean known state (one API container) and generate a realistic mix of traffic with a small script:
@@ -2303,6 +2318,9 @@ A platform that runs your containers (Docker, Kubernetes, a load balancer) wants
 | **Startup** | has it finished starting? | waits, and does not run the other checks yet |
 
 Mixing them up causes classic outages. If your **liveness** check also tests the database, a database outage makes the platform restart every healthy application container at once, which cannot fix the database and makes the recovery slower (a *restart storm*). Liveness must answer only "is this process broken in a way a restart would fix?", so it checks nothing else. **Readiness** is where dependencies belong: "if I cannot reach my database, I should not receive requests, but I should not be killed either."
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a diagram of three health checks for a service called Pagebound. A platform (Docker, Kubernetes or a load balancer) asks the app three questions: liveness (/healthz: is the process alive? if it fails, restart it), readiness (/readyz: can it serve? checks database, Redis, not draining; if it fails, stop sending traffic but do not restart) and startup (has it finished starting?). Show a failed readiness taking the instance out of the load balancer rotation while it keeps running."
 
 ### 9.2 What the service does
 
@@ -2620,6 +2638,9 @@ final state          : firing
 {"alert":"HighErrorRate","severity":"page","summary":"More than 5% of requests are failing"}
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate the life of a Prometheus alert called HighErrorRate. Draw a timeline of the error ratio, with a horizontal line at 5% (the threshold). Colour the alert state along the timeline: inactive (green), then pending (yellow) when the ratio crosses 5% but has not lasted the 'for: 15s' time, then firing (red). Show firing sending a message to Alertmanager, then to Slack or a pager. Also show a short spike that goes back down and never fires."
+
 ### 10.6 Dashboards, Alertmanager and good alerts
 
 - **Grafana** draws dashboards from Prometheus. Start it like Prometheus (a container, `grafana/grafana`), add Prometheus as a data source (`http://prometheus:9090`) and build panels from the queries above: requests per second, error ratio, p95 latency, instances up. A good first dashboard has exactly those four.
@@ -2807,6 +2828,9 @@ Read it in layers:
 - **Job `image`**: `needs: test`, so it runs only if the tests passed. It builds the Docker image with BuildKit and **pushes it to the GitHub Container Registry only on `main` or a version tag** (`push: ${{ ... }}`), tagged with the commit SHA. On a pull request it only builds, to prove the Dockerfile still works. It authenticates with the automatic `GITHUB_TOKEN`, so no password is stored anywhere.
 - **Action versions** like `actions/checkout@v4` are *moving* tags that the action's author controls. Official actions (`actions/*`, `docker/*`) are commonly used with a major tag; for third-party actions pin a full commit SHA (`uses: someone/action@8f3c...`), because a compromised tag would otherwise run attacker code with your secrets (this attack has happened). Dependabot (below) keeps pinned versions fresh.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a GitHub Actions pipeline as a left-to-right flow. A trigger box (push to main, tag v*, pull request) leads to job 'test', which runs twice in a matrix (Python 3.13 and Python 3.14): checkout, setup-python, install, make typecheck, make test. An arrow 'needs: test' leads to job 'image': build with buildx, then push to ghcr.io only on main or a version tag. Show a failing test stopping the image job."
+
 ### 11.5 Lint your CI before GitHub does
 
 A CI file that is wrong tells you only after a push, in a browser tab. A small checker finds the common mistakes locally. This one uses the PyYAML you already have, and it knows a famous YAML trap: YAML 1.1 reads the key `on` as the boolean `True`, so the trigger section of a workflow arrives as `workflow[True]`:
@@ -2857,7 +2881,7 @@ def check(workflow: dict) -> list[tuple[str, str]]:
 
 def main(path: str) -> int:
     try:
-        with open(path) as f:
+        with open(path, encoding="utf-8") as f:
             workflow = yaml.safe_load(f)
     except yaml.YAMLError as exc:
         print(f"ERROR   not valid YAML: {str(exc).splitlines()[0]} ({getattr(exc, 'problem_mark', None) and 'line ' + str(exc.problem_mark.line + 1)})")
@@ -3020,6 +3044,9 @@ The reason rollbacks can be quick and safe is that **an image tag is immutable**
 | **Feature flag** | ship code switched off; turn it on later (and off again) | none | flip the flag | flag system (section 3.6) |
 
 The right choice depends on your size. A single server with Compose does *recreate*, perhaps with a second copy for *rolling*. Kubernetes and managed platforms do rolling, blue/green and canary for you; what they need from you is exactly what this chapter builds: **readiness checks that tell the truth**, **graceful shutdown**, and **metrics that show whether the new version is worse**.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate three deployment strategies on a row of four server boxes behind a proxy, old version v1 in blue and new version v2 in green. Recreate: all stop, then all start, with a downtime gap. Rolling: replace one box at a time after its readiness check passes. Blue/green: run a full green set beside the blue set, then flip the proxy, keeping blue for instant rollback. Show a traffic percentage for each."
 
 ### 12.3 Tutorial: a deployment script with automatic rollback
 
@@ -3326,7 +3353,7 @@ def backup(db_file, backup_dir, keep=7, now=time.time):
         raise SystemExit(f"backup FAILED the integrity check: {verdict}")
 
     digest = hashlib.sha256(target.read_bytes()).hexdigest()
-    Path(f"{target}.sha256").write_text(f"{digest}  {target.name}\n")
+    Path(f"{target}.sha256").write_text(f"{digest}  {target.name}\n", encoding="utf-8")
 
     for old in sorted(backup_dir.glob(f"{db_file.stem}-*.db"))[:-keep]:       # retention: keep the newest `keep`
         old.unlink()
@@ -3355,7 +3382,7 @@ from pathlib import Path
 def drill(backup_file, min_orders=1):
     backup_file, started, steps = Path(backup_file), time.perf_counter(), []
 
-    expected = Path(f"{backup_file}.sha256").read_text().split()[0]          # 1. is the file the one we wrote?
+    expected = Path(f"{backup_file}.sha256").read_text(encoding="utf-8").split()[0]          # 1. is the file the one we wrote?
     actual = hashlib.sha256(backup_file.read_bytes()).hexdigest()
     steps.append(("checksum matches", actual == expected))
 

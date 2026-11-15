@@ -1,0 +1,4 @@
+- Returning 0 for the empty list: by the definition every list is at least one level deep.
+- Adding the depths of the children instead of taking the maximum.
+- Looking only at the first or the last item: the deepest list can be anywhere.
+- Treating strings as lists: `"ab"` is a plain value.

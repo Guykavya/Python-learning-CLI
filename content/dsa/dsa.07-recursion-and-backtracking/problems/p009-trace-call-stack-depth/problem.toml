@@ -1,0 +1,6 @@
+id = "dsa.07.p009"
+title = "Trace: draw the call stack"
+tier = "drill"
+kind = "trace"
+topics = ["call stack", "depth", "recursion tree"]
+minutes = 15

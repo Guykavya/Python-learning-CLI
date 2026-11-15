@@ -166,6 +166,9 @@ C
 
 95 is at least 60, so the first branch wins and the others never get a chance. When your conditions overlap, put the **most specific** (narrowest) one first.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a flowchart for this Python code: marks = 72; if marks >= 90: grade = 'A'; elif marks >= 75: grade = 'B'; elif marks >= 60: grade = 'C'; else: grade = 'F'. Check the conditions top to bottom as diamonds. Colour the paths: 72 >= 90 is False, 72 >= 75 is False, 72 >= 60 is True, so grade = 'C' and the rest is skipped. Show print(grade) giving C."
+
 ### if versus a chain of separate ifs
 
 Two separate `if` statements are **independent**. Both can run. An `if`/`elif` chain is **one** decision. At most one branch runs.
@@ -299,6 +302,9 @@ First word: red
 ```
 
 `if name:` reads as "if there is a name". This is the normal Python style. Writing `if len(name) > 0:` or `if name != "":` works, but is longer and says the same thing.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a sorting machine for Python truthiness. Put these values in two bins: falsy bin holds False, None, 0, 0.0, '' (empty string), [] (empty list). Truthy bin holds 'hello', '0', ' ' (a space), -1, [0]. Then show 'if name:' with name = '' going down the falsy path and printing 'You did not type a name.'"
 
 ### A common input pattern
 
@@ -684,6 +690,9 @@ The steps are always the same: (1) check the condition; (2) if it is false, leav
 
 Each run through the block is called an **iteration**.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate this loop: n = 3, then while n > 0: print(n), n -= 1, and after the loop print 'Go!'. Draw it as a cycle. Each round, show the condition check 'n > 0?' with the value of n, the printed value, and the new n. Rounds: n=3, 2, 1, then n=0 where the check says False and the arrow leaves the loop to print 'Go!'."
+
 ### Three things every while loop needs
 
 1. A variable the condition depends on, **set before** the loop.
@@ -836,6 +845,9 @@ after: 100
 
 Also notice the last line: the loop variable **still exists after the loop**, holding the last value it was given (here, the 100 we assigned). If the loop ran zero times, the variable is never created at all.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate this loop: for n in range(3): print('got', n); n = 100. Show a table with columns: round, n at start, printed line, n after n = 100. Rounds: 0, 'got 0', 100; then 1, 'got 1', 100; then 2, 'got 2', 100. Show that each new round re-binds n to the next item from range(3), ignoring the 100. End with 'after: 100'."
+
 ### Under the hood: iter() and next()
 
 A `for` loop is built on two built-in functions:
@@ -924,6 +936,9 @@ Output:
 ```
 
 (`list()` collects all the values into a list so that we can print them in one go. Lists are the subject of the next chapter.)
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a number line from 0 to 20 and mark the points produced by range(0, 20, 5): 0, 5, 10, 15, shown as filled dots. Show 20 as an empty circle labelled 'stop, never included'. Add a second short number line for range(1, 10, 3) giving 1, 4, 7, with 10 as the excluded stop. Label start, step jumps and stop clearly."
 
 ### Why the stop is excluded
 
@@ -1118,6 +1133,9 @@ Output:
 2
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate this loop over the text 'py-thon!': for ch in 'py-thon!', if ch == '-' then continue, if ch == '!' then break, otherwise print ch. Show the characters in a row with a pointer moving along. Mark '-' with a 'skip, go to next' arrow, mark '!' with a 'stop the loop' sign, and build the printed output 'python' underneath."
+
 ### Under the hood
 
 `break` and `continue` are simply jumps: `break` to the first line after the loop, `continue` back to the top (the next `next()` call or the condition check). `pass` compiles to nothing.
@@ -1278,6 +1296,9 @@ Output:
 
 The outer loop ran 3 times. Each time, the inner loop ran 2 times. So the inner block ran 3 x 2 = 6 times. The `print()` after the inner loop (indented under the outer loop only) ends each row.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a grid for this Python code: for row in range(1, 4): for col in 'AB': print(row and col). Rows are 1, 2, 3 (outer loop), columns are A, B (inner loop). Animate the cells in order: 1A, 1B, then a line break, 2A, 2B, line break, 3A, 3B. Label that the inner loop finishes completely for each outer step, so 3 x 2 = 6 cells."
+
 ### break only leaves one loop
 
 ```python
@@ -1413,6 +1434,9 @@ Output:
 
 `start` only changes the **numbers** shown. It does not skip any items.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw enumerate('loop') as four numbered boxes. Show the pairs it produces: (0, 'l'), (1, 'o'), (2, 'o'), (3, 'p'). Each round, highlight one pair and show it unpacked into the two names i and ch, then the printed line, for example '0 l'. Add a second row showing that enumerate(..., start=1) only changes the numbers, not the items."
+
 ### Under the hood
 
 `enumerate` is lazy. It does not build a list of pairs. It wraps the iterator of the thing you gave it and keeps a counter. Each `next()` asks the inner iterator for one item and returns `(counter, item)`, then adds 1 to the counter. So it works with anything iterable, even things that have no positions, like input lines read one at a time.
@@ -1459,6 +1483,9 @@ Meena: 77
 ```
 
 The name comes from a zip fastener, whose two sides are joined tooth by tooth.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate zip(names, scores) with names = ['Asha', 'Ravi', 'Meena'] and scores = ['82', '91', '77']. Draw the two lists as two rows, side by side like a zip fastener. Each round, highlight one column and show the pair being unpacked into name and score, and the printed line: 'Asha: 82', then 'Ravi: 91', then 'Meena: 77'."
 
 ### Unequal lengths
 
@@ -1819,6 +1846,9 @@ Note that we pass `len`, not `len()`. We are handing over the function itself, f
 When two items tie, `min` and `max` return the **first** one they met. `max(["ab", "cd"], key=len)` returns `"ab"`.
 
 When you learn functions, you will write your own key functions, often with the short `lambda` form. For now, built-in functions such as `len`, `abs`, `int` and `str.lower` cover a lot.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw max and min with key=len on the list ['kiwi', 'banana', 'fig', 'apple']. Show each word with its length beside it as a bar: kiwi 4, banana 6, fig 3, apple 5. Highlight banana (longest, so max returns it) and fig (shortest, so min returns it). Add a note: the comparison uses the lengths, but the answer returned is the original word, not the number."
 
 ### default: what to return for an empty input
 

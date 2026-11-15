@@ -1,0 +1,4 @@
+- Saying "it is too slow": a million multiplications take well under a second. The crash is about **depth**, not time.
+- Thinking the halving version is fast only because it is "smaller": it is fast because each level does one call and there are only `log2 n` levels.
+- Calling `fast_power(x, n // 2)` twice and still claiming `O(log n)` work.
+- Treating `sys.setrecursionlimit` as the solution instead of a last resort.

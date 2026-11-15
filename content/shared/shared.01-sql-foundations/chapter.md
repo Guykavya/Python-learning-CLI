@@ -361,7 +361,7 @@ import sqlite3
 from helpers import show
 
 con = sqlite3.connect(":memory:")
-con.executescript(open("pagebound.sql").read())
+con.executescript(open("pagebound.sql", encoding="utf-8").read())
 ```
 
 From here on, when a block shows only `show(con, ...)` or a bare SQL statement, `con` is this connection. Your first query:
@@ -1345,6 +1345,9 @@ SELECT title FROM books WHERE pages NOT IN (SELECT pages FROM books WHERE catego
 
 The subquery returns 64 and `NULL` (Tiny Robots has no page count). With that `NULL` in the list, nothing can be proven "not in", so zero rows come back, even though plenty of books clearly have a page count not equal to 64. Section 11 gives the safe tools: `NOT EXISTS`, or filtering the NULLs out of the subquery (`WHERE pages IS NOT NULL`).
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw one picture of why NOT IN with a NULL returns no rows. Show the list (64, NULL) and a book with pages 320. Below it, show three checks joined by AND: 320 <> 64 is TRUE, 320 <> NULL is UNKNOWN, so TRUE AND UNKNOWN is UNKNOWN. Then show WHERE keeping only TRUE, so the row is dropped. Colour TRUE green, UNKNOWN amber, FALSE red."
+
 ### 6.5 Handling NULL on purpose
 
 **COALESCE(a, b, ...)** returns the first argument that is not NULL. It is the standard way to supply a default:
@@ -1960,6 +1963,9 @@ tech      2          1
 tech      3          2
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate GROUP BY collapsing rows. Show a books table with 10 rows (category: fiction x4, kids x2, tech x3, cooking x1). Rows slide into four piles by category, then each pile shrinks into one result row: cooking 1, fiction 4, kids 2, tech 3. Label the piles 'groups' and the result 'one row per group', and show COUNT(*) being calculated per pile."
+
 ### 8.4 HAVING: filtering groups
 
 `WHERE` filters rows **before** grouping. `HAVING` filters groups **after** grouping, so it can use aggregates:
@@ -2317,6 +2323,9 @@ Omar Diaz  0
 **Trap:** use `COUNT(b.book_id)` (a column from the right table), not `COUNT(*)`. For Omar there is one joined row (with NULLs), so `COUNT(*)` would say 1. `COUNT(b.book_id)` skips the NULL and says 0, which is the truth.
 
 There is also `RIGHT JOIN` (keep all rows of the right table). It is the same as a left join with the tables swapped, so most people never use it. SQLite supports it since 3.39.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a LEFT JOIN between authors (Maya Rao, Tom Hale, Lena Voss, Ken Ito, Sara Cole, Omar Diaz) and books, matched on author_id. Use arrows from each author to their books. Omar Diaz has no book: highlight him and show his title column filled with NULL. Add a small note that COUNT(b.book_id) gives 0 for Omar but COUNT(*) gives 1."
 
 ### 9.5 Where does the condition go: ON versus WHERE
 
@@ -2765,6 +2774,9 @@ How to spot fan-out:
 
 `DISTINCT` is the most tempting wrong fix: `SELECT DISTINCT` on joined rows may hide the duplicates for a count but never repairs a sum of values that happen to be equal.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw join fan-out. On the left, one order of customer 1 that has two order lines (two rows in order_items). Joining gives two result rows, both repeating the same order. Show COUNT(*) = 2 but COUNT(DISTINCT order_id) = 1, and SUM(5) shipping fee counted twice (10, not 5). Highlight the repeated rows in red and label them 'fan-out'."
+
 ### 10.7 Try it: joins II
 
 **Try it 23.** List each customer who has ordered, with their number of orders, in a way that is not fooled by a join to `order_items`: count each customer's orders after joining customers to orders to order_items.
@@ -3022,6 +3034,9 @@ Hugo Brandt   NULL
 A scalar subquery must return at most one row, and `LIMIT 1` guarantees that. The same trick with `COUNT(DISTINCT ...)` or `MAX(...)` inside the subquery works the same way.
 
 Correlated subqueries are easy to write and easy to read, but can be slow on big tables, if the engine really runs the inner query for every outer row. Modern engines often rewrite them into joins. For heavy work, window functions (section 13) or a pre-aggregated join are better.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a correlated subquery. Show a customers table (Asha Nair, Ben Okoye, Farid Khan) and an orders table with customer_id and ordered dates. For each customer row in turn, highlight it, run the inner query MAX(ordered) over only that customer's orders, and write the answer in a last_order column. Farid Khan has no orders, so show NULL. Label 'inner query runs once per outer row'."
 
 ### 11.5 Subquery in FROM: a derived table
 
@@ -3297,6 +3312,9 @@ author_id
 
 Authors 2 and 3 both wrote tech and fiction. Note: `EXCEPT` and `INTERSECT` treat NULLs as equal (like `DISTINCT`), unlike `=`.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two overlapping circles (a Venn diagram) of author_id values. Left circle: authors who wrote tech books. Right circle: authors who wrote fiction books. The overlap holds 2 and 3. Show four small panels for UNION, UNION ALL, INTERSECT and EXCEPT, shading the part of the circles each one returns. Label UNION ALL as keeping duplicates."
+
 ### 12.4 Try it: CTEs and sets
 
 **Try it 28.** Using a CTE, list the customers who have ordered more than once, with their order count.
@@ -3556,6 +3574,9 @@ Marco Lee  110000  355000         355000
 ```
 
 The two 90000 salaries are peers. With the default `RANGE`, **both** show 245000 (65000 + 90000 + 90000), because each sees its peer. With `ROWS`, the running total steps row by row: one of the two shows 155000 and the other 245000, and which is which is arbitrary because they tie. When you want a true running total and the key can tie, **write `ROWS`** explicitly. (Ranking functions ignore frames. `LAG`/`LEAD` ignore them as well.)
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a window frame sliding down rows. Show daily_sales for store north: 06-01 120.0, 06-02 80.0, 06-03 95.5, 06-05 60.0, 06-06 150.0. A bracket covers the current row and the one before it (ROWS BETWEEN 1 PRECEDING AND CURRENT ROW). As it moves, show the average in a new column: 120.0, 100.0, 87.75, 77.75, 105.0. Note the first row only sees itself."
 
 ### 13.6 LAG and LEAD: looking at neighbours
 
@@ -4059,6 +4080,9 @@ Why does `order_items` still store `unit_price` if the book has a price? Because
 
 **When to denormalise:** reporting databases and caches sometimes repeat data on purpose, to avoid joins and speed up reads. That is a performance decision made on top of a clean design, with the costs known, not a starting point.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw one flat table splitting into separate tables. The flat table flat_orders has rows (1, Asha, Pune, Code by Hand, 39.0, 1), (1, Asha, Pune, SQL Basics, 29.0, 2), (2, Asha, Pune, Code by Hand, 39.0, 1), (3, Ben, Lagos, SQL Basics, 29.0, 1). Split it into customers, books, orders and order_items with foreign key arrows. Highlight that Asha, Pune and the book prices are now stored once."
+
 ### 15.5 Relationships in tables
 
 - **One to many:** foreign key on the many side (`books.author_id`).
@@ -4141,6 +4165,9 @@ CREATE INDEX idx_orders_customer ON orders (customer_id);
 ```
 
 The database uses the index **automatically** when it helps; you do not name it in queries. A primary key and a `UNIQUE` constraint already create an index.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a B-tree index on orders.customer_id compared with a full table scan. Show a small tree where a search for customer_id 4 goes from the root to a leaf in about three steps, ending at a pointer to the table row. Beside it, show a table scan checking every row one by one. Label the steps and say a million rows still need only a handful."
 
 ### 16.2 Seeing the plan: EXPLAIN QUERY PLAN
 
@@ -4308,6 +4335,9 @@ B   20
 ```
 
 Details worth knowing: without an explicit `BEGIN`, each statement is its own tiny transaction (called autocommit). Long transactions hold locks, so keep them short. In SQLite, DDL such as `CREATE TABLE` is transactional too; in MySQL it commits implicitly.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a timeline of a transaction on an accounts table with A = 150 and B = 20. Steps: BEGIN, A becomes 50 (visible only inside), then two endings side by side. ROLLBACK returns A to 150 and B stays 20. COMMIT would make 50 permanent. Show a second path where a CHECK (balance >= 0) failure triggers ROLLBACK. Label the steps 'all or nothing'."
 
 ### 16.5 Try it: indexes and transactions
 

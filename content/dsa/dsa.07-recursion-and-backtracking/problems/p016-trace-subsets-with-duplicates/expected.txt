@@ -1,0 +1,9 @@
+visit []
+visit [1]
+visit [1, 2]
+visit [1, 2, 2]
+skip i = 2 start = 1
+visit [2]
+visit [2, 2]
+skip i = 2 start = 0
+6

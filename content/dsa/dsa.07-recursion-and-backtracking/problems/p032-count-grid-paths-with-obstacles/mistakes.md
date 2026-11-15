@@ -1,0 +1,4 @@
+- Forgetting to un-mark: later paths think the cell is still used, and the count is too small (often 1).
+- Marking the cell after the loop instead of before: the path can step back onto its own cell and the count explodes.
+- Stopping at the end cell only after marking it, and not un-marking it.
+- Forgetting the wall checks for the start and end cells.

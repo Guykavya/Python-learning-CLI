@@ -220,6 +220,9 @@ So a `for` loop is three steps:
 
 You never see `StopIteration` in a normal `for` loop because the loop catches it for you. This is the whole **iteration protocol**. Everything else in this chapter is built on these three steps.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a step-by-step diagram of what a Python for loop does with the list ['red', 'green', 'blue']. Step 1: iter() is called once and makes an iterator, drawn as a bookmark at position 0. Then show three next() calls, the bookmark moving and giving 'red', 'green', 'blue', each running the loop body. The fourth next() raises StopIteration, which is caught quietly, and the loop exits. Label the three steps."
+
 ### 2.3 Everything you loop over has an iterator
 
 Every kind of collection gives its own kind of iterator:
@@ -380,6 +383,9 @@ Now use what you know about the `for` loop to explain it:
 - For the iterator, each loop calls `iter(it)`, which returns **the same** bookmark. The first loop moved it to the end. The second loop starts at the end, gets `StopIteration` at once, and runs zero times. No error, just nothing.
 
 This is what "an iterator can be consumed only once" means, and it is the second outcome of this module. **An iterator is a position, not a collection.** Once the position is at the end, there is nothing to rewind. To go through the data again you need a new iterator from the original iterable (or you need to have saved the items in a list).
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate two rows of boxes holding 1, 2, 3. Top row: a list, looped twice. Each loop calls iter() and creates a NEW bookmark at the start, so both loops see 1, 2, 3. Bottom row: iterator it = iter([1, 2, 3]). The first loop moves one bookmark to the end. The second loop starts at the end, gets StopIteration at once and gives []. Highlight 'an iterator is a position, not a collection'."
 
 ### 3.3 Many built-ins return iterators
 
@@ -768,6 +774,9 @@ done
 ```
 
 Look at the order: the prints from inside the generator and the prints from the loop body **take turns**. The generator does not run ahead. It produces one item, the loop body uses it, and only then does the generator continue. This taking-turns is what makes generators lazy.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a timeline for a generator function talker() that has prints '[start]', yield 'A', '[between A and B]', yield 'B', '[after B]'. Show g = talker() running no code. Then three next(g) calls: the first runs to yield 'A' and freezes, the second resumes after 'A' and freezes at 'B', the third runs to the end and raises StopIteration. Mark the frozen position with a pause icon each time."
 
 ### 5.3 Predict the output
 
@@ -1158,6 +1167,9 @@ used 4
 ```
 
 The list version squares everything first, then you use it. The generator version squares **one** number, you use it, then it squares the next one. Same taking-turns as in section 5.2.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two side-by-side timelines. Left: list comprehension [square(n) for n in range(3)], where squaring 0, 1 and 2 all happen first and then the results [0, 1, 4] are used. Right: generator expression (square(n) for n in range(3)), where nothing runs at creation, then each loop turn does 'squaring 0, used 0', 'squaring 1, used 1', 'squaring 2, used 4'. Show the two orders clearly."
 
 ### 6.3 Memory does not grow with the data
 
@@ -1575,6 +1587,9 @@ Read the output like a conveyor belt in a factory:
 
 At any moment **only one item is in the pipeline**. There is no list of "all doubled values" anywhere. That is why a pipeline over a 20 GB log needs only a few MB: the memory cost is one item per stage, not one item per line.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a conveyor belt with three stages: source([1, 2, 3, 4]), double, keep_big (keeps values above 4). The for loop at the end asks keep_big for an item, which asks double, which asks source. Show one item moving at a time: 1 becomes 2 and is rejected, 2 becomes 4 and is rejected, 3 becomes 6 and reaches RESULT 6, then 4 becomes 8 and gives RESULT 8. Show only one item inside at any moment."
+
 ### 8.4 Short pipelines with generator expressions
 
 For simple stages you do not need a whole function. Generator expressions chain the same way:
@@ -1731,6 +1746,9 @@ home
 
 Each call yields its own name, then hands over to one recursive call per child. The `depth` parameter grows by one at each level, which gives the indentation.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a tree for the nested list [1, [2, [3, 4], 5], [[6]], 7] and show how the recursive generator flatten uses 'yield from flatten(item)' for inner lists. Trace the order in which values come out through the call stack of generators: 1, 2, 3, 4, 5, 6, 7. Highlight each recursive call as a small box nested inside its parent, with the yielded numbers flowing up to the final list."
+
 ### 9.4 `yield from` gives back the return value
 
 There is one thing `yield from` does that the plain loop cannot. The **value** of the expression `yield from sub()` is whatever `sub` returned (the `StopIteration.value` from section 5.5):
@@ -1875,6 +1893,9 @@ Step by step:
 The generator keeps private state (total, count) between calls, which is the attraction. But note that a simple closure from core.06 could do the same job, and most readers would find the closure easier. That is the main reason `send` is rare.
 
 `next(g)` is exactly the same as `g.send(None)`: the paused `yield` expression then evaluates to `None`. So in `echo` from 10.1, calling `next(g)` instead of `g.send(...)` would print `got: None`.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a generator averager() that holds total and count. Show a two-way arrow at 'value = yield average'. Steps: next(avg) gives None; send(10) gives total 10, count 1, average 10.0; send(20) gives total 30, count 2, average 15.0; send(60) gives total 90, count 3, average 30.0. Use one color for values sent in and another for values yielded out, and show total and count updating."
 
 ### 10.3 `throw`: raise an exception at the paused `yield`
 
@@ -2168,6 +2189,9 @@ ValueError: Stop argument for islice() must be None or an integer: 0 <= x <= sys
 ```
 
 - **Skipping is not free.** `islice(it, 1_000_000, None)` must call `next` a million times to get there. A list can jump straight to an index; an iterator cannot.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a row of ten boxes holding the letters a to j with index numbers 0 to 9 under them. Show islice(letters, 3), islice(letters, 2, 5) and islice(letters, 0, None, 3) as highlighted ranges, giving ['a','b','c'], ['c','d','e'] and ['a','d','g','j']. Add a second row showing a shared iterator over range(10): three islice(it, 3) calls take [0,1,2], [3,4,5], then [6,7,8,9] with nothing lost."
 
 ### 12.2 `chain`: one stream from many
 
@@ -2632,6 +2656,9 @@ b ['b', 'b', 'b']
 
 Asking for the second group moved past the first one. `group1` is dead.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the list ['apple', 'avocado', 'banana', 'blueberry', 'cherry'] with a single reader arrow moving along it. groupby gives three group windows: 'a', 'b', 'c', all reading from that one shared arrow. Animate storing the groups in a dict and then moving on: when the arrow moves to the next key, the earlier windows become invalid and are shown empty []. Then show the fix, list(group) inside the loop, saving the items."
+
 ### 14.5 Classic uses
 
 Many "consecutive" problems become one line with `groupby`:
@@ -2956,6 +2983,9 @@ $ python tee4.py
 - If one copy is consumed **completely** before the other starts (like `min(one)` then `max(two)` above), the buffer holds **every item**. Then `tee` uses as much memory as a list, and is slower. In that case just use `list()`.
 
 So the rule from the Python docs is: **if one copy will be used up before the other starts, use a list instead of `tee`.**
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw tee(numbers) splitting one iterator into two copies, first and second, with a shared buffer between them. Case 1: both copies advance together (like pairwise), so the buffer holds one item. Case 2: one copy (min) is fully consumed before the other (max) starts, so the buffer fills with every item, like a list. Use a short numbers example, such as 3, 1, 4, 1, 5, and label the buffer size in each case."
 
 ### 16.4 Do not touch the original after `tee`
 

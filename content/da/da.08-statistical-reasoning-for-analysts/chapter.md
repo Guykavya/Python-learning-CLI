@@ -242,6 +242,9 @@ Ten times the data gives an error that is `sqrt(10) = 3.16` times smaller, not 1
 
 </details>
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw three histograms of the sampling distribution of a mean spend, from a right-skewed population of 200,000 customers (true mean 2,502). Samples of n = 100, 500 and 2000 give spreads (standard errors) of about 135, 60 and 30. Put them on one shared x-axis so the curves get narrower. Mark the true mean with a vertical line and label each curve with its n and SE."
+
 ### 2.3 The bell shape: the central limit theorem
 
 The spend of individual customers is skewed to the right (a few big spenders). But the **means** of samples are bell-shaped. The **central limit theorem** says: the mean of many independent values is approximately normally distributed (bell-shaped), whatever the shape of the original data, when `n` is large enough. How large? It depends on the skew. For mildly skewed data, 30 can be enough; for very skewed data, hundreds.
@@ -269,6 +272,9 @@ print("share of the 5,000 sample means within 1.96 SE of the truth:", round(with
 ```text
 share of the 5,000 sample means within 1.96 SE of the truth: 94.8 %
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate the central limit theorem. Left panel: a right-skewed histogram of individual customer spends (skewness 1.63). Right panel: histograms of 4,000 sample means that update as n steps through 2, 10, 50, 500. Show the skewness printed on screen falling 0.99, 0.45, 0.17, 0.07 as the right panel turns into a symmetric bell curve."
 
 ### 2.4 The law of large numbers
 
@@ -573,6 +579,9 @@ Wider. Being more sure that the interval catches the truth requires a bigger net
 
 </details>
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a 'confidence interval waterfall'. A vertical line marks a true mean of 2,502. Stack 100 horizontal 95 percent intervals, each from a different sample of 500 customers, about 237 wide. Colour the roughly 5 that miss the line red and the others blue. Label '95 percent of intervals catch the truth; any single interval either does or does not.'"
+
 ### 4.3 What a confidence interval is not
 
 Five misreadings, all common, all wrong.
@@ -659,6 +668,9 @@ t-interval for the mean : 2,453 to 2,702
 ```
 
 For the mean, the bootstrap and the t-interval agree. For the median and the 90th percentile, the bootstrap gives intervals where we had no formula. Notice that the interval for the 90th percentile is much wider than for the mean: the tail is where there are few data. Three warnings about the bootstrap: it cannot fix **bias** (it resamples what you have); it needs a decent sample (with 15 values it is unreliable); and for statistics driven by the extremes (the maximum) it fails.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a bootstrap picture. Start with one sample of 500 customer spends (mean 2,578). Show arrows to many resamples drawn with replacement, same size, each giving a mean. Then show a histogram of 5,000 bootstrap means, with the middle 95 percent shaded from 2,448 to 2,705, and the true mean 2,502 marked. Label the steps 'resample', 'compute', 'take percentiles'."
 
 ### 4.6 A confidence interval for a difference
 
@@ -822,6 +834,9 @@ share of shuffles at least as extreme: 0.0345   (z-test gave 0.0303)
 
 Only a small share of the shuffles produce a gap as large as 1.5 points. The permutation p-value and the z-test p-value agree. If you can shuffle, you understand the p-value.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a permutation test for an A/B test: 8,000 visitors, page A and page B, observed conversion gap 1.5 points. Show the labels A and B being shuffled at random 10,000 times, with each gap added to a bell-shaped histogram centred on 0 with typical size 0.70 points. Shade both tails beyond plus or minus 1.5 and label the shaded area as the p-value (about 0.03)."
+
 ### 5.3 When there is no effect
 
 What does a p-value look like when the null is *true*? Simulate 10,000 A/B tests in which both pages have the same 10 percent conversion.
@@ -856,6 +871,9 @@ tests with p < 0.01 when NOTHING is going on: 1.1 %
 
 When there is no effect, p-values are spread **evenly** between 0 and 1, and 5 percent of tests fall below 0.05 anyway. That is what the 0.05 line *means*: you accept being fooled one time in twenty. This simple fact is the root of the next problem.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a flat histogram of p-values from 10,000 A/B tests where both pages truly convert at 10 percent, with 4,000 visitors per group. Bars from 0 to 1 are all about equal height (around 1,000 each). Shade the first bar of the 0 to 0.05 range and label it '5 percent of tests are false alarms even though nothing is going on'."
+
 ### 5.4 Many tests, many false alarms
 
 An analyst compares 20 customer segments on 20 outcomes. Even if nothing is real, about one result in twenty will be "significant". Report only the winner and you have a publication-ready false discovery.
@@ -882,6 +900,9 @@ Bonferroni threshold (0.05 / 20): 0.0025 -> p-values below it: 0
 ```
 
 The chance of at least one false alarm in 20 independent tests is 64 percent. Three defences: **decide the questions before looking** (pre-register what you will test); **correct** for the number of tests (the Bonferroni rule divides the threshold by the number of tests; stricter but simple); and **report all** the comparisons you ran, not only the interesting ones. Slicing the data until something is significant is called *p-hacking* (or "the garden of forking paths"), and it produces results that do not repeat.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Show 20 comparisons of two groups (300 each) drawn from the same distribution, as a row of 20 dots on a p-value axis from 0 to 1. Draw a line at 0.05 and a second line at the Bonferroni threshold 0.0025. Let one dot fall just under 0.05 (0.029). Label the chance of at least one false alarm in 20 tests as 64 percent."
 
 ### 5.5 Not significant is not "no effect"
 
@@ -917,6 +938,9 @@ print(f"n = 500 per group: difference {d * 100:.1f} points, 95% CI {lo_ * 100:.1
 ```text
 n = 500 per group: difference 1.4 points, 95% CI -2.4 to 5.2  -> includes 0, and includes +5
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw power curves for an A/B test where page A converts 10 percent and page B truly converts 11.5 percent. X-axis: users per group (200, 500, 1000, 2000, 4000, 8000). Y-axis: power, rising 7, 12, 20, 34, 57, 86 percent. Mark 80 percent with a dashed line. Beside it, sketch two overlapping bell curves (null and real effect), shading the part of the real-effect curve that is significant."
 
 ## 6. Practical against statistical significance
 
@@ -995,6 +1019,9 @@ big effect, big sample     CI [ 0.14,  2.86] -> inconclusive: the interval conta
 ```
 
 The first row, the "highly significant" one, is classed **not worth it**; the second, the "not significant" one, is **inconclusive** (not "no effect"); the third is also **inconclusive** against a threshold of 0.5 points, although its p-value is below 0.05. A p-value alone would have said "yes, no, yes", and each of those answers would have hidden something. Only the interval shows what the data can and cannot support. With a much bigger test (20,000 per group, below) the third row becomes a clear "worth it".
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a number line of conversion lift in percentage points with a dashed vertical line at the minimum effect of interest, 0.5. Show three confidence intervals as horizontal bars: tiny effect huge sample (0.06 to 0.14), big effect small sample (-1.53 to 4.53), big effect big sample (0.14 to 2.86). Label them 'not worth it' (entirely below), 'inconclusive' and 'inconclusive' (they straddle 0.5)."
 
 ### 6.3 How to speak about results
 

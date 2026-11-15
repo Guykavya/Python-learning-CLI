@@ -240,6 +240,9 @@ default maxmem: [digital envelope routines] memory limit exceeded
 with maxmem set: 64 bytes
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the stored password string 'scrypt$16384$8$1$salt$hash' as five labelled boxes joined by dollar signs. Show login: take the typed password plus the stored salt and the N, r, p numbers, run scrypt, then compare with the stored hash using compare_digest. Add a second path for an old '2**12' hash that is verified, then re-hashed with the current cost at that login and saved again."
+
 > **Do not invent your own scheme.** The module above shows the *ideas*. In a real project use a maintained library or your framework's built-in (Django's `make_password`, Werkzeug's `generate_password_hash`, Passlib or `argon2-cffi`). They already handle the edge cases.
 
 > **Try it on your machine**: Argon2id is the algorithm current guidance recommends first (the winner of the Password Hashing Competition), then scrypt or bcrypt.
@@ -609,6 +612,9 @@ no Origin     : 200 (scripts, curl, mobile apps)
 
 A request with no `Origin` header is allowed here because non-browser clients do not send one, and a CSRF attack needs a browser. Whether to also demand a token is a risk decision; for cookie-based apps that handle money, do both.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a CSRF attack as a timeline with three actors: the browser, shop.example and evil.example. The browser holds a login cookie for shop.example. A hidden form on evil.example posts to /orders/42/cancel, and the browser attaches the cookie. Show the Origin header 'https://evil.example' being checked against the allowed set and refused with 403, while Origin 'https://shop.example' gets 200."
+
 ### Try it: spot the flaw
 
 A teammate stores the session id in `localStorage` and sends it in a header from JavaScript, "so CSRF is impossible". True, but what did they give up?
@@ -682,6 +688,9 @@ verified: 42
 ```
 
 Two facts follow. **The payload is public**: never put passwords, addresses or anything private in a token. And **the signature protects integrity, not secrecy**: change one character in the payload and verification fails, but anyone can read it. (JWE, "encrypted JWT", exists but is rarely needed.)
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a JWT as three coloured blocks joined by dots: header {'alg':'HS256','typ':'JWT'}, payload {'sub':'42','role':'member','exp':2000000000}, and signature. Show base64url encoding of each part. Then show the signature as an HMAC-SHA256 of 'header.payload' with a secret key. Mark the payload 'anyone can read this' and the signature 'proves it was not changed'."
 
 ### 4.2 Claims that must be checked
 
@@ -1035,6 +1044,9 @@ print(len(v), "chars | challenge is", len(challenge_for(v)), "chars | verifier n
 E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuGJSstw-cM
 64 chars | challenge is 43 chars | verifier not derivable from it
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate the OAuth2 authorization code flow with PKCE as a sequence diagram with four lanes: user browser, client app, authorization server, resource server. Steps: redirect to /authorize with state and code_challenge (SHA-256 of the code_verifier), user approves, redirect back with code and state, client POSTs code plus code_verifier to /token, receives an access token, calls /photos. Highlight that the verifier never travels in the browser."
 
 ### 5.3 A tiny authorization server and client, in one process
 
@@ -2234,6 +2246,9 @@ Points to remember:
 - The cursor is **opaque** to clients (base64 of JSON here): they must not build it, so you can change it later. It is *input from the network*, so decode it defensively (above), and use the decoded values only as query parameters, never in SQL text. If the cursor encodes anything sensitive or you must stop clients forging it, sign it (HMAC, section 6.4).
 - Keyset pagination cannot "jump to page 7", and a total count is expensive. For admin tables that need page numbers, offset with a modest maximum is fine; for feeds, syncing and large tables, use cursors.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two side-by-side lists of orders sorted newest first, ids 6 to 1. Offset paging: page 1 shows 6,5,4; then new order 7 arrives; page 2 (OFFSET 3) shows 4,3,2, so 4 repeats. Keyset paging: page 1 shows 6,5,4 and the cursor is id 4; after order 7 arrives, WHERE id < 4 gives 3,2,1. Highlight the repeated 4 in red and the cursor in green."
+
 ### 10.4 Filtering and sorting: allow-lists only
 
 Query parameters tempt developers to build SQL from them. Never interpolate a column name or a sort direction from the request into SQL text. Parameters (`?`) protect **values**, not identifiers. Map the user's words to your words:
@@ -2460,6 +2475,9 @@ Study the result:
 | **Token bucket** | refills steadily; allows bursts up to the capacity, then the sustained rate | two numbers | you tune capacity (burst) and rate (average) separately |
 
 The token bucket is the most common choice for APIs because it models what you want: a normal short burst is fine (a page load makes 8 calls), a sustained flood is not. A *leaky bucket* is its smoothing cousin (it releases requests at a constant rate), and a *sliding window counter* approximates the log with two counters.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a timeline from 0 to 20 seconds with a limit of 5 requests per 10 seconds. A client sends 5 requests at 9.9s and 5 more at 10.1s. Show three rows: fixed window (windows 0-10 and 10-20, both bursts allowed, 10 in 0.2s), sliding log (second burst refused), and a token bucket (capacity 5, refill 0.5 per second) drawn as a bucket that empties and refills slowly."
 
 ### 11.3 What to key the limit on
 
@@ -2812,6 +2830,9 @@ bob retries : 200
 
 The key detail is `WHERE id = ? AND version = ?` in a single `UPDATE`: reading the version in Python and then updating would leave a gap in which another request could sneak in. The same idea protects stock counts, balances and anything else with "read, think, write" logic. Section 13 applies the same care to repeated requests.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two clients, Alice and Bob, both doing GET /orders/1 and receiving ETag '1'. Alice sends PATCH with If-Match '1': the server runs UPDATE ... WHERE id=1 AND version=1, version becomes 2, reply 200. Bob then sends PATCH with If-Match '1': zero rows match, reply 412. Bob reloads, gets ETag '2', retries, gets 200. Show it as a sequence diagram."
+
 ### Try it: breaking or not?
 
 Classify each change as breaking or non-breaking for existing clients: (a) add `"estimated_delivery"` to the order response; (b) rename `"status"` to `"state"`; (c) add the value `"refunded"` to the `status` enum; (d) reject empty `note` strings that used to be accepted; (e) change the 404 body from `{"detail": ...}` to a problem-details object.
@@ -2931,6 +2952,9 @@ balance           : 5000 (expected 7500)
 ```
 
 The customer paid 25.00 twice. The server did exactly what it was asked, twice. No amount of "be careful in the client" fixes this, because the client cannot know.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a sequence diagram of POST /payments for 25.00 EUR between a client and a server with a database. The first attempt charges the account, but the reply is lost, so the client sees a timeout. The client retries and the server charges again. Show the balance going from 10000 to 7500 to 5000 cents, with 'payments recorded: 2' highlighted as the double charge."
 
 ### 13.2 First choice: make the operation naturally idempotent
 
@@ -3387,6 +3411,9 @@ The attacker's text closed the quote and added `OR '1'='1'`, making the `WHERE` 
 - `LIKE` wildcards (`%`, `_`) in user input change the meaning of a search; escape them (`ESCAPE '\\'`) if literal matching is intended.
 - Give the application's database user **only the permissions it needs** (no `DROP`, no access to other schemas). A successful injection then does less damage.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw how the SQL string is built in a login query. Show the vulnerable f-string: name = 'ada' and password = ' OR '1'='1 pasted inside quotes, so the WHERE clause becomes always true and returns both ada and admin. Next to it show the placeholder version with '?', where the password is sent as separate data and no row matches. Colour user text red and SQL code blue."
+
 ### 14.4 Command injection
 
 Passing user text to a shell lets the shell interpret `;`, `&&`, `$()` and backticks:
@@ -3399,11 +3426,11 @@ filename = "photo.jpg; echo INJECTED-COMMAND-RAN"
 
 
 def run(*args, **kw):
-    return subprocess.run(*args, capture_output=True, text=True, **kw).stdout.strip().splitlines()
+    return subprocess.run(*args, capture_output=True, text=True, **kw, encoding="utf-8").stdout.strip().splitlines()
 
 
 print("shell=True with a formatted string (vulnerable):", run(f"echo converting {filename}", shell=True))
-print("argument list, no shell (safe)                 :", run(["echo", "converting", filename]))
+print("argument list, no shell (safe)                 :", run([sys.executable, "-c", "import sys; print(*sys.argv[1:])", "converting", filename]))
 print("the program receives one harmless argument     :", run([sys.executable, "-c", "import sys; print(sys.argv[1:])", filename]))
 ```
 ```text
@@ -3425,16 +3452,16 @@ from pathlib import Path
 with tempfile.TemporaryDirectory() as tmp:
     UPLOADS = (Path(tmp) / "uploads").resolve()
     UPLOADS.mkdir()
-    (Path(tmp) / "secrets.txt").write_text("top secret")
+    (Path(tmp) / "secrets.txt").write_text("top secret", encoding="utf-8")
 
     def open_vulnerable(name: str) -> str:
-        return (UPLOADS / name).read_text()                       # BUG: trusts the name
+        return (UPLOADS / name).read_text(encoding="utf-8")                       # BUG: trusts the name
 
     def open_safe(name: str) -> str:
         target = (UPLOADS / name).resolve()                       # resolve ".." and symlinks first
         if not target.is_relative_to(UPLOADS):                    # then check where we ended up
             raise PermissionError("path escapes the upload folder")
-        return target.read_text()
+        return target.read_text(encoding="utf-8")
 
     print("vulnerable:", open_vulnerable("../secrets.txt"))
     try:
@@ -4013,8 +4040,8 @@ import subprocess
 import sys
 
 program = "def delete_everything(is_admin):\n    assert is_admin, 'admins only'\n    return 'deleted'\nprint(delete_everything(False))"
-normal = subprocess.run([sys.executable, "-c", program], capture_output=True, text=True)
-optimised = subprocess.run([sys.executable, "-O", "-c", program], capture_output=True, text=True)
+normal = subprocess.run([sys.executable, "-c", program], capture_output=True, text=True, encoding="utf-8")
+optimised = subprocess.run([sys.executable, "-O", "-c", program], capture_output=True, text=True, encoding="utf-8")
 print("normal run   :", normal.stderr.strip().splitlines()[-1])
 print("python -O run:", optimised.stdout.strip(), "<- the check vanished")
 ```
@@ -4057,7 +4084,7 @@ from pathlib import Path
 
 with tempfile.TemporaryDirectory() as tmp:
     secret = Path(tmp) / "secret.txt"
-    secret.write_text("internal file contents")
+    secret.write_text("internal file contents", encoding="utf-8")
     print(urllib.request.urlopen(secret.as_uri()).read().decode())             # as_uri() gives file:///tmp/...
 ```
 ```text
@@ -4285,8 +4312,8 @@ PASSWORD = "correct horse battery"
 @pytest.fixture
 def world(tmp_path):
     (tmp_path / "invoices").mkdir()
-    (tmp_path / "invoices" / "inv-1.txt").write_text("invoice one")
-    (tmp_path / "secrets.txt").write_text("TOP SECRET")
+    (tmp_path / "invoices" / "inv-1.txt").write_text("invoice one", encoding="utf-8")
+    (tmp_path / "secrets.txt").write_text("TOP SECRET", encoding="utf-8")
     app = shop_api.create_app(str(tmp_path))
     client = TestClient(app, raise_server_exceptions=False)
 

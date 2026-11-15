@@ -138,6 +138,9 @@ Three facts to hold on to.
 
 To ask "does anything start with `ca`?", walk `c`, then `a`. If both edges exist, the answer is yes, and every word below that node starts with `ca`. The walk takes 2 steps whether we store 6 words or 6 million. The cost is `O(p)` for a prefix of length `p`, independent of `N`.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a trie for the words car, card, care, cat, dog, dot. The root is the empty string; each edge has one letter. Build it word by word, showing shared nodes c, a, r reused by car, card and care. Mark end-of-word nodes with double circles. Then animate the prefix query 'ca': highlight the root to c to a path, and shade every word below that node."
+
 ### Why mark the end of a word?
 
 Look at the picture again. `car` is a word, and `card` is a word, but `ca` is not a word even though a node exists for it. If the trie only stored paths, we could not tell "`car` was inserted" from "`car` is just on the way to `card`". So every node carries a flag: **"a word ends here"**.
@@ -244,6 +247,9 @@ Why these numbers?
 2. `cat` walks `c`, `a` (both exist) and then needs one new node for `t`.
 3. `ca` walks two existing nodes and only sets `is_end` on the node `a`. No new node.
 4. Inserting `car` again changes nothing. Inserting a word twice is harmless.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate inserting car, cat, ca, car into an empty trie, one letter at a time. Start with only the root (1 node). Show car creating 3 new nodes (1 to 4), cat reusing c and a and adding t (4 to 5), ca only setting the end-of-word flag on node a (5 to 5), and the second car changing nothing. Show a running node counter and flash new nodes in a colour."
 
 ### Try it: predict the output
 
@@ -725,6 +731,9 @@ for step in suggestions(["mobile", "mouse", "moneypot", "monitor", "mousepad"], 
 
 Each line is the answer after one more key: `m`, `mo`, `mou`, `mous`, `mouse`. As the prefix grows the list shrinks. Because the lists are alphabetical, we cut to `k = 3` after collecting.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a trie of the words mobile, mouse, moneypot, monitor, mousepad. Animate a user typing m, mo, mou, mous, mouse. After each key, highlight the current trie node and show the suggestion list under it, cut to at most 3 and in alphabetical order: first two keys give mobile, moneypot, monitor; the last three give mouse, mousepad. Show the subtree shrinking."
+
 ### Try it: autocomplete order
 
 Which three words does `suggestions(["bat", "bar", "bark", "ball"], "ba")` give after the last key `a`, and in what order? Write your answer, then run it.
@@ -1133,6 +1142,9 @@ brute force: 28
 
 The best pair is `5` and `25`: `00101` against `11001` differ on every bit but one, giving `11100`, which is 28. The bit values are 8 bits wide in the code (`bits=8`), which is enough for numbers below 256; use `bits=32` for ordinary 32-bit numbers.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a binary trie (children 0 and 1) holding the 5-bit numbers 3, 10, 5, 25, 2, 8, written as 00011, 01010, 00101, 11001, 00010, 01000. Animate searching the best partner for 5 (00101): at each bit, prefer the opposite-bit child, shown as a bold edge. The path ends at 25 (11001). Show the XOR result 11100 = 28 built bit by bit."
+
 ### Why greedy per bit is correct
 
 A 1 in bit position `b` is worth `2^b`, which is **more than all lower bits together** (`2^b > 2^(b-1) + ... + 1`). So at every level, getting a 1 in the current bit beats anything that can happen below. That is a greedy argument, in the spirit of dsa.13.
@@ -1156,6 +1168,9 @@ pattern: a b c a b d
 The naive search shifts the pattern by one and starts from scratch. But we already **know** the last five text letters: `abcab`. Does a shorter piece of the pattern match the end of what we just read? Yes: `ab` is both the **beginning** of the pattern and the **end** of `abcab`. So we can continue as if `ab` were already matched, and compare the text's `c` against the pattern's third letter `c`. No letter of the text is read twice.
 
 All we needed was a table that says: *for each prefix of the pattern, what is the longest shorter piece that is both its beginning and its end?* That table is the **prefix function**.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the text 'abcabcabd' and the pattern 'abcabd' on two aligned rows. Show the pattern matching 'abcab', then a mismatch (text 'c' against pattern 'd') marked in red. Highlight the pattern's first 'ab' and the last 'ab' of the matched part with matching colours. Animate the pattern sliding right so that first 'ab' lines up under those two text letters, without moving the text pointer back."
 
 ### Definitions
 
@@ -1276,6 +1291,9 @@ Walk through three rows.
 - Row `i = 6`: `k = 2`, the new letter `b` equals `s[2] = b`, so `k = 3`: `aab` is both the beginning and the end of `aabaaab`.
 
 The most important picture: **a fallback is not a restart.** The fallback jumps to the longest border *of the border*, which is exactly the next candidate for a prefix that still ends at position `i - 1`.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate computing the prefix function of 'aabaaab' one index at a time. Show the string as boxes with a pointer i and a pointer k. At i=5, k=2 and the letter 'a' mismatches s[2]='b'; show k jumping back to pi[1]=1 along an arrow, then matching s[1]='a' so k becomes 2. Fill the pi array [0,1,0,1,2,2,3] as it grows, with fallback jumps drawn in a different colour."
 
 ### Why this is O(n), not O(n^2)
 
@@ -1459,6 +1477,9 @@ i=8 text[i]=d k 5 -> 6
 ```
 
 Look at `i = 5` (the second `c`). We had matched `abcab` (`k = 5`). The pattern wants `d`, the text gives `c`. KMP falls back to `pi[4] = 2` (we still hold `ab`), then compares `c` against `pattern[2] = c`: match, `k = 3`. The text pointer never moved back. The remaining letters `abd` complete the match.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate KMP searching the pattern 'abcabd' in the text 'abcabcabd'. Show the text row with a moving pointer i and a pattern row aligned under it, with the pi array [0,0,0,1,2,0] shown. Step through i=0 to 8 showing k. At i=5 the text has 'c' but the pattern wants 'd': show k falling from 5 to 2, then to 3. End with a highlighted match starting at index 3."
 
 ### Complexity
 
@@ -1747,6 +1768,9 @@ for text in ["aabxaab", "aaaa", "abcd", "abacaba", ""]:
 ''         []  matches slow: True
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate the Z-function for 'abacaba', whose result is [7, 0, 1, 0, 3, 0, 1]. Draw the string as boxes. For each position i, draw a bracket from i showing how many letters match the start of the string. Show the current Z-box [l, r) as a coloured bar that only moves right. At i=4, show z=3 matching 'aba' and the box moving to l=4, r=7."
+
 ### Hand trace
 
 Let us trace `aabxaab` and print the box before and after each position.
@@ -1916,6 +1940,9 @@ True
 ```
 
 The rolling hashes equal the hashes computed from scratch, and equal windows (`abc` at 0 and 3) have equal numbers (the first and fourth entries match). Python's built-in `pow(B, m - 1, M)` computes `B^(m-1) mod M` quickly without making a huge number.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a rolling hash on the text 'abcabcab' with window length 3, base 31, modulus 101, letter values a=1, b=2, c=3. Show a window box sliding one step at a time. At each step show 'remove the front letter, multiply by 31, add the new letter' and the new hash. The hashes are 16, 97, 88, 16, 97, 88; highlight that the equal windows 'abc' have the same hash 16."
 
 ### The search
 
@@ -2327,6 +2354,9 @@ The cost: `2n - 1` centres, each growing up to `n / 2`. So `O(n^2)` in the worst
 When we expand from a centre, we re-check letters that an earlier centre has already compared. Think of a big palindrome with centre `c`. Inside it, to the right of `c`, everything is the **mirror image** of what is on the left. So the palindromes around positions on the right side are the mirror images of the palindromes around the mirrored positions on the left, at least as far as the big palindrome reaches.
 
 Manacher's algorithm uses that: keep the palindrome that reaches **furthest right**, and start each new centre with the answer of its mirror, only expanding past the edge.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the string 'babad' as the separator version '#b#a#b#a#d#'. Show the centre c and right edge r of the rightmost palindrome as a bracket. For a new centre i inside it, draw its mirror position 2c-i on the left with an arrow, and copy the mirror's radius. Then show the extra expansion beyond r only. Show the final radii [0,1,0,3,0,3,0,1,0,1,0]."
 
 ### Making odd and even look the same
 

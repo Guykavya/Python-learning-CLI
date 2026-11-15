@@ -69,6 +69,9 @@ head
 
 `a.next.next.val` means: go to `a`, follow `next` to node `b`, follow `next` again to node `c`, read `val`. Reading `a.next.next.next` gives `None`, the end.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a singly linked list in Python. Three node objects, each a box with two fields, val and next: a(1), b(2), c(3). Draw arrows from a.next to b and from b.next to c, and make c.next say None. Add a label 'head' pointing at a. Then show how reading a.next.next.val follows two arrows and lands on 3. Highlight each arrow as it is followed."
+
 ### Variables are labels, not boxes
 
 You learned in core.02 that a Python variable does not contain an object; it is a **label stuck onto** an object. Two variables can label the same node. A node does not "know" which variables point to it.
@@ -405,6 +408,9 @@ print(show(chain))
 
 A good rule: **a link may be overwritten only when its old value is stored somewhere else** (in another node's `next`, or in a variable).
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate inserting a new node 99 after node 1 in the list 1 -> 2 -> 3. Show two versions side by side. Wrong order: chain.next = node first, so node 2 and 3 become orphaned (draw them greyed out) and node.next points to itself. Right order: node.next = chain.next first, then chain.next = node. Result 1 -> 99 -> 2 -> 3. Number the steps and the arrows."
+
 ### Trust, but test: a differential test
 
 How do we know that our class is right? Compare it with something we trust: a Python `list` doing the same operations. We generate many random operations with a fixed seed, apply them to both, and compare the contents, the length, and the invariants after every step. This is a **differential test**.
@@ -529,6 +535,9 @@ for values, target in (([6, 6, 1, 6, 2, 6], 6), ([7, 7], 7), ([], 6), ([1, 2, 3]
 ```
 
 Look at the key line: after unlinking, we **do not advance `prev`**. The new `prev.next` might also match (as in `6, 6`), so it must be checked too. Advance only when nothing was removed. This is a very common source of bugs: advancing in both cases skips a node.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate removing every 6 from the list 6 -> 6 -> 1 -> 6 -> 2 -> 6 using a dummy node placed before the first node. Show a pointer called prev starting at dummy. At each step show whether prev.next is 6: if yes, redraw the arrow to skip it and do NOT move prev; if no, move prev forward. End with dummy.next giving 1 -> 2."
 
 ### Where the dummy helps most
 
@@ -711,6 +720,9 @@ DoublyLinkedList([10, 20, 25, 30]) 4
 
 Look at `insert_after`: it has **four link changes**, and their order matters in the same way as in the singly linked case. Steps 1 and 2 set the new node's own links, using the existing neighbours. Only then do steps 3 and 4 change the neighbours. If you do step 4 first (`node.next = new`), you have lost the reference to the old next node, and step 2 cannot find it.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a doubly linked list with two sentinel nodes: head(sentinel) <-> 10 <-> 20 <-> 30 <-> tail(sentinel). Use arrows in both directions. Then animate insert_after(node 10, value 15) in four numbered steps: new.prev = node 10, new.next = node 10's old next (20), then old next's prev = new, then node 10's next = new. Highlight the four changed arrows."
+
 ### Is it right? A differential test
 
 We compare with `collections.deque` (which supports the same operations) and also check the links in **both directions** after every step.
@@ -845,6 +857,9 @@ step 4  reversed: 4 -> 3 -> 2 -> 1 -> None   rest: None
 ```
 
 The two parts always add up to the whole list: nothing is lost, nothing is counted twice. This is the **loop invariant** of reversal: *the nodes before `cur` are already reversed and start at `prev`; the nodes from `cur` are untouched.* When `cur` becomes `None`, everything is reversed and `prev` is the new head.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate reversing the list 1 -> 2 -> 3 -> 4 with three pointers: prev (starts None), cur (starts at 1) and nxt. For each of the 4 loop steps show: save nxt = cur.next, flip cur.next to point at prev, move prev to cur, move cur to nxt. Show the reversed part and the waiting part in different colours. End with 4 -> 3 -> 2 -> 1."
 
 ### Why `nxt` must be saved first
 
@@ -1086,6 +1101,9 @@ print([first_middle(from_list(range(1, n + 1))).val for n in range(1, 7)])
 
 Always test your middle function on lists of length 1, 2, 3 and 4: the even-length case is where mistakes live.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate finding the middle of a list 1 -> 2 -> 3 -> 4 -> 5 with two pointers starting at the head. Slow moves one node per step and fast moves two nodes. Show each step until fast is at the last node or past it. Show that slow ends on node 3. Then repeat for 1 -> 2 -> 3 -> 4 and show slow ends on node 3, the second middle."
+
 ### Detecting a cycle (Floyd's tortoise and hare)
 
 A list has a **cycle** if some node's `next` points back to an earlier node, so the chain never ends. A plain `while cur:` loop would run forever.
@@ -1158,6 +1176,9 @@ step 4: slow at 4, fast at 4
 they meet
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate Floyd's cycle detection on a 6-node list with values 0 to 5, where the tail node 5 points back to node 2. Draw it as a tail leading into a loop. Show slow (one step) and fast (two steps) from node 0. Steps: slow 1 fast 2; slow 2 fast 4; slow 3 fast 2; slow 4 fast 4. Highlight that they meet at node 4."
+
 ### The alternative with a set, and why we prefer two pointers
 
 You could store each visited node in a `set` and stop when you see one twice. It works, but costs `O(n)` memory. Floyd's method needs `O(1)`.
@@ -1219,6 +1240,9 @@ print(cycle_start(from_list([1, 2, 3])))
 start found for every size and position: True
 None
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a list with a tail of a nodes leading into a cycle of c nodes. Show slow and fast meeting inside the cycle, b steps past the cycle start. Then animate step 2: one pointer goes back to the head, the other stays at the meeting point, and both move one node per step. Show they reach the cycle start together. Label a, b and c."
 
 ### The length of the cycle
 
@@ -1395,6 +1419,9 @@ print("same node objects reused:", merged is x_nodes[0], merged.next.next is x_n
 1 -> 2 -> 5 -> 6 -> None
 same node objects reused: True True
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate merging two sorted lists, 1 -> 2 -> 4 and 1 -> 3 -> 4, into one list. Use a dummy node and a tail pointer. At each step show the two front nodes being compared (take from the first list on ties), the smaller node linked after tail, and tail moving. No new nodes are made. End with 1 -> 1 -> 2 -> 3 -> 4 -> 4."
 
 ### Merge k sorted lists
 
@@ -2179,6 +2206,9 @@ Three design details worth remembering:
 1. **The node stores its key.** When we evict `lru`, we must also delete it from the dictionary, and the only way to know which key it was is to read `lru.key`. Without it, the dictionary would keep a stale entry.
 2. **Two sentinels** mean `_unlink` and `_push_front` never test for `None` or for an empty list.
 3. **`put` on an existing key** updates the value *and* the position. Forgetting the move makes the cache evict a key that was just written.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw an LRU cache with two parts. Top: a dictionary mapping keys 1, 2, 3 to nodes. Bottom: a doubly linked list head(sentinel) <-> [3] <-> [1] <-> [2] <-> tail(sentinel), most recent next to head, least recent next to tail. Draw arrows from each dict entry to its node. Animate get(2): unlink node 2 and reinsert it next to head, giving [2] [3] [1]."
 
 ### Is it right? Compare with `OrderedDict`
 

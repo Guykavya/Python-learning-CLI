@@ -1,0 +1,4 @@
+- Using `a - b` instead of `a % b`: correct, but `gcd(10**18, 1)` then needs `10**18` steps and crashes on depth.
+- Base case `if a == 0: return b` only: `gcd(5, 0)` then calls `gcd(0, 5 % 0)` and divides by zero.
+- Forgetting `return` before the recursive call: the result is `None`.
+- Swapping the arguments wrongly (`gcd(a % b, b)`): the order in the rule matters.

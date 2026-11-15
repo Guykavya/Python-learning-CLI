@@ -102,6 +102,9 @@ Stages 1 to 3 happen **once** per file (and the result is cached on disk, sectio
 
 Each stage has a standard-library module that lets you look at its output: `tokenize` for tokens, `ast` for the tree, `compile()` and `dis` for code objects and bytecode. Let us look at each in turn.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw one vertical flow diagram of how CPython runs the line total = price * 2. Four boxes joined by arrows: 'source text', 'tokens' (NAME total, OP =, NAME price, OP *, NUMBER 2), 'AST' (Assign with a BinOp child holding Name price, Mult, Constant 2), 'code object (bytecode)'. Then a fifth box, 'evaluation loop', with a loop arrow. Label the first three arrows 'runs once, cached in .pyc' and the last 'runs every time'."
+
 ### 2.2 Stage 1: tokens
 
 The **tokenizer** reads characters and groups them into **tokens**: names, numbers, strings, operators, and the special `NEWLINE`, `INDENT` and `DEDENT` tokens that make indentation meaningful. The `tokenize` module exposes the same process:
@@ -655,6 +658,9 @@ The stack never holds more than two values at once. The compiler works this out 
 
 </details>
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a stack machine running the Python function return (a - b) * c + a with a=10, b=4, c=2. Show the bytecode list on the left with a pointer, and a vertical value stack on the right. Step through: load a and b gives [10, 4]; BINARY_OP minus gives [6]; load c gives [6, 2]; multiply gives [12]; load a gives [12, 10]; add gives [22]; RETURN_VALUE returns 22. Highlight the popped operands and the pushed result each step."
+
 ### 4.4 Version noise: superinstructions, borrowing and caches
 
 You saw `LOAD_FAST_BORROW_LOAD_FAST_BORROW 1 (w, h)` and may have wondered about that monster name. Three kinds of version-specific detail make listings look harder than they are:
@@ -1126,6 +1132,9 @@ Call `a()`, which calls `b()`, which calls `c()`, and there are four frames: one
 
 **A CPython detail (3.11+).** To make calls cheap, CPython stores frames in a compact internal form and creates a full Python **frame object** only when someone asks for one: a debugger, a traceback, or your code calling `sys._getframe()`. You will not notice this, except that it is one reason function calls got much faster in 3.11.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the call stack for a() calling b() calling c(). Show four frame boxes stacked: module, a, b, c, each with arrows labelled 'f_back' pointing to its caller. Inside each frame box list: code object (f_code), next instruction (f_lasti), local variable slots plus value stack, and globals/built-ins. Then show a second picture where c returns: its frame box disappears and execution continues in b's frame at the instruction after the call."
+
 ### 6.2 Walking the call stack
 
 `sys._getframe()` returns the frame of the code that calls it. The leading underscore means "CPython-specific, use with care": other implementations may not support it. `inspect.currentframe()` is the documented wrapper (and returns `None` on implementations without frame support).
@@ -1490,6 +1499,9 @@ In CPython, every object is a block of memory (a C structure) that begins with t
 - The **type pointer** says what kind of object this is. `type(x)` simply follows this pointer. This is why every value in Python "knows its type": the type is stored in the object, not in the variable. Variables are just names that point at objects (core.02).
 - Objects whose length can vary (`int`, `tuple`, `str`) also store a size. A `list` stores its size, a pointer to a separate array of item pointers, and how many slots that array has room for (section 15).
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the memory layout of the Python list [10, 20] in CPython. Show a list object box with fields: reference count, pointer to type (arrow to the 'list' type), size 2, allocated 4, and an items pointer. The items pointer goes to a separate array of four slots: ptr, ptr, spare, spare. The first two slots point to int objects 10 and 20. Label the header shared by every object."
+
 ### 9.2 `id()` is (in CPython) an address
 
 `id(x)` returns a number that is unique among all objects **alive at the same time**. In CPython it is the object's memory address. Two consequences:
@@ -1789,6 +1801,9 @@ Follow the counts. After the four assignments, `A` has two references (the name 
 
 Nothing in the program can reach `A` or `B` any more, yet neither count is zero, and reference counting only frees objects whose count is zero. **Each object keeps the other alive.** Without help, this memory would be lost until the program ends. This is a **reference cycle**, and it is the reason CPython has a second mechanism: the **cyclic garbage collector** in the `gc` module. `gc.collect()` found the two objects and freed them. (Which of the two is freed first is not specified, so do not rely on the order. The exact number `gc.collect()` returns also differs between versions; it counts every unreachable object found, which can include internal helper objects.)
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate two objects A and B whose attributes point at each other. Frame 1: names a and b point at A and B, plus arrows A.other to B and B.other to A; show reference counts A:2, B:2. Frame 2: run del a, b so the names vanish; counts drop to A:1, B:1, but the two objects still point at each other, unreachable. Frame 3: gc.collect() frees both. Highlight that the count never reaches zero by itself."
+
 ### 11.2 Cycles are everywhere
 
 You rarely build cycles on purpose, but they appear naturally:
@@ -1878,6 +1893,9 @@ print(find_garbage(without_variable, edges))
 `P` has three references: the variable, `X` and `Y`. After subtracting the two internal ones, one remains (the variable), so the whole family is alive, and only the detached pair is garbage. Once the variable is gone, `P`'s count is 2, both come from inside, and the whole tree becomes garbage: a parent-child tree with back pointers can **only** be freed by the collector. Section 12.4 shows how a weak reference avoids that.
 
 </details>
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate the cycle-finding steps of the garbage collector on five objects. Refcounts: A=1, B=1, C=2, D=1, E=1. Edges: A and B point at each other, C and D point at each other, E points at itself; one outside variable refers to C. Step 1: copy the counts. Step 2: subtract one per internal reference, giving A0 B0 C1 D0 E0. Step 3: C is alive, so mark D alive too. Colour A, B and E red as garbage."
 
 ### 11.4 When the collector runs: generations
 
@@ -2193,7 +2211,7 @@ This function works on CPython but is a bug according to the language rules. Wha
 
 ```python
 def save(path, text):
-    open(path, "w").write(text)
+    open(path, "w", encoding="utf-8").write(text)
 ```
 
 <details><summary>Answer</summary>
@@ -2222,6 +2240,9 @@ True False
 ```
 
 The values are computed at run time with `int("...")` on purpose. If you write the literal `1000` twice in the same file, the compiler may store **one** constant and use it twice (section 8), and then `is` says `True`. That depends on how the code was compiled (a file, the REPL, two different functions), and it changed between versions. This is exactly why `is` must never be used to compare numbers.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a number line of CPython's small-int cache from -5 to 256, with those integers drawn as pre-made boxes created at start-up. Show two names, small_a and small_b, both holding int('100') with arrows to the same box, so 'is' gives True. Then show big_a and big_b holding int('1000') with arrows to two separate new boxes outside the range, so '==' is True but 'is' is False."
 
 ### 14.2 String interning
 
@@ -2308,6 +2329,9 @@ print(points)
 
 *64-bit CPython 3.14; the exact growth pattern differs by version.* In 100 appends, the block was reallocated only about a dozen times, and the gaps get wider as the list grows. Because each resize makes room for a number of future appends proportional to the size, the total copying work over n appends is proportional to n. The average cost per append is therefore constant: **amortised O(1)**. Occasionally one append is slow (a resize); on average they are all fast.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a Python list growing by append, starting empty. Show a row of slots as the allocated block. The block is reallocated and copied when the length reaches 1, 5, 9, 17, 25, 33 (sizes from sys.getsizeof on CPython 3.14). Show filled slots and spare slots in different colours, and flash a 'resize and copy' label at each of those points. Add a caption that gaps get wider, so the average append is amortised O(1)."
+
 ### 15.3 What each operation costs
 
 | Operation | Cost | Why |
@@ -2391,6 +2415,9 @@ Since CPython 3.6, a dict is stored in two parts:
 ```
 
 The hash table holds only small indices into a dense **entries** array, where key/value pairs are appended in insertion order. This uses less memory than a table of full entries (the empty slots are just small integers), and iterating means walking the entries array, which naturally gives **insertion order**. That property started as a side effect of this design in 3.6 and became a **language guarantee** in 3.7: every Python implementation must now keep dicts in insertion order.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the compact dict {'a': 1, 'b': 2, 'c': 3} as two tables side by side. Left: an indices table of 8 slots numbered 0 to 7, where slot 3 holds 0, slot 4 holds 2, slot 5 holds 1 and the others are empty. Right: a dense entries array in insertion order with columns hash, key, value: (h_a, 'a', 1), (h_b, 'b', 2), (h_c, 'c', 3). Draw arrows from each index to its entry, and note that iteration walks entries."
 
 ### 16.5 Load factor and resizing
 
@@ -2499,7 +2526,7 @@ code = 'print(list({"pear", "fig", "apple", "kiwi"}))'
 for seed in ("1", "2"):
     env = dict(os.environ, PYTHONHASHSEED=seed)
     result = subprocess.run([sys.executable, "-c", code], env=env,
-                            capture_output=True, text=True)
+                            capture_output=True, text=True, encoding="utf-8")
     print("seed", seed, result.stdout.strip())
 ```
 ```text

@@ -1,0 +1,6 @@
+id = "dsa.07.p007"
+title = "Greatest common divisor (Euclid)"
+tier = "drill"
+kind = "code"
+topics = ["recursion", "euclid", "math"]
+minutes = 15

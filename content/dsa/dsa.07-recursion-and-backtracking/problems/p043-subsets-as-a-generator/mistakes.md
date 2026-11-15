@@ -1,0 +1,4 @@
+- Writing `go(i + 1)` without `yield from`: the inner generator is created and thrown away, so only `[]` is ever yielded.
+- Yielding `path` itself: the caller's lists change while it holds them, and they all end up empty.
+- Building the list first and then yielding from it: correct for small inputs, but `range(40)` never finishes.
+- Calling `list(items)` or `len(list(...))` on a huge input before starting: not needed, `range` supports `len` and indexing.

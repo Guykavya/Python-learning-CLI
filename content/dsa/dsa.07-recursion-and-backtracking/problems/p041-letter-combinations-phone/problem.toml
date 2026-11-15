@@ -1,0 +1,6 @@
+id = "dsa.07.p041"
+title = "Letter combinations of a phone number"
+tier = "applied"
+kind = "code"
+topics = ["backtracking", "product", "strings"]
+minutes = 20

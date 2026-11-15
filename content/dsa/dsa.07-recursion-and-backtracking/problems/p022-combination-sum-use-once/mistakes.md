@@ -1,0 +1,4 @@
+- Writing `i > 0` instead of `i > start`: then `[1, 1, 6]` is lost, because the second 1 is skipped even when it is the first choice of its level.
+- Forgetting to sort: equal values are not next to each other, so the skip rule misses them.
+- Recursing with `i` (reuse) instead of `i + 1`.
+- Removing duplicates with a `set` at the end: correct but explores a huge tree on inputs with many equal values.

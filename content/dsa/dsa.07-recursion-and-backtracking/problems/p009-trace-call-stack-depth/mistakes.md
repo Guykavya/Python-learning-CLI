@@ -1,0 +1,4 @@
+- Counting the depth as 5 by thinking the chain goes down to `f(1)`: the base case is `n <= 2`, so `f(2)` is already a leaf.
+- Mixing up the number of calls (all nodes, 9) with the depth (one path, 4).
+- Writing the stack in the wrong order: the outermost call (5) was pushed first, so it is first in the list.
+- Forgetting that `deepest` is replaced only when the stack is strictly taller.

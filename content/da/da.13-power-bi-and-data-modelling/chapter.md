@@ -242,6 +242,9 @@ A **star schema** has one or more **fact tables** in the middle and **dimension 
 
 The four design steps (Kimball) in order: **choose the business process** (retail sales), **declare the grain** (one row per order line), **choose the dimensions** (date, product, customer, store), **choose the facts** (quantity, unit price, discount). The grain is declared **before** anything else, and it is a sentence: "one row per order line, identified by OrderID and LineNo".
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a star schema diagram for a furniture retailer. Put one big box in the centre called FactSales (one row per order line; columns OrderID, LineNo, Quantity, UnitPrice, DiscountPct, plus keys). Around it draw four smaller boxes: DimDate, DimProduct, DimCustomer and DimStore, each joined to FactSales by a line. Label the fact table 'big, numbers to add up' and each dimension 'small, descriptive text to filter and group by'. Show the key columns on each line."
+
 ### 3.2 Build a star from the flat export
 
 We derive the dimensions from the flat table (in real projects they come from the source systems), give each a **surrogate key**, and build the fact table with keys and measures only. A **surrogate key** is an integer made up for the warehouse (`ProductKey = 7`), separate from the **natural key** of the source system (`"SKU-1042"`): surrogate keys are small and stable, and they survive a renumbering of the source.
@@ -504,6 +507,9 @@ A relationship has four properties.
 The **rule of the model**: *filters flow downhill, from the "one" side to the "many" side.* A filter on a dimension reaches the facts; a filter on a fact column does **not** reach the dimension, unless the relationship is set to filter in both directions. In the star schema this is exactly what you want: the dimensions are what you slice by, and the facts are what you sum.
 
 The click path in Power BI Desktop: *Model view*, drag `DateKey` from `DimDate` onto `OrderDateKey` of `FactSales` (or *Manage relationships, New*), check that it shows `1` on the dimension side and `*` on the fact side, and leave the direction on *Single*.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate how a slicer filters data in a Power BI model. Show a small DimDate table (Year, DateKey) with one-to-many arrows pointing downhill to a FactSales table (OrderDateKey, Revenue). When the user clicks Year = 2024 on DimDate, highlight the 2024 dimension rows, then light up the matching FactSales rows along the arrow. Then show a click on a FactSales row that does NOT filter DimDate, marked with a red cross, because the filter direction is single."
 
 ### 4.2 An engine to see filters flow
 
@@ -1148,6 +1154,9 @@ products visible when the slicers are Store = 'Store 12' and month = 2023-01:
 
 The **default advice**: keep relationships **single-direction, one-to-many, from dimension to fact**. Use bidirectional only for a specific, understood purpose (a slicer that should only list existing values, or a bridge table), and prefer to switch the direction **inside one measure** with `CROSSFILTER` rather than in the model. A model made only of single-direction one-to-many relationships is predictable: you can say what any slicer does just by looking at the diagram.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two side-by-side copies of a star model: FactSales in the middle with DimProduct, DimStore and DimDate around it. In the left copy all arrows point one way, from dimension to fact. In the right copy the Sales-Product and Sales-Store arrows point both ways. Show a slicer on Store = 'Store 12' and month 2023-01: on the left DimProduct stays at 40 of 40 rows lit, on the right it shrinks to 35 of 40, with the filter path drawn."
+
 ### 4.6 Active and inactive: the role-playing date
 
 Revenue by **order date** and revenue by **ship date** are two different questions asked of the same fact and the same date table. The active relationship (order date) is used by default; the inactive one (ship date) is switched on by a measure with `USERELATIONSHIP`.
@@ -1172,6 +1181,9 @@ both columns add up to the same total: True
 ```
 
 Each ship-date year differs from its order-date year because some orders placed in late December ship in January: 2025 has ship-date revenue and no order-date revenue. The **date table must therefore extend to 2025** (the orphan check of 3.3 told us so). The model answers both questions from one date table and one fact table, with the choice written inside the measure's name: "Revenue by ship date".
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw one DimDate table in the middle and one FactSales table with two date columns, OrderDateKey and ShipDateKey. Connect OrderDateKey to DimDate with a solid line labelled 'active (default)' and ShipDateKey with a dashed line labelled 'inactive'. Add a measure box 'Revenue by ship date = CALCULATE([Revenue], USERELATIONSHIP(...))' that switches the dashed line to solid. Show an order placed 30 Dec 2024 and shipped 2 Jan 2025 landing in different years."
 
 ### 4.7 Checking relationships
 
@@ -1241,6 +1253,9 @@ pandas: mean of the column 0.4075 | sum(margin)/sum(revenue) 0.4205
 
 The first number gives each order line the same weight, large or small; the second is the margin of the business. A measure written as a ratio of two sums is correct at every level of a visual, from one line to the grand total. A calculated column of ratios can only be averaged, which is wrong.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Make a two-panel picture of a Sales table with columns Quantity, UnitPrice, LineRevenue. Left panel, 'row context' (calculated column): a spotlight moves down one row at a time, computing one value per row and storing it. Right panel, 'filter context' (measure): a slicer such as Region = North greys out some rows, and the measure adds up only the lit rows into one number. Label each panel with when it is computed: at refresh versus at query time."
+
 ### 5.2 Filter context
 
 Every cell of a visual has a **filter context**: the set of filters that apply to it. A cell of a matrix with `Year` on rows and `Category` on columns, under a slicer `Region = North`, has three filters: year, category, and region. The measure is evaluated **once per cell, in that context**. This is the main idea of DAX, and why one measure serves every visual.
@@ -1275,6 +1290,9 @@ every cell equals the pandas groupby: True (8 cells)
 ```
 
 That check is the method of the whole chapter: **a visual is a groupby**, so every matrix of the report can be compared with `groupby` in pandas.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a matrix with Year (2023, 2024) on rows and Product Category (Bedroom, Kitchen, Living, Outdoor) on columns, under a slicer Store Region = North. Make it interactive: when I hover over one cell, such as 2024 and Kitchen, show the three active filters as chips (Year = 2024, Category = Kitchen, Region = North) and highlight the matching rows of a small FactSales table that the measure Revenue adds up."
 
 ### 5.3 The first measures
 
@@ -1352,6 +1370,9 @@ slicer Year = 2024 and Region = North, measure 'Revenue of 2023': the region fil
 ```
 
 The measure ignores the slicer's year (it is replaced) but keeps the region (a different column), exactly as designed. That is why a "Revenue of 2023" card does not change when the user clicks another year.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate how DAX CALCULATE changes filter context. Start with a box of filter chips: Year = 2024, Region = North. Then apply the measure CALCULATE([Revenue], Date[Year] = 2023): show the Year chip being replaced by Year = 2023 while the Region = North chip stays. Add two more variants beside it: ALL(Product) deleting the product chip, and REMOVEFILTERS(Date) deleting the date chips. Show the resulting revenue box changing each time."
 
 ### 5.5 Percent of a group, `ALLEXCEPT`
 
@@ -1459,6 +1480,9 @@ YTD in December 2024 equals the full 2024 revenue: True
 ```
 
 Three precautions. The date table must be **complete**: a missing day breaks "the previous day" and the percentage changes. Use the **Date column of the date table**, not a date column of the fact (the functions rely on the marked date table). And a time-intelligence measure compares the *same period*, so check what happens at the edges: the first year has no "last year" (the measure is blank, and `YoY %` is blank), and the current partial year compares a part with a full year (da.06, section 8.5).
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a 12-month timeline for 2024 with a line for 2024 monthly revenue and a second line for 2023 revenue shifted onto the same months. Highlight Feb 2024 and show three arrows from it: SAMEPERIODLASTYEAR points to Feb 2023, DATEADD(-1, MONTH) points to Jan 2024, and DATESYTD shades Jan to Feb 2024 as a running total that resets each January. Label each arrow with the DAX function name."
 
 ### 5.8 DAX, pandas and SQL
 
@@ -1672,6 +1696,9 @@ FactSales[OrderDateKey] from CSV is int64 (fine) but Power BI's own type detecti
 ```
 
 Parquet files are smaller for the big tables (the fact table is about four times smaller; on the tiny dimensions the file's fixed overhead makes it no smaller) and they carry the types: a date is a date, a key is an integer. A CSV loses them, and Power Query's automatic type detection (da.12, section 9) then guesses. In Power BI you load a Parquet file with *Get Data, Parquet*, or read a whole folder; the model then needs only the **relationships and the measures**, which the project of section 9 delivers as a specification.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a left-to-right pipeline with five boxes: raw data, pandas cleaning, star schema tables with checks, Parquet files (DimDate, DimProduct, DimCustomer, DimStore, FactSales, FactOrders), and a Power BI model with relationships, DAX measures and report pages. Add a loop arrow labelled 'refresh: rerun the Python script, then press Refresh in Power BI'. Mark Python's part and Power BI's part in two colours."
 
 ### 7.2 Import, DirectQuery, live
 
@@ -2031,13 +2058,13 @@ all_tables = {"Date": DimDate, "Product": DimProduct, "Customer": DimCustomer, "
               "Sales": FactSales, "Orders": FactOrders, "Budget": Budget}
 for name, t in all_tables.items():
     t.to_parquet(proj / "data" / SPEC["tables"][name]["file"], index=False)
-(proj / "model_spec.json").write_text(json.dumps(SPEC, indent=1, default=str))
-(proj / "measures.dax").write_text("\n\n".join(f"// {m['description']}\n{m['name']} = {m['dax']}" for m in SPEC["measures"]))
+(proj / "model_spec.json").write_text(json.dumps(SPEC, indent=1, default=str), encoding="utf-8")
+(proj / "measures.dax").write_text("\n\n".join(f"// {m['description']}\n{m['name']} = {m['dax']}" for m in SPEC["measures"]), encoding="utf-8")
 dd = pd.DataFrame([(t, c, str(all_tables[t][c].dtype), c in SPEC["tables"][t]["hidden"], SPEC["tables"][t]["grain"]) for t in all_tables for c in all_tables[t].columns],
                   columns=["table", "column", "type", "hide in report", "table grain"])
 dd.to_csv(proj / "data_dictionary.csv", index=False)
 print(sorted(p.name for p in proj.iterdir()), "| data files:", len(list((proj / "data").iterdir())))
-print((proj / "measures.dax").read_text()[:420], "...")
+print((proj / "measures.dax").read_text(encoding="utf-8")[:420], "...")
 print(f"\ndata dictionary: {len(dd)} columns, {int(dd['hide in report'].sum())} of them hidden from the report view")
 ```
 ```text
@@ -2074,7 +2101,7 @@ REPORT = {
     "Validation": {"title": "Control totals (compare with the pandas figures in expected_values.csv)", "slicers": [],
                    "visuals": [{"type": "card", "measure": m} for m in ("Revenue", "Cost", "Orders", "Customers", "Freight", "Budget")]},
 }
-(proj / "report_spec.json").write_text(json.dumps(REPORT, indent=1))
+(proj / "report_spec.json").write_text(json.dumps(REPORT, indent=1), encoding="utf-8")
 
 
 def check_report_spec(report, model, spec):
@@ -2113,7 +2140,7 @@ The ultimate test of the deliverable is to **rebuild the model from the files an
 
 ```python run
 def model_from_project(folder):
-    spec = json.loads((folder / "model_spec.json").read_text())
+    spec = json.loads((folder / "model_spec.json").read_text(encoding="utf-8"))
     m = Model()
     for name, t in spec["tables"].items():
         m.table(name, pd.read_parquet(folder / "data" / t["file"]))

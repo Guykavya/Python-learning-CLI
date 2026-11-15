@@ -101,6 +101,9 @@ ratio list/array : 4.5
 
 The list needs about 5 times the memory of the array for the same million integers. Memory is only half the story, though.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two memory layouts side by side for the numbers 1, 2, 3. Left, a Python list: a row of three 8-byte pointer boxes, each with an arrow to a separate 28-byte int object that has a header and a value. Right, a NumPy int64 array: one contiguous strip of three 8-byte cells holding raw numbers, no arrows. Label the byte sizes and note that a million ints take about 36 MB as a list but 8 MB as an array."
+
 ### 1.2 Why one type and one block makes things fast
 
 Two reasons:
@@ -429,6 +432,9 @@ print(m.sum())
 ```
 
 For a table where each row is a student and each column is a subject, `axis=0` gives one number per subject (a column statistic), and `axis=1` gives one number per student (a row statistic).
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a 3-row by 4-column grid with values 0 to 11 in row order (the array m, so row sums are 6, 22, 38 and column sums are 12, 15, 18, 21). Show two animations: sum(axis=0) with arrows pointing down each column, collapsing rows into a result of shape (4,), and sum(axis=1) with arrows pointing across each row, giving shape (3,). Label: the axis you name disappears from the shape."
 
 ### 3.3 Three dimensions and beyond
 
@@ -931,6 +937,9 @@ print(a.reshape(3, 4, order="F"))
  [ 2  5  8 11]]
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Show the numbers 0 to 11 as one flat strip of 12 cells. Below it, animate the same strip being folded into a 3 by 4 grid row by row (C order), then into a 2 by 6 grid, then a 2 by 2 by 3 block. Then show order='F' filling a 3 by 4 grid column by column, giving first row 0, 3, 6, 9. Colour each number consistently so the learner sees the numbers never move or change, only the grouping does."
+
 ### 5.2 `ravel` and `flatten`: back to one dimension
 
 Both flatten an array to 1-D. The difference is the trap of the next section: `flatten()` **always returns a copy**; `ravel()` returns a **view** when it can (no copy, so it is free) and a copy when it must.
@@ -1141,6 +1150,9 @@ nums owns data   : True | part owns data: False
 ```
 
 In plain Python, `lst[2:6]` copies; in NumPy it does not. People coming from lists are caught by this again and again.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw one memory strip holding the ten numbers 0 to 9, which is the array nums. Draw a bracket over positions 2 to 5 labelled part = nums[2:6], with no new memory made. Animate the line part[0] = 100 changing the cell at position 2 in the shared strip, so both nums and part show 100. Label 'view: same memory, part.base is nums' and contrast it with a copy that has its own separate strip."
 
 ### 6.2 Which operations give views, which give copies?
 
@@ -1385,6 +1397,9 @@ print(marks[-1, -2:])
 
 Read an index like `marks[rows, cols]` as two separate slices separated by a comma. `:` alone means "all". Think of it as asking "which rows? which columns?".
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a 6-row by 4-column grid called marks, with row 0 as 50 78 41 48 and row 5 as 64 73 87 75. Make a small animation showing four selections highlighted in different colours: marks[2, 3] (one cell, value 44), marks[:, 1] (a whole column), marks[1:4, :2] (a 3 by 2 block), and marks[::2, ::2] (every second row and column). Label each with its index expression and result shape."
+
 ### 7.3 An integer removes an axis, a slice keeps it
 
 This is the same rule you saw with `squeeze`. It matters for broadcasting later.
@@ -1567,6 +1582,9 @@ print(marks[marks[:, 0] > 70])
 ```
 
 The second selection `marks[marks[:, 0] > 70]` uses a mask of length 6 (one per student) to pick whole rows: the students whose first-subject mark is above 70.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the array scores = [72, 45, 88, 31, 95, 60, 54, 79] as a row of boxes. Beneath it draw a row of True/False boxes for scores >= 60, coloured green and grey. Animate the mask sliding over the scores like a stencil so only the True positions drop down into a new, shorter array [72, 88, 95, 60, 79]. Label that mask.sum() counts the Trues (5) and mask.mean() is 0.625, and the result is a copy."
 
 ### 8.2 Combining conditions: `&`, `|`, `~` and the precedence trap
 
@@ -1784,6 +1802,9 @@ print(marks[[0, 2], 1:3])
 
 `np.ix_` builds index arrays that broadcast (section 11) into a grid. The mixed form `marks[[0, 2], 1:3]` (a list for one axis, a slice for the other) gives rows 0 and 2, columns 1 and 2.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a 6 by 4 grid called marks. First, with row index array [0, 2, 5] and column index array [3, 0, 1], highlight exactly three cells (0,3), (2,0), (5,1), joined by lines as pairs, giving [48 94 73]. Second, with np.ix_([0, 2], [0, 3]), highlight a 2 by 2 block made of rows 0 and 2 and columns 0 and 3. Label 'pairs' versus 'block' clearly."
+
 ### 9.3 `argsort`, `argmax` and friends give positions
 
 Functions starting with `arg` return **positions**, which you can feed straight into fancy indexing.
@@ -1973,6 +1994,9 @@ print(t.sum(axis=(0, 1)))
 ```
 
 Remember the rule from section 3: the axis you name is the one that **disappears**. A tuple of axes reduces several at once.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the 2 by 3 array t with rows [2, 4, 6] and [1, 3, 5]. Show three panels: t.sum(axis=0) with vertical arrows collapsing rows into [3, 7, 11]; t.sum(axis=1) with horizontal arrows collapsing columns into [12, 9]; and t.sum(axis=(0, 1)) collapsing everything into the single number 21. Under each panel write the resulting shape: (3,), (2,), and a scalar. Highlight the axis that disappears."
 
 ### 10.3 `keepdims`: keep the shape usable
 
@@ -2225,6 +2249,9 @@ result  (3, 4)    axis 1: 4 vs 1 -> stretch col;  axis 0: 1 vs 3 -> stretch row
 ```
 
 Notice that nothing is physically copied: NumPy gives the "stretched" axis a stride of 0 (it re-reads the same memory). Broadcasting costs no extra memory for the inputs.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate NumPy broadcasting for a column of shape (3, 1) holding three values and a row of shape (1, 4) holding four values. Show the row copying itself down 3 times and the column copying itself across 4 times, until both become 3 by 4 grids, then add them cell by cell into the (3, 4) result. Write the right-aligned shape comparison, 'axis 1: 4 vs 1, axis 0: 1 vs 3', and note the copies are virtual (stride 0), so no extra memory is used."
 
 To really own these rules, let us write them as a short pure-Python function and test it against NumPy's own `np.broadcast_shapes` on many cases.
 
@@ -3817,7 +3844,7 @@ For data you want to open in a spreadsheet or share, use text (CSV). `savetxt` w
 path = os.path.join(folder, "marks.csv")
 sample = marks[:3]
 np.savetxt(path, sample, fmt="%d", delimiter=",", header="maths,physics,chem,bio", comments="")
-print(open(path).read())
+print(open(path, encoding="utf-8").read())
 loaded = np.loadtxt(path, delimiter=",", skiprows=1, dtype=int)
 print(loaded.shape, np.array_equal(loaded, sample))
 print(np.loadtxt(path, delimiter=",", skiprows=1, usecols=(0, 3), dtype=int))
@@ -3844,7 +3871,7 @@ maths,physics,chem,bio
 
 ```python run
 path2 = os.path.join(folder, "gaps.csv")
-with open(path2, "w") as f:
+with open(path2, "w", encoding="utf-8") as f:
     f.write("a,b,c\n1,2,3\n4,,6\n7,8,\n")
 try:
     np.loadtxt(path2, delimiter=",", skiprows=1)
@@ -3875,7 +3902,7 @@ Empty fields become `nan` in `genfromtxt`, and then `nanmean` and the other `nan
 ```python
 p = os.path.join(TMP, "ints.txt")
 np.savetxt(p, np.array([1, 2, 3]))
-print(open(p).read().split())
+print(open(p, encoding="utf-8").read().split())
 back2 = np.loadtxt(p)
 print(back2, back2.dtype)
 ```
@@ -4437,7 +4464,7 @@ You do not need an image library to write an image file. The PGM (grey) and PPM 
 ```python run
 def write_pgm_text(path, gray):
     h, w = gray.shape
-    with open(path, "w") as f:
+    with open(path, "w", encoding="utf-8") as f:
         f.write(f"P2\n{w} {h}\n255\n")
         for row in gray:
             f.write(" ".join(str(int(v)) for v in row) + "\n")
@@ -4460,7 +4487,7 @@ p_pgm = os.path.join(TMP, "scene.pgm")
 p_ppm = os.path.join(TMP, "scene.ppm")
 write_pgm_text(p_pgm, gray8)
 write_ppm_binary(p_ppm, scene)
-print(open(p_pgm).read().splitlines()[:3])
+print(open(p_pgm, encoding="utf-8").read().splitlines()[:3])
 print("ppm size:", os.path.getsize(p_ppm), "bytes = header", len(b"P6\n64 48\n255\n"), "+", scene.nbytes)
 back = read_ppm_binary(p_ppm)
 print("round trip equal:", np.array_equal(back, scene), "| read-only view of the file bytes:", not back.flags["WRITEABLE"])

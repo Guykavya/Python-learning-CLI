@@ -207,6 +207,9 @@ When Python meets `import shop`, it does this:
 
 Two facts follow, and they explain many surprises. **A module runs only once per program**: the second import finds it in the cache (step 1) and skips steps 2 to 4. And **the module is in the cache *before* it has finished running** (step 3). Remember this; it is the key to circular imports in section 10.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a flowchart of what Python does for 'import shop'. Steps: 1 check if 'shop' is a key in sys.modules (yes: jump to step 5); 2 search sys.path folders in order for shop.py, first match wins (none: ModuleNotFoundError); 3 create an empty module object and put it in sys.modules at once; 4 run shop.py top to bottom; 5 bind the name 'shop'. Highlight that step 3 happens before step 4."
+
 ### 3.2 Importing is running
 
 Step 4 deserves attention. **Importing a file executes it.** Every top-level statement runs. That is why the `print` in `shop.py` appeared. It is also why a module should do **nothing slow or dangerous at the top level**: no `input()`, no deleting files, no long computations. It should only **define** things (functions, constants). Real work belongs in functions that the caller calls.
@@ -470,6 +473,9 @@ True
 
 Notice that for `python script.py` it is the folder of the **script**, not the folder you are standing in. That is a common surprise: `python tools/report.py` can import modules in `tools/`, but not modules in your current folder.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw sys.path as a vertical list of six folders searched top to bottom: '/home/you/project' (script folder), '/usr/lib/python314.zip', '/usr/lib/python3.14', '/usr/lib/python3.14/lib-dynload', '/usr/local/lib/python3.14/dist-packages', '/usr/lib/python3/dist-packages'. Animate an arrow for 'import shop' checking each folder and stopping at the first match, shop.py in the top folder. Label groups: script folder, standard library, site-packages."
+
 ### 4.2 `ModuleNotFoundError`
 
 If no folder in `sys.path` contains the module, you get `ModuleNotFoundError` (a subclass of `ImportError`). Take this layout:
@@ -628,6 +634,9 @@ if __name__ == "__main__":
 
 This is the shape you used for the core.12 file organiser. Putting the work into `main()` (instead of directly under the `if`) has two benefits: tests can call `main([...])` with any arguments, and variables inside `main` stay local instead of becoming global names of the module.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two boxes side by side. Left: 'python temperature.py' runs temperature.py with __name__ set to '__main__', so the demo loop (0, 37, 100 degrees to Fahrenheit) runs. Right: 'python report.py' runs report.py (__name__ is '__main__') which imports temperature; inside it __name__ is 'temperature', so the demo loop is skipped. Show the 'if __name__ == main' test as a green or red gate."
+
 ### 5.3 `python file.py` versus `python -m module`
 
 There are two ways to run code as the main program:
@@ -730,6 +739,9 @@ print(pay([100, 50]))
 ```
 
 The lines `from .prices import ...` and `from ..cart import ...` are **relative imports**: the dots mean "this package" and "the parent package". Section 7 explains them. For now, read `.prices` as "the module `prices` in my own package".
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the folder tree: project/ with app.py and shop/ containing __init__.py, prices.py, cart.py and payments/ (with __init__.py and upi.py). Add arrows for imports: app.py imports shop.payments.upi; upi.py uses '..cart' (parent package); cart.py uses '.prices' (own package). Label each dot form as relative import, and number the files in the order they run, starting with shop/__init__.py."
 
 ### 6.2 Predict the output: import order
 
@@ -1207,6 +1219,9 @@ Traceback (most recent call last):
 ImportError: cannot import name 'order_log' from partially initialized module 'shop.orders' (most likely due to a circular import) (/home/you/project/shop/orders.py)
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a circular import with two boxes, shop/orders.py and shop/inventory.py. Step 1: main.py runs 'from shop.orders import place_order', so orders.py starts and is added to sys.modules, half finished. Step 2: line 1 of orders.py imports inventory. Step 3: line 1 of inventory.py asks for order_log from orders, which is not defined yet. Step 4: ImportError, partially initialized module. Draw a loop arrow."
+
 ### 10.2 Reading the traceback
 
 The traceback is a **story of nested imports**. Read it from the top:
@@ -1566,6 +1581,9 @@ So far we talked about **your** modules. Now look at **installed** packages: the
 
 The solution is a **virtual environment** (often called a **venv**): a small folder that holds its **own** `site-packages` and its own `python` and `pip` commands, linked to a base Python installation. Each project gets its own. Packages installed into one environment are invisible to all others.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two project boxes sharing one base Python. Project A has its own .venv with site-packages containing django 4.2. Project B has its own .venv with site-packages containing django 5.1. Above both, show the base Python's shared standard library. Add a third box, the system site-packages, crossed out and labelled 'not visible inside a venv'. Label: each venv is just a different site-packages folder."
+
 ### 12.2 Creating one
 
 `venv` is part of the standard library. In your project folder:
@@ -1661,6 +1679,9 @@ Inside the environment, look at `sys.path`:
 The **standard library** still comes from the base Python (`/usr/lib/python3.14`): it is shared, not copied. But the system's `dist-packages` folders are **gone**, replaced by the environment's own `site-packages`. When Python starts, it finds `pyvenv.cfg` next to (or one folder above) its executable and sets `sys.prefix` to the environment. That is all a virtual environment is: **a different `site-packages` folder**.
 
 In your own code, `sys.prefix != sys.base_prefix` tells you that you are running inside a virtual environment.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a diagram of sys.path inside an environment, listing /usr/lib/python314.zip, /usr/lib/python3.14, /usr/lib/python3.14/lib-dynload and /home/you/project/.venv/lib/python3.14/site-packages. Show the first three coming from the base Python (shared, marked as the standard library), and the last from the .venv folder. Show a pyvenv.cfg file that Python finds next to its executable, and mark the system dist-packages folders as removed."
 
 ### 12.5 `python -m pip`, not just `pip`
 
@@ -1814,6 +1835,9 @@ shoutkit 0.3.0 has requirement greetkit<2,>=1.0, but you have greetkit 2.0.0.
 Read this carefully: pip printed `ERROR`, **but it still installed 2.0.0**, and the command finished with exit code 0. You asked for it explicitly, so pip did it and warned you. The environment is now **broken**: `shoutkit` may fail at run time. `pip check` (exit code 1 here) verifies the whole environment; it is a good command to run in automated checks.
 
 This is why environments drift into a mess when people install things one by one by hand, and why the next sections are about **writing requirements down**.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a dependency graph. Node shoutkit 0.3.0 has an arrow to greetkit labelled 'requires >=1.0,<2'. First state: greetkit 1.0.0 installed, arrow green, satisfied. Second state: greetkit 2.0.0 force-installed, arrow red, labelled 'incompatible, pip check fails'. Show the two states side by side with a caption that pip installed 2.0.0 anyway and only warned."
 
 ### 13.5 Version specifiers
 
@@ -2181,6 +2205,9 @@ When you publish a release, you upload **both**. pip prefers the wheel; the sdis
 
 A wheel is a zip file. Its name is a code: `organise` (name) - `0.1.0` (version) - `py3` (any Python 3) - `none` (no specific Python C interface) - `any` (any operating system). Packages with compiled C code, such as `numpy`, ship one wheel per platform, with names like `...-cp314-cp314-manylinux_2_28_x86_64.whl`. A pure-Python package needs just one `py3-none-any` wheel.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a pipeline: source folder (pyproject.toml, src/organise, README.md) goes through 'python -m build' and splits into two outputs: organise-0.1.0.tar.gz (sdist, needs a build step on install) and organise-0.1.0-py3-none-any.whl (wheel, just unzipped into site-packages). Then draw a pip install arrow from the wheel into an environment's site-packages. Break the wheel name into name, version, py3, none, any."
+
 ### 16.3 Building: `python -m build`
 
 The standard command is:
@@ -2425,6 +2452,9 @@ $ source .venv/bin/activate
 
 and then `pytest`, your editor and your console scripts all use the code in `src/`.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two side-by-side diagrams of importing organise. Left, normal install: the wheel is unzipped into .venv/lib/python3.14/site-packages/organise, a copy of the code. Right, editable install ('pip install -e .'): site-packages holds only a link pointing to /home/you/organise-project/src/organise. Show an edit to rules.py (adding a 'music' entry) reaching the program instantly only on the right."
+
 ## 17. Project: package the file organiser
 
 ### 17.1 The goal
@@ -2619,8 +2649,8 @@ from organise import plan_moves
 def test_plan_by_type_touches_nothing():
     with tempfile.TemporaryDirectory() as d:
         root = Path(d)
-        (root / "a.jpg").write_text("x")
-        (root / "b.py").write_text("x")
+        (root / "a.jpg").write_text("x", encoding="utf-8")
+        (root / "b.py").write_text("x", encoding="utf-8")
         plan = plan_moves(root, root, "type")
         assert [t.parent.name for _, t in plan] == ["images", "code"]
         assert not (root / "images").exists(), "plan_moves must not create folders"

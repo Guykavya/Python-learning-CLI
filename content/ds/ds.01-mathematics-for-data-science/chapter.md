@@ -184,6 +184,9 @@ print(p @ q, "| cosine:", round(cosine_similarity(p, q), 4))
 
 </details>
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a 2D plot with arrows from the origin for vectors a = [3, 4] and b = [1, 2], labelled with lengths. Mark the angle between them (about 10.3 degrees). Show b projected onto a, and a second panel with four pairs: same direction, perpendicular, opposite, and a with b. Print each pair's dot product and cosine under its panel, so dot product = length times length times cosine is clear."
+
 ### 1.4 Distance, and why scale matters
 
 The **Euclidean distance** between two points is the norm of their difference: `‖a − b‖`. Nearest-neighbour methods, k-means and many others are built on it. It has a trap: it adds up squared differences **of whatever units each column has**. If one column is income in rupees (tens of thousands) and another is age in years (tens), the distance is almost entirely income.
@@ -291,6 +294,9 @@ A @ v = [2. 3.]
 rotate [1, 0] by 90 degrees: [0. 1.]
 rotation preserves length: 5.0
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a 2D grid of points being transformed by two matrices. First A = [[2, 0], [0, 3]], which stretches x by 2 and y by 3; show the unit square becoming a 2 by 3 rectangle and the vector [1, 1] moving to [2, 3]. Then a 90 degree rotation matrix, which turns [1, 0] into [0, 1] and keeps the length of [3, 4] at 5. Label every arrow before and after."
 
 ### 2.2 The matrix product, three ways
 
@@ -631,6 +637,9 @@ trace 4.0 = sum of eigenvalues 4.0
 det   3.0 = product of eigenvalues 3.0
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Plot the matrix A = [[2, 1], [1, 2]] acting on the unit circle in 2D. Show the circle becoming an ellipse. Draw the two eigenvector directions [1, 1] and [1, -1] as lines; mark that along [1, 1] the ellipse is stretched by 3 and along [1, -1] by 1. Add a few other vectors before and after to show they get bent toward [1, 1]."
+
 ### 4.2 Finding the biggest one: power iteration
 
 How are eigenvalues computed? Real libraries use sophisticated algorithms, but the main idea fits in five lines. Apply `A` again and again to almost any starting vector, rescaling each time. Each application stretches the component along the strongest eigenvector most, so the vector turns towards it.
@@ -727,6 +736,9 @@ uncorrelated columns, eigenvalues of the identity: [1. 1. 1. 1.]
 The trace of a correlation matrix is the number of columns, so the eigenvalues add up to 4. If the columns are uncorrelated the correlation matrix is the identity, all eigenvalues are 1 and there is nothing to compress: PCA only helps when columns are correlated.
 
 </details>
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Make a 3D scatter of 500 points for standardised height, weight and shoe size, which are strongly correlated so the cloud is a long thin cigar. Draw the three principal component axes through the centre, scaled by variance: they carry 79.6%, 13.7% and 6.7% of the total variance. Label the first axis 'general body size'. Then show a 2D view of the points projected onto the first two axes."
 
 ## 5. The singular value decomposition
 
@@ -837,6 +849,9 @@ rank 30: distance to the noise-free truth = 14.733   (distance of the noisy data
 ```
 
 The rank-3 reconstruction is **closer to the truth than the data we were given**: truncating the SVD removed noise, not signal.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two plots for an 80 by 30 ratings matrix built from 3 hidden tastes plus a little noise. Left: a bar chart of the first 8 singular values (about 54.2, 47.5, 43.3, then about 4.0, 3.8, 3.6, 3.5, 3.3), with a clear cliff after the third. Right: a line of relative reconstruction error against rank k for k = 1, 2, 3, 5, 10, 30 (0.77, 0.53, 0.16, 0.15, 0.12, 0.00)."
 
 ### 5.4 The pseudo-inverse
 
@@ -1115,6 +1130,9 @@ gradient length (steepest slope)  : 13.8924 -> change per unit step along it: 13
 random directions never beat it   : True
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a contour plot of a function of two variables with the point (x, y) marked. At that point draw the gradient arrow pointing uphill, perpendicular to the contour line through it. Add a small circle of unit-length step directions around the point, coloured by how much the function changes: largest along the gradient, zero along the contour, most negative against the gradient. Label all three."
+
 ### 7.3 The gradient of a loss: linear regression by hand
 
 Now a real gradient. A linear model predicts `ŷ = X w`. Its **mean squared error** (MSE) is
@@ -1296,6 +1314,9 @@ learning rate | distance from the minimum after 0, 10, 30, 100 steps
 ```
 
 For a quadratic bowl the exact rule is: each step multiplies the error along a direction by `(1 − η λ)`, where `λ` is the curvature in that direction. It shrinks if `|1 − η λ| < 1`, that is `η < 2/λ_max`. With a largest curvature of 20 the limit is `0.1`, and the table shows it: 0.09 converges, 0.11 explodes, and exactly 0.1 is the borderline where the steep coordinate flips sign with the same size at every step (the factor is exactly −1) and never settles. In the flat direction (curvature 2) the factor at 0.09 is still 0.82, which is why even the good rates need dozens of steps. The slowest direction (curvature 2) then needs many steps: this tension between the largest and the smallest eigenvalue of the Hessian is exactly the **condition number** of section 3.3, and it is why **scaling features** makes training faster.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate gradient descent on a bowl-shaped loss with contours, steeper in one direction. The minimum is at [3, -1], start at [0, 2]. Show 6 panels or paths for learning rates 0.001, 0.05, 0.09, 0.1 and 0.11. Colour them: slow, converges, converges, bounces forever (stuck at distance 3), and diverges. Show distance from the minimum over steps in a second plot using a log scale."
 
 ### 8.3 Fitting a regression by descent
 
@@ -1577,6 +1598,9 @@ simulated, 2 million people: P(ill | positive) = 0.1675
 ```
 
 The false positives from the huge healthy group swamp the true positives from the small ill group. **When the condition is rare, even an accurate test produces mostly false alarms.** This is the base-rate fallacy, and it applies to fraud detection, spam filters, security alerts and medical screening alike: an alert from a rare-event detector must be judged against the base rate.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a 100 by 100 grid of dots for 10,000 people. Colour 100 dots as ill. Of them, mark 99 as testing positive. Among the 9,900 healthy dots mark 495 as testing positive. Then draw a zoomed bar with only the 594 positives: 99 true (ill) and 495 false (healthy), labelled 'only 16.7% of positives are really ill'. Use clear colours and counts."
 
 ### 10.3 How the answer moves with the base rate
 
@@ -2031,6 +2055,9 @@ standard error 0.5: n = 1600
 
 </details>
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate the central limit theorem. Start with a clearly skewed population histogram. Then for sample sizes n = 2, 5, 30, 200 and 1000, draw the histogram of many sample means beside it, with a normal curve overlaid. Show how it narrows like sigma divided by the square root of n and becomes bell shaped. Mark the true mean with a vertical line and the 1.96 standard error band."
+
 ### 12.5 Not everything has a standard error as simple as `σ/√n`
 
 The formula is for the **mean**. For a median, a ratio, a correlation or a percentile there is no equally simple formula. We can still see the sampling distribution by simulation, and this is what motivates the bootstrap (section 15).
@@ -2151,6 +2178,9 @@ sample 19: (   35,140,    54,838)  captures
 sample 20: (   36,699,    53,634)  captures
 1 of 20 miss: about one in twenty is what 95% means; no single interval can tell you which kind it is
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw 20 horizontal confidence intervals, one per row, from 20 samples of size 100 drawn from the same skewed population. Draw a vertical line for the true mean. Colour intervals that capture it blue and any that miss it red; in the chapter's run, sample 9 misses and the other 19 capture. Add a second small plot of coverage against sample size n = 10, 30, 100, 400: 0.841, 0.892, 0.930, 0.952, with a 0.95 line."
 
 ### 13.3 The t-distribution for small samples
 
@@ -2782,7 +2812,7 @@ def bootstrap_ci(x, stat=np.mean, level=0.95, reps=5000, seed=0):
     b = np.array([stat(x[i]) for i in idx]); a = (1 - level) / 2
     return float(np.quantile(b, a)), float(np.quantile(b, 1 - a))
 '''
-(tmp / "mathkit.py").write_text(MATHKIT)
+(tmp / "mathkit.py").write_text(MATHKIT, encoding="utf-8")
 print("written:", (tmp / "mathkit.py").name, "|", len(MATHKIT.splitlines()), "lines |", sum(l.startswith("def ") for l in MATHKIT.splitlines()), "functions")
 sys.path.insert(0, str(tmp))
 import mathkit as mk

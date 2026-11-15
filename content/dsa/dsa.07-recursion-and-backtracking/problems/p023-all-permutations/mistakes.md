@@ -1,0 +1,4 @@
+- Checking `if nums[i] in path` instead of a `used` list: works for distinct values but costs `O(n)` per check and breaks with duplicates.
+- Forgetting `used[i] = False` after the call: later branches think the item is still taken and permutations go missing.
+- Returning `[]` for the empty input: there is exactly one ordering of nothing, `[[]]`.
+- Appending `path` instead of a copy.

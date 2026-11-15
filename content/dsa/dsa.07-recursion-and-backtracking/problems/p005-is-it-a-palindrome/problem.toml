@@ -1,0 +1,6 @@
+id = "dsa.07.p005"
+title = "Is it a palindrome?"
+tier = "drill"
+kind = "code"
+topics = ["recursion", "two pointers", "strings"]
+minutes = 15

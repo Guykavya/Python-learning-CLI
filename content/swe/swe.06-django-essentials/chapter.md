@@ -128,6 +128,9 @@ Between the web server and your view, there are more steps than the picture show
 
 You will meet each step in this chapter. The important point now: middleware wraps the view like layers of an onion, and the same machinery serves your pages, the admin and your API.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw an animated diagram of one Django request. A browser sends GET /products/ to a WSGI server, which builds an HttpRequest. It travels down through middleware layers drawn as nested onion rings (security, sessions, CSRF, authentication), then the URL resolver, then the view, which talks to the database through the ORM. The HttpResponse returns back up through the same rings in reverse order. Label every step 1 to 6 and highlight the direction of travel."
+
 ### 1.4 Django in one file
 
 You do not need a project to see Django work. This file configures Django in code, defines a URL and a view, and calls the site with the test client:
@@ -807,6 +810,9 @@ EOF
 
 The `{% url %}` tag built the links from the names, and the loop produced one `<li>` per product. Changing `base.html` changes every page at once.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a Django template inheritance picture. On the left, base.html is a page frame with a nav bar and two empty dashed holes named 'block title' and 'block content'. In the middle, product_list.html says 'extends base.html' and has two filled boxes: title 'Products' and content with a loop of li items. On the right show the merged final HTML page, with arrows from each child block into its matching hole."
+
 ### 5.4 Static files
 
 CSS, JavaScript and images are **static files**. Put them in `inventory/static/inventory/...`, load them in a template with `{% load static %}` and `<link href="{% static 'inventory/site.css' %}">`. With `DEBUG = True`, `runserver` serves them. In production a web server or a tool such as WhiteNoise serves them after `python manage.py collectstatic` copies everything into one folder (section 17). Files that users upload (profile pictures, invoices) are called **media** and are a separate setting (`MEDIA_ROOT`, `MEDIA_URL`); never mix them with static files.
@@ -1207,6 +1213,10 @@ Notice: **A** runs 0 queries; **B** runs 1; **C** runs 0 because a QuerySet keep
 
 One more detail: slicing (`qs[:10]`) becomes `LIMIT`, and `qs[0]` runs a query with `LIMIT 1`. Negative indexes are not supported (use `.last()` or reverse the order).
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Make a small step-by-step animation of a lazy Django QuerySet. Show the line qs = Product.objects.filter(quantity__gt=1).order_by('name') building up a recipe card with a database icon that stays idle (0 queries). Then a first loop 'for p in qs' fires one SELECT and fills a cache box with 3 rows. A second loop reads the cache and the database stays idle. Show a query counter changing."
+
+
 ### Try it: how many queries?
 
 ```python
@@ -1353,6 +1363,10 @@ ProtectedError
 
 The double underscore works across relations: `category__name` means "the `name` of the related category", and the ORM writes the `JOIN`. `.distinct()` was needed in the second query because joining products can repeat a category once per matching product.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two database tables for a Django shop. Table shop_category has columns id and name (rows like Tools, Cables, Office). Table shop_product has id, name and category_id (rows like Hammer, Saw, USB cable). Draw arrows from each product's category_id to its category row. Label the arrow 'ForeignKey, forward: hammer.category' and the reverse direction 'related_name: tools.products.all()'. Mark the many side and the one side."
+
+
 ### 7.2 `ManyToManyField`: many to many
 
 A product can have several tags, and a tag belongs to many products. Django creates a hidden **join table** (`shop_product_tags`) for you:
@@ -1456,6 +1470,10 @@ Typical combined use on a list screen: `Product.objects.select_related("category
 
 - `Prefetch("products", queryset=Product.objects.filter(...))` prefetches a **filtered** list.
 - `.only("name")` / `.defer("notes")` load fewer columns, and `.values()` skips model objects altogether. Use them when rows are wide and you need little.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Compare three ways to list 6 Django products with their category names, as three side-by-side timelines of database trips. Naive loop: 1 query for products, then 6 more for p.category, total 7. select_related('category'): 1 query using a JOIN. prefetch_related('products') from Category: 2 queries, the second using WHERE category_id IN (3, 2, 1). Show each trip as an arrow to a database icon and total the count under each."
+
 
 #### Make N+1 visible, not just fixed
 
@@ -1691,6 +1709,10 @@ auth
 ```
 
 An `[X]` means applied. After this, `db.sqlite3` exists in the project folder with all the tables.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the Django migration workflow as a three-step flow. Step 1: edit inventory/models.py (Category and Product classes). Step 2: 'python manage.py makemigrations' compares the models with earlier migrations and writes the file 0001_initial.py. Step 3: 'python manage.py migrate' runs it on db.sqlite3 and records it in the django_migrations table. Show a checklist like showmigrations with [X] marks beside applied steps."
+
 
 ### 8.2 Changing a model
 
@@ -1976,6 +1998,10 @@ The crashed move took 4 units from `A` in the database, then failed, and `atomic
 - `ATOMIC_REQUESTS = True` in `DATABASES` wraps every view in a transaction. It is simple and safe for small sites, at the cost of holding transactions open for the whole request.
 - On PostgreSQL and MySQL, `select_for_update()` inside `atomic()` locks the chosen rows until commit, so two requests cannot both read the same stock number and both subtract from it. SQLite has no row locks, so the call does nothing there; the concept is what to learn. Without a lock, use `F()` (section 6.4) to let the database do `quantity = quantity - 5` atomically.
 - `transaction.on_commit(func)` runs `func` only after the commit succeeds: the right place to send an email or start a background job, so you never announce something that was rolled back.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a Django transaction.atomic() block moving 4 units of stock from product A (quantity 7) to product B (quantity 13). Step 1: A drops to 3 inside the transaction. Step 2: a RuntimeError 'power cut' happens before B is updated. Step 3: atomic() rolls back and A returns to 7. Show a side-by-side comparison with no atomic(), where the 4 units vanish. Display both quantities at every step."
+
 
 ### 9.4 Constraints: let the database say no
 
@@ -2551,6 +2577,10 @@ no CSRF token -> 403
 
 An invalid form is answered with `200` and the page redisplayed with the messages, which is the normal HTML form behaviour (the status code only becomes `4xx` for APIs). The last two lines show **CSRF**: the test client skips the check by default, so we turned it on. Without the hidden token that `{% csrf_token %}` writes into the form, a POST from another site (using the visitor's logged-in cookie) is refused with `403`. Never disable `CsrfViewMiddleware` to "make a form work"; add the tag.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a sequence diagram of the Django Post/Redirect/Get pattern for the page /products/new/. The browser sends GET and receives an empty ProductForm with a hidden csrf token. It then sends POST. If form.is_valid() fails, the server answers 200 and redraws the form with errors. If valid, the server saves the Product and answers 302 to /products/12/, and the browser follows with a new GET. Colour the two branches differently."
+
+
 > **CSRF and JSON clients.** The token is for browser forms. API clients that send a token in a header (DRF with `TokenAuthentication` or JWT) are not vulnerable in the same way, because the browser does not attach the header by itself. DRF's `SessionAuthentication` does enforce CSRF (section 15).
 
 ### Try it: mass assignment
@@ -2953,6 +2983,10 @@ good password: 302 -> /products/
 session cookie set: True
 logout: 302 -> / | cookie value now: ''
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a sequence diagram of Django login with sessions. The browser POSTs username 'sam' and a password to /accounts/login/. Django checks them, creates a row in the django_session table, and replies 302 to /products/ with a sessionid cookie holding only a random key. On the next request, SessionMiddleware and AuthenticationMiddleware turn that cookie into request.user. Finish with logout clearing the cookie."
+
 
 ### 13.4 Protecting views
 
@@ -3611,6 +3645,10 @@ print(r.status_code, repr(r["X-Seen-By"]))
 ```
 
 The request passes through the list **top to bottom** (`outer`, `inner`, view) and the response comes back **bottom to top** (`inner`, `outer`), like an onion. A middleware may also return its own response without calling `get_response` (a block, a cache hit). That is why order matters in `MIDDLEWARE`: `SessionMiddleware` must come before `AuthenticationMiddleware`, because authentication reads the session.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate two Django middleware functions named 'outer' and 'inner' wrapping one view, as concentric boxes. A request dot moves inward, printing 'outer: before the view', 'inner: before the view', then 'VIEW runs'. The response dot moves outward, printing 'inner: after the view', then 'outer: after the view'. Each layer appends its name to an X-Seen-By header, so the final value is 'inner outer '. Show the log lines in order."
+
 
 For the project, a useful middleware tags every response with a request id for log tracing:
 

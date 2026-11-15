@@ -78,6 +78,10 @@ Tests come in sizes. The classic picture is a pyramid:
 
 The pyramid is wide at the bottom on purpose. Unit tests are cheap and precise, so you want many. End-to-end tests are expensive and vague ("the program printed the wrong thing, but where is the bug?"), so you want only a few, to prove that the pieces fit together. A program with a hundred end-to-end tests and no unit tests is slow to test and hard to debug; people call this the "ice-cream cone" and it is a classic mistake.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a test pyramid with three layers. Bottom, widest: 'unit tests', many, thousandths of a second, point at the exact broken function. Middle: 'integration', some, a few hundredths of a second, show that parts disagree. Top, narrowest: 'end-to-end', few, tenths of a second to minutes, something is wrong somewhere. Beside it draw the upside-down 'ice-cream cone' (many end-to-end, few unit tests) in red, labelled 'slow and hard to debug'."
+
+
 ### 1.3 What is a "unit"?
 
 There is no official size. A unit can be a function, a class, or a small group of classes that always work together. A practical test: *"When this test fails, do I immediately know where to look?"* If yes, it is unit-sized.
@@ -583,6 +587,10 @@ $ python -m pytest --setup-show test_order.py
 
 (`M` = module scope, `F` = function scope.)
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate pytest fixture order for one file: fixture a is module scope, c is autouse function scope, b is function scope, and test_x(b, a) runs. Show a timeline left to right: setup a, setup c, setup b, test body, then teardown b, teardown c, teardown a in reverse. Draw nested boxes, a wide module box around a narrow function box, and label that the widest scope is set up first and torn down last."
+
+
 #### Try it 3.1
 
 Predict the output of `python -m pytest -s` for this file. (Careful: three fixtures, two scopes, one autouse.)
@@ -811,6 +819,10 @@ test_ids.py::test_grid[b-2] PASSED
 ```
 
 2 times 2 gives 4 tests. Notice the id order: the decorator **closest to the function** (`y`) comes first in the id. Stacking is handy for "every operator with every kind of input", but it grows fast: 10 by 10 by 10 is 1,000 tests. Use it with small lists.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a 2 by 2 grid for a pytest test stacked with @parametrize('x', [1, 2]) and @parametrize('y', ['a', 'b']). Columns are x = 1 and x = 2, rows are y = 'a' and y = 'b'. Each of the 4 cells is a test with its id: test_grid[a-1], test_grid[a-2], test_grid[b-1], test_grid[b-2]. Highlight that the decorator closest to the function (y) comes first in the id, and add a note that 10 by 10 by 10 would be 1,000 tests."
+
 
 ### 5.3 Parameters through fixtures: `params=` and `indirect`
 
@@ -1043,7 +1055,7 @@ Code that reads and writes files must be tested with **real files**, but never i
 def test_roundtrip(tmp_path):
     f = tmp_path / "n.txt"
     notes.save_notes(f, ["a", "b"])
-    assert f.read_text() == "a\nb\n"
+    assert f.read_text(encoding="utf-8") == "a\nb\n"
     assert notes.load_notes(f) == ["a", "b"]
 ```
 
@@ -1253,6 +1265,10 @@ def test_missing_city_with_fake():
 ```
 
 None of these needed any special library: they are ordinary classes written in ten lines. That is the point of the next section.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a WeatherReport class in the centre with one socket for a weather client, and four plug-in objects beside it. StubClient(35) returns a canned 35 and gives 'Pune: 35C (hot)'. SpyClient records calls == ['Goa']. FakeClient({'Pune': 28}) is a small working dict that gives 'Pune: 28C (mild)' and 'Oslo: no data'. A dummy only fills the socket. Label each by what it does."
+
 
 ### 7.3 Dependency injection: the best seam
 
@@ -1500,6 +1516,10 @@ The wrong-place test fails with the **real** function's error; the right-place t
 
 Patching `weather.fetch_temp` replaced the name in `weather`, but `app` still held the old function. **Patch the name in the module that uses it.** If `app.py` had written `import weather` and called `weather.fetch_temp(city)`, then patching `weather.fetch_temp` would have worked, because the lookup happens in `weather` at call time.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two boxes, module weather and module app. Inside weather: name fetch_temp pointing to the real function that raises 'real network call'. Inside app: a copy name fetch_temp, made by 'from weather import fetch_temp', pointing to the same function. Show patch('weather.fetch_temp') swapping only the weather arrow to a mock returning 21, so app.banner('Pune') still hits the real function and fails. Then show patch('app.fetch_temp') swapping app's arrow, so it returns 'Today in Pune: 21C'."
+
+
 #### Try it 8.1
 
 Predict the output:
@@ -1738,6 +1758,10 @@ def test_afternoon(monkeypatch):
 
 Why a wrapper function `now()`? You cannot patch `datetime.now` directly: `datetime` is a built-in type, whose attributes cannot be replaced. A named function in *your* module is easy to patch. Never use `time.sleep` in a test to "wait for" a timeout: it makes the suite slow, and still races against the machine's speed (section 13).
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate an ExpiringCache with ttl=5 and a FakeClock starting at 100.0. Draw a horizontal time axis. Step 1: put('k', 'v') stores expiry 105.0. Step 2: clock.advance(4.9), now 104.9, get('k') returns 'v' (alive, green). Step 3: clock.advance(0.1), now 105.0, get('k') returns None (expired, red). Show the clock as a dial that the test turns by hand, with no sleeping, and mark the exact boundary at 105.0."
+
+
 ### 10.2 Randomness: seed it or inject it
 
 Random code is tested in two ways. **Inject the generator**, so the test passes `random.Random(seed)`. Or **test a property** that holds for every random outcome.
@@ -1969,6 +1993,10 @@ TOTAL            5      0      2      1    86%
 
 `BrPart` means "branches partly covered" and `3->5` reads: "the jump from line 3 (the `if`) to line 5 (the `return`) never happened". That jump is exactly the "condition was false" path. **Always use `--branch`** (or `branch = True` in a config file).
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the control-flow graph of bonus(score, extra_credit): line 1 'result = score', line 2 'if extra_credit', line 3 'result += 5', line 5 'return result'. Show the test with extra_credit True walking line 1, 2, 3, 5 with green arrows, so line coverage says 100%. Draw the never-used jump 3->5 for the condition-false path as a dashed red arrow, labelled 'branch never taken, 86% with --branch'."
+
+
 ### 11.3 The coverage API
 
 The command line is for humans. Your own code, and this module's grader, can drive coverage from Python:
@@ -1984,7 +2012,7 @@ cov.stop()
 filename, statements, excluded, missing, missing_str = cov.analysis2("grade.py")
 print("statements:", statements)
 print("missing:", missing)
-print("percent:", round(cov.report(file=open("/dev/null", "w")), 1))
+print("percent:", round(cov.report(file=open("/dev/null", "w", encoding="utf-8")), 1))
 ```
 ```text
 statements: [1, 2, 3, 4, 5, 6, 7, 9, 10, 13, 14, 15, 16, 17]
@@ -2158,6 +2186,10 @@ E   )
 ```
 
 (This result was identical on two runs.) The first failing input found was probably long and messy. Hypothesis then **shrinks** it: it tries removing items and making numbers smaller, as long as the test still fails, until nothing can be simplified. The answer, `xs=[0, 0]`, is the smallest list that triggers the bug: a list with a duplicate. You read the bug straight from the example. That is the second gift of property testing: failures arrive **already minimised**.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate Hypothesis shrinking on my_sort, a buggy insertion sort that drops duplicates. Show the test 'len(my_sort(xs)) == len(xs)' failing on a long random list, for example [5, 3, 5, 9, 0, 0, 7]. Then show step by step the list shrinking, removing items and lowering numbers while it still fails, until it reaches xs=[0, 0]. Show my_sort([0, 0]) returning [0], so length 1 is not 2. Highlight the final minimal case."
+
 
 ### 12.4 Which properties to write
 
@@ -2396,6 +2428,10 @@ def test_ids_start_at_1():
 
 A useful habit: run the suite in **random order** now and then (the `pytest-randomly` plugin does this) and run each test **alone** while writing it. An order-dependent test shows itself immediately.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a shared list 'registry' in the middle with two tests. In normal order, test_first_user_gets_id_1 appends 'asha' (length 1, passes), then test_second_user_gets_id_2 appends 'ravi' (length 2, passes). Show the registry carrying over between tests. Then draw reversed order: test_second runs first, gets 1, not 2, and fails; then test_first gets 2, not 1, and fails. Add a third panel with an autouse fixture clearing the registry before each test."
+
+
 ### 13.2 Cause 2: set and dict ordering, hash randomisation
 
 Python randomises string hashes **per process**, so the iteration order of a `set` of strings changes from run to run:
@@ -2522,7 +2558,7 @@ First, a fixture that writes a CSV into `tmp_path`: a **factory** (section 2.7) 
 def csv_file(tmp_path):
     def make(*lines):
         path = tmp_path / "data.csv"
-        path.write_text("\n".join(("category,amount",) + lines) + "\n")
+        path.write_text("\n".join(("category,amount",) + lines) + "\n", encoding="utf-8")
         return path
     return make
 
@@ -2583,7 +2619,7 @@ HERE = Path(__file__).parent
 def test_real_process(csv_file):
     path = csv_file("Food,10")
     done = subprocess.run([sys.executable, str(HERE / "tally.py"), str(path)],
-                          capture_output=True, text=True, timeout=10)
+                          capture_output=True, text=True, timeout=10, encoding="utf-8")
     assert done.returncode == 0
     assert done.stdout == "food         10.00\n"
 ```
@@ -2788,15 +2824,15 @@ MUTATIONS = [
     ("return 300", "return 299"),
 ]
 
-source = (HERE / "parking.py").read_text()
+source = (HERE / "parking.py").read_text(encoding="utf-8")
 for old, new in MUTATIONS:
     assert old in source, old
     with tempfile.TemporaryDirectory() as tmp:
-        (Path(tmp) / "parking.py").write_text(source.replace(old, new, 1))
+        (Path(tmp) / "parking.py").write_text(source.replace(old, new, 1), encoding="utf-8")
         shutil.copy(HERE / "test_parking.py", tmp)
         done = subprocess.run(
             [sys.executable, "-m", "pytest", "-q", "-p", "no:cacheprovider", "-x", tmp],
-            capture_output=True, text=True, timeout=30)
+            capture_output=True, text=True, timeout=30, encoding="utf-8")
     verdict = "killed " if done.returncode != 0 else "SURVIVED"
     print(f"{verdict}  {old!r} -> {new!r}")
 ```
@@ -2818,6 +2854,10 @@ def test_part_day_is_capped():
 ```
 
 (700 minutes is 12 started hours, so without the cap the fee would be 240.) Rerun the mutation script: that line now says `killed`. This tiny loop (spec, tests, coverage, mutation) is the whole method. Real mutation tools (such as `mutmut`) automate it, but the idea is exactly this script. Your module project is graded the same way: your tests must pass on correct code and **kill each seeded bug**.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a table of 7 mutations of a parking-fee function, each a row. Columns: original code, mutated code, verdict. Six rows show 'killed' in green, for example '<= 15' to '< 15'. One row shows 'SURVIVED' in red: 'min(hours * 20, 200)' to 'hours * 20'. Then add an arrow from the survivor to a new test, test_part_day_is_capped, fee(700) == 200, and show that row turning green."
+
 
 ### 15.4 A recipe you can reuse
 

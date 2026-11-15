@@ -1,0 +1,7 @@
+id = "dsa.07.p008"
+title = "Explain: why does this recursion never stop?"
+tier = "drill"
+kind = "explain"
+topics = ["base case", "progress", "RecursionError"]
+minutes = 20
+assessment = "explain"

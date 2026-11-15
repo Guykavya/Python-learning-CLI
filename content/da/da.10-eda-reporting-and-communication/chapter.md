@@ -125,6 +125,9 @@ NEXT STEPS          what we will check next, and how we will measure success
 
 We return to this template in section 6 and fill it with real numbers.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a one-page report as a vertical stack of seven labelled boxes, top to bottom: HEADLINE (one sentence), RECOMMENDATION (action, owner, date), IMPACT (a range, plus cost), EVIDENCE (two or three charts), CONFIDENCE, LIMITATIONS, NEXT STEPS. Make the headline box biggest and darkest, add a side arrow marked 'what the reader needs first' pointing down, and label it 'FreshBox churn finding'."
+
 ## 2. The case: FreshBox
 
 ### 2.1 The company and the worry
@@ -298,6 +301,9 @@ Weekly revenue
 
 The "churn" in the question lives in the middle of the tree. Its possible causes are the four branches under it: **delivery quality, customer mix, price, season**. That list is our hypothesis list (section 4).
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a tree diagram. The root is 'Weekly revenue = active subscribers x average price per box'. Under active subscribers: 'active last week + new customers - churned', then 'churned = opening actives x churn rate'. Under churn rate draw four branches: late-delivery rate (leading), customer mix, price changes, season. Under average price: plan mix and price changes. Highlight the four churn branches as the hypothesis list."
+
 ### 3.4 Defining the KPIs
 
 Following da.06, each KPI gets a written definition before any code. Here are the four that matter for the question.
@@ -379,6 +385,9 @@ The loop:
 6. **Log** everything you tried, including what failed.
 
 The log is not paperwork. It keeps you honest about how many things you tried (the forking-paths problem of da.08), and it is the raw material of the appendix.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a circular loop of six numbered steps: 1 Observe (churn rose in September), 2 Hypothesise (list causes from the KPI tree), 3 Predict (what would confirm or falsify), 4 Test (smallest analysis, with an interval), 5 Update (keep, reject, refine), 6 Log everything tried. Draw arrows round the circle, and show the log as a notebook in the centre that every step feeds into."
 
 ### 4.2 Look at the time profile first
 
@@ -555,6 +564,9 @@ Every row adds up to the same total (about +1.6 points), and the **rate effect d
 The rate effect would be near zero (each channel's own churn rate would be unchanged) and the mix effect would carry the whole change. In our data it is the other way round: the channel rate effect is +1.60 points and the mix effect only +0.05. The decomposition therefore *rejects* "it is only a mix shift" and keeps "something raised churn within each channel".
 
 </details>
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a stacked bar chart of the change in churn by dimension, in percentage points. Each bar splits into a mix effect and a rate effect and totals about +1.65. Channel: mix +0.05, rate +1.60. Plan: mix 0.00, rate +1.65. City: mix 0.00, rate +1.65. Tenure band: mix -0.76, rate +2.41. Colour mix and rate differently, draw a zero line, and label 'rate effect dominates'."
 
 ### 4.6 Season and the base year
 
@@ -862,6 +874,9 @@ H1 late deliveries rate ratio, dose-response, hazard model                      
 ```
 
 This table is the spine of the written finding in section 6: the **headline** comes from the first row, the **secondary action** from the third, the **limitations** from the doubts attached to all four, and the **appendix** from the remaining two. Keep the log of everything else you tried. Here it would list the segment cuts of 4.4 and the 2023 comparison; in a real project it would also list dead ends.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw an evidence table as a grid with four rows and a verdict column. H1 late deliveries: odds ratio 2.9, explains 1.4 of 1.4 points, supported (main cause), green. H2 customer mix: channel mix +0.05, older base -0.59 points, does not explain, grey. H3 price change: about 0.4 points, supported but secondary, amber. H4 season: autumn 2023 4.8% vs summer 5.7%, rejected, red. Add an arrow from row 1 to 'headline'."
 
 
 ## 6. Writing the finding
@@ -1171,8 +1186,8 @@ def render_html(f, source_note):
 
 
 page = render_html(finding, "Data: FreshBox customer and weekly panel, 2023-01-02 to 2024-12-30 (synthetic). Analysis: hypothesis tests and hazard model, section 5.")
-(tmp / "finding.html").write_text(page)
-(tmp / "finding.md").write_text(finding.render_markdown())
+(tmp / "finding.html").write_text(page, encoding="utf-8")
+(tmp / "finding.md").write_text(finding.render_markdown(), encoding="utf-8")
 words = len(re.sub(r"<[^>]+>", " ", re.sub(r"<img[^>]*>", " ", page)).split())
 print(f"page written: {len(page) / 1024:.0f} KB (machine-specific) | words on the page: {words} | reading time: about {words / 200:.0f} minutes")
 ```
@@ -1202,6 +1217,9 @@ Churn is up (4.0% to 5.7%) and late deliveries are the main cause (on-time 92% t
 
 words: 35
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw one set of numbers, 'churn 4.0% to 5.7%, on-time 92% to 80%, about 65 customers a month saved', flowing into three differently sized documents: a small chat bubble (3 lines, 35 words), a medium one-page report for the manager, and a large multi-page appendix for the analyst. Label the source box 'R, one dictionary of numbers' and write 'cannot disagree' on the arrows."
 
 ### 6.8 Writing rules
 
@@ -1411,7 +1429,7 @@ st.metric("Customers lost per month", f"{lost:,.0f}")
 st.write(f"At {rate:.1f}% churn, a base of {opening:,} loses about {lost:,.0f} customers a month.")
 '''
 hello_path = tmp / "hello_app.py"
-hello_path.write_text(hello_code)
+hello_path.write_text(hello_code, encoding="utf-8")
 
 from streamlit.testing.v1 import AppTest
 
@@ -1480,13 +1498,13 @@ n = st.selectbox("n", [10, 100, 1000])
 st.write(expensive(n))
 '''
 cache_path = tmp / "cache_app.py"
-cache_path.write_text(cache_code)
-log_path.write_text("")
+cache_path.write_text(cache_code, encoding="utf-8")
+log_path.write_text("", encoding="utf-8")
 c_at = AppTest.from_file(str(cache_path), default_timeout=30).run()
 for choice in (100, 100, 1000, 10, 100, 1000):
     c_at.selectbox[0].select(choice).run()
 print("reruns:", 7, "| value shown last:", c_at.markdown[0].value)
-print("times the function really ran:", len(log_path.read_text().splitlines()), "->", log_path.read_text().split())
+print("times the function really ran:", len(log_path.read_text(encoding="utf-8").splitlines()), "->", log_path.read_text(encoding="utf-8").split())
 ```
 ```text
 reruns: 7 | value shown last: `332833500`
@@ -1507,6 +1525,9 @@ A dashboard is not a report with buttons. Five rules.
 
 And one rule about *code*: **the dashboard only displays; the logic lives in a module with tests.** If the numbers are computed inside `app.py`, the dashboard and the written report will eventually disagree. We now build that structure.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a wireframe of a Streamlit dashboard page. Top: a row of KPI tiles (value plus change against baseline), each with a short definition line. Middle: two charts. Bottom: a table. Left sidebar: few filters (channel, plan, city), all selected by default. Add a note that the default view tells the story and an empty-selection message instead of a crash. Annotate each of the five design rules."
+
 ## 9. Project: a dashboard with a findings page
 
 **The brief.** The head of operations wants the churn analysis available to the whole team as an interactive page. It must have: a **Findings** tab with the written one-pager of section 6; an **Explore** tab where anyone can filter by channel, plan and city and see the KPIs, the monthly churn, and the effect of late boxes; and a **Data notes** tab with definitions, provenance and caveats. It must be tested.
@@ -1521,6 +1542,9 @@ dashboard/
   overview.png, contributions.png     figures used by the findings page
   data/customers.parquet, data/panel.parquet
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a block diagram of the FreshBox dashboard project. A box 'fb_metrics.py (logic, tested)' feeds two boxes: 'app.py (display only)' and 'findings.md (generated by code)', plus the figures overview.png and contributions.png. Data files customers.parquet and panel.parquet feed fb_metrics.py. Show a tests box checking fb_metrics.py, and label the arrows so the report and dashboard use the same numbers."
 
 ### 9.2 The logic module
 
@@ -1582,7 +1606,7 @@ def late_effect_table(customers, panel):
     g.index = g.index.map({False: "no late box", True: "late box in last 3 weeks"})
     return g
 '''
-(dash / "fb_metrics.py").write_text(module_code)
+(dash / "fb_metrics.py").write_text(module_code, encoding="utf-8")
 
 customers.to_parquet(dash / "data" / "customers.parquet")
 panel.to_parquet(dash / "data" / "panel.parquet")
@@ -1643,7 +1667,7 @@ By hand: in January three customers had a box in the first week; only customer 1
 The findings page is generated from the finding (section 6); the app displays it.
 
 ```python run
-(dash / "findings.md").write_text(finding.render_markdown())
+(dash / "findings.md").write_text(finding.render_markdown(), encoding="utf-8")
 for name in ("overview.png", "contributions.png"):
     (dash / name).write_bytes((tmp / name).read_bytes())
 
@@ -1727,7 +1751,7 @@ active week falls in the month. *On time*: share of boxes delivered on time. *La
 Churn for small selections is noisy: check the number of opening actives before reading a rate.
 """)
 '''
-(dash / "app.py").write_text(app_code)
+(dash / "app.py").write_text(app_code, encoding="utf-8")
 print(sorted(p.name for p in dash.iterdir() if not p.name.startswith("__")))
 print("app.py lines:", len(app_code.strip().splitlines()), "| fb_metrics.py lines:", len(module_code.strip().splitlines()))
 ```

@@ -1,0 +1,4 @@
+- Collecting all subsets first and checking them afterwards: with 40 items that is `2^40` subsets and never finishes.
+- Pruning with `if remaining < 0: return False`: wrong when negative numbers can follow.
+- Checking `remaining == 0` only at `i == len(nums)`: correct, but you lose the early stop on long lists.
+- Returning `False` for `target == 0`: the empty subset counts.

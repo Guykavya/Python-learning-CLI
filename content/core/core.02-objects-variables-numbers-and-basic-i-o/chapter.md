@@ -214,6 +214,9 @@ TypeError: can only concatenate str (not "int") to str
 
 `text` is the string `"20"`. You cannot add the number `1` to a string, so Python stops with a `TypeError`.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a Python program as a flow of data. A user types 20 on the keyboard. Show input('Enter your age: ') receiving it and handing back the STRING '20' (draw it in quotes, in a box labelled str), stored in the name text. Then show text + 1 with the number 1 (labelled int) meeting the str and hitting a red TypeError: can only concatenate str (not int) to str. Highlight that input() always gives a str."
+
 ### Under the hood
 
 - `input()` reads characters up to the Enter key. The newline character produced by Enter is **removed**. Everything else is kept exactly, including spaces at the start and end.
@@ -444,6 +447,9 @@ Step by step:
 
 So assignment never changes an object. It only moves a label.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate Python names as sticky notes on objects, in 3 steps. Step 1: a = 5, so note 'a' sticks to a box holding 5. Step 2: b = a, so note 'b' sticks to the SAME box 5 (two notes, one box); show 'a is b' = True. Step 3: a = a + 1, so a new box 6 appears and note 'a' peels off and moves to it, while 'b' stays on 5; show 'a is b' = False. Print values 6 and 5."
+
 ### Why this matters: shared objects
 
 With numbers you never see a difference, because a number object can never be changed. But a **list** *can* be changed in place. Lists are taught in core.05; here is a quick preview:
@@ -462,6 +468,9 @@ Output:
 ```
 
 We changed the list through the name `b`, and the change is visible through `a`. That is because there was only ever **one** list, with two labels on it. `b = a` did not make a copy.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate this Python code: a = [1, 2]; b = a; b.append(3); print(a). Draw one list object shown as boxes [1, 2] with two name labels, 'a' and 'b', both pointing at it. Then show b.append(3) adding a third box 3 to that same list, in place. Show that printing a gives [1, 2, 3] because there was only ONE list. Use a contrasting colour for the new box."
 
 ### Under the hood
 
@@ -521,6 +530,9 @@ hello HELLO
 ```
 
 `s.upper()` did not change `s`. It built a brand new string and returned it.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two memory boxes for this Python code: s = 'hello'; t = s.upper(). Box 1 holds the string 'hello' with name label 's' on it, and it is locked (immutable, a padlock icon) so it never changes. An arrow labelled .upper() leads to a NEW box holding 'HELLO' with label 't'. Print 'hello HELLO' at the bottom. Highlight that the original object was not modified; a new one was built."
 
 ### Under the hood
 
@@ -619,6 +631,9 @@ Why is `-7 // 2` equal to `-4`? The exact answer is `-3.5`, and "floor" means ro
 
 Compare the last line: `int(-7 / 2)` gives `-3`. That is because `int()` **truncates** (rounds towards zero), while `//` **floors** (rounds towards negative infinity). For positive numbers they agree. For negative numbers they differ.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a number line from -5 to 0 with whole numbers marked. Put a dot at -3.5 (the exact value of -7 / 2). Show an arrow from the dot going LEFT (down) to -4, labelled '-7 // 2 = -4 (floor: towards negative infinity)'. Show a second arrow going RIGHT to -3, labelled 'int(-7 / 2) = -3 (truncate: towards zero)'. Use two colours and mark zero clearly."
+
 ### The identity that ties them together
 
 Python guarantees this identity for any numbers `a` and `b` (with `b` not zero):
@@ -649,6 +664,9 @@ True
 ```
 
 `divmod(a, b)` returns both results together as a pair: `(a // b, a % b)`. The line `a, b = -17, 5` binds two names at once. `//` and `%` also work on floats, and then the results are floats.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a clock face with the numbers 0 to 9 (like a dial with 10 positions) to explain Python's % operator with divisor 10. Show 23 % 10 = 3 as going around and stopping at 3. Show -1 % 10 = 9 as stepping one place backwards from 0 and landing on 9. Show -23 % 10 = 7. Highlight that the result is always between 0 and 9."
 
 Dividing by zero with `/`, `//` or `%` raises `ZeroDivisionError: division by zero`.
 
@@ -717,6 +735,9 @@ False
 ```
 
 Why? In base 10, `1/3` is `0.3333...` forever. In base 2, `1/10` is `0.000110011001100...` forever. So the stored `0.1` is slightly more than one tenth, and `0.2` is slightly off too. The errors add up, and the sum lands on the float just *above* the one nearest to `0.3`.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a number line with tiny evenly spaced tick marks representing the only floats a computer can store. Show that 0.1 and 0.2 fall between ticks, so each snaps to the nearest tick (stored 0.1 is really 0.10000000000000000555). Show the sum landing on the tick just above the tick nearest 0.3, labelled 0.30000000000000004. Mark 0.3 itself on a different tick, so 0.1 + 0.2 == 0.3 is False."
 
 ### repr: the shortest string that round-trips
 
@@ -1251,6 +1272,9 @@ Output:
 
 Work the last one out: `3 ** 2` is `9`. Then `*`, `//`, `%` are on the same level, left to right: `2 * 9 = 18`, `18 // 4 = 4`, `4 % 5 = 4`. Finally `1 + 4 = 5`.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the Python expression 1 + 2 * 3 ** 2 // 4 % 5 as an upside-down tree, where each operator is a node and the deepest nodes run first. Use Python precedence: 3 ** 2 = 9 first; then, left to right, 2 * 9 = 18, 18 // 4 = 4, 4 % 5 = 4; finally 1 + 4 = 5. Write the intermediate value beside each node and number the order of evaluation 1 to 5."
+
 Note also `2 ** -1`: a unary minus on the **right** of `**` is fine and applies to the exponent.
 
 ### Under the hood
@@ -1618,6 +1642,9 @@ True
 ```
 
 `x` and `y` are two separate lists that happen to hold equal values. `z = x` puts a second label on the same list.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw Python's == versus is. Code: x = [1]; y = [1]; z = x. Show two separate list boxes, each holding 1, at different addresses (e.g. id 101 and id 202). Labels 'x' and 'z' point to the first box, label 'y' points to the second. Show x == y is True (equal contents, a double-headed arrow) but x is y is False (different objects), and z is x is True (same object)."
 
 ### Small-integer caching: never rely on it
 

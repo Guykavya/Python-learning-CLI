@@ -95,12 +95,12 @@ open(file, mode="r", encoding=None, errors=None, newline=None)
 These are the options that matter. We write a small file, then read it back.
 
 ```python
-f = open("notes.txt", "w")
+f = open("notes.txt", "w", encoding="utf-8")
 f.write("first line\n")
 f.write("second line\n")
 f.close()
 
-f = open("notes.txt", "r")
+f = open("notes.txt", "r", encoding="utf-8")
 text = f.read()
 f.close()
 
@@ -139,18 +139,18 @@ The most important fact: **`"w"` erases the old content the moment you call `ope
 
 ```python
 def show(name):
-    with open(name, "r") as f:
+    with open(name, "r", encoding="utf-8") as f:
         return f.read()
 
-with open("log.txt", "w") as f:
+with open("log.txt", "w", encoding="utf-8") as f:
     f.write("one\n")
 print("after first w:", repr(show("log.txt")))
 
-with open("log.txt", "w") as f:
+with open("log.txt", "w", encoding="utf-8") as f:
     f.write("two\n")
 print("after second w:", repr(show("log.txt")))
 
-with open("log.txt", "a") as f:
+with open("log.txt", "a", encoding="utf-8") as f:
     f.write("three\n")
 print("after a:", repr(show("log.txt")))
 ```
@@ -164,6 +164,9 @@ The second `"w"` threw away `"one"`. The `"a"` mode kept `"two"` and added `"thr
 
 Mode `"x"` means "create, and **fail** if it exists". Use it when overwriting would be a bug (a dated report, a backup, a lock file). A second `open("once.txt", "x")` raises `FileExistsError`.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a before/after picture of a file called log.txt on disk. Step 1: open with 'w' and write 'one' (file holds one). Step 2: open with 'w' again and write 'two': show the old 'one' erased at the moment of open, file holds two. Step 3: open with 'a' and write 'three': file holds two then three. Add a fourth panel where 'x' on an existing file shows a red FileExistsError. Label each mode."
+
 A word about `"r+"`: it opens an existing file for reading and writing, with one cursor. Python reads a whole block into a buffer, so a write after a read often lands somewhere you did not expect (at the end of the file). Avoid `"r+"` for text. Read the file, change the text in memory, and write it back safely (section 8).
 
 ## 3. Reading and writing text
@@ -173,13 +176,13 @@ A word about `"r+"`: it opens an existing file for reading and writing, with one
 In the next examples, the file `poem.txt` holds four lines: `Roses are red`, `Violets are blue`, `Python is neat` and `And so are you`.
 
 ```python
-with open("poem.txt") as f:
+with open("poem.txt", encoding="utf-8") as f:
     print(repr(f.read(8)))
     print(repr(f.read(8)))
-with open("poem.txt") as f:
+with open("poem.txt", encoding="utf-8") as f:
     print(repr(f.readline()))
     print(repr(f.readline()))
-with open("poem.txt") as f:
+with open("poem.txt", encoding="utf-8") as f:
     print(f.readlines())
 ```
 ```text
@@ -203,17 +206,20 @@ Because of the position, a file is **used up** after reading, like the generator
 
 To read again, keep the text in a variable, call `f.seek(0)` (go to the start; `f.tell()` tells the position), or open the file again.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a file object reading poem.txt, which has four lines: 'Roses are red', 'Violets are blue', 'Python is neat', 'And so are you'. Show a cursor arrow over the characters. Step through read(8) returning 'Roses ar', the next read(8) returning 'e red\nVi', then seek(0) jumping the cursor back to the start. Show the position number from tell() after each call, and highlight the used-up part of the file."
+
 ### 3.2 The best way: loop over the file
 
 A file object is **iterable**: a `for` loop gives one line at a time.
 
 ```python
-with open("poem.txt") as f:
+with open("poem.txt", encoding="utf-8") as f:
     for number, line in enumerate(f, start=1):
         print(number, repr(line))
 
 print("--- stripped ---")
-with open("poem.txt") as f:
+with open("poem.txt", encoding="utf-8") as f:
     for line in f:
         print(line.rstrip("\n").upper())
 ```
@@ -236,10 +242,10 @@ This is the way to read text files. It reads **one line at a time**, so the file
 **Predict the output.** Write down all the printed lines before you open the answer.
 
 ```python
-with open("n.txt", "w") as f:
+with open("n.txt", "w", encoding="utf-8") as f:
     f.write("alpha\nbeta\ngamma\n")
 
-with open("n.txt") as f:
+with open("n.txt", encoding="utf-8") as f:
     print(f.read(3))
     print(f.readline())
     print(f.readline().strip())
@@ -269,18 +275,18 @@ True
 ```python
 lines = ["apple", "banana", "cherry"]
 
-with open("fruits.txt", "w") as f:
+with open("fruits.txt", "w", encoding="utf-8") as f:
     for name in lines:
         f.write(name + "\n")
 
-with open("fruits.txt", "w") as f:
+with open("fruits.txt", "w", encoding="utf-8") as f:
     pass
 
-with open("fruits2.txt", "w") as f:
+with open("fruits2.txt", "w", encoding="utf-8") as f:
     f.writelines(name + "\n" for name in lines)
     print("n =", f.write("tail"))
 
-with open("fruits2.txt") as f:
+with open("fruits2.txt", encoding="utf-8") as f:
     print(repr(f.read()))
 ```
 ```text
@@ -302,7 +308,7 @@ Writing to a disk is slow, so Python collects what you write in a **buffer** and
 
 ```python
 import os
-f = open("buf.txt", "w")
+f = open("buf.txt", "w", encoding="utf-8")
 f.write("hello")
 print("size on disk before flush:", os.path.getsize("buf.txt"))
 f.flush()
@@ -316,21 +322,24 @@ size on disk after flush:  5
 
 Before `flush()` the file on disk had **0 bytes**, although we had written 5 characters. `close()` and the end of a `with` block flush too, so normally you do not notice. You notice when a program crashes and the last lines are missing from a log, or when another program reads the file while yours is still writing. Use `f.flush()` or `print(..., flush=True)`. (Even `flush()` only hands the data to the operating system; `os.fsync` pushes it to the physical disk, see section 8.)
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw three boxes in a row: 'Your program with Python buffer', 'Operating system', 'Disk'. Animate f.write('hello') putting five characters in the Python buffer while the disk file shows size 0. Then f.flush() moves the five characters to the operating system and the disk file shows size 5. Label each arrow, and show a crash before flush as a red cross that loses the buffered text."
+
 ### 3.6 Predict the output
 
 **Predict the output.** Remember what `"w"` does at the moment of `open`.
 
 ```python
-with open("a.txt", "w") as f:
+with open("a.txt", "w", encoding="utf-8") as f:
     f.write("one")
-with open("a.txt", "a") as f:
+with open("a.txt", "a", encoding="utf-8") as f:
     f.write("two\n")
-with open("a.txt", "w") as f:
+with open("a.txt", "w", encoding="utf-8") as f:
     f.write("three\n")
-with open("a.txt", "a") as f:
+with open("a.txt", "a", encoding="utf-8") as f:
     f.write("four")
     f.write("five\n")
-with open("a.txt") as f:
+with open("a.txt", encoding="utf-8") as f:
     print(f.read().split())
 ```
 <details><summary>Answer</summary>
@@ -372,6 +381,9 @@ naïve café
 ```
 
 `"naïve café"` has **10 characters** but **12 bytes**: `ï` and `é` need two bytes each in UTF-8. A `bytes` object prints as `b'...'`; indexing it gives **integers** (0 to 255), not one-letter strings. `str` and `bytes` are different types, and Python never mixes them silently.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the string 'naïve café' as 10 character boxes. Below it, draw the UTF-8 bytes as 12 boxes: 110 97 195 175 118 101 and so on. Use arrows to show that the characters 'ï' and 'é' each split into two bytes (195 175 for ï). Label the top row str with len 10 and the bottom row bytes with len 12, and the arrows encode and decode."
 
 ### 4.2 UTF-8, the encoding to use
 
@@ -422,7 +434,7 @@ for mode in ["strict", "replace", "ignore", "backslashreplace"]:
 
 with open("out.txt", "w", encoding="ascii", errors="replace") as f:
     f.write("50 ₹")
-print(open("out.txt").read())
+print(open("out.txt", encoding="utf-8").read())
 ```
 ```text
 strict -> UnicodeDecodeError
@@ -469,7 +481,7 @@ print(len(data), data[0], data[1:4])
 print(type(data), type(data[0]))
 
 try:
-    with open("pic.bin", "r") as f:
+    with open("pic.bin", "r", encoding="utf-8") as f:
         f.read()
 except UnicodeDecodeError as e:
     print("UnicodeDecodeError:", e)
@@ -491,11 +503,11 @@ Linux and macOS end a line with `\n`; Windows uses `\r\n`. In **text mode** Pyth
 with open("crlf.txt", "wb") as f:
     f.write(b"one\r\ntwo\r\nthree\r\n")
 
-with open("crlf.txt", "r") as f:
+with open("crlf.txt", "r", encoding="utf-8") as f:
     print("default      :", repr(f.read()))
-with open("crlf.txt", "r", newline="") as f:
+with open("crlf.txt", "r", newline="", encoding="utf-8") as f:
     print("newline=''   :", repr(f.read()))
-with open("crlf.txt", "r", newline="\n") as f:
+with open("crlf.txt", "r", newline="\n", encoding="utf-8") as f:
     print("newline='\\n' :", repr(f.read()))
 ```
 ```text
@@ -509,6 +521,9 @@ newline='\n' : 'one\r\ntwo\r\nthree\r\n'
 - `newline="\n"` when writing means "write `\n` exactly"; `newline="\r\n"` writes Windows endings on any system.
 
 You need `newline=""` in one very important place: the **csv** module (section 11). Remember the spelling now.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Show the bytes b'one\r\ntwo\r\nthree\r\n' written to a file called crlf.txt. Draw three readers side by side. Default text mode turns each \r\n into \n and gives 'one\ntwo\nthree\n'. Reading with newline='' keeps the original \r\n. Use different colours for \r and \n and highlight the characters that change in each reader's result."
 
 ### 4.9 Predict the output
 
@@ -543,7 +558,7 @@ ASCII is 1 byte per character, so `abc` is 3 and 3. `café` has the 2-byte `é`:
 Every open file uses a resource of the operating system, which allows only a limited number per program. More important, **buffered data is saved only when the file is closed or flushed**.
 
 ```python
-f = open("lost.txt", "w")
+f = open("lost.txt", "w", encoding="utf-8")
 f.write("data we hoped to save")
 # no f.close() here ...
 import os
@@ -563,11 +578,11 @@ We had written 21 characters, but the file on disk had **0 bytes** until `close(
 The `with` statement runs a block and **guarantees** a cleanup step when the block ends, however it ends: normally, with `return`, with `break`, or with an exception.
 
 ```python
-f = open("notes.txt", "w")
+f = open("notes.txt", "w", encoding="utf-8")
 f.write("data")
 f.close()
 
-with open("notes.txt") as f:
+with open("notes.txt", encoding="utf-8") as f:
     print(f.closed)
     data = f.read()
 print(f.closed)
@@ -591,7 +606,7 @@ Inside the block `f.closed` is `False`; after it, `True`, and using `f` raises `
 
 ```python
 try:
-    with open("w.txt", "w") as f:
+    with open("w.txt", "w", encoding="utf-8") as f:
         f.write("saved before the crash\n")
         raise RuntimeError("something broke")
 except RuntimeError as e:
@@ -625,6 +640,9 @@ leaving, error was: None
 ```
 
 `__enter__` ran first and its return value became `v`; then the block; then `__exit__` ran and received `None` (no error).
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a timeline for the code 'with Shout() as v'. Step 1: the enter step runs, prints 'entering', and returns 'value', which becomes v. Step 2: the block runs and prints 'inside with value'. Step 3: the exit step runs and prints 'leaving, error was: None'. Add a second run where the block raises an error, and show the exit step still running before the error leaves. Mark the three steps with numbered arrows."
 
 ### 5.4 Your own context manager with `@contextmanager`
 
@@ -672,14 +690,14 @@ If the block raises, Python throws the exception into the generator **at the `yi
 
 ```python
 def read_first(path):
-    with open(path) as f:
+    with open(path, encoding="utf-8") as f:
         return f.readline()
 
-with open("t.txt", "w") as f:
+with open("t.txt", "w", encoding="utf-8") as f:
     f.write("first\nsecond\n")
 print(repr(read_first("t.txt")))
 try:
-    with open("t.txt") as f:
+    with open("t.txt", encoding="utf-8") as f:
         for line in f:
             print(line.strip())
             raise KeyError("stop")
@@ -719,7 +737,7 @@ Errors from the operating system are subclasses of **`OSError`**, and common one
 
 ```python
 try:
-    open("missing_folder/file.txt", "w")
+    open("missing_folder/file.txt", "w", encoding="utf-8")
 except FileNotFoundError as e:
     print("FileNotFoundError:", e)
 ```
@@ -799,7 +817,7 @@ def make_log(path, n_lines):
 
 make_log("big.log", 100_000)
 print(os.path.getsize("big.log") // 1024, "KB")
-with open("big.log") as f:
+with open("big.log", encoding="utf-8") as f:
     for _ in range(3):
         print(f.readline(), end="")
 ```
@@ -820,18 +838,18 @@ We count the `ERROR` lines in three ways and measure the **peak memory** with `t
 import tracemalloc
 
 def count_all_at_once(path):
-    with open(path) as f:
+    with open(path, encoding="utf-8") as f:
         text = f.read()
     return text.count("ERROR")
 
 def count_with_readlines(path):
-    with open(path) as f:
+    with open(path, encoding="utf-8") as f:
         lines = f.readlines()
     return sum(1 for line in lines if "ERROR" in line)
 
 def count_streaming(path):
     n = 0
-    with open(path) as f:
+    with open(path, encoding="utf-8") as f:
         for line in f:
             if "ERROR" in line:
                 n += 1
@@ -862,6 +880,9 @@ The streaming rules:
 2. Do not store the lines. Keep **summaries**: counters, totals, the best few items.
 3. If you must keep something per line (the set of all user names), ask how big *that* will be.
 4. Writing is a stream too: write each result when you have it, not after collecting a billion results in a list.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a bar chart comparing peak memory for three ways to count ERROR lines in big.log: count_all_at_once about 10084 KB, count_with_readlines about 9901 KB, count_streaming about 145 KB. Next to it, animate a file as a long strip with a small window sliding line by line for streaming, and the whole strip loaded into a big box for the other two. Label the window 'one line at a time'."
 
 ### 7.4 Keeping only the end
 
@@ -960,21 +981,21 @@ You have a file `report.txt` with important data, and your program must replace 
 
 ```python
 def save_report(path, lines, crash_at=None):
-    with open(path, "w") as f:              # the old content is erased HERE
+    with open(path, "w", encoding="utf-8") as f:              # the old content is erased HERE
         for i, line in enumerate(lines):
             if i == crash_at:
                 raise RuntimeError("power cut!")
             f.write(line + "\n")
 
 save_report("report.txt", ["old 1", "old 2", "old 3"])
-print("before:", open("report.txt").read().split())
+print("before:", open("report.txt", encoding="utf-8").read().split())
 
 try:
     save_report("report.txt", ["new 1", "new 2", "new 3", "new 4"], crash_at=2)
 except RuntimeError as e:
     print("crashed:", e)
 
-print("after :", open("report.txt").read().split())
+print("after :", open("report.txt", encoding="utf-8").read().split())
 ```
 ```text
 before: ['old', '1', 'old', '2', 'old', '3']
@@ -997,7 +1018,7 @@ import os
 
 def save_report(path, lines, crash_at=None):
     tmp_path = path + ".tmp"
-    with open(tmp_path, "w") as f:
+    with open(tmp_path, "w", encoding="utf-8") as f:
         for i, line in enumerate(lines):
             if i == crash_at:
                 raise RuntimeError("power cut!")
@@ -1009,11 +1030,11 @@ try:
     save_report("report.txt", ["new 1", "new 2", "new 3", "new 4"], crash_at=2)
 except RuntimeError as e:
     print("crashed:", e)
-print("after crash :", open("report.txt").read().split())
+print("after crash :", open("report.txt", encoding="utf-8").read().split())
 print("leftover    :", sorted(n for n in os.listdir(".") if not n.endswith(".py")))
 
 save_report("report.txt", ["new 1", "new 2", "new 3", "new 4"])
-print("after success:", open("report.txt").read().split())
+print("after success:", open("report.txt", encoding="utf-8").read().split())
 ```
 ```text
 crashed: power cut!
@@ -1023,6 +1044,9 @@ after success: ['new', '1', 'new', '2', 'new', '3', 'new', '4']
 ```
 
 After the crash, `report.txt` still holds the complete **old** report. Study the middle line: a **leftover** `report.txt.tmp` is still there. The original is safe, but we left rubbish behind. The next version cleans up.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate an atomic save of report.txt, which holds old 1, old 2, old 3. Step 1: write new lines into report.txt.tmp next to it. Step 2: a power cut after two lines, showing a half-written .tmp file while report.txt is still complete and old. Then a second run: tmp is complete, os.replace switches the name report.txt from the old file to the new one in one step. Highlight that the name never points to a half file."
 
 ### 8.3 What "atomic" means
 
@@ -1058,7 +1082,7 @@ def atomic_open(path, mode="w", **kwargs):
 
 with atomic_open("data.txt", encoding="utf-8") as f:
     f.write("version 1\n")
-print(open("data.txt").read(), end="")
+print(open("data.txt", encoding="utf-8").read(), end="")
 
 try:
     with atomic_open("data.txt", encoding="utf-8") as f:
@@ -1066,7 +1090,7 @@ try:
         raise ValueError("bug in my code")
 except ValueError:
     pass
-print(open("data.txt").read(), end="")
+print(open("data.txt", encoding="utf-8").read(), end="")
 print(sorted(n for n in os.listdir(".") if not n.endswith(".py")))
 ```
 ```text
@@ -1090,11 +1114,11 @@ The second block raised `ValueError` after writing half of "version 2". The file
 
 ```python
 import os
-with open("keep.txt", "w") as f:
+with open("keep.txt", "w", encoding="utf-8") as f:
     f.write("old")
 
 def update(text, fail):
-    with open("keep.txt.tmp", "w") as f:
+    with open("keep.txt.tmp", "w", encoding="utf-8") as f:
         f.write(text)
         if fail:
             raise OSError("disk full")
@@ -1105,7 +1129,7 @@ for text, fail in [("new1", True), ("new2", False)]:
         update(text, fail)
     except OSError as e:
         print("failed:", e)
-    print(open("keep.txt").read(), sorted(n for n in os.listdir(".") if n.startswith("keep")))
+    print(open("keep.txt", encoding="utf-8").read(), sorted(n for n in os.listdir(".") if n.startswith("keep")))
 ```
 <details><summary>Answer</summary>
 
@@ -1156,6 +1180,9 @@ projects
 ```
 
 `name` is the last part; `stem` is the name without the **last** suffix; `suffix` is the last suffix with its dot; `suffixes` lists all; `parent` is the folder; `parts` is a tuple of all pieces. `type(p).__name__` is `PosixPath` on Linux and macOS, and `WindowsPath` on Windows: `Path(...)` picks the right one.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the path Path('projects') / 'demo' / 'report.final.txt' as a folder tree: projects, then demo, then the file report.final.txt. Label the pieces with brackets: parts is ('projects', 'demo', 'report.final.txt'), parent is projects/demo, name is report.final.txt, stem is report.final, suffix is .txt, suffixes is ['.final', '.txt']. Use a different colour for each label."
 
 ### 9.3 Changing pieces
 
@@ -1236,7 +1263,7 @@ print((root / "a" / "blob.bin").read_bytes())
 
 with note.open("a", encoding="utf-8") as f:
     f.write("more\n")
-print(len(note.read_text().splitlines()))
+print(len(note.read_text(encoding="utf-8").splitlines()))
 
 (root / "empty.txt").touch()
 print((root / "empty.txt").stat().st_size)
@@ -1271,7 +1298,7 @@ root = Path("proj")
 for name in ["main.py", "notes.txt", "src/app.py", "src/deep/x.py", "src/data.csv"]:
     p = root / name
     p.parent.mkdir(parents=True, exist_ok=True)
-    p.write_text("x")
+    p.write_text("x", encoding="utf-8")
 
 print("iterdir:", sorted(p.name for p in root.iterdir()))
 print("glob *.py:", sorted(str(p) for p in root.glob("*.py")))
@@ -1347,7 +1374,7 @@ a/b/../c.txt
 import os
 os.makedirs("a/b", exist_ok=True)
 for name in ["a/one.txt", "a/b/two.txt"]:
-    with open(name, "w") as f:
+    with open(name, "w", encoding="utf-8") as f:
         f.write(name)
 print(sorted(os.listdir("a")))
 for folder, dirs, files in os.walk("a"):
@@ -1401,7 +1428,7 @@ The `glob` module finds paths with shell-like patterns. It returns **strings**; 
 import glob
 from pathlib import Path
 for name in ["a.txt", "b.txt", "ab.txt", "c.csv", "d1.log", ".hidden.txt", "sub/e.txt", "sub/deep/f.txt"]:
-    p = Path(name); p.parent.mkdir(parents=True, exist_ok=True); p.write_text("x")
+    p = Path(name); p.parent.mkdir(parents=True, exist_ok=True); p.write_text("x", encoding="utf-8")
 
 print(sorted(glob.glob("*.txt")))
 print(sorted(glob.glob("?.txt")))
@@ -1498,7 +1525,7 @@ with open("people.csv", "w", newline="", encoding="utf-8") as f:
     writer = csv.DictWriter(f, fieldnames=["name", "city"])
     writer.writeheader()
     writer.writerows(people)
-print(open("people.csv", newline="").read().splitlines())
+print(open("people.csv", newline="", encoding="utf-8").read().splitlines())
 ```
 ```text
 ['name', 'qty', 'price']
@@ -1510,6 +1537,9 @@ notebook 120.0
 ```
 
 `reader.fieldnames` is the header; `row["price"]` does not depend on the column order. `DictWriter` needs `fieldnames`, and `writeheader()` writes them. Two more facts for files from other people: a row that is **too short** gets `None` for the missing columns; a row that is **too long** puts the extra values in a **list under the key `None`**. A `DictWriter` refuses a row with keys that are not in `fieldnames` (`ValueError`), unless you pass `extrasaction="ignore"`.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw items.csv as a table with the header name, qty, price and two rows: pen, 10, 2.5 and notebook, 3, 40. Animate csv.DictReader turning each row into a dictionary: {'name': 'pen', 'qty': '10', 'price': '2.5'}, using the header as the keys. Show that the values are strings, then a small step that does int(qty) times float(price) to give 25.0 for pen. Add an arrow back for DictWriter."
 
 ### 11.4 Quoting: the module does the hard part
 
@@ -1555,11 +1585,11 @@ import csv
 
 rows = [["a", "b"], ["1", "2"]]
 
-with open("good.csv", "w", newline="") as f:
+with open("good.csv", "w", newline="", encoding="utf-8") as f:
     csv.writer(f).writerows(rows)
 
 # Windows-style text mode simulated with newline="\r\n":
-with open("bad.csv", "w", newline="\r\n") as f:
+with open("bad.csv", "w", newline="\r\n", encoding="utf-8") as f:
     csv.writer(f).writerows(rows)
 
 print("with newline='' :", open("good.csv", "rb").read())
@@ -1739,7 +1769,7 @@ events = [{"id": 1, "kind": "login"}, {"id": 2, "kind": "click"}, {"id": 3, "kin
 with open("events.jsonl", "w", encoding="utf-8") as f:
     for event in events:
         f.write(json.dumps(event) + "\n")
-print(open("events.jsonl").read(), end="")
+print(open("events.jsonl", encoding="utf-8").read(), end="")
 
 with open("events.jsonl", encoding="utf-8") as f:
     for line in f:
@@ -1977,7 +2007,7 @@ from pathlib import Path
 
 with tempfile.TemporaryDirectory() as folder:
     work = Path(folder)
-    (work / "a.txt").write_text("scratch")
+    (work / "a.txt").write_text("scratch", encoding="utf-8")
     print(sorted(p.name for p in work.iterdir()), work.exists())
 print(work.exists())
 
@@ -2693,7 +2723,7 @@ main(["src", "--by", "size", "--dest", "bysize", "-q"])
 print(sorted(str(p) for p in Path("bysize").rglob("*.*")))
 print("== name clash ==")
 Path("src2").mkdir()
-Path("src2/a.txt").write_text("new a")
+Path("src2/a.txt").write_text("new a", encoding="utf-8")
 os.utime("src2/a.txt", (1_767_225_600, 1_767_225_600))
 main(["src2", "--by", "date", "--dest", "sorted"])
 print(sorted(p.name for p in Path("sorted/2026-01").iterdir()))
@@ -2727,7 +2757,7 @@ from organise import main
 def test_dry_run_changes_nothing():
     with tempfile.TemporaryDirectory() as d:
         root = Path(d)
-        (root / "a.jpg").write_text("x")
+        (root / "a.jpg").write_text("x", encoding="utf-8")
         assert main([d, "--dry-run", "-q"]) == 0
         assert (root / "a.jpg").exists()
         assert not (root / "images").exists()
@@ -2735,7 +2765,7 @@ def test_dry_run_changes_nothing():
 def test_move_by_type():
     with tempfile.TemporaryDirectory() as d:
         root = Path(d)
-        (root / "b.py").write_text("x")
+        (root / "b.py").write_text("x", encoding="utf-8")
         main([d, "-q"])
         assert (root / "code" / "b.py").exists()
 

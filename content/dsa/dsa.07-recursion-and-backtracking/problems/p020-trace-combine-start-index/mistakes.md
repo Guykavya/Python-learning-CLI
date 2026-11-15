@@ -1,0 +1,4 @@
+- Not printing the leaves: the `print` comes before the length check, so every call prints.
+- Giving the grandchildren the parent's `start + 1` instead of `x + 1`.
+- Forgetting the dead-end call with path `[4]`.
+- Writing the final list in a different format: Python prints `[[1, 2], [1, 3], ...]`.

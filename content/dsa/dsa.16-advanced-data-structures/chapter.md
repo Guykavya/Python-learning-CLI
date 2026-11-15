@@ -147,6 +147,10 @@ Take `a = [5, 3, 8, 6, 2, 7, 4, 1]`. Each node stores the sum of its range.
 
 Check some nodes: `5+3 = 8`, `8+6 = 14`, `8+14 = 22`, `2+7 = 9`, `4+1 = 5`, `9+5 = 14`, `22+14 = 36`. The root holds the sum of everything.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a segment tree for the array [5, 3, 8, 6, 2, 7, 4, 1]. Each node is a box showing its range [lo,hi) and the sum of that range: root [0,8)=36, children [0,4)=22 and [4,8)=14, then [0,2)=8, [2,4)=14, [4,6)=9, [6,8)=5, then the eight leaves. Animate it being built bottom-up: leaves first, then each parent turns on as the sum of its two children."
+
+
 ### Why this makes queries fast
 
 Suppose we want the sum of `a[2:7]`, which is `8 + 6 + 2 + 7 + 4 = 27`. We do not add five numbers. We look for the **fewest nodes whose ranges exactly cover `[2, 7)`**:
@@ -306,6 +310,10 @@ answer: 27
 ```
 
 Count the "inside" lines: they are the nodes that actually contribute. The "partial" lines are the path along the two edges of the query (the left edge at position 2 and the right edge at position 7). Everything else is cut off immediately, either as "outside" or as "inside".
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a range-sum query on a segment tree built from [5, 3, 8, 6, 2, 7, 4, 1], asking for the sum of positions [2,7). Show the tree with node ranges. Step through the recursion from the root: colour nodes grey for 'outside, skip', yellow for 'partial, split', green for 'inside, take'. The green nodes are [2,4)=14, [4,6)=9 and [6,7)=4; show them adding up to 27."
+
 
 ### Predict the output
 
@@ -628,6 +636,10 @@ values:  a = [5, 3, 8, 6, 2, 7, 4, 1]
 ```
 
 The size is exactly `2n`, not `4n`.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Show the iterative segment tree for a = [5, 3, 8, 6, 2, 7, 4, 1] as both a tree and a flat list of size 16 (index 0 unused). Leaves sit at t[8..15] = 5 3 8 6 2 7 4 1. Animate filling from index 7 down to 1 with t[i] = t[2i] + t[2i+1]: t[4..7] = 8 14 9 5, t[2..3] = 22 14, t[1] = 36. Highlight the children of each index as it is filled."
+
 
 ### Point update: walk up
 
@@ -1097,6 +1109,10 @@ after query(2, 3)
 Follow the first update. The range `[1, 4)` is covered by the leaf `[1,2)` (node 5) and by the whole node `[2,4)` (node 3). Node 3 got `s = 14 + 10 * 2 = 34` and `lz = 10`; its leaves (nodes 6 and 7) still say `6` and `8`: **stale on purpose**. Now `query(2, 3)` wants node 6. To reach it, it descends through node 3, which pushes the note: nodes 6 and 7 become `16` and `18`, and `lz[3]` returns to `0`. The two leaves received the note only when someone needed them.
 
 (Leaves also collect a `lz` value, as node 5 shows. It is never used, because a leaf has no children. That is harmless; some implementations skip it.)
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate lazy propagation on a segment tree over [2, 4, 6, 8] storing sums. Nodes: 1=[0,4)=20, 2=[0,2)=6, 3=[2,4)=14, leaves 4..7 = 2,4,6,8. Step 1: add +10 to range [1,4). Node 3 becomes 34 and gets a sticky note 'lazy +10'; its leaves stay 6 and 8 (stale). Step 2: query position 2. The note is pushed down, so leaves become 16 and 18 and node 3's note clears."
+
 
 ### What happens if you forget to push?
 
@@ -1578,6 +1594,10 @@ Read it as stacked bars. The long bar `t[16]` covers everything. `t[8]` covers 1
 1. The bars are **nested or disjoint**, never partly overlapping: the structure is a hidden tree.
 2. A prefix `1..13` can be tiled by **a few bars laid end to end**: `t[8]` (1-8), then `t[12]` (9-12), then `t[13]` (13). That is the query.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a Fenwick tree for n = 16 as stacked horizontal bars over positions 1..16. Cell t[i] covers positions (i - lowbit(i), i], where lowbit(i) = i & -i. So t[16] covers 1-16, t[8] covers 1-8, t[12] covers 9-12, t[14] covers 13-14, odd cells cover one position. Then highlight how the prefix sum of 1..13 is tiled by t[8], t[12], t[13]."
+
+
 ### Prefix query: drop the lowest bit
 
 To get `a1 + ... + a13`, start at 13 (`1101`), take `t[13]`, which covers just position 13. We still need 1..12. Remove the lowest bit: `13 - 1 = 12` (`1100`). Take `t[12]` (covers 9..12). Remove the lowest bit: `12 - 4 = 8` (`1000`). Take `t[8]` (covers 1..8). Remove the lowest bit: 0. Stop.
@@ -1602,6 +1622,10 @@ add(i, v):  while i <= n:
 ```
 
 Update of position 5 (`101`): `5 -> 6 (110) -> 8 (1000) -> 16`. The cells `t[5]`, `t[6]`, `t[8]`, `t[16]` all contain position 5, and no others do.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a Fenwick tree point update with n = 16. Add a value at position 5. Show the binary of the index at each step: 5 (101), then add the lowest set bit to get 6 (110), then 8 (1000), then 16. Highlight the bars t[5], t[6], t[8], t[16] one after another, each covering position 5, and show every other bar staying unchanged."
+
 
 ### The class
 
@@ -1980,6 +2004,10 @@ x=20 rank=1 seen=4 earlier<=x: 2  new inversions: 2  total: 6
 
 Read the trace. When `x = 30` arrives, two elements have been seen (`40`, `10`); only `10` is `<= 30`, so `2 - 1 = 1` inversion: the pair `(40, 30)`. The second `10` arrives after `40`, `10`, `30`. Only the `40` and the `30` are greater, so it adds 2 inversions; the earlier `10` is equal, and equal elements do not count. The final `20` adds 2 more (`40` and `30`), for a total of 6.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate counting inversions in [40, 10, 30, 10, 20] with a Fenwick tree of counts over ranks (10=0, 20=1, 30=2, 40=3). Process left to right. For each x show the rank, how many earlier elements are <= x, and new inversions = seen - that count: 0, 1, 1, 2, 2, total 6. After each step add 1 at x's rank and show the count bars growing."
+
+
 ### The brute-force check
 
 ```python
@@ -2093,6 +2121,10 @@ looking for k=5
 ```
 
 The fifth smallest of `1,3,3,3,7,7,9` is `7`, found in four steps, one per bit: no `prefix` calls, no binary search on top.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate finding the 5th smallest in a multiset {1,3,3,3,7,7,9} using a Fenwick tree of counts over values 1..10. Start with pos=0, k=5 and step sizes 8, 4, 2, 1. Step 8: t[8]=6 is not less than 5, so stay. Step 4: t[4]=4 < 5, so pos=4, k=1. Step 2: t[6]=0, so pos=6. Step 1: t[7]=0, so pos=7. Answer: value 7. Show the pointer jumping along the bars."
+
 
 ### Brute-force check
 
@@ -2281,6 +2313,10 @@ k=3 (blocks of 8): [1]
 
 Trace `query(1, 7)`. The length is 6, so `k = 2` (blocks of 4). The first block is `a[1:5] = 3, 8, 6, 2` with minimum `2` (that is `table[2][1]`). The second block starts at `7 - 4 = 3`: `a[3:7] = 6, 2, 7, 4` with minimum `2` (`table[2][3]`). Their overlap is positions 3 and 4. The answer is `min(2, 2) = 2`.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a sparse table for minimum on a = [5, 3, 8, 6, 2, 7, 4, 1] as rows: k=0 [5,3,8,6,2,7,4,1], k=1 [3,3,6,2,2,4,1], k=2 [3,2,2,2,1], k=3 [1]. Row k entry i is the minimum of a[i : i+2^k]. Then animate the query [1,7): length 6, so k=2. Highlight block a[1:5] and block a[3:7], show their overlap at positions 3 and 4, and the answer min(2,2)=2."
+
+
 ### Why a sparse table fails for sums
 
 Do the same for sums on the same range. The two blocks have sums `19` and `19`, and `19 + 19 = 38`, but the true sum of `a[1:7]` is `3 + 8 + 6 + 2 + 7 + 4 = 30`. The overlap `6 + 2 = 8` was counted twice.
@@ -2364,6 +2400,10 @@ Cut the array into blocks of size `B = floor(sqrt(n))`. For each block, keep its
  query [2, 14):  2 3 | block 1 | block 2 | 12 13
                  ^ scan        whole blocks     scan ^
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw an array of 16 cells (indices 0..15) cut into 4 blocks of size 4, each block showing its stored sum. Animate a range-sum query on [2,14): add cells 2 and 3 one by one (left partial block), then take the stored sums of block 1 and block 2 in one step each, then add cells 12 and 13 one by one. Count the cells touched."
+
 
 ```python
 class SqrtSum:

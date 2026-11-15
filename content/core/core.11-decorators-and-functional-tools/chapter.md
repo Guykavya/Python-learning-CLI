@@ -210,6 +210,10 @@ $ python obj6.py
 
 `a` and `b` each have their **own** `count`, because each call of `make_counter` created a new `count` variable. This is exactly how decorators will keep state (section 8).
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a Python closure. A function make_counter() has a local variable count = 0 and an inner function tick() that uses 'nonlocal count' and does count += 1. Show make_counter() called twice: a = make_counter() and b = make_counter(). Draw two separate tick functions, each with its own small 'cell' box holding count. Animate a() three times so a's cell goes 1, 2, 3 while b's cell stays untouched, then b() gives 1."
+
+
 ### 1.5 A function carries information about itself
 
 A function object has **attributes**: pieces of information stored on it. Some are filled in by Python, and you can add your own.
@@ -376,6 +380,10 @@ after:    say_hello ──► [wrapper] ── func ──► [original say_hell
 ```
 
 The original function still exists. Only the name moved.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate Python name rebinding for a decorator. Step 1: the name 'say_hello' is an arrow pointing to the original say_hello function object. Step 2: run say_hello = announce(say_hello). A new function object 'wrapper' appears, holding a closure variable 'func' that points to the original function. Step 3: the 'say_hello' arrow moves from the original to the wrapper. Highlight that the original still exists and is reached through func."
+
 
 ### 3.3 The `@` syntax is just a shortcut
 
@@ -856,6 +864,10 @@ Everything is back: the name, the docstring, the type hints, and even `help` sho
 
 From now on, **every decorator in this chapter uses `@functools.wraps(func)`**. Make it a habit: there is no good reason to leave it out.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a before and after comparison of Python function metadata. Left side: a decorator log_calls without functools.wraps wraps the function area(width, height); the wrapper card shows __name__ = 'wrapper', __doc__ = None. Right side: with @functools.wraps(func), arrows copy __name__ 'area', __doc__ 'Return the area of a rectangle.' and __annotations__ from the original area onto the wrapper card. Show help(area) output matching on the right."
+
+
 ### 5.4 `__wrapped__`: the way back to the original
 
 `wraps` also adds one new attribute: `wrapper.__wrapped__`, which points to the **original** function. That gives you a way to call the function **without** the decorator, which is useful in tests:
@@ -1006,6 +1018,10 @@ def say_hi(name): ...              decorator = repeat(3)
 ```
 
 or in one line: `say_hi = repeat(3)(say_hi)`. The two pairs of brackets are the two calls: `repeat(3)` gives a decorator, and `(say_hi)` calls that decorator with the function.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw three nested boxes for the Python decorator @repeat(3) on def say_hi(name). Outer box: repeat(times) receives 3 and returns decorator. Middle box: decorator(func) receives say_hi and returns wrapper. Inner box: wrapper(*args, **kwargs) receives 'Asha' and loops 3 times calling func, printing 'hi Asha' three times. Mark the outer two as 'runs once at decoration time' and the inner as 'runs on every call'. Show times and func as variables the wrapper remembers."
+
 
 ### 6.3 Watching the three layers run
 
@@ -1328,6 +1344,10 @@ A short way to remember all three facts:
 
 Why the two orders? To **build** the onion you must start from the core and add skins outwards. To **reach** the core from outside you must go through the outer skin first. Same onion, two directions.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a Python onion with two stacked decorators written as @first above @second above def work. Draw work as the core, second_wrapper as the middle skin, first_wrapper as the outer skin. First show building: second wraps work, then first wraps that. Then animate one call work() moving inward, printing 'first : enter', 'second: enter', 'work runs', then outward printing 'second: exit', 'first : exit', and 'done' returned."
+
+
 ### 7.4 Three decorators, fully traced
 
 With settings, so you can see all layers at once. One decorator factory, used three times with different labels:
@@ -1590,6 +1610,10 @@ hello call #3
 ```
 
 `hello` and `bye` each have their **own** counter. Why? `count_calls` ran twice (once per `@count_calls`), and each run created a new `calls` variable for its own wrapper.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two Python wrappers made by the decorator count_calls. @count_calls on hello creates wrapper A with its own closure cell calls = 0. @count_calls on bye creates wrapper B with a separate cell calls = 0. Animate the calls hello(), hello(), bye(), hello(): cell A goes 1, 2, 3 and cell B goes 1. Print each message like 'hello call #2' and show the two cells never mix."
+
 
 The weakness: `calls` is hidden. Code outside cannot read it or reset it.
 
@@ -1956,6 +1980,10 @@ fib_fast(27) = 196418 in 0.000013 s
 
 (Your timings will differ; the huge gap will not.)
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the call tree of the recursive Python function fib(n) for fib(5) in two versions. Version 1 without a cache: the tree repeats fib(3), fib(2) and others many times, shown in red. Version 2 with @functools.lru_cache: each fib(k) is computed once (a 'miss', green), and later repeats are 'hits' that read a stored value from a small cache table instead of branching again. Label hits and misses."
+
+
 ### 10.3 `maxsize` and "least recently used"
 
 A cache that only grows can eat all your memory if the function is called with millions of different arguments. `maxsize` sets a limit. When the cache is full and a new result arrives, the result that was **least recently used** (LRU) is thrown out. That is where the name comes from.
@@ -2123,6 +2151,10 @@ power () {'exponent': 2}
 
 You could write the same with a closure (`def square(b): return power(b, 2)`) or a `lambda`. `partial` is shorter, says clearly "this is `power` with `exponent=2`", and you can see its settings when you print it.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw functools.partial as a function with some slots pre-filled. Show power(base, exponent) as a machine with two input slots. Then square = partial(power, exponent=2) as the same machine with the exponent slot locked to 2 and only base open. Animate square(5) filling base with 5 and giving 25. Also show cube = partial(power, exponent=3) with cube(2) giving 8. Label the stored func, args and keywords."
+
+
 ### 11.2 `partial` with higher-order functions
 
 `partial` shines when a higher-order function (like `map`, `sorted` or a callback) wants a function with **fewer** arguments than yours has:
@@ -2191,6 +2223,10 @@ TypeError: reduce() of empty iterable with no initial value
 ```
 
 Without a start value, an empty list is an error. **Always give a start value** unless you know the list is never empty.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate functools.reduce folding the list [3, 5, 2, 10] with addition. Show a running total box. Step 1: 3 + 5 = 8. Step 2: 8 + 2 = 10. Step 3: 10 + 10 = 20. At each step the previous result moves into the left slot of the function and the next list item drops into the right slot. End with the single value 20. Mention the formula f(f(f(a, b), c), d)."
+
 
 ### 12.2 When to use `reduce` (rarely)
 

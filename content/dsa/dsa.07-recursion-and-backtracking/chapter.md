@@ -246,6 +246,10 @@ factorial(3) returns 6
 
 Read it from the top. The calls go *down* (each deeper line is a new call on top of the stack), and the "returns" lines come back *up* in the reverse order. This "down, then up" shape is the heartbeat of every recursive function.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate the Python call stack for this recursive function: factorial(n) returns 1 if n is 0, else n * factorial(n-1). Start with factorial(3). Draw a vertical stack of boxes. Step by step, push factorial(3), factorial(2), factorial(1), factorial(0); then pop them one by one, showing the returned values 1, 1, 2, 6. Mark the top of the stack, and label each waiting box with what it will do when its answer arrives."
+
+
 ### A decorator that shows the stack for any function
 
 You learned decorators in core.11. Here is a small one that you can reuse to debug any recursive function in this module.
@@ -384,6 +388,10 @@ fib(4)
 Count the nodes: 9 calls for `fib(4)`. The leaves are the calls that return right away (`fib(1)` and `fib(0)`). Look at the repeated pieces: `fib(2)` appears twice, with its whole sub-tree. That is wasted work, because the answer to `fib(2)` is
 always the same.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the recursion tree of fib(4), where fib(n) = fib(n-1) + fib(n-2) and fib(0)=0, fib(1)=1. It has 9 nodes: fib(4) branches to fib(3) and fib(2); fib(3) to fib(2) and fib(1); and so on. Colour the two fib(2) sub-trees the same colour to show repeated work, mark the leaves fib(1) and fib(0), and animate the calls running left to right, depth first."
+
+
 ### Counting the calls
 
 Let `calls(n)` be the number of calls made by `fib(n)`. One call for the node itself, plus the calls of its two children: `calls(n) = 1 + calls(n-1) + calls(n-2)`, with `calls(0) = calls(1) = 1`. Let us count by really running the function.
@@ -454,6 +462,9 @@ calls: 51
 
 Only 51 real calls (one per value of `n`), instead of tens of billions. The tree collapsed into a chain, because each repeated sub-tree is computed only once. This is the whole idea of **dynamic programming**, and it is the topic of a later module.
 In *this* module the trees do **not** have repeated sub-trees (each branch is a different partial answer), so we cannot memoise them. We make them smaller with pruning instead.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Show how memoisation shrinks the recursion tree of fib(5). First draw the full tree (15 calls, with fib(3) twice and fib(2) three times). Then animate a cache: the first time fib(2), fib(3) and so on are computed, store the result in a table n -> value. Every later call to a stored value turns grey, shows 'cache hit', and its whole sub-tree disappears, leaving a chain of 6 real calls."
 
 **Try it 2.** Draw by hand the recursion tree of `countdown_sum(3)`, where `countdown_sum(n) = n + countdown_sum(n-1)` and `countdown_sum(0) = 0`. How many nodes? What is the depth?
 
@@ -592,6 +603,10 @@ undo 1     path=
 Look at what happens after `answer: 00`. The `undo 0` line puts the path back to `0`, and then the loop picks the next option `1`, giving `01`. After both options at depth 1 are done, the path goes back to the empty string and the first level
 tries its second option. The path is a **stack** that mirrors the call stack.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate backtracking that builds all binary strings of length 2. Show a decision tree: the root is the empty path, each level adds '0' or '1'. A moving marker walks depth first through: choose 0, choose 0 (answer 00), undo, choose 1 (answer 01), undo, undo, then choose 1, and so on to 10 and 11. Next to the tree, show the path list growing with append and shrinking with pop at each step."
+
+
 ### The trap: appending the path itself
 
 This is the number one backtracking bug. `result.append(path)` stores a *reference* to the list, not a copy. Later `path.pop()` changes that very list, so every stored "answer" changes too.
@@ -620,6 +635,10 @@ print(broken(2))
 ```
 
 The result holds four references to the same list, and that list is empty at the end because every `pop` has run. The fix is to store a copy: `path[:]` or `list(path)`.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Explain the Python reference bug with a memory diagram. A list called path is shared. Step 1: path = ['0','0'] and result.append(path) stores an arrow to the same list, not a copy. Step 2: path.pop() twice empties that one list. Show the result list holding four arrows all pointing to the same now-empty box, so printing gives [[], [], [], []]. Then redraw with path[:] making separate copies."
+
 
 ### The other style: pass a new value down (no un-choose)
 
@@ -716,6 +735,9 @@ for s in subsets_include_exclude([1, 2, 3]):
 [3]
 []
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the include/exclude decision tree for the list [1, 2, 3]. Level 0 decides item 1, level 1 item 2, level 2 item 3; the left branch means include (append), the right means exclude (skip). Show the path at each node and label the 8 leaves in the order they are found: [1,2,3], [1,2], [1,3], [1], [2,3], [2], [3], []. Animate a marker walking depth first."
 
 ### View 2: choose the next item from the rest
 
@@ -1102,6 +1124,10 @@ for p in permutations([1, 2, 3]):
 
 The state has two parts now, the `path` and the `used` flags, and **both** must be undone. Forgetting `used[i] = False` is a typical bug: the items stay "used" and later branches find nothing to pick.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate permutations of [1, 2, 3] by backtracking with a used array. Draw a tree: the root has 3 children (1, 2, 3), each has 2 children, each of those has 1, giving 6 leaves: 123, 132, 213, 231, 312, 321. Beside the tree show the path list and the used flags [F,F,F] changing as the marker chooses and un-chooses; grey out used items at each node."
+
+
 ### How fast does it grow?
 
 ```python
@@ -1390,6 +1416,10 @@ all agree: True
 
 The target `0` is a good test: the empty subset sums to 0, so the answer is 1. (It works because `total == target` is checked before anything else.) Remember: **the prune is an optimisation, never a change of the answer.**
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Illustrate pruning on a small include/exclude tree for the numbers [1, 2, 3, 4] with target 5 (all positive). Each node shows (index, running total). Draw the full tree faintly, then cut branches in red with a reason: 'total above target' (for example total 6) and 'total plus all remaining numbers is below target'. Mark total equal to 5 as a found subset. Show how many nodes remain versus the full tree."
+
+
 ### Pruning by sorting
 
 If the candidates are sorted, one failure lets you stop the whole loop. You have already seen this in `combination_sum`: `if c > remaining: break`. Compare it with `continue`, which would also be correct but would keep checking larger values one by one.
@@ -1569,6 +1599,10 @@ ABCB False
 
 Compare with the correct version: `"SEE"` should be `True` but the broken version gives `False`. The reason: the first attempt starts at an `S`, marks cells, fails, and the marks stay. The next start finds a board full of `#` and cannot succeed. A missing
 "un-choose" does not crash. It silently gives wrong answers, which is why it is the hardest backtracking bug to find.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate word search on the 3x4 grid ['ABCE','SFCS','ADEE'] looking for the word SEE. Show the grid. Run the broken version: each visited cell is overwritten with '#' and never restored. Start at the S in row 1 column 0, mark cells, fail, and leave '#' behind. Then start at the S in row 1 column 3 and show it cannot succeed because needed cells are '#'. Contrast with the fixed version that restores each letter."
+
 
 ### Pruning in word search
 
@@ -1750,6 +1784,10 @@ for n in range(1, 9):
 ```
 
 The counts for `n = 1 ... 8` are 1, 0, 0, 2, 10, 4, 40, 92. Two things to notice. For `n = 2` and `n = 3` there is no solution at all (the function returns an empty list, which is a valid answer). And the sequence is not smooth: `n = 6` has fewer solutions than `n = 5`.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a 4x4 chessboard and animate N-Queens, placing one queen per row from row 0. When a queen lands at (r, c), shade every attacked square: its column, its diagonal where r-c is equal, and its anti-diagonal where r+c is equal. Show the sets cols, diag and anti beside the board. When a row has no safe square, remove the last queen (backtrack). End with the two solutions [1,3,0,2] and [2,0,3,1]."
+
 
 ### Seeing a solution
 

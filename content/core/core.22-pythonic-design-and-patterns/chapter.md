@@ -356,7 +356,7 @@ import os
 
 def read_lbyl(path):
     if os.path.exists(path):
-        with open(path) as f:
+        with open(path, encoding="utf-8") as f:
             return f.read()
     return ""
 ```
@@ -368,7 +368,7 @@ This is **racy**: between the `exists` check and the `open`, another process can
 ```python
 def read_eafp(path):
     try:
-        with open(path) as f:
+        with open(path, encoding="utf-8") as f:
             return f.read()
     except FileNotFoundError:
         return ""
@@ -840,6 +840,9 @@ print(area(Rect(2, 3)), area(Tri(2, 3)))
 `Tri` was added but nobody updated `area`, so it quietly returns `None` again. Two cures appear later: a **method on the class** (`shape.area()`, polymorphism), and a **registry** when you cannot touch the classes (section 6.2).
 
 Related: `type(x) == list` rejects subclasses (`MyList()` fails the test, `isinstance` accepts it). Use `isinstance` when you truly must check, but first ask whether you need to check at all: duck typing (core.14) says to call the method and let it fail if it is missing.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a before and after picture of a Python function area(shape). Before: one box area() with an if/elif chain checking isinstance Circle, then Rect; a new Tri object arrives, falls through every branch, and returns None (show a red arrow). After: three class boxes Circle, Rect, Tri, each with its own area() method, and the call shape.area() going straight to the right box. Label 'edit one big function' versus 'add one new class'."
 
 ### 3.6 Flag arguments
 
@@ -1334,6 +1337,9 @@ The **object-oriented form** is polymorphism: give every shape class an `area()`
 
 **When not to.** Two cases are not worth a registry. If the choice has two stable branches that will never grow, an `if` is clearer. And do not use the registry just to *look* extensible, as section 12 explains.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a diagram of a registry in Python. In the centre, a dictionary SHAPES with keys 'circle', 'square' and later 'rect', each pointing to a function box. A decorator @register('rect') is shown as an arrow that adds a new row to the dictionary. Then animate area('rect', 2, 5) looking up SHAPES['rect'] and returning 10, and area('hexagon', 1) failing with a ValueError that lists the known names. Highlight that area() never changes."
+
 ### 6.4 L: Liskov substitution
 
 **The pain.** A subclass "is-a" its parent in the real world, but the code that works with the parent breaks when it receives the child.
@@ -1567,6 +1573,9 @@ print(checkout([20, 30], lambda t: t - 1))
 
 **When not to.** Use a class-based strategy only if the strategy needs **several methods** or **its own state and configuration** that callers inspect. A strategy class with one method named `execute` is a function in disguise.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a diagram of the Strategy pattern for a shopping checkout. One box checkout(items, strategy) takes items [20, 30], sums them to 50, then calls a plugged-in function. Show three swappable function boxes on the side: percent_off(10) giving 45.0, flat_off(60) giving 0, and no_discount giving 50. Show a plug-and-socket arrow so the viewer sees checkout stays the same while the rule is swapped. Label the sum step and the strategy step."
+
 ### 7.2 Factory: one place that knows how to build things
 
 **The pain.** Code scattered everywhere decides which class to create.
@@ -1724,6 +1733,9 @@ Four design choices are worth noticing, because each guards against a real bug:
 
 **When not to.** Observers make the flow of control **invisible**: reading `signup` no longer tells you what happens. Debugging "who changed this?" gets harder. For two or three fixed reactions that always happen, just call them. Use events when the set of listeners really varies or comes from plugins.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate an EventBus with publish and subscribe. Draw a bus box with handlers for event 'signup': log, mail, stats. Step 1: publish('signup', user='asha'). The bus calls log (prints), then mail (raises RuntimeError 'smtp down', shown in red and collected), then stats (still runs). Result list: [RuntimeError]. Step 2: stats calls its unsubscribe function and is removed. Step 3: publish for user 'ben' calls only log and mail. Highlight that one failure does not stop the others."
+
 ### 7.4 Adapter: make an old thing fit a new shape
 
 **The pain.** You have code that expects one interface, and a library (or a legacy class you may not edit) that offers another.
@@ -1760,6 +1772,9 @@ ok 22.5
 `monitor` is unchanged, and `LegacySensor` is unchanged. And often the shortest adapter is **no adapter**: change `monitor` to accept a **function** (`monitor(read_celsius)`), so that anything callable can be plugged in with a one-line `lambda`.
 
 **When not to.** If you own both sides, change one of them instead of adding a translation layer. Adapters are for code you cannot or should not edit: third-party libraries, legacy modules, another team's service.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a diagram of the Adapter pattern. Left: function monitor(sensor), which calls sensor.celsius(). Right: class LegacySensor, which only has read_fahrenheit_string() returning '72.5F'. In the middle, a FahrenheitAdapter box wraps LegacySensor. Animate one call: monitor calls celsius(), the adapter reads '72.5F', removes the 'F', converts (72.5 - 32) * 5 / 9, and returns 22.5, so monitor prints 'ok 22.5'. Label that neither side was edited."
 
 ### 7.5 Command: an action as an object
 
@@ -2006,6 +2021,9 @@ ok [('a@x.com', 'welcome')] {'a@x.com': '2025-01-01'}
 A test can now say, with no patching: the signup stored the email with *this exact time*, and sent *exactly this one message*. That is the "best seam" you saw in core.19, section 7. This is also why `unittest.mock.patch` is a last resort: it reaches into modules to replace things that should have been parameters.
 
 The rule of thumb for layering: **the core never imports the shell.** Business functions take plain values and collaborators; only `main`/`build_app` imports `smtplib`, opens files and reads `sys.argv`.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a diagram of dependency injection with a composition root. A function build_app(env) sits at the top. If env is 'test' it creates SignupService with a plain dict repo, a FakeMailer, and a clock lambda returning '2025-01-01'. Otherwise it creates SignupService with a real Mailer and datetime.datetime.now. Arrows show the parts being passed into the service constructor. Show a test calling signup('a@x.com') and checking FakeMailer.sent."
 
 ### 8.4 Why globals hurt
 
@@ -2426,7 +2444,7 @@ def run(*lines):
         capture_output=True,
         text=True,
         timeout=20,
-    )
+    , encoding="utf-8")
     return result.stdout.splitlines()
 
 
@@ -2583,6 +2601,9 @@ print(build_report([]))
 ```text
 ['total: 0.00']
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a layered picture of a functional core and imperative shell. The outer ring is the shell: main() reads commands and calls write(line). The inner circle is the pure core: build_report(loans) takes a list of Loan objects and returns a list of lines, ending with 'total: 0.00' when the list is empty. Arrows show data going in and lines coming out. Mark that tests call build_report directly, with no fake reader or writer."
 
 ### 11.6 Step 4: replace the command chain with a registry
 

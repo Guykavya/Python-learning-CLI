@@ -534,6 +534,9 @@ print(count)
 
 Every character costs one lookup and one store: `O(n)` for the whole string, instead of `O(n * distinct)` when you call `text.count(ch)` for each distinct letter.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate counting the letters of the string 'mississippi' with a dictionary. Show the letters as a row of tiles; a pointer moves right one tile at a time and increases that letter's counter in a table beside it. The table grows as new letters appear. The final counts are m: 1, i: 4, s: 4, p: 2. Highlight the counter that changes at each step."
+
 ### `collections.Counter`
 
 `Counter` is a dictionary built for counting:
@@ -777,6 +780,9 @@ print(group_anagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))
 
 Cost: `O(n * L log L)` for `n` words of length `L` (the sorts). With the 26-count tuple it is `O(n * (L + 26))`.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the words eat, tea, tan, ate, nat, bat flowing one by one through a machine that sorts their letters to make a key: eat, tea and ate become 'aet', tan and nat become 'ant', bat becomes 'abt'. Below, show a dictionary with three buckets keyed 'aet', 'ant', 'abt', and animate each word dropping into the bucket with its key. End with the three groups."
+
 ### Keys that look right but are wrong
 
 A key must be equal **exactly** for the items you want in one group. These two are tempting and wrong:
@@ -936,6 +942,9 @@ means you only ever pair with **earlier** positions, which also guarantees each 
 
 Why does `[3, 3]` work? The first `3` is stored; the second `3` asks for `6 - 3 = 3` and finds it at index 0.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate the two-sum algorithm on the list [2, 7, 11, 15] with target 9. Show the list as boxes and a dictionary 'seen' (value to index) beside it. At each index j, compute need = 9 - a[j] and check whether need is already a key in seen. Step 0: need 7, not found, store 2 -> 0. Step 1: need 2, found at index 0, so answer (0, 1). Highlight the lookup before the store."
+
 ### Counting pairs instead of finding one
 
 If you want **how many** pairs, store counts and add them up:
@@ -1076,6 +1085,9 @@ print(count_subarrays_sum([1, -1, 1, -1], 0))
 ```
 
 Why `{0: 1}`? The empty prefix (before the first element) has sum 0 and must be counted, otherwise every subarray that starts at index 0 is missed.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Take the list [1, -1, 2, -2, 3, -3] with target sum k = 0. Draw the prefix sums [0, 1, 0, 2, 0, 3, 0] as a line under the list, and animate a dictionary of counts of prefix sums as you move right. Highlight each time the current prefix value was already seen: show a bracket joining the two equal prefixes, and the subarray between them that sums to zero. The total is 6."
 
 ### Zero-sum subarrays and "equal prefixes"
 
@@ -1469,6 +1481,9 @@ collisions cannot be avoided. A hash table is a plan for **living with collision
 Why `% m`? The hash function returns a big integer (Python's `hash` can be any 64-bit value, negative included). The remainder modulo `m` folds it into the range `0 .. m - 1`. In Python the result of
 `%` with a positive `m` is never negative, which is exactly what an array index needs.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a row of 8 boxes numbered 0 to 7 (a hash table with m = 8). Animate the keys 5, 13, 21, 7, 100, 12 arriving one by one. Each key goes to the box key % 8: 5, 13 and 21 all land in box 5, 7 in box 7, 100 and 12 in box 4. Show the arithmetic beside each arrow and flash the boxes that receive a second key, labelled 'collision'."
+
 ### Step 2: chaining
 
 The simplest way to handle collisions: each bucket holds a **list** of the pairs that landed there (a **chain**).
@@ -1529,6 +1544,9 @@ True False 5
 
 Integers hash to themselves in Python (`hash(13) == 13`), so with `m = 4` the keys `5, 9, 13` all go to bucket 1: you can see the chain `[5, 9, 13]` formed. (We use integer keys here so the output
 is the same on every machine; with string keys the layout would change from run to run.)
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a hash table with 4 buckets (0 to 3), each holding a growing list (a chain). Animate inserting the keys 5, 9, 12, 13, 7, 16, using bucket = key % 4. Show the final chains: bucket 0 has 12 and 16, bucket 1 has 5, 9, 13, bucket 2 is empty, bucket 3 has 7. Then animate looking up 13: jump to bucket 1, then walk the chain 5, 9, 13, highlighting each step."
 
 ### How long is a chain?
 
@@ -1634,6 +1652,9 @@ print(t.get(48), t.get(49))
 Watch what happens: keys that are all multiples of 8 collide completely while `m` is 4 and 8 (everything is in bucket 0), and even at `m = 16` half of them still share a bucket. Only a much larger `m` separates them.
 Resizing helps with load, but it cannot fix a badly matched hash function: keys with a common factor of `m` still pile up. This is why real implementations mix the bits of the hash before taking the remainder,
 and why a prime or a randomised modulus is often chosen.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a chained hash table growing. Start with 4 buckets. Insert the keys 8, 16, 24 (all multiples of 8, so all land in bucket 0). When the load factor size/buckets goes above 0.75, the table doubles to 8 buckets and every key is rehashed with key % 8. Show the old array, the new bigger array, arrows moving each key, and the bucket numbers recalculated."
 
 ### Why doubling? Amortised `O(1)`
 
@@ -1753,6 +1774,9 @@ True False
 Home slot for 10, 17, 3 and 24 is slot 3 (`k % 7 == 3`). They fill 3, 4, 5, 6. A block of consecutive full slots is a **cluster**. A key whose home lies inside a cluster has to walk to the end of the
 cluster: clusters make probes longer, and longer clusters grow faster (a *rich get richer* effect).
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw an array of 7 slots numbered 0 to 6 for open addressing with linear probing, home slot = key % 7. Animate adding 10, 17, 3, 24 (all with home slot 3): each one checks slot 3, then moves right one slot at a time to 4, 5, 6 until it finds an empty one. Then add 8 (slot 1) and 15 (slot 1, then 2). Colour the run of full slots 3 to 6 as a 'cluster'."
+
 ### Why can a search stop at an empty slot?
 
 Say we search for `x` and arrive at an empty slot. If `x` had been inserted, its own insertion walked the same probe sequence and stopped at the **first** empty slot, which was this slot or one earlier.
@@ -1856,6 +1880,9 @@ True
 ```
 
 A simpler (and slower) alternative is to re-insert the keys that follow the deleted one in its cluster. Python's `dict` uses tombstones internally too.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw an array of 7 slots holding 10 in slot 3, 17 in slot 4 and 3 in slot 5. Step 1: wrongly empty slot 4 and show a search for 3 starting at slot 3, hitting the empty slot 4 and wrongly saying 'absent'. Step 2: instead mark slot 4 with a tombstone symbol, show the search for 3 passing over it to find 3 in slot 5. Step 3: insert 24 (home slot 3) and show it reusing the tombstone slot."
 
 ### Chaining versus open addressing
 
@@ -2214,6 +2241,9 @@ start 314 23
 
 The two last columns always agree: the rolling update is exact arithmetic modulo `M`, not an approximation. Cost of one step: a constant number of operations, independent of `L`.
 Problem 38 asks you to trace this.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a rolling hash on the digit string '31415926' with window length 3, base B = 10, modulus M = 97. Show a 3-wide window sliding right one step at a time. At each step show the new hash: 314 gives 23, then 141 gives 44, 415 gives 27, 159 gives 62, 592 gives 10, 926 gives 53. Mark the digit leaving on the left and the digit entering on the right."
 
 ### Rabin-Karp: pattern search
 

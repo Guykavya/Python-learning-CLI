@@ -68,12 +68,16 @@ def test_syllabus_is_honest_about_unwritten_modules(home, capsys):
     capsys.readouterr()
     run("syllabus", "swe")
     out = capsys.readouterr().out
-    assert "not written yet" in out, "a module with no problems must say so, not show 0/N"
-    assert "Written so far: 0 of" in out, "the summary line should count only modules that have problems"
+    assert "chapter ready" in out, "a module with a chapter but no problems must say so, not show 0/N"
+    assert "Problems written: 0 of" in out, "the summary line should count only modules that have problems"
+    assert "Chapters written: 11 of 11" in out, "every swe module has a chapter"
 
     run("syllabus", "dsa")
     out = capsys.readouterr().out
-    assert "Written so far: 2 of" in out, "dsa has two written modules"
+    syl_modules = list(load().track("dsa").modules)
+    with_problems = sum(1 for m in syl_modules if content.problems_for_module(m.id))
+    assert f"Problems written: {with_problems} of {len(syl_modules)}" in out, "the problem count must match what is on disk"
+    assert with_problems >= 2, "dsa has at least its first two modules written"
 
 
 def test_goto_warns_when_module_has_no_content(home, capsys):
@@ -141,3 +145,9 @@ def test_reset_all_also_erases_own_files(home):
 def test_menu_offers_start_over():
     entry = next(m for m in cli.MENU if m[2] == ["reset"])
     assert entry[0] == "11", "the menu should list 'Start over' as item 11"
+
+
+def test_every_syllabus_module_finds_its_chapter_folder():
+    """A folder renamed by hand ('files-and-io') or cut short must still be found by its id."""
+    missing = [m.id for m in load().modules() if not m.chapter_path.exists()]
+    assert missing == [], f"modules whose chapter.md cannot be found from the syllabus: {missing}"

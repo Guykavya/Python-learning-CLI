@@ -1,0 +1,4 @@
+- Counting cells instead of moves (off by one): the 3x3 open grid has 9 cells but 8 moves.
+- Starting only from the top-left corner: the longest path may start elsewhere (the plus-shaped example).
+- Forgetting to un-mark, so later branches see blocked cells.
+- Returning `-1` or crashing when there are no free cells: the answer is 0.

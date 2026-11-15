@@ -1,0 +1,4 @@
+- Using `abs(r - c)` or `c - r` in one place and `r - c` in another: the diagonal keys must be computed the same way everywhere.
+- Forgetting to remove from the sets after the recursive call.
+- Checking only columns: then queens attack each other diagonally and the counts are too large.
+- Returning 0 for `n = 1`: a single queen on a 1x1 board is one solution.

@@ -1,0 +1,6 @@
+id = "dsa.07.p034"
+title = "Longest path in a small grid"
+tier = "challenge"
+kind = "code"
+topics = ["grid backtracking", "maximum", "self-avoiding walks"]
+minutes = 40

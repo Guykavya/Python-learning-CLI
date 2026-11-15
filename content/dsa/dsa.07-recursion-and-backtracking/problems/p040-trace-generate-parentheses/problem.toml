@@ -1,0 +1,6 @@
+id = "dsa.07.p040"
+title = "Trace: generate parentheses"
+tier = "applied"
+kind = "trace"
+topics = ["generate parentheses", "pruning", "catalan"]
+minutes = 20

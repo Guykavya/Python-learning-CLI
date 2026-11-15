@@ -1,0 +1,6 @@
+id = "dsa.07.p016"
+title = "Trace: subsets with duplicates"
+tier = "applied"
+kind = "trace"
+topics = ["subsets", "duplicates", "skip rule"]
+minutes = 20

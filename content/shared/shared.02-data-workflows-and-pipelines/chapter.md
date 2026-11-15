@@ -49,6 +49,9 @@ Every pipeline, however large, has the same five parts:
 
 Around these five parts sit the things that make a pipeline trustworthy: **state** (what did the last run get to?), **logging** (what happened?), and **rules about sensitive data** (who may see what?).
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw one left-to-right diagram of a data pipeline with five boxes: source (order service API), extract (fetch), transform (clean, check), load (write), sink (SQLite and Parquet files). Under the boxes, draw a second row for the helpers around them: state (what did the last run reach?), logging, and sensitive-data rules. Use arrows for data flow and a dotted line from each helper to the stage it supports."
+
 ### 1.3 Batch and streaming
 
 There are two broad ways to move data.
@@ -930,6 +933,9 @@ Order 104 still exists, nobody deleted it, and we never saw it. With a real pipe
 - use incremental loads with an overlap (section 8), so a record missed this run is picked up next run;
 - deduplicate on the key (section 9), so a record seen twice is stored once.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate offset pagination on orders listed newest first: 107, 106, 105, 104, 103, 102, 101, with limit 3. Show page 1 (offset 0) returning 107, 106, 105. Then a new order 108 is inserted at the front, shifting every row down one slot. Show page 2 (offset 3) returning 105, 104, 103, so 105 appears twice. Highlight the duplicate in red and the shifted positions with arrows."
+
 ### 3.9 Pages as a generator
 
 The functions above collect every record into one list before returning. For seven orders that is fine. For ten million it is not, and it also means nothing can be saved until the very last page arrives. A **generator** that yields one page at a time lets the caller process and save each page as it comes, keeping memory flat and making resume possible:
@@ -1191,6 +1197,9 @@ Bigger pipelines name their layers. The names vary between companies, but the id
 | **clean** | mart, gold, reporting | business-ready tables: one row per order, daily totals | analysts, finance, dashboards |
 
 You can build every layer with the tools you have: a raw table of JSON text, a staging table filled by Python or SQL, and clean tables built with `INSERT ... SELECT` and `GROUP BY`.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw three stacked layers as a vertical flow: raw (records exactly as received, table raw_orders with JSON body), staging (parsed, typed, deduplicated rows), and clean (orders_clean, business-ready). Add arrows going up, and label who reads each layer: the pipeline only, data engineers, analysts and finance. Add a curved arrow from raw back to clean labelled 'replay: change the SQL, zero API calls'."
 
 ### 4.5 Keeping raw data lets you replay
 
@@ -1894,6 +1903,9 @@ Not every failed check should stop the pipeline. Decide, for each check, which a
 
 Write these decisions down next to the checks. A check without a decided action is just noise in a log.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a flowchart of a data-quality gate. A batch of records enters a checks box. Three outputs leave it: one bad record (amount = 'N/A') goes to a quarantine box while the run continues; 40% of records failing the schema stops the run (fail); city_null_rate rising from 2% to 15% sends a warning to a log. Good records continue to the load step. Colour fail red, quarantine orange, warn yellow."
+
 ### 6.5 Checks in SQL after loading
 
 Some checks are easiest after the data is in the database, where SQL can look at all of it, including data from earlier runs. These are the same queries you wrote in the last chapter, used as **assertions**: each one should return no rows (or zero).
@@ -2317,6 +2329,9 @@ rows in table: 8
 
 Run 3 fetched exactly the two changed orders with one request, updated 105 in place, inserted 108, and moved the watermark forward. The table has eight rows: no duplicates, nothing missing.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate an incremental load on a timeline of updated_at values. Run 1 loads all 7 orders and sets the watermark to 2024-06-04T09:00:00Z. Run 2 asks updated_since that watermark and gets 0 rows. Then order 105 is cancelled (updated_at 10:00:00Z) and order 108 arrives (10:30:00Z). Run 3 fetches just those 2 rows and moves the watermark to 10:30:00Z. Draw the watermark as a vertical line sliding right."
+
 ### 8.3 `>` or `>=`: the equal-timestamp problem
 
 Look closely at the API contract: `updated_since=T` returns records with `updated_at > T`, **strictly greater**. That looks natural, since we already have the record at exactly `T`. It hides a nasty bug.
@@ -2418,6 +2433,9 @@ overlap 0:10:00: run 2 fetched 2, wrote 1, order 110 loaded: True
 (One detail in `run_with_overlap`: the new watermark is the maximum of the old watermark and the records' times. Without the old one in the `max`, a run that only re-fetched older, overlapping records could move the watermark **backwards**.)
 
 How long should the overlap be? Long enough to cover the worst lateness you have seen, with a margin: minutes for replica lag, hours if a source is known to batch its writes. The cost is re-fetching that window on every run, which is usually small. If records can be **very** late (days), no overlap is enough, and you add a periodic full reconcile.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a timeline with a watermark line at 09:00:00. Order 110, updated_at 08:55:00, shows up late, after the run finished. Show two cases side by side. With no overlap, the next run asks since 09:00:00 and misses order 110. With a 10-minute overlap, it asks since 08:50:00 and catches it, while already-loaded rows are re-fetched and absorbed by the upsert. Shade the overlap window."
 
 ### 8.5 When, and from what, to move the watermark
 
@@ -2830,6 +2848,9 @@ A common alternative is **full jitter**, `rand() * backoff`: a random wait anywh
 
 Notice the functions take `rand` as an argument instead of calling `random.random()` inside. That is the "inject the randomness" pattern: tests pass `rand=lambda: 1.0` (delays equal the plain backoff) or `rand=lambda: 0.0` (exactly half), and can assert the exact delays.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a chart of retry wait times against attempt number 0 to 6, with base 1 second and cap 30 seconds. Plot the plain exponential backoff line: 1, 2, 4, 8, 16, 30, 30. Shade the band for equal jitter between half the backoff and the full backoff (for example 0.5 to 1, then 15 to 30). Mark a few random client points inside the band to show clients spread apart instead of retrying together."
+
 ### 10.4 Honouring `Retry-After`
 
 A 429 or 503 response often includes a `Retry-After` header that says how long to wait: either a number of **seconds** (`Retry-After: 30`) or an HTTP date (`Retry-After: Wed, 05 Jun 2024 10:00:00 GMT`). When the server tells you, obey it: it knows its own rate-limit window. Waiting less gets you another 429; waiting much more wastes time.
@@ -3069,7 +3090,7 @@ Do **not** put the data itself in the checkpoint. The checkpoint says "where am 
 A checkpoint file is tiny, so writing it seems trivial:
 
 ```python
-path.write_text(json.dumps(state))
+path.write_text(json.dumps(state), encoding="utf-8")
 ```
 
 But `write_text` first **empties** the file and then writes the new content. If the program is killed between those two steps (power loss, the process is stopped, the disk fills), the file is left empty or half-written. On the next run, the checkpoint cannot be read, and you have lost exactly the information you needed to recover. Here is a simulated crash halfway through a write:
@@ -3325,6 +3346,9 @@ ids loaded: [101, 102, 103, 107]
 ```
 
 Orders 104, 105 and 106 are missing, the run "finished successfully", and nothing anywhere records the loss. That is why the order of two lines matters so much.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a resumable cursor fetch of 7 orders in pages of 3. Show pages 1 and 2 committed (6 rows) and the checkpoint file updated after each page. Then request 3 fails with a network error. Show the checkpoint holding the cursor for page 3. In the second run, show only one request being made, ending with 7 rows and done = true. Mark the order: data first, checkpoint second."
 
 ### 11.5 Checkpoint in the database: one transaction for both
 
@@ -4033,6 +4057,9 @@ This layout, with `column=value` folder names, is called **Hive-style** partitio
 
 The partition column's value lives in the **folder name**, not inside the files. Readers add it back as a column when they read the dataset.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a folder tree for a Hive-style partitioned dataset called orders/ with four folders, order_date=2024-06-01 to order_date=2024-06-04, each holding part-0.parquet. Show a reader asking for order_date = 2024-06-03: only that folder is highlighted and opened, the others are greyed out (partition pruning). Add a second arrow showing that one folder can be rewritten alone without touching the others."
+
 ### 14.2 Writing a partitioned dataset
 
 `pq.write_to_dataset(table, root, partition_cols=[...])` writes one folder per distinct value:
@@ -4352,6 +4379,9 @@ print(pa.concat_tables([old, new], promote_options="default").to_pylist())
 ```
 
 In a pipeline you do not want to discover the schema from whatever files exist. You want **one declared schema per version**: when you add `gift_wrap`, you add it to the pipeline's `pa.schema([...])` as a nullable field, and readers use that schema. The unify trick is for reading data you did not write, or data written before you were careful.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two Parquet files side by side. The first, part-2024-06-01, has columns id and status (orders 101, 102). The second, part-2024-06-02, has id, status and gift_wrap (order 103). Show a naive read using only the first file's schema, so gift_wrap is lost. Then show a unified schema read where the missing gift_wrap values for 101 and 102 are filled as null. Highlight the lost column in red."
 
 ### 15.5 Type changes and renames need a migration
 

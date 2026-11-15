@@ -1,0 +1,4 @@
+- `range(start + 1, len(s))` instead of `len(s) + 1`: the last piece (up to the end of the string) is never tried, so no answer is ever complete.
+- Recursing with `go(start + 1)` instead of `go(end)`: pieces overlap.
+- Returning `[]` for the empty string: there is one partition with no pieces, `[[]]`.
+- Appending `path` instead of a copy.

@@ -45,6 +45,16 @@ and report. Do not start the next module unless Kavya asks.
   "Predict the output" / "Try it" answers go in `<details><summary>Answer</summary>` … `</details>`
   (opening tag on one line, closing tag on its own line): the reader hides them until the learner presses `a`.
   Example output must come from actually running the code; label machine-specific values (addresses, ids).
+- **Run what matters, explain the rest** (rule from 2026-11-13, applies to every new chapter):
+  run only the examples that carry the main lesson and paste their real output. Experiments that only
+  repeat a lesson (long sweeps, many seeds, extra model sizes) become a question followed by a
+  `<details>` worked answer, never with invented numbers; a number may appear there only if it was really
+  measured, and is then labelled "measured in an earlier test run". Keep the code of a chapter to about
+  20 minutes of total run time (training loops on CPU are the usual cause of overruns).
+- **Visualise it**: after each idea that is easier to see than to read, add an optional prompt box
+  (`> **Visualise it** *(optional; paste into any AI chat ...)*` followed by the quoted prompt, about 6-10 per
+  chapter). The prompt must name the concrete objects of that section (shapes, values, pointers, steps),
+  not be generic. The chapter must work without it. `learn stuck` also asks the chatbot for a picture or trace.
 - Problem count = `problems:` in the syllabus. Rough mix: ~1/3 drill, ~1/3 applied, rest deep +
   challenge. Mostly `code`, plus ~10 `trace` and ~5 `explain`.
 - Exactly one problem each with `assessment = "explain" | "trace" | "fix" | "build"`.

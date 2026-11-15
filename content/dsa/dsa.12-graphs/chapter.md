@@ -159,6 +159,9 @@ print("is 1-3 an edge?", matrix[1][3] == 1, "  is 2-3 an edge?", matrix[2][3] ==
 is 1-3 an edge? False   is 2-3 an edge? True
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw an undirected graph with 4 vertices 0, 1, 2, 3 and edges 0-1, 0-2, 1-2, 2-3. Next to it show two views of the same graph. First, an adjacency list: 0 -> [1, 2], 1 -> [0, 2], 2 -> [0, 1, 3], 3 -> [2]. Second, a 4x4 adjacency matrix with 1 for an edge. Highlight the row for vertex 2 in both views and the cell for the pair 1-3, which is 0."
+
 The matrix answers "is there an edge between `u` and `v`?" in `O(1)`. But it always costs `O(V²)` memory, and listing the neighbours of `u` costs `O(V)` (scan a whole row), even if `u` has one neighbour. For an undirected graph the matrix is symmetric: `matrix[u][v] == matrix[v][u]`.
 
 ### Which one?
@@ -307,6 +310,9 @@ The graph from section 1, with the neighbour lists in the order we stored them (
 | 5 | E | B seen | none | `[]` |
 
 `F` and `G` are never reached: they are in another component. `dist` has no key for them, which is how you answer "can I reach F from A?" (no).
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate breadth-first search on an undirected graph with edges A-B, A-C, B-D, B-E, C-D, plus a separate pair F-G. Start at A. Show five steps: pop A, push B and C; pop B, push D and E; pop C; pop D; pop E. At each step show the queue as boxes, colour each vertex by distance (A 0, B and C 1, D and E 2), and draw the BFS waves. Leave F and G grey."
 
 ### Why BFS gives the shortest path (in steps)
 
@@ -628,6 +634,9 @@ Read `eA` as "enter A" and `xA` as "exit A". The events nest like brackets: `eA 
 
 Many people number the events with a clock: **`tin[u]`**, the time `u` was entered, and **`tout[u]`**, the time it was exited. Then `v` is a descendant of `u` in the DFS tree exactly when `tin[u] < tin[v]` and `tout[v] < tout[u]`.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate depth-first search on an undirected graph with edges A-B, A-C, B-D, B-E, C-D, starting at A and trying neighbours in the order stored (A: B, C; B: A, D, E; C: A, D; D: B, C). Show the stack and a growing list of events: eA eB eD eC xC xD eE xE xB xA. Colour a vertex grey when entered and black when exited. Highlight that the events nest like brackets."
+
 ### Complexity and what DFS is good for
 
 Like BFS: each vertex is entered once and each edge is looked at once (twice if undirected), so DFS costs **`O(V + E)`** time and `O(V)` memory (`O(E)` for the "mark on pop" stack).
@@ -720,6 +729,9 @@ Three components: `{A, B, C, D, E}`, `{F, G}` and the lonely `{H}`. Notice that 
 The outer loop visits every vertex once, and all the searches together look at every edge once per end, so the whole thing is still **`O(V + E)`**, not `O(V)` searches times `O(V + E)`.
 
 The `comp` dictionary is now a fast answer to "are `x` and `y` connected?": compare `comp[x]` and `comp[y]` in `O(1)`. (If edges keep arriving, the labels go stale; Union-Find in section 9 handles that case.)
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw an undirected graph with 8 vertices A to H. Edges: A-B, A-C, B-D, B-E, C-D, and F-G. H has no edges. Run a search from each unvisited vertex in turn: start at A, then F, then H. Colour each component differently: component 0 is {A,B,C,D,E}, component 1 is {F,G}, component 2 is {H}. Show a counter going 1, 2, 3 and the comp dictionary filling in."
 
 ### Islands on a grid
 
@@ -1040,6 +1052,9 @@ Trace the first call. At the start only `intro` and `math` have in-degree 0. Tak
 
 Cost: building the in-degrees is `O(V + E)`, and every vertex and edge is handled once more in the loop: **`O(V + E)`**.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate Kahn's topological sort on courses with arrows: intro->dsa, math->dsa, dsa->algorithms, math->stats, stats->ml, algorithms->ml, intro->web. Show each course with its in-degree number. Step by step, pop a ready course from the queue (intro, math, web, dsa, stats, algorithms, ml), lower its neighbours' in-degrees, and add any that reach 0. Show the queue and the growing order list. Then add ml->intro and show the stuck cycle."
+
 ### The DFS way: reverse the finishing order
 
 DFS finishes a vertex only after everything reachable from it is finished. So if there is an edge `u -> v` in a DAG, `v` finishes **before** `u` (it is either finished already, or it will be explored and finished inside `u`'s visit; it cannot be grey, because that would be a cycle). Therefore: **list the vertices in the order they finish, then reverse the list.**
@@ -1258,6 +1273,9 @@ The third graph shows why the outer loop matters: a check that starts only from 
 
 Cost: one BFS over everything, **`O(V + E)`**. DFS works just as well; only the colours matter, not the order.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate two-colouring with BFS. First graph: a square with edges 0-1, 1-2, 2-3, 3-0. Colour 0 red, then its neighbours 1 and 3 blue, then 2 red. Result [0, 1, 0, 1]. Second graph: a triangle 0-1-2. Colour 0 red, 1 and 2 blue, then flash the edge 1-2 because both ends have the same colour. Label it 'odd cycle, not bipartite'."
+
 **Predict the output.** Is a tree always bipartite? Is a grid graph (cells joined up/down/left/right) bipartite?
 
 <details><summary>Answer</summary>
@@ -1345,6 +1363,9 @@ union(0, 2) again: False
 ```
 
 `find` is written with two loops, not recursion: a recursive `find` on a long chain (before compression flattens it) can hit the recursion limit.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate Union-Find with 5 elements 0 to 4 as trees, starting with parent = [0,1,2,3,4]. Do union(0,1), union(2,3), union(1,3), showing the parent array and the tree after each step (final parent = [0,0,0,2,4], 2 groups). Then show find(3) walking 3 -> 2 -> 0. Then show a longer chain being flattened by path compression, so each vertex points straight to the root."
 
 ### How much do the tricks save?
 
@@ -1560,6 +1581,9 @@ Read the trace slowly:
 - `D` is settled at 4 and gives `E` the distance 7. The stale `(6, D)` is skipped. `E` is settled at 7.
 
 `path_to` from section 3 works unchanged on the `parent` dictionary: `A C B D E`, 7 km.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate Dijkstra on an undirected weighted graph with edges A-B 4, A-C 1, C-B 2, C-D 5, B-D 1, D-E 3, from source A. Show a table of tentative distances and the heap after each pop: settle A 0, settle C 1 (B drops from 4 to 3), settle B 3 (D drops from 6 to 4), skip stale (4,B), settle D 4, skip stale (6,D), settle E 7. Highlight the final path A-C-B-D-E."
 
 ### Complexity
 
@@ -2062,6 +2086,9 @@ Trace: `A-D` (1), `C-F` (2) and `B-D` (3) join separate groups. `A-B` (4) would 
 Cost: sorting is **`O(E log E)`**, and the DSU work is almost `O(E)`. So Kruskal is `O(E log E)`, which is the same as `O(E log V)`.
 
 If the graph is **not connected**, no spanning tree exists. Kruskal then returns a minimum spanning **forest** with fewer than `V - 1` edges; check `len(tree) == V - 1` before you claim "everything is connected".
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate Kruskal's algorithm on 6 villages A to F with cables A-D 1, C-F 2, B-D 3, A-B 4, B-E 5, B-C 6, D-E 7, E-F 8. Go through the edges in sorted order. Colour an edge green if it is taken and red if it is skipped (A-B closes a cycle). Show the groups merging as you go. Stop after 5 edges and show the total 17."
 
 ### Prim: grow one tree from a start vertex
 

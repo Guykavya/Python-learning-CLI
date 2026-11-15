@@ -84,6 +84,9 @@ If the statement says `n <= N`, the intended solution probably has the complexit
 
 Why does this table work? Because setters choose `n` so that the **intended** solution barely fits the time limit and the **slower, natural** solution does not. A statement with `n <= 2 * 10^5` is telling you "a quadratic solution is wrong". A statement with `n <= 20` is telling you "exponential is fine".
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a horizontal ruler from n = 10 to n = 10^18 on a log scale, with a vertical red line at 10^8 operations (about one second). For each row mark the allowed algorithm: n=10 O(n!), n=20 O(2^n), n=500 O(n^3), n=5000 O(n^2), n=10^5 O(n log n), n=10^6 O(n). Show each cost landing just left of the red line, and the slower natural choice landing far right of it."
+
 ### Let us compute it
 
 Instead of memorising, compute. The program below prints, for several `n`, how many operations common growth rates need. A value above `10^8` is marked as too slow for one second in a fast language.
@@ -496,6 +499,9 @@ a = list(map(int, data[1:1 + n]))
 
 `sys.stdin.buffer` skips the step of decoding bytes to text. `int(b"12")` works directly. It is the fastest on large inputs. The price: tokens are `bytes`, so words are `b"abc"`, not `"abc"`. Decode (`tok.decode()`) when you need a real string.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate how Pattern C reads the input '5' newline '3 1 4 1 5'. First show sys.stdin.read().split() turning the text into one token list ['5','3','1','4','1','5']. Then show an iterator pointer moving right: next(it) gives n=5, then five more next(it) calls build a=[3,1,4,1,5]. Highlight that the pointer remembers its place, so no index variable is needed."
+
 ### Running the patterns on a real input
 
 We now run all four on the same small input and check they agree. Each pattern reads a count `n` and then `n` numbers.
@@ -689,6 +695,9 @@ list+write  0.0240 s (machine-specific)
 
 (We send the output to an `io.StringIO` while timing, then restore the real one to print the results.) The `print`-each version is slowest. The gap against a real terminal or pipe is bigger, since a real stream has extra flushing cost.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Make a side-by-side picture of printing 200000 numbers. Left: 200000 small arrows, one print call each, going into the screen, every one labelled 'convert + write + maybe flush'. Right: values 0,1,2,3 turned into strings, joined with newline into one long block, then one single arrow to the screen. Label the left slow and the right fast (about 0.040 s vs 0.020 s)."
+
 ### The standard output patterns
 
 ```python
@@ -853,6 +862,9 @@ print([solve_good(a) for a in tests])
 
 The two tests are independent and neither has a repeated value, yet the buggy version calls the second one a duplicate: `seen` still holds `3` from the first test. The fix is the fresh `seen = set()` inside the function.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate two runs of a contest program on tests [1,2,3] and [3,5,6]. Show a global set 'seen' on the left: after test 1 it holds {1,2,3}, so in test 2 the value 3 is found already inside and the program wrongly prints 'duplicate'. On the right show a fresh empty set created at the start of each test, so test 2 correctly prints 'unique'. Highlight the leaked value 3."
+
 ### Trap 2: allocating big arrays per test
 
 If `t` can be `10^4` and you write `dp = [0] * (10**5 + 1)` inside `solve`, you do `10^9` work. Allocate according to the **current** test's `n`, or allocate once outside and reset only the part you used. The statement hint is "the sum of `n` over all test cases is at most ...".
@@ -966,6 +978,9 @@ print("? 500", flush=True)
 
 `flush=True` forces Python to send the buffer immediately. Equivalent: `sys.stdout.write(...)` then `sys.stdout.flush()`.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a sequence diagram with two lanes, 'My program' and 'Judge', plus a buffer box under my program. My program prints '? 500' into the buffer. Without flush the text stays in the buffer and the judge lane shows 'waiting forever' (idleness limit exceeded). Then redraw with print('? 500', flush=True): the buffer empties at once, the judge receives it and replies. Label the flush step."
+
 ### Input rules in interactive problems
 
 - **Do not read all of stdin at once.** `sys.stdin.read()` waits for end of file, which only comes when the judge closes the pipe, i.e. never. Use `input()` or `sys.stdin.readline()` to read one line at a time.
@@ -997,10 +1012,10 @@ solution = textwrap.dedent('''
 def run_interaction(secret):
     with tempfile.TemporaryDirectory() as d:
         path = os.path.join(d, "sol.py")
-        with open(path, "w") as f:
+        with open(path, "w", encoding="utf-8") as f:
             f.write(solution)
         proc = subprocess.Popen([sys.executable, "-I", path], stdin=subprocess.PIPE,
-                                stdout=subprocess.PIPE, text=True)
+                                stdout=subprocess.PIPE, text=True, encoding="utf-8")
         questions = 0
         while True:
             line = proc.stdout.readline().split()
@@ -1163,6 +1178,9 @@ parent: [0, 0, 0, 1, 1, 2]
 Complexity: `O(n + m)` time (each node and edge once), `O(n)` extra space.
 
 Note the order: `0, 2, 5, 1, 4, 3`. The stack is last-in-first-out, so the last pushed neighbour is explored first. The visit order differs from the recursive order `0, 1, 3, 4, 2, 5`, but it is still a valid DFS preorder (every node comes after its parent). For most tasks only the parent relationships matter.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the tree with edges 0-1, 0-2, 1-3, 1-4, 2-5. Animate the iterative DFS with an explicit stack: start stack [0]; pop 0, push 1 and 2; pop 2, push 5; pop 5; pop 1, push 3 and 4; pop 4; pop 3. Show the stack as a column after each step and build the order [0,2,5,1,4,3] and parent array [0,0,0,1,1,2] beside it."
 
 #### Template 2: processing children before parents (subtree sizes)
 
@@ -1696,6 +1714,9 @@ power of two? False True
 
 Python's `x // 2` on a non-negative int equals `x >> 1`, but the shift is not always faster in CPython; the gain is small. Bit **tricks as algorithms** (bitmask DP, subset enumeration, the Fenwick lowbit from dsa.16) matter more than bit shifts as micro-optimisation.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Show x = 40 as 8 binary boxes 00101000. Below it draw x - 1 = 39 as 00100111, then x & -x as 00001000 (the lowest set bit, value 8). Next draw x & (x - 1) = 00100000, which is not zero, so 40 is not a power of two; compare with 64 (1000000) and 63 (0111111), where the AND is all zeros. Colour the changed bits."
+
 ### 7. `divmod`, `math.isqrt`, and integer-only arithmetic
 
 - `divmod(a, b)` gives quotient and remainder in one call. Useful for flattening a 2D index: `r, c = divmod(idx, width)`.
@@ -1910,6 +1931,9 @@ True
 
 Complexity: `O(log e)`.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate mod_pow(2, 10, m) by square-and-multiply. Write e = 10 as binary 1010. Walk the bits from lowest to highest in a table with columns e, bit, r, a: e=10 bit 0 (r=1, a becomes 4); e=5 bit 1 (r=4, a becomes 16); e=2 bit 0 (a becomes 256); e=1 bit 1 (r=4*256=1024). Highlight that only 4 steps are needed, not 10 multiplications."
+
 ### Modular inverse
 
 For a prime `M`, Fermat's little theorem says `b^(M-1) ≡ 1`, so `b^(M-2)` is the inverse: `inv = pow(b, M - 2, M)`. Python 3.8+ also accepts a negative exponent: `pow(b, -1, M)`, which works for any `M` coprime to `b` (using the extended Euclid algorithm).
@@ -2013,6 +2037,9 @@ print(sum(sieve(10**6)))             # number of primes below 10**6
 ```
 
 `78498` primes below one million is a famous number; if your sieve prints something else, there is a bug. The slice `is_prime[i*i::i]` is every `i`-th entry from `i*i`; assigning zeros of the same length removes them all in one C-level operation. `len(range(i*i, n+1, i))` computes the slice length without building the list.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the numbers 0 to 50 as a grid, all marked prime except 0 and 1. Animate the sieve: for i=2 cross out 4,6,8,... up to 50; for i=3 start at 9 (9,12,15,...); for i=5 start at 25; for i=7 start at 49. Use a different colour for each i. Explain that i=4 and 6 are skipped because they are already crossed out. Finally highlight the 15 primes left."
 
 #### Smallest prime factor sieve: factorise fast
 
@@ -2288,6 +2315,9 @@ print("mismatches in 3000 trials:", bad)
 ```text
 mismatches in 3000 trials: 0
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a loop diagram of a stress test: generator (seeded random.Random(2024)) produces an input, which goes to both 'fast' and 'brute', then a comparison box. Run it through the buggy Kadane that starts with best = 0 on the input [-2, -2, -5, -2]: fast outputs 0, brute outputs -2, so the box turns red and stops at trial 11. Show the tiny failing input highlighted."
 
 ### Why small inputs
 

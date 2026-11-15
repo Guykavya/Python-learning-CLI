@@ -1,0 +1,6 @@
+id = "dsa.07.p032"
+title = "Number of paths in a grid with obstacles"
+tier = "applied"
+kind = "code"
+topics = ["grid backtracking", "counting", "self-avoiding walks"]
+minutes = 30

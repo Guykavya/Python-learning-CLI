@@ -206,6 +206,9 @@ FastAPI is *Starlette plus extras*, and Starlette is the ASGI toolkit; the layer
 
 You can run a WSGI app under ASGI and the other way round with adapters, but in practice you pick one. The mental model to keep: **ASGI is the contract, uvicorn is the server, Starlette is the toolkit, Pydantic is the validator, FastAPI is the glue.**
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "A FastAPI request travels down a stack of layers. Draw it as a vertical pipeline: bytes from the socket, the uvicorn ASGI server, the middleware stack, the router (path plus method), FastAPI request logic (read parameters, Pydantic validation, dependencies), your endpoint (def or async def), then response building (response_model filter, JSON). Animate one GET /hello request going down and the response going back up. Label the call 'await app(scope, receive, send)' between server and app."
+
 ## 2. The smallest app, and how to run it
 
 ### 2.1 Hello, FastAPI
@@ -531,7 +534,7 @@ Pydantic is the heart of FastAPI. It deserves its own section, and it is useful 
 
 ### 5.1 Hints describe; Pydantic enforces
 
-Recall core.09: Python ignores type hints at runtime. ```python run
+Recall core.09: Python ignores type hints at runtime.
 (`def double(n: int)` called as `double("ab")` just returns `"abab"`; no error.)
 
 A Pydantic `BaseModel` reads the hints and **checks them at runtime**, when you create an object:
@@ -946,6 +949,9 @@ Here is the path of one request through FastAPI, with the places where things ca
 
 The key idea: **steps 2 and 3 happen before your function is called.** So a `422` means "your request was understood as HTTP, but the data did not satisfy the declared types and constraints". It is a *client* error. The server code did not run.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a flowchart of one FastAPI request with five stages: 1 Routing, 2 Read raw pieces (path, query, headers, cookies, body), 3 Pydantic validation, 4 Your endpoint, 5 response_model filter. Show exit arrows: no path match gives 404, wrong method gives 405, invalid JSON gives 422 json_invalid, any broken rule gives 422 with all errors collected, HTTPException gives 4xx, a bug gives 500. Animate a request that fails at stage 3 and highlight that the endpoint never runs."
+
 ### 6.2 The anatomy of a 422
 
 Every 422 body has the shape `{"detail": [ error, error, ... ]}` with one entry per problem. Let us make several problems at once, in a path, a query parameter, a header and a body field:
@@ -1110,6 +1116,9 @@ stored row still has: ['email', 'id', 'password_hash']
 The endpoint returned the whole `UserDB` including the hash, and the response still had only `id` and `email`. The **filter is a safety net**: even if a later change returns the wrong object, the secret field cannot escape, because the response model does not declare it. (Compare Flask in swe.04 section 18, where you must remember to leave the field out of every `jsonify` by hand.)
 
 > **Rule.** Never use the same Pydantic class for input and output when they differ, and never use the database class as the response model.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw three boxes in a row: UserCreate (email, password), UserDB (id, email, password_hash) and UserOut (id, email). Animate a POST /users request with email a@b.co and a password flowing in, becoming a UserDB row stored in FAKE_DB, then the endpoint returning the full row. Show a filter labelled response_model=UserOut removing password_hash before the response 201 {id: 1, email: 'a@b.co'} leaves. Highlight the removed field in red."
 
 ### 7.5 Partial updates with `PATCH`
 
@@ -1420,6 +1429,9 @@ Two observations from `calls`:
 - `get_db` appears **once** even though both `current_user` and `me` asked for it. Within one request, FastAPI **caches** a dependency's result (same callable = same value). Use `Depends(get_db, use_cache=False)` to opt out.
 - On the failing request, `get_token` raised `HTTPException`, so `current_user` and the endpoint **never ran**. Dependencies are a natural place for guard logic.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the dependency tree for GET /me in FastAPI. The endpoint me needs current_user and get_db. current_user needs get_token and get_db. Animate resolution from the leaves up: get_token, get_db, current_user, endpoint, and show get_db computed only once and cached for the request. Then replay a request with no Authorization header: get_token raises HTTPException 401, so current_user and the endpoint are greyed out and never run. Show the calls list growing."
+
 ### 9.4 Class dependencies
 
 A class is a callable, so it works as a dependency; its `__init__` parameters are read like function parameters:
@@ -1521,6 +1533,9 @@ app.dependency_overrides.clear()                  # always clean up after a test
 ```
 
 No monkeypatching, no global state: the same trick swaps a real database for an in-memory one and a real login for a fixed test user (section 20).
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two side-by-side versions of one FastAPI test for GET /year. Real: endpoint year depends on get_clock, which returns datetime.now(). Test: app.dependency_overrides[get_clock] is replaced by a lambda returning datetime(2000, 1, 1), so the same endpoint returns {'year': 2000}. Show an arrow from the endpoint to either the real or the replacement function, with a switch labelled dependency_overrides, and a final step 'clear()' removing the switch."
 
 ### Try it: count the calls
 
@@ -1636,6 +1651,9 @@ Read the three lines:
 - `/sync-ok`: a plain `def` with a blocking call is fine, because FastAPI runs it in a worker thread, so five run in parallel threads.
 
 (The exact seconds vary by machine, which is why we print a verdict instead of the number. The pool size is limited, 40 threads by default, so extreme load on `def` endpoints queues too.)
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a timeline of five simultaneous requests to a FastAPI server, in three rows. Row 1, async def with await asyncio.sleep(0.2): five bars overlapping, total about 0.2 s on the main thread. Row 2, async def with time.sleep(0.2): five bars one after another, total about 1.0 s, the event loop frozen. Row 3, plain def with time.sleep(0.2): five bars in parallel on worker threads, about 0.2 s. Colour row 2 red."
 
 ### 10.3 Mixing: `run_in_threadpool` and `asyncio.to_thread`
 
@@ -2156,6 +2174,9 @@ print(len(r.headers["x-request-id"]))          # generated ids: random, only the
 
 The timing value itself is machine-specific, so we print only that it exists. Middleware added **last** is the **outermost** (it sees the request first). Order matters, for example CORS should sit outside authentication so that even error responses carry CORS headers.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw an onion diagram of FastAPI middleware. The client sends a request through middleware A, then middleware B, then the router and the endpoint, and the response travels back out in reverse order. Mark 'before call_next' on the way in and 'after call_next' on the way out. Animate the add_request_id_and_timing middleware: it reads X-Request-ID abc123 (or makes a random 8-character id), stores request.state.request_id, then adds X-Request-ID and X-Process-Time-ms to the response."
+
 ### 13.2 CORS
 
 **CORS** (Cross-Origin Resource Sharing, swe.04 section 20) is a browser rule: JavaScript from `https://app.example.com` may not read responses from `https://api.example.com` unless the API sends `Access-Control-Allow-Origin` for that origin. The server is not protected by it (curl ignores it); it protects the *user's browser*. FastAPI ships a middleware:
@@ -2236,6 +2257,9 @@ Limits to respect:
 - Background tasks live **inside the server process**. If the process restarts, queued tasks are lost, and there are no retries.
 - Failures are invisible to the client (the response is already sent). Log inside the task.
 - For anything important, slow or heavy (reports, video, payments) use a real job queue (Celery, RQ, arq) so work survives restarts and can be retried.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a timeline with three lanes: the client, the FastAPI endpoint, and a background task queue. Animate POST /signup?email=a@b.co: the endpoint saves the user, calls background.add_task(send_welcome, email), and returns the 201 response. Show the response reaching the client first, and only then the task 'email sent to a@b.co' running. Number the events: 'user saved', 'returning response', 'email sent'. Add a note that tasks are lost if the server restarts."
 
 ## 15. WebSockets
 
@@ -2378,6 +2402,9 @@ rooms left: {}
 
 Dina was in another room, so she heard nothing. Notice the HTTP endpoint `announce` pushing to sockets: this is how a normal `POST /tasks/5/done` triggers a real-time update (the project does exactly that).
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a ConnectionManager in a FastAPI app holding two rooms: team-7 with sockets for asha and ben, and team-9 with dina. Animate ben sending {'task': 5, 'status': 'done'}: the manager broadcasts it to asha and ben only, never to dina. Then show an ordinary HTTP POST /rooms/team-7/announce?text=standup pushing an 'announcement' event to the same two sockets and returning {'delivered_to': 2}. Show a 'left' event when ben disconnects."
+
 ### 15.4 WebSocket authentication and limits
 
 Browsers cannot set an `Authorization` header on `new WebSocket(...)`, so a token usually travels in the query string (`?token=...`) and you validate it **before** `accept()`; to reject, call `await websocket.close(code=1008)` (policy violation) and return. The project in section 22 does this. Also think about: tokens in URLs end up in logs (use short-lived tickets); a manager held in a Python variable works for **one process only**, so with several workers you need a shared broker (Redis pub/sub); send pings so dead connections are noticed; limit message size.
@@ -2475,6 +2502,9 @@ print(sorted(p for p in c.get("/openapi.json").json()["paths"]))
 ['asha', 'ben'] 401 {'id': 3}
 ['/api/v1/tasks/{task_id}', '/users/']
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the URL map of a FastAPI app built from two APIRouters. The 'users' router has prefix /users with route GET /. The 'tasks' router has prefix /tasks, a shared dependency require_key (needs header X-Key: k) and route GET /{task_id}. The main app includes users directly and tasks with prefix /api/v1. Show the final paths /users/ and /api/v1/tasks/{task_id}, and animate a request to /api/v1/tasks/3 being rejected with 401 without the key and returning {'id': 3} with it."
 
 ### 17.2 A layout that scales
 

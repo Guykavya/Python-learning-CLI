@@ -129,6 +129,10 @@ instruction by instruction. PyPy goes further: while your program runs, its
 JIT ("just in time") compiler notices code that runs often and turns it into
 real machine code.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a pipeline for how Python runs a file with three lines: x = 2 + 3, then print(x). Boxes left to right: 'Source text', then 'Compile: grammar check and bytecode', then 'Bytecode: LOAD_SMALL_INT 5, STORE_NAME x, LOAD_NAME print...', then 'Evaluation loop runs one instruction at a time', then output 5. Note that 2 + 3 became the constant 5 at compile time. Show a red stop sign after the compile box labelled 'SyntaxError: nothing has run yet'."
+
+
 > **Predict the output.** This file has a typo on line 3. What appears when you
 > run it?
 >
@@ -192,6 +196,10 @@ tree is `/`, called the **root**.
 - `..` means "the parent folder" (one level up).
 - `~` means "my home folder", for example `/home/asha`.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a folder tree: / at the top, then home, then asha, then projects, containing notes.txt. Mark 'you are here' on /home/asha. Show two coloured routes to notes.txt. The absolute path /home/asha/projects/notes.txt starts at the root and goes down. The relative path projects/notes.txt starts at the marker. Then move the marker into projects and show '..' as an arrow up to asha and '.' as a loop on the same folder."
+
+
 ### The core commands
 
 | Command | Meaning | Example |
@@ -231,6 +239,10 @@ $ pwd
 
 Files whose names start with a dot, like `.gitignore` or `.venv`, are
 **hidden**. Plain `ls` does not show them. Use `ls -a`.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a folder tree with / at the top, then home, then asha, then code, then day1 (containing hello.py). Animate this terminal session step by step: 'cd ~' puts a 'you are here' marker on /home/asha; 'mkdir -p code/day1' adds the two folders; 'cd code/day1' moves the marker down to day1; 'cd ../..' moves it up two levels back to /home/asha. Show the output of pwd beside the marker at each step."
+
 
 **Be careful with `rm`.** There is no recycle bin. `rm -r folder` deletes a
 folder and everything inside it, permanently.
@@ -346,6 +358,10 @@ including the checker in this course, rely on that.
 The `PATH` rule explains many "wrong Python" problems. If two folders in
 `PATH` both contain a `python3`, the earlier one wins. Activating a virtual
 environment (section 6) works by putting its folder at the **front** of `PATH`.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a row of boxes for a PATH list, in order: /home/asha/code/weather/.venv/bin, /usr/local/bin, /usr/bin. A magnifying glass checks each box from left to right looking for 'python3'. Show a python3 file in both the first and the third box. Highlight that the first match wins and the search stops there, so the .venv one runs. Then show the same row without the .venv box, where /usr/bin/python3 wins."
+
 
 > **Predict the output.**
 >
@@ -649,6 +665,10 @@ $ ls -l hello.py
 
 The `x` letters mean "executable".
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a flow diagram of what happens when I type './hello.py' in bash on Linux. Step 1: the kernel opens hello.py and reads the first line '#!/usr/bin/env python3'. Step 2: it runs /usr/bin/env with the file path. Step 3: env searches the PATH folders for python3 and finds it. Step 4: that Python runs hello.py. Add a side note: Python itself sees the first line as just a comment. Label each arrow with its step number."
+
+
 ### `__name__` and `__file__`
 
 Every running file has a few special names that Python creates for you.
@@ -881,6 +901,10 @@ path works exactly the same:
 $ .venv/bin/python weather.py
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two side-by-side folders. On the left is the system Python at /usr/bin/python3. On the right is /home/asha/code/weather/.venv, containing bin/python (an arrow pointing to /usr/bin/python3), pyvenv.cfg, and lib/python3.X/site-packages. Show 'pip install requests' placing requests only into the right-hand site-packages, while the left one stays unchanged. Label pyvenv.cfg as 'tells Python it is inside a venv'."
+
+
 You can check from inside Python whether you are in a venv. `sys.prefix` is
 the environment in use. `sys.base_prefix` is the base installation it was built
 from. They differ only inside a venv:
@@ -957,6 +981,10 @@ Git thinks of three places:
    hidden `.git` folder.
 
 `git add` moves changes from 1 to 2. `git commit` saves 2 into 3.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw three boxes in a row: 'Working directory' (your files you edit), 'Staging area (index)', and 'Repository (.git folder, commits)'. Animate it: edit hello.py in the first box; the arrow 'git add' carries it into the second box; the arrow 'git commit' turns it into a new commit dot in the third box, chained to the earlier commits. Show the staging box empty again after the commit. Label every arrow with its command."
+
 
 ### A full session
 
@@ -1152,6 +1180,10 @@ level, so you will see just one entry.
 
 The fix here: `message = "Marks: " + str(marks)`, or simply
 `print("Marks:", marks)`.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a traceback as a numbered reading guide. The traceback is: 'Student: Riya' printed first, then 'File /home/asha/report.py, line 5, in <module>', the code line 'message = "Marks: " + marks' with carets under the plus sign, and last 'TypeError: can only concatenate str (not int) to str'. Start with a big arrow at the bottom line labelled 'read first: what', then up to 'where: line 5', then 'which part: the carets'. Show lines 1 to 4 as 'ran fine'."
+
 
 ### Error types you will meet first
 

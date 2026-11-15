@@ -93,6 +93,10 @@ parent of i   : (i - 1) // 2
 
 Check with the picture: the children of index `1` (value `3`) are at `3` and `4` (values `7` and `4`) ✓; the parent of index `5` (value `5`) is `(5 - 1) // 2 = 2` (value `2`) ✓.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the min-heap array [1, 3, 2, 7, 4, 5, 6] twice: as a complete binary tree and as a row of boxes with indexes 0 to 6. Draw colored arrows linking each parent to its children, labeled with the formulas children = 2*i+1 and 2*i+2, and parent = (i-1)//2. Highlight index 1 (value 3) with children at 3 and 4, and index 5 with parent 2."
+
+
 ```python
 import heapq
 import random
@@ -221,6 +225,10 @@ pop -> 2 [3, 5, 8, 9]
 
 Follow the first lines. After `5, 3`: pushing `3` appends it after `5`; `3 < 5` so they swap: `[3, 5]`. Pushing `8` appends it as the right child of `3`: `8 >= 3`, so it stays. Pushing `1` appends it at index 3, whose parent is index 1 (value `5`): swap; its new parent is index 0 (value `3`): swap again; it is the root. That is the "bubbling up" that gives `sift_up` its name.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate pushes into a min-heap, in the order 5, 3, 8, 1, 9, 2. Show the tree and the array together after each push. For push 1: it is appended at index 3, swaps with its parent 5 at index 1, then swaps with 3 at index 0 and becomes the root, giving [1, 3, 8, 5]. Highlight the swapping pair in each step and the final array [1, 3, 2, 5, 9, 8]."
+
+
 ### Watch a pop in detail
 
 ```python
@@ -265,6 +273,10 @@ is a heap: True
 ```
 
 The last item `6` came to the root, and then it sank twice. First it swapped with `2`, the smaller of its two children (`3` and `2`). Then it swapped with `5`, the only child of its new position. After that it was a leaf, so it stopped. The remaining list is again a valid heap, although not sorted. We always choose the **smaller** child: if we swapped with the bigger one (`3`), the smaller child (`2`) would end up below a bigger parent and break the rule.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate one pop on the min-heap [1, 3, 2, 7, 4, 5, 6]. Step 1: remove root 1. Step 2: move the last item 6 to the root, giving [6, 3, 2, 7, 4, 5]. Step 3: 6 swaps with the smaller child 2, then with 5, and stops at a leaf, giving [2, 3, 5, 7, 4, 6]. Show tree and array together, highlight the compared children, and mark the smaller one."
+
 
 ### A `MinHeap` class
 
@@ -408,6 +420,10 @@ print(b, is_min_heap(b))
 [1, 2, 6, 3, 7, 8, 9, 5] True
 [1, 2, 4, 3, 6, 5, 8, 10, 7, 9] True
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate bottom-up heapify on the array [9, 5, 8, 2, 7, 1, 6, 3], drawn as a binary tree. Start at the last parent, index n//2 - 1 = 3, and call sift_down on each index going back to the root at index 0. Gray out the leaves as already valid heaps. Highlight the node being sifted and each swap. Final min-heap: [1, 2, 6, 3, 7, 8, 9, 5]."
+
 
 ### Why `O(n)` and not `O(n log n)`?
 
@@ -801,6 +817,10 @@ after moving   : [1] | [3, 4, 5, 10]
 
 The bar `|` separates the heap (left) from the sorted tail (right). Each line moves the current maximum behind the bar.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate in-place heap sort of [4, 10, 3, 5, 1] as one row of boxes. Phase 1: build a max-heap, giving [10, 5, 3, 4, 1]. Phase 2: swap the root with the last heap item, shrink the heap by one, and sift down the new root. Show a vertical bar between the heap part (left) and the sorted tail (right) moving left: [5, 4, 3, 1 | 10], then [4, 1, 3 | 5, 10], and so on until [1, 3, 4, 5, 10]."
+
+
 ### Check it
 
 ```python
@@ -886,6 +906,10 @@ print(top_k_largest([4, 4, 4], 2), top_k_largest([1, 2], 5), top_k_largest([1, 2
 ```
 
 Note the first two lines: for `k = 0` the heap would stay empty, and the test `x > heap[0]` would raise `IndexError`. Always decide what the function does for `k = 0` and for `k` larger than the number of items (here the answer is simply all the items).
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate top-K largest with K = 3 over the stream 3, 1, 5, 12, 2, 11, 7. Show a min-heap of size 3 and the current number. Push 3, 1, 5 (root 1). Then 12 replaces root 1; 2 is ignored because it is smaller than the root 3; 11 replaces 3; 7 replaces 5. Highlight the root as the weakest kept item. Final heap holds 7, 11, 12."
+
 
 For the K **smallest**, mirror everything: a **max-heap** of size K (store negatives), replace the root when `x` is smaller. The same trick works for objects: push a tuple `(key, item)`.
 
@@ -1130,6 +1154,10 @@ add 3: lower [1, 2, 3]  upper [5, 8, 9]  median 4.0
 
 Check the invariants on the printed lines: the biggest number on the left of the bar is never larger than the smallest on the right, and the left side is never smaller than the right side. After `5, 2, 8, 1, 9, 3` the sorted list is `1, 2, 3, 5, 8, 9`, and the median is `(3 + 5) / 2 = 4.0`.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a running median with two heaps over the numbers 5, 2, 8, 1, 9, 3. Draw a max-heap 'lower half' on the left and a min-heap 'upper half' on the right, with a dividing line. For each number, show it going into lower, the largest of lower moving to upper, and a rebalance if needed. Show the two tops and the median after each step; the final median is 4.0."
+
+
 ### Cost
 
 `add` does at most three heap operations: `O(log n)`. `median` just reads the roots: `O(1)`. The memory is `O(n)`: every number is stored once.
@@ -1247,6 +1275,10 @@ print("400 random inputs: our merge, heapq.merge and sorted() agree:", bool(ok))
 ```
 
 `heapq.merge` is the same algorithm as a lazy generator. Because it produces one item at a time, it can merge **huge** inputs that do not fit in memory: that is how an **external sort** works.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate merging k sorted lists [1, 4, 9], [2, 3, 10], [] and [0, 5] with a min-heap. Show the lists as rows with a pointer on each front item, and the heap holding one front item per non-empty list, as (value, list number, position). Each step: pop the smallest, append it to the output, and push the next item of the same list. Output grows to [0, 1, 2, 3, 4, 5, 9, 10]."
+
 
 ### External sort in miniature
 
@@ -1794,6 +1826,10 @@ write deploy 0
 Look at the numbers on the first line: the queue has 2 live tasks, but the heap list still holds 4 entries (the old "write" and the removed "test" are still there as stale entries). They disappear only when they reach the top and `pop` throws them away.
 
 The heap property is safe because the comparison never looks at the task: the entries are compared by `priority`, then by the unique `count`, so they never reach the third place. Changing the third field to the marker does not move the entry.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate lazy deletion in a priority queue with tasks. Operations: add write(3), add test(2), add deploy(1), add write(0) again (the old write entry is marked REMOVED but stays in the heap), then remove test (also marked). Show the heap holding 4 entries with stale ones in gray, while the dictionary holds only 2 live tasks. Then two pops skip stale entries and return write, then deploy."
+
 
 ### Check it against a dictionary
 

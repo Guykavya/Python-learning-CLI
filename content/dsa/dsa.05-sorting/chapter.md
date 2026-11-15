@@ -110,6 +110,9 @@ for n in (4, 8, 16, 100):
 For 4 items there are 24 orders, and 4 comparisons give only 16 answers, so you need at least 5. The numbers show that `log2(n!)` and `n log2 n` stay in the same neighbourhood.
 This bound is only about sorts that **compare**. Counting sort and radix sort (sections 12 and 13) do something else, and can run in `O(n)` when the keys are small integers.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a binary decision tree for sorting 3 different values a, b, c. Each internal node is a comparison like 'a < b?' with a yes branch and a no branch. Show that there are 3! = 6 leaves, one per possible order, and that a tree of height 2 has only 4 leaves, so height 3 is needed. Label the leaves with the orders and highlight the longest path."
+
 **Predict the output 1.** How many comparisons are needed at least to sort 3 different values? Compute `ceil(log2(3!))`.
 
 <details><summary>Answer</summary>
@@ -591,6 +594,9 @@ inserted 1 -> [1, 2, 3, 4, 10, 12]
 
 Trace `i = 5`, key 1: the 12, 10, 4, 3, 2 each shift one place right, and 1 drops into index 0. The shift is one assignment, not a three-step swap, so insertion sort writes less than bubble sort.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate insertion sort on [4, 3, 2, 10, 12, 1], one pass per frame. Show a bar for each value, a shaded sorted zone on the left, and the current key lifted above the row. For the last pass (key 1), show 12, 10, 4, 3, 2 each sliding one place right while 1 waits, then 1 dropping into index 0. Show the list after each pass."
+
 ### Why check `j >= 0` first?
 
 In `while j >= 0 and a[j] > key`, Python evaluates `j >= 0` first and stops if it is false. If you swap the two tests, then at `j = -1` Python reads `a[-1]`, the **last** element, and quietly gives wrong answers without an error.
@@ -868,6 +874,9 @@ merge [2, 4, 5] [1, 3, 7] -> [1, 2, 3, 4, 5, 7]
 Read it as a tree. The list is cut in halves down to single elements (the "sort" lines getting more indented). Then the "merge" lines go back up: each merges two sorted lists into a longer sorted one.
 The total number of merge **levels** is `log2(n)`; every level touches all `n` elements once.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw merge sort on [5, 2, 4, 7, 1, 3] as a tree. Top: the whole list. Split into [5, 2, 4] and [7, 1, 3], then down to single elements, with [2, 4] and [1, 3] as sub-splits. Then draw the merge steps going back up: [2] [4] gives [2, 4]; [5] [2, 4] gives [2, 4, 5]; [1] [3] gives [1, 3]; [7] [1, 3] gives [1, 3, 7]; the final merge gives [1, 2, 3, 4, 5, 7]. Colour split and merge phases differently."
+
 ### Cost
 
 - Time: `O(n log n)` **always**, because the halves are always equal. There is no bad input.
@@ -1131,6 +1140,9 @@ pivot index 3 [2, 4, 3, 5, 9, 8, 7]
 
 Invariant (a fact that stays true during the loop): `a[lo:i]` is all `< pivot`, `a[i:j]` is all `>= pivot`. When the loop ends `a[i:hi]` holds the larger-or-equal values, so swapping the pivot into `a[i]` puts it exactly between the two zones.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate Lomuto partition on [7, 2, 9, 4, 3, 8, 5] with pivot 5 (last element). Show pointer j scanning from index 0 and pointer i marking the end of the 'smaller than pivot' zone. At each step show swaps: j=1 swaps 2 with 7, j=3 swaps 4 with 9, j=4 swaps 3 with 7. At the end the pivot swaps into index 3, giving [2, 4, 3, 5, 9, 8, 7]. Colour the zones: smaller, larger-or-equal, pivot."
+
 The full sort:
 
 ```python
@@ -1370,6 +1382,9 @@ print(data, "less ends before", lt, "greater starts after", gt)
 
 When `a[i] > pivot` the element swapped in from the right is **not examined yet**, so `i` does not advance. This is the classic bug in problem p017.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate the Dutch national flag partition on [3, 6, 1, 6, 2, 9, 6, 4] with pivot 6. Show three pointers lt, i and gt, and colour the zones less, equal, unexamined and greater. Step through every move. Highlight that when a[i] is greater than the pivot (the 9), it swaps with a[gt] and i does NOT move, because the swapped-in value 4 is unexamined. End state: [3, 1, 2, 4, 6, 6, 6, 9]."
+
 ### Quickselect: the k-th smallest without sorting everything
 
 Suppose you need only the `k`-th smallest value (the median, say). After a partition the pivot is in its final index `p`. If `p == k` you are done; if `k < p` the answer is in the left part; otherwise in the right part. **You recurse into only one side**, so the expected work is `n + n/2 + n/4 + ... = O(n)`.
@@ -1499,6 +1514,9 @@ print(a)
 ```
 
 The root `1` fell: it swapped with 9 (the larger of its children 9 and 5), then with 4 (the larger of its new children 4 and 3), and then reached index 3, which has no children inside the list. The printed result satisfies `9 >= 4, 5` and `4 >= 1, 3`.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the list [1, 9, 5, 4, 3, 2] as a binary tree (index i has children 2i+1 and 2i+2): root 1, children 9 and 5, then 4 and 3 under 9, and 2 under 5. Animate sift down: 1 swaps with the larger child 9, then with the larger child 4, then stops at index 3. Show the final tree [9, 4, 5, 1, 3, 2] next to its array form, with swapped nodes highlighted."
 
 ### Build a heap in `O(n)`
 
@@ -1651,6 +1669,9 @@ print(counting_sort([], 3))
 ```
 
 Time `O(n + k)`, memory `O(n + k)`. When `k` is about `n` or smaller, this is linear time. When `k` is huge (values up to `10^18`) the table cannot exist, and counting sort is useless.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate counting sort on [3, 1, 5, 1, 0, 3, 3, 2] with k = 5. Show the input row, then a count table with slots 0 to 5. Move through the input and increase a counter for each value, ending with counts [1, 2, 1, 3, 0, 1]. Then read the table left to right, writing each value as many times as its count, to produce [0, 1, 1, 2, 3, 3, 3, 5]."
 
 ### The stable version for records
 
@@ -1870,6 +1891,9 @@ print(sorted(records, key=lambda r: r[1]))
 ```
 
 Both are sorted by the number, but selection sort changed `a, b` to `b, a` (the swap that brought `c` to the front threw `a` behind `b`) and `d, e` stayed. A stable sort gives `c, d, e, a, b`.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Show records [('a',3), ('b',3), ('c',1), ('d',2), ('e',2)] as coloured boxes, sorted by the number. Animate selection sort: in the first pass c swaps with a, so a jumps behind b. Final result is c, d, e, b, a, so the equal 3s are reversed. Below it show a stable sort result c, d, e, a, b, with arrows connecting equal-key items to show their original order was kept."
 
 ### Making an unstable sort stable
 
@@ -2252,6 +2276,9 @@ print(min_rooms([(1, 5), (1, 5), (1, 5)]))
 
 At start number `i` (0-based) exactly `i + 1` meetings have started; `j` of them have already ended (`ends[j] <= s`), so `i + 1 - j` are running. Using `<=` here is the half-open rule: a meeting that ends at `s` frees its room.
 (You can drop the pairing of start with end because the *count* of running meetings only needs the two multisets.)
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a timeline for meetings (0,30), (5,10), (15,20) as horizontal bars. Beside it show the separately sorted starts [0, 5, 15] and ends [10, 20, 30]. Animate the sweep: at each start s, count started meetings minus ended meetings (i + 1 - j). Show the counts 1, 2, 2 and highlight the maximum, 2, as the number of rooms needed, at time 5 to 10."
 
 ### Minimum arrows (balloons) and activity selection
 

@@ -279,6 +279,9 @@ deque(['b', 1, 2, 'a']) b a
 
 The price: indexing into the *middle* (`q[500]`) is O(n), and there is no slicing. Use a deque when you work at the ends, a list when you jump around.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a Python collections.deque as a row of boxes with a left end and a right end. Start with ['a','b']. Step 1: append('c') adds on the right. Step 2: appendleft('z') adds on the left, giving z a b c. Step 3: popleft() removes z and pop() removes c, leaving a b. Then show deque(maxlen=2) receiving 'home', 'cart', 'pay': when 'pay' arrives, 'home' falls off the opposite end. Label both ends O(1)."
+
 **`maxlen`: keep only the last N.** A deque with `maxlen` drops items from the opposite end when it is full. This is exactly what `tail -n 3` does with a file:
 
 ```python
@@ -387,6 +390,9 @@ blue 12 True
 99
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw three stacked layers of dictionaries, top to bottom: from_cli {'debug': True}, from_file {'size': 12}, defaults {'color': 'blue', 'size': 10, 'debug': False}. These form a Python ChainMap searched top to bottom. Animate lookups of 'color', 'size' and 'debug': an arrow falls through the layers and stops at the first layer holding the key, highlighting the winning value (blue, 12, True). Greyed-out values like size 10 and debug False are shadowed. Show that writes go only to the top layer."
+
 `new_child()` returns a new chain with a fresh empty dict in front, which is how interpreters model nested scopes (local, then enclosing, then global, then built-in names). `parents` gives the chain without the first map.
 
 **Trap:** `del settings["key"]` and assignment only touch the first map. If the key lives only in a lower layer, `del` raises `KeyError`.
@@ -474,6 +480,9 @@ rest: [2, 3, 5, 8]
 ```
 
 Look at `[1, 2, 8, 5, 3]`: not sorted, but `1 <= 2`, `1 <= 8`, `2 <= 5`, `2 <= 3`. Each `heappop` takes `h[0]`, moves the last item to the top and lets it "sink" below its smaller child until the rule holds again. Popping everything gives sorted order.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a Python heap (heapq) as a binary tree above its list. Show pushing 5, 1, 8, 3, 2 one at a time, ending with the list [1, 2, 8, 5, 3]. For each push, show the new item added at the bottom and swapping upward while it is smaller than its parent. Final tree: 1 at top, children 2 and 8, then 5 and 3 under 2. Label that each parent is less than or equal to its children, and that the list is not fully sorted."
 
 The helpers:
 
@@ -652,6 +661,9 @@ print([grade(s) for s in [33, 59, 60, 77, 89, 90, 100]])
 ```text
 ['F', 'F', 'D', 'C', 'B', 'A', 'A']
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the sorted list [10, 20, 20, 20, 30] as boxes with index numbers 0 to 4 and the gaps between boxes numbered too. Show Python's bisect_left(a, 20) pointing at gap 1 and bisect_right(a, 20) pointing at gap 4, with a bracket showing the 3 copies of 20 between them. Then show the grade example: breakpoints 60, 70, 80, 90 on a number line, with scores 59, 60 and 90 landing in the correct grade bands F, D, A."
 
 `bisect_right` is the right choice here because a score **equal** to a breakpoint (60) belongs to the higher grade. With `bisect_left`, 60 would get `"F"`. Off-by-one at the boundaries is *the* bisect bug; always test the exact breakpoint values.
 
@@ -904,6 +916,9 @@ Python refuses to compare or subtract a naive and an aware datetime: it cannot k
 
 Two aware datetimes are **equal if they are the same instant**, even in different zones: 14:30 UTC and 20:00 in India are the same moment.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw one horizontal timeline of real world time with a single marked instant. Above it show the same instant as an aware datetime in UTC: 2025-03-09 14:30+00:00. Below it show the same instant in India time: 20:00+05:30. Draw an arrow between them labelled 'same instant, so they are equal'. Add a separate floating card '14:30 with no time zone (naive)' that is not attached to the timeline, with a red cross when compared to the aware ones: TypeError."
+
 **Getting "now".** Choose the kind on purpose. `datetime.now(timezone.utc)` gives an **aware** datetime in UTC. `datetime.now()` with no argument gives **naive local time**: fine for a quick print, wrong for anything you store or compare.
 
 `datetime.utcnow()` looks like the right tool but returns a **naive** datetime holding UTC numbers, which later code mistakes for local time. It is deprecated since Python 3.12. Write `datetime.now(timezone.utc)` instead. The same goes for `utcfromtimestamp`: use `datetime.fromtimestamp(ts, timezone.utc)`, as chapter 12 did for file times.
@@ -1038,6 +1053,9 @@ print(as_utc.astimezone(london))      # the round trip lands on a real time
 ```
 
 Python does not raise an error. It quietly uses the offset from **before** the jump (GMT, +00:00), so "01:30" means 01:30 UTC, which is really **02:30 BST**. The round trip through UTC shows the real wall-clock time. If your program accepts times typed by users (an alarm, a booking), check for the gap: convert to UTC and back (`dt.astimezone(timezone.utc).astimezone(dt.tzinfo)`), and if the wall-clock numbers changed, the time did not exist.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a timeline for 30 March 2025 in London showing wall-clock time on one row and UTC on another. The wall clock jumps from 01:00 GMT straight to 02:00 BST, leaving a shaded gap where 01:30 never exists. Show the datetime 01:30 labelled with the London zone being read as 01:30 GMT (which equals 01:30 UTC), then an arrow converting it to UTC and back to London, landing on the real time 02:30 BST."
 
 ### 5.4 The DST fold: times that happen twice
 
@@ -1514,6 +1532,9 @@ True False
 True False
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two diagrams of Python copy.deepcopy using the same data. Original: a list called grid holding two arrows that both point to the same list row [0, 0]. Copy: a new list g2 with two arrows that both point to ONE new list [0, 0], not two separate lists, because deepcopy remembers copied objects in a memo. Then animate g2[0][0] = 9 and show both rows of g2 change to [9, 0], while the original row stays [0, 0]."
+
 **3. Customising copies.** A class can control both kinds of copy with `__copy__(self)` and `__deepcopy__(self, memo)`. A common reason: an object holds something that must not be copied, such as an open file, a lock or a large cache.
 
 ```python
@@ -1682,7 +1703,7 @@ result = subprocess.run(
     [sys.executable, "-c", "import sys; print('hi', sys.argv[1:]); print('oops', file=sys.stderr)", "a b", "c"],
     capture_output=True,    # collect stdout and stderr instead of showing them
     text=True,              # decode bytes to str
-)
+, encoding="utf-8")
 print(result.returncode)
 print(repr(result.stdout), repr(result.stderr))
 print(result.args[-2:])
@@ -1722,7 +1743,7 @@ try:
 except subprocess.TimeoutExpired as e:
     print("TimeoutExpired after", e.timeout, "s")
 r = subprocess.run([sys.executable, "-c", "print(input().upper())"],
-                   input="hello\n", capture_output=True, text=True)
+                   input="hello\n", capture_output=True, text=True, encoding="utf-8")
 print(r.stdout.strip())
 ```
 ```text
@@ -2085,6 +2106,9 @@ IntegrityError: CHECK constraint failed: bal >= 0
 ```
 
 The failed transfer had already **added 500 to asha** when the second statement broke the `CHECK`. The `with` block rolled that back too, so no money appeared from nowhere.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a database transaction in Python sqlite3 with two rows: asha 70 and ravi 80. Inside 'with conn:' a transfer of 500 from ravi to asha runs two steps. Step 1: asha becomes 570. Step 2: ravi becomes minus 420, which breaks the rule CHECK (bal >= 0) and raises an IntegrityError. Then show an arrow rolling both rows back to asha 70 and ravi 80, so no money appears from nowhere. Label COMMIT for success and ROLLBACK for failure."
 
 Two details that catch everyone:
 
@@ -2477,6 +2501,9 @@ app saw    app.db WARNING slow query
 ```
 
 `"connected"` was printed **twice**, once per handler, even though the root logger's level is WARNING: propagation only checks handler levels. This is also the classic cause of **duplicated log lines**: a handler added both to a module logger and to the root logger (or `basicConfig` called while a module adds its own handler). The fix is to put handlers in **one place**, normally the root logger, and let everything propagate to it.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the Python logging tree: root logger (level WARNING, with a handler printing 'root saw'), its child 'app' (level INFO, handler 'app saw'), and a grandchild 'app.db' with no level of its own. Animate db.info('connected'): it passes the effective level INFO inherited from app, goes to the app handler, then propagates up to the root handler, so it prints twice. Then show db.debug('query plan') being dropped, and app.propagate = False blocking the path upward."
 
 #### Try it 14.1
 

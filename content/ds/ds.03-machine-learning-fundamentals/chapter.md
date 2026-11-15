@@ -130,6 +130,10 @@ sex    0.0430
 s3    -0.3950
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a labelled table diagram of a supervised dataset: 442 rows (one per diabetes patient) and 10 feature columns named age, sex, bmi, bp, s1, s2, s3, s4, s5, s6, which together form the matrix X with shape (442, 10). Draw a separate single column y with shape (442,) for disease progression after a year (range 25 to 346). Add arrows showing that the model f maps each row of X to one predicted value."
+
+
 ### 2.2 A model is a family plus a fitting rule
 
 Two choices define every model in this chapter. The **model family** (a straight line, a decision tree, nearest neighbours) fixes the shapes the model can take. The **fitting rule** (least squares, a split criterion) picks one shape from the family using the training data. Parameters the fitting rule finds (the coefficients of a line) are **parameters**. Settings that *you* choose before fitting (the depth of a tree, the strength of a penalty, the number of neighbours) are **hyperparameters**, and choosing them well is half of practical machine learning (section 10).
@@ -220,6 +224,10 @@ print("train / validation / test:", len(Xa), len(Xb), len(Xt), "| total:", len(X
 ```text
 train / validation / test: 264 89 89 | total: 442
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw one horizontal bar representing 442 rows of data, cut into three coloured blocks: training 264 rows, validation 89 rows, test 89 rows. Under each block write what it is used for: fitting parameters, choosing the model and hyperparameters, and one final honest score. Mark the test block as a sealed envelope that is opened only once, at the very end."
+
 
 ### 4.2 A split is one random draw
 
@@ -337,6 +345,10 @@ degree 15  : [ 0.03  1.17 -0.03 -0.9  -0.25]
 
 Degree 1 is far off at the ends of the wave (underfit). Degree 3 follows the truth. Degree 15 is erratic, especially near the edges, where it has few points to hold it down.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Plot x from 0 to 1 with the true curve sin(2*pi*x) as a dashed line and about 30 noisy points (noise SD 0.3) around it. Overlay three polynomial fits: degree 1 (a straight line, underfits), degree 3 (follows the sine wave), and degree 15 (wild swings near the edges, overfits). Use three colours, a legend, and labelled axes."
+
+
 ### 5.3 Why more data cures overfitting, and why it cannot cure underfitting
 
 With more training data there is less room to chase noise. Repeat the degree-15 fit with more and more rows.
@@ -421,6 +433,10 @@ degree 12: measured MSE at the points, averaged over training sets  4.231 | bias
 ```
 
 The two agree up to the finite number of fresh-noise draws. (The test RMSE of section 5.1 at high degrees is worse than this variance suggests because it includes the edges of the interval, where a high-degree polynomial swings wildly.) This is the mathematical reason behind the U-shaped curve of section 5.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a line chart with polynomial degree on the x-axis (1, 2, 3, 5, 9, 12) and error on the y-axis. Plot bias squared (0.164, 0.161, 0.003, 0.000, 0.004, 0.021), variance (0.022, 0.043, 0.013, 0.032, 0.863, 4.114) and their sum plus a flat noise line at 0.09. Use a log y-axis. Label the sum's minimum near degrees 3 to 5."
+
 
 ### 6.2 What moves the dial
 
@@ -515,6 +531,10 @@ degree 12 (too flexible: high variance)
 ```
 
 Compare the three tables. For degree 1, training and validation RMSE are close to each other but both stay high (about 0.5, against the noise floor of 0.3) however many rows we add: a **high-bias** curve. For degree 12 the training RMSE is tiny with few rows and the validation RMSE is enormous (78.9 with 12 rows, 7.4 with 20); the gap closes only as rows pass 40 and is still wider than for degree 3 at 80 rows: a **high-variance** curve. For degree 3 both end near the noise floor of 0.3. If you can reduce the gap with more data, collecting data is worth it; if both curves have already flattened at a bad value, collecting data is wasted money.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw learning curves: x-axis is number of training rows (12, 20, 40, 80, 160, 320), y-axis is RMSE. For degree 1, train RMSE goes 0.459, 0.490, 0.495, 0.498, 0.510, 0.511 and validation goes 0.582, 0.566, 0.534, 0.533, 0.529, 0.526. For degree 3, train goes 0.257, 0.263, 0.282, 0.289, 0.292, 0.298 and validation goes 0.406, 0.355, 0.326, 0.319, 0.314, 0.311. Add a noise floor line at 0.3 and shade the gap."
+
 
 ### 7.2 Explaining overfitting with a learning curve: the outcome
 
@@ -728,6 +748,10 @@ print("scikit-learn cross_val_score:", auto.round(3), "| mean", round(float(auto
 mean 0.487 | SD across folds 0.084
 scikit-learn cross_val_score: [0.332 0.46  0.537 0.522 0.595] | mean 0.489 (folds differ because the shuffle differs; the mean agrees closely)
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate 5-fold cross-validation on a dataset shown as one row of 5 equal blocks (folds). In each of 5 steps, a different fold turns orange as the validation fold while the other four are blue for training. After each step show a score: 0.501, 0.503, 0.533, 0.557, 0.343 (R squared). End by showing the mean 0.487 and the spread (SD 0.084) as an error bar."
+
 
 ### 9.2 Choosing k, and repeating
 
@@ -968,6 +992,10 @@ sklearn confusion_matrix (rows true 0/1, cols predicted 0/1):
  [  4 103]]
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a 2x2 confusion matrix as a coloured grid. Rows are the true class (actually malignant, actually benign); columns are the prediction (predicted malignant, predicted benign). Fill the cells: true positives 61, false negatives 3, false positives 4, true negatives 103. Label each cell TP, FN, FP or TN, and use colour to show correct cells versus mistakes."
+
+
 ### 12.2 Accuracy, precision, recall, F1
 
 - **Accuracy** `= (TP + TN) / all`: the share right. Misleading when classes are unequal.
@@ -1064,6 +1092,10 @@ a few ROC points (fpr, tpr): [(0.0, 0.0), (0.0, 0.922), (0.019, 0.938), (0.028, 
 random scores: 0.493 (about 0.5)
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Plot an ROC curve with false-positive rate on the x-axis and true-positive rate on the y-axis, both from 0 to 1. Use these points: (0,0), (0,0.922), (0.019,0.938), (0.028,0.953), (0.047,0.969), (0.084,0.984), (0.103,1.0), then (1,1). Add the diagonal coin-flip line (AUC 0.5), shade the area under the curve, and label AUC = 0.9956."
+
+
 AUC is threshold-free, which is useful for comparing models, but it can look excellent on heavily imbalanced data where a precision-recall view is more informative (ds.04). **Log loss** (cross-entropy, the loss of ds.01) judges the quality of the probabilities themselves, not just their ranking.
 
 ```python run
@@ -1141,6 +1173,10 @@ centres found:
 cluster sizes: [200 200 200] | inertia: 1137.5
 sklearn inertia: 1137.5
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate k-means with k=3 on 600 2D points from three blobs centred near (0,0), (6,0) and (3,5), each with spread 1. Start with 3 random points as centres. Repeat two steps: colour each point by its nearest centre, then move each centre to the mean of its points. Show the centres sliding until they settle near (-0.07,0.01), (3.14,5.02) and (5.89,-0.13)."
+
 
 ### 13.2 Choosing k, and the problem of the start
 
@@ -1280,7 +1316,7 @@ class Evaluation:
         return {"accuracy": metrics.accuracy_score(self._y_test, p), "precision": metrics.precision_score(self._y_test, p, average="macro"),
                 "recall": metrics.recall_score(self._y_test, p, average="macro"), "F1": metrics.f1_score(self._y_test, p, average="macro")}
 '''
-(tmp / "evalkit.py").write_text(EVALKIT)
+(tmp / "evalkit.py").write_text(EVALKIT, encoding="utf-8")
 sys.path.insert(0, str(tmp))
 import evalkit
 print("written:", len(EVALKIT.splitlines()), "lines")

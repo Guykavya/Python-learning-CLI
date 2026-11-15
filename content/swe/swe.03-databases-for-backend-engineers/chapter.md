@@ -625,6 +625,9 @@ Most indexes are **B-trees**: a tree where each node is a sorted page of keys, w
 - Because the keys are **sorted**, the same tree answers range queries (`BETWEEN`, `>`), `ORDER BY`, and prefix matches (`LIKE 'abc%'`) with no extra work.
 - Every insert or update of an indexed column must also change the tree. That is the price (section 5.8).
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw an animated B-tree index on an 'orders' table with 40,000 rows, index on customer_id. Show a root page [4000 | 8000], inner pages, and linked leaf pages holding sorted keys with row addresses. Animate a lookup of customer_id = 5500 walking root, inner, leaf (about 4 page reads). Beside it, show a 'SCAN orders' that checks all 40,000 rows one by one. Label the page reads on both sides."
+
 ### 5.2 A table big enough to matter
 
 All the examples in this section use one table. Rows are made by arithmetic, so the data (and the plans) are the same on every run.
@@ -1065,9 +1068,15 @@ print([r[0] for r in db.execute("SELECT msg FROM log")])
 
 Savepoints are what let a library offer "nested transactions": SQLAlchemy's `session.begin_nested()` is a savepoint. A typical use: importing 1,000 rows, where a bad row should be skipped but the good ones kept.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a timeline of one database transaction on a table 'log'. Steps: BEGIN, INSERT 'step 1', SAVEPOINT try_step2, INSERT 'step 2 (half done)', ROLLBACK TO try_step2, INSERT 'step 3', COMMIT. Show the table contents after each step as a small box, with 'step 2' appearing then disappearing. End with ['step 1', 'step 3'] and mark the savepoint as a bookmark inside the transaction."
+
 ### 6.6 Durability and the write-ahead log
 
 How can a database survive a power cut in the middle of a commit? It writes the change to a **log file first** (the write-ahead log, or WAL), forces that log to disk, and only then reports `COMMIT` as done. After a crash, it replays the log. That is why a commit is "slow" (it waits for the disk) and why a hundred small commits are far slower than one commit of a hundred rows. Rule: **batch writes inside one transaction** when they belong together.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate how a database commit survives a power cut using a write-ahead log (WAL). Show three boxes: app, log file, data file. Steps: app sends COMMIT, change is appended to the log, log is forced to disk, only then 'COMMIT done' returns to the app. Then show a crash before the data file is updated and the database replaying the log on restart. Compare 100 small commits with one commit of 100 rows."
 
 SQLite has a WAL *mode* (`PRAGMA journal_mode = WAL`) where readers never block the writer and the writer never blocks readers. For web apps on SQLite it is the standard choice. PostgreSQL always uses a WAL, and the same log is the basis of replication and point-in-time recovery (section 15).
 
@@ -1186,6 +1195,9 @@ after commit: 150 2
 
 The first half is a non-repeatable read. The second half is a stable snapshot: neither the changed price nor the new row (the phantom) appears until A ends its transaction.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a two-lane timeline for Transaction A and Transaction B on a table 'item' where row id=1 has price 100. A reads 100. B begins, updates price to 120, and commits. A reads again. Show two versions side by side: READ COMMITTED, where A sees 120 (non-repeatable read), and REPEATABLE READ, where A keeps its snapshot and sees 100. Highlight the second read in each version."
+
 **Dirty reads** are the one anomaly we cannot show here: SQLite never shows another connection's uncommitted data in normal use (section 6.4 proved it). In PostgreSQL they are impossible at every level.
 
 ### 7.4 Lost update, live
@@ -1213,6 +1225,9 @@ two pens sold, qty is now: 9
 ```
 
 Two pens were sold but stock went down by one. In a shop that is overselling; in a bank it is missing money. All four fixes below remove the *gap between the read and the write*.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a lost update on a table 'stock' where sku 'pen' has qty 10. Two requests, r1 and r2, both read qty = 10. Then r1 writes 9 and r2 writes 9. Show the stored value in the middle as a box, and the two reads and two writes as arrows on a timeline. Highlight the gap between read and write, and the final qty of 9 although two pens were sold."
 
 **Fix 1: let the database do the arithmetic, in one statement.** The statement `UPDATE ... SET qty = qty - 1` reads and writes under one lock. Add a guard so you cannot go below zero, and check `rowcount`:
 
@@ -1336,6 +1351,9 @@ Each side holds a read lock that the other needs to finish. SQLite refuses B at 
 ```
 
 PostgreSQL notices the cycle after about a second (`deadlock_timeout`) and kills one transaction with `ERROR: deadlock detected`. The cure is not clever code, it is a rule: **always lock rows in the same order** (for a transfer, lowest account id first). With a fixed order, a cycle cannot form.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a deadlock between two money transfers. Transfer 1 locks account 1 then wants account 2. Transfer 2 locks account 2 then wants account 1. Show two transaction boxes (T1, T2) and two account boxes with arrows 'holds' and 'waits for' forming a circle, with the word DEADLOCK. Then redraw with both transfers locking the lowest account id first, so the circle disappears."
 
 
 ### 7.6 Choosing
@@ -1787,6 +1805,9 @@ Seven customers produced **eight** statements: one query to get the customers (t
         app --- SELECT orders WHERE customer_id IN (1,2,..) -> db     (2 trips in total)
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate the N+1 query problem in SQLAlchemy. An app box and a database box. Naive loop over 7 customers: one 'SELECT customers' trip, then one 'SELECT orders WHERE customer_id = ?' trip per customer, 8 trips in total, shown as 8 arrows with a counter. Then show selectinload: 'SELECT customers' plus one 'SELECT orders WHERE customer_id IN (...)', 2 trips. Show the counters side by side."
+
 ### 10.3 Finding it: count the queries
 
 The recorder we built (`sql_log`) is the tool. In a real project you will use one of these to find N+1:
@@ -2205,6 +2226,9 @@ after c1.close(): Pool size: 2  Connections in pool: 1 Current Overflow: 1 Curre
 
 Read the story: `connect` fires only when a **new real connection** is opened (three times, for c1, c2 and c3). `checkout` and `checkin` fire each time a connection is lent or returned. The fourth request found size 2 + overflow 1 all in use, waited for `pool_timeout`, and raised `TimeoutError`. When `c1` was returned, the next request got *that same connection* without a new `connect`. The first status line says `Current Overflow: -1` because the counter starts at minus the pool size and rises as connections are opened; the number that matters is `Checked out connections`. Which connection is "overflow" is bookkeeping; what matters is the total limit of `pool_size + max_overflow` = 3.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a SQLAlchemy QueuePool with pool_size=2, max_overflow=1, pool_timeout=0.3 seconds. Show a pool box and a database. Four requests call engine.connect(): c1, c2 and c3 each check out a connection (3 in use, the limit), and the 4th waits 0.3 s then fails with TimeoutError. Then c1.close() returns its connection, and a new request reuses it. Show a 'checked out' counter."
+
 ### 12.3 Connection leaks
 
 The usual real-life cause of that `TimeoutError` is not too much traffic. It is a **leak**: code that checks a connection out and never returns it. A leak looks like this:
@@ -2347,6 +2371,9 @@ A **migration** is a small, versioned script that moves the schema from one stat
                           in a one-row table called alembic_version
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a row of Alembic migration revisions 0001, 0002, 0003 as stepping stones from an empty database. Show a marker for the one-row table 'alembic_version' pointing at the current revision. Animate 'alembic upgrade head' moving the marker forward, applying each upgrade() in order, and 'alembic downgrade -1' moving it back with downgrade(). Show the schema changing at each step."
+
 ### 13.2 A project, built in code
 
 Normally you run `alembic init migrations` in a terminal and edit `alembic.ini` and `migrations/env.py` by hand. Here we do the same things from Python, in a temporary folder, so every command below is real and repeatable. This setup block is long; read it once, then it is reused by the next blocks.
@@ -2371,7 +2398,7 @@ def quiet(fn, *a, **k):                         # Alembic prints file paths: hid
 quiet(command.init, cfg, os.path.join(root, "migrations"))
 
 # env.py decides how migrations connect and which models to compare against
-open(os.path.join(root, "migrations", "env.py"), "w").write(textwrap.dedent('''
+open(os.path.join(root, "migrations", "env.py"), "w", encoding="utf-8").write(textwrap.dedent('''
     from alembic import context
     from sqlalchemy import create_engine
     import models
@@ -2385,7 +2412,7 @@ open(os.path.join(root, "migrations", "env.py"), "w").write(textwrap.dedent('''
 '''))
 
 def write_models(body):
-    open(os.path.join(root, "models.py"), "w").write(textwrap.dedent('''
+    open(os.path.join(root, "models.py"), "w", encoding="utf-8").write(textwrap.dedent('''
         from sqlalchemy import MetaData, String, Float, Integer
         from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
         class Base(DeclarativeBase):
@@ -2403,7 +2430,7 @@ def run(fn, *a, **k):
 def body_of(rev_id, func="upgrade"):
     folder = os.path.join(root, "migrations", "versions")
     name = [f for f in os.listdir(folder) if f.startswith(rev_id)][0]
-    text_ = open(os.path.join(folder, name)).read()
+    text_ = open(os.path.join(folder, name), encoding="utf-8").read()
     start = text_.index(f"def {func}()")
     end = text_.find("\ndef ", start + 1)
     return text_[start:end if end > 0 else None].strip()
@@ -2603,6 +2630,9 @@ Splitting the change into steps that are each safe on their own is called **expa
 
 The principle: **at every moment, both the old and the new application version work against the current schema.** Rolling out many servers takes minutes; for those minutes old and new code run together. Each step is a separate deploy, possibly days apart.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate the expand and contract pattern for replacing a column 'price' with 'price_cents'. Show five steps on a timeline: 1 add price_cents (NULL allowed), 2 backfill, 3 deploy new code that writes both and reads the new one, 4 verify no NULLs, 5 drop old column and set NOT NULL. Under each step show the table columns and which app version (old or new) works. Mark step 5 as the only one that cannot be rolled back."
+
 ### 14.3 The steps as migrations
 
 Continuing the Alembic project from section 13, here are steps 1, 2 and 5 as hand-written revision files. Step 3 is application code, shown after.
@@ -2624,7 +2654,7 @@ def upgrade():
 def downgrade():
 {textwrap.indent(textwrap.dedent(downgrade_src).strip(), "    ")}
 '''
-    open(os.path.join(root, "migrations", "versions", f"{rev}_x.py"), "w").write(src)
+    open(os.path.join(root, "migrations", "versions", f"{rev}_x.py"), "w", encoding="utf-8").write(src)
 
 # seed some real data before we start
 with create_engine(url).begin() as c:

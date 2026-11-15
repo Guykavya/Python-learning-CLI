@@ -85,6 +85,9 @@ Every chart does one thing: it turns numbers into **marks** (points, lines, bars
 
 This ordering (studied by Cleveland and McGill in the 1980s) is the single most useful fact in the chapter. When you want a reader to compare two numbers precisely, put them on **position or length**. A pie chart encodes numbers as angles and areas, the weak channels, and that is why bars beat pies for almost every comparison.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Show the same five values (for example 23, 21, 19, 20, 17 percent for five coffee stores) drawn two ways side by side: a pie chart and a sorted bar chart on a common baseline. Add a ranking ladder on the right from most accurate to least: position on a common scale, length, angle and slope, area, colour lightness. Circle the channel each chart uses."
+
 ### 1.2 The questions behind charts
 
 Choose a chart by the **question** it must answer, not by what looks nice.
@@ -214,6 +217,9 @@ plt.close(fig)
 Figure contains 1 axes: Axes
 the axes have two Axis objects: XAxis and YAxis
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a labelled diagram of the matplotlib object tree. A big box 'Figure' (the canvas, size in inches) contains a box 'Axes' (one plot with title and labels). Inside Axes show 'XAxis' and 'YAxis' (ticks, tick labels, scale) and artists such as a line, bars, text and a legend. Add a note: 'fig, ax = plt.subplots(figsize=(8, 4)) makes one Figure with one Axes'."
 
 Use the object-oriented style in all real work. It makes it clear *which* axes you are drawing on, which is essential once a figure has several. It also lets a function **return** the figure, so that a test can inspect it (section 9).
 
@@ -459,6 +465,9 @@ print(STORE_COLOR)
 ```text
 {'Harbour': '#E69F00', 'Old Town': '#56B4E9', 'Campus': '#009E73', 'Airport': '#F0E442', 'Mall': '#0072B2', 'Riverside': '#D55E00'}
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw three colour strips for three kinds of data. Qualitative: six distinct hues labelled with store names Harbour, Old Town, Campus, Airport, Mall, Riverside. Sequential: one hue from light to dark labelled 'revenue per day, low to high'. Diverging: blue to grey to red labelled 'change from last year, below to above zero'. Under each strip write when to use it."
 
 ### 3.7 Annotations and reference lines
 
@@ -819,6 +828,9 @@ figure 6 x 4 inches, 1 axes
            legend: ['line: -0.29 visits per km']
 slope -0.291, intercept 6.42
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Make three scatter panels of 3,000 customers: x is distance to nearest store in km (0 to 25), y is visits per month, with visits falling as distance grows and most points near the lower left. Panel 1: plain solid dots that hide density. Panel 2: transparent dots (alpha 0.2). Panel 3: hexbin with a colour bar of counts. Add an orange fitted line, slope -0.29 visits per km."
 
 The title says "goes with", not "causes": this is an association in observational data (da.08). A straight line is also a modelling choice; the relation here is closer to a decay, and the line understates the drop near the shop and overstates it far away. Charts of relationships invite causal readings; the words in the title must resist them.
 
@@ -1187,6 +1199,9 @@ plt.close(g.fig)
 panels: 3 ['age = under 30', 'age = 30-44', 'age = 45+']
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Show how one table becomes small multiples. Draw a table of weekly revenue with columns week, store, category, revenue. Then draw six small line-chart panels, one per store (Airport, Campus, Harbour, Mall, Old Town, Riverside), each with four coloured lines for espresso, tea, pastry and cold. Use arrows from 'store' to the panel split and from 'category' to line colour, and mark the shared y-axis."
+
 ### 5.6 Themes, palettes and contexts
 
 `sns.set_theme(style=..., context=..., palette=...)` sets the look for everything after it. `style` is the background and grid (`whitegrid`, `ticks`, `dark`); `context` scales the text (`paper`, `notebook`, `talk`, `poster`), so one script can produce a figure for a report or a slide; `palette` sets the colours. Seaborn's `"colorblind"` palette is a good default.
@@ -1265,6 +1280,9 @@ honest     visual change   11.2%  | lie factor  1.00
 truncated  visual change  219.0%  | lie factor 19.55
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two bar charts side by side with the same two bars: revenue 2023 = 2.108 million and 2024 = 2.344 million (11 percent growth). Left y-axis starts at 0 and the second bar is slightly taller. Right y-axis starts at 2.0 and the second bar looks over three times taller. Label them 'honest' and 'truncated', and add arrows showing the cut-off part of each bar."
+
 On the truncated axis the second bar looks more than **three times** as tall as the first (219 percent taller), for a growth of 11 percent: a lie factor near 20. A bar's *length* is the data. If you cut the bottom off, you cut off the data. **Bars start at zero**, no exception. For a line chart, the axis need not start at zero, because the encoding is position and slope, not length; but then the chart must not claim a large change that is small in relative terms, and the axis range must be stated by the labels.
 
 ### 6.2 The dual-axis chart
@@ -1323,6 +1341,9 @@ date
 2023-12-01   110.00   114.00
 2024-12-01   124.00   124.00
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate one chart of two monthly revenue lines over 24 months: Airport (orange, 34 to 46 thousand) and Harbour (blue, 31 to 43 thousand). Airport is really higher every month. Let the right-hand axis limits slide between 0-45 and 10-55 while the left stays 0-60, so the orange line seems to cross below and above the blue. Show a caption: 'same data, only one axis changed'."
 
 ### 6.3 Size and area
 
@@ -1635,7 +1656,7 @@ fig.write_html(tmp / "monthly_by_store.html", include_plotlyjs=True)
 fig.write_html(tmp / "monthly_by_store_cdn.html", include_plotlyjs="cdn")
 for f in ("monthly_by_store.html", "monthly_by_store_cdn.html"):
     print(f"{f:28} {(tmp / f).stat().st_size / 1024:9.0f} KB (machine-specific)")
-text = (tmp / "monthly_by_store.html").read_text()
+text = (tmp / "monthly_by_store.html").read_text(encoding="utf-8")
 print("HTML contains the data:", "Airport" in text, "| and the library:", "plotly" in text.lower())
 print("JSON of the figure starts with:", fig.to_json()[:60], "...")
 ```
@@ -1673,6 +1694,9 @@ print("title:", title)
 Airport / Riverside revenue ratio: 1.93
 title: Airport sells 1.9 times as much as Riverside
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the same bar chart twice, side by side. Data: monthly revenue by store for a coffee chain, Airport about 1.9 times Riverside. Left chart: topic title 'Revenue by store'. Right chart: finding title 'Airport sells 1.9 times as much as Riverside', with the Airport bar highlighted in orange and the others grey. Add speech bubbles: 'reader must work out the point' on the left, 'reader gets the point at once' on the right."
 
 ### 8.2 Contrast and colour-blind safety
 
@@ -2289,7 +2313,7 @@ def build_report():
 
 
 report_html = build_report()
-(tmp / "brewco_report.html").write_text(report_html)
+(tmp / "brewco_report.html").write_text(report_html, encoding="utf-8")
 print(f"report written: {len(report_html) / 1e6:.1f} MB (machine-specific)")
 ```
 ```text
@@ -2304,7 +2328,7 @@ The last step is a test of the finished document: every figure has a caption and
 ```python run
 import re
 
-doc = (tmp / "brewco_report.html").read_text()
+doc = (tmp / "brewco_report.html").read_text(encoding="utf-8")
 imgs = re.findall(r"<img [^>]*>", doc)
 alts = [re.search(r"alt='([^']*)'", t).group(1) for t in imgs]
 print("images:", len(imgs), "| with non-empty alt text:", sum(bool(a.strip()) for a in alts))

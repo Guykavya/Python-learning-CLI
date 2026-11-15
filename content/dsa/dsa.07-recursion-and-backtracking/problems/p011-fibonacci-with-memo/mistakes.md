@@ -1,0 +1,4 @@
+- Creating `memo = {}` inside `fib`: every call gets a fresh, empty dictionary, so nothing is ever found and the function is as slow as before.
+- Storing the result but never checking the memo first (or checking after recursing).
+- Using a mutable default `def fib(n, memo={})`: it works, but the shared default surprises people; it is better to make the sharing visible.
+- Recursing for `fib(1000)`: depth 1000 hits the recursion limit. A loop is the right tool for very large `n`.

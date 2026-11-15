@@ -248,6 +248,9 @@ Read that line from left to right: *take `items`, split by `product_id`, look on
 
 </details>
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw split-apply-combine on a small retail table with columns product_id and revenue. Show the table's rows colour-coded by product_id (P001, P002, P003), then arrows splitting them into three separate coloured piles. Apply sum to each pile, giving one number each, then combine into a short result table indexed by product_id. Label the three steps Split, Apply, Combine. Note that a product with no rows gets no pile."
+
 ## 2. groupby basics
 
 ### 2.1 What `groupby` returns
@@ -693,6 +696,9 @@ print(g.round(1))
 
 Rows 1 and 4 are filled with the mean of **their own category**, not of the whole column. (If a whole category is missing, the group mean is also `NaN` and the gap stays. Whether this fill is *honest* is a cleaning question for da.05.)
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate groupby('category')['revenue'].transform('mean') on six order lines with categories office, grocery and beauty. Show each category's mean computed once, then pasted back onto every original row, so the output has the same six rows in the same order. Next to it, show agg('mean') returning only three rows. Highlight that transform keeps the row count and the original index, so it can be a new column."
+
 ### 4.2 `filter`: keep whole groups
 
 `filter` takes a function that returns `True` or `False` for each group, and keeps the rows of groups that give `True`. *"Customers with at least 12 order lines"*:
@@ -1062,6 +1068,9 @@ Notice that in the `left` and `outer` results `order_id` and `amount` turned int
 
 A good default is `how="left"` with the table whose rows you must not lose on the left. `inner` is dangerous when you do not check counts: it **silently drops** the rows that fail to match, and no warning appears.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw four overlapping-circle (Venn) or row-matching diagrams for joining customers (C1 Pune, C2 Delhi, C3 Agra) with orders (101 and 102 for C1, 103 for C3, 104 for C9). One panel each for inner, left, right and outer. Colour the surviving result rows, show NaN in grey where no match exists, and label the row counts 3, 4, 4 and 5."
+
 ### 6.3 The golden rule: count the rows
 
 Before every merge, ask: *how many rows should come out?* After it, check. For a `left` join where the right table has unique keys, the answer is **exactly the number of left rows**:
@@ -1232,6 +1241,9 @@ print(len(L), "x", len(R), "->", len(mm))
 ```text
 3 x 4 -> 12
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a join fan-out. Left table: 3 order-item rows, all with key P001. Right table: a product lookup where P001 appears twice, with two different categories. Draw lines from each left row to both right rows, producing 6 result rows. Show the revenue total growing, with a red label 'overstated'. Add a second small picture: 3 rows times 4 rows with the same key gives 12 rows."
 
 ### 6.9 Key problems that make rows fail to match
 
@@ -1608,6 +1620,9 @@ dup.pivot(index="store_id", columns="q", values="revenue")
 ValueError: Index contains duplicate entries, cannot reshape
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a pivot of a long table with columns store_id, q (quarter) and revenue, with rows like S1 2024Q1, S1 2024Q2, S2 2024Q1. Show arrows moving store_id values to the row labels, q values to the column headers, and revenue into the cells, giving a wide grid of stores by quarters. Mark with a red cross what happens if the same store and quarter pair appears twice: pivot raises an error."
+
 ### 8.3 `pivot_table`: pivot plus an aggregation
 
 `pivot_table` is `groupby` followed by a pivot. It takes `aggfunc`, and it can fill gaps (`fill_value`), add totals (`margins=True`) and work with several value columns. This is the spreadsheet "pivot table":
@@ -1716,6 +1731,9 @@ print(back.equals(wide2.rename_axis(columns=None)))
 True
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate melt, turning a wide table into a long one. Wide table: store_id plus six quarter columns (2024Q1 to 2025Q2), 6 rows, so shape (6, 7). Keep store_id as id_vars, and slide each quarter column down into rows named quarter and revenue. Show the result growing to 36 rows and 3 columns. Label 6 stores x 6 quarters = 36, and show pivot as the reverse arrow."
+
 ### 8.5 `stack` and `unstack`: moving levels of the index
 
 When a table has a MultiIndex, `unstack` moves the innermost row level up into columns, and `stack` does the reverse. They are the "index flavour" of pivot and melt:
@@ -1748,6 +1766,9 @@ dtype: float64
 ```
 
 In pandas 3, `stack` keeps rows with missing values (the old `dropna` behaviour is gone), so a stack/unstack round trip does not lose cells. `unstack` creates `NaN` for combinations that do not exist, so use `fill_value=0` where "no sales" means zero.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw unstack and stack on revenue grouped by store_id and channel. Left: a long Series with a two-level index (S1 online, S1 store, S2 online, S2 store). Right: a table with store_id rows and online and store columns. Animate the inner index level channel rotating up into the column headers (unstack) and back down (stack). Mark with NaN any combination that does not exist."
 
 ### 8.6 `crosstab`: counts of combinations
 
@@ -1995,6 +2016,9 @@ True
 
 Each week row shows the sum, the number of days (7 here, because of the full calendar), and the best day.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate resample('ME') on a daily revenue series from 2024-01-01 onwards. Show daily bars on a timeline, grouped into calendar-month boxes, each box collapsing into one bar placed on the month-end date (2024-01-31, 2024-02-29). Label the sum for each month. Add a small note that resample keeps empty bins, like groupby on the month would not."
+
 ### 9.4 Rolling windows
 
 Daily numbers are jumpy. A **rolling mean** smooths them: for each day, take the average of the last N days. The window slides one step at a time:
@@ -2056,6 +2080,9 @@ print(cmp.iloc[[6, 30, 200]].round(0))
 2024-01-31  2,126.00   2,491.00   1,402.00
 2024-07-19  2,074.00   3,104.00   1,807.00
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a 7-day trailing rolling mean over daily revenue bars. A highlighted 7-bar window slides one day at a time, and a smooth line plots the mean at the window's right edge. Leave the first 6 days as NaN gaps because the window is not full. Add a second panel: when days are missing, rolling('7D') covers fewer than 7 observations while rolling(7) still counts 7 rows."
 
 ### 9.5 `shift`, `diff`, `pct_change`: comparing with the past
 

@@ -1,0 +1,6 @@
+id = "dsa.07.p024"
+title = "Explain: permutations with duplicates"
+tier = "deep"
+kind = "explain"
+topics = ["permutations", "duplicates", "skip rule"]
+minutes = 25

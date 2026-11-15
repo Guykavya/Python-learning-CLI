@@ -1,0 +1,4 @@
+- Returning `[]` for `n = 0`: there is one string of length 0.
+- Forgetting `path.pop()`: the strings get longer and longer.
+- Trying `"1"` before `"0"`: the result is in reverse order.
+- Storing `path` (a list) instead of the joined string.

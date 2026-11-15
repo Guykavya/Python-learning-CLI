@@ -1,0 +1,7 @@
+id = "dsa.07.p045"
+title = "Build a generic backtracking engine"
+tier = "challenge"
+kind = "code"
+topics = ["backtracking", "template", "higher-order functions", "build"]
+minutes = 60
+assessment = "build"

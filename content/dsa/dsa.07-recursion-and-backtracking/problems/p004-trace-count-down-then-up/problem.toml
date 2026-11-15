@@ -1,0 +1,6 @@
+id = "dsa.07.p004"
+title = "Trace: count down, then up"
+tier = "drill"
+kind = "trace"
+topics = ["recursion", "call stack", "print order"]
+minutes = 10

@@ -1,0 +1,6 @@
+id = "dsa.07.p015"
+title = "All subsets"
+tier = "drill"
+kind = "code"
+topics = ["subsets", "backtracking", "power set"]
+minutes = 20

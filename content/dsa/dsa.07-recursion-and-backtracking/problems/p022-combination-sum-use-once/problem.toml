@@ -1,0 +1,6 @@
+id = "dsa.07.p022"
+title = "Combination sum II (each number once)"
+tier = "deep"
+kind = "code"
+topics = ["combinations", "duplicates", "skip rule"]
+minutes = 30

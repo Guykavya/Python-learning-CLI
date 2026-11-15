@@ -425,6 +425,9 @@ factors of 2 are gone (and so on). So `d` only ever "hits" primes, even though w
 **Cost:** O(sqrt n) per number. For `n <= 10^12` that is up to `10^6` steps, fine for a few numbers. For many
 numbers, we need a sieve.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a factor tree for n = 360 built by trial division. Start with 360 and try d = 2: divide three times (360, 180, 90, 45), showing exponent 3. Then d = 3: divide twice (45, 15, 5), exponent 2. Then d = 4 fails because all 2s are gone. Now d * d = 16 > 5, so the leftover 5 is prime. End with [(2, 3), (3, 2), (5, 1)]. Highlight each division step in a different colour."
+
 ### Divisor count and sum from the factorisation
 
 If `n = p1^e1 * p2^e2 * ... * pk^ek`, every divisor chooses an exponent `0..e1` for `p1`, `0..e2` for `p2`, and so
@@ -586,6 +589,9 @@ primes: [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
 
 Look at `p = 3`: it starts at `9`, not `6`, because `6` was crossed off by `2`. And `p = 5` starts at `25`; `5 * 5 = 25
 <= 50`, but `p = 11` would start at `121 > 50`, so the loop stops at `p = 7`.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a grid of the numbers 2 to 50, ten per row. Animate the sieve of Eratosthenes: p = 2 crosses off 4, 6, 8 ... 50. Then p = 3 starts at 9 and crosses 9, 15, 21, 27, 33, 39, 45 (new ones only). Then p = 5 crosses 25 and 35. Then p = 7 crosses 49. Use a different colour per prime, show 6 skipped by p = 3, and circle the 15 primes left."
 
 ### Cost
 
@@ -930,6 +936,9 @@ gcd(17, 5)
   a=2, b=1: 2 = 2 * 1 + 0
   b is 0 -> answer 1
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Show Euclid's algorithm for gcd(252, 105) as rectangles. Draw a 252 by 105 rectangle and cut off two 105 by 105 squares, leaving a 42 by 105 strip. Then cut two 42 squares, leaving 21 by 42. Then two 21 squares fill it exactly with no remainder. Write the equations 252 = 2*105 + 42, 105 = 2*42 + 21, 42 = 2*21 + 0 beside each step. Highlight 21 as the answer."
 
 ### Why it is fast
 
@@ -1461,6 +1470,9 @@ print(product)
 579187588
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a 12-hour clock face. Show that 15 o'clock lands on 3, because 15 % 12 = 3. Then animate adding 5 hours repeatedly starting at 9: 9, 2, 7, 0, 5, wrapping past 12 back to 0 each time. Label each hand position with the value before and after the % 12. Add a note that (a + b) % 12 gives the same hand position whether you reduce first or last."
+
 ### Python's friendly negative remainders
 
 In the section on `//` and `%` we saw that `x % m` is never negative for positive `m`. So in subtraction, `(a - b) % m`
@@ -1580,6 +1592,9 @@ answer: 323 check: 323
 
 Each line shows the base *before* squaring and the result *after* using the bit. Read the bits of `13 = 1101` from the
 lowest: `1, 0, 1, 1`. The rows with `bit = 1` multiply the current base into the result; the row with `bit = 0` only squares.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate fast exponentiation of 3 ** 13 mod 1000 using the bits of 13 = 1101, read from the lowest bit. Show a table with columns base, exp, bit, result. Rows: base 3, bit 1, result 3; base 9, bit 0, result 3; base 81, bit 1, result 243; base 561, bit 1, result 323. Show the base squaring each row and the exponent halving. Highlight the rows where the bit is 1."
 
 ### The built-in `pow(a, b, m)`
 
@@ -1916,6 +1931,9 @@ simple, never divides, and is perfect when `n` is a few thousand at most, for ex
 entries, which is the limit). For `n = 60` with exact answers this is all you need.
 
 You can also use the reduction modulo `m` in the table, `(a + b) % m`, with no problem: addition survives the modulus.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw Pascal's triangle for rows 0 to 7 as a centred pyramid, using C(n, r) = C(n-1, r-1) + C(n-1, r). Rows: 1; 1 1; 1 2 1; 1 3 3 1; 1 4 6 4 1; 1 5 10 10 5 1; 1 6 15 20 15 6 1; 1 7 21 35 35 21 7 1. Animate each inner cell as the sum of the two cells above it. Highlight 35 = 15 + 20 with arrows."
 
 ### Method 2: factorials and inverse factorials (n up to ~10^6 or 10^7)
 
@@ -2373,6 +2391,9 @@ print(popcount(2**100 - 1), bin(2**100 - 1).count("1"))
 `bin(n).count("1")` is the simplest popcount; and newer Python versions (3.10 and later) also have `n.bit_count()`. Hand-writing the loop
 shows why it is efficient, and it is what the problems expect first.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw three rows of bit boxes for n = 44, n - 1 = 43 and n & (n - 1) = 40, as 6-bit numbers: 101100, 101011, 101000. Show that subtracting 1 flips the lowest 1 and the zeros below it. Use red for the lowest set bit of 44 and the flipped bits of 43. Show the AND result clearing that bit. Then repeat to count set bits of 44, giving popcount 3."
+
 ### n & -n: isolate the lowest set bit
 
 What does `-n` look like in binary? On a computer, negative numbers use **two's complement**: `-n` is "flip all bits of `n`, then add 1".
@@ -2541,6 +2562,9 @@ print(subs)
 ```text
 ['1011', '1010', '1001', '1000', '0011', '0010', '0001', '0000']
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the 8 subsets of items ['a', 'b', 'c'] as bitmasks from 000 to 111, one row per mask. Show three bit boxes per row, where bit 0 is item a, bit 1 is item b and bit 2 is item c. Highlight bits set to 1 and list the chosen items beside each mask: 000 is empty, 011 is ['a', 'b'], 101 is ['a', 'c'], 111 is all three. Use a binary counting animation."
 
 ### XOR and its three laws
 

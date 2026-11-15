@@ -211,6 +211,9 @@ first command worked, so this ran
 exit code of the last command: 3
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a small animation of a shell chaining commands with &&. Two rows. Row 1: 'python -c sys.exit(0)' shows exit code 0 in green, then an arrow to 'echo first command worked' which runs. Row 2: 'sys.exit(3)' shows exit code 3 in red, and the arrow to the echo is blocked with a cross. At the end show '$?' holding 3. Label 0 as success and any other number as failure."
+
 ### 2.4 stdout, stderr and the pipe
 
 A tool's real output goes to **stdout**; messages for the human (progress, errors) go to **stderr**. That lets people write `mytool list > out.txt` and still see errors on the screen, and it lets other programs read your output cleanly.
@@ -296,7 +299,7 @@ def apply_moves(moves, root, dry_run=False):
             shutil.move(str(src), str(dst))
         done.append((src, dst))
     if done and not dry_run:
-        (Path(root) / JOURNAL).write_text(json.dumps([[str(s), str(d)] for s, d in done]))
+        (Path(root) / JOURNAL).write_text(json.dumps([[str(s), str(d)] for s, d in done]), encoding="utf-8")
     return done
 
 
@@ -306,7 +309,7 @@ def undo(root):
     if not journal.exists():
         return []
     restored = []
-    for s, d in reversed(json.loads(journal.read_text())):
+    for s, d in reversed(json.loads(journal.read_text(encoding="utf-8"))):
         s, d = Path(s), Path(d)
         if d.exists() and not s.exists():
             shutil.move(str(d), str(s))
@@ -523,6 +526,9 @@ song.mp3
 ```
 
 Three things to notice. The dry run really changed nothing. The second run found nothing more to move (the journal is hidden, so it is ignored; the files already sit in subfolders). And `undo` returned every file to its place. When a tool gives you these three guarantees, you can run it on a real folder without fear.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a before-and-after diagram of a folder called 'mess' tidied by a Python tool named tidy. Left: loose files in one folder. Middle: after 'tidy.py organize mess', files sit in type subfolders and a hidden '.tidy-journal.json' lists (source, destination) pairs. Right: after 'tidy.py undo mess', the journal is read in reverse, files return to their old places and the journal is deleted. Use arrows and label the three commands."
 
 Duplicates, and what happens when the usage is wrong (argparse exits with code 2 by itself):
 
@@ -876,14 +882,14 @@ import tempfile
 root = Path(tempfile.mkdtemp())
 report = root / "reports" / "2026" / "march.csv"       # / joins paths, on every OS
 report.parent.mkdir(parents=True, exist_ok=True)       # make all missing folders; no error if present
-report.write_text("id,total\n1,10\n2,20\n")
+report.write_text("id,total\n1,10\n2,20\n", encoding="utf-8")
 
 print("name  :", report.name)
 print("stem  :", report.stem)
 print("suffix:", report.suffix)
 print("parent:", report.parent.name)
 print("exists:", report.exists(), "| is_file:", report.is_file(), "| size:", report.stat().st_size)
-print("text  :", report.read_text().splitlines())
+print("text  :", report.read_text(encoding="utf-8").splitlines())
 print("with_suffix:", report.with_suffix(".json").name)
 print("glob  :", sorted(p.name for p in root.rglob("*.csv")))
 print("relative:", report.relative_to(root))
@@ -941,11 +947,14 @@ def atomic_write_text(path, text):
 target = Path(tempfile.mkdtemp()) / "state.json"
 atomic_write_text(target, '{"last_run": 1}')
 atomic_write_text(target, '{"last_run": 2}')
-print(target.read_text(), "| leftover temp files:", [p.name for p in target.parent.glob("*.tmp")])
+print(target.read_text(encoding="utf-8"), "| leftover temp files:", [p.name for p in target.parent.glob("*.tmp")])
 ```
 ```text
 {"last_run": 2} | leftover temp files: []
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate an atomic file write. A folder holds 'state.json' with {'last_run': 1}. Step 1: mkstemp creates 'state.json.xxxx.tmp' in the same folder. Step 2: the new text {'last_run': 2} is written, flushed and fsynced to the temp file. Step 3: os.replace swaps the temp name onto 'state.json' in one instant. Show a reader always seeing the old file or the new file, never half, and a crash before step 3 leaving only a temp file that gets deleted."
 
 ### 6.4 Deleting safely
 
@@ -996,12 +1005,12 @@ def changes(old, new):
 
 
 root = Path(tempfile.mkdtemp())
-(root / "a.txt").write_text("1")
-(root / "b.txt").write_text("22")
+(root / "a.txt").write_text("1", encoding="utf-8")
+(root / "b.txt").write_text("22", encoding="utf-8")
 before = snapshot(root)
-(root / "a.txt").write_text("123456")          # modified (different size)
+(root / "a.txt").write_text("123456", encoding="utf-8")          # modified (different size)
 (root / "b.txt").unlink()                      # removed
-(root / "c.txt").write_text("new")             # added
+(root / "c.txt").write_text("new", encoding="utf-8")             # added
 print(changes(before, snapshot(root)))
 ```
 ```text
@@ -1030,14 +1039,14 @@ import sys
 
 # 1. A list of arguments, never one big string with shell=True.
 result = subprocess.run([sys.executable, "-c", "print('hello from a child')"],
-                        capture_output=True, text=True, check=True, timeout=10)
+                        capture_output=True, text=True, check=True, timeout=10, encoding="utf-8")
 print("stdout :", result.stdout.strip())
 print("code   :", result.returncode)
 
 # 2. A failing command: check=True turns a non-zero exit code into an exception.
 try:
     subprocess.run([sys.executable, "-c", "import sys; print('boom', file=sys.stderr); sys.exit(4)"],
-                   capture_output=True, text=True, check=True)
+                   capture_output=True, text=True, check=True, encoding="utf-8")
 except subprocess.CalledProcessError as e:
     print("failed : exit code", e.returncode, "| stderr:", e.stderr.strip())
 
@@ -1068,11 +1077,11 @@ Rules:
 The injection danger, shown safely with `echo`:
 
 ```python run
-import subprocess
+import subprocess, sys
 
 filename = "report.txt; echo INJECTED"
-subprocess.run(f"echo processing {filename}", shell=True)           # BAD: the shell sees two commands
-subprocess.run(["echo", "processing", filename])                    # GOOD: one argument, printed as text
+subprocess.run(f"echo processing {filename}", shell=True)           # BAD: the shell (bash/zsh) sees two commands
+subprocess.run([sys.executable, "-c", "import sys; print(*sys.argv[1:])", "processing", filename])   # GOOD: one argument, printed as text (a Python child, so it also runs on Windows)
 ```
 ```text
 processing report.txt
@@ -1166,7 +1175,7 @@ def load(path=None, env=None):
 from pathlib import Path
 import settings
 
-Path("auto.toml").write_text('inbox = "~/Downloads"\nbackup_dir = "/data/backups"\nkeep_days = 30\n')
+Path("auto.toml").write_text('inbox = "~/Downloads"\nbackup_dir = "/data/backups"\nkeep_days = 30\n', encoding="utf-8")
 print("file only      :", settings.load("auto.toml", env={}))
 print("env overrides  :", settings.load("auto.toml", env={"AUTO_KEEP_DAYS": "7", "AUTO_API_TOKEN": "s3cret"}))
 print("no file at all :", settings.load("missing.toml", env={}).keep_days, "(the default)")
@@ -1215,7 +1224,7 @@ from logsetup import setup_logging
 
 log = logging.getLogger("backup")
 logfile = Path(tempfile.mkdtemp()) / "auto.log"
-setup_logging(verbose=1, logfile=logfile, stream=open(os.devnull, "w"))   # hide the screen copy here
+setup_logging(verbose=1, logfile=logfile, stream=open(os.devnull, "w", encoding="utf-8"))   # hide the screen copy here
 log.info("starting backup of %d folders", 3)
 log.debug("this detail is hidden unless -vv")
 log.warning("folder %s is empty", "photos")
@@ -1224,7 +1233,7 @@ try:
 except ZeroDivisionError:
     log.exception("backup step failed")                         # includes the traceback
 
-lines = logfile.read_text().splitlines()
+lines = logfile.read_text(encoding="utf-8").splitlines()
 print(f"\nthe log file got {len(lines)} lines; the first three, without timestamps:")
 for line in lines[:3]:
     print("  ", line.split(" ", 2)[2])
@@ -1456,6 +1465,9 @@ error call : 404 -> handled, not hidden
 ```
 
 Set a **User-Agent** that says who you are and how to reach you. For rate-limited or flaky APIs add retries with backoff and jitter (swe.08, swe.10 section 12): `retry()` from swe.10 works unchanged.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a sequence diagram between a Python script using httpx and a server at /api/books. Call 1: GET /api/books returns 200 with the JSON list and the header ETag 'v1'; the script stores the copy. Call 2: GET with header If-None-Match 'v1' returns 304 Not Modified with no body, so the script reuses its stored copy. Call 3: GET /missing returns 404, and raise_for_status makes an exception. Label status codes and highlight the saved transfer."
 
 ### 10.2 Parsing HTML
 
@@ -1798,6 +1810,9 @@ invalid: bad cron field '61': allowed 0-59
 
 Look at the last pattern: `0 0 13 * 5` is "midnight on the 13th **or** on any Friday", not "Friday the 13th". When *both* day fields are restricted, cron runs when *either* matches. Test patterns before you rely on them (online tools such as crontab.guru do the same).
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the five cron fields as five labelled boxes in a row: minute, hour, day-of-month, month, day-of-week (0 is Sunday). Fill them for '30 2 * * 1-5' and show a week calendar with the 02:30 slots highlighted Monday to Friday only. Then show '0 0 13 * 5' on a month calendar, highlighting both every 13th and every Friday, to show that when both day fields are restricted cron uses OR, not AND."
+
 ### 12.2 Why a script works by hand and fails in cron
 
 | Cause | What happens | Fix |
@@ -1859,7 +1874,7 @@ def single_instance(path):
         fd = os.open(path, os.O_CREAT | os.O_EXCL | os.O_WRONLY)           # fails if the file exists
     except FileExistsError:
         try:
-            pid = int(open(path).read().strip())
+            pid = int(open(path, encoding="utf-8").read().strip())
         except ValueError:
             pid = None
         if pid and psutil.pid_exists(pid):
@@ -1894,7 +1909,7 @@ with single_instance(lock):
         print("second copy refused:", e)
 print("after finishing, lock file exists:", lock.exists())   # (the process id above differs on every run)
 
-lock.write_text("99999999")                                  # a pid that does not exist = a crashed run
+lock.write_text("99999999", encoding="utf-8")                                  # a pid that does not exist = a crashed run
 with single_instance(lock):
     print("stale lock taken over")
 ```
@@ -1906,6 +1921,9 @@ stale lock taken over
 ```
 
 On Linux and macOS the shell tool `flock` does the same without code: `flock -n /tmp/job.lock python job.py` (exit immediately if locked). This pure-Python version also works on Windows. (A rare race remains if two processes take over a stale lock at the very same instant; for stricter needs use a library such as `portalocker`, or a database row.)
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a single-instance lock file job.lock. Copy A starts, creates the file exclusively (O_EXCL), writes its process id, and runs. Copy B starts, sees the file exists, reads the pid, checks the process is alive and exits with 'already running as process N'. When A finishes the file is deleted. Add a second scene: a stale lock holding pid 99999999, no such process, so a new run deletes it and takes over. Use a flowchart with these decisions."
 
 ### Try it: read a crontab line
 
@@ -2024,6 +2042,9 @@ tidy two days later: last success was 48 hours ago (limit 24)
 
 The last check is the key idea: a job can also fail by **not running at all** (cron stopped, machine off, crontab lost). A status file with a timestamp lets a separate check say "no success in 24 hours".
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a diagram of a job runner called run_job. A job function (good: files_moved 12, bad: raises ConnectionError) runs inside a try block. Either way it writes a status file such as 'tidy.json' with fields job, started, ok, result or error, and seconds, using an atomic write. A separate checker, problem_with, reads the files and reports None, 'last run failed', 'never ran' or 'last success was 48 hours ago (limit 24)'. Show a timeline for the stale case."
+
 ### 13.2 Get told: alerts and the dead-man's switch
 
 - Send yourself a message on failure: e-mail (section 9), a chat webhook, or a push service. Keep it short: job name, error, where the log is.
@@ -2044,6 +2065,9 @@ Write jobs so that running them again, late, or twice is harmless:
 - Every network call has a timeout; every subprocess has a timeout (section 7).
 - Retry transient failures a few times with backoff and jitter; do not retry forever (swe.10 section 12).
 - Cap the whole job's runtime (`timeout 600 python job.py` in cron, or a watchdog inside the script) so one hung run cannot block all later runs.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a timeline showing a flaky network call in a scheduled job. Attempt 1 fails, wait 1 second, attempt 2 fails, wait 2 seconds plus a small random jitter, attempt 3 succeeds. Show a second timeline where retries stop after a few tries and the job fails loudly. Wrap everything in a bar labelled 'timeout 600 python job.py' that kills a hung run at the limit. Label timeouts per call, backoff, jitter and the overall cap."
 
 ### Try it: what is missing?
 

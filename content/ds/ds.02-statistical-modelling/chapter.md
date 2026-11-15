@@ -178,6 +178,9 @@ within 2 sd: 0.955
 
 `np.random.default_rng(seed)` makes a random-number generator. The same seed always produces the same numbers, which is why the output in this chapter is reproducible.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a standard normal bell curve (mean 0, standard deviation 1) with the x-axis labelled in standard deviations from -4 to 4. Shade the area within 1 sd in one colour and the extra area between 1 and 2 sd in a second colour. Label the shaded shares 68.4 percent and 95.5 percent (simulated from 100,000 draws), and mark the mean with a dashed vertical line."
+
 ### 2.4 Sampling, p-values and confidence intervals
 
 We almost never see the whole population; we see a **sample**. A number computed from a sample (a mean, a coefficient) would be a little different with a different sample. That wobble is called **sampling variability**, and its size is the **standard error** of the number.
@@ -357,6 +360,9 @@ smallest RSS on this grid at slope 4.75
 ```
 
 The RSS dips and then climbs again, like a bowl. The bottom of the bowl is the OLS answer, and calculus finds it exactly.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a scatter plot of 60 students: hours studied (0 to 10) on the x-axis, exam score on the y-axis, generated as score = 35 + 4.5*hours + noise (sd 6). Show three candidate lines through the point of means (slopes 3, 4.75, 6) with short vertical residual segments to the points. Beside it, plot RSS against slope as a bowl-shaped curve with its lowest point near slope 4.75 (RSS about 1494)."
 
 ### 3.3 The closed-form answer for one predictor
 
@@ -1111,6 +1117,9 @@ masters   3.31% per year of experience
 
 The true slopes are 2.5, 2.5 and 3.5 percent. The estimates are in the right region (sampling noise explains the gaps) and the masters slope is the highest, as designed. The F-test p-value, 0.017, is below 0.05 but not tiny: the interaction is real in this data (we built it in) yet modest, and with 400 rows the test only just notices it.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Plot log wage against years of experience for three groups: school, degree and masters. Draw one straight line per group, all with different slopes. The slopes are about 2.25, 2.63 and 3.31 percent per year, so the masters line is steepest. Use the same intercept for all three to keep it simple. Label each slope and add a note that this fan of unequal slopes is an interaction."
+
 ### 6.5 Polynomial terms: curves that are still "linear"
 
 If the pattern curves, add powers of `x`. The model stays linear in its coefficients, so everything in this chapter still applies. Here is **synthetic** data where the truth is `y = 5 + 2x - 0.15 x^2 + noise (sd 1.5)`: rising at first, then flattening, like the effect of age on fitness.
@@ -1161,6 +1170,9 @@ x
 ```
 
 Look at the signs. The straight line's residuals are negative at both ends and positive in the middle: the line sits below the points in the middle and above them at the ends, an arch pattern that shows the model is missing curvature. The quadratic's residuals are all near zero. This "pattern in the residuals" idea is the core of diagnostics in section 9.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Make two side-by-side panels using 80 points from y = 5 + 2x - 0.15x^2 + noise (sd 1.5), x from 0 to 12. Left: the data with a straight-line fit (R-squared 0.14), with residuals as small vertical bars. Right: the same data with the quadratic curve fit (R-squared 0.60). Colour the residual bars by sign to show the line is below the middle points and above the ends."
 
 ### 6.6 Log transforms of predictors and responses
 
@@ -1590,6 +1602,9 @@ saved in a temporary folder: ds02_... (random, machine-specific)
 
 Open the two PNG files from the temporary folder (print `outdir` to find it) and look for: an arch in `resid_line.png`, and a flat random cloud in `resid_quad.png`. I could not display the images here, so this is what you should expect to see, not something observed.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a residuals-versus-fitted plot for a straight line fitted to curved (quadratic) data. Fitted values go on the x-axis and residuals on the y-axis, with a horizontal zero line. Show the points forming an arch, with residuals negative at both ends and positive in the middle. Add a second small panel with a healthy random band around zero, and label the two panels 'curve missed' and 'healthy'."
+
 ### 9.2 Normal QQ plots
 
 A **QQ plot** (quantile-quantile) compares the sorted residuals with the values a normal distribution would give. If the residuals are normal the points lie on a straight line. We can build the idea without a picture: take standardised residuals, sort them, and pair each with the normal quantile for its rank.
@@ -1709,6 +1724,9 @@ rules of thumb: leverage > 2p/n = 0.065;  |studentised residual| > 3;  Cook's D 
 ```
 
 The rules of thumb are screening tools, not laws. They tell you where to *look*. Then ask why the point is odd: a typing error (fix or remove it, and write down that you did), a different kind of case (maybe it belongs to another population), or a true and important observation (keep it, and report results both ways). **Never delete a point just because it hurts your result.**
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a scatter of 62 points, hours studied (0 to 20) against score, with a fitted line of slope about 4.75 passing through 60 points that cluster between 0 and 10 hours. Add two extra points at x = 20: point A on the trend and point B 40 marks below it. Draw the line refitted with B, tilted to slope about 4.03. Label A as high leverage with small residual, and B as high leverage with big residual, so high influence."
 
 ### 9.4 Multicollinearity and the variance inflation factor
 
@@ -1996,6 +2014,9 @@ The by-hand and library intervals agree. The simulation found 0.913 inside, a li
 
 With the formula API, `smf.ols(...).fit().get_prediction(new_df)` works the same way, with `new_df` holding the original column names.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Plot a fitted line score = 33.19 + 4.75*hours (hours 0 to 15) with two bands around it. The narrow inner band is the 95 percent confidence interval for the mean, and the wider outer band is the prediction interval for one new student. At 5 hours label the mean as 56.93, the inner band as 55.62 to 58.25, and the outer band as 46.69 to 67.18. Show that the inner band is narrowest near the middle of the data."
+
 ### 10.1 Try it: intervals
 
 **Try it 10.1 (Predict the output).** If we fitted the same model to 6,000 students instead of 60, would the *confidence* interval for the mean at 5 hours get narrower? Would the *prediction* interval get much narrower?
@@ -2264,6 +2285,9 @@ logit -> probability: [0.018, 0.269, 0.5, 0.731, 0.982]
 ```
 
 Equal steps in log-odds are not equal steps in probability: near 0.5 a unit step moves the probability a lot; near 0 or 1 it hardly moves it. That flattening is the S shape.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Plot the sigmoid curve p = 1 / (1 + exp(-z)) for z from -6 to 6, with p on the y-axis from 0 to 1. Mark the points z = -4, -1, 0, 1, 4 with probabilities 0.018, 0.269, 0.5, 0.731, 0.982. Draw a second row under the x-axis showing equal steps in log-odds. Highlight that the curve is steep near 0.5 and flat near 0 and 1."
 
 ### 13.3 How is it fitted? Maximum likelihood
 
@@ -2810,6 +2834,9 @@ NegBin  rate ratio 95% CI for release: 1.30 to 1.93
 Compare each interval with 1.82. The Poisson interval is narrower and, in this sample, misses the true 1.82; the negative binomial interval is wider and contains it. One sample cannot prove the point (a narrow interval can include the truth by luck), which is why section 8 used simulation: over many samples the over-optimistic interval misses more than the promised 5 percent.
 
 </details>
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two histograms of daily ticket counts with the same mean. The left one is Poisson, where variance is roughly equal to the mean. The right one is overdispersed, a negative binomial, where variance is about 5.5 times the mean, with a longer right tail. Under each, draw the standard error bars for the 'release' coefficient: Poisson 0.049, quasi-Poisson 0.094, negative binomial 0.100. Label the narrow one over-optimistic."
 
 ## 16. Comparing models: likelihood-ratio test and AIC
 

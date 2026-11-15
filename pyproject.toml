@@ -83,14 +83,19 @@ ml = [
     "peft>=0.11",
     "onnx>=1.16",
     "onnxruntime>=1.18",
+    # ml.07: torch.onnx.export (dynamo exporter) needs onnxscript; the probe falls back to resource if psutil is absent.
+    "onnxscript>=0.1",
 ]
-# llm.*: exercises use fake model clients; real providers are only "try it on your machine" steps.
+# llm.03 (RAG): reads PDFs. Everything else in the llm chapters is the standard library, numpy, SQLite FTS5,
+# FastAPI and code written in the chapters. Install when you reach llm.03:  pip install -e ".[llm]"
 llm = [
+    "pypdf>=4.0",
+]
+# Only if you want to try a REAL model provider after the llm chapters. No chapter, test or problem needs these
+# (the course uses fake model clients on purpose, so it works with no key and no internet):  pip install -e ".[providers]"
+providers = [
     "anthropic>=0.30",
     "openai>=1.35",
-    "chromadb>=0.5",
-    "sentence-transformers>=3.0",
-    "tiktoken>=0.7",
 ]
 
 [project.scripts]

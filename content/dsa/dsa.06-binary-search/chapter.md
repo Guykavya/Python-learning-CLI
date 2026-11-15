@@ -195,6 +195,9 @@ found at 11
 
 The window had 16, then 8, then 4... elements. Each step costs one comparison and halves the window (the middle element is removed from the window, and the rest is split in two).
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate binary search for x = 22 on the sorted list [0, 2, 4, ..., 30] (16 numbers, indices 0 to 15). Draw the cells as a row. Step 1: window a[0..15], mid = 7, value 14, which is less than 22, so grey out indices 0 to 7. Step 2: window a[8..15], mid = 11, value 22, found. Mark lo, mid and hi with arrows and show the window size 16, then 8."
+
 ### How many probes at most?
 
 If the window has `m` elements, one step leaves at most `m // 2` elements (the larger side, when `m` is even, has `m / 2` elements, and when `m` is odd both sides have `(m - 1) / 2`).
@@ -459,6 +462,9 @@ From step 2 on the state is `lo = 2, hi = 3`, and it never changes. Two cures:
 
 **The shrink check.** For every branch of your loop ask: *is the new window strictly smaller than the old one?* If one branch can leave `lo` and `hi` unchanged, you have an infinite loop.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate the buggy binary search on a = [1, 3, 5, 7] looking for 7, where the code does lo = mid instead of lo = mid + 1. Show cells with lo, mid and hi arrows. Step 1: lo 0, hi 3, mid 1, so lo becomes 1. Step 2: mid 2, lo becomes 2. Step 3: lo 2, hi 3, mid 2, lo = mid changes nothing. Show the window staying the same size, with a red 'stuck forever' label."
+
 ### Trap 2: `<=` against `<`
 
 The condition `lo <= hi` belongs to the closed window, `lo < hi` to the half-open or shrinking one. Use the wrong one and you get one of two bugs:
@@ -647,6 +653,9 @@ a        = 1  2  2  2  5  7  7  9
 a[i]>=2  = F  T  T  T  T  T  T  T     -> first True at 1   (lower_bound(2))
 a[i]>2   = F  F  F  F  T  T  T  T     -> first True at 4   (upper_bound(2))
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the sorted list [1, 2, 2, 2, 5, 7, 7, 9] as boxes at indices 0 to 7. Under it draw two coloured strips: the test 'a[i] >= 2' reads F T T T T T T T, and the test 'a[i] > 2' reads F F F F T T T T. Put a vertical line at the first True of each strip: lower_bound(2) = 1 and upper_bound(2) = 4. Shade the block of 2s between the two lines."
 
 ### The code
 
@@ -1097,6 +1106,9 @@ Rules for reals:
 - Both updates are `lo = mid` and `hi = mid` (no `+ 1`, no `- 1`).
 - The width halves each step: after `k` steps it is `width / 2^k`.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate bisection to estimate the square root of 10 on a real number line from 3.0 to 4.0. Each step, take mid = (lo + hi) / 2: if mid * mid >= 10 then hi = mid, else lo = mid. Show the first steps: [3.0, 3.5], [3.0, 3.25], [3.125, 3.25], [3.125, 3.1875]. Draw the interval as a shrinking bar, mark the true value 3.16227..., and label the width halving each step."
+
 ### Why not `while hi - lo > eps`?
 
 It looks natural, and it is dangerous. Floats have a limited precision: near `10^5` the gap between two neighbouring floats is about `1.5 * 10^-11`. If you ask for `eps = 10^-15`, then
@@ -1261,6 +1273,9 @@ print(first_true(1, max(piles), lambda k: sum((p + k - 1) // k for p in piles) <
 ```
 
 This `first_true` is the whole technique. Everything else in the chapter is "choose `lo`, `hi`, and write `feasible`".
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a number line of candidate eating speeds k = 1 to 12 for piles [3, 6, 7, 11] with 8 hours allowed. Colour speeds 1, 2, 3 red ('too slow') and 4 to 12 green ('OK'). Animate first_true(1, 11): mid 6 is OK so hi = 6; mid 3 is too slow so lo = 4; mid 5 is OK so hi = 5; mid 4 is OK so hi = 4. Show the answer 4 at the red/green border."
 
 ### Why the range matters: `hi` must be feasible
 
@@ -1472,6 +1487,9 @@ print(aggressive_cows([1, 2, 4, 8, 9], 5))
 ```
 
 The upper limit `(max - min) // (c - 1)` is the biggest distance that could possibly fit: `c` cows have `c - 1` gaps that together cannot be longer than the whole line.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw stalls at positions 1, 2, 4, 8, 9 on a number line, with 3 cows to place. Show the search over the minimum distance d from 1 to 4. For d = 3, put cows at 1, 4, 8 (placed 3, so True). For d = 4, cows at 1 and 8 only (placed 2, so False). Show a strip of d = 1, 2, 3 True and d = 4 False, and mark the last True, d = 3, as the answer."
 
 ### 10.6 Kth smallest in a sorted matrix
 
@@ -1691,6 +1709,9 @@ for a in ([6, 7, 9, 15, 19, 2, 3, 4], [2, 3, 4, 6, 7], [4, 2], [5], [3, 4, 5, 1,
 [5] -> index 0 value 5
 [3, 4, 5, 1, 2] -> index 3 value 1
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the rotated array [6, 7, 9, 15, 19, 2, 3, 4] as bars of different heights at indices 0 to 7, showing two rising runs with a drop between index 4 and 5. Animate finding the minimum: lo 0, hi 7, mid 3 (15 > a[hi] = 4) so lo = 4; mid 5 (2 <= 4) so hi = 5; mid 4 (19 > 2) so lo = 5. Highlight the window and the final minimum, 2 at index 5."
 
 ### Why compare with `a[hi]` and not `a[lo]`?
 
@@ -2023,6 +2044,9 @@ print(peak_index([3, 5, 3, 2, 0]))
 
 `mid + 1` is safe: the loop runs only when `mid < hi`, so `mid + 1 <= hi <= n - 1`. And `hi = mid` (not `mid - 1`) because `mid` may be the peak itself.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the mountain array [1, 3, 8, 12, 9, 5, 2] as a bar chart with indices 0 to 6. Animate the peak search with lo, mid and hi arrows. Step 1: lo 0, hi 6, mid 3: is 12 < 9? No, so hi = 3. Step 2: mid 1: 3 < 8, so lo = 2. Step 3: mid 2: 8 < 12, so lo = 3. Lo equals hi, so the peak is 12 at index 3. Show uphill and downhill arrows."
+
 ### Any peak in an array that is not a mountain
 
 The classic "find a peak element" problem gives an array where neighbours are different, and a **peak** is an element bigger than both neighbours (the ends count as `-infinity` outside). There may be several peaks, and you must return **any** of them.
@@ -2144,6 +2168,9 @@ print([search_matrix(m, x) for x in (3, 13, 60, 1, 23)])
 ```
 
 A common slip is to divide by `R` instead of `C`. Check with a non-square matrix (3 rows, 4 columns): `i = 5` is row `5 // 4 = 1`, column `5 % 4 = 1`, value 11.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the 3 by 4 matrix [[1, 3, 5, 7], [10, 11, 16, 20], [23, 30, 34, 60]] as a grid, and above it the same numbers as one long row with virtual indices 0 to 11. Animate searching for 13: lo 0, hi 11, mid 5 is row 1 col 1 (value 11, too small) so lo = 6; mid 8 is row 2 col 0 (23, too big) so hi = 7; mid 6 is row 1 col 2 (16) so hi = 5. Lo passes hi, so not found."
 
 ### Case 2: sorted rows and sorted columns (but not one long list)
 

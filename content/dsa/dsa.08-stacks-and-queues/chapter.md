@@ -75,6 +75,9 @@ The pops returned 3, then 4 (the new top), then 2. Only `1` remains, at the bott
 
 </details>
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two side-by-side pictures. Left: a stack as a vertical pile. Push 'a', 'b', 'c' one at a time, then pop twice: 'c' leaves first, then 'b', leaving 'a'. Right: a queue as a horizontal pipe. Enqueue 'a', 'b', 'c', then dequeue twice: 'a' leaves first, then 'b', leaving 'c'. Label the stack 'LIFO: newest out first' and the queue 'FIFO: oldest out first'. Highlight the item leaving at each step."
+
 ## 2. A stack with a Python list
 
 ### The operations
@@ -415,6 +418,9 @@ error: queue is full
 
 After the dequeue of `1`, the first slot is free, and `4` is stored there. The queue's order is still `2, 3, 4`: it starts at `head = 1` and wraps around. You do not need to write this in your solutions (use `deque`), but it explains why a queue can be `O(1)` at both ends, and it is a common exam question.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a ring buffer queue with capacity 3 as a circle of 3 slots (index 0, 1, 2), with a 'head' arrow and a size counter. Step 1: enqueue 1, 2, 3, so the slots show [1, 2, 3], head=0. Step 2: dequeue 1, so head moves to 1 and slot 0 is empty. Step 3: enqueue 4. The tail position is (head + size) % 3 = 0, so 4 wraps into slot 0, giving [4, 2, 3]. Step 4: enqueue 5 fails, queue is full. Show the formula at each step."
+
 ### Other queues in the standard library
 
 - `queue.Queue` is a queue for **threads** (core.21): it locks, and `get()` can wait for an item. It is slower than `deque`, so do not use it for algorithms.
@@ -617,6 +623,9 @@ Every `False` has one of **three causes**, and the code handles each:
 If you forget the third check you accept `((`. If you forget the `not stack` guard, the empty-stack `pop()` crashes with `IndexError`. These are the two usual bugs; both are in the tests of this module.
 
 Other characters (letters, spaces) are ignored, because we only react to brackets.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate bracket matching on the string '([]{})'. Show the characters in a row with a pointer moving left to right, and a vertical stack beside it. Push '(' , push '[', then ']' pops '[' (match), push '{', then '}' pops '{', then ')' pops '('. Show the stack contents after every character and end with an empty stack, meaning True. Then replay with '(]' to show a mismatch: ']' meets '(' on top, so the answer is False, highlighted in red."
 
 ### Where exactly is the error?
 
@@ -831,6 +840,9 @@ print(-7 // 2, int(-7 / 2), (-7) % 2)
 ```text
 -4 -3 1
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a stack evaluating the postfix expression '3 4 2 * +'. Show the tokens in a row with a pointer. For each number, push it onto a vertical stack. For '*', pop 2 (this is b) then 4 (this is a), compute 4 * 2 = 8, push 8. For '+', pop 8 then 3, compute 3 + 8 = 11, push 11. Show the stack after every token and highlight the popped operands and the pushed result. The final stack holds 11."
 
 ### From infix to postfix: the shunting-yard method
 
@@ -1293,6 +1305,9 @@ moves: 4 for 4 items
 
 One `pop` can be slow (it may move many items), but each item moves from the inbox to the outbox **at most once** in its life. So `n` pushes and `n` pops cost `O(n)` in total, which is `O(1)` **amortised** per operation. This is a standard argument; learn the sentence: "every element is moved at most once, so the total work is linear."
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a queue built from two stacks, called 'inbox' and 'outbox', drawn as two vertical piles. Push 1, 2, 3 onto the inbox. Then pop: the outbox is empty, so move every item from the inbox to the outbox one by one, which reverses it, so 1 is now on top; pop returns 1. Push 4 onto the inbox. Pop 2, 3, then the outbox is empty again, so move 4 across and pop 4. Show a moves counter reaching 4."
+
 ### A stack from a queue
 
 The other direction: use one queue so that the *newest* item comes out first. After each push, rotate the queue so that the new item moves to the front. `push` is `O(n)` and `pop` is `O(1)`.
@@ -1471,6 +1486,9 @@ print(next_greater([2, 1, 2, 4, 3]))
 | 4 | 3 | none | `[4, 3]` |
 
 At the end, the two people still waiting (4 and 3) have no greater element, so they keep `-1`. Notice that the waiting values are never increasing from bottom to top: `[2]`, `[2,1]`, `[2,2]`, `[4]`, `[4,3]`.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate the monotonic stack finding the next greater element for nums = [2, 1, 2, 4, 3]. Show the array with a pointer at index i and a 'waiting' stack of values beside it. Steps: i=0 push 2; i=1 push 1; i=2 value 2 pops the 1, which gets answer 2, then push 2; i=3 value 4 pops both 2s, each gets answer 4, then push 4; i=4 push 3. Remaining 4 and 3 get -1. Fill the answer array [4, 2, 4, -1, -1] as it appears."
 
 ### Why this is `O(n)` and not `O(n^2)`
 
@@ -2018,6 +2036,9 @@ print("500 random cases agree:", ok)
 
 For the **minimum** of each window, flip the comparison: pop from the back while `nums[dq[-1]] >= x`. The deque is then increasing and the front is the minimum.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a sliding window maximum with a deque. Use nums = [1, 3, -1, -3, 5, 3, 6, 7] and k = 3. Show the array with a highlighted window and a deque below listing index:value pairs. At each step, pop smaller-or-equal values from the back, push the new index, and drop the front if it left the window. Show the deque after each step: 0:1; 1:3; 1:3, 2:-1; then 3:-3 added; then 4:5 alone; 4:5, 5:3; 6:6; 7:7. The front is the window maximum."
+
 ### Two deques: the longest window with a small range
 
 Find the longest subarray in which `max - min <= limit`. Keep a **max-deque** and a **min-deque** of the current window. Move the right end one step at a time; when the range is too big, shrink from the left until it is fine. Remove the left element from a deque only if it is the one at the deque's front.
@@ -2276,6 +2297,9 @@ print(level_order(None))
 
 `range(len(queue))` is evaluated **once**, when the loop starts, so adding children to the queue inside the loop does not change how many times it runs. That is why this works.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate level-order traversal of a binary tree with a queue. The tree: root 3, whose children are 9 and 20, and 20 has children 15 and 7. Draw the tree on top and the queue below. Step 1: queue [3], level size 1. Process 3, adding 9 and 20. Step 2: queue [9, 20], level size 2, process both, adding 15 and 7. Step 3: queue [15, 7]. Color each level differently and show the result [[3], [9, 20], [15, 7]]."
+
 ### BFS on a grid: the shortest path
 
 You are in a maze: `.` is free, `#` is a wall. You move up, down, left, right. What is the fewest steps from the start to the goal?
@@ -2316,6 +2340,9 @@ print(shortest_path(["..#.", "..#.", "..#."], (0, 0), (0, 3)))
 ```
 
 The last line is `-1`: a wall splits the grid in two, so the goal cannot be reached. Always decide what to return when there is no path.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate breadth-first search on a small grid maze, where '.' is free and '#' is a wall. Use this maze, with start at the top-left and goal at the bottom-right: ['..#....', '.##.##.', '....#..', '.##...#', '...#...']. Show the grid and a queue of (row, col, steps). Colour cells in expanding ripples by step count (distance 1, then 2, and so on), mark cells as seen when they are enqueued, and highlight the final shortest path of 10 steps."
 
 ### Mark a cell as seen when you enqueue it, not when you dequeue it
 

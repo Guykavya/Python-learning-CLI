@@ -231,6 +231,9 @@ Fewer: about 20,000 against 37,000. The formula contains `p(1 - p)`, the varianc
 
 </details>
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a line chart of statistical power against visitors per group for an online shop A/B test. The baseline conversion is 6 percent. Plot two curves: detecting a +0.5 point lift (20% power at 6,000 visitors, 36% at 12,000, 50% at 18,000, 62% at 24,000) and a +0.7 point lift (35%, 60%, 78%, 88%). Draw a dashed line at 80% power. Mark that +0.5 points needs about 37,000 per group."
+
 ### 2.3 The experiment data
 
 Our test ran for 14 days with 12,000 visitors in each group. The factory also builds a *pre-experiment* column, the visitor's number of orders in the previous 90 days, which we use later to sharpen the analysis. We know the truth, which the analyst would not: the banner raises the odds of buying by about 12 percent (about +0.7 points) and lowers the average basket a little (3 percent: free shipping lets people buy smaller baskets).
@@ -499,6 +502,9 @@ false positive rate if you stop at the first significant daily look (14 looks): 
 
 Checking every day and stopping on the first "significant" result turns a 5 percent false-alarm rate into about **21 percent**: about one A/A test in five would be declared a winner when nothing changed. The remedies: fix the sample size and the end date in advance and analyse once; or use a **sequential testing** method designed for repeated looks (the boundaries are stricter early on); or at least require the full planned duration. Looking at the dashboard is allowed; **deciding** from it before the end is not.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate 14 daily looks at an A/A test, where both groups truly convert at 6 percent. Show a z-score line wandering over time with significance bands at plus and minus 1.96. Highlight any day it crosses a band. Add two counters: stopping at the first crossing gives a false positive rate of about 21 percent, while one planned look at the end gives about 5 percent."
+
 ### 2.9 Other things that go wrong
 
 | Problem | What happens | What to do |
@@ -704,6 +710,9 @@ overall conversion (session to purchase): 7.08%
 
 The overall conversion is about 7 percent. The two columns say different things, and a good funnel reading uses both. "% of the previous step" shows where the **rate** of loss is highest: only 30 percent of the sessions that viewed a product add anything to the cart, and only 51 percent of carts start checkout. "Dropped" shows where the **most sessions** leave: the largest absolute loss is between viewing a product and adding it to the cart (26,000 sessions), then the sessions that never view a product (22,000). Not every leak can be fixed: people who browse and do not buy are normal. A step is a good target when its rate looks low *compared with a sensible benchmark* and a lot of traffic reaches it, which is what the segment cuts below let us test.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a funnel chart for a shop with 60,000 sessions: viewed product 37,545, added to cart 11,409, started checkout 5,848, purchased 4,251. Label each bar with the percent of the previous step (62.6, 30.4, 51.3, 72.7) and the number dropped. Highlight the biggest drop (add to cart) in a different colour, and note overall conversion is 7.08 percent."
+
 ### 3.4 Compare segments, and beware of mix
 
 The same funnel, cut by device and by channel. For each step we show the step conversion with an interval, because small groups are noisy (da.08).
@@ -770,6 +779,9 @@ referral desktop      1936             63.80      11.00
 ```
 
 Inside **every channel**, the mobile "cart to checkout" rate is about 20 points below desktop (45 against 66), while the channel differences at that step are small. So the checkout leak is a **device** problem that affects every channel; the apparent weakness of paid traffic is partly because paid is 78 percent mobile. Fixing mobile checkout would help every channel, paid most.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two side-by-side funnels, desktop and mobile, for an online shop. Desktop: view 63.5%, add to cart 30.2%, start checkout 65.2%, purchase 77.3%. Mobile: 62.1%, 30.5%, 44.9%, 69.6%. Overall conversion is 9.7% on desktop and 5.9% on mobile. Highlight the cart-to-checkout step, where mobile is about 20 points lower, and label it 'the checkout leak'."
 
 ### 3.5 Size the opportunity
 
@@ -931,6 +943,9 @@ print("customers whose first order is also counted as M0 activity:", bool((activ
 cohort sizes add up to the customers: True | number of cohorts: 24
 customers whose first order is also counted as M0 activity: True
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a cohort retention heatmap. Rows are monthly signup cohorts: 2023-01 (255 customers), 2023-04, 2023-07, 2023-10, 2024-01, 2024-04, 2024-07. Columns are months since first order: M0, M1, M2, M3, M6, M9, M12. M0 is 100%, M1 is about 22 to 29%, and M12 about 8 to 12%. Leave future cells empty, not zero. Use a light-to-dark colour scale and show the percent in each cell."
 
 ### 4.3 The average curve, and the channels
 
@@ -1137,6 +1152,9 @@ month in which cumulative contribution first reaches the CAC: {'email': 'M0', 'o
 ```
 
 Email, organic and referral recover their acquisition cost on the **first order** (month 0); **paid takes about four months** (its first order contributes less than its CAC, and these customers reorder least). This is the answer to the business question for Q3 in business terms, and each row carries uncertainty that the next section's recommendation must state.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a line chart of cumulative contribution per customer over months M0 to M11 for four acquisition channels, with a horizontal dashed line at each channel's acquisition cost. At M11: referral 1,242, email 1,065, organic 882, paid 546 rupees. Costs: email 80, organic 150, referral 200, paid 420. Mark where each line crosses its cost: paid at M4, the others at M0."
 
 ### 4.6 Retention without a table: time to the second order
 
@@ -1386,6 +1404,9 @@ Hibernating       9.00    32.00 54.00      5.00
 ```
 
 The channel mix by segment shows what we found in section 4: referral and email customers are over-represented among Champions and Loyal, paid customers among Hibernating. Segmentation and channel analysis tell the same story from two sides.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a 5 by 5 grid for RFM segmentation with recency score (1 to 5) on one axis and frequency score (1 to 5) on the other. Colour and label the zones: Champions (R and F at least 4), Loyal (R and F at least 3), New/promising (R at least 4, F at most 2), At risk (R at most 2, F at least 3), Hibernating (R and F at most 2), and Needs attention for the rest."
 
 ### 5.4 Do the segments mean anything? Test on the future
 
@@ -1643,6 +1664,9 @@ Cut or reshape paid-ad spend (per 100 customers moved, 12 months)               
 ```
 
 The ordering that follows from the table is not a formula but an argument: the **mobile checkout** has the largest, best-grounded prize (the gap is certain; the fix's effect must be tested); **paid acquisition** is the cheapest lever and the evidence is strong (the comparison is large and the intervals do not overlap), but the capacity of the better channels is limited (you cannot buy more "referral" customers on demand), so a cut is safer than a reallocation; the **banner** should not be rolled out on this evidence; the **win-back** is a small prize and is only worth running if it is almost free. Writing the argument is more useful than any score.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a horizontal range chart (floating bars) of estimated monthly contribution in thousands of rupees for four ideas. Mobile checkout fix: 86 to 286. Moving 100 paid customers to organic or referral: 61 to 92. Free-shipping banner for everyone: -140 to 109. Win-back offer for at-risk customers: 6 to 19. Add a vertical line at zero and label each bar's confidence: medium, high, low, medium."
 
 ### 6.3 What we do not know
 
@@ -1936,8 +1960,8 @@ def build_case_study(finding):
 
 ORD_END = str(orders["order_date"].max().date())
 page = build_case_study(finding)
-(tmp / "shopnest_case_study.html").write_text(page)
-(tmp / "recommendation.md").write_text(finding.render_markdown())
+(tmp / "shopnest_case_study.html").write_text(page, encoding="utf-8")
+(tmp / "recommendation.md").write_text(finding.render_markdown(), encoding="utf-8")
 print(f"written: {len(page) / 1024:.0f} KB (machine-specific) | {sorted(p.name for p in tmp.iterdir())}")
 ```
 ```text

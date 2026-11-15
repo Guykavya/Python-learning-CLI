@@ -122,6 +122,10 @@ You asked for /hello with GET
 
 That is the whole idea. **A Flask object *is* a WSGI application**: `app(environ, start_response)` works on it. Because the contract is so small, any WSGI server (Gunicorn, uWSGI, Waitress, Werkzeug's built-in) can run any WSGI framework (Flask, Django, Bottle). You will rarely write a WSGI function yourself; knowing it exists explains two things later: why the **test client** can call your app with no network (it builds an `environ` dict and calls the app), and why deployment guides say "point Gunicorn at `module:app`" (it needs the callable).
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a WSGI handshake. On the left a web server (Gunicorn or Werkzeug), on the right a Flask object that is a WSGI app. Show the server calling app(environ, start_response), where environ is a dict with PATH_INFO '/hello' and REQUEST_METHOD 'GET'. Show the app calling start_response('200 OK', headers) and returning [body bytes]. Label the test client as another caller that skips the network."
+
+
 ## 2. The smallest app, and how to run it
 
 ### 2.1 Hello, Flask
@@ -277,6 +281,10 @@ for url in ["/user/kavya", "/post/42", "/post/abc", "/post/-1", "/files/a/b/c.tx
 ```
 
 Notice `/post/abc` is a `404`, not an error inside your function: the converter refused to match, so the rule did not match. That is good design: **the URL pattern is the first validation layer**. Built-in converters: `string` (default), `int`, `float`, `path`, `uuid`. A negative number fails `int` too (use a custom converter or check inside if you need it).
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a URL matcher for a Flask app with three rules: '/user/<username>', '/post/<int:post_id>', '/files/<path:subpath>'. Animate five requests flowing in: /user/kavya, /post/42, /post/abc, /post/-1, /files/a/b/c.txt. Show each one tested against the rules. Highlight that /post/abc and /post/-1 fail the int converter and give 404 without the view running, while /post/42 becomes the int 42."
+
 
 ### 3.3 `url_for`: never hard-code URLs
 
@@ -761,6 +769,10 @@ The mirror image is `@app.before_request`, which runs before every view. If it r
 
 Keep this picture in mind. Almost every "why did my code not run?" or "where does this value come from?" question is answered by finding the box in this diagram.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate one Flask request moving down a vertical flowchart: environ arrives, Request built and contexts pushed, before_request hooks (a returned value skips the view), URL matching (no match gives 404 or 405 to an error handler), the view function (a raised error goes to an error handler), make_response, after_request hooks, session cookie saved, contexts popped, teardown_request, response sent. Highlight the current box and show the response travelling back."
+
+
 ### 5.7 Try it
 
 What does this print? (Think about which hooks run, and in which order.)
@@ -824,7 +836,7 @@ Path("templates").mkdir()
 Path("templates/hello.html").write_text(
     "<h1>Hello, {{ name }}!</h1>\n"
     "<p>You have {{ items|length }} item{{ 's' if items|length != 1 }}.</p>\n"
-)
+, encoding="utf-8")
 
 app = Flask(__name__)
 
@@ -998,12 +1010,12 @@ Path("templates/base.html").write_text("""\
 {% block content %}{% endblock %}
 <footer>(c) 2026</footer>
 </body></html>
-""")
+""", encoding="utf-8")
 Path("templates/index.html").write_text("""\
 {% extends "base.html" %}
 {% block title %}Home{% endblock %}
 {% block content %}<h1>Welcome</h1>{% endblock %}
-""")
+""", encoding="utf-8")
 Path("templates/about.html").write_text("""\
 {% extends "base.html" %}
 {% block title %}About{% endblock %}
@@ -1011,7 +1023,7 @@ Path("templates/about.html").write_text("""\
 <h1>About</h1>
 <p>{{ super() }}extra</p>
 {% endblock %}
-""")
+""", encoding="utf-8")
 
 app = Flask(__name__)
 
@@ -1044,6 +1056,10 @@ print(c.get("/about").get_data(as_text=True))
 ```
 
 Notes: a child contains *only* `extends` and block definitions, because content outside blocks is ignored. `{{ super() }}` includes the parent's version of the block. `{% include "partial.html" %}` pastes another template in place (good for small repeated pieces like a pager).
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw template inheritance. Show base.html as a page skeleton with a nav, a block title, a block content and a footer. Show index.html and about.html as two child templates that say extends 'base.html' and fill block title and block content. Draw arrows filling the holes, then the two final pages side by side: 'Home - Blog' and 'About - Blog'. Mark where super() pulls in the parent's block."
+
 
 ### 7.2 Macros: functions for HTML
 
@@ -1086,7 +1102,7 @@ from pathlib import Path
 from flask import Flask
 
 Path("static").mkdir()
-Path("static/style.css").write_text("body { margin: 0 }\n")
+Path("static/style.css").write_text("body { margin: 0 }\n", encoding="utf-8")
 app = Flask(__name__)
 
 with app.test_request_context():
@@ -1425,6 +1441,10 @@ Rules you can rely on:
 - The ORM session of Flask-SQLAlchemy needs an application context, which is why tests and scripts wrap database work in `with app.app_context():`.
 - A **thread you start yourself does not inherit the context**. Pass plain values (not `request`) to the thread and push a context inside it.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two threads handling two requests at the same time in a Flask server. Each thread has its own stack holding an application context (current_app, g) and a request context (request, session). Show the global names request and current_app as proxy arrows that point to whichever context belongs to the current thread. Add a third box, a plain script, with no stack and a red error 'Working outside of application context'."
+
+
 ### 10.3 `g`: per-request scratch space
 
 `g` is an empty object created fresh for each application context. Use it to share values between code that runs during **one** request: the current user, a database connection, a start time. It is *not* storage between requests; the next request gets a new `g`.
@@ -1502,6 +1522,10 @@ def create_app(config=Config):
 ```
 
 Everything that needs the app is done inside `create_app`; everything else is importable without an app. Order of imports no longer matters, because nothing runs at import time.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the Flask application factory as a flow. On the left, objects created without an app: db = SQLAlchemy() in extensions.py, models, and a Blueprint bp in blog.py. In the middle, create_app() with four steps: Flask(__name__), config.from_object, db.init_app(app), register_blueprint(bp). Show each loose object snapping into the app at its step, then the finished app returned on the right."
+
 
 ### 11.3 Two apps, two configurations, one process
 
@@ -1744,6 +1768,10 @@ What to notice:
 - `url_for("auth.login")` uses `blueprint.function`. Inside the *same* blueprint, `url_for(".index")` (leading dot) is a shortcut.
 - The prefix is given once, at the blueprint or at registration (`app.register_blueprint(auth, url_prefix="/account")` overrides it). Moving the whole section to another URL is a one-word change.
 - In a template, `url_for('blog.show', post_id=p.id)`: the endpoint name must carry the blueprint name. Forgetting it gives `BuildError: Could not build url for endpoint 'show'`.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a Flask app with two blueprints plugged into it. The auth blueprint has url_prefix '/auth' and routes login and logout. The blog blueprint has no prefix and routes index and show. Show the resulting URL table: endpoint auth.login maps to /auth/login, auth.logout to /auth/logout, blog.index to /, blog.show to /post/<int:post_id>. Highlight how url_for('auth.login') finds a URL by endpoint name."
+
 
 ### 13.3 What else a blueprint can own
 
@@ -2130,6 +2158,10 @@ Three lessons:
 3. Changing `SECRET_KEY` invalidates every existing session: everyone is logged out.
 
 Limits of cookie sessions: about 4 KB maximum; the data goes up on every request; and you **cannot revoke** a session on the server (a stolen cookie keeps working until it expires). When you need revocation ("log out everywhere") use server-side sessions (extension Flask-Session, data in Redis or the database) or keep a `session_version` number on the user and compare it on each request.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a Flask cookie session. A browser logs in with POST /auth/login. The server sets session['user_id'] = 7 and replies with a Set-Cookie holding three dot-separated parts: payload, timestamp, signature. Show the browser sending it back on GET /me. Then show a forged cookie with user_id 1 and the old signature being rejected, so the user is anonymous. Label the payload as readable but not encrypted, and the signature as made with SECRET_KEY."
+
 
 ### 16.3 Login and logout
 
@@ -2568,6 +2600,10 @@ Rules to take from the output:
 - In `TESTING` mode with no generic handler, Flask re-raises unexpected exceptions so your test fails loudly. A generic `Exception` handler changes that: your test then sees a 500 response. Decide on purpose.
 - A handler registered on a blueprint (`@bp.errorhandler`) covers only that blueprint's routes; `@bp.app_errorhandler` covers the app (section 13).
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw an error-routing diagram for a Flask app with three handlers: ApiError returns JSON with its own status, HTTPException returns JSON for paths starting /api/ or HTML otherwise, and Exception returns a generic 500 JSON and logs the real error. Send seven requests through it: /api/ok, /api/missing, POST /api/ok, /api/limit, /api/bug, /page, /nowhere. Show which handler catches each and the status code (200, 404, 405, 429, 500, 403, 404). Mark the most specific handler winning."
+
+
 ## 20. CORS in one page
 
 A web page may freely send a request to another origin (scheme + host + port), but the browser **refuses to let the page read the response** unless the other server agrees. This is the **same-origin policy**, relaxed by **CORS** (cross-origin resource sharing): the API says, in headers, which origins may read it.
@@ -2685,7 +2721,7 @@ Path("tiny.py").write_text(textwrap.dedent('''
         @app.get("/old")
         def old(): return redirect("/items")
         return app
-'''))
+'''), encoding="utf-8")
 Path("tests/conftest.py").write_text(textwrap.dedent('''
     import pytest
     from tiny import create_app, db
@@ -2700,7 +2736,7 @@ Path("tests/conftest.py").write_text(textwrap.dedent('''
     @pytest.fixture
     def client(app):
         return app.test_client()
-'''))
+'''), encoding="utf-8")
 Path("tests/test_tiny.py").write_text(textwrap.dedent('''
     def test_add_and_list(client):
         r = client.post("/items", json={"name": "pen"})
@@ -2729,9 +2765,9 @@ Path("tests/test_tiny.py").write_text(textwrap.dedent('''
             s["user_id"] = 5
         with client.session_transaction() as s:
             assert s["user_id"] == 5
-'''))
+'''), encoding="utf-8")
 r = subprocess.run([sys.executable, "-m", "pytest", "-q", "-p", "no:cacheprovider"],
-                   capture_output=True, text=True)
+                   capture_output=True, text=True, encoding="utf-8")
 import re
 print(re.sub(r" in [0-9.]+s", "", r.stdout).strip())
 ```

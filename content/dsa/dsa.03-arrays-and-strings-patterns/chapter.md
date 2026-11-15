@@ -207,6 +207,9 @@ The standard library has the same thing: `list(itertools.accumulate(a, initial=0
 Without `initial=0` you get the running totals *without* the leading zero (length `n`). In this chapter we write the
 loop, because it makes the indices visible.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the array a = [3, 1, 4, 1, 5, 9, 2, 6] as boxes, with the prefix array P = [0, 3, 4, 8, 9, 14, 23, 25, 31] beneath it (P has one extra leading 0). Animate building P: each P[i+1] = P[i] + a[i]. Then show the query sum a[2..4]: highlight a[2..4], mark P[5] = 14 and P[2] = 4 with arrows, and show 14 - 4 = 10."
+
 ### 1-based queries
 
 Many problem statements number positions from 1: "query `l r` means `a_l + ... + a_r`, with `1 <= l <= r <= n`".
@@ -557,6 +560,9 @@ the last step `cur = 20`, we need `13`, which was seen once (after `7, 2, -3`, t
 starts at index `5`: `a[5..7] = [1, 4, 2]`. Notice how `cur = 14` appears both after the `7` and after the `1`, so
 the dictionary stores the count `2` for it: later, if we needed `14`, both earlier positions would count.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate counting subarrays with sum k = 7 in a = [3, 4, 7, 2, -3, 1, 4, 2]. Show the running prefix sum cur at each step (3, 7, 14, 16, 13, 14, 18, 20) beside a dictionary of counts, starting as {0: 1}. At each step show the lookup of cur - 7 and highlight the matching earlier prefix when found. Show the four subarrays found: [3,4], [7], [7,2,-3,1], [1,4,2]."
+
 ### Longest subarray with sum k: store the first index
 
 Now the question is "what is the **length of the longest** subarray with sum `k`?". The same equation holds, but
@@ -739,6 +745,9 @@ build `D` from the initial array: `D[0] = a[0]` and `D[i] = a[i] - a[i - 1]`. Th
 stores the **differences** between neighbours, and a range add changes only two differences (the one entering the
 range and the one leaving it).
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Show a 5-cell array of zeros and four range-add updates (l, r, v): (1,3,5), (0,1,2), (2,4,-1), (4,4,10). Under it draw the difference array D with 6 cells, putting +v at D[l] and -v at D[r+1] for each update. End with D = [2, 5, -3, 0, 5, -9]. Then animate the running sum of D turning into the final array [2, 7, 4, 4, 9]."
+
 ### 1-based updates
 
 With `1 <= l <= r <= n`, allocate `D` of length `n + 2` and use `D[l] += v`, `D[r + 1] -= v`, then read positions
@@ -882,6 +891,9 @@ When there are several valid pairs, this rule returns **one particular** pair (t
 necessarily the pair with the smallest `i` among all pairs. Problems that print "the pair" must say which one they
 mean; in this module the problems say "the pair found by the standard two-pointer rule", which is exactly the code
 above.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate the two-pointer search for target 15 in the sorted array [1, 2, 4, 7, 11, 15]. Draw cells with pointer i at the left end and j at the right end. Step by step show the sum: 1+15=16 (too big, j moves left), 1+11=12 (too small, i moves right), 2+11=13 (i moves right), 4+11=15 (found at indices 2 and 4). Colour discarded cells grey."
 
 ### Why it never skips the answer
 
@@ -1230,6 +1242,9 @@ saw 0: [0, 1, 2]  low=1 mid=2 high=1
 Step 1 sees `1` and only moves `mid` (the array does not change). Step 2 sees `2` and swaps it with `a[2] = 0`; `mid`
 stays at `1`. Step 3 looks at that `0`, swaps it with `a[low] = a[0] = 1`. Now `mid = 2 > high = 1`: done in 3 steps.
 </details>
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate the Dutch national flag sort on [2, 0, 2, 1, 1, 0] with pointers low, mid and high. Colour the zones: zeros left of low, ones between low and mid, unknown from mid to high, twos right of high. Show each step: a 2 swaps with a[high] and high moves left while mid stays; a 0 swaps with a[low] and both low and mid move. End with [0, 0, 1, 1, 2, 2]."
 
 ### Container with most water
 
@@ -1680,6 +1695,9 @@ At `r = 2` the second `b` forces two removals (`a`, then `b`), so `l = 2`. At `r
 the earlier `a` was already removed (its count went to `0`), so nothing shrinks.
 </details>
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a variable sliding window over the string 'abcabcbb'. Show l and r pointers and the current window text as r moves right: 'a', 'ab', 'abc', then adding 'a' shrinks to 'bca', then 'cab', 'abc', then 'cb', then 'b'. Highlight the repeated letter that forces l to move, and show the best length staying at 3."
+
 ### Shortest subarray with sum at least s (positive numbers)
 
 For "shortest" problems the roles flip: we **record the answer inside the shrinking loop**, while the window is
@@ -2068,6 +2086,9 @@ Flip the comparison: pop from the back while `a[dq[-1]] >= x`, so the deque is i
 The windows are `[4, 2]`, `[2, 12]`, `[12, 3]`, `[3, 8]`, `[8, 1]`.
 </details>
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate the monotonic deque for window maximum with k = 3 on [1, 3, -1, -3, 5, 3, 6, 7]. Draw the array with a sliding window of 3 cells, and under it the deque of indices with their values. At each step show indices popped from the back (values smaller or equal to the new one) and the front as the current maximum. Final output: [3, 3, 5, 5, 6, 7]."
+
 ### Shortest subarray with sum at least k, negatives allowed
 
 We saw the plain window fail on `[84, -37, 32, 40, 95]` with `k = 167`. The fix combines prefix sums and a monotonic
@@ -2238,6 +2259,9 @@ Each line is `x cur best`:
 The best subarray is `[5, -1, 2]` with sum `6`. At `x = 5` the running `cur = -1` is thrown away (restart); at
 `x = 1` the `cur = 0` is not negative, so extending and restarting give the same `1`.
 </details>
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate Kadane's algorithm on [-2, 1, -3, 4, -1, 2, 1, -5, 4]. Under each element show cur (the best sum ending here) and best (the best so far), and mark each step 'extend' or 'restart'. Values of cur: -2, 1, -2, 4, 3, 5, 6, 1, 5; best ends at 6. Highlight the final best subarray [4, -1, 2, 1] on the array."
 
 ### Reporting the subarray: indices and tie rules
 
@@ -2653,6 +2677,9 @@ its "right column" is rows `2..2`, which is `8` (then `right = 0`). The bottom-r
 `top 2 <= bottom 2`, but its column range `right..left` = `0..1` backwards is empty; it only sets `bottom = 1`. The
 left-column step is skipped (`left 1 > right 0`), and the loop ends.
 </details>
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate spiral traversal of the 3 x 4 grid with rows [1,2,3,4], [5,6,7,8], [9,10,11,12]. Draw four bounds top, bottom, left, right as lines that move inwards after each side is walked: top row 1 2 3 4, right column 8 12, bottom row 11 10 9, left column 5, then the inner ring 6 7. Show the output list growing to 1 2 3 4 8 12 11 10 9 5 6 7."
 
 ### Rotating a square grid by 90 degrees, in place
 

@@ -472,6 +472,9 @@ The range rule masks exactly the same values here, but it is better: it also cat
 
 </details>
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a before/after bar chart of mean age in a survey of 600 people. Before: bar at 64.7, because about 14 rows hold fake codes such as 999, 0 and 150. After masking those codes as missing: bar at 46.2, equal to the true mean. Show a small strip of ages with a few 999 values pulling a mean marker to the right, then moving back. Label 'sentinel codes move the mean by 18 years'."
+
 ### 3.4 Dates: three formats in one column
 
 `signup` holds `"2024-03-05"`, `"05/03/2024"` and `"Mar 05, 2024"`. `pd.to_datetime` can parse many formats, but mixing them is dangerous because of one ambiguity: is `05/03/2024` the 5th of March or the 3rd of May? pandas does not know. Without a hint it assumes month first for slash dates, which is wrong for our survey (day first, Indian style).
@@ -872,6 +875,9 @@ equals the truth count: True
 
 </details>
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two tables side by side for a survey with 615 rows. Left: resp_id column all different (1001, 1002 ... ) so 'is_unique = True', but 15 rows share the same email_key, linked by arrows with the label 're-submission, new id'. Right: after drop_duplicates(subset=['email_key'], keep='last'), 600 rows remain. Highlight that checking the id alone misses the 15 repeats."
+
 ### 5.4 Which copy survives?
 
 `drop_duplicates(keep="first")` keeps the first copy in the *current row order*. That is arbitrary unless you sorted first. A responsible rule says which row is the better one and sorts accordingly. For the survey: the newest submission wins, and the newer submission has the higher `resp_id`.
@@ -1072,6 +1078,9 @@ flags per city rule: 16  planted found: 7
 The result is almost the same as for the whole table (16 flags instead of 15), because the synthetic cities have the same income distribution by construction. In real data, incomes differ by city (and by job, age, year), and then a value that is normal for Mumbai looks extreme in a small town. Check **within the group that defines "normal"**. The price is that small groups give unstable fences; with fewer than about 30 rows per group, a domain rule (a fixed allowed range) is safer.
 
 </details>
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate two number lines for a toy series [10,11,9,10,12,11,10,500,600,550]. Top: z-score, show the mean (172.3) and std (261.7) dragged up by the three large values, so 600 is only 1.7 std away and nothing is flagged. Bottom: median and MAD stay near 10, so 500, 550 and 600 are flagged. Label 'masking: outliers hide themselves from the z-score'. Also sketch IQR fences Q1-1.5*IQR and Q3+1.5*IQR."
 
 ### 6.4 Domain rules beat statistics
 
@@ -1276,6 +1285,9 @@ rows left after dropna()          : 429
 rows left after dropna(subset=['income']): 516
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a heatmap of missing cells for 600 survey rows by 9 columns (resp_id, age, city, income, satisfaction, signup, phone, email, email_key), dark for missing. Show missing shares: income 14%, phone 8.5%, age 4.7%, email 4%, others 0. Beside it, a bar chart of missing cells per row: 0 cells 429 rows, 1 cell 157, 2 cells 12, 3 cells 2. Annotate that dropna() leaves 429 rows."
+
 ### 7.5 The `dropna` and `fillna` toolbox
 
 | Tool | What it does |
@@ -1347,6 +1359,9 @@ Statisticians (after Donald Rubin) sort missing data into three kinds. The names
 | **MNAR**: missing not at random | the missing value itself | high earners hide their income | **biased**, and the data alone cannot show you how much |
 
 Note the word "random" in MAR is misleading. MAR is *not* random: missingness has a pattern, but the pattern is explained by columns you have. MNAR is the hard case, because the explanation sits in exactly the value you do not have.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw three small scatter plots of income against another visible column, showing three ways income can go missing. MCAR: missing points scattered randomly everywhere. MAR: missing points concentrated where education years are low, using a visible column. MNAR: missing points concentrated at the highest incomes themselves. Color kept points blue and missing points hollow red, and label each with 'chance of missing depends on: nothing / a visible column / the value itself'."
 
 ### 8.2 A population where we know everything
 
@@ -1441,6 +1456,9 @@ edu_years
 ```
 
 Under MCAR the education mix is unchanged (10, 15, 30 ... percent). Under MAR the groups with little education shrink and the university groups grow. The table has become *more educated*, and since education drives income, the average rises. This is the mechanism of MAR, visible in numbers.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a grouped bar chart of education mix (edu_years 8, 10, 12, 14, 16, 18) with three bars per group: truth (10.7, 15.0, 30.7, 19.0, 14.5, 10.1 percent), rows kept under MCAR (10.4, 14.9, 30.9, 18.9, 14.7, 10.3), rows kept under MAR (7.7, 10.7, 30.0, 22.4, 17.2, 11.9). Highlight that MAR shrinks low-education groups and grows high ones, so the average income rises."
 
 ### 8.4 Diagnosing: does missingness depend on what I can see?
 
@@ -1773,6 +1791,9 @@ After filling 23% with the mean
 ```
 
 The second histogram has a tower in the middle bins. A model or a "what share earn between 30,000 and 40,000?" question sees a dense crowd that does not exist in real life. This is called **variance shrinkage**.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two histograms of income in 8 bins from 4,900 to 177,700. Top, truth for 6,000 people: counts 2424, 2492, 762, 229, 66, 18, 4, 5. Bottom, after filling 23% of missing values with the mean: counts 1860, 3300, 592, 179, 46, 16, 2, 5. Highlight the tall tower in the 26,500-48,100 bin and label it 'mean filling creates a fake crowd, variance shrinks'."
 
 ### 9.5 Single fills pretend to be certain
 
@@ -2218,6 +2239,9 @@ every step writes a line to the LOG; the raw file is never changed
 
 The order matters. Fix **formats** first (you cannot compare `"Pune"` with `"pune "`). Remove **duplicates** next (so they do not count twice in any statistic). Handle **outliers** after formats (you cannot compare `"₹45,000"` as text), and before filling missing values (an unfixed outlier would pollute a mean-based fill). **Validate** last, and quarantine what still fails.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a left-to-right flow diagram of a cleaning pipeline: raw file, then 1 formats, 2 duplicates, 3 outliers, 4 validate, then clean table. From validate, branch a downward arrow to 'rejects (rows + reason)'. Add a note under each step explaining why the order matters, and a log box that every step writes to. Show the raw file with a lock icon labelled 'never changed'."
+
 ### 12.2 The steps as functions
 
 ```python run
@@ -2387,7 +2411,7 @@ out = pathlib.Path(_tmp.name)
 t4.to_csv(out / "survey_clean.csv", index=False)
 rejects.to_csv(out / "survey_rejects.csv", index=False)
 show_log().to_csv(out / "cleaning_log.csv", index=False)
-(out / "survey_schema.yaml").write_text(survey_schema.to_yaml())
+(out / "survey_schema.yaml").write_text(survey_schema.to_yaml(), encoding="utf-8")
 print(sorted(p.name for p in out.iterdir()))
 back = pd.read_csv(out / "survey_clean.csv", parse_dates=["signup"])
 print(back.dtypes.astype(str).to_dict())

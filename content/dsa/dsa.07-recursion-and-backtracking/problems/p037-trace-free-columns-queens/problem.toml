@@ -1,0 +1,6 @@
+id = "dsa.07.p037"
+title = "Trace: is this queen placement safe?"
+tier = "drill"
+kind = "trace"
+topics = ["n-queens", "diagonals", "sets"]
+minutes = 15

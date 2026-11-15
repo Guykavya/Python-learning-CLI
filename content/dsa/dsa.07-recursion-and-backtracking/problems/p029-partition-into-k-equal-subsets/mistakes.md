@@ -1,0 +1,4 @@
+- Forgetting the divisibility and "largest number fits" checks: the search then runs on hopeless inputs.
+- Not undoing `buckets[b] += nums[i]` after a failed branch.
+- Trying every empty bucket for the first number: all of them are the same, and the search does `k` times the work at every level where buckets tie.
+- Returning `True` when the buckets have equal sums but some number was not placed.
