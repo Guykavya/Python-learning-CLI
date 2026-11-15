@@ -55,6 +55,16 @@ jobs:
           if [ "$RUNNER_OS" = "Windows" ]; then PY=.venv/Scripts/python.exe; else PY=.venv/bin/python; fi
           "$PY" -X warn_default_encoding -W error::EncodingWarning -m pytest engine/tests -q -p no:cacheprovider
 
+      # The full-screen mode (home, problem workspace, syllabus browser, chapter reader) needs the optional Textual
+      # extra, so the step above skips its tests. Install the extra and run them here, on every OS, so a problem
+      # that only shows on Windows or macOS fails CI. The learner's base install is still tested without it, above.
+      - name: Full-screen mode tests (Textual extra)
+        shell: bash
+        run: |
+          if [ "$RUNNER_OS" = "Windows" ]; then PY=.venv/Scripts/python.exe; else PY=.venv/bin/python; fi
+          "$PY" -m pip install -q --disable-pip-version-check -e ".[tui]"
+          "$PY" -X warn_default_encoding -W error::EncodingWarning -m pytest engine/tests/test_ui.py engine/tests/test_workspace.py engine/tests/test_screens.py -q -p no:cacheprovider
+
       # Every chapter must be well formed, and every import it needs must be declared in pyproject.toml.
       - name: Chapter lint and dependency check
         shell: bash

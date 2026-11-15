@@ -11,6 +11,15 @@ textual = pytest.importorskip("textual", reason="optional extra: pip install -e 
 PID = "core.02.p001"
 
 
+async def wait_until(pilot, condition, what: str, seconds: float = 20.0) -> None:
+    """Poll instead of sleeping a fixed time: CI machines (Windows, macOS) can be much slower than a laptop."""
+    waited = 0.0
+    while not condition():
+        assert waited < seconds, f"timed out after {seconds}s waiting for: {what}"
+        await pilot.pause(0.1)
+        waited += 0.1
+
+
 @pytest.fixture
 def tty(monkeypatch):
     """Pretend a real terminal is attached (pytest runs without one)."""
@@ -179,19 +188,17 @@ def test_home_animates_and_can_be_switched_off(home):
     async def drive() -> None:
         app = HomeApp(data)
         async with app.run_test(size=(170, 50)) as pilot:
-            await pilot.pause(1.2)
-            assert app.poem.frame > 3, "the timer must be stepping the scene"
-            assert app.rain_left.drops and app.rain_right.drops, "rain must fall in both empty areas"
-            assert str(app.query_one("#rain-left").content).strip(), "the left rain must be drawn"
-            assert ">>>" in str(app.query_one("#poem").content), "the poem starts with the Python prompt"
+            await wait_until(pilot, lambda: app.poem.frame > 3, "the timer to step the scene")
+            await wait_until(pilot, lambda: app.rain_left.drops and app.rain_right.drops, "rain in both empty areas")
+            await wait_until(pilot, lambda: str(app.query_one("#rain-left").content).strip(), "the left rain to be drawn")
+            await wait_until(pilot, lambda: ">>>" in str(app.query_one("#poem").content), "the poem to start with the prompt")
             assert app.query_one("#clockbox").region.x > app.query_one("#overview").region.x, \
                 "the clock pane sits to the right of the plan"
             await pilot.press("q")
 
         narrow = HomeApp(data)
         async with narrow.run_test(size=(100, 40)) as pilot:
-            await pilot.pause(0.5)
-            assert narrow.query_one("#poem").display is False, "on a narrow terminal the poem makes room for the plan"
+            await wait_until(pilot, lambda: narrow.query_one("#poem").display is False, "the poem to hide on a narrow terminal")
             assert narrow.query_one("#clock").display, "but the clock stays"
             await pilot.press("q")
 
