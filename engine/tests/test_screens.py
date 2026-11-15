@@ -194,6 +194,8 @@ def test_home_animates_and_can_be_switched_off(home):
             await wait_until(pilot, lambda: ">>>" in str(app.query_one("#poem").content), "the poem to start with the prompt")
             assert app.query_one("#clockbox").region.x > app.query_one("#overview").region.x, \
                 "the clock pane sits to the right of the plan"
+            await app.query_one("#rain-left").remove()  # a timer tick that arrives while the screen is torn down
+            app.tick()
             await pilot.press("q")
 
         narrow = HomeApp(data)
