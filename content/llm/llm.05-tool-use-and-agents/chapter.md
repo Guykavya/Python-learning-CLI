@@ -509,7 +509,10 @@ def default_tools() -> dict[str, ToolSpec]:
     def write_run(sb, p): sb.write(p.path, p.content); return f"wrote {_kb(len(p.content))} to {p.path}"
     def write_preview(sb, p):
         t = sb.resolve(p.path)
-        return f"write {_kb(len(p.content))} to {p.path}" + (f" (OVERWRITES an existing file of {_kb(len(t.read_text(errors='replace', encoding="utf-8")))})" if t.is_file() else " (new file)")
+        if not t.is_file():
+            return f"write {_kb(len(p.content))} to {p.path} (new file)"
+        old = _kb(len(t.read_text(errors="replace", encoding="utf-8")))
+        return f"write {_kb(len(p.content))} to {p.path} (OVERWRITES an existing file of {old})"
     def mkdir_run(sb, p): sb.make_dir(p.path); return f"folder {p.path} exists"
     def move_run(sb, p): sb.move(p.src, p.dst); return f"moved {p.src} -> {p.dst}"
     def trash_run(sb, p): return f"moved {p.path} to the trash (a person can restore it as {sb.trash(p.path)})"
@@ -518,7 +521,10 @@ def default_tools() -> dict[str, ToolSpec]:
         if t.is_dir():
             n = sum(1 for _ in t.rglob("*") if _.is_file())
             return f"TRASH the folder {p.path} with {n} file(s) in it"
-        return f"TRASH the file {p.path}" + (f" ({_kb(len(t.read_text(errors='replace', encoding="utf-8")))})" if t.is_file() else " (it does not exist)")
+        if not t.is_file():
+            return f"TRASH the file {p.path} (it does not exist)"
+        size = _kb(len(t.read_text(errors="replace", encoding="utf-8")))
+        return f"TRASH the file {p.path} ({size})"
 
     static = lambda risk: (lambda sb, p: risk)
     tools = [

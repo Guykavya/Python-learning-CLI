@@ -1333,8 +1333,9 @@ The syllabus outcome, *detect drift in a served model*, lives in the middle row.
 r = api.get("/metrics"); print(r.text.strip())
 print("\nreading it: a Prometheus alert would compare, for example, the share of requests slower than 50 ms:")
 lines = {l.split()[0]: float(l.split()[1]) for l in r.text.splitlines() if l and not l.startswith("#")}
+slow = 1 - lines['churn_request_latency_ms_bucket{le="50"}'] / lines['churn_request_latency_ms_count']
 print(f"  requests so far {int(lines['churn_requests_total'])}, customers scored {int(lines['churn_predictions_total'])}, "
-      f"slower than 50 ms: {1 - lines['churn_request_latency_ms_bucket{le=\"50\"}'] / lines['churn_request_latency_ms_count']:.1%}")
+      f"slower than 50 ms: {slow:.1%}")
 ```
 ```text
 # TYPE churn_requests_total counter
