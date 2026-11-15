@@ -1,0 +1,4 @@
+- Thinking step 2 re-sorts by name: stability keeps the names in the order from step 1.
+- Reversing the whole of step 1 for `reverse=True` and forgetting that all names are different, so there are no ties to preserve in step 1.
+- Mixing up the order of the people in `wrong`: its last sort is by name, so the ages no longer matter.
+- Expecting `True` or `False` without evaluating the key: `[-ord(c) for c in name]` as a list compares letter by letter; the shorter list wins on equal prefixes, so check with names of equal length.

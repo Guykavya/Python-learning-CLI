@@ -1,0 +1,4 @@
+- Keeping the index of the **last** match (assigning instead of returning): the problem asks for the first.
+- Incrementing `index` before the comparison, so the head is reported as index 1.
+- Using `while cur and cur.val:`: a value `0` or `None` stops the search early.
+- Returning `None` or `False` when nothing matched: the contract is `-1`.

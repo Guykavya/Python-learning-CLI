@@ -1,0 +1,6 @@
+id = "dsa.08.p003"
+title = "A Queue class with a deque"
+tier = "drill"
+kind = "code"
+topics = ["queue", "collections.deque", "FIFO", "O(1) popleft"]
+minutes = 15

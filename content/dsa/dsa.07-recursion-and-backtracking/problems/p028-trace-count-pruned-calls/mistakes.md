@@ -1,0 +1,4 @@
+- Forgetting that the root counts as a node.
+- Stopping at `remaining == 0` but still counting its children: the function returns before recursing.
+- Assuming the check always saves calls: it saves only when the overshoot happens before the last level.
+- Writing `2, 13` without the parentheses: `print` of a tuple shows `(2, 13)`.

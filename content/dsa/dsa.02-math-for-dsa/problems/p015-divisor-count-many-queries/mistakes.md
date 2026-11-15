@@ -1,0 +1,5 @@
+- Factorising each query by trial division. Anything that costs `sqrt n` per query times 100000 queries is about 10^8 steps.
+- Computing the `spf` table inside the query loop. It does not depend on the query, so build it once.
+- Multiplying `e` instead of `e + 1`. A prime `p^e` gives `e + 1` choices of exponent (0 to `e`), so 64 = 2^6 has 7 divisors, not 6.
+- Building `spf` with `spf[m] = i` for every prime without checking `spf[m] == m`. A later, larger prime overwrites the smaller one, so `spf[m]` is no longer the *smallest* prime factor. The divisor counts then still come out right only if you divide each prime out fully, so keep the check and keep the table honest.
+- Forgetting `spf[1]`: the loop `while n > 1` must end with `ans = 1` for `n = 1`.

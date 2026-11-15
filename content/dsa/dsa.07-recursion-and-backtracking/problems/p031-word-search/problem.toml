@@ -1,0 +1,6 @@
+id = "dsa.07.p031"
+title = "Word search"
+tier = "deep"
+kind = "code"
+topics = ["grid backtracking", "mark and restore", "dfs"]
+minutes = 35

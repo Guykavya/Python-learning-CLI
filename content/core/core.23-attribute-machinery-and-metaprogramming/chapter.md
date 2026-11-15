@@ -163,6 +163,9 @@ Three details matter:
 2. The search uses **`type(obj)`**, not `obj`. Descriptors and special methods work only when they live on the class, never when stored on the instance.
 3. All of the boxes above (except the last one) are the body of one method: **`object.__getattribute__`**. Every class inherits it. Section 4 shows how to replace it, and why you rarely should.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a flowchart of how Python runs obj.x. Steps in order: 1) find the first 'x' in the class dictionaries along type(obj).__mro__; 2) if it is a data descriptor (has __set__), call its __get__; 3) else if 'x' is in obj.__dict__, return that; 4) else if it is a non-data descriptor, call __get__; 5) else if found on the class, return it; 6) else raise AttributeError, then try __getattr__. Show yes/no arrows and colour the data-descriptor box as top priority."
+
 ### 2.3 The algorithm in Python
 
 You can write the algorithm yourself. This is a simplified version (no `__slots__`, no metaclass details), but it is close enough to predict almost every real case:
@@ -378,6 +381,9 @@ AttributeError: volume
 ```
 
 The hook ran only for `font_size` and `volume`. Reading `self.DEFAULTS` inside the hook is fine, because `DEFAULTS` exists on the class, so it does not call the hook again.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate three lookups on a Settings object. Its instance dict is {'theme': 'dark'} and its class has DEFAULTS = {'theme': 'light', 'font_size': 12} plus a __getattr__ method. Show s.theme found in the instance dict, no hook. Show s.DEFAULTS found on the class, no hook. Show s.font_size failing normal lookup, then __getattr__('font_size') returning 12. Show s.volume raising AttributeError. Mark the hook as the last box in the chain."
 
 ### 3.2 The contract: missing means `AttributeError`
 
@@ -741,6 +747,9 @@ The real mistake (a typo on `_balanse`) is gone from the message, and you will s
 
 Two lessons. When a class has both properties and `__getattr__`, an error message about a property that "does not exist" means: look **inside** the getter. And a getter that might fail with `AttributeError` for a reason of its own should catch it and raise a different exception (for example `RuntimeError`), so the real cause is not swallowed by the fallback.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a sequence diagram for a.balance where class Account has a property 'balance' whose getter reads self._balanse (a typo) and also defines __getattr__. Steps: 1) property getter runs; 2) the typo raises AttributeError; 3) Python cannot tell this from a missing attribute, so it calls __getattr__('balance'); 4) __getattr__ raises its own error, 'Account has no attribute balance'. Highlight that the real error is lost in step 4."
+
 ### 4.4 When to use `__getattribute__`
 
 Rarely. Every attribute read, including every method call and every `self.x`, now runs your Python function, so the class gets slower everywhere, and every line of the hook is a recursion risk. Prefer, in this order:
@@ -980,6 +989,9 @@ descriptor stored on instance: Traced
 
 Every read, write and delete of `t.attr` became a method call, and nothing was ever stored in `t.__dict__`. Reading on the class called `__get__` with `instance=None`. The last line shows the rule from section 2.2: the `Traced` object stored in the instance dictionary did nothing special; Python simply returned it.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a diagram with a class Thing holding attr = Traced(), where Traced defines __get__, __set__ and __delete__. Show four arrows from the code to the descriptor: t.attr calls __get__(t, Thing) and gives 42; Thing.attr calls __get__(None, Thing); t.attr = 7 calls __set__(t, 7); del t.attr calls __delete__(t). Next to it show t.__dict__ staying empty ({}) the whole time."
+
 ### 6.3 The `instance is None` case
 
 When code reads `Owner.attr`, there is no instance. The convention is: **return the descriptor itself**. Then `Owner.attr` gives you the descriptor object, which is useful for introspection (`Owner.price.name`, help texts, ORMs listing their fields). `property` follows this convention:
@@ -1109,6 +1121,9 @@ from non-data descriptor
 ```
 
 `c.__dict__["d"] = ...` really put a value in the instance dictionary, but `c.d` still answers from the data descriptor: it is checked before the dictionary. For `n`, the instance value hides the descriptor until it is deleted.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a side-by-side comparison for class C with d = DataDesc() (has __get__ and __set__) and n = NonDataDesc() (only __get__). Instance c has c.__dict__ = {'n': 'assigned', 'd': 'forced into dict'}. Show c.d reading: the data descriptor wins and returns 'from data descriptor'. Show c.n reading: the instance dict wins and returns 'assigned'. Then show del c.n, after which c.n gives 'from non-data descriptor'. Use a priority ladder."
 
 ### 7.3 A read-only data descriptor
 
@@ -1396,6 +1411,9 @@ Here is the complete story, the answer to learning outcome 1:
 7. The bound method calls `__func__(__self__, "hi")`, that is `speak_function(d, "hi")`. Inside, `self` is `d`.
 
 If `instance` is `None` (step 5 when you write `Dog.speak`), `function.__get__` simply returns the function itself. Python 2 had "unbound method" objects for that case; Python 3 removed them.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate d.speak('hi') where d is a Dog instance with d.__dict__ = {'name': ...} and Dog.__dict__ holds the function speak. Steps: 1) lookup finds the plain function speak in Dog; 2) it is a non-data descriptor and d.__dict__ has no 'speak'; 3) function.__get__(speak, d, Dog) builds a bound method with __func__=speak and __self__=d; 4) calling it with 'hi' runs speak(d, 'hi'). Show the bound method object being created."
 
 ### 9.4 Consequences you can now explain
 
@@ -2125,6 +2143,9 @@ print(i.price, hasattr(i, "__dict__"))
 5 False
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two memory layouts side by side for Point(1, 2). Left: a normal class, where the instance holds a __dict__ pointing to {'x': 1, 'y': 2}. Right: class Point with __slots__ = ('x', 'y'), where the instance holds two fixed slots at offset 0 and offset 1 and has no __dict__. Show the class dictionary holding two member_descriptor objects named x and y that read and write those offsets."
+
 #### Try it 13.1
 
 `class Bad: __slots__ = ("x",); x = 5` fails at class creation. Using what you know about member descriptors, explain why, and say what the programmer probably wanted.
@@ -2180,6 +2201,9 @@ TypeError: Broken must pass fmt=... in its class line
 Keyword arguments in the class line (`fmt="csv"`) go to `__init_subclass__`. Two habits make it play well with other base classes: accept unknown keywords as `**kwargs`, and call `super().__init_subclass__(**kwargs)` so the next class in the MRO gets its turn. The `/` makes `cls` positional-only (core.06), so a keyword called `cls` could never clash with it.
 
 The check ran at **class definition time**: the mistake was caught when the module was imported, not later when someone tried to use `Broken`. That is the big win of class-creation hooks: errors move to the earliest possible moment.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a timeline of Python defining class CsvExporter(Exporter, fmt='csv'). Steps: 1) the class body runs; 2) the class object CsvExporter is created; 3) Python calls Exporter.__init_subclass__(CsvExporter, fmt='csv'); 4) that hook adds 'csv': CsvExporter to Exporter.registry and sets cls.fmt. Then show class Broken(Exporter) with no fmt raising TypeError at definition time, before any instance exists."
 
 ### 14.2 Enforcing a contract
 
@@ -2458,6 +2482,9 @@ The first four lines come from creating `Base` itself (it has the metaclass too,
 
 The trace filters out names starting with `__`. The namespace always has some automatic dunder entries, and which ones depends on the version: every version has `__module__` and `__qualname__`; 3.13 added `__firstlineno__` and `__static_attributes__`; 3.14 can add more. Code that inspects a namespace should never depend on those.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a numbered timeline of what happens when Python runs '@decorate class Child(Base, table='kids')', where Base uses metaclass Meta. Steps in order: 1) Meta.__prepare__ returns the namespace; 2) the class body runs; 3) Meta.__new__ starts; 4) Field.__set_name__ for the 'name' attribute; 5) Base.__init_subclass__ is called; 6) Meta.__new__ ends; 7) Meta.__init__; 8) the class decorator runs last. Group steps 4 to 5 inside type.__new__."
+
 ### 17.3 Writing a useful metaclass
 
 Here is a metaclass that uses two powers only a metaclass has: `__prepare__`, to see every assignment in the body, and acting on the class **that declares it** (not only subclasses). It refuses a class body that defines the same name twice, a common copy-paste bug that Python normally allows silently:
@@ -2615,6 +2642,9 @@ True False
 ```
 
 `__init__` ran once per class, and each subclass got its own instance because the dictionary is keyed by `cls`. Remember core.22 (section 12.2): in most programs a module-level object does the same job with no machinery at all. A metaclass `__call__` earns its place in frameworks, for example to record every instance created, or to return cached objects for equal arguments.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a diagram of two lines of calls. Line one: Config() calls type(Config).__call__, which is SingletonMeta.__call__(Config). The first time it calls Config.__new__ then Config.__init__ and stores the instance in a dict keyed by the class. The second time it returns the stored instance, with no __init__. Line two: TestConfig() gets its own entry in the dict. Label which calls print 'Config.__init__ runs'."
 
 ### 18.2 Metaclass conflicts
 

@@ -1,0 +1,5 @@
+- `substr(title, 0, 3)`: positions start at 1, so this returns only 2 characters in SQLite.
+- `strftime('%Y', published) = 2022` compares text with a number. Write `'2022'`.
+- Forgetting the CAST: `julianday` gives a floating number like `1758.0`.
+- Subtracting the strings directly (`'2024-01-01' - published`): SQLite turns the text into the number 2024, 2019 and gives 5.
+- Naming the column `year` but returning `strftime('%y', ...)` (lowercase %y is the two-digit year).

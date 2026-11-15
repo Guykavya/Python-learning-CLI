@@ -1,0 +1,4 @@
+- Resizing at exactly 0.75. The test is `> 0.75`, so 3 of 4 does not resize.
+- Keeping keys in the old bucket positions after the resize. Each key is recomputed: `12 % 8 = 4`.
+- Printing `show` before `resize to`: the `resize` line comes first.
+- Reordering chains in the new table. Visit old buckets 0, 1, 2, ... and each chain left to right.

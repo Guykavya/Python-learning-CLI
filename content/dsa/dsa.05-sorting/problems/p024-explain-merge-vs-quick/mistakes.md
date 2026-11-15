@@ -1,0 +1,3 @@
+- Claiming quick sort is O(n log n) always: only on average (or expected, with a random pivot).
+- Saying 'merge sort is slower because it is O(n log n)': both are, on average; the difference is constants, memory and guarantees.
+- Forgetting that quick sort's recursion stack also uses memory (O(log n) if you recurse on the smaller side first, O(n) worst).

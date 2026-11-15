@@ -1,0 +1,6 @@
+id = "dsa.04.p039"
+title = "Explain: choosing a grouping key"
+tier = "challenge"
+kind = "explain"
+topics = ["anagram key", "hashable", "collisions", "complexity", "reasoning"]
+minutes = 35

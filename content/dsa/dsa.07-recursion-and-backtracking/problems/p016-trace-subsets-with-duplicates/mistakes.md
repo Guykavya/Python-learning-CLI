@@ -1,0 +1,4 @@
+- Forgetting to sort first: the trace runs on `[1, 2, 2]`, not `[2, 1, 2]`.
+- Skipping the second 2 inside `[1, 2]`: there `i == start`, so it is allowed.
+- Printing the `skip` lines too early: a skip line comes after the previous sibling's whole sub-tree.
+- Forgetting that every node (not only leaves) prints `visit`.

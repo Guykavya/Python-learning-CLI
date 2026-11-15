@@ -1,0 +1,6 @@
+id = "dsa.03.p045"
+title = "Trapping rain water"
+tier = "deep"
+kind = "code"
+topics = ["two pointers", "prefix maximum", "suffix maximum", "arrays"]
+minutes = 40

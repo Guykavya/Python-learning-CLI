@@ -1,0 +1,6 @@
+id = "dsa.07.p028"
+title = "Trace: count the pruned calls"
+tier = "applied"
+kind = "trace"
+topics = ["pruning", "recursion tree", "node count"]
+minutes = 20

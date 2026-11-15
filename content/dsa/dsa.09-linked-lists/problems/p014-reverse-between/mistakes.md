@@ -1,0 +1,5 @@
+- Counting from 0: positions here are 1-based, so the node before position `left` is `left - 1` steps from the dummy.
+- Forgetting `first.next = cur`: the range's last node still points at `None` (the `prev` it got in the first loop step), so the rest of the list is lost.
+- Forgetting `before.next = prev`: the front still points at `first`, which is now the end of the range, so the middle disappears.
+- Returning `head` without a dummy: for `left = 1` the head changes.
+- Reversing one node too many or too few: the loop runs `right - left + 1` times.

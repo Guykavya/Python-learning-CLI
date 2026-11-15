@@ -1,0 +1,5 @@
+- Forgetting the all-negative case. `total - best_min` is then 0, the sum of an empty subarray, and you print `0` instead of the largest element (`-2` for `-3 -2 -3`).
+- Returning only `total - best_min`. When the best subarray does not wrap (`1 -2 3 -2`), the plain Kadane answer is needed.
+- Running Kadane on `a + a`. It can choose more than `n` elements, using some positions twice (`5 5` doubled would give 20).
+- Starting `cur_max` and `best_max` at 0. That allows the empty subarray and breaks the all-negative case again.
+- Taking `best_min` as the smallest element instead of the smallest subarray sum.

@@ -1,0 +1,6 @@
+id = "dsa.08.p035"
+title = "Trapping rain water"
+tier = "deep"
+kind = "code"
+topics = ["monotonic stack", "two pointers", "water levels"]
+minutes = 35

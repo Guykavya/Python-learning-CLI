@@ -1,0 +1,6 @@
+id = "dsa.08.p034"
+title = "Largest rectangle in a histogram"
+tier = "deep"
+kind = "code"
+topics = ["monotonic stack", "previous smaller", "next smaller", "sentinel"]
+minutes = 40

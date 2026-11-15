@@ -1,0 +1,5 @@
+- Putting `PRAGMA foreign_keys = ON` in the script and expecting it to stick: it is per connection and the tests already set it.
+- Creating `orders` before `customers`. SQLite accepts it, but it reads badly; create the parent first.
+- Forgetting `ON DELETE CASCADE`: deleting a customer then fails with a foreign key error (or leaves orphans if checks are off).
+- Putting the foreign key on `customers` (the parent) instead of `orders`.
+- Writing `REFERENCES customers` without the column. It works only when the parent has a primary key, which is fragile.

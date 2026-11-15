@@ -1,0 +1,10 @@
+- Printing the `BAD` lines in the middle, as each record is quarantined. They are only printed by `finally`, after the loop.
+- Rejecting id `True`. `isinstance(True, int)` is `True`, so this check lets it through, and `print` shows it as `True`.
+- Expecting `Decimal(" 4.25 ")` to fail. Leading and trailing spaces are allowed.
+- Writing `1000` or `1e3` for `Decimal("1e3")`. The Decimal keeps the exponent form and prints `1E+3`.
+- Writing `2024-06-01T10:00:00Z`. `fromisoformat` reads `Z` as UTC and `isoformat()` writes it as `+00:00`.
+- Thinking `Decimal("12,00")` raises `ValueError`. It raises `decimal.InvalidOperation`, which is not caught by `except (ValueError, KeyError)`.
+- Forgetting that `finally` still runs after the `return` in the outer `except`, so batch3 prints its `BAD` line after `CRASH`.
+- Printing a summary line for batch3. The `return` skips it.
+- Getting the threshold wrong for batch2: `1/3` is more than `0.3`, so it aborts even with only one bad record.
+- Using single quotes in the `BAD` lines. `json.dumps` always uses double quotes; `"2"` keeps its quotes because the id is a string.

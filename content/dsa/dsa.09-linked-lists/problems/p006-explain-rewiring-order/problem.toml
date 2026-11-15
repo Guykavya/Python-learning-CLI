@@ -1,0 +1,7 @@
+id = "dsa.09.p006"
+title = "Explain: why does order matter when rewiring?"
+tier = "drill"
+kind = "explain"
+topics = ["linked list", "rewiring", "references"]
+minutes = 15
+assessment = "explain"

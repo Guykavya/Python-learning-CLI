@@ -1,0 +1,6 @@
+id = "dsa.03.p059"
+title = "Explain which pattern fits"
+tier = "challenge"
+kind = "explain"
+topics = ["pattern recognition", "prefix sums", "two pointers", "sliding window", "Kadane", "difference array"]
+minutes = 30

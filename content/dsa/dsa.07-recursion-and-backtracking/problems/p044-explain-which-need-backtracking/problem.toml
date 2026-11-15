@@ -1,0 +1,6 @@
+id = "dsa.07.p044"
+title = "Explain: which problems need backtracking?"
+tier = "deep"
+kind = "explain"
+topics = ["problem recognition", "backtracking vs dp", "greedy"]
+minutes = 25

@@ -1,0 +1,7 @@
+id = "shared.01.p004"
+title = "Page 2 of the cheapest books"
+tier = "drill"
+kind = "code"
+topics = ["LIMIT", "OFFSET", "ORDER BY", "pagination", "tie-break"]
+minutes = 15
+difficulty = 2

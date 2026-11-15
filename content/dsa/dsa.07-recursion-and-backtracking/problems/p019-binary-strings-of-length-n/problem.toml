@@ -1,0 +1,6 @@
+id = "dsa.07.p019"
+title = "Binary strings of length n"
+tier = "drill"
+kind = "code"
+topics = ["backtracking", "template", "lexicographic order"]
+minutes = 15

@@ -1,0 +1,6 @@
+id = "dsa.03.p038"
+title = "Dutch national flag"
+tier = "applied"
+kind = "code"
+topics = ["three pointers", "partitioning", "in-place", "one pass"]
+minutes = 30

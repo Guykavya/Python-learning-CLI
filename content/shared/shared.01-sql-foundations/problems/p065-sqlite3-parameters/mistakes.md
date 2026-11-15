@@ -1,0 +1,6 @@
+- Passing a bare string instead of a tuple: `execute(sql, (name))` is just `name`; SQLite sees one binding per character and fails. Write `(name,)`.
+- Using f-strings: `f"... WHERE name = '{name}'"` breaks on `O'Brien` and is open to SQL injection.
+- Forgetting `con.commit()` after the `INSERT`: the row is visible on this connection but not saved.
+- Returning `cursor.fetchall()` for a single customer instead of `fetchone()` (an empty list is not `None`).
+- Building two SQL strings for "with category" and "without". It works, but the statement asks for a single query.
+- Writing `category = :category` only: with `None` that is `category = NULL`, which matches nothing.

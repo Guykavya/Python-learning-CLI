@@ -1,0 +1,5 @@
+- Forgetting to remove the leaving character. The counts then describe everything seen so far, not the window.
+- Removing `text[r - m + 1]` instead of `text[r - m]`. The window `text[r-m+1 .. r]` still contains position `r - m + 1`.
+- Comparing **sets** of letters instead of counts. `set("aab") == set("abb")`, but they are not anagrams.
+- Comparing `sorted(window)` or `Counter(text[i:i+m])` for every `i`. Correct, but O(m) or worse per window.
+- Not handling `len(pattern) > len(text)`: some loops then index past the end or count a partial window.

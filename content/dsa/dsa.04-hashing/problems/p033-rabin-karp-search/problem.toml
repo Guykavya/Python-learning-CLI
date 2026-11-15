@@ -1,0 +1,6 @@
+id = "dsa.04.p033"
+title = "Find every occurrence of a pattern"
+tier = "deep"
+kind = "code"
+topics = ["Rabin-Karp", "rolling hash", "string search", "fixed window"]
+minutes = 45

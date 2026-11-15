@@ -1,0 +1,4 @@
+- Going from the most significant digit with the same loop: the later passes destroy the earlier ordering.
+- An unstable inner pass (for example putting equal digits in reverse order): earlier digits are lost.
+- Looping a fixed 10 times with `max(a)` recomputed inside the digit loop is fine; but looping while `exp <= 10**9` is too few if you also allow `10**9` itself (it has 10 digits). Use `max(a) // exp > 0`.
+- Calling `sorted` for the per-digit pass: banned, and it would make the whole sort a comparison sort.

@@ -1,0 +1,5 @@
+- Using `x % 2` or `x & 1` as the splitting bit. The lowest bit of `a ^ b` may be bit 5, not bit 0; if `a` and `b` have the same parity this split puts them together.
+- Printing `a b` unsorted when the statement asks for the smaller first.
+- Splitting by `v > something`, or sorting. Sorting works in O(n log n) with a careful scan, but the XOR method needs no extra memory.
+- Using `x ^ -x` or `x | -x` instead of `x & -x`.
+- Treating `0` as "no value": one of the singles can be 0 (the third example). Do not skip zeros.

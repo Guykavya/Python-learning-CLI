@@ -1,0 +1,4 @@
+- Saying "sorting makes the output sorted": that is a side effect; the reason is that equal values become neighbours.
+- Reading the condition as "skip if the previous value was used": it is the opposite, skip while the previous equal copy is **not** used.
+- Thinking `i > start` from subsets works here: permutations have no `start` index.
+- Believing a `set` is "just as good": it costs the full `n!` work and memory first.

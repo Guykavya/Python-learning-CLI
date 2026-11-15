@@ -1,0 +1,4 @@
+- INNER JOIN: Meera (the top person) disappears.
+- Joining `e.emp_id = m.manager_id`: that finds an employee's reports, not their manager. The result is reversed.
+- Forgetting the second alias: "ambiguous column name" errors.
+- Returning `m.name` and `e.name` in swapped order, or naming both columns `name`.

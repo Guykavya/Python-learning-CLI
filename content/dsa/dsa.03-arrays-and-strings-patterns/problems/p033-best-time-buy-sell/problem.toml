@@ -1,0 +1,6 @@
+id = "dsa.03.p033"
+title = "Best day to buy and sell"
+tier = "applied"
+kind = "code"
+topics = ["running minimum", "one pass", "arrays", "greedy"]
+minutes = 20

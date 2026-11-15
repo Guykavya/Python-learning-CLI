@@ -1,0 +1,6 @@
+id = "dsa.04.p037"
+title = "LRU cache"
+tier = "challenge"
+kind = "code"
+topics = ["dictionary order", "cache", "design", "O(1) operations"]
+minutes = 50

@@ -1,0 +1,4 @@
+- Not restoring the cell when the search succeeds (`if go(...): return True` before the restore line): the board is left with `"#"` marks.
+- Forgetting to mark at all: `"ABCB"` is then found by stepping back onto the `B`.
+- Checking `k == len(word)` after the bounds check: a word that ends on the last cell of the grid is then missed when the next step is off the grid.
+- Letting one start's marks leak into the next start.

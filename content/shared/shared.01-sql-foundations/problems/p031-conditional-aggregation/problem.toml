@@ -1,0 +1,7 @@
+id = "shared.01.p031"
+title = "Conditional aggregation: CASE and FILTER"
+tier = "applied"
+kind = "code"
+topics = ["SUM(CASE ...)", "FILTER", "conditional aggregation", "GROUP BY"]
+minutes = 20
+difficulty = 3

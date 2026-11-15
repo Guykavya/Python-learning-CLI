@@ -347,6 +347,9 @@ tv_return_only.py:1: error: A function returning TypeVar should receive at least
 
 What the message says: the caller would have to *guess* `T`. Remove the variable, or add a parameter that carries it.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a type-checker solving a type variable T for the Python function same(a: T, b: T) -> T. Show four calls as rows: same(1, 2) gives int; same(1, 2.5) gives float; same(1, 'a') gives object; same([1], ['a']) gives object. For each row, draw the argument types as boxes with arrows climbing a type tree up to the nearest shared parent, then label the result. Highlight that unrelated types quietly widen to object."
+
 ### Try it 3.1
 
 Write a generic function `last_item` that returns the last element of a list. Then say what mypy reveals for `last_item([1.5, 2.5])` and for `last_item(["a", None])`.
@@ -472,6 +475,9 @@ stack_check.py:19: error: Need type annotation for "t"  [var-annotated]
 
 Python itself does not enforce the type argument: `Stack()` with no brackets works, and so would pushing a string into a `Stack[int]`. When a generic object is built without brackets, the checker works out the parameter from the constructor arguments. For a container that starts empty, it cannot, and it asks for an annotation: `s: Stack[int] = Stack()`. So `Stack[int]()` or a variable annotation is common.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a generic class Stack[T] as a box with a hole labelled T, holding a list[T] with methods push(item: T) and pop() -> T. Then animate choosing T = int with Stack[int](): the hole fills with int. Show nums.push(1) accepted, then a Stack[str] where s.push(5) is rejected with a red error because 5 is an int, not a str. Note that at run time the object is just a plain Stack."
+
 ### 4.3 More than one type parameter
 
 ```python
@@ -535,6 +541,9 @@ Is a `list[int]` acceptable where a `list[float]` is expected? An `int` can be u
 With the new syntax you do not declare variance at all: the checker **infers** it from how `T` is used in the class.
 
 `ReadOnly[T]` (a class with a method that only *returns* a `T`) is accepted as `ReadOnly[float]` when you hold a `ReadOnly[int]`; `Mut[T]` (a class with a public writable attribute of type `T`) is **not**, because someone could write a float into it. With the old spelling you declare this yourself: `TypeVar("T", covariant=True)`. You will rarely need to think harder about variance than this.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a small type tree with float above int. Show list[int] and list[float] as two separate boxes with NO arrow between them, and explain with a red step: if list[int] were allowed where list[float] is expected, append(2.5) would put a float into a list of ints. Next to it, draw Sequence[float] (read-only) with a green arrow from Sequence[int]. Label list as invariant and Sequence as covariant."
 
 ### 4.6 `Self`: a method that returns "the same class"
 
@@ -730,6 +739,9 @@ bound.py:19: error: Value of type variable "A" of "loudest" cannot be "int"  [ty
 
 A bound is the right tool for "any subclass of X, and give me the same subclass back".
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a class tree: Animal at the top, Dog below it (Dog has a bark method). Show the function loudest[A: Animal](a: A) -> A as a pipe. Feed in a Dog and show a Dog coming out, so d.bark() is allowed. Feed in the int 42 and show it bounced off a red gate labelled 'A must be Animal or a subtype'. Contrast with a pipe typed Animal -> Animal, which loses the Dog."
+
 ### 6.2 Constraints: "`T` is exactly one of these"
 
 ```python
@@ -907,6 +919,9 @@ proto_close.py:28: error: Argument 1 to "shutdown" has incompatible type "Rock";
 `File` and `Socket` **never mention** `SupportsClose`. They fit because they have a method `close(self) -> None`. `Rock` does not, so the call is rejected. This is **structural typing** ("same shape"), as opposed to **nominal typing** ("same name in the inheritance tree"), which is what base classes give you.
 
 The body of the protocol method is `...`. A protocol is not code that runs; it only describes a shape.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a protocol SupportsClose (needs one method: close(self) -> None) as a socket-shaped hole. Show three classes as plugs: File and Socket each have close() and click in with a green tick, even though they never mention SupportsClose. Rock has no close() and does not fit, shown red. Contrast with inheritance: a second small diagram where a class must point an arrow to a base class by name."
 
 ### 8.3 Matching rules, and run time
 
@@ -1287,6 +1302,9 @@ td_check.py:20: note: Revealed type is "int"
 ```
 
 Each mistake has its own message: missing key, extra key, wrong value type, unknown key on reading, wrong type on writing. A plain `dict[str, object]` variable is also **not** accepted as a `Movie`: the checker cannot know it has the right keys.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a TypedDict named Movie with required keys title: str and year: int as a form with two labelled slots. Show five dict literals being checked against it. {'title': 'Alien', 'year': 1979} passes green. Missing year, an extra key 'stars', and year given as the string '1979' fail red, each with its own error label. Add a note: at run time it is only a plain dict."
 
 ### 11.2 Optional keys: `total=False`, `NotRequired`, `Required`
 
@@ -1747,6 +1765,9 @@ The decorated `greet` keeps its names, its types and its default. All three mist
 
 The older spelling declares the variables first: `P = ParamSpec("P")` and `R = TypeVar("R")`, then `def logged(func: Callable[P, R]) -> Callable[P, R]:` with the same body.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a decorator logged[**P, R] as a wrapper box around a function greet(name: str, excited: bool = False) -> str. Show the parameter list P travelling in through the wrapper's *args: P.args, **kwargs: P.kwargs and out unchanged, and R as the return type passing through. Then show the three bad calls greet(42), greet('a', loud=True) and x: int = greet('a') being flagged red because greet kept its exact signature."
+
 ### 15.3 `Concatenate`: adding or removing a parameter
 
 A decorator can supply an extra first argument. `Callable[Concatenate[Request, P], R]` means "a function taking a `Request` first, then everything in `P`", and the decorator returns `Callable[P, R]`: the `Request` is injected, so callers no longer pass it. (`from typing import Concatenate`.)
@@ -1847,6 +1868,9 @@ At run time the overload stubs are thrown away:
 
 At run time the overload stubs are thrown away: only the implementation remains (`double.__annotations__` is empty here), though `typing.get_overloads(double)` can list the stubs.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a function double with two overload signatures, def double(x: int) -> int and def double(x: str) -> str, plus one implementation taking int | str. Animate three calls arriving at a switchboard: double(2) is routed to the int signature and returns int, double('ab') is routed to the str signature and returns str, and double(2.5) matches none and shows a red 'No overload variant' error. Mark that the implementation is the only code that runs."
+
 ### 16.2 Rules and a classic pattern: `Literal` flags
 
 - At least two overloads, and an implementation (outside stub files).
@@ -1936,6 +1960,9 @@ narrow_basic.py:26: note: Revealed type is "list[str] | None"
 ```
 
 Walk through it. Each test splits the type in two: the "yes" branch and the "no" branch. Excluded types disappear from the *rest* of the function (the `else` of the `isinstance` chain is `list[int]`). `x.upper()` at the top is rejected, because it is not true for every member of the union. After `if not isinstance(x, str): return`, the code below sees `str`: an **early return narrows what follows**. And a truthiness test is not as strong as you might hope: in the `else` branch, `items` is still `list[str] | None`, because an empty list is also false.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a flowchart for show(x) where x starts as int | str | list[int] | None. Step 1: 'x is None' splits into None (returns) and the rest, int | str | list[int]. Step 2: isinstance(x, int) peels off int. Step 3: isinstance(x, str) peels off str, leaving list[int] in the final else. Draw the type shrinking as a set of coloured blocks at each branch, labelling the remaining type."
 
 ### 17.1 What narrows
 
@@ -2046,6 +2073,9 @@ guards.py:27: error: Item "int" of "int | str" has no attribute "upper"  [union-
 - A plain `bool` function narrows nothing, and `v.upper()` fails.
 
 (Python 3.13 added `TypeIs`; on 3.12 and older import it from the `typing_extensions` package. `TypeGuard` exists since 3.10.)
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two side-by-side branching diagrams for a helper function used in an if statement. Left: is_int(v: int | str) -> TypeIs[int]. Its True branch shows v as int, and its False branch shows v as str. Right: is_str_list(items: list[object]) -> TypeGuard[list[str]]. Its True branch shows list[str], but its False branch stays list[object], unchanged. Add a third box, a plain bool helper, that narrows nothing."
 
 ### 18.2 `TypeGuard` versus `TypeIs`
 

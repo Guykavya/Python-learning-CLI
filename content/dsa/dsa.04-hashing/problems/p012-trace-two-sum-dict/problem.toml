@@ -1,0 +1,6 @@
+id = "dsa.04.p012"
+title = "Trace the complement lookup"
+tier = "drill"
+kind = "trace"
+topics = ["two sum", "complement", "dictionary", "trace"]
+minutes = 15

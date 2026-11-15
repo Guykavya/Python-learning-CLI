@@ -1,0 +1,7 @@
+id = "shared.02.p030"
+title = "Mask emails and keep only allowed columns"
+tier = "drill"
+kind = "code"
+topics = ["PII", "masking", "allow-list", "deny by default", "data minimisation", "sensitive data"]
+minutes = 20
+difficulty = 2

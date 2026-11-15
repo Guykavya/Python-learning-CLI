@@ -1,0 +1,4 @@
+- Saying lists are "too big" or "slow" to be keys: the reason is **mutability**.
+- Saying `(1, [2])` is fine because tuples are immutable: the tuple is, but its list item is not hashable.
+- Thinking `1` and `1.0` are different keys because their types differ. Equal values hash alike and collapse to one key.
+- Forgetting the rule: equal objects must have equal hashes.

@@ -1,0 +1,6 @@
+id = "dsa.06.p004"
+title = "Search insert position"
+tier = "drill"
+kind = "code"
+topics = ["lower bound", "insertion point", "half-open"]
+minutes = 20

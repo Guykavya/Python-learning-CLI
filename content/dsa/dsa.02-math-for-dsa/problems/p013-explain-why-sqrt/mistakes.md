@@ -1,0 +1,4 @@
+- Saying "the square root is the biggest possible divisor". It is not: `n / 2` can be a divisor. The correct statement is that a composite number has a divisor that is **at most** the square root.
+- Saying "after sqrt(n) the numbers are not divisors". They can be (13 divides 91), but each one is paired with a smaller partner that was already tested.
+- Forgetting the proof by contradiction: both factors larger than `sqrt(n)` would multiply to more than `n`.
+- Not mentioning perfect squares and `<=`.

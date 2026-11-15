@@ -1,0 +1,160 @@
+# Real site problems for dsa.09 (Linked lists).
+# Verification: every LeetCode slug below was written from memory (from the problem plan) and NOT re-fetched
+# (no web access was used while writing). Fix any slug that fails to open.
+# Codeforces and CSES problems are left out on purpose: none were verified.
+# Order follows the chapter: reversal (6) plus one easy warm-up from 9, fast and slow pointers (7),
+# merging and sorting (8), rearrangements (9), random pointer (10), LRU cache (12).
+
+[[problem]]
+site = "leetcode"
+key = "reverse-linked-list"
+title = "Reverse Linked List"
+url = "https://leetcode.com/problems/reverse-linked-list/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "reverse-linked-list-ii"
+title = "Reverse Linked List II"
+url = "https://leetcode.com/problems/reverse-linked-list-ii/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "reverse-nodes-in-k-group"
+title = "Reverse Nodes in k-Group"
+url = "https://leetcode.com/problems/reverse-nodes-in-k-group/"
+minutes = 40
+
+[[problem]]
+site = "leetcode"
+key = "remove-duplicates-from-sorted-list"
+title = "Remove Duplicates from Sorted List"
+url = "https://leetcode.com/problems/remove-duplicates-from-sorted-list/"
+minutes = 10
+
+[[problem]]
+site = "leetcode"
+key = "middle-of-the-linked-list"
+title = "Middle of the Linked List"
+url = "https://leetcode.com/problems/middle-of-the-linked-list/"
+minutes = 10
+
+[[problem]]
+site = "leetcode"
+key = "linked-list-cycle"
+title = "Linked List Cycle"
+url = "https://leetcode.com/problems/linked-list-cycle/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "linked-list-cycle-ii"
+title = "Linked List Cycle II"
+url = "https://leetcode.com/problems/linked-list-cycle-ii/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "happy-number"
+title = "Happy Number"
+url = "https://leetcode.com/problems/happy-number/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "find-the-duplicate-number"
+title = "Find the Duplicate Number"
+url = "https://leetcode.com/problems/find-the-duplicate-number/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "merge-two-sorted-lists"
+title = "Merge Two Sorted Lists"
+url = "https://leetcode.com/problems/merge-two-sorted-lists/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "merge-k-sorted-lists"
+title = "Merge k Sorted Lists"
+url = "https://leetcode.com/problems/merge-k-sorted-lists/"
+minutes = 35
+
+[[problem]]
+site = "leetcode"
+key = "sort-list"
+title = "Sort List"
+url = "https://leetcode.com/problems/sort-list/"
+minutes = 35
+
+[[problem]]
+site = "leetcode"
+key = "remove-nth-node-from-end-of-list"
+title = "Remove Nth Node From End of List"
+url = "https://leetcode.com/problems/remove-nth-node-from-end-of-list/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "palindrome-linked-list"
+title = "Palindrome Linked List"
+url = "https://leetcode.com/problems/palindrome-linked-list/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "reorder-list"
+title = "Reorder List"
+url = "https://leetcode.com/problems/reorder-list/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "rotate-list"
+title = "Rotate List"
+url = "https://leetcode.com/problems/rotate-list/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "partition-list"
+title = "Partition List"
+url = "https://leetcode.com/problems/partition-list/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "odd-even-linked-list"
+title = "Odd Even Linked List"
+url = "https://leetcode.com/problems/odd-even-linked-list/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "add-two-numbers"
+title = "Add Two Numbers"
+url = "https://leetcode.com/problems/add-two-numbers/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "intersection-of-two-linked-lists"
+title = "Intersection of Two Linked Lists"
+url = "https://leetcode.com/problems/intersection-of-two-linked-lists/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "copy-list-with-random-pointer"
+title = "Copy List with Random Pointer"
+url = "https://leetcode.com/problems/copy-list-with-random-pointer/"
+minutes = 35
+
+[[problem]]
+site = "leetcode"
+key = "lru-cache"
+title = "LRU Cache"
+url = "https://leetcode.com/problems/lru-cache/"
+minutes = 45

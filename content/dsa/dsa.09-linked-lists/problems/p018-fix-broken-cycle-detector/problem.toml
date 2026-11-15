@@ -1,0 +1,7 @@
+id = "dsa.09.p018"
+title = "Fix the broken cycle detector"
+tier = "applied"
+kind = "code"
+topics = ["linked list", "cycle", "debugging", "fast and slow pointers"]
+minutes = 20
+assessment = "fix"

@@ -1,0 +1,5 @@
+- Building the sieve inside the query loop. The table is the same every time: build it once, before reading the queries.
+- Testing each candidate with trial division per query. It works, but 3000 queries make it many times slower than one table lookup.
+- Leaving `is_prime[1]` as `True`. Then `4` would give `1 3`. 0 and 1 are not prime.
+- Forgetting 4: `2 + 2`. Searching `p` only among odd numbers misses it.
+- Sieve table of size `n` instead of `n + 1`, so index `n - p` or 10^6 itself is out of range.

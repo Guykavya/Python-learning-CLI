@@ -1,0 +1,5 @@
+- Setting `node.next = new` before `new.next = node.next`: the new node then points at itself.
+- Updating only `next` pointers: walking forward looks fine, but `pop` (which uses `tail.prev`) removes the wrong node or a node that is already gone.
+- Popping from an empty list without a check: you unlink a sentinel and the structure is broken for good.
+- Forgetting to return the node from `append`/`appendleft`: callers cannot use `remove_node` then.
+- Iterating up to `None` instead of up to `self.tail`: the tail sentinel's `val` (`None`) appears as an extra item.

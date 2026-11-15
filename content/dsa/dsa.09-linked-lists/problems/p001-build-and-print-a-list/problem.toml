@@ -1,0 +1,6 @@
+id = "dsa.09.p001"
+title = "Build and print a list"
+tier = "drill"
+kind = "code"
+topics = ["linked list", "node", "dummy node", "walking"]
+minutes = 15

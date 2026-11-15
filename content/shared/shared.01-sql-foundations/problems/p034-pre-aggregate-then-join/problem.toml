@@ -1,0 +1,7 @@
+id = "shared.01.p034"
+title = "Pre-aggregate, then join"
+tier = "applied"
+kind = "code"
+topics = ["pre-aggregation", "join fan-out", "subquery in FROM", "LEFT JOIN", "COALESCE"]
+minutes = 25
+difficulty = 3

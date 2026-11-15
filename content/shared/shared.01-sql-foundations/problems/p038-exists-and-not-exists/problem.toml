@@ -1,0 +1,7 @@
+id = "shared.01.p038"
+title = "EXISTS and NOT EXISTS"
+tier = "applied"
+kind = "code"
+topics = ["EXISTS", "NOT EXISTS", "semi-join", "anti-join"]
+minutes = 20
+difficulty = 3

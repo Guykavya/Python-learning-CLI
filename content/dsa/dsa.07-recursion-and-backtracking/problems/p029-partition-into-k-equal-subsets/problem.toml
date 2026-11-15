@@ -1,0 +1,6 @@
+id = "dsa.07.p029"
+title = "Partition into k equal-sum subsets"
+tier = "challenge"
+kind = "code"
+topics = ["backtracking", "pruning", "buckets"]
+minutes = 50

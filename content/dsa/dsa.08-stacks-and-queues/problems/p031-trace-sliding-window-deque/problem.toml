@@ -1,0 +1,6 @@
+id = "dsa.08.p031"
+title = "Trace: the sliding window deque"
+tier = "deep"
+kind = "trace"
+topics = ["monotonic queue", "deque", "sliding window maximum", "indices"]
+minutes = 20

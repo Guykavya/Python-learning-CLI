@@ -1,0 +1,6 @@
+id = "dsa.07.p038"
+title = "Sudoku: validate a board"
+tier = "drill"
+kind = "code"
+topics = ["sudoku", "sets", "grid"]
+minutes = 20

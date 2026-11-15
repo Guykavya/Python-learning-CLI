@@ -1,0 +1,6 @@
+id = "dsa.05.p027"
+title = "Trace a stable counting sort"
+tier = "deep"
+kind = "trace"
+topics = ["counting sort", "stability", "prefix sums", "trace"]
+minutes = 25

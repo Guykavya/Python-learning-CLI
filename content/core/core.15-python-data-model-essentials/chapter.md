@@ -97,6 +97,10 @@ print(type(b).__len__(b))
 
 All three lines give the same answer, because `len(b)` is just a polite way to ask for `b.__len__()`. You almost never call a dunder method by hand. You define it, and Python calls it for you.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a two-column diagram of Python turning syntax into method calls. Left column: len(x), x[i], x + y, x == y, repr(x), for a in x, with x, x(1, 2). Right column: type(x).__len__(x), __getitem__, __add__, __eq__, __repr__, __iter__, __enter__ then __exit__, __call__. Draw an arrow from each left item to its right item. Highlight that a class named Box with __len__ returning 42 makes len(b) give 42."
+
+
 ### 1.2 Why Python is designed this way
 
 Many languages give special objects (arrays, strings) special syntax, and your own objects are second-class. Python takes another road: **the syntax belongs to everyone**. A class written by you can be indexed, added, looped over and used in `with`, exactly like a built-in, if it defines the right methods. That is why libraries such as NumPy, pandas and pathlib feel natural: `Path("a") / "b"` and `array1 + array2` are just `__truediv__` and `__add__`.
@@ -178,6 +182,10 @@ hi
 ```
 
 The `str` of a string is the string itself. Its `repr` has quotes and shows the newline as `\n`, so you can see exactly what it holds.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw one object, the date 2025-03-09 (datetime.date(2025, 3, 9)), with two arrows leaving it. Arrow 'str()' and 'print()' goes to the friendly text 2025-03-09, labelled 'for users'. Arrow 'repr()' goes to datetime.date(2025, 3, 9), labelled 'for developers, looks like code'. Add a second small example: the string 'hi' plus a newline, where str shows a line break but repr shows 'hi\n' with quotes."
+
 
 ### 2.2 The default is not helpful
 
@@ -575,6 +583,10 @@ start
 
 Two separate `Point(1, 2)` objects collapsed into one set member, and a brand-new `Point(0, 0)` finds the dict entry. This is value semantics: the set cares about what the point *is*, not which object it is.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a set made of 4 labelled buckets. Step 1: add Point(1, 2); show hash((1, 2)) pointing to one bucket. Step 2: add another separate Point(1, 2); same hash, same bucket, the == check says equal, so it is not stored again. Step 3: add Point(3, 4) into a different bucket. End with len(seen) equal to 2. Label the rule: equal objects must have equal hashes."
+
+
 ### 5.6 Hashing a key, not the object
 
 Suppose a case-insensitive tag compares with `casefold()`. The hash must use the same thing. (A key function like this is a common way to define equality.)
@@ -780,6 +792,10 @@ Notes:
 - Do not forget `__eq__`. `total_ordering` needs both pieces: ordering plus equality.
 - It is a little **slower** than hand-written methods, because each generated method calls two others. For hot loops, write all six.
 - If `__eq__` is defined, remember `__hash__` too (section 6) when the card is a value object.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a number line for a poker-like Card class using the rank order 2 3 4 5 6 7 8 9 T J Q K A (low to high). Mark Card('3'), Card('Q'), Card('A') at their positions. Show sorted() comparing pairs using only __lt__. Then show the generated __le__, __gt__ and __ge__ as arrows built from __eq__ and __lt__, with the label 'total_ordering'."
+
 
 ### Try it 7.1
 
@@ -1087,6 +1103,10 @@ Read each line:
 - `Other() + Base()`: `Other` has no `__add__`, so `Base.__radd__` runs.
 - `Base() + Other()`: `Base.__add__` answers, nobody else needs to.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a decision flowchart for a + b. Step 1: is type(b) a proper subclass of type(a) that overrides __radd__? If yes call b.__radd__(a). Step 2: else call a.__add__(b). Step 3: if that gives NotImplemented, call b.__radd__(a) when the types differ. Step 4: if still NotImplemented, raise TypeError. Show the example Base() + Sub() ending at 'Sub.__radd__'."
+
+
 ### Try it 9.1
 
 If `__sub__` returns `"sub"` and `__rsub__` returns `"rsub"`, what do `3 - N()`, `N() - 3` and `N() - N()` give?
@@ -1136,6 +1156,10 @@ print(x, y, x is y)
 ```
 
 For a list, `+=` calls `list.__iadd__`, which extends the list in place, so `b` sees the change and `a is b` is still true. For a tuple, there is no `__iadd__`. Python builds a new tuple and rebinds `x`, so `y` is untouched.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two side-by-side memory diagrams. Left: a = [1, 2]; b = a; a += [3]. Both names a and b point to the same list box, which grows to [1, 2, 3], so a is b is True. Right: x = (1, 2); y = x; x += (3,). A new tuple (1, 2, 3) is created and x moves to it, while y still points to the old (1, 2). Label the left side __iadd__ and the right side __add__."
+
 
 ### 10.2 Writing `__iadd__`
 
@@ -1503,6 +1527,10 @@ print(list(c))
 
 The second `list(c)` is empty. `CountDown` is an **iterator**: it is single-use. This is fine for things like file handles, but a **collection** should be reusable, so it should be an iterable that makes new iterators.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two pictures of the class CountDown(3), which has __iter__ returning self and a __next__ method. First list(c): show one iterator with n going 3, 2, 1 and then StopIteration, giving [3, 2, 1]. Then second list(c): the same iterator is already used up, so the result is []. Contrast it with the Playlist class, whose __iter__ makes a fresh generator each time, so nested loops over ['a', 'b', 'c'] work."
+
+
 ### 14.5 A ring buffer
 
 A ring buffer holds the last `capacity` items. When full, the oldest item drops out. With `collections.deque(maxlen=...)` this is trivial, but let us write the container interface ourselves:
@@ -1544,6 +1572,10 @@ RingBuffer([2, 3, 4]) 3 2 4 True False
 ```
 
 `__iter__` returns `iter(self._items)`: a ready-made iterator from the inner container. Once your class has `__iter__`, **everything that consumes iterables** works: `sum`, `max`, `sorted`, `list`, `tuple`, `set`, unpacking and `in`.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a ring buffer with capacity 3 built on deque(maxlen=3). Show three slots and append the numbers 0, 1, 2, 3, 4 one at a time. After 0, 1, 2 the buffer is full. Appending 3 drops 0 off the left, and appending 4 drops 1. Finish with RingBuffer([2, 3, 4]), len 3, rb[0] equal to 2, rb[-1] equal to 4, and highlight that sum, max and sorted work because of __iter__."
+
 
 ## 15. Truth testing and the old sequence protocol
 
@@ -1995,6 +2027,10 @@ exit None
 after
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a timeline for 'with Demo() as value:' with arrows in order. 1) Demo().__enter__() runs and prints 'enter', then returns 'the value', which is bound to value. 2) The block runs and prints 'inside: the value'. 3) __exit__(None, None, None) runs and prints 'exit None'. 4) The line after the with block prints 'after'. Show that __exit__ runs even if the block fails."
+
+
 ### 20.2 A timer
 
 ```python
@@ -2077,7 +2113,7 @@ class IgnoreMissing:
         return exc_type is not None and issubclass(exc_type, FileNotFoundError)
 
 with IgnoreMissing():
-    open("/no/such/file")
+    open("/no/such/file", encoding="utf-8")
 print("file error ignored")
 try:
     with IgnoreMissing():
@@ -2124,6 +2160,10 @@ caught outside
 ```
 
 Managers are entered **left to right** and exited **right to left** (like stacked plates). The exception passes `B`, then `A`, then reaches the `except`. `with A, B:` is the same as nesting `with A:` around `with B:`.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate 'with CM('A'), CM('B'):' where the body raises KeyError('boom'). Draw two stacked plates, A then B. Show the steps in order: enter A, enter B, body, then the error. The error passes through exit B (receives KeyError), then exit A (receives KeyError), then reaches the outer except, which prints 'caught outside'. Label entering as left to right and leaving as right to left."
+
 
 ### Predict the output 21.1
 
@@ -2244,7 +2284,7 @@ import io
 from contextlib import suppress, redirect_stdout
 
 with suppress(FileNotFoundError):
-    open("/no/such/file")
+    open("/no/such/file", encoding="utf-8")
 print("still here")
 
 buf = io.StringIO()

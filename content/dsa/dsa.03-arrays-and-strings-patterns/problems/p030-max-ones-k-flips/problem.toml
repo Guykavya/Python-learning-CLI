@@ -1,0 +1,6 @@
+id = "dsa.03.p030"
+title = "Longest run of ones with k flips"
+tier = "applied"
+kind = "code"
+topics = ["sliding window", "variable window", "counting", "binary arrays"]
+minutes = 25

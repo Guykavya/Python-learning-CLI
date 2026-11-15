@@ -1,0 +1,5 @@
+- Stopping the loop when `a == b` (subtractive Euclid). It is correct but takes `10^18` steps for `(10^18, 1)`, and loops forever when one number is 0.
+- Looping `while a % b != 0` and crashing with `ZeroDivisionError` when `b = 0`. Test `b != 0` first.
+- Starting with `a, b = b, a % b` written as two lines: `a = b` then `b = a % b` uses the new `a`. Use the tuple form or a temporary.
+- Printing `b` instead of `a`. When the loop ends, `b` is 0 and `a` holds the answer.
+- Trying `for d in range(min(a, b), 0, -1)`: it hangs for big numbers, and fails for 0.

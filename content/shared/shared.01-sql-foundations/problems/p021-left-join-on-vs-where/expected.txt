@@ -1,0 +1,12 @@
+Asha|10
+Ben|NULL
+Chen|13
+Chen|14
+Dia|NULL
+---
+Asha|10
+Chen|13
+Chen|14
+---
+Ben|NULL
+Dia|NULL

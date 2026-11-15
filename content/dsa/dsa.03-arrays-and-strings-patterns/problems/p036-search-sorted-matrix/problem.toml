@@ -1,0 +1,6 @@
+id = "dsa.03.p036"
+title = "Staircase search in a sorted grid"
+tier = "applied"
+kind = "code"
+topics = ["grids", "two pointers", "staircase search", "sorted matrix"]
+minutes = 30

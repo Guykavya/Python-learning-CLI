@@ -1,0 +1,5 @@
+- Returning `(g, x1, y1)` unchanged from the recursive call. The coefficients must be swapped and adjusted: `(y1, x1 - (a // b) * y1)`.
+- Using `a / b` (float) instead of `a // b`. For numbers near 10^18 a float loses digits.
+- Returning `(0, 0, 0)` or `(1, 0, 0)` in the base case. It must be `(a, 1, 0)`.
+- Printing the pair `(x, y)` in the wrong order, or the values with brackets and commas instead of spaces.
+- Using `math.gcd` to find `g` and then guessing `x, y`: you still need the coefficients.

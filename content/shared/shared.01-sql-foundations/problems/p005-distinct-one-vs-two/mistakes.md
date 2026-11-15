@@ -1,0 +1,4 @@
+- Treating `DISTINCT` in query 2 as "distinct category only". It looks at the whole row (both columns).
+- Printing `True`/`False` or `true/false` for query 3. SQLite prints `1` and `0`.
+- Forgetting that `ORDER BY ... DESC` is applied after DISTINCT, so query 4 starts with the largest price.
+- Printing floats as `45.50`: SQLite shows `45.5`. And `39.0` keeps its `.0`.

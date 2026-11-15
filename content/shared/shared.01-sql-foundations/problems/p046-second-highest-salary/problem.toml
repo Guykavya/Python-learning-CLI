@@ -1,0 +1,7 @@
+id = "shared.01.p046"
+title = "Second highest salary, overall and per department"
+tier = "challenge"
+kind = "code"
+topics = ["second highest", "DISTINCT + OFFSET", "correlated COUNT", "ties", "no window functions"]
+minutes = 40
+difficulty = 4

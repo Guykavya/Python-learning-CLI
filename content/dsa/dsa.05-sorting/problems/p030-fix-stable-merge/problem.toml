@@ -1,0 +1,7 @@
+id = "dsa.05.p030"
+title = "Fix the stable merge sort"
+tier = "deep"
+kind = "code"
+topics = ["merge sort", "stability", "debugging"]
+minutes = 40
+assessment = "fix"

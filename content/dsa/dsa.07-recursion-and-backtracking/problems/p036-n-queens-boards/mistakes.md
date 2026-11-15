@@ -1,0 +1,4 @@
+- Recording `cols_of` itself instead of a fresh board: all solutions end up the same (or empty) at the end.
+- Off-by-one in the row string: `"." * c + "Q" + "." * (n - c)` is one character too long.
+- Returning the boards as lists of lists of characters instead of lists of strings.
+- Returning `[[]]` for `n = 2` or `3`: there is no solution, so the answer is `[]`.

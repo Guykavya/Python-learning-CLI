@@ -1,0 +1,8 @@
+- `float(order["amount"])`. Floats cannot store most decimal fractions exactly; money must be `Decimal` (or integer cents).
+- `Decimal(float(text))`: converting through float first brings the float error into the Decimal (`Decimal(0.1)` is `0.1000000000000000055511151231257827...`).
+- Keeping the original offset. Rows with `+05:30` and rows with `Z` then print differently and sort confusingly; convert everything to UTC.
+- Using `.replace(tzinfo=timezone.utc)` instead of `.astimezone(timezone.utc)`. `replace` just relabels `15:30` as `15:30 UTC`, which is 5.5 hours wrong.
+- Treating a timestamp without an offset as UTC. That is a guess, and it is wrong for every source that sends local time.
+- `customer["city"].strip()` without checking for `None` first: `AttributeError: 'NoneType' object has no attribute 'strip'`.
+- `str(city)` to "handle" None. You store the four letters `"None"`, which no null check will ever find.
+- Changing the input (`order["amount"] = Decimal(...)`). The raw record should stay exactly as received.

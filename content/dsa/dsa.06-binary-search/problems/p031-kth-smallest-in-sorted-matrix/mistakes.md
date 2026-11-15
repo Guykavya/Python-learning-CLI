@@ -1,0 +1,4 @@
+- Searching over positions instead of values: rows and columns are sorted separately, so the position order is not value order.
+- Using `count_le(mid) > k` or `== k`: the first `v` with count at least `k` is the answer; equality may never happen with duplicates.
+- Flattening and sorting: `O(n^2 log n)`, and banned here. (It works for `n = 700`, but not for the matrices the real problem allows.)
+- Counting with a nested loop over all cells per candidate: 490000 cells times 30 candidates, slow in Python.

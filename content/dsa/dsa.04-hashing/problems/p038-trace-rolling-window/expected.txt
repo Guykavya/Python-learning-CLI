@@ -1,0 +1,7 @@
+top 3
+first 314 23
+141 44 44 True
+415 27 27 True
+159 62 62 True
+592 10 10 True
+926 53 53 True

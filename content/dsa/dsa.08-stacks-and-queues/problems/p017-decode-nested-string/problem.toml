@@ -1,0 +1,6 @@
+id = "dsa.08.p017"
+title = "Decode a nested string"
+tier = "applied"
+kind = "code"
+topics = ["stack", "nested structure", "strings", "multi-digit numbers"]
+minutes = 30

@@ -1,0 +1,3 @@
+- Saying sorting makes the answers sorted, as the main reason: the real reason is that `break` becomes valid.
+- Claiming `break` is always correct: without sorting it loses answers.
+- Thinking `continue` and `break` make a different number of calls here: the check before the call is what avoids the calls.

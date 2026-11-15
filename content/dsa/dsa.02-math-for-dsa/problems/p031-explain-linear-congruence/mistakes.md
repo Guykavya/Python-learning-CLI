@@ -1,0 +1,5 @@
+- Saying there is a unique solution when `gcd(a, m) > 1`. There are `g` solutions, or none.
+- Dividing `a` and `b` by `g` but keeping the old modulus `m`. The modulus must be divided too.
+- Writing the solution as `x = b / a`. That is real division and has no meaning here.
+- Forgetting the condition `g | b` and trying to compute an inverse of `a / g` anyway; the result is a number that is simply wrong.
+- Listing solutions spaced `m` apart; the spacing is `m / g`.

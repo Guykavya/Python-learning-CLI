@@ -1,0 +1,5 @@
+- Returning the column as `price` and forgetting the alias. The test checks the column name `cost`.
+- Putting the columns in the wrong order. The statement fixes `title` first, then `cost`.
+- Writing `SELECT *`. It returns all 7 columns, not two.
+- Quoting the alias with single quotes (`AS 'cost'`) works in SQLite but is a string literal in other databases. Use plain or double-quoted names.
+- Forgetting the comma between the two columns (`title price AS cost` makes `price AS cost` fail to parse in a confusing way: `title price` is read as "title aliased to price").

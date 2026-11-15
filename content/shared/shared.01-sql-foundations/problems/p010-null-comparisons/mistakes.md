@@ -1,0 +1,5 @@
+- Expecting `city = NULL` to find Ben and Dia. It finds nothing.
+- Expecting `city <> 'Pune'` to return Ben and Dia ("they are not Pune"). Their city is unknown, so the test is unknown and the row is dropped.
+- Expecting `NOT IN ('Pune', NULL)` to return Chen. `Chen <> NULL` is unknown, so the whole AND is unknown.
+- Writing `0` instead of `NULL` for query 5, rows Ben and Dia.
+- Forgetting the `(no rows)` line for empty results.

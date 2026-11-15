@@ -1,0 +1,4 @@
+- Using `stack.pop(0)`: that takes from the **front**, so the string comes out unchanged (and each call costs `O(n)`).
+- Popping while also looping `for ch in stack`: changing a list while you loop over it skips items.
+- Building the result with `out += ch` inside the loop: correct, but can be slow on very long strings; append to a list and `"".join` once.
+- Forgetting the empty string: `stack[-1]` or `stack.pop()` on an empty stack raises `IndexError`; `while stack:` avoids it.

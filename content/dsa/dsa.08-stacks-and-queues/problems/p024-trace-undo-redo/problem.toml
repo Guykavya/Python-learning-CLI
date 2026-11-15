@@ -1,0 +1,6 @@
+id = "dsa.08.p024"
+title = "Trace: undo and redo"
+tier = "applied"
+kind = "trace"
+topics = ["stack", "undo", "redo", "design"]
+minutes = 20

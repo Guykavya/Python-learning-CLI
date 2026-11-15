@@ -1,0 +1,6 @@
+id = "dsa.07.p043"
+title = "Subsets as a generator"
+tier = "deep"
+kind = "code"
+topics = ["generators", "yield from", "lazy evaluation"]
+minutes = 30

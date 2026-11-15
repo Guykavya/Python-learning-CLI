@@ -1,0 +1,17 @@
+7,007,,19.90,False,2024-06-01 10:00:00+00:00
+id '7' str
+city '' str
+amount '19.90' str
+paid 'False' str
+paid? yes
+7007
+6 1
+id 7 int
+zip '007' str
+city None NoneType
+amount Decimal('19.90') Decimal
+paid False bool
+paid? no
+8 39.80
+2024-06-01T10:00:00+00:00 True
+decimal128(8, 2) timestamp[us, tz=UTC]

@@ -1,0 +1,4 @@
+- Counting `DISTINCT oi.book_id` or `DISTINCT o.customer_id`. Two orders can contain the same book, and one customer has one id: neither identifies an order.
+- Changing `SUM` as well. The revenue is right; changing it breaks it.
+- Replacing the joins with `LEFT JOIN`. That keeps unmatched customers but still repeats orders.
+- Adding `DISTINCT` after `SELECT` hoping to dedupe: it removes identical output rows, not repeated counts inside a group.

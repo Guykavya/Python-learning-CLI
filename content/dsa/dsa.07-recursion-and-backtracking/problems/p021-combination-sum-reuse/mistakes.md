@@ -1,0 +1,4 @@
+- Starting every loop at 0: you get every order of the same numbers (`[2, 2, 3]`, `[2, 3, 2]`, `[3, 2, 2]`).
+- Recursing with `i + 1`: each number can then be used only once, so `[2, 2, 3]` is missing.
+- Using `break` without sorting first: you may stop before a smaller candidate that would still fit.
+- Appending `path` instead of `path[:]`.

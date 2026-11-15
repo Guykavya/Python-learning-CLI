@@ -1,0 +1,8 @@
+id = "shared.02.p021"
+title = "Fix: the pipeline that duplicates and loses orders"
+tier = "deep"
+kind = "code"
+topics = ["debugging pipelines", "idempotency", "UPSERT", "checkpoints", "crash recovery", "order of writes"]
+minutes = 35
+difficulty = 4
+assessment = "fix"

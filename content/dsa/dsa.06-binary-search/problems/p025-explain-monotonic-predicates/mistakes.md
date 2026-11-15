@@ -1,0 +1,3 @@
+- Calling a predicate monotonic because it "mostly" grows. One counterexample is enough to break it.
+- Forgetting to say which end the True block is at (first True or last True): that decides `hi = mid` or `lo = mid`.
+- Calling `x is even` monotonic because it is simple: it alternates `F T F T`.

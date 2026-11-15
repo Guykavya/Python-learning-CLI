@@ -1,0 +1,5 @@
+- Returning `False` when all rules tie: the right element then jumps ahead and the sort is unstable.
+- Comparing ages as strings: `'9' > '10'`. Convert numeric fields to `int` when reading.
+- Reading the rules incorrectly when `k = 0`: there are no rule lines, and the output equals the input.
+- Using `sorted`/`cmp_to_key` for the comparison: the source check rejects them. Write the loop.
+- Applying only the first rule and ignoring the rest: ties must go to the next rule.

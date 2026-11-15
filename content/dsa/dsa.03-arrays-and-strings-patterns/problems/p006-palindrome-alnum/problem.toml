@@ -1,0 +1,6 @@
+id = "dsa.03.p006"
+title = "Palindrome, ignoring punctuation and case"
+tier = "drill"
+kind = "code"
+topics = ["two pointers", "strings", "palindrome", "isalnum"]
+minutes = 15

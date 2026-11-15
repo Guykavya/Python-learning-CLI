@@ -1,0 +1,4 @@
+- Counting the two NULLs as different rows for `UNION` (answer 6) or missing the NULL in `INTERSECT` (answer 1). In set operations NULL equals NULL.
+- Answering `except|2`: Pune appears twice among suppliers but `EXCEPT` removes duplicates.
+- Answering `union_all|5`: that is the number of customers; `UNION ALL` adds both tables.
+- Ordering the lines by label. The `ORDER BY` is `n DESC` first.

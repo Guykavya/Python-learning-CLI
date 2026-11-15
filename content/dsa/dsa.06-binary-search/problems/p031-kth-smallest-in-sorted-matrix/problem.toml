@@ -1,0 +1,6 @@
+id = "dsa.06.p031"
+title = "Kth smallest in a sorted matrix"
+tier = "deep"
+kind = "code"
+topics = ["binary search on the answer", "counting", "staircase walk"]
+minutes = 50

@@ -1,0 +1,6 @@
+id = "dsa.07.p014"
+title = "Tower of Hanoi moves"
+tier = "deep"
+kind = "code"
+topics = ["recursion", "divide and conquer", "hanoi"]
+minutes = 30

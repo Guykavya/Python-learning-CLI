@@ -1,0 +1,7 @@
+id = "dsa.02.p028"
+title = "Fix the nCr that divides"
+tier = "deep"
+kind = "code"
+topics = ["modular division", "Fermat inverse", "off-by-one", "debugging"]
+minutes = 35
+assessment = "fix"

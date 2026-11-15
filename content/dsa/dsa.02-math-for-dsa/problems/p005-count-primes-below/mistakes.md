@@ -1,0 +1,5 @@
+- Re-running the sieve inside the query loop. 100000 queries times 5 million steps never finishes. Anything that does not depend on the query belongs before the loop.
+- Counting `pi(n)` by looping `range(2, n + 1)` and doing trial division. That is about `n * sqrt(n)` steps per query.
+- Making the table `top` long instead of `top + 1`, then failing with an IndexError (or an off-by-one) when a query equals the top.
+- Counting 1 as a prime. `is_prime[1]` must be `False`.
+- Using `[True] * (top + 1)` and then `sum(is_prime[:n + 1])` per query: a hidden O(n) per query, the same trap as in dsa.01.

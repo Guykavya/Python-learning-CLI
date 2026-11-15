@@ -1,0 +1,7 @@
+id = "shared.01.p020"
+title = "Self join: employee and manager"
+tier = "applied"
+kind = "code"
+topics = ["self join", "table aliases", "LEFT JOIN", "hierarchy"]
+minutes = 20
+difficulty = 3

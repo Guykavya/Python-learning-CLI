@@ -1,0 +1,4 @@
+- Counting with `>=`/taking the right value on ties: equal values would be counted as inversions.
+- Adding `1` instead of `len(left) - i` when a right value is taken.
+- Counting inversions inside the halves twice (or never): the total is `left inversions + right inversions + cross inversions`.
+- Brute force with two loops: 200000 elements means 2 * 10^10 pairs, far over the time limit.

@@ -1,0 +1,6 @@
+id = "dsa.04.p021"
+title = "Repeated DNA segments"
+tier = "applied"
+kind = "code"
+topics = ["set", "substrings", "fixed-length window"]
+minutes = 30

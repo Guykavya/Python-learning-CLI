@@ -1,0 +1,7 @@
+id = "shared.01.p063"
+title = "CREATE INDEX and check the plan"
+tier = "applied"
+kind = "code"
+topics = ["CREATE INDEX", "EXPLAIN QUERY PLAN", "composite index", "UNIQUE index"]
+minutes = 30
+difficulty = 3

@@ -1,0 +1,4 @@
+- `WHERE city <> 'Pune'` alone: drops Ben and Dia.
+- `WHERE city != 'Pune' AND city IS NULL`: contradictory (no row is both), returns nothing.
+- `WHERE city <> 'Pune' OR city = NULL`: `= NULL` is never true. Use `IS NULL`.
+- `WHERE NOT city = 'Pune'`: same problem as `<>`.

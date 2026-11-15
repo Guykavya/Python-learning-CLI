@@ -1,0 +1,6 @@
+id = "dsa.04.p005"
+title = "Valid anagram"
+tier = "drill"
+kind = "code"
+topics = ["anagram", "frequency counting", "strings"]
+minutes = 15

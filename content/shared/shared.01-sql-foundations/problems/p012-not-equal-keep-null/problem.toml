@@ -1,0 +1,7 @@
+id = "shared.01.p012"
+title = "Not equal, but keep the unknowns"
+tier = "applied"
+kind = "code"
+topics = ["NULL", "<>", "IS NULL", "OR", "three-valued logic"]
+minutes = 15
+difficulty = 3

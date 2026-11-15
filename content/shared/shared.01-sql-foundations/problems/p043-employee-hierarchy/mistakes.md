@@ -1,0 +1,5 @@
+- Using `WHERE manager_id = NULL` in the anchor: nothing equals NULL; write `IS NULL`.
+- Starting the anchor at depth 1 (or increasing by 0 in the step), so all depths are off.
+- Joining on the wrong direction (`e.emp_id = t.manager_id`) and walking *up* the tree instead of down.
+- Using `UNION` instead of `UNION ALL`: it works, but costs a dedupe on every step. `UNION ALL` is the normal choice when no row can repeat.
+- Hard-coding two or three self joins: it fails as soon as the tree is deeper.

@@ -1,0 +1,5 @@
+- Saying `gcd(0, 5)` is 0 or undefined. By the loop, it is 5: every number divides 0, so the greatest divisor of both 0 and 5 is 5.
+- Using `lcm(0, 5) = 5`. The common multiples of 0 and 5 are only 0, and the code returns 0.
+- Forgetting the guard in `lcm`: without `if g == 0` the line `a // g` divides by zero for `(0, 0)`.
+- Believing the identity `gcd * lcm == a * b` fails for zeros. Both sides are 0, so it holds (`True`).
+- Computing lcm as `a * b` when the numbers share a factor (`8 12` gives 24, not 96).

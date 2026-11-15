@@ -1,0 +1,5 @@
+- Averaging customers' averages instead of all order totals: the baseline changes when customers have different numbers of orders.
+- Computing `n_orders` from the joined lines: the fan-out makes it too big. Count in `order_totals`, where an order is one row.
+- Forgetting `* 1.0`: integer division in some databases (SQLite: `spent` is REAL here, but write it anyway).
+- Putting a second `WITH` keyword before the next CTE: only one `WITH`, then commas.
+- Using `>=`: a customer exactly at the average is not above it.

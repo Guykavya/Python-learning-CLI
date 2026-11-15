@@ -1,0 +1,5 @@
+- `copy.random = node.random`: the copy then points into the **original** list (a shallow copy of the pointer).
+- Looking up the random target by **value**: values can repeat, so you may pick the wrong node.
+- Interleaving without restoring: the original list then contains the copies, and the caller's data is broken.
+- In the unweave, forgetting the last copy: `copy.next.next` crashes when `copy.next` is `None`.
+- Setting randoms in the same pass as creating copies: the copy of a later node does not exist yet.

@@ -1,0 +1,6 @@
+id = "dsa.08.p013"
+title = "Infix to postfix (shunting-yard)"
+tier = "deep"
+kind = "code"
+topics = ["shunting-yard", "operator stack", "precedence", "left associativity"]
+minutes = 40

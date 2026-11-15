@@ -1,0 +1,4 @@
+- Using sets: `set(note) <= set(magazine)` ignores how many letters are needed.
+- Comparing lengths only: a long magazine can still lack one letter.
+- Checking the counts the wrong way round (magazine needs <= note). The note needs <= magazine.
+- Removing letters with `magazine.replace(ch, "", 1)` in a loop: each call is O(n), so O(n^2).

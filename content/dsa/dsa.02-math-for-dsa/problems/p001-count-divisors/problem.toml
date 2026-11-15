@@ -1,0 +1,6 @@
+id = "dsa.02.p001"
+title = "Count the divisors"
+tier = "drill"
+kind = "code"
+topics = ["divisors", "modulo", "loops"]
+minutes = 10

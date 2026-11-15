@@ -1,0 +1,6 @@
+id = "dsa.05.p034"
+title = "Explain: what makes a valid comparator?"
+tier = "deep"
+kind = "explain"
+topics = ["comparator", "cmp_to_key", "key function", "transitivity"]
+minutes = 30

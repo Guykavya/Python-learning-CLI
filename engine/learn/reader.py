@@ -14,6 +14,7 @@ from learn import ui
 _CODE_SPAN = re.compile(r"(`[^`]+`)")
 _BOLD = re.compile(r"\*\*(.+?)\*\*")
 _LINK = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
+_ANCHOR_LINK = re.compile(r"\[([^\]]+)\]\(#[^)]*\)")  # [text](#section): a link inside the page
 _BULLET = re.compile(r"^(\s*)[-*] (.*)$")
 _DETAILS = re.compile(r"^<details>\s*<summary>(.*)</summary>\s*$")
 
@@ -139,13 +140,83 @@ def render(lines: list[str], reveal: bool = False) -> str:
     return "\n".join(out)
 
 
+def _prepare(lines: list[str], reveal: bool) -> list[str]:
+    """Markdown lines for the rich renderer: `<details>` boxes become a bold label (hidden or open)."""
+    out: list[str] = []
+    in_code = False
+    hiding = False
+    for line in lines:
+        details = _DETAILS.match(line) if not in_code else None
+        if details:
+            label = _summary(details.group(1))
+            if reveal:
+                out += [f"**▾ {label}**", ""]
+            else:
+                out += [f"**▸ {label}** *(hidden: type a after this section)*", ""]
+                hiding = True
+            continue
+        if not in_code and line.strip() == "</details>":
+            hiding = False
+            continue
+        if hiding:
+            continue
+        if line.startswith("```"):
+            in_code = not in_code
+        elif not in_code:
+            line = _ANCHOR_LINK.sub(r"\1", line)  # a page anchor means nothing in a terminal
+        out.append(line)
+    return out
+
+
+def render_markdown(lines: list[str], reveal: bool = False) -> str:
+    """Full Markdown rendering (tables, wrapping, quotes) with the `rich` package.
+
+    Falls back to the plain line-by-line `render` when `rich` is missing or fails, so reading
+    never breaks. Output is an ANSI string that `_page` shows through `less -R`.
+    """
+    try:
+        import io
+
+        from rich.console import Console
+        from rich.markdown import Markdown
+        from rich.theme import Theme
+
+        theme = Theme(
+            {
+                "markdown.h1": "bold yellow",
+                "markdown.h2": "bold cyan",
+                "markdown.h3": "bold",
+                "markdown.code": "bold cyan",  # inline `code`: no background, so light terminals stay readable
+                "markdown.link": "blue",
+                "markdown.link_url": "dim",
+                "markdown.block_quote": "dim",
+            }
+        )
+        color = ui.color_enabled()
+        console = Console(
+            file=io.StringIO(),
+            width=min(ui.terminal_width(), 100),
+            force_terminal=color,
+            color_system="standard" if color else None,  # the 16 terminal colours follow the user's theme
+            legacy_windows=False,
+            theme=theme,
+        )
+        console.print(Markdown("\n".join(_prepare(lines, reveal)), code_theme="ansi_dark", hyperlinks=False))
+        return "\n".join(line.rstrip(" ") for line in console.file.getvalue().rstrip("\n").split("\n"))
+    except Exception:  # missing rich, or any rendering error: use the plain renderer
+        return render(lines, reveal)
+
+
 def _page(text: str) -> None:
     """Show text through `less` when it is longer than the screen, otherwise print it."""
     less = shutil.which("less")
     if not less or not sys.stdout.isatty():
         print(text)
         return
-    subprocess.run([less, "-R", "-F", "-X"], input=text, text=True, encoding="utf-8")
+    # -e: quit on the second Space at the end, so the last screen stays visible.
+    # -P: replace the bare ":" with the keys that work here.
+    prompt = "Space: next page  b: back  q: stop reading  "
+    subprocess.run([less, "-R", "-F", "-X", "-e", "-P", prompt], input=text, text=True, encoding="utf-8")
 
 
 def contents(sections: list[Section], current: int) -> None:
@@ -167,7 +238,7 @@ def read_chapter(title: str, text: str, start: int, save: Callable[[int], None])
         save(i)
         header = ui.dim(f"{title}  ·  section {i + 1} of {len(sections)}")
         footer = ui.dim(f"\n── end of section {i + 1}/{len(sections)} ──")
-        _page(header + "\n\n" + render(s.lines, reveal) + footer)
+        _page(header + "\n\n" + render_markdown(s.lines, reveal) + footer)
         nxt = f"next: {sections[i + 1].title}" if i + 1 < len(sections) else "this was the last section"
         print(ui.dim(f"  {nxt}"))
         answers = " · a answers" if has_answers(s.lines) and not reveal else ""

@@ -1,0 +1,4 @@
+- Using `q.pop()` or `q[-1]`: correct on a real deque, but those are not queue operations (the point of the exercise).
+- Creating the queue with `deque()` directly instead of `queue_factory()`: the tests cannot check your calls (and fail).
+- Rotating `len(q)` times instead of `len(q) - 1`: the new item goes all the way round and ends at the back again.
+- Using `q.rotate(1)`: a deque method, not a queue operation.

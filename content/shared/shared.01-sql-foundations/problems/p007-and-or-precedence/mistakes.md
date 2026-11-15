@@ -1,0 +1,4 @@
+- Reading `a OR b AND c` left to right as `(a OR b) AND c`. `AND` binds first.
+- Thinking `NOT category = 'fiction' AND price < 15` negates the whole condition. `NOT` applies only to the comparison next to it.
+- Forgetting that Q1 and Q2 happen to return the same rows here, but only by chance of this data. Try adding a fiction book at 50.00.
+- Mixing up row order: every query sorts by `book_id`, not by title.

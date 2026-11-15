@@ -1,0 +1,7 @@
+id = "dsa.02.p027"
+title = "Explain when a modular inverse exists"
+tier = "deep"
+kind = "explain"
+topics = ["modular inverse", "Fermat", "extended Euclid", "gcd"]
+minutes = 25
+assessment = "explain"

@@ -1,0 +1,4 @@
+- Writing `COUNT(*) = (number of tech books)` instead of `COUNT(DISTINCT book_id)`: buying the same tech book twice counts double and a customer who never bought another one qualifies.
+- Putting the "every" condition in one order: a customer may buy the books in several orders, so the test must look at all orders of the customer.
+- Filtering `WHERE book_id IN (tech books)` and stopping: that returns customers who bought *any* tech book.
+- Forgetting the inner correlation to the customer (`o.customer_id = c.customer_id`): the inner query then asks whether *anyone* bought the book.

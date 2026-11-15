@@ -1,0 +1,4 @@
+- Not resetting the height to 0 at a `"0"`: columns with gaps look taller than they are.
+- Comparing with the number `1` instead of the string `"1"`: every cell looks like 0.
+- Using the same list object for every row in `histograms` (changing `h` in place and appending it): all rows end up equal to the last one. Build a new list per row.
+- Crashing on `[]`: `grid[0]` does not exist; handle the empty grid first.

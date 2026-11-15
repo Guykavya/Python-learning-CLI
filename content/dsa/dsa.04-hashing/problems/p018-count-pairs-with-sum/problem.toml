@@ -1,0 +1,6 @@
+id = "dsa.04.p018"
+title = "Count the pairs with a given sum"
+tier = "applied"
+kind = "code"
+topics = ["two sum", "counting pairs", "frequency table"]
+minutes = 30

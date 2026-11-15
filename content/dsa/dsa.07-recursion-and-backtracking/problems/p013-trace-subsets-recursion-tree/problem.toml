@@ -1,0 +1,7 @@
+id = "dsa.07.p013"
+title = "Trace: the recursion tree of subsets"
+tier = "applied"
+kind = "trace"
+topics = ["subsets", "recursion tree", "preorder"]
+minutes = 15
+assessment = "trace"

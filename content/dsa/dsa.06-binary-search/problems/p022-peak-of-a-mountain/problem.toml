@@ -1,0 +1,6 @@
+id = "dsa.06.p022"
+title = "Peak of a mountain (interactive)"
+tier = "applied"
+kind = "code"
+topics = ["peak finding", "interactive", "slope test"]
+minutes = 35

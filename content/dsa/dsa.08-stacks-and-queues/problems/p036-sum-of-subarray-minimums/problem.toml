@@ -1,0 +1,6 @@
+id = "dsa.08.p036"
+title = "Sum of subarray minimums"
+tier = "challenge"
+kind = "code"
+topics = ["monotonic stack", "contribution technique", "equal values", "modulo"]
+minutes = 45

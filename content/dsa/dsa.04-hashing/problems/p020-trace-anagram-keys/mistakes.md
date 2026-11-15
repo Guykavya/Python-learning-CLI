@@ -1,0 +1,4 @@
+- Calling `google` and `gogole` different. Both have g x2, o x2, l, e: same key `eggloo`.
+- Writing the key with commas or brackets. It is a plain string such as `eilnst`.
+- Printing group lengths in dictionary order instead of sorted: the final `sorted(...)` line is sorted.
+- Writing `{6: 5, 3: 2}` in the wrong order. `counts` is built from the word list in order: first `listen` (length 6).

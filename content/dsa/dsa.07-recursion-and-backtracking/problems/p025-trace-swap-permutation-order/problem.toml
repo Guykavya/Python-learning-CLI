@@ -1,0 +1,6 @@
+id = "dsa.07.p025"
+title = "Trace: the order of swap-based permutations"
+tier = "deep"
+kind = "trace"
+topics = ["permutations", "swap method", "order"]
+minutes = 25

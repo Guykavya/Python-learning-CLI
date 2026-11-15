@@ -1,0 +1,7 @@
+id = "shared.01.p027"
+title = "HAVING: prolific authors"
+tier = "drill"
+kind = "code"
+topics = ["HAVING", "GROUP BY", "COUNT"]
+minutes = 12
+difficulty = 2

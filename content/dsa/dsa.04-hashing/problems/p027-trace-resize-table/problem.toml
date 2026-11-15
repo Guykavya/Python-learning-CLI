@@ -1,0 +1,6 @@
+id = "dsa.04.p027"
+title = "Trace a table that resizes"
+tier = "deep"
+kind = "trace"
+topics = ["hash table", "load factor", "resizing", "rehashing", "trace"]
+minutes = 25

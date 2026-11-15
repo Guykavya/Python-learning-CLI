@@ -1,0 +1,4 @@
+- Comparing `a[mid]` with `a[mid - 1]` and getting stuck at `lo = mid`: the half-open "first True" template wants the neighbour on the right.
+- Using `hi = mid - 1`: you may discard the peak.
+- Scanning to find the maximum: breaks the question limit for large `n`.
+- Printing the peak value instead of its index.

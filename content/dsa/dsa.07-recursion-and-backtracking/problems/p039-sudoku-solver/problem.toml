@@ -1,0 +1,6 @@
+id = "dsa.07.p039"
+title = "Sudoku solver"
+tier = "challenge"
+kind = "code"
+topics = ["sudoku", "backtracking", "constraint sets"]
+minutes = 60

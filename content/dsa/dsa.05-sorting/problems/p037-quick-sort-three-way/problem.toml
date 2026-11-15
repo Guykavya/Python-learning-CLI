@@ -1,0 +1,6 @@
+id = "dsa.05.p037"
+title = "Implement quick sort with three-way partition"
+tier = "challenge"
+kind = "code"
+topics = ["quick sort", "three-way partition", "random pivot", "duplicates"]
+minutes = 60

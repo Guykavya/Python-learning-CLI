@@ -1,0 +1,7 @@
+id = "shared.02.p007"
+title = "Flatten one order into a typed row"
+tier = "drill"
+kind = "code"
+topics = ["transform", "flattening JSON", "Decimal", "datetime", "timezone", "normalising strings"]
+minutes = 25
+difficulty = 2

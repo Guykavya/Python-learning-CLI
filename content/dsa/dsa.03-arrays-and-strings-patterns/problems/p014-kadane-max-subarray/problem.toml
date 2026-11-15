@@ -1,0 +1,6 @@
+id = "dsa.03.p014"
+title = "Maximum subarray sum (Kadane)"
+tier = "drill"
+kind = "code"
+topics = ["Kadane", "maximum subarray", "running best"]
+minutes = 20

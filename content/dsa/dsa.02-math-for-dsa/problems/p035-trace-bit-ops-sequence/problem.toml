@@ -1,0 +1,6 @@
+id = "dsa.02.p035"
+title = "Trace a bit operations sequence"
+tier = "deep"
+kind = "trace"
+topics = ["bit operations", "negative numbers", "xor swap", "shifts"]
+minutes = 35

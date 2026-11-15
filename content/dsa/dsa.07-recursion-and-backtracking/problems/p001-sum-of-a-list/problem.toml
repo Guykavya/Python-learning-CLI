@@ -1,0 +1,6 @@
+id = "dsa.07.p001"
+title = "Sum of a list, recursively"
+tier = "drill"
+kind = "code"
+topics = ["recursion", "base case", "index recursion"]
+minutes = 15

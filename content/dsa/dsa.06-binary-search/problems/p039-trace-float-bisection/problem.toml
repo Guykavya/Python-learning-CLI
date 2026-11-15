@@ -1,0 +1,6 @@
+id = "dsa.06.p039"
+title = "Trace a bisection on real numbers"
+tier = "deep"
+kind = "trace"
+topics = ["floats", "bisection", "trace"]
+minutes = 20

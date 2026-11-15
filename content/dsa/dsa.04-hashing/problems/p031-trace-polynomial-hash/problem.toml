@@ -1,0 +1,6 @@
+id = "dsa.04.p031"
+title = "Trace a polynomial string hash"
+tier = "deep"
+kind = "trace"
+topics = ["string hashing", "polynomial hash", "modular arithmetic", "collisions", "trace"]
+minutes = 25

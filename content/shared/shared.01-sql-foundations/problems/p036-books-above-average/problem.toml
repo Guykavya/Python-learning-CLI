@@ -1,0 +1,7 @@
+id = "shared.01.p036"
+title = "Books above the average price"
+tier = "drill"
+kind = "code"
+topics = ["scalar subquery", "AVG"]
+minutes = 15
+difficulty = 2

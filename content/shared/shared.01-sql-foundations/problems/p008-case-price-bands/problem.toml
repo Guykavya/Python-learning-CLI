@@ -1,0 +1,7 @@
+id = "shared.01.p008"
+title = "CASE: price bands"
+tier = "drill"
+kind = "code"
+topics = ["CASE", "WHEN", "expressions", "boundaries"]
+minutes = 15
+difficulty = 2

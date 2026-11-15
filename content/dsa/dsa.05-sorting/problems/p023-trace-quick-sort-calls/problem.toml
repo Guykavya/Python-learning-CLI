@@ -1,0 +1,6 @@
+id = "dsa.05.p023"
+title = "Trace the quick sort recursion"
+tier = "applied"
+kind = "trace"
+topics = ["quick sort", "recursion", "partition", "trace"]
+minutes = 30

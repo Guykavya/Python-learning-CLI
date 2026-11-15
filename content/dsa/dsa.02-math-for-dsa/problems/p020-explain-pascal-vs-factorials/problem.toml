@@ -1,0 +1,6 @@
+id = "dsa.02.p020"
+title = "Which nCr method, and when?"
+tier = "applied"
+kind = "explain"
+topics = ["nCr", "Pascal's triangle", "factorial tables", "choosing a method"]
+minutes = 20

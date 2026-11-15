@@ -1,0 +1,6 @@
+id = "dsa.03.p048"
+title = "Minimum window substring"
+tier = "deep"
+kind = "code"
+topics = ["sliding window", "variable window", "dictionary counts", "strings", "tie-breaking"]
+minutes = 45

@@ -1,0 +1,6 @@
+id = "dsa.02.p008"
+title = "Fast power modulo m"
+tier = "drill"
+kind = "code"
+topics = ["modular exponentiation", "binary exponentiation", "modulo"]
+minutes = 25

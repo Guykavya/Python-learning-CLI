@@ -1,0 +1,5 @@
+- Using `>` instead of `>=`: `8 - 3 - 2` becomes `8 3 2 - -`, which means `8 - (3 - 2) = 7`.
+- Forgetting `ops[-1] in PREC` (or an equivalent check): the loop pops a `(` into the output, or compares it with a `KeyError`.
+- Forgetting to discard the `(` at the `)`: brackets appear in the output.
+- Forgetting the final loop that empties the stack: trailing operators are lost.
+- Comparing precedence the wrong way round (`<=`): `3 + 4 * 2` turns into `3 4 + 2 *`.

@@ -1,0 +1,4 @@
+- Putting the second `5` in the chain again. `put` checks `key in buckets[i]` first.
+- Using `key // 4` or `key % 5`: the bucket is `key % 4`.
+- Counting `steps` for a missing key as 0. A miss still walks the whole chain: 3 steps for bucket 0.
+- Forgetting that the printed chain order is insertion order within the bucket.

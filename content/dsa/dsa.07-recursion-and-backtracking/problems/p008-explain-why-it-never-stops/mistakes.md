@@ -1,0 +1,4 @@
+- Labelling snippet 2 as A: it does have a base case; the problem is that odd inputs skip it.
+- Labelling snippet 4 as broken because "`n // 10` can be 0": 0 is below 10, so it is a base case.
+- Thinking `xs[:]` is "the rest of the list": `[:]` is a full copy; the rest is `xs[1:]`.
+- Saying "Python freezes" or "runs forever": CPython raises `RecursionError` after about 1000 nested calls.

@@ -1,0 +1,5 @@
+- Returning the phase-1 meeting value: it is inside the cycle but usually not the entrance.
+- Starting the walk at `nums[0]` for one pointer and `0` for the other: both must start at the same node.
+- Phase 1 written as `while slow != fast` with both starting at `0`: the loop never runs. Move first, then compare (or start them one step apart consistently).
+- Sorting `nums` or flipping signs to mark visited values: correct answers, but the array must not change.
+- Using a set or `[0] * (n + 1)` counts: `O(n)` memory; the memory test rejects it.

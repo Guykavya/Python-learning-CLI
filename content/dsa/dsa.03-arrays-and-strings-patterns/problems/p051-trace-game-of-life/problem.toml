@@ -1,0 +1,6 @@
+id = "dsa.03.p051"
+title = "Trace Game of Life neighbour counts"
+tier = "deep"
+kind = "trace"
+topics = ["matrix", "neighbours", "grid boundaries", "simulation", "trace"]
+minutes = 30

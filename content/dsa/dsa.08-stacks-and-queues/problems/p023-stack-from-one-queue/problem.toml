@@ -1,0 +1,6 @@
+id = "dsa.08.p023"
+title = "A stack from one queue"
+tier = "applied"
+kind = "code"
+topics = ["stack", "queue", "design", "rotation"]
+minutes = 25

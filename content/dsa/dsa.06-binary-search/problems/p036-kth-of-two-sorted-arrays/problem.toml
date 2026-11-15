@@ -1,0 +1,6 @@
+id = "dsa.06.p036"
+title = "Kth of two sorted arrays (interactive)"
+tier = "challenge"
+kind = "code"
+topics = ["partition search", "two arrays", "interactive"]
+minutes = 70

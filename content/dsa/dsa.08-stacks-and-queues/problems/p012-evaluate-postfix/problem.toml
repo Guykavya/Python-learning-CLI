@@ -1,0 +1,6 @@
+id = "dsa.08.p012"
+title = "Evaluate a postfix expression"
+tier = "drill"
+kind = "code"
+topics = ["stack", "postfix", "reverse Polish notation", "integer division"]
+minutes = 20

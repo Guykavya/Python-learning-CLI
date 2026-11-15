@@ -1,0 +1,6 @@
+id = "dsa.03.p052"
+title = "Longest subarray with sum k"
+tier = "deep"
+kind = "code"
+topics = ["prefix sums", "dictionary", "first occurrence", "negative numbers"]
+minutes = 35

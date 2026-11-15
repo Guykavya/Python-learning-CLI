@@ -1,0 +1,6 @@
+id = "dsa.02.p009"
+title = "Trace Python's mod and floor division"
+tier = "drill"
+kind = "trace"
+topics = ["modulo", "floor division", "negative numbers", "divmod"]
+minutes = 15

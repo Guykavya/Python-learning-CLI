@@ -1,0 +1,6 @@
+id = "dsa.06.p014"
+title = "Minimum in a rotated sorted array (interactive)"
+tier = "applied"
+kind = "code"
+topics = ["rotated array", "interactive", "binary search"]
+minutes = 35

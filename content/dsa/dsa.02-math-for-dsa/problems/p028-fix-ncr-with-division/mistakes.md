@@ -1,0 +1,6 @@
+- Replacing `//` with `/`. That makes a float, and floats lose digits beyond 2^53; remainders cannot be divided like that either.
+- Computing the inverse of `fact[r]` and of `fact[n - r]` separately without reducing the product: correct, but forgetting `% MOD` on the intermediate product can make the numbers grow (slower, still right).
+- Fixing the division but not the table size: the program passes every small test and crashes with `IndexError` on `n = 10^6`.
+- Fixing the table size but not `r > n`: `fact[n - r]` silently reads `fact[-2]` and prints a wrong nonzero number. No crash, no warning.
+- Using `pow(d, MOD - 2)` without the third argument: it computes a gigantic number and never finishes.
+- Taking the inverse of 0 (for example if `MOD` divides the denominator). Here `n < MOD`, so no factorial up to `n!` is divisible by `MOD`, and the inverse exists.

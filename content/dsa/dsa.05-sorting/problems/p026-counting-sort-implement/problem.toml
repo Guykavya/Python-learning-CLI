@@ -1,0 +1,6 @@
+id = "dsa.05.p026"
+title = "Implement counting sort"
+tier = "applied"
+kind = "code"
+topics = ["counting sort", "non-comparison sort", "range of values"]
+minutes = 30

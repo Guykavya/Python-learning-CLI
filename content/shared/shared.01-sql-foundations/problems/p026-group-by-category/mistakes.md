@@ -1,0 +1,4 @@
+- Selecting a column that is not in `GROUP BY` and not aggregated (`SELECT title, COUNT(*) ... GROUP BY category`). SQLite returns an arbitrary title; PostgreSQL refuses.
+- Rounding the price before averaging (`AVG(ROUND(price, 2))`). Round the result, not the inputs.
+- Forgetting `ORDER BY`. Group order is an accident of the engine, not a promise.
+- Using `COUNT(price)` instead of `COUNT(*)`. Same here, but it skips NULL prices, which is a different question.

@@ -1,0 +1,6 @@
+id = "dsa.09.p031"
+title = "Add two numbers stored as lists"
+tier = "applied"
+kind = "code"
+topics = ["linked list", "dummy node", "carry", "building a list"]
+minutes = 25

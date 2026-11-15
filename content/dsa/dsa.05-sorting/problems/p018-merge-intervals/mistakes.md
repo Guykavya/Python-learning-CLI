@@ -1,0 +1,5 @@
+- Writing `cr = r` instead of `max(cr, r)`: `[1, 10]` followed by `[2, 3]` would shrink the block to 3.
+- Using `l < cr`: touching intervals then stay separate, but the problem says they merge.
+- Not sorting: the one-pass sweep only works on intervals ordered by start.
+- Forgetting to output the last block after the loop.
+- An O(n^2) comparison of every pair: far too slow for 200000 intervals.

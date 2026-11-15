@@ -1,0 +1,4 @@
+- Treating the equal case like "smaller" (`hi = mid`): `[3, 3, 1, 3]` with `lo = 0, hi = 3, mid = 1` would discard the right part that contains the 1.
+- Treating the equal case like "greater" (`lo = mid + 1`): `[1, 1, 0, 1, 1]`... can skip the minimum when `mid` holds a copy of the minimum.
+- Using `a[lo] == a[mid] == a[hi]` and then scanning the whole range with `min`: allowed by the idea, but this problem bans `min` to make you handle it in the loop.
+- Expecting `O(log n)` in the worst case: with many equal values the loop must shrink by one at a time.

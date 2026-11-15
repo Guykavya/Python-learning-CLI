@@ -1,0 +1,5 @@
+- Restarting the window right after the repeat (`l = r`) instead of after the **old copy**. On `dvdf` that gives 2 (`df`), but the answer is 3 (`vdf`).
+- Using `if` instead of `while` to shrink. With a set, one removal may not take out the old copy of `s[r]`.
+- With the last-index method: setting `l = last[s[r]] + 1` without `max`. On `abba` the second `a` moves `l` back to 1 and reports `bba` (length 3).
+- Comparing with `>=`, which moves the answer to the **last** window of maximum length (`kew` instead of `wke`).
+- Updating the best before the window is valid again (before the shrinking loop finishes).

@@ -1,0 +1,5 @@
+- Using `<=` in the clash test: meetings that merely touch would be reported as a clash.
+- Not sorting first: checking neighbours in input order says nothing about clashes.
+- Comparing starts with starts or ends with ends instead of `start[i]` with `end[i-1]`.
+- Checking all pairs: 200000 meetings means 2 * 10^10 pairs.
+- Printing nothing or `yes` in lower case for `n = 0`.

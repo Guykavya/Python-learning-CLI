@@ -1,0 +1,6 @@
+id = "dsa.08.p020"
+title = "Min stack"
+tier = "applied"
+kind = "code"
+topics = ["stack", "design", "O(1) minimum", "augmented stack"]
+minutes = 25

@@ -1,0 +1,6 @@
+id = "dsa.02.p022"
+title = "Trace a gcd and lcm table"
+tier = "applied"
+kind = "trace"
+topics = ["gcd", "lcm", "zero", "trace"]
+minutes = 20

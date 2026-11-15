@@ -1,0 +1,4 @@
+- Fixing only one bug: the duplicates test and the "bigger than everything" test fail for different reasons.
+- Changing `while lo < hi` to `while lo <= hi` to patch the end case: with `hi = mid` that loops forever.
+- Special-casing `x > a[-1]` with an `if` before the loop: it hides bug 2 instead of fixing the range.
+- Replacing the loop by `bisect_left`: rejected here, since the exercise is about reading the template.

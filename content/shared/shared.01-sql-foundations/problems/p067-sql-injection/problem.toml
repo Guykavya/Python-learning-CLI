@@ -1,0 +1,7 @@
+id = "shared.01.p067"
+title = "Explain: SQL injection and what parameters cannot do"
+tier = "deep"
+kind = "explain"
+topics = ["SQL injection", "parameters", "f-strings", "identifiers", "sqlite3"]
+minutes = 30
+difficulty = 4

@@ -1,0 +1,4 @@
+- Forgetting that a `start` line prints even when no swap follows.
+- Choosing the child with the smaller value or the left child by default: the swap goes to the **larger** child.
+- Printing the line before the swap instead of after it.
+- Starting at index 5 (the last leaf): `range(n // 2 - 1, -1, -1)` starts at 2.

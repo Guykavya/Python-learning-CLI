@@ -1,0 +1,3 @@
+- Saying 'stable means the output is deterministic'. Every sort is deterministic; stable is about equal keys specifically.
+- Running the two passes in the wrong order: the last sort is the strongest key.
+- Thinking stability only matters for equal numbers. For plain integers it is invisible; it matters for records, where equal keys can still be told apart.

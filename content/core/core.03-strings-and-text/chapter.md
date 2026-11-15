@@ -66,6 +66,9 @@ Hello
 
 `len()` counts the characters. The empty string `""` has length 0. It is still a perfectly good string, just with nothing in it.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the Python string 'Hello' as a row of five boxes, one letter per box (H, e, l, l, o) with the position numbers 0 to 4 under them. Beside it draw the empty string '' as a row with zero boxes. Label them len('Hello') = 5 and len('') = 0. Then draw 'stop' and 'pots' as two separate rows, to show they have the same letters but are different strings because the order differs."
+
 Three facts shape everything else in this chapter:
 
 1. **A string is a sequence.** You can ask for the character at a position (indexing), a piece of it (slicing), and its length.
@@ -144,6 +147,9 @@ Aé🙂
 ```
 
 Look at the last line. `"a\nb"` is written with four symbols in the source code, but the string has only **3** characters: `a`, a newline, and `b`. The escape sequence `\n` is how you *write* one character; it is not two characters in the string.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw how Python reads the source text a, backslash, n, b (written as a\nb inside quotes). Top row: four boxes with the four symbols typed in the code. An arrow down to a bottom row of three boxes: 'a', one newline character drawn as a special symbol, and 'b'. Label the bottom row len = 3. Highlight that the two typed symbols backslash and n become ONE character."
 
 ### Under the hood
 
@@ -338,6 +344,9 @@ Each character in a string has a position number called an **index**. Counting s
 
 **Negative indices** count from the end. `-1` is the last character, `-2` the one before it. Python simply adds the length: `s[-1]` means `s[len(s) - 1]`.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the string 'Python' as six boxes with P, y, t, h, o, n. Put positive indexes 0 to 5 above the boxes and negative indexes -6 to -1 below them. Animate s[0], s[5], s[-1] and s[-6] one at a time: highlight the chosen box and show the result P, n, n, P. Also show s[-1] turning into s[len(s) - 1] = s[5] using 6 - 1."
+
 ```python
 s = "Python"
 print(s[0])
@@ -431,6 +440,9 @@ The best mental picture is to number the **gaps between** characters, not the ch
 ```
 
 `s[1:4]` is everything between gap 1 and gap 4: `yth`.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the string 'Python' with the cut lines (gaps) between letters numbered 0 to 6 above, and -6 to -1 below. Animate s[1:4]: put one marker at gap 1 and another at gap 4, shade the letters between them (y, t, h), and show the result 'yth'. Then show s[:2] = 'Py', s[2:] = 'thon' and s[-3:] = 'hon'. Make clear that the stop gap is not included."
 
 ```python
 s = "Python"
@@ -537,6 +549,9 @@ noh
 ```
 
 `s[::-1]` is the standard way to reverse a string. `s[4:1:-1]` starts at index 4 (`o`), walks left, and stops before index 1: `oht`. The last one is empty: starting at 1 and walking left you can never reach 4.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the string 'Python' as six boxes with indexes 0 to 5. Animate three slices with a negative step as arrows moving LEFT. First s[::-1] visits n, o, h, t, y, P, giving 'nohtyP'. Then s[4:1:-1] starts at index 4 ('o'), walks left through 'h' and 't', and stops before index 1, giving 'oht'. Last, s[1:4:-1] starts at 1, cannot walk left to 4, and gives an empty string ''."
 
 A step of 0 is not allowed:
 
@@ -704,6 +719,9 @@ apple pear
 
 Two surprises live here. Every uppercase ASCII letter (codes 65 to 90) comes before every lowercase one (97 to 122), so `"Zebra" < "apple"`. And digit strings are compared as text, so `"10" < "9"` because `"1"` comes before `"9"`. Convert to `int` if you mean numbers. To compare text without caring about case, compare `a.casefold() < b.casefold()`.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a number line of character codes for comparing strings in Python. Show uppercase letters A to Z with codes 65 to 90 on the left, then lowercase a to z with codes 97 to 122 on the right. Use it to show why 'Zebra' < 'apple' is True (Z is 90, a is 97). Beside it, compare '10' and '9' character by character: '1' (49) is less than '9' (57), so '10' < '9' is True."
+
 ### Under the hood
 
 `len(s)` is instant: the length is stored inside the string object. `in` scans the string; CPython uses a clever search algorithm that is usually very fast, but in the worst case its time grows with the length of the text.
@@ -761,6 +779,9 @@ ASHA
 ```
 
 The first call built `"ASHA"` and threw it away, because nothing kept it. You must store the result.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two memory pictures for Python. Picture 1: name = 'asha' is a box with the name 'name' as an arrow pointing to the string 'asha'. Then name.upper() creates a NEW string 'ASHA' that nothing points to (draw it fading away), while 'name' still points to 'asha'. Picture 2: name = name.upper() moves the arrow so 'name' points to 'ASHA'. Label: strings never change, new ones are built."
 
 ### Why immutable?
 
@@ -1173,6 +1194,9 @@ Output:
 ```
 
 With an explicit separator, every separator makes a cut, so two separators in a row give an empty piece, and a separator at an end gives an empty piece at that end. That is exactly what you want for formats like CSV where empty fields matter.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate the Python call ',a,'.split(',') and 'a,,b'.split(','). Draw each string as a row of characters, with a scissors mark at every comma. After cutting, show the pieces as a list in square brackets. For 'a,,b' show the pieces 'a', '' and 'b', with the empty piece highlighted as an empty box between the two commas. For ',a,' show '', 'a', '' with the empty pieces at both ends."
 
 ### split() with no argument
 
@@ -1642,6 +1666,9 @@ Output:
 ```
 
 Like the padding methods, width never cuts. If the value is longer, it is shown in full.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a row of 10 character slots for each of these Python f-strings, with the text between square brackets. f"[{'cat':10}]" gives cat then 7 spaces. f"[{'cat':>10}]" gives 7 spaces then cat. f"[{'cat':^10}]" gives 3 spaces, cat, 4 spaces. f"[{42:10}]" gives 8 spaces then 42. Colour the filled slots and the padding differently. Add a last row where 'toolong' with width 3 overflows the slots."
 
 ### Fill
 
@@ -2155,6 +2182,9 @@ f0 9f 99 82
 - ASCII text is already valid UTF-8, byte for byte. Old English files just work.
 - The first byte of a character tells you how many bytes follow, and continuation bytes look different from first bytes, so a program can find character boundaries anywhere in a file.
 - No byte of a multi-byte character ever looks like an ASCII character, so searching for `/` or `\n` in raw bytes is safe.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw how UTF-8 stores four characters as bytes. Show 'A' as 1 byte, 'é' as 2 bytes, '₹' as 3 bytes (e2 82 b9) and the emoji 🙂 as 4 bytes (f0 9f 99 82). Draw each character on the left and a row of byte boxes on the right, each box showing its hex value where known. Use a colour for the first byte and another for the following bytes. Label how many bytes each character needs."
 
 ### Other encodings
 

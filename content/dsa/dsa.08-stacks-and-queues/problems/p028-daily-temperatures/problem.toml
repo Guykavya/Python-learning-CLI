@@ -1,0 +1,6 @@
+id = "dsa.08.p028"
+title = "Daily temperatures"
+tier = "applied"
+kind = "code"
+topics = ["monotonic stack", "distance to next greater", "time limit"]
+minutes = 20

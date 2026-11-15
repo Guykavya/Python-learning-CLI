@@ -1,0 +1,7 @@
+id = "shared.01.p056"
+title = "Percent of category and of everything"
+tier = "applied"
+kind = "code"
+topics = ["SUM OVER", "PARTITION BY", "percent of total", "ROUND"]
+minutes = 25
+difficulty = 3

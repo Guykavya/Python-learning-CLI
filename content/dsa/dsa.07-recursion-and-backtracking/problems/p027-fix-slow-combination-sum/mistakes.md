@@ -1,0 +1,4 @@
+- Removing `counter.tick()`: the tests then see zero calls and fail; keep it as the first line of `go`.
+- Sorting but still checking `remaining < 0` only at the top of `go`: the dead calls are still made.
+- Using `break` without sorting: the loop may stop before a smaller candidate that would fit, so answers go missing.
+- Changing `go(i, ...)` to `go(i + 1, ...)` while editing: reuse is then lost and `[2, 2, 3]` disappears.

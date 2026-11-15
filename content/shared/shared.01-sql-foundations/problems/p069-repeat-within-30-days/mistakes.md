@@ -1,0 +1,7 @@
+- Using `MIN(order_id)` as the first order: ids are not always in date order.
+- Counting orders instead of customers: a customer with two quick follow-up orders counted twice. Use `DISTINCT` on the customer.
+- `BETWEEN 0 AND 30` counts a second order on the same day; the statement says it must be a later date.
+- `< 30` instead of `<= 30`: the boundary day (exactly 30) is included.
+- Dividing by all rows of `customers`: customers who never ordered must not be in the base.
+- Integer division: `repeaters / customers` gives 0. Use `100.0 *`.
+- Comparing the *second* order with the *third* instead of with the first.

@@ -1,0 +1,6 @@
+id = "dsa.02.p015"
+title = "Divisor counts for many queries"
+tier = "applied"
+kind = "code"
+topics = ["smallest prime factor", "sieve", "divisor count", "factorisation"]
+minutes = 30

@@ -1,0 +1,4 @@
+- Using `range(1, n)`. That leaves out `n` itself, which is always a divisor, so every answer is one too small.
+- Using `range(n)`. Then `d = 0` and `n % 0` crashes with `ZeroDivisionError`.
+- Testing `n // d == 0` or `d % n == 0`. The check is `n % d == 0`: remainder of `n` divided by `d`.
+- In the square-root version, counting `d` and `n // d` as two divisors when they are equal. 36 has the divisor 6 once, not twice.

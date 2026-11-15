@@ -1,0 +1,4 @@
+- Wrapping at slot 6 by setting the index to 0 without `% M`: the probe after 6 is slot 0.
+- Counting the home slot as a probe only when taken. The first slot tried is always listed.
+- Reporting `find(1)` as found after one step: slot 1 holds 8, not 1. Searching continues until an empty slot.
+- Writing the table as a dictionary. It is a list of 7 cells, `None` for empty.

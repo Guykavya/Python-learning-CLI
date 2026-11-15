@@ -1,0 +1,11 @@
+- `sum l r` as `P[r] - P[l]`. That drops `a[l]`; the formula is `P[r] - P[l - 1]` with `P[0] = 0`.
+- Answering `sum` with `sum(a[l - 1:r])`. Correct, but 200000 such commands on 200000 readings is far too slow.
+- Re-summing each window with `sum(a[i:i + k])` in `best` or `above`. For `k = 100000` that is about 10^10 steps.
+- Starting Kadane's `best` at 0 in `maxsub`. A baseline above every reading must give a negative answer.
+- Writing `>= S` instead of `> S` as the shrink condition in `longest_le`, or `>` instead of `>=` in `above`. Read each comparison in the table again.
+- No `left <= right` guard in `longest_le`: `longest_le -1` loops past the end and crashes.
+- Forgetting to drop the front of the deque in `maxwin`: an old maximum stays forever.
+- Checking `l >= 1` and `r <= n` but not `l <= r`. `sum 6 4` must be an error, not a negative number.
+- Using `isdigit()` on the whole argument. `-3` is a valid baseline but `"-3".isdigit()` is `False`.
+- Lower-casing the line before checking the name (`SUM` must be an error), or ignoring extra arguments.
+- Crashing on a blank line (`parts[0]` of an empty list). Check `if not parts` first.

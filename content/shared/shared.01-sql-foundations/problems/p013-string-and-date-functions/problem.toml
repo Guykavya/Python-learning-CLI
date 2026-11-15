@@ -1,0 +1,7 @@
+id = "shared.01.p013"
+title = "String and date functions"
+tier = "applied"
+kind = "code"
+topics = ["strftime", "substr", "length", "julianday", "date functions"]
+minutes = 20
+difficulty = 3

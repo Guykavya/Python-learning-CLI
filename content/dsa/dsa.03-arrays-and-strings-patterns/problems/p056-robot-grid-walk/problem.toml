@@ -1,0 +1,6 @@
+id = "dsa.03.p056"
+title = "Robot walk on a grid with walls"
+tier = "challenge"
+kind = "code"
+topics = ["matrix", "simulation", "direction arrays", "grid boundaries", "set"]
+minutes = 45

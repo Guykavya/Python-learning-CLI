@@ -1,0 +1,4 @@
+- Returning `s[0] + reverse(s[1:])`: that rebuilds the string in the same order.
+- A base case only for one character (`len(s) == 1`): the empty string then fails with `IndexError`.
+- Forgetting `return` in front of the recursive expression.
+- Thinking unicode needs special care: Python strings are sequences of characters, so `"ï"` is one item like any other.

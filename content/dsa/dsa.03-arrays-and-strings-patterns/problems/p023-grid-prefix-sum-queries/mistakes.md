@@ -1,0 +1,5 @@
+- Adding back `P[r1][c1]` instead of `P[r1-1][c1-1]`. The removed strips end just above row `r1` and just left of column `c1`.
+- Forgetting to add the corner back. It was subtracted twice, so the sum is too small by that corner block.
+- Building `P` without the zero row and column, then indexing `P[r1-1]` with `r1 = 1`. Python reads `P[-1]`, the **last** row, and silently gives a wrong answer.
+- Mixing 0-based and 1-based indices: `grid[i][j]` while `i` runs from 1.
+- Summing the rectangle cell by cell for each query. Correct, but far too slow for 200000 large queries.

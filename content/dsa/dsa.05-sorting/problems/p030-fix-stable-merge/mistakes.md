@@ -1,0 +1,4 @@
+- `<` instead of `<=` when comparing keys: on ties the right element goes first, so equal keys swap order (unstable).
+- Copying only `left[i:]` after the loop: when `left` finishes first, the rest of `right` is lost.
+- `a[mid + 1:]` skips the middle element: use `a[mid:]`.
+- Fixing one bug and thinking you are done: the tests find all three, so run them again after each change.

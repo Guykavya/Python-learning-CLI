@@ -1,0 +1,6 @@
+id = "dsa.03.p029"
+title = "Count anagram windows"
+tier = "applied"
+kind = "code"
+topics = ["sliding window", "fixed window", "letter counts", "strings"]
+minutes = 30

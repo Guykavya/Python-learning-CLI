@@ -1,0 +1,6 @@
+id = "dsa.03.p049"
+title = "Explain why the difference array works"
+tier = "deep"
+kind = "explain"
+topics = ["difference array", "prefix sums", "range updates"]
+minutes = 25

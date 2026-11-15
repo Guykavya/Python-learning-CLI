@@ -1,0 +1,5 @@
+- Using `b.price` instead of `oi.unit_price`: the sale price differs from the current price (see dataset B).
+- Forgetting `ROUND`: `3 * 9.99` shows as `29.97` or `29.970000000000002`, depending on the value.
+- Joining only two tables and trying to read `status` from `order_items` (it is in `orders`).
+- Putting the status test in `ON` of an inner join: works, but the habit hurts when you later switch to LEFT JOIN (see p021).
+- Sorting only by `order_id`; the second key `title` is needed for a fixed order inside an order.

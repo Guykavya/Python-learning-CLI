@@ -1,0 +1,6 @@
+id = "dsa.08.p039"
+title = "Rotting oranges (multi-source BFS)"
+tier = "challenge"
+kind = "code"
+topics = ["BFS", "multi-source BFS", "levels", "grid"]
+minutes = 35

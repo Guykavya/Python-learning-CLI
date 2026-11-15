@@ -1,0 +1,6 @@
+id = "dsa.06.p033"
+title = "Trace a doubling search"
+tier = "deep"
+kind = "trace"
+topics = ["exponential search", "doubling", "trace"]
+minutes = 25

@@ -1,0 +1,5 @@
+- Writing the warmer temperature instead of the distance.
+- Using `<=`: a day with the same temperature is not warmer.
+- Leaving `-1` for "never": this problem uses `0`.
+- Storing temperatures on the stack: then you cannot compute the distance.
+- A double loop: correct but `O(n^2)`, too slow for 100,000 days.

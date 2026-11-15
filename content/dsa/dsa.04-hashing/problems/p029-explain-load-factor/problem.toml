@@ -1,0 +1,6 @@
+id = "dsa.04.p029"
+title = "Explain: load factor and resizing"
+tier = "deep"
+kind = "explain"
+topics = ["load factor", "resizing", "amortised cost", "open addressing", "reasoning"]
+minutes = 30

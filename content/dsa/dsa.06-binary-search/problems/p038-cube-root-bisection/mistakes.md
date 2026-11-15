@@ -1,0 +1,4 @@
+- Using `lo = mid + 1` on floats: that jumps over the answer. For reals `lo = mid` and `hi = mid` are correct.
+- Looping `while hi - lo > 1e-18`: at `x` near 10^5 the floats cannot get that close; the loop never ends.
+- Using `//` instead of `/` for the midpoint, which rounds down to whole numbers.
+- Printing with `print(x)`: that shows too many or too few digits, or scientific notation. Use `f"{x:.6f}"`.

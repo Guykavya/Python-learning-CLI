@@ -1,0 +1,6 @@
+id = "dsa.05.p003"
+title = "Trace bubble sort passes"
+tier = "drill"
+kind = "trace"
+topics = ["bubble sort", "swaps", "trace"]
+minutes = 15

@@ -1,0 +1,5 @@
+- Printing the state after the pass instead of before. The `print` is the first line in the loop body.
+- Forgetting that `base` is squared on **every** pass, even when the bit is 0.
+- Forgetting the modulus: writing `6561` instead of `561` (`6561 % 1000`). Reduce after each multiplication.
+- Using `exp / 2`. The program uses `>> 1`, which is floor division by 2: 13 becomes 6, 3 becomes 1, 1 becomes 0.
+- Expecting a line for `power(7, 0, 5)`. With `exp = 0` the loop body never runs.

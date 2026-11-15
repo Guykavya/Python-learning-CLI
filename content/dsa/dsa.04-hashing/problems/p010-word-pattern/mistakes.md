@@ -1,0 +1,4 @@
+- Using `zip` without first comparing lengths: `zip` stops at the shorter side, so `ab` vs `dog cat fish` looks fine.
+- Only checking letter -> word. `dog dog dog dog` against `abba` passes that rule alone.
+- Splitting the pattern with `.split()`: the pattern has no spaces, so iterate its characters directly.
+- Comparing the **sets** of letters and words: counts of distinct items match for `abba` and `dog cat cat fish`.

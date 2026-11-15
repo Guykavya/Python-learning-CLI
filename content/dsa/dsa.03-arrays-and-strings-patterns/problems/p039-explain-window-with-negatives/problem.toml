@@ -1,0 +1,6 @@
+id = "dsa.03.p039"
+title = "Explain why the window breaks with negatives"
+tier = "applied"
+kind = "explain"
+topics = ["sliding window", "negative numbers", "prefix sums", "monotonicity", "choosing a pattern"]
+minutes = 25

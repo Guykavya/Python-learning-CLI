@@ -1,0 +1,6 @@
+- Overwriting `first[pre] = i` every time. The dictionary then holds the **last** index, which gives the shortest subarray, not the longest.
+- Forgetting `first[0] = 0` before the loop. Subarrays that start at position 1 are never found.
+- Using `i - j + 1` as the length. With prefix indices, `P[i] - P[j]` is the sum of the `i - j` elements `a[j..i-1]`: no `+ 1`.
+- Using a sliding window. It only works when every value is positive; here values can be negative.
+- Trying every start with an inner loop: O(n^2), which times out at 200000.
+- Printing -1 when there is no subarray. The output for "none" is 0.

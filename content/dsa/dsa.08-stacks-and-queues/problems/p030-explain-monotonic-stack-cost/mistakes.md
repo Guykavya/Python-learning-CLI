@@ -1,0 +1,4 @@
+- Claiming the `while` loop "runs only once or twice on average" without a proof: the argument must hold for **every** input, so count pops.
+- Saying "each element is popped exactly once": some are never popped (they stay with `-1`). It is **at most** once.
+- Concluding `O(n log n)` because "the stack is sorted": nothing is searched; the order only explains where the pops happen.
+- Mixing up time and memory: the stack can hold `n` items even though the time is linear.

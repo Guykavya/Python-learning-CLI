@@ -1,0 +1,9 @@
+- `row[column]` instead of `row.get(column)`: a missing key raises `KeyError` instead of counting as null.
+- `if not row.get(column)` to find nulls. That counts `0`, `Decimal("0")` and `""` as missing.
+- Dividing by `len(rows)` without guarding the empty batch: `ZeroDivisionError` on the quiet day the source sent nothing.
+- Listing a duplicate id once per extra copy (`[9, 9, 3]`). Each duplicated id appears once, sorted.
+- Treating `None` ids as duplicates of each other. Missing ids are a null problem; report them in the null rate.
+- `low < amount < high`: the ends are allowed, so `0` would be wrongly reported.
+- Using the last row's `updated_at` instead of the maximum. Rows are not sorted by time.
+- Calling `datetime.now()` inside the function. The result then depends on when the test runs; always take `now` from the caller.
+- `max(times)` with an empty list: `ValueError`.

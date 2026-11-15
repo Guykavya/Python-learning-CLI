@@ -1,0 +1,4 @@
+- Changing `pop` to never remove from `mins`: then the minimum can never go back up after the smallest value leaves.
+- Changing `pop` to `if x < self.mins[-1]`: the popped value can never be smaller than the minimum, so `mins` is never cleaned up.
+- Pushing every value onto `mins` (or `min(x, mins[-1])` every time): correct, but it throws away the memory saving that the design wanted; the tests check that `mins` stays short.
+- Rescanning `items` in `get_min`: correct but `O(n)`.

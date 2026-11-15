@@ -1,0 +1,9 @@
+tea 1
+ate 1
+to 2
+at 2
+tan 2
+{3: ['tea', 'ate', 'tan'], 2: ['to', 'at']}
+{'m': 1, 'i': 4, 's': 4, 'p': 2}
+0 5
+False 5

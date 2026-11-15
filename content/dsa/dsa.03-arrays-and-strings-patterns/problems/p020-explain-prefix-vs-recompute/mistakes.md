@@ -1,0 +1,5 @@
+- Saying B is "O(1)" in total. Building `p` is O(n); only each **question** is O(1).
+- Saying A is O(n) because one `sum` is O(n): there are `q` of them.
+- Explaining the formula with `p[r] - p[l]`. That drops position `l`.
+- Saying prefix sums cost no memory. They need `n + 1` extra cells (unless you overwrite `a`, which loses the original).
+- Missing the limit: prefix sums assume the array does not change between questions.

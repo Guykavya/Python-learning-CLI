@@ -1,0 +1,4 @@
+- Stopping when both lists end and forgetting the final carry: `5 + 5` gives `[0]` instead of `[0, 1]`.
+- Stopping when the **shorter** list ends: the rest of the longer number is lost.
+- Writing the sum into the nodes of `a`: the inputs must not change (and `a` may be too short).
+- Using `total % 10` but forgetting `carry = total // 10` (or the other way round).

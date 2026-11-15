@@ -1,0 +1,6 @@
+id = "dsa.05.p013"
+title = "Trace the Lomuto partition"
+tier = "drill"
+kind = "trace"
+topics = ["quick sort", "partition", "Lomuto", "trace"]
+minutes = 20

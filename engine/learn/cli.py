@@ -3,6 +3,10 @@
 from __future__ import annotations
 
 import argparse
+import contextlib
+import importlib.util
+import io
+import os
 import shutil
 import sqlite3
 import subprocess
@@ -10,7 +14,7 @@ import sys
 from datetime import date, datetime, timedelta
 from pathlib import Path
 
-from learn import completion, config, content, db, gitsnap, model, paths, progress, reader, reset, runner, scan, sync, ui
+from learn import chapters, completion, config, content, db, doctor, gitsnap, model, paths, progress, reader, reset, runner, scan, sync, ui
 from learn.syllabus import Syllabus
 from learn.syllabus import load as load_syllabus
 
@@ -19,6 +23,34 @@ EXPLAIN_MIN_WORDS = 30
 EXPLAIN_RATING_QUALITY = {1: 0.3, 2: 0.7, 3: 1.0}
 STATUS_ICON = {"mastered": "★", "in-progress": "◐", "not-started": "○", "no-content": "·"}
 KIND_FILE = {"code": "solution.py", "trace": "answer.txt", "explain": "answer.md"}
+
+_force_plain = False   # set by the global --plain flag for one run
+_warned_no_textual = False
+
+
+def _is_terminal() -> bool:
+    return sys.stdin.isatty() and sys.stdout.isatty()
+
+
+def ui_mode(cfg: dict | None = None) -> str:
+    """"tui" only when it is wanted AND possible; otherwise "plain".
+
+    Wanted: `[ui] mode = "tui"` in config.toml, or LEARN_UI=tui. `learn --plain` or LEARN_UI=plain wins.
+    Possible: a real terminal (not a pipe) and the optional Textual package installed.
+    """
+    global _warned_no_textual
+    if _force_plain:
+        return "plain"
+    mode = os.environ.get("LEARN_UI") or (cfg or config.load()).get("ui", {}).get("mode", "plain")
+    if mode != "tui" or not _is_terminal():
+        return "plain"
+    if importlib.util.find_spec("textual") is None:
+        if not _warned_no_textual:
+            _warned_no_textual = True
+            print(ui.dim('  [ui] mode is "tui" but Textual is not installed, so this run is plain. Install it: '
+                         '.venv/bin/python -m pip install -e ".[tui]"'))
+        return "plain"
+    return "tui"
 
 
 class UserError(Exception):
@@ -308,6 +340,16 @@ def cmd_start(args: argparse.Namespace) -> None:
     db.mark_active(conn)
     conn.commit()
 
+    if not getattr(args, "no_tui", False) and ui_mode(cfg) == "tui":
+        try:
+            from learn import workspace
+        except ImportError:
+            workspace = None  # Textual or Rich broke: fall through to the plain screen below
+        if workspace is not None:
+            if want_editor(args, cfg):
+                open_in_editor(work / "problem.md", main_file)
+            return workspace.run(prob.id)
+
     label = "REVIEW  " if is_review else ""
     ui.heading(f"{label}{prob.id}  {prob.title}")
     print(ui.dim(f"{prob.tier} · {prob.kind} · ~{prob.minutes} min · topics: {', '.join(prob.topics)}"))
@@ -518,6 +560,7 @@ def cmd_stuck(args: argparse.Namespace) -> None:
         "I am learning Python and I am stuck on a practice problem.",
         "Please act as a tutor. Do NOT give me the full solution or full code.",
         "Ask me one guiding question or give one small hint about what I am missing, then stop.",
+        "If a picture would help me see it (a small diagram, a table, or a step-by-step trace of my code with the values at each step), include one.",
         "",
         "## Problem",
         prob.read("problem.md").strip(),
@@ -544,6 +587,27 @@ def cmd_stuck(args: argparse.Namespace) -> None:
     conn.commit()
 
 
+def cmd_work(args: argparse.Namespace) -> None:
+    """Full-screen workspace for one problem (optional Textual extra)."""
+    try:
+        from learn import workspace
+    except ImportError:
+        raise UserError(
+            "The workspace needs the optional Textual package. Install it once with:\n"
+            '  .venv/bin/python -m pip install -e ".[tui]"   (Windows: .venv\\Scripts\\python.exe)\n'
+            "Everything it does also works as plain commands: learn check, learn hint, learn solution."
+        ) from None
+    if not sys.stdin.isatty() or not sys.stdout.isatty():
+        raise UserError("The workspace is full-screen: run it in a terminal (not through a pipe).")
+    conn, _, _ = ctx()
+    prob = resolve_problem(conn, args.problem)
+    conn.close()
+    # Same as `learn start`: creates your file, restarts the session timer, turns a due problem into a review.
+    with contextlib.redirect_stdout(io.StringIO()):
+        cmd_start(argparse.Namespace(problem=prob.id, review=args.review, code=False, no_tui=True))
+    workspace.run(prob.id)
+
+
 def _clipboard(text: str) -> bool:
     for cmd in (["wl-copy"], ["xclip", "-selection", "clipboard"], ["xsel", "--clipboard", "--input"]):
         if shutil.which(cmd[0]):
@@ -560,14 +624,54 @@ def _clipboard(text: str) -> bool:
 def _written_summary(syl: Syllabus, tracks: list) -> str:
     """One honest line: how much of the syllabus exists as real content."""
     modules = [m for t in tracks for m in t.modules]
+    chapters = [m for m in modules if m.chapter_path.exists()]
     written = [m for m in modules if content.problems_for_module(m.id)]
     problems = sum(len(content.problems_for_module(m.id)) for m in written)
     planned = sum(m.planned_problems for m in modules)
-    return f"Written so far: {len(written)} of {len(modules)} modules, {problems} of about {planned} planned problems."
+    return (f"Chapters written: {len(chapters)} of {len(modules)} modules. "
+            f"Problems written: {len(written)} of {len(modules)} modules, {problems} of about {planned} planned problems.")
+
+
+def _run_argv(argv: list[str], pause: bool = False) -> None:
+    """Run one command the way a typed command runs, showing its errors instead of raising them."""
+    try:
+        args = build_parser().parse_args(argv)
+        args.func(args)
+    except UserError as exc:
+        print(ui.err(str(exc)))
+    except KeyboardInterrupt:
+        print()
+    except SystemExit:
+        pass
+    if pause:
+        ui.ask(ui.dim("\n  Press Enter to go back"))
+
+
+def _syllabus_browser(syl: Syllabus, cfg: dict, track: str | None) -> None:
+    """The full-screen syllabus. Actions run, then the browser reopens where you were."""
+    from learn import browser
+
+    module = None
+    while True:
+        conn = db.connect()
+        states = db.states(conn)
+        current = {t.id: progress.current_module(conn, syl, t.id).id for t in syl.tracks}
+        conn.close()
+        argv = browser.run(syl, states, current, cfg["plan"].get("focus", []), track, module)
+        if not argv:
+            return
+        if argv[0] == "work":
+            module = content.get(argv[1]).module_id
+        else:
+            module = argv[1]
+        _run_argv(argv, pause=argv[0] == "goto")
 
 
 def cmd_syllabus(args: argparse.Namespace) -> None:
     conn, syl, cfg = ctx()
+    if ui_mode(cfg) == "tui":
+        conn.close()
+        return _syllabus_browser(syl, cfg, args.track)
     states = db.states(conn)
     tracks = [syl.track(args.track)] if args.track else syl.tracks
     for t in tracks:
@@ -577,11 +681,15 @@ def cmd_syllabus(args: argparse.Namespace) -> None:
             mp = progress.module_progress(m.id, states)
             icon = STATUS_ICON[mp.status]
             pri = {"essential": "", "role-specific": ui.dim(" role"), "advanced-elective": ui.dim(" elective")}[m.priority]
-            count = f"{mp.solved}/{mp.total}" if mp.total else ui.dim("not written yet")
+            if mp.total:
+                count = f"{mp.solved}/{mp.total}"
+            else:
+                count = ui.dim("chapter ready" if m.chapter_path.exists() else "not written yet")
             here = ui.accent("  ← you are here") if m.id == current.id and t.id in cfg["plan"].get("focus", []) else ""
             print(f"  {icon} {m.id:9} {m.title}{pri}")
             print(ui.dim(f"      {count:>15}  ") + (ui.progress_bar(mp.score) if mp.total else ui.dim(f"{m.planned_problems} problems planned")) + here)
-    print(ui.dim("\n  ★ mastered  ◐ in progress  ○ not started  · content not written yet"))
+    print(ui.dim("\n  ★ mastered  ◐ in progress  ○ not started"))
+    print(ui.dim("  'chapter ready' = you can read it (learn read), its problems are still being written"))
     print(ui.dim("  " + _written_summary(syl, tracks)))
 
 
@@ -625,7 +733,7 @@ def cmd_module(args: argparse.Namespace) -> None:
                      + (f"   still to do: {', '.join(sorted(missing))}" if missing else "")))
 
 
-def _read_module(conn, m, restart: bool = False) -> None:
+def _read_module(conn, m, restart: bool = False, tui: bool = False) -> None:
     """Open one chapter in the reader, remembering where you stopped."""
     db.log_event(conn, "read", m.id)
     db.mark_active(conn)
@@ -637,12 +745,22 @@ def _read_module(conn, m, restart: bool = False) -> None:
         conn.commit()
 
     start = 0 if restart else int(db.get_meta(conn, key, "0"))
+    if tui:
+        try:
+            from learn import tui as tui_reader
+        except ImportError:
+            print(ui.warn("The full-screen reader needs the optional Textual package. Install it once with:"))
+            print("  .venv/bin/python -m pip install -e \".[tui]\"   (Windows: .venv\\Scripts\\python.exe)")
+            print(ui.dim("Opening the normal reader instead.\n"))
+        else:
+            tui_reader.read_chapter(f"{m.id}  {m.title}", m.chapter_path.read_text(encoding="utf-8"), start, save)
+            return
     if sys.stdout.isatty() and ui.color_enabled():
         print("\033[2J\033[H", end="")  # leave the shelf behind: the screen is now the chapter
     reader.read_chapter(f"{m.id}  {m.title}", m.chapter_path.read_text(encoding="utf-8"), start, save)
 
 
-def _bookshelf(conn, syl) -> None:
+def _bookshelf(conn, syl, tui: bool = False) -> None:
     """Every written chapter in a compact grid. Pick any, any time: nothing is locked."""
     while True:
         print("\033[2J\033[H" if sys.stdout.isatty() and ui.color_enabled() else "", end="")
@@ -688,7 +806,7 @@ def _bookshelf(conn, syl) -> None:
         if m is None:
             print(ui.warn("  Type a number from the list, a module id such as core.02, or Enter to leave."))
             continue
-        _read_module(conn, m)
+        _read_module(conn, m, tui=tui)
 
 
 def cmd_read(args: argparse.Namespace) -> None:
@@ -697,7 +815,7 @@ def cmd_read(args: argparse.Namespace) -> None:
     interactive = sys.stdin.isatty() and not (args.print or args.code)
     if module_id is None:
         if interactive:
-            return _bookshelf(conn, syl)
+            return _bookshelf(conn, syl, args.tui or ui_mode(cfg) == "tui")
         last = db.get_meta(conn, "last_problem")
         if last:
             module_id = last.rsplit(".", 1)[0]
@@ -727,7 +845,7 @@ def cmd_read(args: argparse.Namespace) -> None:
         conn.commit()
         print(m.chapter_path.read_text(encoding="utf-8"))
         return
-    _read_module(conn, m, args.restart)
+    _read_module(conn, m, args.restart, args.tui or ui_mode(cfg) == "tui")
 
 
 def cmd_goto(args: argparse.Namespace) -> None:
@@ -1074,10 +1192,197 @@ def cmd_validate(args: argparse.Namespace) -> None:
         raise SystemExit(1)
 
 
+# ----------------------------------------------------------------- chapter tools: lint, verify, extract, doctor, cards, capstone
+
+def _chapters_for(target: str | None) -> list[tuple[str, Path]]:
+    """Chapters of one module, one track, or (no target) every module that has one."""
+    syl = load_syllabus()
+    if target is None:
+        mods = syl.modules()
+    elif target in syl.track_ids():
+        mods = syl.track(target).modules
+    else:
+        try:
+            mods = [syl.module(target)]
+        except KeyError as exc:
+            raise UserError(str(exc.args[0])) from None
+    return [(m.id, m.chapter_path) for m in mods if m.chapter_path.exists()]
+
+
+def cmd_lint(args: argparse.Namespace) -> None:
+    targets = _chapters_for(args.target)
+    errors = warnings = 0
+    for mid, path in targets:
+        text = path.read_text(encoding="utf-8")
+        if args.fix_encoding:
+            text, n = chapters.fix_chapter_encoding(text)
+            if n:
+                path.write_text(text, encoding="utf-8", newline="\n")
+                print(f"{mid}: added encoding='utf-8' in {n} code block(s)")
+        issues = chapters.lint_chapter(text)
+        e = [i for i in issues if i.level == "error"]
+        w = [i for i in issues if i.level == "warning"]
+        errors, warnings = errors + len(e), warnings + len(w)
+        if e or (w and args.warnings):
+            print(ui.err("✗ ") + f"{mid}  {rel(path)}")
+            for i in e + (w if args.warnings else []):
+                print(f"    {i}")
+        elif args.verbose:
+            print(ui.ok("✓ ") + mid + (ui.dim(f"  ({len(w)} warnings)") if w else ""))
+    print(f"\n{len(targets)} chapters checked: {errors} errors, {warnings} warnings.")
+    if not args.warnings and warnings:
+        print(ui.dim("Warnings are hidden; add --warnings to see them (they are Windows text-encoding risks and missing optional parts)."))
+    if errors or (args.strict and warnings):
+        raise SystemExit(1)
+
+
+def cmd_verify(args: argparse.Namespace) -> None:
+    targets = _chapters_for(args.target)
+    bad = 0
+    for mid, path in targets:
+        text = path.read_text(encoding="utf-8")
+        r = chapters.verify_chapter(text, timeout=args.timeout, diff=args.diff, strict_encoding=args.strict_encoding)
+        if r.blocks == 0:
+            if args.verbose:
+                print(ui.dim(f"- {mid}: no 'python run' blocks"))
+            continue
+        line = f"{mid}: {r.ran}/{r.blocks} code blocks ran in {r.seconds:.1f} s"
+        if args.diff:
+            line += f"; output same as the chapter in {r.same_output}, different in {len(r.different_output)}"
+        if r.failed:
+            bad += 1
+            print(ui.err("✗ ") + line)
+            for ln, msg in r.failed:
+                print(f"    block at line {ln}: {msg}")
+        else:
+            print(ui.ok("✓ ") + line)
+        if args.diff and r.different_output:
+            print(ui.dim("    (timings, ids and paths legitimately differ; lines: " + ", ".join(map(str, r.different_output[:12])) + ")"))
+    if not targets:
+        print("No chapters found.")
+    if bad:
+        raise SystemExit(1)
+
+
+def cmd_extract(args: argparse.Namespace) -> None:
+    targets = _chapters_for(args.module)
+    if len(targets) != 1:
+        raise UserError("Give one module, for example: learn extract llm.07")
+    mid, path = targets[0]
+    files = chapters.extract_files(path.read_text(encoding="utf-8"))
+    if not files:
+        print(f"{mid} does not write project files from its code blocks, so there is nothing to extract.")
+        return
+    out = Path(args.out).resolve() if args.out else paths.playground_dir() / mid
+    written, skipped = chapters.write_extracted(files, out, force=args.force)
+    for p in written:
+        print(ui.ok("  wrote ") + rel(p) if out.is_relative_to(paths.root()) else f"  wrote {p}")
+    for p in skipped:
+        print(ui.warn("  kept  ") + f"{p.name} (already there; use --force to overwrite)")
+    roots = sorted({f.root for f in files})
+    print(f"\n{len(written)} file(s) written under {out}")
+    tests = [f for f in files if Path(f.relpath).name.startswith("test_")]
+    if tests:
+        r = roots[0]
+        print(ui.dim(f"Run the project's tests:  cd {out / r}  and then  python -m pytest -q"))
+
+
+def cmd_doctor(args: argparse.Namespace) -> None:
+    req = doctor.load_requirements()
+    mark = {"ok": ui.ok("✓"), "warn": ui.warn("!"), "bad": ui.err("✗")}
+    ui.heading("This machine")
+    problems = 0
+    for label, status, detail in doctor.environment_report():
+        print(f"  {mark[status]} {label:<26}{detail}")
+        problems += status == "bad"
+    print(ui.bold("\nPackages"))
+    for group, have, total in doctor.group_status(req):
+        hint = "" if group == "base" else f'   pip install -e ".[{group}]"'
+        print(f"  {mark['ok'] if have == total else mark['warn']} {group:<10}{have}/{total} installed" + ui.dim(hint))
+    targets = _chapters_for(args.target) if (args.target or args.all) else []
+    undeclared_total = 0
+    if targets:
+        print(ui.bold("\nWhat the chapters import"))
+    missing_by_group: dict[str, set[str]] = {}
+    for mid, path in targets:
+        needs = doctor.chapter_needs(path.read_text(encoding="utf-8"), req)
+        undeclared_total += len(needs.undeclared)
+        for dist, group in needs.missing.items():
+            missing_by_group.setdefault(group, set()).add(dist)
+        if args.target and not args.all or needs.missing or needs.undeclared:
+            status = "ok" if not (needs.missing or needs.undeclared) else "warn"
+            print(f"  {mark[status]} {mid}" + ui.dim(f"  {len(needs.installed)} installed"
+                  + (f", missing: {', '.join(sorted(needs.missing))}" if needs.missing else "")
+                  + (f", optional and missing: {', '.join(needs.optional_missing)}" if needs.optional_missing else "")
+                  + (f", NOT LISTED IN pyproject.toml: {', '.join(needs.undeclared)}" if needs.undeclared else "")))
+    for group, dists in sorted(missing_by_group.items()):
+        sizes = [f"{d} ({doctor.SIZE_HINT[d]})" for d in sorted(dists) if d in doctor.SIZE_HINT]
+        cmd = 'pip install -e .' if group == "base" else f'pip install -e ".[{group}]"'
+        print(ui.bold(f"\nTo install what is missing for group '{group}':  ") + cmd)
+        if sizes:
+            print(ui.dim("  large downloads: " + ", ".join(sizes)))
+    if args.strict and (problems or undeclared_total):
+        raise SystemExit(1)
+
+
+def cmd_cards(args: argparse.Namespace) -> None:
+    import csv
+    targets = _chapters_for(args.target)
+    rows = []
+    for mid, path in targets:
+        for c in chapters.make_cards(path.read_text(encoding="utf-8")):
+            rows.append((c.front, c.back, mid, c.section))
+    if not rows:
+        print("No question-and-answer boxes found.")
+        return
+    name = (args.target or "all").replace(".", "-")
+    out = Path(args.out) if args.out else paths.library_dir() / "cards" / f"{name}{'.tsv' if args.anki else '.csv'}"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    with out.open("w", encoding="utf-8", newline="") as f:
+        if args.anki:
+            w = csv.writer(f, delimiter="\t")                                   # Anki: Import file, tab-separated, front then back then tags
+            for front, back, mid, section in rows:
+                w.writerow([front, back, f"{mid} {section.split()[0] if section else ''}".strip()])
+        else:
+            w = csv.writer(f)
+            w.writerow(["front", "back", "module", "section"])
+            w.writerows(rows)
+    print(f"{len(rows)} cards from {len(targets)} chapter(s) written to {rel(out) if out.is_relative_to(paths.root()) else out}")
+    if args.anki:
+        print(ui.dim("In Anki: File > Import, choose the file, fields separated by Tab, field 1 = Front, field 2 = Back, field 3 = Tags."))
+
+
+CAPSTONE_FILES = {t: f"capstone-{t}.md" for t in ("core", "dsa", "swe", "da", "ds", "ml", "llm")}
+
+
+def cmd_capstone(args: argparse.Namespace) -> None:
+    syl = load_syllabus()
+    guides = paths.root() / "docs" / "guides"
+    if args.track is None:
+        ui.heading("Capstone projects")
+        for t in syl.tracks:
+            f = CAPSTONE_FILES.get(t.id)
+            ok = f is not None and (guides / f).exists()
+            print(f"  {t.id:<7}{(t.capstone or 'no capstone for this track')}" + (ui.dim(f"   learn capstone {t.id}") if ok else ""))
+        return
+    if args.track not in CAPSTONE_FILES:
+        raise UserError(f"No capstone guide for '{args.track}'. Tracks with one: {', '.join(CAPSTONE_FILES)}")
+    path = guides / CAPSTONE_FILES[args.track]
+    if not path.exists():
+        raise UserError(f"The guide {rel(path)} is missing.")
+    text = path.read_text(encoding="utf-8")
+    if args.print or not (sys.stdin.isatty() and sys.stdout.isatty()):
+        print(text)
+        return
+    reader.read_chapter(f"capstone  {syl.track(args.track).title}", text, 0, lambda i: None)
+
+
 # ----------------------------------------------------------------- parser
 
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="learn", description="Your offline Python learning module.")
+    p.add_argument("--plain", action="store_true",
+                   help="plain terminal output for this run, even if [ui] mode = \"tui\" (put it before the command)")
     sub = p.add_subparsers(dest="command")
 
     def add(name: str, func, help_text: str, aliases: list[str] | None = None) -> argparse.ArgumentParser:
@@ -1110,6 +1415,9 @@ def build_parser() -> argparse.ArgumentParser:
     sp = add("stuck", cmd_stuck, "Build a paste-ready prompt for any free chatbot")
     sp.add_argument("problem", nargs="?")
 
+    sp = add("work", cmd_work, "Full-screen workspace for a problem: statement, your file, hints, checks", aliases=["ws"])
+    sp.add_argument("problem", nargs="?", help="problem id or plan number (default: the one you are working on)")
+    sp.add_argument("--review", action="store_true", help="solve a solved problem again from scratch")
     sp = add("syllabus", cmd_syllabus, "Show all tracks and modules with progress")
     sp.add_argument("track", nargs="?")
     sp = add("module", cmd_module, "Show one module: topics, outcomes, problems")
@@ -1119,6 +1427,7 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("--restart", action="store_true", help="start from the first section")
     sp.add_argument("--print", action="store_true", help="print the raw chapter in one go")
     sp.add_argument("--code", action="store_true", help="open it in VS Code instead")
+    sp.add_argument("--tui", action="store_true", help="full-screen reader for this run (or set [ui] mode = \"tui\")")
     sp = add("goto", cmd_goto, "Jump a track to any module (nothing is locked)")
     sp.add_argument("target", help="module id, or a track id with --auto")
     sp.add_argument("--auto", action="store_true", help="return the track to automatic order")
@@ -1155,6 +1464,34 @@ def build_parser() -> argparse.ArgumentParser:
     sp = add("validate", cmd_validate, "Check problems are complete and their tests work (authoring)")
     sp.add_argument("target", nargs="?", help="problem, module or track id")
     sp.add_argument("-v", "--verbose", action="store_true")
+
+    sp = add("lint", cmd_lint, "Check chapters: fences, answer boxes, prompt boxes, Windows text-encoding (authoring)")
+    sp.add_argument("target", nargs="?", help="module or track id (default: every chapter)")
+    sp.add_argument("--strict", action="store_true", help="warnings also fail")
+    sp.add_argument("--warnings", action="store_true", help="show warnings, not only errors")
+    sp.add_argument("--fix-encoding", action="store_true", help="add encoding='utf-8' to text-file calls in code blocks")
+    sp.add_argument("-v", "--verbose", action="store_true")
+    sp = add("verify", cmd_verify, "Run the code blocks of chapters and report failures (authoring)")
+    sp.add_argument("target", nargs="?", help="module or track id (default: every chapter; slow)")
+    sp.add_argument("--diff", action="store_true", help="also compare the output with the output pasted in the chapter")
+    sp.add_argument("--strict-encoding", action="store_true", help="run without UTF-8 mode and fail on text files opened without an encoding (Windows check)")
+    sp.add_argument("--timeout", type=float, default=900.0, help="seconds allowed per chapter")
+    sp.add_argument("-v", "--verbose", action="store_true")
+    sp = add("extract", cmd_extract, "Write the project files that a chapter builds into playground/<module>/")
+    sp.add_argument("module")
+    sp.add_argument("--out", help="another folder")
+    sp.add_argument("--force", action="store_true", help="overwrite files that already exist")
+    sp = add("doctor", cmd_doctor, "Check this machine and which packages a module needs")
+    sp.add_argument("target", nargs="?", help="module or track id")
+    sp.add_argument("--all", action="store_true", help="check the imports of every chapter")
+    sp.add_argument("--strict", action="store_true", help="exit with an error if something is wrong or undeclared")
+    sp = add("cards", cmd_cards, "Export the chapters' question-and-answer boxes as flashcards (CSV or Anki)")
+    sp.add_argument("target", nargs="?", help="module or track id (default: all chapters)")
+    sp.add_argument("--out", help="output file")
+    sp.add_argument("--anki", action="store_true", help="tab-separated file for Anki's Import")
+    sp = add("capstone", cmd_capstone, "Show a track's capstone project guide")
+    sp.add_argument("track", nargs="?")
+    sp.add_argument("--print", action="store_true", help="print it in one go")
     return p
 
 
@@ -1179,15 +1516,21 @@ def _print_menu(conn: sqlite3.Connection) -> None:
     print()
     last = db.get_meta(conn, "last_problem")
     st = db.problem_state(conn, last) if last else None
-    if st is not None and (st["status"] == "started" or st["is_review"]):
-        print(ui.dim("  Working on: ") + ui.bold(last) + "  " + content.get(last).title)
-    # Mid-problem the next step is checking your answer; otherwise it is starting the next one.
-    midway = st is not None and st["status"] == "started"
+    in_review = st is not None and bool(st["is_review"])
+    if st is not None and (st["status"] == "started" or in_review):
+        tag = ui.warn("[REVIEW] ") if in_review else ""
+        print(ui.dim("  Working on: ") + tag + ui.bold(last) + "  " + content.get(last).title)
+        if in_review and st["session_dir"]:
+            print(ui.dim("  Checking folder: ") + rel(Path(st["session_dir"])))
+    # Mid-problem (or mid-review) the next step is checking your answer; otherwise starting the next one.
+    midway = st is not None and (st["status"] == "started" or in_review)
     best = "2" if midway else "1"
 
     # A brand-new learner (or one who just started over) has nothing "next" yet.
     fresh = not db.states(conn)
     labels = {"1": "Start learning"} if fresh else {}
+    if in_review:
+        labels["2"] = "Check my review"
 
     def cell(entry, width):
         arrow = ui.ok("▶") if entry[0] == best else " "
@@ -1230,8 +1573,62 @@ def _typed_command(parser: argparse.ArgumentParser, text: str) -> list[str] | No
     return None
 
 
+def _home_data() -> dict:
+    """Everything the full-screen home needs, as plain values, read fresh each time it opens."""
+    conn, syl, cfg = ctx()
+    try:
+        scan.scan(conn)
+        conn.commit()
+        states = db.states(conn)
+        plan = progress.plan_today(conn, syl, cfg)
+        last = db.get_meta(conn, "last_problem")
+        st = db.problem_state(conn, last) if last else None
+        working = None
+        if st is not None and (st["status"] == "started" or st["is_review"]):
+            working = {"id": last, "title": content.get(last).title, "review": bool(st["is_review"])}
+        tracks = []
+        for t in cfg["plan"].get("focus", []):
+            if t in syl.track_ids():
+                m = progress.current_module(conn, syl, t)
+                mp = progress.module_progress(m.id, states)
+                tracks.append({"track": t, "module": m.id, "title": m.title, "score": mp.score,
+                               "solved": mp.solved, "total": mp.total})
+        return {
+            "name": cfg.get("ui", {}).get("name", ""),
+            "animations": bool(cfg.get("ui", {}).get("animations", True)),
+            "day": db.day_count(conn) + (0 if _active_today(conn) else 1),
+            "date": f"{date.today():%a %d %b %Y}",
+            "minutes": cfg["plan"]["daily_minutes"],
+            "fresh": not states,
+            "working": working,
+            "due": len(progress.due_reviews(conn)),
+            "tracks": tracks,
+            "plan": [{"n": i, "kind": it.kind, "track": it.track, "label": it.label, "minutes": it.minutes,
+                      "reason": it.reason} for i, it in enumerate(plan, 1)],
+            "problem_ids": sorted(content.all_problems()),
+        }
+    finally:
+        conn.close()
+
+
+# Commands that only print: the home waits for Enter so their output is not wiped by the full-screen app.
+_PAUSE_AFTER = {"today", "stats", "reset"}
+
+
+def _tui_menu() -> None:
+    from learn import home
+
+    while True:
+        argv = home.run(_home_data())
+        if not argv:
+            return
+        _run_argv(argv, pause=argv[0] in _PAUSE_AFTER)
+
+
 def cmd_menu(parser: argparse.ArgumentParser) -> None:
-    """Plain `learn` in a terminal: today's plan, then a numbered menu until q."""
+    """Plain `learn` in a terminal: today's plan, then a numbered menu until q (full-screen home in tui mode)."""
+    if ui_mode() == "tui":
+        return _tui_menu()
     cmd_today(argparse.Namespace())
     conn = db.connect()
     while True:
@@ -1288,9 +1685,11 @@ def main(argv: list[str] | None = None) -> int:
         completion.complete(parser, argv[1:])
         return 0
     args = parser.parse_args(argv)
+    global _force_plain
+    _force_plain = bool(getattr(args, "plain", False))
     func = getattr(args, "func", None)
-    if func in (None, cmd_today, cmd_resume):
-        ui.banner()
+    if func in (cmd_today, cmd_resume) or (func is None and ui_mode() != "tui"):  # the full-screen home draws its own
+        ui.banner(config.load().get("ui", {}).get("name", ""))
     try:
         if func is not None:
             func(args)

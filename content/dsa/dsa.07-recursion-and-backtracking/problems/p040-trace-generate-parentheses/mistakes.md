@@ -1,0 +1,4 @@
+- Writing the empty string as an empty line: `repr("")` prints `''`.
+- Trying `)` before `(`: the code tries `(` first.
+- Printing calls that are not allowed (such as `')' 0 1`): an illegal branch creates no call.
+- Forgetting the list printed after the `n = 2` trace.

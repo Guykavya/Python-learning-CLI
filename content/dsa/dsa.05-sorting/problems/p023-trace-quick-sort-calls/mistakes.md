@@ -1,0 +1,4 @@
+- Printing a line for a base call only when the range is exactly one element: empty ranges print too.
+- Doing the right recursion before the left one.
+- Printing the list before the final pivot swap.
+- Mixing up the depth: the first call is depth 0, its two children are depth 1.

@@ -1,0 +1,4 @@
+- Counting a swap when `m == i`: selection sort at most does `n - 1` real swaps, and none for an already sorted list.
+- Using `<=` in the scan: with ties `m` moves to the last equal value, which changes the swap count and breaks the problem's rule.
+- Searching only `a[i+1:]` and forgetting to compare against `a[i]` itself.
+- Using `min(a[i:])` and `a.index`: `a.index` finds the first value in the whole list, not in `a[i:]`, and it is easy to get wrong with duplicates.

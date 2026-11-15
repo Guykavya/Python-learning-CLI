@@ -138,6 +138,9 @@ Read it from the bottom:
 2. **Where it happened**: the last `File` entry, line 2, inside `average`, the expression `sum(marks) / len(marks)`. The `^` under the carets points at the `/` operator.
 3. **How we got there**: each entry above is one **frame** on the call stack (chapter 6, section 5): `<module>` called `report` on line 9, `report` called `average` on line 5. "most recent call last" means the newest frame is at the bottom.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a Python call stack as three boxes stacked, oldest on top: '<module> line 9 calls report', 'report line 5 calls average', 'average line 2: sum(marks) / len(marks)'. Mark the bottom box in red with 'ZeroDivisionError: division by zero' because marks is an empty list. Add an arrow labelled 'read the traceback from the bottom: what, where, then how we got there' going upward through the boxes."
+
 ### Where it happened versus where the mistake is
 
 The exception happened in `average`, but is `average` wrong? It does what it says for every non-empty list. The real question is "who should have dealt with an empty list?" Maybe `average` should raise a clearer error, maybe `report` should print "no marks yet", maybe the caller should never pass an empty list. A traceback tells you **where the program noticed** the problem. Deciding **where to fix** it is your job, and this chapter gives you the tools for each choice.
@@ -260,6 +263,9 @@ call stack (newest on top)            after raise ValueError
 | <module> line 16    |               no handler: print traceback, exit 1
 +---------------------+
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a call stack with four frames: <module> line 16, level1 line 13, level2 line 8, level3 line 3. Step 1: level3 runs 'raise ValueError('deep problem')'. Steps 2 to 4: one frame at a time turns grey and is thrown away (level3, level2, level1) because none has a handler. Last step: <module> prints the traceback and the program exits with status 1. Show that no 'ends' line prints."
 
 ### Under the hood: how the interpreter unwinds frames
 
@@ -396,6 +402,9 @@ BaseException
 
 The full tree is in the official documentation (see Further reading).
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the Python exception hierarchy as a tree. Root BaseException has children SystemExit, KeyboardInterrupt and Exception. Under Exception show ArithmeticError (ZeroDivisionError, OverflowError), LookupError (IndexError, KeyError), ValueError, TypeError, NameError, AttributeError, OSError (FileNotFoundError, PermissionError), EOFError. Highlight the path KeyError, LookupError, Exception, BaseException to show that a KeyError is also a LookupError."
+
 ### BaseException versus Exception
 
 Everything that can be raised descends from `BaseException`. Directly under it are a few special exceptions that are **not errors** in the usual sense:
@@ -464,7 +473,7 @@ Errors that come from the operating system, such as a missing file, a permission
 
 ```python
 try:
-    open("no_such_file.txt")
+    open("no_such_file.txt", encoding="utf-8")
 except FileNotFoundError as error:
     print("Could not open:", error.filename)
     print(error)
@@ -570,6 +579,9 @@ D: after try
 ```
 
 For `"20"` the order is A, B, D. For `"twenty"` it is A, C, D: line B never ran, because `int(text)` raised before it.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate one try/except block run twice. Code: A print 'converting', int(text), B print 'converted', except ValueError prints C, then D print 'after try'. Run 1, text '20': light up A, B, D and skip C. Run 2, text 'twenty': light up A, then int(text) raises ValueError, B is crossed out as never run, C runs, then D. Show both paths side by side as flow lines."
 
 ### An unhandled type still crashes
 
@@ -721,6 +733,9 @@ some lookup failed
 ```
 
 `KeyError` is a `LookupError`, so the first clause matched and the second is dead code. Python does not warn you. **Rule: put the most specific types first, the general ones last.**
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Show a dict lookup data['b'] on {'a': 1} raising KeyError. Draw the two except clauses as a vertical list: 'except LookupError' first, 'except KeyError' second. Animate the KeyError arrow checked top to bottom: it matches LookupError first (because KeyError is a subclass) and stops there, printing 'some lookup failed'. Grey out the KeyError clause as dead code, with the rule 'most specific first'."
 
 ### One clause for several types: a tuple
 
@@ -1045,6 +1060,9 @@ Two more rules complete the picture:
 
 - If the `except` or `else` block **itself raises**, that new exception becomes pending; `finally` still runs, and then the new exception propagates.
 - If `finally` itself raises, that exception replaces whatever was pending.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a flowchart of Python try/except/else/finally. Start at the try block with two branches: 'no exception' goes to else, 'exception E raised' goes to 'matching except?'. Yes runs the handler, no leaves E pending. Every path joins at finally. After finally: if E is still pending it propagates to the caller, otherwise execution continues after the try. Colour the success path green and the failure path red."
 
 ### finally when the exception is not handled
 
@@ -1526,6 +1544,9 @@ ValueError: time must use digits, like 09:30, got '9:3O'
 
 Python printed **both** exceptions, the original first, joined by "The above exception was the direct cause of the following exception". The user-level message comes last, where the reader looks first, and nothing about the real cause was lost.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two exception boxes linked by an arrow. The first: ValueError 'invalid literal for int() with base 10: '3O'' raised in parse_time at int(parts[1]). The second: ValueError 'time must use digits, like 09:30, got '9:3O'' raised by 'raise ... from e'. Label the arrow 'the direct cause of' and show the order a traceback prints them: original first, new message last, where the reader looks first."
+
 ### Implicit chaining: "During handling of the above exception"
 
 If a **new** exception is raised **while handling** another, even by accident, Python links them automatically. That is how you see a different linking sentence:
@@ -1956,6 +1977,9 @@ True
 ```
 
 All three are correct. For a dict, the third, `dict.get` with a default (chapter 5), is the clearest of all. Python often provides a method that makes the question disappear; prefer it when it exists. EAFP shines when there is no such method, and when the check would repeat the work of the operation.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Compare three ways to count words in 'the cat and the hat and the bat'. Draw three columns: LBYL ('if w in dict' then add or set), EAFP (try counts[w] += 1, except KeyError sets 1), and dict.get(w, 0) + 1. For each column animate the first two words, 'the' then 'cat', showing the dict growing to {'the': 1, 'cat': 1}. Highlight that all three end with {'the': 3, 'cat': 1, 'and': 2, 'hat': 1, 'bat': 1}."
 
 ### Parsing numbers: the check is harder than it looks
 

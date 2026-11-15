@@ -1,0 +1,4 @@
+- Putting `COUNT(*) >= 2` in `WHERE`. SQLite says "misuse of aggregate": the count does not exist yet.
+- Using `HAVING` without `GROUP BY` and expecting a per-author result.
+- Writing `HAVING COUNT(*) > 2`: that means "more than 2", which drops authors with exactly 2.
+- Forgetting the tie-break: authors 2 and 4 can have the same count and their order must be fixed.

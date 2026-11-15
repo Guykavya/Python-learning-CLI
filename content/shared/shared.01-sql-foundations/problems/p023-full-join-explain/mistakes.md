@@ -1,0 +1,5 @@
+- Using `INNER JOIN` for a reconciliation: the mismatches (the point of the report) disappear.
+- Selecting `s.sku` only from a FULL JOIN: NULL for rows that exist only in `listing`. Use `COALESCE(s.sku, l.sku)`.
+- Emulating with `UNION ALL` of two plain LEFT JOINs: the matched rows then appear **twice**. The second half needs `WHERE s.sku IS NULL`.
+- Saying "SQLite has no FULL JOIN". It does since 3.39; older versions need the emulation.
+- Forgetting that `UNION` silently removes real duplicates.

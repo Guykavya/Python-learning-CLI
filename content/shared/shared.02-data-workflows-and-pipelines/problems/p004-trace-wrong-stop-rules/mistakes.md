@@ -1,0 +1,6 @@
+- Thinking `short_page_stops` makes 2 requests for six orders. Page 2 is full, so the loop cannot know it was the last one and asks for page 3.
+- Using normal division in your head for `count_pages_first`: `7 // 3` is `2`, not `2.33` or `3`.
+- Thinking `skips_first_page` collects page 1. The first `get_page(1)` result is only used for its `next_page`; its data is never added.
+- Expecting `ORDERS[-3:0]` to be the last three orders. A slice with stop `0` is empty because `0` is not after `-3` (which means index 4).
+- Forgetting that `requested` is cleared in `run`, so each line shows only that call's pages.
+- Writing the lists without the spaces after commas. `print` of a list shows `[1, 2, 3]`.

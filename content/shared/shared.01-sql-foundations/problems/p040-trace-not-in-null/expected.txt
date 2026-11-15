@@ -1,0 +1,4 @@
+Asha|0|0
+Bala|0|0
+Chitra|NULL|1
+Dev|NULL|1

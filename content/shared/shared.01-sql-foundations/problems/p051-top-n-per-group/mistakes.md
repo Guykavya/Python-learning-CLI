@@ -1,0 +1,5 @@
+- Writing `WHERE ROW_NUMBER() OVER (...) <= 2`. SQL rejects windows in `WHERE`; use a CTE or subquery.
+- Forgetting `PARTITION BY dept`: you then get only the top 2 of the whole company.
+- `LIMIT 2` at the end: also gives only 2 rows in total.
+- Using `RANK` or `DENSE_RANK`: a three-way tie for second place returns 3 rows, not 2.
+- Not tie-breaking: with equal salaries the winner changes from run to run.

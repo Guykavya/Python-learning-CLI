@@ -1,0 +1,5 @@
+- Printing the state line before the `drop` lines of the same step. The `while` loop runs first.
+- Dropping only one character per repeat. The loop repeats until `s[r]` is gone, which can take several drops (`p` and `w` at `r = 2`).
+- Restarting the window at the repeat, so `dvdf` would show the window `d` at `r = 2` instead of `vd`.
+- Letting `best` go down when the window shrinks. It is `max(best, ...)`.
+- Writing the window as `s[l:r]`, which misses the last character. The program prints `s[l:r + 1]`.

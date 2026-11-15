@@ -1,0 +1,6 @@
+id = "dsa.02.p030"
+title = "Modular inverse for any modulus"
+tier = "deep"
+kind = "code"
+topics = ["modular inverse", "extended Euclid", "composite modulus"]
+minutes = 35

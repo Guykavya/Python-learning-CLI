@@ -1,0 +1,5 @@
+- Moving the **taller** wall. The shorter wall then stays, and every later container is still limited by it, so you can skip the real answer: `1 8 6 2 5 4 8 3 7` gives less than 49.
+- Width `j - i + 1`. The walls stand at the positions; the water between walls `i` and `j` is `j - i` wide.
+- Using the taller wall's height (`max` instead of `min`). Water spills over the lower wall.
+- Thinking the walls in between block the water. They don't matter for this problem (that is the rain-water problem).
+- Trying every pair with two loops. Correct, but O(n^2).

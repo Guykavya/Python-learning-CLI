@@ -1,0 +1,6 @@
+id = "dsa.04.p002"
+title = "Does any value repeat?"
+tier = "drill"
+kind = "code"
+topics = ["set", "duplicates", "membership"]
+minutes = 10

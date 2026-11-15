@@ -1,0 +1,6 @@
+id = "dsa.05.p006"
+title = "Insertion sort and its shifts"
+tier = "drill"
+kind = "code"
+topics = ["insertion sort", "shifts", "inversions"]
+minutes = 20

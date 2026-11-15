@@ -1,0 +1,131 @@
+# Real site problems for dsa.07 (Recursion and backtracking).
+# Verification: every LeetCode slug and CSES id below was written from memory and NOT re-fetched (no web access was used
+# while writing). Fix any id that fails to open.
+# Order follows the chapter: subsets (6), combinations (7), permutations (8), pruning (9), grid search (10),
+# N-Queens and Sudoku (11-12), more classics (13), then CSES practice.
+
+[[problem]]
+site = "leetcode"
+key = "subsets"
+title = "Subsets"
+url = "https://leetcode.com/problems/subsets/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "subsets-ii"
+title = "Subsets II"
+url = "https://leetcode.com/problems/subsets-ii/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "combinations"
+title = "Combinations"
+url = "https://leetcode.com/problems/combinations/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "combination-sum"
+title = "Combination Sum"
+url = "https://leetcode.com/problems/combination-sum/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "combination-sum-ii"
+title = "Combination Sum II"
+url = "https://leetcode.com/problems/combination-sum-ii/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "permutations"
+title = "Permutations"
+url = "https://leetcode.com/problems/permutations/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "permutations-ii"
+title = "Permutations II"
+url = "https://leetcode.com/problems/permutations-ii/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "partition-to-k-equal-sum-subsets"
+title = "Partition to K Equal Sum Subsets"
+url = "https://leetcode.com/problems/partition-to-k-equal-sum-subsets/"
+minutes = 40
+
+[[problem]]
+site = "leetcode"
+key = "word-search"
+title = "Word Search"
+url = "https://leetcode.com/problems/word-search/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "n-queens"
+title = "N-Queens"
+url = "https://leetcode.com/problems/n-queens/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "n-queens-ii"
+title = "N-Queens II"
+url = "https://leetcode.com/problems/n-queens-ii/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "sudoku-solver"
+title = "Sudoku Solver"
+url = "https://leetcode.com/problems/sudoku-solver/"
+minutes = 45
+
+[[problem]]
+site = "leetcode"
+key = "generate-parentheses"
+title = "Generate Parentheses"
+url = "https://leetcode.com/problems/generate-parentheses/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "letter-combinations-of-a-phone-number"
+title = "Letter Combinations of a Phone Number"
+url = "https://leetcode.com/problems/letter-combinations-of-a-phone-number/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "palindrome-partitioning"
+title = "Palindrome Partitioning"
+url = "https://leetcode.com/problems/palindrome-partitioning/"
+minutes = 30
+
+[[problem]]
+site = "cses"
+key = "1622"
+title = "Creating Strings"
+url = "https://cses.fi/problemset/task/1622"
+minutes = 20
+
+[[problem]]
+site = "cses"
+key = "1623"
+title = "Apple Division"
+url = "https://cses.fi/problemset/task/1623"
+minutes = 20
+
+[[problem]]
+site = "cses"
+key = "1624"
+title = "Chessboard and Queens"
+url = "https://cses.fi/problemset/task/1624"
+minutes = 30

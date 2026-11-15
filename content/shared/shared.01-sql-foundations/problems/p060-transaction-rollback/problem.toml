@@ -1,0 +1,7 @@
+id = "shared.01.p060"
+title = "Trace: what is left after ROLLBACK and SAVEPOINT"
+tier = "deep"
+kind = "trace"
+topics = ["transactions", "BEGIN", "COMMIT", "ROLLBACK", "SAVEPOINT", "CHECK constraint"]
+minutes = 25
+difficulty = 4

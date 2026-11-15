@@ -1,0 +1,5 @@
+- Printing the old values instead of the new ones. The `print` runs after the four assignments.
+- Moving the values the wrong way round (top to left instead of left to top). That is the counter-clockwise turn.
+- Getting `offset` wrong in the inner layer: for layer 1, `i = 1` gives `offset = 0`, not 1.
+- Expecting a move with `i = 3` in layer 0. The range stops at `last - 1`; the corner `(0,3)` was already handled when `i = 0`.
+- Forgetting that `print(*row)` puts single spaces between the numbers and no brackets.

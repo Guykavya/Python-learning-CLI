@@ -1,0 +1,6 @@
+id = "dsa.02.p012"
+title = "Trace the lowest-bit tricks"
+tier = "drill"
+kind = "trace"
+topics = ["bit manipulation", "n & (n - 1)", "n & -n", "popcount"]
+minutes = 15

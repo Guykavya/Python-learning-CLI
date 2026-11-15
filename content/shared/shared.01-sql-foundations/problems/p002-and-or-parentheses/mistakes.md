@@ -1,0 +1,4 @@
+- No parentheses: `category = 'fiction' OR category = 'mystery' AND price < 13` means `fiction OR (mystery AND cheap)`. It also returns expensive fiction such as `Paper Moons`.
+- Using `AND` between the two categories. One row has one category, so nothing matches.
+- Writing `category = 'fiction' OR 'mystery'`. This is not "equals either"; the second part is just a string, not a comparison.
+- Using `<=` when the statement says "less than".

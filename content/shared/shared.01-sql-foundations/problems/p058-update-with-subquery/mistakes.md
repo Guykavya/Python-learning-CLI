@@ -1,0 +1,5 @@
+- Forgetting `WHERE` in step 1: every book becomes 10 percent more expensive.
+- `HAVING COUNT(*) > 2` (needs three orders) instead of `>= 2`.
+- Writing `WHERE (SELECT COUNT(*) ...)` without correlating it to the customer: all customers or none are updated.
+- Updating customers with a join-like condition but forgetting the subquery returns ids, so `WHERE customer_id = (SELECT ...)` only works for one row (use `IN`).
+- Writing `price = price * 1.1` without `ROUND`: 22.000000000000004 is not 22.0.

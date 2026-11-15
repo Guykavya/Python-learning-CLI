@@ -1,0 +1,7 @@
+id = "dsa.06.p030"
+title = "Fix the broken lower bound"
+tier = "deep"
+kind = "code"
+topics = ["lower bound", "debugging", "off-by-one"]
+minutes = 30
+assessment = "fix"

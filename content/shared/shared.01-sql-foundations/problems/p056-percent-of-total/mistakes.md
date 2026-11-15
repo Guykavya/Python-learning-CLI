@@ -1,0 +1,5 @@
+- Integer division: `price / SUM(price)` can give 0 when both are integers. Use `100.0 *`.
+- Writing `SUM(price)` without `OVER`: SQL then asks for `GROUP BY`, or collapses the rows.
+- Using `GROUP BY category` and losing the individual books.
+- Forgetting to round, or rounding to 2 decimals.
+- Using the wrong partition: `PARTITION BY title` makes every share 100.

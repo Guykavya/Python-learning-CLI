@@ -1,0 +1,6 @@
+- Omitting the column list and relying on column order: breaks when the table changes and here fails because of the id column.
+- Writing the string `'NULL'` instead of the keyword `NULL`. The city would then be the text "NULL".
+- Forgetting `WHERE city IS NOT NULL`: the primary key on `city_list` accepts one NULL in SQLite, which gives a bad row.
+- Forgetting `DISTINCT`: the second `Pune` violates the primary key and the whole script stops.
+- Hard-coding the city names. A hidden dataset has different customers.
+- Doing step 2 first, so Lima is missing.

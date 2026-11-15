@@ -1,0 +1,4 @@
+- Printing the list **before** the pop: the program pops first, then prints the list that is left.
+- Popping from the left (`pop 4` instead of `pop 7`): `pop()` with no argument takes the last item.
+- Writing `top 4`: the top is the last item, `stack[-1]`, which is `5`.
+- Copying the format loosely (`[4,7]` without the space): Python prints lists with `, ` between items.

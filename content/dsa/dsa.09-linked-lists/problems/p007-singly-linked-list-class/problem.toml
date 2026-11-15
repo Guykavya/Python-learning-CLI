@@ -1,0 +1,6 @@
+id = "dsa.09.p007"
+title = "Singly linked list class"
+tier = "applied"
+kind = "code"
+topics = ["linked list", "class", "invariants", "tail pointer", "generator"]
+minutes = 30

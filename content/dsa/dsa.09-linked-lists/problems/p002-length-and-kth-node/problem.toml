@@ -1,0 +1,6 @@
+id = "dsa.09.p002"
+title = "Length and k-th node"
+tier = "drill"
+kind = "code"
+topics = ["linked list", "walking", "index"]
+minutes = 15

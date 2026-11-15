@@ -1,0 +1,6 @@
+id = "dsa.06.p027"
+title = "Split array largest sum"
+tier = "deep"
+kind = "code"
+topics = ["binary search on the answer", "minimise the maximum", "partition"]
+minutes = 45

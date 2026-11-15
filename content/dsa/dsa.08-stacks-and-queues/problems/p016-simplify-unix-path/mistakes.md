@@ -1,0 +1,5 @@
+- Popping on `..` without checking: `"/../"` crashes with `IndexError` on an empty stack.
+- Treating `...` like `..`: only exactly two dots mean "parent".
+- Pushing empty strings from `//`: the result then contains `//` or ends with `/`.
+- Returning `""` for the root: the answer for an empty stack is `"/"`.
+- Using `str.replace("//", "/")` once: `"///"` still leaves `"//"`.

@@ -1,0 +1,7 @@
+id = "shared.02.p005"
+title = "Follow the Link header, with a page guard"
+tier = "applied"
+kind = "code"
+topics = ["httpx", "pagination", "Link header", "response.links", "safety limit", "custom exception"]
+minutes = 30
+difficulty = 3

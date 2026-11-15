@@ -1,0 +1,5 @@
+- Saying "the window fails because it uses `if` instead of `while`". The loop is fine; the missing piece is that sums are no longer monotonic.
+- Claiming zeros break the window. Zeros keep the sum the same, so growing never lowers it and shrinking never raises it; the window still works (it is only not strictly monotonic).
+- Giving a counterexample that the window actually handles. Check your example by running the code by hand, step by step.
+- Proposing "try every subarray" as the fix. That is correct but O(n^2); prefix sums give O(n).
+- Mixing up the replacements: the counting dictionary stores how many times each prefix appeared; the longest-subarray dictionary stores the first index.

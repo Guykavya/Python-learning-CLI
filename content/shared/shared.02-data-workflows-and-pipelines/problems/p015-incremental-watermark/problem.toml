@@ -1,0 +1,7 @@
+id = "shared.02.p015"
+title = "Incremental load with a watermark in a state table"
+tier = "applied"
+kind = "code"
+topics = ["incremental loads", "watermark", "high-water mark", "state table", "pagination", "transactions", "httpx MockTransport"]
+minutes = 40
+difficulty = 3

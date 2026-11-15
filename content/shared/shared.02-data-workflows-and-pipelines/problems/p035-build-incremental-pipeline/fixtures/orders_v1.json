@@ -1,0 +1,12 @@
+[
+  {"id": 101, "customer": {"email": "asha@example.com", "city": "Pune"}, "status": "shipped", "amount": "19.99", "currency": "INR", "created_at": "2024-06-01T10:00:00Z", "updated_at": "2024-06-01T12:00:00Z", "items": [{"sku": "B1", "qty": 2}]},
+  {"id": 102, "customer": {"email": "ravi@example.com", "city": null}, "status": "pending", "amount": "250.00", "currency": "INR", "created_at": "2024-06-01T11:00:00Z", "updated_at": "2024-06-01T12:30:00Z", "items": [{"sku": "B2", "qty": 1}, {"sku": "B3", "qty": 1}]},
+  {"id": 103, "customer": {"email": "neha@example.com", "city": "Delhi"}, "status": "shipped", "amount": "12,50", "currency": "INR", "created_at": "2024-06-01T11:30:00Z", "updated_at": "2024-06-01T13:00:00Z", "items": [{"sku": "B4", "qty": 1}]},
+  {"id": 104, "customer": {"email": "meera@example.com", "city": "Delhi"}, "status": "cancelled", "amount": "0.00", "currency": "INR", "created_at": "2024-06-02T01:30:00+05:30", "updated_at": "2024-06-02T08:00:00Z", "items": []},
+  {"id": 105, "customer": {"email": "asha@example.com", "city": "Pune"}, "status": "shipped", "amount": "5.5", "currency": "INR", "created_at": "2024-06-02T09:00:00Z", "updated_at": "2024-06-02T09:15:00Z", "items": [{"sku": "B1", "qty": 1}]},
+  {"id": 106, "customer": {"email": "kiran@example.com", "city": "Mumbai"}, "status": "lost", "amount": "40.00", "currency": "INR", "created_at": "2024-06-02T09:30:00Z", "updated_at": "2024-06-02T10:00:00Z", "items": [{"sku": "B5", "qty": 1}]},
+  {"id": 107, "customer": {"city": "Goa"}, "status": "pending", "amount": "15.00", "currency": "INR", "created_at": "2024-06-02T10:30:00Z", "updated_at": "2024-06-02T11:00:00Z", "items": [{"sku": "B6", "qty": 1}]},
+  {"id": 108, "customer": {"email": "  Kiran@Example.COM ", "city": "Mumbai"}, "status": "shipped", "amount": "1200", "currency": "INR", "created_at": "2024-06-03T07:00:00Z", "updated_at": "2024-06-03T07:30:00Z", "items": [{"sku": "B5", "qty": 3}]},
+  {"id": 109, "customer": {"email": "dev@example.com", "city": "Pune"}, "status": "pending", "amount": "75.25", "currency": "INR", "created_at": "2024-06-03T08:00:00Z", "updated_at": "2024-06-03T09:00:00Z", "items": [{"sku": "B6", "qty": 1}]},
+  {"id": 110, "customer": {"email": "ravi@example.com", "city": null}, "status": "shipped", "amount": "10.00", "currency": "INR", "created_at": "2024-06-03T08:30:00Z", "updated_at": "2024-06-03T09:00:00Z", "items": [{"sku": "B2", "qty": 4}]}
+]

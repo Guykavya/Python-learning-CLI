@@ -1,0 +1,5 @@
+- Adding `name` to the window `ORDER BY`. Then no two rows are peers, and `RANK` behaves like `ROW_NUMBER`.
+- Mixing up the two: `RANK` is the one that leaves gaps.
+- Sorting ascending, so the highest salary gets the largest rank.
+- Writing `RANK(salary)` or `RANK() ORDER BY salary DESC` without `OVER (...)`.
+- Forgetting the final `ORDER BY`; window functions do not promise any output order.

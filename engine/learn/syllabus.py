@@ -32,7 +32,17 @@ class Module:
 
     @property
     def content_path(self) -> Path:
-        return paths.content_dir() / self.track / self.dir_name
+        """The folder of this module. The slug of the title is only a guess: a folder that was renamed by hand (core.12 'files-and-io')
+        or whose title was shortened is found by its id prefix instead."""
+        guess = paths.content_dir() / self.track / self.dir_name
+        if guess.exists():
+            return guess
+        track_dir = paths.content_dir() / self.track
+        if track_dir.is_dir():
+            matches = sorted(p for p in track_dir.iterdir() if p.is_dir() and p.name.startswith(self.id + "-"))
+            if len(matches) == 1:
+                return matches[0]
+        return guess
 
     @property
     def chapter_path(self) -> Path:

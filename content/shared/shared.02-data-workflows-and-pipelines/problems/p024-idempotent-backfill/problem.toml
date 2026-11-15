@@ -1,0 +1,7 @@
+id = "shared.02.p024"
+title = "Idempotent backfill: replace one day at a time"
+tier = "challenge"
+kind = "code"
+topics = ["backfill", "idempotency", "delete+insert per partition", "transactions", "pagination", "datetime.date", "timedelta", "crash recovery"]
+minutes = 50
+difficulty = 4

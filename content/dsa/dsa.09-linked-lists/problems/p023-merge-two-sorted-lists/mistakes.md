@@ -1,0 +1,5 @@
+- Taking from `b` on ties (`if b.val <= a.val`): the result is sorted but not stable.
+- Forgetting `tail = tail.next`: every node is linked after the dummy and replaces the previous one.
+- Copying the rest node by node in a second loop: correct but unnecessary; one link attaches the whole rest.
+- Returning `dummy` instead of `dummy.next`.
+- Creating new nodes (`ListNode(a.val)`): the tests check that the original nodes are reused.

@@ -1,0 +1,6 @@
+id = "dsa.06.p040"
+title = "Explain: why duplicates break the rotated search"
+tier = "deep"
+kind = "explain"
+topics = ["rotated array", "duplicates", "worst case"]
+minutes = 30

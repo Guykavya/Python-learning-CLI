@@ -1,0 +1,6 @@
+id = "dsa.03.p055"
+title = "Shortest subarray with sum at least k, negatives allowed"
+tier = "challenge"
+kind = "code"
+topics = ["prefix sums", "monotonic deque", "negative numbers", "shortest subarray"]
+minutes = 60

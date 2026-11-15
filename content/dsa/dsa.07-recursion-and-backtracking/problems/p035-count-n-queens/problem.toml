@@ -1,0 +1,6 @@
+id = "dsa.07.p035"
+title = "Count N-Queens solutions"
+tier = "applied"
+kind = "code"
+topics = ["n-queens", "backtracking", "sets"]
+minutes = 30

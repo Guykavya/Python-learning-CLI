@@ -1,0 +1,7 @@
+id = "dsa.08.p021"
+title = "Fix the broken min stack"
+tier = "applied"
+kind = "code"
+topics = ["stack", "debugging", "design", "equal values"]
+minutes = 20
+assessment = "fix"

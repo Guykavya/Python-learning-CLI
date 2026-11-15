@@ -1,0 +1,6 @@
+id = "dsa.07.p012"
+title = "Depth of a nested structure"
+tier = "deep"
+kind = "code"
+topics = ["recursion", "nested lists", "max"]
+minutes = 20

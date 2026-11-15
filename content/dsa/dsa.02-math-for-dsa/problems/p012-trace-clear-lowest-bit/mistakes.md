@@ -1,0 +1,4 @@
+- Thinking `n & (n - 1)` shifts the number. It keeps all higher bits and clears only the lowest 1-bit.
+- Mixing up `x & -x` (the lowest bit's value, a power of two) with its position (`bit_length` of it minus 1).
+- Forgetting the double space in `" x | (x + 1) ="`: it is in the string, so it is in the output.
+- Reading `5 ^ 3` as a power. `^` is XOR in Python; the power is `**`. XOR of `101` and `011` is `110` = 6.

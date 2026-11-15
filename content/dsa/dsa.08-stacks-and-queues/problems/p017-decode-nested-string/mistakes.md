@@ -1,0 +1,4 @@
+- Reading only one digit: `12[a]` becomes `1` then `2[a]`, or `2` copies of `a` instead of 12.
+- Forgetting to reset `k` to 0 after pushing: the next group's count gets the old digits in front.
+- Pushing only the count and not the text before the group: `ab2[c]` loses `ab`.
+- Repeating the outer text too (`(outer + current) * times`): only the group is repeated.

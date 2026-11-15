@@ -1,0 +1,6 @@
+id = "dsa.07.p033"
+title = "Count islands with flood fill"
+tier = "deep"
+kind = "code"
+topics = ["flood fill", "dfs", "explicit stack"]
+minutes = 35

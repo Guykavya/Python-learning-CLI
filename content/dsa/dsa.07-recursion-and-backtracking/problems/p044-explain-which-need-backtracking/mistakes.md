@@ -1,0 +1,4 @@
+- Labelling every "count" problem as backtracking: counting without listing usually means DP if states repeat.
+- Labelling problem 4 as DP "to be safe": it works, but greedy is the intended tool for this coin system.
+- Ignoring the input size: `2^100` is far beyond any computer.
+- Calling problem 5 greedy: a crossword needs undoing wrong guesses.

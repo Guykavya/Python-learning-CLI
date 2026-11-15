@@ -1,0 +1,6 @@
+id = "dsa.08.p010"
+title = "Longest valid parentheses"
+tier = "deep"
+kind = "code"
+topics = ["stack of indices", "sentinel", "parentheses", "brute-force check"]
+minutes = 35

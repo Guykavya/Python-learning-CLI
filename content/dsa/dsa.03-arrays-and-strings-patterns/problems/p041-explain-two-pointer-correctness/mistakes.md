@@ -1,0 +1,6 @@
+- Saying "the sum is too small, so we need a bigger number, so move `i`" without saying why `a[i]` is useless for **every** remaining partner. That is the whole proof; the rest is bookkeeping.
+- Comparing with the wrong extreme: for the "too small" case you need the **largest** value still in play (`a[j]`), not the smallest.
+- Writing an invariant about the pointers only ("`i < j`") instead of about where the solution can be.
+- Giving an "unsorted counterexample" that the code happens to solve anyway. Run your example by hand to the end.
+- Claiming duplicates break the method. The proof uses `<=` and `>=`, so equal values are fine.
+- Forgetting the sorting cost when the input is unsorted: O(n log n), not O(n).

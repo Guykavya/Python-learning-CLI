@@ -1,0 +1,5 @@
+- `int(b)` on a 100000-digit string. Python 3.11 and later raise `ValueError: Exceeds the limit (4300 digits)`. You must avoid converting, or lift the limit on purpose.
+- Replacing `b` by `b % m`. The exponent cycles with the period of `a` modulo `m` (a divisor of `phi(m)`), not with period `m`. Try `2^100 mod 7`.
+- Replacing `b` by `b % (m - 1)` when `m` is not prime, or when `a` is a multiple of `m`. Fermat's shortcut needs a prime `m` that does not divide `a`.
+- Starting `r = 1` and printing 1 when `m = 1` (the answer is 0). Start at `1 % m`.
+- Using `r = r ** 10 % m` with huge `r`. Here `r < m` so it is safe, but `pow(r, 10, m)` is cleaner.

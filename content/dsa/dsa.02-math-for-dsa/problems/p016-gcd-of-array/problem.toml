@@ -1,0 +1,6 @@
+id = "dsa.02.p016"
+title = "GCD of a whole array"
+tier = "applied"
+kind = "code"
+topics = ["gcd", "Euclid", "folding", "arrays"]
+minutes = 20

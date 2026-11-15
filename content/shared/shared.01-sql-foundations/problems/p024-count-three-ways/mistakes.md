@@ -1,0 +1,5 @@
+- Using `COUNT(city)` for "how many customers": NULL cities are silently skipped, so the number is too small.
+- Using `COUNT(*)` for "how many have a city": it counts the NULL rows too.
+- Writing `COUNT(DISTINCT city)` and expecting NULL to be one of the distinct values. NULL is never counted.
+- Writing `DISTINCT COUNT(city)`: `DISTINCT` belongs inside the parentheses to change what is counted.
+- Forgetting the `AS` names: the test checks column names and their order.

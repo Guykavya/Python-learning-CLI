@@ -1,0 +1,6 @@
+id = "dsa.04.p019"
+title = "Four lists, sum zero"
+tier = "applied"
+kind = "code"
+topics = ["meet in the middle", "pair sums", "dictionary of sums"]
+minutes = 35

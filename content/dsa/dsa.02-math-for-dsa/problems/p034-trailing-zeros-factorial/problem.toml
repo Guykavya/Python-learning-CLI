@@ -1,0 +1,6 @@
+id = "dsa.02.p034"
+title = "Exponent of a prime in n!"
+tier = "deep"
+kind = "code"
+topics = ["Legendre formula", "factorial", "trailing zeros", "prime exponent"]
+minutes = 30

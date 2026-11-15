@@ -1,0 +1,3 @@
+- Saying that sorting needs at least `n log n` steps in every model: the bound is for **comparison** sorts only.
+- Forgetting that the bound is about the worst case: some inputs (sorted) can be done in `O(n)` by adaptive sorts like Timsort.
+- Using `n^2` instead of `n!` for the number of orderings.

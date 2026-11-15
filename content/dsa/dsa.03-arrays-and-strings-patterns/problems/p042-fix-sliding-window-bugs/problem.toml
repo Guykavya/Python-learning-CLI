@@ -1,0 +1,7 @@
+id = "dsa.03.p042"
+title = "Fix the at-most-k-distinct window"
+tier = "deep"
+kind = "code"
+topics = ["sliding window", "variable window", "dictionary counts", "off-by-one", "debugging"]
+minutes = 35
+assessment = "fix"

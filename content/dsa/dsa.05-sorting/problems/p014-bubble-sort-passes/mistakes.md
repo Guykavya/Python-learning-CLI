@@ -1,0 +1,4 @@
+- Not counting the last (clean) pass: a sorted list then prints 0 passes instead of 1.
+- Using `>=` in the comparison: equal values swap forever and the loop never ends (or the swap count is wrong).
+- Running exactly `n - 1` passes without the flag: the pass count becomes `n - 1` even for sorted input.
+- Letting the inner loop run to `n`: `a[i + 1]` is out of range at the end.

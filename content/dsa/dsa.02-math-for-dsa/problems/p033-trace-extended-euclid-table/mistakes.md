@@ -1,0 +1,5 @@
+- Printing `s0, t0` of the last row (the row with `r = 0`). The answer is the row before it: after the final shift, `s0` and `t0` hold it.
+- Updating `s` using the **new** `r` or `q` of the next step. All three columns use the same `q`, computed once at the top of the pass.
+- Applying `row0 - q*row1` to `r` only and carrying `s, t` over unchanged.
+- Using `/` mentally and getting decimals. `q` is an integer quotient.
+- Forgetting that the last printed row of the loop has `r = 0`, with `s` and `t` equal to `b/g` and `-a/g` up to sign.

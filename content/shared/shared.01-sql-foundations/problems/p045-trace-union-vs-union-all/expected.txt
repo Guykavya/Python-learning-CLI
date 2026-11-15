@@ -1,0 +1,4 @@
+union_all|9
+union|5
+intersect|2
+except|1

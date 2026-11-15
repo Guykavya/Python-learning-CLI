@@ -1,0 +1,7 @@
+id = "dsa.04.p040"
+title = "Build a hash map from scratch"
+tier = "challenge"
+kind = "code"
+topics = ["hash table", "chaining", "load factor", "rehashing", "build"]
+minutes = 120
+assessment = "build"

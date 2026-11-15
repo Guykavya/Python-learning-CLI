@@ -1,0 +1,4 @@
+- Printing `seen` after storing `x`. The line is printed before the store.
+- Stopping at the wrong place: the loop breaks as soon as a pair is found, so later numbers never appear.
+- Printing `pair 5 4`. The stored index (the earlier one) comes first: `4 5`.
+- Printing `no pair` after a successful break: `else` on a loop only runs when the loop was **not** broken.

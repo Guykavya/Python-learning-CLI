@@ -1,0 +1,5 @@
+- Writing `while lo < hi` with `hi = n - 1`: the last remaining candidate (`lo == hi`) is never tested, so targets at the ends are missed.
+- Writing `lo = mid` or `hi = mid` in the closed template: the range may stop shrinking and the program loops forever.
+- Searching with `in` or `.index` is a linear scan. With 100000 queries on 100000 numbers that is 10^10 steps and times out.
+- Printing the value instead of the index, or printing 0 instead of -1 for a missing target (0 is a valid index).
+- Calling `input()` inside the query loop for every query: the queries are on one line.

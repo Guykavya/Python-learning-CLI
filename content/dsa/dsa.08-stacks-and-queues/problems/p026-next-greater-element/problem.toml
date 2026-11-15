@@ -1,0 +1,6 @@
+id = "dsa.08.p026"
+title = "Next greater element"
+tier = "drill"
+kind = "code"
+topics = ["monotonic stack", "next greater element", "brute-force check"]
+minutes = 20

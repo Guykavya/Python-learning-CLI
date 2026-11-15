@@ -1,0 +1,6 @@
+id = "dsa.02.p037"
+title = "Euler phi and the gcd sum"
+tier = "challenge"
+kind = "code"
+topics = ["Euler totient", "smallest prime factor", "multiplicative functions", "gcd sum"]
+minutes = 50

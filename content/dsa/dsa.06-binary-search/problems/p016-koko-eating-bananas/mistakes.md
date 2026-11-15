@@ -1,0 +1,5 @@
+- Using `p // k` (floor) for the hours of one pile: a pile of 7 at speed 4 takes 2 hours, not 1.
+- Using `p / k` (a float) and rounding at the end: wrong and slow.
+- Trying every speed from 1 upwards: with piles of 10^9 that is up to 10^9 checks of 100000 piles each.
+- Searching up to `sum(piles)` instead of `max(piles)`: still correct but needs more steps; and with `lo = 0` you divide by zero.
+- Returning `hi` or `lo - 1` in a way that does not match your template. Test a case where the answer is the smallest and the largest possible speed.

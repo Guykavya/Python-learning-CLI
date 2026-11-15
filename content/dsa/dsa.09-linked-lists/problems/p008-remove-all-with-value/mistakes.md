@@ -1,0 +1,4 @@
+- Advancing `prev` after an unlink: in `6, 6` the second `6` slides into `prev.next` and is skipped.
+- Returning `head` instead of `dummy.next`: if the old head was removed, you return a removed node.
+- Testing `cur.val` with only one pointer: to unlink `cur` you need the node before it.
+- Building a new list with `ListNode(v)` for every kept value: the result looks right but the tests check that the original nodes are reused.

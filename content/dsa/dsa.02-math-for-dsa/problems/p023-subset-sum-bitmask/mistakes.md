@@ -1,0 +1,4 @@
+- Starting the mask loop at 1. Then the empty subset is never counted, which is wrong when `t = 0`.
+- Looping to `1 << n` inclusive, or using `range(1 << n - 1)`. In Python `<<` has lower priority than `-`, so `1 << n - 1` is `1 << (n - 1)`. Write `(1 << n)`.
+- Counting distinct subset **values** (using a set of sums or of tuples). Equal values at different positions are different subsets.
+- Writing `range(2 ** n + 1)`. That produces a mask with bit `n` set, which has no element.

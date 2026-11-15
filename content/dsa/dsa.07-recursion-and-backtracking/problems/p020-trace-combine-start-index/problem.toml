@@ -1,0 +1,6 @@
+id = "dsa.07.p020"
+title = "Trace: combinations n choose k"
+tier = "drill"
+kind = "trace"
+topics = ["combinations", "start index", "recursion tree"]
+minutes = 15

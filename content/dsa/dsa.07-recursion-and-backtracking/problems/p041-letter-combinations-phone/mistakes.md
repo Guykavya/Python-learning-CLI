@@ -1,0 +1,4 @@
+- Returning `[""]` for the empty input: the problem asks for `[]`.
+- Forgetting that 7 and 9 have **four** letters.
+- Recursing with `i` instead of `i + 1`: infinite recursion.
+- Recording `path` (a list) instead of the joined string.

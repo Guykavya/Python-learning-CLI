@@ -1,0 +1,6 @@
+id = "dsa.05.p011"
+title = "Explain: what is a stable sort?"
+tier = "drill"
+kind = "explain"
+topics = ["stability", "sorted", "multi-key"]
+minutes = 20

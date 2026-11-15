@@ -1,0 +1,6 @@
+id = "dsa.02.p026"
+title = "Trace the sieve crossing off"
+tier = "applied"
+kind = "trace"
+topics = ["sieve of Eratosthenes", "trace", "p*p start"]
+minutes = 25

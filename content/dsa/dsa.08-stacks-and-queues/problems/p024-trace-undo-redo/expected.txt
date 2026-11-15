@@ -1,0 +1,14 @@
+type hi 'hi' 1 0
+type _there 'hi_there' 2 0
+undo 'hi' 1 1
+type ! 'hi!' 2 0
+undo 'hi' 1 1
+undo '' 0 2
+redo 'hi' 1 1
+redo 'hi!' 2 0
+redo 'hi!' 2 0
+type ? 'hi!?' 3 0
+redo 'hi!?' 3 0
+undo 'hi!' 2 1
+undo 'hi' 1 2
+undo '' 0 3

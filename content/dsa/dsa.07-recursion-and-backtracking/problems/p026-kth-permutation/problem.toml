@@ -1,0 +1,6 @@
+id = "dsa.07.p026"
+title = "k-th permutation without generating them all"
+tier = "challenge"
+kind = "code"
+topics = ["permutations", "factorial number system", "counting"]
+minutes = 40

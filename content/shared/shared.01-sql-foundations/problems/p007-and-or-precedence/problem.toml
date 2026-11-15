@@ -1,0 +1,7 @@
+id = "shared.01.p007"
+title = "Trace: AND before OR"
+tier = "drill"
+kind = "trace"
+topics = ["AND", "OR", "NOT", "precedence"]
+minutes = 15
+difficulty = 2

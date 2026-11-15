@@ -1,0 +1,5 @@
+- Using `strftime('%d', day)` (day of month) minus the row number: it breaks at the end of a month.
+- Subtracting the row number as a plain number from the date string (`'2024-01-03' - 3` is `2021`, strings are not dates).
+- Forgetting `-` or the word `days` inside `date(day, '-' || rn || ' days')`.
+- Grouping by `day` instead of the difference key: every row becomes its own group.
+- Not numbering inside a CTE: you cannot `GROUP BY` an expression that mixes the window function with an aggregate in the same level.

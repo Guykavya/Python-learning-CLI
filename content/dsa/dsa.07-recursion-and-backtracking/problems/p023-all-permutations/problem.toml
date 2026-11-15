@@ -1,0 +1,6 @@
+id = "dsa.07.p023"
+title = "All permutations"
+tier = "drill"
+kind = "code"
+topics = ["permutations", "backtracking", "used array"]
+minutes = 20

@@ -1,0 +1,3 @@
+- Printing `a[lo]` without checking `lo == n`, or `a[j - 1]` without checking `j == 0`. Python would happily read `a[-1]` for `j = 0` and print the largest element, a very quiet bug.
+- Using the lower bound for the floor: for `x` in the list the lower bound points at the first copy and gives the right value, but for `x` between elements it points to the ceiling, not the floor.
+- Printing the index instead of the value.

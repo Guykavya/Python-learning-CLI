@@ -1,0 +1,4 @@
+9 closed ([3, 5, 4], 4) half-open ([3, 5, 4], 4)
+10 closed ([3, 5, 4], -1) half-open ([3, 5, 4], 5)
+1 closed ([3, 1, 0], 0) half-open ([3, 1, 0], 0)
+14 closed ([3, 5, 6], -1) half-open ([3, 5, 6], 7)

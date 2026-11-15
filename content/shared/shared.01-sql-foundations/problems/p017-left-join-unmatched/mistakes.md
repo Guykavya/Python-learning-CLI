@@ -1,0 +1,4 @@
+- Putting `books` on the left: books without an author are kept instead, and Zed Park disappears.
+- Using INNER JOIN: Zed Park disappears.
+- Adding `WHERE b.title IS NOT NULL`: removes exactly the row you wanted to keep.
+- Expecting an empty string instead of NULL for the missing title.

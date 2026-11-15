@@ -86,10 +86,18 @@ BANNER = r"""
 """[1:].splitlines()
 
 
-def banner() -> None:
+CAPTION = "your offline Python learning module"
+
+
+def caption(name: str = "") -> str:
+    return CAPTION + (f"  ·  by {name}" if name else "")
+
+
+def banner(name: str = "") -> None:
     """The fixed welcome art: top half blue, bottom half yellow, like the Python logo."""
     for i, line in enumerate(BANNER):
         print(style(line, "bold", "blue" if i < 3 else "yellow"))
+    print(dim("  " + caption(name)))
     print(dim("  one problem at a time  ·  learn today  ·  learn next"))
     print()
 

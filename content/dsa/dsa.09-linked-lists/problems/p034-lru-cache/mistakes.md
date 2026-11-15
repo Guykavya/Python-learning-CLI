@@ -1,0 +1,6 @@
+- Not moving the node on `get`: the cache then evicts keys that were just used.
+- Not moving the node on an update `put`: the updated key can be evicted next although it was just used.
+- Evicting `head.next` (the most recent) instead of `tail.prev` (the least recent).
+- Evicting before checking whether the key already exists: an update on a full cache throws out another key for no reason.
+- Forgetting `del self.nodes[lru.key]`: the dictionary keeps growing and `get` finds a key that is no longer in the list.
+- Using a Python list for the order (`order.remove(key)`): correct but `O(capacity)` per operation; the timing test fails.

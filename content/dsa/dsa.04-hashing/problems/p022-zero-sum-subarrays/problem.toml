@@ -1,0 +1,6 @@
+id = "dsa.04.p022"
+title = "Count the zero-sum subarrays"
+tier = "applied"
+kind = "code"
+topics = ["prefix sums", "dictionary", "counting subarrays"]
+minutes = 30

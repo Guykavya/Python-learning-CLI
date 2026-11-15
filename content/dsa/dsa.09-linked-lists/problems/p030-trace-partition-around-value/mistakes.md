@@ -1,0 +1,4 @@
+- Putting a value equal to `x` on the small side: the condition is `cur.val < x`, so `5` goes to big.
+- Sorting the values: partition keeps arrival order; `3 -> 2 -> 1` stays in that order.
+- Printing `big: B` or `small: S`: `part` skips the dummy and prints `empty` when the side has no real node.
+- Writing the result as `3 -> 2 -> 1 -> 5 -> 8 -> 5 -> 10 -> None`: `show` here prints no `None` at the end.

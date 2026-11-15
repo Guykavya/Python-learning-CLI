@@ -1,0 +1,7 @@
+id = "shared.01.p044"
+title = "UNION, INTERSECT and EXCEPT"
+tier = "deep"
+kind = "code"
+topics = ["UNION", "INTERSECT", "EXCEPT", "set operations", "duplicates"]
+minutes = 25
+difficulty = 3

@@ -1,0 +1,4 @@
+- Storing `x` before the check: with `a = [3, 2]`, target 6, the value 3 would pair with itself.
+- Printing the values instead of the indices, or printing `j i` instead of `i j`.
+- Using `a.index(need)` for the lookup. `index` scans the list: O(n) per call, O(n^2) overall.
+- Building the dictionary from the whole list first and overwriting duplicate values: for `3 3` the first index is lost.

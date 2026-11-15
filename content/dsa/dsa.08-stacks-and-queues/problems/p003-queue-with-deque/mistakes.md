@@ -1,0 +1,4 @@
+- Using a list with `pop(0)` or `insert(0, x)`: correct order, but `O(n)` per operation.
+- Using `pop()` instead of `popleft()`: that removes the **newest** item, so the "queue" behaves like a stack.
+- `front()` that returns `self._items[-1]`: that is the back, the newest item.
+- Letting the deque raise its own error (`pop from an empty deque`): the message does not name your structure. Check first.

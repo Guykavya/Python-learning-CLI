@@ -1,0 +1,12 @@
+listen eilnst 1
+silent eilnst 2
+enlist eilnst 3
+google eggloo 1
+gogole eggloo 2
+cat act 1
+act act 2
+eilnst ['listen', 'silent', 'enlist']
+eggloo ['google', 'gogole']
+act ['cat', 'act']
+[2, 2, 3]
+{6: 5, 3: 2}

@@ -1,0 +1,4 @@
+- Treating `<` as `<=`: `prev` would move past the old `4` and the line would read `after 4`.
+- Writing `after 2` for inserting `1`: `prev` never moves because the first node (`2`) is not smaller than `1`; it stays on the dummy `D`.
+- Printing the list including the dummy (`D -> 1 -> ...`): the program prints `show(dummy.next)`.
+- Forgetting that the list grows: each call starts from the list the previous call returned.

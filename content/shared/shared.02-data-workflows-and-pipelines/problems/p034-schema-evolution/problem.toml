@@ -1,0 +1,7 @@
+id = "shared.02.p034"
+title = "Schema evolution: a new optional field from the API"
+tier = "challenge"
+kind = "code"
+topics = ["schema evolution", "ALTER TABLE ADD COLUMN", "PRAGMA table_info", "UPSERT", "pa.unify_schemas", "pa.concat_tables", "SQL identifiers"]
+minutes = 50
+difficulty = 4

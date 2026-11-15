@@ -122,6 +122,9 @@ Found 1 error in 1 file (checked 1 source file)
    It points at the exact line of the *caller* that is wrong, which is where the real mistake lives.
 3. **It forces you to think.** Writing `-> float` makes you ask "can this function sometimes return `None`?" before a user finds out.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a function signature as a machine. The function is average(numbers: list[int]) -> float. On the left, an input slot labelled 'list[int]'. Show the call average([70, 80, 90]) fitting the slot and returning 80.0 on the right, labelled 'float'. Then show the call average(80): the int 80 is rejected at the slot with a red label 'mypy: expected list[int], got int' before the machine ever runs."
+
 ### 1.3 The honest part
 
 Now run the file with Python itself:
@@ -316,6 +319,9 @@ All four lines ran. `add("2", "3")` joined two strings with `+`, giving `"23"`. 
 
 Why did this work? Because the *body* of the function only uses `+`, and `+` happens to work on strings, lists and floats. The hint was ignored, the body did its job, and the result was a perfectly valid, but surprising, value. The annotation `-> int` was also false: the second call returned a `str`.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Make a two-lane diagram for def add(a: int, b: int) -> int: return a + b. Lane one is 'Python at runtime' with a gate that says 'type hints ignored, always open'. Send 2 and 3 through to get 5, '2' and '3' to get '23', [1] and [2] to get [1, 2], and 1.5 and 2.5 to get 4.0. Mark the hint 'int' as a faded sign nobody checks."
+
 ### 3.2 A wrong type that crashes: crashes for a different reason
 
 When a wrong type *does* crash, it is the **operation inside the body** that fails, not the hint:
@@ -378,6 +384,9 @@ Success: no issues found in 1 source file
 ```
 
 But mypy cannot know what the user will type. If they type `abc`, `int("abc")` raises `ValueError` at runtime, and no hint could have prevented it. Hints describe the shape of your code. They say nothing about whether **data from outside** (keyboard, files, the internet) is good. For that you still need the error handling you learned in core.07, and `isinstance` checks (section 14).
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a timeline with two checkers for a file containing ask_age() -> int that does int(input('Age: ')). Before the program runs, a 'mypy (static)' reader scans the written code and says 'Success: no issues'. Then at runtime a user types 'abc' and int('abc') raises ValueError. Show that mypy sees only the written code, while runtime sees the data that really arrives."
 
 ### 3.5 Try it
 
@@ -722,6 +731,9 @@ Found 2 errors in 1 file (checked 1 source file)
 
 Only lines 10 and 12 are flagged: `count_up(3.0)` and `b: int = 5.0`. The calls with an `int` for a `float` are fine. Python itself runs all of it (try it), because `3.0 + 1` is simply `4.0`.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw nested sets as circles: int fits inside float, so a float-sized slot accepts 3 but an int-sized slot does not accept 3.0. Show four calls as arrows: double(3) into a float slot (green), count_up(3.0) into an int slot (red, error), a: float = 5 (green), b: int = 5.0 (red). Label the circles 'int' and 'float' and the rule 'int is accepted where float is wanted, not the reverse'."
+
 ### 6.3 Surprise two: `int` accepts a `bool`
 
 In Python, `bool` is a kind of `int`: `True` behaves as `1`, and `False` as `0`. You saw `True + True == 2` in core.02. The type rules follow the same fact, so `True` is accepted where an `int` is expected:
@@ -880,6 +892,9 @@ $ python ch_coll1.py
 $ python -m mypy ch_coll1.py
 Success: no issues found in 1 source file
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw type hints as labelled containers with their contents. Show list[int] holding 1, 2, 3; dict[str, float] holding the pair 'tea' to 2.5; and dict[str, list[int]] holding 'asha' pointing to a box of 70, 90 and 'ravi' pointing to 60, 65. Read the nested one from outside in: 'a dict, from strings, to lists of ints'. Colour each type layer differently and match it to the value."
 
 ### 7.2 Wrong contents are caught
 
@@ -1339,6 +1354,9 @@ Success: no issues found in 1 source file
 
 (`reveal_type` is explained in section 12. It makes mypy print the type it has worked out. It only exists inside mypy, so this file would crash if you ran it with Python.)
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a flowchart for shout_name(users, user_id). Start with name = find_user(...) whose type is 'str | None' (two-coloured box). A diamond asks 'name is None?'. The yes branch returns 'NOBODY'. The no branch continues with the box now narrowed to just 'str', where name.upper() is safe. Show the call with 'u1' giving ASHA and 'u9' giving NOBODY."
+
 ### 9.5 `Optional` does not mean "optional parameter"
 
 This is the most common confusion. The word `Optional` sounds as if it describes a parameter that you may leave out. It does **not**. It only says "the value may be `None`". Whether you can *omit* the argument depends only on whether it has a **default value**.
@@ -1531,6 +1549,9 @@ Two good rules for unions:
 
 You can annotate a variable with a union too: `result: int | None = None`.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a union as a fork. A value of type 'int | str' enters a diamond labelled isinstance(value, str). The yes branch narrows to 'str' and calls value.upper(). The no branch narrows to 'int' and returns str(value). Show a red warning on the version that calls value.upper() without the check: Item 'int' of 'int | str' has no attribute 'upper'."
+
 ### 10.1 Try it
 
 What is the hint for a function `parse(text)` that returns an `int` when `text` is all digits, and the string `"error"` otherwise? And how must a caller handle the result?
@@ -1637,6 +1658,9 @@ Found 2 errors in 1 file (checked 1 source file)
 ```
 
 Both errors say that the callable passed in does not have the shape `Callable[[int], int]`. Read the two shapes in the message and compare them.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw Callable[[int], int] as a plug shape: one int goes in, one int comes out. Test three functions against it. double(n: int) -> int fits (green), and so do a lambda and abs. shout(text: str) -> str does not fit because it takes a str. add(a: int, b: int) -> int does not fit because it needs two arguments. Show them used inside apply_all(func, [1, 2, 3])."
 
 ### 11.1 `Any`, once more
 

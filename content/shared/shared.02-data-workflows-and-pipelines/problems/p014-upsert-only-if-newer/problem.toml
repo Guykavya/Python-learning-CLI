@@ -1,0 +1,7 @@
+id = "shared.02.p014"
+title = "Upsert only if the incoming row is newer"
+tier = "drill"
+kind = "code"
+topics = ["UPSERT", "ON CONFLICT DO UPDATE", "idempotent writes", "sqlite3", "executemany", "rowcount"]
+minutes = 20
+difficulty = 2

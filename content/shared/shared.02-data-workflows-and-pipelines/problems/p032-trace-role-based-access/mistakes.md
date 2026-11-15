@@ -1,0 +1,7 @@
+- Showing the raw email in the support line. The view's `SELECT` builds a masked value and names it `email`; the raw column is not visible through the view.
+- Writing `k1, 2` for the analyst count. The analyst view hides cancelled orders, so order 103 is not counted.
+- Forgetting that views are live. After the `UPDATE`, order 103 is no longer cancelled, so it appears in the analyst view and the sum becomes 27499.
+- Expecting `KeyError` for the intern. `GRANTS.get(role, set())` returns an empty set for an unknown role: access is denied by default.
+- Expecting the `amount_cents` query to work for support because the column exists in the table. A view only exposes what its `SELECT` lists.
+- Thinking the `DELETE` through the view removed a row. SQLite views are read-only (without `INSTEAD OF` triggers), so it raises an error and the table keeps 3 rows.
+- Writing the column name as `sum` or `total`. Without an alias, the name is the expression text exactly as written: `SUM(amount_cents)`.

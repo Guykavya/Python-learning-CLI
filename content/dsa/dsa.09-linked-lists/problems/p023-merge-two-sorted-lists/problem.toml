@@ -1,0 +1,6 @@
+id = "dsa.09.p023"
+title = "Merge two sorted lists"
+tier = "drill"
+kind = "code"
+topics = ["linked list", "merge", "dummy node", "stable"]
+minutes = 20

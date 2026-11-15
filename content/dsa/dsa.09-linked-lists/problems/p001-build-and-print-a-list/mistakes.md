@@ -1,0 +1,5 @@
+- Returning `dummy` instead of `dummy.next`: the list then starts with an extra node holding `0`.
+- Forgetting `tail = tail.next`: every new node is linked after the dummy and replaces the previous one, so only the last value survives.
+- Walking with `while cur.val:` or `while cur and cur.val`: the walk stops at a value `0`, `None` or `""`.
+- Moving `head` itself in `to_list`: harmless here, but in bigger functions you lose your only way back to the start. Walk with a copy (`cur`).
+- Writing `from_list` recursively: a list of 100,000 values exceeds Python's recursion limit (about 1,000 frames).

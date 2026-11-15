@@ -1,0 +1,6 @@
+id = "dsa.02.p003"
+title = "Trace trial division"
+tier = "drill"
+kind = "trace"
+topics = ["trial division", "sqrt bound", "tracing"]
+minutes = 10

@@ -1,0 +1,6 @@
+id = "dsa.06.p016"
+title = "Koko eating bananas"
+tier = "applied"
+kind = "code"
+topics = ["binary search on the answer", "feasible predicate", "ceiling division"]
+minutes = 35

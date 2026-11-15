@@ -1,0 +1,6 @@
+id = "dsa.07.p002"
+title = "Explain: power by repeated halving"
+tier = "drill"
+kind = "explain"
+topics = ["recursion limit", "depth", "divide and conquer"]
+minutes = 20

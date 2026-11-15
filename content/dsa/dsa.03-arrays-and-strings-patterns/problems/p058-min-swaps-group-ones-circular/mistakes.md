@@ -1,0 +1,6 @@
+- Sliding only over the straight array. Blocks that wrap around the end are missed (`1 1 0 0 1` needs 0 swaps, not 1).
+- Using the wrong window size. The final block has exactly `m` cells, the number of ones.
+- Counting zeros outside the window, or ones outside it. The swaps needed are the **zeros inside** the best window.
+- Running the circular loop one window too far (or too short): there are exactly `n` windows, ending at `m - 1 .. n + m - 2`.
+- Counting each window with `sum()` again. That is O(n m), too slow when there are 100000 ones.
+- Thinking a swap must be between neighbours. Here any two positions may be swapped.

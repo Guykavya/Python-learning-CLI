@@ -1,0 +1,5 @@
+- Putting `ORDER BY salary DESC` only at the end of the query and writing `ROW_NUMBER() OVER ()`. The numbers are then handed out in an unspecified order, then sorted.
+- Forgetting the tie-break. Ben and Chen could swap numbers between runs, and the test (and real reports) would be unstable.
+- Writing `ORDER BY salary DESC, name DESC` and getting Chen before Ben.
+- Misspelling the alias (`row_num`) so the test cannot find the column `rn`.
+- Using `COUNT(*)` with `GROUP BY` hoping to number rows. That collapses rows instead of numbering them.

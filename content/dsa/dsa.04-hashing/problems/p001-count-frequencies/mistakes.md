@@ -1,0 +1,4 @@
+- Using `a.count(x)` for each element: each call is O(n), so the whole program is O(n^2). Too slow for 200000.
+- Forgetting the default: `count[x] += 1` raises `KeyError` the first time a value is seen. Use `.get(x, 0)` or `Counter`.
+- Sorting the output. The problem asks for first-appearance order; a sorted list is a different answer.
+- Printing a dictionary with `print(count)`. That shows braces and a colon. Print one `value count` line each.

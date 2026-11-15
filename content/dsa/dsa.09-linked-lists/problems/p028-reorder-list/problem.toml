@@ -1,0 +1,6 @@
+id = "dsa.09.p028"
+title = "Reorder list"
+tier = "deep"
+kind = "code"
+topics = ["linked list", "fast and slow pointers", "reversal", "weaving", "in place"]
+minutes = 35

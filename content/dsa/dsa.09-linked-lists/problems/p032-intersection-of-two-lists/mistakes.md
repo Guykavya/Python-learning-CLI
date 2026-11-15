@@ -1,0 +1,4 @@
+- Comparing values (`p.val == q.val`): two lists can contain equal values in different nodes.
+- Switching to the head of the **same** list at the end: the lengths never line up and the loop may run forever.
+- Switching when `p.next is None` instead of when `p is None`: then the pointers never take the "None" step, and with no shared node they never meet, so the loop never ends.
+- Putting nodes into a set: correct, but `O(n)` memory.

@@ -1,0 +1,7 @@
+id = "shared.02.p028"
+title = "Partition overwrite: re-running a day replaces only that day"
+tier = "applied"
+kind = "code"
+topics = ["partitioning", "partition overwrite", "idempotent writes", "os.replace", "shutil.rmtree", "re-runnable jobs"]
+minutes = 35
+difficulty = 3

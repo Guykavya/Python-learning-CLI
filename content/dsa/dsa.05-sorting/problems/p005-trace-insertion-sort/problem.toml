@@ -1,0 +1,6 @@
+id = "dsa.05.p005"
+title = "Trace insertion sort"
+tier = "drill"
+kind = "trace"
+topics = ["insertion sort", "shifts", "trace"]
+minutes = 15

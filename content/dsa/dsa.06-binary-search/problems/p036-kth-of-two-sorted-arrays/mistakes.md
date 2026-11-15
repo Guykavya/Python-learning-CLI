@@ -1,0 +1,4 @@
+- Merging the two arrays: impossible, they are hidden and have up to 10^9 elements each.
+- Reading `A[i]` with `i == n` or `B[j - 1]` with `j == 0`: the range `[max(0, k - m), min(k, n)]` and the `lo < hi` loop keep both valid, but a different range breaks it.
+- Returning `min` instead of `max` of the two last elements of the prefix: the k-th smallest is the **largest** element of the `k` smallest.
+- Searching over values with two inner binary searches: correct but needs far more than the allowed number of questions.

@@ -1,0 +1,6 @@
+- Choosing by fashion ("ELT is what modern data teams use") instead of by the facts of the scenario.
+- Choosing ELT for the courier: the raw orders with emails would land at the courier before any cleaning, which is exactly what the contract forbids.
+- Choosing ETL for analytics without noticing the 90-day limit: once the API forgets, a new revenue rule can never be applied to old orders.
+- Describing layers without saying what a row in them looks like. "A raw layer" is vague; `raw_orders(loaded_at, payload)` with the JSON text is clear.
+- Forgetting that the raw layer is itself sensitive data that needs access control and retention.
+- Saying ETL has "no risk" because the data is clean. A wrong transform rule silently ships wrong data and the destination cannot repair it.

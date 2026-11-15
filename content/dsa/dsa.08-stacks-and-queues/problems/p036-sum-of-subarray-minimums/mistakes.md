@@ -1,0 +1,5 @@
+- Strict on both sides: subarrays with two equal minimums are not counted at all (`[2, 2]` gives 4).
+- Non-strict on both sides: they are counted twice (`[2, 2]` gives 8).
+- Forgetting the modulo: the big tests' answers are far above `10**9 + 7`.
+- Default `nxt[i] = -1` instead of `n`: the count `(nxt[i] - i)` becomes negative.
+- Brute force over all subarrays: `O(n^2)` at best, too slow for 100,000 numbers.

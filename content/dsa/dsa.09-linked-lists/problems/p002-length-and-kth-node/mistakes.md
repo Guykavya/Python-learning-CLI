@@ -1,0 +1,4 @@
+- Taking `k + 1` steps (starting the counter at 1 or using `<=`): `get(head, 0)` should be the head itself.
+- Stepping without a `None` check: `None.next` raises `AttributeError` when `k` is past the end.
+- Returning `cur.val` instead of `cur`: the problem asks for the node, so the caller can link after it.
+- Counting with `while cur.next:`: this stops on the last node without counting it, and crashes on an empty chain.

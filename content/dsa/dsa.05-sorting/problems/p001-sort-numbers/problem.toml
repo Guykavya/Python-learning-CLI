@@ -1,0 +1,6 @@
+id = "dsa.05.p001"
+title = "Sort numbers up and down"
+tier = "drill"
+kind = "code"
+topics = ["sorted", "reverse", "list.sort"]
+minutes = 10

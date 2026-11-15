@@ -241,6 +241,9 @@ def test_removing_an_item_from_the_cart():
 
 You do **not** write `if __name__ == "__main__":` or call the tests yourself. pytest finds them and calls them for you. You also do not `print` anything: a passing test is silent.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the three steps of a pytest test as three stacked boxes: Arrange, Act, Assert. Use the test test_removing_an_item_from_the_cart. Arrange: cart = ['pen', 'ink']. Act: cart.remove('pen'), so the cart box now shows ['ink']. Assert: cart == ['ink'] gives a green tick. Show the value inside the cart at each step, and label which line of code belongs to which box."
+
 ### 2.4 What happens when the assert is false
 
 Add one wrong test, to see what pytest does:
@@ -362,6 +365,9 @@ A file named `calc_checks.py` would also be skipped, because the file name does 
 `test_one`, `testtwo` and `test` are collected: the rule is "starts with lower-case `test`". There is no need for an underscore, though you should always use one. `Test_three` has a capital `T` and `four_test` does not *start* with `test`, so neither is collected.
 
 </details>
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate how pytest discovers tests. Show a folder with calc.py and test_calc.py. Pytest skips calc.py because the file name does not match test_*.py. Inside test_calc.py, show three functions: test_add (collected, green), check_add_negative (skipped, grey, because the name does not start with 'test') and helper (skipped, grey). End with the report: 1 passed. Label each rule that decides keep or skip."
 
 ### 3.2 Useful options
 
@@ -565,6 +571,9 @@ Read it in this order:
 7. **The short summary** at the bottom: one line per failure, handy when there are many.
 
 Now the question that matters: is the function wrong, or is the test? `apply_discount(80, 50)` is `80 - 80 * 50 / 100`, which is `80 - 40`, which is `40`. Half price of 80 is 40. The **function is right and the test is wrong**: whoever wrote `30` made an arithmetic slip. Section 5 returns to this question, because you must always ask it.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the failure report of test_half_price as an annotated picture. Code: assert apply_discount(80, 50) == 30. Show apply_discount(80, 50) computing 80 - 80*50/100 = 40.0 on the left, 30 on the right, and a red not-equal sign between them. Point arrows from the report lines ('>' line, 'E assert 40.0 == 30', 'where 40.0 = apply_discount(80, 50)') to the matching parts, and mark that the test's expected value is the one that is wrong."
 
 ### 4.2 The left side is what the code produced
 
@@ -1185,6 +1194,9 @@ $ python -m pytest -q -k second
 1 passed, 1 deselected in 0.01s
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two timelines side by side for test_cart.py. Left: both tests share one global list cart. test_add_one_item appends 'pen' so cart is ['pen'] and passes; test_add_second_item appends 'ink' so cart is ['pen', 'ink'], length 2, passes. Right: run test_add_second_item alone with -k second; cart starts empty, becomes ['ink'], length 1, so assert 1 == 2 fails in red. Highlight the shared list."
+
 ### 7.4 No logic in tests
 
 A test should be so simple that it is obviously correct. If a test contains a loop, an `if`, or a complicated calculation, the test itself can have a bug, and then who tests the test? Compare:
@@ -1293,6 +1305,9 @@ $ python -m pytest -q
 ```
 
 By default `approx` allows a **relative** error of one millionth (`1e-6`) of the expected value. You can set your own: `pytest.approx(0.3, abs=0.01)` allows a difference of 0.01. Use `approx` whenever the expected value is a float that came from a calculation. When the answer is a whole number stored in an int, or a float that is exact in binary (such as `2.5`), plain `==` is fine.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a number line zoomed in near 0.3. Mark the exact value 0.3 and the value 0.30000000000000004 that add(0.1, 0.2) gives, a tiny gap apart. Show that plain == sees the gap and fails, while pytest.approx(0.3) draws a small shaded tolerance band (about one millionth of 0.3 wide on each side) that contains the result, so the test passes. Label both outcomes."
 
 ### 8.2 Lists: order matters, and so does the type
 
@@ -1454,6 +1469,9 @@ The pieces:
 - The test function takes those names as parameters and uses them normally.
 
 This is the one case where a test function has parameters. They are filled in by pytest from the table, not by you.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate pytest.mark.parametrize for test_grade. Show a table of 8 rows (95-A, 90-A, 89-B, 75-B, 74-C, 60-C, 59-F, 0-F). Each row is fed one at a time into the single function test_grade(marks, expected), which calls grade(marks), and then becomes its own result line such as test_grade[89-B] PASSED. Show the progress going 12%, 25% up to 100%, and 8 passed at the end."
 
 ### 9.3 A failing row
 
@@ -1642,6 +1660,9 @@ $ python -m pytest -q
 ```
 
 `with pytest.raises(ValueError):` opens a block. The test **passes** only if the code inside the block raises `ValueError` (or a child of it). If the block finishes without an exception, or raises a different one, the test **fails**.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a flow diagram of with pytest.raises(ValueError): withdraw(100, -5). The call enters the block and hits 'if amount <= 0', which raises ValueError('amount must be positive'). The block catches it and the test passes (green). Add two red side paths: the block finishes with no exception, so the test fails; a different exception type is raised, so the test fails. Label the three outcomes."
 
 ### 10.2 It fails when nothing is raised
 
@@ -2065,6 +2086,9 @@ FAILED test_tickets.py::test_borders[12-50] - AssertionError: age 12 should p...
 
 The failing row is `(12, 50)`: exactly the bug. The typical values 2, 8, 30 and 70 could never have seen it.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw an age number line from -1 to 70 for ticket_price. Colour the classes: below 0 error, 0-4 free (price 0), 5-11 child (price 50), 12 and up shown as the buggy code treats it, then 60+ senior (price 60). The code uses age < 12, a bug since it should be age < 13. Mark the border values 4, 5, 12, 13, 59, 60, and show that typical ages 2, 8, 30, 70 miss the bug while 12 catches it."
+
 ### 11.3 The usual suspects: a checklist
 
 Every time you test a function, walk through this list and ask "does this apply?".
@@ -2312,6 +2336,9 @@ If you can make that change and no test fails, your suite has a hole, exactly at
 
 You do not need to do it for every line. Do it on the places where a mistake is **likely**: the borders, the loops, the error branches.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate the 'break it on purpose' check. Show a function with a line 'if age < 13'. Step 1: the test suite is green. Step 2: change < to <=, which is a deliberate mutant. Step 3a: a test with the border value fails, so the mutant is killed (red). Step 3b: if all tests still pass, the mutant survives, which shows a hole in the suite. Show both cases side by side."
+
 ### 13.3 Test behaviour, not the way the code is written
 
 A test should check **what** the function promises, not **how** it does it. A test that looks at internal variables or calls private helper steps breaks every time you tidy the code, even when the behaviour is the same. The only things your tests should rely on are the function's arguments, its return value, its documented effects and the exceptions it raises. That keeps your tests valid while you refactor.
@@ -2353,6 +2380,9 @@ So far you wrote the code first, then the tests. **Test-driven development** rev
 4. Repeat with the next small behaviour.
 
 The colours come from the test runner: red for failing, green for passing.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the red, green, refactor loop as a circle with three coloured nodes. Use initials('Ada Lovelace') == 'A.L.' as the example. Red: test_two_words fails because names.py is missing, then fails with None == 'A.L.'. Green: the smallest code, return 'A.L.', passes. Refactor: tidy the code while keeping tests green. Show the test result and the code at each node, with an arrow back to Red for the next behaviour."
 
 ### 14.2 A worked example: initials
 

@@ -1,0 +1,6 @@
+id = "dsa.05.p015"
+title = "Implement merge sort"
+tier = "applied"
+kind = "code"
+topics = ["merge sort", "recursion", "divide and conquer"]
+minutes = 40

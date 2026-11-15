@@ -1,0 +1,8 @@
+- `CAST(amount * 100 AS INTEGER)` without `ROUND`. `19.99` becomes `1998` cents because the float product is `1998.9999...`.
+- Parsing in Python and inserting `json.dumps(json.loads(text))`. The raw layer then no longer shows what arrived, and broken payloads crash the load.
+- Building the INSERT with an f-string. A city like `O'Brien Nagar` breaks the SQL (and it is an injection risk).
+- Forgetting `WHERE json_valid(payload)`. One broken payload makes `json_extract` fail and the whole clean build stops.
+- `DROP TABLE raw_orders` or `CREATE TABLE` without `IF NOT EXISTS` in `load_raw`. The raw layer must keep growing across loads.
+- Inserting into an existing `clean_orders` instead of rebuilding it. The second build doubles every row.
+- `trim(...)` alone for the city. A blank `"   "` becomes `''`, which is not `NULL`; use `NULLIF(..., '')`.
+- Forgetting `conn.commit()`. Another connection (or the next run) sees nothing.

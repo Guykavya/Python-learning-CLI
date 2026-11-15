@@ -1,0 +1,6 @@
+id = "dsa.02.p033"
+title = "Trace the extended Euclid table"
+tier = "deep"
+kind = "trace"
+topics = ["extended Euclid", "table", "Bezout"]
+minutes = 35

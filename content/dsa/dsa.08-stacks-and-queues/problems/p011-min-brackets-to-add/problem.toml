@@ -1,0 +1,6 @@
+id = "dsa.08.p011"
+title = "Minimum brackets to add"
+tier = "applied"
+kind = "code"
+topics = ["counter", "balanced brackets", "greedy"]
+minutes = 15

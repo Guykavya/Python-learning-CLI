@@ -1,0 +1,8 @@
+id = "shared.02.p026"
+title = "Trace: CSV round trip vs Parquet round trip"
+tier = "drill"
+kind = "trace"
+topics = ["csv", "parquet", "pyarrow", "types", "round trip", "truthiness", "Decimal"]
+minutes = 15
+difficulty = 2
+assessment = "trace"

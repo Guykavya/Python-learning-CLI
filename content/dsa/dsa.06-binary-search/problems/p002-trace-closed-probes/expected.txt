@@ -1,0 +1,6 @@
+lo 0 mid 4 hi 9 a[mid] 16
+lo 5 mid 7 hi 9 a[mid] 56
+lo 5 mid 5 hi 6 a[mid] 23
+lo 6 mid 6 hi 6 a[mid] 38
+not found, lo 7 hi 6
+probes 4

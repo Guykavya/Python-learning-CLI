@@ -1,0 +1,4 @@
+- Using `reverse=True` with `(score, name)`: the names then come out Z to A for equal scores.
+- Sorting by name first and by score second without relying on stability: the second sort must come after and must be stable, which the built-in is, but it is easy to run them in the wrong order.
+- Keeping the score as a string: `'9' > '100'`. Convert to `int`.
+- Negating the name: strings cannot be negated. Only numeric keys can use the minus trick.

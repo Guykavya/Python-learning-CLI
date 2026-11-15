@@ -1,0 +1,4 @@
+- Using a list to track recency: `list.remove(k)` is O(c), so 200000 commands with `c = 50000` is about 10^10 steps.
+- Evicting when an **existing** key is updated: only a new key can push another one out.
+- Forgetting that `get` refreshes the key. Without that, `get 1` in the example would not protect key 1.
+- Printing nothing for `put` and `-1` for a missing key only; `get` of a present key must print the value.

@@ -100,6 +100,9 @@ practice sites give one or two seconds. So:
 When a problem says `n <= 10^18`, it is telling you: "do not loop from 1 to n". When it says
 `n <= 1000`, it is telling you: "the simple way is fine, do not over-think it."
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a horizontal bar chart on a log scale showing how many simple steps plain Python can do in about one second (roughly 10 million, marked as a vertical line). Add bars for loops of size n = 1,000, 100,000, 10 million, 10^12 and 10^18. Colour bars left of the line green, near it yellow, far right red. Label each bar with its verdict: instant, fine, borderline, impossible (hours), impossible (centuries)."
+
 ### A reading example
 
 > Read a positive integer n (1 <= n <= 10^12). Print `prime` if n is prime and `not prime`
@@ -184,6 +187,9 @@ Look at the table: for even n the answer is `-n/2`, and for odd n it is `(n+1)/2
 would work for small n, but now you have a formula that works instantly even for n = 10^18.
 You found it with a pencil, not with code.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a table being filled row by row for the alternating sum 1 - 2 + 3 - 4 ... up to n. Rows: n=1 gives 1, n=2 gives -1, n=3 gives 2, n=4 gives -2, n=5 gives 3, n=6 gives -3. Then plot the sums as points on a number line chart and highlight the pattern: odd n gives (n+1)/2 (upper points), even n gives -n/2 (lower points). Show the two formulas at the end."
+
 <details><summary>Try it: fill the table for "sum of the first n odd numbers" (1, 1+3, 1+3+5, ...) for n = 1 to 5. What is the pattern?</summary>
 
 | n | sum |
@@ -246,6 +252,9 @@ solve them one at a time. "Print a calendar for a month" sounds hard. Split it:
 Each sub-problem is a small, testable piece. Write and test them in order. When the last one
 works, the whole thing works. You will do exactly this in the "month calendar" challenge.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a flow diagram that breaks the big task 'print a calendar for a month' into five small boxes in order: 1 is it a leap year, 2 how many days in this month (uses box 1), 3 which weekday is the 1st, 4 print the header line, 5 print the days with a new line after each Sunday. Use arrows for the order, and a dashed arrow from box 1 to box 2. Mark each box 'test alone'."
+
 ## Step 5: From pseudocode to code
 
 If the pseudocode is good, this step is almost mechanical: each line becomes one or two lines
@@ -302,6 +311,9 @@ of one loop iteration**.
 Now `n > 0` is false, the loop stops, and 6 == 6, so it prints `balanced`. That matches our
 hand answer.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a Python loop that checks if n = 1452 is balanced. Show the digits 1 4 5 2 as boxes. Each step, highlight the last digit, add it to odd_total (positions 1 and 3) or even_total (positions 2 and 4), then slide the digit away so n shrinks 1452, 145, 14, 1, 0. Show a trace table filling live: digit 2,5,4,1; odd_total 2,2,6,6; even_total 0,5,5,6. End with 6 == 6, balanced."
+
 Rules for honest tracing:
 
 1. **Be the computer, not the programmer.** Do what the code says, not what you meant it to
@@ -353,6 +365,9 @@ for i in range(1, 4):
 
 Six lines in total: 1 + 2 + 3. When the inner loop depends on the outer variable, the total
 work is a sum like this, which is why nested loops get slow quickly.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate this Python code: for i in range(1, 4): for j in range(i): print(i, j). Show the outer variable i as a big wheel and the inner j as a small wheel that spins fully for each i. Print each line as it happens: 1 0 / 2 0, 2 1 / 3 0, 3 1, 3 2. Show a running counter reaching 6 lines (1 + 2 + 3), with the three groups in different colours."
 
 ## Step 7: Edge-case thinking
 
@@ -422,6 +437,9 @@ is five numbers, and 7 - 3 + 1 = 5. Forgetting the `+ 1` is the fence-post mista
 
 The half-open rule has a good reason: `range(a, b)` has exactly `b - a` values, and
 `range(0, n)` matches positions 0 to n-1 in a string of length n.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a number line from 0 to 6 and show how Python's range(1, 5) and range(1, 5 + 1) behave. For range(1, 5) draw filled dots on 1, 2, 3, 4 and an empty circle on 5 labelled 'excluded'. For range(1, 6) fill 1 to 5. Add a fence-post picture below: 10 metres of fence has 10 gaps but 11 posts. Label 'b - a + 1' for counting inclusive."
 
 ### `<` versus `<=`
 
@@ -509,6 +527,9 @@ Before anything is read, what should it be? There is no correct value for "the l
 nothing", so the clean fix is: read the first number and make it the largest, then loop over
 the rest. Starting with `largest = 0` makes the sentence false when all numbers are negative,
 and the program prints 0 for the input -5, -2, -9. The invariant tells you why it is wrong.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a 'largest so far' loop over the numbers -5, -2, -9. Show two runs side by side. Run A starts with largest = 0 and ends printing 0, which is wrong, so flash red on the sentence 'largest is the largest of the numbers read so far'. Run B starts with largest = first number (-5), then reads -2 (largest becomes -2), then -9 (stays -2), and ends correct. Keep the invariant sentence visible and tick it each step."
 
 When you write a loop, say its invariant to yourself in one sentence. If you cannot, you do not
 yet know what the loop is doing.
@@ -729,6 +750,9 @@ Trace for n = 49:
 
 With `d * d < 49`, the loop would stop before d = 7 and wrongly report 49 as prime.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate trial division for n = 49. Draw a row of numbers 2 to 48. Step d = 2, 3, 4, 5, 6, 7: at each step show d * d (4, 9, 16, 25, 36, 49) and 49 % d (1, 1, 1, 4, 1, 0). Highlight the zone d * d <= 49 in green, the numbers beyond 7 in grey as 'never needed'. Stop at d = 7 with 'divisor found, not prime'. Also show a pair 7 x 7 = 49."
+
 A small speed-up: after checking 2, try only odd d (3, 5, 7, ...). It halves the work.
 
 The same "pair up divisors" idea finds the **sum of all divisors** quickly: each d that divides n
@@ -767,6 +791,9 @@ Trace for a = 48, b = 18:
 
 b is 0, so the answer is 6. Invariant: "gcd(a, b) equals the gcd of the original numbers." The
 loop ends because b gets strictly smaller every step and cannot go below 0.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate Euclid's algorithm for gcd(48, 18) using rectangles. Start with a 48 by 18 rectangle and tile it with 18 by 18 squares, leaving a 12 wide remainder. Then step through (a, b) = (48, 18), (18, 12), (12, 6), (6, 0), showing a % b = 12, 6, 0 each time. Highlight the final a = 6 as the gcd and show that the rectangle is filled exactly by 6 by 6 squares."
 
 Note `a, b = b, a % b` computes both right-hand values first, then assigns. Writing `a = b` and
 then `b = a % b` on separate lines is wrong, because the second line would use the new a.

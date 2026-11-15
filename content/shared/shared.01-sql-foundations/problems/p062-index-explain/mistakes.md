@@ -1,0 +1,5 @@
+- Saying "SEARCH means the database searches faster because it is smarter". It means it uses a sorted structure and jumps instead of reading everything.
+- Believing an index is used whenever the column appears in the query. A function on the column (`substr`, `+ 0`, `lower`) usually blocks it.
+- "Index every column": each index slows every write and uses disk space.
+- Forgetting the order of columns in a composite index: (customer_id, ordered) helps `WHERE customer_id = ?`; it does not help `WHERE ordered = ?` alone.
+- Expecting an index to help a query that returns most of the table.

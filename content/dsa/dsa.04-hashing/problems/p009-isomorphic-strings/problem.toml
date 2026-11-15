@@ -1,0 +1,6 @@
+id = "dsa.04.p009"
+title = "Isomorphic strings"
+tier = "drill"
+kind = "code"
+topics = ["dictionary", "bijection", "strings"]
+minutes = 15

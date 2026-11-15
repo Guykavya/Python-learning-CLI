@@ -1,0 +1,7 @@
+id = "shared.01.p003"
+title = "ORDER BY several keys"
+tier = "drill"
+kind = "code"
+topics = ["ORDER BY", "DESC", "tie-breaking"]
+minutes = 10
+difficulty = 2

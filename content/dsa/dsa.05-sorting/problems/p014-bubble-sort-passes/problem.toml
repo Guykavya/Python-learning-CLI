@@ -1,0 +1,6 @@
+id = "dsa.05.p014"
+title = "Bubble sort with early exit"
+tier = "applied"
+kind = "code"
+topics = ["bubble sort", "early exit", "passes", "swaps"]
+minutes = 25

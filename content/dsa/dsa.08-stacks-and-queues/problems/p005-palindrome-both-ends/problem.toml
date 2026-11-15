@@ -1,0 +1,6 @@
+id = "dsa.08.p005"
+title = "Palindrome check from both ends"
+tier = "drill"
+kind = "code"
+topics = ["deque", "popleft", "pop", "palindrome"]
+minutes = 15

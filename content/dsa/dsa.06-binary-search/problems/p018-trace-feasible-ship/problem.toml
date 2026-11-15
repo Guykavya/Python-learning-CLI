@@ -1,0 +1,6 @@
+id = "dsa.06.p018"
+title = "Trace the search for a ship capacity"
+tier = "applied"
+kind = "trace"
+topics = ["binary search on the answer", "trace", "feasibility"]
+minutes = 25

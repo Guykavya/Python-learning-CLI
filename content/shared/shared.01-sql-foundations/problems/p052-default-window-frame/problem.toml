@@ -1,0 +1,7 @@
+id = "shared.01.p052"
+title = "Trace: the default window frame with ties"
+tier = "deep"
+kind = "trace"
+topics = ["window frame", "RANGE vs ROWS", "peers", "ties"]
+minutes = 25
+difficulty = 4

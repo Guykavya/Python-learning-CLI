@@ -1,0 +1,5 @@
+- Popping index 0 at `i = 2`: `2 < 2` is false; equal is not greater.
+- Writing values in `waiting` instead of indices: the program stores and prints indices.
+- Printing the `pop` lines after the line for `i`: the pops happen inside the `while`, before the push and the print.
+- Writing `pop 0` before `pop 2`: the top of the stack (index 2) is popped first.
+- Forgetting the final line with the whole `ans` list.

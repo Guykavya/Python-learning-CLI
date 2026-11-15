@@ -1,0 +1,4 @@
+- Starting `slow` on the head instead of a dummy: `slow` stops **on** the node to remove (one too far) and the head cannot be removed.
+- Moving `fast` `n + 1` or `n - 1` times: off by one; check `n = 1` and `n = length`.
+- Looping `while fast is not None` instead of `while fast.next is not None` (with the dummy start): `slow` ends one node too far.
+- Returning `head`: when the head was removed, it is no longer part of the list.

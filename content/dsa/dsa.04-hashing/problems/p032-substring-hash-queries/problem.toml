@@ -1,0 +1,6 @@
+id = "dsa.04.p032"
+title = "Substring hash queries"
+tier = "deep"
+kind = "code"
+topics = ["string hashing", "prefix hashes", "modular arithmetic", "pow(b, e, m)"]
+minutes = 45

@@ -1,0 +1,6 @@
+id = "dsa.02.p006"
+title = "GCD with Euclid's algorithm"
+tier = "drill"
+kind = "code"
+topics = ["gcd", "Euclid", "while loop", "modulo"]
+minutes = 15

@@ -1,0 +1,7 @@
+- No limit at all. The day the API has a bug, your job never ends and your memory fills up.
+- Returning the partial list when the limit is hit. Nobody notices that data is missing.
+- Off by one at the limit: raising when exactly `max_pages` pages complete normally, or making request number `max_pages + 1` before raising.
+- Taking the first URL in the Link header. The header can list `first`, `prev`, `next` and `last` in any order; pick `rel="next"`.
+- Parsing the header by hand with `split(";")[0]`. Use `response.links`, which handles several entries and the angle brackets.
+- Adding `BASE` in front of the next URL. When it is already absolute you get `https://api...https://api...`; `client.get` already resolves paths against `base_url`.
+- Reading `response.links["next"]` without `.get`. The last page has no next entry, so that is a `KeyError`.

@@ -1,0 +1,7 @@
+id = "dsa.07.p027"
+title = "Fix the slow combination sum"
+tier = "applied"
+kind = "code"
+topics = ["pruning", "sorting", "debugging"]
+minutes = 30
+assessment = "fix"

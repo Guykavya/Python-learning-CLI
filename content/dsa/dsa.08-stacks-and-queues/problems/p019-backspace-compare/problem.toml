@@ -1,0 +1,6 @@
+id = "dsa.08.p019"
+title = "Compare strings with backspaces"
+tier = "applied"
+kind = "code"
+topics = ["stack", "two pointers", "O(1) space", "strings"]
+minutes = 35

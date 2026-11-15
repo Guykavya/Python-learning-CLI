@@ -1,0 +1,6 @@
+- Using the shrinking window from the positive-only problem. Removing a negative value makes the sum go **up**, so "shrink while the sum is big enough" stops too early (`2 -2 4`, `k = 3`: the answer is the 4 alone).
+- Forgetting the back pops. The deque is then not sorted by prefix value, and checking only the front misses good starts behind it.
+- Using `if` instead of `while` for the front. Several starts can become good at the same end; the later ones give shorter answers.
+- Starting the loop at `i = 1` without putting index 0 into the deque. Subarrays that start at the first element are never found.
+- Printing `n + 1` (the "infinity" value) instead of `-1` when nothing works.
+- Trying every start with an inner loop: O(n^2), too slow for 200000.

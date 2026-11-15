@@ -1,0 +1,6 @@
+id = "dsa.09.p027"
+title = "Palindrome list in O(1) space"
+tier = "deep"
+kind = "code"
+topics = ["linked list", "fast and slow pointers", "reversal", "restore"]
+minutes = 35

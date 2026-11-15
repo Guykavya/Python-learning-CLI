@@ -1,0 +1,7 @@
+id = "shared.02.p006"
+title = "Explain: ETL or ELT?"
+tier = "drill"
+kind = "explain"
+topics = ["ETL", "ELT", "raw layer", "staging", "clean layer", "pipeline design"]
+minutes = 20
+difficulty = 2

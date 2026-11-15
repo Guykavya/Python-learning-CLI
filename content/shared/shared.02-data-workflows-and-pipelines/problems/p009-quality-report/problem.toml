@@ -1,0 +1,7 @@
+id = "shared.02.p009"
+title = "A data-quality report for one batch"
+tier = "applied"
+kind = "code"
+topics = ["data quality", "null rate", "uniqueness", "range check", "freshness", "Counter", "injected now"]
+minutes = 35
+difficulty = 3

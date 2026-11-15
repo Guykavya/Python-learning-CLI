@@ -1,0 +1,4 @@
+- Printing a line for every swap instead of once per pass.
+- Forgetting that the inner loop is shorter in each pass: it does not matter for the result here, but it matters when you count comparisons.
+- Writing `swaps` as the number of passes with a swap, instead of the number of single swaps.
+- Printing the list without brackets and commas: `print` of a list shows `[1, 4, 2, 5, 8]`.

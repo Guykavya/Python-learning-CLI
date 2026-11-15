@@ -1,0 +1,6 @@
+id = "dsa.02.p025"
+title = "Goldbach split"
+tier = "applied"
+kind = "code"
+topics = ["sieve", "primes", "queries", "precomputation"]
+minutes = 30

@@ -1,0 +1,159 @@
+# Real site problems for dsa.02 (titles and slugs or ids written from memory of the sites; not re-fetched online).
+# LeetCode: Easy and Medium. Codeforces: rating 800 to 1000. CSES: Introductory Problems and Mathematics.
+# Order: bit tricks first, then primes and divisors, then modular arithmetic and counting, then harder mixes.
+# Match each one to the chapter section: bits (10), sieve and primes (3, 4), gcd (5, 6), modular power and
+# inverse (7, 8), nCr and Legendre (9). Write the simple solution first, then the one that fits the limits.
+
+[[problem]]
+site = "leetcode"
+key = "power-of-two"
+title = "Power of Two"
+url = "https://leetcode.com/problems/power-of-two/"
+minutes = 10
+
+[[problem]]
+site = "leetcode"
+key = "number-of-1-bits"
+title = "Number of 1 Bits"
+url = "https://leetcode.com/problems/number-of-1-bits/"
+minutes = 10
+
+[[problem]]
+site = "leetcode"
+key = "single-number"
+title = "Single Number"
+url = "https://leetcode.com/problems/single-number/"
+minutes = 10
+
+[[problem]]
+site = "leetcode"
+key = "missing-number"
+title = "Missing Number"
+url = "https://leetcode.com/problems/missing-number/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "counting-bits"
+title = "Counting Bits"
+url = "https://leetcode.com/problems/counting-bits/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "hamming-distance"
+title = "Hamming Distance"
+url = "https://leetcode.com/problems/hamming-distance/"
+minutes = 10
+
+[[problem]]
+site = "leetcode"
+key = "factorial-trailing-zeroes"
+title = "Factorial Trailing Zeroes"
+url = "https://leetcode.com/problems/factorial-trailing-zeroes/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "count-primes"
+title = "Count Primes"
+url = "https://leetcode.com/problems/count-primes/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "ugly-number"
+title = "Ugly Number"
+url = "https://leetcode.com/problems/ugly-number/"
+minutes = 10
+
+[[problem]]
+site = "leetcode"
+key = "pascals-triangle-ii"
+title = "Pascal's Triangle II"
+url = "https://leetcode.com/problems/pascals-triangle-ii/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "sqrtx"
+title = "Sqrt(x)"
+url = "https://leetcode.com/problems/sqrtx/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "powx-n"
+title = "Pow(x, n)"
+url = "https://leetcode.com/problems/powx-n/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "single-number-iii"
+title = "Single Number III"
+url = "https://leetcode.com/problems/single-number-iii/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "subsets"
+title = "Subsets"
+url = "https://leetcode.com/problems/subsets/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "bitwise-and-of-numbers-range"
+title = "Bitwise AND of Numbers Range"
+url = "https://leetcode.com/problems/bitwise-and-of-numbers-range/"
+minutes = 30
+
+[[problem]]
+site = "codeforces"
+key = "1370A"
+title = "Maximum GCD"
+url = "https://codeforces.com/problemset/problem/1370/A"
+minutes = 15
+
+[[problem]]
+site = "codeforces"
+key = "1475A"
+title = "Odd Divisor"
+url = "https://codeforces.com/problemset/problem/1475/A"
+minutes = 20
+
+[[problem]]
+site = "cses"
+key = "1095"
+title = "Exponentiation"
+url = "https://cses.fi/problemset/task/1095"
+minutes = 20
+
+[[problem]]
+site = "cses"
+key = "1712"
+title = "Exponentiation II"
+url = "https://cses.fi/problemset/task/1712"
+minutes = 30
+
+[[problem]]
+site = "cses"
+key = "1713"
+title = "Counting Divisors"
+url = "https://cses.fi/problemset/task/1713"
+minutes = 30
+
+[[problem]]
+site = "cses"
+key = "1079"
+title = "Binomial Coefficients"
+url = "https://cses.fi/problemset/task/1079"
+minutes = 30
+
+[[problem]]
+site = "cses"
+key = "1081"
+title = "Common Divisors"
+url = "https://cses.fi/problemset/task/1081"
+minutes = 35

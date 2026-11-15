@@ -45,6 +45,32 @@ and report. Do not start the next module unless Kavya asks.
   "Predict the output" / "Try it" answers go in `<details><summary>Answer</summary>` … `</details>`
   (opening tag on one line, closing tag on its own line): the reader hides them until the learner presses `a`.
   Example output must come from actually running the code; label machine-specific values (addresses, ids).
+- **Run what matters, explain the rest** (rule from 2026-11-13, applies to every new chapter):
+  run only the examples that carry the main lesson and paste their real output. Experiments that only
+  repeat a lesson (long sweeps, many seeds, extra model sizes) become a question followed by a
+  `<details>` worked answer, never with invented numbers; a number may appear there only if it was really
+  measured, and is then labelled "measured in an earlier test run". Keep the code of a chapter to about
+  20 minutes of total run time (training loops on CPU are the usual cause of overruns).
+- **Chapters are rendered by `rich` in the terminal reader** (`engine/learn/reader.py`, `render_markdown`).
+  Write standard Markdown only: pipe tables, `>` quotes, fenced code with a language tag, `-` lists.
+  No raw HTML except the `<details><summary>` answer boxes. Keep table rows short (they wrap at 100 columns).
+  After changing the reader or adding a Markdown feature, re-render every chapter without the fallback
+  (call `Markdown(...)` from `rich` directly; `render_markdown` hides errors) and check nothing crashes or vanishes.
+  Keep `rich` in `pyproject.toml`, and keep the plain `render()` as the fallback and as what the tests check.
+- **Full-screen mode** (`[ui] mode = "tui"`, Textual extra `[tui]`, never a base dependency): `engine/learn/{tui,workspace,home,browser}.py`;
+  the home's moving decoration is pure logic in `engine/learn/scene.py` (tested without Textual in `test_scene.py`; keep frames capped by `MAX_WIDTH/MAX_HEIGHT`).
+  `cli.ui_mode()` decides: setting or `LEARN_UI`, a real terminal, Textual installed; `learn --plain` wins. Anything else is plain,
+  so pipes, scripts and CI never see a full-screen app. The chapter reader shows the same Markdown through `reader._prepare`,
+  so the Markdown rules above cover it.
+  - The screens only choose and show. They return command words (`["next"]`, `["read", id]`) or call the `cmd_*` functions in
+    `cli.py` and capture their output. Change scoring, hints, plans or review rules in `cli.py` only, never in a screen,
+    so both modes always agree. Interactive plain commands (`check`, `hint`, `solution`, `stats`) stay plain on purpose.
+  - Every new screen gets a headless test (`engine/tests/test_workspace.py`, `test_screens.py`, `test_ui.py`) using
+    Textual's `run_test`, and a screenshot check by eye before it is called done. Extend the test when you add a key.
+- **Visualise it**: after each idea that is easier to see than to read, add an optional prompt box
+  (`> **Visualise it** *(optional; paste into any AI chat ...)*` followed by the quoted prompt, about 6-10 per
+  chapter). The prompt must name the concrete objects of that section (shapes, values, pointers, steps),
+  not be generic. The chapter must work without it. `learn stuck` also asks the chatbot for a picture or trace.
 - Problem count = `problems:` in the syllabus. Rough mix: ~1/3 drill, ~1/3 applied, rest deep +
   challenge. Mostly `code`, plus ~10 `trace` and ~5 `explain`.
 - Exactly one problem each with `assessment = "explain" | "trace" | "fix" | "build"`.

@@ -1,0 +1,9 @@
+push 4 [4]
+push 7 [4, 7]
+pop 7 [4]
+push 1 [4, 1]
+push 9 [4, 1, 9]
+pop 9 [4, 1]
+pop 1 [4]
+push 5 [4, 5]
+top 5 size 2

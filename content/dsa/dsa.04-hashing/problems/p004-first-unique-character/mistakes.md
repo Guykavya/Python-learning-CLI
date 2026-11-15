@@ -1,0 +1,4 @@
+- Printing the first character that has count 1 instead of its **index**.
+- Looping over the dictionary instead of over the string. A dictionary has no idea about positions; the string does.
+- Printing the index of the first occurrence of the least frequent letter. The rule is count equal to 1, not the minimum.
+- Printing `0` or nothing instead of `-1` when every character repeats.

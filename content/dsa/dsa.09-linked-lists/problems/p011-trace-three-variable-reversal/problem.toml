@@ -1,0 +1,7 @@
+id = "dsa.09.p011"
+title = "Trace: the three-variable reversal"
+tier = "drill"
+kind = "trace"
+topics = ["linked list", "reversal", "pointers"]
+minutes = 15
+assessment = "trace"

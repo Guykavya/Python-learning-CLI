@@ -1,0 +1,6 @@
+id = "dsa.04.p023"
+title = "Trace a table with chaining"
+tier = "applied"
+kind = "trace"
+topics = ["hash table", "chaining", "collisions", "trace"]
+minutes = 20

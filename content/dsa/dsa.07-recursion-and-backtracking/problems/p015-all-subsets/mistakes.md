@@ -1,0 +1,4 @@
+- `result.append(path)` without a copy: every entry is the same list object, which is empty at the end.
+- Recursing with `go(start + 1)` instead of `go(i + 1)`: subsets such as `[1, 1]` or duplicates appear.
+- Forgetting `[]`: the empty subset is part of the power set.
+- Recording only at the leaves in the "choose the next item" view: then only the full set is recorded.

@@ -1,0 +1,5 @@
+- Sorting the strings in reverse alphabetical order: for `[30, 3]` it puts `'30'` before `'3'` and prints `303`, but `330` is larger.
+- Returning `1` where you should return `-1`: the order is reversed and you build the smallest number.
+- Forgetting the all-zeros case: `[0, 0]` would print `00`.
+- Comparing as integers `int(a + b)`: it works but is slow for long strings; compare the strings directly (same length, so string order equals numeric order).
+- Using the key `str(x) * 10`: it works for values up to 10^9 only if the repeat is long enough (at least the max length, 10 digits), but it is easy to get wrong.

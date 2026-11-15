@@ -1,0 +1,5 @@
+- Writing `-3` for `-7 >> 1`. Shifts round toward minus infinity (`-7 // 2 = -4`).
+- Writing `-5` for `~5`. It is `-6`: `~x = -x - 1`.
+- Reading `5 & 5 - 1` as `(5 & 5) - 1 = 4`. Coincidence in value here, but wrong order: `-` binds tighter than `&`, so it is `5 & 4 = 4`. Try `6 & 6 - 1` to see: `6 & 5 = 4`, not `5`.
+- Expecting `bin(-5)` to show two's complement. Python prints `-0b101`.
+- Calculating `-5 & 255` as `-5`. A mask with `& 255` turns the negative number into its low 8 bits: `251`.

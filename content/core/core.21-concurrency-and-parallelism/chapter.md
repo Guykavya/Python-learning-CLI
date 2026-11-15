@@ -128,6 +128,9 @@ Concurrency: one core, taking turns     Parallelism: several cores at once
 
 Threads in normal Python and asyncio give you **concurrency**. Processes give you **parallelism**. For I/O-bound work concurrency is enough, because the "work" is mostly waiting, and waiting does not need a CPU. For CPU-bound work you need parallelism.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two timelines side by side to explain concurrency versus parallelism in Python. Left: one CPU core, tasks A, B and C taking turns in short coloured blocks (A, B, C, A, B, C), with gaps showing each task waiting. Right: three cores, with A, B and C each running as one long block at the same time. Label the left 'concurrency: one core, taking turns (threads, asyncio)' and the right 'parallelism: many cores at once (processes)'. Add a time axis."
+
 ### 1.4 Measure first
 
 Concurrency makes code harder to write, test and debug. Before you add it, **measure** (chapter 20): is the program really waiting, or really computing? A quick check:
@@ -480,6 +483,9 @@ GIL enabled: True
 switch interval: 0.005 seconds
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate the GIL as a single key. Show 3 threads (T1, T2, T3) and one key labelled 'GIL' on a table. Step by step: T1 holds the key and runs Python bytecode while T2 and T3 wait. After the switch interval of 0.005 seconds the key passes to T2, then T3, then T1 again. Show 4 CPU cores, but only the thread holding the key lit up. Caption: 'only one thread runs Python code at any instant'."
+
 ### 4.2 When the GIL is released
 
 If one thread held the GIL forever, other threads would never run. Two rules make threads take turns:
@@ -590,6 +596,9 @@ All ten threads read `0` during the pause, and each wrote `0 + 100`. Nine deposi
 
 Even `time.sleep(0)`, a pause of zero seconds, is enough, because it makes the thread give up the GIL. A counter class whose `increment()` does `v = self._value; time.sleep(0); self._value = v + 1`, used by 8 threads that each increment 200 times, should reach 1,600. Runs on the test machine printed 208, 203, 209 and 213: a different wrong number every time.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate the race on a shared balance, step by step. Balance starts at 0. Ten threads each run: read balance, sleep 0.05 s, write read value + 100. Show all ten threads reading 0 during the pause, one after another, then each writing 100, so the final balance is 100 and nine deposits vanish. Use a timeline with one row per thread (T1 to T10), a balance box that updates, and highlight the gap between read and write in red. End with 'expected 1000, got 100'."
+
 ### 5.3 The fix: a lock
 
 A `threading.Lock` is a token that only one thread can hold at a time. `acquire()` takes it (waiting if another thread has it); `release()` gives it back. The code between them is called a **critical section**: only one thread at a time can be inside it.
@@ -632,6 +641,9 @@ print(c.value)
 ```text
 1600
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a lock protecting a counter. Show three threads T1, T2, T3 each running increment(): read value v, pause, write v+1, inside 'with lock'. Draw a door labelled 'critical section' with one key. T1 enters holding the key and reads 0, writes 1. T2 and T3 queue outside, blocked at acquire. When T1 releases, T2 enters, reads 1, writes 2. Show the counter box updating 0, 1, 2, 3 and compare briefly with the no-lock version losing updates."
 
 ### 5.4 Rules for critical sections
 
@@ -788,6 +800,9 @@ still alive after 1 s: True True
 Neither "got both" line ever prints. (We used daemon threads and `join(timeout=1)` only so this demo can exit; a real deadlocked program just hangs. `join(timeout=...)` returns after the timeout whether or not the thread finished, so you must check `is_alive()` afterwards.)
 
 Four conditions must all be true for a deadlock: (1) a lock can be held by only one thread, (2) a thread holds one lock while waiting for another, (3) nobody can take a lock away from its holder, and (4) there is a **circle** of waiting. Breaking any one prevents deadlock. In practice we break the circle.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a deadlock as a circle. Two threads, worker_1 and worker_2, and two locks, lock_a and lock_b. Step 1: worker_1 holds lock_a, worker_2 holds lock_b (both sleep 0.05 s). Step 2: worker_1 asks for lock_b, worker_2 asks for lock_a. Draw arrows 'holds' and 'waits for' forming a cycle, with both threads marked 'stuck forever'. Then show a second small picture where both take lock_a first and the cycle breaks."
 
 ### 6.2 Fix 1: always take locks in the same order
 
@@ -1075,6 +1090,9 @@ The **sentinel** is a special value meaning "no more work". Each worker stops wh
 
 Results arrive in completion order. To return them in input order, send the index with the item (`(index, item)`) and put the result into slot `index` of a list, or sort by index at the end, as above.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a producer-consumer queue. A main thread puts jobs 0 to 5 into a 'tasks' queue, then three STOP sentinels (None). Three worker threads w0, w1, w2 each take a job with get(), work for 0.1 s, and put (item, item squared) into a 'results' queue. Show the queue as a pipe with items moving, the workers taking jobs in turn, and each worker quitting when it receives a sentinel. Finish at about 0.2 s total."
+
 ### 7.6 `task_done()` and `join()`
 
 A second way to know when all work is finished: every `get()` is matched by a `task_done()` call, and `q.join()` waits until the count of unfinished items drops to zero (here `q = queue.Queue()` and `done = []`):
@@ -1259,6 +1277,9 @@ if __name__ == "__main__":
 
 **Keep the data small and the work big.** Sending a 100 MB list to a worker costs more than many calculations. Send file names, not file contents, and give each job enough work (thousands of items, not one) to be worth the trip.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw how a pool sends data between processes. A parent process holds the list range(10). Pool(processes=4) has four separate worker processes, each with its own memory box. Show arrows: the parent pickles chunks of the list and sends them to workers, each worker runs square(x), and the pickled results come back in input order into [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]. Mark a lambda and a lock as 'cannot be pickled' with a red cross."
+
 ### 8.6 Sharing state between processes
 
 A global variable changed in a child is changed only in the child. To really share a number, use `multiprocessing.Value`, which lives in shared memory:
@@ -1395,6 +1416,9 @@ asc  0.4s  1 -> 1
 ```
 
 (Your times will differ.) With `map`, item 1 was the slowest and comes first, so nothing could be printed before 0.4 s. With `as_completed`, each result appeared as soon as it was ready. The dict `{future: input}` is the standard trick to remember which input each future belongs to, because `as_completed` gives you futures in a new order.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a timeline comparing pool.map and as_completed with ThreadPoolExecutor(max_workers=5). Jobs slow_square(1..4) sleep 0.4, 0.3, 0.2 and 0.1 seconds respectively, all running at once. Show four bars starting at time 0 and ending at 0.4, 0.3, 0.2, 0.1. Below, show map printing 1, 4, 9, 16 all at 0.4 s in input order, and as_completed printing 4 at 0.1 s, 3 at 0.2 s, 2 at 0.3 s, 1 at 0.4 s."
 
 ### 9.3 Exceptions
 
@@ -1587,6 +1611,9 @@ concurrent: 0.3 s
 `asyncio.sleep(seconds)` does not block anything. It tells the loop "wake me later" and gives control back. `await asyncio.sleep(0)` means "let everyone else who is ready run once, then come back to me", the asyncio version of `time.sleep(0)` in section 5.
 
 One thread can manage a huge number of waits, because a waiting coroutine is only a small object in memory. `await asyncio.gather(*(ping(n) for n in range(10_000)))`, where each `ping` does `await asyncio.sleep(1)`, returned 10,000 results in **1.13 s** on the test machine (your times will differ). Ten thousand threads would need gigabytes of stack space.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate the asyncio event loop with two tasks. Task A runs until await asyncio.sleep(0.3), then is parked with 'wake me in 0.3 s'. Task B runs until await asyncio.sleep(0.2), and is parked too. The loop has nothing ready, so it idles. At 0.2 s B wakes and runs to its end. At 0.3 s A wakes and finishes. Draw a time axis with one thread, tasks as coloured blocks, parked waits as dotted bars, and the loop in the middle."
 
 #### Try it 10.1 (Predict the output)
 
@@ -1906,6 +1933,9 @@ task.cancelled(): True
 ```
 
 Awaiting a cancelled task raises `CancelledError` in the waiter too. Timeouts are built on cancellation: `asyncio.timeout` cancels the inner code, then turns the `CancelledError` into `TimeoutError` at the edge of the block.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate task cancellation step by step. main creates a task running worker(), which prints 'opening file' and then hits await asyncio.sleep(10). After 0.1 s main calls task.cancel(). Show a CancelledError arriving inside worker at that await, unwinding through the finally block that prints 'closing file', then the task ending as cancelled. Main's await task raises CancelledError, and task.cancelled() is True. Use a timeline with two lanes, main and worker, and a red lightning mark at the await."
 
 ### 12.3 Never swallow `CancelledError`
 

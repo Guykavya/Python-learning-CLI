@@ -1,0 +1,6 @@
+id = "dsa.09.p020"
+title = "Length of the cycle"
+tier = "applied"
+kind = "code"
+topics = ["linked list", "fast and slow pointers", "cycle"]
+minutes = 20

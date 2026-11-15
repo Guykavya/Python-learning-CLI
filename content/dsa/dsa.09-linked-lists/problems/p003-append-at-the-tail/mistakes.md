@@ -1,0 +1,4 @@
+- Walking with `while cur is not None`: the loop ends with `cur` equal to `None`, and `cur.next = node` raises `AttributeError`.
+- Returning `cur` (the last node) instead of `head`: the caller loses the front of the list.
+- Forgetting the empty case: `head.next` on `None` crashes.
+- Not using the returned head: `append(None, 1)` alone does nothing visible; write `head = append(head, 1)`.

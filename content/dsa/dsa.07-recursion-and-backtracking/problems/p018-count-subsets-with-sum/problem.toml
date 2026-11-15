@@ -1,0 +1,6 @@
+id = "dsa.07.p018"
+title = "Count subsets with a given sum"
+tier = "applied"
+kind = "code"
+topics = ["subsets", "counting", "pruning"]
+minutes = 25

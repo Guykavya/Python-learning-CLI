@@ -1,0 +1,4 @@
+- Walking only one lap: the numbers near the end never see the start (`[1, 2, 1]` would give `[2, -1, -1]`).
+- Pushing on both laps: the stack holds indices twice and the answers can be written twice (harmless here but wasteful), and indices `>= n` crash `ans[...]` if you forget `% n`.
+- Using `<=`: equal numbers answer each other (`[5, 5]` would give `[5, 5]`).
+- Walking more than one full lap: a number cannot be its own answer.

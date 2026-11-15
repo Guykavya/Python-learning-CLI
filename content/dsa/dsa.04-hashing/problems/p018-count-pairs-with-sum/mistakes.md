@@ -1,0 +1,4 @@
+- Counting the pair `(x, x)` for `x = k / 2` with one copy of `x`: the pair needs two **different positions**.
+- Counting each pair twice (once from each end). Looking only at **earlier** elements counts each pair once.
+- Storing `seen[x]` before the lookup: when `2x = k` the element pairs with itself.
+- Two nested loops over all pairs: 2 * 10^10 steps for `n = 200000`.

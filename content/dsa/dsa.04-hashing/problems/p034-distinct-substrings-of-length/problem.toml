@@ -1,0 +1,6 @@
+id = "dsa.04.p034"
+title = "Distinct substrings of one length"
+tier = "challenge"
+kind = "code"
+topics = ["rolling hash", "substrings", "set of hashes", "mod 2^61-1"]
+minutes = 45

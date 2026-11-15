@@ -1,0 +1,3 @@
+- Writing the order level by level (5, 4, 3, 3, 2, ...): Python finishes the whole left sub-tree before starting the right one.
+- Forgetting the calls with `n = 0`: `fib(2)` calls both `fib(1)` and `fib(0)`.
+- Counting only the "useful" calls: every call, including the base cases, is appended to `order`.

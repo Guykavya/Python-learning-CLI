@@ -404,6 +404,9 @@ Slices never raise `IndexError`. A slice that runs past the end is simply cut sh
 
 A slice of a list is a **new list**. That is why `a[:]`, the slice of everything, is a common way to copy a list. Section 7 explains exactly what kind of copy it is.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a = [10, 20, 30, 40, 50, 60] as six boxes with index numbers 0 to 5 and negative numbers -6 to -1 under them. Animate these slices by shading the chosen boxes: a[1:4] gives [20, 30, 40]; a[-2:] gives [50, 60]; a[::2] gives [10, 30, 50]; a[::-1] gives the reversed list. Show that the stop index is not included, with a marker at the cut point."
+
 ### Slice assignment
 
 Here lists can do something strings cannot. You can assign **to** a slice. The slice on the left is cut out and replaced by the items of the iterable on the right. The two sides do not need the same length, so the list can grow or shrink.
@@ -628,6 +631,9 @@ names = ["Asha", "Ravi", "Asha"]
 
 Because every slot is a reference of the same size, the list can jump straight to slot `i` by arithmetic: start address plus `i` times the size of one reference. That is why `a[i]` takes the same short time whether the list has 10 items or 10 million. We say indexing is **O(1)**, "constant time".
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a Python list names = ['Asha', 'Ravi', 'Asha'] as a row of three numbered slots (0, 1, 2). Each slot holds only an arrow, not the text. Draw the arrows going to separate boxes outside the row holding the strings 'Asha', 'Ravi' and 'Asha'. Then animate reading names[1]: jump straight to slot 1 and follow its arrow to 'Ravi', labelled 'one step, any list size'."
+
 ### Big-O in one paragraph
 
 **Big-O notation** describes how the work grows as the input grows. O(1) means the work does not depend on the size n. O(n) means the work grows in proportion to n: double the list, double the time. O(n²) means doubling n makes it four times slower. Big-O ignores constant factors and small details. It answers one question: "if my data gets 1,000 times bigger, how much slower will this be?" A whole DSA module covers this properly; here we need only the basic idea.
@@ -712,6 +718,9 @@ True
 
 Aliasing is not a bug in itself. It is often exactly what you want, for example when a nested list holds a reference to a row and you change the row through it. It becomes a bug when you **think** you have two independent lists but you really have one.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Show two name labels, original and alias, both with arrows to ONE list box [1, 2, 3]. Animate step by step: alias = original adds a second label and no new list; alias.append(4) changes the one list to [1, 2, 3, 4]. Print original, which shows [1, 2, 3, 4], and mark 'alias is original' as True. Highlight that there is only one list."
+
 ### Making a copy
 
 There are four everyday ways to copy a list. All four make a **new outer list**:
@@ -774,6 +783,9 @@ Appending a new row to the copy did not affect `grid`, because the outer lists a
 ```
 
 There are two outer lists, but only one of each row.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw grid = [[1, 2], [3, 4]] as an outer list with two arrows to two inner row boxes. Then draw copy_of_grid = grid.copy() as a second outer list whose arrows point to the SAME two row boxes. Animate copy_of_grid.append([5, 6]) adding a third row only to the copy, then copy_of_grid[0][0] = 99 changing the shared row [99, 2], visible from both names."
 
 ### Deep copies
 
@@ -956,6 +968,9 @@ Output:
 True True
 False
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw grid = [[0] * 3] * 3 as an outer list of three arrows that all point to ONE inner list [0, 0, 0]. Animate grid[0][0] = 1 so that the single inner list becomes [1, 0, 0] and all three rows look changed. Next to it, draw good = [[0] * 3 for _ in range(3)] with three separate inner lists, where only the first changes. Label the first 'True: same row' and the second 'False'."
 
 ### The fix
 
@@ -1192,6 +1207,9 @@ TypeError: 'tuple' object does not support item assignment
 ```
 
 The tuple still holds the same two references. The list it refers to has grown. "Immutable" means the references cannot change, not that everything reachable from the tuple is frozen. This matters for hashing in section 14.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw t = (1, [2, 3]) as a tuple box with two locked slots. Slot 0 points to the int 1. Slot 1 points to a separate list box [2, 3]. Animate t[1].append(4): the list box grows to [2, 3, 4] while the tuple slot arrow stays unchanged. Then show t[1] = [9] being blocked with a red cross and the message TypeError: 'tuple' object does not support item assignment."
 
 ### When to use a tuple
 
@@ -1694,6 +1712,9 @@ To look a key up, Python repeats steps 1 and 2 and goes **straight** to that slo
        +-----+---------------------+-----+-----+-     -+-----+
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a dict hash table as 8 slots numbered 0 to 7. Animate storing the key 'Meena' with value '99000': compute hash('Meena'), take it modulo 8 to get slot 1, and drop the entry 'Meena' -> '99000' into slot 1. Then animate the lookup: repeat the hash and modulo, jump straight to slot 1 with no scanning of other slots, and highlight the value found."
+
 ### Collisions
 
 Two different keys can land in the same slot. This is a **collision**. CPython handles it by trying other slots in a fixed pattern until it finds the key or an empty slot. When it finds a slot with a matching hash, it also checks the keys with `==`, because equal hashes do not prove equal keys. Collisions cost a little extra time. With a good hash function they are rare, so the average stays O(1).
@@ -1935,6 +1956,9 @@ The operators need both sides to be sets. The methods accept any iterable, so `s
 
 `<` is a **proper** subset: a subset that is not equal. That is why `{1, 2} < {1, 2}` is `False`.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a Venn diagram for two sets: python_club = {'Asha', 'Ravi', 'Meena', 'Kiran'} and chess_club = {'Ravi', 'Kiran', 'John'}. Put Asha and Meena in the left-only part, Ravi and Kiran in the overlap, and John in the right-only part. Add buttons that shade each result: union | (all five names), intersection & (Ravi, Kiran), difference python_club - chess_club (Asha, Meena), symmetric difference ^ (Asha, Meena, John)."
+
 ### Removing duplicates
 
 `set(items)` removes duplicates in one O(n) step, but the order is lost. To keep the **first-seen order**, use `dict.fromkeys`, since dict keys are unique and keep insertion order. Or use a set to remember what you have seen, with a list for the result.
@@ -2035,6 +2059,9 @@ Output:
 [-20, 80, 0]
 ['apple', 'cat']
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate the list comprehension [n for n in nums if n > 0] with nums = [5, -2, 8, 0, -7, 3]. Show the numbers moving one at a time along a conveyor belt through a gate labelled 'n > 0'. Numbers 5, 8 and 3 pass into a new list; -2, 0 and -7 are dropped with a red mark. End with the result [5, 8, 3] and show the matching for loop with an if beside it."
 
 ### Choosing a value with if-else
 
@@ -2307,6 +2334,9 @@ Output:
 ```
 
 That `lambda` is a preview of core.06. `lambda person: person[1]` is a tiny unnamed function that takes one item and returns its second part. You will learn it properly soon. Until then, there is another way that needs no new syntax.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate sorting twice. Start with staff = [('Ravi','IT'), ('Asha','HR'), ('Meena','IT'), ('John','HR')]. Step 1: sort by name, giving Asha, John, Meena, Ravi. Step 2: sort by department using a stable sort; colour HR items blue and IT items orange so the viewer sees the name order kept inside each group. Final result: Asha HR, John HR, Meena IT, Ravi IT."
 
 ### Tuple keys: decorate, sort, undecorate
 

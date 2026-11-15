@@ -1,0 +1,4 @@
+- Thinking `ages["ana"] = 31` adds a second `ana`. Keys are unique, so it overwrites the value.
+- Printing `0` for `ages.get("cy")`. Without a default `.get` gives `None`.
+- Forgetting that `print(ages.pop("ana"), ages)` evaluates `pop` first, so the dictionary shown is already without `ana`.
+- Writing `Ben` as a match: `"Ben" in ages` is `False` because only `"ben"` was a key.

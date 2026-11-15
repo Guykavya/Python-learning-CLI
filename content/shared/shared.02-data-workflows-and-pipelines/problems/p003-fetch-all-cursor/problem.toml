@@ -1,0 +1,7 @@
+id = "shared.02.p003"
+title = "Cursor pagination"
+tier = "drill"
+kind = "code"
+topics = ["httpx", "pagination", "cursor", "opaque token", "query parameters"]
+minutes = 20
+difficulty = 2

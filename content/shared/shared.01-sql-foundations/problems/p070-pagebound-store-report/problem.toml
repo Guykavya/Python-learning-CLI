@@ -1,0 +1,8 @@
+id = "shared.01.p070"
+title = "Build: the Pagebound store report (12 questions)"
+tier = "challenge"
+kind = "code"
+topics = ["joins", "aggregates", "LEFT JOIN", "subqueries and CTEs", "window functions", "NULL handling", "fan-out"]
+minutes = 120
+difficulty = 5
+assessment = "build"

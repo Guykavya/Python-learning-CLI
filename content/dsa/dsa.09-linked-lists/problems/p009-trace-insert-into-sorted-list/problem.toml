@@ -1,0 +1,6 @@
+id = "dsa.09.p009"
+title = "Trace: insert into a sorted list"
+tier = "drill"
+kind = "trace"
+topics = ["linked list", "dummy node", "sorted insert"]
+minutes = 15

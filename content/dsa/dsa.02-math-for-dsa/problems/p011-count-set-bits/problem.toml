@@ -1,0 +1,6 @@
+id = "dsa.02.p011"
+title = "Count the set bits"
+tier = "drill"
+kind = "code"
+topics = ["bit manipulation", "popcount", "n & (n - 1)"]
+minutes = 15

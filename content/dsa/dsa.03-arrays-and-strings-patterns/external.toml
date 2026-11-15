@@ -1,0 +1,188 @@
+# Real site problems for dsa.03 (Arrays and strings patterns).
+# Verified online (web search, Nov 2026): the four Codeforces ids and titles (313B, 466C, 816B, 279B).
+# LeetCode slugs and CSES task ids were written from memory of the sites and not re-fetched online.
+# LeetCode: Easy, Medium and a few Hard. Codeforces: rating about 1100 to 1700. CSES: Sorting and Searching, Range Queries.
+# Order follows the chapter: prefix sums and difference arrays (sections 2-4), two pointers (5), sliding windows (6-7),
+# the monotonic deque (8), Kadane (9), grids (10). Write the brute force first, then the pattern that fits the limits.
+
+[[problem]]
+site = "leetcode"
+key = "range-sum-query-2d-immutable"
+title = "Range Sum Query 2D - Immutable"
+url = "https://leetcode.com/problems/range-sum-query-2d-immutable/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "product-of-array-except-self"
+title = "Product of Array Except Self"
+url = "https://leetcode.com/problems/product-of-array-except-self/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "subarray-sum-equals-k"
+title = "Subarray Sum Equals K"
+url = "https://leetcode.com/problems/subarray-sum-equals-k/"
+minutes = 25
+
+[[problem]]
+site = "cses"
+key = "1646"
+title = "Static Range Sum Queries"
+url = "https://cses.fi/problemset/task/1646"
+minutes = 15
+
+[[problem]]
+site = "cses"
+key = "1661"
+title = "Subarray Sums II"
+url = "https://cses.fi/problemset/task/1661"
+minutes = 30
+
+[[problem]]
+site = "codeforces"
+key = "313B"
+title = "Ilya and Queries"
+url = "https://codeforces.com/problemset/problem/313/B"
+minutes = 20
+
+[[problem]]
+site = "codeforces"
+key = "466C"
+title = "Number of Ways"
+url = "https://codeforces.com/problemset/problem/466/C"
+minutes = 35
+
+[[problem]]
+site = "codeforces"
+key = "816B"
+title = "Karen and Coffee"
+url = "https://codeforces.com/problemset/problem/816/B"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "two-sum-ii-input-array-is-sorted"
+title = "Two Sum II - Input Array Is Sorted"
+url = "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "sort-colors"
+title = "Sort Colors"
+url = "https://leetcode.com/problems/sort-colors/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "3sum"
+title = "3Sum"
+url = "https://leetcode.com/problems/3sum/"
+minutes = 35
+
+[[problem]]
+site = "leetcode"
+key = "container-with-most-water"
+title = "Container With Most Water"
+url = "https://leetcode.com/problems/container-with-most-water/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "trapping-rain-water"
+title = "Trapping Rain Water"
+url = "https://leetcode.com/problems/trapping-rain-water/"
+minutes = 40
+
+[[problem]]
+site = "leetcode"
+key = "find-all-anagrams-in-a-string"
+title = "Find All Anagrams in a String"
+url = "https://leetcode.com/problems/find-all-anagrams-in-a-string/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "longest-substring-without-repeating-characters"
+title = "Longest Substring Without Repeating Characters"
+url = "https://leetcode.com/problems/longest-substring-without-repeating-characters/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "minimum-size-subarray-sum"
+title = "Minimum Size Subarray Sum"
+url = "https://leetcode.com/problems/minimum-size-subarray-sum/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "max-consecutive-ones-iii"
+title = "Max Consecutive Ones III"
+url = "https://leetcode.com/problems/max-consecutive-ones-iii/"
+minutes = 20
+
+[[problem]]
+site = "codeforces"
+key = "279B"
+title = "Books"
+url = "https://codeforces.com/problemset/problem/279/B"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "minimum-window-substring"
+title = "Minimum Window Substring"
+url = "https://leetcode.com/problems/minimum-window-substring/"
+minutes = 45
+
+[[problem]]
+site = "leetcode"
+key = "sliding-window-maximum"
+title = "Sliding Window Maximum"
+url = "https://leetcode.com/problems/sliding-window-maximum/"
+minutes = 40
+
+[[problem]]
+site = "leetcode"
+key = "maximum-subarray"
+title = "Maximum Subarray"
+url = "https://leetcode.com/problems/maximum-subarray/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "maximum-sum-circular-subarray"
+title = "Maximum Sum Circular Subarray"
+url = "https://leetcode.com/problems/maximum-sum-circular-subarray/"
+minutes = 35
+
+[[problem]]
+site = "leetcode"
+key = "spiral-matrix"
+title = "Spiral Matrix"
+url = "https://leetcode.com/problems/spiral-matrix/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "rotate-image"
+title = "Rotate Image"
+url = "https://leetcode.com/problems/rotate-image/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "set-matrix-zeroes"
+title = "Set Matrix Zeroes"
+url = "https://leetcode.com/problems/set-matrix-zeroes/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "game-of-life"
+title = "Game of Life"
+url = "https://leetcode.com/problems/game-of-life/"
+minutes = 30

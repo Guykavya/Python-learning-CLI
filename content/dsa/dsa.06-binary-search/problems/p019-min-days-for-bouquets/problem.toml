@@ -1,0 +1,6 @@
+id = "dsa.06.p019"
+title = "Minimum days to make bouquets"
+tier = "applied"
+kind = "code"
+topics = ["binary search on the answer", "feasible predicate", "adjacent groups"]
+minutes = 40

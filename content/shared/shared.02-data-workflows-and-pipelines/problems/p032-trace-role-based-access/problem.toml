@@ -1,0 +1,7 @@
+id = "shared.02.p032"
+title = "Trace: what each role can see"
+tier = "deep"
+kind = "trace"
+topics = ["least privilege", "SQLite views", "allow-lists", "role-based access", "masking in SQL", "cursor.description"]
+minutes = 25
+difficulty = 3

@@ -1,0 +1,4 @@
+- Forgetting to switch to 0-based `k - 1`: the last permutation of each block is assigned to the next block.
+- Using `n!` instead of `(n-1)!` as the block size.
+- Picking from the original digit list instead of the **remaining** digits.
+- Generating permutations with backtracking and stopping at the `k`-th: correct but up to 362,880 steps per query.

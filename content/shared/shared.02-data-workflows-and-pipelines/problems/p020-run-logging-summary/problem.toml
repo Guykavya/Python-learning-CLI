@@ -1,0 +1,7 @@
+id = "shared.02.p020"
+title = "Run logging: run id, counts and one summary line"
+tier = "drill"
+kind = "code"
+topics = ["logging", "run id", "run summary", "caplog", "PII in logs", "dependency injection"]
+minutes = 25
+difficulty = 2

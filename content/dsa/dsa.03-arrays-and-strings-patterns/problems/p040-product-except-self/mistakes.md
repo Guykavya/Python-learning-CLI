@@ -1,0 +1,5 @@
+- Dividing the total product by `a[i]`. With a zero in the array that is a `ZeroDivisionError`, and with `% MOD` ordinary `//` gives wrong answers anyway.
+- Multiplying `left` by `a[i]` **before** storing it, so `a[i]` is included in its own product.
+- Forgetting `% MOD`: Python's big integers then grow to hundreds of thousands of digits and the program crawls.
+- Printing a negative number for a negative product. Use `% MOD` on the final value too (Python's `%` makes it non-negative).
+- Treating one zero and two zeros the same way in the division method: with two zeros even the zero positions get 0.

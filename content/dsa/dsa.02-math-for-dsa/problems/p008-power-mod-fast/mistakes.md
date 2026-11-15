@@ -1,0 +1,6 @@
+- Starting `result = 1` and printing it for `m = 1`. The answer must be 0 (`1 % 1`), so start with `1 % m`.
+- Looping `for _ in range(b)`. With `b = 10^18` this never finishes.
+- Using `a ** b % m`. Python will try to build a number with a billion digits and run out of memory or time.
+- Forgetting `% m` after one of the multiplications. The answers stay correct in Python, but the numbers grow without bound and the code becomes slow.
+- Changing `b` before testing its parity, or testing `b // 2 == 1`. Test `b % 2 == 1` (or `b & 1`) first, then halve.
+- Not squaring `base` each round, so later 1-bits multiply the same power again.

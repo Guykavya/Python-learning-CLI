@@ -1,0 +1,5 @@
+- Using `mid = (lo + hi) // 2` together with `lo = mid`: infinite loop when `hi == lo + 1`.
+- Forgetting to sort the positions before the greedy check.
+- Placing the first cow somewhere other than the leftmost stall: the greedy argument needs it.
+- Counting the cows with `>` instead of `>=` for "at least `d` away".
+- Trying all `C(n, c)` placements: hopeless for n = 100000.

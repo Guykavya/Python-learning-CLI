@@ -1,0 +1,4 @@
+- Returning 1 at `remaining == 0` and **also** continuing to recurse: subsets are counted twice.
+- Deduplicating by value (`set` of tuples): this problem counts positions, so `[1, 1]` with target 1 is 2.
+- Building every subset as a list and then counting: correct but slow and memory-hungry.
+- Forgetting that target 0 has one answer, the empty subset.

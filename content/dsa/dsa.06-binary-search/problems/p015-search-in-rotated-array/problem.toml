@@ -1,0 +1,6 @@
+id = "dsa.06.p015"
+title = "Search in a rotated sorted array"
+tier = "applied"
+kind = "code"
+topics = ["rotated array", "closed template", "sorted half"]
+minutes = 40

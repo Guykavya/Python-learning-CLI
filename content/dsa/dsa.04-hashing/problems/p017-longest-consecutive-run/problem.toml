@@ -1,0 +1,6 @@
+id = "dsa.04.p017"
+title = "Longest run of consecutive values"
+tier = "applied"
+kind = "code"
+topics = ["set", "sequence start", "O(n)"]
+minutes = 30

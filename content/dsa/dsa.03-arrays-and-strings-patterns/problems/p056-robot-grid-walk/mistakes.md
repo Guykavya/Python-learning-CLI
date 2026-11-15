@@ -1,0 +1,8 @@
+- Swapping left and right. With `N E S W` in clockwise order, R is `+ 1`; L is `- 1` (or `+ 3`).
+- Writing `(d - 1) % 4` in another language: there it can be `-1`. In Python it is 3, but `(d + 3) % 4` is safe everywhere.
+- Mixing up rows and columns: North changes the **row** (`-1`), East changes the **column** (`+1`).
+- Checking only `nr < r` and `nc < c`. Row `-1` then reads the last row of the grid: the robot wraps around silently.
+- Stopping the whole program at the first blocked `F`. A blocked move is skipped; the next commands still run.
+- Counting moves instead of different cells. Walking back over visited cells does not add to the count.
+- Keeping visited cells in a list and using `in`. Each check is O(n), so a long walk becomes O(n^2).
+- Forgetting to convert between 1-based input/output and 0-based indices, or converting twice.

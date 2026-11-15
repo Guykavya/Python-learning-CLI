@@ -1,0 +1,5 @@
+- `LIMIT 3` alone gives page 1. Page 2 needs `OFFSET 3`.
+- `OFFSET 6` (using page * size). Rows 7-9 are page 3.
+- No tie-break: rows with equal prices may appear in a different order or on two different pages.
+- Putting `LIMIT` before `ORDER BY`: a syntax error. `LIMIT` is always last.
+- Writing `LIMIT 3, 3` and swapping the numbers: in that form the **first** number is the offset.

@@ -1,0 +1,7 @@
+short_page_stops [1, 2, 3] [101, 102, 103, 104, 105, 106, 107]
+short_page_stops [1, 2, 3] [101, 102, 103, 104, 105, 106]
+count_pages_first [1, 2] [101, 102, 103, 104, 105, 106]
+count_pages_first [1, 2] [101, 102, 103, 104, 105, 106]
+skips_first_page [1, 2, 3] [104, 105, 106, 107]
+starts_at_zero [0] []
+follows_next_page [1, 2] [101, 102, 103, 104, 105, 106]

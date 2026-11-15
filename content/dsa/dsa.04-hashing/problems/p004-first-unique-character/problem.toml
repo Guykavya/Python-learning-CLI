@@ -1,0 +1,6 @@
+id = "dsa.04.p004"
+title = "First character that appears once"
+tier = "drill"
+kind = "code"
+topics = ["frequency counting", "strings", "two passes"]
+minutes = 15

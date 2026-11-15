@@ -1,0 +1,5 @@
+- Recursing with `C(n-1, r-1) + C(n-1, r)` and no table. The call tree doubles at each level, so `C(60, 30)` never finishes. Store the values you have computed.
+- Row off-by-one: row `n` has `n + 1` entries (`r = 0..n`), so `rows[n][r]` with `rows` starting at row 0. Starting the list at row 1 shifts everything by one.
+- Forgetting the last 1 in each row, or making the inner loop `range(1, n + 1)` so the sum reaches past the end of the previous row.
+- Indexing `rows[n][r]` when `r > n`, which crashes with `IndexError`. The answer there is 0.
+- Using `/` in the multiplicative formula: `c * (n - r + i) / i` gives a float. Use `//`.

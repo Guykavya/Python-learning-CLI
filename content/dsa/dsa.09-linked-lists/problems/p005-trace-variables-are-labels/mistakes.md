@@ -1,0 +1,5 @@
+- Thinking `e = d` changes node `1`: it only moves the label `e`. `a` still prints `1 -> 3`.
+- Thinking `c = c.next` changes the list: moving a label never changes an arrow. Only `something.next = ...` does.
+- Computing `f` after moving `e`: the program runs top to bottom; at `f = e.next`, `e` is still node `1`.
+- Writing `b: 2 -> 3`: `b.val = 20` changed the value in node `2` itself, and `b` points at that same node.
+- Forgetting that `d`'s chain passes through node `2`, so `d` (and `e`) also show `20`.

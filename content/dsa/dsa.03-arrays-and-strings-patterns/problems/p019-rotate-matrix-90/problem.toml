@@ -1,0 +1,6 @@
+id = "dsa.03.p019"
+title = "Rotate a square grid by 90 degrees"
+tier = "drill"
+kind = "code"
+topics = ["grid", "rotation", "transpose", "in place", "modulo"]
+minutes = 20

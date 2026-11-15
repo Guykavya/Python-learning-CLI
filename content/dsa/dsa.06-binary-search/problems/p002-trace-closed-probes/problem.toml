@@ -1,0 +1,7 @@
+id = "dsa.06.p002"
+title = "Trace the probes of a closed binary search"
+tier = "drill"
+kind = "trace"
+topics = ["binary search", "trace", "probes"]
+minutes = 15
+assessment = "trace"

@@ -1,0 +1,4 @@
+- Undoing the digit even after success: the function returns `True` but the board is empty again.
+- Not checking the givens: a board with two 5s in a row can be "solved" around the clash and returned.
+- Forgetting to remove the digit from the three sets when un-choosing: later branches see digits that are not on the board.
+- Returning the board when the search failed instead of `None`.

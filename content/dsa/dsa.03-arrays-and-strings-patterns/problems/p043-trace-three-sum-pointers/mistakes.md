@@ -1,0 +1,6 @@
+- Running the skip loops before moving the pointers after `found`. The code moves `l` and `r` first, then compares `a[l]` with `a[l - 1]` (the value just used).
+- Printing a `skip l` line when the pointers have met. The loop condition starts with `l < r`, so nothing is printed.
+- Using the unsorted order. The first line of each call is the sorted array, and every index refers to it.
+- Forgetting that `i` stops at `n - 3`: `range(n - 2)`. In the second call only `i = 0` and `i = 1` exist.
+- Printing `skip i` for `i = 0`. The test is `i > 0 and ...`, so index 0 is never skipped.
+- Writing the result as `[[-1, -1, 2], ...]`. The code appends tuples, so Python prints `(-1, -1, 2)`.

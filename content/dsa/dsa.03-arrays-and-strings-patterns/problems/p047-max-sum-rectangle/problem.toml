@@ -1,0 +1,6 @@
+id = "dsa.03.p047"
+title = "Maximum sum rectangle"
+tier = "deep"
+kind = "code"
+topics = ["Kadane", "2D Kadane", "matrix", "column sums"]
+minutes = 45

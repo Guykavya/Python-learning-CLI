@@ -1,0 +1,6 @@
+- Restarting when `cur <= 0`. A run with sum 0 adds nothing but gives an earlier start; restarting loses it (`-1 0 2` gives `2 3 3` instead of `2 2 3`).
+- Replacing the best on `>=`. A later run with the same sum then wins, and it is longer or starts later (`2 -2 2` gives `2 1 3` or `2 3 3`).
+- The "textbook" Kadane `cur = max(0, cur + x)` with `best = 0`. It allows an empty subarray, so an all-negative array prints 0 and no real bounds.
+- Updating `cur_start` when you replace the best instead of when you restart the run.
+- Printing 0-based indices. The output is 1-based.
+- Trying every start and extending it: correct, but O(n^2), which times out at 200000.

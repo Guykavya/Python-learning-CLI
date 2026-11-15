@@ -1,0 +1,5 @@
+- Thinking `ROLLBACK TO s1` ends the transaction. It only rewinds to the savepoint; the transaction remains open (you still need `COMMIT` or `ROLLBACK`).
+- Expecting `RELEASE` to undo something. It only removes the savepoint name; the work stays.
+- Believing the failed `UPDATE` aborted the whole third transaction. In SQLite only that statement is undone.
+- Forgetting that Bo was deleted in transaction 1 (the deletion was committed).
+- Writing the error text or a header line in `answer.txt`.

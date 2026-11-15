@@ -1,0 +1,5 @@
+- Forgetting `seen = {0: 1}`. Subarrays that start at index 0 are then missed: `5 5 / 5` gives 0 instead of 1.
+- Recording the current prefix **before** looking up `prefix - k`. For `k = 0` every prefix then matches itself, so you count `n` extra empty subarrays.
+- Using a sliding window that shrinks while the sum is too big. With negative numbers the sum can go down when the window grows, so the window skips answers.
+- Storing `seen[prefix] = True` instead of a count. Two earlier equal prefixes mean two different subarrays.
+- Two nested loops over start and end. Correct, but O(n^2): too slow for `n = 200000`.

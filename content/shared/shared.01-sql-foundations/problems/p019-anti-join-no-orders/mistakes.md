@@ -1,0 +1,5 @@
+- `LEFT JOIN ... WHERE o.order_id IS NOT NULL`: that is the opposite (customers who have orders).
+- `INNER JOIN`: loses the customers you are looking for.
+- Testing `o.customer_id IS NULL` instead of the primary key: it works for the join here, but a NULL in a nullable column can come from real data too. The primary key is NULL only when there was no match.
+- `NOT IN (SELECT customer_id FROM orders)`: returns nothing if any order has a NULL customer_id.
+- Using `SELECT DISTINCT` to "fix" duplicates you should not have had.

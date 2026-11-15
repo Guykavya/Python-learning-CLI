@@ -1,0 +1,7 @@
+id = "dsa.04.p036"
+title = "Explain: collisions in string hashing"
+tier = "challenge"
+kind = "explain"
+topics = ["rolling hash", "collisions", "birthday paradox", "double hashing", "anti-hash", "reasoning"]
+minutes = 35
+assessment = "explain"

@@ -1,0 +1,5 @@
+- Forgetting `NOT NULL` on `name`: a row with a missing name is accepted.
+- Writing `age INTEGER NOT NULL CHECK (age >= 13)`: age is optional, so NULL must be allowed.
+- Putting `UNIQUE` in a separate statement (`ALTER TABLE ... ADD UNIQUE` is not supported in SQLite). Use it inside CREATE TABLE.
+- `DEFAULT free` without quotes: that is a column name, not text. Write `DEFAULT 'free'`.
+- Writing `CHECK (plan = 'free' OR 'pro')`. Use `IN ('free', 'pro')`.

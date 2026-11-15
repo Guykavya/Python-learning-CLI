@@ -1,0 +1,7 @@
+id = "shared.01.p018"
+title = "Join three tables: a total per line"
+tier = "applied"
+kind = "code"
+topics = ["JOIN", "three tables", "expressions", "ROUND", "order_items"]
+minutes = 20
+difficulty = 3

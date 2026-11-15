@@ -337,6 +337,9 @@ b is 8
 
 `double_print(4)` printed `8` and then gave back `None`, so `a` is `None`. `double_return(4)` printed nothing and gave back `8`. A function that prints its answer is like a calculator that shows the result on its screen but will not let you copy it into the next sum. Almost always, a function should **return** its result and let the caller decide whether to print it.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "I am learning Python. Draw two side-by-side panels. Left: def double_print(x): print(x * 2), called as a = double_print(4). Show 8 going to a screen icon, and the variable a receiving None. Right: def double_return(x): return x * 2, called as b = double_return(4). Show 8 travelling back along an arrow into the variable b, with nothing on the screen. Label 'print shows to the human' and 'return gives to the code'."
+
 ### A function without return gives back None
 
 If the body finishes without reaching a `return`, or reaches a bare `return` with no value, the call gives back `None`:
@@ -638,6 +641,9 @@ ZeroDivisionError: division by zero
 
 Read a traceback from the **bottom up**: the last line says what went wrong (`ZeroDivisionError`), the line above it says where (`average`, line 2), and each earlier pair shows who called whom to get there. Seeing the frames in a traceback is the fastest way to locate a bug.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "I am learning Python. Animate a call stack as stacked boxes. Start with <module>, then push main, then report (name='art', marks=[]), then average (marks=[]). Highlight the top box as running and the others as waiting. At the last step, sum(marks) / len(marks) divides by zero: flash ZeroDivisionError and show the traceback listing the frames oldest at the top. Also show a normal call, report('maths', [70, 80]), popping average and returning 75.0."
+
 ### Local variables live in the frame
 
 Because each call has its own frame, the names inside a function are **local** to that call. A local `total` in one function has nothing to do with a `total` in another function or at the top level of the file:
@@ -733,6 +739,9 @@ SyntaxError: positional argument follows keyword argument
 ```
 
 This is a syntax error, so Python rejects the whole file before running a single line.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "I am learning Python. Draw the function def describe(name, age, city) as three labelled slots. Show the call describe('Asha', city='Pune', age=19): the positional value 'Asha' fills name by position, then city='Pune' and age=19 drop into their slots by name. Then show describe(name='Asha', 19, 'Pune') with a red cross and the message 'positional argument follows keyword argument'. Highlight that positional arguments must come first."
 
 ### Default values
 
@@ -1019,6 +1028,9 @@ The list lives as long as the function does, so it outlives every call. The func
 
 Defaults that are **immutable**, such as numbers, strings, `None` and tuples, are safe. They are shared too, but nothing can change them, so sharing is invisible. The trap is only with **mutable** defaults: lists, dicts and sets.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "I am learning Python. Animate this function: def add_item(item, basket=[]): basket.append(item); return basket. Draw the function object holding __defaults__ pointing to ONE list, created when def ran. Then call add_item('apple'), add_item('bread'), add_item('milk') in turn. Each time, draw the basket parameter arrow pointing to that same list and show it growing: ['apple'], then ['apple', 'bread'], then ['apple', 'bread', 'milk']. Label 'default evaluated once'."
+
 ### The fix: None as a sentinel
 
 The standard fix is to use `None` as the default and create the new object **inside** the body, where it is created fresh on every call:
@@ -1158,6 +1170,9 @@ Output:
 fruit: apple, mango, fig
 empty: 
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "I am learning Python. Animate packing with *args. Show def total(*numbers) being called as total(1, 2, 3), total(10) and total(). For each call, draw the loose arguments going into a funnel marked * and coming out as one tuple: (1, 2, 3), then (10,), then (). Show the loop adding them to give 6, 10 and 0. Also show def tag(label, *items) with tag('fruit', 'apple', 'mango', 'fig'): label takes 'fruit', items gets the rest."
 
 ### Any number of keyword arguments: **kwargs
 
@@ -1548,6 +1563,9 @@ outside: [60, 70]
 
 This is why "pass by reference" is the wrong description: in a true pass-by-reference language, `marks = []` would empty the caller's variable too.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "I am learning Python. Animate names and objects. Caller has scores pointing to the list [60, 70]. Call add_bonus(scores): the parameter marks also points to the same list, and marks[i] += 5 plus append(100) change it to [65, 75, 100], seen through scores. Then call reset(scores) on a fresh [60, 70]: marks = [] moves only the local label marks to a new list [0]; scores still points to [60, 70]. Show both cases."
+
 ### Why ints and strings "cannot be changed" by a function
 
 ```python
@@ -1763,6 +1781,9 @@ global x
 ```
 
 Each `x` is a different variable in a different scope. The innermost one **shadows** (hides) the others while you are inside `inner`.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "I am learning Python. Draw four nested boxes: Built-in (len), Global (x = 'global x'), Enclosing = outer() (x = 'enclosing x'), Local = inner() (x = 'local x'). Animate print(x) inside inner: a search arrow starts in Local and finds 'local x' at once, so it stops. Then show print(x) in outer stopping at Enclosing, and print(x) at top level stopping at Global. Also show len('four') searching outward to Built-in. Label LEGB."
 
 ### Shadowing built-ins
 
@@ -2474,6 +2495,9 @@ The two hex addresses in the cell line will be different on your machine. What m
 
 Two function objects share one compiled code object, but each has its own cell. Inside `multiply`, reading `factor` means "look in my cell and read what it holds right now". Remember the words **right now**: they are the key to the next section.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "I am learning Python. Draw make_multiplier(factor) returning multiply(n) that returns n * factor. Make two calls: double = make_multiplier(2) and triple = make_multiplier(3). Show each call's frame being thrown away, but a small box called a cell, holding 2 or 3, kept alive by the function object's __closure__ arrow. Show double and triple sharing one code object, each with its own cell. Label 'cell_contents'."
+
 ### Changing enclosed state: nonlocal
 
 A closure can also **change** its remembered variables, using `nonlocal` (section 14). Assignment through `nonlocal` stores a new reference into the cell. This gives you a function with private memory that persists between calls, without any global variable:
@@ -2643,6 +2667,9 @@ Output:
 
 At the top level of a file, `i` is a global, so the lambdas read the global; changing it changes every answer. Inside a function, the loop variable is a cell shared by all the inner functions, with the same effect.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "I am learning Python. Animate funcs = []; for i in range(3): funcs.append(lambda: i). Draw ONE variable box i. As the loop runs, i changes 0, then 1, then 2, while three lambda boxes all point to that same box. After the loop ends, call each lambda: all read the box now, so all return 2. Then set i = 99 and show funcs[0]() returning 99. Label 'late binding: looked up when called'."
+
 ### Fix 1: bind the value with a default argument
 
 Default values are evaluated **once, when the function is defined** (section 8). Usually that is a trap; here it is exactly what we want:
@@ -2805,6 +2832,9 @@ factorial(3) returns 6
 ```
 
 The calls go **down** until they reach the base case, then the results come back **up**, each one multiplied on the way. While `factorial(0)` runs, four frames exist at once, each with its own `n`. Each frame is paused at the multiplication, waiting for the call below it to return.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "I am learning Python. Animate the call stack for factorial(3). Push boxes in turn: factorial(3) with n=3, factorial(2), factorial(1), factorial(0), the last marked 'base case, return 1'. Then pop them one by one with return values flowing upward: 1, then 1*1 = 1, then 2*1 = 2, then 3*2 = 6. Show each frame holding its own n and paused at the multiplication. Label the downward phase 'calls' and the upward phase 'returns'."
 
 ### Recursion on numbers: sum of digits
 

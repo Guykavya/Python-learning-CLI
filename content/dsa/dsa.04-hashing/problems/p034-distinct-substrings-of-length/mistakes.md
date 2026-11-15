@@ -1,0 +1,4 @@
+- Slicing every window: for `L = 100000` that is 10^10 characters copied.
+- Using Python's `hash()` of a slice: randomised per run, and it is still `O(L)` per slice.
+- Forgetting that the first window must be added to the set before the loop.
+- Using a small modulus such as 1000003: with 200000 windows there will be real collisions and the count comes out too small.

@@ -1,0 +1,5 @@
+- Greedy: taking the bigger end each time. In `6 1 1 100 1 5` with `k = 3` it gets 12 instead of 106.
+- Using a window of size `k` (the biggest block of `k` in the middle). You may only take cards from the ends; the window is the block you **leave**, of size `n - k`.
+- Looking for the **largest** block to leave. You want to leave as little as possible: the smallest block.
+- Crashing or special-casing badly when `k = n`. The block left is empty, with sum 0.
+- Re-summing every split or window with `sum()` or slices: O(n k), too slow for the largest tests.

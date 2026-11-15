@@ -1,0 +1,6 @@
+id = "dsa.05.p012"
+title = "Trace sorted with key and reverse"
+tier = "drill"
+kind = "trace"
+topics = ["sorted", "key", "reverse", "stability"]
+minutes = 20

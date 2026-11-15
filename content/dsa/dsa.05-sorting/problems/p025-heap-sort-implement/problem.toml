@@ -1,0 +1,6 @@
+id = "dsa.05.p025"
+title = "Implement heap sort"
+tier = "applied"
+kind = "code"
+topics = ["heap sort", "sift down", "in-place"]
+minutes = 45

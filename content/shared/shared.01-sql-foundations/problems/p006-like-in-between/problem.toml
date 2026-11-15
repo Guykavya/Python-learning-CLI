@@ -1,0 +1,7 @@
+id = "shared.01.p006"
+title = "LIKE, IN and BETWEEN"
+tier = "drill"
+kind = "code"
+topics = ["LIKE", "IN", "BETWEEN", "wildcards"]
+minutes = 15
+difficulty = 2

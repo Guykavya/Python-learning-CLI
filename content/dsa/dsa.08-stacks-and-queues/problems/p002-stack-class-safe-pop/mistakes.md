@@ -1,0 +1,5 @@
+- Using the front of the list as the top (`insert(0, x)` and `pop(0)`): correct order, but every operation is `O(n)`.
+- Returning `None` from `pop` or `peek` on an empty stack: the caller cannot tell an empty stack from a stack whose top is `None`.
+- Testing emptiness with `if not self._items[-1]`: that looks at the **value** on top (a `0` would look "empty") and crashes on an empty list.
+- `peek` that calls `self._items.pop()`: it removes the item.
+- Raising `Exception` or `ValueError` instead of `IndexError`: code that catches `IndexError` (like the built-in list users expect) would miss it.

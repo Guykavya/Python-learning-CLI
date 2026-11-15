@@ -1,0 +1,4 @@
+- Comparing values (`slow.val == fast.val`): different nodes can hold equal values, so a list without a cycle is reported as cyclic.
+- Comparing before moving: `slow is fast` is true at the very start (both on the head), so every list looks cyclic.
+- Checking only `fast is not None`: on an even-length list `fast.next` is `None` and `fast.next.next` crashes.
+- Using a set of nodes or ids: correct, but `O(n)` memory; the test with unhashable nodes and the memory check reject it.

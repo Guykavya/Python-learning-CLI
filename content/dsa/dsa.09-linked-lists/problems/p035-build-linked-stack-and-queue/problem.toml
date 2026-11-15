@@ -1,0 +1,7 @@
+id = "dsa.09.p035"
+title = "Build your own stack and queue on nodes"
+tier = "deep"
+kind = "code"
+topics = ["linked list", "stack", "queue", "design", "O(1)"]
+minutes = 40
+assessment = "build"

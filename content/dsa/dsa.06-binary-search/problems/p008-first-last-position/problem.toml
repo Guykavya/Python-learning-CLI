@@ -1,0 +1,6 @@
+id = "dsa.06.p008"
+title = "First and last position"
+tier = "drill"
+kind = "code"
+topics = ["lower bound", "upper bound", "first occurrence", "last occurrence"]
+minutes = 25

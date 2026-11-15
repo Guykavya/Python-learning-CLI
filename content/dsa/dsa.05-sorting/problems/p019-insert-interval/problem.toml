@@ -1,0 +1,6 @@
+id = "dsa.05.p019"
+title = "Insert an interval"
+tier = "applied"
+kind = "code"
+topics = ["intervals", "merge", "linear scan"]
+minutes = 35

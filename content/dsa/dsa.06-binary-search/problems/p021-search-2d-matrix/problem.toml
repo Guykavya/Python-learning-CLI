@@ -1,0 +1,6 @@
+id = "dsa.06.p021"
+title = "Search a 2D matrix"
+tier = "applied"
+kind = "code"
+topics = ["2D matrix", "index mapping", "closed template"]
+minutes = 35

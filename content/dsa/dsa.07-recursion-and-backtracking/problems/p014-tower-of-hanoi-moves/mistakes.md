@@ -1,0 +1,4 @@
+- Swapping the roles of the pegs in the recursive calls wrongly: the first sub-call goes from `source` to **spare**, the second from **spare** to `target`.
+- Base case `n == 1` only: `hanoi(0)` then recurses forever with negative `n`.
+- Returning moves as lists `['A', 'C']` instead of tuples `('A', 'C')`.
+- Ignoring the peg-name parameters and always writing `'A'`, `'B'`, `'C'`.

@@ -1,0 +1,6 @@
+id = "dsa.09.p008"
+title = "Remove all nodes with a value"
+tier = "drill"
+kind = "code"
+topics = ["linked list", "dummy node", "unlink"]
+minutes = 15

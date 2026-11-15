@@ -1,0 +1,4 @@
+- Checking only one direction. `ab` to `aa` passes the forward check but breaks the one-to-one rule.
+- Comparing the number of distinct characters only: `ab`/`ba` is fine but `aab`/`abb` has the same distinct count and is `NO`.
+- Resetting a mapping when you see a character again instead of **checking** it against the stored one.
+- Comparing `s == t` or sorting the strings. Those do not look at the position-by-position rule.

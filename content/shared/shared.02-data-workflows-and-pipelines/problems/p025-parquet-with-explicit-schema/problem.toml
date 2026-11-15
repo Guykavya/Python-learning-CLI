@@ -1,0 +1,7 @@
+id = "shared.02.p025"
+title = "Parquet with an explicit schema"
+tier = "drill"
+kind = "code"
+topics = ["parquet", "pyarrow", "pa.schema", "decimal128", "timestamp with time zone", "nullable columns", "schema inference"]
+minutes = 25
+difficulty = 2

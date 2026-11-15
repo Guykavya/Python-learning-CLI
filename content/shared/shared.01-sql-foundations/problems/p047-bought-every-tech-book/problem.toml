@@ -1,0 +1,7 @@
+id = "shared.01.p047"
+title = "Relational division: customers who bought every tech book"
+tier = "challenge"
+kind = "code"
+topics = ["relational division", "double NOT EXISTS", "COUNT(DISTINCT) = COUNT", "for all"]
+minutes = 40
+difficulty = 5

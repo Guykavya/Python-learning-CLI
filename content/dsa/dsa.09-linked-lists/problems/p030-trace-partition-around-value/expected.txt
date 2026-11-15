@@ -1,0 +1,8 @@
+took 3 | small: 3 | big: empty
+took 5 | small: 3 | big: 5
+took 8 | small: 3 | big: 5 -> 8
+took 5 | small: 3 | big: 5 -> 8 -> 5
+took 10 | small: 3 | big: 5 -> 8 -> 5 -> 10
+took 2 | small: 3 -> 2 | big: 5 -> 8 -> 5 -> 10
+took 1 | small: 3 -> 2 -> 1 | big: 5 -> 8 -> 5 -> 10
+result: 3 -> 2 -> 1 -> 5 -> 8 -> 5 -> 10

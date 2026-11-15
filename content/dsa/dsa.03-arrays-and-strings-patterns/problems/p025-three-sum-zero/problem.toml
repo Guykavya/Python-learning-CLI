@@ -1,0 +1,6 @@
+id = "dsa.03.p025"
+title = "Three numbers that sum to zero"
+tier = "applied"
+kind = "code"
+topics = ["two pointers", "sorting", "duplicates", "3-sum"]
+minutes = 40

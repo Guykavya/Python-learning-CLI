@@ -1,0 +1,7 @@
+id = "shared.01.p040"
+title = "Trace: NOT IN meets a NULL"
+tier = "deep"
+kind = "trace"
+topics = ["NOT IN trap", "three-valued logic", "NOT EXISTS", "NULL"]
+minutes = 20
+difficulty = 3

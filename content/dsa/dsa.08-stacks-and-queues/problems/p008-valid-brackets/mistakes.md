@@ -1,0 +1,5 @@
+- Returning `True` at the end without checking the stack: `"(("` is then "valid".
+- Popping without checking for an empty stack: `")("` crashes with `IndexError` instead of returning `False`.
+- Counting each kind separately (three counters): `"([)]"` has balanced counts but crossed pairs, so it is invalid.
+- Treating letters as errors: other characters must be ignored.
+- Comparing the closer with the opener directly (`stack.pop() != ch`) when you pushed openers: `(` never equals `)`.

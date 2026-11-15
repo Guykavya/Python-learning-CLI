@@ -1,0 +1,5 @@
+- Pushing `(node.val, node)`: on equal values `heapq` compares the nodes and raises `TypeError`.
+- Using `id(node)` as the tie-breaker: it works, but the order between equal values then depends on memory addresses; the list index is predictable.
+- Pushing all `N` nodes into the heap at once: still correct, but `O(N log N)` and `O(N)` memory.
+- Merging the lists one after another: correct but `O(k N)`; the 5,000-list test times out.
+- Forgetting the `None` heads in `lists`: `None.val` crashes.

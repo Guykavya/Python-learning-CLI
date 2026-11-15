@@ -1,0 +1,4 @@
+- Counting the zeros as a repeated digit: empty cells must be ignored.
+- Wrong box index, e.g. `r // 3 + c // 3` (only 5 different values) or `(r // 3) * 3 + c % 3`.
+- Checking only rows and columns: a repeat inside a box is missed.
+- Checking whether the board is complete or solvable: that is not asked here.

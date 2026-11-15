@@ -1,0 +1,6 @@
+- Fixing only the crash (bug 2) and the length (bug 1), then trusting the program because the longest length looks right. Line 2 shows that the window was invalid on many steps: `if` must be `while`.
+- Fixing bug 2 by checking `count[ch] > 0` inside a loop over all keys every step: correct, but it turns O(n) into O(26 n) and misses the point. Delete the key.
+- Writing `while len(count) >= k`. That keeps at most `k - 1` distinct characters.
+- Moving `left += 1` before reading `s[left]`. Then the wrong character is removed from the counts.
+- Rewriting with a nested loop that rebuilds a set for every start. It is correct but O(n^2) and times out at `n = 200000`.
+- Forgetting the `k = 0` case: no character is ever allowed, so the window is empty after every step and both answers are 0.

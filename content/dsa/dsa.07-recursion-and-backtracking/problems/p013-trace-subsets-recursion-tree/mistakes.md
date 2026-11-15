@@ -1,0 +1,4 @@
+- Writing the nodes level by level (`[]`, `[1]`, `[2]`, `[3]`, `[1, 2]`, ...): recursion goes deep first.
+- Using `i + 1` of the **parent** as the child's start for every child: the child's start is one past the position that was just chosen.
+- Forgetting that `path` is printed **before** the loop, so the parent line comes before its children.
+- Forgetting the last line `8`.

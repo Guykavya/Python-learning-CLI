@@ -1,0 +1,7 @@
+id = "shared.01.p037"
+title = "IN with a subquery: who bought a tech book"
+tier = "drill"
+kind = "code"
+topics = ["IN (subquery)", "semi-join", "nested queries"]
+minutes = 20
+difficulty = 2

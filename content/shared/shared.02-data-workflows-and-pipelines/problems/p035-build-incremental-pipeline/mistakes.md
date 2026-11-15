@@ -1,0 +1,12 @@
+- Saving the checkpoint before committing the page. A crash in between makes the resume skip a page that was never stored: data lost silently.
+- Moving the watermark during the run, or before the export. A crash then leaves the watermark ahead of the published data, and the next run never asks for those records again.
+- Computing the watermark from every fetched record, including quarantined ones. A bad record with a late `updated_at` pushes the watermark past good data you have not stored yet, and the bad record is never fetched again after it is fixed.
+- Using `INSERT OR REPLACE` or a plain `INSERT`. The first overwrites newer data with older data when records arrive out of order; the second fails or duplicates on every re-run.
+- Appending Parquet files on every run (`pq.write_to_dataset` with defaults). The partitions grow by one copy per run. Rebuild a day from SQLite and swap it in.
+- Exporting only the days of inserted or updated rows. After a crash between commit and checkpoint, the repeated page's rows are `unchanged`, and their day is never exported.
+- Ignoring the checkpoint's cursor and `since` on resume (starting again from page 1, or recomputing `since`). It costs requests, and with a moving source it can skip records.
+- Storing the raw bad record in the quarantine, or logging it. It contains the email.
+- Retrying 4xx errors, retrying forever, or catching `Exception` around the request (which also retries your own bugs).
+- Real `time.sleep` in the retry loop instead of the `sleep` argument: the tests would wait for minutes.
+- No `max_pages` guard: a buggy API whose `next_cursor` never ends keeps the job running (and paying) forever.
+- Floats for money (`float("19.99") * 100` is `1998.9999999999998`). Use `Decimal` and integer cents.

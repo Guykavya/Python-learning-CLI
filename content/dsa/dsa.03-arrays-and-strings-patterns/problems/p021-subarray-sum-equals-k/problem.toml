@@ -1,0 +1,6 @@
+id = "dsa.03.p021"
+title = "Count subarrays with sum k"
+tier = "applied"
+kind = "code"
+topics = ["prefix sums", "hash map", "counting", "negative numbers"]
+minutes = 30

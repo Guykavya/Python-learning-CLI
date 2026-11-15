@@ -1,0 +1,4 @@
+- Using a **set** of letters as the key: `aab` and `ab` would share a key, but they are not anagrams.
+- Using a sorted list as the key. A list is not hashable. Convert to a string or tuple.
+- Forgetting to sort inside a group or to sort the groups: the output order would depend on input order.
+- Comparing every pair of words with a helper function: correct but O(n^2).

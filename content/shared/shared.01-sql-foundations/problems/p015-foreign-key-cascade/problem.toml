@@ -1,0 +1,7 @@
+id = "shared.01.p015"
+title = "Foreign keys and ON DELETE CASCADE"
+tier = "applied"
+kind = "code"
+topics = ["FOREIGN KEY", "REFERENCES", "ON DELETE CASCADE", "PRAGMA foreign_keys", "referential integrity"]
+minutes = 25
+difficulty = 3

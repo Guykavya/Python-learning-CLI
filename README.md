@@ -16,22 +16,31 @@ data structures and algorithms alongside.
 
 ## What exists today
 
-The syllabus has 92 modules. **12 are written so far**, with over 500 tested problems:
+The syllabus has **92 modules, and every one of them has its chapter** (about 250,000 lines of
+book-style text with worked examples, common traps and summaries). **Problems** with automatic
+tests are written module by module and exist today for the first part of the path:
 
-| Track | Written | Planned |
-|---|---|---|
-| Core Python | 10 of 24 modules (basics, strings, control flow, collections, functions, errors, testing, type hints, generators) | the rest of the language, standard library, concurrency, internals |
-| DSA | 2 of 18 modules (problem-solving basics, complexity) | arrays through dynamic programming |
-| Software engineer, data analyst, data scientist, AI/ML | none yet | planned |
+| Track | Modules | Chapters | Modules with problems | Problems written / planned |
+|---|---|---|---|---|
+| Core Python | 24 | 24 | 24 | 1,075 / 1,075 |
+| Shared (SQL, data pipelines) | 2 | 2 | 2 | 105 / 105 |
+| DSA | 18 | 18 | 7 | 310 / 785 |
+| Software engineer | 11 | 11 | 0 | 0 / 375 |
+| Data analyst | 13 | 13 | 0 | 0 / 510 |
+| Data scientist | 10 | 10 | 0 | 0 / 400 |
+| AI/ML engineer (deep learning) | 7 | 7 | 0 | 0 / 220 |
+| AI/ML engineer (LLM applications) | 7 | 7 | 0 | 0 / 185 |
 
-Unwritten modules show as "not written yet" in `learn syllabus`, and nothing is locked. Run
-`./learn syllabus` for the live numbers. New modules are added one at a time.
+A module that has a chapter but no problems yet shows **"chapter ready"** in `learn syllabus`:
+you can read it with `learn read <module>`, and nothing is locked. Each track also has a
+**capstone guide** in `docs/guides/` (a project checklist with a review process). Run
+`./learn syllabus` for the live numbers. New problems are added one module at a time.
 
 ## Install
 
 You need **Python 3.11 or newer** (any newer version works). Git is optional: it only
 makes downloading easier and lets `learn` keep a private history of your progress.
-Internet is needed once, to install the packages the engine uses (PyYAML, pytest, Pygments, and tzdata on Windows).
+Internet is needed once, to install the packages the engine uses (PyYAML, pytest, Pygments, Rich, and tzdata on Windows).
 
 **1. Get the project.** Either clone it:
 
@@ -65,6 +74,18 @@ says `./learn`.
 **Something went wrong?** Delete the `.venv` folder and run the command again; the launcher
 rebuilds it. To pick a specific Python, set `LEARN_PYTHON` to its path first
 (PowerShell: `$env:LEARN_PYTHON = "C:\path\to\python.exe"`, Linux/macOS: `LEARN_PYTHON=/path/to/python3 ./learn init`).
+
+### Extra packages (large downloads)
+
+The base install covers most modules. Install an extra only when you reach it, then check with `learn doctor <module>`.
+
+| Extra | Command | Needed by |
+|---|---|---|
+| `ml` | `.venv/bin/python -m pip install -e ".[ml]"` | ds.04, ml.01 to ml.07 (torch, transformers, xgboost, mlflow, dvc, onnx; several GB) |
+| `llm` | `.venv/bin/python -m pip install -e ".[llm]"` | llm.03 (PDF reading) |
+| `providers` | `.venv/bin/python -m pip install -e ".[providers]"` | Optional: only if you later connect a real Anthropic or OpenAI key. The llm chapters run offline without it. |
+
+On Windows use `.venv\Scripts\python.exe` instead of `.venv/bin/python`.
 
 ### Optional settings
 
@@ -147,7 +168,66 @@ Your progress is untouched, because none of it is part of the course repository.
 | `learn sync` | Pull solves from Codeforces and LeetCode |
 | `learn config show` / `config set plan.daily_minutes 120` | Settings |
 | `learn reset` | Start over: saves a backup zip in `backups/`, then erases your progress and solutions (`--all` also erases `config.toml`, `playground/` and `library/`) |
+| `learn doctor [module]` | Which packages a chapter needs and whether they are installed (`--all`, `--strict`) |
+| `learn extract <module>` | Save the files a chapter builds (projects, tests) into `library/` to open in your editor |
+| `learn verify <module>` | Run every code block of a chapter and compare with the printed output (`--strict-encoding`) |
+| `learn lint` | Check every chapter is well formed (`--fix-encoding`, `--strict`) |
+| `learn cards [module]` | Export Q&A and predict-the-output boxes as flashcards (CSV or Anki) |
+| `learn capstone <track>` | Open the capstone guide of a track |
 | `learn new <module> "<title>"` / `learn validate` | Write your own problems |
+
+### Windows
+
+Use `learn.cmd` (the launcher sets UTF-8 for you). If you run Python yourself, set `PYTHONUTF8=1`, or
+accented text and emoji in chapters can fail with cp1252 errors. `learn doctor` warns about this.
+CI runs the engine tests on Linux, macOS and Windows.
+
+**Reading chapters.** `learn read` draws the chapter as formatted Markdown (tables, quotes, coloured code) with the
+Rich package, which is pure Python and installs with the course on every system. On Linux and macOS a long section
+pages through `less` (Space: next page, `b`: back, `q`: stop). Windows has no `less`, so a long section prints in one go
+and you scroll up with the mouse wheel or Shift+PageUp. Use Windows Terminal (the default on Windows 11) or VS Code's
+terminal for colours; the old `cmd.exe` window can show raw colour codes. If Rich is missing, the reader quietly falls
+back to a simpler line-by-line style; `.venv/bin/python -m pip install -e .` (Windows: `.venv\Scripts\python.exe`) restores it.
+
+**Full-screen mode (optional).** One setting turns the whole course full-screen:
+
+```
+./learn config set ui.mode tui
+```
+
+Install the extra package once (Windows: `.venv\Scripts\python.exe` instead of `.venv/bin/python`):
+`.venv/bin/python -m pip install -e ".[tui]"`. With `ui.mode = tui`, the same commands open full-screen screens:
+
+| You type | You get |
+|---|---|
+| `learn` | **Home**: today's plan, where you are in each track, and keys: `c` continue, `n` next problem, `r` read, `s` syllabus, `t` stats, `i` problem by id, `q` quit |
+| `learn start <id>`, `learn next`, `learn work` | **Problem workspace**: the statement on the left; tabs on the right for your file, hints, the last check and the walkthrough. Keys: `c` check, `h` hint, `s` solution (asks first until solved), `x` stuck prompt, `e` open in VS Code, `f` back to your file, `q` quit |
+| `learn syllabus [track]` | **Syllabus browser**: tracks and modules with progress. Keys: `r` read the chapter, `p` jump to the problems (Enter opens one), `m` back to the modules, `g` make this the current module, `q` quit |
+| `learn read <id>` | **Chapter reader**: contents on the left, the section on the right. Keys: `n`/`p` next and previous, `a` answers, `c` hide the contents, `q` quit |
+
+Notes:
+
+- You still write code in your own editor. The workspace's "My file" tab only shows the file and updates each time you
+  save (turn on auto-save in VS Code). Scoring is identical in both modes, because the workspace runs the same code as
+  `learn check`, `learn hint` and `learn solution`.
+- The home screen is alive: a shimmering PYTHON logo, a clock with a time-of-day greeting in the top-right corner, slow
+  code rain in the empty areas, and the Zen of Python typed out line by line on the right (it starts at `>>> import this`,
+  each line appears below the previous one, and when all 19 are done it wipes and starts again). Your name comes from
+  `learn config set ui.name "Your Name"` (empty = no name shown). `learn config set ui.animations false` gives a still
+  screen. Press **Ctrl+P**, type `theme`, and pick "Change theme" to try colour themes (Nord, Gruvbox, Dracula...).
+  On a narrow terminal (under 120 columns) the poem is hidden to leave room for the plan.
+- `learn check`, `hint`, `solution`, `stats`, `today` and the authoring commands stay plain text, so they work in pipes and scripts.
+- Anything that is not a real terminal (a pipe, a script, CI) is always plain. Without Textual installed, `learn` says so
+  once and stays plain. For one run in the other mode: `learn --plain ...`, or `LEARN_UI=tui learn ...`.
+- `learn read <id> --tui` and `learn work <id>` open those screens for one run even when the mode is `plain`.
+- On Windows use Windows Terminal (the default on Windows 11) or VS Code's terminal. The old `cmd.exe` window can draw
+  full-screen apps badly.
+
+### Guides and cheat sheets
+
+- [Study roadmap and daily routine](docs/guides/study-roadmap.md)
+- [Turning capstones into a portfolio](docs/guides/portfolio.md)
+- Cheat sheets in `docs/reference/`: [Python](docs/reference/cheatsheet-python.md), [SQL](docs/reference/cheatsheet-sql.md), [NumPy and pandas](docs/reference/cheatsheet-numpy-pandas.md), [Git, shell, Docker](docs/reference/cheatsheet-git-shell-docker.md), [glossary](docs/reference/glossary.md)
 
 ## Folders
 

@@ -1,0 +1,4 @@
+- Writing `SUM(CASE WHEN status = 'shipped' THEN 1 END)` (no `ELSE 0`) and getting NULL for customers with no shipped orders instead of 0.
+- Writing `COUNT(CASE WHEN status = 'shipped' THEN 1 ELSE 0 END)`: `COUNT` counts every non-NULL value, and 0 is not NULL, so it counts all rows.
+- Filtering with `WHERE status = 'shipped'` and expecting the other columns to survive.
+- In `FILTER`, putting the clause after the wrong parenthesis: it belongs directly after the aggregate, before `AS`.

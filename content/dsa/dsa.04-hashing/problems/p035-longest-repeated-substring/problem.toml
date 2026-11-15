@@ -1,0 +1,6 @@
+id = "dsa.04.p035"
+title = "Longest repeated substring"
+tier = "challenge"
+kind = "code"
+topics = ["binary search on the answer", "rolling hash", "set of hashes"]
+minutes = 60

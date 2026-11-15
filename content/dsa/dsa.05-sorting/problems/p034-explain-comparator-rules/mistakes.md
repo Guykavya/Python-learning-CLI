@@ -1,0 +1,3 @@
+- Returning only `True/False` from a comparator: it must return a negative number, zero or a positive number.
+- Returning `a - b` for big numbers or floats: fine for small ints, but subtraction can overflow in other languages and loses precision with floats. Compare with `(a > b) - (a < b)`.
+- Believing that a bad comparator crashes the sort: it does not, it silently gives an arbitrary order.

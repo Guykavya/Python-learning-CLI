@@ -1,0 +1,8 @@
+- Rebuilding or dropping the table to add a column. Old data is lost or rewritten; `ALTER TABLE ADD COLUMN` keeps every row and gives it NULL.
+- Comparing with a hard-coded list of columns instead of `PRAGMA table_info`. The second run then tries to add the same column again and fails with "duplicate column name".
+- Taking the type from the first value even when it is `None`, so a REAL column becomes TEXT forever.
+- Putting names from the data into SQL without checking them. A key like `x); DROP TABLE orders; --` becomes SQL. Identifiers cannot be `?` parameters, so allow only `isidentifier()` names.
+- Checking the names one by one while altering. When the third name is bad, two columns are already added and the batch is half-applied.
+- `INSERT OR REPLACE` as the upsert. It deletes and re-inserts the row, so columns the new row does not mention become NULL.
+- Using `promote_options="permissive"` (or casting) to make a type conflict go away. `int32` vs `int64`, or `int` vs `string` for `amount`, means the source changed; a person must decide what it means.
+- Rewriting all old Parquet files with the new schema on every change. Evolve the reader instead; the old files stay valid.

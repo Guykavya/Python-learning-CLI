@@ -1,0 +1,4 @@
+- Forgetting that the answer is at least `max(a)`: with a smaller `S` the greedy loop creates an "empty" piece for an element that can never fit.
+- Requiring `pieces(S) == m` in the check: that predicate is not monotone. Use `<= m`.
+- Sorting `a`: the order of the elements is fixed.
+- Trying a DP with `O(n^2 m)` states: far too slow for `n = 10^5`.

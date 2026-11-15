@@ -1,0 +1,7 @@
+id = "shared.01.p065"
+title = "sqlite3 parameters: ? and :name"
+tier = "applied"
+kind = "code"
+topics = ["sqlite3", "parameters", "named parameters", "SQL injection", "lastrowid"]
+minutes = 35
+difficulty = 3

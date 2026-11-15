@@ -1,0 +1,5 @@
+- Starting with `g = 1`. Then `gcd(1, x) = 1` for every `x`, and the answer is always 1.
+- Counting elements equal to `g` inside the same loop that computes `g`. Early elements are compared with an unfinished `g`. First finish the fold, then count.
+- Taking the gcd of only the first two elements, or `min(a)`. The gcd is not the minimum (the gcd of 4 and 6 is 2).
+- Using `/` in the third line. `x / g` creates floats, loses precision for 10^18, and prints `.0`.
+- Taking `gcd(x, g)` and then forgetting to save it back in `g`.

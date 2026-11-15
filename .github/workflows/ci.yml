@@ -1,5 +1,5 @@
 # Install the course from scratch with the real launchers and check that it runs,
-# on Linux and Windows, with the oldest supported Python and the newest stable one.
+# on Linux, macOS and Windows, with the oldest supported Python and the newest stable one.
 name: CI
 
 on:
@@ -22,7 +22,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-latest, macos-latest, windows-latest]
         python: ["3.11", "3.14"]
     steps:
       - uses: actions/checkout@v5
@@ -54,6 +54,22 @@ jobs:
         run: |
           if [ "$RUNNER_OS" = "Windows" ]; then PY=.venv/Scripts/python.exe; else PY=.venv/bin/python; fi
           "$PY" -X warn_default_encoding -W error::EncodingWarning -m pytest engine/tests -q -p no:cacheprovider
+
+      # Every chapter must be well formed, and every import it needs must be declared in pyproject.toml.
+      - name: Chapter lint and dependency check
+        shell: bash
+        run: |
+          if [ "$RUNNER_OS" = "Windows" ]; then PY=.venv/Scripts/python.exe; else PY=.venv/bin/python; fi
+          "$PY" -m learn lint --strict
+          "$PY" -m learn doctor --all --strict
+
+      # The llm chapters use only the standard library and fakes, so they run anywhere.
+      # --strict-encoding turns a missing encoding="utf-8" into a failure, as on Windows.
+      - name: Run llm chapter code (strict encoding)
+        shell: bash
+        run: |
+          if [ "$RUNNER_OS" = "Windows" ]; then PY=.venv/Scripts/python.exe; else PY=.venv/bin/python; fi
+          for m in llm.01 llm.02; do "$PY" -m learn verify $m --strict-encoding; done
 
       # core.03 and core.06 hold non-ASCII text (accents, emoji, combining marks).
       # Output goes to a file, so Windows uses a pipe encoding, not the console's.

@@ -1,0 +1,237 @@
+# Real site problems for dsa.06 (Binary search).
+# Verification: the four CSES ids (1620, 1085, 1091, 1073) were checked with a web search against cses.fi. Every LeetCode slug and
+# Codeforces id (165B, 492B, 702C, 1201C) was written from memory and NOT re-fetched. Fix any id that fails to open.
+# Already in dsa.03 / dsa.04 / dsa.05 and therefore left out: sort-colors, two-sum-ii-input-array-is-sorted, CSES 1621, 1640, 1642, 1629.
+# Order follows the chapter: classic search and bounds (2-7), search on the answer (9-11), rotated arrays (12), peak and matrix (14-15),
+# design and counting (16), answer-search practice, then CSES and Codeforces.
+
+[[problem]]
+site = "leetcode"
+key = "binary-search"
+title = "Binary Search"
+url = "https://leetcode.com/problems/binary-search/"
+minutes = 10
+
+[[problem]]
+site = "leetcode"
+key = "search-insert-position"
+title = "Search Insert Position"
+url = "https://leetcode.com/problems/search-insert-position/"
+minutes = 10
+
+[[problem]]
+site = "leetcode"
+key = "find-first-and-last-position-of-element-in-sorted-array"
+title = "Find First and Last Position of Element in Sorted Array"
+url = "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "sqrtx"
+title = "Sqrt(x)"
+url = "https://leetcode.com/problems/sqrtx/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "valid-perfect-square"
+title = "Valid Perfect Square"
+url = "https://leetcode.com/problems/valid-perfect-square/"
+minutes = 10
+
+[[problem]]
+site = "leetcode"
+key = "first-bad-version"
+title = "First Bad Version"
+url = "https://leetcode.com/problems/first-bad-version/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "guess-number-higher-or-lower"
+title = "Guess Number Higher or Lower"
+url = "https://leetcode.com/problems/guess-number-higher-or-lower/"
+minutes = 10
+
+[[problem]]
+site = "leetcode"
+key = "find-smallest-letter-greater-than-target"
+title = "Find Smallest Letter Greater Than Target"
+url = "https://leetcode.com/problems/find-smallest-letter-greater-than-target/"
+minutes = 10
+
+[[problem]]
+site = "leetcode"
+key = "single-element-in-a-sorted-array"
+title = "Single Element in a Sorted Array"
+url = "https://leetcode.com/problems/single-element-in-a-sorted-array/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "search-in-rotated-sorted-array"
+title = "Search in Rotated Sorted Array"
+url = "https://leetcode.com/problems/search-in-rotated-sorted-array/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "find-minimum-in-rotated-sorted-array"
+title = "Find Minimum in Rotated Sorted Array"
+url = "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "find-minimum-in-rotated-sorted-array-ii"
+title = "Find Minimum in Rotated Sorted Array II"
+url = "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "peak-index-in-a-mountain-array"
+title = "Peak Index in a Mountain Array"
+url = "https://leetcode.com/problems/peak-index-in-a-mountain-array/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "find-peak-element"
+title = "Find Peak Element"
+url = "https://leetcode.com/problems/find-peak-element/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "search-a-2d-matrix"
+title = "Search a 2D Matrix"
+url = "https://leetcode.com/problems/search-a-2d-matrix/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "kth-smallest-element-in-a-sorted-matrix"
+title = "Kth Smallest Element in a Sorted Matrix"
+url = "https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/"
+minutes = 35
+
+[[problem]]
+site = "leetcode"
+key = "time-based-key-value-store"
+title = "Time Based Key-Value Store"
+url = "https://leetcode.com/problems/time-based-key-value-store/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "find-k-closest-elements"
+title = "Find K Closest Elements"
+url = "https://leetcode.com/problems/find-k-closest-elements/"
+minutes = 35
+
+[[problem]]
+site = "leetcode"
+key = "koko-eating-bananas"
+title = "Koko Eating Bananas"
+url = "https://leetcode.com/problems/koko-eating-bananas/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "capacity-to-ship-packages-within-d-days"
+title = "Capacity To Ship Packages Within D Days"
+url = "https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "minimum-number-of-days-to-make-m-bouquets"
+title = "Minimum Number of Days to Make m Bouquets"
+url = "https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "find-the-smallest-divisor-given-a-threshold"
+title = "Find the Smallest Divisor Given a Threshold"
+url = "https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "split-array-largest-sum"
+title = "Split Array Largest Sum"
+url = "https://leetcode.com/problems/split-array-largest-sum/"
+minutes = 40
+
+[[problem]]
+site = "leetcode"
+key = "magnetic-force-between-two-balls"
+title = "Magnetic Force Between Two Balls"
+url = "https://leetcode.com/problems/magnetic-force-between-two-balls/"
+minutes = 35
+
+[[problem]]
+site = "leetcode"
+key = "median-of-two-sorted-arrays"
+title = "Median of Two Sorted Arrays"
+url = "https://leetcode.com/problems/median-of-two-sorted-arrays/"
+minutes = 60
+
+[[problem]]
+site = "cses"
+key = "1620"
+title = "Factory Machines"
+url = "https://cses.fi/problemset/task/1620"
+minutes = 40
+
+[[problem]]
+site = "cses"
+key = "1085"
+title = "Array Division"
+url = "https://cses.fi/problemset/task/1085"
+minutes = 40
+
+[[problem]]
+site = "cses"
+key = "1091"
+title = "Concert Tickets"
+url = "https://cses.fi/problemset/task/1091"
+minutes = 40
+
+[[problem]]
+site = "cses"
+key = "1073"
+title = "Towers"
+url = "https://cses.fi/problemset/task/1073"
+minutes = 35
+
+[[problem]]
+site = "codeforces"
+key = "165B"
+title = "Burning Midnight Oil"
+url = "https://codeforces.com/problemset/problem/165/B"
+minutes = 30
+
+[[problem]]
+site = "codeforces"
+key = "492B"
+title = "Vanya and Lanterns"
+url = "https://codeforces.com/problemset/problem/492/B"
+minutes = 25
+
+[[problem]]
+site = "codeforces"
+key = "702C"
+title = "Cellular Network"
+url = "https://codeforces.com/problemset/problem/702/C"
+minutes = 35
+
+[[problem]]
+site = "codeforces"
+key = "1201C"
+title = "Maximum Median"
+url = "https://codeforces.com/problemset/problem/1201/C"
+minutes = 40

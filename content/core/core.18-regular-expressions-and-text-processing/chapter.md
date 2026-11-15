@@ -334,6 +334,9 @@ print(re.search(r"\d+", "a1 b2345").group())
 1
 ```
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate Python re.search(r'\d+', 'a1 b2345') scanning left to right. Draw the text as boxes with positions 0 to 7. Show a start pointer moving one step at a time: at position 0 'a' fails, at position 1 '1' matches and the match grows to span (1, 2). Highlight '1' in green, then stop and grey out the rest, including 2345. Label it 'leftmost match wins, search stops at the first success'."
+
 ## 3. Raw strings and escaping
 
 ### 3.1 Two languages, one backslash
@@ -761,6 +764,9 @@ a1b a2b a3b
 
 The last one surprises everyone at first: `.*` ran to the end of the text, then **backed off** one character at a time until it found a `b` to finish the match. So it matched from the first `a` to the **last** `b`. Section 9 is devoted to this behaviour and how to control it.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a step-by-step diagram of the regex a.*b on the text 'a1b a2b a3b'. Show each character in a box. Step 1: 'a' matches the first character. Step 2: .* greedily swallows everything to the end of the text. Step 3: 'b' fails because no text is left, so .* gives back one character at a time (arrows moving left) until it reaches the last 'b'. Highlight the final match from the first 'a' to the last 'b'."
+
 ### 5.3 The zero-width trap of `*`
 
 `*` and `?` can match **zero** times. A pattern made only of such items can match the **empty string**, and it will, everywhere:
@@ -823,6 +829,9 @@ print([m.start() for m in re.finditer(r"\b", text)])
 ```
 
 Positions 0 and 2 surround `hi`; 4 and 7 surround `you`. Between `,` and the space there is no boundary: both are non-word characters.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the text 'hi, you' as seven character boxes (h i , space y o u) numbered 0 to 6, with the gaps between them as positions 0 to 7. Mark the word boundaries \b as vertical lines at positions 0, 2, 4 and 7. Colour word characters and non-word characters differently. Label each line 'word char meets non-word char or the text edge' and note that there is no boundary between ',' and the space."
 
 ### 5.5 `$` versus `\Z`: the trailing newline
 
@@ -1121,6 +1130,9 @@ print(int(day), int(month), int(year))
 
 This is the heart of the first outcome of this chapter: **a pattern with groups turns unstructured text into fields.**
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the pattern (\d{4})-(\d{2})-(\d{2}) lined up above the text 'Released on 2024-03-05 at noon'. Colour the three groups differently in both the pattern and the text: group 1 is 2024, group 2 is 03, group 3 is 05. Draw arrows to labelled boxes: group(0) is 2024-03-05, group(1), group(2), group(3). Show span(2) = (17, 19) under the text and mark the string positions."
+
 ### 7.2 Nested and optional groups
 
 Groups can be nested; count the **opening** brackets to know the numbers:
@@ -1239,6 +1251,9 @@ print(re.findall(r"\b(?:Java|JavaScript)\b", "JavaScript and Java"))
 ```
 
 Two fixes: put the **longer** alternative first, or add a boundary (`\b`) so a too-short alternative fails and the engine tries the next one.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate re.findall on the text 'JavaScript and Java' with two patterns, Java|JavaScript and JavaScript|Java. For each, show the engine at the start of the text trying alternatives from left to right and taking the first one that works. For the first pattern, 'Java' wins and 'Script' is left behind, giving ['Java', 'Java']. For the second, 'JavaScript' wins, giving ['JavaScript', 'Java']. Colour the matched spans."
 
 ### 7.6 `m.lastindex` and `m.lastgroup`
 
@@ -1517,6 +1532,9 @@ One match, the whole line, instead of four tags. Here is what the engine did, st
 
 Giving back characters and trying again is called **backtracking**. It is how every quantifier works when the rest of the pattern fails, and it is the key to section 13.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate the regex <.*> on the text '<b>bold</b> and <i>italic</i>'. Draw each character in a box. Step 1: '<' matches the first '<'. Step 2: .* swallows everything to the end. Step 3: '>' fails, so .* gives back one character and '>' matches the final '>'. Highlight the single match covering the whole text. Then show .*? stopping at each first '>' to give four tags."
+
 ### 9.2 Lazy quantifiers: `*?`, `+?`, `??`, `{m,n}?`
 
 Put a `?` **after** a quantifier and it becomes **lazy** (also called *non-greedy* or *reluctant*): it takes **as few** repetitions as it can, and takes one more only if the rest of the pattern fails.
@@ -1671,6 +1689,9 @@ print(re.findall(r"\b\d+(?!px|\d)", text))  # numbers NOT followed by px
 ```
 
 Line 1 returns only the numbers: `(?=px)` checked for `px` but did not consume it. Line 3 needs care: without `\d` in the negative lookahead, `10` in `100px` would match (it is followed by `0`, not `px`). Negative lookarounds often need such extra guards; test them on tricky input.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the text '100px 20em 35px 7%' as character boxes. Show the pattern \d+(?=px) scanning it: highlight the digits 100 and 35 as the match in green, and draw the 'px' after them in a dashed outline labelled 'checked but not consumed (zero width)'. Show 20 and 7 failing because no 'px' follows. Final result: ['100', '35']."
 
 ### 10.3 Several conditions at one position: password rules
 
@@ -2012,6 +2033,9 @@ room [12], floor [3]
 
 The last line shows why `\g<1>` exists: `\10` would mean "group 10". Write the replacement as a **raw string** too, for the same reasons as the pattern.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a before and after diagram for re.sub(r'(\d{2})/(\d{2})/(\d{4})', r'\3-\2-\1', 'Born 05/03/2004, joined 17/08/2022'). Colour the three groups of the first date: 05 is group 1, 03 is group 2, 2004 is group 3. Draw crossing arrows that move them into the order group 3, group 2, group 1 with dashes between. Show the result 2004-03-05, and repeat the same for the second date."
+
 ### 12.3 A function as the replacement
 
 When the new text must be **computed**, pass a function instead of a string. `re.sub` calls it with each Match object and uses the string it returns:
@@ -2256,6 +2280,9 @@ print([ways(n) for n in range(1, 11)])
 ```
 
 The warning sign is always the same: **a quantifier inside a quantifier, where both can match the same characters.** The inner `a+` and the outer `( )+` compete for the same `a`s, and every split between them is a separate path for the engine.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a tree or table showing why the pattern (a+)+ is slow on the text 'aaaa!'. List all 8 ways to cut 'aaaa' into groups of one or more letters, such as (aaaa), (aaa)(a), (aa)(aa) and (a)(a)(a)(a). Mark each with a red cross because '$' fails at '!'. Add a bar chart for n = 1 to 10 letters with 1, 2, 4, 8 up to 512 paths, labelled 'doubles with each extra a'."
 
 ### 13.3 Spotting dangerous patterns
 

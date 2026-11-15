@@ -1,0 +1,3 @@
+- Returning `abs(count("(") - count(")"))`: `")("` gives 0, but you need 2 insertions.
+- Letting `open_count` go negative: a later `(` would then "cancel" an earlier unmatched `)`, which is wrong because a `(` cannot close a `)` that came before it.
+- Swapping the tuple: the first number is the `(` to add.

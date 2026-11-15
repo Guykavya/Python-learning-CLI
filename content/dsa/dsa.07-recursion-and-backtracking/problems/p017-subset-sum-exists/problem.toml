@@ -1,0 +1,6 @@
+id = "dsa.07.p017"
+title = "Subset sum: does one exist?"
+tier = "applied"
+kind = "code"
+topics = ["subsets", "backtracking", "early exit"]
+minutes = 25

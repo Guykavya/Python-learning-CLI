@@ -1,0 +1,7 @@
+id = "shared.01.p017"
+title = "LEFT JOIN keeps unmatched rows"
+tier = "drill"
+kind = "code"
+topics = ["LEFT JOIN", "unmatched rows", "NULL"]
+minutes = 15
+difficulty = 2

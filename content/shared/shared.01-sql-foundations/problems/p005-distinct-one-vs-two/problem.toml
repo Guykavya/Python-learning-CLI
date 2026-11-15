@@ -1,0 +1,7 @@
+id = "shared.01.p005"
+title = "Trace: DISTINCT on one column, two columns, an expression"
+tier = "drill"
+kind = "trace"
+topics = ["DISTINCT", "expressions", "duplicates"]
+minutes = 15
+difficulty = 2

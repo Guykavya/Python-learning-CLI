@@ -1,0 +1,6 @@
+id = "dsa.03.p001"
+title = "Prefix sums of an array"
+tier = "drill"
+kind = "code"
+topics = ["prefix sums", "arrays", "running total"]
+minutes = 10

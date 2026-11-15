@@ -1,0 +1,5 @@
+- Putting the range column first: `(ordered, status)` cannot jump to `status = 'shipped'`.
+- Index on `(customer_id)` only: requirement 1 passes, but requirement 3 still has `USE TEMP B-TREE FOR ORDER BY`.
+- Creating a normal (non-unique) index on `email`: lookups are fast but duplicates are still allowed.
+- Indexing every column separately. SQLite normally uses one index per table lookup, so single-column indexes do not combine into a composite one.
+- Forgetting that NULL emails: a unique index allows several NULLs in SQLite.

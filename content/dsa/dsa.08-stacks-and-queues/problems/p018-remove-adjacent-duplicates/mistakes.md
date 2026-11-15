@@ -1,0 +1,4 @@
+- Removing **all** copies of a repeated letter (`"aaa"` -> `""`): only pairs cancel, so one `a` stays.
+- Making one left-to-right pass over the string without a stack: `"abba"` removes `bb` but then misses the new pair `aa`.
+- Comparing with `s[i - 1]` (the previous character of the **input**) instead of the stack top: after a deletion the real neighbour is on the stack.
+- Forgetting `stack and ...`: `stack[-1]` on an empty stack raises `IndexError`.

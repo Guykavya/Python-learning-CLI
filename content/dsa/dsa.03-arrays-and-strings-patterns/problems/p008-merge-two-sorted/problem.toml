@@ -1,0 +1,6 @@
+id = "dsa.03.p008"
+title = "Merge two sorted arrays"
+tier = "drill"
+kind = "code"
+topics = ["two pointers", "merge", "sorted arrays"]
+minutes = 15

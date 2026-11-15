@@ -1,0 +1,6 @@
+id = "dsa.03.p028"
+title = "Shortest subarray with sum at least s"
+tier = "applied"
+kind = "code"
+topics = ["sliding window", "variable window", "two pointers", "positive numbers"]
+minutes = 30

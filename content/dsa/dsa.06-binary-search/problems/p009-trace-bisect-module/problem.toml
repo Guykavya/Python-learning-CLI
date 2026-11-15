@@ -1,0 +1,6 @@
+id = "dsa.06.p009"
+title = "Trace the bisect module"
+tier = "drill"
+kind = "trace"
+topics = ["bisect", "insort", "key", "trace"]
+minutes = 15

@@ -74,6 +74,9 @@ Each step has a reason:
 - **Fix the cause.** If a function receives `None` where it expected a list, adding `if x is None: return` inside it may hide a bug in the caller that produced the `None`.
 - **Prevent** with a test, so the same bug can never come back silently. This is called a **regression test**.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a flow diagram of the six-step debugging loop: 1 Reproduce, 2 Isolate, 3 Hypothesise, 4 Test, 5 Fix, 6 Prevent. Put arrows downward, plus a loop-back arrow from Test up to Isolate labelled 'guess was wrong'. In the Reproduce box write the example 'crashes when the file has an empty last line'. Highlight that Test checks the guess, not the fix, and that Prevent means a regression test that fails on the old code."
+
 ### 1.3 A worked example
 
 A bill-splitting app has a complaint: "When 3 friends split ₹100, the app says everyone pays ₹33.33, but the restaurant wants ₹100, not ₹99.99."
@@ -646,6 +649,9 @@ How to read this:
 
 **Version note.** Since Python 3.13, `breakpoint()` stops *on* the `breakpoint()` line itself (line 20 above). Python 3.11 and 3.12 stop on the line *after* it (line 21). The listing layout and some messages also differ slightly between versions. The commands are the same everywhere. (Also, `pdb` shows the dict in the `--Return--` line in sorted key order; the program's own `print` shows insertion order. Same dict, different display.)
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a pdb session on a small Python function report(scores) with lines: counts = {}, for name, score in scores.items(), grade = letter(score), counts[grade] = counts.get(grade, 0) + 1, return counts. Show an arrow on the line about to run and a variables panel. Step with n: at the grade line show name='asha', score=91, then grade='A'. Show s entering report, and r returning {'A': 1, 'B': 1, 'F': 2}. Label each command."
+
 ### 4.4 The commands you will actually use
 
 | Command | Long name | What it does |
@@ -1074,6 +1080,9 @@ Observe:
 
 One subtle rule: when a message propagates, the **parent loggers' levels are not checked again**, only the parent **handlers'** levels. Try 6.1 shows the consequence.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a tree of Python loggers: root, its child 'app' (level INFO, one handler that prints '[name] LEVEL message'), and its child 'app.db' (no handler, level inherited as INFO). Animate db.info('connected') travelling up to app's handler and printing. Show db.debug('query plan ...') dropped at INFO. Then set app.db to DEBUG and animate a debug message passing up and printing. Label 'propagate=True' and 'effective level'."
+
 ### 6.5 The duplicate-handler trap
 
 ```python
@@ -1314,6 +1323,9 @@ $ git bisect reset
 
 The same halving idea works without git: on dates in a log file ("which day did the numbers go wrong?"), on configuration options, on library versions, on the lines of a data file. Problem p011 asks you to write it as a function that counts its experiments.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw 12 commits in a row, change 1 to change 12. Change 1 is good, change 12 is bad. Animate git bisect in four test steps: test change 6 (good, colour green), test change 9 (bad, red), test change 8 (bad), test change 7 (good). After each step grey out the half that is ruled out. End by circling change 8 as the first bad commit, and write 'about log2(12) tests'."
+
 ### 7.3 Shrinking a failing input
 
 A program crashes on a 10,000-row file. You could debug with the whole file, but every run is slow and every `print` floods. Much better: find a **small** input that still fails. Small failing inputs are easy to reason about, make perfect regression tests, and often make the cause obvious.
@@ -1366,6 +1378,9 @@ shrunk to: [-7]
 Twelve numbers became one: `[-7]`. Now the cause is obvious: negative numbers are handled wrongly. Notice that `fails` is a small function that answers one question, "does this input still show the bug?". Writing that function is the real work; the shrinking loop is generic.
 
 Halving has a weakness, shown in Try it 7.2: when the bug needs **two** elements that sit in different halves, neither half fails and the loop gives up. The full algorithm, **delta debugging** (*ddmin*, by Andreas Zeller), keeps going with finer pieces (quarters, eighths, ...) and finally tries removing single elements, until no single element can be removed without the bug disappearing. Such a result is called **1-minimal**. Problem p012 asks you to build a simple version. Property-based testing tools such as `hypothesis` (chapter 19) do the same thing automatically when they "shrink" a failing example.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate halving a failing input. Start with the list [4, 8, 15, 16, 23, 42, -7, 1, 2, 9, 30, 11], where a buggy mean fails on negative numbers. Step 1: first half has no failure, keep second half [-7, 1, 2, 9, 30, 11]. Step 2: keep [-7, 1, 2]. Step 3: keep [-7]. Colour the failing piece red at each step, grey the discarded half, and show the list length shrinking 12, 6, 3, 1."
 
 ### 7.4 The rubber duck
 
@@ -1619,6 +1634,9 @@ The difference between `tottime` and `cumtime` is the key idea:
 So you **read `cumtime` from the top down** to find the slow area, then **look at `tottime`** to find the hot spot inside it. And always look at **`ncalls`**: 200,000 calls of `maketrans` is suspicious, because it builds the *same* translation table every time.
 
 Note that `make_text` (the `random.py` lines) also shows up: it is part of the run. The profiler measures whatever you run, setup included. That is why the next step profiles only the part we care about.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a call tree for a profiled program. count_words (own time 0.166 s, cumulative 1.247 s) calls is_stopword (200,000 calls, own time 0.571 s) and clean (own 0.154 s, cumulative 0.474 s), and clean calls maketrans (200,000 calls, 0.227 s). Draw each box with two bars: own time (solid) and cumulative time (outline). Highlight is_stopword as the hot spot and maketrans as 'same table built every time'."
 
 ### 9.4 Profiling one function with `pstats`
 
@@ -1980,6 +1998,9 @@ peak: 178,996 bytes
 
 Only 100 pages remain alive. The same idea applies to caches: `functools.lru_cache(maxsize=1000)` instead of `maxsize=None` when the inputs are unbounded, and an `unsubscribe` method next to every `subscribe`. Problem p022 asks you to fix a leak of that kind.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a memory-over-time chart with two lines for 20,000 handled requests. Line one climbs steadily to 32.7 MiB, because a module-level list _history keeps every page (20,000 blocks of about 1713 B). Line two goes flat after 100 pages, because _history is a deque with maxlen=100. Beside it draw two small box rows: one with every page referenced by _history, one with only the last 100. Label the snapshot before and after."
+
 ### 11.5 A leak-hunting routine
 
 1. **Reproduce** the growth: call the suspect operation many times in a loop.
@@ -2076,6 +2097,9 @@ n=4000  has_pair_fast  False      0.54 ms
 ```
 
 (Machine-specific.) The test data is the **worst case** (no pair exists, so both functions must look at everything). Watch the growth: every time `n` doubles, the slow version takes about **4 times** longer (O(n²): about n²/2 pairs), while the fast one roughly doubles (O(n)). At 4,000 items the gap is over 1,000 times; at 100,000 items the slow version would take minutes. No amount of micro-tuning the slow loop could ever catch up. The trick of the fast version: for each `x`, the partner we need is `target - x`, and a set answers "have I seen it?" in constant time.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a chart of time versus n for finding a pair that sums to a target. For n = 1000, 2000, 4000 the pairs-loop version takes 38.58, 156.04, 625.45 ms (about 4 times more each time n doubles, O(n squared)). The set version takes 0.20, 0.37, 0.54 ms (about double, O(n)). Animate the set version scanning a list, asking 'is target - x in seen?' and adding x. Highlight the growing gap."
 
 ### 12.3 The right data structure
 
@@ -2521,6 +2545,9 @@ Found 3 errors.
 `unit` is unused, but unused **arguments** are not in the selected families (the `ARG` family would report it). And ruff cannot know that `3.14` should be `math.pi`: that is a judgement for humans.
 
 </details>
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a git commit being checked by pre-commit. Show hooks in order: ruff-check with --fix, ruff-format, end-of-file-fixer, trailing-whitespace, mypy. Hooks that modify files or find errors turn red and stop the commit; example shop.py: 'Found 8 errors (4 fixed, 4 remaining)'. Then show the developer fixing the rest, running git add again, all hooks turning green, and the commit going through."
 
 ## 14. Reading other people's code
 

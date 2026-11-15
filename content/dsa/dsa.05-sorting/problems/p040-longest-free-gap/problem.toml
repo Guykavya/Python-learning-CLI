@@ -1,0 +1,6 @@
+id = "dsa.05.p040"
+title = "Longest free gap in a schedule"
+tier = "challenge"
+kind = "code"
+topics = ["intervals", "sweep", "sort first", "gaps"]
+minutes = 60

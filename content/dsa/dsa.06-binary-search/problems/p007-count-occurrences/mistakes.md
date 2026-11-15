@@ -1,0 +1,3 @@
+- Finding one occurrence with a classic search and then walking left and right: on a list of 100000 equal numbers that is a linear walk per query.
+- Mixing up the two bounds, so the difference is negative or off by the count.
+- Forgetting that a missing value gives `lower == upper`, so the answer 0 comes for free: no special case is needed.

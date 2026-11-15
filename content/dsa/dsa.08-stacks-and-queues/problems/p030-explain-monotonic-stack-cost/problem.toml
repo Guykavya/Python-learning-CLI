@@ -1,0 +1,6 @@
+id = "dsa.08.p030"
+title = "Explain: why is the monotonic stack O(n)?"
+tier = "deep"
+kind = "explain"
+topics = ["amortised analysis", "monotonic stack", "complexity"]
+minutes = 20

@@ -1,0 +1,6 @@
+id = "dsa.07.p006"
+title = "Flatten a nested list"
+tier = "deep"
+kind = "code"
+topics = ["recursion", "nested lists", "isinstance"]
+minutes = 25

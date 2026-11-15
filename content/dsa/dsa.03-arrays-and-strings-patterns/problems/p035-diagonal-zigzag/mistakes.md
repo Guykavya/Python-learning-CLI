@@ -1,0 +1,5 @@
+- Swapping the directions: diagonal 1 must be `2 5` (down), not `5 2`. The rule is "even `d` up, odd `d` down".
+- Always starting an up-walk at column 0 (row `d`). Once `d >= r` that row does not exist: the start must be clamped with `min(d, r - 1)`.
+- Using one size `n` for both sides. In a `3 x 4` or `4 x 2` grid that skips cells or goes out of range.
+- Looping `d` only up to `r + c - 2` exclusive (`range(r + c - 2)`), which loses the bottom-right cell.
+- In the "collect then reverse" method, reversing the odd diagonals instead of the even ones.

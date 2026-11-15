@@ -1,0 +1,21 @@
+-- 1
+no divisor found for 1
+not prime
+-- 2
+no divisor found for 2
+prime
+-- 9
+try 2 on 9
+try 3 on 9
+9 is divisible by 3
+not prime
+-- 17
+try 2 on 17
+try 3 on 17
+try 4 on 17
+no divisor found for 17
+prime
+-- 30
+try 2 on 30
+30 is divisible by 2
+not prime

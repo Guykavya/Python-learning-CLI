@@ -1,0 +1,6 @@
+id = "dsa.05.p009"
+title = "Sort students by score then name"
+tier = "drill"
+kind = "code"
+topics = ["key tuple", "negation trick", "multiple keys"]
+minutes = 15

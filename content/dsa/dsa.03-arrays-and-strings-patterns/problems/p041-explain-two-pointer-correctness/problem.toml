@@ -1,0 +1,7 @@
+id = "dsa.03.p041"
+title = "Explain why two pointers never skip the pair"
+tier = "deep"
+kind = "explain"
+topics = ["two pointers", "correctness", "sorted array", "invariant"]
+minutes = 30
+assessment = "explain"

@@ -1,0 +1,6 @@
+id = "dsa.07.p010"
+title = "Trace: count the calls of fib(5)"
+tier = "applied"
+kind = "trace"
+topics = ["recursion tree", "repeated work", "exponential"]
+minutes = 15

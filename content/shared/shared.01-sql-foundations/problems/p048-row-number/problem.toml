@@ -1,0 +1,7 @@
+id = "shared.01.p048"
+title = "Number the rows with ROW_NUMBER"
+tier = "drill"
+kind = "code"
+topics = ["ROW_NUMBER", "OVER", "window ORDER BY", "tie-break"]
+minutes = 15
+difficulty = 2

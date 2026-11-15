@@ -1,0 +1,8 @@
+- `except ValueError:` only. `decimal.InvalidOperation` (from `Decimal("12,00")`) is an `ArithmeticError`, so it escapes and crashes the batch.
+- A bare `except:` or `except BaseException:`. Ctrl+C is then quarantined as a "bad record" and the program will not stop.
+- Calling `check(record)` on a value that is not a dict. `None` or a string makes `check` itself crash.
+- Opening the file with `"w"`. Every run erases the bad records of the previous runs.
+- Writing `json.dumps(bad_list)` once, or using `indent=2`. JSON Lines needs exactly one object per line.
+- Storing the transformed or partly-changed record. The quarantine must hold the original, so it can be re-processed after a fix.
+- Forgetting `encoding="utf-8"`. On Windows the default encoding cannot always write names like "Zoë".
+- Creating an empty quarantine file on a clean run. Monitoring that alerts on "quarantine file exists" then fires for nothing.

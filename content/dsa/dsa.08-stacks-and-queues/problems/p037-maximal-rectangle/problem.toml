@@ -1,0 +1,6 @@
+id = "dsa.08.p037"
+title = "Maximal rectangle of 1s"
+tier = "challenge"
+kind = "code"
+topics = ["monotonic stack", "histogram", "2D grid", "reduction"]
+minutes = 45

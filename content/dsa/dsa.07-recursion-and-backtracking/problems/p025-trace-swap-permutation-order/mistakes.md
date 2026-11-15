@@ -1,0 +1,3 @@
+- Writing the lines in sorted order (`1234 1243 1324 1342 1423 1432`): the swap method gives `1432` before `1423`.
+- Starting line 3 with `3124`: swapping positions 0 and 2 of `1234` gives `3214`.
+- Forgetting that each swap is undone, so every level-0 swap starts again from `1234`.

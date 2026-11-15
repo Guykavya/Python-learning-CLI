@@ -1,0 +1,5 @@
+- Joining `order_items` and `payments` straight to `orders` and summing: every sum is multiplied by the size of the other side.
+- Using `JOIN` instead of `LEFT JOIN` for the summaries: orders without payments (or without lines) disappear.
+- Forgetting `COALESCE`: the missing side gives NULL, not 0.0.
+- Using `SUM(DISTINCT amount)` to hide the duplication: two payments of the same amount would be counted once.
+- Grouping the subquery by something other than `order_id`, so the summary still has several rows per order.

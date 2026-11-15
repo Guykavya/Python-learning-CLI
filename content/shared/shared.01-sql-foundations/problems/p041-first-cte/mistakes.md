@@ -1,0 +1,4 @@
+- Forgetting the comma or parentheses structure: `WITH name AS ( ... )` and then the main `SELECT` with no comma between them.
+- Filtering `units >= 2` in the CTE with `WHERE`: `WHERE` cannot see the sum; use `HAVING` there or filter outside.
+- Joining without an `ON` condition and getting every title with every unit count.
+- Using `COUNT(*)` for units: that counts lines, not quantity (SQL Basics has three lines of 1).

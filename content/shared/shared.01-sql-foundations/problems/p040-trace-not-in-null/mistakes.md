@@ -1,0 +1,4 @@
+- Answering `1` for Chitra and Dev because "they have no orders". `NOT IN` with a NULL in the list is unknown for them, printed as `NULL`.
+- Treating NULL like 0 (false): unknown is its own value.
+- Writing `0` for `NOT EXISTS` on Chitra: `NOT EXISTS` is a plain true/false (1/0), and no order row exists for her, so it is `1`.
+- Forgetting the sort: names are sorted alphabetically, Asha first.

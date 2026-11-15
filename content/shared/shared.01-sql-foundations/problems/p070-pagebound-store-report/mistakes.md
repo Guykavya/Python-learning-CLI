@@ -1,0 +1,9 @@
+- Q5: putting `o.status <> 'cancelled'` in `WHERE` after a `LEFT JOIN`: customers without such orders disappear (that is the inner join in disguise). Put it in `ON`. Also forgetting `COALESCE(SUM(...), 0)`.
+- Q9: averaging item rows (`AVG(qty * unit_price)` over `order_items`) instead of order totals. The join fan-out gives a wrong average.
+- Q4: `WHERE author_id NOT IN (SELECT author_id FROM books)` works here only because no `author_id` is NULL; prefer `LEFT JOIN ... IS NULL` or `NOT EXISTS`.
+- Q1: `>= 25` includes Python Quick at exactly 25.00.
+- Q2: `city = NULL` is never true.
+- Q6/Q11: forgetting to exclude cancelled orders, or rounding before summing (round once, at the end).
+- Q7: no tie-break by title, so the order of the two 8-unit books is unstable.
+- Q8: counting orders instead of distinct months, or counting a month that only has a cancelled order.
+- Q12: using `ROW_NUMBER()` instead of `RANK()`, or including authors without sales through a LEFT JOIN (the statement says they do not appear).

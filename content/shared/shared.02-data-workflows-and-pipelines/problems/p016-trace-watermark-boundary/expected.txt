@@ -1,0 +1,19 @@
+-- run 1
+gt [1, 2] 2 105
+ge [1, 2] 2 105
+overlap [1, 2] 2 105
+-- run 2
+gt [4] 1 107
+ge [2, 3, 4] 2 107
+overlap [2, 3, 4] 2 107
+-- run 3
+gt [] 0 107
+ge [4] 0 107
+overlap [2, 3, 4] 0 107
+-- run 4
+gt [2] 1 109
+ge [2, 4] 1 109
+overlap [2, 3, 4] 1 109
+gt missing [3, 5] stale []
+ge missing [5] stale []
+overlap missing [5] stale []

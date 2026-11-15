@@ -1,0 +1,6 @@
+id = "dsa.04.p025"
+title = "Longest balanced subarray"
+tier = "applied"
+kind = "code"
+topics = ["prefix sums", "first occurrence", "dictionary", "transform"]
+minutes = 35

@@ -1,0 +1,4 @@
+- Storing only whether a sum exists (a set). Several `(i, j)` can give the same sum, so you need how **many**.
+- Using `pair_count[s] = 1` instead of adding 1: repeated sums are undercounted.
+- Looking up `c + d` instead of `-(c + d)`: you want a sum that cancels it.
+- Running four nested loops: `n^4` steps. Even `n = 100` is already 10^8.

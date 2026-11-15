@@ -1,0 +1,6 @@
+id = "dsa.06.p025"
+title = "Explain: is this predicate monotonic?"
+tier = "applied"
+kind = "explain"
+topics = ["monotonic predicate", "binary search on the answer", "reasoning"]
+minutes = 25

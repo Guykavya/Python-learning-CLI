@@ -1,0 +1,6 @@
+id = "dsa.04.p026"
+title = "Explain: what can be a key?"
+tier = "applied"
+kind = "explain"
+topics = ["hashable", "mutable keys", "tuple", "equality", "reasoning"]
+minutes = 25

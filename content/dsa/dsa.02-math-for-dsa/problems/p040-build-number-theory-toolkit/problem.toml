@@ -1,0 +1,7 @@
+id = "dsa.02.p040"
+title = "Build a number theory toolkit"
+tier = "challenge"
+kind = "code"
+topics = ["number theory", "command interpreter", "gcd", "modular arithmetic", "sieve", "bit tricks"]
+minutes = 90
+assessment = "build"

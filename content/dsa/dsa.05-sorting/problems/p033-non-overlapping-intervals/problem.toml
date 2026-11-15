@@ -1,0 +1,6 @@
+id = "dsa.05.p033"
+title = "Fewest intervals to remove"
+tier = "deep"
+kind = "code"
+topics = ["intervals", "greedy", "sort by end", "activity selection"]
+minutes = 45

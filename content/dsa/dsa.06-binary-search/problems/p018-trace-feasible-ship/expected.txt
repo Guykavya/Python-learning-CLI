@@ -1,0 +1,5 @@
+lo 4 hi 16 mid 10 days 2 ok True
+lo 4 hi 10 mid 7 days 3 ok True
+lo 4 hi 7 mid 5 days 4 ok False
+lo 6 hi 7 mid 6 days 3 ok True
+answer 6

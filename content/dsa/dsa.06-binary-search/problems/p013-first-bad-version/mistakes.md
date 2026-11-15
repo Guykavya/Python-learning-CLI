@@ -1,0 +1,4 @@
+- Forgetting `flush=True`: the test never sees your question and your program waits forever for a reply.
+- Asking about the same version twice, or asking one more time at the end to confirm `lo`. When `lo == hi` the answer is known.
+- Starting with `lo = 0` or `hi = n + 1` and asking about versions outside `1..n`.
+- Printing anything else (debug text) to the screen: the test treats every other line as an error.

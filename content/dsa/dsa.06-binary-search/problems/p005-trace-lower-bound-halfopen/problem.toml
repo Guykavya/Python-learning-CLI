@@ -1,0 +1,6 @@
+id = "dsa.06.p005"
+title = "Trace a half-open lower bound with duplicates"
+tier = "drill"
+kind = "trace"
+topics = ["lower bound", "duplicates", "trace"]
+minutes = 20

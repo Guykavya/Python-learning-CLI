@@ -1,0 +1,7 @@
+Counter({'to': 3, 'be': 3, 'or': 1, 'not': 1, 'that': 1, 'is': 1, 'the': 1, 'question': 1})
+3 0
+[('to', 3), ('be', 3)]
+[('or', 6), ('to', 3), ('be', 3)]
+8 17
+3
+False

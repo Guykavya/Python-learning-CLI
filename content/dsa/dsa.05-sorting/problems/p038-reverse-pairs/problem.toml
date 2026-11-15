@@ -1,0 +1,6 @@
+id = "dsa.05.p038"
+title = "Count reverse pairs"
+tier = "challenge"
+kind = "code"
+topics = ["merge sort", "counting while merging", "two pointers"]
+minutes = 60

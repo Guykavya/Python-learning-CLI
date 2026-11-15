@@ -1,0 +1,4 @@
+- Forgetting the leftovers after the loop. When `a` runs out first, all remaining `b` values are lost.
+- Looping `while i < n or j < m` and then reading `a[i]` when `i == n`: an `IndexError`.
+- Comparing with `<` and also with `>`, then not handling equal values: the loop never advances on ties.
+- Reading the second array when `m = 0` with `input()` but forgetting the empty line is still there to read.

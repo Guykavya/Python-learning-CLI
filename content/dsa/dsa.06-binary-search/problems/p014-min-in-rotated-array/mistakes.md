@@ -1,0 +1,4 @@
+- Comparing `a[mid]` with `a[lo]`: for `[3, 4, 5, 1, 2]` and `[1, 2, 3, 4, 5]` the answer to `a[mid] > a[lo]` is the same ("yes") but the minimum is on different sides.
+- Using `hi = mid - 1`: the element at `mid` can be the minimum itself, and you would throw it away.
+- Forgetting `flush=True`, or printing the index instead of the value.
+- Scanning all `n` elements: that needs a million questions and breaks the limit.

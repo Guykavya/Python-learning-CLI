@@ -1,0 +1,176 @@
+# Real site problems for dsa.05 (Sorting).
+# Verification: NOT verified online. A web search for the CSES ids returned nothing useful, so every LeetCode slug,
+# CSES task id (1629, 1619, 1630) and Codeforces id (160A, 34B) was written from memory and not re-fetched.
+# Titles and ids that fail to open should be fixed here; no Codeforces id was invented, only ones recalled with confidence.
+# Already in dsa.03 / dsa.04 and therefore left out: sort-colors, two-sum-ii-input-array-is-sorted, CSES 1621 and 1640.
+# LeetCode: Easy, Medium and a few Hard. Codeforces: rating about 800 to 1200. CSES: Sorting and Searching.
+# Order follows the chapter: Python sorting (2), merge sort and inversions (8-9), quick sort and quickselect (10),
+# comparators (15), intervals (16), then CSES and Codeforces greedy-by-sorting practice.
+
+[[problem]]
+site = "leetcode"
+key = "sort-an-array"
+title = "Sort an Array"
+url = "https://leetcode.com/problems/sort-an-array/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "merge-sorted-array"
+title = "Merge Sorted Array"
+url = "https://leetcode.com/problems/merge-sorted-array/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "sort-the-people"
+title = "Sort the People"
+url = "https://leetcode.com/problems/sort-the-people/"
+minutes = 10
+
+[[problem]]
+site = "leetcode"
+key = "relative-sort-array"
+title = "Relative Sort Array"
+url = "https://leetcode.com/problems/relative-sort-array/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "h-index"
+title = "H-Index"
+url = "https://leetcode.com/problems/h-index/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "largest-number"
+title = "Largest Number"
+url = "https://leetcode.com/problems/largest-number/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "kth-largest-element-in-an-array"
+title = "Kth Largest Element in an Array"
+url = "https://leetcode.com/problems/kth-largest-element-in-an-array/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "merge-intervals"
+title = "Merge Intervals"
+url = "https://leetcode.com/problems/merge-intervals/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "insert-interval"
+title = "Insert Interval"
+url = "https://leetcode.com/problems/insert-interval/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "meeting-rooms"
+title = "Meeting Rooms"
+url = "https://leetcode.com/problems/meeting-rooms/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "meeting-rooms-ii"
+title = "Meeting Rooms II"
+url = "https://leetcode.com/problems/meeting-rooms-ii/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "non-overlapping-intervals"
+title = "Non-overlapping Intervals"
+url = "https://leetcode.com/problems/non-overlapping-intervals/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "minimum-number-of-arrows-to-burst-balloons"
+title = "Minimum Number of Arrows to Burst Balloons"
+url = "https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "interval-list-intersections"
+title = "Interval List Intersections"
+url = "https://leetcode.com/problems/interval-list-intersections/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "maximum-gap"
+title = "Maximum Gap"
+url = "https://leetcode.com/problems/maximum-gap/"
+minutes = 45
+
+[[problem]]
+site = "leetcode"
+key = "reverse-pairs"
+title = "Reverse Pairs"
+url = "https://leetcode.com/problems/reverse-pairs/"
+minutes = 60
+
+[[problem]]
+site = "leetcode"
+key = "count-of-smaller-numbers-after-self"
+title = "Count of Smaller Numbers After Self"
+url = "https://leetcode.com/problems/count-of-smaller-numbers-after-self/"
+minutes = 60
+
+[[problem]]
+site = "leetcode"
+key = "sort-list"
+title = "Sort List"
+url = "https://leetcode.com/problems/sort-list/"
+minutes = 45
+
+[[problem]]
+site = "leetcode"
+key = "wiggle-sort-ii"
+title = "Wiggle Sort II"
+url = "https://leetcode.com/problems/wiggle-sort-ii/"
+minutes = 45
+
+[[problem]]
+site = "cses"
+key = "1629"
+title = "Movie Festival"
+url = "https://cses.fi/problemset/task/1629"
+minutes = 25
+
+[[problem]]
+site = "cses"
+key = "1619"
+title = "Restaurant Customers"
+url = "https://cses.fi/problemset/task/1619"
+minutes = 25
+
+[[problem]]
+site = "cses"
+key = "1630"
+title = "Tasks and Deadlines"
+url = "https://cses.fi/problemset/task/1630"
+minutes = 25
+
+[[problem]]
+site = "codeforces"
+key = "160A"
+title = "Twins"
+url = "https://codeforces.com/problemset/problem/160/A"
+minutes = 15
+
+[[problem]]
+site = "codeforces"
+key = "34B"
+title = "Sale"
+url = "https://codeforces.com/problemset/problem/34/B"
+minutes = 15

@@ -1,0 +1,4 @@
+- Printing `a * b`. That is a common multiple, not the least one. It is right only when `gcd = 1`.
+- Using `/` instead of `//`. `a / g * b` goes through floats, loses precision past 2^53, and prints something like `1e+36`.
+- Printing `max(a, b)`. That is right only when the smaller number divides the larger.
+- Computing the gcd wrongly, for instance returning `a` when `b` is reached. Check with `lcm(4, 6) = 12`: gcd is 2.

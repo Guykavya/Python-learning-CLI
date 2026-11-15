@@ -180,6 +180,9 @@ AttributeError: 'Dog' object has no attribute 'age'
 
 Adding attributes from outside like this is possible, but it is a bad habit: nothing guarantees that every `Dog` has a `name`. Section 4 shows the proper way.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a Python class Dog and two objects made from it. Show rex as a box holding its own dictionary {'name': 'Rex', 'age': 3}, and fido as a separate box holding {'name': 'Fido'}. Then show the code print(fido.age) as an arrow into fido's box that finds nothing and ends in a red AttributeError. Label each box 'own __dict__' and highlight that fido has no age."
+
 ### 2.3 Methods: functions inside the class
 
 A **method** is a function defined inside the class body. Its first parameter is the instance it works on. By a very strong convention, this parameter is called `self`.
@@ -287,6 +290,9 @@ Rex sniffs Fido
 ```
 
 (`__init__` sets `self.name` when the dog is made; section 4 explains it.) `Dog.greet` is the plain function from the class, so you pass the instance yourself. `rex.greet` already has the instance inside it. The function needs **some** name for "the object I was called on", and Python makes you write that name explicitly. `self` is not a keyword (any name would work), but every Python programmer expects `self`, so always use it.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate two calls side by side for a class Dog with method greet(self, other) and an object rex whose name is 'Rex'. Left: rex.greet('Fido') steps: find greet in class Dog, pack function and rex into a bound method, call greet(rex, 'Fido'). Right: Dog.greet(rex, 'Fido') passes rex by hand. Highlight that self is rex in both, and both print 'Rex sniffs Fido'."
 
 ### 3.2 Bound method objects
 
@@ -438,6 +444,9 @@ TypeError: Point.__init__() missing 1 required positional argument: 'y'
 
 The error names `Point.__init__()`. The instance is passed automatically, so only `x` and `y` count.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate what happens when Python runs Point(3, 4). Step 1: an empty Point object appears. Step 2: Point.__init__ is called with self pointing to that object, x=3, y=4, and the attributes x=3 and y=4 appear inside the object. Step 3: the filled object is returned and assigned to a variable. Label which step creates the object and which one only fills it in."
+
 ### 4.3 Validate in `__init__`
 
 `__init__` runs for every new object, so it is the right place to **check the arguments**. If they are bad, raise an exception, and a bad object never exists.
@@ -558,6 +567,9 @@ Margherita Paneer
 
 This is the same rule that finds methods: methods are simply class attributes that happen to be functions. Class attributes are good for **constants** that belong to the class (`Account.MAX_WITHDRAWAL`), **defaults** that an instance may override, and **data about the class as a whole**, such as a counter.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a class box Pizza holding size_cm = 30, and two instance boxes a and b. Box a holds {'name': 'Margherita'}, box b holds {'name': 'Paneer'}. Animate the lookup for a.size_cm: first search a's own dictionary (not found, grey), then arrow up to the Pizza class box (found, green, value 30). Show b.size_cm taking the same path to the same shared value."
+
 ### 5.2 Assignment always writes to the instance
 
 Here is the rule that surprises people. **Assigning** `obj.name = value` **always writes into the instance's `__dict__`**. It never changes the class attribute. The new instance attribute **shadows** (hides) the class attribute for that one object.
@@ -628,6 +640,9 @@ True
 `self.members.append(person)` does **not** assign to `self.members`. It **reads** `self.members` (found on the class) and changes that list in place. There is only one list, so every team gets every member. Remember: `self.x = ...` creates an instance attribute; `self.x.append(...)` does not. The fix is to create mutable values **per instance**, in `__init__`: `self.members = []`.
 
 Rule of thumb: **class attributes should be immutable** (numbers, strings, tuples) or deliberately shared. Lists, dicts and sets that belong to one object go in `__init__`.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a class Team with one list members = [] stored on the class. Two objects, red and blue, each have only a name in their own dictionary. Animate red.join('Asha'): the lookup of self.members goes up to the class, and the single shared list becomes ['Asha']. Show both red and blue pointing arrows at that same list, and label the bug. Then show the fixed version, with one separate list inside each object."
 
 ### 5.5 Predict the output
 
@@ -948,6 +963,9 @@ Step by step:
 - The real value lives in a **backing attribute** with a different name, `_price`. If the setter did `self.price = value`, it would call itself forever (`RecursionError`).
 - In `__init__`, `self.price = price` already goes through the setter, so construction is checked too. Validate in **one** place: the setter.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Animate a Product object with name 'tea' and a property called price. Show item.price = 150 going through the setter, which checks value >= 0, then stores 150 in the hidden backing attribute _price inside the object's dictionary {'name': 'tea', '_price': 150}. Then show item.price = -5 stopping at the setter with a red ValueError, and reading item.price calling the getter to return _price."
+
 ### 8.3 Computed and read-only properties
 
 A property does not have to store anything. It can **compute** a value from other attributes, so it is always up to date. A property **without a setter** is read-only:
@@ -1070,6 +1088,9 @@ property
 
 We wrote straight into `__dict__`, because normal assignment to `d.size` would call the property. Then: the instance value hides the class attribute `kind`; the instance function hides the method (and is called with **no** argument, because it is not bound); but the **property wins** over the instance value `"instance size"`.
 
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw a ladder of lookup steps for d.kind, d.greet and d.size on an object d of class Demo. The class has kind = 'class attribute', a method greet, and a property size. The instance dictionary holds kind = 'instance value', greet = a lambda, and size = 'instance size'. Show the property winning first for size, then the instance dictionary for kind and greet, then the class. Colour the winner at each step."
+
 ### 9.3 Tools to look at objects
 
 | Tool | What it gives |
@@ -1155,6 +1176,9 @@ invoice from Mira
 There is no copying. When you call `ravi.payslip()` on an intern, the lookup rule from section 5.1 searches the instance, then `Intern`, then **`Employee`**, and finds `payslip` there. Every class that does not name a parent inherits from **`object`**, the root of all classes. That is where default methods such as `__repr__` and `__init__` come from.
 
 You can see the parent in `Intern.__bases__`, which is the tuple `(Employee,)`. And `"payslip" in vars(Intern)` is `False`: the method lives only in `Employee`.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw an inheritance tree: Employee at the top (methods __init__, monthly_pay returning 30000, payslip), with Intern (monthly_pay returns 12000) and Contractor (monthly_pay returns 45000, invoice) below it, and object above Employee. Animate ravi.payslip() for an Intern: search ravi, then Intern (not found), then Employee (found). Show payslip then calling self.monthly_pay() and finding Intern's version, giving 12000."
 
 ### 10.3 The template method pattern: the parent calls `self.hook()`
 
@@ -1439,6 +1463,9 @@ The MRO is `D, B, C, A, object`. Notice that `A` comes **after both** `B` and `C
 2. **The order of the bases in each class statement is kept.** (`class D(B, C)` puts `B` before `C`.)
 
 And it keeps the orders of the parents' own MROs. If no order can keep all these promises, Python refuses to create the class.
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw the diamond: class A at the top, B and C below it (each is a child of A), and D at the bottom inheriting from B and C, written class D(B, C). Each of A, B and C has a method who() returning its own letter. Animate the lookup D().who() moving along the order D, B, C, A, object as numbered arrows, stopping at B. Highlight that A comes after both B and C."
 
 ### 12.3 C3 by hand: the rule
 
@@ -1858,6 +1885,9 @@ print(s.pop(), hasattr(s, "insert"))
 ```text
 2 False
 ```
+
+> **Visualise it** *(optional; paste into any AI chat that can draw diagrams or code a small animation. The chapter works without it.)*
+> "Draw two diagrams comparing a stack. Left: class Stack(list), a box that is-a list, with all list methods (insert, sort, remove) sticking out. Show pushing 1, 2, then insert(0, 99) and sort(reverse=True) giving [99, 2, 1] so peek returns 1 and breaks the rule. Right: class Stack that has-a hidden _items list, exposing only push and pop. Show insert being blocked."
 
 ### 14.3 Strategy objects: change behaviour at run time
 

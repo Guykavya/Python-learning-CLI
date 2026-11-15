@@ -1,0 +1,6 @@
+id = "dsa.05.p004"
+title = "Selection sort and its swaps"
+tier = "drill"
+kind = "code"
+topics = ["selection sort", "swaps", "in-place"]
+minutes = 20

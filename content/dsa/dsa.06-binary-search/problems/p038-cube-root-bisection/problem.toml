@@ -1,0 +1,6 @@
+id = "dsa.06.p038"
+title = "Solve an equation by bisection"
+tier = "challenge"
+kind = "code"
+topics = ["floats", "fixed iteration count", "bisection"]
+minutes = 45

@@ -1,0 +1,6 @@
+id = "dsa.09.p016"
+title = "Middle of the list"
+tier = "drill"
+kind = "code"
+topics = ["linked list", "fast and slow pointers"]
+minutes = 15

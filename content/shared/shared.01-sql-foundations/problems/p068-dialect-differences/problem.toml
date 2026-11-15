@@ -1,0 +1,7 @@
+id = "shared.01.p068"
+title = "Explain: moving a query from SQLite to PostgreSQL and MySQL"
+tier = "deep"
+kind = "explain"
+topics = ["dialects", "SQLite", "MySQL", "PostgreSQL", "portability"]
+minutes = 35
+difficulty = 4

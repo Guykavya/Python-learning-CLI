@@ -1,0 +1,7 @@
+id = "shared.01.p029"
+title = "Orders per customer and status"
+tier = "applied"
+kind = "code"
+topics = ["GROUP BY several columns", "ORDER BY aggregate"]
+minutes = 15
+difficulty = 2

@@ -1,0 +1,6 @@
+- Computing `phi` by counting `gcd(i, n) == 1` for each `i` per query: O(n log n) per query, far too slow for `10^5` queries of size `10^6`.
+- Using `n * (p - 1) / p` (a float) per prime: it loses precision and gives `float` output. Use `n // p * (p - 1)`.
+- Applying the formula to a prime power as `p^e - 1`. It is `p^(e-1) * (p - 1)`.
+- Forgetting the leftover when you factorise by trial division: with the `spf` table there is none, but the loop must run until `n == 1`.
+- Building the `spf` table for each query. It is the same for all queries: build it once.
+- Treating `n = 1`: `phi(1) = 1` and `S(1) = gcd(1, 1) = 1`. A loop that never runs must leave the answers at 1.

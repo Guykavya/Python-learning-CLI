@@ -1,0 +1,4 @@
+- Marking a cell visited only when it is popped, not when it is pushed: the same cell is pushed many times (still correct, but slower).
+- Counting diagonal neighbours: `"#.#", ".#."` has 3 islands, not 1.
+- Raising the recursion limit to pass the snake test: a deep Python stack can crash the interpreter itself.
+- Changing the grid (it is a list of strings anyway: strings cannot be changed in place).

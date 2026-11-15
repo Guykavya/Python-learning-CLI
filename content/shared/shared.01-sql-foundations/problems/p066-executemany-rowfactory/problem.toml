@@ -1,0 +1,7 @@
+id = "shared.01.p066"
+title = "executemany, row_factory and closing connections"
+tier = "applied"
+kind = "code"
+topics = ["executemany", "row_factory", "sqlite3.Row", "contextlib.closing", "transaction on error"]
+minutes = 40
+difficulty = 3

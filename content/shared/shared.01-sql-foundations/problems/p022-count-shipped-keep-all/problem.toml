@@ -1,0 +1,7 @@
+id = "shared.01.p022"
+title = "Keep all customers, count only shipped orders"
+tier = "applied"
+kind = "code"
+topics = ["LEFT JOIN", "ON vs WHERE", "COUNT", "GROUP BY"]
+minutes = 25
+difficulty = 4

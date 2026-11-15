@@ -1,0 +1,6 @@
+id = "dsa.03.p058"
+title = "Minimum swaps to group all ones in a circle"
+tier = "challenge"
+kind = "code"
+topics = ["sliding window", "fixed window", "circular array", "modulo index"]
+minutes = 35

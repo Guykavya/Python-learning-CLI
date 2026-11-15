@@ -1,0 +1,7 @@
+id = "shared.01.p025"
+title = "SUM, AVG, MIN, MAX with NULLs"
+tier = "drill"
+kind = "code"
+topics = ["SUM", "AVG", "MIN", "MAX", "NULL in aggregates", "COALESCE"]
+minutes = 15
+difficulty = 2
