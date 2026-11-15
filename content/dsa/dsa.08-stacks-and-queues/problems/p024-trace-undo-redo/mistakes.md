@@ -1,0 +1,5 @@
+- Forgetting that `type` clears `redo_stack`: then `redo` after `type ?` would bring back an old text.
+- Expecting `'hi_there'` to come back with `redo`: it was cleared by `type !`.
+- Skipping the lines of commands that do nothing: every command prints a line.
+- Writing the text without quotes: the program prints `repr(e.text)`, so `''` and `'hi'` appear with quotes.
+- Counting the stacks wrong after `undo`: the undo stack shrinks by one and the redo stack grows by one.

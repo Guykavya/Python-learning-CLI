@@ -1,0 +1,5 @@
+- Forgetting the leftover removals: `"112"`, `k = 1` returns `"112"`.
+- `stack[:-k]` when `k == 0`: that is `stack[:0]`, the empty list. Only cut when `k > 0`.
+- Forgetting to strip leading zeros: `"10200"`, `k = 1` returns `"0200"`.
+- Returning `""` instead of `"0"` when everything is removed.
+- Comparing with `>=`: equal digits are popped, which wastes removals (`"112"` would lose a `1`).

@@ -1,0 +1,6 @@
+id = "dsa.09.p019"
+title = "Start of the cycle"
+tier = "deep"
+kind = "code"
+topics = ["linked list", "fast and slow pointers", "cycle", "Floyd", "proof"]
+minutes = 35

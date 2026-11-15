@@ -1,0 +1,6 @@
+id = "dsa.09.p029"
+title = "Rotate right by k"
+tier = "applied"
+kind = "code"
+topics = ["linked list", "length", "modulo", "rewiring"]
+minutes = 25

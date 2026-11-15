@@ -1,0 +1,5 @@
+- Pushing `/` on top of `*` without popping: equal precedence must leave first, otherwise `4 * 2 / x` would be read as `4 * (2 / x)`.
+- Popping the `+` at the `/`: `+` has lower precedence, so it must wait.
+- Writing the `(` into the output, or forgetting it on the stack line after token `(`.
+- Emptying the stack at the end bottom first (`+ /`): it is a stack, so `/` comes off first.
+- Writing the stack top first: the line shows the list as stored, bottom first.

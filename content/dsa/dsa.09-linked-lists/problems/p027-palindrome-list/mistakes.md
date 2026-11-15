@@ -1,0 +1,5 @@
+- Returning `False` at the first mismatch, before restoring: the caller's list is left cut in half.
+- Comparing until `a is None`: the first half is as long as or longer than the second; compare while `b` exists.
+- Using `slow = fast = head`: for even lengths `slow` ends one node too far, the second half is too short, and a pair is never compared (`[1, 2, 3, 1]` would be called a palindrome).
+- Restoring with `slow.next = second`: `second` is the head of the **reversed** half; you must reverse it again first.
+- Copying the values into a list: correct, but the memory test rejects it here.

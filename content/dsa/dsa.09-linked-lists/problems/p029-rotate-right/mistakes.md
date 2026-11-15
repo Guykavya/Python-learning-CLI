@@ -1,0 +1,5 @@
+- Stepping `k` times (or rotating by one `k` times): with `k = 10**12` this never finishes; use `k % n`.
+- Computing `k % n` with `n = 0`: `ZeroDivisionError` on the empty list; handle it first.
+- Off by one in the walk to the new tail: walking `n - k` steps lands on the new **head**, not the tail.
+- Forgetting `new_tail.next = None`: the list becomes a ring and the result has a cycle.
+- Returning `head` after rotating: the head changed to `new_head`.

@@ -1,0 +1,146 @@
+# Real site problems for dsa.08 (Stacks and queues).
+# Verification: every LeetCode slug below was written from memory (from the problem plan) and NOT re-fetched
+# (no web access was used while writing). Fix any slug that fails to open.
+# Codeforces problems are left out on purpose: none were verified. CSES 1073 (Towers) is already in dsa.06.
+# Order follows the chapter: designs (3, 8), brackets (5), expressions (6), string stacks (7), min stack (8),
+# monotonic stack (9-10), monotonic queue (11), BFS (12).
+
+[[problem]]
+site = "leetcode"
+key = "implement-queue-using-stacks"
+title = "Implement Queue using Stacks"
+url = "https://leetcode.com/problems/implement-queue-using-stacks/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "implement-stack-using-queues"
+title = "Implement Stack using Queues"
+url = "https://leetcode.com/problems/implement-stack-using-queues/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "valid-parentheses"
+title = "Valid Parentheses"
+url = "https://leetcode.com/problems/valid-parentheses/"
+minutes = 10
+
+[[problem]]
+site = "leetcode"
+key = "longest-valid-parentheses"
+title = "Longest Valid Parentheses"
+url = "https://leetcode.com/problems/longest-valid-parentheses/"
+minutes = 35
+
+[[problem]]
+site = "leetcode"
+key = "evaluate-reverse-polish-notation"
+title = "Evaluate Reverse Polish Notation"
+url = "https://leetcode.com/problems/evaluate-reverse-polish-notation/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "basic-calculator"
+title = "Basic Calculator"
+url = "https://leetcode.com/problems/basic-calculator/"
+minutes = 40
+
+[[problem]]
+site = "leetcode"
+key = "simplify-path"
+title = "Simplify Path"
+url = "https://leetcode.com/problems/simplify-path/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "decode-string"
+title = "Decode String"
+url = "https://leetcode.com/problems/decode-string/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "min-stack"
+title = "Min Stack"
+url = "https://leetcode.com/problems/min-stack/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "next-greater-element-i"
+title = "Next Greater Element I"
+url = "https://leetcode.com/problems/next-greater-element-i/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "next-greater-element-ii"
+title = "Next Greater Element II"
+url = "https://leetcode.com/problems/next-greater-element-ii/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "daily-temperatures"
+title = "Daily Temperatures"
+url = "https://leetcode.com/problems/daily-temperatures/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "online-stock-span"
+title = "Online Stock Span"
+url = "https://leetcode.com/problems/online-stock-span/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "largest-rectangle-in-histogram"
+title = "Largest Rectangle in Histogram"
+url = "https://leetcode.com/problems/largest-rectangle-in-histogram/"
+minutes = 40
+
+[[problem]]
+site = "leetcode"
+key = "maximal-rectangle"
+title = "Maximal Rectangle"
+url = "https://leetcode.com/problems/maximal-rectangle/"
+minutes = 40
+
+[[problem]]
+site = "leetcode"
+key = "trapping-rain-water"
+title = "Trapping Rain Water"
+url = "https://leetcode.com/problems/trapping-rain-water/"
+minutes = 35
+
+[[problem]]
+site = "leetcode"
+key = "remove-k-digits"
+title = "Remove K Digits"
+url = "https://leetcode.com/problems/remove-k-digits/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "sliding-window-maximum"
+title = "Sliding Window Maximum"
+url = "https://leetcode.com/problems/sliding-window-maximum/"
+minutes = 35
+
+[[problem]]
+site = "leetcode"
+key = "shortest-path-in-binary-matrix"
+title = "Shortest Path in Binary Matrix"
+url = "https://leetcode.com/problems/shortest-path-in-binary-matrix/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "rotting-oranges"
+title = "Rotting Oranges"
+url = "https://leetcode.com/problems/rotting-oranges/"
+minutes = 25

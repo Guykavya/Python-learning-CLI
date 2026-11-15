@@ -1,0 +1,5 @@
+- Returning `head` (or `head.next`) at the end instead of `new_head`: every level must pass up the head the deepest call found.
+- Forgetting `head.next = None`: the first two nodes point at each other and the list ends in a cycle.
+- Writing `new_head.next = head`: `new_head` is the old last node; the node to attach to is `head.next`.
+- Only one base case (`head is None`): then the one-node call goes on to `head.next.next` with `head.next` being `None` and crashes.
+- Raising the recursion limit to reverse 100,000 nodes: it can crash the interpreter itself; use the loop.

@@ -1,0 +1,4 @@
+- Refilling even when the outbox is not empty: newer items land on top of older ones, and the order breaks (chapter "Try it 4").
+- Pouring the items back into the inbox after every pop: correct, but `O(n)` per operation.
+- `empty()` that only checks the inbox (or only the outbox).
+- `peek()` that forgets to refill: it looks at an empty outbox and crashes.

@@ -1,0 +1,5 @@
+- Marking cells as seen when they are **dequeued**: the same cell is enqueued by several neighbours (the test counts this).
+- Using `pop()` instead of `popleft()`: the queue becomes a stack, the search becomes DFS, and the first path found is not the shortest.
+- Forgetting the bounds check, or checking `nr <= rows`: index errors at the edges, or negative indices that wrap around to the other side of the grid.
+- Returning `None` or `0` when the goal is unreachable instead of `-1`.
+- Not checking whether `start` or `goal` is a wall.

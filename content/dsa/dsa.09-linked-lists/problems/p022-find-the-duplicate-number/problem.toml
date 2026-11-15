@@ -1,0 +1,6 @@
+id = "dsa.09.p022"
+title = "Find the duplicate number"
+tier = "deep"
+kind = "code"
+topics = ["fast and slow pointers", "cycle", "array as linked list", "Floyd"]
+minutes = 35

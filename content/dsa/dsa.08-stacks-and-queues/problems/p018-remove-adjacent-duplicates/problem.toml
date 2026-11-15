@@ -1,0 +1,6 @@
+id = "dsa.08.p018"
+title = "Remove adjacent duplicates"
+tier = "drill"
+kind = "code"
+topics = ["stack", "strings", "cancel pairs"]
+minutes = 15

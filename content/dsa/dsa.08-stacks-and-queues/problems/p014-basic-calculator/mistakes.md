@@ -1,0 +1,6 @@
+- Using Python's `//` for `/`: `-7/2` gives `-4`.
+- Using `int(a / b)`: correct for these small numbers, but it goes through floats; prefer the integer helper.
+- Applying the operator that comes **after** the number: `3+5/2` then adds 5 before it is divided.
+- Forgetting the last number: without treating the end like a `)` (or adding a final `+`), the last term is never pushed.
+- Not skipping past the `)` after the recursive call: the outer level sees the `)` and stops too early.
+- Handling unary minus with a special `sign` variable and forgetting it inside brackets: `(-4*2)` breaks while `-4*2` works.

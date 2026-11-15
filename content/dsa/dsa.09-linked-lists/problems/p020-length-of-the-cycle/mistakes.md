@@ -1,0 +1,4 @@
+- Counting from the head: that counts the tail too (and never ends, because a walk from the head never reaches `None`).
+- Starting the count at 0 with `cur = slow.next`: a cycle of length 3 is reported as 2.
+- Using `while cur.val != slow.val`: different nodes may hold equal values.
+- Forgetting the no-cycle case: return `0`, not `None`.

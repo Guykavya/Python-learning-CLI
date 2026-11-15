@@ -1,0 +1,5 @@
+- Forgetting the sentinel: bars still on the stack at the end are never measured (`[2, 4]` returns 0).
+- Width `i - left` instead of `i - left - 1`: the boundaries themselves are not part of the rectangle.
+- Using `left = stack[-1]` without checking for an empty stack: the bar was the lowest so far, so its rectangle reaches the left edge (`left = -1`).
+- `heights.append(0)`: it changes the caller's list.
+- Taking the height from the new bar `h` instead of the popped bar.

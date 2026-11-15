@@ -1,0 +1,6 @@
+id = "dsa.08.p002"
+title = "A Stack class with a safe pop"
+tier = "drill"
+kind = "code"
+topics = ["stack", "class", "IndexError", "empty stack"]
+minutes = 15

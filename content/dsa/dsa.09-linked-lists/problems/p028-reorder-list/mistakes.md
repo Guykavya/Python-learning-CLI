@@ -1,0 +1,4 @@
+- Not cutting after the first half: the first half still runs into the second, and the weave makes a cycle.
+- Weaving until `first` is `None` instead of until `second` is `None`: the first half may be one node longer, and its last node already ends the list; looping further reads `second.next` on `None`.
+- Overwriting `first.next` before saving it: the rest of the first half is lost.
+- Returning a new head: the first node never changes; the function returns `None`.

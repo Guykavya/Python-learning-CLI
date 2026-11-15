@@ -1,0 +1,5 @@
+- One BFS per rotten orange, taking the maximum: the oranges spread **at the same time**, so the minimum distance to any rotten orange counts.
+- Counting a minute after the last level even though nothing rotted: the loop must stop when `fresh` reaches 0 (the `while queue and fresh` condition).
+- Returning `-1` for a grid without fresh oranges: the answer is 0.
+- Rotting a neighbour in the same pass that you read the grid (scanning row by row without a queue): a single minute then spreads further than one step.
+- Crashing on `[]` by reading `grid[0]`.

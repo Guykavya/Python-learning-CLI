@@ -78,12 +78,11 @@ def test_medium():
 
 
 def test_cell_without_options():
-    board = [[0] * 9 for _ in range(9)]
-    board[0] = [1, 2, 3, 4, 5, 6, 7, 8, 0]
-    board[5][8] = 9
-    text = "".join(str(d) for row in board for d in row)
+    # Only 10 empty cells, so any cell order finishes quickly. The givens do not clash.
+    text = "123456780459871230876239140617548300394612570582703619748125960965387420231964850"
     assert solve_in_subprocess(text) is None, (
-        "Cell (0, 8) can hold no digit: row 0 has 1..8 and column 8 already has a 9. Return None when the search fails.")
+        "Cell (0, 8) can hold no digit: row 0 has 1..8 and column 8 already has a 9 (row 5). "
+        "Return None when the search fails.")
 
 
 def test_clashing_givens():

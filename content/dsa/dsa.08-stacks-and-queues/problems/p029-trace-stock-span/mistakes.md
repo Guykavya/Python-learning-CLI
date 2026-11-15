@@ -1,0 +1,4 @@
+- Adding 1 for each popped pair instead of its span: `60` would get span 2 instead of 4.
+- Using `<` instead of `<=`: the second `35` would not swallow the first.
+- Forgetting the `1` for today: every span is at least 1.
+- Writing the stack without the tuples: Python prints `[(79, 5), (20, 1)]`.

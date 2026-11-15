@@ -1,0 +1,7 @@
+id = "dsa.08.p040"
+title = "Build a bounded round-robin scheduler"
+tier = "challenge"
+kind = "code"
+topics = ["queue", "deque", "simulation", "round robin", "class design", "build"]
+minutes = 60
+assessment = "build"

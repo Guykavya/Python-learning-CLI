@@ -1,0 +1,5 @@
+- Forgetting the sentinel `-1`: the first run that starts at index 0 has no "wall" below it, and `stack[-1]` crashes or gives a wrong length.
+- Not pushing the unmatched `)` as the new wall: runs on the two sides of it are wrongly joined (`"()))()"` would look like length 6).
+- Using `>=` for the update: on a tie you return the **later** run.
+- Computing the start as `stack[-1]`: the top is the wall itself, one position **before** the run.
+- Checking only whole-string validity for every substring: correct but `O(n^3)`.

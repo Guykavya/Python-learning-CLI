@@ -1,0 +1,6 @@
+id = "dsa.09.p012"
+title = "Reverse a list (iterative)"
+tier = "drill"
+kind = "code"
+topics = ["linked list", "reversal", "in place"]
+minutes = 15

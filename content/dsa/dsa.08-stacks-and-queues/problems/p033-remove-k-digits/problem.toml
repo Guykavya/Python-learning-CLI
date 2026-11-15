@@ -1,0 +1,6 @@
+id = "dsa.08.p033"
+title = "Remove k digits"
+tier = "deep"
+kind = "code"
+topics = ["monotonic stack", "greedy", "strings", "leading zeros"]
+minutes = 30

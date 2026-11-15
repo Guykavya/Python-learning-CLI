@@ -1,0 +1,5 @@
+- Stack push at the tail and pop at the tail: popping then needs the node before the tail, which costs a walk.
+- Queue enqueue at the head and dequeue at the tail: the same `O(n)` walk on every dequeue.
+- Forgetting `self._tail = None` when the last item is dequeued: the next `enqueue` links the new node after a node that is no longer in the queue, and it disappears.
+- Raising nothing (or returning `None`) on an empty `pop`/`dequeue`: the caller cannot tell an empty structure from a stored `None`.
+- Testing `if self._top:` instead of `if self._top is None:`: fine for nodes (they are always truthy), but writing it out makes the intent clear and avoids surprises if nodes ever get a `__len__`.

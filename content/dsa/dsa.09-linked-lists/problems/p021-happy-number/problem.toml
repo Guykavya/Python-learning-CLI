@@ -1,0 +1,6 @@
+id = "dsa.09.p021"
+title = "Happy number"
+tier = "applied"
+kind = "code"
+topics = ["fast and slow pointers", "cycle", "numbers"]
+minutes = 20

@@ -1,0 +1,6 @@
+id = "dsa.08.p006"
+title = "Trace: a stack after each operation"
+tier = "drill"
+kind = "trace"
+topics = ["stack", "push", "pop", "LIFO"]
+minutes = 10

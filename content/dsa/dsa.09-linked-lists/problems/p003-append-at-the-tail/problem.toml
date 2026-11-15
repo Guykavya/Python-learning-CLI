@@ -1,0 +1,6 @@
+id = "dsa.09.p003"
+title = "Append at the tail"
+tier = "drill"
+kind = "code"
+topics = ["linked list", "walking", "tail", "empty list"]
+minutes = 15

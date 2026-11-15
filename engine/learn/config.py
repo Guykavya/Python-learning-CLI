@@ -12,6 +12,7 @@ DEFAULTS: dict[str, dict[str, Any]] = {
     "accounts": {"codeforces_handle": "", "leetcode_username": ""},
     "plan": {"daily_minutes": 60, "focus": ["core", "dsa"]},
     "editor": {"open_in_vscode": False},
+    "ui": {"mode": "plain", "name": "", "animations": True},
 }
 
 

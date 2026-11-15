@@ -1,0 +1,5 @@
+step 1: prev=1 cur=2 nxt=2 | reversed: 1
+step 2: prev=2 cur=3 nxt=3 | reversed: 2 -> 1
+step 3: prev=3 cur=4 nxt=4 | reversed: 3 -> 2 -> 1
+step 4: prev=4 cur=None nxt=None | reversed: 4 -> 3 -> 2 -> 1
+head is now 4 and old head 1 points to None

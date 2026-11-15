@@ -1,0 +1,5 @@
+- Adding water when the stack is empty after the pop: there is no left wall, so `[0, 1]` would hold water.
+- Using `max` of the two walls for the depth: the water spills over the **lower** wall.
+- Width `i - left` instead of `i - left - 1`.
+- Counting only the column directly above the popped bar (width 1): the layer may span several bars that were popped earlier.
+- Forgetting that the deepest point can be anywhere: computing the left maximum only.

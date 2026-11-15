@@ -1,0 +1,6 @@
+id = "dsa.09.p032"
+title = "Intersection of two lists"
+tier = "challenge"
+kind = "code"
+topics = ["linked list", "two pointers", "node identity"]
+minutes = 30

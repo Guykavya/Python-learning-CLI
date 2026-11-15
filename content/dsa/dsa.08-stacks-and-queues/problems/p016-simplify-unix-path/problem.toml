@@ -1,0 +1,6 @@
+id = "dsa.08.p016"
+title = "Simplify a Unix path"
+tier = "applied"
+kind = "code"
+topics = ["stack", "strings", "split", "paths"]
+minutes = 20

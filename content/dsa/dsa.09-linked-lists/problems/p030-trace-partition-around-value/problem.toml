@@ -1,0 +1,6 @@
+id = "dsa.09.p030"
+title = "Trace: partition around a value"
+tier = "applied"
+kind = "trace"
+topics = ["linked list", "dummy node", "partition", "stable"]
+minutes = 20

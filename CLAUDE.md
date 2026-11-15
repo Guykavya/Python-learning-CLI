@@ -51,6 +51,22 @@ and report. Do not start the next module unless Kavya asks.
   `<details>` worked answer, never with invented numbers; a number may appear there only if it was really
   measured, and is then labelled "measured in an earlier test run". Keep the code of a chapter to about
   20 minutes of total run time (training loops on CPU are the usual cause of overruns).
+- **Chapters are rendered by `rich` in the terminal reader** (`engine/learn/reader.py`, `render_markdown`).
+  Write standard Markdown only: pipe tables, `>` quotes, fenced code with a language tag, `-` lists.
+  No raw HTML except the `<details><summary>` answer boxes. Keep table rows short (they wrap at 100 columns).
+  After changing the reader or adding a Markdown feature, re-render every chapter without the fallback
+  (call `Markdown(...)` from `rich` directly; `render_markdown` hides errors) and check nothing crashes or vanishes.
+  Keep `rich` in `pyproject.toml`, and keep the plain `render()` as the fallback and as what the tests check.
+- **Full-screen mode** (`[ui] mode = "tui"`, Textual extra `[tui]`, never a base dependency): `engine/learn/{tui,workspace,home,browser}.py`;
+  the home's moving decoration is pure logic in `engine/learn/scene.py` (tested without Textual in `test_scene.py`; keep frames capped by `MAX_WIDTH/MAX_HEIGHT`).
+  `cli.ui_mode()` decides: setting or `LEARN_UI`, a real terminal, Textual installed; `learn --plain` wins. Anything else is plain,
+  so pipes, scripts and CI never see a full-screen app. The chapter reader shows the same Markdown through `reader._prepare`,
+  so the Markdown rules above cover it.
+  - The screens only choose and show. They return command words (`["next"]`, `["read", id]`) or call the `cmd_*` functions in
+    `cli.py` and capture their output. Change scoring, hints, plans or review rules in `cli.py` only, never in a screen,
+    so both modes always agree. Interactive plain commands (`check`, `hint`, `solution`, `stats`) stay plain on purpose.
+  - Every new screen gets a headless test (`engine/tests/test_workspace.py`, `test_screens.py`, `test_ui.py`) using
+    Textual's `run_test`, and a screenshot check by eye before it is called done. Extend the test when you add a key.
 - **Visualise it**: after each idea that is easier to see than to read, add an optional prompt box
   (`> **Visualise it** *(optional; paste into any AI chat ...)*` followed by the quoted prompt, about 6-10 per
   chapter). The prompt must name the concrete objects of that section (shapes, values, pointers, steps),

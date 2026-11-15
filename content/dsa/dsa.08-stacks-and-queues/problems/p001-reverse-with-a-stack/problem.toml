@@ -1,0 +1,6 @@
+id = "dsa.08.p001"
+title = "Reverse a string with a stack"
+tier = "drill"
+kind = "code"
+topics = ["stack", "list as stack", "LIFO"]
+minutes = 10

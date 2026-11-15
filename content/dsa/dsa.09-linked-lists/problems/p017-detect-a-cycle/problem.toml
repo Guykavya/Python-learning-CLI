@@ -1,0 +1,6 @@
+id = "dsa.09.p017"
+title = "Detect a cycle"
+tier = "applied"
+kind = "code"
+topics = ["linked list", "fast and slow pointers", "cycle", "Floyd"]
+minutes = 25

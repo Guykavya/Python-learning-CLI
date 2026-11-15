@@ -1,0 +1,6 @@
+id = "dsa.09.p026"
+title = "Remove the n-th node from the end"
+tier = "applied"
+kind = "code"
+topics = ["linked list", "two pointers", "gap", "dummy node"]
+minutes = 20

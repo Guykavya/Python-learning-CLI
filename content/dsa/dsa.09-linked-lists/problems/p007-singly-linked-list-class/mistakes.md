@@ -1,0 +1,6 @@
+- `push_front` on an empty list without setting `tail`: the next `push_back` does `None.next = ...` and crashes.
+- `pop_front` of the only node without setting `tail = None`: the tail still points at the removed node, and a later `push_back` links new nodes to a node that is not in the list (they disappear).
+- `remove` of the last node without moving `tail` back: the same "disappearing push_back" bug.
+- `remove` that removes every match instead of the first one.
+- `push_back` that walks from `head`: correct but `O(n)`, so the 200,000-push test times out.
+- Forgetting to update the size in one method: `len()` slowly drifts away from the truth.

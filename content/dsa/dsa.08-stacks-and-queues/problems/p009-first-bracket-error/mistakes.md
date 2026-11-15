@@ -1,0 +1,5 @@
+- Popping before comparing: you lose the opener you needed for the error message.
+- Reporting the **opener's** index for a mismatch: the problem asks for the closer that caused it.
+- Reporting `stack[-1]` for unclosed brackets: that is the latest, not the earliest.
+- Pushing only the bracket: at the end you no longer know where it was. Push `(ch, i)`.
+- Scanning to the end and only then deciding: a mismatch in the middle must be reported at once, even if openers remain later.

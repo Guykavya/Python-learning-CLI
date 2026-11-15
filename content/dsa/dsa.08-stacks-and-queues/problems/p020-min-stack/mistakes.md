@@ -1,0 +1,4 @@
+- Keeping a single variable `self.minimum`: after popping the minimum, you do not know the next one without a scan.
+- `get_min` with `min(self.items)`: correct but `O(n)`, too slow for the last test.
+- Storing the minimum but returning the pair from `pop` or `top`: return only the value.
+- Two-stack version with `<` instead of `<=`: popping one of two equal minimums loses the minimum (see problem 21).

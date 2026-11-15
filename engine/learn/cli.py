@@ -3,6 +3,10 @@
 from __future__ import annotations
 
 import argparse
+import contextlib
+import importlib.util
+import io
+import os
 import shutil
 import sqlite3
 import subprocess
@@ -19,6 +23,34 @@ EXPLAIN_MIN_WORDS = 30
 EXPLAIN_RATING_QUALITY = {1: 0.3, 2: 0.7, 3: 1.0}
 STATUS_ICON = {"mastered": "★", "in-progress": "◐", "not-started": "○", "no-content": "·"}
 KIND_FILE = {"code": "solution.py", "trace": "answer.txt", "explain": "answer.md"}
+
+_force_plain = False   # set by the global --plain flag for one run
+_warned_no_textual = False
+
+
+def _is_terminal() -> bool:
+    return sys.stdin.isatty() and sys.stdout.isatty()
+
+
+def ui_mode(cfg: dict | None = None) -> str:
+    """"tui" only when it is wanted AND possible; otherwise "plain".
+
+    Wanted: `[ui] mode = "tui"` in config.toml, or LEARN_UI=tui. `learn --plain` or LEARN_UI=plain wins.
+    Possible: a real terminal (not a pipe) and the optional Textual package installed.
+    """
+    global _warned_no_textual
+    if _force_plain:
+        return "plain"
+    mode = os.environ.get("LEARN_UI") or (cfg or config.load()).get("ui", {}).get("mode", "plain")
+    if mode != "tui" or not _is_terminal():
+        return "plain"
+    if importlib.util.find_spec("textual") is None:
+        if not _warned_no_textual:
+            _warned_no_textual = True
+            print(ui.dim('  [ui] mode is "tui" but Textual is not installed, so this run is plain. Install it: '
+                         '.venv/bin/python -m pip install -e ".[tui]"'))
+        return "plain"
+    return "tui"
 
 
 class UserError(Exception):
@@ -308,6 +340,16 @@ def cmd_start(args: argparse.Namespace) -> None:
     db.mark_active(conn)
     conn.commit()
 
+    if not getattr(args, "no_tui", False) and ui_mode(cfg) == "tui":
+        try:
+            from learn import workspace
+        except ImportError:
+            workspace = None  # Textual or Rich broke: fall through to the plain screen below
+        if workspace is not None:
+            if want_editor(args, cfg):
+                open_in_editor(work / "problem.md", main_file)
+            return workspace.run(prob.id)
+
     label = "REVIEW  " if is_review else ""
     ui.heading(f"{label}{prob.id}  {prob.title}")
     print(ui.dim(f"{prob.tier} · {prob.kind} · ~{prob.minutes} min · topics: {', '.join(prob.topics)}"))
@@ -545,6 +587,27 @@ def cmd_stuck(args: argparse.Namespace) -> None:
     conn.commit()
 
 
+def cmd_work(args: argparse.Namespace) -> None:
+    """Full-screen workspace for one problem (optional Textual extra)."""
+    try:
+        from learn import workspace
+    except ImportError:
+        raise UserError(
+            "The workspace needs the optional Textual package. Install it once with:\n"
+            '  .venv/bin/python -m pip install -e ".[tui]"   (Windows: .venv\\Scripts\\python.exe)\n'
+            "Everything it does also works as plain commands: learn check, learn hint, learn solution."
+        ) from None
+    if not sys.stdin.isatty() or not sys.stdout.isatty():
+        raise UserError("The workspace is full-screen: run it in a terminal (not through a pipe).")
+    conn, _, _ = ctx()
+    prob = resolve_problem(conn, args.problem)
+    conn.close()
+    # Same as `learn start`: creates your file, restarts the session timer, turns a due problem into a review.
+    with contextlib.redirect_stdout(io.StringIO()):
+        cmd_start(argparse.Namespace(problem=prob.id, review=args.review, code=False, no_tui=True))
+    workspace.run(prob.id)
+
+
 def _clipboard(text: str) -> bool:
     for cmd in (["wl-copy"], ["xclip", "-selection", "clipboard"], ["xsel", "--clipboard", "--input"]):
         if shutil.which(cmd[0]):
@@ -569,8 +632,46 @@ def _written_summary(syl: Syllabus, tracks: list) -> str:
             f"Problems written: {len(written)} of {len(modules)} modules, {problems} of about {planned} planned problems.")
 
 
+def _run_argv(argv: list[str], pause: bool = False) -> None:
+    """Run one command the way a typed command runs, showing its errors instead of raising them."""
+    try:
+        args = build_parser().parse_args(argv)
+        args.func(args)
+    except UserError as exc:
+        print(ui.err(str(exc)))
+    except KeyboardInterrupt:
+        print()
+    except SystemExit:
+        pass
+    if pause:
+        ui.ask(ui.dim("\n  Press Enter to go back"))
+
+
+def _syllabus_browser(syl: Syllabus, cfg: dict, track: str | None) -> None:
+    """The full-screen syllabus. Actions run, then the browser reopens where you were."""
+    from learn import browser
+
+    module = None
+    while True:
+        conn = db.connect()
+        states = db.states(conn)
+        current = {t.id: progress.current_module(conn, syl, t.id).id for t in syl.tracks}
+        conn.close()
+        argv = browser.run(syl, states, current, cfg["plan"].get("focus", []), track, module)
+        if not argv:
+            return
+        if argv[0] == "work":
+            module = content.get(argv[1]).module_id
+        else:
+            module = argv[1]
+        _run_argv(argv, pause=argv[0] == "goto")
+
+
 def cmd_syllabus(args: argparse.Namespace) -> None:
     conn, syl, cfg = ctx()
+    if ui_mode(cfg) == "tui":
+        conn.close()
+        return _syllabus_browser(syl, cfg, args.track)
     states = db.states(conn)
     tracks = [syl.track(args.track)] if args.track else syl.tracks
     for t in tracks:
@@ -632,7 +733,7 @@ def cmd_module(args: argparse.Namespace) -> None:
                      + (f"   still to do: {', '.join(sorted(missing))}" if missing else "")))
 
 
-def _read_module(conn, m, restart: bool = False) -> None:
+def _read_module(conn, m, restart: bool = False, tui: bool = False) -> None:
     """Open one chapter in the reader, remembering where you stopped."""
     db.log_event(conn, "read", m.id)
     db.mark_active(conn)
@@ -644,12 +745,22 @@ def _read_module(conn, m, restart: bool = False) -> None:
         conn.commit()
 
     start = 0 if restart else int(db.get_meta(conn, key, "0"))
+    if tui:
+        try:
+            from learn import tui as tui_reader
+        except ImportError:
+            print(ui.warn("The full-screen reader needs the optional Textual package. Install it once with:"))
+            print("  .venv/bin/python -m pip install -e \".[tui]\"   (Windows: .venv\\Scripts\\python.exe)")
+            print(ui.dim("Opening the normal reader instead.\n"))
+        else:
+            tui_reader.read_chapter(f"{m.id}  {m.title}", m.chapter_path.read_text(encoding="utf-8"), start, save)
+            return
     if sys.stdout.isatty() and ui.color_enabled():
         print("\033[2J\033[H", end="")  # leave the shelf behind: the screen is now the chapter
     reader.read_chapter(f"{m.id}  {m.title}", m.chapter_path.read_text(encoding="utf-8"), start, save)
 
 
-def _bookshelf(conn, syl) -> None:
+def _bookshelf(conn, syl, tui: bool = False) -> None:
     """Every written chapter in a compact grid. Pick any, any time: nothing is locked."""
     while True:
         print("\033[2J\033[H" if sys.stdout.isatty() and ui.color_enabled() else "", end="")
@@ -695,7 +806,7 @@ def _bookshelf(conn, syl) -> None:
         if m is None:
             print(ui.warn("  Type a number from the list, a module id such as core.02, or Enter to leave."))
             continue
-        _read_module(conn, m)
+        _read_module(conn, m, tui=tui)
 
 
 def cmd_read(args: argparse.Namespace) -> None:
@@ -704,7 +815,7 @@ def cmd_read(args: argparse.Namespace) -> None:
     interactive = sys.stdin.isatty() and not (args.print or args.code)
     if module_id is None:
         if interactive:
-            return _bookshelf(conn, syl)
+            return _bookshelf(conn, syl, args.tui or ui_mode(cfg) == "tui")
         last = db.get_meta(conn, "last_problem")
         if last:
             module_id = last.rsplit(".", 1)[0]
@@ -734,7 +845,7 @@ def cmd_read(args: argparse.Namespace) -> None:
         conn.commit()
         print(m.chapter_path.read_text(encoding="utf-8"))
         return
-    _read_module(conn, m, args.restart)
+    _read_module(conn, m, args.restart, args.tui or ui_mode(cfg) == "tui")
 
 
 def cmd_goto(args: argparse.Namespace) -> None:
@@ -1270,6 +1381,8 @@ def cmd_capstone(args: argparse.Namespace) -> None:
 
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="learn", description="Your offline Python learning module.")
+    p.add_argument("--plain", action="store_true",
+                   help="plain terminal output for this run, even if [ui] mode = \"tui\" (put it before the command)")
     sub = p.add_subparsers(dest="command")
 
     def add(name: str, func, help_text: str, aliases: list[str] | None = None) -> argparse.ArgumentParser:
@@ -1302,6 +1415,9 @@ def build_parser() -> argparse.ArgumentParser:
     sp = add("stuck", cmd_stuck, "Build a paste-ready prompt for any free chatbot")
     sp.add_argument("problem", nargs="?")
 
+    sp = add("work", cmd_work, "Full-screen workspace for a problem: statement, your file, hints, checks", aliases=["ws"])
+    sp.add_argument("problem", nargs="?", help="problem id or plan number (default: the one you are working on)")
+    sp.add_argument("--review", action="store_true", help="solve a solved problem again from scratch")
     sp = add("syllabus", cmd_syllabus, "Show all tracks and modules with progress")
     sp.add_argument("track", nargs="?")
     sp = add("module", cmd_module, "Show one module: topics, outcomes, problems")
@@ -1311,6 +1427,7 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("--restart", action="store_true", help="start from the first section")
     sp.add_argument("--print", action="store_true", help="print the raw chapter in one go")
     sp.add_argument("--code", action="store_true", help="open it in VS Code instead")
+    sp.add_argument("--tui", action="store_true", help="full-screen reader for this run (or set [ui] mode = \"tui\")")
     sp = add("goto", cmd_goto, "Jump a track to any module (nothing is locked)")
     sp.add_argument("target", help="module id, or a track id with --auto")
     sp.add_argument("--auto", action="store_true", help="return the track to automatic order")
@@ -1456,8 +1573,62 @@ def _typed_command(parser: argparse.ArgumentParser, text: str) -> list[str] | No
     return None
 
 
+def _home_data() -> dict:
+    """Everything the full-screen home needs, as plain values, read fresh each time it opens."""
+    conn, syl, cfg = ctx()
+    try:
+        scan.scan(conn)
+        conn.commit()
+        states = db.states(conn)
+        plan = progress.plan_today(conn, syl, cfg)
+        last = db.get_meta(conn, "last_problem")
+        st = db.problem_state(conn, last) if last else None
+        working = None
+        if st is not None and (st["status"] == "started" or st["is_review"]):
+            working = {"id": last, "title": content.get(last).title, "review": bool(st["is_review"])}
+        tracks = []
+        for t in cfg["plan"].get("focus", []):
+            if t in syl.track_ids():
+                m = progress.current_module(conn, syl, t)
+                mp = progress.module_progress(m.id, states)
+                tracks.append({"track": t, "module": m.id, "title": m.title, "score": mp.score,
+                               "solved": mp.solved, "total": mp.total})
+        return {
+            "name": cfg.get("ui", {}).get("name", ""),
+            "animations": bool(cfg.get("ui", {}).get("animations", True)),
+            "day": db.day_count(conn) + (0 if _active_today(conn) else 1),
+            "date": f"{date.today():%a %d %b %Y}",
+            "minutes": cfg["plan"]["daily_minutes"],
+            "fresh": not states,
+            "working": working,
+            "due": len(progress.due_reviews(conn)),
+            "tracks": tracks,
+            "plan": [{"n": i, "kind": it.kind, "track": it.track, "label": it.label, "minutes": it.minutes,
+                      "reason": it.reason} for i, it in enumerate(plan, 1)],
+            "problem_ids": sorted(content.all_problems()),
+        }
+    finally:
+        conn.close()
+
+
+# Commands that only print: the home waits for Enter so their output is not wiped by the full-screen app.
+_PAUSE_AFTER = {"today", "stats", "reset"}
+
+
+def _tui_menu() -> None:
+    from learn import home
+
+    while True:
+        argv = home.run(_home_data())
+        if not argv:
+            return
+        _run_argv(argv, pause=argv[0] in _PAUSE_AFTER)
+
+
 def cmd_menu(parser: argparse.ArgumentParser) -> None:
-    """Plain `learn` in a terminal: today's plan, then a numbered menu until q."""
+    """Plain `learn` in a terminal: today's plan, then a numbered menu until q (full-screen home in tui mode)."""
+    if ui_mode() == "tui":
+        return _tui_menu()
     cmd_today(argparse.Namespace())
     conn = db.connect()
     while True:
@@ -1514,9 +1685,11 @@ def main(argv: list[str] | None = None) -> int:
         completion.complete(parser, argv[1:])
         return 0
     args = parser.parse_args(argv)
+    global _force_plain
+    _force_plain = bool(getattr(args, "plain", False))
     func = getattr(args, "func", None)
-    if func in (None, cmd_today, cmd_resume):
-        ui.banner()
+    if func in (cmd_today, cmd_resume) or (func is None and ui_mode() != "tui"):  # the full-screen home draws its own
+        ui.banner(config.load().get("ui", {}).get("name", ""))
     try:
         if func is not None:
             func(args)

@@ -40,7 +40,7 @@ you can read it with `learn read <module>`, and nothing is locked. Each track al
 
 You need **Python 3.11 or newer** (any newer version works). Git is optional: it only
 makes downloading easier and lets `learn` keep a private history of your progress.
-Internet is needed once, to install the packages the engine uses (PyYAML, pytest, Pygments, and tzdata on Windows).
+Internet is needed once, to install the packages the engine uses (PyYAML, pytest, Pygments, Rich, and tzdata on Windows).
 
 **1. Get the project.** Either clone it:
 
@@ -181,6 +181,47 @@ Your progress is untouched, because none of it is part of the course repository.
 Use `learn.cmd` (the launcher sets UTF-8 for you). If you run Python yourself, set `PYTHONUTF8=1`, or
 accented text and emoji in chapters can fail with cp1252 errors. `learn doctor` warns about this.
 CI runs the engine tests on Linux, macOS and Windows.
+
+**Reading chapters.** `learn read` draws the chapter as formatted Markdown (tables, quotes, coloured code) with the
+Rich package, which is pure Python and installs with the course on every system. On Linux and macOS a long section
+pages through `less` (Space: next page, `b`: back, `q`: stop). Windows has no `less`, so a long section prints in one go
+and you scroll up with the mouse wheel or Shift+PageUp. Use Windows Terminal (the default on Windows 11) or VS Code's
+terminal for colours; the old `cmd.exe` window can show raw colour codes. If Rich is missing, the reader quietly falls
+back to a simpler line-by-line style; `.venv/bin/python -m pip install -e .` (Windows: `.venv\Scripts\python.exe`) restores it.
+
+**Full-screen mode (optional).** One setting turns the whole course full-screen:
+
+```
+./learn config set ui.mode tui
+```
+
+Install the extra package once (Windows: `.venv\Scripts\python.exe` instead of `.venv/bin/python`):
+`.venv/bin/python -m pip install -e ".[tui]"`. With `ui.mode = tui`, the same commands open full-screen screens:
+
+| You type | You get |
+|---|---|
+| `learn` | **Home**: today's plan, where you are in each track, and keys: `c` continue, `n` next problem, `r` read, `s` syllabus, `t` stats, `i` problem by id, `q` quit |
+| `learn start <id>`, `learn next`, `learn work` | **Problem workspace**: the statement on the left; tabs on the right for your file, hints, the last check and the walkthrough. Keys: `c` check, `h` hint, `s` solution (asks first until solved), `x` stuck prompt, `e` open in VS Code, `f` back to your file, `q` quit |
+| `learn syllabus [track]` | **Syllabus browser**: tracks and modules with progress. Keys: `r` read the chapter, `p` jump to the problems (Enter opens one), `m` back to the modules, `g` make this the current module, `q` quit |
+| `learn read <id>` | **Chapter reader**: contents on the left, the section on the right. Keys: `n`/`p` next and previous, `a` answers, `c` hide the contents, `q` quit |
+
+Notes:
+
+- You still write code in your own editor. The workspace's "My file" tab only shows the file and updates each time you
+  save (turn on auto-save in VS Code). Scoring is identical in both modes, because the workspace runs the same code as
+  `learn check`, `learn hint` and `learn solution`.
+- The home screen is alive: a shimmering PYTHON logo, a clock with a time-of-day greeting in the top-right corner, slow
+  code rain in the empty areas, and the Zen of Python typed out line by line on the right (it starts at `>>> import this`,
+  each line appears below the previous one, and when all 19 are done it wipes and starts again). Your name comes from
+  `learn config set ui.name "Your Name"` (empty = no name shown). `learn config set ui.animations false` gives a still
+  screen. Press **Ctrl+P**, type `theme`, and pick "Change theme" to try colour themes (Nord, Gruvbox, Dracula...).
+  On a narrow terminal (under 120 columns) the poem is hidden to leave room for the plan.
+- `learn check`, `hint`, `solution`, `stats`, `today` and the authoring commands stay plain text, so they work in pipes and scripts.
+- Anything that is not a real terminal (a pipe, a script, CI) is always plain. Without Textual installed, `learn` says so
+  once and stays plain. For one run in the other mode: `learn --plain ...`, or `LEARN_UI=tui learn ...`.
+- `learn read <id> --tui` and `learn work <id>` open those screens for one run even when the mode is `plain`.
+- On Windows use Windows Terminal (the default on Windows 11) or VS Code's terminal. The old `cmd.exe` window can draw
+  full-screen apps badly.
 
 ### Guides and cheat sheets
 

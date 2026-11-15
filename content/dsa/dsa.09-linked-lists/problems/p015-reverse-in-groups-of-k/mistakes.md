@@ -1,0 +1,5 @@
+- Reversing the last, shorter group too: check that `k` nodes exist **before** reversing.
+- Losing the rest of the list: if the group is reversed with `prev = None`, its last node points at `None` and must be connected to `group_next` afterwards.
+- Advancing `group_prev` to `kth`: after the reversal `kth` is the **first** node of the group; the node before the next group is the old first node.
+- Returning `head`: after the first group is reversed, the head is `kth` of that group; return `dummy.next`.
+- Collecting nodes into a Python list and relinking: it works, but uses `O(n)` extra memory.

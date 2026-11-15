@@ -1,0 +1,6 @@
+id = "dsa.09.p005"
+title = "Trace: variables are labels"
+tier = "drill"
+kind = "trace"
+topics = ["linked list", "references", "is", "aliasing"]
+minutes = 15

@@ -1,0 +1,5 @@
+- Saying the code is "wrong": it gives the right order. The problem is only the time.
+- Saying `pop(0)` is slow "because it searches for the item": it does not search; it **shifts** the items after it.
+- Calling the total cost `O(n)`: one call is `O(n)`, so `n` calls are `O(n^2)`.
+- Recommending `list.pop()` as the fix: that removes the newest item and turns the queue into a stack.
+- Recommending `queue.Queue` for a normal algorithm: it is meant for threads and is slower than a deque.

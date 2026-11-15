@@ -1,0 +1,6 @@
+id = "dsa.09.p034"
+title = "LRU cache"
+tier = "challenge"
+kind = "code"
+topics = ["doubly linked list", "dictionary", "design", "O(1)", "sentinel"]
+minutes = 45

@@ -1,0 +1,4 @@
+- Comparing `slow is fast` **before** moving: both start on the head, so every list is reported as cyclic.
+- Changing the loop to `for _ in range(10**6)`: a guess at a limit is not a fix; long lists fail and short cycles waste time.
+- Adding a `seen` set: it works, but the problem asks to keep `O(1)` memory.
+- Comparing `slow.val == fast.val`: equal values in different nodes give false alarms.

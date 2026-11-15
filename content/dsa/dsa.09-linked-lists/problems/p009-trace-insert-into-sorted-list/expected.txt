@@ -1,0 +1,6 @@
+insert 4 after D : 4
+insert 2 after D : 2 -> 4
+insert 6 after 4 : 2 -> 4 -> 6
+insert 4 after 2 : 2 -> 4 -> 4 -> 6
+insert 1 after D : 1 -> 2 -> 4 -> 4 -> 6
+insert 9 after 6 : 1 -> 2 -> 4 -> 4 -> 6 -> 9

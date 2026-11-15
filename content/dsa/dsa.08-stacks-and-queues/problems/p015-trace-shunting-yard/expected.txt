@@ -1,0 +1,12 @@
+3 | out: 3 | ops: 
++ | out: 3 | ops: +
+4 | out: 3 4 | ops: +
+* | out: 3 4 | ops: + *
+2 | out: 3 4 2 | ops: + *
+/ | out: 3 4 2 * | ops: + /
+( | out: 3 4 2 * | ops: + / (
+1 | out: 3 4 2 * 1 | ops: + / (
+- | out: 3 4 2 * 1 | ops: + / ( -
+5 | out: 3 4 2 * 1 5 | ops: + / ( -
+) | out: 3 4 2 * 1 5 - | ops: + /
+end | out: 3 4 2 * 1 5 - / +

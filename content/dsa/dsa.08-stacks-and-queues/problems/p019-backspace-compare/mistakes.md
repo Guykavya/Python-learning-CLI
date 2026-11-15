@@ -1,0 +1,5 @@
+- Popping on `#` without checking: `"#a"` crashes with `IndexError`.
+- Walking from the **start** with two pointers: a `#` later in the string can delete a character you already compared.
+- Returning `True` when one string runs out first: for `"a"` and `"#"` one side still has a kept letter, so the texts differ.
+- Using `skip` across both strings: each string needs its own count of pending backspaces.
+- Comparing `a[i] != b[j]` before skipping the deleted characters.

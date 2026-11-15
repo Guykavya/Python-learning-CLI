@@ -1,0 +1,6 @@
+id = "dsa.09.p024"
+title = "Merge k sorted lists"
+tier = "deep"
+kind = "code"
+topics = ["linked list", "merge", "heap", "divide and conquer"]
+minutes = 35

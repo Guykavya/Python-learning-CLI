@@ -1,0 +1,6 @@
+id = "dsa.08.p032"
+title = "Sliding window maximum"
+tier = "deep"
+kind = "code"
+topics = ["monotonic queue", "deque", "sliding window", "time limit"]
+minutes = 35

@@ -1,0 +1,6 @@
+id = "dsa.08.p022"
+title = "A queue from two stacks"
+tier = "applied"
+kind = "code"
+topics = ["queue", "stack", "design", "amortised O(1)"]
+minutes = 25

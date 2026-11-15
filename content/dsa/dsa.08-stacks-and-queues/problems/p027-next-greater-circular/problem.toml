@@ -1,0 +1,6 @@
+id = "dsa.08.p027"
+title = "Next greater element in a circle"
+tier = "applied"
+kind = "code"
+topics = ["monotonic stack", "circular array", "modulo index"]
+minutes = 25

@@ -12,3 +12,15 @@ focus = ["core", "dsa"]
 
 [editor]
 open_in_vscode = false
+
+[ui]
+# "plain" = normal terminal output (works everywhere, nothing extra to install).
+# "tui"   = full-screen screens: home menu, syllabus browser, problem workspace, chapter reader.
+#           Needs the optional Textual package:  .venv/bin/python -m pip install -e ".[tui]"
+#           Without Textual, or when output is not a terminal, learn quietly stays plain.
+# One run in the other mode:  learn --plain ...   or   LEARN_UI=tui learn ...
+mode = "plain"
+# Your name, shown under the logo and in the welcome line. Leave empty to show nothing.
+name = ""
+# Moving decoration on the full-screen home (code rain, a snake, the Zen of Python). false = still screen.
+animations = true

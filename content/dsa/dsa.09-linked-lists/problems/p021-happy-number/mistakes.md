@@ -1,0 +1,4 @@
+- Starting `slow` and `fast` both at `n` with `while slow != fast`: the loop never runs. Start `fast` one step ahead, or use a `do ... while`-style loop with a `break`.
+- Returning `slow == 1`: when the number is happy, `fast` reaches `1` first; `slow` may still be on the way.
+- Treating a meeting as "unhappy" without checking the value: the meeting can happen at `1` (for `n = 1`).
+- Converting with `str(n)` and `int(ch)`: correct, just slower than `divmod`; both are fine.

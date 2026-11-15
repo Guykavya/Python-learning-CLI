@@ -1,0 +1,4 @@
+- Appending first and then subtracting `window[0]`: after the append, the old value is already gone, so you subtract the wrong number.
+- Dividing by `k` before the window is full: the first averages are too small (`[1, 10]` would give `11 / 3`).
+- Recomputing `sum(window)` for every value: correct but `O(k)` per value, too slow for large `k`.
+- Using integer division `//`: the averages must be floats (`5.5`, not `5`).

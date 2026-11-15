@@ -1,0 +1,5 @@
+- Forgetting `.lower()`: `"Aa"` would report `('a', 'A')` instead of being a palindrome.
+- Keeping spaces and punctuation: `"A man, a plan..."` then fails at the comma.
+- Looping `while d:` and popping twice: with an odd length the last `pop` runs on an empty deque and raises `IndexError`.
+- Returning the pair in the wrong order: the character from the **left** end comes first.
+- Using a list with `pop(0)`: correct, but `O(n)` per step.

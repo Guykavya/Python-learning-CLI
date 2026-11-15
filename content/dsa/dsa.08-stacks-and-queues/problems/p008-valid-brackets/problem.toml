@@ -1,0 +1,6 @@
+id = "dsa.08.p008"
+title = "Valid brackets"
+tier = "drill"
+kind = "code"
+topics = ["stack", "balanced brackets", "matching pairs"]
+minutes = 15

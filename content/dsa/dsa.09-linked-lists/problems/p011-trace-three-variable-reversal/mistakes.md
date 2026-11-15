@@ -1,0 +1,4 @@
+- Printing `cur=3 nxt=2` on step 2: `cur = nxt` runs before the print, so they are always equal in the printed line.
+- Writing the whole list `4 -> 3 -> 2 -> 1` from step 1 on: only the part already flipped starts at `prev`.
+- Thinking `head` follows the reversal: `head` is a label on node `1`, which is now the tail. The new head is `prev`.
+- Writing the last step as `nxt=4`: on step 4 `cur` is node `4`, so `nxt = cur.next` is `None`.

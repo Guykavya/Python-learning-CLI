@@ -1,0 +1,6 @@
+id = "dsa.09.p033"
+title = "Copy a list with random pointers"
+tier = "challenge"
+kind = "code"
+topics = ["linked list", "deep copy", "random pointer", "dictionary", "interleaving"]
+minutes = 40

@@ -1,0 +1,6 @@
+id = "dsa.09.p025"
+title = "Sort a linked list"
+tier = "deep"
+kind = "code"
+topics = ["linked list", "merge sort", "fast and slow pointers", "stable", "recursion"]
+minutes = 40

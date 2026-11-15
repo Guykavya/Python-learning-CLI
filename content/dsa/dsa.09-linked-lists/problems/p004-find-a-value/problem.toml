@@ -1,0 +1,6 @@
+id = "dsa.09.p004"
+title = "Find a value"
+tier = "drill"
+kind = "code"
+topics = ["linked list", "walking", "search"]
+minutes = 10

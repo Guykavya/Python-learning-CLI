@@ -1,0 +1,6 @@
+id = "dsa.08.p025"
+title = "Trace: next greater element"
+tier = "drill"
+kind = "trace"
+topics = ["monotonic stack", "next greater element", "indices"]
+minutes = 15

@@ -1,0 +1,6 @@
+- Using `pop()` instead of `popleft()`: the newest job runs first and the order is wrong.
+- Advancing the clock by `quantum` even when the job needs less: `C` would finish at 6 instead of 5.
+- Rejecting a re-queued job, or counting it as a new submission.
+- Advancing the clock in `step()` when the queue is empty.
+- Returning `self.finished` itself from `run_all`: the caller can then change your record. Return a copy.
+- Checking `len(self.ready) > capacity`: one job too many gets in.

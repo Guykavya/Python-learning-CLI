@@ -1,0 +1,6 @@
+id = "dsa.09.p010"
+title = "Doubly linked list with sentinels"
+tier = "applied"
+kind = "code"
+topics = ["doubly linked list", "sentinel", "class", "O(1) removal"]
+minutes = 35

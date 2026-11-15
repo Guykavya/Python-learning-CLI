@@ -1,0 +1,6 @@
+id = "dsa.09.p015"
+title = "Reverse in groups of k"
+tier = "challenge"
+kind = "code"
+topics = ["linked list", "reversal", "dummy node", "groups"]
+minutes = 40

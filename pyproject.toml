@@ -7,6 +7,8 @@ dependencies = [
     "pyyaml>=6.0",
     "pytest>=8.0",
     "pygments>=2.0",
+    # The chapter reader draws Markdown (tables, quotes, wrapped text) with rich; pure Python, works on Windows.
+    "rich>=13",
     # core.19 (advanced testing): property-based tests and coverage measurement.
     "hypothesis>=6.100",
     "coverage>=7.0",
@@ -91,6 +93,10 @@ ml = [
 llm = [
     "pypdf>=4.0",
 ]
+# Optional full-screen chapter reader:  learn read <module> --tui. The normal reader works without it.
+tui = [
+    "textual>=0.80",
+]
 # Only if you want to try a REAL model provider after the llm chapters. No chapter, test or problem needs these
 # (the course uses fake model clients on purpose, so it works with no key and no internet):  pip install -e ".[providers]"
 providers = [
@@ -111,3 +117,7 @@ include = ["learn*"]
 
 [tool.pytest.ini_options]
 testpaths = ["engine/tests"]
+# Many tests copy the whole content/ folder (70 MB). Keep only the folders of FAILED tests, and only for the last run,
+# so a few test runs cannot fill /tmp (it lives in RAM on Linux).
+tmp_path_retention_policy = "failed"
+tmp_path_retention_count = 1

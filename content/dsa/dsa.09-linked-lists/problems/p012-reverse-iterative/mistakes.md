@@ -1,0 +1,5 @@
+- Flipping before saving (`cur.next = prev` then `nxt = cur.next`): the rest of the list is lost.
+- Returning `head`: after the loop, `head` is the old first node, now the last one; return `prev`.
+- Starting with `prev = head`: the old head then points at itself, making a cycle.
+- Stopping the loop at `while cur.next:`: the last node is never flipped (and an empty list crashes).
+- Creating new nodes (`ListNode(cur.val, prev)`): the result looks right, but it is a copy, not an in-place reversal.

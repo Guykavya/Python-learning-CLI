@@ -1,0 +1,5 @@
+- Popping `a` first: `8 3 -` gives `-5` instead of `5`, and division is upside down.
+- Using `//`: `-7 2 /` gives `-4` instead of `-3`.
+- Using `int(a / b)`: right for small numbers, wrong for very large ones because floats have only about 16 significant digits.
+- Treating `"-11"` as the operator `-` (for example with `t[0] in "+-*/"`): pops two numbers that are not there.
+- Returning `stack` instead of `stack[0]` (or `stack.pop()`): the answer is a number, not a list.

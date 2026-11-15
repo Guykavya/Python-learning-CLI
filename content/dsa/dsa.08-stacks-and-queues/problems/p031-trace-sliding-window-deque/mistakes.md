@@ -1,0 +1,4 @@
+- Printing values instead of indices.
+- Keeping an equal or smaller value at the back: the rule pops while the value is `<=` the new one.
+- Doing the front check before appending, or forgetting it: at `i = 3` of the second run the deque must be `[1, 2, 3]`, not `[0, 1, 2, 3]`.
+- Printing a maximum for `i < k - 1`: the first window is complete only at `i = 2`.

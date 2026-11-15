@@ -1,0 +1,6 @@
+id = "dsa.08.p009"
+title = "Where is the first bracket error?"
+tier = "applied"
+kind = "code"
+topics = ["stack", "balanced brackets", "indices", "error reporting"]
+minutes = 20

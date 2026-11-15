@@ -1,0 +1,5 @@
+- Popping with `<=`: equal values then answer each other, and `[2, 2, 3]` gives `[2, 3, -1]`.
+- Storing values instead of indices: you cannot tell **where** to write the answer.
+- Writing the answer as an index instead of a value.
+- Using `0` or `None` for "no greater element" instead of `-1`.
+- Nested loops: correct, but `O(n^2)`; the big test times out.

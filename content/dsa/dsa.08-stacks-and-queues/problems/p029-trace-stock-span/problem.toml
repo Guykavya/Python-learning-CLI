@@ -1,0 +1,6 @@
+id = "dsa.08.p029"
+title = "Trace: the stock span stack"
+tier = "applied"
+kind = "trace"
+topics = ["monotonic stack", "stock span", "merging spans"]
+minutes = 20

@@ -1,0 +1,4 @@
+- Saying node `2` "moves" or is "copied": nothing is copied; it just loses its last reference.
+- Saying line B points the new node at node `2`: after line A, `node.next` is no longer node `2`.
+- Giving the right order without the reason: the rule (save the old link before overwriting it) is what transfers to other problems.
+- Thinking Python will raise an error: it does not; the code runs and silently makes a cycle.

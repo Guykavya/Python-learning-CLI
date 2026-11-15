@@ -1,0 +1,6 @@
+id = "dsa.08.p038"
+title = "Shortest path in a grid with BFS"
+tier = "applied"
+kind = "code"
+topics = ["BFS", "queue", "grid", "visited set"]
+minutes = 30

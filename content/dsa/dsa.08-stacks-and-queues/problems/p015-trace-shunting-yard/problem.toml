@@ -1,0 +1,7 @@
+id = "dsa.08.p015"
+title = "Trace: the shunting-yard stacks"
+tier = "applied"
+kind = "trace"
+topics = ["shunting-yard", "operator stack", "precedence"]
+minutes = 20
+assessment = "trace"

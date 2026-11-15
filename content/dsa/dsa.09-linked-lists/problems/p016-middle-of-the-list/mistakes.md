@@ -1,0 +1,4 @@
+- Using `while fast.next and fast.next.next`: that stops one round earlier and gives the **first** middle for even lengths.
+- Moving `fast` two steps without checking `fast.next`: `None.next` crashes at the end of an even list.
+- Returning `slow.val` instead of `slow`: the problem asks for the node.
+- Copying the values into a Python list and indexing: correct, but uses `O(n)` memory and skips the technique this problem practises.

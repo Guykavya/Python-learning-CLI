@@ -1,0 +1,6 @@
+id = "dsa.08.p004"
+title = "Average of the last k values"
+tier = "drill"
+kind = "code"
+topics = ["deque", "maxlen", "running total", "sliding window"]
+minutes = 15

@@ -1,0 +1,4 @@
+- Returning the phase-1 meeting point: it is somewhere inside the cycle, not necessarily its start.
+- Moving `slow` two steps in phase 2: both pointers must move **one** step at a time.
+- Starting phase 2 with `p = head.next` or doing the step before the comparison: when the head is the cycle start (`a = 0`), the answer is the head itself, found with zero steps.
+- Comparing values instead of nodes: two nodes with equal values are not the same node.

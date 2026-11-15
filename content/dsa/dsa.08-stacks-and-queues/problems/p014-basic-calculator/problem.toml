@@ -1,0 +1,6 @@
+id = "dsa.08.p014"
+title = "A calculator with brackets and unary minus"
+tier = "challenge"
+kind = "code"
+topics = ["stack", "recursion", "expression evaluation", "unary minus", "integer division"]
+minutes = 60

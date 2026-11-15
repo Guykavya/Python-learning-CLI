@@ -1,0 +1,7 @@
+id = "dsa.08.p007"
+title = "Explain: why not list.pop(0) for a queue?"
+tier = "drill"
+kind = "explain"
+topics = ["queue", "list", "deque", "complexity"]
+minutes = 15
+assessment = "explain"

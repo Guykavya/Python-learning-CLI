@@ -1,0 +1,5 @@
+- `slow = fast = head` for the split: for two nodes, `slow` ends on the second node, the "first half" is the whole list, and the recursion never ends.
+- Forgetting `slow.next = None`: the first half still runs into the second half; merging then makes cycles or duplicates.
+- A merge that takes from the right half on ties: the result is sorted but not stable.
+- Copying values into a list, sorting and writing them back: the values move between nodes; the test checks that every node keeps its own value.
+- Insertion sort on the list: correct but `O(n^2)`; 50,000 nodes take far too long.

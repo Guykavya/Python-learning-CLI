@@ -1,0 +1,5 @@
+- Storing values instead of indices: you cannot tell when the front has left the window.
+- Forgetting the front check: `[9, 3, 2, 1]` with `k = 2` reports `9` for every window.
+- Popping from the back with `<` only: correct answers, but equal values pile up; with `<=` the deque stays smaller.
+- Appending the answer before the first window is complete (`i < k - 1`).
+- `max(nums[i:i + k])` for each window: `O(n * k)`, too slow for the last test.

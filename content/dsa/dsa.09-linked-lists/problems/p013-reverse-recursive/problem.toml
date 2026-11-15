@@ -1,0 +1,6 @@
+id = "dsa.09.p013"
+title = "Reverse a list (recursive)"
+tier = "applied"
+kind = "code"
+topics = ["linked list", "reversal", "recursion", "recursion limit"]
+minutes = 20
