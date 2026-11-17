@@ -1,0 +1,6 @@
+id = "dsa.10.p056"
+title = "Subtree of another tree"
+tier = "applied"
+kind = "code"
+topics = ["tree", "recursion", "subtree", "same tree"]
+minutes = 25

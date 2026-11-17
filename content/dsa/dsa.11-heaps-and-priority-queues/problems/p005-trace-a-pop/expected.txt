@@ -1,0 +1,17 @@
+pop 1: move 8 to the root
+[8, 2, 6, 3, 4, 7]
+swap 8 with 2
+[2, 8, 6, 3, 4, 7]
+swap 8 with 3
+[2, 3, 6, 8, 4, 7]
+stop
+1
+pop 2: move 7 to the root
+[7, 3, 6, 8, 4]
+swap 7 with 3
+[3, 7, 6, 8, 4]
+swap 7 with 4
+[3, 4, 6, 8, 7]
+stop
+2
+[3, 4, 6, 8, 7]

@@ -1,0 +1,6 @@
+- **Using a copy** of the previous round's distances: this code updates `dist` in place, so a value lowered early in a round is used later in the same round (`1->3` uses the new `dist[1] = 4` in round 1).
+- **Relaxing from an infinite start**: the guard `dist[u] != INF` skips the first three edges in round 1.
+- **Counting equal values as changes**: `4->1` in round 2 gives `-1`, which is not smaller than `-1`.
+- **Forgetting the round line of the last round**: the line `round 4: ...` is printed before `no change: stop`.
+- **Writing `inf` in the round lines** or `'-'` in the last line: the rounds show `'-'`, the returned list shows `inf`.
+- **Running all `n - 1` rounds**: the loop stops after the first round without a change.

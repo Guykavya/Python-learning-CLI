@@ -1,0 +1,6 @@
+id = "dsa.10.p029"
+title = "All root-to-leaf paths"
+tier = "applied"
+kind = "code"
+topics = ["tree", "paths", "backtracking", "dfs"]
+minutes = 25

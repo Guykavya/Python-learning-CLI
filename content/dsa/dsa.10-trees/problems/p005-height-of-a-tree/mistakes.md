@@ -1,0 +1,5 @@
+- `height(None) = -1` or `height(leaf) = 0`: that is the "count edges" convention. This module counts nodes.
+- `1 + height(left) + height(right)`: that is the size, not the height.
+- Forgetting the `1 +`: the result is always 0.
+- Using `min` instead of `max`: that gives the shortest path, and for a node with one child it is wrong (see the minimum depth problem later).
+- Taking only the left side (`1 + height(root.left)`), which is right only for a left chain.

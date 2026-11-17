@@ -1,0 +1,6 @@
+id = "dsa.11.p004"
+title = "Sift down"
+tier = "drill"
+kind = "code"
+topics = ["heap", "sift down", "pop", "in place"]
+minutes = 20

@@ -1,0 +1,6 @@
+id = "dsa.10.p041"
+title = "K-th smallest in a BST"
+tier = "applied"
+kind = "code"
+topics = ["tree", "BST", "inorder", "early stop"]
+minutes = 25

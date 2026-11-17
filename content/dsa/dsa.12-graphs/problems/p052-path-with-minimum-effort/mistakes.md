@@ -1,0 +1,6 @@
+- **Adding the differences** (normal Dijkstra): the effort is the largest step, not the total climb.
+- **BFS on steps**: the shortest route in steps can be steep; a longer, flatter route may win.
+- **Moving diagonally**: only up, down, left and right.
+- **Stopping when the target is first pushed**: a better effort to it can still arrive. Stop when it is **popped**.
+- **Comparing with `>=` instead of `>`** for stale entries is harmless; forgetting `max` and using the edge weight alone is not: the effort to a cell must remember the worst step **so far**.
+- **Greedy "always step to the flattest neighbour"**: it can walk into a dead end.

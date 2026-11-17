@@ -1,0 +1,7 @@
+- Using `i // 2` as the parent (that is the 1-based formula). With index 0 as the root the parent is `(i - 1) // 2`.
+- Using `if` instead of `while`: the item moves up only once, and a new smallest item stays far below the root.
+- Forgetting `i = p` after a swap: the loop compares the same two positions again, and with a `while True` it never ends.
+- Swapping when `a[i] <= a[p]`: it is harmless for numbers but wasteful, and for tuples it moves equal-priority items past each other. Use a strict `<`.
+- Comparing in the wrong direction (`>`): that builds a **max**-heap.
+- Stopping at `i > 1` instead of `i > 0`: the item can never reach the root.
+- Returning a new list instead of changing `a`: the caller's list stays as it was.

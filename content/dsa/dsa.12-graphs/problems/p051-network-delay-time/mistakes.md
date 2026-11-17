@@ -1,0 +1,6 @@
+- **Numbering from 0**: the servers are `1 .. n`. A list of size `n` makes server `n` fall off the end.
+- **Adding the distances up**: the signals travel in parallel; the answer is the largest distance, not the sum.
+- **Taking the maximum of the reached servers only**: a server that is never reached makes the answer `-1`.
+- **Building the table from the links only**: a server with no link at all is missing from such a table and is silently ignored.
+- **Treating links as two-way**: `(u, v, t)` sends from `u` to `v` only.
+- **Counting hops instead of milliseconds** (plain BFS).

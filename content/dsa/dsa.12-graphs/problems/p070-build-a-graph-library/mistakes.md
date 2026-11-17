@@ -1,0 +1,8 @@
+- **`dfs` with a stack that pushes neighbours in list order** (or marks vertices when they are pushed): the order is a valid DFS but not the same as the recursive one; the tests compare exactly. Push in reverse and mark when popped.
+- **Recursive `dfs` or `topo`**: a chain of `10**5` vertices hits the recursion limit.
+- **`bfs` that marks vertices when popped**: a vertex can be queued twice and appear twice in the order.
+- **Undirected `add_edge` adding only one direction.**
+- **`components` on a directed graph** returning something anyway: the statement asks for `ValueError`.
+- **`topo` that returns a partial order on a cycle**: if fewer than `n` vertices were output, return `None`.
+- **`shortest` with BFS**: BFS counts edges; with weights it is wrong.
+- **Accepting a negative weight**: Dijkstra would silently give wrong answers later; refuse it at `add_edge`.

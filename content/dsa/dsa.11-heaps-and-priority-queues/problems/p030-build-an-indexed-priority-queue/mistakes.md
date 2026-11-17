@@ -1,0 +1,9 @@
+- Updating `pos` only in `push` and `pop_min` and forgetting it inside the sifts: after a few swaps `pos[key]` points to the wrong place and `update` changes the wrong item. All moves must go through one `_swap` that fixes both positions.
+- After `update`, always calling `sift_up` (or always `sift_down`): a better priority must go up, a worse one down. Compare with the **parent**: if the new priority is smaller than the parent's, go up; otherwise go down.
+- After `remove`, only sifting down (as `pop_min` does): the last item put into a hole in the **middle** of the heap can be smaller than the new parent, because it came from another branch. Use the same `_restore` as in `update`.
+- Cutting off the last item before swapping it into place: you lose the item that should replace the removed one. Swap first, then pop the last position.
+- Forgetting `del self.pos[key]` in `remove`: `key in pq` stays true, and a later `push` of the key raises `ValueError`.
+- Removing the key and re-sifting when the removed item **was** the last one (`i == last`): there is nothing at `i` any more. Guard it.
+- `ValueError`/`KeyError`/`IndexError` mixed up: duplicate `push` is `ValueError`, an unknown key is `KeyError`, an empty queue is `IndexError`.
+- Searching for the key with `keys.index(key)`: it works but costs `O(n)`; the 60,000 updates of the big test do not finish.
+- Leaving stale entries (a flag "deleted"): then `stored()` is bigger than `len(pq)`. This problem wants the real structure.

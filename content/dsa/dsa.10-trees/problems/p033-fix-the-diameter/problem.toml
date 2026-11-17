@@ -1,0 +1,7 @@
+id = "dsa.10.p033"
+title = "Fix the diameter"
+tier = "applied"
+kind = "code"
+topics = ["tree", "diameter", "debugging", "height"]
+minutes = 25
+assessment = "fix"

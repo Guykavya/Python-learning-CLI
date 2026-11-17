@@ -1,0 +1,11 @@
+visit (0, 0)
+visit (1, 0)
+visit (0, 1)
+visit (2, 0)
+visit (2, 1)
+visit (2, 2)
+visit (3, 2)
+**b.
+*.ba
+***b
+b.*b

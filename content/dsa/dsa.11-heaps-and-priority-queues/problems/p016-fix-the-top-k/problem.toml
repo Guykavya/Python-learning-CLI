@@ -1,0 +1,7 @@
+id = "dsa.11.p016"
+title = "Fix the top-k"
+tier = "applied"
+kind = "code"
+topics = ["heap", "top-k", "debugging", "min-heap vs max-heap"]
+minutes = 25
+assessment = "fix"

@@ -1,0 +1,5 @@
+- Writing `for _ in range(len(queue))` inside the loop with a `while len(queue)` check, then changing the size in the middle: read the size **once** before the inner loop.
+- `[[]]` or `[None]` for the empty tree: start the queue with the root only if there is one.
+- Using a plain list with `pop(0)`: correct, but `O(n)` per pop. Use `collections.deque` and `popleft()`.
+- Mixing up the order: appending the right child before the left child reverses every level.
+- Appending `None` children to the queue and then crashing on `None.val`.

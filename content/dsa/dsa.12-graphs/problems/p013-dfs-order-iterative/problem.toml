@@ -1,0 +1,6 @@
+id = "dsa.12.p013"
+title = "DFS order (iterative)"
+tier = "applied"
+kind = "code"
+topics = ["graph", "DFS", "stack", "recursion limit", "traversal order"]
+minutes = 30

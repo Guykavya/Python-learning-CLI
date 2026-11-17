@@ -1,0 +1,8 @@
+- Returning `heap[-1]`: the last slot of the list is **not** the largest or the smallest of a heap; only `heap[0]` is special.
+- Using a max-heap: its root is the **largest**, not the k-th largest.
+- Always returning `heap[0]`, also when the heap has fewer than `k` items: then the k-th largest does not exist and the answer must be `None`.
+- Never removing anything (`heappush` on every call and no `heappop`): the root is then the smallest of **all** numbers, and memory grows without limit.
+- Replacing the root with every new number, also with a smaller one (`heapreplace` without the `val > heap[0]` test): a small number would push a big one out.
+- Forgetting the numbers of `nums` in the constructor, or only taking the first `k` of them: the later ones may be larger.
+- Keeping all numbers in a list and sorting it at every `add`: right answers, but `O(n log n)` per call and `O(n)` memory.
+- Changing the list that was passed to the constructor (for example `heapify(nums)` on it).

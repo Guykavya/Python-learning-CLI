@@ -1,0 +1,6 @@
+id = "dsa.12.p055"
+title = "Why Dijkstra fails with negative edges"
+tier = "deep"
+kind = "explain"
+topics = ["graph", "dijkstra", "negative edges", "bellman-ford", "proof", "explain"]
+minutes = 30

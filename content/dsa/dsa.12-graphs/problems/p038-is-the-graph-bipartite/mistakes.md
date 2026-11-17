@@ -1,0 +1,5 @@
+- **Colouring only the piece of vertex 0**: an odd cycle in another piece is missed.
+- **Never checking coloured neighbours**: the colouring is built but a conflict is never reported, so every graph looks bipartite.
+- **Ignoring self loops** (skipping `v == u`): `(u, u)` is an edge inside one team.
+- **Recursive DFS** on a path of 100,000 vertices: `RecursionError`.
+- **Using `colour = [0] * n`** for "not coloured": 0 is also a real colour, so you cannot tell "uncoloured" from "team 0". Use `-1`.

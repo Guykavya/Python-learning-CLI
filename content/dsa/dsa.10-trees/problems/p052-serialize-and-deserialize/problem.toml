@@ -1,0 +1,6 @@
+id = "dsa.10.p052"
+title = "Serialise and deserialise a tree"
+tier = "deep"
+kind = "code"
+topics = ["tree", "serialisation", "preorder", "string", "round trip"]
+minutes = 35

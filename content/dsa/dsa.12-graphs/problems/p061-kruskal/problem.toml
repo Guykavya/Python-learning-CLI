@@ -1,0 +1,6 @@
+id = "dsa.12.p061"
+title = "Kruskal"
+tier = "applied"
+kind = "code"
+topics = ["graph", "minimum spanning tree", "kruskal", "union-find", "greedy"]
+minutes = 30

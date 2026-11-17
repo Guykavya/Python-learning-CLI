@@ -1,0 +1,5 @@
+- Writing the queue before the popped node's children were appended: the `pop` line shows the queue after the append.
+- Reading `size` as the number of nodes in the whole tree or as the size after the level: it is `len(queue)` when the level starts.
+- Putting `10` before `3` or adding the right child before the left child: children are appended left first.
+- Forgetting that a missing child (`None`) adds nothing to the queue.
+- Leaving out the final line with the levels.

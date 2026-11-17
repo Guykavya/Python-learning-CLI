@@ -1,0 +1,6 @@
+id = "dsa.11.p003"
+title = "Sift up"
+tier = "drill"
+kind = "code"
+topics = ["heap", "sift up", "push", "in place"]
+minutes = 15

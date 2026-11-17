@@ -1,0 +1,6 @@
+id = "dsa.12.p017"
+title = "Largest component"
+tier = "applied"
+kind = "code"
+topics = ["graph", "connected components", "BFS"]
+minutes = 25

@@ -1,0 +1,6 @@
+- **Merging by name**: two different people called "John" become one. Only shared addresses merge accounts.
+- **No transitivity**: merging each account only with the first earlier account that shares an address, without merging whole groups, breaks chains like `A - B - C` given in the order `A, C, B`.
+- **Keeping duplicate addresses**: an address shared by two accounts must appear once.
+- **Unsorted output**: sort the addresses inside each account, then the accounts by `(name, first address)`.
+- **Dropping the name** or putting it at the end: the name is the first item of every result.
+- **Using the address as the person's identity** without Union-Find: the same person can have addresses that never appear together in one account.

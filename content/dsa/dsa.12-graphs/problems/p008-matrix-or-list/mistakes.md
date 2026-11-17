@@ -1,0 +1,5 @@
+- Saying "a matrix is always bad". For dense graphs and small `V` it is simple and fast, and some algorithms (Floyd-Warshall) need a full table anyway.
+- Counting the list size as `E` instead of `V + 2E`: every undirected edge is stored at both ends, and every vertex has a list.
+- Thinking BFS on a matrix is `O(V + E)`: it must scan each row to find the neighbours, `O(V)` per vertex.
+- Calling a grid dense because it "has many cells": density compares `E` with `V^2`, and a grid has at most `4V` edge ends.
+- Forgetting that a set loses the neighbour order.

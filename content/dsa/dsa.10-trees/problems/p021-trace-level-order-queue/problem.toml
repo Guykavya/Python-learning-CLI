@@ -1,0 +1,6 @@
+id = "dsa.10.p021"
+title = "Trace: the queue in a level-order walk"
+tier = "drill"
+kind = "trace"
+topics = ["tree", "level order", "queue", "trace"]
+minutes = 20

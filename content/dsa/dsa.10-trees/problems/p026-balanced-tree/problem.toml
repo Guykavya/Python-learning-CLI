@@ -1,0 +1,6 @@
+id = "dsa.10.p026"
+title = "Balanced tree?"
+tier = "applied"
+kind = "code"
+topics = ["tree", "height", "balance", "one pass"]
+minutes = 30

@@ -1,0 +1,7 @@
+id = "dsa.12.p008"
+title = "Explain: matrix or list?"
+tier = "drill"
+kind = "explain"
+topics = ["graph", "adjacency matrix", "adjacency list", "complexity", "explain"]
+minutes = 20
+assessment = "explain"

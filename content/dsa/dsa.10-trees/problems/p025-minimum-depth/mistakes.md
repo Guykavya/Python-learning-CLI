@@ -1,0 +1,5 @@
+- `1 + min(min_depth(left), min_depth(right))`: with one missing child the `0` always wins the `min`, so a chain of `n` nodes gets the answer `1`.
+- Treating a node with one child as a leaf: a leaf has **no** children.
+- Counting edges instead of nodes (the answer would be one smaller).
+- Forgetting the empty tree (`None` must return `0`).
+- Using a DFS that returns the first leaf it meets (not the nearest one): the left branch may be much deeper than the right one.

@@ -1,0 +1,6 @@
+id = "dsa.10.p053"
+title = "Sorted array to a balanced BST"
+tier = "applied"
+kind = "code"
+topics = ["tree", "BST", "construction", "divide and conquer", "balance"]
+minutes = 25

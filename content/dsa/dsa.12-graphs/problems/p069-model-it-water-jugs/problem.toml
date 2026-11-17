@@ -1,0 +1,6 @@
+id = "dsa.12.p069"
+title = "Model it: the water jug puzzle"
+tier = "deep"
+kind = "trace"
+topics = ["graph", "modelling", "state graph", "bfs", "trace"]
+minutes = 35

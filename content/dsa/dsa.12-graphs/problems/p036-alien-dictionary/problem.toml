@@ -1,0 +1,6 @@
+id = "dsa.12.p036"
+title = "Alien dictionary"
+tier = "challenge"
+kind = "code"
+topics = ["graph", "topological sort", "modelling", "strings"]
+minutes = 50

@@ -1,0 +1,7 @@
+- Sorting once and joining the sticks in that order (`cost` of `1+2`, then `3+3`, then `6+4`...): after a join the new stick may be bigger than the next original stick, so the order is wrong. `[1, 1, 1, 1]` costs `8` with the heap (`(1+1) + (1+1) + (2+2)`) but `9` when joined in a chain.
+- Joining the two **longest** sticks first: it maximises the cost.
+- Forgetting to push the new stick back into the heap.
+- Calling `heapq.heapify(sticks)` on the input: the caller's list is reordered. Work on a copy.
+- Returning `5` for `[5]` (the length of the stick) instead of `0`: nothing is joined, nothing is paid.
+- Popping from an empty heap for 0 or 1 sticks: the loop must run only while at least two sticks are left.
+- Sorting the list again after every join: correct, but `O(n^2 log n)` for 65,536 sticks. The time limit stops it.

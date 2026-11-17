@@ -1,0 +1,6 @@
+id = "dsa.10.p038"
+title = "Validate a BST"
+tier = "applied"
+kind = "code"
+topics = ["tree", "BST", "validation", "bounds"]
+minutes = 25

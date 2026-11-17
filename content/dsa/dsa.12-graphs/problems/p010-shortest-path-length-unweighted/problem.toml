@@ -1,0 +1,6 @@
+id = "dsa.12.p010"
+title = "Shortest path length (unweighted)"
+tier = "drill"
+kind = "code"
+topics = ["graph", "BFS", "shortest path", "distance"]
+minutes = 20

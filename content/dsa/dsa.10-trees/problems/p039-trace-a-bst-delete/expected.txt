@@ -1,0 +1,5 @@
+start    : [50, 30, 70, 20, 40, 60, 80, None, None, 35, None, None, 65]
+delete 40: [50, 30, 70, 20, 35, 60, 80, None, None, None, None, None, 65]
+delete 70: [50, 30, 80, 20, 35, 60, None, None, None, None, None, None, 65]
+delete 50: [60, 30, 80, 20, 35, 65]
+inorder  : [20, 30, 35, 60, 65, 80]

@@ -1,0 +1,6 @@
+id = "dsa.12.p066"
+title = "Critical connections (bridges)"
+tier = "challenge"
+kind = "code"
+topics = ["graph", "bridges", "low-link", "dfs", "iterative dfs"]
+minutes = 55

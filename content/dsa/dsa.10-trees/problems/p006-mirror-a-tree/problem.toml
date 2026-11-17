@@ -1,0 +1,6 @@
+id = "dsa.10.p006"
+title = "Mirror (invert) a tree"
+tier = "drill"
+kind = "code"
+topics = ["tree", "recursion", "invert", "in place"]
+minutes = 15

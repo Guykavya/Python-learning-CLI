@@ -1,0 +1,4 @@
+- Following only `node.right` links: when the right child is missing at some depth, the node you see is on the left, so a tree like `[1, 2, 3, 4]` is wrong (it returns `[1, 3]`).
+- Taking the **first** node of each level: that is the left side view.
+- Returning every node of the rightmost branch plus every left-only branch: you must see exactly one value per depth.
+- Appending the right child first and still taking the last node of each level: that gives the leftmost node. Either append left then right and take the last, or append right then left and take the first.

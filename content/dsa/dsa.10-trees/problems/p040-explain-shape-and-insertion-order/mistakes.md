@@ -1,0 +1,5 @@
+- Saying that a BST "always" has `O(log n)` operations: the bound holds only when the height is about `log n`.
+- Describing the sorted case as "slow" without saying why: every new key is larger than all earlier keys, so it goes to the right of the last node, and the tree is a chain of height `n`.
+- Forgetting that the **inorder traversal is the same** for every insertion order: it is the sorted list of the keys.
+- Counting the height in edges in one place and in nodes in another; the chapter counts nodes (a chain of 5 keys has height 5).
+- Answering question 5 with "random order", which is typical but not the best: the best order puts the middle key first.

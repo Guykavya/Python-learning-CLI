@@ -1,0 +1,7 @@
+- Building all `len(a) * len(b)` pairs (nested loops, `itertools.product`) and sorting: correct for small inputs, impossible for 100,000 by 100,000. The big tests stop it by time or by memory.
+- Pushing both neighbours of every popped cell without a `seen` set: the same cell enters the heap twice and appears twice in the result. Pushing only the right neighbour (and starting with the first column) needs no `seen` set.
+- Starting with only the cell `(0, 0)` and pushing only the right neighbour: the cells of the other rows are never reached. Start with the first cell of every row (the first `k` rows are enough).
+- Forgetting `j + 1 < len(b)`: an `IndexError` at the end of a short `b`.
+- Returning fewer or more than `k` pairs when `k` is bigger than the number of pairs: return all pairs; the loop condition `heap and len(result) < k` handles it.
+- Storing `(sum, a[i], b[j])` in the heap and then comparing equal triples: it works for numbers but not for objects. Store indices.
+- Not handling `k <= 0` or an empty list: `b[0]` of an empty `b` is an `IndexError`.

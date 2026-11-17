@@ -1,0 +1,6 @@
+id = "dsa.12.p037"
+title = "Parallel courses (longest chain)"
+tier = "deep"
+kind = "code"
+topics = ["graph", "topological sort", "kahn", "rounds", "longest path in a dag"]
+minutes = 35

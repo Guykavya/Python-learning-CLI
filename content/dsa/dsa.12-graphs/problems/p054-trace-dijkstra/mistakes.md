@@ -1,0 +1,6 @@
+- **Removing the old pair** when a distance drops: the lazy version never removes anything; the old pair stays and later comes out as stale.
+- **Building the adjacency list from one direction only**: the graph is undirected, so `(2, 1, 3)` also gives 1 the neighbour 2.
+- **Printing the heap before the pushes** of the current pop: the print comes after the loop over the neighbours.
+- **Pushing on `<=`**: `2 + 2 = 4` is not smaller than `dist[0] = 0`, and `5 + 3 = 8` is not smaller than `dist[2] = 2`; equal is not better either.
+- **Forgetting that `inf` is shown as `'-'`** with quotes in the first line.
+- **Stopping when the heap still has stale pairs**: the loop runs until the heap is empty, so the three stale pops are printed.

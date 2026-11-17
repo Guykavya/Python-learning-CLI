@@ -1,0 +1,5 @@
+- Pushing left first and right second: you get the order node, right, left (a "mirror preorder").
+- Pushing `None` children and then crashing when you pop one (`None.val`). Push only children that exist, or skip `None` after popping.
+- Starting with `stack = [root]` when `root` is `None`: the first pop returns `None` and `None.val` crashes.
+- Using recursion "just for the children": the recursion limit fails on the 5,000-node chains.
+- Using `while stack.pop()`: it pops before the check and loses a node.

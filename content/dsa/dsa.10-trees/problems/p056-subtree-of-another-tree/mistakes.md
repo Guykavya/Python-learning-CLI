@@ -1,0 +1,6 @@
+- Checking only that the **values** of `sub` appear in `root` (or that the roots match): the shape must be the same down to the leaves.
+- Stopping the comparison when `sub` runs out of nodes: `[3, 4, 5, 1, 2, ..., 0]` has the node `2` with a child `0`, and `sub = [4, 1, 2]` has no such child, so it is not a subtree.
+- Returning `False` when `sub` is `None`: the empty tree is a subtree of every tree.
+- Comparing text forms of the trees without delimiters (`"2##"` is found inside `"12##"`): `[2]` is not a subtree of `[12]`.
+- Trying `same_tree` only at the root: the subtree can start anywhere.
+- Crashing on `root is None` before the check `sub is None`.

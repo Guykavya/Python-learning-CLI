@@ -1,0 +1,6 @@
+- Returning the path backwards (`[t, ..., s]`): reverse it.
+- Starting the walk at `parent[t]` and forgetting `t` itself, or stopping before `s`.
+- Using `while parent[x]:` to walk back: vertex `0` is falsy, so a path through `0` stops early. Compare with `None`.
+- A DFS path: valid, but usually not the shortest.
+- Returning `[]` instead of `None` when there is no path, or `None` when `s == t`.
+- Keeping a full path list for every vertex in the queue: correct but slow and memory-hungry on long paths.

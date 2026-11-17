@@ -1,0 +1,6 @@
+- **Returning the first edge of the cycle** (or any cycle edge): the problem asks for the one that appears last in the list.
+- **Swapping the ends** (returning `(1, 2)` for an edge written `(2, 1)`): return the edge exactly as given.
+- **Returning a list** `[u, v]`: the tests compare with a tuple.
+- **Uniting `u` and `v` themselves** (`parent[u] = v`) instead of their roots: groups break apart and a cycle can be missed.
+- **Searching the graph for each edge** (BFS "is `v` reachable from `u`?"): correct but `O(n^2)` on 100,000 edges.
+- **Assuming the extra edge is the last one in the list**: the input order is arbitrary.

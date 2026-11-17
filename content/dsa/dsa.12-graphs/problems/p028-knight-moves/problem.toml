@@ -1,0 +1,6 @@
+id = "dsa.12.p028"
+title = "Knight moves"
+tier = "applied"
+kind = "code"
+topics = ["graph", "bfs", "implicit graph", "state graph"]
+minutes = 25

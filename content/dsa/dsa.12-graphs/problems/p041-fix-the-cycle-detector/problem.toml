@@ -1,0 +1,7 @@
+id = "dsa.12.p041"
+title = "Fix the cycle detector"
+tier = "applied"
+kind = "code"
+topics = ["graph", "cycle detection", "dfs", "three colours", "debugging"]
+minutes = 30
+assessment = "fix"

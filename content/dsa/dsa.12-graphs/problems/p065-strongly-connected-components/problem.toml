@@ -1,0 +1,6 @@
+id = "dsa.12.p065"
+title = "Strongly connected components"
+tier = "deep"
+kind = "code"
+topics = ["graph", "directed graph", "strongly connected components", "kosaraju", "tarjan", "iterative dfs"]
+minutes = 50

@@ -1,0 +1,6 @@
+id = "dsa.10.p013"
+title = "Inorder (iterative)"
+tier = "applied"
+kind = "code"
+topics = ["tree", "traversal", "inorder", "stack", "iterative"]
+minutes = 25

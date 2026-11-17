@@ -1,0 +1,6 @@
+id = "dsa.11.p015"
+title = "K closest points to the origin"
+tier = "applied"
+kind = "code"
+topics = ["heap", "top-k", "max-heap", "squared distance", "tie-break"]
+minutes = 25

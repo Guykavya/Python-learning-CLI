@@ -1,0 +1,6 @@
+id = "dsa.10.p025"
+title = "Minimum depth"
+tier = "applied"
+kind = "code"
+topics = ["tree", "height", "leaf", "min depth", "trap"]
+minutes = 20

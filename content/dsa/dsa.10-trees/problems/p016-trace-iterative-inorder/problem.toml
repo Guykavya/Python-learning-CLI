@@ -1,0 +1,7 @@
+id = "dsa.10.p016"
+title = "Trace: the iterative inorder"
+tier = "drill"
+kind = "trace"
+topics = ["tree", "inorder", "stack", "trace"]
+minutes = 20
+assessment = "trace"

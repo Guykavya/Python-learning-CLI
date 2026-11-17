@@ -1,0 +1,6 @@
+- Computing `depth[i] = depth[parent[i]] + 1` in one loop over `i`: it fails when the parent has a larger number than the child (its depth is still the starting `0`).
+- Assuming the root is node `0`: find the node with `parent == -1`.
+- Using recursion for the depths: a path of 5,000 nodes raises `RecursionError`.
+- Appending a child to its **own** list instead of to the list of the parent (`children[i].append(...)` instead of `children[parent[i]]`).
+- Counting the depth in nodes: the root must have depth `0`.
+- Returning the lists in another order, or a dictionary: the result is a pair `(children, depth)` of two lists.

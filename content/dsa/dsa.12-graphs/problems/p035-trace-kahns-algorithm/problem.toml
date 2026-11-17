@@ -1,0 +1,6 @@
+id = "dsa.12.p035"
+title = "Trace Kahn's algorithm"
+tier = "applied"
+kind = "trace"
+topics = ["graph", "topological sort", "kahn", "in-degree", "trace"]
+minutes = 20

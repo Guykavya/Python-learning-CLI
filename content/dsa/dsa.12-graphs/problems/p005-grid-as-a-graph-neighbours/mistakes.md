@@ -1,0 +1,5 @@
+- Checking only `nr < rows` and `nc < cols`: `-1` passes, and `grid[-1]` is the **last** row in Python, so a cell on the top row gets a neighbour from the bottom row.
+- Writing `<= rows`: then `grid[rows]` raises `IndexError`.
+- Looking at the cell before the bounds check (`grid[nr][nc] != "#" and 0 <= nr ...`): the lookup crashes or wraps around first.
+- Mixing up rows and columns: `(r, c)` is (row, column), so "right" changes `c`, not `r`.
+- Returning the diagonals before the straight moves, or in another order.

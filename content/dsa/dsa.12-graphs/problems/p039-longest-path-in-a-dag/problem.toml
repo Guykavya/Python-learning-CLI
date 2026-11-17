@@ -1,0 +1,6 @@
+id = "dsa.12.p039"
+title = "Longest path in a DAG"
+tier = "applied"
+kind = "code"
+topics = ["graph", "dag", "dynamic programming", "topological sort", "counting paths"]
+minutes = 40

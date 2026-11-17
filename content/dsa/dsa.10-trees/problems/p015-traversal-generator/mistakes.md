@@ -1,0 +1,4 @@
+- Building the whole list with a traversal and then `yield from the_list`: it returns the right values, but it visits every node before the first value comes out.
+- Using `return` with a list instead of `yield`: the function is then not a generator, and `next(g)` fails.
+- Forgetting that a generator with no `yield` reached (an empty tree) simply ends: no special case is needed.
+- Calling `list(...)` on the generator inside your own code: it forces all the work at once.

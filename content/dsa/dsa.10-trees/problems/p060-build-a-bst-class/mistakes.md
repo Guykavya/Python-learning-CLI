@@ -1,0 +1,7 @@
+- Writing `insert`, `delete` or `height` recursively: it works for small trees and fails on the sorted chain of 2,000 keys (this is the point of the tests).
+- Forgetting to change `self.root` when the root is deleted (the parent is `None`) or when the first key is inserted.
+- Forgetting to update `size` on delete, or increasing it for a duplicate insert.
+- In the two-children case: copying the successor's key but not removing the successor node, or removing it with the wrong parent (when the successor is the direct right child of the node, its parent is the node itself, and the pointer to change is `right`, not `left`).
+- Returning an internal list from `inorder` (a later change by the caller would break the tree) or the keys in the wrong order.
+- Counting the height in edges: this class counts nodes (an empty tree is `0`, one key is `1`).
+- Using `if key:` as a test: `0` and negative numbers are keys.

@@ -1,0 +1,7 @@
+- **Going through the vertices as `0, 1, 2, ...`** instead of in topological order: an edge `5 -> 2` is used before `best[5]` is known.
+- **Starting every vertex at 0** instead of `None`: paths then seem to start anywhere, and an unreachable vertex like 4 pushes its weight 10 into vertex 3.
+- **Taking `min`** (that is a shortest path).
+- **Removing parallel edges** with a set: two edges `0 -> 1` give two different paths.
+- **Forgetting the modulo**: the count is correct but becomes a number with tens of thousands of digits, and the answer is wrong (it must be taken modulo `10**9 + 7`).
+- **`source == target`** has exactly one path, the empty one: `1`.
+- **Recursion** along a path of 100,000 vertices: `RecursionError`.

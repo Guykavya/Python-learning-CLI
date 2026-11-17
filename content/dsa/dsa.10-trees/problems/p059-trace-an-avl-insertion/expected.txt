@@ -1,0 +1,11 @@
+insert 10: [10]
+insert 20: [10, None, 20]
+rotate_left at 10
+insert 30: [20, 10, 30]
+insert 40: [20, 10, 30, None, None, None, 40]
+rotate_left at 30
+insert 50: [20, 10, 40, None, None, 30, 50]
+rotate_right at 40
+rotate_left at 20
+insert 25: [30, 20, 40, 10, 25, None, 50]
+height: 3

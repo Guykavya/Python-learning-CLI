@@ -1,0 +1,7 @@
+- Simulating heap arrays instead of sets: the program prints sorted lists, so the internal array order never matters. Work with sets of numbers.
+- Skipping step 2 and pushing the new number into the half "where it belongs": the program always goes through `low` first. The results are the same sets only if you also move the largest of `low` up, so do all three steps.
+- Forgetting that step 3 moves the **smallest** of `high` back (not the largest).
+- Writing `5` instead of `5.0` for an even count: the average `(3 + 7) / 2` is a float, so it prints `5.0`.
+- Writing `5.0` instead of `5` for an odd count: the median is `-self.low[0]`, an int from the data.
+- Adding the note to the wrong lines: it appears when the count **before** the add was even, that is, on the 1st, 3rd and 5th add here.
+- Printing the halves unsorted or with different spacing: the f-string has two spaces between the three parts.

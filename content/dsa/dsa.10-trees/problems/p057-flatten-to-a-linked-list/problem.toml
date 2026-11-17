@@ -1,0 +1,6 @@
+id = "dsa.10.p057"
+title = "Flatten a tree to a linked list"
+tier = "deep"
+kind = "code"
+topics = ["tree", "preorder", "in place", "linked list"]
+minutes = 35

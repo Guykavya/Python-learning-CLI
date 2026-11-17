@@ -1,0 +1,6 @@
+id = "dsa.12.p023"
+title = "Word ladder"
+tier = "deep"
+kind = "code"
+topics = ["graph", "BFS", "implicit graph", "modelling"]
+minutes = 40

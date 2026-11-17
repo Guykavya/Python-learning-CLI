@@ -1,0 +1,6 @@
+id = "dsa.12.p062"
+title = "Prim"
+tier = "applied"
+kind = "code"
+topics = ["graph", "minimum spanning tree", "prim", "heap", "greedy"]
+minutes = 35

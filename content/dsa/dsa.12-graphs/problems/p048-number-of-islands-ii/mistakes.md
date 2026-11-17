@@ -1,0 +1,6 @@
+- **Counting a repeated position again**: a cell that is already land must not add an island.
+- **Lowering the count for every land neighbour**: if two neighbours belong to the same island, only the first union merges anything. Use the `True`/`False` result of `union`.
+- **Neighbours from the flat index** (`i - 1`, `i + 1`) without a column check: `(r, 0)` and `(r - 1, cols - 1)` are "neighbours" in the numbering, but not on the map.
+- **Diagonal neighbours**: islands use only up, down, left and right.
+- **A flood fill after every step**: correct but `O(rows * cols)` per step; the time-limit test fails.
+- **Recursive `find`** on long chains: `RecursionError`. Use loops.

@@ -1,0 +1,5 @@
+- Using the first value as the root every time: the tree is a chain of height `n` (this is what inserting the sorted values one by one gives).
+- Off-by-one with the end of the range: `go(lo, mid)` excludes `mid`, and `go(mid + 1, hi)` starts after it; mixing inclusive and exclusive ends loses or repeats a value.
+- Slicing the list in every call (`values[:mid]`): it works but copies the list again and again, `O(n log n)`; indices avoid it.
+- Building a balanced tree that is not a BST (for example by level order): the inorder must be the list, so the middle is the root of each part.
+- Returning `TreeNode(None)` for an empty range instead of `None`.

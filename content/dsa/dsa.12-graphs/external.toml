@@ -1,0 +1,273 @@
+# Real site problems for dsa.12 (Graphs).
+# Verification: every LeetCode slug and CSES id below was written from memory (from the problem plan) and NOT
+# re-fetched (no web access was used while writing). Fix any slug or id that fails to open.
+# Only free LeetCode problems: "Alien Dictionary" is left out on purpose (LeetCode Premium; this module's p036 covers it).
+# Codeforces problems are left out: none were verified.
+# Order follows the chapter: BFS/DFS and grids (3-5), cycles and topological sort (6-7), bipartite (8),
+# Union-Find (9), shortest paths (10-14), MST (15), bridges (17), modelling (18); then the CSES graph section.
+
+[[problem]]
+site = "leetcode"
+key = "number-of-islands"
+title = "Number of Islands"
+url = "https://leetcode.com/problems/number-of-islands/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "max-area-of-island"
+title = "Max Area of Island"
+url = "https://leetcode.com/problems/max-area-of-island/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "clone-graph"
+title = "Clone Graph"
+url = "https://leetcode.com/problems/clone-graph/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "surrounded-regions"
+title = "Surrounded Regions"
+url = "https://leetcode.com/problems/surrounded-regions/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "pacific-atlantic-water-flow"
+title = "Pacific Atlantic Water Flow"
+url = "https://leetcode.com/problems/pacific-atlantic-water-flow/"
+minutes = 35
+
+[[problem]]
+site = "leetcode"
+key = "01-matrix"
+title = "01 Matrix"
+url = "https://leetcode.com/problems/01-matrix/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "open-the-lock"
+title = "Open the Lock"
+url = "https://leetcode.com/problems/open-the-lock/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "word-ladder"
+title = "Word Ladder"
+url = "https://leetcode.com/problems/word-ladder/"
+minutes = 45
+
+[[problem]]
+site = "leetcode"
+key = "shortest-bridge"
+title = "Shortest Bridge"
+url = "https://leetcode.com/problems/shortest-bridge/"
+minutes = 40
+
+[[problem]]
+site = "leetcode"
+key = "course-schedule"
+title = "Course Schedule"
+url = "https://leetcode.com/problems/course-schedule/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "course-schedule-ii"
+title = "Course Schedule II"
+url = "https://leetcode.com/problems/course-schedule-ii/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "is-graph-bipartite"
+title = "Is Graph Bipartite?"
+url = "https://leetcode.com/problems/is-graph-bipartite/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "possible-bipartition"
+title = "Possible Bipartition"
+url = "https://leetcode.com/problems/possible-bipartition/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "redundant-connection"
+title = "Redundant Connection"
+url = "https://leetcode.com/problems/redundant-connection/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "number-of-provinces"
+title = "Number of Provinces"
+url = "https://leetcode.com/problems/number-of-provinces/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "accounts-merge"
+title = "Accounts Merge"
+url = "https://leetcode.com/problems/accounts-merge/"
+minutes = 40
+
+[[problem]]
+site = "leetcode"
+key = "network-delay-time"
+title = "Network Delay Time"
+url = "https://leetcode.com/problems/network-delay-time/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "path-with-minimum-effort"
+title = "Path With Minimum Effort"
+url = "https://leetcode.com/problems/path-with-minimum-effort/"
+minutes = 40
+
+[[problem]]
+site = "leetcode"
+key = "cheapest-flights-within-k-stops"
+title = "Cheapest Flights Within K Stops"
+url = "https://leetcode.com/problems/cheapest-flights-within-k-stops/"
+minutes = 40
+
+[[problem]]
+site = "leetcode"
+key = "min-cost-to-connect-all-points"
+title = "Min Cost to Connect All Points"
+url = "https://leetcode.com/problems/min-cost-to-connect-all-points/"
+minutes = 35
+
+[[problem]]
+site = "leetcode"
+key = "evaluate-division"
+title = "Evaluate Division"
+url = "https://leetcode.com/problems/evaluate-division/"
+minutes = 40
+
+[[problem]]
+site = "leetcode"
+key = "critical-connections-in-a-network"
+title = "Critical Connections in a Network"
+url = "https://leetcode.com/problems/critical-connections-in-a-network/"
+minutes = 50
+
+[[problem]]
+site = "cses"
+key = "1192"
+title = "Counting Rooms"
+url = "https://cses.fi/problemset/task/1192"
+minutes = 25
+
+[[problem]]
+site = "cses"
+key = "1666"
+title = "Building Roads"
+url = "https://cses.fi/problemset/task/1666"
+minutes = 25
+
+[[problem]]
+site = "cses"
+key = "1667"
+title = "Message Route"
+url = "https://cses.fi/problemset/task/1667"
+minutes = 30
+
+[[problem]]
+site = "cses"
+key = "1193"
+title = "Labyrinth"
+url = "https://cses.fi/problemset/task/1193"
+minutes = 35
+
+[[problem]]
+site = "cses"
+key = "1194"
+title = "Monsters"
+url = "https://cses.fi/problemset/task/1194"
+minutes = 50
+
+[[problem]]
+site = "cses"
+key = "1668"
+title = "Building Teams"
+url = "https://cses.fi/problemset/task/1668"
+minutes = 30
+
+[[problem]]
+site = "cses"
+key = "1669"
+title = "Round Trip"
+url = "https://cses.fi/problemset/task/1669"
+minutes = 40
+
+[[problem]]
+site = "cses"
+key = "1678"
+title = "Round Trip II"
+url = "https://cses.fi/problemset/task/1678"
+minutes = 40
+
+[[problem]]
+site = "cses"
+key = "1671"
+title = "Shortest Routes I"
+url = "https://cses.fi/problemset/task/1671"
+minutes = 35
+
+[[problem]]
+site = "cses"
+key = "1672"
+title = "Shortest Routes II"
+url = "https://cses.fi/problemset/task/1672"
+minutes = 35
+
+[[problem]]
+site = "cses"
+key = "1195"
+title = "Flight Discount"
+url = "https://cses.fi/problemset/task/1195"
+minutes = 45
+
+[[problem]]
+site = "cses"
+key = "1197"
+title = "Cycle Finding"
+url = "https://cses.fi/problemset/task/1197"
+minutes = 45
+
+[[problem]]
+site = "cses"
+key = "1202"
+title = "Investigation"
+url = "https://cses.fi/problemset/task/1202"
+minutes = 50
+
+[[problem]]
+site = "cses"
+key = "1675"
+title = "Road Reparation"
+url = "https://cses.fi/problemset/task/1675"
+minutes = 35
+
+[[problem]]
+site = "cses"
+key = "1682"
+title = "Flight Routes Check"
+url = "https://cses.fi/problemset/task/1682"
+minutes = 40
+
+[[problem]]
+site = "cses"
+key = "1683"
+title = "Planets and Kingdoms"
+url = "https://cses.fi/problemset/task/1683"
+minutes = 45

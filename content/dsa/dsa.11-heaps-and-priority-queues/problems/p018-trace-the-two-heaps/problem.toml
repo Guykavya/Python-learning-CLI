@@ -1,0 +1,6 @@
+id = "dsa.11.p018"
+title = "Trace the two heaps"
+tier = "deep"
+kind = "trace"
+topics = ["heap", "two heaps", "median", "trace"]
+minutes = 25

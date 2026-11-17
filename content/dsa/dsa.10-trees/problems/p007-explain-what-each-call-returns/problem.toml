@@ -1,0 +1,7 @@
+id = "dsa.10.p007"
+title = "Explain: what does each call return?"
+tier = "drill"
+kind = "explain"
+topics = ["tree", "recursion", "base case", "contract"]
+minutes = 15
+assessment = "explain"

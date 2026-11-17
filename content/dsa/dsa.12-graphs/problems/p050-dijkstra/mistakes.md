@@ -1,0 +1,7 @@
+- **Marking a vertex as finished when it is pushed** (a `seen` set as in BFS). The first route found to a vertex is not always the shortest: with `0 -> 1` (5), `0 -> 2` (1), `2 -> 1` (1), vertex 1 is first reached with 5 and later with 2. Only the **pop** makes a distance final.
+- **Using BFS**: BFS counts edges, not weights. `0 -> 1` (10) is one edge but longer than `0 -> 2 -> 1` (1 + 1).
+- **Returning `-1` or `None` for unreachable vertices**: the statement asks for `float("inf")`.
+- **Adding the reverse edge** for every input edge: the edges are one-way here.
+- **No stale check**: the answer stays right, but each old entry relaxes all its edges again; on big graphs that is much slower.
+- **Finding the closest vertex by scanning a list every time**: correct, but `O(V^2)`; with `10**5` vertices that is `10**10` steps.
+- **Forgetting the vertices without edges**: build the adjacency list for all `n` vertices, not only those that appear in `edges`.

@@ -1,0 +1,6 @@
+id = "dsa.10.p032"
+title = "Maximum path sum"
+tier = "challenge"
+kind = "code"
+topics = ["tree", "path sum", "recursion", "return vs record"]
+minutes = 40

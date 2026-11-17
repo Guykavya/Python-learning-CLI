@@ -1,0 +1,6 @@
+- Starting with `best = 0`: a tree like `[-3]` or `[-2, -1]` must return a negative number.
+- Returning `node.val + left + right` to the parent: the parent would extend a path that is already bent, which is not a path any more.
+- Forgetting `max(0, ...)` for the branches: a negative child makes every sum smaller, and the best path may then skip it.
+- Assuming the best path goes through the root: it often does not (see the tree with two big values under the root's child).
+- Using `max(left, right)` **without** clipping when you record: `node.val + left + right` needs both clipped branches.
+- Treating an empty child as `float("-inf")` and adding it: that gives `-inf` sums. An empty branch contributes `0`.

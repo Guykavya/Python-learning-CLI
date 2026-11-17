@@ -1,0 +1,6 @@
+- Joining diagonal cells: the second example then gives 1 instead of 5.
+- A recursive DFS: on an all-land map of 100 x 100 it needs 10,000 nested calls and raises `RecursionError`.
+- Counting land cells instead of islands.
+- Checking `nr < rows` but not `nr >= 0`: `grid[-1]` is the last row, so islands on the top and bottom rows get joined.
+- Comparing with the number `1` instead of the string `"1"`.
+- Crashing on `[]` because of `len(grid[0])`.

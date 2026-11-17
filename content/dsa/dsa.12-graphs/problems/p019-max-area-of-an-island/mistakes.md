@@ -1,0 +1,5 @@
+- Marking a cell only when it is popped, without skipping cells that were already counted: a cell reachable from two neighbours is pushed and counted twice, and the area is too big.
+- Returning the number of islands instead of the largest area.
+- Using 8 directions.
+- A recursive search: 90,000 nested calls on an all-land 300 x 300 map.
+- `max(sizes)` on an empty list when there is no land: return `0`.

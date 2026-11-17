@@ -1,0 +1,6 @@
+id = "dsa.12.p063"
+title = "Min cost to connect all points"
+tier = "deep"
+kind = "code"
+topics = ["graph", "minimum spanning tree", "prim", "dense graph", "manhattan distance"]
+minutes = 35

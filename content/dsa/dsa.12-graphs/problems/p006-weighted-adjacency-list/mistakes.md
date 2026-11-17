@@ -1,0 +1,5 @@
+- `adj[u][v] = w` every time: the **last** weight wins, not the smallest.
+- `max` instead of `min`.
+- Taking the minimum on one side only: with `(0, 1, 5)` then `(1, 0, 2)` you must update `adj[1][0]` **and** `adj[0][1]`.
+- Testing `if adj[a].get(b) and ...`: a weight of `0` is falsy, so a zero-weight edge gets overwritten. Test with `b not in adj[a]`.
+- `[{}] * n`: one dictionary shared by every vertex.

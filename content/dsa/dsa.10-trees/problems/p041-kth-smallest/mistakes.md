@@ -1,0 +1,5 @@
+- Building the full inorder list and indexing it: correct, but `O(n)` time and memory even for `k = 1`; the pointer counter fails it.
+- Off-by-one with the counter: `k = 1` is the smallest value, so the answer is the node at which the counter becomes `0`, not `1` more or less.
+- Returning from the inner call of a recursive version but not stopping the outer calls: the walk continues and a later value overwrites the answer.
+- Forgetting the case `k` larger than the number of nodes: return `None`, do not crash.
+- Using a counter in a global variable that is not reset between calls.

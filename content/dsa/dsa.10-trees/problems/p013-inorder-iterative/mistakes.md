@@ -1,0 +1,5 @@
+- The loop condition `while stack:` alone: at the start the stack is empty, so the loop never runs. You need `while cur is not None or stack`.
+- Visiting a node when it is **pushed** (that is preorder).
+- Forgetting `cur = cur.right` after the visit: the right subtrees are never handled and the loop ends too early or loops forever.
+- Using recursion for the "go left" part: it still fails on a left chain of 5,000 nodes.
+- Pushing the right child as well: the stack is meant for the nodes waiting for their turn, not for the whole frontier.

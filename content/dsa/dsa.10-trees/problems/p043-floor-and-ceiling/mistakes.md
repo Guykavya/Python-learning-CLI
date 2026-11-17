@@ -1,0 +1,5 @@
+- Returning when `node.val < key` without looking right: a larger value that is still `<= key` may be in the right subtree.
+- Forgetting the exact match: `floor(t, 5)` must return `5`, not the next smaller value.
+- Mixing the two: for the floor, a **smaller** value is remembered and you go right; for the ceiling, a **larger** value is remembered and you go left.
+- Returning `best.val` when `best` is `None`: crashes when no value qualifies.
+- Walking the whole tree: `O(n)`. The pointer counter fails it.

@@ -1,0 +1,4 @@
+- Skipping negative values (`if root.val > 0`) or using `abs`: the sum must use the values as they are.
+- Forgetting the node's own value and adding only the two subtrees.
+- Returning `root.val` for `None` (crash) or `1` for the empty tree (the sum is shifted by the number of missing children).
+- A global `total` that is never reset: the second call adds to the first.

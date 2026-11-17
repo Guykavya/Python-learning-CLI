@@ -1,0 +1,6 @@
+id = "dsa.12.p031"
+title = "Topological order (Kahn)"
+tier = "applied"
+kind = "code"
+topics = ["graph", "topological sort", "kahn", "in-degree", "dag"]
+minutes = 30

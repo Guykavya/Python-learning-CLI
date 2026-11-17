@@ -1,0 +1,6 @@
+- Printing the rotation lines **after** the `insert` line: they are printed while the insertion runs.
+- Using one rotation for the right-left case: the code first rotates the child (`rotate_right at 40`) and then the node (`rotate_left at 20`), so two lines appear.
+- Naming the wrong node in a rotation line: the line shows the value of the node at the **top** of the rotation, before the rotation (`rotate_left at 20` rotates around `20`, and `30` becomes the new top).
+- Looking for the unbalanced node from the top: the check goes **up** from the new leaf, and the lowest unbalanced node is fixed first.
+- Forgetting to cut the trailing `None`s of the level-order lists, or filling the gaps in the middle with nothing.
+- Believing that `20` stays the root: the double rotation at the end makes `30` the root.

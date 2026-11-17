@@ -1,0 +1,6 @@
+- **Undirected thinking**: "connected" ignores direction; in `0 -> 1 -> 2` all three are connected, but no two of them are strongly connected.
+- **Second pass on the original graph**: from a source component a search in the original graph runs into the components below it and merges them.
+- **Increasing finish order** in the second pass: the first finished vertex lies in a sink of the condensation, and its search in the reversed graph spills into the components that point to it.
+- **Recursion**: a chain of `10**5` vertices needs `10**5` nested calls; Python stops at about 1,000. Raising the limit that far can crash the interpreter. Use explicit stacks.
+- **Tarjan without the `on_stack` test**: an edge into a component that is already finished lowers `low` and glues two components together.
+- **Forgetting isolated vertices**: a vertex without edges is a component of its own.

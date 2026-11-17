@@ -1,0 +1,6 @@
+id = "dsa.12.p014"
+title = "Trace BFS"
+tier = "drill"
+kind = "trace"
+topics = ["graph", "BFS", "queue", "distance", "trace"]
+minutes = 20

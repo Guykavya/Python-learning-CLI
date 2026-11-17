@@ -1,0 +1,6 @@
+id = "dsa.12.p006"
+title = "Weighted adjacency list"
+tier = "drill"
+kind = "code"
+topics = ["graph", "weighted graph", "adjacency list", "parallel edges"]
+minutes = 15

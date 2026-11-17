@@ -1,0 +1,6 @@
+id = "dsa.10.p009"
+title = "Values at depth d"
+tier = "applied"
+kind = "code"
+topics = ["tree", "recursion", "depth", "top-down"]
+minutes = 18

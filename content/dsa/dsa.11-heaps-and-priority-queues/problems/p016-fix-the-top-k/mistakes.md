@@ -1,0 +1,7 @@
+- Fixing only the `k = 0` crash: the function then returns `[]` for `k = 0` and still returns the **lowest** scores for the other values of `k`.
+- Turning the comparison around but keeping the minus signs (`elif s > heap[0]` with negated items): the stored numbers and the new score are on different scales, and the results are wrong in a different way.
+- Removing the minus signs but keeping the old comparison `-s > heap[0]`: it compares the negated new score with a plain score.
+- Comparing with `heap[-1]` (the last list slot) instead of `heap[0]`: only the root of a heap is special.
+- Returning the heap as it is, or `sorted(heap)` without `reverse=True`: the answer must be highest first.
+- Replacing the heap by `sorted(scores, reverse=True)[:k]`: correct answers, but the point is the bounded heap; the comparison test rejects it.
+- Forgetting the check for `k <= 0`: `heap[0]` on an empty heap raises `IndexError`.

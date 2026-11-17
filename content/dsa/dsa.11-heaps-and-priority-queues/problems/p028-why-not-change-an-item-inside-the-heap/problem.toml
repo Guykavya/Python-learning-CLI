@@ -1,0 +1,6 @@
+id = "dsa.11.p028"
+title = "Explain: why not change an item inside the heap?"
+tier = "deep"
+kind = "explain"
+topics = ["heap", "invariant", "lazy deletion", "priority queue"]
+minutes = 20

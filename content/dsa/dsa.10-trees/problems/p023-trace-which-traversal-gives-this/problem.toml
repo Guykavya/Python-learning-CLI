@@ -1,0 +1,6 @@
+id = "dsa.10.p023"
+title = "Trace: which traversal gives this?"
+tier = "drill"
+kind = "trace"
+topics = ["tree", "preorder", "inorder", "postorder", "trace"]
+minutes = 20

@@ -1,0 +1,6 @@
+id = "dsa.10.p047"
+title = "Lowest common ancestor in a binary tree"
+tier = "applied"
+kind = "code"
+topics = ["tree", "LCA", "recursion", "ancestor"]
+minutes = 30

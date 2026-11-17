@@ -1,0 +1,8 @@
+- Running the jobs in input order (first come, first served): job 3 (duration 1) does not wait behind jobs 1 and 2.
+- Forgetting that a job enters the heap as soon as `arrival <= time` (not `<`): at `t=6` job 3 has arrived at 3 and is already waiting.
+- Choosing the longest job, or the job with the smallest *arrival*, instead of the smallest tuple `(duration, arrival, job)`.
+- Printing `still waiting` before removing the chosen job: the line shows the heap **after** the pop.
+- Printing the tuples in heap-array order instead of sorted: the program sorts them.
+- Missing the `idle` line, or printing it with the wrong clock: it is printed when the heap is empty and the next arrival is in the future; the clock then jumps to that arrival.
+- Computing `waited` from time 0 instead of from the job's own arrival: `waited = time - arrival`.
+- Writing `3.4` as `3.40`, or `17/5`: `print` of a float shows `3.4`.

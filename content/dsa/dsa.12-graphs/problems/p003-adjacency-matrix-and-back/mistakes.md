@@ -1,0 +1,5 @@
+- `[[0] * n] * n`: every row is the same list, so setting one cell sets a whole column.
+- Forgetting `m[v][u]` for an undirected graph: the matrix is not symmetric and `to_edges` gives a different graph back.
+- Listing both `(u, v)` and `(v, u)` in `to_edges` for an undirected graph: every edge appears twice.
+- Starting the inner loop at `u + 1`: self loops on the diagonal are lost.
+- Counting parallel edges (`+= 1`): this matrix only stores 0 or 1.

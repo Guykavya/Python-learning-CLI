@@ -1,0 +1,5 @@
+- **A single visited set** in a DFS: a course needed by two others ("diamond") looks like a cycle, so a possible schedule is reported as impossible.
+- **Recursion** on a chain of 100,000 courses: `RecursionError`.
+- **Forgetting courses without any prerequisite** (only looking at courses that appear in `prerequisites`): the count of taken courses is then wrong.
+- **A course that is its own prerequisite** (`[0, 0]`) can never be taken: `False`.
+- **Counting each pair only once with a set while the in-degree counts every pair**: a repeated pair then blocks a course forever.

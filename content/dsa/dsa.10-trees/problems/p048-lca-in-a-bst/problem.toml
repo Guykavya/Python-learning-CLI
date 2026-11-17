@@ -1,0 +1,6 @@
+id = "dsa.10.p048"
+title = "Lowest common ancestor in a BST"
+tier = "drill"
+kind = "code"
+topics = ["tree", "BST", "LCA", "search"]
+minutes = 20

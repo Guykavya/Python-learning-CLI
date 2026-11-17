@@ -1,0 +1,6 @@
+id = "dsa.12.p016"
+title = "Connected components count"
+tier = "drill"
+kind = "code"
+topics = ["graph", "connected components", "BFS", "DFS"]
+minutes = 20

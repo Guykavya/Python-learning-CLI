@@ -1,0 +1,5 @@
+- **Counting roads** (the 1s, or the 1s divided by 2): a province of 3 cities can have 2 or 3 roads. Count components, not edges.
+- **Counting only cities without other roads**, plus one: a few separate pairs of cities break it.
+- **Searching only from city 0**: the other provinces are never found.
+- **Forgetting indirect connections**: `0 - 2 - 1` makes one province even though `is_connected[0][1] == 0`. A search (or Union-Find) handles it; comparing rows does not.
+- **Marking cities when they are popped instead of pushed**: still correct, but the same city can be pushed many times.

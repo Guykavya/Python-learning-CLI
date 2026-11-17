@@ -1,0 +1,6 @@
+id = "dsa.10.p028"
+title = "Has a root-to-leaf path with sum"
+tier = "drill"
+kind = "code"
+topics = ["tree", "path sum", "top-down", "leaf"]
+minutes = 15

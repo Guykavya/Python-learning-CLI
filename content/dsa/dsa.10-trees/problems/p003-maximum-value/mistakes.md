@@ -1,0 +1,4 @@
+- Returning `0` for the empty tree: for a tree of negative numbers the answer `0` would beat every real value.
+- Starting with `best = 0`: the same problem. The best value must start from a real value of the tree.
+- Calling `max(root.val, max_value(root.left), max_value(root.right))` without handling `None`: it raises `TypeError` (comparing `None` with a number).
+- Returning `float("-inf")` for the empty tree: it works inside the recursion, but the tests (and the problem) ask for `None` for an empty tree.

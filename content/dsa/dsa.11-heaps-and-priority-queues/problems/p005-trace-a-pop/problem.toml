@@ -1,0 +1,7 @@
+id = "dsa.11.p005"
+title = "Trace a pop"
+tier = "drill"
+kind = "trace"
+topics = ["heap", "pop", "sift down", "trace"]
+minutes = 20
+assessment = "trace"

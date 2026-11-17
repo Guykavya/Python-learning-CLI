@@ -1,0 +1,6 @@
+id = "dsa.10.p010"
+title = "Trace: draw a tree from a description"
+tier = "drill"
+kind = "trace"
+topics = ["tree", "level order", "build_tree", "trace"]
+minutes = 20

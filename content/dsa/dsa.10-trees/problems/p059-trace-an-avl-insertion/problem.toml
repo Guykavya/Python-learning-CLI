@@ -1,0 +1,6 @@
+id = "dsa.10.p059"
+title = "Trace: an AVL insertion"
+tier = "challenge"
+kind = "trace"
+topics = ["tree", "AVL", "rotation", "balance", "trace"]
+minutes = 40

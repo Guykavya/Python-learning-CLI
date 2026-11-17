@@ -1,0 +1,6 @@
+id = "dsa.10.p002"
+title = "Sum of all values"
+tier = "drill"
+kind = "code"
+topics = ["tree", "recursion", "negative values"]
+minutes = 10

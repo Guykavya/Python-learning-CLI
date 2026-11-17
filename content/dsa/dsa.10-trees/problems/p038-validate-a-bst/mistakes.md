@@ -1,0 +1,6 @@
+- Comparing each node only with its children: the tree `[5, 1, 6, None, None, 3, 7]` fools it.
+- Using `<=` where the rule says strictly: `[2, 2, 2]` must be invalid.
+- Using `-2**31` and `2**31 - 1` as the starting bounds with strict comparisons: a tree that holds exactly `2147483647` is wrongly rejected. Use `None` (or infinity).
+- Passing only one bound down (for example only the parent's value): the grandparent's limit is lost.
+- Validating the left and right subtrees but forgetting to compare the node with the bounds.
+- Using a global `prev` variable for the inorder method and forgetting to reset it, so a second call remembers the last value of the first.

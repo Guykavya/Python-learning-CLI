@@ -1,0 +1,6 @@
+- Using the **values** of the nodes to find `p` and `q`: values repeat in these tests. Compare nodes with `is`.
+- Forgetting the factor `2`: the LCA's depth is subtracted from both sides.
+- Counting nodes instead of edges: the answer is one larger for every path.
+- Computing the depth of the LCA with the depth of `p` only: all three depths are different numbers.
+- Handling `p is q` or "`p` is an ancestor of `q`" with special code that is wrong: the formula already gives `0` for `p is q`, and `depth(q) - depth(p)` for an ancestor.
+- Recursion that fails on a chain of 300 nodes because a helper is written with a loop inside a recursion.

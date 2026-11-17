@@ -1,0 +1,6 @@
+add 7: lower [7]  upper []  median 7  (moved one back)
+add 3: lower [3]  upper [7]  median 5.0
+add 9: lower [3, 7]  upper [9]  median 7  (moved one back)
+add 3: lower [3, 3]  upper [7, 9]  median 5.0
+add 5: lower [3, 3, 5]  upper [7, 9]  median 5  (moved one back)
+add 8: lower [3, 3, 5]  upper [7, 8, 9]  median 6.0

@@ -1,0 +1,6 @@
+id = "dsa.12.p030"
+title = "Cycle in a directed graph"
+tier = "applied"
+kind = "code"
+topics = ["graph", "cycle detection", "dfs", "three colours", "directed graph"]
+minutes = 30

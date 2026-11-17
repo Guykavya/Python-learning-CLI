@@ -1,0 +1,4 @@
+- `n - len(edges)`: every edge that closes a cycle (or repeats an edge, or is a self loop) does not join two components.
+- Looping only over vertices that appear in an edge: isolated vertices are components too.
+- Storing each edge in one direction only: a search from `1` then cannot go back to `0`, and the count is too high.
+- A recursive DFS: a chain of 100,000 vertices exceeds the recursion limit.

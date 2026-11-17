@@ -1,0 +1,7 @@
+- **BFS from one cell of the first island** instead of all of them: it measures the distance from that cell, which can be much longer than the distance from the island's nearest edge.
+- **Off by one**: returning the distance of the land cell that was reached (`d + 1`) instead of the number of water cells between (`d`). Two cells next to each other diagonally (`"10"`, `"01"`) need 1 flip.
+- **Diagonal steps**: islands and bridges use only up, down, left and right. With 8 directions, diagonal land cells would already be "one island".
+- **Comparing all pairs of cells**: correct but `O(A * B)`; with two islands of 30,000 cells each it does 900 million comparisons and fails the time limit.
+- **Recursive flood fill**: a snake-shaped island of 40,000 cells is 40,000 nested calls. Use a stack.
+- **Marking cells when they are popped** instead of when they are pushed: the same cell is queued many times, and on a big grid the queue blows up.
+- **Treating cells of the first island as water** in the BFS (forgetting to mark them as seen): the BFS walks back through its own island and counts those cells as flips.

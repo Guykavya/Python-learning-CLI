@@ -1,0 +1,6 @@
+- Pushing **all** numbers into the heap and popping them: it is correct, but it is a heap sort of `N` numbers, `O(N log N)` time and `O(N)` memory, and it ignores that the lists are already sorted.
+- Forgetting to push the next item of the list you just popped from: the numbers after the first of each list are lost.
+- Entries `(value, iterator)` or `(value, list)`: when two values are equal, Python compares the second fields, and iterators cannot be compared (`TypeError`), and comparing lists is slow and wrong. Put a unique integer (the list number) before anything that cannot be compared.
+- Taking `lst[0]` of an empty inner list: `IndexError`. Skip empty lists when you build the first heap.
+- Merging the lists one after the other (`result = merge(result, next_list)`): correct, but the first lists are copied again and again, `O(N k)`. The 2,000-list test stops at 10 seconds.
+- Taking the front items with `pop(0)`: it changes the input lists, and it moves the whole list on each call.

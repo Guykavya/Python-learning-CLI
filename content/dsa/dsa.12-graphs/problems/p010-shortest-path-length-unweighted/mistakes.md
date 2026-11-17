@@ -1,0 +1,5 @@
+- DFS: it finds a path, often not the shortest.
+- Counting vertices instead of edges (the path `0 1 2` has length 2, not 3).
+- Returning `None` or `float("inf")` instead of `-1` for an unreachable target.
+- Forgetting `s == t` (distance 0).
+- Storing only one direction of each undirected edge.

@@ -1,0 +1,5 @@
+- Counting only `u` for an undirected edge: every edge has two ends.
+- Swapping in and out: the edge `(u, v)` **leaves** `u` (out-degree of `u`) and **arrives** at `v` (in-degree of `v`).
+- Counting a self loop once in an undirected graph. Both of its ends touch the vertex, so it adds 2; otherwise the handshake lemma fails.
+- Skipping duplicate edges: parallel edges each count.
+- Using a dictionary built from the edges: isolated vertices are missing from the result.

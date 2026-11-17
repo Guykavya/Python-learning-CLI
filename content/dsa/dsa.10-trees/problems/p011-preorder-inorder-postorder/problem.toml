@@ -1,0 +1,6 @@
+id = "dsa.10.p011"
+title = "Preorder, inorder, postorder (recursive)"
+tier = "drill"
+kind = "code"
+topics = ["tree", "traversal", "preorder", "inorder", "postorder", "recursion"]
+minutes = 15

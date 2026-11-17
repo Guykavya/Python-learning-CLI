@@ -1,0 +1,6 @@
+id = "dsa.12.p058"
+title = "Floyd-Warshall"
+tier = "applied"
+kind = "code"
+topics = ["graph", "shortest path", "all pairs", "floyd-warshall", "dynamic programming"]
+minutes = 30

@@ -1,0 +1,6 @@
+id = "dsa.12.p024"
+title = "Open the lock"
+tier = "applied"
+kind = "code"
+topics = ["graph", "BFS", "state graph", "implicit graph"]
+minutes = 30

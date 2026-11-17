@@ -1,0 +1,5 @@
+- Comparing a node only with its **parent**: a node can be smaller than a grandparent and larger than its parent. Compare with the largest ancestor.
+- Using `>` instead of `>=`: a node equal to the maximum so far is good.
+- Starting with `biggest = 0`: a root of `-5` would not be good.
+- Passing the old `biggest` to the children after a good node: the children must see the **new** maximum.
+- Counting the empty tree as one good node, or crashing on `root.val` when `root` is `None`.

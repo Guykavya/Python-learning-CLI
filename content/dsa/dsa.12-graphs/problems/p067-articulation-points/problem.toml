@@ -1,0 +1,6 @@
+id = "dsa.12.p067"
+title = "Articulation points"
+tier = "challenge"
+kind = "code"
+topics = ["graph", "articulation points", "low-link", "dfs", "iterative dfs"]
+minutes = 55

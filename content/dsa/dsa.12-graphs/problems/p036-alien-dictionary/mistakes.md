@@ -1,0 +1,6 @@
+- **Adding an edge for every differing position**, not just the first: `["ab", "ba"]` only says `a < b`; adding `b < a` from the second position invents a cycle and you answer `""` for a valid list.
+- **Ignoring the prefix rule**: `["abc", "ab"]` is impossible, but without the check you return some order.
+- **Leaving out letters that are in no edge**: every letter that appears must be in the answer.
+- **No cycle check**: returning the letters that Kahn reached when some are missing. The answer must be `""`.
+- **Reversing the edge** (`b -> a`): the order is exactly backwards.
+- **Comparing only the first letters** of neighbours: `["wrt", "wrf"]` differ at position 2, not 0.

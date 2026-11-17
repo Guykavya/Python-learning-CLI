@@ -1,0 +1,6 @@
+- Looking only in the right subtree of the key: a leaf (or any node without a right subtree) has its successor **above** it.
+- Using `<=` where `<` is needed (or the other way round): the successor must be **strictly** larger, so a key that exists in the tree is not its own successor.
+- Returning the node when the key is found, instead of continuing right: the key itself is not the answer.
+- Building the whole inorder list: correct, but `O(n)`; the pointer counter fails it.
+- Returning `best.val` when `best` is `None`: it crashes for the largest value.
+- Assuming the key is in the tree: the tests ask for keys that are missing too.

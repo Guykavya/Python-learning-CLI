@@ -1,0 +1,6 @@
+- **A seen flag set at the first push** (as in BFS): a vertex first reached through a 1-edge keeps the distance 1 even when a 0-route exists. With `0 -> 1` (1), `0 -> 2` (0), `2 -> 1` (0), vertex 1 must get 0.
+- **Ignoring the weights** (plain BFS): every edge then costs 1.
+- **Putting the 0-edges at the back** and still marking seen: the deque is no longer sorted, so a vertex can leave with a too large distance.
+- **`appendleft` for 1-edges and `append` for 0-edges**: exactly the wrong way round. Because the code still compares distances, the answers can come out right, but the deque is no longer sorted and vertices are processed many times: on the big test it does not finish.
+- **Returning `-1`** for unreachable vertices instead of `float("inf")`.
+- **Using a heap**: right answers, but this exercise asks for the linear-time deque (the tests reject `heapq`).

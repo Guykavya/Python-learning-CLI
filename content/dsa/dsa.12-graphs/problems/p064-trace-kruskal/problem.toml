@@ -1,0 +1,6 @@
+id = "dsa.12.p064"
+title = "Trace Kruskal"
+tier = "applied"
+kind = "trace"
+topics = ["graph", "minimum spanning tree", "kruskal", "union-find", "trace"]
+minutes = 20

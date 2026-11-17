@@ -1,0 +1,6 @@
+id = "dsa.10.p036"
+title = "BST insert"
+tier = "drill"
+kind = "code"
+topics = ["tree", "BST", "insert"]
+minutes = 20

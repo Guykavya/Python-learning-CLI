@@ -1,0 +1,5 @@
+- Comparing the heights only at the root: the tree `[1, 2, 2, 3, None, None, 3, 4, None, None, 4]` has balanced root children but a node deeper down that is not balanced. Check **every** node.
+- Calling `height` at every node: correct, but `O(n log n)` or `O(n^2)`; the pointer counter in the tests catches it.
+- Using `-1` as a signal but then treating it as a height: `1 + max(-1, 3)` hides the failure. Test for `-1` before using the value.
+- Comparing the number of nodes of the two sides instead of their heights.
+- Returning `True` as soon as the root looks fine, without looking at the subtrees.

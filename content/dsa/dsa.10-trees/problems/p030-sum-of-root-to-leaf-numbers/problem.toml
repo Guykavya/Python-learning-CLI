@@ -1,0 +1,6 @@
+id = "dsa.10.p030"
+title = "Sum of root-to-leaf numbers"
+tier = "applied"
+kind = "code"
+topics = ["tree", "paths", "top-down", "digits"]
+minutes = 20

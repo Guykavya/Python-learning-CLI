@@ -1,0 +1,6 @@
+- Returning the number of **changes** (4 for `hit -> cog`) instead of the number of words (5).
+- Not checking that `end` is in the list.
+- Comparing every pair of words to build the graph: `O(N^2 L)`, too slow for 12,000 words.
+- A DFS: it finds **a** ladder, not the shortest.
+- Searching in the list `words` with `in` (`O(N)` per check) instead of a set.
+- Forgetting to mark words when they are queued: the same word can enter the queue many times.

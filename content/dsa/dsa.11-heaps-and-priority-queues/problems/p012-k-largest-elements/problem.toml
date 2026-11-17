@@ -1,0 +1,6 @@
+id = "dsa.11.p012"
+title = "K largest elements"
+tier = "drill"
+kind = "code"
+topics = ["heap", "top-k", "min-heap of size k", "heapq"]
+minutes = 25

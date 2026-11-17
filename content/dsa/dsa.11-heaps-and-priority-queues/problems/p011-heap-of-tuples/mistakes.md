@@ -1,0 +1,7 @@
+- Pushing `(priority, task)` with no counter: it works until two priorities are equal and the tasks cannot be compared, and then it raises `TypeError`. A test that never uses equal priorities would not show it.
+- Putting the counter **first**, `(counter, priority, task)`: the counter is unique, so the priority is never looked at, and the queue is a plain FIFO.
+- Putting the counter **after** the task, `(priority, task, counter)`: the tasks are compared before the counter is reached.
+- Using `random.random()` or `id(task)` as the tie-breaker: it avoids the error, but the order among equal priorities is no longer first in, first out.
+- Using `len(self._heap)` as the counter: after pops it repeats numbers, and two entries can get the same counter. Use a counter that only goes up.
+- Returning the whole tuple from `pop`: the caller wanted the task.
+- Making the counter a **class** attribute that is shared by all queues without resetting: it still works, but it is surprising; keep one counter per queue.

@@ -1,0 +1,5 @@
+- `adj = [[]] * n`: one list object repeated `n` times. Appending to `adj[0]` changes "all" of them. Use `[[] for _ in range(n)]`.
+- Forgetting the reverse direction for an undirected graph: then `v` cannot reach `u`, and a search later misses vertices.
+- Building the lists only from the vertices that appear in the edges (for example a dictionary filled from the edges): isolated vertices disappear.
+- Adding a self loop twice in an undirected graph.
+- Sorting the neighbour lists. The order of the input is the order the later problems expect.

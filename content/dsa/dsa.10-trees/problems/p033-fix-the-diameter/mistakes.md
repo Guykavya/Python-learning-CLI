@@ -1,0 +1,5 @@
+- Measuring only the root (`height(left) + height(right)`): the longest path may not pass through the root. This is the bug in the starter.
+- Calling that same formula at every node using the slow `height`: correct, but every subtree is walked again for each ancestor, `O(n log n)` or `O(n^2)`. The pointer counter in the tests rejects it.
+- Returning `left + right` to the parent: a parent can use only **one** branch of its child, so return `1 + max(left, right)`.
+- Counting nodes instead of edges: the answer would be one larger than expected.
+- Starting `best` with `1`: one node has diameter 0.

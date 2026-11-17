@@ -1,0 +1,7 @@
+id = "dsa.11.p008"
+title = "Explain: why heapify is O(n)"
+tier = "deep"
+kind = "explain"
+topics = ["heap", "heapify", "complexity", "height and depth", "explain"]
+minutes = 25
+assessment = "explain"

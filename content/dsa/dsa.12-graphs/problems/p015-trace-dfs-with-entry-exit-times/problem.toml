@@ -1,0 +1,6 @@
+id = "dsa.12.p015"
+title = "Trace DFS with entry/exit times"
+tier = "applied"
+kind = "trace"
+topics = ["graph", "DFS", "recursion", "entry and exit times", "trace"]
+minutes = 25

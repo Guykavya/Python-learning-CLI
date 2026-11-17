@@ -1,0 +1,6 @@
+- **No cycle check**: returning the partial order when the graph has a cycle. Some vertices are then missing. Compare `len(order)` with `n`.
+- **Starting only from vertex 0**: other vertices with in-degree 0 never enter the queue.
+- **Reading the edge backwards** (`indeg[u] += 1`, `adj[v].append(u)`): you get the reverse order, where every edge is broken.
+- **Removing duplicate edges from `adj` but not from the in-degree** (or the other way round): a vertex never reaches 0 and the answer is `[]` for a graph without a cycle.
+- **Returning `None`** for a cycle: this problem asks for `[]`.
+- **Looking for in-degree-0 vertices by scanning all vertices after every step**: correct, but `O(n^2)`. Keep a queue and push a vertex the moment it reaches 0.

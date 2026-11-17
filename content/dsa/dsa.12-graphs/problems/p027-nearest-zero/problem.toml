@@ -1,0 +1,6 @@
+id = "dsa.12.p027"
+title = "Nearest 0 (multi-source BFS)"
+tier = "applied"
+kind = "code"
+topics = ["graph", "grid", "multi-source bfs", "distance"]
+minutes = 30

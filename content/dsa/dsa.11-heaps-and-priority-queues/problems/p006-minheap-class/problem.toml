@@ -1,0 +1,6 @@
+id = "dsa.11.p006"
+title = "A MinHeap class"
+tier = "applied"
+kind = "code"
+topics = ["heap", "class", "push", "pop", "heapify", "differential test"]
+minutes = 35

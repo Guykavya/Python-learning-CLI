@@ -1,0 +1,7 @@
+- Using a **max**-heap (negated numbers) of size `k`: its root is the largest kept item, so the replacement rule throws away the **best** items and you end up with the `k` smallest.
+- Comparing with `heap[0]` before the heap has `k` items, or when `k = 0`: `heap[0]` on an empty heap raises `IndexError`. Handle `k <= 0` first and fill the heap before comparing.
+- Pushing every item and popping when the size is above `k`: correct, but every item pays a push and a pop (about 7 comparisons each for `k = 10`). The test counts comparisons: look at `heap[0]` first.
+- Forgetting that `k` can be larger than `n`: the loop must not crash and must return all items.
+- Returning the heap list itself: it is in heap order (the smallest first, the rest not sorted). Pop the items out and reverse.
+- Sorting the input (`sorted(nums)[-k:]`): `O(n log n)`, and not allowed here.
+- Changing the input list (for example `heapq.heapify(nums)` on it). The caller's list must stay as it was.

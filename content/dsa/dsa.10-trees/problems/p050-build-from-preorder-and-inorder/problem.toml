@@ -1,0 +1,6 @@
+id = "dsa.10.p050"
+title = "Build a tree from preorder and inorder"
+tier = "deep"
+kind = "code"
+topics = ["tree", "construction", "preorder", "inorder", "dictionary"]
+minutes = 35

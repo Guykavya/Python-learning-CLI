@@ -1,0 +1,5 @@
+- Walking the reverse search **downhill** (`<=`): that is the direction of the water, not the way back.
+- Using `>` instead of `>=`: water flows over level ground too, so equal heights must be allowed.
+- Starting the Pacific search from the top row only (forgetting the left column), or mixing up which edges belong to which ocean.
+- Searching from every cell: correct but `O((rows * cols)^2)`, far too slow for 300 x 300.
+- Returning lists `[r, c]` instead of tuples, or an unsorted result.

@@ -1,0 +1,6 @@
+- Sorting a list on every `median()` call: correct, but `O(n log n)` per call. The 100,000-number test does not finish in time.
+- Forgetting to negate when using `heapq` as a max-heap: `low[0]` is then the *smallest* of the lower half, and the median is wrong from the third number on.
+- Pushing the new number into the half that "looks right" without moving the borders: for `5, 2, 8` the number `8` must end in `high`; if it is pushed into `low` and the sizes are not fixed, `low` ends up with two numbers bigger than something in `high`.
+- Returning `-self.low[0]` for an even count (or the average for an odd count): the rule is the top for odd, the average of two tops for even.
+- Returning `float(...)` for an odd count: harmless for the comparison `5 == 5.0`, but the tests also check that `median()` after `add(5)` is exactly the number you added.
+- Not raising `ValueError` on an empty finder: the empty case reads `self.low[0]` and raises `IndexError` instead.

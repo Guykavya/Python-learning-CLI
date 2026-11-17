@@ -1,0 +1,7 @@
+- Placing the most frequent letter every time, without keeping the letter just placed out of the heap: the same letter ends up twice in a row (`"aab"` gives `"aab"`).
+- Forgetting to push `held` back: the letter is lost, the result is too short. (If you do not compare lengths at the end you return a string with missing letters.)
+- Pushing `held` back **before** popping the next letter: the same letter can be popped again immediately.
+- Returning the shorter result when the string is impossible. The test for impossibility is the length of the result: if it is not `len(s)`, return `""`.
+- Using the wrong impossibility rule: `max_count > n // 2` rejects `"aab"` (2 > 1) which can be arranged as `"aba"`. The correct limit is `(n + 1) // 2`.
+- Taking the letter with the **fewest** copies first: it leaves the dangerous letter for the end, where nothing is left to separate it.
+- Mixing up the sign: with negative counts, `count + 1` is one copy used, and `held[0] < 0` means "copies left". Positive counts in a min-heap would give the *least* frequent letter first.

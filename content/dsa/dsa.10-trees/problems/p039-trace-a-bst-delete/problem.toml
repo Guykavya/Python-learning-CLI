@@ -1,0 +1,6 @@
+id = "dsa.10.p039"
+title = "Trace: a BST delete"
+tier = "applied"
+kind = "trace"
+topics = ["tree", "BST", "delete", "trace"]
+minutes = 30

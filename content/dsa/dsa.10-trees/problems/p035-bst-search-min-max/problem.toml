@@ -1,0 +1,6 @@
+id = "dsa.10.p035"
+title = "BST search, min, max"
+tier = "drill"
+kind = "code"
+topics = ["tree", "BST", "search", "iterative"]
+minutes = 15

@@ -1,0 +1,176 @@
+# Real site problems for dsa.10 (Trees).
+# Verification: every LeetCode slug and the CSES id below were written from memory (from the problem plan) and NOT
+# re-fetched (no web access was used while writing). Fix any slug or id that fails to open.
+# Codeforces problems are left out on purpose: none were verified. CSES 1130 (Tree Matching) is left out too: it needs
+# a greedy idea that this module does not teach.
+# Order follows the chapter: height and mirror (3), iterative inorder (5), level order (6), balance and diameter (7),
+# paths (8), binary search trees (9), lowest common ancestor (10), construction and serialising (11),
+# comparing and reshaping (12), then CSES 1131 (the diameter again, on a tree given as edges: needs an iterative walk).
+
+[[problem]]
+site = "leetcode"
+key = "maximum-depth-of-binary-tree"
+title = "Maximum Depth of Binary Tree"
+url = "https://leetcode.com/problems/maximum-depth-of-binary-tree/"
+minutes = 10
+
+[[problem]]
+site = "leetcode"
+key = "invert-binary-tree"
+title = "Invert Binary Tree"
+url = "https://leetcode.com/problems/invert-binary-tree/"
+minutes = 10
+
+[[problem]]
+site = "leetcode"
+key = "binary-tree-inorder-traversal"
+title = "Binary Tree Inorder Traversal"
+url = "https://leetcode.com/problems/binary-tree-inorder-traversal/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "binary-tree-level-order-traversal"
+title = "Binary Tree Level Order Traversal"
+url = "https://leetcode.com/problems/binary-tree-level-order-traversal/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "binary-tree-zigzag-level-order-traversal"
+title = "Binary Tree Zigzag Level Order Traversal"
+url = "https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "binary-tree-right-side-view"
+title = "Binary Tree Right Side View"
+url = "https://leetcode.com/problems/binary-tree-right-side-view/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "balanced-binary-tree"
+title = "Balanced Binary Tree"
+url = "https://leetcode.com/problems/balanced-binary-tree/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "diameter-of-binary-tree"
+title = "Diameter of Binary Tree"
+url = "https://leetcode.com/problems/diameter-of-binary-tree/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "path-sum"
+title = "Path Sum"
+url = "https://leetcode.com/problems/path-sum/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "path-sum-iii"
+title = "Path Sum III"
+url = "https://leetcode.com/problems/path-sum-iii/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "binary-tree-maximum-path-sum"
+title = "Binary Tree Maximum Path Sum"
+url = "https://leetcode.com/problems/binary-tree-maximum-path-sum/"
+minutes = 40
+
+[[problem]]
+site = "leetcode"
+key = "validate-binary-search-tree"
+title = "Validate Binary Search Tree"
+url = "https://leetcode.com/problems/validate-binary-search-tree/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "kth-smallest-element-in-a-bst"
+title = "Kth Smallest Element in a BST"
+url = "https://leetcode.com/problems/kth-smallest-element-in-a-bst/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "delete-node-in-a-bst"
+title = "Delete Node in a BST"
+url = "https://leetcode.com/problems/delete-node-in-a-bst/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "recover-binary-search-tree"
+title = "Recover Binary Search Tree"
+url = "https://leetcode.com/problems/recover-binary-search-tree/"
+minutes = 40
+
+[[problem]]
+site = "leetcode"
+key = "lowest-common-ancestor-of-a-binary-tree"
+title = "Lowest Common Ancestor of a Binary Tree"
+url = "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "lowest-common-ancestor-of-a-binary-search-tree"
+title = "Lowest Common Ancestor of a Binary Search Tree"
+url = "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "construct-binary-tree-from-preorder-and-inorder-traversal"
+title = "Construct Binary Tree from Preorder and Inorder Traversal"
+url = "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/"
+minutes = 35
+
+[[problem]]
+site = "leetcode"
+key = "serialize-and-deserialize-binary-tree"
+title = "Serialize and Deserialize Binary Tree"
+url = "https://leetcode.com/problems/serialize-and-deserialize-binary-tree/"
+minutes = 40
+
+[[problem]]
+site = "leetcode"
+key = "convert-sorted-array-to-binary-search-tree"
+title = "Convert Sorted Array to Binary Search Tree"
+url = "https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "subtree-of-another-tree"
+title = "Subtree of Another Tree"
+url = "https://leetcode.com/problems/subtree-of-another-tree/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "flatten-binary-tree-to-linked-list"
+title = "Flatten Binary Tree to Linked List"
+url = "https://leetcode.com/problems/flatten-binary-tree-to-linked-list/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "count-good-nodes-in-binary-tree"
+title = "Count Good Nodes in Binary Tree"
+url = "https://leetcode.com/problems/count-good-nodes-in-binary-tree/"
+minutes = 20
+
+[[problem]]
+site = "cses"
+key = "1131"
+title = "Tree Diameter"
+url = "https://cses.fi/problemset/task/1131"
+minutes = 40

@@ -1,0 +1,6 @@
+- Building the right subtree before the left: the preorder is read from the front, so the left subtree's items must be consumed first.
+- Searching the root with `inorder.index(val)` in every call: correct but `O(n^2)`; use a dictionary.
+- Off-by-one in the ranges (`mid`, `mid + 1`, `mid - 1`): an empty range must return `None`.
+- Using `preorder.pop(0)` to take the next root: it changes the list you were given (and is `O(n)` per pop). Use an index or an iterator.
+- Slicing the lists in every call without care: it works for small trees but copies the lists again and again.
+- Assuming the values are `1..n` or sorted: the values are only distinct.

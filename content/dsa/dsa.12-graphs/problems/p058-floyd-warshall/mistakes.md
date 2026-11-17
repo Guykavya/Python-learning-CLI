@@ -1,0 +1,6 @@
+- **`k` as the inner loop** (`for i: for j: for k:`): when the pair `(i, j)` is finished, `dist[i][k]` or `dist[k][j]` may not be final yet, and the pair is never looked at again. With the edges `0->1 (1), 1->0 (6), 2->3 (2), 3->1 (8)`, `dist[2][0]` must be 16, the wrong order leaves it `inf`.
+- **The last parallel edge wins**: `dist[u][v] = w` overwrites a cheaper edge listed earlier. Keep the minimum.
+- **Forgetting the diagonal**: `dist[i][i]` must start at 0.
+- **`[[inf] * n] * n`**: all rows are the **same** list, so writing one entry changes the whole column.
+- **Adding both directions**: the edges are one-way.
+- **A self loop with a positive weight overwriting the diagonal**: keep the minimum, so `min(0, w)` stays 0.

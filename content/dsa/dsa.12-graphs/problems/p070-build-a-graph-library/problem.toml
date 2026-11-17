@@ -1,0 +1,7 @@
+id = "dsa.12.p070"
+title = "Build a graph library"
+tier = "deep"
+kind = "code"
+topics = ["graph", "design", "bfs", "dfs", "components", "topological sort", "dijkstra", "iterative dfs"]
+minutes = 90
+assessment = "build"
