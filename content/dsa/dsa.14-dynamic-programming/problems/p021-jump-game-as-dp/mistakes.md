@@ -1,0 +1,6 @@
+- **No memo.** A recursion that tries every jump from every index repeats the same sub-problems; `[3] * 400` never finishes. Each index is one state: solve it once.
+- **Using 0 or -1 to mean "not reached".** Then `min` picks the fake value. Use `INF` until the end, and convert to `-1` only when you return.
+- **Indexing past the end.** `i + nums[i]` can be far beyond the last index: stop at `min(n - 1, i + nums[i])`.
+- **Returning 1 for `[0]`.** You start on the last index, so the answer is 0 (the base case).
+- **Assuming the end is always reachable** (as in dsa.13). `[3, 2, 1, 0, 4]` must give `-1`.
+- **Pushing from unreached indices with a 0 count.** If `f[i]` is `INF`, `i` must not make its neighbours reachable.

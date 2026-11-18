@@ -1,0 +1,6 @@
+- **Two modes only** (camera or not, as in house robber). "No camera" hides two different situations: watched by a child, or still waiting for the parent. The parent's choice depends on which one it is.
+- **Cameras on all leaves.** Leaves are the worst place: a camera on a leaf's parent watches the leaf, the parent, the sibling and the grandparent.
+- **Allowing an open child under an open or watched parent.** An open child must be watched by its parent's camera; only the `camera` mode may use `l0` and `r0`.
+- **A missing child as `(0, 0, 0)`.** Then a node "has a camera child" for free: `watched` becomes 0 for leaves, and the answer is too small. A missing child cannot hold a camera: `INF`.
+- **Answering `min` of all three modes at the root.** The root has no parent, so it cannot stay open.
+- **Recursion that tries "camera here or not" without returning all modes.** It solves the same subtrees many times: exponential.

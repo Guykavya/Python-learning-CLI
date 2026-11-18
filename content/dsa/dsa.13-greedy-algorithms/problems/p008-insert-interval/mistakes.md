@@ -1,0 +1,6 @@
+- **`end <= new_start`** for the first run: a block ending exactly where `new` starts is copied instead of merged, leaving `[3, 5], [5, 6]`.
+- **`start < new_end`** for the middle run: a block starting exactly at `new`'s end is not absorbed.
+- **Forgetting to append `new`** when it goes before or after everything (no block overlaps it).
+- **Setting the merged end to the last absorbed block's end** instead of `max`: when `new` reaches further than every absorbed block, its own end is lost.
+- **`list.insert` in a loop** or sorting again: correct but slower than one pass.
+- **Appending the input's inner lists** to the output and editing them: the caller's calendar changes.

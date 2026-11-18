@@ -1,0 +1,6 @@
+id = "dsa.14.p043"
+title = "Last stone weight II"
+tier = "deep"
+kind = "code"
+topics = ["dynamic programming", "subset sum", "reduction", "0/1 knapsack", "proof"]
+minutes = 35

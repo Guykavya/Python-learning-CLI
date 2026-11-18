@@ -1,0 +1,6 @@
+id = "dsa.13.p024"
+title = "Gas station"
+tier = "applied"
+kind = "code"
+topics = ["greedy", "arrays", "circular route", "prefix sums", "gas station"]
+minutes = 25

@@ -1,0 +1,6 @@
+id = "dsa.14.p004"
+title = "Climbing stairs with a set of steps"
+tier = "applied"
+kind = "code"
+topics = ["dynamic programming", "tabulation", "climbing stairs", "counting sequences", "modulo"]
+minutes = 20

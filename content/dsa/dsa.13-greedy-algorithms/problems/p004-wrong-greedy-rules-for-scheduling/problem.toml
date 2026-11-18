@@ -1,0 +1,6 @@
+id = "dsa.13.p004"
+title = "Wrong greedy rules for scheduling"
+tier = "applied"
+kind = "code"
+topics = ["greedy", "activity selection", "counterexample", "intervals"]
+minutes = 25

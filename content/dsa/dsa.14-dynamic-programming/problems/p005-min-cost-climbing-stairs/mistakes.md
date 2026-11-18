@@ -1,0 +1,5 @@
+- **Making the last stair the goal.** The top is index `n`, one past the last stair. With the goal at `n - 1` you pay for a stair you do not need: `[1, 1, 1000]` gives 1001 instead of 1.
+- **Paying for the start.** `f(0) = cost[0]` and `f(1) = cost[1]` mixes the two state meanings (arrive vs leave). Choose one sentence and stick to it.
+- **Paying the cost of the stair you arrive on** instead of the one you leave: `f[i - 1] + cost[i]` reads past the end at `i = n`.
+- **A recursion from the top down.** Correct, but 100,000 levels deep it raises `RecursionError`.
+- **Returning the chapter's `(price, table)` tuple.** The tests want only the number.

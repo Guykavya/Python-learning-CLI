@@ -1,0 +1,6 @@
+id = "dsa.14.p008"
+title = "From memo to table"
+tier = "applied"
+kind = "code"
+topics = ["dynamic programming", "memoisation", "tabulation", "conversion", "2d table"]
+minutes = 30

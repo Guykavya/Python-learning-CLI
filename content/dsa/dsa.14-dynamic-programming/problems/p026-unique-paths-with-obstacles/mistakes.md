@@ -1,0 +1,5 @@
+- **Pre-filling the first row and column with 1s.** With an obstacle in the first row, the cells to its right are unreachable, not 1.
+- **Setting the start to 1 before checking for an obstacle.** A blocked start must give 0.
+- **Forgetting that the end can be blocked.** Then the answer is 0, and your formula must not add anything into it.
+- **Using `f[r-1][c]` when `r == 0`.** In Python `f[-1][c]` is the last row, not an error. In this table the last row is still all 0 when row 0 is filled, so the answer comes out right by luck; in a rolling-row version, or a table that is filled in another order, it silently adds a wrong number. Guard with `r > 0` and `c > 0`.
+- **Recursion without a memo:** it walks every path; a 200 by 200 grid never finishes.

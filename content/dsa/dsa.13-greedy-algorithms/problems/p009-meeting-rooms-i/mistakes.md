@@ -1,0 +1,5 @@
+- **Not sorting.** Two clashing meetings may be far apart in the input.
+- **`end >= next_start`** as a clash: touching meetings are fine.
+- **Comparing every pair** with two loops: correct but `O(n^2)`; 100,000 meetings means about 5 billion pairs.
+- **Comparing with the first meeting only.** Each meeting must be compared with the next one.
+- **Sorting in place** with `meetings.sort()`: the caller's list changes.

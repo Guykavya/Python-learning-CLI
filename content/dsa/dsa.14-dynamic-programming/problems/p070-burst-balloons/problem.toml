@@ -1,0 +1,6 @@
+id = "dsa.14.p070"
+title = "Burst balloons"
+tier = "challenge"
+kind = "code"
+topics = ["dynamic programming", "interval dp", "burst balloons", "last choice", "padding"]
+minutes = 50

@@ -1,0 +1,6 @@
+id = "dsa.14.p026"
+title = "Unique paths with obstacles"
+tier = "applied"
+kind = "code"
+topics = ["dynamic programming", "grid dp", "counting paths", "obstacles", "base case"]
+minutes = 20

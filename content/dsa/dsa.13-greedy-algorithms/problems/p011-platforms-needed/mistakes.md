@@ -1,0 +1,5 @@
+- **`arr[i] <= dep[j]`** for an arrival: a train arriving at the minute another leaves gets its own platform, against the rule in the statement.
+- **Returning the final count** instead of the maximum: after the last arrival the count may already have dropped.
+- **Sorting only the arrivals** and keeping departures in their original order: the walk then meets departures out of time order.
+- **Sorting pairs by arrival and comparing each train only with the previous one**: three trains can overlap even when each pair of neighbours looks fine.
+- **Counting overlapping pairs** and calling that the answer: four trains that each overlap only one other may need just two platforms.

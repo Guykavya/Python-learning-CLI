@@ -1,0 +1,6 @@
+id = "dsa.14.p069"
+title = "Matrix chain multiplication"
+tier = "deep"
+kind = "code"
+topics = ["dynamic programming", "interval dp", "matrix chain", "split point", "order of evaluation"]
+minutes = 35

@@ -1,0 +1,6 @@
+- **Returning the right difference but a group that does not make it**, for example the parcels picked by a greedy pass. Always check: `abs(total - 2 * sum(group))` must equal your difference.
+- **Walking back in the 1-D array.** It only says *which sums* are reachable after all parcels, not which parcels made them; you need the 2-D table (or the `who` trick from the solution).
+- **Taking a parcel whenever `f[i][s]` is True.** The test is on the row **above**: if `f[i-1][s]` is already True, parcel `i - 1` is not needed.
+- **Using an index twice.** This happens with an upward 1-D loop or with a walk that does not move to the previous row after a take.
+- **Looking for the best `s` above `total // 2`.** `total - 2 * s` is then negative; the closest sum below half gives the same difference with the other friend's parcels.
+- **Returning values instead of indices.** `[1, 6, 5]` is not a list of indices of `[1, 6, 11, 5]`.

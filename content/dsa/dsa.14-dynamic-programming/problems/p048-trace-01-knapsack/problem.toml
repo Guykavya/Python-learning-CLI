@@ -1,0 +1,6 @@
+id = "dsa.14.p048"
+title = "Trace 0/1 knapsack"
+tier = "applied"
+kind = "trace"
+topics = ["dynamic programming", "0/1 knapsack", "rolling array", "trace"]
+minutes = 20

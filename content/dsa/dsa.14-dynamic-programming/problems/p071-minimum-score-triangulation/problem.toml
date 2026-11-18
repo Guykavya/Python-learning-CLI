@@ -1,0 +1,6 @@
+id = "dsa.14.p071"
+title = "Minimum score triangulation"
+tier = "deep"
+kind = "code"
+topics = ["dynamic programming", "interval dp", "polygon", "triangulation", "split point"]
+minutes = 35

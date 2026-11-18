@@ -1,0 +1,5 @@
+- **`f(0) = 0`.** Then everything is shifted: `climb_stairs(2)` would be 1. Standing on the ground is one way (the empty sequence of moves), exactly as in chapter section 2.
+- **Indexing `f[1]` when `n = 0`.** A list of size 1 has no index 1: guard it with `if n >= 1`.
+- **Modulo only at the end.** The answer is right but the numbers grow to 20,000 digits; on the large input this is much slower. Reduce every cell.
+- **A memoised recursion.** Correct for small `n`, but 100,000 levels deep it raises `RecursionError` (the default limit is about 1000).
+- **Counting combinations instead of sequences.** `1 + 2` and `2 + 1` are different ways here. If you got 2 for `n = 3`, you counted multisets.

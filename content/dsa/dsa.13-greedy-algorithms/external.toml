@@ -1,0 +1,141 @@
+# Real site problems for dsa.13 (Greedy algorithms).
+# Verification: every LeetCode slug and CSES id below was written from memory (from the problem plan) and NOT
+# re-fetched (no web access was used while writing). Fix any slug or id that fails to open.
+# Only free LeetCode problems. Left out on purpose, because earlier modules already list them: merge-intervals,
+# insert-interval, non-overlapping-intervals, minimum-number-of-arrows-to-burst-balloons, largest-number,
+# meeting-rooms(-ii) (Premium), task-scheduler, remove-k-digits; CSES 1629, 1630, 1076.
+# Order follows the chapter: knapsack-style sorting (7), scheduling (10), arrays (11), numbers and strings (12);
+# then the CSES greedy problems.
+
+[[problem]]
+site = "leetcode"
+key = "maximum-units-on-a-truck"
+title = "Maximum Units on a Truck"
+url = "https://leetcode.com/problems/maximum-units-on-a-truck/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "two-city-scheduling"
+title = "Two City Scheduling"
+url = "https://leetcode.com/problems/two-city-scheduling/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "boats-to-save-people"
+title = "Boats to Save People"
+url = "https://leetcode.com/problems/boats-to-save-people/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "assign-cookies"
+title = "Assign Cookies"
+url = "https://leetcode.com/problems/assign-cookies/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "jump-game"
+title = "Jump Game"
+url = "https://leetcode.com/problems/jump-game/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "jump-game-ii"
+title = "Jump Game II"
+url = "https://leetcode.com/problems/jump-game-ii/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "gas-station"
+title = "Gas Station"
+url = "https://leetcode.com/problems/gas-station/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "best-time-to-buy-and-sell-stock-ii"
+title = "Best Time to Buy and Sell Stock II"
+url = "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "lemonade-change"
+title = "Lemonade Change"
+url = "https://leetcode.com/problems/lemonade-change/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "candy"
+title = "Candy"
+url = "https://leetcode.com/problems/candy/"
+minutes = 35
+
+[[problem]]
+site = "leetcode"
+key = "partition-labels"
+title = "Partition Labels"
+url = "https://leetcode.com/problems/partition-labels/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "wiggle-subsequence"
+title = "Wiggle Subsequence"
+url = "https://leetcode.com/problems/wiggle-subsequence/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "valid-parenthesis-string"
+title = "Valid Parenthesis String"
+url = "https://leetcode.com/problems/valid-parenthesis-string/"
+minutes = 35
+
+[[problem]]
+site = "leetcode"
+key = "hand-of-straights"
+title = "Hand of Straights"
+url = "https://leetcode.com/problems/hand-of-straights/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "queue-reconstruction-by-height"
+title = "Queue Reconstruction by Height"
+url = "https://leetcode.com/problems/queue-reconstruction-by-height/"
+minutes = 35
+
+[[problem]]
+site = "cses"
+key = "1074"
+title = "Stick Lengths"
+url = "https://cses.fi/problemset/task/1074"
+minutes = 20
+
+[[problem]]
+site = "cses"
+key = "1090"
+title = "Ferris Wheel"
+url = "https://cses.fi/problemset/task/1090"
+minutes = 20
+
+[[problem]]
+site = "cses"
+key = "1631"
+title = "Reading Books"
+url = "https://cses.fi/problemset/task/1631"
+minutes = 25
+
+[[problem]]
+site = "cses"
+key = "1632"
+title = "Movie Festival II"
+url = "https://cses.fi/problemset/task/1632"
+minutes = 40

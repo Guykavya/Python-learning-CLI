@@ -1,0 +1,5 @@
+- **Greedy: always step to the smaller child.** `[[1], [2, 3], [9, 9, 1], [9, 9, 9, 1]]`: greedy goes to 2 and meets only 9s (21); the best path is 1 + 3 + 1 + 1 = 6.
+- **Taking the minimum of each row.** Rows are not independent: from position `j` you can reach only `j` and `j + 1`.
+- **Top-down without the edges.** `f[i-1][j]` does not exist for the last cell of row `i`, and `f[i-1][j-1]` with `j = 0` reads `f[i-1][-1]`, the wrong end of the row.
+- **Starting a minimum at 0.** Values may be negative; start from real values.
+- **Changing the input.** Writing the sums into `triangle` itself works, but surprises the caller. Copy the bottom row first.

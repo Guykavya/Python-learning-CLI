@@ -1,0 +1,6 @@
+id = "dsa.13.p010"
+title = "Assign meetings to rooms"
+tier = "applied"
+kind = "code"
+topics = ["greedy", "intervals", "interval partitioning", "heap", "meeting rooms"]
+minutes = 30

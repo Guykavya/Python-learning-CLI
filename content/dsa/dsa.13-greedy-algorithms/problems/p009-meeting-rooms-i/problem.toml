@@ -1,0 +1,6 @@
+id = "dsa.13.p009"
+title = "Meeting rooms I"
+tier = "drill"
+kind = "code"
+topics = ["greedy", "intervals", "meeting rooms", "sorting"]
+minutes = 15

@@ -1,0 +1,7 @@
+id = "dsa.13.p003"
+title = "Trace activity selection"
+tier = "drill"
+kind = "trace"
+topics = ["greedy", "activity selection", "intervals", "trace"]
+minutes = 20
+assessment = "trace"

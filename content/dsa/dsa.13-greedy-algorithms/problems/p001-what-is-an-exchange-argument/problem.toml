@@ -1,0 +1,7 @@
+id = "dsa.13.p001"
+title = "Explain: what is an exchange argument?"
+tier = "drill"
+kind = "explain"
+topics = ["greedy", "exchange argument", "proof", "activity selection", "explain"]
+minutes = 20
+assessment = "explain"

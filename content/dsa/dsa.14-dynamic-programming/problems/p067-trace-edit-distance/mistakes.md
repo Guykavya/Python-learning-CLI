@@ -1,0 +1,6 @@
+- **Comparing the wrong letters.** Cell `f[i][j]` compares `a[i - 1]` with `b[j - 1]`: row 1 is `k`, column 1 is `s`. Off by one here shifts every match one cell.
+- **Adding 1 on a match.** Equal letters cost nothing: `f[2][2]` is 1, not 2.
+- **Taking the min of the three neighbours on a match.** The code copies the diagonal only. Here it gives the same number, but in general "min of three" without `+ 1` is a different formula.
+- **Forgetting that `sitting` has two `i`s and two `t`s.** Row `i` matches columns 2 **and** 5; each `t` row matches columns 3 **and** 4.
+- **Base cases as zeros.** Row 0 is `0 1 2 ... 7` and column 0 is `0 1 ... 6`: turning a prefix into the empty string costs one deletion per letter.
+- **Printing `0` instead of `-` on the first line.** The label is `-` for row 0, then the row starts with its own `0`.

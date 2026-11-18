@@ -1,0 +1,6 @@
+id = "dsa.13.p007"
+title = "Merge intervals"
+tier = "drill"
+kind = "code"
+topics = ["greedy", "intervals", "merge intervals", "sorting"]
+minutes = 20

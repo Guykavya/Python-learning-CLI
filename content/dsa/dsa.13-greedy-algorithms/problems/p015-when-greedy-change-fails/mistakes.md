@@ -1,0 +1,5 @@
+- **Writing the machine's coins from memory** instead of tracing the code: for 10 it is `[4, 4, 1, 1]`, not `[4, 3, 3]`.
+- **A "better" list that is not the fewest.** For 10, `[3, 3, 3, 1]` has four coins, the same as the machine.
+- **An amount where greedy wins**, like 7 (`4 + 3`) or 8 (`4 + 4`). Check both counts.
+- **Coins outside the system.** A 2 or a 5 would make 10 easy, but this country has only 1, 3 and 4.
+- **Returning 6** from the chapter. The point is to find the pattern behind it.

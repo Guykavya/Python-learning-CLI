@@ -1,0 +1,6 @@
+id = "dsa.14.p056"
+title = "LCS string itself"
+tier = "applied"
+kind = "code"
+topics = ["dynamic programming", "longest common subsequence", "reconstruction", "strings"]
+minutes = 30

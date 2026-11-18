@@ -1,0 +1,5 @@
+- **Shortest job first.** It is right for *total waiting time* but not for *maximum lateness*. `[(5, 5), (1, 6)]`: running the 1-unit job first makes the 5-unit job one unit late; EDF has nobody late.
+- **Least slack first** (`deadline - duration`). It sounds smarter, but `[(1, 2), (10, 10)]`: slack is 1 and 0, so it runs the 10-unit job first and the short job finishes at 11, nine units late. EDF: lateness 1.
+- **Forgetting the clamp at 0.** If every job is early, `t - deadline` is negative; the lateness is 0, not a negative number.
+- **Measuring from the start time** instead of the finish time. Add the duration first, then compare.
+- **Returning the sorted jobs** instead of their indices. The tests ask for indices so that two equal jobs are still told apart.

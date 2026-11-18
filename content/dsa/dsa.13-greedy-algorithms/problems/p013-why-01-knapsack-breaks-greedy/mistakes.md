@@ -1,0 +1,6 @@
+- **An instance where greedy actually wins.** Check both totals; with ties in density, greedy may pick the right items by luck.
+- **Copying the chapter's instances** (`[(60, 10), (100, 20), (120, 30)]` with capacity 50, or `(10, 6), (7, 5), (7, 5)` with 10).
+- **"Greedy is wrong because 0/1 is NP-hard."** True but not an explanation; name the step of the proof that breaks.
+- **Saying the swap "makes the value smaller".** The value would go up; the problem is that the swapped bag is **too heavy**.
+- **Suggesting another sort key as the fix.** Every single key fails on some instance.
+- **Confusing the two problems** in the comparison: in the fractional version the empty space is filled by a piece of an item, so it is never wasted.

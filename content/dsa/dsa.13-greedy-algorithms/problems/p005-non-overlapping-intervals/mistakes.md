@@ -1,0 +1,5 @@
+- **Sorting by start and dropping the newcomer** every time two intervals clash. If the kept one is long, like `(1, 100)`, it blocks many others. Drop the one that ends **later**.
+- **`start > last_end`.** Touching intervals then count as overlapping, and you remove too many.
+- **Returning the number kept** instead of `n - kept`.
+- **`last_end = 0` as a start value.** An interval with a negative start would be removed for no reason.
+- **Comparing with the previous interval in sorted order** instead of the last **kept** one.

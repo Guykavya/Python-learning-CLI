@@ -1,0 +1,5 @@
+- **`bisect_right` instead of `bisect_left`.** That finds the first value `> x`, so an equal number is appended: you count non-decreasing subsequences. `[2, 2, 3, 3, 1]` gives 4 instead of 2.
+- **Only appending when `x > tails[-1]`, and otherwise doing nothing.** Without the replace step, `[10, 1, 2, 3]` stays at `[10]`: 1 instead of 3. The replace keeps a lower ending for later.
+- **Replacing the last element always** (`tails[-1] = x`) instead of the first one `>= x`. `[1, 5, 2, 3]` would never recover the shorter run `1, 2, 3`.
+- **Returning `tails`** as the subsequence. It is not one in general; only `len(tails)` is the answer.
+- **The `O(n^2)` loop.** Correct, but 100,000 numbers need about 5 * 10**9 steps.

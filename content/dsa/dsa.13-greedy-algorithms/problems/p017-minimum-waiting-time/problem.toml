@@ -1,0 +1,6 @@
+id = "dsa.13.p017"
+title = "Minimum waiting time"
+tier = "drill"
+kind = "code"
+topics = ["greedy", "scheduling", "shortest job first", "sorting", "exchange argument"]
+minutes = 15

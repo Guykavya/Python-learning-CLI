@@ -1,0 +1,6 @@
+- **The earliest free slot instead of the latest.** A deadline-3 job placed in slot 1 blocks a later deadline-1 job that had nowhere else to go.
+- **Sorting by deadline and taking every job that still fits.** This keeps cheap early jobs and drops expensive ones. Deadline order is only correct with the heap that can throw out a cheaper job later.
+- **"Accept if `len(chosen) < deadline`".** Counting the jobs taken so far ignores *which* slots they occupy. `(3, 8)` taken first makes `(1, 7)` look impossible, but `(1, 7)` in slot 1 and `(3, 8)` in slot 3 both fit.
+- **A slot list of size `max(deadline) + 1`.** With a deadline of `10**9`, that is a billion entries. Cap each deadline at `n`.
+- **`max()` of an empty list.** The chapter's demo uses `max(d for ...)`, which crashes on `[]`. The answer for no jobs is `0`.
+- **Sorting the caller's list in place** with `jobs.sort(...)`. Use `sorted(...)`.

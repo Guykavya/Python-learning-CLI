@@ -1,0 +1,6 @@
+- **Two greedy trips.** The best first trip can ruin the second. Both walks must be chosen together.
+- **Counting a shared cell twice.** When `r1 == r2` (same step, same row) the walkers stand on one cell: add its cherry once.
+- **Walkers at different steps.** If the walkers move independently, the "same cell" test fails: one could take a cherry at step 3 that the other "takes again" at step 5. Moving them together makes `r1 == r2` the only overlap.
+- **Using 0 for impossible states.** Then a pair of positions that no legal route reaches looks like "0 cherries so far" and can grow. Use `-inf`, and return `max(0, answer)`.
+- **Forgetting the thorn checks** on either cell, or on the start/end.
+- **Returning a negative number** when there is no route. The answer is 0 then.

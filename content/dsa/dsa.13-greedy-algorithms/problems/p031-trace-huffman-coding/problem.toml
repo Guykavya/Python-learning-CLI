@@ -1,0 +1,6 @@
+id = "dsa.13.p031"
+title = "Trace Huffman coding"
+tier = "applied"
+kind = "trace"
+topics = ["greedy", "huffman coding", "heap", "tie-breaker", "trace"]
+minutes = 30

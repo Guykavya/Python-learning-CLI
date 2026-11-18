@@ -1,0 +1,6 @@
+- **Using coins bigger than `a`.** At `a = 2` only coin 1 fits: `tried=[2]`, not three values.
+- **Printing `inf`.** Coin 1 always fits, so no `tried` value is ever infinite here.
+- **Letting a tie replace `last`.** The test is `<`: at `a = 5` coin 4 ties with coin 1 and `last[5]` stays 1.
+- **Forgetting `f[0]` in the table line.** The list has seven entries, starting with 0.
+- **Thinking the answer is `[4, 1, 1]`.** That is greedy (3 coins). The DP finds `3 + 3`.
+- **Walking back with the wrong rule.** Subtract `last[a]`, the coin stored for that amount, not the largest coin.

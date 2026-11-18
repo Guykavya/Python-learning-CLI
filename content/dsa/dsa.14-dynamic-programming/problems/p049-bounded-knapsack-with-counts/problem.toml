@@ -1,0 +1,6 @@
+id = "dsa.14.p049"
+title = "Bounded knapsack with counts"
+tier = "deep"
+kind = "code"
+topics = ["dynamic programming", "0/1 knapsack", "bounded knapsack", "binary splitting"]
+minutes = 40

@@ -1,0 +1,5 @@
+- **Taking each coin at most once.** 50 needs two quarters; move to the next coin only when the current one no longer fits.
+- **Trying coins smallest first.** `[1] * amount` adds up, but uses the most coins, not the fewest.
+- **Forgetting to subtract** the coins taken: the next coin is applied to the full amount again.
+- **Returning the count** instead of the list, or a list in the wrong order (largest first is asked).
+- **Believing largest-first works for any coins.** It works here because US coins are canonical. With `[1, 10, 25]` and 30 it gives six coins instead of three (p015, p016).

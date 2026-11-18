@@ -1,0 +1,5 @@
+- **Indexing `a[i]` instead of `a[i - 1]`.** The table is one bigger than the strings; row `i` is about the prefix of length `i`, whose last character is `a[i - 1]`.
+- **On a mismatch, taking `f[i-1][j-1]`.** That throws away **both** characters, but one of them may still match later: `lcs_length("ab", "b")` would lose the match.
+- **Counting common letters** (`set(a) & set(b)`) or common positions. Order matters and repeats count: `"aaaa"` and `"aa"` have LCS 2; `"ab"` and `"ba"` have LCS 1.
+- **Longest common substring.** A subsequence may skip characters; a substring may not. `"abcde"` and `"ace"` have LCS 3 but longest common substring 1.
+- **No memo in a recursive version**: exponential on two different strings of length 400.

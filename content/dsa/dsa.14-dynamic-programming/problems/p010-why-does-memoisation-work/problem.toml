@@ -1,0 +1,7 @@
+id = "dsa.14.p010"
+title = "Explain: why does memoisation work?"
+tier = "drill"
+kind = "explain"
+topics = ["dynamic programming", "memoisation", "overlapping sub-problems", "state", "explain"]
+minutes = 20
+assessment = "explain"

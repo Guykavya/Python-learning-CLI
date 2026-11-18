@@ -1,0 +1,6 @@
+id = "dsa.14.p054"
+title = "Russian doll envelopes"
+tier = "challenge"
+kind = "code"
+topics = ["dynamic programming", "longest increasing subsequence", "sorting", "bisect", "two dimensions"]
+minutes = 40

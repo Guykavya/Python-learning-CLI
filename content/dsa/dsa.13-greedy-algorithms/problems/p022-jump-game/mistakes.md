@@ -1,0 +1,5 @@
+- **`farthest = i + jump` without `max`.** A small jump later would make you forget a long jump from earlier: `[3, 1, 0, 0]` is reachable from index 0 directly.
+- **"A zero means False".** `[2, 0, 0]` jumps over the first zero and lands on the last index, which may be a zero too.
+- **Jumping as far as possible each time.** In `[2, 3, 0, 1]` the longest jump from index 0 lands on the 0 at index 2 and gets stuck, but the short jump to index 1 continues to the end. The farthest-reach scan never has to choose a landing place.
+- **Filling a `reachable` list jump by jump.** It is correct but `O(n * max jump)`: far too slow for `[10**5] * 10**5`.
+- **Forgetting the single-element array.** `[0]`: you are already at the last index, so `True`.

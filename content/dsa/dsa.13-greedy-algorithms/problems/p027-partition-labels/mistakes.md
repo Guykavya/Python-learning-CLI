@@ -1,0 +1,5 @@
+- **Cutting as soon as the current letter's last copy is reached**, without keeping `end`. In `"abaccbd"` the last `a` is at index 2, so this cuts after `"aba"`, but the `b` at index 1 appears again at index 5.
+- **Using the first occurrence** instead of the last. A piece must contain *every* copy of its letters.
+- **`end = last[ch]` without `max`.** A letter whose last copy is near could shrink the piece and cut through a letter seen earlier.
+- **Returning the pieces instead of their lengths**, or forgetting the `+ 1` in `i - start + 1`.
+- **Crashing on the empty string.** No letters: no pieces, `[]`.

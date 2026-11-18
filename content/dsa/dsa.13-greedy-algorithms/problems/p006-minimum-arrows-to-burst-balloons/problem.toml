@@ -1,0 +1,6 @@
+id = "dsa.13.p006"
+title = "Minimum arrows to burst balloons"
+tier = "applied"
+kind = "code"
+topics = ["greedy", "intervals", "closed intervals", "interval stabbing"]
+minutes = 25

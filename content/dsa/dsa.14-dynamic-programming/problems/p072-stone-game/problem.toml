@@ -1,0 +1,6 @@
+id = "dsa.14.p072"
+title = "Stone game (interval)"
+tier = "applied"
+kind = "code"
+topics = ["dynamic programming", "interval dp", "game", "minimax", "score difference"]
+minutes = 30

@@ -1,0 +1,6 @@
+- **Forgetting to reverse.** The walk collects characters from the end: `"abcde"`, `"ace"` would give `"eca"`, which is not a subsequence of either string in that order.
+- **Walking with `and` replaced by `or`** in the loop condition (`while i > 0 or j > 0`) without checks: the indices go negative and `a[-1]` silently reads the last character.
+- **Moving towards the smaller neighbour.** Then a value is lost and the string is too short.
+- **On a mismatch, moving diagonally.** That drops both characters; the result can be too short (`"ab"`, `"b"` gives `""`).
+- **Comparing with one fixed answer** in your own tests. `"ABCBDAB"` and `"BDCABA"` have three different correct answers.
+- **Using the two-row version.** It gives the length only; the walk needs the full table.

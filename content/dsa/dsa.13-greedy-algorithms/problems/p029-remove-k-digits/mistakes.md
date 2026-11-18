@@ -1,0 +1,6 @@
+- **Popping on `>=`.** In `"1121"` with `k = 1`, popping the equal 1 gives `"121"`; the right answer deletes the 2: `"111"`.
+- **Forgetting the leftover removals.** `"12345"` with `k = 2` never pops; you must still remove two digits (from the right) to get `"123"`.
+- **Cutting the leftovers from the left.** The stack is rising, so the small digits are on the left: keep them.
+- **Not stripping leading zeros**: `"10200"`, `k = 1` must give `"200"`, not `"0200"`.
+- **Returning `""`** when everything is removed or only zeros remain. The answer is `"0"`.
+- **Converting to `int`** and back. It works for short strings, but the point is the digit string; `int` of a 100,000-digit string is slow and Python limits printing such long integers.

@@ -1,0 +1,6 @@
+- **Sorting by start time.** One long event that starts first blocks everything (`(0, 10)` against three short events).
+- **Sorting by length.** A short event can sit across two others (`(4, 7)` between `(0, 5)` and `(6, 10)`).
+- **`start > last_end`** instead of `>=`. Touching events then count as overlapping and the answer is too small.
+- **Comparing with the previous event in sorted order** instead of the last **taken** event. A skipped event must not move `last_end`.
+- **Sorting the input in place** with `intervals.sort(...)`: the caller's list changes. Use `sorted(...)`.
+- **Starting `last_end` at 0.** Events with negative times, or that start before 0, would be skipped. `float("-inf")` is safe for any start.

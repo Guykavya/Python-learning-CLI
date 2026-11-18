@@ -1,0 +1,6 @@
+- **Heap entries `(weight, tree)`.** Equal weights make Python compare a string with a tuple: `TypeError`. Put a unique counter between them.
+- **One letter gives 0 bits.** The join cost is 0, but the file still needs 1 bit per letter (the code `"0"`).
+- **Joining the two heaviest trees**, or re-sorting by count descending. The rarest letters must end up deepest.
+- **Counting the root as depth 1.** A letter right below the root has a 1-bit code; the root itself is depth 0.
+- **Fixed-length codes** (every letter `ceil(log2 k)` bits). It is a valid prefix code, but not the shortest when counts differ.
+- **Re-sorting the whole list after every join.** Correct, but `O(k^2 log k)`: slow for 10,000 letters.

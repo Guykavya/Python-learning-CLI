@@ -1,0 +1,6 @@
+id = "dsa.14.p067"
+title = "Trace edit distance"
+tier = "drill"
+kind = "trace"
+topics = ["dynamic programming", "edit distance", "levenshtein", "table", "trace"]
+minutes = 25

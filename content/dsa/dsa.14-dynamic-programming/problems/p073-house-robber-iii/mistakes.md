@@ -1,0 +1,5 @@
+- **`skip = lrob + rrob`.** Not robbing a node does not force you to rob its children. In `[2, 1, 3, None, 4]` the best skips node 1 and robs its child 4. Use `max(lrob, lskip)` for each child.
+- **Robbing levels**: "all even levels or all odd levels, whichever sum is larger". It fails when the best choice mixes levels, as in `[2, 1, 3, None, 4]` (4 is on level 2, 3 on level 1).
+- **Returning only one number** and recursing to grandchildren without a memo. Correct, but each subtree is solved again from its grandparent: exponential (Fibonacci) on a chain.
+- **A memo keyed by `node.val`.** Two different houses can hold the same amount; key by the node itself.
+- **Forgetting `None`.** A missing child is `(0, 0)`, and `rob_tree(None)` is 0.

@@ -1,0 +1,6 @@
+id = "dsa.13.p011"
+title = "Platforms needed"
+tier = "applied"
+kind = "code"
+topics = ["greedy", "intervals", "two pointers", "sweep line", "meeting rooms"]
+minutes = 25

@@ -1,0 +1,6 @@
+id = "dsa.14.p030"
+title = "Cherry pickup (two walkers)"
+tier = "challenge"
+kind = "code"
+topics = ["dynamic programming", "grid dp", "two walkers", "state design", "cherry pickup"]
+minutes = 50

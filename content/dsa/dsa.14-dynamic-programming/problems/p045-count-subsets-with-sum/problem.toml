@@ -1,0 +1,6 @@
+id = "dsa.14.p045"
+title = "Count subsets with sum"
+tier = "applied"
+kind = "code"
+topics = ["dynamic programming", "subset sum", "counting", "zeros", "0/1 knapsack"]
+minutes = 25

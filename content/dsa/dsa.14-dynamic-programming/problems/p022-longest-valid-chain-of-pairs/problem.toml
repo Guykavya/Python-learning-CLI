@@ -1,0 +1,6 @@
+id = "dsa.14.p022"
+title = "Longest valid chain of pairs"
+tier = "deep"
+kind = "code"
+topics = ["dynamic programming", "1-d dp", "ends at", "sorting", "chains", "intervals"]
+minutes = 35

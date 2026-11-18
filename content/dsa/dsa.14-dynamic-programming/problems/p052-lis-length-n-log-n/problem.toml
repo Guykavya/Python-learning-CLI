@@ -1,0 +1,6 @@
+id = "dsa.14.p052"
+title = "LIS length O(n log n)"
+tier = "deep"
+kind = "code"
+topics = ["dynamic programming", "longest increasing subsequence", "binary search", "bisect", "tails"]
+minutes = 30

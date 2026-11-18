@@ -1,0 +1,6 @@
+id = "dsa.13.p033"
+title = "Task scheduler (greedy count)"
+tier = "challenge"
+kind = "code"
+topics = ["greedy", "counting", "scheduling", "cooldown", "formula", "heap"]
+minutes = 45

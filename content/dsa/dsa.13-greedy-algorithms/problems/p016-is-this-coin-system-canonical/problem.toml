@@ -1,0 +1,6 @@
+id = "dsa.13.p016"
+title = "Is this coin system canonical?"
+tier = "deep"
+kind = "code"
+topics = ["greedy", "coin change", "canonical coin system", "counterexample", "table"]
+minutes = 35

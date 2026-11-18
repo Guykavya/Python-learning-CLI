@@ -1,0 +1,5 @@
+- **Returning `f[-1]`.** The longest subsequence need not end at the last item: `[1, 2, 3, 0]` has `f[-1] = 1` but the answer is 3.
+- **Using `<=`.** That counts non-decreasing subsequences: `[7, 7, 7, 7]` would give 4 instead of 1.
+- **Counting the "rises"** (`nums[i] > nums[i-1]`) or the length of the longest increasing **run** (contiguous). A subsequence may skip items: `[1, 5, 2, 3]` has LIS 3 (`1, 2, 3`).
+- **`max(f)` on an empty list** raises `ValueError`. Handle `[]` first.
+- **Counting distinct values.** `[3, 2, 1]` has three distinct values, but the LIS is 1.

@@ -1,0 +1,6 @@
+id = "dsa.13.p030"
+title = "Queue reconstruction by height"
+tier = "deep"
+kind = "code"
+topics = ["greedy", "sorting", "insertion", "queue reconstruction"]
+minutes = 35

@@ -1,0 +1,7 @@
+id = "dsa.14.p024"
+title = "Trace coin change"
+tier = "drill"
+kind = "trace"
+topics = ["dynamic programming", "coin change", "tabulation", "reconstruction", "trace"]
+minutes = 20
+assessment = "trace"

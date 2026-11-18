@@ -1,0 +1,7 @@
+id = "dsa.13.p018"
+title = "Fix the shortest-job-first scheduler"
+tier = "applied"
+kind = "code"
+topics = ["greedy", "scheduling", "shortest job first", "debugging"]
+minutes = 25
+assessment = "fix"

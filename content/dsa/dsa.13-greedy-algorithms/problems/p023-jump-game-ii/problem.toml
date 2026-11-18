@@ -1,0 +1,6 @@
+id = "dsa.13.p023"
+title = "Jump game II"
+tier = "applied"
+kind = "code"
+topics = ["greedy", "arrays", "bfs layers", "jump game", "minimum jumps"]
+minutes = 25

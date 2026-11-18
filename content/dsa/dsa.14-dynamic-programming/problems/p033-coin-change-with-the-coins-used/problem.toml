@@ -1,0 +1,6 @@
+id = "dsa.14.p033"
+title = "Coin change with the coins used"
+tier = "applied"
+kind = "code"
+topics = ["dynamic programming", "coin change", "reconstruction", "parent pointers"]
+minutes = 25

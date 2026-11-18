@@ -1,0 +1,5 @@
+- **Reading a cell you already changed for the same item.** At item 1, `g[3]` is still 5 when `g[4]` reads it. If you went left to right, `g[2]` would already be 4 (item 1 twice), then `g[3] = 6` and `g[4] = 8`: item 1 used several times.
+- **Changing capacities below the weight.** The loop stops at `wt[i]`: for item 2 (weight 4), `g[0]` to `g[3]` stay as they were.
+- **Replacing instead of taking the max.** At item 2, `w = 4`: `g[0] + 6 = 6` is less than the old 7, so `g[4]` stays 7.
+- **Losing a tie.** At item 3, `w = 7`: `g[5] + 3 = 11` equals the old 11. The value stays 11 either way.
+- **Format.** The `start` line has the same list format; the item line shows `(3,5)` with no space after the comma, because the f-string writes it that way.

@@ -1,0 +1,5 @@
+- **`s < out[-1][1]`** instead of `<=`. Touching intervals like `(1, 4)` and `(4, 5)` must merge in this problem.
+- **`out[-1][1] = e`** instead of `max(...)`. An interval inside the block shrinks it: `(1, 10)` then `(2, 3)` gives `[1, 3]`.
+- **Forgetting to sort.** An unsorted input merges only neighbours that happen to be next to each other.
+- **Appending the input's own inner list** and editing it later: the caller's data changes behind their back.
+- **Comparing with the previous input interval** instead of the last output block: three intervals that chain only through a long first one would not merge.

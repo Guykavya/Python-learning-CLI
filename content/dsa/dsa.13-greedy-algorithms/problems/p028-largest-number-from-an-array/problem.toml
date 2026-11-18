@@ -1,0 +1,6 @@
+id = "dsa.13.p028"
+title = "Largest number from an array"
+tier = "deep"
+kind = "code"
+topics = ["greedy", "sorting", "custom comparator", "strings", "cmp_to_key"]
+minutes = 30

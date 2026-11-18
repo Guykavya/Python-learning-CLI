@@ -1,0 +1,6 @@
+id = "dsa.13.p025"
+title = "Best time to buy and sell stock II"
+tier = "drill"
+kind = "code"
+topics = ["greedy", "arrays", "stock profit", "sum of rises"]
+minutes = 15

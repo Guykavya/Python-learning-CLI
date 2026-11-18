@@ -1,0 +1,6 @@
+- **Copying LCS: only the diagonal when the letters are equal.** Counting needs both choices, use the letter **and** skip it. `"rabbbit"`, `"rabbit"` would give 1 instead of 3.
+- **`f(i, 0) = 0`.** Then nothing is ever counted and every answer is 0. The empty target is matched in exactly one way.
+- **`f(0, 0) = 1` but the rest of column 0 left at 0.** `num_distinct("ab", "")` must be 1, and later cells read `f[i-1][0]` for every `i`.
+- **Rolling list with `j` going upwards.** The same letter of `s` is then used for two letters of `t`: `num_distinct("a", "aa")` gives 1.
+- **Taking the answer modulo `10**9 + 7`** out of habit. This problem wants the exact count.
+- **Recursion without a memo** ("use it or skip it"): correct but exponential; `"a" * 400` and `"a" * 200` never finishes.

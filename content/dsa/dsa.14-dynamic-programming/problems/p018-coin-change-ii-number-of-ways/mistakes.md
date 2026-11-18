@@ -1,0 +1,5 @@
+- **Amounts outside, coins inside.** That counts sequences: `coin_ways([1, 2, 5], 5)` gives 9 instead of 4. The loop order **is** the meaning of the DP.
+- **`f[0] = 0`.** Nothing can be built; every answer is 0.
+- **Looping `a` downward** inside the coin loop. Then `f[a - c]` is still the value from before coin `c`, so each coin can be used at most once (that is the 0/1 knapsack loop of chapter section 10).
+- **Starting the inner loop at 0** without a guard: `f[a - c]` with a negative index reads from the end of the list.
+- **A recursion `ways(amount)` that tries every coin as the next one.** It counts every order of the same combination.

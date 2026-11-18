@@ -1,0 +1,5 @@
+- **Greedy: biggest square first.** `12 = 9 + 1 + 1 + 1` (4 squares), but `4 + 4 + 4` uses 3.
+- **Forgetting the square equal to `n`.** `while k * k < n` misses `n = 16` itself: the answer 1 becomes 2 or more.
+- **`f(0) = 1`.** Every answer is then one too big.
+- **Rebuilding the list of squares inside the amount loop**, or computing `math.sqrt` each time: correct, but slower.
+- **Plain recursion.** Each amount branches into up to `sqrt(n)` calls: exponential. With a memo, `n = 10**4` recurses 10,000 deep.

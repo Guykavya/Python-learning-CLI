@@ -1,0 +1,6 @@
+- **Returning the side instead of the area.** The largest `f` is a side; square it.
+- **Forgetting the diagonal.** `1 + min(above, left)` misses a 0 in the top-left corner of the square: `[[0,1,1],[1,1,1],[1,1,1]]` would give 9 instead of 4.
+- **Returning `f[rows-1][cols-1]`.** The best square may end anywhere; keep the maximum.
+- **Counting runs of ones.** A 1 by 4 strip is not a 4 by 4 square.
+- **Aliased rows or a reused row.** `[[0] * cols] * rows`, or updating one row in place without saving the old diagonal, reads an already-updated value as `f[r-1][c-1]` (section 8, "the aliasing trap").
+- **`max` over an empty table.** If there are no 1s, `best` stays 0 and the area is 0.

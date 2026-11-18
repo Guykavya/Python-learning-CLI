@@ -1,0 +1,6 @@
+id = "dsa.14.p068"
+title = "Explain: why is LIS O(n log n)?"
+tier = "deep"
+kind = "explain"
+topics = ["dynamic programming", "lis", "binary search", "bisect", "invariant", "explain"]
+minutes = 30

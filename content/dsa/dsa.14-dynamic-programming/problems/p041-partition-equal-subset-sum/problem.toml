@@ -1,0 +1,6 @@
+id = "dsa.14.p041"
+title = "Partition equal subset sum"
+tier = "applied"
+kind = "code"
+topics = ["dynamic programming", "subset sum", "0/1 knapsack", "partition"]
+minutes = 25

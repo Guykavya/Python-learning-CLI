@@ -1,0 +1,6 @@
+id = "dsa.14.p002"
+title = "Count the calls"
+tier = "drill"
+kind = "trace"
+topics = ["dynamic programming", "memoisation", "recursion tree", "call count", "trace"]
+minutes = 20

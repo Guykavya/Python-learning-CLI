@@ -1,0 +1,6 @@
+id = "dsa.13.p021"
+title = "Assign cookies"
+tier = "drill"
+kind = "code"
+topics = ["greedy", "sorting", "two pointers", "matching"]
+minutes = 15

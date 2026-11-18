@@ -1,0 +1,6 @@
+- **Starting the table at 0 everywhere.** Without 1s on the first row and column (or `f[0][0] = 1`) every cell stays 0.
+- **Returning 0 for a 1 by 1 grid.** Standing still is one path.
+- **Multiplying instead of adding.** `rows * cols` and `f[r-1][c] * f[r][c-1]` are not path counts.
+- **`f = [[1] * cols] * rows`.** All rows are the same list (the aliasing trap of section 8). Here it gives the right answer by luck: one shared list *is* the one-row rolling version. The same habit breaks maximal square and every grid whose transition reads the diagonal `f[r-1][c-1]`, so build rows with `[[1] * cols for _ in range(rows)]`.
+- **No memo in a recursion.** `paths(r - 1, c) + paths(r, c - 1)` without a cache counts the paths one at a time: hopeless for 150 by 150.
+- **Top-down for 1000 by 1000.** The recursion is about 2,000 calls deep and Python stops at about 1,000.

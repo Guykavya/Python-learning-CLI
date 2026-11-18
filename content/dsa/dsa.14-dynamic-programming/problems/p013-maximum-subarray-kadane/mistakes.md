@@ -1,0 +1,5 @@
+- **Starting from 0** (`cur = best = 0`). That allows the empty block: `[-3, -1, -2]` gives 0 instead of -1.
+- **Returning `cur` at the end.** `cur` is the best block ending at the **last** index; `[3, 4, -10]` gives -3 instead of 7.
+- **Mixing two restart styles.** `cur = max(cur, 0) + x` is a correct way to write the restart, but only if `best` starts at `nums[0]` and is updated after `cur`. Starting `best` at 0 brings back the empty-block bug.
+- **Summing only positive numbers.** The block must be contiguous; `[5, -9, 6]` is 6, not 11.
+- **All `O(n^2)` blocks.** Correct but too slow for 100,000 items.

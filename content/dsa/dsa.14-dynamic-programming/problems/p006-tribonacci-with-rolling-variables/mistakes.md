@@ -1,0 +1,6 @@
+- **Three separate assignments.** `a = b; b = c; c = a + b + c` uses the **new** `a` and `b` on the last line. Use one tuple assignment, or a temporary variable.
+- **Returning `c` (or `b`) after `n` steps.** That is `T(n + 2)` (or `T(n + 1)`). Decide what each variable means and count the steps.
+- **`T(2) = 2`.** The three start values are `0, 1, 1`.
+- **A list of size `n`.** It passes the tests, but the problem asks for `O(1)` memory: that is the exercise.
+- **Taking a modulo.** The problem asks for the exact value; the test reduces it only to print it.
+- **Recursion with three calls.** About `1.84**n` calls: `n = 60` never finishes.

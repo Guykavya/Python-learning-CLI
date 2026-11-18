@@ -1,0 +1,6 @@
+- **Counting distinct palindromes.** `"aaa"` has 6 palindromic substrings, not 3: positions matter, so `"a"` counts three times and `"aa"` twice. A `set` of substrings gives the wrong answer.
+- **Only odd centres.** Forgetting the gap centres misses every even-length palindrome: `"abba"` would give 4 instead of 6.
+- **Counting once per centre** (or adding the final length) instead of once per successful step.
+- **Filling the table with `i` going up.** `is_pal[i][j]` needs `is_pal[i + 1][j - 1]`, a row that is not filled yet; you silently read `False` and miss palindromes like `"aba"`.
+- **The guard `j - i < 1` instead of `j - i < 2`.** For `"bb"` the inside is empty, but `is_pal[i + 1][j - 1]` is then the cell *below the diagonal*, which is `False`.
+- **Crashing on `""`.** The loops simply do not run: the answer is 0.

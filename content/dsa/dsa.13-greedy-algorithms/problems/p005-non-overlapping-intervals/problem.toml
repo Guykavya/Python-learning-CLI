@@ -1,0 +1,6 @@
+id = "dsa.13.p005"
+title = "Non-overlapping intervals"
+tier = "applied"
+kind = "code"
+topics = ["greedy", "intervals", "activity selection", "non-overlapping intervals"]
+minutes = 25

@@ -1,0 +1,5 @@
+- **No parity check.** `[1, 2]` with target 0 gives `P = 1.5`; `(3 + 0) // 2 = 1` silently counts the subset `{1}`, which really means `+1 - 2 = -1`. Return 0 when `total + target` is odd.
+- **No range check, or checking `target > total` only.** A target of `-7` with total 5 makes `P = -1`; `[0] * 0` and `f[-1]` give nonsense or an `IndexError`. Use `abs(target) > total`.
+- **Skipping zeros**, or treating them as one choice. `+0` and `-0` are different sign patterns: `[0, 1]` with target 1 has 2 ways.
+- **Looping `s` upwards.** A number is then counted several times in the same subset and the count is too large.
+- **Recursion without a memo.** Two branches per number: `2**100` calls.

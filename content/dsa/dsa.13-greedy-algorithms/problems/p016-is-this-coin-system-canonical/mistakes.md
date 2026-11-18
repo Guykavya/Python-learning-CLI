@@ -1,0 +1,7 @@
+- **Checking only up to the largest coin.** `[1, 3, 4]` first fails at 6 > 4.
+- **Stopping one amount early**, with `range(1, c(k-1) + ck - 1)`: the last amount `c(k-1) + ck - 1` is not checked, and `[1, 9, 10]` (fails at 18) looks canonical.
+- **A fixed range** like "amounts up to 1000": the bound grows with the coins.
+- **Not sorting** the coins: the "two largest" and greedy's "largest first" are then wrong.
+- **A BFS (or brute force) per amount**: correct but `O(B^2)`, far too slow for big coins. Build one table.
+- **Only checking amounts that are coin sums** or multiples of some coin: the first failure can be any amount.
+- **Crashing on a single coin** `[1]` because `coins[-2]` does not exist.

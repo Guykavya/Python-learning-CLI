@@ -1,0 +1,6 @@
+- **Treating `*` like a wildcard star.** `*` repeats the element before it; it is not "anything". `("ab", "a*")` is False: `a*` cannot produce `b`.
+- **Skipping only the `*`, not the unit.** Zero copies means `f(i, j-2)`. With `f(i, j-1)` the `x` stays in the pattern and still needs a letter, so zero copies become impossible: `("", "a*")` and `("b", "a*b")` wrongly give False.
+- **"One more copy" without checking the character.** `f(i-1, j)` is only allowed when `s[i-1]` matches `p[j-2]`; otherwise `("b", "a*")` becomes True.
+- **Forgetting the first row.** `""` matches `"a*"`, `"a*b*"` and `".*"`. Without the first-row loop all of these are False.
+- **Comparing `s[i-1]` with `*`.** In the `*` case the character to compare is `p[j-2]`, the element being repeated.
+- **Using `re.fullmatch`.** It is not allowed here, and it is a good lesson why not: Python's `re` backtracks, and on `"a" * 300` against `"a*" * 150 + "b"` it does not finish within the 10-second limit of the tests. The DP fills 301 x 301 cells: a fraction of a second.

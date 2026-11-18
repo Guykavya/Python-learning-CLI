@@ -1,0 +1,6 @@
+id = "dsa.13.p022"
+title = "Jump game"
+tier = "drill"
+kind = "code"
+topics = ["greedy", "arrays", "farthest reach", "jump game"]
+minutes = 15

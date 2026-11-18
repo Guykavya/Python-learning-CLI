@@ -1,0 +1,5 @@
+- **Shortest first with insert at `k`.** A taller person inserted later in front of a short one changes the short person's count.
+- **Equal heights by `k` descending.** `(5, 2)` placed before `(5, 0)` gets one more equal-height person in front of it when `(5, 0)` is inserted at index 0.
+- **Appending, then sorting by `k`.** `k` is not a position; it counts only the taller-or-equal people in front.
+- **Counting only strictly taller people.** The problem says `>= h`: equal heights count.
+- **Returning lists instead of tuples**, or sorting the caller's list in place.

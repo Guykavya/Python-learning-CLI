@@ -1,0 +1,6 @@
+id = "dsa.14.p074"
+title = "Tree: maximum independent set size"
+tier = "deep"
+kind = "code"
+topics = ["dynamic programming", "tree dp", "independent set", "adjacency list", "iterative post-order"]
+minutes = 40

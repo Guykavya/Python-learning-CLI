@@ -1,0 +1,6 @@
+id = "dsa.14.p017"
+title = "Coin change: fewest coins"
+tier = "drill"
+kind = "code"
+topics = ["dynamic programming", "coin change", "minimum", "unbounded", "infinity"]
+minutes = 20

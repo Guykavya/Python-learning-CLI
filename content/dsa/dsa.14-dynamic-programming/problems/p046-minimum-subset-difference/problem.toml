@@ -1,0 +1,6 @@
+id = "dsa.14.p046"
+title = "Minimum subset difference"
+tier = "applied"
+kind = "code"
+topics = ["dynamic programming", "subset sum", "reconstruction", "partition"]
+minutes = 35

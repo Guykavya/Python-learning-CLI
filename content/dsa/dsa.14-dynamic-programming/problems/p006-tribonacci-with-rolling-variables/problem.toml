@@ -1,0 +1,6 @@
+id = "dsa.14.p006"
+title = "Tribonacci with rolling variables"
+tier = "drill"
+kind = "code"
+topics = ["dynamic programming", "rolling variables", "memory", "tribonacci"]
+minutes = 15

@@ -1,0 +1,5 @@
+- **Writing the largest-first joins as `4 + 6`.** The first pop is the biggest stick (the most negative entry), so `a = 6`, `b = 4`.
+- **Printing negative numbers.** `sign *` flips each popped value back before printing.
+- **Forgetting that the new stick goes back into the heap.** Every round has one stick fewer; there are always `n - 1 = 3` joins.
+- **Printing the new stick's length as the total.** The total is the running sum of all join costs: 5, 14, 29.
+- **Thinking the last join differs between the rules.** The last join always costs the sum of all sticks, 15.

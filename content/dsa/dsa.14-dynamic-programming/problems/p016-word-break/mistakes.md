@@ -1,0 +1,6 @@
+- **Greedy: take the longest (or shortest) word that fits.** `"aaab"` with `a, aa, aab`: taking `aa` leaves `ab`, which fails, though `a + aab` works.
+- **Recursion without a memo.** `"a" * 40 + "b"` tries every way to cut 40 a's (more than a billion) before failing at the `b`.
+- **Memo keyed by the remaining string.** It works, but each key is a new string slice: slower and more memory than keying by the position.
+- **`f(0) = False`.** Nothing can then become `True`.
+- **Searching the word list** with `in` on a `list`: each test scans all 200 words.
+- **Forgetting that words repeat.** `"applepenapple"` uses `apple` twice; do not remove a word after using it.

@@ -1,0 +1,5 @@
+- **Swapping the loops** (steps outside, stairs inside). That counts **combinations**: `1 + 4` and `4 + 1` become one way. `count_ways(5, [1, 3, 4])` would be 3 instead of 6.
+- **`f(0) = 0`.** Nothing can then be built: every answer is 0.
+- **Reading `f[i - s]` for `s > i`.** A negative index silently reads from the **end** of the list in Python. Guard with `if s <= i`.
+- **Assuming the steps are sorted** and stopping the inner loop at the first `s > i` with `break`. With `[4, 1, 3]` the `1` is never used.
+- **Recursion for `n = 10**4`**: too deep even with a memo.

@@ -1,0 +1,5 @@
+- **Skipping the total check.** Without `sum(gas) < sum(cost)`, the scan still returns some index even when no start works.
+- **Restarting at `i` instead of `i + 1`.** Station `i` itself just failed; the next candidate is the station after it.
+- **Forgetting to empty the tank** when you restart. The new start begins with 0 litres.
+- **Trying every start and driving round from each.** Correct but `O(n^2)`: too slow for 100,000 stations.
+- **Checking the tank before adding the gas at the station.** You fill up at station `i`, then pay `cost[i]` to leave it: the net change is `gas[i] - cost[i]`.

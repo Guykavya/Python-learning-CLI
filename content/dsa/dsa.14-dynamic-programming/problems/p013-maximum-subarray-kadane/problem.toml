@@ -1,0 +1,6 @@
+id = "dsa.14.p013"
+title = "Maximum subarray (Kadane)"
+tier = "drill"
+kind = "code"
+topics = ["dynamic programming", "1d dp", "kadane", "maximum subarray", "ends-here state"]
+minutes = 15

@@ -1,8 +1,13 @@
 # Problem plan: dsa.14 Dynamic programming (80 problems)
 
-Rules and format: see [dsa.07-problem-plan.md](dsa.07-problem-plan.md). Ids `dsa.14.p001`…`p080`. Recommended: write this module in 4 sessions of 20 problems (A–B, C–D, E–F, G–H), on **Opus/high** because of the many hand-traced tables.
-**Mix:** 21 drill, 32 applied, 20 deep, 7 challenge. Kinds: 70 code, 6 trace, 4 explain. **assessment:** explain = p010, trace = p024, fix = p050, build = p080.
-Every DP problem's test compares the learner's answer with a **brute-force or recursive reference** on small random inputs, then runs a big input (n = 10**3 to 10**5) under a time limit, so a plain recursion without memo fails with the message "exponential: add a memo". Reconstruction problems are **validated**, not compared. Memory-reduction problems state the allowed memory (rolling arrays) in the statement; the test only checks time and result.
+Rules and format: see [dsa.07-problem-plan.md](dsa.07-problem-plan.md). Function style (`from solution import f`). Ids `dsa.14.p001`…`p080`, folder `pNNN-slug`.
+Written 2026-11-17 on Opus by 4 parallel writers (p001–020, p021–040, p041–060, p061–080 + `external.toml`).
+**Mix:** 21 drill, 32 applied, 20 deep, 7 challenge (checked against the tables below). Kinds: 70 code, 6 trace, 4 explain. **assessment:** explain = p010, trace = p024, fix = p050, build = p080.
+Every DP problem's test compares the learner's answer with a **brute-force or recursive reference** on small seeded random inputs, then runs a big input (n = 10**3 to 10**5) under a time limit **in a subprocess** (as in dsa.11/dsa.12), so a plain recursion without memo fails with the message "exponential: add a memo". Reconstruction problems are **validated**, not compared. Memory-reduction problems state the allowed memory (rolling arrays) in the statement; the test only checks time and result.
+**Explain problems** (p010, p047, p068, p079) are self-rated against `answer.md` (model answer + a checklist of the points a good answer makes); the "terms" below are that checklist.
+**Traces** (`⚠ HAND-TRACE`: p002, p007, p024, p035, p048, p067): the exact code is printed in `problem.md` and pins the output format; work the table out on paper, then run that code and compare. For p002, state exactly what counts as a call (the chapter's counter inside the function body).
+Problems not taught in the chapter (e.g. paint houses, cherry pickup, dungeon game, longest path in a matrix, binary tree cameras) teach the idea in their hints.
+Recursion: pytest already uses ~34 frames, so memoised recursion tests stay at depth ≤ 800 unless the problem is about the recursion limit (p009).
 
 ## A. Memo, tabulation, the recipe (Ch. 1–4)
 | # | Title | Tier | Kind | Idea / tests |
@@ -16,7 +21,7 @@ Every DP problem's test compares the learner's answer with a **brute-force or re
 | 7 | State, transition, base case | drill | trace | `⚠ HAND-TRACE` fill the table of `ways(n)` for n=0..8, steps `{1,3,4}` |
 | 8 | From memo to table | applied | code | rewrite given top-down code bottom-up; same answers on random inputs |
 | 9 | Python recursion limit and DP | applied | code | n=10**4 top-down fails; solution uses a table or `lru_cache` with iteration |
-| 10 | Why does memoisation work? | drill | explain | graded by terms ("overlapping", "same state", "repeated") |
+| 10 | Why does memoisation work? | drill | explain | `assessment = "explain"`; checklist: "overlapping", "same state", "repeated" |
 
 ## B. 1-D DP and coins (Ch. 5–7)
 | # | Title | Tier | Kind | Idea / tests |
@@ -34,7 +39,7 @@ Every DP problem's test compares the learner's answer with a **brute-force or re
 | 21 | Jump game as DP | applied | code | vs greedy |
 | 22 | Longest valid chain of pairs | deep | code | |
 | 23 | Paint houses | applied | code | 3 colours, no equal neighbours |
-| 24 | Trace coin change | drill | trace | `⚠ HAND-TRACE` table for coins `[1,3,4]`, amount 6 |
+| 24 | Trace coin change | drill | trace | `assessment = "trace"`; `⚠ HAND-TRACE` table for coins `[1,3,4]`, amount 6 |
 
 ## C. Grid DP, reconstruction (Ch. 8–9)
 | # | Title | Tier | Kind | Idea / tests |
@@ -108,8 +113,6 @@ Every DP problem's test compares the learner's answer with a **brute-force or re
 | 79 | DP, greedy or backtracking? | applied | explain | classify 8 statements, justify two |
 | 80 | Build a DP debugger | deep | code | `assessment = "build"`; wrapper that records `(state → value)`, counts calls and detects missing base cases; tests use fib, coin change and a deliberately broken recursion |
 
-## Counts
-Tiers about 27/26/19/8 (adjust p29, p52, p60 if the totals are off). Traces: 2, 7, 24, 35, 48, 67 explicit; turn p1, p13, p25, p57, p76 into "fill the table by hand" variants for 12. Explain: 10, 47, 68, 79 plus p9 and p20 as written variants for 6. One assessment of each kind.
-
 ## Real-site problems (`external.toml`)
-LeetCode `climbing-stairs`, `min-cost-climbing-stairs`, `house-robber`, `house-robber-ii`, `maximum-subarray`, `maximum-product-subarray`, `decode-ways`, `word-break`, `coin-change`, `coin-change-ii`, `perfect-squares`, `combination-sum-iv`, `unique-paths`, `unique-paths-ii`, `minimum-path-sum`, `triangle`, `maximal-square`, `dungeon-game`, `cherry-pickup`, `partition-equal-subset-sum`, `target-sum`, `last-stone-weight-ii`, `ones-and-zeroes`, `longest-increasing-subsequence`, `russian-doll-envelopes`, `longest-common-subsequence`, `edit-distance`, `longest-palindromic-subsequence`, `longest-palindromic-substring`, `palindromic-substrings`, `shortest-common-supersequence`, `distinct-subsequences`, `interleaving-string`, `wildcard-matching`, `regular-expression-matching`, `burst-balloons`, `house-robber-iii`, `binary-tree-cameras`, `partition-to-k-equal-sum-subsets`, `number-of-digit-one`; CSES 1633 (Dice Combinations), 1634, 1635, 1636, 1637, 1638, 1639, 1158, 1097, 1746 to verify. Ids unverified.
+Not repeated (already in earlier modules): `maximum-subarray`, `partition-to-k-equal-sum-subsets`, `fibonacci-number`, `maximal-rectangle`, `longest-valid-parentheses`.
+LeetCode `climbing-stairs`, `min-cost-climbing-stairs`, `house-robber`, `house-robber-ii`, `maximum-product-subarray`, `decode-ways`, `word-break`, `coin-change`, `coin-change-ii`, `perfect-squares`, `combination-sum-iv`, `unique-paths`, `unique-paths-ii`, `minimum-path-sum`, `triangle`, `maximal-square`, `dungeon-game`, `cherry-pickup`, `partition-equal-subset-sum`, `target-sum`, `last-stone-weight-ii`, `ones-and-zeroes`, `longest-increasing-subsequence`, `russian-doll-envelopes`, `longest-common-subsequence`, `edit-distance`, `longest-palindromic-subsequence`, `longest-palindromic-substring`, `palindromic-substrings`, `shortest-common-supersequence`, `distinct-subsequences`, `interleaving-string`, `wildcard-matching`, `regular-expression-matching`, `burst-balloons`, `house-robber-iii`, `binary-tree-cameras`, `number-of-digit-one`; CSES 1633 (Dice Combinations), 1634, 1635, 1636, 1637, 1638, 1639, 1158, 1097, 1746 to verify. Ids unverified.

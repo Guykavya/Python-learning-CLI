@@ -1,0 +1,6 @@
+- **Filling row by row with `i` going up.** `f(k + 1, j)` lives in a later row and is still 0 when you read it: the answers come out too small. Loop by length, or `i` downwards.
+- **The wrong cost of the last step.** The two parts are `dims[i] x dims[k + 1]` and `dims[k + 1] x dims[j + 1]`, so the cost is `dims[i] * dims[k + 1] * dims[j + 1]`. Using `dims[k]` or `dims[j]` is the usual off-by-one.
+- **Letting `k` reach `j`.** Then the right part `k + 1..j` is empty: `k` runs over `range(i, j)`.
+- **Answer at `f[0][n]`.** There are `n = len(dims) - 1` matrices, numbered `0..n-1`; the answer is `f[0][n - 1]`.
+- **Greedy: always do the cheapest adjacent multiplication first.** It is wrong: for `dims = [8, 9, 4, 6, 4, 4]` it costs 592, the best is 576. The cost of a step depends on what was multiplied before, so a locally cheap step can make later steps expensive.
+- **Recursion without a memo.** Correct, but it tries every bracketing: exponential.

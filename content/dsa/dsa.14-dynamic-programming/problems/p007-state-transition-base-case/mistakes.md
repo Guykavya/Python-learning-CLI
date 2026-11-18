@@ -1,0 +1,5 @@
+- **Starting with `f[0] = 0`** (or forgetting the base case line). The first printed line is the base case itself.
+- **Including negative indices.** In real Python `f[-1]` would read the **last** cell. Here the guard skips them, so `f[1]` and `f[2]` have one term each and `f[3]` has two.
+- **Printing the terms in increasing index order** (`f[0] + f[2]`). The loop goes over `steps = [1, 3, 4]`, so the biggest index (`i - 1`) comes first.
+- **Printing the cell before all its terms are added.** The print is after the inner loop.
+- **Counting combinations.** `13` and `31` are two ways; the table counts sequences.
