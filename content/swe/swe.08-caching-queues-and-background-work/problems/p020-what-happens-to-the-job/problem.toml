@@ -1,0 +1,6 @@
+id = "swe.08.p020"
+title = "What happens to the job?"
+tier = "applied"
+kind = "trace"
+topics = ["worker loop", "RetryLater", "PermanentError", "backoff", "dead letters", "trace"]
+minutes = 30

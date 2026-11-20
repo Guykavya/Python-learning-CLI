@@ -1,0 +1,5 @@
+- **`GET` then `SET`.** Two workers at the limit both pass: the race of p005.
+- **`INCR` then `EXPIRE` if the count is 1.** A crash between them leaves a key without expiry.
+- **`set(..., ex=window)` on every request.** The window never ends while the user keeps calling.
+- **Comparing with `<` instead of `<=`.** `INCR` returns the count *including* this request, so the 3rd request with limit 3 must pass.
+- **An in-process dict.** Each worker would have its own counter, so the real limit becomes `limit x workers`.

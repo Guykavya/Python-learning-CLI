@@ -1,0 +1,6 @@
+id = "swe.08.p005"
+title = "Why is INCR safe?"
+tier = "drill"
+kind = "explain"
+topics = ["Redis", "atomic commands", "race condition", "read-modify-write", "explain"]
+minutes = 20

@@ -1,0 +1,7 @@
+id = "swe.08.p017"
+title = "Pick the delivery guarantee"
+tier = "applied"
+kind = "explain"
+topics = ["at-most-once", "at-least-once", "exactly-once effect", "ack timing", "idempotency", "explain"]
+minutes = 30
+assessment = "explain"

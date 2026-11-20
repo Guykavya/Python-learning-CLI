@@ -1,0 +1,5 @@
+- **"Our queue guarantees exactly-once."** Not for effects outside the queue. Plan for duplicates.
+- **Mixing up which crash loses and which duplicates.** Ack first loses; ack after duplicates.
+- **Thinking duplicates are rare edge cases.** Every deploy that kills workers, every lease that expires on a slow job, creates them.
+- **Using the job id as the idempotency key.** Two jobs for the same thing (a double click) have different ids; use a business key.
+- **One guarantee for everything.** A statistics counter and a card charge need different choices.

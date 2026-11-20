@@ -1,0 +1,6 @@
+- **Evicting the oldest inserted key (FIFO).** Without `move_to_end` on a hit, a key read a thousand times is evicted as if it were never used.
+- **`<` instead of `<=` for expiry.** An entry stored at 0 with ttl 10 is expired at exactly 10, the same rule Redis and the chapter use.
+- **Testing truthiness: `if cache.get(k):`.** Then a cached `0`, `""` or `[]` looks like a miss. Compare the stored entry with `None`.
+- **`ttl or self.ttl`.** `ttl=0` is falsy and silently becomes the default.
+- **Counting `set` as a hit or miss.** The hit ratio measures reads only.
+- **Calling `time.time()` directly.** Then the tests cannot move time. Always use the injected `now`.

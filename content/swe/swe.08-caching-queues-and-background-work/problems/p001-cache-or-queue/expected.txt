@@ -1,0 +1,8 @@
+1: cache
+2: queue
+3: both
+4: neither
+5: queue
+6: cache
+7: neither
+8: both

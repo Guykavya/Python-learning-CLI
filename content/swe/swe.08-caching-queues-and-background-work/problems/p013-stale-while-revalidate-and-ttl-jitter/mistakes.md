@@ -1,0 +1,5 @@
+- **Using one deadline.** If Redis deletes the entry at the soft deadline, there is nothing stale to serve and the stampede is back.
+- **Making non-lock holders wait or load.** The point of SWR is that they return the stale value at once.
+- **Letting a failed refresh fail the request.** The stale value is still better than an error; release the lock so the next caller can retry.
+- **Jitter only on the soft deadline.** Hard expiries then still line up, and a restart that reloads everything expires everything together.
+- **`random.random()` called directly.** Tests cannot control it; take `rng` as a parameter.

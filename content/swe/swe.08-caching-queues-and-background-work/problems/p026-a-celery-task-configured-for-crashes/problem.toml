@@ -1,0 +1,6 @@
+id = "swe.08.p026"
+title = "A Celery task configured for crashes"
+tier = "applied"
+kind = "code"
+topics = ["Celery", "acks_late", "reject_on_worker_lost", "autoretry_for", "retry_backoff", "idempotency key"]
+minutes = 35

@@ -1,0 +1,4 @@
+- **Caching anything slow.** Situation 4 and 7 are fast queries whose answer must be exact. A cache there causes double use and wrong balances.
+- **Queueing what the user must see now.** A withdrawal or a payment needs its outcome in the request; only the follow-up (receipt e-mail) goes on a queue.
+- **Missing "both".** A scheduled job that fills a cache (situation 8) or a background report that is served many times (situation 3) uses both tools.
+- **Thinking a queue makes work faster.** It makes the *response* faster; the work takes as long as before, somewhere else.

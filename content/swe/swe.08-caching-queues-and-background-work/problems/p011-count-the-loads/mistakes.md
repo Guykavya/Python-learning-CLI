@@ -1,0 +1,4 @@
+- **Counting the request at exactly `load_ms` as a miss.** `t >= value_ready_at` makes it a hit (lines 1, 3, 4 and 6).
+- **Thinking single flight loads once per waiting request.** Waiters do not load; they read the result.
+- **Forgetting the request at t = 0.** It is the first miss.
+- **Dividing the wrong way.** gap = 1000 / rate, so 200 requests per second arrive every 5 ms, not every 0.2 ms.

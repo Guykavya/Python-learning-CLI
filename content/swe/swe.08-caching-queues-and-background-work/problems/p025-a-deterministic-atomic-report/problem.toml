@@ -1,0 +1,6 @@
+id = "swe.08.p025"
+title = "A deterministic, atomic report"
+tier = "drill"
+kind = "code"
+topics = ["idempotency", "deterministic output", "atomic write", "os.replace", "fsync", "csv"]
+minutes = 30

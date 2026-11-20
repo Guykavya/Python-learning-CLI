@@ -1,0 +1,6 @@
+- **Using the job id as the key.** Two jobs for the same e-mail (a double click, a retried enqueue) have different ids and send two e-mails.
+- **A log without a provider key.** A crash between `send` and `UPDATE ... 'sent'` still sends twice.
+- **Marking `sent` before sending.** A crash between the two loses the e-mail for ever (at-most-once).
+- **Catching `Crash` (or `BaseException`) in the handler.** A dying process cannot catch its own death; the test would no longer simulate a crash.
+- **`INSERT` instead of `INSERT OR IGNORE`.** The retry after `after-claim` fails on the primary key and the job never finishes.
+- **Putting the time or a random id in the key.** Every attempt then has a new key and the provider cannot recognise repeats.

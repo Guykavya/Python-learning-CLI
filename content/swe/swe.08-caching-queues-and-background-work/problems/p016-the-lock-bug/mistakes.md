@@ -1,0 +1,5 @@
+- **A constant value such as `"1"`.** Every holder writes the same value, so the token check cannot tell them apart.
+- **`if r.get(key) == token: r.delete(key)`.** Two commands: the lock can expire and be taken by B between them, and A then deletes B's lock.
+- **No TTL.** A holder that crashes keeps the lock for ever.
+- **Returning `None` from `acquire`.** `set(..., nx=True)` returns `None` on failure; wrap it in `bool()` so callers can write `is False`.
+- **Trusting the lock for correctness.** A paused holder can still write after its lock expired; protect the resource with fencing tokens or transactions.

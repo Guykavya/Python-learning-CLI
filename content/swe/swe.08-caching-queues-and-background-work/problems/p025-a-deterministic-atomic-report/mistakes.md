@@ -1,0 +1,6 @@
+- **Writing straight to the final name.** A crash leaves half a report that a reader may download.
+- **A temporary file in another folder (`/tmp`).** `os.replace` across filesystems is not atomic and can fail.
+- **No `flush`/`fsync`.** After a power cut the rename may survive while the data does not.
+- **Not sorting rows.** Database order is not guaranteed, so two runs give different bytes.
+- **`datetime.now()` in the report.** Every run is different; take the month (and any timestamp) from the job's payload.
+- **`os.rename` on Windows.** It fails if the target exists; `os.replace` works everywhere.

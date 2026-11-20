@@ -1,0 +1,4 @@
+- **Getting the orders wrong.** Write the positions first, then fill in the steps; do not guess.
+- **Thinking the reader reads the current database at store time.** It stores what it read earlier, in `local["v"]`.
+- **Thinking `delete` "fixes" a later store.** A delete only removes what is there *now*; a store that comes later is not affected.
+- **Forgetting the `stale:` line.** The output has seven lines.

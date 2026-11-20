@@ -1,0 +1,5 @@
+- **Thinking a crash before the send loses the job.** The job was never acked, so worker-2 runs it.
+- **Thinking an ordinary error (line 5) is harmless.** The e-mail went out before the timeout; the retry sends it again.
+- **Stopping worker-2 after the crash.** `break` only ends worker-1's loop.
+- **Counting pending jobs wrong.** Worker-2 acks everything it runs, so nothing is left.
+- **Expecting line 7 to be 2.** Job 1 is sent twice (crash) and job 2 once more (duplicate job): three.

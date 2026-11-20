@@ -1,0 +1,6 @@
+id = "swe.08.p011"
+title = "Count the loads"
+tier = "drill"
+kind = "trace"
+topics = ["cache stampede", "single flight", "thundering herd", "Little's law", "trace"]
+minutes = 20

@@ -1,0 +1,5 @@
+- **`*/3` in months as 3, 6, 9, 12.** A step starts at the field's lowest value: 1, 4, 7, 10.
+- **Ignoring the OR rule in line 4.** Waiting for the 20th gives the wrong date.
+- **Assuming a non-existent time raises an error.** Python silently picks an offset (the one before the jump for fold=0).
+- **Mixing up which fold is BST.** On the autumn night the first 01:30 is still summer time (UTC+1).
+- **Forgetting that 23:50 + 10 minutes is the next day.** Line 1 is on Sunday.

@@ -1,0 +1,6 @@
+- **Forgetting the OR rule.** `0 8 13 * 5` runs on the 13th **and** on every Friday, not only on Friday the 13th.
+- **Python's weekday numbering.** `weekday()` gives Monday = 0; cron's Sunday = 0. Off by one day for every weekday schedule.
+- **`>=` instead of `>`.** `next_after(09:00)` must not return 09:00 again, or a scheduler runs the same slot twice.
+- **`5/10` read as just 5.** A number with a step means "from here to the end of the field".
+- **Errors that do not say which field is wrong.** "invalid literal for int()" does not help the person fixing a crontab.
+- **Searching for ever.** `31 2` (31 February) never matches: give up after a bound and raise.

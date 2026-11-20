@@ -1,0 +1,7 @@
+1: cache=None read=NEW
+2: cache=None read=NEW
+3: cache=OLD read=OLD
+4: cache=None read=NEW
+5: cache=NEW read=NEW
+6: cache=NEW read=NEW
+stale: 1

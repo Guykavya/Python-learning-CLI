@@ -1,0 +1,7 @@
+- **Returning `False` from `set(..., nx=True)`.** redis-py returns `None` when NX refuses. Code that checks `is True` or `if result:` both work with `None`; code that checks `is False` does not.
+- **Keeping the old expiry on a plain `set`.** Redis clears it. A cache entry rewritten without `ex` lives for ever.
+- **Clearing the expiry in `incr`.** Then a rate-limit counter never resets (chapter 7.2).
+- **Rounding TTL down.** Redis rounds the remaining time; with a fake clock at 29.5 s left the chapter's convention (`math.ceil`) shows 30.
+- **Checking the deadline with `<`.** At exactly the deadline the key is gone.
+- **Expired keys still counted by `delete` or `exists`.** Run `_alive` first in every command.
+- **Locking only part of a command.** `incr` must read and write inside one `with self._lock:`, or two threads lose updates (problem p005).

@@ -1,0 +1,6 @@
+id = "swe.08.p024"
+title = "The outbox"
+tier = "applied"
+kind = "code"
+topics = ["outbox pattern", "transaction", "relay", "dedupe key", "at-least-once", "crash windows"]
+minutes = 45

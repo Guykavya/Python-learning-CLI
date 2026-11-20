@@ -1,0 +1,6 @@
+id = "swe.08.p003"
+title = "Is the cache paying off?"
+tier = "drill"
+kind = "code"
+topics = ["hit ratio", "latency", "break-even", "measurement"]
+minutes = 20

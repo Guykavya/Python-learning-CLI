@@ -1,0 +1,6 @@
+- **Not caching "not found".** Every request for a missing id reaches the database ("cache penetration").
+- **Caching "not found" for the full TTL.** A newly created product stays invisible for 5 minutes. Use a short TTL and delete the key on create.
+- **Deleting the key before updating the database.** A reader between the two steps re-caches the old price (chapter "Try it: what is wrong with this write path?").
+- **`if cached:` instead of `if cached is not None:`.** The JSON text `"null"` is truthy, but a cached `0` or `""` from other code would not be; compare with `None`.
+- **pickle.** Anyone who can write to Redis could run code in your process when you unpickle.
+- **No TTL.** Without one, any invalidation bug lives for ever.

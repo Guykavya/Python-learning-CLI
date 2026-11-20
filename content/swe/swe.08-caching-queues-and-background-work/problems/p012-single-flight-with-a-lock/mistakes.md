@@ -1,0 +1,6 @@
+- **Check-then-set: `if cache.get(lock) is None: cache.set(lock, ...)`.** Two callers both see "no lock". Only `nx=True` decides atomically.
+- **A lock without `ex`.** If the loading process dies, the lock stays for ever and every caller waits until its timeout, on every request.
+- **No `finally`.** A loader that raises leaves the lock behind for `lock_ttl` seconds.
+- **Waiting without a timeout.** A dead loader then hangs every waiter.
+- **Waiters calling the loader at once.** That is the naive version again.
+- **Busy-waiting without `sleep`.** It burns a CPU core and floods the cache with reads.

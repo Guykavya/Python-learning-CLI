@@ -1,0 +1,4 @@
+- **"It runs after the response, so it is safe."** Running later is not the same as being stored.
+- **Putting ORM objects in jobs.** They hold a database session from the request, may not serialise, and go stale.
+- **Thinking threads fix it.** A thread pool is still in-process memory: lost on restart.
+- **Making the client wait 40 seconds.** Return quickly with a status URL; do slow work in a worker.

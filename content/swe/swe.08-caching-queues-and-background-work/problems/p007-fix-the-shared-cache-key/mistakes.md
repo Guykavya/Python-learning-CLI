@@ -1,0 +1,5 @@
+- **Testing with one user.** The bug is invisible until two different users meet in the cache. Write a two-user test for every cached personalised endpoint (swe.07 section 8.4).
+- **Keying by user name or id.** Safe, but it throws away the sharing: every customer becomes a cache miss once per TTL.
+- **"Fixing" it by removing the cache.** That works but gives back the slowness. Fix the key.
+- **Changing `product_info` too.** Shared data under a shared key is correct; per-user keys there only waste memory.
+- **Forgetting other inputs in real systems.** Language, currency, region, tenant and permissions change answers too.

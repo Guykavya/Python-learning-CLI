@@ -1,0 +1,7 @@
+id = "swe.08.p030"
+title = "An e-mail and report worker that survives crashes"
+tier = "challenge"
+kind = "code"
+topics = ["job queue", "idempotency", "atomic write", "outbox", "dead letters", "FastAPI", "crash testing", "project"]
+minutes = 120
+assessment = "build"

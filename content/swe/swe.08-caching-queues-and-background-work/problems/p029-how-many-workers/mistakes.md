@@ -1,0 +1,5 @@
+- **Sizing for the average (target 1.0).** The pool has no spare capacity, so any backlog never drains.
+- **`ceil` on a float that should be whole.** `math.ceil(21 / 0.7)` is 31; round first.
+- **`backlog / capacity`.** New jobs keep arriving while you drain; only `capacity - arrival` shrinks the backlog.
+- **Returning a negative drain time** when capacity is below the arrival rate. It never drains: infinity.
+- **An integer `Retry-After`.** HTTP header values are strings.

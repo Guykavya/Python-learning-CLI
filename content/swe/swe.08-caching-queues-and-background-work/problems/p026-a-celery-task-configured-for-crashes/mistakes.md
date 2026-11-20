@@ -1,0 +1,6 @@
+- **Leaving `acks_late` off.** Celery's default acknowledges a task when it is received: a deploy that kills workers loses the tasks they were running.
+- **`acks_late` without idempotency.** Now tasks run twice after crashes; without the key, users get two e-mails.
+- **`autoretry_for=(Exception,)`.** A bug or a bad payload is retried five times instead of failing fast.
+- **Accepting pickle.** Anyone who can write to the broker can run code in your workers.
+- **A high prefetch with long tasks.** A worker holds many tasks; if it dies, all of them wait for the visibility timeout.
+- **Creating the provider at import time.** The tests (and real deployments) configure it later; look it up inside the task.

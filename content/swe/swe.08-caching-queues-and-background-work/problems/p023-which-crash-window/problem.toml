@@ -1,0 +1,7 @@
+id = "swe.08.p023"
+title = "Which crash window?"
+tier = "deep"
+kind = "trace"
+topics = ["crash windows", "at-least-once", "duplicates", "ack", "naive handler", "trace"]
+minutes = 30
+assessment = "trace"

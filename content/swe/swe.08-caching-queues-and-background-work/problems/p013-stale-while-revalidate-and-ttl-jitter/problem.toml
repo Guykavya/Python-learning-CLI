@@ -1,0 +1,6 @@
+id = "swe.08.p013"
+title = "Stale-while-revalidate and TTL jitter"
+tier = "deep"
+kind = "code"
+topics = ["stale-while-revalidate", "TTL jitter", "cache avalanche", "soft and hard expiry", "SET NX EX"]
+minutes = 40
