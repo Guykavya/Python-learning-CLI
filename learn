@@ -16,7 +16,7 @@ sync_deps() {
   [ "$1" = "_complete" ] && return
   cmp -s "$DIR/pyproject.toml" "$DEPS" && return
   echo "The course lists new packages. Installing them (needs internet once)..."
-  if ! PYYAML_FORCE_LIBYAML=0 "$VENV/bin/python" -m pip install -q --disable-pip-version-check -e "$DIR"; then
+  if ! PYYAML_FORCE_LIBYAML=0 "$VENV/bin/python" "$DIR/scripts/install_with_progress.py" "$DIR"; then
     echo "Could not install them. Later, with internet, run: .venv/bin/python -m pip install -e ." >&2
   fi
   cp "$DIR/pyproject.toml" "$DEPS"
@@ -60,7 +60,7 @@ if [ -d "$VENV" ]; then
   echo "The engine's environment (.venv) is broken, incomplete or from another folder. Rebuilding it..."
   rm -rf "$VENV"
 else
-  echo "Setting up the engine for the first time (needs internet once)..."
+  echo "Setting up the engine for the first time (needs internet once)."
 fi
 
 if ! "$PY" -m venv "$VENV"; then
@@ -73,7 +73,7 @@ fi
 
 # PyYAML: skip its optional C extension so no compiler is ever needed (the engine uses the
 # pure-Python loader anyway). This matters on brand-new Pythons that have no prebuilt wheel yet.
-if ! PYYAML_FORCE_LIBYAML=0 "$VENV/bin/python" -m pip install -q --disable-pip-version-check -e "$DIR"; then
+if ! PYYAML_FORCE_LIBYAML=0 "$VENV/bin/python" "$DIR/scripts/install_with_progress.py" "$DIR"; then
   echo >&2
   echo "Installing the engine's packages failed (see the message above)." >&2
   echo "Check your internet connection, then run this command again." >&2

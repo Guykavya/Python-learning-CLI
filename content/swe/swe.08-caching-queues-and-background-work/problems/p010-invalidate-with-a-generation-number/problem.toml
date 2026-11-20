@@ -1,0 +1,6 @@
+id = "swe.08.p010"
+title = "Invalidate with a generation number"
+tier = "applied"
+kind = "code"
+topics = ["cache invalidation", "generation number", "versioned keys", "INCR", "race condition"]
+minutes = 35

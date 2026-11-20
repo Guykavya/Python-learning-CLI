@@ -1,0 +1,6 @@
+- **Retrying permanent errors.** A bad payload never becomes good; it only wastes attempts and hides the cause.
+- **No cap.** Attempt 15 with base 2 waits 9 hours.
+- **No jitter.** Everything that failed together retries together, and the provider falls over again.
+- **Passing the payload text to the handler.** Decode it with `json.loads`.
+- **Catching `BaseException`.** A simulated crash (or `KeyboardInterrupt`) must kill the worker, not be recorded as a job failure.
+- **Redriving everything at once after a fix.** Redrive a few, watch them succeed, then the rest; and only with idempotent handlers.

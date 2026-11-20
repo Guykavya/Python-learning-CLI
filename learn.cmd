@@ -51,7 +51,7 @@ exit /b 1
 
 :build
 if exist "%VENV%\" goto rebuild
-echo Setting up the engine for the first time (needs internet once)...
+echo Setting up the engine for the first time (needs internet once).
 goto create
 :rebuild
 echo The engine's environment (.venv) is broken, incomplete or from another folder. Rebuilding it...
@@ -69,7 +69,7 @@ exit /b 1
 rem PyYAML: skip its optional C extension so no compiler is ever needed (the engine uses the
 rem pure-Python loader anyway). This matters on brand-new Pythons that have no prebuilt wheel yet.
 set "PYYAML_FORCE_LIBYAML=0"
-"%VPY%" -m pip install -q --disable-pip-version-check -e "%DIR%."
+"%VPY%" "%DIR%scripts\install_with_progress.py" "%DIR%."
 if not errorlevel 1 goto installed
 echo. 1>&2
 echo Installing the engine's packages failed (see the message above). 1>&2
@@ -88,7 +88,7 @@ fc /b "%DIR%pyproject.toml" "%DEPS%" >nul 2>&1
 if not errorlevel 1 goto launch
 echo The course lists new packages. Installing them (needs internet once)...
 set "PYYAML_FORCE_LIBYAML=0"
-"%VPY%" -m pip install -q --disable-pip-version-check -e "%DIR%."
+"%VPY%" "%DIR%scripts\install_with_progress.py" "%DIR%."
 if errorlevel 1 echo Could not install them. Later, with internet, run: .venv\Scripts\python -m pip install -e . 1>&2
 set "PYYAML_FORCE_LIBYAML="
 copy /y "%DIR%pyproject.toml" "%DEPS%" >nul

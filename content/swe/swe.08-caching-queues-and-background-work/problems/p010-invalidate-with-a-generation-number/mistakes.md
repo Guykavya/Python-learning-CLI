@@ -1,0 +1,5 @@
+- **Reading the generation after loading from the database.** Then a slow reader can load OLD, see the new generation, and store OLD under the new key: the race is back.
+- **Deleting old entries in `invalidate`.** Not needed, and a `KEYS`-style scan to find them is slow in real Redis. Let the TTL clean up.
+- **Giving the generation key a TTL.** When it expires the generation falls back to 0, and old `g0` entries (if still alive) come back from the dead.
+- **`GET` + `SET` instead of `INCR`.** Two writers could both write the same generation number (problem p005).
+- **Invalidating before updating the database.** A reader could pick up the new generation and still read the old row.

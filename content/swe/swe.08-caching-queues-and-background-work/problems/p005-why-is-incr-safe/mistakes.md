@@ -1,0 +1,4 @@
+- **"It is only a problem with threads."** Two separate processes or machines race in exactly the same way; the only shared place is Redis itself.
+- **"Redis is fast, so the window is too small to matter."** At thousands of requests per second, a window of a millisecond loses updates every second.
+- **Using a Python lock as the fix.** It protects one process only.
+- **Forgetting the `INCR` / `EXPIRE` gap.** Two commands are two commands, even when both are atomic on their own.

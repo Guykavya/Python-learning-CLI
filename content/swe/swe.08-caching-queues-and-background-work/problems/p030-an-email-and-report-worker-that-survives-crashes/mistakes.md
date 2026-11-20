@@ -1,0 +1,7 @@
+- **Saving the status and enqueueing the e-mail job in two steps.** A crash between them leaves a "ready" report and no e-mail, for ever.
+- **No dedupe key on the e-mail job.** A crash after the status step reruns the report job and enqueues a second e-mail job (the log still saves you, but only by luck of having it).
+- **Writing the CSV straight to its final name.** A crash mid-write publishes half a report.
+- **Building the report from unsorted rows or with a timestamp.** A rerun changes the bytes and the digest.
+- **Treating an invalid month as a temporary error.** It is retried 5 times and blocks a worker each time.
+- **Catching `Crash`/`BaseException` and carrying on.** A dead process cannot continue; let it propagate (and roll back the transaction you were in).
+- **Using the job id as the e-mail key.** The duplicate e-mail job in the tests has a different id.

@@ -1,0 +1,6 @@
+- **Save, then enqueue, with no transaction.** A crash in between: an order with no receipt, silently.
+- **Enqueue first, then save.** A crash in between: a receipt for an order that does not exist.
+- **`except Exception` around the transaction.** The simulated crash (`BaseException`) skips the rollback and leaves the transaction open.
+- **Marking the row sent before enqueueing.** A crash in between loses the receipt for ever.
+- **No dedupe key on relay.** A crash after enqueue but before marking produces a second job.
+- **Deleting outbox rows instead of marking them.** Fine in production (with care), but you lose the record of what was sent; marking is easier to debug.

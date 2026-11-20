@@ -1,0 +1,6 @@
+id = "swe.08.p006"
+title = "A catalogue behind a cache"
+tier = "applied"
+kind = "code"
+topics = ["cache-aside", "negative caching", "JSON", "invalidate on write", "Redis"]
+minutes = 35

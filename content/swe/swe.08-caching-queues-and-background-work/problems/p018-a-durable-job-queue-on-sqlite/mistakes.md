@@ -1,0 +1,6 @@
+- **`SELECT` the next job, then `UPDATE` it in a second statement.** Two workers can select the same row and both run it.
+- **No lease.** A worker that dies leaves its job `running` for ever: the job is lost.
+- **`complete` without the worker check.** A worker that lost its lease can mark the job done while the new owner is still working, or after it failed and was requeued.
+- **Counting attempts in `fail` instead of in `reserve`.** A job that crashes its worker never reaches `fail`, so it would retry for ever.
+- **`ON CONFLICT ... DO NOTHING` without handling the "no row" case.** `RETURNING` gives nothing on a conflict; look the existing id up.
+- **Storing the payload with `str(payload)`.** That is Python syntax, not JSON; use `json.dumps`.

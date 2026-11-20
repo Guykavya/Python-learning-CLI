@@ -1,0 +1,4 @@
+- **Forgetting that misses also pay the lookup.** `ratio * lookup + (1 - ratio) * db` makes a useless cache look free. Every request asks the cache first.
+- **Dividing by zero** on an empty list. Before the first request the ratio is simply 0.0.
+- **Silently ignoring unknown events.** `"HIT"` or `"timeout"` in the data means the measurement is broken; say so loudly.
+- **Returning a negative or >1 break-even ratio.** When the lookup is not cheaper than the database there is no break-even point: `None`.

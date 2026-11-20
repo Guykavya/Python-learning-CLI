@@ -1,0 +1,6 @@
+id = "swe.08.p009"
+title = "Delete-after-write is not enough"
+tier = "deep"
+kind = "trace"
+topics = ["cache invalidation", "race condition", "interleavings", "stale cache", "trace"]
+minutes = 30

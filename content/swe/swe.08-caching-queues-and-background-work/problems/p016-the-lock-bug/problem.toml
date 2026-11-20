@@ -1,0 +1,6 @@
+id = "swe.08.p016"
+title = "The lock bug"
+tier = "deep"
+kind = "code"
+topics = ["distributed lock", "SET NX EX", "lock token", "compare-and-delete", "Lua", "fencing"]
+minutes = 35

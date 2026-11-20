@@ -1,0 +1,6 @@
+id = "swe.08.p008"
+title = "Good cache keys"
+tier = "drill"
+kind = "code"
+topics = ["cache key", "namespace", "version", "sha256", "normalisation"]
+minutes = 25

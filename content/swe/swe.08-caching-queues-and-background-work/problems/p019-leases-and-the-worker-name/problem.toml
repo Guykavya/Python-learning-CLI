@@ -1,0 +1,6 @@
+id = "swe.08.p019"
+title = "Leases and the worker name"
+tier = "deep"
+kind = "code"
+topics = ["lease", "visibility timeout", "atomic claim", "heartbeat", "threads", "SQLite"]
+minutes = 45

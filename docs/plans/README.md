@@ -40,7 +40,7 @@ Written = problem folders on disk. Plan = file in this folder.
 | swe.05 | FastAPI | 50 | 50 | done 2026-11-20, all validated |
 | swe.06 | Django essentials | 25 | 25 | done 2026-11-20, all validated |
 | swe.07 | Auth, API design and security | 35 | 35 | done 2026-11-20, all validated |
-| swe.08 | Caching, queues and background work | 30 | 0 | yes |
+| swe.08 | Caching, queues and background work | 30 | 30 | done 2026-11-20, all validated |
 | swe.09 | Deployment, observability and operations | 30 | 0 | yes |
 | swe.10 | Practical architecture and system design | 25 | 0 | yes |
 | swe.11 | Automation and scripting | 30 | 0 | yes |

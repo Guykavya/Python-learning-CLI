@@ -1,0 +1,6 @@
+id = "swe.08.p028"
+title = "When does it run next?"
+tier = "drill"
+kind = "trace"
+topics = ["cron", "next run", "daylight saving time", "zoneinfo", "UTC", "trace"]
+minutes = 25

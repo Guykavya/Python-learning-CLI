@@ -1,0 +1,6 @@
+id = "swe.08.p002"
+title = "A TTL + LRU cache"
+tier = "drill"
+kind = "code"
+topics = ["cache", "TTL", "LRU", "OrderedDict", "hit ratio", "injected clock"]
+minutes = 30

@@ -1,0 +1,5 @@
+- **SELECT then UPDATE by id, without re-checking.** Two workers both select job 7 and both run it. The slow-SELECT test shows it every time.
+- **Forgetting expired leases in "ready".** A crashed worker's job would stay `running` for ever.
+- **`complete` without `worker = ?`.** A worker whose lease expired marks the job done while the new owner is still working (chapter "Try it: why check the worker name?").
+- **Ignoring `rowcount`.** Returning `True` always hides "you lost this job".
+- **One connection shared by all threads.** Each worker process has its own connection; share nothing but the database file.

@@ -1,0 +1,6 @@
+id = "swe.08.p027"
+title = "Parse a cron expression"
+tier = "applied"
+kind = "code"
+topics = ["cron", "scheduled jobs", "parsing", "ranges and steps", "datetime", "day-of-month OR day-of-week"]
+minutes = 50

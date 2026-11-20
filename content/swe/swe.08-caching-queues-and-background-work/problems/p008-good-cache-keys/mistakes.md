@@ -1,0 +1,5 @@
+- **Not sorting.** `?q=lamp&page=1` and `?page=1&q=lamp` are the same request; unsorted keys make two cache entries for one answer.
+- **Dropping every falsy value.** `page=0` is a real page.
+- **Removing whitespace instead of hashing.** Two different searches then share one cache entry and one of them gets the wrong answer.
+- **Python's `hash()`.** It is randomised per process (`PYTHONHASHSEED`), so each worker would compute different keys.
+- **Forgetting the version.** When the stored format changes, old entries are read by new code and break it.

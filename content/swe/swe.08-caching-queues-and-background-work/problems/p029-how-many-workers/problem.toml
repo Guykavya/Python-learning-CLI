@@ -1,0 +1,6 @@
+id = "swe.08.p029"
+title = "How many workers?"
+tier = "drill"
+kind = "code"
+topics = ["Little's law", "capacity planning", "utilisation", "backlog", "backpressure", "Retry-After"]
+minutes = 25

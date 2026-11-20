@@ -1,0 +1,6 @@
+id = "swe.08.p001"
+title = "Cache or queue?"
+tier = "drill"
+kind = "trace"
+topics = ["cache", "queue", "background work", "staleness", "trace"]
+minutes = 15

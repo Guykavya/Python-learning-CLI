@@ -1,0 +1,6 @@
+id = "swe.08.p004"
+title = "MiniRedis, the core commands"
+tier = "applied"
+kind = "code"
+topics = ["Redis", "SET NX EX", "INCR", "EXPIRE", "TTL", "lazy expiry", "injected clock"]
+minutes = 45

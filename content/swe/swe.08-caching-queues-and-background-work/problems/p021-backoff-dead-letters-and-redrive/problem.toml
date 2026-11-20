@@ -1,0 +1,6 @@
+id = "swe.08.p021"
+title = "Backoff, dead letters and redrive"
+tier = "applied"
+kind = "code"
+topics = ["retry policy", "exponential backoff", "jitter", "dead-letter queue", "redrive", "worker loop"]
+minutes = 45

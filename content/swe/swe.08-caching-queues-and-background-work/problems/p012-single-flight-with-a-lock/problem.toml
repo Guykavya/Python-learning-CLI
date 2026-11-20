@@ -1,0 +1,6 @@
+id = "swe.08.p012"
+title = "Single flight with a lock"
+tier = "deep"
+kind = "code"
+topics = ["cache stampede", "single flight", "SET NX EX", "lock", "threads", "try/finally"]
+minutes = 40

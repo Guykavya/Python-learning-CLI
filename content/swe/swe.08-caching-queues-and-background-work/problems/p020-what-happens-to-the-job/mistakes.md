@@ -1,0 +1,5 @@
+- **Treating `KeyError` as permanent.** The worker only knows `PermanentError`; everything else is retried with backoff.
+- **Adding the attempt in `fail`.** `reserve` already counted it.
+- **Computing backoff with the wrong attempt.** The 3rd failure uses attempt 3: `0.75 x 8 = 6`.
+- **Changing `run_at` when the job dies.** `fail` with attempts used up only sets `dead`, the error and `finished_at`.
+- **Forgetting that `run_at` prints as a float (`45.0`).**

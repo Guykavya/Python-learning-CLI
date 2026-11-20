@@ -1,0 +1,6 @@
+id = "swe.08.p018"
+title = "A durable job queue on SQLite"
+tier = "applied"
+kind = "code"
+topics = ["job queue", "SQLite", "lease", "UPDATE RETURNING", "dedupe key", "dead letters", "at-least-once"]
+minutes = 60

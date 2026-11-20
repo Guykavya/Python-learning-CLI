@@ -1,0 +1,6 @@
+a: done attempts=1 run_at=0.0
+b: queued attempts=1 run_at=45.0
+c: dead attempts=1 run_at=0.0
+d: queued attempts=1 run_at=1.5
+e: queued attempts=3 run_at=2006.0
+f: dead attempts=5 run_at=3012.0

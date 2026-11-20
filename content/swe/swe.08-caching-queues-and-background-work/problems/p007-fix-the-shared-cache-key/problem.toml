@@ -1,0 +1,7 @@
+id = "swe.08.p007"
+title = "Fix the shared cache key"
+tier = "applied"
+kind = "code"
+topics = ["cache key", "data leak", "personalised data", "two-user test", "fix"]
+minutes = 25
+assessment = "fix"
