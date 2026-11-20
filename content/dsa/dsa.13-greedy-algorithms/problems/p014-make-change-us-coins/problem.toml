@@ -1,0 +1,6 @@
+id = "dsa.13.p014"
+title = "Make change with the fewest coins (US coins)"
+tier = "drill"
+kind = "code"
+topics = ["greedy", "coin change", "canonical coin system"]
+minutes = 15

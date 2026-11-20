@@ -1,0 +1,6 @@
+- **Opening in `before_request`.** Pages that do not need the database still pay for it.
+- **A module-level connection.** Shared between threads and requests; SQLite refuses it across threads.
+- **Opening a new connection in each `get_db()` call.** Three calls, three connections: slow, and the commit of one is invisible to the others until committed.
+- **`g.db.close()` without checking.** If the view never called `get_db()`, `g.db` does not exist: `AttributeError` in teardown.
+- **Closing in the view.** A raised exception skips the line; teardown always runs.
+- **Forgetting `app.teardown_appcontext(close_db)`.** Nothing closes the connections; the process slowly runs out of file handles.

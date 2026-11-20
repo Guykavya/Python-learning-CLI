@@ -1,0 +1,6 @@
+- **No `is_end` flag.** Then `search("ca")` is `True` as soon as `car` is stored. A prefix is not a word.
+- **`search` that only checks the path** (the same code as `starts_with`).
+- **Creating a new node even if the child exists.** `node.children[ch] = TrieNode()` without the `if` throws away everything stored below that letter: inserting `cat` after `card` deletes `card`.
+- **Forgetting to step into the child** (`node = node.children[ch]`). Every letter is then added under the root.
+- **Storing all words in a list or set and scanning it for `starts_with`.** Correct, but each question costs `O(number of words)`: the tests' 10**5 queries time out.
+- **Special-casing the empty word.** No special case is needed: the loop runs zero times and the root is marked.

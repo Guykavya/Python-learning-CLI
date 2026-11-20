@@ -1,0 +1,7 @@
+- **One BFS per `1` cell**: correct, but `O((rows * cols)^2)`. On 300 x 300 that is billions of steps; the time-limit test fails.
+- **Starting only from the first zero**: the distances are then to that zero, not to the nearest one.
+- **Changing `mat` in place** (writing distances into it): the caller's matrix is changed, and a distance `1` can no longer be told apart from an original `1`.
+- **Setting the distance when a cell is popped** instead of when it is pushed: a cell can be pushed several times and the queue grows a lot; the first push already has the right distance.
+- **One DP pass only** (top-left to bottom-right): a cell whose nearest zero is below or to the right gets a wrong or huge value.
+- **Diagonal steps**: only up, down, left and right count.
+- **`[[0] * cols] * rows`** for the result: every row is the same list object, so writing one cell changes a whole column.

@@ -1,0 +1,7 @@
+- Using `ends[0] < start` instead of `<=`: then a meeting that starts exactly when another ends gets a new room. `[(1, 5), (5, 9)]` needs one room.
+- Not sorting by start time: with `[(7, 10), (2, 4)]` the meeting `(2, 4)` is looked at second, and `10 <= 2` is false, so a second room is opened for no reason.
+- Pushing the end time of every meeting without ever reusing a room: the answer is then the number of meetings.
+- Comparing the new meeting with all rooms in a list: correct, but `O(n * rooms)`. With 100,000 meetings that all overlap, it is far too slow.
+- Replacing the **largest** end time (or any end time that is not the smallest): a room that is still busy may be given away, or a free room stays unused.
+- Sorting the caller's list in place (`intervals.sort()`): the caller's order changes. Use `sorted(intervals)`.
+- Storing the heap as `(end, start)` and comparing `heap[0]` (a tuple) with `start`: compare `heap[0][0]`, or keep only the end times.

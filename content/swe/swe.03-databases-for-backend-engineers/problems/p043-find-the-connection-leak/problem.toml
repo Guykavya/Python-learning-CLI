@@ -1,0 +1,6 @@
+id = "swe.03.p043"
+title = "Find the connection leak"
+tier = "applied"
+kind = "code"
+topics = ["connection pool", "QueuePool", "leak", "context managers", "SQLAlchemy"]
+minutes = 30

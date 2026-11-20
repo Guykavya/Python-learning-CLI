@@ -1,0 +1,7 @@
+id = "dsa.10.p060"
+title = "Build a BST class with tests"
+tier = "deep"
+kind = "code"
+topics = ["tree", "BST", "class", "iterative", "design"]
+minutes = 45
+assessment = "build"

@@ -1,0 +1,6 @@
+- **Starting from greedy's answer** and showing it is valid. Being valid is not being optimal; the argument must start from an optimal answer `O` and turn it into greedy's.
+- **Claiming `O` must contain `g`.** Many optimal schedules can exist. The argument only shows that **some** optimal schedule contains `g`.
+- **Forgetting validity.** "Same size" is not enough: you must show `g` does not overlap the rest of `O`. That needs `end(g) <= end(f) <= start(h)`.
+- **Forgetting the "repeat" step.** One swap only proves the **first** choice. Induction on the smaller problem proves the rest.
+- **Using a touching event as an overlap.** With half-open intervals, `g` ending at 5 and `h` starting at 5 is fine.
+- **Saying "greedy is obviously best".** The whole point is that obvious rules (earliest start, shortest first, fewest conflicts) are wrong; the proof must say *which* fact about the rule makes the swap legal.

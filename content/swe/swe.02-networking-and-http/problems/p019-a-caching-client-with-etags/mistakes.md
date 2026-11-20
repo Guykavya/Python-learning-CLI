@@ -1,0 +1,7 @@
+- **Storing a response with `no-store`.** It may contain private data; the server forbade copies.
+- **Treating `304` as an error**, or looking for a body in it. Use the stored body.
+- **Not updating freshness after a `304`.** The next call would revalidate again at once.
+- **Sending `If-None-Match` for a fresh copy.** A fresh copy needs no request at all.
+- **Comparing with `<=`.** At the exact moment of expiry the copy is stale; use `now < fresh_until`.
+- **Keeping an old copy after a `404`.** A failing response should not leave the old body in place as if nothing happened.
+- **A single global entry** instead of one per URL.

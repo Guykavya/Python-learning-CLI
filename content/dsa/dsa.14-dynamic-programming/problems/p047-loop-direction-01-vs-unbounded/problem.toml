@@ -1,0 +1,6 @@
+id = "dsa.14.p047"
+title = "Loop direction: 0/1 vs unbounded"
+tier = "applied"
+kind = "explain"
+topics = ["dynamic programming", "0/1 knapsack", "unbounded knapsack", "loop order", "explain"]
+minutes = 20

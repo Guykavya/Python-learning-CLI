@@ -1,0 +1,8 @@
+- Building the heap from a list by calling `push` for every item: correct, but `O(n log n)` in the worst case (descending data). The test counts comparisons and rejects it.
+- Keeping the caller's list (`self._data = items`) and heapifying it in place: the caller's list changes. Copy it with `list(items)`.
+- Heapifying with `range(n // 2 - 1, 0, -1)` (the stop is 0 and it is not included): the root is never sifted down.
+- Heapifying from the root to the last parent (a forward loop): `sift_down` assumes the subtrees below are heaps already, so it must go **backwards**.
+- Implementing `pop` with `list.pop(0)`: it removes the root but shifts all other items, and the shape is lost. Take the **last** item and put it into index 0.
+- Forgetting the case where the heap had one item: after `self._data.pop()` the list is empty, and `self._data[0] = last` raises an `IndexError`. Check `if self._data:` first.
+- Swapping with the **larger** child in `_sift_down`, or comparing the right child with `a[i]` instead of with the best so far.
+- Returning `None` for `pop` or `peek` on an empty heap instead of raising `IndexError`.

@@ -1,0 +1,6 @@
+id = "swe.04.p016"
+title = "Validate a signup form"
+tier = "drill"
+kind = "code"
+topics = ["validation", "regex", "strip", "form data", "pure functions"]
+minutes = 25

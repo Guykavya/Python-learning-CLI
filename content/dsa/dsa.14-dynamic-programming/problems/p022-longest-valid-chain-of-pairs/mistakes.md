@@ -1,0 +1,6 @@
+- **Not sorting.** The table assumes every predecessor comes before `i`. Shuffled input breaks that.
+- **`<=` instead of `<`.** `(1, 2)` and `(2, 3)` touch; they do not chain.
+- **Comparing the wrong ends.** The link test is `pairs[j][1] < pairs[i][0]`: the **end** of the earlier pair against the **start** of the later one.
+- **`max(f)` on an empty list** crashes. Return 0 for no pairs.
+- **Greedy by start time.** Taking the pair that starts first picks `(1, 10)` in `[(1, 10), (2, 3), (4, 5)]` and blocks both others. (Greedy by **end** time is correct; by start is not.)
+- **Recursion without a memo** ("longest chain starting at `i`"): exponential on 400 nested pairs.

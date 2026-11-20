@@ -1,0 +1,5 @@
+- **Sorting by `(width, height)` and taking the LIS of the heights.** Equal widths with increasing heights are then counted as a chain: `[(3, 3), (3, 4)]` gives 2 instead of 1.
+- **`bisect_right` on the heights.** Equal heights are then allowed: `[(1, 2), (2, 2)]` gives 2, but the heights are equal so they do not nest.
+- **Sorting by area**, or by width + height. `(2, 9)` has a smaller area than `(4, 5)` but does not fit inside it.
+- **Sorting by height and then doing LIS on widths** with ascending width on ties: the same trap, mirrored. Either dimension works, but the tie must go descending.
+- **The `O(n^2)` DP** on 100,000 envelopes: correct but far too slow.

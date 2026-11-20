@@ -1,0 +1,6 @@
+id = "dsa.11.p010"
+title = "A max-heap with heapq"
+tier = "drill"
+kind = "code"
+topics = ["heapq", "max-heap", "negation"]
+minutes = 15

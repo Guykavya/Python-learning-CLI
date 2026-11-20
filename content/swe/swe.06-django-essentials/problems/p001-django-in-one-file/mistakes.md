@@ -1,0 +1,6 @@
+- **`<pk>` instead of `<int:pk>`.** Then `pk` is a string, `{"id": "42"}` has quotes, and `/items/abc/` reaches the view.
+- **A converter name that does not match the argument name.** `<int:id>` with `def item_detail(request, pk)` raises `TypeError` (unexpected keyword argument `id`).
+- **Forgetting the final slash in the pattern** (`"items/<int:pk>/"` vs `"items/<int:pk>"`). The URL `/items/7/` then gives a 404.
+- **Using `<str:slug>` for the article.** It also matches `has%20space` and `a.b`; `<slug:...>` is stricter.
+- **Returning a plain dict or a string** instead of an `HttpResponse`: Django raises `ValueError: The view ... didn't return an HttpResponse object`.
+- **Not setting `content_type="text/plain"`** for `home`: the body is right, but the type is `text/html`.

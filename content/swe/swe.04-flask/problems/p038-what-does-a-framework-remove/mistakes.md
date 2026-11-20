@@ -1,0 +1,5 @@
+- **Answering with "it is faster" or "shorter".** The point is correctness and safety: fewer places to make mistakes.
+- **Saying Flask is a web server.** It is an application framework; the server (Gunicorn, the dev server) is separate.
+- **Saying the framework validates your input.** It parses it; whether it is acceptable is your rule.
+- **Saying the test client uses the network.** It calls the WSGI app directly.
+- **Forgetting the last question.** Authentication, authorisation and CSRF are not automatic.

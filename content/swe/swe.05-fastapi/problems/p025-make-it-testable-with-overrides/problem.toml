@@ -1,0 +1,6 @@
+id = "swe.05.p025"
+title = "Make it testable with overrides"
+tier = "applied"
+kind = "code"
+topics = ["dependency injection", "dependency_overrides", "injected clock", "settings", "refactoring"]
+minutes = 30

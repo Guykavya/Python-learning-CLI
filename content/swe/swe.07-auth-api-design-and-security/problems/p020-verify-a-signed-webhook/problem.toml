@@ -1,0 +1,6 @@
+id = "swe.07.p020"
+title = "Verify a signed webhook"
+tier = "applied"
+kind = "code"
+topics = ["webhooks", "HMAC-SHA256", "replay protection", "timestamp tolerance", "raw body"]
+minutes = 30

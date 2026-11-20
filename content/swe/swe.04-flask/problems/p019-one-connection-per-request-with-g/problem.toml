@@ -1,0 +1,6 @@
+id = "swe.04.p019"
+title = "One connection per request with g"
+tier = "applied"
+kind = "code"
+topics = ["g", "teardown_appcontext", "sqlite3", "lazy connection", "app context"]
+minutes = 35

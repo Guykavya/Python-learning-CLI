@@ -1,0 +1,6 @@
+id = "dsa.14.p042"
+title = "Target sum (+/-)"
+tier = "applied"
+kind = "code"
+topics = ["dynamic programming", "subset sum", "counting", "reduction", "target sum"]
+minutes = 30

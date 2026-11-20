@@ -1,0 +1,9 @@
+- **No check for `aud`.** A token meant for another service is accepted.
+- **`audience in aud` when `aud` is a string.** It is a substring test: `"payments"` is in `"payments-admin"`. Use `==` for strings.
+- **`isinstance(exp, int)` that accepts `True`.** `bool` is an `int`.
+- **`exp` optional.** Missing `exp` means valid for ever.
+- **`now > exp + leeway`.** The rule is `now - leeway >= exp`: at exactly `exp + leeway` the token is expired.
+- **Wrong direction for `nbf`.** `nbf` is the **earliest** time of use, so the leeway is added to `now`, not subtracted.
+- **Crashing with `TypeError`** when `exp` is a string (`now - leeway >= "1000"`). Check types first.
+- **Reading the real clock** (`time.time()`). Use the `now` argument.
+- **Returning the reason to the client.** Log it; show a generic message.

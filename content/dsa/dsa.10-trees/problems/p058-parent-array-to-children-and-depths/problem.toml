@@ -1,0 +1,6 @@
+id = "dsa.10.p058"
+title = "Parent array to children lists and depths"
+tier = "applied"
+kind = "code"
+topics = ["tree", "parent array", "representation", "BFS", "depth"]
+minutes = 30

@@ -1,0 +1,6 @@
+- Extending the branch when the child's value equals the **grandparent's** value, or when the child's own branch is long but its value differs from this node: always compare the child's value with **this** node's value.
+- Forgetting the `+ 1` for the edge to the child: the lengths are edges.
+- Returning `left_len + right_len` to the parent: a path that bends cannot be extended again.
+- Not resetting a branch to `0` when the values differ: a long same-value branch below an unequal child must not count.
+- Counting nodes instead of edges: a pair of equal nodes is length 1.
+- Writing `best = 1`: a single node is length 0.

@@ -1,0 +1,6 @@
+- **Greedy, biggest coin first.** Correct for some coin systems only (dsa.13): `[1, 3, 4]` and 6 gives 4 + 1 + 1 = 3 coins instead of 3 + 3.
+- **Storing `-1` in the table** for impossible amounts. Then `f[a - c] + 1` is 0 and wins every `min`: impossible amounts look free.
+- **Returning `float("inf")`.** The problem wants `-1`; convert at the end.
+- **`f(0) = 1` or `f(0) = INF`.** Zero coins make 0. With `INF`, nothing is ever reachable.
+- **Counting combinations instead of the minimum** (`f[a] += f[a - c]`). That is p018.
+- **Recursion from `amount` downward.** Without a memo it is exponential; with a memo and a 1-coin it is 10,000 calls deep.

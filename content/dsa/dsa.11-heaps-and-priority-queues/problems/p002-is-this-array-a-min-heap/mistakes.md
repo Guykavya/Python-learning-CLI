@@ -1,0 +1,6 @@
+- Checking `a[i] <= a[i + 1]` (neighbours). That asks "is it sorted?", so `[1, 3, 2]` would be rejected although it is a valid heap.
+- Rejecting equal items (`a[i] <= a[parent]` as the failure test). The rule is "parent **less than or equal** to child", so `[2, 2, 2]` is a heap.
+- Checking only the left child. A broken right child, like the `0` in `[1, 3, 2, 7, 4, 5, 0]`, is then missed.
+- Looping over parents with `range(len(a) // 2 + 1)` or `range(len(a) // 2 - 1)`: the first runs past the last parent (an `IndexError` or a wrong test for the right child), the second skips the last parent.
+- Forgetting the guard for a missing right child when you check from the parent side: with an even length, the last parent has only a left child.
+- Changing the list (for example by calling `heapq.heapify` on it to compare): the function must only look.

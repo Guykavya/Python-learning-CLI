@@ -1,0 +1,6 @@
+id = "dsa.11.p011"
+title = "A heap of tuples"
+tier = "drill"
+kind = "code"
+topics = ["heapq", "tuples", "priority queue", "tie-breaker"]
+minutes = 20

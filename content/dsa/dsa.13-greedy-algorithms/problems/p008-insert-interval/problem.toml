@@ -1,0 +1,6 @@
+id = "dsa.13.p008"
+title = "Insert interval"
+tier = "applied"
+kind = "code"
+topics = ["greedy", "intervals", "merge intervals", "linear scan"]
+minutes = 25

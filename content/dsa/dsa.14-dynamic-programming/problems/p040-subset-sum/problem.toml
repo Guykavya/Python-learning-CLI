@@ -1,0 +1,6 @@
+id = "dsa.14.p040"
+title = "Subset sum"
+tier = "drill"
+kind = "code"
+topics = ["dynamic programming", "subset sum", "0/1 knapsack", "bitset", "loop order"]
+minutes = 20

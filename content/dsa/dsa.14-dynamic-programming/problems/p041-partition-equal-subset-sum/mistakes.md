@@ -1,0 +1,5 @@
+- **Forgetting the odd check.** With `S = 11`, `S // 2 = 5` and a subset sums to 5, so you answer `True` for `[1, 2, 3, 5]`. An odd total can never be split evenly.
+- **Looping `s` upwards.** Then `f[s - x]` may already contain `x`, and a number is used twice: `[1, 2, 5]` returns `True` (1 + 1 + 2 = 4).
+- **A greedy split.** "Sort largest first and put each number in the lighter pile" gives 7 and 5 for `[3, 3, 2, 2, 2]`, but `[3, 3]` and `[2, 2, 2]` works. Greedy is not safe here.
+- **Plain recursion without a memo.** Trying "take or skip" for every number is `2**n` calls; with 200 numbers it never ends.
+- **Starting with `f[0] = False`.** Nothing is ever reachable then. The empty subset sums to 0.

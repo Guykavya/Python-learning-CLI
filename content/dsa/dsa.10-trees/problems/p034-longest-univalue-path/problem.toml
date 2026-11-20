@@ -1,0 +1,6 @@
+id = "dsa.10.p034"
+title = "Longest univalue path"
+tier = "deep"
+kind = "code"
+topics = ["tree", "path", "recursion", "return vs record"]
+minutes = 30

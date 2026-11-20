@@ -1,0 +1,5 @@
+- **`pre[r] - pre[l - 1]`** (the closed-range formula) with half-open ranges: off by one element.
+- **Adding up the range in `query`** (the starter): correct, but `O(r - l)` per query.
+- **Repairing only `pre[i + 1]`.** Every longer prefix contains `a[i]` too.
+- **Adding `v` instead of `v - a[i]`.** The prefixes contain the old value; the change is the difference.
+- **Forgetting to store the new value in `a`.** The next `set` at the same position then computes the wrong difference.

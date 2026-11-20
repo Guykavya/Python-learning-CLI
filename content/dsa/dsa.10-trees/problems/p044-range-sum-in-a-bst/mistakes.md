@@ -1,0 +1,5 @@
+- Visiting every node and testing `lo <= v <= hi`: correct but `O(n)`; the pointer counter fails it.
+- Skipping the **wrong** side: for a value below `lo` the **left** subtree is useless (smaller still), not the right one.
+- Using `<` where `<=` is needed at the ends: both `lo` and `hi` are included.
+- Pruning only at the root, not at the deeper nodes.
+- Returning `0` for a node that is out of range **without** looking at the subtree that may still hold values of the range.

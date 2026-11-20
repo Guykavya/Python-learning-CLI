@@ -1,0 +1,5 @@
+- **Not sorting** (the starter): the given order is usually not the best.
+- **Sorting longest first.** The longest job then delays everyone.
+- **Summing finish times** instead of waiting times: adding the job's own duration before adding to the total counts it once too often.
+- **Recomputing `sum(order[:i])` for every job**: correct but `O(n^2)`. Keep a running `elapsed`.
+- **Sorting in place** with `durations.sort()`: the caller's list changes.

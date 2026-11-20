@@ -1,0 +1,6 @@
+- **Removing `tags` from `TaskOut` to make the 500 go away.** The error is gone and so is the feature; the API must still return the tags.
+- **Fixing only the list endpoint.** `session.get` without options has the same problem, and so does `task.tags.append(...)`: appending to an unloaded list must load it first.
+- **Accessing `task.tags` "to warm it up" before returning.** That access *is* the lazy load; it fails the same way, only earlier.
+- **Thinking `expire_on_commit=False` fixes it.** It keeps attributes that were **already loaded**; it does not load ones that never were.
+- **Switching to `joinedload` for a list relationship without `.unique()`.** A JOIN repeats each task once per tag, and SQLAlchemy 2 then requires `result.unique()`; `selectinload` avoids that.
+- **Reading the `RuntimeWarning: coroutine ... was never awaited` as the bug.** It is a side effect; fix the loading and it disappears.

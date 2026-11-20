@@ -1,0 +1,6 @@
+id = "dsa.14.p066"
+title = "Regular expression matching"
+tier = "challenge"
+kind = "code"
+topics = ["dynamic programming", "strings", "pattern matching", "regular expressions", "boolean dp"]
+minutes = 50

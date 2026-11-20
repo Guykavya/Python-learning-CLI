@@ -1,0 +1,6 @@
+id = "dsa.12.p033"
+title = "Course schedule"
+tier = "drill"
+kind = "code"
+topics = ["graph", "topological sort", "cycle detection", "modelling"]
+minutes = 20

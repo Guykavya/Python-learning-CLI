@@ -1,0 +1,4 @@
+- **Thinking `git add` moves the file.** It copies the working version into the index; the working file stays as it is, so after command 3 there are three different versions of one file.
+- **Thinking `restore --staged` throws your edits away.** It only changes the index. Plain `git restore app.py` (no `--staged`) is the dangerous one.
+- **Confusing which diff compares what.** `git diff` = working tree vs index. `git diff --staged` = index vs last commit.
+- **Forgetting that a commit takes the index, not the working tree.** If you edit after `git add` and then commit without adding again, the edit is not in the commit.

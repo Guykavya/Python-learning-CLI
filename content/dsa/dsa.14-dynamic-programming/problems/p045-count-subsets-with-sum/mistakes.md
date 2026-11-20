@@ -1,0 +1,5 @@
+- **Returning 1 as soon as the sum reaches 0** in a recursive version. Zeros after that point can still be added: `[1, 0]` with target 1 has 2 subsets (`{1}` and `{1, 0}`), not 1. The base case must be "no numbers left".
+- **Skipping zeros** (`if x == 0: continue`) or treating them like any value but with a loop that stops at `s = 1`. Each zero must double the counts.
+- **Looping `s` upwards.** Then a number can be used several times and you count multisets: `[2]` with target 4 gives 1 instead of 0.
+- **Counting distinct value sets.** `[1, 2, 3, 3]` with target 6 is 3, not 2: the two 3s are different positions.
+- **Starting with `f[0] = 0`.** All counts stay 0. The empty subset is one subset with sum 0.

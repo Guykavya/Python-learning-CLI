@@ -1,0 +1,6 @@
+id = "swe.07.p014"
+title = "Refresh tokens that detect theft"
+tier = "deep"
+kind = "code"
+topics = ["refresh tokens", "rotation", "token families", "theft detection", "hashing stored tokens"]
+minutes = 40

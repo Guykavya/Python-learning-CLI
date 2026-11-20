@@ -1,0 +1,5 @@
+- **Stopping at the first class that is too expensive.** It happens to work for large `n`, but for small `n` the table order is not strict (`n = 3`: `2**3 = 8 < 3**3 = 27`). Look at all seven and keep the last that fits.
+- **Computing `2 ** n` for huge `n`.** `2 ** (10**9)` is a number with 300 million digits; the program hangs. Guard it.
+- **Using `10**8` as the budget.** That is a C++ number. In CPython a loop step is much slower, so the course (and most contests played in Python) uses `10**7` per second.
+- **Printing the cost instead of the name**, or a name that is spelled differently (`n*log n`, `nlogn`). The names must match the table.
+- **Using `math.log` and forgetting the base.** `log2` is the natural choice; the natural logarithm is smaller by about 30%, which can change the answer at the border.

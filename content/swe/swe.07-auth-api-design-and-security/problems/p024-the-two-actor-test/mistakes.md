@@ -1,0 +1,7 @@
+- **Checking only the status code of the attack.** The update-hole app answers 404 and still changes the note. Always read Asha's data afterwards, as Asha.
+- **Testing denials only.** An app that answers 404 to everyone passes. Check that the owner can still read.
+- **Using one user.** Every note is yours, so no hole can show.
+- **Forgetting the anonymous caller** (`401`) and the list endpoint, where a missing owner filter exposes all notes at once.
+- **Reporting a problem on the secure app** (for example by demanding `403` instead of accepting `404`). The chapter's rule is `404` for "not yours": a false alarm teaches people to ignore the test.
+- **Keeping a module-level client or state.** The test calls your function five times with five fresh apps.
+- **Letting the function raise** on a broken app (for example `r.json()["id"]` on an error body). Check the setup status first.

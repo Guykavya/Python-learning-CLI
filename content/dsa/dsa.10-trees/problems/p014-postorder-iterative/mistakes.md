@@ -1,0 +1,5 @@
+- Reversing an ordinary preorder: for `[1, 2, 3]` that gives `[3, 2, 1]`, but the postorder is `[2, 3, 1]`. The preorder you reverse must visit the right child before the left.
+- Pushing the children in the wrong order for the modified preorder: the order of the two `append` lines is the whole trick.
+- In the one-stack way, visiting a node when you first reach it: that is preorder. Visit it when you come back with its right subtree finished.
+- In the `last` pointer way, forgetting `last`: the loop goes into the same right subtree again and again.
+- Recursion anywhere: the 5,000-node chain fails with `RecursionError`.

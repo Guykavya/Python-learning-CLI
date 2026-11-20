@@ -1,0 +1,6 @@
+id = "dsa.14.p027"
+title = "Minimum path sum"
+tier = "drill"
+kind = "code"
+topics = ["dynamic programming", "grid dp", "minimum cost path", "base case"]
+minutes = 15

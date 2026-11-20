@@ -1,0 +1,6 @@
+- **One fixed salt for everybody** (a constant in the code). Two users with the same password get the same hash, and a precomputed table works again.
+- **Recomputing with the default iterations** instead of the stored ones. Every hash made before you raise the default stops verifying.
+- **`actual == expected`.** It returns early at the first different byte; `hmac.compare_digest` does not.
+- **Letting a broken string raise.** A `ValueError` from one bad row turns into a 500 on the login page.
+- **`hashlib.sha256(salt + password)`.** One round of a fast hash: billions of guesses per second on a graphics card. Use a deliberately slow function.
+- **Encoding with `str(salt)`** (`"b'\x8f...'"`) instead of base64: it may contain `$`, and it cannot be decoded reliably.

@@ -1,0 +1,5 @@
+- **Copying the mirror when `i >= r`.** Outside the box nothing is known: the start is 0.
+- **Forgetting the cap `r - i`.** With `r = 6`, row 5 may copy at most 1.
+- **Moving `(c, r)` when `i + p[i]` equals `r`.** Only a strictly larger right edge moves it, so rows 8 to 14 keep `(7, 14)`.
+- **Comparing neighbours in `s` instead of `t`.** The radius counts steps in `t`, where every second character is `#`.
+- **Format.** Each row is `i char start p c r`, separated by single spaces; the last line is the list `p`.

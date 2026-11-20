@@ -1,0 +1,5 @@
+- **Saying `PUT` is not idempotent because the status changed** (`201` then `200`). Idempotency is about the state.
+- **Forgetting that `DELETE` of a missing key is a `404`** and changes nothing.
+- **Counting the `GET` calls as changes** to the state.
+- **Adding to the counter on the `PATCH` only once.** An increment applies every time it arrives.
+- **Writing the order count after call 4 as 3.** `PUT /a/1` does not touch `orders`.

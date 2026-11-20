@@ -1,0 +1,6 @@
+- **`F(0) = 1`.** That is the climbing-stairs base, a different sequence shifted by one. Fibonacci here starts `0, 1, 1, 2, 3`.
+- **A "memo" that is never read.** Writing `memo[n] = ...` but not checking `if n in memo` first keeps the code exponential. The test then times out with "exponential: add a memo".
+- **Testing the notebook with `if memo.get(n):`.** `F(0) = 0` is falsy, so it is recomputed every time. Here it costs little, but in other DPs it silently destroys the speed (chapter section 3).
+- **A table of size `n`.** `f[n]` is then out of range. Tables for "0 to n" need `n + 1` cells.
+- **Setting `f[1] = 1` without the guard.** For `n = 0` the list is `[0]` and `f[1]` raises `IndexError`.
+- **A "table" version that still calls itself.** Then it has the recursion limit again: `fib_table(5000)` raises `RecursionError`.

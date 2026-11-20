@@ -1,0 +1,6 @@
+- **`response.json()` without a `try`.** An HTML error page raises `JSONDecodeError` instead of your `ApiError`.
+- **Assuming the JSON has an `error` dict.** It may be a list, a string, or lack the key.
+- **Losing the status.** Callers need `e.status` to decide whether to retry.
+- **Raising for `3xx`.** Only 400 and above are errors here.
+- **A different exception class for each case.** One `ApiError` with a `code` is easier to handle.
+- **Showing the whole HTML page as the message.** Use the reason phrase.

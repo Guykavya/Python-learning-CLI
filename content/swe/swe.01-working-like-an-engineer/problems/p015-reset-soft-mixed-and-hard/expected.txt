@@ -1,0 +1,3 @@
+soft: tip=c-b staged=a.txt,c.txt unstaged=b.txt untracked=- files=a.txt,b.txt,c.txt
+mixed: tip=c-b staged=- unstaged=a.txt,b.txt untracked=c.txt files=a.txt,b.txt,c.txt
+hard: tip=c-b staged=- unstaged=- untracked=- files=a.txt,b.txt

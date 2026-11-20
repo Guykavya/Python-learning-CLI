@@ -1,0 +1,5 @@
+- **`line.strip()` or `line.split()` on the whole line.** The leading space of ` M b.py` carries the meaning; after stripping, an unstaged change looks like a staged one.
+- **Treating `??` as staged.** `?` is not a status letter of the index; untracked files are only untracked.
+- **Putting a file in one list only.** `MM` and `D ` belong to two lists each; the lists answer different questions.
+- **Using the old name of a rename.** The file you have now is the new path.
+- **Forgetting that `deleted` covers both columns.** `D ` (staged deletion) and ` D` (unstaged deletion) are both deletions.

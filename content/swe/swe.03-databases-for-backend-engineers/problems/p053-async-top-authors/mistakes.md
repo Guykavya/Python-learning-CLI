@@ -1,0 +1,5 @@
+- **Reading `author.books` without loading it.** Under `lazy="raise"` this raises at once; without it, `MissingGreenlet` appears.
+- **Forgetting `await`.** `session.scalars(...)` returns a coroutine; using it without `await` is a bug.
+- **Using the sync `Session` with an async engine.** Use `AsyncSession`.
+- **Not sorting ties by name.** Equal counts must be in alphabetical order.
+- **Closing the session before touching the data.** Load first, then read.

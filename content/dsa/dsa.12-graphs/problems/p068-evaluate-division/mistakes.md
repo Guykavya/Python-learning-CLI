@@ -1,0 +1,6 @@
+- **Only one edge per equation**: then `b / a` or any path that walks an equation backwards is "unknown".
+- **`x / x = 1.0` for an unknown `x`**: nothing is known about `x` (it may even be 0); the answer is `-1.0`.
+- **Adding the factors** instead of multiplying them.
+- **No visited set** in a DFS: equations that form a cycle (`a / b`, `b / c`, `c / a`) make the search walk around forever.
+- **Reading `adj[x]` on a `defaultdict`** for an unknown variable: it silently creates an empty entry, and a later query `x / x` then finds `x` "known".
+- **Comparing floats with `==`** in your own checks: `1 / 3 * 3` need not be exactly `1.0`.

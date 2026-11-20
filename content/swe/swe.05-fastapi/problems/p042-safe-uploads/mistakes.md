@@ -1,0 +1,7 @@
+- **`await file.read()` with no size.** The whole upload lands in memory before you can check its size.
+- **Checking the size after the loop** instead of inside it. You still read everything.
+- **`>=` instead of `>`.** A file of exactly `MAX_BYTES` is allowed.
+- **Counting `\n`.** Wrong for quoted values with line breaks, for blank lines, and for a last line without a newline.
+- **Counting the header as a row.**
+- **Trusting `file.filename` or `content_type`.** Both are chosen by the client; they are hints, not proof.
+- **Decoding each chunk separately.** A multi-byte character such as `é` can be split between two chunks and fail to decode; join first (or use an incremental decoder).

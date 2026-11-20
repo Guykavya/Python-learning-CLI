@@ -1,0 +1,6 @@
+- **Forgetting `return v`.** The field silently becomes `None` (or the model fails later). The classic validator bug.
+- **`@classmethod` above `@field_validator`.** The order matters: `@field_validator(...)` goes on top.
+- **Checking the domain before lower-casing.** `ravi@Mailinator.com` slips through.
+- **`interests` validator in "after" mode.** Pydantic refuses the string before your code runs, with `list_type`.
+- **Returning `[]` (or raising) for a non-string in the before-validator.** Return it unchanged; Pydantic's own check gives the right error.
+- **Raising `TypeError` or a custom exception.** Only `ValueError` (and `AssertionError`) become a 422 entry; other exceptions are bugs and give a 500.

@@ -1,0 +1,6 @@
+- **Forgetting to push in `query`.** A query that descends reads the children, whose sums are stale until the tag is delivered.
+- **Forgetting to recompute after the recursive `add`.** The parent keeps the old sum.
+- **`s[node] += v` without the length.** Every element of the node's range gets `+v`, so the sum grows by `v * (hi - lo)`.
+- **Pushing and also applying to the node itself again**, so the same tag is counted twice.
+- **Descending into a fully covered node** to update the leaves one by one: correct, but `O(r - l)`.
+- **Resetting the tag before applying it to the children.**

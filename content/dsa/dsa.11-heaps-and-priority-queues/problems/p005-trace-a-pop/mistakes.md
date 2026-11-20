@@ -1,0 +1,6 @@
+- Removing the root and shifting everything left (like `list.pop(0)`). The code does not: it takes the **last** item and puts it into index 0; no other item moves until the swaps start.
+- Forgetting that `a.pop()` already shortened the list: the first printed list has one item fewer than the starting heap.
+- Swapping with the larger child, or always with the left child: the loop picks the smaller of the two, so `8` goes to `2` first, not to `6`.
+- Printing a `swap` line with the values in the wrong order. The line shows the sinking item first, then the child it swaps with.
+- Missing the `stop` line: it is printed once per pop, also when the item sinks all the way to a leaf (there the children do not exist, so `smallest == i`).
+- Printing the returned value before the trace lines: `print(pop_traced(heap))` runs the function first, so its lines come first and the returned value comes last.

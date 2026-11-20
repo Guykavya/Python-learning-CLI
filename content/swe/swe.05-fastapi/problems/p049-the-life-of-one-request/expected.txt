@@ -1,0 +1,15 @@
+GET /ok -> 200
+  1. middleware: before
+  2. dependency: open
+  3. endpoint: ok
+  4. middleware: after, status 200
+  5. background: audit /ok
+  6. dependency: commit
+  7. dependency: close
+GET /fail -> 404
+  1. middleware: before
+  2. dependency: open
+  3. endpoint: fail
+  4. dependency: rollback
+  5. dependency: close
+  6. middleware: after, status 404

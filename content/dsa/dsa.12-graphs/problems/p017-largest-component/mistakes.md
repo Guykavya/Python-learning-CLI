@@ -1,0 +1,5 @@
+- Returning the size instead of the list of vertices.
+- `>=` instead of `>`: on a tie the **later** component wins.
+- Forgetting to sort: a search visits vertices in its own order.
+- Starting searches only from vertices that appear in an edge: for a graph without edges the answer is `[0]`.
+- A recursive DFS: a chain of 100,000 vertices exceeds the recursion limit.

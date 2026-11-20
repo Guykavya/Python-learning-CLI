@@ -1,0 +1,6 @@
+id = "swe.05.p039"
+title = "A WebSocket echo"
+tier = "drill"
+kind = "code"
+topics = ["WebSocket", "accept", "receive_text", "close codes", "WebSocketDisconnect"]
+minutes = 20

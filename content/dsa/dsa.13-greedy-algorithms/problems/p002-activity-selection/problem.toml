@@ -1,0 +1,6 @@
+id = "dsa.13.p002"
+title = "Activity selection"
+tier = "drill"
+kind = "code"
+topics = ["greedy", "activity selection", "intervals", "sorting"]
+minutes = 20

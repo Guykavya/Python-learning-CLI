@@ -1,0 +1,6 @@
+id = "swe.02.p015"
+title = "Is it worth retrying"
+tier = "drill"
+kind = "code"
+topics = ["retries", "idempotent methods", "status codes", "idempotency key"]
+minutes = 20

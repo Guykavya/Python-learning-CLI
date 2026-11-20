@@ -1,0 +1,5 @@
+- **A loop per query.** Correct for tiny inputs, impossible for `10**6`.
+- **Precomputing to a fixed `10**6` when queries are small** is fine, but precomputing to a number smaller than the largest `n` raises `IndexError`; take the maximum from the input.
+- **Forgetting `r > n`.** `n - r` is negative, and a negative list index silently reads from the end of the list.
+- **Not reducing mod `p` at every multiplication.** Python integers do not overflow, but numbers grow, and the loop becomes slow.
+- **Computing an inverse for every factorial** with `pow`: `10**6` modular exponentiations take seconds; the downward trick needs only one.

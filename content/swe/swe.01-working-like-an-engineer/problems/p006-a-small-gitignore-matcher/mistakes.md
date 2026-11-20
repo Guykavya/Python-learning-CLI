@@ -1,0 +1,6 @@
+- **Matching a non-anchored pattern against the whole path.** `*.pyc` must match the name at any depth; against the whole path `[^/]*\.pyc` fails on `src/a.pyc`.
+- **Treating `build/` as matching a file named `build`.** The trailing slash restricts it to directories.
+- **Letting `!` win over an ignored parent.** Once `build/` is ignored, `!build/keep.txt` cannot help.
+- **Translating `*` to `.*`.** Then `docs/*.md` would also match `docs/x/y.md`, but in git `*` never crosses a `/`. Use `[^/]*`.
+- **Forgetting to strip a leading `/`** before building the regex, or to keep the "anchored" flag it implies.
+- **Stopping at the first matching pattern** instead of the last: `!keep.pyc` comes after `*.pyc`, so the later rule must win.

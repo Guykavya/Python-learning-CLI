@@ -1,0 +1,6 @@
+- **Waiting for `b""`** while the client waits for the answer: both sides wait for the other.
+- **Using `conn.recv(length)` once.** It may return fewer bytes. Loop until `len(buf) >= length`.
+- **Throwing away `buf` after the body.** A pipelined next request is lost.
+- **Reading `length` more bytes without counting what is already in `buf`.** The server then waits for bytes the client never sends.
+- **Returning an error answer when the client leaves early.** There is nobody to answer; just return.
+- **Forgetting that a request may have no `Content-Length`.** The length is 0 and no body is read.

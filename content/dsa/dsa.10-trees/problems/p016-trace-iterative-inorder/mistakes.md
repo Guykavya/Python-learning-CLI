@@ -1,0 +1,5 @@
+- Printing the stack before the push or pop: the lines show the stack after the action.
+- Forgetting that after `pop 1` there is no push: the right child of `1` is `None`, so the next action is another pop.
+- Visiting `5` before `4`: `5` is popped only when its whole left subtree (`2`, `1`, `4`) is done.
+- Writing the stack top first: the lines print the bottom first, so the node just pushed is last in the list.
+- Leaving out the final line with the returned list.

@@ -1,0 +1,6 @@
+id = "dsa.10.p055"
+title = "Same tree? Symmetric tree?"
+tier = "drill"
+kind = "code"
+topics = ["tree", "recursion", "comparison", "mirror"]
+minutes = 20

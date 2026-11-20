@@ -1,0 +1,7 @@
+id = "dsa.16.p030"
+title = "Build a range-query library"
+tier = "deep"
+kind = "code"
+topics = ["fenwick tree", "segment tree", "sparse table", "testing", "library design"]
+minutes = 60
+assessment = "build"

@@ -1,0 +1,6 @@
+- **Using fewer bits than the numbers have.** With 8 bits, numbers like 1000 lose their high bits and the answer is wrong. Use 31 bits for values below `2**31`.
+- **Inserting the lowest bit first.** The greedy argument needs the most valuable bit decided first.
+- **Preferring the same bit** instead of the opposite one.
+- **`max(nums) ^ min(nums)`** (the starter). `[1, 2, 4, 8]`: `8 ^ 1 = 9`, but `8 ^ 4 = 12`.
+- **Pairing a number with itself** gives 0, which is harmless for the maximum, but querying before inserting makes the intent clear.
+- **Trying all pairs.** Correct, and fine for 1,000 numbers; 10**5 numbers is 5 * 10**9 pairs.

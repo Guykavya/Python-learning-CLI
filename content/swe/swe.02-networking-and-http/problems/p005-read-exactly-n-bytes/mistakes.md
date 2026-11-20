@@ -1,0 +1,5 @@
+- **One `recv(n)` and hoping.** It works on loopback with small messages and fails in production.
+- **Asking for `n` every time.** After a partial read this swallows bytes of the next message.
+- **Treating `b""` as "no data yet".** It means the peer closed. Looping on it spins forever.
+- **`data += chunk` in a loop for huge `n`.** Fine here; collecting parts and joining once is the habit for big sizes.
+- **Not saying how much arrived.** A message like "connection closed" does not help to debug a half message.

@@ -1,0 +1,6 @@
+- **No copy.** A greedy that calls `items.sort()` reorders the caller's list: the brute force then sees a different input, and the counterexample you report is not the input that failed.
+- **`random.Random(seed)` inside the loop.** Every trial starts from the same state and makes the same instance.
+- **The global `random.seed(...)` plus `random.randint`.** It works, but any other code that uses `random` changes your sequence, so a failure may not be reproducible.
+- **Collecting every counterexample and returning the last one** (or continuing the loop). Return the first and stop.
+- **`if not result:` to mean "nothing found".** An instance can be `0` or `[]`, and an answer can be `0`. Compare with `!= `, and return `None` explicitly.
+- **Calling `make_input` more than once per trial** (for example once for the greedy and once for the brute force). The two functions must see the **same** instance.

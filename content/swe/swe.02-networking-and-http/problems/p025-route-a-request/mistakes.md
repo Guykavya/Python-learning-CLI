@@ -1,0 +1,7 @@
+- **`405` for an unknown path.** If no pattern matches, it is a `404`.
+- **`404` for a known path with the wrong method.** It is `405` with `Allow`.
+- **No anchors in the regex.** `/notes/7/extra` then matches `/notes/{id}`.
+- **`.*` for a parameter.** It would match `/` and the empty string. Use `[^/]+`.
+- **Not escaping the fixed text.** A `.` or `+` in a pattern is special in a regex.
+- **Letting `/notes/{id}` shadow `/notes/new`.** Try the more specific pattern first.
+- **An unsorted `Allow`.** Sort it, so the header is predictable.

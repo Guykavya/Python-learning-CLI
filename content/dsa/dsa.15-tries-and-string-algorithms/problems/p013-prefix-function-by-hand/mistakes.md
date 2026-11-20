@@ -1,0 +1,5 @@
+- **Falling back to `pi[k]` instead of `pi[k - 1]`.** `k` is a length; the last letter of that border is at index `k - 1`.
+- **Comparing `s[i]` with `s[i - 1]` or `s[k - 1]`.** The letter that extends a border of length `k` is `s[k]`.
+- **Restarting at 0 after a mismatch.** At `i = 7` that gives `pi[7] = 0`, but the fallback to 1 finds the border `ab`.
+- **Leaving out values in `path`.** It starts with the `k` before the step and gets one entry per fallback; a match adds nothing to it.
+- **Format.** Each line is `i letter path k`, separated by single spaces, with the list printed in Python's format: `3 c [1, 0] 0`.

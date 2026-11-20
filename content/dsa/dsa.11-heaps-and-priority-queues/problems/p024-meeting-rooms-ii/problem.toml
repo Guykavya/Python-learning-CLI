@@ -1,0 +1,6 @@
+id = "dsa.11.p024"
+title = "Meeting rooms II"
+tier = "applied"
+kind = "code"
+topics = ["heap", "greedy", "intervals", "sorting"]
+minutes = 25

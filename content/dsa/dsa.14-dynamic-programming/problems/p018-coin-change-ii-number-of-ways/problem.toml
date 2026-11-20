@@ -1,0 +1,6 @@
+id = "dsa.14.p018"
+title = "Coin change II: number of ways"
+tier = "applied"
+kind = "code"
+topics = ["dynamic programming", "coin change", "counting", "combinations", "loop order"]
+minutes = 25

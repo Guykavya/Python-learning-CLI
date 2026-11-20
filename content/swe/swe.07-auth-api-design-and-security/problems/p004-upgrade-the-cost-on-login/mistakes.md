@@ -1,0 +1,7 @@
+- **Upgrading before verifying.** The new hash would be made from whatever the attacker typed. Verify first.
+- **Returning a new hash when nothing needs upgrading.** It wastes a scrypt run on every login and changes the row each time.
+- **`!=` instead of "lower than".** It "upgrades" stronger hashes down to the current cost.
+- **Comparing only `n`.** `r` and `p` count too.
+- **Letting `needs_rehash` crash on a bad string.** It runs on data from the database; treat unreadable as `True`.
+- **Reusing the old salt.** Hash again with `hash_password`; it draws a new one.
+- **Forgetting to save the new hash.** `verify_and_upgrade` only returns it; the login code must write it to the user's row.

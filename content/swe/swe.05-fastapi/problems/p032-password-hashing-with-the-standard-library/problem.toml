@@ -1,0 +1,6 @@
+id = "swe.05.p032"
+title = "Password hashing with the standard library"
+tier = "drill"
+kind = "code"
+topics = ["password hashing", "pbkdf2_hmac", "salt", "constant-time comparison", "hmac.compare_digest", "base64"]
+minutes = 25

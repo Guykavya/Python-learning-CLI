@@ -1,0 +1,6 @@
+id = "dsa.10.p004"
+title = "Count leaves"
+tier = "drill"
+kind = "code"
+topics = ["tree", "recursion", "leaf"]
+minutes = 12

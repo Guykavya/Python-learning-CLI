@@ -1,0 +1,6 @@
+id = "swe.01.p014"
+title = "git bisect by hand"
+tier = "drill"
+kind = "code"
+topics = ["git bisect", "binary search", "debugging"]
+minutes = 20

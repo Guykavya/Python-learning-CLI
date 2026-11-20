@@ -1,0 +1,5 @@
+- **A plain `BEGIN` (or the implicit one).** The lock arrives after your check: the gap stays.
+- **Checking stock outside the transaction.** The value may be stale when you update.
+- **Forgetting `rollback()` on errors.** The connection stays in a transaction holding the write lock and blocks everybody.
+- **Inserting the order before checking the stock.** It works only if you roll back; check first.
+- **Returning the order id before committing.** The caller might see an order that later disappears.

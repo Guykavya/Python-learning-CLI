@@ -1,0 +1,6 @@
+id = "swe.05.p023"
+title = "Count the calls"
+tier = "applied"
+kind = "trace"
+topics = ["dependency tree", "dependency cache", "use_cache", "sub-dependencies", "trace"]
+minutes = 25

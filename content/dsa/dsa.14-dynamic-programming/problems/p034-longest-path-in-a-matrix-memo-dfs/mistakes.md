@@ -1,0 +1,7 @@
+- **Using `>=` instead of `>`.** Equal neighbours would let the path go back and forth forever (infinite recursion), and the memo would store wrong values. The rule is **strictly** larger.
+- **Adding a `visited` set.** It is not needed (a strictly increasing path cannot revisit a cell), and if it is part of the state the memo becomes wrong: the stored value would depend on which cells happened to be visited.
+- **Returning `f(0, 0)` only.** The longest path can start anywhere. Take the maximum over every cell.
+- **Wrapping around the edges with negative indices.** `matrix[-1][c]` is the last row in Python, not "outside". Check `0 <= nr < rows` before reading.
+- **Counting steps instead of cells.** A single cell is a path of length 1, not 0.
+- **Only moving right and down,** as in chapter section 8. Here all four directions are allowed, so a row-by-row table does not work; use the memo, or sort the cells by value.
+- **No memo.** It works on the examples and times out on a large matrix.

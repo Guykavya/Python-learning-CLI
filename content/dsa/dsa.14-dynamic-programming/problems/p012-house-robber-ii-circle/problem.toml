@@ -1,0 +1,6 @@
+id = "dsa.14.p012"
+title = "House robber II (circle)"
+tier = "applied"
+kind = "code"
+topics = ["dynamic programming", "1d dp", "house robber", "circular array", "case split"]
+minutes = 25

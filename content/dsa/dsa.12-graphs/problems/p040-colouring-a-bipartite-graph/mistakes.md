@@ -1,0 +1,5 @@
+- **Returning a colouring even when a conflict exists**: check every edge, also edges to people who are already coloured.
+- **Colouring only the piece of person 0**: the others stay `-1`, which is not a group, and a conflict in another piece is missed.
+- **Treating `(a, b)` as directed**: the dislike is mutual; add the edge in both lists. Otherwise BFS may never reach some people from the start of their piece.
+- **Ignoring `(a, a)`**: someone in the same group as themself is a conflict; the code above finds it because `a` is in its own list.
+- **Recursion** on 100,000 people: `RecursionError`.

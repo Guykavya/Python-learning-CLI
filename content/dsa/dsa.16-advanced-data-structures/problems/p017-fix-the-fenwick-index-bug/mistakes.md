@@ -1,0 +1,5 @@
+- **Fixing only the infinite loop** (adding `i += 1`) and keeping `i & i`: no more hang, but sums are still wrong.
+- **Fixing only `i & -i`.** `add(0, ...)` still hangs, because `0 & -0` is 0.
+- **Shifting in `prefix` as well.** `prefix(r)` already means "the first `r` elements"; shifting it adds one element.
+- **`i += 1` inside the loop** instead of before it: the step and the shift get mixed.
+- **Guarding with `if i == 0: return`.** It hides the hang but drops every update of `a[0]`.

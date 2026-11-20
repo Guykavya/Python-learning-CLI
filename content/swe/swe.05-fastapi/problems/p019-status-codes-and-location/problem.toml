@@ -1,0 +1,6 @@
+id = "swe.05.p019"
+title = "Status codes and `Location`"
+tier = "drill"
+kind = "code"
+topics = ["status codes", "201 Created", "Location header", "204 No Content", "409 Conflict", "HTTPException"]
+minutes = 20

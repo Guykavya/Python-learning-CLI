@@ -1,0 +1,6 @@
+- **`url_for("login")`.** With blueprints the endpoint is `auth.login`: `BuildError`.
+- **Expecting a blueprint 404 handler to catch unknown URLs under its prefix.** It only sees errors raised by its own views.
+- **Registering the blueprint before its routes exist** (in a different module) or forgetting `register_blueprint`: routes silently missing.
+- **A prefix with a trailing slash** (`"/auth/"`) next to routes starting with `/`: double slashes.
+- **Forgetting `post_id=` in `url_for("blog.show", ...)`.** Arguments must match the rule.
+- **Circular imports** by importing `app` inside the blueprint module. Blueprints do not need the app.

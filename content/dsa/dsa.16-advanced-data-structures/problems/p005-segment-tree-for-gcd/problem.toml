@@ -1,0 +1,6 @@
+id = "dsa.16.p005"
+title = "Segment tree for gcd"
+tier = "applied"
+kind = "code"
+topics = ["segment tree", "gcd", "identity element"]
+minutes = 25

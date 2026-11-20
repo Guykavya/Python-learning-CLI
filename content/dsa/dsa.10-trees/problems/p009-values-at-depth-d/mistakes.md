@@ -1,0 +1,5 @@
+- Missing the `None` base case: asking for a depth below a leaf crashes on `None.left`.
+- Using the right subtree first: the values come back right to left.
+- Forgetting `d - 1` when going down: the depth never reaches 0.
+- Returning `root.val` instead of `[root.val]`: the lists cannot be joined with `+`.
+- Returning a list for the whole tree (all depths) and then picking one: slower and more code than a direct recursion.

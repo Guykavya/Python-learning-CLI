@@ -1,0 +1,6 @@
+- **`request.get_json()` without `silent=True`.** On bad input Flask raises and answers with its own **HTML** error page: an API client expects JSON.
+- **Checking `data["title"]` first.** A list or `None` makes it a `TypeError` (a 500).
+- **One status for everything.** 415, 400 and 422 carry different meanings.
+- **Stopping at the first bad field.** Collect all problems, then answer once.
+- **`isinstance(True, int)`-style traps.** Here `title` must be a **str**; a number 5 is not a title.
+- **Forgetting `Location` on 201**, or building it by hand: use `url_for`.

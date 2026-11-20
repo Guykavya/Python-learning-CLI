@@ -1,0 +1,6 @@
+id = "dsa.10.p005"
+title = "Height of a tree"
+tier = "drill"
+kind = "code"
+topics = ["tree", "recursion", "height"]
+minutes = 12

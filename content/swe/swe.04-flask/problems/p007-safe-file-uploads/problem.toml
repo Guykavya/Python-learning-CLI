@@ -1,0 +1,6 @@
+id = "swe.04.p007"
+title = "Safe file uploads"
+tier = "applied"
+kind = "code"
+topics = ["uploads", "secure_filename", "MAX_CONTENT_LENGTH", "413", "allow-list"]
+minutes = 35

@@ -1,0 +1,6 @@
+- **`REAL` prices.** Floats cannot hold money exactly; use integer paise.
+- **No `NOT NULL`.** In SQLite a primary key column other than `INTEGER PRIMARY KEY` may hold NULL, and other columns accept it unless forbidden.
+- **A `CHECK` with `>= 0` for the quantity.** A line with quantity 0 is meaningless: `qty > 0`.
+- **Forgetting `PRAGMA foreign_keys = ON` in your own tests.** The clause alone does nothing in SQLite until the pragma is on (problem 8).
+- **Two single-column primary keys on `order_lines`.** A table has one primary key; use `PRIMARY KEY (order_id, book_id)`.
+- **A different column name.** The tests look for the exact names of the table.

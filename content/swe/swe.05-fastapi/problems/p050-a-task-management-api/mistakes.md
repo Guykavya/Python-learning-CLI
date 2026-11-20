@@ -1,0 +1,10 @@
+- **403 for outsiders.** It tells them the team exists. Members-only resources answer 404 to everyone else.
+- **Looking a task up by id alone** (`session.get(Task, task_id)`). Any member of any team can then edit any task by guessing ids.
+- **Registering the envelope for FastAPI's `HTTPException` only.** The router's own 404 for unknown paths (a Starlette exception) keeps the default shape.
+- **Dropping `exc.headers`** in the handler: the 401 loses `WWW-Authenticate: Bearer`.
+- **Accepting the WebSocket first and checking the token after.** Refuse with `close(code=1008)` before `accept()`.
+- **Holding a database session open for the whole life of a socket.** Open a short session for the check, close it, then listen.
+- **PATCH with `model_dump()`** (without `exclude_unset=True`): every field not sent becomes `None`.
+- **`expire_on_commit=True`** with async sessions: reading `task.id` after `commit()` raises `MissingGreenlet` (section 11.5). The starter's lifespan already sets it to `False`.
+- **Broadcasting the ORM object.** `send_json` needs plain JSON: `TaskOut.model_validate(task).model_dump(mode="json")`.
+- **Calling `hash_password` directly in an `async def`.** It blocks the event loop for about 50 ms per call; use `run_in_threadpool`.

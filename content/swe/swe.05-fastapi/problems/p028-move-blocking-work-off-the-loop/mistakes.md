@@ -1,0 +1,5 @@
+- **`asyncio.to_thread(make_report(n))`.** The parentheses call `make_report` right away, on the loop, so nothing is gained (and `to_thread` then fails because a dict is not callable).
+- **Forgetting `await`.** The endpoint returns a coroutine object instead of the report, and FastAPI cannot serialise it.
+- **Changing the endpoint to plain `def`.** That also overlaps, but the task is to keep `async def` (the endpoint might await other async calls).
+- **`await asyncio.sleep(0.3)` inside `make_report`.** `make_report` is not async; the real function you are wrapping is an old blocking library you cannot change.
+- **Importing `make_report` into a local name before the endpoint** (`report_fn = make_report` at module level). The test replaces `solution.make_report`; call it by that name at request time.

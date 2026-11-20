@@ -1,0 +1,6 @@
+id = "dsa.17.p019"
+title = "A full contest problem set"
+tier = "challenge"
+kind = "code"
+topics = ["contest", "multiple problems", "fast io", "iterative dfs"]
+minutes = 60

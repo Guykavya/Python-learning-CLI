@@ -1,0 +1,5 @@
+- **Counting marks `<= x`.** The question says strictly less: insert while `a[...] < x`.
+- **Answering in sorted order and returning that order.** Store each answer at the question's original index.
+- **Resetting the Fenwick tree for every question.** The insertions accumulate as `x` grows; that is the point of sorting.
+- **A Fenwick tree indexed by the mark** (values up to 10**9): index by **position**, or compress the values.
+- **Scanning the range for every question** (the starter): `O(n)` each.

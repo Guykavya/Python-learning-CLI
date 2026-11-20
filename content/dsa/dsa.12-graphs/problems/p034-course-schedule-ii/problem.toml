@@ -1,0 +1,6 @@
+id = "dsa.12.p034"
+title = "Course schedule II"
+tier = "applied"
+kind = "code"
+topics = ["graph", "topological sort", "kahn", "modelling"]
+minutes = 25

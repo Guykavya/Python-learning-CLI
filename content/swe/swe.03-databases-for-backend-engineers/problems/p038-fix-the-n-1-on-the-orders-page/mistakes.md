@@ -1,0 +1,5 @@
+- **Loading with `.all()` and then touching attributes in the loop.** Every untouched relationship is lazy.
+- **`selectinload` on one relationship only.** The other still costs N queries.
+- **Changing the result** (order of lines, missing orders). The tests compare with a plain SQL result.
+- **`joinedload` plus `limit` on a collection.** The limit would apply to the joined rows, not to the orders; SQLAlchemy wraps a subquery, but `selectinload` is simpler.
+- **Eager-loading in the model for every use** (`lazy="joined"` everywhere). Choose per query.

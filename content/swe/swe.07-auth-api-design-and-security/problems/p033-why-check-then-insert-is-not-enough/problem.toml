@@ -1,0 +1,7 @@
+id = "swe.07.p033"
+title = 'Why "check, then insert" is not enough'
+tier = "deep"
+kind = "explain"
+topics = ["idempotency key", "race condition", "transactions", "retries", "unique constraint", "explain"]
+minutes = 30
+assessment = "explain"

@@ -1,0 +1,6 @@
+id = "dsa.13.p034"
+title = "Minimum cost to connect sticks"
+tier = "challenge"
+kind = "trace"
+topics = ["greedy", "heap", "connect sticks", "huffman", "max-heap by negation", "trace"]
+minutes = 25

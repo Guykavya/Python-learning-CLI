@@ -1,0 +1,6 @@
+id = "dsa.13.p012"
+title = "Fractional knapsack"
+tier = "drill"
+kind = "code"
+topics = ["greedy", "fractional knapsack", "sorting", "floats"]
+minutes = 20

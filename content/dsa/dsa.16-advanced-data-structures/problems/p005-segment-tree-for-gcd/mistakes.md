@@ -1,0 +1,5 @@
+- **Identity `1`** (as for a product): `gcd(1, x) = 1`, so every partial query returns 1.
+- **Identity `math.inf`** (copied from the min tree): `math.gcd` does not accept floats.
+- **Special-casing zeros.** Not needed: `gcd(0, x) = x` and `gcd(0, 0) = 0` are exactly right.
+- **The starter's one-element case**: `query(3, 4)` must return `a[3]`, not 0.
+- **Calling `math.gcd(*a[l:r])` in the query**: correct but `O(r - l)`.

@@ -1,0 +1,5 @@
+- Adding the number at every node (not only at leaves): the prefixes `1`, `12`, `13`, ... are counted too.
+- Returning `so_far` for a `None` child: a node with one child then counts its number twice (once for the real path and once for the missing child).
+- Forgetting the `* 10`: the digits are added instead of joined.
+- Passing the old number to the children instead of the updated one.
+- Building strings and converting with `int(...)` is correct but slower and needs more care with the empty tree.

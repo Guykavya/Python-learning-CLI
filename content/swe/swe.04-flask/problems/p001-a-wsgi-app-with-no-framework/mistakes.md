@@ -1,0 +1,6 @@
+- **Returning a `str`.** WSGI bodies are bytes. A `str` body is an error in real servers.
+- **`Content-Length` from `len(text)`.** It counts bytes: measure the encoded body (`é` is two bytes).
+- **Status as a number.** `start_response(200, ...)` is wrong; the status is a string with the reason phrase, `"200 OK"`.
+- **Forgetting `[0]` after `parse_qs`.** The values are lists.
+- **Calling `start_response` after the first body chunk is produced** in a generator, or never calling it. It must be called before the body is sent.
+- **Treating `/hello/` like `/hello`.** The frameworks add that logic (section 3.5); a raw app sees two different paths.

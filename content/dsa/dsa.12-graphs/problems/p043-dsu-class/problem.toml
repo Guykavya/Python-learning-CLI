@@ -1,0 +1,6 @@
+id = "dsa.12.p043"
+title = "DSU class"
+tier = "applied"
+kind = "code"
+topics = ["graph", "union-find", "disjoint set union", "path compression", "union by size"]
+minutes = 35

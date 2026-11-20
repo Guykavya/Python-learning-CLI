@@ -1,0 +1,6 @@
+id = "dsa.16.p023"
+title = "Sparse table: range minimum"
+tier = "applied"
+kind = "code"
+topics = ["sparse table", "range minimum query", "static data", "idempotent"]
+minutes = 30

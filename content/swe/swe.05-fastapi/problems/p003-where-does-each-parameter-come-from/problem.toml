@@ -1,0 +1,6 @@
+id = "swe.05.p003"
+title = "Where does each parameter come from?"
+tier = "drill"
+kind = "trace"
+topics = ["path parameters", "query parameters", "type conversion", "422", "trace"]
+minutes = 20

@@ -1,0 +1,8 @@
+- **Looping over the real list while removing from it.** The socket after a dead one is skipped. Loop over `list(...)`.
+- **`self.rooms[room]` with a `defaultdict` in `broadcast` or `count`.** Every read creates an empty room: a slow memory leak.
+- **Not deleting a room when it empties.** Same leak, from the other side.
+- **Letting one failed `send_json` stop the broadcast.** Catch the exception per socket.
+- **Broadcasting `left` before `disconnect`.** The loop tries to send to the closed socket first.
+- **Forgetting `accept()` in `connect`.** The client is never connected.
+- **Broadcasting to every room** (looping over `self.rooms.values()`): Dina hears team-7's messages.
+- **No `except WebSocketDisconnect`** in the endpoint: the socket is never removed, and the next broadcast hits a dead socket.

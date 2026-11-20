@@ -1,0 +1,343 @@
+# Real site problems for dsa.14 (Dynamic programming).
+# Verification: every LeetCode slug and CSES id below was written from memory (from the problem plan) and NOT
+# re-fetched (no web access was used while writing). Fix any slug or id that fails to open.
+# Only free LeetCode problems. Left out on purpose, because earlier modules already list them: maximum-subarray,
+# partition-to-k-equal-sum-subsets, fibonacci-number, maximal-rectangle, longest-valid-parentheses.
+# Order follows the chapter: 1-D DP and coins (5-7), grids (8), knapsack family (10-12), sequences and
+# palindromes (13-16), interval, tree and digit DP (17-20); then the CSES dynamic programming section.
+
+[[problem]]
+site = "leetcode"
+key = "climbing-stairs"
+title = "Climbing Stairs"
+url = "https://leetcode.com/problems/climbing-stairs/"
+minutes = 10
+
+[[problem]]
+site = "leetcode"
+key = "min-cost-climbing-stairs"
+title = "Min Cost Climbing Stairs"
+url = "https://leetcode.com/problems/min-cost-climbing-stairs/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "house-robber"
+title = "House Robber"
+url = "https://leetcode.com/problems/house-robber/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "house-robber-ii"
+title = "House Robber II"
+url = "https://leetcode.com/problems/house-robber-ii/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "maximum-product-subarray"
+title = "Maximum Product Subarray"
+url = "https://leetcode.com/problems/maximum-product-subarray/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "decode-ways"
+title = "Decode Ways"
+url = "https://leetcode.com/problems/decode-ways/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "word-break"
+title = "Word Break"
+url = "https://leetcode.com/problems/word-break/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "coin-change"
+title = "Coin Change"
+url = "https://leetcode.com/problems/coin-change/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "coin-change-ii"
+title = "Coin Change II"
+url = "https://leetcode.com/problems/coin-change-ii/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "perfect-squares"
+title = "Perfect Squares"
+url = "https://leetcode.com/problems/perfect-squares/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "combination-sum-iv"
+title = "Combination Sum IV"
+url = "https://leetcode.com/problems/combination-sum-iv/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "unique-paths"
+title = "Unique Paths"
+url = "https://leetcode.com/problems/unique-paths/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "unique-paths-ii"
+title = "Unique Paths II"
+url = "https://leetcode.com/problems/unique-paths-ii/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "minimum-path-sum"
+title = "Minimum Path Sum"
+url = "https://leetcode.com/problems/minimum-path-sum/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "triangle"
+title = "Triangle"
+url = "https://leetcode.com/problems/triangle/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "maximal-square"
+title = "Maximal Square"
+url = "https://leetcode.com/problems/maximal-square/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "dungeon-game"
+title = "Dungeon Game"
+url = "https://leetcode.com/problems/dungeon-game/"
+minutes = 35
+
+[[problem]]
+site = "leetcode"
+key = "cherry-pickup"
+title = "Cherry Pickup"
+url = "https://leetcode.com/problems/cherry-pickup/"
+minutes = 50
+
+[[problem]]
+site = "leetcode"
+key = "partition-equal-subset-sum"
+title = "Partition Equal Subset Sum"
+url = "https://leetcode.com/problems/partition-equal-subset-sum/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "target-sum"
+title = "Target Sum"
+url = "https://leetcode.com/problems/target-sum/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "last-stone-weight-ii"
+title = "Last Stone Weight II"
+url = "https://leetcode.com/problems/last-stone-weight-ii/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "ones-and-zeroes"
+title = "Ones and Zeroes"
+url = "https://leetcode.com/problems/ones-and-zeroes/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "longest-increasing-subsequence"
+title = "Longest Increasing Subsequence"
+url = "https://leetcode.com/problems/longest-increasing-subsequence/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "russian-doll-envelopes"
+title = "Russian Doll Envelopes"
+url = "https://leetcode.com/problems/russian-doll-envelopes/"
+minutes = 40
+
+[[problem]]
+site = "leetcode"
+key = "longest-common-subsequence"
+title = "Longest Common Subsequence"
+url = "https://leetcode.com/problems/longest-common-subsequence/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "edit-distance"
+title = "Edit Distance"
+url = "https://leetcode.com/problems/edit-distance/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "longest-palindromic-subsequence"
+title = "Longest Palindromic Subsequence"
+url = "https://leetcode.com/problems/longest-palindromic-subsequence/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "longest-palindromic-substring"
+title = "Longest Palindromic Substring"
+url = "https://leetcode.com/problems/longest-palindromic-substring/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "palindromic-substrings"
+title = "Palindromic Substrings"
+url = "https://leetcode.com/problems/palindromic-substrings/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "shortest-common-supersequence"
+title = "Shortest Common Supersequence"
+url = "https://leetcode.com/problems/shortest-common-supersequence/"
+minutes = 40
+
+[[problem]]
+site = "leetcode"
+key = "distinct-subsequences"
+title = "Distinct Subsequences"
+url = "https://leetcode.com/problems/distinct-subsequences/"
+minutes = 35
+
+[[problem]]
+site = "leetcode"
+key = "interleaving-string"
+title = "Interleaving String"
+url = "https://leetcode.com/problems/interleaving-string/"
+minutes = 35
+
+[[problem]]
+site = "leetcode"
+key = "wildcard-matching"
+title = "Wildcard Matching"
+url = "https://leetcode.com/problems/wildcard-matching/"
+minutes = 45
+
+[[problem]]
+site = "leetcode"
+key = "regular-expression-matching"
+title = "Regular Expression Matching"
+url = "https://leetcode.com/problems/regular-expression-matching/"
+minutes = 50
+
+[[problem]]
+site = "leetcode"
+key = "burst-balloons"
+title = "Burst Balloons"
+url = "https://leetcode.com/problems/burst-balloons/"
+minutes = 50
+
+[[problem]]
+site = "leetcode"
+key = "house-robber-iii"
+title = "House Robber III"
+url = "https://leetcode.com/problems/house-robber-iii/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "binary-tree-cameras"
+title = "Binary Tree Cameras"
+url = "https://leetcode.com/problems/binary-tree-cameras/"
+minutes = 45
+
+[[problem]]
+site = "leetcode"
+key = "number-of-digit-one"
+title = "Number of Digit One"
+url = "https://leetcode.com/problems/number-of-digit-one/"
+minutes = 45
+
+[[problem]]
+site = "cses"
+key = "1633"
+title = "Dice Combinations"
+url = "https://cses.fi/problemset/task/1633"
+minutes = 15
+
+[[problem]]
+site = "cses"
+key = "1634"
+title = "Minimizing Coins"
+url = "https://cses.fi/problemset/task/1634"
+minutes = 20
+
+[[problem]]
+site = "cses"
+key = "1635"
+title = "Coin Combinations I"
+url = "https://cses.fi/problemset/task/1635"
+minutes = 20
+
+[[problem]]
+site = "cses"
+key = "1636"
+title = "Coin Combinations II"
+url = "https://cses.fi/problemset/task/1636"
+minutes = 20
+
+[[problem]]
+site = "cses"
+key = "1637"
+title = "Removing Digits"
+url = "https://cses.fi/problemset/task/1637"
+minutes = 20
+
+[[problem]]
+site = "cses"
+key = "1638"
+title = "Grid Paths"
+url = "https://cses.fi/problemset/task/1638"
+minutes = 20
+
+[[problem]]
+site = "cses"
+key = "1158"
+title = "Book Shop"
+url = "https://cses.fi/problemset/task/1158"
+minutes = 25
+
+[[problem]]
+site = "cses"
+key = "1746"
+title = "Array Description"
+url = "https://cses.fi/problemset/task/1746"
+minutes = 35
+
+[[problem]]
+site = "cses"
+key = "1639"
+title = "Edit Distance"
+url = "https://cses.fi/problemset/task/1639"
+minutes = 30
+
+[[problem]]
+site = "cses"
+key = "1097"
+title = "Removal Game"
+url = "https://cses.fi/problemset/task/1097"
+minutes = 35

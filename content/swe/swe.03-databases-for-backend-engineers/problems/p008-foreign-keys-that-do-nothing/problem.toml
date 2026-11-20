@@ -1,0 +1,6 @@
+id = "swe.03.p008"
+title = "Foreign keys that do nothing"
+tier = "drill"
+kind = "code"
+topics = ["foreign keys", "PRAGMA", "SQLite", "connect"]
+minutes = 15

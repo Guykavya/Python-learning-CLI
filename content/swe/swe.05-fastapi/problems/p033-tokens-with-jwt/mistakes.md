@@ -1,0 +1,7 @@
+- **`jwt.decode(token, SECRET)` without `algorithms=`.** PyJWT refuses to decode at all, and older libraries accepted whatever algorithm the token named, including `none`.
+- **`"sub": user_id` as an int.** PyJWT requires a string `sub` and rejects the token on decode (`InvalidSubjectError`).
+- **Default options with a fixed `now` in the tests.** PyJWT compares `exp` with the real time, so a token "from 2023" is always expired.
+- **`now > exp` instead of `now >= exp`.** At exactly `exp` the token is no longer valid (PyJWT uses the same rule).
+- **`except Exception:` around everything, returning `None`.** The caller then has to remember to check for `None`; an exception cannot be forgotten.
+- **Letting `jwt.ExpiredSignatureError` escape.** The caller must then know every PyJWT class; one `InvalidToken` is the contract.
+- **Putting secrets in the claims.** The payload is only base64: anyone holding the token can read it (`jwt.decode(..., options={"verify_signature": False})` in the tests does exactly that).

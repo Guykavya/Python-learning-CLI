@@ -1,0 +1,5 @@
+- **Recomputing the parent before the recursive call.** The child is still old, so the parent keeps the old sum.
+- **Adding `v` at the leaf instead of setting it.** `update` means `a[i] = v`.
+- **Updating only the leaf.** Every ancestor still holds the old sum; queries over big nodes are wrong.
+- **Going the wrong way at `mid`.** Position `i` belongs to the left child when `i < mid` (half-open `[lo, mid)`); `i <= mid` sends `mid` to the wrong side.
+- **Rebuilding the whole tree after each update.** Correct, `O(n)` per update.

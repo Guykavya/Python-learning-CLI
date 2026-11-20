@@ -1,0 +1,6 @@
+id = "swe.06.p016"
+title = "An admin worth using"
+tier = "applied"
+kind = "code"
+topics = ["ModelAdmin", "list_display", "search_fields", "list_filter", "readonly_fields", "admin actions", "permissions"]
+minutes = 25

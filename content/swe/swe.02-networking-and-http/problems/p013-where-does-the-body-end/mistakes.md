@@ -1,0 +1,5 @@
+- **Including `WORLD` in the body of response 1.** `Content-Length` says 5.
+- **Reading 4 bytes for response 4** because of the `Content-Length` header. A `204` has no body whatever the headers say; waiting for 4 bytes hangs.
+- **Saying `reuse=yes` for response 3.** Reading until close means the connection is gone.
+- **Forgetting the chunk sizes are hexadecimal.** (Here `4` and `5`, the same in hex and decimal, but `a` would be 10.)
+- **Putting chunk-size lines into the body.** Only the chunk data counts.

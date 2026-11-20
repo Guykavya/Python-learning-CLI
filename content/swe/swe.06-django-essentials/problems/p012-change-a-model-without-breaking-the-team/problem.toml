@@ -1,0 +1,6 @@
+id = "swe.06.p012"
+title = "Change a model without breaking the team"
+tier = "applied"
+kind = "explain"
+topics = ["migrations", "makemigrations", "default", "null", "data migration", "RunPython", "teamwork", "explain"]
+minutes = 30

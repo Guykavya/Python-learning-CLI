@@ -1,0 +1,6 @@
+- **Copying `p[2c - i]` without the cap `r - i`.** The mirror only proves the palindrome up to `r`; beyond it the value can be too big.
+- **Not expanding after the copy.** The copied radius is a lower bound; the `while` loop must still try to grow it.
+- **Moving `(c, r)` for every `i`.** Move it only when `i + p[i] > r`; otherwise later mirrors use a box that reaches less far.
+- **Reading `p[i]` as a radius in `s`.** It is the **length** of the palindrome in `s` (radius in `t`).
+- **Counting `p[i]` palindromes per centre.** It is `(p[i] + 1) // 2`: lengths `p[i], p[i] - 2, ...`.
+- **Expanding from scratch** (the starter): correct, `O(n**2)` on `aaaa...`.

@@ -1,0 +1,6 @@
+id = "dsa.12.p011"
+title = "Shortest path itself"
+tier = "applied"
+kind = "code"
+topics = ["graph", "BFS", "shortest path", "parent pointers"]
+minutes = 25

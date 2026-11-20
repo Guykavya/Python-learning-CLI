@@ -1,0 +1,6 @@
+id = "dsa.16.p015"
+title = "Fenwick: range update, point query"
+tier = "applied"
+kind = "code"
+topics = ["fenwick tree", "difference array", "range update"]
+minutes = 30

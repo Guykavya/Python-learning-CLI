@@ -1,0 +1,3 @@
+lazy: statements=5 rows=10
+joinedload: statements=1 rows=7
+selectinload: statements=2 rows=10

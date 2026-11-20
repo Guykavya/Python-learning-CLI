@@ -1,0 +1,6 @@
+- Not assigning the recursive result (`delete(root.left, key)` alone): the removal is lost.
+- Case 3: copying the successor's value but forgetting to delete the successor node, so the value is in the tree twice.
+- Replacing a node with two children by only one of its children, which throws the other subtree away.
+- Searching the successor in the **left** subtree (that is the predecessor's place: you would copy the largest value of the left side, and the tests compare the exact shape).
+- Crashing for a key that is not in the tree, or for an empty tree.
+- Returning the deleted node's child from the **top** call but forgetting to return `root` at the end of the function for the other cases.

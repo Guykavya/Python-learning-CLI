@@ -1,0 +1,6 @@
+- **`accept()` first, then checking the token.** The handshake succeeds; for a moment an unauthenticated user is connected.
+- **Raising `HTTPException(401)` in a WebSocket endpoint.** WebSockets have no HTTP status after the handshake; use close codes.
+- **Forgetting `return` after `close()`.** The code goes on to `accept()` or `receive_text()` on a closed socket and fails.
+- **`len(text) > MAX_BYTES`.** Counts characters; multi-byte characters slip through.
+- **`>=` instead of `>`.** A message of exactly 4096 bytes is allowed.
+- **Checking the size only once** (before the loop). Every message must be checked.

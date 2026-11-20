@@ -1,0 +1,6 @@
+id = "swe.04.p025"
+title = "Paginate the post list"
+tier = "applied"
+kind = "code"
+topics = ["db.paginate", "pagination", "max_per_page", "url_for", "404"]
+minutes = 40

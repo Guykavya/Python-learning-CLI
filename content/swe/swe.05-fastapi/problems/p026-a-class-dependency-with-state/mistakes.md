@@ -1,0 +1,7 @@
+- **Keeping the times in a local variable of `__call__`.** It starts empty on every request, so nothing is ever limited.
+- **`Depends(RateLimit)` (the class) instead of `Depends(RateLimit(3, 60))`.** FastAPI would build a new object on every request, with empty memory, and try to read `limit` and `window` from the query.
+- **One shared instance for both endpoints.** Then `/export` uses up `/search`'s allowance.
+- **Recording the refused request.** A client that keeps retrying would never get in, because every retry pushes the window forward.
+- **`<=` in the window test.** With `now - t <= window` the request from t=0 still counts at t=60.
+- **`int(...)` instead of `math.ceil` for Retry-After.** 0.5 seconds would become `0`, telling the client to retry immediately into another 429.
+- **Calling `time.monotonic()` directly in `__call__`.** It works in production, but the test cannot move time and would have to sleep.

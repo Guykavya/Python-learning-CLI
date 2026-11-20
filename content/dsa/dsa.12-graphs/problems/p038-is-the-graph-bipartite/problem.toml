@@ -1,0 +1,6 @@
+id = "dsa.12.p038"
+title = "Is the graph bipartite?"
+tier = "drill"
+kind = "code"
+topics = ["graph", "bipartite", "bfs", "two-colouring"]
+minutes = 20

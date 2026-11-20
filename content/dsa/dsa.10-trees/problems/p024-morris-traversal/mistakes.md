@@ -1,0 +1,5 @@
+- Not stopping the search for `pred` at the thread (`pred.right is not cur`): the search follows the thread up into `cur` and loops forever.
+- Forgetting to remove the thread (`pred.right = None`): the tree is left with a cycle, and the next walk loops. The test checks the tree afterwards.
+- Visiting `cur` when the thread is made (that is preorder): in inorder you visit it only when you come back.
+- Using a list as a stack "just for the path": that is not `O(1)` extra memory, and the test measures memory.
+- Moving to `cur.right` after making a thread: after making a thread you go **left**.

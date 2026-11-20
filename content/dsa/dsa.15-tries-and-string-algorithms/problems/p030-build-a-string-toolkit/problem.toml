@@ -1,0 +1,7 @@
+id = "dsa.15.p030"
+title = "Build a string toolkit"
+tier = "deep"
+kind = "code"
+topics = ["trie", "prefix function", "kmp", "z-function", "testing"]
+minutes = 60
+assessment = "build"

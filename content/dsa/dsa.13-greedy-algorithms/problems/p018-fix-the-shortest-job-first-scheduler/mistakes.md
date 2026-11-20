@@ -1,0 +1,5 @@
+- **Fixing only the `=`.** `total_wait += elapsed` after `elapsed += duration` sums finish times (52 instead of 28).
+- **Fixing only the order of the lines.** `total_wait = elapsed` still overwrites the total; it ends as the waiting time of the last job (16).
+- **Sorting by name** or by the whole tuple: `sorted(jobs)` sorts by name first, not by duration.
+- **Sorting the input in place** with `jobs.sort(...)`: the caller's list changes.
+- **Breaking ties by name.** The rules say equal durations keep their input order; the stable `sorted` with key `job[1]` does that.

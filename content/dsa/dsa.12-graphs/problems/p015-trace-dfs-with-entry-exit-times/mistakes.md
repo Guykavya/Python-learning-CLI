@@ -1,0 +1,5 @@
+- Using a separate counter for exits, or starting the exit times again from 0: there is one clock for both kinds of events.
+- Entering `4` right after `1` (as BFS would): DFS finishes the whole branch under `1` first.
+- Entering `3` twice, once from `2` and once from `1`: by the time `1`'s loop reaches `3`, it is already in `tin`.
+- Forgetting that `adj[1]` contains `3` from the edge `(3, 1)`: it is listed after `2`, because that edge comes later in the list.
+- Writing the table with `tin` and `tout` swapped, or in the order of entry instead of `u = 0 .. 5`.

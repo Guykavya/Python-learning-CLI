@@ -1,0 +1,6 @@
+id = "swe.03.p011"
+title = "NULL and UNIQUE"
+tier = "drill"
+kind = "trace"
+topics = ["NULL", "UNIQUE", "constraints", "trace"]
+minutes = 15

@@ -1,0 +1,6 @@
+- **`len(body)` of a `str`.** `len("é")` is 1, the encoded body is 2 bytes.
+- **`\n` instead of `\r\n`.** Some clients accept it; the standard says CRLF.
+- **Forgetting the blank line** between headers and body.
+- **Sending a body with `204`.** Clients ignore it and the bytes poison the next response on a kept-alive connection.
+- **A made-up reason phrase.** The phrase is informational but use the standard one (`HTTPStatus`).
+- **Mixing `str` and `bytes`** when joining head and body.

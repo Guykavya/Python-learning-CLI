@@ -1,0 +1,6 @@
+id = "dsa.16.p016"
+title = "Trace the Fenwick update path"
+tier = "drill"
+kind = "trace"
+topics = ["fenwick tree", "lowbit", "binary", "trace"]
+minutes = 15

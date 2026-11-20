@@ -1,0 +1,5 @@
+- **Trying the roots in list order and taking the first match.** `["aa", "a"]` would turn `aab` into `aa`; the shortest root is `a`.
+- **Walking to the end of the word, then taking the last root seen.** That gives the **longest** root.
+- **Not checking `is_end` after each step.** Reaching a node is not enough; a root must end there.
+- **Replacing words that are only a prefix of a root.** The word `a` with the root `ab`: the walk ends inside the root, so the word stays `a`.
+- **Changing the spacing.** Split on spaces and join with single spaces.

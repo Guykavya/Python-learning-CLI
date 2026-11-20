@@ -1,0 +1,6 @@
+id = "dsa.14.p001"
+title = "Fibonacci three ways"
+tier = "drill"
+kind = "code"
+topics = ["dynamic programming", "memoisation", "tabulation", "fibonacci", "recursion"]
+minutes = 20

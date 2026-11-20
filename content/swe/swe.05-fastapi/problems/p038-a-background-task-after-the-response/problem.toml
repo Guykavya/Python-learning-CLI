@@ -1,0 +1,6 @@
+id = "swe.05.p038"
+title = "A background task after the response"
+tier = "drill"
+kind = "code"
+topics = ["BackgroundTasks", "dependency_overrides", "logging", "fakes"]
+minutes = 25

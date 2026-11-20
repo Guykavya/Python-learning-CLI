@@ -1,0 +1,6 @@
+id = "swe.05.p049"
+title = "The life of one request"
+tier = "deep"
+kind = "trace"
+topics = ["request lifecycle", "middleware", "yield dependencies", "BackgroundTasks", "HTTPException", "trace"]
+minutes = 35

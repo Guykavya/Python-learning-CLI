@@ -1,0 +1,8 @@
+insert tea: new 3, nodes 4
+insert ten: new 1, nodes 5
+insert te: new 0, nodes 5
+insert tea: new 0, nodes 5
+t 4 0
+te 4 1
+tea 2 2
+ten 1 1

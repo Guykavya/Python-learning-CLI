@@ -1,0 +1,6 @@
+- **Pasting `order` into an `f"... ORDER BY {order}"` string.** SQL injection through a column name.
+- **`text(f"... ORDER BY {order}")`.** The same hole with a different function.
+- **`.like(f"%{title}%")` with no escaping.** A `%` typed by the user matches everything.
+- **Adding `where(col == None)` for missing filters.** That means `IS NULL`: no rows.
+- **Validating `order` only when filters are present.** Refuse a bad value always.
+- **Not ordering by `id` after the chosen column.** Ties come out in an undefined order.

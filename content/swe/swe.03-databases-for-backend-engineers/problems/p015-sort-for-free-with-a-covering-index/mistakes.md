@@ -1,0 +1,5 @@
+- **An index only on `customer_id`.** The rows are found, but then sorted in a temporary b-tree.
+- **Index columns in the wrong order** (`created, customer_id`): the filter on `customer_id` then cannot narrow the search.
+- **`SELECT *`.** The other columns are not in the index, so it is not covering.
+- **Forgetting the `id DESC` tie-break** in the query: orders created at the same moment come out in an undefined order.
+- **`ORDER BY created DESC` with an index declared `created DESC`.** SQLite reads indexes backwards for free; no need.

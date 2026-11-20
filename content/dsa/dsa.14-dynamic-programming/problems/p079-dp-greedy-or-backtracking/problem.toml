@@ -1,0 +1,6 @@
+id = "dsa.14.p079"
+title = "DP, greedy or backtracking?"
+tier = "applied"
+kind = "explain"
+topics = ["dynamic programming", "greedy", "backtracking", "choosing an algorithm", "explain"]
+minutes = 25

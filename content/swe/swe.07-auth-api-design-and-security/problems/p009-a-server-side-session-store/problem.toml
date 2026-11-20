@@ -1,0 +1,6 @@
+id = "swe.07.p009"
+title = "A server-side session store"
+tier = "applied"
+kind = "code"
+topics = ["sessions", "idle timeout", "absolute timeout", "session fixation", "rotation", "injected clock"]
+minutes = 40

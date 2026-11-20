@@ -1,0 +1,4 @@
+- **`print` inside the loop.** Correct but slow: that is the version this test rejects.
+- **`join` of integers.** `"\n".join([1, 4])` raises `TypeError`: convert with `str` first.
+- **Forgetting the final newline** when using `sys.stdout.write`. Some judges accept it, some compare exactly; add it.
+- **Building the string with `+=` in a loop.** CPython sometimes optimises it, PyPy does not; a list plus `join` is always safe.

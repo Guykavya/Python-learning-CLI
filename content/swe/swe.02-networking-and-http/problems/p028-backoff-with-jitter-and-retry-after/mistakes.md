@@ -1,0 +1,6 @@
+- **`base * 2**i` with no cap.** After ten retries the wait is minutes.
+- **Using the ceiling itself as the wait.** Without randomness all clients retry at the same moments.
+- **`random.uniform` (the global one) instead of `rng.uniform`.** The test cannot control it.
+- **Ignoring the date form of `Retry-After`**, or returning a negative wait for a past date.
+- **Returning `0` for garbage.** `None` means "no usable header: use your own backoff".
+- **Trusting a huge `Retry-After`.** Cap it.

@@ -1,0 +1,7 @@
+- **Skipping every edge back to the parent vertex** (`if v == parent: continue`): with two cables between `u` and `v`, the second cable is a real back edge. Skipping it reports both cables as bridges.
+- **`>=` instead of `>`**: `low[c] == tin[p]` means `c`'s subtree can climb back to `p` itself, so the edge `p - c` is on a cycle. (`>=` is the articulation point rule.)
+- **Updating `low[u]` with `low[v]` of a vertex that is still being explored** is usually harmless for bridges, but mixing it up with `tin[v]` is a common source of confusion: for a back edge use `tin[v]`.
+- **Recursion** on a line of `10**5` servers: about 1,000 calls is Python's limit. Use frames with an iterator, as in the chapter.
+- **Only starting the DFS at vertex 0**: in a disconnected graph the other parts have bridges too.
+- **The slow way** (remove each edge, run BFS) is `O(E * (V + E))`: fine for checking, far too slow for `10**5`.
+- **Returning `(v, u)`** for an edge listed as `(u, v)`: return the edge exactly as it appears in `edges`.

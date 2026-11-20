@@ -1,0 +1,6 @@
+- **The recursive walk of the chapter.** Right answers, but on a path of 100,000 nodes it raises `RecursionError`. Raising the recursion limit hides the problem: it costs memory, and on older Pythons or small thread stacks it can crash the interpreter. Use BFS order reversed, or an explicit stack.
+- **Going forwards through the BFS order.** A parent is then processed before its children are finished, and reads zeros.
+- **`skip(v) = sum(take(child))`.** Not taking `v` leaves each child free; choose `max(take, skip)` per child.
+- **Two colours of the tree** ("all nodes at even depth, or all at odd depth"). Always independent, but not always the largest: a path of 4 nodes with a leaf hung under each middle node shows it.
+- **Assuming `a` is the parent in each edge `(a, b)`.** Edges come in any order and direction; only the BFS from the root decides who is the parent.
+- **Starting `take` at 0.** `take(v)` counts `v` itself: it starts at 1.

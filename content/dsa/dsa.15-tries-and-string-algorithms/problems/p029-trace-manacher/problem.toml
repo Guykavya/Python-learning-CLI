@@ -1,0 +1,6 @@
+id = "dsa.15.p029"
+title = "Trace Manacher"
+tier = "deep"
+kind = "trace"
+topics = ["manacher", "palindromes", "trace"]
+minutes = 25

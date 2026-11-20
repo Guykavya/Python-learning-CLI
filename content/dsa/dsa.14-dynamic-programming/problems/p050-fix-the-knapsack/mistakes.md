@@ -1,0 +1,5 @@
+- **Reversing the loop but stopping one too early**: `range(capacity, weights[i], -1)` never updates `best[weights[i]]`, so a parcel that exactly fills a capacity is missed: `knapsack([3], [5], 3)` returns 0.
+- **Reversing the parcel loop** (`for i in reversed(...)`). The order of the parcels does not matter; the capacity loop is the bug.
+- **Adding a 2-D table.** Correct, but the task keeps one array. Understand why the direction matters instead.
+- **Marking parcels as "used" in a set.** The array `best[c]` stands for many different choices at once; a global "used" set cannot say which choice used which parcel.
+- **Testing only friendly inputs.** The second example gives 9 with the bug as well. One parcel with a large capacity shows the reuse at once.

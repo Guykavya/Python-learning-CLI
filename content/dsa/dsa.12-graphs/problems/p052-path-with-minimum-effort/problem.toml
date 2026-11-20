@@ -1,0 +1,6 @@
+id = "dsa.12.p052"
+title = "Path with minimum effort"
+tier = "deep"
+kind = "code"
+topics = ["graph", "grid", "dijkstra", "minimax path"]
+minutes = 40

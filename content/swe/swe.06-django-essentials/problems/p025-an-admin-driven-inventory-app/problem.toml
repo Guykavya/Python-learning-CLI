@@ -1,0 +1,7 @@
+id = "swe.06.p025"
+title = "An admin-driven inventory app"
+tier = "challenge"
+kind = "code"
+topics = ["project", "Django", "ORM", "transactions", "admin", "DRF", "permissions", "testing"]
+minutes = 120
+assessment = "build"

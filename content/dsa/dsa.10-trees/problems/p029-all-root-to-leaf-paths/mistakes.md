@@ -1,0 +1,5 @@
+- Forgetting `path.pop()`: the values of the finished branches stay in `path`, and later paths start with wrong nodes.
+- Recording a path at every node (not only at a leaf): `"1"` and `"1->2"` would appear for the tree `[1, 2]`.
+- Treating a node with one child as a leaf: the path must continue into the existing child.
+- Storing the list `path` itself instead of a string or a copy (`path[:]`): all stored paths are the same list and end up empty.
+- Joining numbers without `str`: `"->".join([1, 2])` raises a `TypeError`.

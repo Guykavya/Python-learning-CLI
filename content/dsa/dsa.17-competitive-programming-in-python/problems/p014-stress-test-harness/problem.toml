@@ -1,0 +1,6 @@
+id = "dsa.17.p014"
+title = "Stress test harness"
+tier = "deep"
+kind = "code"
+topics = ["stress testing", "brute force", "random generator", "seed"]
+minutes = 35

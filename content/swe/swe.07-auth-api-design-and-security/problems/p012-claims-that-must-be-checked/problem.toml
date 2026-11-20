@@ -1,0 +1,6 @@
+id = "swe.07.p012"
+title = "Claims that must be checked"
+tier = "applied"
+kind = "code"
+topics = ["JWT claims", "exp", "nbf", "iss", "aud", "leeway", "injected clock"]
+minutes = 35

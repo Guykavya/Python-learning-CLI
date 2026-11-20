@@ -1,0 +1,6 @@
+id = "dsa.16.p024"
+title = "Sparse table: why overlap is fine"
+tier = "applied"
+kind = "explain"
+topics = ["sparse table", "idempotent", "associative", "explain"]
+minutes = 20

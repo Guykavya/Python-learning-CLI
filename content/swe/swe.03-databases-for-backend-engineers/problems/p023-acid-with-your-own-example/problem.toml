@@ -1,0 +1,7 @@
+id = "swe.03.p023"
+title = "ACID with your own example"
+tier = "drill"
+kind = "explain"
+topics = ["ACID", "transactions", "atomicity", "durability", "write-ahead log", "explain"]
+minutes = 25
+assessment = "explain"

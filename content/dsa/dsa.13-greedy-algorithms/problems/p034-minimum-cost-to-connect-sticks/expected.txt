@@ -1,0 +1,9 @@
+smallest first
+join 2 + 3 = 5, total 5
+join 4 + 5 = 9, total 14
+join 6 + 9 = 15, total 29
+largest first
+join 6 + 4 = 10, total 10
+join 10 + 3 = 13, total 23
+join 13 + 2 = 15, total 38
+totals: 29 38

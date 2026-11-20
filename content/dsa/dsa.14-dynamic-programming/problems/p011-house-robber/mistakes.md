@@ -1,0 +1,6 @@
+- **Every other house** (`sum(nums[::2])` or the better of the two parities). `[2, 1, 1, 2]` needs the two ends, which skips two houses in a row.
+- **Greedy: richest house first.** On `[2, 7, 9, 3, 1]`, taking 7 first gives at most 10; the best is 12.
+- **`f(i) = max(f(i-1), f(i-1) + nums[i-1])`.** Adding to `f(i-1)` allows robbing neighbours.
+- **Crashing on `[]` or `[x]`** with a table that writes `f[1]` without a guard.
+- **Separate assignments** `prev2 = prev1; prev1 = max(prev1, prev2 + money)`: the second line sees the new `prev2`.
+- **Recursion without a memo**: exponential, and with a memo still too deep for 100,000 houses.

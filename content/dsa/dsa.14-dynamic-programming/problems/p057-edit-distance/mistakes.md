@@ -1,0 +1,5 @@
+- **Base cases of 0.** `f[i][0]` is `i`, not 0: turning `"abc"` into `""` needs 3 deletes. With zeros, `edit_distance("abc", "")` returns 0.
+- **Charging 1 for equal characters too** (`1 + min(...)` always). Then `edit_distance("abc", "abc")` is not 0.
+- **Taking the min of the three without the equal case.** For equal characters the diagonal **without** `+ 1` must be allowed.
+- **Mixing up which neighbour is which.** Up `f[i-1][j]` is a delete, left `f[i][j-1]` an insert. For the distance it does not matter, because both cost 1, but it matters when you print the operations (p058).
+- **Using `abs(len(a) - len(b))`**, or counting different positions. `"abc"` and `"bca"` differ in every position but the distance is 2 (delete `a`, insert `a` at the end).

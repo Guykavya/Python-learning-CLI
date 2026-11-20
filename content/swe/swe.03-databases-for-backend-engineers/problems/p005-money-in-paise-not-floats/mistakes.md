@@ -1,0 +1,5 @@
+- **`float(text) * 100`.** `19.99 * 100` is `1998.9999999999998`; `int()` of it is 1998.
+- **`round()` for money.** Python rounds halves to the nearest even number.
+- **`Decimal(0.1)`** (a float argument) carries the float's error; pass the text.
+- **Accepting `"nan"` or `"inf"`.** `Decimal` parses them; they are not amounts.
+- **Storing rupees as `REAL` in the database.** Same problem, one layer lower.

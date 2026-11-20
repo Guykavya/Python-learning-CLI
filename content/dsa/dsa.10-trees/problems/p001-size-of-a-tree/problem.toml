@@ -1,0 +1,6 @@
+id = "dsa.10.p001"
+title = "Size of a tree"
+tier = "drill"
+kind = "code"
+topics = ["tree", "recursion", "base case"]
+minutes = 10

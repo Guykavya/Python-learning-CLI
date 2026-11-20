@@ -1,0 +1,5 @@
+- **Adding up the gaps.** The read timeout compares each gap alone with the limit.
+- **Saying the 1.0 s timeout fires at 1.0 s.** The gaps are 0.8 s: it never fires.
+- **Forgetting `total - clock` shrinks.** At clock 2.4 only 0.6 s of the 3.0 s deadline remain.
+- **Writing `with 2 bytes` for the deadline line.** Three bytes (at 0.8, 1.6 and 2.4 s) arrived before the deadline.
+- **Wrong format.** The lines are `timeout after <t>s with <n> bytes` and `done at <t>s with <n> bytes`, one decimal.

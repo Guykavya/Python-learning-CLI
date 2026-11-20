@@ -1,0 +1,6 @@
+id = "swe.02.p005"
+title = "Read exactly n bytes"
+tier = "drill"
+kind = "code"
+topics = ["TCP", "recv", "framing", "socketpair"]
+minutes = 25

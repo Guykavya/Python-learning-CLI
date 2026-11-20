@@ -1,0 +1,6 @@
+id = "dsa.12.p045"
+title = "Number of provinces"
+tier = "drill"
+kind = "code"
+topics = ["graph", "adjacency matrix", "connected components", "union-find", "dfs"]
+minutes = 20

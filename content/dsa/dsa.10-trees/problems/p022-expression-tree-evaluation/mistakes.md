@@ -1,0 +1,5 @@
+- Testing a leaf with `isinstance(node.val, int)` is fine, but testing `node.val > 0` or `if node.val` for "is a number" fails for `0` and negative numbers. A leaf is a node with no children.
+- Applying the operator as `b - a` or `b / a`: the left operand comes first.
+- Using `//` for the division: the problem says true division.
+- Evaluating the operator node before its children: the operands do not exist yet.
+- Calling `eval` on a string you build: it works only for this problem and teaches nothing about the tree.

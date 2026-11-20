@@ -1,0 +1,7 @@
+- **Forgetting `await` before `send(...)`.** `send` is an async function: without `await` it builds a coroutine that never runs, and nothing is sent.
+- **`str` instead of `bytes`** in headers or body. ASGI uses bytes: `b"content-type"`, `json.dumps(...).encode()`.
+- **`content-length` from the dict** (`len(str(data))`) or from the wrong string. Count the bytes you actually send.
+- **`content-length` as an int.** It is a header value, so it is bytes: `str(len(body)).encode()`.
+- **Sending the body first.** The start message (status and headers) always comes first.
+- **Checking `scope["path"].startswith("/hello")`.** `/hello/world` must be 404.
+- **Writing `def app` (not `async def`).** A server `await`s the app; a plain function cannot be awaited.

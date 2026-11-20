@@ -1,0 +1,6 @@
+id = "dsa.14.p075"
+title = "Binary tree cameras"
+tier = "challenge"
+kind = "code"
+topics = ["dynamic programming", "tree dp", "binary tree", "three states", "covering"]
+minutes = 50

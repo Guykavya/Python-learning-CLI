@@ -1,0 +1,5 @@
+- **Keeping `startswith` and adding a "/" check.** `https://app.example.com/cb/../x` still starts correctly. Do not patch the prefix test; remove it.
+- **Comparing only the host** (`urlsplit(uri).netloc`). The path, the scheme and the query then go unchecked, and `@` tricks confuse parsers.
+- **Lower-casing both sides.** Registered URIs are compared exactly; the client registers the form it will use.
+- **Redirecting back with `error=invalid_redirect_uri`.** With an unverified address that is the attack. Answer 400 on the authorization server's own page.
+- **Checking `in` against all clients' URIs.** A redirect_uri belongs to one client.

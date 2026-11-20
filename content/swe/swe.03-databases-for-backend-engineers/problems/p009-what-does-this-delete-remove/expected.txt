@@ -1,0 +1,4 @@
+1: customers=1 orders=1 lines=1 tickets=3 invoices=1
+2: error
+3: customers=1 orders=1 lines=1 tickets=3 invoices=0
+4: customers=1 orders=0 lines=0 tickets=3 invoices=0

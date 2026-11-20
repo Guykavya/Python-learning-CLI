@@ -1,0 +1,6 @@
+id = "swe.04.p001"
+title = "A WSGI app with no framework"
+tier = "drill"
+kind = "code"
+topics = ["WSGI", "environ", "start_response"]
+minutes = 20

@@ -1,0 +1,5 @@
+- **Looping for the inverse.** Up to `10**9` steps per query.
+- **Computing `b ** (p - 2) % p`.** The power is a number with millions of digits for large `p`; always use three-argument `pow`.
+- **Forgetting `b % p == 0`.** `pow(0, p - 2, p)` is `0`, and the answer `0` looks valid but is wrong: the statement wants `-1`.
+- **Not reducing `a`.** `a` is up to `10**18`; it is fine in Python, but `a % p` first keeps the products small.
+- **`a // b % p`.** Integer division is not modular division, even when `b` divides `a`.

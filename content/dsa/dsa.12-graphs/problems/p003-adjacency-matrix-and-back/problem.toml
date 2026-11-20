@@ -1,0 +1,6 @@
+id = "dsa.12.p003"
+title = "Adjacency matrix and back"
+tier = "drill"
+kind = "code"
+topics = ["graph", "adjacency matrix", "edge list", "representation"]
+minutes = 20

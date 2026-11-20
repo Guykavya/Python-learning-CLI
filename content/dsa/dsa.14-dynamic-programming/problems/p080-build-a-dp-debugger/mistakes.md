@@ -1,0 +1,8 @@
+- **Recursive calls that bypass the wrapper.** If the function calls an inner undecorated helper, nothing is memoised or counted. With `@dp_debug` on the function itself, its own name refers to the wrapper, so the recursion goes through it.
+- **Popping the stack only on success.** After one `MissingBaseCase`, 200 old states stay "in progress" and the next call fails immediately (or reports a cycle that does not exist). Pop in `finally:`.
+- **Marking "in progress" by putting a placeholder in the table** (`table[state] = None` before computing). A cycle then reads `None` as if it were a finished value: you get a `TypeError` far away, or a wrong number, instead of `CyclicState`. Keep the in-progress states apart from the finished ones.
+- **Storing the counters in global variables or as default arguments.** Then two decorated functions share them, and `reset()` of one clears the other.
+- **Counting a call only when something is computed.** `calls` includes the hits; `hits` is the part answered from the table.
+- **Supporting only `@dp_debug`.** With `@dp_debug(max_depth=50)` Python first calls `dp_debug(max_depth=50)` with no function; it must return the decorator.
+- **Letting the error be a `RecursionError`.** That is what Python raises at about 1,000 frames, with a huge traceback and no state named. Raise your own error well before that.
+- **Forgetting `functools.wraps`.** The wrapper is then called `wrapper` in messages and tracebacks.

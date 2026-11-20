@@ -1,0 +1,10 @@
+1: left=2 right=3
+2: left=None right=4
+4: left=None right=None
+3: left=5 right=None
+5: left=6 right=None
+6: left=None right=None
+size 6
+height 4
+leaves 2
+leaf values [4, 6]

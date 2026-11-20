@@ -1,0 +1,6 @@
+id = "swe.05.p007"
+title = "Several body parts"
+tier = "applied"
+kind = "trace"
+topics = ["request body", "Body", "embed", "several models", "trace"]
+minutes = 25

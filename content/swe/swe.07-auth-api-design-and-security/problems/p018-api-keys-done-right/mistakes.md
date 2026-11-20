@@ -1,0 +1,7 @@
+- **Storing the key (or the secret) in the row** "just for support". Then a leaked table is a set of working keys. Only the hash is stored.
+- **`presented.split("_")` without a limit.** A `token_urlsafe` secret that contains `_` gives four parts and a valid key is refused (about half of all keys).
+- **Comparing with `==`.** Use `hmac.compare_digest` so the comparison time does not reveal how many leading characters match.
+- **Passing the raw presented text to `compare_digest`.** A `str` with non-ASCII characters makes it raise `TypeError`; hash first and compare the hex digests.
+- **Letting `check` raise** on malformed input. An attacker must get the same `None` for every kind of wrong key.
+- **Revoking by owner** instead of by prefix. Rotation needs two live keys for one customer.
+- **Using `random` for the secret.** Use `secrets`.

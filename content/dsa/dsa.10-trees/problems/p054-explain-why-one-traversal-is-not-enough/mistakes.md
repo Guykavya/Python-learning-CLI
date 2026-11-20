@@ -1,0 +1,6 @@
+- Giving two trees that are really the same tree written in two ways.
+- Saying "the preorder is not enough because it is out of order": the problem is not the order, but that the **boundary** between the left and the right subtree is lost.
+- Forgetting that the extra information has to be of a different kind: another traversal (inorder) **or** markers for missing children, not just "more nodes".
+- Believing that preorder and inorder always determine the tree: with repeated values the root cannot be located in the inorder list.
+- Explaining the BST case with "it is sorted": the BST rule says where each value must go (bounds), which replaces the inorder list.
+- Counting the tokens of the serialisation without the markers: `n` nodes and `n + 1` markers give `2n + 1`.

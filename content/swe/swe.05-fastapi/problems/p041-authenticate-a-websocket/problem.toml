@@ -1,0 +1,6 @@
+id = "swe.05.p041"
+title = "Authenticate a WebSocket"
+tier = "applied"
+kind = "code"
+topics = ["WebSocket", "authentication", "close codes", "message size limit", "query parameters"]
+minutes = 35

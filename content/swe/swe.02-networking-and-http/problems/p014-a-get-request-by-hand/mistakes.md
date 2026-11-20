@@ -1,0 +1,7 @@
+- **A single `recv(4096)`.** A response can arrive in several pieces.
+- **Forgetting `\r\n\r\n` at the end of the request.** The server waits for the rest and you wait for the answer: both hang.
+- **Using `\n`** instead of `\r\n` in the request.
+- **No `Host` header.** An HTTP/1.1 server answers `400`.
+- **Decoding the body as text.** Return bytes; the caller knows the encoding from `Content-Type`.
+- **No timeout.** A server that never answers hangs the program for ever.
+- **Case-sensitive header names** in the result.

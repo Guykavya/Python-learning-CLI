@@ -1,0 +1,6 @@
+- **Sorting as numbers**, biggest first: `[10, 2]` gives `"102"` instead of `"210"`.
+- **Sorting as text, descending.** It gets most cases right, but `[3, 30]` gives `"303"` instead of `"330"`: a longer string with the same start counts as bigger.
+- **Forgetting the all-zeros case.** `[0, 0, 0]` must give `"0"`.
+- **Stripping every leading zero** with `lstrip("0")`: `[0]` would give `""`.
+- **Returning an `int`.** The answer is a string.
+- **Calling `nums.sort(...)`** on the caller's list. Build your own list of strings.

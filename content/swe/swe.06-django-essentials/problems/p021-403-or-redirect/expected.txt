@@ -1,0 +1,6 @@
+1: 302 /accounts/login/?next=/profile/
+2: 403
+3: 302 /accounts/login/?next=/export/
+4: 302 /accounts/login/?next=/panel/
+5: 403
+6: 200 panel

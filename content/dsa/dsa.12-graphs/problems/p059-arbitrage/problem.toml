@@ -1,0 +1,6 @@
+id = "dsa.12.p059"
+title = "Arbitrage? (a negative cycle in logarithms)"
+tier = "challenge"
+kind = "code"
+topics = ["graph", "bellman-ford", "negative cycle", "logarithm", "floating point", "modelling"]
+minutes = 50

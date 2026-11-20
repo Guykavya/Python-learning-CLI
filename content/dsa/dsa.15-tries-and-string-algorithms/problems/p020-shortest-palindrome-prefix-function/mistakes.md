@@ -1,0 +1,5 @@
+- **Using `#` (or any fixed character) as the separator** when `s` may contain it. `"#a"` gives the wrong answer `"#a"`.
+- **No separator at all.** Then borders can be longer than `s` (`"aa"` + `"aa"` has border 3).
+- **Adding the reverse of the whole string** (`s[::-1] + s`, or `s[::-1][:-1] + s`). A palindrome, but not the shortest.
+- **Mixing up the prefix and the tail.** It is the **tail after** the palindromic prefix that is reversed and put in front.
+- **Checking each prefix with slicing** (the starter): `O(n**2)` characters copied, too slow for `3 * 10**5`.

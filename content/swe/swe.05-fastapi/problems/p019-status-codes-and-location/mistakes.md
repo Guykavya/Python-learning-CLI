@@ -1,0 +1,6 @@
+- **Leaving the default 200 on create.** The client then cannot tell "created" from "already there".
+- **`len(NOTES) + 1` for the id.** After a delete it hands out an id that is still in use and overwrites a note.
+- **Returning `{"ok": True}` from the 204 endpoint.** A 204 must have no body; some clients and proxies break on one.
+- **Returning a 400 or 422 for the duplicate.** The request was valid; it conflicts with stored data, which is what 409 means.
+- **Setting the `Location` header before the duplicate check.** Check first, then change anything.
+- **Raising `HTTPException` from `starlette.exceptions`.** Use the one from `fastapi` (section 8.1).

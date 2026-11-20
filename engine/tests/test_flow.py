@@ -68,8 +68,11 @@ def test_syllabus_is_honest_about_unwritten_modules(home, capsys):
     capsys.readouterr()
     run("syllabus", "swe")
     out = capsys.readouterr().out
-    assert "chapter ready" in out, "a module with a chapter but no problems must say so, not show 0/N"
-    assert "Problems written: 0 of" in out, "the summary line should count only modules that have problems"
+    swe_modules = list(load().track("swe").modules)
+    swe_with_problems = sum(1 for m in swe_modules if content.problems_for_module(m.id))
+    if swe_with_problems < len(swe_modules):
+        assert "chapter ready" in out, "a module with a chapter but no problems must say so, not show 0/N"
+    assert f"Problems written: {swe_with_problems} of {len(swe_modules)}" in out, "the summary line should count only modules that have problems"
     assert "Chapters written: 11 of 11" in out, "every swe module has a chapter"
 
     run("syllabus", "dsa")
@@ -83,7 +86,9 @@ def test_syllabus_is_honest_about_unwritten_modules(home, capsys):
 def test_goto_warns_when_module_has_no_content(home, capsys):
     run("init")
     capsys.readouterr()
-    run("goto", "swe.01")
+    unwritten = [m.id for t in load().tracks for m in t.modules if not content.problems_for_module(m.id)]
+    assert unwritten, "every module of the course is written: this test needs one without problems to jump to"
+    run("goto", unwritten[0])
     out = capsys.readouterr().out
     assert "no problems written yet" in out, "jumping to an unwritten module should warn that the plan will skip it"
 

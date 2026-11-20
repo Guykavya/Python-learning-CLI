@@ -1,0 +1,6 @@
+- **`COUNT(*)` after a `LEFT JOIN`.** A post without comments counts 1. Count a column of the right-hand table.
+- **An inner `.join(Comment)`.** Posts without comments disappear.
+- **`GROUP BY` missing** (or missing `User.username`): wrong or invalid SQL; some databases reject it, SQLite hides the mistake.
+- **`joinedload` on the collection and a `.limit()`** later: the limit applies to the joined rows, not to the posts.
+- **Fixing one relationship only.** The page still runs N queries for the other one.
+- **Counting with `len(p.comments)` after `joinedload(Post.comments)` of the whole collection** just for a number: correct but loads all comment rows.

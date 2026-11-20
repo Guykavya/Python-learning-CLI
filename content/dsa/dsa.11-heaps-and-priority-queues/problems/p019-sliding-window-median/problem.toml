@@ -1,0 +1,6 @@
+id = "dsa.11.p019"
+title = "Sliding window median"
+tier = "challenge"
+kind = "code"
+topics = ["heap", "two heaps", "lazy deletion", "sliding window", "median"]
+minutes = 50

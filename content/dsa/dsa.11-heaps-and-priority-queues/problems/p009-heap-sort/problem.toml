@@ -1,0 +1,6 @@
+id = "dsa.11.p009"
+title = "Heap sort"
+tier = "applied"
+kind = "code"
+topics = ["heap", "heap sort", "in place", "sift down"]
+minutes = 30

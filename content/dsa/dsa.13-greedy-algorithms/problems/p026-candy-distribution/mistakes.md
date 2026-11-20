@@ -1,0 +1,5 @@
+- **Only one pass.** Left to right alone handles `[1, 2, 3]` but gives `[5, 4, 3]` the candies `1, 1, 1`.
+- **Overwriting in the second pass** (`c[i] = c[i + 1] + 1` without `max`). A peak that needed 4 from the left gets lowered and the left rule breaks.
+- **Treating equal ratings as "equal candies".** Equal neighbours have no rule at all: `[1, 2, 2]` is `1, 2, 1`, total 4, not 5.
+- **Using `>=` instead of `>`.** Equal ratings would then force "more", which the problem does not ask for.
+- **Starting the right pass at `n - 1`.** `c[i + 1]` would be out of range; start at `n - 2`.

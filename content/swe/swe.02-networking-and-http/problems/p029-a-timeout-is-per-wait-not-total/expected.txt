@@ -1,0 +1,4 @@
+read timeout 1.0 s: done at 8.0s with 10 bytes
+read timeout 0.5 s: timeout after 0.5s with 0 bytes
+timeout 1.0 s, deadline 3.0 s: timeout after 3.0s with 3 bytes
+timeout 1.0 s, deadline 10.0 s: done at 8.0s with 10 bytes

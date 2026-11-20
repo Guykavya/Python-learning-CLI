@@ -1,0 +1,6 @@
+id = "dsa.10.p003"
+title = "Maximum value"
+tier = "drill"
+kind = "code"
+topics = ["tree", "recursion", "base case", "None"]
+minutes = 12

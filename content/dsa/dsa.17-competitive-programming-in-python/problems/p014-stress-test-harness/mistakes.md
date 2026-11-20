@@ -1,0 +1,5 @@
+- **Passing the same list to both functions.** An in-place change in `fast` silently changes the input of `brute`, producing fake mismatches (or hiding real ones).
+- **Creating `random.Random(seed)` inside the loop.** Every trial then gets the same case.
+- **Returning the copy that `fast` mutated** instead of the original case. The case you show must be the one that failed.
+- **Letting an exception escape.** A crash in `fast` is the most interesting failure; return it as a result.
+- **Comparing exceptions with `==`.** Two instances of the same exception class are not equal; compare their types.

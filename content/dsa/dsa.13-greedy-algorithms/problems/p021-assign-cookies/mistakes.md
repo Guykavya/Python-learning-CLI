@@ -1,0 +1,5 @@
+- **Forgetting to sort one of the lists.** The single pass only works when both are sorted.
+- **`>` instead of `>=`.** A cookie of size 2 makes a child with greed 2 happy.
+- **Giving a cookie to a child and not moving on**, or reusing a cookie for two children. Each child and each cookie is used once.
+- **Biggest cookie to the least greedy child.** It wastes a big cookie on a child who would have been happy with a small one.
+- **Sorting the caller's lists in place** (`greed.sort()`). Use `sorted(...)`.

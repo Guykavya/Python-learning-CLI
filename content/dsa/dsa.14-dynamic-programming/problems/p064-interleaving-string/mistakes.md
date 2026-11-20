@@ -1,0 +1,5 @@
+- **Greedy: take from `s1` whenever its letter fits.** `("ab", "ac", "acab")`: greedy takes `a` from `s1`, then needs `c` but `s1` offers `b` and `s2` offers `a`: stuck, so it says False. Taking the first `a` from `s2` works. When both offer the same letter you must try both.
+- **Forgetting the length check.** `("a", "b", "a")` must be False: a letter of `s2` is never used. Without the check, the table can be indexed past the end of `s3`, or "all letters of `s3` used" is mistaken for success.
+- **A third index for `s3`.** It is always `i + j`. A 3-D table is correct but `600` times bigger.
+- **Comparing with `s3[i + j]` instead of `s3[i + j - 1]`** in the table version, where `f(i, j)` covers the **first** `i + j` letters.
+- **Recursion without a memo**: correct, and fine on the examples, but exponential when the two strings share long runs of the same letter.

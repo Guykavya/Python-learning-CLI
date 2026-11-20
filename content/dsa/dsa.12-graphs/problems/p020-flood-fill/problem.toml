@@ -1,0 +1,7 @@
+id = "dsa.12.p020"
+title = "Flood fill"
+tier = "applied"
+kind = "trace"
+topics = ["graph", "grid", "BFS", "flood fill", "trace"]
+minutes = 25
+assessment = "trace"

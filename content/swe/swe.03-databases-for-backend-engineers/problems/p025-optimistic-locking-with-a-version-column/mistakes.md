@@ -1,0 +1,5 @@
+- **`SELECT` the version, compare in Python, then `UPDATE`.** The gap is back; put the check in the `WHERE`.
+- **Not incrementing the version.** Every later save with the old number would succeed.
+- **Returning `True` without looking at `rowcount`.**
+- **Treating a missing product like a conflict.** Here both give `False`; a real API would answer `404` versus `409`.
+- **Forgetting to commit.**

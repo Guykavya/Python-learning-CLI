@@ -1,0 +1,6 @@
+id = "dsa.10.p024"
+title = "Morris traversal (no stack, no recursion)"
+tier = "challenge"
+kind = "code"
+topics = ["tree", "inorder", "morris", "threaded", "constant space"]
+minutes = 45

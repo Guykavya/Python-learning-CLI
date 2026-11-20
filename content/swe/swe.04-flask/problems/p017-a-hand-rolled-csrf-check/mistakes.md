@@ -1,0 +1,8 @@
+- **A token that changes at every GET.** Two open tabs would invalidate each other. Keep one token per session.
+- **`==` instead of `compare_digest`.** It can leak the token through timing.
+- **`compare_digest(str, str)` with user input.** `TypeError` on non-ASCII text, a 500 an attacker can cause.
+- **Letting `"" == ""` pass** when the session has no token yet.
+- **Protecting POST only.** PUT, PATCH and DELETE also change data.
+- **Checking the token inside each view.** One forgotten view is a hole. A `before_request` hook covers all.
+- **Changing data on GET** (`GET /deposit?amount=99`). No token can save that design.
+- **Putting the token in a cookie that the browser sends automatically.** That is the very thing the attacker already controls.

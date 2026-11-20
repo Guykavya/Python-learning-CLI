@@ -1,0 +1,6 @@
+- **"The PIN protects it."** It is not a security boundary.
+- **"debug=True is fine on an internal server."** Anyone on the network, or an SSRF bug, reaches it.
+- **"Flask is fast enough: `app.run(threaded=True)`."** The problem is not speed but hardening, process management and TLS.
+- **Putting Gunicorn on port 80 facing the internet** without a proxy. Slow clients tie up workers.
+- **Hard-coding the secret key** or committing it to Git.
+- **Choosing debug with an `if __name__ == "__main__"` trick** and thinking it is safe because Gunicorn does not run that block: one wrong command line and it is on. Control it by configuration.

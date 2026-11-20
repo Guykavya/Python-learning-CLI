@@ -1,0 +1,6 @@
+id = "swe.03.p014"
+title = "The leftmost prefix rule"
+tier = "applied"
+kind = "trace"
+topics = ["composite index", "leftmost prefix", "query plans", "trace"]
+minutes = 25

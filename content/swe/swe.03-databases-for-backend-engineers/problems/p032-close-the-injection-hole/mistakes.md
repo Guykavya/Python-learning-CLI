@@ -1,0 +1,5 @@
+- **`text(f"... '{name}'")`.** The same hole with a different function.
+- **Escaping quotes by hand** (`name.replace("'", "''")`). It fails for other databases and encodings; binding is the fix.
+- **Binding only some values.** One pasted value is enough for an attack.
+- **Binding a table or column name.** Identifiers cannot be parameters; use a whitelist (problem 31).
+- **Returning `Row` objects** when a list of tuples was asked for: convert them.

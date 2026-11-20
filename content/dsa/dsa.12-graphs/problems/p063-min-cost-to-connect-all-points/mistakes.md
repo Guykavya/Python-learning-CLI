@@ -1,0 +1,5 @@
+- **Euclidean distance** (`sqrt(dx^2 + dy^2)`): the cost is `|dx| + |dy|`, an integer.
+- **"Nearest neighbour chain"**: always joining the point nearest to the **last** point added walks a path, not a tree, and can be far more expensive. Prim joins the point nearest to **any** tree point.
+- **Summing each point's nearest neighbour**: the same edge can be counted twice and the pieces may not connect.
+- **`best[0]` left at infinity**: the first point must start at 0, or the total becomes `inf`.
+- **Building all pairs and sorting** for `n = 1000`: correct, but heavy in memory; the array version needs only `O(n)`.

@@ -1,0 +1,5 @@
+- Pushing `adj[u]` in order: the **last** neighbour is popped first, so the order is mirrored.
+- Marking on push (like BFS): a vertex is locked in by its first discoverer and cannot be reached deeper first; the result is a valid search, but not the recursive DFS order.
+- Forgetting the `if u in visited: continue` when marking on pop: vertices are recorded several times.
+- Keeping recursion and raising the limit with `sys.setrecursionlimit`: on 100,000 vertices the interpreter itself can crash.
+- Using `stack.pop(0)`: that is a queue, so BFS.

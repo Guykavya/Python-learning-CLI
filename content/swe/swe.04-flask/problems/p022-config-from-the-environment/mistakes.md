@@ -1,0 +1,6 @@
+- **`os.environ.get("BLOG_DEBUG")` as a boolean.** `"false"` is a non-empty string, so it is `True`.
+- **Forgetting the converted type of numbers** (`"20" + 1` is a `TypeError`; `"9" > "10"` is `True`).
+- **Calling `from_prefixed_env` before the defaults.** The defaults would overwrite the environment.
+- **Applying the environment after `test_config`.** A test could no longer fix its own settings.
+- **Prefix collisions.** `FLASK_` is Flask's own default prefix; choose your own (`BLOG_`).
+- **A numeric secret key** (becomes an int) or a title such as `123` (becomes a number): remember the JSON rule.

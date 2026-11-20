@@ -1,0 +1,6 @@
+id = "dsa.12.p046"
+title = "Accounts merge"
+tier = "deep"
+kind = "code"
+topics = ["graph", "union-find", "connected components", "hash map", "modelling"]
+minutes = 40

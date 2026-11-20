@@ -1,0 +1,6 @@
+- **Printing the query as part of `path`.** `urlsplit` separates them.
+- **Sending the cookie in step 1.** The jar is empty until the first answer arrives.
+- **Forgetting that the cookie is stored before the redirect is followed.** The `cookie stored:` line comes before `follow:`.
+- **Counting the body as the length of the whole message.** `body: 16 bytes` is the length of the string `<h1>Welcome</h1>`.
+- **Writing the `follow:` URL as `/home`.** `urljoin` gives the full URL.
+- **Forgetting the last line.** `print("final:", browse(...))` prints after `browse` returned.

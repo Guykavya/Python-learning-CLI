@@ -1,0 +1,7 @@
+- Flattening all cells and sorting: correct, but it reads and stores every cell (`O(nm)` memory). The tests use a matrix of a million cells that counts reads.
+- Pushing **all** cells into the heap: the same cost as flattening.
+- Popping `k` times and returning the last popped value is correct, but returning `heap[0]` after `k` pops gives the `(k+1)`-th smallest. Count your pops: `k - 1` pops, then look at the top, or `k` pops and return the last popped value.
+- Pushing only the cell **below** the popped cell and starting with the first row: this is the column version of the same idea and works, but mixing both (below for some, right for others) pushes the same cell twice or skips cells.
+- Removing duplicate values (a `set` of seen numbers): the two `13`s of the example must count twice. The `k`-th smallest counts repeated numbers.
+- Starting the binary search with `lo = 0`: negative numbers exist. Use the corner cells as bounds.
+- Binary search that returns `lo` when `count > k` is allowed to stop: always use `count >= k` to move `hi` down, otherwise you return a value that is not in the matrix.

@@ -1,0 +1,6 @@
+id = "dsa.14.p023"
+title = "Paint houses"
+tier = "applied"
+kind = "code"
+topics = ["dynamic programming", "1-d dp", "extra state", "rolling variables", "paint house"]
+minutes = 25

@@ -1,0 +1,6 @@
+id = "swe.03.p026"
+title = "Read the timeline"
+tier = "deep"
+kind = "trace"
+topics = ["isolation levels", "READ COMMITTED", "REPEATABLE READ", "non-repeatable read", "PostgreSQL", "trace"]
+minutes = 30

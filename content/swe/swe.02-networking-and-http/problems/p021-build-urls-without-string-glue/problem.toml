@@ -1,0 +1,6 @@
+id = "swe.02.p021"
+title = "Build URLs without string glue"
+tier = "drill"
+kind = "code"
+topics = ["URLs", "urllib.parse", "percent-encoding", "query strings"]
+minutes = 25

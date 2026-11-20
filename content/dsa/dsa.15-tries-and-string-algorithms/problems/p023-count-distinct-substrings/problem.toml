@@ -1,0 +1,6 @@
+id = "dsa.15.p023"
+title = "Count distinct substrings"
+tier = "deep"
+kind = "code"
+topics = ["z-function", "substrings", "counting", "trie"]
+minutes = 40

@@ -1,0 +1,6 @@
+id = "dsa.12.p054"
+title = "Trace Dijkstra"
+tier = "applied"
+kind = "trace"
+topics = ["graph", "dijkstra", "heap", "lazy deletion", "trace"]
+minutes = 25

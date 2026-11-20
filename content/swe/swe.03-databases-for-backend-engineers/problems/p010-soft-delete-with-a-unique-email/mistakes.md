@@ -1,0 +1,4 @@
+- **`email TEXT UNIQUE` in the table.** It blocks re-registration for ever.
+- **Putting `deleted_at` into a composite `UNIQUE(email, deleted_at)`.** `NULL`s never collide, so two live rows with the same e-mail would be allowed.
+- **Forgetting to filter deleted rows** in every query. That is what the view is for: use it everywhere.
+- **A trigger instead of an index.** The index is atomic and fast; a trigger can race.

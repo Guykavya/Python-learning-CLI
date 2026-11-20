@@ -1,0 +1,6 @@
+id = "swe.04.p034"
+title = "A JSON API for posts"
+tier = "applied"
+kind = "code"
+topics = ["REST", "status codes", "PATCH", "error format", "ownership", "Location"]
+minutes = 55

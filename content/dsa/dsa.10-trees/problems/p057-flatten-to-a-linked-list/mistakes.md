@@ -1,0 +1,6 @@
+- Moving the left subtree to the right without first hanging the old right subtree on its last node: the right subtree is lost.
+- Forgetting `cur.left = None`: the nodes keep their left pointers and the structure is not a list.
+- Taking `cur.left` itself (instead of its rightmost node) as the place for the old right subtree: the nodes below `cur.left` are cut off from the chain.
+- Building a **new** list of nodes (a copy): the statement requires the same node objects.
+- Doing the right subtree first: the preorder visits the left subtree before the right one.
+- Returning the list instead of changing the tree in place.

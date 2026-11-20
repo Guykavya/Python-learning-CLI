@@ -1,0 +1,6 @@
+id = "dsa.11.p026"
+title = "Task scheduler with cooldown"
+tier = "challenge"
+kind = "code"
+topics = ["heap", "greedy", "scheduling", "queue"]
+minutes = 50

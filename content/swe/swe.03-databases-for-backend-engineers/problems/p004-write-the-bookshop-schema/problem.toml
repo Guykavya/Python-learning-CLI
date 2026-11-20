@@ -1,0 +1,6 @@
+id = "swe.03.p004"
+title = "Write the bookshop schema"
+tier = "applied"
+kind = "code"
+topics = ["schema design", "constraints", "primary key", "foreign key", "CHECK"]
+minutes = 35

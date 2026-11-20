@@ -1,0 +1,6 @@
+id = "dsa.12.p018"
+title = "Number of islands"
+tier = "drill"
+kind = "code"
+topics = ["graph", "grid", "connected components", "DFS", "BFS"]
+minutes = 25

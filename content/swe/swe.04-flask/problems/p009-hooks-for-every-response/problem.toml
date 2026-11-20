@@ -1,0 +1,6 @@
+id = "swe.04.p009"
+title = "Hooks for every response"
+tier = "applied"
+kind = "code"
+topics = ["before_request", "after_request", "g", "headers", "request id"]
+minutes = 30

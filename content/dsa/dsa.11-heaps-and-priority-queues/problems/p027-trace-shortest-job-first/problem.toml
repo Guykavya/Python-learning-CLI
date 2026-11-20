@@ -1,0 +1,6 @@
+id = "dsa.11.p027"
+title = "Trace: shortest job first"
+tier = "applied"
+kind = "trace"
+topics = ["heap", "greedy", "scheduling", "trace"]
+minutes = 25

@@ -1,0 +1,6 @@
+id = "dsa.16.p012"
+title = "Count of numbers in a range (merge sort tree or offline)"
+tier = "deep"
+kind = "code"
+topics = ["offline queries", "fenwick tree", "merge sort tree", "counting"]
+minutes = 45

@@ -1,0 +1,6 @@
+- **Printing a password back** (`value="{{ value }}"` for every type).
+- **`value="{{ value }}"` with `None`.** Jinja prints `None`; use `value or ''`.
+- **Building the HTML with `|safe` or string concatenation.** Then a quote in the value breaks the attribute: XSS in an attribute.
+- **`aria-invalid="false"` for fields without errors.** Leave the attribute out.
+- **The label without `for`.** The label is no longer tied to the input.
+- **`id` different from `name`.** `aria-describedby` and `for` point to the **id**.

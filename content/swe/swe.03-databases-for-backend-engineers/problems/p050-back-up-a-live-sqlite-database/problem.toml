@@ -1,0 +1,6 @@
+id = "swe.03.p050"
+title = "Back up a live SQLite database"
+tier = "applied"
+kind = "code"
+topics = ["backup", "sqlite3.backup", "consistency", "integrity_check"]
+minutes = 35

@@ -1,0 +1,6 @@
+id = "dsa.17.p011"
+title = "nCr mod p with precomputed factorials"
+tier = "applied"
+kind = "code"
+topics = ["nCr", "factorials", "modular inverse", "precomputation"]
+minutes = 30

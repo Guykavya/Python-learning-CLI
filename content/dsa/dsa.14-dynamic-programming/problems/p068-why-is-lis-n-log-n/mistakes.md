@@ -1,0 +1,6 @@
+- **"`tails` is the longest increasing subsequence."** It is not: `[3, 4, 1]` ends with `tails = [1, 4]`, and `1` comes after `4`. Only its length is the answer.
+- **"`tails[k]` is the last value of a subsequence of length `k`."** It is length `k + 1` (lists start at 0). An off-by-one here makes the argument in question 3 fall apart.
+- **Leaving out "smallest".** Without it there is no reason to replace, and no reason why the list is sorted.
+- **"It is sorted because binary search needs it."** That is backwards: you must show it **is** sorted, and only then can you binary search it.
+- **"Binary search makes it `O(log n)`."** For the whole algorithm it is `n` searches: `O(n log n)`.
+- **Mixing up `bisect_left` and `bisect_right`.** `bisect_left` is for strictly increasing (an equal number replaces); `bisect_right` is for non-decreasing (an equal number may extend).

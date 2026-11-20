@@ -1,0 +1,6 @@
+1: 401 login required
+2: 401 login required
+3: 404 order not found
+4: 403 admins only
+5: 404 order not found
+6: 200 ada

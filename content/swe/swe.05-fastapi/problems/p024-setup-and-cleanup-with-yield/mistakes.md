@@ -1,0 +1,6 @@
+- **No `raise` after the rollback.** The exception is swallowed; FastAPI then has no response to send and fails with `FastAPIError: Response not awaited...`, a 500 instead of the 409.
+- **Committing in `finally`.** `finally` also runs on failure, so a failed request would save its half-done work.
+- **Closing only on success** (close after commit, no `finally`). Every failed request leaks a connection; after enough errors the pool is empty.
+- **`except HTTPException:` only.** A real bug (`RuntimeError`) then skips the rollback.
+- **Creating `ListSession()` directly** instead of calling the injected factory. It works, but the test cannot swap it, so the frame cannot be checked.
+- **`return session` instead of `yield session`.** Then there is no "after": nothing ever commits or closes.

@@ -1,0 +1,5 @@
+- **Testing the wrong rule on the wrong list.** The long early event breaks earliest start; on the same list, shortest first works perfectly (it takes the short events).
+- **Forgetting the tie-break.** Earliest start sorts by `(start, end)`: if your long event and a short event start at the same time, the short one comes first and the trap does not work. Make the long event start strictly first.
+- **A short event that overlaps only one long event.** Shortest first then loses nothing: it trades one event for one event. The short event must block **two**.
+- **Treating touching as overlapping.** `(0, 6)` and `(6, 10)` fit together. If your "best" counted on them clashing, the brute force will disagree.
+- **Copying the chapter's examples** with the events in another order. The test compares the sorted lists.

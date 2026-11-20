@@ -1,0 +1,105 @@
+# Real site problems for dsa.16 (Advanced data structures).
+# Verification: every LeetCode slug, CSES id and Codeforces id below was written from memory (from the problem
+# plan) and NOT re-fetched (no web access was used while writing). Fix any that fails to open.
+# Only free LeetCode problems. Left out on purpose, because earlier modules already list them:
+# range-sum-query-immutable (dsa.01), count-of-smaller-numbers-after-self and reverse-pairs (dsa.05),
+# CSES 1646 Static Range Sum Queries (dsa.01, dsa.03).
+# Order: segment trees and Fenwick trees first, then harder range problems; CSES; Codeforces.
+
+[[problem]]
+site = "leetcode"
+key = "range-sum-query-mutable"
+title = "Range Sum Query - Mutable"
+url = "https://leetcode.com/problems/range-sum-query-mutable/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "count-of-range-sum"
+title = "Count of Range Sum"
+url = "https://leetcode.com/problems/count-of-range-sum/"
+minutes = 50
+
+[[problem]]
+site = "leetcode"
+key = "the-skyline-problem"
+title = "The Skyline Problem"
+url = "https://leetcode.com/problems/the-skyline-problem/"
+minutes = 50
+
+[[problem]]
+site = "leetcode"
+key = "range-module"
+title = "Range Module"
+url = "https://leetcode.com/problems/range-module/"
+minutes = 45
+
+[[problem]]
+site = "leetcode"
+key = "falling-squares"
+title = "Falling Squares"
+url = "https://leetcode.com/problems/falling-squares/"
+minutes = 45
+
+[[problem]]
+site = "cses"
+key = "1647"
+title = "Static Range Minimum Queries"
+url = "https://cses.fi/problemset/task/1647"
+minutes = 20
+
+[[problem]]
+site = "cses"
+key = "1648"
+title = "Dynamic Range Sum Queries"
+url = "https://cses.fi/problemset/task/1648"
+minutes = 20
+
+[[problem]]
+site = "cses"
+key = "1649"
+title = "Dynamic Range Minimum Queries"
+url = "https://cses.fi/problemset/task/1649"
+minutes = 20
+
+[[problem]]
+site = "cses"
+key = "1651"
+title = "Range Update Queries"
+url = "https://cses.fi/problemset/task/1651"
+minutes = 25
+
+[[problem]]
+site = "cses"
+key = "1652"
+title = "Forest Queries"
+url = "https://cses.fi/problemset/task/1652"
+minutes = 25
+
+[[problem]]
+site = "cses"
+key = "1190"
+title = "Subarray Sum Queries"
+url = "https://cses.fi/problemset/task/1190"
+minutes = 45
+
+[[problem]]
+site = "cses"
+key = "1143"
+title = "Hotel Queries"
+url = "https://cses.fi/problemset/task/1143"
+minutes = 35
+
+[[problem]]
+site = "codeforces"
+key = "380C"
+title = "Sereja and Brackets"
+url = "https://codeforces.com/problemset/problem/380/C"
+minutes = 50
+
+[[problem]]
+site = "codeforces"
+key = "339D"
+title = "Xenia and Bit Operations"
+url = "https://codeforces.com/problemset/problem/339/D"
+minutes = 35

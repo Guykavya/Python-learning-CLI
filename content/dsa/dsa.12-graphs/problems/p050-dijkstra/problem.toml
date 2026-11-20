@@ -1,0 +1,6 @@
+id = "dsa.12.p050"
+title = "Dijkstra"
+tier = "applied"
+kind = "code"
+topics = ["graph", "shortest path", "dijkstra", "heap", "lazy deletion"]
+minutes = 35

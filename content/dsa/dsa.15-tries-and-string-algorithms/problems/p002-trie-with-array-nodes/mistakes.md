@@ -1,0 +1,5 @@
+- **`[[None] * 26]` shared between nodes**, for example a class attribute `next = [None] * 26` instead of setting it in `__init__`. Then every node uses the same list, and every word is mixed with every other.
+- **Counting letters instead of nodes.** `node_count += 1` must sit inside the `if ... is None` block.
+- **Slot number off by one** (`ord(ch) - 96`): then `z` has slot 26, which does not exist, and every other letter lands in its neighbour's slot.
+- **Forgetting the root in `node_count`.** The empty trie already has one node.
+- **Checking `node.next[i]` after stepping into it.** In `search`, step first and test `None` right away, or you will read `.is_end` of `None`.

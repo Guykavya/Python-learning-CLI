@@ -6,28 +6,29 @@ This module teaches contest habits, so problems are **script style** (stdin → 
 
 | # | Title | Tier | Kind | Idea / tests |
 |---|---|---|---|---|
-| 1 | Read the constraints | drill | code | given n and a time limit, print the largest complexity class allowed (table in the statement); 10 cases |
-| 2 | Sum of numbers with `sys.stdin` | drill | code | 2·10**5 numbers; `input()` version fails the time limit (message) |
-| 3 | Why is `input()` slow? | drill | explain | graded by terms ("flush", "buffer", "readline", "per call") |
-| 4 | Fast output | drill | code | 2·10**5 lines; one `print` per line fails; `"\n".join` passes |
-| 5 | Multiple test cases | applied | code | `t` cases; trap: reading one number per line vs a whole line; empty lines |
-| 6 | Read until end of input | drill | code | no count given; trailing spaces |
-| 7 | Parse a grid | applied | code | `n m` then n strings; 1000x1000 |
-| 8 | Iterative DFS on a long chain | applied | code | 2·10**5 nodes; recursive version fails with RecursionError message |
-| 9 | Trace the template | applied | trace | `⚠ HAND-TRACE` the output of a given `main()` for a tiny input, including the print order of buffered output |
-| 10 | Modular arithmetic template | applied | code | `pow(a, b, m)`, inverse, factorials mod p; vs big-integer reference |
-| 11 | nCr mod p with precomputed factorials | applied | code | 10**5 queries |
-| 12 | Fix the TLE | applied | code | `assessment = "fix"`; given a correct but slow solution (string `+=`, `list.pop(0)`, `input()`), change data structures only |
-| 13 | Count the operations | drill | trace | `⚠ HAND-TRACE` estimate: for 3 given loops decide AC or TLE at 10**8 simple ops/s; expected labels |
-| 14 | Stress test harness | deep | code | write `stress(brute, fast, gen, n)`; the test plants a bug in `fast` and checks your harness finds a failing input and prints it |
-| 15 | Generator for random trees | deep | code | valid connected acyclic graph; seeds reproducible |
-| 16 | Minimise a failing input | deep | code | shrink a failing case by removing elements while it still fails |
-| 17 | Reading a verdict | drill | trace | `⚠ HAND-TRACE` for 6 verdict descriptions (WA on test 2, TLE on test 17, RE, MLE…) choose the likely cause; expected labels |
-| 18 | Contest plan and upsolve | applied | explain | write a 5-line plan for a 2-hour contest and what to upsolve; graded by required items (read all problems first, skip rule, time boxes) |
-| 19 | A full contest problem set | challenge | code | three small problems A, B, C in one file, solved within a total time limit |
-| 20 | Build your contest template | deep | code | `assessment = "build"`; `template.py` with fast IO, `solve()` per test case, helpers; the test runs it on four earlier problems |
+| 1 | Read the constraints ✅ | drill | code | given n and a time limit, print the largest complexity class allowed (table in the statement); 10 cases |
+| 2 | Sum of numbers with `sys.stdin` ✅ | drill | code | 2·10**5 numbers; `input()` version fails the time limit (message) |
+| 3 | Why is `input()` slow? ✅ | drill | explain | graded by terms ("flush", "buffer", "readline", "per call") |
+| 4 | Fast output ✅ | drill | code | 2·10**5 lines; one `print` per line fails; `"\n".join` passes |
+| 5 | Multiple test cases ✅ | applied | code | `t` cases; trap: reading one number per line vs a whole line; empty lines |
+| 6 | Read until end of input ✅ | drill | code | no count given; trailing spaces |
+| 7 | Parse a grid ✅ | applied | code | `n m` then n strings; 1000x1000 |
+| 8 | Iterative DFS on a long chain ✅ | applied | code | 2·10**5 nodes; recursive version fails with RecursionError message |
+| 9 | Trace the template ✅ | applied | trace | `⚠ HAND-TRACE` the output of a given `main()` for a tiny input, including the print order of buffered output |
+| 10 | Modular arithmetic template ✅ | applied | code | `pow(a, b, m)`, inverse, factorials mod p; vs big-integer reference |
+| 11 | nCr mod p with precomputed factorials ✅ | applied | code | 10**5 queries |
+| 12 | Fix the TLE ✅ | applied | code | `assessment = "fix"`; given a correct but slow solution (string `+=`, `list.pop(0)`, `input()`), change data structures only |
+| 13 | Count the operations ✅ | drill | trace | `⚠ HAND-TRACE` estimate: for 3 given loops decide AC or TLE at 10**8 simple ops/s; expected labels |
+| 14 | Stress test harness ✅ | deep | code | write `stress(brute, fast, gen, n)`; the test plants a bug in `fast` and checks your harness finds a failing input and prints it |
+| 15 | Generator for random trees ✅ | deep | code | valid connected acyclic graph; seeds reproducible |
+| 16 | Minimise a failing input ✅ | deep | code | shrink a failing case by removing elements while it still fails |
+| 17 | Reading a verdict ✅ | drill | trace | `⚠ HAND-TRACE` for 6 verdict descriptions (WA on test 2, TLE on test 17, RE, MLE…) choose the likely cause; expected labels |
+| 18 | Contest plan and upsolve ✅ | applied | explain | write a 5-line plan for a 2-hour contest and what to upsolve; graded by required items (read all problems first, skip rule, time boxes) |
+| 19 | A full contest problem set ✅ | challenge | code | three small problems A, B, C in one file, solved within a total time limit |
+| 20 | Build your contest template ✅ | deep | code | `assessment = "build"`; `template.py` with fast IO, `solve()` per test case, helpers; the test runs it on four earlier problems |
 
 ## Counts
+Written 2026-11-19, all 20 validated. Deviations: p013 uses the CPython budget of 10**7 ops/s (2 s limit = 2·10**7), not 10**8; p014 follows the chapter's signature `stress(fast, brute, gen, trials=1000, seed=1)` with tuple cases (not the table's argument order) and deep-copies the case; p001 and p017 are 'predict' style as in the rule below. Slow-variant checks count calls to `input()` and writes to stdout through a runner in the test (deterministic) instead of relying only on wall time; p008, p012, p019 also use real time limits.
 Traces: 9, 13, 17 explicit; make p1 and p10 "predict the result" variants for 5. Explain: 3, 18 plus p2 as a written variant for 3. One assessment of each kind.
 
 ## Real-site problems (`external.toml`)

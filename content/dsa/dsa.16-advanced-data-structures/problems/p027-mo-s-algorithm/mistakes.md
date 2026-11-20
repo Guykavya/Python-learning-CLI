@@ -1,0 +1,6 @@
+- **Shrinking before growing**: counts go negative and the answers are garbage.
+- **Answering in sorted order and returning that order**: store each answer at its original index.
+- **Processing the questions in input order**: still correct, but the window jumps back and forth, `O(n)` per question.
+- **`distinct -= 1` when a count drops to 0 without checking it was 1 before**: write the test as `count[x] == 0` after the decrement.
+- **Using `len(set(a[l:r]))`** (the starter): `O(n)` per question.
+- **The empty query `(l, l)`**: must give 0; the loops handle it if the window is moved to exactly `[l, l)`.

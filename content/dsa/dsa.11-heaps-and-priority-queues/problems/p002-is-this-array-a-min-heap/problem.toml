@@ -1,0 +1,6 @@
+id = "dsa.11.p002"
+title = "Is this array a min-heap?"
+tier = "drill"
+kind = "code"
+topics = ["heap", "heap property", "array layout"]
+minutes = 15

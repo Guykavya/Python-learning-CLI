@@ -1,0 +1,6 @@
+- **Crashing on a missing section.** `data["project"]["name"]` raises `KeyError`; use `.get`.
+- **Treating `version` as missing when it is `dynamic`.** Many projects read the version from the package.
+- **Counting `<9` or `!=2.0` as a lower bound.** A lower bound is `>=`, `==`, `~=`, `===` or `>`.
+- **Checking only `dependencies`.** The `dev` group in `optional-dependencies` is part of the setup too.
+- **Forgetting that `testpaths` entries can end with `/`.** `"tests/"` and `"tests"` mean the same folder.
+- **Returning problems in a different order.** The order of the table is part of the contract; messages can then be compared in a test.

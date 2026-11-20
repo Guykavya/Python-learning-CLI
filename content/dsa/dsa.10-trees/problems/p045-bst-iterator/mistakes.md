@@ -1,0 +1,6 @@
+- Doing a full inorder walk in the constructor and storing a list: it works but uses `O(n)` memory and does all the work at once; the pointer counter fails it.
+- Keeping the stack in a **class** variable: two iterators share it and disturb each other.
+- Pushing the right child's whole subtree instead of its left spine only.
+- Forgetting `_push_left(node.right)` after the pop: the walk skips the right subtrees.
+- Returning `True` from `has_next()` for an empty tree, or letting `next()` fail with `IndexError` at the end: the statement asks for `StopIteration`.
+- Changing the tree (for example by cutting `node.left` to avoid pushing it twice).

@@ -1,0 +1,5 @@
+- **Calling every "wrong answer" a bad algorithm.** A wrong answer on test 1 with the right number but a different text is a format problem (F).
+- **Blaming recursion for every runtime error.** Only the `RecursionError` text, or a deep input, points to D; an `IndexError` is another cause.
+- **Calling a table of 2.5·10^7 entries "fine because it only takes time".** The memory limit (often 256 MB) decides first.
+- **Skipping the special case.** Test 2 of a problem is very often `n = 1`.
+- **Changing the program before reading the verdict.** Spend the minute on the verdict first; blind changes cost penalty time.

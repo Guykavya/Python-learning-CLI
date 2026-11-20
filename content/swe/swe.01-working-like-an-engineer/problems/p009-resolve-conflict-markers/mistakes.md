@@ -1,0 +1,6 @@
+- **Using `str.splitlines()`**, which loses the information about the final newline. `split("\n")` and `join("\n")` round-trip exactly.
+- **Treating `=======` outside a block as an error.** It is ordinary text there.
+- **Keeping the marker lines in the output**, or stripping lines that merely *contain* `<<<<<<<` in the middle of a line.
+- **Reporting the wrong line** for an unclosed block. The useful line is where the block began.
+- **Handling only one block.** After `>>>>>>>` the state must go back to "outside", so a second block works.
+- **Passing the real internal lists to the user's function**, which may modify them.

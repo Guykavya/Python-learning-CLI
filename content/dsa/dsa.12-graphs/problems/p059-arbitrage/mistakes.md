@@ -1,0 +1,7 @@
+- **`log(r)` without the minus**: then a profitable cycle has a **positive** sum, and Bellman-Ford finds the cycles that **lose** money.
+- **No tolerance**: in a consistent market (all cycles exactly 1) the float sum of logs comes out as `-2e-16` here and there, and a strict `<` reports arbitrage that does not exist.
+- **Starting from currency 0 only**: a profitable cycle that currency 0 cannot reach is missed. Start every currency at 0.
+- **Only `n - 1` rounds and no check**: the decision comes from a round that still changes something after the distances should have settled.
+- **A tolerance only in the final test**: if every update compares exactly, rounding errors of `1e-16` can feed on each other round after round (in Floyd-Warshall on products they grew to `inf`). Put the tolerance in the relaxation.
+- **Adding the rates** instead of using logarithms: `0.5 + 4.0 + 0.55` says nothing about `0.5 * 4.0 * 0.55`.
+- **Treating an exchange as two-way** with the same rate: `(a, b, r)` gives `r` units of `b`; going back is another entry, or not possible at all.

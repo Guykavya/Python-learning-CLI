@@ -1,0 +1,5 @@
+- **A counterexample with a negative cycle**: then no shortest path exists at all, and the question is a different one. Check that no cycle has a negative total.
+- **A counterexample where the negative edge leaves the source**: Dijkstra settles the source first and then sees the negative edge at once; it often gives the right answer. The negative edge must lead **back** to a vertex that was settled earlier.
+- **"Add the most negative weight to all edges"**: this changes which route is shortest, because routes with more edges pay the shift more often.
+- **Saying the lazy version is fine "because it got the example right"**: it gives no guarantee on the running time, and it never ends on a negative cycle.
+- **Mixing up the proof**: the problem is not the heap but the claim that a settled distance is final.

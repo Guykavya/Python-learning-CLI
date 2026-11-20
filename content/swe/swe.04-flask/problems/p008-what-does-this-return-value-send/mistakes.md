@@ -1,0 +1,5 @@
+- **`application/json; charset=utf-8`.** Flask's JSON responses say just `application/json`.
+- **`text/plain; charset=utf-8` for view 3.** The header is exactly what you set.
+- **Spaces in the JSON** (`{"ok": true, "n": 3}`). The default provider is compact and sorted.
+- **Forgetting the trailing `|` on line 5**, or adding text after it. The body is empty.
+- **Thinking `204` has no `Content-Type` at all.** The header is still there; it is the body that is empty.

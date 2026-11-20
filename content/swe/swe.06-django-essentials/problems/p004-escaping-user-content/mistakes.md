@@ -1,0 +1,6 @@
+- **Pasting the text into an f-string.** `f'<p>{text}</p>'` has no escaping at all. Only a template variable is escaped for you.
+- **Using `|safe` to get the `<br>` tags.** That switches off escaping for the whole text. `linebreaksbr` already does the right thing.
+- **Replacing newlines first, then escaping.** `text.replace("\n", "<br>")` followed by escaping turns your own `<br>` into `&lt;br&gt;`. If you do it in Python, escape first.
+- **Building `Template(text)` from the comment.** The visitor then controls the template, and `{{ ... }}` in a comment would be evaluated.
+- **Replacing only `"\n"` by hand.** Browsers send `"\r\n"`; `linebreaksbr` deals with both.
+- **Compiling the template inside the function on every call.** It works, but it is slower than a module-level `Template`.

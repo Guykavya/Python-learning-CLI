@@ -1,0 +1,6 @@
+id = "dsa.10.p046"
+title = "Recover a BST with two swapped values"
+tier = "challenge"
+kind = "code"
+topics = ["tree", "BST", "inorder", "swapped nodes"]
+minutes = 40

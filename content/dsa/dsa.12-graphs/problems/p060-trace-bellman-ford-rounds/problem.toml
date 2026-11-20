@@ -1,0 +1,6 @@
+id = "dsa.12.p060"
+title = "Trace Bellman-Ford rounds"
+tier = "applied"
+kind = "trace"
+topics = ["graph", "bellman-ford", "negative edges", "trace"]
+minutes = 25

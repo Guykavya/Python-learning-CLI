@@ -1,0 +1,5 @@
+- **Thinking `--soft` unstages the changes.** It does not touch the index; the changes of the removed commit remain staged.
+- **Thinking `--mixed` deletes the file `c.txt`.** It only resets the index; the file stays on disk as untracked.
+- **Forgetting that the staged edit of `a.txt` becomes unstaged under `--mixed`.** The index is reset, so the edit is only in the working tree.
+- **Believing `--hard` can be undone for uncommitted edits.** The reflog tracks commits only.
+- **Listing `c.txt` as existing after `--hard`.** The working tree is made equal to commit 2, which has no `c.txt`.

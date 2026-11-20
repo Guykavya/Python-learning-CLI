@@ -1,0 +1,6 @@
+id = "dsa.14.p021"
+title = "Jump game as DP"
+tier = "applied"
+kind = "code"
+topics = ["dynamic programming", "1-d dp", "jump game", "minimum jumps", "unreachable"]
+minutes = 25

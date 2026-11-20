@@ -1,0 +1,6 @@
+id = "dsa.14.p055"
+title = "LCS length"
+tier = "drill"
+kind = "code"
+topics = ["dynamic programming", "longest common subsequence", "strings", "2-D table"]
+minutes = 20

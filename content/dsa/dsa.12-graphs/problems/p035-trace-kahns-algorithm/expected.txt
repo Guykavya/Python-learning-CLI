@@ -1,0 +1,11 @@
+start: ready=[3, 4] indeg=[1, 2, 2, 0, 0, 2]
+take 3: ready=[4] indeg=[1, 1, 2, 0, 0, 2]
+take 4: ready=[1, 0] indeg=[0, 0, 2, 0, 0, 2]
+take 1: ready=[0] indeg=[0, 0, 1, 0, 0, 2]
+take 0: ready=[2] indeg=[0, 0, 0, 0, 0, 1]
+take 2: ready=[5] indeg=[0, 0, 0, 0, 0, 0]
+take 5: ready=[] indeg=[0, 0, 0, 0, 0, 0]
+order: [3, 4, 1, 0, 2, 5]
+start: ready=[0] indeg=[0, 2, 1, 1]
+take 0: ready=[] indeg=[0, 1, 1, 1]
+order: cycle

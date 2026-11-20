@@ -1,0 +1,7 @@
+id = "dsa.16.p007"
+title = "Why 4n nodes?"
+tier = "drill"
+kind = "explain"
+topics = ["segment tree", "memory", "tree height", "explain"]
+minutes = 20
+assessment = "explain"

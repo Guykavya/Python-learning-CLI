@@ -1,0 +1,6 @@
+- **Using the normal rule for the root**: `low[c] >= tin[root]` is always true, so every root would be marked. Count the root's DFS children instead.
+- **Counting the root's neighbours instead of its DFS children**: in a triangle the root has two neighbours but only one DFS child (the second neighbour is reached through the first).
+- **`>` instead of `>=`**: a subtree that can climb back exactly to `u` still reaches the rest only through `u`.
+- **Recursion** on a line of `10**5` vertices: use explicit frames.
+- **Forgetting disconnected parts**: start a DFS from every unvisited vertex, each with its own root rule.
+- **Returning duplicates or an unsorted list**: a vertex can satisfy the rule for several children; return each once, sorted.

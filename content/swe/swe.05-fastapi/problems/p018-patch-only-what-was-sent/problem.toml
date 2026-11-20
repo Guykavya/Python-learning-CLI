@@ -1,0 +1,6 @@
+id = "swe.05.p018"
+title = "`PATCH` only what was sent"
+tier = "applied"
+kind = "code"
+topics = ["PATCH", "partial update", "exclude_unset", "model_dump", "null versus missing"]
+minutes = 30

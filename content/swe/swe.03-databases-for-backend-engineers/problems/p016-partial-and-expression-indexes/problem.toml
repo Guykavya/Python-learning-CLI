@@ -1,0 +1,6 @@
+id = "swe.03.p016"
+title = "Partial and expression indexes"
+tier = "applied"
+kind = "code"
+topics = ["partial index", "expression index", "query plans"]
+minutes = 35

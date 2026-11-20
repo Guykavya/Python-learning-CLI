@@ -1,0 +1,6 @@
+id = "swe.02.p027"
+title = "What TLS protects and what it does not"
+tier = "deep"
+kind = "explain"
+topics = ["TLS", "HTTPS", "certificates", "security", "explain"]
+minutes = 35

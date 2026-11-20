@@ -1,0 +1,7 @@
+- **Using `node.val` as the dictionary key.** Two different nodes can have the same value; they would be merged into one copy and the shape changes.
+- **Copying the node but not the neighbours** (`Node(node.val, node.neighbors)`): the new node points into the old graph. The test checks that no new list contains an old node.
+- **No dictionary at all** (copy every neighbour again): a cycle makes the copy loop forever, and a shared neighbour is copied twice.
+- **Storing the copy only after the recursive calls**: the cycle comes back before the copy is in the dictionary, and the recursion never ends.
+- **Using a set for the neighbours** or skipping a neighbour that was seen: a repeated neighbour (`[b, b]`) or a self loop disappears from the copy.
+- **Recursion on a long chain**: `RecursionError` on 20,000 nodes. Use a queue or an explicit stack.
+- **Forgetting `None`**: `clone_graph(None)` must return `None`, not crash.

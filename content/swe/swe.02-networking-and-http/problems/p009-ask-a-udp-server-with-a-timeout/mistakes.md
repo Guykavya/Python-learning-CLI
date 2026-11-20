@@ -1,0 +1,6 @@
+- **A blocking `recvfrom` with no timeout.** One lost datagram hangs the program for ever.
+- **Returning the first datagram that arrives.** It may come from anyone; compare the address.
+- **A fresh timeout after every stray datagram.** The total wait can then be unlimited.
+- **Using `time.time()`** for deadlines. A clock change breaks it; use `time.monotonic()`.
+- **Forgetting to close the socket** when you return from inside the loop; use `try/finally`.
+- **Resending without a limit.** `tries` bounds the attempts.

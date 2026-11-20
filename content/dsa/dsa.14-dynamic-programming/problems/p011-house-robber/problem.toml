@@ -1,0 +1,6 @@
+id = "dsa.14.p011"
+title = "House robber"
+tier = "drill"
+kind = "code"
+topics = ["dynamic programming", "1d dp", "house robber", "rolling variables"]
+minutes = 15

@@ -1,7 +1,7 @@
 # Problem plan: dsa.10 Trees (60 problems)
 
 Rules and format: see [dsa.07-problem-plan.md](dsa.07-problem-plan.md). Ids `dsa.10.p001`…`p060`. Use ONE shared helper per `test_solution.py`: `build(level_order_list)` (None for gaps) and `to_level(root)`. Starter code defines `class TreeNode` (`val`, `left`, `right`).
-**Mix:** 20 drill, 25 applied, 11 deep, 4 challenge. Kinds: 52 code, 5 trace, 3 explain. **assessment:** explain = p007, trace = p016, fix = p033, build = p060.
+**Mix:** 19 drill, 26 applied, 11 deep, 4 challenge. Kinds: 51 code (incl. fix p033 and build p060), 6 trace, 3 explain. **assessment:** explain = p007, trace = p016, fix = p033, build = p060.
 Deep trees: tests that build a 5,000-node chain must not use a recursive builder; solutions using recursion on such input get the message "use an iterative version or raise the limit knowingly". Compare against brute force / `sorted()` on random trees (fixed seed).
 
 ## A. Shape and recursion (Ch. 1–3)
@@ -30,11 +30,11 @@ Deep trees: tests that build a 5,000-node chain must not use a recursive builder
 | 17 | Level order | drill | code | list of levels; empty tree → `[]` |
 | 18 | Zigzag level order | applied | code | alternate direction |
 | 19 | Right side view | applied | code | |
-| 20 | Level averages | drill | code | float compare with tolerance |
-| 21 | Bottom-up level order | drill | code | |
+| 20 | Good nodes | applied | code | preorder that carries the maximum so far down; a node is good if no ancestor is larger; negatives, single node, chain |
+| 21 | Trace the queue in a level-order walk | drill | trace | `⚠ HAND-TRACE` print the queue contents after each pop on a 6-node tree; expected lines come from running the code |
 | 22 | Expression tree evaluation | applied | code | postorder; `+ - * /` |
 | 23 | Which traversal gives this? | drill | trace | `⚠ HAND-TRACE` given a tree, write all three orders; answers as lists |
-| 24 | Morris traversal (no stack, no recursion) | challenge | code | O(1) extra space: test checks the tree is restored |
+| 24 | Morris traversal (no stack, no recursion) | challenge | code | O(1) extra space: test checks the tree is restored. The chapter only names Morris (sec. 5) and does not teach it: the statement describes the thread idea and the hints walk through it |
 
 ## C. Height, balance, diameter, paths (Ch. 7–8)
 | # | Title | Tier | Kind | Idea / tests |
@@ -64,7 +64,7 @@ Deep trees: tests that build a 5,000-node chain must not use a recursive builder
 | 43 | Floor and ceiling | applied | code | |
 | 44 | Range sum in a BST | applied | code | pruning: counter limits nodes visited |
 | 45 | BST iterator | deep | code | `next/has_next` with O(h) memory |
-| 46 | Recover a BST with two swapped nodes | challenge | code | |
+| 46 | Recover a BST with two swapped nodes | challenge | code | swap the two VALUES back (nodes stay in place); not in the chapter, so the hints teach it: in the inorder list look for the descents (one or two); adjacent and far-apart swaps |
 
 ## E. LCA, construction, serialisation (Ch. 10–11)
 | # | Title | Tier | Kind | Idea / tests |
@@ -76,7 +76,7 @@ Deep trees: tests that build a 5,000-node chain must not use a recursive builder
 | 51 | Build from postorder + inorder | deep | code | |
 | 52 | Serialise and deserialise | deep | code | round trip on random trees including `None` gaps |
 | 53 | Sorted array to balanced BST | applied | code | heights differ by at most 1 |
-| 54 | Why one traversal is not enough | applied | explain | give two trees with the same preorder; graded by checking the answer builds both |
+| 54 | Why one traversal is not enough | applied | explain | give two different trees with the same preorder, as level-order lists, and say what extra information fixes it; self-rated against `answer.md` (explain problems are never machine-graded) |
 
 ## F. Comparing, reshaping, representations, balancing (Ch. 12–14)
 | # | Title | Tier | Kind | Idea / tests |
@@ -84,12 +84,12 @@ Deep trees: tests that build a 5,000-node chain must not use a recursive builder
 | 55 | Same tree? / symmetric? | drill | code | two functions |
 | 56 | Subtree of another tree | applied | code | |
 | 57 | Flatten to a linked list | deep | code | in place, preorder; right pointers only |
-| 58 | Good nodes | applied | code | info passed down |
+| 58 | Parent array to children lists and depths | applied | code | Ch. 13: `parent[i]`, root has -1; return `(children, depth)`; a parent that comes AFTER its child in the array; a single node; a path of 5,000 nodes (no recursion) |
 | 59 | Trace an AVL insertion | challenge | trace | `⚠ HAND-TRACE` rotations and final level order when inserting `10,20,30,40,50,25` |
 | 60 | Build a BST class with tests | deep | code | `assessment = "build"`; `insert/delete/contains/height/inorder/__len__`; sorted insertion of 2,000 keys must not recurse past the limit; checks against `set` |
 
 ## Counts
-Tiers about 20/20/14/6. Traces: 10, 16, 23, 39, 59 are explicit; add p5, p25, p27, p37, p50 as "write the result by hand" variants if exactly 10 is wanted. Explain: 7, 40, 54 plus p26, p38, p24 as written-reason variants for 6. Keep one assessment of each kind.
+Tiers 19 drill / 26 applied / 11 deep / 4 challenge. Traces: p010, p016, p021, p023, p039, p059 (6). Explain: p007, p040, p054 (3). Fix: p033. Build: p060. Everything else is code (51). Changes against the first draft of this plan (made 2026-11-16): the old count line said 20/20/14/6, which did not match the table; p020 Level averages (trivial) became Good nodes; p021 Bottom-up level order (trivial) became a queue trace; p058 Good nodes moved to p020 and p058 now covers Ch. 13 (the parent array), the only chapter section without a problem; p054 was marked "graded by checking" but explain problems are self-rated.
 
 ## Real-site problems (`external.toml`)
-LeetCode `maximum-depth-of-binary-tree`, `invert-binary-tree`, `binary-tree-inorder-traversal`, `binary-tree-level-order-traversal`, `binary-tree-zigzag-level-order-traversal`, `binary-tree-right-side-view`, `balanced-binary-tree`, `diameter-of-binary-tree`, `path-sum`, `path-sum-iii`, `binary-tree-maximum-path-sum`, `validate-binary-search-tree`, `kth-smallest-element-in-a-bst`, `delete-node-in-a-bst`, `lowest-common-ancestor-of-a-binary-tree`, `lowest-common-ancestor-of-a-binary-search-tree`, `construct-binary-tree-from-preorder-and-inorder-traversal`, `serialize-and-deserialize-binary-tree`, `convert-sorted-array-to-binary-search-tree`, `subtree-of-another-tree`, `flatten-binary-tree-to-linked-list`, `count-good-nodes-in-binary-tree`, `recover-binary-search-tree`; CSES 1130, 1131 (tree algorithms) to verify. Ids unverified.
+LeetCode `maximum-depth-of-binary-tree`, `invert-binary-tree`, `binary-tree-inorder-traversal`, `binary-tree-level-order-traversal`, `binary-tree-zigzag-level-order-traversal`, `binary-tree-right-side-view`, `balanced-binary-tree`, `diameter-of-binary-tree`, `path-sum`, `path-sum-iii`, `binary-tree-maximum-path-sum`, `validate-binary-search-tree`, `kth-smallest-element-in-a-bst`, `delete-node-in-a-bst`, `lowest-common-ancestor-of-a-binary-tree`, `lowest-common-ancestor-of-a-binary-search-tree`, `construct-binary-tree-from-preorder-and-inorder-traversal`, `serialize-and-deserialize-binary-tree`, `convert-sorted-array-to-binary-search-tree`, `subtree-of-another-tree`, `flatten-binary-tree-to-linked-list`, `count-good-nodes-in-binary-tree`, `recover-binary-search-tree`; CSES 1131 Tree Diameter (needs an iterative walk: 2*10^5 nodes). CSES 1130 Tree Matching is left out (needs a greedy idea this module does not teach). Slugs are written from memory and unverified: say so in `external.toml`, as dsa.09 does.

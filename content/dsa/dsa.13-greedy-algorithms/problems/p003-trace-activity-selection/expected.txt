@@ -1,0 +1,10 @@
+order: [(1, 4), (3, 5), (0, 6), (4, 7), (5, 9), (6, 9), (8, 11), (11, 12)]
+(1, 4) take  last_end=4
+(3, 5) skip  last_end=4
+(0, 6) skip  last_end=4
+(4, 7) take  last_end=7
+(5, 9) skip  last_end=7
+(6, 9) skip  last_end=7
+(8, 11) take  last_end=11
+(11, 12) take  last_end=12
+chosen: 4 [(1, 4), (4, 7), (8, 11), (11, 12)]

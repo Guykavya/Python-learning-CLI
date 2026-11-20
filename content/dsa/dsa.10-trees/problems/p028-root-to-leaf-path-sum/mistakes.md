@@ -1,0 +1,4 @@
+- `if root is None: return target == 0`: for `[1, 2]` and target `1` this accepts the path that ends at the root, but the root is not a leaf. It also returns `True` for an empty tree with target 0.
+- Checking `target == 0` at every node (not only at leaves): a path may not stop in the middle.
+- Assuming all values are positive and stopping when the remaining sum becomes negative: with negative values the sum can come back up.
+- Returning the result of only the left side (`return has_path_sum(root.left, rest)`): the right side is never asked.

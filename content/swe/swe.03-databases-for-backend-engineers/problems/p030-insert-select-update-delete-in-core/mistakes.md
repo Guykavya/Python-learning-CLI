@@ -1,0 +1,5 @@
+- **Forgetting the commit.** With `engine.connect()` and no `commit()`, the inserts are rolled back when the connection closes.
+- **`execute` in a loop** for many rows. Pass the whole list: one `executemany`.
+- **`rowcount` of a `select`.** It is meaningful only for insert, update and delete.
+- **Building SQL strings with `f"..."`.** Use the constructors; values become bound parameters.
+- **Forgetting `order_by`.** The names come back in an undefined order.

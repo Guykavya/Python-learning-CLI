@@ -1,0 +1,6 @@
+id = "dsa.10.p018"
+title = "Zigzag level order"
+tier = "applied"
+kind = "code"
+topics = ["tree", "level order", "zigzag", "queue"]
+minutes = 20

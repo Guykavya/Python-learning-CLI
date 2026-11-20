@@ -1,0 +1,6 @@
+- **`[[0] * k] * (n + 1)`.** All rows are the same list, so filling row `i` also changes row `i - 1` while you read it. Use a comprehension (chapter section 4).
+- **Looping `i` downward.** Row `i` would read row `i - 1` before it is filled: all zeros.
+- **A table with `k + 1` columns and the test `run < k` in the wrong place.** Then a run of exactly `k` ones slips through. Copy the condition from the memo: a 1 may be placed only if `run + 1 < k`.
+- **Returning `t[n][k - 1]` or `t[n - 1][0]`.** The original call is `go(n, 0)`: `n` characters left, no ones at the end yet.
+- **Base case only for `run = 0`.** `go(0, run)` is 1 for every `run`, so the whole first row is ones.
+- **Keeping the recursion and calling `sys.setrecursionlimit`.** That is not a table, and very deep recursion can crash the interpreter itself.

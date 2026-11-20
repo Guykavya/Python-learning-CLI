@@ -1,0 +1,6 @@
+- Calling `insert(root.left, key)` without `root.left = ...`: the new node is created and thrown away.
+- Returning the new node from every level instead of `root`: the tree shrinks to the last inserted node.
+- Putting an equal key on the right (or left): a BST here has distinct values, and a duplicate must not be added.
+- Comparing in the wrong direction (smaller keys on the right).
+- Creating a new `TreeNode` copy of the whole path: the existing nodes must stay the same objects.
+- Forgetting the empty tree: `None.val` crashes.

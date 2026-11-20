@@ -1,0 +1,6 @@
+id = "dsa.14.p037"
+title = "0/1 knapsack: which items"
+tier = "applied"
+kind = "code"
+topics = ["dynamic programming", "0/1 knapsack", "reconstruction", "tabulation"]
+minutes = 30

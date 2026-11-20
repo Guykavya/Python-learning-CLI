@@ -1,0 +1,7 @@
+- Saying "the heap is not sorted, so it breaks": a heap is **never** fully sorted. The rule is only parent `<=` child. The point is that the rule is broken at one edge.
+- Saying that `heappop` "pops the wrong item": it pops the root, which is the minimum **if the rule holds**. The wrong answer comes from the broken rule, not from `heappop`.
+- Explaining the steps of `heappop` without saying which items it never looks at.
+- Proposing `heap.sort()` as a repair: a sorted list is a heap, but sorting costs `O(n log n)` after every change. `heapify` is `O(n)`.
+- Saying that lazy deletion "removes" the old entry: it only marks it. The entry stays in the heap and is dropped later, when it reaches the top.
+- Forgetting the cost: lazy deletion trades memory (stale entries) for time (`O(log n)` per change).
+- Claiming that a change of the task field is unsafe: the task is never reached by a comparison as long as the count is unique.

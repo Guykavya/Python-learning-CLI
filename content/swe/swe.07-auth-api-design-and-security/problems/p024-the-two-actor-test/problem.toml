@@ -1,0 +1,6 @@
+id = "swe.07.p024"
+title = "The two-actor test"
+tier = "challenge"
+kind = "code"
+topics = ["IDOR", "two-actor test", "side effects", "security testing", "test the test"]
+minutes = 50

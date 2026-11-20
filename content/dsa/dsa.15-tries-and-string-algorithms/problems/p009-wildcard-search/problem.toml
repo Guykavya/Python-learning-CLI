@@ -1,0 +1,6 @@
+id = "dsa.15.p009"
+title = "Wildcard search `.`"
+tier = "applied"
+kind = "code"
+topics = ["trie", "wildcard", "dfs", "backtracking"]
+minutes = 30

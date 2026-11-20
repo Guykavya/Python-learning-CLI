@@ -1,0 +1,6 @@
+- **"Memoisation makes recursion faster" without saying why.** The speed-up comes only from repeated states. No repeats, no gain.
+- **Wrong repeat counts.** `fib(6)` asks `fib(2)` 5 times and `fib(1)` 8 times, not "twice each". The counts grow like the Fibonacci numbers themselves.
+- **Confusing calls with states.** The memoised `fib(6)` still makes 11 calls; only 7 of them (one per state) do real work.
+- **Thinking a cache helps backtracking.** `perms` never asks the same question twice, so every lookup misses.
+- **Blaming only the default argument in `count_ways`.** The key `(len(coins), amount)` leaves out the coin values. Inside one top-level call it happens to work (a given length is always the same prefix of the same list), but that is a hidden assumption, and the shared dictionary breaks it. A safe key contains everything the answer depends on.
+- **Mixing up the two properties.** Optimal substructure lets you write the recursion; overlapping sub-problems makes remembering worth it.

@@ -1,0 +1,6 @@
+id = "dsa.15.p022"
+title = "Pattern search with Z"
+tier = "deep"
+kind = "code"
+topics = ["z-function", "string search", "separator", "longest common prefix"]
+minutes = 35

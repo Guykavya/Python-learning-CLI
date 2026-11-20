@@ -1,0 +1,6 @@
+id = "dsa.15.p024"
+title = "Rabin-Karp search"
+tier = "applied"
+kind = "code"
+topics = ["rabin-karp", "rolling hash", "hashing", "collisions", "string search"]
+minutes = 35

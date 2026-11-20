@@ -1,0 +1,6 @@
+id = "swe.01.p017"
+title = "A pure Python task runner"
+tier = "applied"
+kind = "code"
+topics = ["task runner", "subprocess", "exit codes", "sys.executable"]
+minutes = 35

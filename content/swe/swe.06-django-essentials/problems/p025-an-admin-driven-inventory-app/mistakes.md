@@ -1,0 +1,11 @@
+- **`item.quantity -= 3; item.save()`.** Two requests at once can overwrite each other, and a stale object hides the real stock. Use `F("quantity") + delta` in an `update()`.
+- **No `transaction.atomic`.** If creating the `Movement` fails, the quantity is already changed: stock without a record.
+- **The `IntegrityError` caught without a savepoint.** Inside an outer transaction a failed statement breaks the whole transaction ("current transaction is aborted"). Wrap just the `UPDATE` in its own `with transaction.atomic():`.
+- **Forgetting `item.refresh_from_db(...)`.** The caller's object then shows the old quantity.
+- **`quantity` editable in the admin.** Anyone could change stock without a movement. `readonly_fields = ("quantity",)`.
+- **No `__str__` on a model.** The admin lists and the movement history become unreadable (and a `Movement.__str__` that touches `self.item` costs a query per row; keep it simple).
+- **A movement of zero accepted.** Nothing happened, so nothing should be recorded.
+- **N+1 in the API list.** `category_name` reads `item.category`; use `select_related("category")`.
+- **Using `IsAuthenticated` for `move`.** Any logged-in user could change stock. Put `IsAdminUser` on the action.
+- **409 vs 400.** A well-formed request that conflicts with the current state (not enough stock) is 409; a malformed one (bad `delta`) is 400.
+- **Writing the tests last.** The rules are the product; a test that cannot fail proves nothing. Try removing the `F()`, the atomic block or the constraint and see which tests notice.

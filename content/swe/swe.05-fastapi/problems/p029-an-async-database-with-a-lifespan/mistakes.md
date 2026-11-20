@@ -1,0 +1,6 @@
+- **A module-level engine** (`engine = create_async_engine("sqlite+aiosqlite:///tasks.db")` at the top). Every app and every test then shares one database, and the URL cannot be chosen per app.
+- **Creating the tables in `create_app` with `asyncio.run(...)`.** It touches the database before the app starts and runs on a different event loop from the one that will serve requests.
+- **Forgetting `await`** on `session.commit()`, `session.execute(...)` or `session.get(...)`. You get a coroutine object instead of a result, and a "never awaited" warning.
+- **Default `expire_on_commit=True`.** `return task` after the commit then tries to reload `task.id` lazily, which fails in async code (`MissingGreenlet`, section 11.5).
+- **Using `TestClient(app)` without `with`.** The lifespan does not run, `app.state.sessionmaker` does not exist, and the first request fails with an `AttributeError`.
+- **No `order_by`.** SQLite usually returns rows in insertion order, but nothing promises it.

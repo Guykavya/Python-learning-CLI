@@ -1,0 +1,6 @@
+- Looking at both subtrees (a full tree search): it works but is `O(n)`; the tests count the pointer reads.
+- Returning `cur.val` instead of the node: the tests ask for the node and call `.val` themselves.
+- Writing `while root.left:` without handling `root is None` first: `find_min(None)` crashes.
+- Moving to the wrong side: smaller keys are on the **left**.
+- Writing `if cur.val:` or `if key:` as a test: the keys `0` and negative numbers are real keys.
+- Returning `False` or `0` for "not found": return `None`.

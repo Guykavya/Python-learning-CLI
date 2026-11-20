@@ -1,0 +1,6 @@
+- **`session.permanent = True` always.** Every login is "remember me" for two weeks.
+- **`SESSION_COOKIE_SECURE = True` and testing over plain HTTP in a real browser.** The cookie is never sent and login seems broken; use HTTPS or a dev override.
+- **Forgetting that `session.permanent` must be set at login**, not only in config.
+- **Applying `test_config` before the defaults.** The defaults would win.
+- **`SameSite=None` "to make it work".** It sends the cookie everywhere, removing a CSRF layer (and requires `Secure`).
+- **Not clearing the cookie at logout.** `session.clear()` makes Flask send the deleting header; do not just set `session["user"] = None`.

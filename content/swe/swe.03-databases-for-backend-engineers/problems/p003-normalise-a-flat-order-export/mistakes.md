@@ -1,0 +1,6 @@
+- **One row per input row in every table.** That keeps all the duplicates; the point is to store each fact once.
+- **Using the name as the customer key.** Two customers may share a name; the e-mail is the natural key here.
+- **Ids from `enumerate(rows)`.** They are per table, not per input row.
+- **Making the order before the customer.** You need the customer's id.
+- **Losing the order of lines.** Keep input order in `order_lines`.
+- **Putting the price in `order_lines`.** Here the price is a fact about the product (the chapter later stores the sale price per line when prices change).

@@ -1,0 +1,5 @@
+- **Recursion.** A linear history of 5,000 commits already breaks the default recursion limit.
+- **Forgetting that the commit is its own ancestor** in this problem (git's own `merge-base --is-ancestor` also counts a commit as its own ancestor).
+- **No `seen` set.** A merge makes two paths to the same commit; without `seen` the work repeats, and in a big graph it explodes.
+- **`graph[c]` on a parent that has no line.** Use `graph.get(c, [])`.
+- **Counting root commits as merges.** A merge has **two or more** parents.

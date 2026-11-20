@@ -1,0 +1,5 @@
+- **"The tree has 4n nodes."** It has `2n - 1` nodes; `4n` is the size of the list, because of the gaps.
+- **"2n is enough because there are 2n - 1 nodes."** Only for powers of two; `n = 5` already uses index 15.
+- **Height `log2(n)` without rounding up.** For `n = 9` the height is 4, not 3.17 or 3.
+- **Forgetting that the root has index 1.** With root 0 the formulas change (`2i + 1`, `2i + 2`), and the bound is slightly different.
+- **Not explaining why the iterative tree escapes the problem.**

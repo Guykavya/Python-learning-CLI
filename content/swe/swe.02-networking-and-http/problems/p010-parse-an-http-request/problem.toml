@@ -1,0 +1,6 @@
+id = "swe.02.p010"
+title = "Parse an HTTP request"
+tier = "applied"
+kind = "code"
+topics = ["HTTP", "request parsing", "headers", "Content-Length"]
+minutes = 45

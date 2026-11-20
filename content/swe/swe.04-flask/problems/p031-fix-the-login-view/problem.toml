@@ -1,0 +1,7 @@
+id = "swe.04.p031"
+title = "Fix the login view"
+tier = "deep"
+kind = "code"
+topics = ["login", "user enumeration", "session fixation", "open redirect", "security fixes"]
+minutes = 50
+assessment = "fix"

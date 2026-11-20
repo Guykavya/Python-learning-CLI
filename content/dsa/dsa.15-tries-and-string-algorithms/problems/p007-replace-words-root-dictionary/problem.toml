@@ -1,0 +1,6 @@
+id = "dsa.15.p007"
+title = "Replace words (root dictionary)"
+tier = "applied"
+kind = "code"
+topics = ["trie", "prefix", "strings"]
+minutes = 25

@@ -1,0 +1,6 @@
+- **Saying "the client should just not retry".** It cannot know whether to; the network, load balancers and users retry anyway. The server must make retries safe.
+- **Describing the key as a lock on the whole API.** It identifies one logical operation; a new payment gets a new key.
+- **Blaming only "two users at once".** The race needs just two *requests*, from the same client (a double click, a retry that overlaps a slow first attempt).
+- **Fixing the race with a faster check.** A quicker `SELECT` still leaves a gap. The claim must be one atomic step.
+- **Forgetting the crash case.** An answer that handles only concurrency misses that the work and the record must be one transaction.
+- **Ignoring scope and fingerprint.** The key belongs to a user, and the same key with a different body is an error, not a replay.

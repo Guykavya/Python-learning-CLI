@@ -1,0 +1,5 @@
+- **`from_attributes` only on `UserOut`.** The nested `team` object then fails: `TeamOut` needs it too.
+- **Converting by hand with `vars(user)` or `user.__dict__`.** It works for these fake objects but copies *everything*, including `password_hash`, and fails on real ORM objects (they carry internal state).
+- **Returning `to_out(user).model_dump()` without `response_model`.** It works, but the docs no longer know the response shape.
+- **Returning `None` for an unknown id.** `None` does not fit `UserOut`: FastAPI raises a response validation error, a **500**. Raise `HTTPException(404)` instead.
+- **Thinking `from_attributes` means "copy every attribute".** It copies only the declared fields.

@@ -1,0 +1,5 @@
+- **Bundles that are all powers of two.** For `count = 5`, bundles `1, 2, 4` can make 7 copies, more than exist. The last bundle must be the **rest** (`1, 2, 2`).
+- **Looping capacity upwards for a bundle.** A bundle is a 0/1 item; upwards it can be reused and the count limit is broken (`(1, 5, 3)` with `W = 10` would give 50).
+- **Ignoring the count**, which solves the unbounded knapsack.
+- **One item per copy.** Correct, but with 1000 copies of 100 kinds it is about `10**8` steps and runs out of time.
+- **Forgetting kinds with `count = 0`.** They must add nothing; with a loop `while count > 0` this is automatic.

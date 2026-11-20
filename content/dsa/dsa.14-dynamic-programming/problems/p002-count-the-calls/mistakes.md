@@ -1,0 +1,5 @@
+- **Not counting the base-case calls.** `fib(1)` and `fib(0)` run the body (and the counter) like every other call. `naive 1 1 1`, not `naive 1 1 0`.
+- **Not counting hits in the memo version.** A hit still runs `calls += 1` before it returns. Counting only the misses gives 7 instead of 11.
+- **Thinking `fib_memo(0)` is never asked.** `fib_memo(2)` asks for `fib_memo(1)` and then `fib_memo(0)`; both are misses the first time. The notebook ends with 7 keys, `0..6`.
+- **Forgetting that the notebook survives.** Only `calls` is reset. `again` is one hit, and `next` needs just 3 calls.
+- **Counting `len(notebook)` before the call finishes.** The `print` arguments are evaluated left to right, so `len(notebook)` is read **after** `fib_memo(...)` has returned.

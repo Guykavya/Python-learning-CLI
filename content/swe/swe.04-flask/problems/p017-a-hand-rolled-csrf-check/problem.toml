@@ -1,0 +1,6 @@
+id = "swe.04.p017"
+title = "A hand-rolled CSRF check"
+tier = "deep"
+kind = "code"
+topics = ["CSRF", "session", "hmac.compare_digest", "secrets", "before_request"]
+minutes = 45

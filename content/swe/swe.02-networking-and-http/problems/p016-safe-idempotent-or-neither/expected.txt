@@ -1,0 +1,10 @@
+1: status=404 orders=0 a1=- counter=0
+2: status=201 orders=1 a1=- counter=0
+3: status=201 orders=2 a1=- counter=0
+4: status=201 orders=2 a1=7 counter=0
+5: status=200 orders=2 a1=7 counter=0
+6: status=200 orders=2 a1=7 counter=1
+7: status=200 orders=2 a1=7 counter=2
+8: status=204 orders=2 a1=- counter=2
+9: status=404 orders=2 a1=- counter=2
+10: status=200 orders=2 a1=- counter=2

@@ -1,0 +1,5 @@
+- **No copy**: `if dist[u] + p < dist[v]` inside a round lets a price found earlier in the same round be used again, so one round can add several flights and the stop limit is broken. With `[(0, 1, 100), (1, 2, 100), (0, 2, 500)]`, `k = 0` must give 500, not 200.
+- **`k` rounds instead of `k + 1`**: `k` stops means `k + 1` flights.
+- **Plain Dijkstra on cities**: it finds the cheapest route regardless of the number of stops, and its `dist` cannot remember a dearer route with fewer stops.
+- **Returning `inf`** instead of `-1` when no route fits.
+- **Stopping early when a round changes nothing** is fine; stopping after the first round that reaches `dst` is not: a later round may find a cheaper route with more stops that still fits.

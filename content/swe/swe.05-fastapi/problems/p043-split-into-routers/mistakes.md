@@ -1,0 +1,6 @@
+- **Leaving the old `@app` routes in place.** `/tasks` then still works, without the new rules.
+- **Writing `"/tasks"` again in the route** of a router whose prefix is already `/tasks`: the path becomes `/tasks/tasks`.
+- **Expecting the value of a `dependencies=[...]` entry as a parameter.** It is only run, not passed; declare it as a parameter if you need it.
+- **Including the router before adding its routes** and expecting later routes to appear: `include_router` copies the routes that exist at that moment.
+- **`prefix="/api/"` with a trailing slash.** FastAPI refuses prefixes ending in `/`.
+- **Adding the check to each endpoint** "to be safe". It works, but the next endpoint someone adds will forget it again.

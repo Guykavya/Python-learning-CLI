@@ -1,0 +1,6 @@
+- **No check round**: with a negative cycle the distances after `V - 1` rounds are just some numbers; you must test once more and return `None`.
+- **Looking for negative cycles anywhere** (for example `dist = [0] * n`, or checking edges whose `dist[u]` is `inf` with a big number as infinity): a cycle the source cannot reach must not turn the answer into `None`.
+- **One round too few** (`n - 2`): the longest simple route has `n - 1` edges, and the check round then reports a cycle that does not exist.
+- **`<=` in the check round**: an edge that gives an **equal** distance is not an improvement; zero-weight cycles are not negative.
+- **Using a large integer like `10**9` as infinity without the `dist[u] != INF` test**: `10**9 - 5` looks like a real distance.
+- **Stopping the rounds early after the source's neighbours are done**: only "a whole round changed nothing" allows stopping.

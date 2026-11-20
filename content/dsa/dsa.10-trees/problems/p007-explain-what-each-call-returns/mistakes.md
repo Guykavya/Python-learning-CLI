@@ -1,0 +1,5 @@
+- Describing what the code does line by line instead of saying what the call **returns** (its meaning).
+- Saying `height(None)` is 0 "because it is the base case": the reason is that an empty tree has no nodes on any path (node-counting convention).
+- Saying `is_leaf(None)` is `False` "by accident": it is False because an empty child is not a node, so it cannot be a leaf. Counting empty children as leaves would give `n + 1` extra leaves.
+- Forgetting that `count_leaves` without the leaf case returns 0 for every tree, because the recursion only ever ends in `None`.
+- Answering `0` for `max_value(None)`: that is a legal tree value, so the caller cannot tell the cases apart.

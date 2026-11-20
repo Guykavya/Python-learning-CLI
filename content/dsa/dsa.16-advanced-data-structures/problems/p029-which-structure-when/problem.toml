@@ -1,0 +1,6 @@
+id = "dsa.16.p029"
+title = "Which structure when?"
+tier = "deep"
+kind = "trace"
+topics = ["choosing a data structure", "segment tree", "fenwick tree", "sparse table", "trace"]
+minutes = 20

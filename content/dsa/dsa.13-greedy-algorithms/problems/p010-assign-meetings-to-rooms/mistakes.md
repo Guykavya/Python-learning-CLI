@@ -1,0 +1,6 @@
+- **Sorting the meetings** themselves and filling `rooms` in sorted order: `rooms[i]` then belongs to the wrong meeting. Sort the indices.
+- **`busy[0][0] < s`.** A room freed at time 10 cannot be used at 10, so touching meetings need extra rooms and the count is above the minimum.
+- **Heap of end times only.** You know a room is free but not which one; you need `(end, room)` pairs.
+- **Processing by end time.** A meeting may be given a room before an earlier-starting meeting that needs it.
+- **Checking every room in a loop** for each meeting: correct, but `O(n * k)`, slow when many rooms are used.
+- **Reusing a room without pushing the new end time**: the room looks free while the new meeting is still running.

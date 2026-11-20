@@ -1,0 +1,6 @@
+id = "dsa.10.p051"
+title = "Build a tree from postorder and inorder"
+tier = "deep"
+kind = "code"
+topics = ["tree", "construction", "postorder", "inorder", "dictionary"]
+minutes = 35

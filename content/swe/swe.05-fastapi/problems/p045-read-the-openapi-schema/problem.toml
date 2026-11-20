@@ -1,0 +1,6 @@
+id = "swe.05.p045"
+title = "Read the OpenAPI schema"
+tier = "drill"
+kind = "trace"
+topics = ["OpenAPI", "app.openapi", "parameters", "status codes", "422", "trace"]
+minutes = 20

@@ -1,0 +1,6 @@
+- Using the 1-based formulas (`2*i`, `2*i + 1`, `i // 2`) in a list that starts at index 0. Then `left(0)` is `0`: the root becomes its own child.
+- Writing `parent(i) = i // 2 - 1` or `(i // 2) - 1`: the minus one belongs **inside**, before the division.
+- Writing `(i - 1) / 2`: the slash gives a float (`1.5`), which cannot be a list index. Use `//`.
+- Forgetting the `< n` test in `children`: for the last parent a missing right child would point to an index that does not exist (or to an item outside the heap).
+- Testing `<= n` instead of `< n`: the valid indexes of `n` items are `0 .. n - 1`.
+- Returning the children as a tuple or in the order right, left: the tests expect a list, left child first.

@@ -1,0 +1,5 @@
+- **Wrong signs in inclusion-exclusion**: the top-left corner is subtracted twice and must be added back once.
+- **Resetting `j` outside the row loop.** The column loop must restart at `c + 1` (or `c`) for every row cell.
+- **Mixing up `R` and `C`** in the bounds of the two loops, which only shows on non-square grids.
+- **`+ 1` in `prefix`** as well as in `add`: the prefix of the first `r` rows needs no shift.
+- **Adding up the rectangle** (the starter): `O(area)` per question.

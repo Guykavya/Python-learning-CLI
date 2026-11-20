@@ -1,0 +1,5 @@
+- **Forgetting to reverse.** The walk back collects cells from the end to the start.
+- **Comparing `grid` values instead of `f` values** on the way back. A cheap neighbour cell can sit at the end of an expensive path.
+- **Stepping off the grid.** On the first row only "left" is possible; on the first column only "up". Without these cases `f[r-1][c]` with `r = 0` reads the last row.
+- **Rolling the table to one row.** Then the walk back has nothing to read. Keep the full table (or parent pointers) when you need the path.
+- **Returning the route in a different shape**, such as a list of directions or of costs. The task asks for `(row, col)` cells.

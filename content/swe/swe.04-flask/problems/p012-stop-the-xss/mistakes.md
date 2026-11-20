@@ -1,0 +1,6 @@
+- **Formatting first, escaping after.** The `<strong>` you added would be escaped too; and with the other order, a user typing `<script>` before the replace gets through.
+- **`Markup(text)` on raw user text** (the starter's bug): `Markup` is a promise, not a cleaner.
+- **`|safe` in the template.** Same bug in another place.
+- **Greedy regex `\*\*(.+)\*\*`.** `**a** and **b**` becomes one big bold part.
+- **Forgetting that `escape()` returns `Markup`.** If you replace on a `Markup`, the new text inserted by `re.sub` is escaped again, producing `&lt;strong&gt;`. Convert with `str()` first.
+- **Escaping the author name by hand.** Autoescape already does it; double escaping shows `&amp;`.

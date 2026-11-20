@@ -1,0 +1,6 @@
+- **A plain union `Card | Bank | Upi`.** It works for good input, but bad input gets errors from every member: noisy and confusing.
+- **`method: str` in the models.** The discriminator needs a `Literal` per member; with `str` Pydantic cannot decide and refuses the definition.
+- **Putting `discriminator=` on the `method` field instead of on the union.** It belongs to the union: `Annotated[A | B | C, Field(discriminator="method")]`.
+- **Expecting the loc `["body", "number"]`.** In a discriminated union the tag is part of the path: `["body", "card", "number"]`.
+- **Unescaped `|` or a missing `^...$`.** Without anchors, `"41111111111111112222"` would contain 16 digits and pass.
+- **`payment.number[:4]`.** "Ending" means the last four digits: `[-4:]`.

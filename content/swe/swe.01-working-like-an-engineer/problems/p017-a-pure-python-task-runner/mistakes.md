@@ -1,0 +1,6 @@
+- **Ignoring the return code of `run`.** The runner then returns 0 for a failing test run: CI turns green.
+- **Writing `"python"` in the commands.** It may start a different Python (system, not the virtual environment); `sys.executable` is always the right one.
+- **Running all commands even after a failure.** The statement says stop at the first failure.
+- **Returning `1` instead of the command's own code.** Keep the code so that callers can tell the reason.
+- **Running the tests before lint in `check`.** The cheap checks come first.
+- **Running a command for an unknown task.** Print the usage and return 2.

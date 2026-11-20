@@ -1,0 +1,5 @@
+- **`s >= shot_at`** for a new arrow (the activity-selection condition). Touching balloons would get two arrows instead of one.
+- **Sorting by start** and shooting at the end of the first balloon. A long early balloon pushes the arrow too far right and misses short balloons inside it.
+- **Shooting at the start** of a balloon instead of its end: balloons that start later but still overlap are missed.
+- **Starting `shot_at` at 0** or at `-1`: balloons with negative positions are counted as already burst.
+- **Returning `len(balloons)`** after merging overlapping balloons as in merge intervals: merging `(1, 3), (2, 5), (4, 6)` gives one block, but no single arrow hits all three.

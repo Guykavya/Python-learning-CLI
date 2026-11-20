@@ -1,0 +1,6 @@
+id = "swe.02.p025"
+title = "Route a request"
+tier = "applied"
+kind = "code"
+topics = ["routing", "405 Allow", "path parameters", "404"]
+minutes = 40

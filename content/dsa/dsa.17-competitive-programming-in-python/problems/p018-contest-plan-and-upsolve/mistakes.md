@@ -1,0 +1,6 @@
+- **Reading only problem A, then diving in.** Problem C is sometimes easier than B; you only learn it by reading.
+- **No skip rule.** Spending 90 minutes on one problem is the most common way to waste a round.
+- **Submitting without testing the smallest case.** A wrong answer on test 2 usually means `n = 1`.
+- **Starting a new problem in the last 5 minutes** and leaving a solved one with a format error.
+- **Skipping the upsolve.** The learning happens afterwards; a contest without upsolving mostly measures what you already knew.
+- **Reading the editorial immediately.** Without trying alone first, the idea does not stick.

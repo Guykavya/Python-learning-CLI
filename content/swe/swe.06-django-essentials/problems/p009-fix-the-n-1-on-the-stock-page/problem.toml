@@ -1,0 +1,7 @@
+id = "swe.06.p009"
+title = "Fix the N+1 on the stock page"
+tier = "applied"
+kind = "code"
+topics = ["N+1", "select_related", "prefetch_related", "query count", "ManyToManyField"]
+minutes = 25
+assessment = "fix"

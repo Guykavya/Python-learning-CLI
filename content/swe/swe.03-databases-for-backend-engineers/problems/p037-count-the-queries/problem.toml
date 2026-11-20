@@ -1,0 +1,6 @@
+id = "swe.03.p037"
+title = "Count the queries"
+tier = "drill"
+kind = "code"
+topics = ["N+1", "event listeners", "context managers", "SQLAlchemy"]
+minutes = 30

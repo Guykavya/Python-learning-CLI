@@ -1,0 +1,7 @@
+id = "swe.03.p055"
+title = "The e-commerce database"
+tier = "challenge"
+kind = "code"
+topics = ["project", "SQLAlchemy", "constraints", "transactions", "backup", "N+1"]
+minutes = 150
+assessment = "build"

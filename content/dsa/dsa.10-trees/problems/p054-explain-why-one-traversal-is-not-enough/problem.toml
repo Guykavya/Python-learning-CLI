@@ -1,0 +1,6 @@
+id = "dsa.10.p054"
+title = "Explain: why one traversal is not enough"
+tier = "applied"
+kind = "explain"
+topics = ["tree", "traversal", "construction", "serialisation"]
+minutes = 25

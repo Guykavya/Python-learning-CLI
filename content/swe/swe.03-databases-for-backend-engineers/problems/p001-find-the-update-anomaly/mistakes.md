@@ -1,0 +1,4 @@
+- **Returning keys with one value.** Many rows with the same value are fine; only different values conflict.
+- **Using `len(rows)` per key.** Count distinct values, not rows.
+- **Losing the order** by turning the values into a `set`.
+- **Crashing on empty input.** The result is `{}`.

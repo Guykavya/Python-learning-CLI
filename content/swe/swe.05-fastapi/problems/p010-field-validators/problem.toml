@@ -1,0 +1,6 @@
+id = "swe.05.p010"
+title = "Field validators"
+tier = "applied"
+kind = "code"
+topics = ["field_validator", "mode before", "normalising input", "ValueError", "422"]
+minutes = 35

@@ -1,0 +1,6 @@
+id = "dsa.15.p027"
+title = "Longest palindromic substring in O(n)"
+tier = "deep"
+kind = "code"
+topics = ["manacher", "palindromes", "queries"]
+minutes = 40

@@ -1,0 +1,6 @@
+id = "swe.05.p024"
+title = "Setup and cleanup with `yield`"
+tier = "applied"
+kind = "code"
+topics = ["yield dependencies", "commit and rollback", "cleanup", "sub-dependencies", "dependency_overrides"]
+minutes = 35

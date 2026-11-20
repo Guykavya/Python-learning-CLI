@@ -1,0 +1,6 @@
+id = "dsa.12.p026"
+title = "Shortest bridge"
+tier = "challenge"
+kind = "code"
+topics = ["graph", "grid", "dfs", "multi-source bfs", "islands"]
+minutes = 45

@@ -1,0 +1,4 @@
+- Giving the `None` entries no place in the list: each `None` still uses one entry, which shifts every later value to the wrong parent.
+- Printing the lines in level order (`1, 2, 3, 4, 5, 6`): `describe` is a preorder walk, so node `3` comes after the whole left subtree `2, 4`.
+- Hanging `6` under `4`: `4` is a right child at the end of the first branch, and the entries for its children are the two `None`s. The `6` belongs to `5`, the next node in the queue.
+- Writing `height 3`: the longest path is `1 - 3 - 5 - 6`, four nodes.

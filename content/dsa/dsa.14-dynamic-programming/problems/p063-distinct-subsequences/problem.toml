@@ -1,0 +1,6 @@
+id = "dsa.14.p063"
+title = "Distinct subsequences"
+tier = "deep"
+kind = "code"
+topics = ["dynamic programming", "subsequences", "counting", "strings", "rolling array"]
+minutes = 35

@@ -1,0 +1,9 @@
+- **`FloatField` for price.** Floats cannot store `0.10` exactly. Use `DecimalField(max_digits=8, decimal_places=2)`.
+- **Forgetting `on_delete`.** It is a required argument of `ForeignKey`; Django raises `TypeError` without it.
+- **`on_delete=CASCADE` "because it is the default in tutorials".** Deleting a category would then delete every item in it. For history and stock, `PROTECT` is the safe choice.
+- **No `related_name`.** Then `category.items` does not exist (the default is `category.item_set`).
+- **`choices` with the labels as stored values.** The stored value is the first part (`"active"`); the second is only for people.
+- **`default="Active"`.** Use the stored value or the member `Status.ACTIVE`, not the label.
+- **Forgetting `__str__`.** Everything works, but the admin and the shell show `Item object (1)`.
+- **Putting `ordering` outside `Meta`.** It is an option of the inner class, not a field.
+- **Forgetting `app_label` in one of the two models.** Only for this course's sandbox, but then that model is not registered and its table is not created.

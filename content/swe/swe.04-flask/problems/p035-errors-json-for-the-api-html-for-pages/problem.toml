@@ -1,0 +1,6 @@
+id = "swe.04.p035"
+title = "Errors: JSON for the API, HTML for pages"
+tier = "deep"
+kind = "code"
+topics = ["error handlers", "HTTPException", "500", "JSON errors", "information leaks"]
+minutes = 45

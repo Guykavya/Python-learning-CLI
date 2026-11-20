@@ -1,0 +1,5 @@
+- Appending `v` to `rev[u]` (copying the graph instead of reversing it).
+- Changing `adj` in place while reversing it: the caller's graph is destroyed, and edges that were already turned around are turned again.
+- Answering `can_reach` with a BFS in the **original** graph: that gives the vertices `target` can reach, the opposite question.
+- Forgetting `target` itself (a path of zero edges).
+- A recursive DFS: a chain of 100,000 vertices exceeds the recursion limit.

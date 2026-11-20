@@ -1,0 +1,6 @@
+- **Returning the LCS, or `a + b`.** The LCS is a common *sub*sequence (too short); `a + b` is a common supersequence, but not the shortest when they share letters.
+- **Dropping the letter on a step up or left.** That is `lcs_string`, which builds a subsequence. Here every letter must be written somewhere.
+- **Forgetting the leftovers.** When `j` reaches 0, the letters `a[:i]` are not written yet. `shortest_supersequence("abc", "")` must be `"abc"`.
+- **Walking towards the smaller neighbour.** The walk then leaves the LCS path, shares fewer letters, and the result is a valid supersequence that is too long.
+- **Forgetting to reverse.** The walk collects letters from the end. Without `reversed`, the result is backwards and usually not a supersequence at all.
+- **Expecting one fixed answer.** For `"ab"` and `"ba"`, both `"aba"` and `"bab"` are shortest (length 3). Which one you get depends on how you break the tie between the two neighbours; the tests accept any valid shortest string.

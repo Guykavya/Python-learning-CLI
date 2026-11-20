@@ -1,0 +1,6 @@
+- **Checking the goal when a state is discovered** instead of when it is dequeued: the program prints the line for `(0, 1)` before it finds `(3, 4)`.
+- **Pouring the whole jug**: pour A into B moves only `min(a, 5 - b)`; from `(3, 3)` only 2 litres fit, giving `(1, 5)`.
+- **Listing seen states as new**: `parent` remembers every state ever discovered, also those still in the queue.
+- **Changing the order of the moves**: the new states are listed in the order fill A, fill B, empty A, empty B, A into B, B into A.
+- **Forgetting the line for a state with no new neighbours**: `(3, 5) -> new []` is printed too.
+- **Swapping the two numbers**: a state is `(litres in A, litres in B)`, and A holds 3, B holds 5.

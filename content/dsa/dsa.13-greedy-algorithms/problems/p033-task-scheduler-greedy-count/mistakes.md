@@ -1,0 +1,6 @@
+- **Forgetting `max(len(tasks), ...)`.** With many different letters no idle unit is needed: `["A", "B", "C", "D", "A", "B", "C", "D"]`, `n = 1` takes 8, while the formula part alone gives `(2 - 1) * 2 + 4 = 6`.
+- **Adding 1 instead of `m`.** If `A` and `B` both appear `f` times, the last row holds both: `["A","A","A","B","B","B"]`, `n = 2` is 8, not 7.
+- **`f * (n + 1)`.** The last row is not a full block: after the last `A` there is no cooldown to wait for.
+- **Simulating with "first allowed letter in alphabetical order".** `["A", "B", "B", "B"]` with `n = 1`: `A B . B . B` is 6 units, but `B A B . B` is 5. If you simulate, always run the letter with the most copies left.
+- **Crashing on no tasks.** `max()` of an empty list fails; the answer is 0.
+- **Treating `n` as the distance between starts.** `n = 2` means two *other* units in between, so copies are `n + 1` apart.

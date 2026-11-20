@@ -1,0 +1,7 @@
+- **Choosing by speed alone.** "FastAPI is faster" is not a reason unless you say why this job is limited by waiting on I/O, and in most apps the database is the real limit.
+- **"Django is old" or "FastAPI is new".** Age says nothing about fit.
+- **No cost.** Every choice has one (build more yourself, or carry more than you need). If you list none, the reviewer cannot trust the rest.
+- **No trigger.** Say what would make you change your mind, in terms of a measurement or a change in the job.
+- **Rewriting for one feature (job G).** Replacing a working, tested system because one feature is easier elsewhere is almost always the more expensive choice.
+- **Forgetting that frameworks combine.** Django can own the data and the admin while a small async service handles a hot path.
+- **Answering with a preference.** "I already know it" is a real input, but state it as a benefit and a cost, not as the whole reason.

@@ -1,0 +1,6 @@
+id = "dsa.13.p013"
+title = "Explain: why 0/1 knapsack breaks greedy"
+tier = "drill"
+kind = "explain"
+topics = ["greedy", "0/1 knapsack", "fractional knapsack", "exchange argument", "counterexample", "explain"]
+minutes = 20

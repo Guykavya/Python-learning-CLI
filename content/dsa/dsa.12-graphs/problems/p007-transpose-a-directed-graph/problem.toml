@@ -1,0 +1,6 @@
+id = "dsa.12.p007"
+title = "Transpose a directed graph"
+tier = "applied"
+kind = "code"
+topics = ["graph", "directed graph", "transpose", "BFS", "reachability"]
+minutes = 25

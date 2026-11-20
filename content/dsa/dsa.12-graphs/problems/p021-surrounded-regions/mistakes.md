@@ -1,0 +1,5 @@
+- Capturing every `"O"` that is not itself on the border: an inner `"O"` joined to a border `"O"` is safe.
+- Starting the search from the first and last **row** only and forgetting the first and last **column**.
+- Joining cells diagonally: a region touching a border `"O"` only at a corner is still captured.
+- Changing the caller's list (assigning new strings into `board[r]`): build and return a new list.
+- A recursive flood from each border cell: deep recursion on large open boards.

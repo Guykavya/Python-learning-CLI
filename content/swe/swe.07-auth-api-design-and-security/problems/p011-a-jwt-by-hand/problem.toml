@@ -1,0 +1,6 @@
+id = "swe.07.p011"
+title = "A JWT by hand"
+tier = "drill"
+kind = "code"
+topics = ["JWT", "HS256", "HMAC", "base64url", "signature", "algorithm pinning"]
+minutes = 30

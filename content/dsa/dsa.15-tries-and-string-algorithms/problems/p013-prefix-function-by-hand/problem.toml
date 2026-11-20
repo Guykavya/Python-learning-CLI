@@ -1,0 +1,6 @@
+id = "dsa.15.p013"
+title = "Prefix function by hand"
+tier = "drill"
+kind = "trace"
+topics = ["prefix function", "border", "trace"]
+minutes = 20

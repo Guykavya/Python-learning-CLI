@@ -1,0 +1,5 @@
+- **No `methods=[...]`.** The route answers only GET (and HEAD/OPTIONS); the POST gets 405.
+- **`request.form["name"]`.** A missing field raises a 400 `BadRequestKeyError` with a Flask-generated page; `.get` lets you answer with your own message.
+- **Returning the user's text without escaping.** `<b>` would be live HTML (XSS). In a template it is escaped for you.
+- **Checking `request.method == "PUT"` yourself.** The router already answers 405 with a correct `Allow` header.
+- **Forgetting to strip.** `"   "` is not a name.

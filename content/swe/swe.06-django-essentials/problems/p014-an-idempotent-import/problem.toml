@@ -1,0 +1,6 @@
+id = "swe.06.p014"
+title = "An idempotent import"
+tier = "deep"
+kind = "code"
+topics = ["update_or_create", "bulk_create", "idempotence", "transaction.atomic"]
+minutes = 30

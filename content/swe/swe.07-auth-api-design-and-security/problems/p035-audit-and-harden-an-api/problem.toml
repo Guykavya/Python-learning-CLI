@@ -1,0 +1,7 @@
+id = "swe.07.p035"
+title = "Audit and harden an API"
+tier = "challenge"
+kind = "code"
+topics = ["security audit", "hardening", "login throttling", "password hashing", "JWT expiry", "IDOR", "idempotency", "open redirect", "logging", "error handling", "FastAPI"]
+minutes = 120
+assessment = "build"

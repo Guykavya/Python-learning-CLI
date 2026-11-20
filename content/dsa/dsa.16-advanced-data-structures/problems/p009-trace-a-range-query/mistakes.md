@@ -1,0 +1,5 @@
+- **Entering an inside node.** Once a node is inside, its sum is taken and its children are never visited (no lines for them).
+- **Treating `[0,2)` as partial for `query(2, 6)`.** It ends where the query begins: `hi = 2 <= l = 2`, outside.
+- **Visiting the right child before the left one.** The program always goes left first.
+- **Wrong indentation.** Each recursion level adds two spaces: node 1 has none, nodes 2 and 3 have two, nodes 4 to 7 have four, and the leaves 8 to 15 have six.
+- **Wrong sums.** Node 5 is `7 + 3 = 10`, node 6 is `9 + 2 = 11`.

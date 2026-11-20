@@ -1,0 +1,6 @@
+id = "dsa.13.p019"
+title = "Job sequencing with deadlines"
+tier = "applied"
+kind = "code"
+topics = ["greedy", "scheduling", "job sequencing", "deadlines", "heap"]
+minutes = 30

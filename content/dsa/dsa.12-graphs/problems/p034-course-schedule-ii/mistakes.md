@@ -1,0 +1,5 @@
+- **The edge the wrong way** (`a -> b`): the order you get is a valid order for "a before b", which is backwards. Every prerequisite is broken.
+- **Returning the partial order** when there is a cycle: the answer must be `[]`.
+- **Returning `None`** instead of `[]`.
+- **Leaving out courses without prerequisites**: every course must appear in the plan.
+- **Recursion** on 100,000 courses: `RecursionError`.

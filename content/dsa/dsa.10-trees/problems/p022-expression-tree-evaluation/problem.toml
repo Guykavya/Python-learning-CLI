@@ -1,0 +1,6 @@
+id = "dsa.10.p022"
+title = "Expression tree evaluation"
+tier = "applied"
+kind = "code"
+topics = ["tree", "postorder", "expression tree", "recursion"]
+minutes = 20

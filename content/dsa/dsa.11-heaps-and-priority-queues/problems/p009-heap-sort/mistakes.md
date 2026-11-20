@@ -1,0 +1,7 @@
+- Using a **min**-heap for the ascending sort and swapping the root to the end: that puts the smallest item at the end, so the result is descending. Ascending needs the max-heap.
+- Letting `sift_down` look at `len(a)` instead of `end`: it pulls the already sorted items (the large ones at the back) into the heap again, and the sort is destroyed.
+- Looping the phase-1 range with `n // 2` instead of `n // 2 - 1` as the first index (harmless, a leaf) or ending it at `0` exclusive (`range(n // 2 - 1, 0, -1)`): then the root is never sifted and the heap is wrong.
+- Running phase 2 down to `end = 0` or stopping at `end = 2`: the last or the second swap is lost, for example `[2, 1]` stays unsorted.
+- Sorting a copy and returning it: the test looks at the list you were given. It must be sorted in place.
+- Calling `a.sort()` or `sorted(a)` "for the final order": not allowed here, and it hides what the heap does.
+- Expecting equal items to keep their order: heap sort is not stable.

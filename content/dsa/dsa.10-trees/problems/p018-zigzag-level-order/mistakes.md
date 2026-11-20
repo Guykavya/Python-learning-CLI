@@ -1,0 +1,5 @@
+- Reversing **every** level (that is a right-to-left level order, not a zigzag).
+- Reversing the wrong parity: the root level must stay as it is.
+- Appending the right child first to the queue on odd levels: this changes which nodes belong to the next level's order and gives wrong results below the second level.
+- Reversing the queue instead of the finished list.
+- Forgetting the empty tree.

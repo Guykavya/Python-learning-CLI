@@ -1,0 +1,6 @@
+id = "swe.02.p029"
+title = "A timeout is per wait not total"
+tier = "deep"
+kind = "trace"
+topics = ["timeouts", "read timeout", "deadline", "trace"]
+minutes = 30

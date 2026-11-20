@@ -1,0 +1,7 @@
+- **`update_or_create(sku=..., name=..., price=...)` without `defaults`.** Then name and price are part of the lookup: a changed price finds no row and tries to create a second one with the same sku (`IntegrityError`).
+- **Resetting `quantity`** (putting it in `defaults`, or deleting and re-creating the rows). The test with quantity 42 catches it.
+- **`bulk_create` without checking existing skus.** A second run raises `IntegrityError` on the unique column (or `ignore_conflicts=True` hides it and your counts are wrong).
+- **Counting from the length of `rows`** instead of the distinct skus: a repeated sku is counted twice.
+- **One query per row** for a big first import (`get` / `filter().exists()` in a loop).
+- **No `transaction.atomic()`.** A failure in the middle leaves some rows changed and some not, and a retry reports different numbers.
+- **Returning a list or the objects** instead of the tuple `(created, updated)`.

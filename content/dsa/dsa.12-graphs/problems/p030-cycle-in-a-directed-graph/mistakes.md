@@ -1,0 +1,7 @@
+- **One `visited` set** ("seen before = cycle"): the undirected idea fails on directed graphs. In a diamond the shared vertex is seen twice, with no cycle.
+- **The undirected parent trick**: in a directed graph `0 -> 1 -> 0` is a real cycle, but "skip the vertex I came from" hides it.
+- **Resetting to WHITE when leaving a vertex** (instead of BLACK): still correct, but a vertex can be explored again and again; on graphs with many shared descendants the time explodes.
+- **Treating BLACK like GREY**: every cross edge to a finished vertex becomes a false cycle.
+- **Searching only from vertex 0**: a cycle that 0 cannot reach is missed. Start from every WHITE vertex.
+- **Recursion** on a chain of 100,000 vertices: `RecursionError`. Use the iterator stack.
+- **Forgetting self loops**: `(1, 1)` is a cycle of length 1.

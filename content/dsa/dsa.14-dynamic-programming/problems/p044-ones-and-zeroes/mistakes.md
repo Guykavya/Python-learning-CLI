@@ -1,0 +1,5 @@
+- **One of the loops upwards.** The same string is then taken again and again: `find_max_form(["0"], 3, 0)` returns 3 instead of 1. Both loops must go from high to low.
+- **A greedy choice** such as "shortest strings first". For `["00", "01", "01"]` with `m = n = 2`, all three have length 2; taking `"00"` first uses both zeros and leaves room for nothing else (1 string), while `"01"` and `"01"` give 2. Greedy is not safe for knapsack.
+- **One capacity only.** Treating `m + n` as a single budget of characters ignores which character runs out: `["00", "000"]` with `m = 1, n = 10` must be 0.
+- **Value = length** instead of 1. We count strings, not characters.
+- **Starting the loops at 0 and testing `if i >= z`** is fine; starting them at `z` but going upwards is not.

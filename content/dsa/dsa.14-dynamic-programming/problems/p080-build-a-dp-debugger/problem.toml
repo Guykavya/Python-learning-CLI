@@ -1,0 +1,7 @@
+id = "dsa.14.p080"
+title = "Build a DP debugger"
+tier = "deep"
+kind = "code"
+topics = ["dynamic programming", "memoisation", "debugging", "decorators", "recursion"]
+minutes = 60
+assessment = "build"

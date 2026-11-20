@@ -1,0 +1,8 @@
+- **Retrying a `POST` after a `503` without a key.** The server may have done the work.
+- **Retrying a `404` or a `400`.** The request is wrong; repeating cannot fix it.
+- **A new idempotency key for each attempt.** Then the key protects nothing; use one key for the whole operation.
+- **Sleeping after the last failure.** The caller waits for nothing.
+- **`time.sleep` hard-coded.** Tests would really sleep; take `sleep` as a parameter.
+- **Ignoring `Retry-After`**, or believing a `Retry-After` of a day. Cap it at 30 s.
+- **Counting attempts wrongly.** `attempts=4` means four requests in all, not four retries.
+- **Catching `Exception`.** A bug in your code is not a network failure.

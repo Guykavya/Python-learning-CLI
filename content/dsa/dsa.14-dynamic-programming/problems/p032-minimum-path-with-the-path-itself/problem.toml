@@ -1,0 +1,6 @@
+id = "dsa.14.p032"
+title = "Minimum path with the path itself"
+tier = "applied"
+kind = "code"
+topics = ["dynamic programming", "grid dp", "reconstruction", "minimum path sum", "walk back"]
+minutes = 25

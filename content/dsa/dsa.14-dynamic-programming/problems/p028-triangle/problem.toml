@@ -1,0 +1,6 @@
+id = "dsa.14.p028"
+title = "Triangle"
+tier = "applied"
+kind = "code"
+topics = ["dynamic programming", "grid dp", "bottom-up", "triangle", "rolling array"]
+minutes = 20

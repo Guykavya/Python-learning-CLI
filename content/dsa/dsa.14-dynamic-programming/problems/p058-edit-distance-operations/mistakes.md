@@ -1,0 +1,5 @@
+- **Reversing the list but keeping the original positions.** After an early insert or delete, every later position is off by one: for `""` to `"ab"` reversed gives insert `a` at 0, insert `b` at 0, which builds `"ba"`.
+- **Insert at `i - 1` instead of `i`.** The new character goes **after** `a[:i]`. For `"a"` to `"ab"`, insert `b` at position 1, not 0.
+- **Replacing equal characters.** If the "keep" test is not first, or does not check `a[i-1] == b[j-1]`, you may emit a useless replace and the list is longer than the distance.
+- **Reading `a[i-1]` when `i == 0`.** Python reads `a[-1]` (the last character) without an error. Check `i > 0` and `j > 0` before every such read; at the edges only inserts (row 0) or deletes (column 0) are left.
+- **Stopping when `i == 0 and j > 0`.** The remaining `j` characters of `b` still need inserts: loop `while i > 0 or j > 0`.

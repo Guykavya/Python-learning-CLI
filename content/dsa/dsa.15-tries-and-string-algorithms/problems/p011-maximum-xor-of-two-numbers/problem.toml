@@ -1,0 +1,6 @@
+id = "dsa.15.p011"
+title = "Maximum XOR of two numbers"
+tier = "deep"
+kind = "code"
+topics = ["trie", "binary trie", "xor", "greedy", "bits"]
+minutes = 35

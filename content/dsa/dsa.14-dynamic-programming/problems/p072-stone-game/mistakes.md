@@ -1,0 +1,6 @@
+- **Adding the opponent's result** (`piles[i] + f(i+1, j)`). Then both players are counted as one: you get the total of all piles. The opponent's gain is your loss: subtract.
+- **Greedy: take the larger end.** For `[4, 1, 4, 7, 5]` it takes 5 and the second player takes 7; the result is `-1`. Taking 4 first gives `+3`. A big end pile may open a bigger one for the opponent.
+- **Base case `f(i, i) = 0`.** With one pile, the mover takes it: `f(i, i) = piles[i]`.
+- **Keeping "whose turn" and two scores in the state.** It works, but the difference from the mover's point of view needs neither.
+- **Filling by rows with `i` going up.** `f(i+1, j)` is in the next row and not filled yet.
+- **Plain recursion without a memo.** Two choices per move: `2^n` move sequences.

@@ -1,0 +1,6 @@
+id = "dsa.16.p004"
+title = "Segment tree for min"
+tier = "applied"
+kind = "code"
+topics = ["segment tree", "range minimum", "identity element"]
+minutes = 25

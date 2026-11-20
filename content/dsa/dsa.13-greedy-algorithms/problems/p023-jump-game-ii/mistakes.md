@@ -1,0 +1,5 @@
+- **Looping to `len(nums)` instead of `len(nums) - 1`.** At the last index `i == layer_end` can be true and you count a jump you never make: `[1, 1]` gives 2 instead of 1.
+- **Always jumping as far as possible from where you stand.** From index 0 of `[2, 3, 1, 1, 4]` the longest jump lands on index 2 (value 1), which needs 3 jumps in total; landing on index 1 (value 3) needs only 2. Choose by how far the *next* jump reaches.
+- **Counting a jump at every index**, or whenever `farthest` grows. A jump is counted only when the current layer runs out.
+- **Returning 1 for `[0]`.** You start on the last index: 0 jumps.
+- **A BFS that pushes every index in range.** Correct, but `O(n * jump)`: with 100,000 jumps of length 100,000 it does not finish.

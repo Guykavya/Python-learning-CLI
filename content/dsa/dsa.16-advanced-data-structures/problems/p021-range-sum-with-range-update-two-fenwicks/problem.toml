@@ -1,0 +1,6 @@
+id = "dsa.16.p021"
+title = "Range sum with range update (two Fenwicks)"
+tier = "challenge"
+kind = "code"
+topics = ["fenwick tree", "difference array", "range update", "range sum"]
+minutes = 45

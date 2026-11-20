@@ -1,0 +1,7 @@
+- **Forgetting to put `"mark_discontinued"` in `actions`** (or writing the method without the `self`). The action never shows up.
+- **`search_fields = ("name")`** is a string, not a tuple; the admin treats it as separate letters. Write `("name", "sku")` or `["name", "sku"]`.
+- **Hiding quantity with CSS or a widget** but leaving it editable. The test posts `quantity=999`; only `readonly_fields` (or `exclude`) stops the server from reading it.
+- **A loop in the action** (`for item in queryset: item.discontinued = True; item.save()`): correct but one `UPDATE` per row.
+- **Removing `path("admin/", admin.site.urls)`** from `urlpatterns`: every admin URL is a 404.
+- **Checking permissions by hand** in the action or in `has_change_permission`. The built-in checks already give the 403 the tests expect.
+- **`list_filter = ("category__name",)`** or a wrong parameter name: the filter works in a browser but not with the id the test sends. Use the field itself, `"category"`.

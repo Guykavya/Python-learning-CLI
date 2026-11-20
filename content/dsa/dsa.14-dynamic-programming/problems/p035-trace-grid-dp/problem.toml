@@ -1,0 +1,6 @@
+id = "dsa.14.p035"
+title = "Trace grid DP"
+tier = "applied"
+kind = "trace"
+topics = ["dynamic programming", "grid", "unique paths", "obstacles", "trace"]
+minutes = 15

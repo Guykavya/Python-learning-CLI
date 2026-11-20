@@ -1,0 +1,6 @@
+id = "dsa.13.p015"
+title = "When greedy change fails"
+tier = "drill"
+kind = "code"
+topics = ["greedy", "coin change", "counterexample", "canonical coin system"]
+minutes = 15

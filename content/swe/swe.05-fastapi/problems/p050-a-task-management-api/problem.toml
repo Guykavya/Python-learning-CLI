@@ -1,0 +1,7 @@
+id = "swe.05.p050"
+title = "A task-management API"
+tier = "challenge"
+kind = "code"
+topics = ["project", "FastAPI", "async SQLAlchemy", "JWT", "dependencies", "routers", "WebSocket", "error envelope", "OpenAPI"]
+minutes = 180
+assessment = "build"

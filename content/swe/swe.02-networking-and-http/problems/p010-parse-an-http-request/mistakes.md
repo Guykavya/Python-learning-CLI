@@ -1,0 +1,7 @@
+- **A dictionary for headers.** Repeated headers (`Set-Cookie`, `Accept`) lose all but one value.
+- **Case-sensitive lookup.** `content-length` and `Content-Length` are the same header.
+- **Splitting the whole request on `\r\n`.** The body may contain `\r\n`; cut at the first blank line only.
+- **Decoding the whole request as UTF-8.** The body can be any bytes; only the head is text.
+- **Reading the body to the end of the data.** Use `Content-Length`; bytes after it are the next request.
+- **Accepting `int(" 5")` or `"+5"` as a length.** Digits only.
+- **Forgetting `Host` for HTTP/1.1** (or demanding it for 1.0).

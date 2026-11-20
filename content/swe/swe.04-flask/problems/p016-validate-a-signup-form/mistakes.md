@@ -1,0 +1,6 @@
+- **`re.match` or `re.search` instead of `fullmatch`.** `ok_name!!` starts with a valid name.
+- **Stripping the password.** Spaces are allowed characters; changing the password silently makes login fail.
+- **Returning the passwords in `clean`.** They would be re-rendered into the page.
+- **`form["username"]`.** A missing key raises; `.get(key, "")` does not.
+- **Uppercase allowed by accident** (`[A-Za-z]`). The rule is lower-case only.
+- **Reporting `confirm` only when the password is long.** The two checks are independent.

@@ -1,0 +1,6 @@
+id = "swe.05.p029"
+title = "An async database with a lifespan"
+tier = "challenge"
+kind = "code"
+topics = ["async SQLAlchemy", "aiosqlite", "lifespan", "app factory", "AsyncSession dependency", "app.state"]
+minutes = 60

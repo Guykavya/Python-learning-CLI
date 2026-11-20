@@ -1,0 +1,9 @@
+- **One timer only.** An idle-only session lives for ever when kept active; an absolute-only session logs out a user in the middle of work.
+- **`>` instead of `>=`.** At exactly the limit the session is already expired.
+- **Not sliding the idle timer** on `get`, or sliding it on a **failed** `get`.
+- **Resetting `created` in `rotate`.** The absolute limit then moves forward at every rotation.
+- **Keeping the old id alive after `rotate`.** That is the whole fixation bug.
+- **Creating a session from an expired one** in `rotate`. Return `None` and make nothing.
+- **Reading `time.time()`.** Use the injected `clock()`.
+- **Ids from `random` or a counter.** Guessable. Use `secrets.token_urlsafe(32)`.
+- **Raising on unknown ids.** `get(None)` happens on every anonymous request; it must just return `None`.

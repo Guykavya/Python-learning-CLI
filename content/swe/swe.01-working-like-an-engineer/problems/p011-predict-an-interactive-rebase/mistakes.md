@@ -1,0 +1,5 @@
+- **Melding `squash D` into `B` because D "belongs" there.** `squash` and `fixup` always go into the commit directly above them in the *list*, which after the reordering is `E`.
+- **Counting `C` as a separate commit.** `fixup` folds it into `B`.
+- **Keeping the subject `Add search` for the last commit.** A squash keeps the subject of the commit it is squashed into (`Add docs`).
+- **Forgetting that `reword` changes only the message.** `B`'s files stay in the commit.
+- **Listing `F`.** A dropped commit, and its file, is gone from the new history.

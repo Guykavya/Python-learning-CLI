@@ -1,0 +1,6 @@
+id = "dsa.14.p061"
+title = "Count palindromic substrings"
+tier = "applied"
+kind = "code"
+topics = ["dynamic programming", "palindromes", "strings", "expand around centre", "counting"]
+minutes = 25

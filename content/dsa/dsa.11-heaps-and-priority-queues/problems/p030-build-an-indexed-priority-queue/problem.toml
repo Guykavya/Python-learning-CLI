@@ -1,0 +1,7 @@
+id = "dsa.11.p030"
+title = "Build an indexed priority queue"
+tier = "deep"
+kind = "code"
+topics = ["heap", "indexed heap", "priority queue", "design", "decrease-key"]
+minutes = 60
+assessment = "build"

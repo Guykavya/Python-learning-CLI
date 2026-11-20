@@ -1,0 +1,6 @@
+id = "swe.07.p030"
+title = "Which IP is the client?"
+tier = "deep"
+kind = "code"
+topics = ["client IP", "X-Forwarded-For", "trusted proxies", "spoofing", "rate limiting keys"]
+minutes = 30

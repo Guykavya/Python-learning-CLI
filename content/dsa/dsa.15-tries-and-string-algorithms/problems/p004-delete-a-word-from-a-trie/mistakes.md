@@ -1,0 +1,6 @@
+- **Only clearing `is_end`.** `search` becomes false, but the nodes stay: `node_count()` is wrong and the trie only grows.
+- **Pruning top down.** Removing the first letter's node deletes every word below it.
+- **Not stopping.** A node with other children, or that ends another word, must stay: deleting `card` must not remove `car`.
+- **Deleting a prefix that is not a word.** `delete("ca")` must return `False` and change nothing, even though the path exists.
+- **Removing the root.** The root always stays, even after the empty word is deleted.
+- **A recursive `node_count` on a 10,000-letter word** hits the recursion limit. Use a stack.

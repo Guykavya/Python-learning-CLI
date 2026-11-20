@@ -1,0 +1,6 @@
+- **Forgetting `back_populates` on one side.** The two sides then do not stay consistent in memory.
+- **A foreign key on the "one" side.** It belongs to the table that holds many rows.
+- **No `delete-orphan`.** Removing a line from the list raises an integrity error or leaves an orphan.
+- **`cascade="all, delete-orphan"` on `Customer.orders`.** Deleting a customer would then delete their orders; here it is only on the lines (an order belongs to a customer, but you keep orders).
+- **Old-style `Column(...)` without `Mapped`.** It works but the course uses the 2.x style.
+- **Different attribute names.** The tests use `orders`, `customer`, `lines`, `order`.

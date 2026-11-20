@@ -1,0 +1,5 @@
+- **`input().split()` for the array.** Breaks when the array is on several lines, or when a blank line separates the cases.
+- **Floating-point average.** `sum / n` and comparing with `>` can mis-round for large sums. `x * n > total` is exact in integers.
+- **State that leaks between cases.** If `total` or the list are created before the loop, the second case adds to the first. Create them inside the loop.
+- **Printing inside the loop** for `10**5` cases. It works, but it is slower than collecting the answers.
+- **Strictly greater.** `>=` counts the elements equal to the average.

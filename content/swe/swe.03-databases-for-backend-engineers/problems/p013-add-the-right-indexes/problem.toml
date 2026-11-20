@@ -1,0 +1,6 @@
+id = "swe.03.p013"
+title = "Add the right indexes"
+tier = "applied"
+kind = "code"
+topics = ["indexes", "composite index", "query plans", "SQLite"]
+minutes = 35

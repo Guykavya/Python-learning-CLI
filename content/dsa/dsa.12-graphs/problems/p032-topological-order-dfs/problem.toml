@@ -1,0 +1,6 @@
+id = "dsa.12.p032"
+title = "Topological order (DFS)"
+tier = "applied"
+kind = "code"
+topics = ["graph", "topological sort", "dfs", "finishing order", "three colours"]
+minutes = 35

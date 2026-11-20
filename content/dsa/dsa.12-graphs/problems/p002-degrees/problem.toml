@@ -1,0 +1,6 @@
+id = "dsa.12.p002"
+title = "Degrees"
+tier = "drill"
+kind = "code"
+topics = ["graph", "degree", "in-degree", "out-degree"]
+minutes = 15

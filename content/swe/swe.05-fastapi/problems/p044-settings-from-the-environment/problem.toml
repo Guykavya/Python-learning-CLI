@@ -1,0 +1,6 @@
+id = "swe.05.p044"
+title = "Settings from the environment"
+tier = "drill"
+kind = "code"
+topics = ["settings", "environment variables", "Pydantic", "ValidationError", "app factory", "monkeypatch"]
+minutes = 30

@@ -1,0 +1,8 @@
+- **Block-listing** bad characters (`;`, `--`, `DROP`). Allow only the values you named.
+- **Putting the client's `sort` into SQL text** (`f"ORDER BY {sort}"`). Even after a check, map it to your own column name.
+- **Converting with `int()` first** and catching `ValueError`. `int(" 5")`, `int("+5")` and `int("٣")` all succeed, so odd spellings slip through. Check ASCII digits first.
+- **`str.isdigit()` alone.** It is true for `"²"` and for digits of other scripts.
+- **Forgetting the upper limit.** `limit=100000000` is a cheap denial-of-service request.
+- **Ignoring unknown parameters.** `?owner_id=2` is the classic way to widen a query; refuse it loudly.
+- **Case-insensitive matching** ("be liberal"). `PAID` is not `paid`; every spelling you accept is one more case to secure.
+- **A message that does not say what is allowed.** A client cannot fix `400 bad request`.

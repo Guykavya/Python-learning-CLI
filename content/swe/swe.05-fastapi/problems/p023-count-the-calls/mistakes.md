@@ -1,0 +1,6 @@
+- **Counting one run per `Depends(get_db)` you see.** Within a request, the same dependency is computed once and shared; `/a` has three `Depends(get_db)` and one run.
+- **Thinking the cache lasts between requests.** It is per request; the second `/a` starts again from zero.
+- **Thinking `use_cache=False` spreads downwards.** In `/d` it makes `get_user` run again, but `get_user`'s own `get_db` is still cached.
+- **Expecting a third `get_db` in `/b`.** The endpoint's `db` is an ordinary `Depends`, and a cached value exists from the first run.
+- **Printing `endpoint` first.** Dependencies always run before the endpoint body; the endpoint is the root of the tree and runs last.
+- **Ordering by the order of the `def`s in the file.** The order is the order of first run during resolution.

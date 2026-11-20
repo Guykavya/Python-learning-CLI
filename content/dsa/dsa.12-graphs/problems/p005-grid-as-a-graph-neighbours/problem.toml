@@ -1,0 +1,6 @@
+id = "dsa.12.p005"
+title = "Grid as a graph: neighbours"
+tier = "drill"
+kind = "code"
+topics = ["graph", "grid", "implicit graph", "neighbours"]
+minutes = 15

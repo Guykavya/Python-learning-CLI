@@ -1,0 +1,6 @@
+id = "swe.07.p010"
+title = "Keep secrets out of the logs"
+tier = "drill"
+kind = "code"
+topics = ["logging", "redaction", "logging.Filter", "secrets", "caplog"]
+minutes = 30

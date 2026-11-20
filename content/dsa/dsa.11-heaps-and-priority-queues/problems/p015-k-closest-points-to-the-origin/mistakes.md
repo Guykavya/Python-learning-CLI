@@ -1,0 +1,7 @@
+- Using `math.sqrt` or `math.hypot` to compare distances: it is slower, and for big coordinates two different squared distances give the same float. The test `(10**9, 0)` against `(-10**9, 1)` catches it.
+- Storing `(d, x, y)` in a min-heap and keeping the **first** `k`: that is a heap of the *worst* `k`, or a plain "pop `k` times" after pushing everything. For a bounded heap of the `k` smallest you need the **largest** at the root: negate the key.
+- Returning the heap list as it is: it is in heap order, not nearest first. Sort the `k` entries.
+- Breaking a tie at the border the wrong way: with a key like `(-d, x, y)` the root among equal distances is the point with the **smaller** `x`, and that is the one that would leave, although it should stay. Negate every part of the key, or compare the whole `(d, x, y)` tuple.
+- Treating `k = 0` like "no limit" or crashing on `heap[0]` of an empty heap.
+- Sorting the input list in place (`points.sort(...)`): the caller's list is changed.
+- Using Manhattan distance, `abs(x) + abs(y)`: the problem uses the straight-line distance.

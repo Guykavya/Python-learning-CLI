@@ -1,0 +1,6 @@
+- **Only proving one direction.** "An odd cycle cannot be two-coloured" is the easy half; it does not show that a graph **without** odd cycles can be coloured.
+- **Saying "BFS gives shortest paths, so it works"** without the key fact: an edge joins layers that are at most one apart.
+- **Forgetting that the two tree paths share only their meeting point.** If they overlapped further, the "cycle" would not be a simple cycle; taking the first meeting point avoids that.
+- **Counting the cycle length as `2(k - j)`** (forgetting the edge `u - v`): that is even and proves nothing.
+- **Claiming three colours work the same way.** The neighbour of a red vertex has two choices; the BFS has nothing to force.
+- **Forgetting disconnected graphs:** each piece needs its own start vertex and its own layers.

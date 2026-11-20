@@ -1,0 +1,6 @@
+- **Counting the courses** (one per `popleft`) instead of the rounds: that is `n`, not the number of semesters.
+- **BFS distance from the starting courses**: it takes the **shortest** way to a course, but a course must wait for its **longest** chain. In `0 -> 1 -> 2, 0 -> 2` course 2 needs semester 3, not 2.
+- **Not separating rounds**: `while ready` without the inner `for _ in range(len(ready))` mixes courses of the next semester into the current one.
+- **No cycle check**: return `-1` when `done < n`.
+- **Recursion** for the longest chain on 100,000 courses: `RecursionError`.
+- **Courses with no relations at all** count: with no relations the answer is 1 (all in one semester), not 0.

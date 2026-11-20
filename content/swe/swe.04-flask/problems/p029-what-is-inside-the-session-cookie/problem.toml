@@ -1,0 +1,7 @@
+id = "swe.04.p029"
+title = "What is inside the session cookie?"
+tier = "deep"
+kind = "explain"
+topics = ["session cookie", "itsdangerous", "signature", "SECRET_KEY", "session fixation", "explain"]
+minutes = 40
+assessment = "explain"

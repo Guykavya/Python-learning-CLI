@@ -1,0 +1,6 @@
+- **Using `Task` (the table) as the body.** The client can set `id`, and no rule is checked because table models do not validate on creation.
+- **`TaskCreate(Task)`**, inheriting from the table. It inherits `table=True`'s fields including `id`, so the problem comes back. Inherit from `TaskBase`.
+- **`id: int | None` in `TaskRead`.** The output then claims the id might be missing; after a commit it never is.
+- **Forgetting `session.refresh(task)`** (or reading `task.id` before `commit()`). The id is only known after the row is inserted.
+- **A module-level engine.** Every app (and test) then shares one in-memory database.
+- **`create_engine("sqlite://")` without `StaticPool` and `check_same_thread=False`.** Each pool connection to `sqlite://` is a different empty database, and the worker thread that runs a sync endpoint is not the thread that created the connection.

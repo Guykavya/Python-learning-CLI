@@ -1,0 +1,5 @@
+- **Choosing a Fenwick tree for a minimum.** The operation needs an inverse; min has none.
+- **Choosing a sparse table when the data changes.** It has no updates (only a rebuild).
+- **Missing the `offline` branch in scenario 3.** With unknown operations on static data, offline questions go to Mo's algorithm.
+- **Reading `update == "range"` as "any update".** Scenarios 4, 5 and 8 have point updates.
+- **Format.** Each line is `number. scenario text: structure`.

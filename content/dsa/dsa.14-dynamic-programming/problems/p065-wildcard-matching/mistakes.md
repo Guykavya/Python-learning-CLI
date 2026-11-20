@@ -1,0 +1,6 @@
+- **Star moves both indices** (`f(i-1, j-1)`). Then a star eats exactly one letter, not "any number": `("abcd", "a*")` gives False.
+- **Forgetting the first row.** With `f(0, j)` all False, the pattern `"*"` does not match `""`, and neither does `"**"`. A star in front of the pattern must be allowed to be empty when nothing of `s` is used yet.
+- **Setting the whole first row True after the first star.** `f(0, 2)` for `"*a"` is False: the `a` needs a letter.
+- **`?` matching the empty string.** `?` eats exactly one character: `("", "?")` is False.
+- **Plain recursion trying every length for each star.** Fine on short inputs, exponential on `"a" * 300` with `"*a" * 150 + "b"`. Memoise `(i, j)` or use the table.
+- **Matching a prefix only.** `("aa", "a")` is False: the pattern must cover the whole string, so the answer is the corner `f(n, m)`.

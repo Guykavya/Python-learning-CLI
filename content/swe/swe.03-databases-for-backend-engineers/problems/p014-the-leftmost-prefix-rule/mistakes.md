@@ -1,0 +1,5 @@
+- **Saying `full` for clause 2.** Only two of the three columns narrow the search; the third is not in the query.
+- **Thinking the index helps clause 4.** `status` is not the leftmost column.
+- **Counting `created` in clause 7.** After a range on `status`, later columns cannot narrow the search.
+- **Treating `IN` as a range.** A list of values acts like several equalities, so the chain continues (clause 8).
+- **Believing the order of the conditions in the `WHERE` matters.** The planner reorders them; only the index order counts.

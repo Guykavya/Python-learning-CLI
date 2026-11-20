@@ -1,0 +1,6 @@
+- Swapping with the **larger** child, or with the left child whenever it is smaller than `a[i]`: the other child may be smaller still, and it would end up below a larger parent. Always choose the smaller child.
+- Comparing the right child with `a[i]` instead of with `a[smallest]`: when the left child is already smaller than `a[i]`, the right child must be compared with the left one.
+- Using `len(a)` instead of `n` for the bounds: heap sort keeps the sorted items behind index `n`, and they must not be touched.
+- Not checking that the right child exists (`r < n`): the last parent of a heap with an even number of items has only a left child, and `a[r]` raises an `IndexError`.
+- Stopping after one swap (`if` instead of `while`): the item sinks only one level.
+- Forgetting `i = smallest`: the loop looks at the same node again.

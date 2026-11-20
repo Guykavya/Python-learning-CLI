@@ -1,0 +1,6 @@
+id = "dsa.14.p062"
+title = "Shortest common supersequence"
+tier = "deep"
+kind = "code"
+topics = ["dynamic programming", "lcs", "reconstruction", "strings", "supersequence"]
+minutes = 40

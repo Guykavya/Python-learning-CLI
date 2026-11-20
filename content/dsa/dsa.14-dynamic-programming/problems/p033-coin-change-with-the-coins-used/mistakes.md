@@ -1,0 +1,6 @@
+- **`last[a] = c` outside the `if`.** It then stores the last coin *tried*, not the best one, and the walk back gives too many coins (or wrong amounts).
+- **Returning `None` for amount 0.** Zero needs no coins: `[]`.
+- **Returning a partial list when the amount is impossible.** Check `f[amount] == INF` first and return `None`.
+- **Greedy (largest coin first).** `[1, 3, 4]` with 6 gives `[4, 1, 1]`; the best is `[3, 3]`.
+- **Top-down for 10,000.** With a coin of value 1 the recursion is 10,000 calls deep; fill the table bottom-up.
+- **Walking back with `a -= f[a]`.** `f[a]` is a count of coins, not a coin value.

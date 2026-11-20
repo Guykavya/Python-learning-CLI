@@ -1,0 +1,6 @@
+id = "dsa.14.p044"
+title = "Ones and zeroes (2-D knapsack)"
+tier = "deep"
+kind = "code"
+topics = ["dynamic programming", "0/1 knapsack", "two capacities", "rolling array"]
+minutes = 35

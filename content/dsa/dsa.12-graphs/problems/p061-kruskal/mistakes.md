@@ -1,0 +1,6 @@
+- **Taking the `n - 1` cheapest edges** without checking for cycles: they may form a cycle and leave a vertex out.
+- **Sorting from the largest weight**: that builds a **maximum** spanning tree.
+- **Returning the total of a forest** when the graph is not connected: check that `n - 1` edges were taken.
+- **Checking only `parent[u] != parent[v]`** instead of the **roots** (`find`): two vertices of the same group can have different parents.
+- **Forgetting `n = 1`**: no edges are needed, the total is 0 (not `None`).
+- **A recursive `find` without care**: on long chains it can hit the recursion limit; a loop with path halving is safe.

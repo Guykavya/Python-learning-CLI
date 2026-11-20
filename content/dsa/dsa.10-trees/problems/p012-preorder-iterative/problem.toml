@@ -1,0 +1,6 @@
+id = "dsa.10.p012"
+title = "Preorder (iterative)"
+tier = "applied"
+kind = "code"
+topics = ["tree", "traversal", "preorder", "stack", "iterative"]
+minutes = 20

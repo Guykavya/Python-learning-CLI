@@ -1,0 +1,6 @@
+id = "swe.01.p006"
+title = "A small gitignore matcher"
+tier = "deep"
+kind = "code"
+topics = ["gitignore", "pattern matching", "glob", "regular expressions"]
+minutes = 50

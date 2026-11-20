@@ -1,0 +1,6 @@
+id = "swe.04.p022"
+title = "Config from the environment"
+tier = "drill"
+kind = "code"
+topics = ["from_prefixed_env", "environment variables", "JSON values", "nested config"]
+minutes = 25

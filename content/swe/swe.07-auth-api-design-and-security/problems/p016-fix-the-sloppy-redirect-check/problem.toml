@@ -1,0 +1,6 @@
+id = "swe.07.p016"
+title = "Fix the sloppy redirect check"
+tier = "applied"
+kind = "code"
+topics = ["OAuth2", "redirect_uri", "exact matching", "open redirect", "authorization server"]
+minutes = 25

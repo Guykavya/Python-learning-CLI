@@ -1,0 +1,7 @@
+- **Forgetting the drive back to 0.** `min(f[full])` is the shortest *path*, not the round trip. Add `dist[last][0]`.
+- **Assuming `dist` is symmetric.** With one-way roads, `dist[last][nxt]` and `dist[nxt][last]` differ. Always read in the direction you drive.
+- **A state of only `mask`.** Where you stand matters: the next drive starts there. Without `last` the DP cannot add the right distance.
+- **Filling the table with 0 instead of INF.** Unreached states then look like free paths, and the answer comes out far too small (often 0).
+- **Starting masks without bit 0.** Paths that do not start at the depot are not tours. Skip masks where bit 0 is off (or never create them).
+- **Reconstruction from the wrong mask.** After stepping back from `last`, remove `last` from the mask **before** reading the next parent.
+- **Nearest neighbour greedy.** "Always drive to the closest unvisited place" is fast and often far from optimal; the tests contain cases where it loses.

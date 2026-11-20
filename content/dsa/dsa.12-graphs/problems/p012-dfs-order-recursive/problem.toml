@@ -1,0 +1,6 @@
+id = "dsa.12.p012"
+title = "DFS order (recursive)"
+tier = "drill"
+kind = "code"
+topics = ["graph", "DFS", "recursion", "traversal order"]
+minutes = 20

@@ -1,0 +1,7 @@
+- **Reading the stock into Python, then updating.** Two sessions can both pass the check (problem 24).
+- **No savepoint.** An out-of-stock error on the second item leaves the order and the first decrement behind, or breaks the session.
+- **Storing only the product id in the line.** A later price change would rewrite history; store `unit_price_paise`.
+- **Foreign keys without the pragma.** The tests insert an order for a missing customer through raw SQL and expect an error.
+- **Computing totals with a loop of lazy loads.** One grouped query.
+- **Overwriting the backup file** or restoring over the live database.
+- **Using floats anywhere for money.**

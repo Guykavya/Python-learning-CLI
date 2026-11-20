@@ -1,0 +1,5 @@
+- Comparing only the values (a traversal list or the set of values): `[1, 2]` and `[1, None, 2]` have the same values and the same preorder, but different shapes.
+- Checking `a is None or b is None` **before** checking whether both are `None`: two empty subtrees are equal, not different.
+- In `is_mirror`, comparing `a.left` with `b.left`: that is the test for the same tree, not for the mirror.
+- Comparing the root with itself in `is_symmetric(root)` (calling `is_mirror(root, root)` is correct, but `same_tree(root.left, root.right)` is not).
+- Forgetting the single node: `[1]` is symmetric, because both sides are empty.

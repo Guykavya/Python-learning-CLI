@@ -1,0 +1,5 @@
+- **Solving the row.** `[2, 3, 2]` gives 4 (both 2s), but they are neighbours on the circle.
+- **Dropping both ends at once** (`nums[1:-1]`). That loses choices that use the first house or the last one: `[5, 1, 1]` would give 1 instead of 5.
+- **Forgetting `n = 1`.** Both slices are empty and the answer would be 0. One house on its own is not its own neighbour.
+- **Trying to subtract.** "Row answer minus the smaller end if both were used" fails: once an end is forbidden, the best choice of the other houses can change completely.
+- **`n = 2`.** The two houses are neighbours both ways round; the split gives `max(nums[0], nums[1])`, which is right.

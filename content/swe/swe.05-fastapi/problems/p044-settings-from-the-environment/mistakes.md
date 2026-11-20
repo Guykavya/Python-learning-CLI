@@ -1,0 +1,7 @@
+- **A default for the secret** (`secret_key: str = "dev"`). The app then runs in production with a key everybody knows.
+- **`raise ConfigError(str(exc))`.** `str(ValidationError)` contains `input_value=...`: the secret goes into the logs.
+- **Forgetting `from None`.** The traceback prints the original `ValidationError` too ("During handling of the above exception...").
+- **Naming fields instead of variables** (`secret_key: Field required`). The person fixing the deployment searches for the wrong word.
+- **Raising on the first problem only.** Fix, redeploy, next error, redeploy... Report them all at once.
+- **`bool(environ["APP_DEBUG"])`.** Any non-empty string is `True`, including `"false"`. Let Pydantic parse it.
+- **Reading the environment inside the endpoint** on every request: slow, and a bad value is only found when someone calls it.

@@ -1,0 +1,6 @@
+- **Reading only the first page.** The result looks fine and is wrong.
+- **No loop protection.** A server bug (or an attacker) makes you fetch the same URL until memory runs out.
+- **Building the next URL by string concatenation.** `url + next` breaks for absolute and root-relative links; use `urljoin`.
+- **Treating a non-200 page as the end of the data.** An error in the middle must not look like a complete result.
+- **`data["next"]` when the key is missing.** Some APIs omit it on the last page; use `.get`.
+- **Sorting or de-duplicating the items.** Return them in the order of the pages.

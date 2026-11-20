@@ -1,0 +1,6 @@
+id = "swe.04.p028"
+title = "Store passwords properly"
+tier = "drill"
+kind = "code"
+topics = ["password hashing", "werkzeug.security", "salt", "scrypt", "models"]
+minutes = 30

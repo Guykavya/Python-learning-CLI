@@ -1,0 +1,5 @@
+- **Not resetting the count** on a longer length (`c[i] += c[j]` in both cases). Shorter subsequences are then counted too: `[1, 2, 3]` gives more than 1.
+- **Setting `c[i] = c[j]` on equal lengths too.** That keeps only the last way: `[1, 3, 5, 4, 7]` gives 1 instead of 2.
+- **Adding only `c[n - 1]`**, or only the count at the first index with the max. The longest subsequences can end at several places: `[2, 2, 2, 2, 2]` is 5.
+- **Starting `c[i]` at 0.** The item alone is one subsequence of length 1.
+- **Counting distinct value sequences** instead of positions. `[1, 2, 2]` has two LIS (`1, 2` with either 2), so the answer is 2.

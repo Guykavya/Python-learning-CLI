@@ -1,0 +1,6 @@
+- **Rendering the thanks page directly from the POST.** The browser's refresh warning ("resubmit the form?") and double submissions come from this.
+- **Redirecting also on errors.** The typed values and errors would be lost (unless you store them in the session).
+- **Forgetting `SECRET_KEY`.** `flash` raises "The session is unavailable because no secret key was set".
+- **Validating before stripping.** `"   "` is not a name.
+- **Hard-coding `"/thanks"`.** `url_for("thanks")` survives a change of the URL.
+- **Flashing before validation succeeded**, so the success message shows next to an error.

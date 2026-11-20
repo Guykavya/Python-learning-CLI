@@ -1,0 +1,7 @@
+id = "swe.05.p015"
+title = "Read a 422"
+tier = "deep"
+kind = "trace"
+topics = ["422", "loc", "error type", "request lifecycle", "json_invalid", "trace"]
+minutes = 30
+assessment = "trace"

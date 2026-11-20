@@ -1,0 +1,5 @@
+- **`db.commit()` after each `UPDATE`.** The debit is permanent before the credit is tried.
+- **Catching the exception and returning `False`** inside the `with`: the block then commits the half-done work.
+- **Checking the balance with a separate `SELECT`.** Another connection can change it before your `UPDATE`.
+- **Forgetting `src == dst`.** The debit and the credit cancel, hiding bugs; refuse it.
+- **Allowing negative or zero amounts.** A negative transfer moves money the other way.

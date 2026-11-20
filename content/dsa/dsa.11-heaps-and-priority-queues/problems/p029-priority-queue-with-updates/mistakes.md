@@ -1,0 +1,10 @@
+- Entries `(priority, task)` without a counter: two tasks with the same priority make Python compare the tasks. For `object()`s that is a `TypeError`; for strings it silently orders equal priorities alphabetically instead of by arrival.
+- Changing the **priority** of an entry in place instead of marking it: the heap rule breaks (see problem p028).
+- `pop` that returns the first entry without checking the marker: a cancelled task comes out.
+- `len` that returns `len(self.heap)`: stale entries are counted. The length is the number of live tasks.
+- Forgetting to delete the task from the dictionary in `pop`: `task in pq` stays true and a later `add` marks an entry that was already popped.
+- Calling `remove` with a missing task and getting no error: the dictionary lookup must raise `KeyError` (`entries.pop(task)` does).
+- Keeping the **old** count when a task is changed: the changed task then leaves before tasks that were added after it, but before the change. The rule is "the order of the last add".
+- Never rebuilding: after 100,000 changes of 5 tasks the heap holds 100,000 entries. The size rule `stored() <= 4 * len + 8` catches it.
+- Rebuilding after **every** operation: correct but `O(n)` each time, 100,000 operations on 50,000 tasks do not finish in 10 seconds.
+- Rebuilding only in `add`: a series of `remove` calls leaves a big heap for a small queue, and the size rule fails after the `remove`.

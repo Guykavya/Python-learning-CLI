@@ -1,0 +1,4 @@
+- **Running the pragma once on one connection.** Every connection needs it.
+- **Running it inside a transaction.** SQLite ignores it there; do it right after `connect`.
+- **Forgetting `timeout`.** Under concurrent writes the default may raise "database is locked" too early.
+- **Testing with a file-less mental model.** `":memory:"` databases are private to one connection.

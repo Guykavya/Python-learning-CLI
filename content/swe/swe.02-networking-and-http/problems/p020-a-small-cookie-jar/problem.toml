@@ -1,0 +1,6 @@
+id = "swe.02.p020"
+title = "A small cookie jar"
+tier = "challenge"
+kind = "code"
+topics = ["cookies", "Set-Cookie", "Path", "Secure", "Max-Age"]
+minutes = 60

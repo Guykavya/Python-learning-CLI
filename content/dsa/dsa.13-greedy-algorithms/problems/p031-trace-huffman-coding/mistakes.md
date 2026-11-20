@@ -1,0 +1,6 @@
+- **Numbering the letters in dictionary order** (`r` = 0, `e` = 1, ...). The code numbers them in `sorted(freq)` order.
+- **Joining the newest tree first on a tie**, or joining `bd` in round 2. On equal weight the smaller tie number wins, and a joined tree always has a larger tie number than every letter.
+- **Putting the heavier tree on the left.** The first pop (the lighter one, or the one with the smaller tie) is the left child: in round 3, `bd` is left of `a`.
+- **Forgetting that `name` reads a tree left to right**: the tree `((b, d), a)` prints as `bda`.
+- **Printing the letters in the order the codes were found.** The loop prints them in `sorted(codes)` order.
+- **A cost of 12** (the root's weight). The cost is the sum of every join, or `sum(freq * code length)`.

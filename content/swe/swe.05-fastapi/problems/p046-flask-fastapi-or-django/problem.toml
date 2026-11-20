@@ -1,0 +1,6 @@
+id = "swe.05.p046"
+title = "Flask, FastAPI or Django?"
+tier = "deep"
+kind = "explain"
+topics = ["framework choice", "Flask", "FastAPI", "Django", "trade-offs", "explain"]
+minutes = 35

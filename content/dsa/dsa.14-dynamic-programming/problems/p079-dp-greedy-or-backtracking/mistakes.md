@@ -1,0 +1,6 @@
+- **"Greedy, because it is faster."** Speed is never the reason; correctness is. Greedy needs a proof or it is a guess.
+- **Greedy for all coin problems.** It is right for `[1, 5, 10, 25]` and wrong for `[1, 3, 4]` (amount 6).
+- **DP for "print every solution".** DP shares sub-problems to avoid building every solution, but here every solution must be built anyway. DP can *count* them; backtracking *lists* them.
+- **Backtracking for task 5 "because there are choices".** With 100 items it is `2**100` subsets; the knapsack table is 10**6 cells.
+- **Treating tasks 5 and 6 as the same problem.** Fractions are exactly what make the greedy exchange argument work.
+- **A justification that only restates the choice.** "DP because it has overlapping sub-problems" says nothing until you name the state and show two paths that reach it.

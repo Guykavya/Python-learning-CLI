@@ -1,0 +1,6 @@
+id = "swe.02.p001"
+title = "Classify an IP address"
+tier = "drill"
+kind = "code"
+topics = ["IP addresses", "ipaddress", "loopback", "private ranges"]
+minutes = 15

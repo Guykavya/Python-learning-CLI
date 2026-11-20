@@ -1,0 +1,6 @@
+id = "swe.06.p002"
+title = "Where does reverse point?"
+tier = "drill"
+kind = "trace"
+topics = ["reverse", "include", "namespaces", "app_name", "NoReverseMatch", "trace"]
+minutes = 15

@@ -1,0 +1,6 @@
+- Forgetting `counts = {0: 1}`: every path that starts at the root is missed.
+- Adding the current running sum to `counts` **before** looking up `running - target`: for `target = 0` every node would count itself as a path of length zero.
+- Not taking the running sum back out (`counts[running] -= 1`): the left branch's sums leak into the right branch and you count paths that are not downward paths.
+- Keeping the dictionary in a variable outside the function, so the second call starts with the counts of the first.
+- Stopping at leaves, or starting only at the root: the paths may start anywhere and end anywhere below.
+- Calling a "paths that start here" walk from every node: correct but `O(n * h)`; the pointer counter in the tests fails it.

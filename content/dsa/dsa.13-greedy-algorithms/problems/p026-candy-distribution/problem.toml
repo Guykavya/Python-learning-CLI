@@ -1,0 +1,6 @@
+id = "dsa.13.p026"
+title = "Candy distribution"
+tier = "deep"
+kind = "code"
+topics = ["greedy", "arrays", "two passes", "candy"]
+minutes = 35

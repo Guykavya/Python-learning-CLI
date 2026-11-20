@@ -1,0 +1,6 @@
+id = "dsa.15.p025"
+title = "Longest repeated substring"
+tier = "deep"
+kind = "code"
+topics = ["rolling hash", "prefix hashes", "binary search", "substrings"]
+minutes = 45

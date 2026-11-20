@@ -1,0 +1,5 @@
+- Computing only `height(left) + height(right)` at the **root**: the longest path may not pass through the root (see the test with two long arms below the root's child).
+- Returning `left + right` to the parent: a parent can use only **one** branch of its child, so the return value must be `1 + max(left, right)`.
+- Counting nodes instead of edges: the answer would be one more than expected.
+- Calling `height` again at every node: correct, but `O(n^2)` on a chain.
+- Initialising `best` with something that is wrong for one node (`best = 1`): a single node has diameter 0.

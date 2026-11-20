@@ -1,0 +1,6 @@
+id = "dsa.14.p029"
+title = "Maximal square"
+tier = "deep"
+kind = "code"
+topics = ["dynamic programming", "grid dp", "ends at", "maximal square", "min of three"]
+minutes = 30

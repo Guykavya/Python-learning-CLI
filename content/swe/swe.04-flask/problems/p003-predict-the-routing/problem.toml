@@ -1,0 +1,6 @@
+id = "swe.04.p003"
+title = "Predict the routing"
+tier = "drill"
+kind = "trace"
+topics = ["routing", "trailing slash", "redirect", "405", "trace"]
+minutes = 20

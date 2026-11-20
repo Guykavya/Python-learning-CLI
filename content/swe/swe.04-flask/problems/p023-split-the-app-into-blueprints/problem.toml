@@ -1,0 +1,6 @@
+id = "swe.04.p023"
+title = "Split the app into blueprints"
+tier = "applied"
+kind = "code"
+topics = ["blueprints", "url_prefix", "url_for", "endpoint names", "error handlers"]
+minutes = 40

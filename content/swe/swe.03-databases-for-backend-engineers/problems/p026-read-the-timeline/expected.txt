@@ -1,0 +1,3 @@
+read committed: A=100 B=100 C=150 final=160
+repeatable read: A=100 B=100 C=100 final=error
+anomaly: non-repeatable read

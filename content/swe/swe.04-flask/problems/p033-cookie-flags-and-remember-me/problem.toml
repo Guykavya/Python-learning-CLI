@@ -1,0 +1,6 @@
+id = "swe.04.p033"
+title = "Cookie flags and remember-me"
+tier = "drill"
+kind = "code"
+topics = ["cookies", "HttpOnly", "Secure", "SameSite", "session.permanent", "remember me"]
+minutes = 30

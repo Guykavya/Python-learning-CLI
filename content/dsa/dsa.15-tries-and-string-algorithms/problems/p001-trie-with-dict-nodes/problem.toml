@@ -1,0 +1,6 @@
+id = "dsa.15.p001"
+title = "Trie with dict nodes"
+tier = "drill"
+kind = "code"
+topics = ["trie", "prefix", "dict"]
+minutes = 20

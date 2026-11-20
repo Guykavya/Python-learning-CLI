@@ -1,0 +1,5 @@
+- Building `adj[0]` as `[1, 2]` (sorted). The edges list `(0, 2)` before `(0, 1)`, so `2` is first.
+- Forgetting that undirected edges go into **both** lists: `(1, 3)` puts `3` into `adj[1]` and `1` into `adj[3]`.
+- Printing the queue before the neighbours were added: the print comes after the `for` loop.
+- Giving `3` the distance 3 because it is "after" `1` and `2`. Its distance is the distance of its discoverer plus one.
+- Sorting the keys of `dist`. Python prints a dictionary in insertion order.

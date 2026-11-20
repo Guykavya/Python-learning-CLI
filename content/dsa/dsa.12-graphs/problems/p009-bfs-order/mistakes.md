@@ -1,0 +1,6 @@
+- Using `list.pop()` (a stack): that is a depth-first order, not BFS.
+- Using `list.pop(0)`: correct order, but `O(n)` per pop; use `deque.popleft()`.
+- Sorting the neighbours: the order of the edge list is the order the tests expect.
+- Forgetting the reverse direction of undirected edges, or adding it for `directed=True`.
+- Adding unreachable vertices at the end, or putting `start` somewhere else than first.
+- Marking on pop: same order, but slow on dense graphs.

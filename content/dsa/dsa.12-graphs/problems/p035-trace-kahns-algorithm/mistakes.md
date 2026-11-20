@@ -1,0 +1,6 @@
+- **Counting in-degrees from the start vertex** (how many edges leave a vertex) instead of how many edges **end** at it.
+- **Popping from the right** (`pop()` instead of `popleft()`): the program uses a queue, so the oldest ready vertex is taken first.
+- **Writing the line before the edges are removed**: the `take` line is printed after the inner loop.
+- **Appending `0` before `1`** after taking 4: the targets are handled in the order of `adj[4] = [1, 0]`.
+- **Expecting a partial order for the cycle**: the last line prints the word `cycle`, not the list `[0]`.
+- **Forgetting the edge from 0 to 1** in the second graph: vertex 1 has in-degree 2, not 1.

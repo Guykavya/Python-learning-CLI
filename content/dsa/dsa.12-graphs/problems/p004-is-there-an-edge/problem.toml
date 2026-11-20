@@ -1,0 +1,6 @@
+id = "dsa.12.p004"
+title = "Is there an edge?"
+tier = "drill"
+kind = "code"
+topics = ["graph", "adjacency set", "representation", "complexity"]
+minutes = 20

@@ -1,0 +1,6 @@
+- Writing only the values in preorder, without markers: two different trees give the same string, so the round trip fails.
+- No delimiter between the tokens: the values `1` and `2` run together as `12`, and the reader cannot tell where one number ends. Separate the tokens with a comma.
+- Reading the left and the right subtree in a different order from the one used when writing.
+- Testing the token with `if token:` or converting with `if int(token):`: `0` is a real value.
+- Keeping the tree in a global variable (or a dictionary keyed by the string) and returning it from `deserialize`: the string must carry all the information. The tests change the original tree after serialising.
+- Returning a `list` from `serialize`: the function must return a `str` so that it can be saved or sent.

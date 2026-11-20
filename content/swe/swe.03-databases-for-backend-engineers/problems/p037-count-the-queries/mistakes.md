@@ -1,0 +1,5 @@
+- **Not removing the listener.** Every later statement is still counted, and listeners pile up in a long-running program.
+- **Removing it only on success.** An exception inside the block must also remove it (that is what `__exit__` is for).
+- **Counting at the session level** (`after_flush`). N+1 happens in the SELECTs; count at the engine's cursor.
+- **Returning `True` from `__exit__`.** That would hide the errors of the block.
+- **A module-level list** shared by all counters. Each one needs its own.

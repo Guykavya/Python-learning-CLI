@@ -1,0 +1,6 @@
+id = "dsa.12.p040"
+title = "Colouring a bipartite graph"
+tier = "applied"
+kind = "code"
+topics = ["graph", "bipartite", "bfs", "two-colouring", "modelling"]
+minutes = 30

@@ -1,0 +1,6 @@
+id = "dsa.14.p053"
+title = "Count the longest increasing subsequences"
+tier = "challenge"
+kind = "code"
+topics = ["dynamic programming", "longest increasing subsequence", "counting", "two tables"]
+minutes = 40

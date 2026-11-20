@@ -1,0 +1,9 @@
+- Sorting every window (`statistics.median(nums[i:i+k])`): correct, but `O(n k log k)`. The big test would take minutes and stops at 10 seconds.
+- Deleting the leaving number by **value** from a heap (`heap.remove(x)` plus `heapify`): correct (equal numbers are interchangeable), but `O(k)` per step. It is fine for `k = 100` and too slow for `k = 20000`.
+- Marking the leaving number as gone **by value** (a set of "removed values"): when the value appears twice and only one copy has left, both copies are thrown away. Mark by index, or count how many copies of each value are gone.
+- Using `len(low)` and `len(high)` for the balance: stale entries are counted too, so the halves drift apart. Keep the counters of **live** entries.
+- Not pruning stale entries from the tops before reading the median or before comparing a new number with `-low[0][0]`: the top may be a number that already left the window.
+- Forgetting to rebalance after the removal. After one number enters and one leaves, the live sizes can differ by two.
+- Even `k`: using `//` (a sum like `3 + 4` gives `3`, not `3.5`), or returning only the top of the lower half.
+- Odd `k`: returning `float(...)`. The expected value for `[1, 3, -1]` is the `int` `1`.
+- Sorting or changing `nums` in place: the caller's list must stay as it was.

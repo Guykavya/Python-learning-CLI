@@ -1,0 +1,6 @@
+- Comparing values (`node.val == p.val`) instead of nodes: values repeat, so the wrong node can match.
+- Not stopping at `p` or `q`: if `p` is an ancestor of `q`, a search below `p` is not needed and `p` is already the answer.
+- Returning `node` as soon as one child returns something: the LCA needs an answer from **both** sides (or the node being `p` or `q` itself).
+- Assuming the answer is never `p` or `q`: a node is its own ancestor.
+- Searching for `p` and `q` separately with two traversals and then comparing paths: correct, but longer; the single recursion is enough.
+- Using a global list for the path and forgetting to remove nodes when the recursion returns.

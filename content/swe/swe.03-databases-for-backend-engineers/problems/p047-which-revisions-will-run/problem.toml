@@ -1,0 +1,6 @@
+id = "swe.03.p047"
+title = "Which revisions will run"
+tier = "drill"
+kind = "trace"
+topics = ["Alembic", "revision chain", "upgrade", "downgrade", "trace"]
+minutes = 20

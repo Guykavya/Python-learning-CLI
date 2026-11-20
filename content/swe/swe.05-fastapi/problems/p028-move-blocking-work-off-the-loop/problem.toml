@@ -1,0 +1,6 @@
+id = "swe.05.p028"
+title = "Move blocking work off the loop"
+tier = "applied"
+kind = "code"
+topics = ["asyncio.to_thread", "run_in_threadpool", "blocking calls", "event loop", "concurrency"]
+minutes = 25

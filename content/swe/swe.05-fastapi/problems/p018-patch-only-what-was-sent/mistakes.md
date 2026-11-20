@@ -1,0 +1,6 @@
+- **`data.model_dump()` without `exclude_unset=True`.** Every field you did not send comes back as `None` and overwrites the stored value. This silently destroys data and is the classic `PATCH` bug.
+- **`exclude_none=True` instead of `exclude_unset=True`.** It keeps the fields you did not send safe, but it also throws away a `null` the client sent on purpose, so a due date can never be removed.
+- **`if data.due:` checks.** A `None` from "not sent" and a `None` from "sent as null" look the same; so do `False` for `done` and "not sent".
+- **Updating a copy.** `task = dict(TASKS[task_id]); task.update(changes)` returns the right JSON once, but the next `GET` shows the old task.
+- **Making the fields required.** Then a client must send every field, and `PATCH` turns into `PUT`.
+- **Creating a missing task.** A `PATCH` to an unknown id is a 404, not an insert.

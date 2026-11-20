@@ -1,0 +1,6 @@
+id = "dsa.11.p025"
+title = "Reorganise a string"
+tier = "deep"
+kind = "code"
+topics = ["heap", "greedy", "counter", "strings"]
+minutes = 35

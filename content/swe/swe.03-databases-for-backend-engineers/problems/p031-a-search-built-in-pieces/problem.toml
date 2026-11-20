@@ -1,0 +1,6 @@
+id = "swe.03.p031"
+title = "A search built in pieces"
+tier = "applied"
+kind = "code"
+topics = ["SQLAlchemy Core", "dynamic queries", "whitelist", "icontains"]
+minutes = 35

@@ -1,0 +1,6 @@
+id = "swe.03.p024"
+title = "Stop the lost update"
+tier = "deep"
+kind = "code"
+topics = ["lost update", "concurrency", "atomic UPDATE", "threads", "SQLite"]
+minutes = 45

@@ -1,0 +1,6 @@
+id = "swe.03.p017"
+title = "Why the database ignored your index"
+tier = "deep"
+kind = "explain"
+topics = ["selectivity", "ANALYZE", "query planner", "indexes", "explain"]
+minutes = 30

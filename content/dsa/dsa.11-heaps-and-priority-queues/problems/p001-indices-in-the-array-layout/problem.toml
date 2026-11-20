@@ -1,0 +1,6 @@
+id = "dsa.11.p001"
+title = "Indices in the array layout"
+tier = "drill"
+kind = "code"
+topics = ["heap", "array layout", "index arithmetic"]
+minutes = 10

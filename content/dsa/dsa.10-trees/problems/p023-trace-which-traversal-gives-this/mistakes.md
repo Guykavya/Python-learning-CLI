@@ -1,0 +1,4 @@
+- Giving `7` to the wrong parent: the entries `None, 7` at the end of the list belong to `4`, the first node still waiting in the queue, so `7` is the **right** child of `4` (the `None` is its missing left child), not a child of `2`.
+- In the inorder, writing `7` before `4`: `4` has only a right child, so `4` comes first and then its right subtree `7`.
+- Writing the postorder as the reverse of the preorder: `7, 4, 2, 5, 6, 3, 1` is correct and the reverse of the preorder would be `6, 5, 3, 7, 4, 2, 1`.
+- Forgetting the node `3` between `5` and `6` in the inorder.

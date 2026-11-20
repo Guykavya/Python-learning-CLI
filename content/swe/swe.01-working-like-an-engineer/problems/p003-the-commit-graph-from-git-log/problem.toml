@@ -1,0 +1,6 @@
+id = "swe.01.p003"
+title = "The commit graph from git log"
+tier = "applied"
+kind = "code"
+topics = ["commit graph", "parents", "ancestors", "git log"]
+minutes = 30

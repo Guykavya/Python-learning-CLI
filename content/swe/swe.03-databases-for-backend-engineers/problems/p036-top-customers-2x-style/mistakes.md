@@ -1,0 +1,5 @@
+- **Summing in Python** after loading every order: slow and wasteful.
+- **No tie-break.** Equal totals come out in an undefined order.
+- **Grouping only by the name.** Two customers with the same name would be merged; group by the id (and name).
+- **A left join without `COALESCE`.** Customers with no orders would show a `None` total (and appear, which the task forbids).
+- **`ORDER BY` an alias in some databases only.** Order by the aggregate expression itself.

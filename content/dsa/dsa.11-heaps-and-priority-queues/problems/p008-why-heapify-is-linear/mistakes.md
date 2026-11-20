@@ -1,0 +1,6 @@
+- Saying "most nodes are leaves, so heapify is fast" and stopping there. The leaves are only half of the story: you must also say that the nodes one level up cost 1, the next level 2, and that the total of that series is at most about `n`.
+- Mixing up height and depth. Height = levels **below** a node (what a `sift_down` can still travel); depth = levels **above** (what a `sift_up` can still travel). The same node has a small height and a large depth when it is near the bottom.
+- Claiming that heapify is `O(n)` "because it is a loop that runs `n / 2` times": the loop runs `n / 2` times, but each iteration is not `O(1)`. The `O(n)` comes from the sum of the costs, not from the number of iterations.
+- Saying the friend "is wrong". An `O(n log n)` bound for heapify is true, only loose. A good answer says what is true and what is tight.
+- Believing that `O(n)` heapify makes heap sort `O(n)`. The `n` pops after the build cost `O(n log n)`.
+- Writing a long text that never gives a number. The explanation should contain 11 and 34, or numbers of your own.

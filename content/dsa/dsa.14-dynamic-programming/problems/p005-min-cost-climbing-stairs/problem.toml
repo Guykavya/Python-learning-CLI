@@ -1,0 +1,6 @@
+id = "dsa.14.p005"
+title = "Min cost climbing stairs"
+tier = "drill"
+kind = "code"
+topics = ["dynamic programming", "tabulation", "climbing stairs", "minimum cost"]
+minutes = 15

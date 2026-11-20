@@ -1,0 +1,7 @@
+1: diff=yes staged=no
+2: diff=no staged=yes
+3: diff=yes staged=yes
+4: diff=yes staged=no
+5: diff=no staged=yes
+6: diff=no staged=no
+7: diff=yes staged=no

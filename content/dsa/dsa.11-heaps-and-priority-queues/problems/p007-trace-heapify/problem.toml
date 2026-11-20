@@ -1,0 +1,6 @@
+id = "dsa.11.p007"
+title = "Trace heapify"
+tier = "applied"
+kind = "trace"
+topics = ["heap", "heapify", "bottom-up", "sift down", "trace"]
+minutes = 20

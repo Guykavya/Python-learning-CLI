@@ -1,0 +1,6 @@
+- **Going forwards with "best health so far".** The path with the most health at the end can dip below 0 earlier. Work backwards.
+- **Forgetting `max(1, ...)`.** A potion makes `after - dungeon[r][c]` small or negative; the knight still needs at least 1 to walk in alive.
+- **Off by one on "dead".** Health 0 is dead. With one demon of 5 he needs 6, not 5.
+- **Ignoring the last room (or the first).** Both rooms change his health.
+- **`max` instead of `min` for the next room.** He chooses the next room, so he picks the one that needs **less**.
+- **Recursion without a memo.** `need(r, c)` calls both neighbours; without a cache the calls multiply like paths.

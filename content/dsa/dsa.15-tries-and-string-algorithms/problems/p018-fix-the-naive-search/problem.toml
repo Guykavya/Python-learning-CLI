@@ -1,0 +1,7 @@
+id = "dsa.15.p018"
+title = "Fix the naive search"
+tier = "applied"
+kind = "code"
+topics = ["kmp", "string search", "performance", "debugging"]
+minutes = 30
+assessment = "fix"

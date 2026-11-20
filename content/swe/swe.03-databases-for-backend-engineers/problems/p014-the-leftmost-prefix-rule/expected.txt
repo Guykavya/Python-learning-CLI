@@ -1,0 +1,8 @@
+1: full
+2: partial
+3: partial
+4: no
+5: partial
+6: no
+7: partial
+8: full

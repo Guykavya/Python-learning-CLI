@@ -1,0 +1,6 @@
+1: exp
+2: alg
+3: accepted
+4: signature
+5: aud
+6: kid

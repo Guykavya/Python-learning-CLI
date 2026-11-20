@@ -1,0 +1,6 @@
+id = "dsa.14.p059"
+title = "Longest palindromic subsequence"
+tier = "applied"
+kind = "code"
+topics = ["dynamic programming", "interval dp", "palindromes", "subsequence", "reconstruction"]
+minutes = 30

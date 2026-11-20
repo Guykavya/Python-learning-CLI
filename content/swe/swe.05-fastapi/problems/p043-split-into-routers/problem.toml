@@ -1,0 +1,6 @@
+id = "swe.05.p043"
+title = "Split into routers"
+tier = "drill"
+kind = "code"
+topics = ["APIRouter", "include_router", "prefix", "tags", "router dependencies"]
+minutes = 25

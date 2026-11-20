@@ -1,0 +1,6 @@
+id = "dsa.13.p027"
+title = "Partition labels"
+tier = "applied"
+kind = "code"
+topics = ["greedy", "strings", "last occurrence", "intervals", "partition"]
+minutes = 25

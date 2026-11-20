@@ -1,0 +1,6 @@
+- **Not restoring the cell** after the DFS. Later paths then see `#` and miss words.
+- **Reporting a word twice** when it can be traced in two ways (or appears twice in `words`). Remove it from the trie once found, or use a set.
+- **Allowing a cell to be reused within one word.** `aba` on the board `ab` must not be found.
+- **Visiting a neighbour before checking the trie.** The pruning happens only if you test `board[nr][nc] in node` first.
+- **Starting the DFS only from cells that match a whole word's first letter, then searching per word.** That is the slow per-word search again.
+- **Leaving the board changed** when the function returns (for example, returning from inside the loop before restoring).

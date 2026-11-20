@@ -1,0 +1,6 @@
+- **Reading the size as decimal.** `a` means 10, `1a` means 26.
+- **`int(text, 16)` without a check.** It accepts `0x4`, `+4` and `1_0`.
+- **Searching for `\r\n` to find the end of a chunk.** The data may contain `\r\n`; use the size.
+- **Ignoring the `\r\n` after the data.** Without the check, a wrong size silently corrupts the rest.
+- **Stopping at the `0` line and not reading the trailers.** The blank line after the trailers must also be consumed (it is part of the message).
+- **Forgetting the extension** (`;name=value`): it must not be parsed as part of the size.

@@ -1,0 +1,6 @@
+id = "swe.06.p011"
+title = "PROTECT or CASCADE?"
+tier = "drill"
+kind = "trace"
+topics = ["on_delete", "CASCADE", "PROTECT", "SET_NULL", "ProtectedError", "trace"]
+minutes = 20

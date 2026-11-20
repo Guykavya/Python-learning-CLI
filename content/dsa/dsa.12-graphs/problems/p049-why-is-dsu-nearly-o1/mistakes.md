@@ -1,0 +1,6 @@
+- **"Every operation is O(1)."** The bound is amortised: a single `find` can take several steps; only the average over a sequence is (nearly) constant.
+- **Crediting path compression for the `log n` depth bound.** The doubling argument is about **union by size**; compression alone also gives `O(log n)` amortised, but by a different argument.
+- **Saying the depth grows when an element's own group is the bigger one.** Only the smaller group's root is hung under the other root.
+- **Treating α(n) as `log log n` or similar.** It grows much more slowly; for every realistic `n` it is at most 4.
+- **Forgetting the price.** Union-Find cannot split a group or list its members quickly.
+- **Comparing sizes of elements instead of roots** when explaining union by size.

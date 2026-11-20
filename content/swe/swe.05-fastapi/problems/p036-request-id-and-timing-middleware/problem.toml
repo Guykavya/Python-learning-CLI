@@ -1,0 +1,6 @@
+id = "swe.05.p036"
+title = "Request id and timing middleware"
+tier = "drill"
+kind = "code"
+topics = ["middleware", "request id", "Server-Timing", "request.state", "headers"]
+minutes = 25

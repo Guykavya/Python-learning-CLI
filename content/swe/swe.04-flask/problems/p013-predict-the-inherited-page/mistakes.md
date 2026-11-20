@@ -1,0 +1,6 @@
+- **Thinking `super()` always gives the base text.** It gives the block of the *direct parent* in the chain.
+- **Writing `[base content]` in the special page.** `page.html` replaced the content; that is what `super()` returns.
+- **Showing the base footer in `special.html`.** The grandchild overrides `footer`.
+- **Forgetting to uppercase** (`DEMO`).
+- **Leaving out the `--- name` lines.** The program prints them.
+- **Adding blank lines.** The `-` trims remove them; the expected output has none.

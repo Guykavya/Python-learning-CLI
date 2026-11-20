@@ -1,0 +1,6 @@
+- **Only style comments.** Missing the money bug and the API break while correcting spaces is the most common bad review.
+- **Unlabelled comments.** "Use a better name" and "this is a security hole" look the same.
+- **"This is wrong."** Say why and suggest a fix.
+- **Rewriting the author's code in the comments.** Suggest a direction; the author owns the change.
+- **No praise.** Naming what is good tells the author what to keep doing.
+- **Approving because the code "works for me".** Without tests, nobody can say it works.

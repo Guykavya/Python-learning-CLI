@@ -1,0 +1,6 @@
+id = "dsa.15.p016"
+title = "Trace KMP failure links"
+tier = "applied"
+kind = "trace"
+topics = ["kmp", "prefix function", "string search", "trace"]
+minutes = 20

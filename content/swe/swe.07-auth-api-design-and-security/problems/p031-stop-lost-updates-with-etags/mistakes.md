@@ -1,0 +1,7 @@
+- **Reading the version, then writing in a separate step.** Another request can slip into the gap and both pass the check. Keep compare and write inside one lock (or one SQL statement).
+- **Using `412` when the header is missing** (or `428` when it is stale). Missing: 428. Present but wrong: 412.
+- **Forgetting the ETag on the `PUT` response.** The client needs the new version to make its next edit without another `GET`.
+- **An ETag that does not change**, for example the note id, or a hash of the text that was not updated.
+- **Comparing without the quotes** (the header value includes the two `"` characters): use the exact text you sent out.
+- **Changing the note before checking the header,** so a refused request still alters the data. Check first, write last.
+- **A `500` for a garbage `If-Match` text.** Any value that is not the current ETag is just `412`; do not parse it as a number.

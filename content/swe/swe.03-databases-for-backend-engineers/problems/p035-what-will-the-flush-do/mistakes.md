@@ -1,0 +1,4 @@
+- **Returning objects instead of names.** Sets of objects cannot be compared in tests.
+- **Expecting changes to be in the database before a flush.** The session only remembers them.
+- **Forgetting that a flush moves objects out of `new`.** They are persistent after it.
+- **Not sorting.** Sets have no order.

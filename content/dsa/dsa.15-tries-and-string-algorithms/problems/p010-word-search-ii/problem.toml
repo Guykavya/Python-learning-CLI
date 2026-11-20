@@ -1,0 +1,6 @@
+id = "dsa.15.p010"
+title = "Word Search II"
+tier = "challenge"
+kind = "code"
+topics = ["trie", "backtracking", "dfs", "grid", "pruning"]
+minutes = 50

@@ -1,0 +1,6 @@
+id = "swe.05.p027"
+title = "Who blocks the event loop?"
+tier = "deep"
+kind = "trace"
+topics = ["event loop", "async def versus def", "blocking calls", "thread pool", "concurrency", "trace"]
+minutes = 25

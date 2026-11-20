@@ -1,0 +1,6 @@
+id = "swe.05.p030"
+title = "The `MissingGreenlet` trap"
+tier = "deep"
+kind = "code"
+topics = ["MissingGreenlet", "lazy loading", "selectinload", "async SQLAlchemy", "relationships", "response_model"]
+minutes = 45

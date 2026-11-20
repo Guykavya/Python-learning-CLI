@@ -1,0 +1,6 @@
+id = "swe.05.p009"
+title = "Lax or strict?"
+tier = "drill"
+kind = "trace"
+topics = ["Pydantic", "lax mode", "strict mode", "coercion", "trace"]
+minutes = 20

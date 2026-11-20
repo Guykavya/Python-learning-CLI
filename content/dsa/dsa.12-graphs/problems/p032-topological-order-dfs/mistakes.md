@@ -1,0 +1,6 @@
+- **Not reversing** the finishing list: it is a valid order for the **reversed** edges, so every edge is broken.
+- **Using the preorder** (the order of entering vertices): with edges `0 -> 1` and `2 -> 0`, a DFS from 0 enters `0, 1`, then `2`: `2` ends up after `0`, which breaks `2 -> 0`.
+- **No GREY check**: on a cyclic graph you return an order that breaks the cycle's edge instead of `[]`.
+- **A single visited set instead of three colours**: a diamond looks like a cycle (`3` is seen twice), so you return `[]` for a perfectly good DAG.
+- **Recursion** on 100,000 vertices: `RecursionError`. Use the stack of iterators.
+- **Starting only from vertex 0**: vertices that 0 cannot reach are missing from the order.

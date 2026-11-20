@@ -1,0 +1,8 @@
+1. client -> browser: 302 redirect to /authorize [client_id, redirect_uri, response_type, scope, state, code_challenge, code_challenge_method]
+2. browser -> auth_server: GET /authorize [client_id, redirect_uri, response_type, scope, state, code_challenge, code_challenge_method]
+3. auth_server -> browser: 302 redirect to redirect_uri [code, state]
+4. browser -> client: GET /callback [code, state]
+5. client -> auth_server: POST /token [grant_type, code, redirect_uri, client_id, code_verifier]
+6. auth_server -> client: 200 token response [access_token, token_type, expires_in]
+7. client -> resource_server: GET /photos [Authorization]
+8. resource_server -> client: 200 photos [owner, photos]

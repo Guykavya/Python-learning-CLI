@@ -1,0 +1,6 @@
+id = "dsa.14.p014"
+title = "Maximum product subarray"
+tier = "applied"
+kind = "code"
+topics = ["dynamic programming", "1d dp", "kadane", "maximum product", "two states"]
+minutes = 30

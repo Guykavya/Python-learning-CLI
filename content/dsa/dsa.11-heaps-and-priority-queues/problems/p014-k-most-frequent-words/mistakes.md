@@ -1,0 +1,7 @@
+- Using `Counter.most_common(k)` directly: for equal counts it keeps the order in which the words first appeared, not the alphabetical order the problem asks for.
+- Using the key `(count, word)` with `nsmallest`: that returns the **least** frequent words. The count must be negated: `(-count, word)`.
+- Sorting the words in **reverse** to get the highest counts first: `sorted(..., reverse=True)` also reverses the alphabetical order of equal counts, so ties come out from `z` to `a`.
+- Lower-casing the words: the problem compares them exactly as they are.
+- Returning `(word, count)` pairs: the answer is a list of words only.
+- An off-by-one on `k` (`k + 1` words) or a crash when `k` is larger than the number of different words, or when `words` is empty.
+- Treating `k = 0` as "everything": `[: -0]` and `[:0 or None]` style slices return the whole list. `k <= 0` gives `[]`.

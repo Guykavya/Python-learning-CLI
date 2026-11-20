@@ -1,0 +1,6 @@
+id = "swe.05.p020"
+title = "One error shape for the whole API"
+tier = "applied"
+kind = "code"
+topics = ["exception handlers", "error envelope", "RequestValidationError", "HTTPException", "domain exceptions"]
+minutes = 40

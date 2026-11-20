@@ -1,0 +1,8 @@
+- **A new `ItemForm()` after a failed POST.** The errors and the typed values vanish. Reuse the bound form.
+- **Rendering a 200 page after a successful save.** Refreshing the page repeats the POST. Redirect instead.
+- **`redirect("/items/")`** with a hard-coded path works, but `redirect("item_list")` follows the URL name.
+- **Not checking `request.method`.** Treating every request as a POST gives a form full of "required" errors on the first GET.
+- **Using `@csrf_exempt` to make the 403 go away.** The 403 is the protection. Instead, render the form with the request and keep `{% csrf_token %}` inside the `<form>`.
+- **`form.save()` without `is_valid()`**: `ValueError: The Item could not be created because the data didn't validate.`
+- **Saving with `Item.objects.create(**request.POST)`.** `request.POST` values are lists, nothing is validated and every posted field is accepted.
+- **Forgetting the `path(...)` entry**: the URL is a 404 and every test fails at the first GET.

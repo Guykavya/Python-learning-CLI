@@ -1,0 +1,6 @@
+id = "swe.04.p037"
+title = "Tests that catch the bugs"
+tier = "challenge"
+kind = "code"
+topics = ["testing", "test quality", "mutation testing", "CSRF", "authorisation", "login"]
+minutes = 60

@@ -1,0 +1,6 @@
+id = "dsa.14.p003"
+title = "Climbing stairs"
+tier = "drill"
+kind = "code"
+topics = ["dynamic programming", "tabulation", "climbing stairs", "modulo"]
+minutes = 15

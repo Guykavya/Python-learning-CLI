@@ -1,0 +1,6 @@
+id = "swe.03.p042"
+title = "Keep going after an error"
+tier = "deep"
+kind = "code"
+topics = ["Session", "begin_nested", "SAVEPOINT", "IntegrityError", "PendingRollbackError"]
+minutes = 40

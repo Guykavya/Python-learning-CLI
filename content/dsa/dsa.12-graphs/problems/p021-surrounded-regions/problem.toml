@@ -1,0 +1,6 @@
+id = "dsa.12.p021"
+title = "Surrounded regions"
+tier = "applied"
+kind = "code"
+topics = ["graph", "grid", "multi-source search", "flood fill"]
+minutes = 30

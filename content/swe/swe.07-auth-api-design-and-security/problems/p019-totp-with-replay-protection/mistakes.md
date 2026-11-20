@@ -1,0 +1,8 @@
+- **Using the clock inside the function.** Tests pass `now`; `time.time()` makes them impossible to write.
+- **Forgetting `zfill`.** A code like 7081804 loses its leading zero and the RFC vector `07081804` fails.
+- **`struct.pack("<Q", ...)`** (little-endian) or packing the counter as 4 bytes. The RFC says 8 bytes, big-endian.
+- **Not clearing the top bit** (`& 0x7FFFFFFF`): the number can be huge or negative-looking, and the code is wrong for about half of all counters.
+- **Accepting a slot `<= last_step`.** That is exactly the replay hole.
+- **Returning `True` instead of the slot.** The caller then has nothing to store as `last_step`.
+- **Comparing codes as integers.** `int("047291") == 47291` hides the leading-zero rule and accepts `"47291"`.
+- **A window wider than +-1.** Every extra slot makes the guessing attack easier.

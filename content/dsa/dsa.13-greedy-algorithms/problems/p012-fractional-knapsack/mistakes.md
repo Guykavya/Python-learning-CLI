@@ -1,0 +1,6 @@
+- **Sorting by value** (or by weight). A heavy valuable item can be thin: `(50, 50)` has density 1.
+- **Sorting ascending.** Forgetting `reverse=True` fills the bag with the worst kilograms first.
+- **Skipping an item that does not fit whole.** That is the 0/1 rule; here you take the fraction that fits.
+- **Integer division** `value * part // weight`: the fraction's value is cut down to a whole number.
+- **Returning an int** when nothing fits. Start the total at `0.0`.
+- **Comparing floats with `==`** in your own tests: `0.1 + 0.2 != 0.3`. Use `math.isclose`.

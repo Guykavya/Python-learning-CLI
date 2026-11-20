@@ -1,0 +1,6 @@
+id = "dsa.12.p048"
+title = "Number of islands II (online)"
+tier = "challenge"
+kind = "code"
+topics = ["graph", "grid", "union-find", "online connectivity", "islands"]
+minutes = 45

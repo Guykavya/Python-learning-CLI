@@ -1,0 +1,7 @@
+- **Setting `request.state.request_id` after `call_next`.** The endpoint has already run by then and sees nothing.
+- **`VALID_ID.match` or `search` instead of `fullmatch`.** `match` accepts `"ok<script>"` because the start fits.
+- **Generating one id at import time** (`REQUEST_ID = uuid4().hex` at the top of the file). Every request then shares it.
+- **Echoing any incoming value.** The header is user input: it reaches your logs and your response.
+- **Using `time.time()`** for durations. It can jump when the clock is corrected; `perf_counter()` cannot.
+- **Putting the logic in a dependency.** Dependencies run only for matched routes, so 404s for unknown paths get no headers.
+- **Forgetting `return response`.** The middleware must return what `call_next` gave it.

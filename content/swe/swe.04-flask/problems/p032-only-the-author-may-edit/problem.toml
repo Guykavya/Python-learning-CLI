@@ -1,0 +1,6 @@
+id = "swe.04.p032"
+title = "Only the author may edit"
+tier = "applied"
+kind = "code"
+topics = ["authorisation", "403", "ownership", "IDOR", "helper functions"]
+minutes = 40

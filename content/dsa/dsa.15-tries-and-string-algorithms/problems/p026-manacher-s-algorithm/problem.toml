@@ -1,0 +1,6 @@
+id = "dsa.15.p026"
+title = "Manacher's algorithm"
+tier = "challenge"
+kind = "code"
+topics = ["manacher", "palindromes", "amortised analysis"]
+minutes = 50

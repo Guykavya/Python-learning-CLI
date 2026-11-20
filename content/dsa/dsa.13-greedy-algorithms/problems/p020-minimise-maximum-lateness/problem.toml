@@ -1,0 +1,6 @@
+id = "dsa.13.p020"
+title = "Minimise maximum lateness"
+tier = "deep"
+kind = "code"
+topics = ["greedy", "scheduling", "earliest deadline first", "lateness", "exchange argument"]
+minutes = 35

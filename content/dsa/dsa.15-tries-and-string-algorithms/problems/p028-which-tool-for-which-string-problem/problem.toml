@@ -1,0 +1,6 @@
+id = "dsa.15.p028"
+title = "Which tool for which string problem?"
+tier = "drill"
+kind = "explain"
+topics = ["trie", "kmp", "z-function", "rabin-karp", "manacher", "choosing an algorithm", "explain"]
+minutes = 20

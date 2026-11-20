@@ -1,0 +1,6 @@
+- **Answering `I` for bug 3.** The attacker reads data later, but the bug is that the system believed a false identity: `S`.
+- **Answering `T` for bug 2.** A value was changed, but the value is the role: the result is more rights, `E`.
+- **Answering `S` for bug 8.** Nothing is faked: user 1 is really user 1. The bug is the missing ownership check, so data is read: `I`.
+- **Answering `T` for bug 6.** Nobody tampered with data. The problem is that nobody can prove who did it: `R`.
+- **Answering `D` for bug 5 and also "brute force".** The vocabulary is closed; `D` is the answer.
+- **Writing words or several letters per line.** One capital letter per line, or the answer cannot be checked.

@@ -1,0 +1,7 @@
+- Forgetting the minus sign in `push`: the list is then a normal min-heap, and `pop` returns the smallest number (negated, even).
+- Forgetting it in `pop` or `peek`: the caller gets `-8` instead of `8`.
+- Negating **twice** in `peek` (for example `-(-self._h[0])`): the answer is the stored, negated number again.
+- Negating the items inside the caller's list (`for i in range(len(items)): items[i] = -items[i]`) and heapifying that list: the caller's list is changed and broken. Build a new list.
+- Calling `heapify` on the list **before** negating it: the list is a min-heap of the original numbers, and negating it afterwards does not make it a heap of the negated numbers.
+- Using `heapq.heappush_max` and friends: these exist only on Python 3.14+, and the course supports 3.11.
+- Using a minus sign on something that is not a number (strings, tuples). Negation works for numbers only; use a reversed-comparison wrapper for other items.

@@ -1,0 +1,8 @@
+- **Storing the token itself.** A database leak is then a list of working reset links. Store `sha256(token)`.
+- **Using `random` or a counter for the token.** Guessable. Use `secrets`.
+- **Leaving the used token in the table.** Single use means `pop` (delete) on the first `consume`.
+- **`>` instead of `>=` for expiry.** At exactly `ttl` seconds the token must be expired.
+- **Checking the clock before removing the row.** An expired token should disappear when tried.
+- **Calling `time.time()`.** The class must use the `clock()` it was given, or tests cannot move time.
+- **Forgetting to cancel the old token.** Old links stay live.
+- **Raising on a wrong token.** The caller shows one message ("this link is invalid or expired"): return `None`.

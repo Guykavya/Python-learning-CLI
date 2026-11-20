@@ -1,0 +1,6 @@
+id = "dsa.14.p038"
+title = "Unbounded knapsack"
+tier = "drill"
+kind = "code"
+topics = ["dynamic programming", "unbounded knapsack", "tabulation", "loop order"]
+minutes = 20

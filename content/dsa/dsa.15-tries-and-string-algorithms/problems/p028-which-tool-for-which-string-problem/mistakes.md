@@ -1,0 +1,6 @@
+- **Writing KMP for a single plain search.** `in` / `find` is shorter and, in Python, faster.
+- **`str.count` for overlapping occurrences**, or for positions: it counts non-overlapping matches and gives no positions.
+- **KMP for "matches starting at each position".** Its state describes matches **ending** at the current position; that question is the Z-function's.
+- **One `find` per pattern for 500 patterns.** The text is read 500 times; Rabin-Karp reads it once.
+- **Expanding around centres for 10**6 letters.** `O(n**2)` on repetitive text.
+- **Choosing a trie for a one-off question.** Building it costs more than one scan.

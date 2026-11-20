@@ -1,0 +1,7 @@
+- **No `started` flag.** Leading zeros are then treated as digits. For `N = 21` every number is filled as two digits, so 7 becomes `07` and fails (7 and 0 differ by 7), and 0 becomes `00` and fails too. Only `01`, `10`, `12` and `21` survive: `count_stepping(0, 21)` gives 4 instead of 13.
+- **Not counting 0.** 0 is a single digit, so it is a stepping number. A DP that returns `1 if started else 0` at the end (as in the chapter's "no adjacent equal" example, which counts from 1) misses it.
+- **`upto(lo)` instead of `upto(lo - 1)`.** Then `lo` itself is subtracted away: `count_stepping(10, 15)` gives 1 instead of 2.
+- **Calling `upto(-1)`.** `str(-1)` has a minus sign; handle `lo = 0` separately.
+- **Putting `@cache` on a function at module level whose answer depends on `N`.** The cached values from one `N` are then reused for another `N` with different digits. Define `go` inside `upto`, or put the digits into the state.
+- **Forgetting that `tight` stays True only when `d == limit`.** Then numbers above `N` are counted.
+- **Comparing `d` with the previous position's digit even when that digit was a leading zero.** That is the same bug as the missing `started` flag.

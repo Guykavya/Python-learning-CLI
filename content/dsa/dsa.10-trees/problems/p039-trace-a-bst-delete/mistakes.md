@@ -1,0 +1,6 @@
+- Using the **predecessor** (the largest key of the left subtree) in the two-children case: the code uses the successor.
+- Removing the successor node together with its child: the successor's right child (like `65`) moves up and stays in the tree.
+- Writing the level-order list from the picture without filling the gaps with `None`: every missing child of a node that exists still takes a place in the list, until only trailing gaps remain.
+- Leaving trailing `None`s at the end of a line: they are cut off.
+- Believing that deleting `40` makes `35` the root of the tree: it only takes the place of `40`, under `30`.
+- Forgetting that the root's **value** changes (the root object stays, but it now holds `60`).

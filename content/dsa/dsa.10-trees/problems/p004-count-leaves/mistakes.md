@@ -1,0 +1,4 @@
+- Only the `None` base case: the function returns 0 for every tree.
+- Counting a node with one child as a leaf (`if root.left is None or root.right is None`): `or` is wrong, it must be `and`.
+- Counting `None` children as leaves: there are `n + 1` of them.
+- Writing `if not root.left and not root.right` is fine for nodes, but testing `root.val` for falsiness is not: a node with value 0 is not "empty".

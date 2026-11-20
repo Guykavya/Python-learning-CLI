@@ -1,0 +1,6 @@
+id = "dsa.14.p078"
+title = "Count numbers ≤ N with digit property"
+tier = "deep"
+kind = "code"
+topics = ["dynamic programming", "digit dp", "counting", "leading zeros", "range query"]
+minutes = 45

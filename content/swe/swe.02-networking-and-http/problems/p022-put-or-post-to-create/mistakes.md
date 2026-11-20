@@ -1,0 +1,5 @@
+- **"PUT is idempotent because it returns the same status."** The status may change (`201` then `200`); the **state** is what stays the same.
+- **"POST is never retried."** It is, when the client cannot tell whether it worked; that is the whole problem.
+- **Generating a new idempotency key for each retry.** The key must be the same for all attempts of one operation, or it protects nothing.
+- **"The server can detect duplicates by comparing the body."** Two legitimate orders can have identical content.
+- **Forgetting that the key needs storage on the server** (and a lifetime for how long it is remembered).

@@ -1,0 +1,6 @@
+id = "dsa.14.p015"
+title = "Decode ways"
+tier = "applied"
+kind = "code"
+topics = ["dynamic programming", "1d dp", "decode ways", "strings", "counting"]
+minutes = 25

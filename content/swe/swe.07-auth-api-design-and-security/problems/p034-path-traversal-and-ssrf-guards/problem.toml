@@ -1,0 +1,6 @@
+id = "swe.07.p034"
+title = "Path traversal and SSRF guards"
+tier = "deep"
+kind = "code"
+topics = ["path traversal", "symlinks", "pathlib", "SSRF", "ipaddress", "DNS resolution", "input validation"]
+minutes = 50

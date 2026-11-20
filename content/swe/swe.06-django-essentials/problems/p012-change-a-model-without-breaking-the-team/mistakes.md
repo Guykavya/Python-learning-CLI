@@ -1,0 +1,8 @@
+- **"Just type `''` at the prompt"** for a field that needs different values per row. The migration works, and the data is silently wrong.
+- **Adding `null=True` to a text field and calling it done.** Text fields should have one way to say "empty" (`""`); two (`""` and `NULL`) make queries and forms confusing.
+- **Confusing `blank` and `null`.** `blank=True` only changes validation in forms and the admin; the database column needs `null=True` to accept `NULL`.
+- **Importing the real model in a data migration.** It works today and breaks on a fresh database when the model has later fields or methods that the table does not have at that step. Use `apps.get_model()`.
+- **No reverse function.** The migration then cannot be unapplied (`IrreversibleError`).
+- **Editing `0004` after a colleague ran it.** His database says "0004 applied", but the file now describes something else. Add `0005` instead.
+- **Not committing the migration file.** Your database changes, theirs does not, and the next `git pull` gives errors like "no such column".
+- **Deleting migrations to "clean up".** `squashmigrations` does this safely, and only when every database is up to date.

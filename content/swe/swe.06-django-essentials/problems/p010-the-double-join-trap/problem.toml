@@ -1,0 +1,6 @@
+id = "swe.06.p010"
+title = "The double-join trap"
+tier = "deep"
+kind = "code"
+topics = ["annotate", "Count", "distinct", "joins multiply rows", "many-to-many", "reverse foreign key"]
+minutes = 30

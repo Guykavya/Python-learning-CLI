@@ -1,0 +1,6 @@
+id = "dsa.11.p020"
+title = "Merge k sorted lists with a heap"
+tier = "applied"
+kind = "code"
+topics = ["heap", "merge", "k-way merge"]
+minutes = 25

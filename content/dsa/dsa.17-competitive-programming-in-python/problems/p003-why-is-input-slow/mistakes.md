@@ -1,0 +1,4 @@
+- **"It is slow because the disk is slow."** The disk is not involved; the data is buffered. The cost is Python's per-call work.
+- **"`input()` is O(n) per call."** One call is `O(length of the line)`, not `O(n)`. The problem is the number of calls.
+- **"`read()` is always better."** For interactive problems and huge inputs, it is not usable. Pick the tool for the job.
+- **Forgetting the flush.** Part of the cost of `input()` is that it flushes standard output first; that is why printing and reading with `input()` interleave correctly in a terminal.

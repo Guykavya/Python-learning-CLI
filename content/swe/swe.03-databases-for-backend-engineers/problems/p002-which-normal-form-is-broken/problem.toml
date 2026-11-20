@@ -1,0 +1,6 @@
+id = "swe.03.p002"
+title = "Which normal form is broken"
+tier = "drill"
+kind = "trace"
+topics = ["normal forms", "1NF", "2NF", "3NF", "functional dependency", "trace"]
+minutes = 25

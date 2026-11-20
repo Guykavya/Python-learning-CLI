@@ -1,0 +1,6 @@
+id = "swe.07.p003"
+title = "A password module"
+tier = "drill"
+kind = "code"
+topics = ["passwords", "scrypt", "salt", "constant-time comparison", "self-describing hash"]
+minutes = 25

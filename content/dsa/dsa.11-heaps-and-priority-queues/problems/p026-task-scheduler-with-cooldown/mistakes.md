@@ -1,0 +1,7 @@
+- Counting the cooldown as `n` units between the end of a run and the next run: the next run is allowed at `t + n + 1`, not `t + n`. With `n = 2`, `A _ _ A` is fine, `A _ A` is not.
+- Forgetting idle units: when the heap is empty but tasks are still cooling, the clock must tick without running a task. If the loop stops when the heap is empty, the answer is too small.
+- Putting the task back into the heap at once (without cooling): the same task runs twice in a row, and the answer equals `len(tasks)` for every input.
+- Picking the task with the **fewest** copies left: it finishes small tasks early and leaves the big one for the end, where only idle units can separate its copies.
+- In the formula: forgetting the `+ k` for several kinds with the same maximum count (`AAABBB` needs `(3 - 1) * 3 + 2 = 8`, not `7`), or forgetting `max(len(tasks), ...)` when there are many different tasks (no idle unit is needed then).
+- Using `n` instead of `n + 1` in the formula: a gap is the cooldown **plus** the unit of the task itself.
+- Counting tasks by their position instead of by name: equal names are the same kind and need the cooldown between them.

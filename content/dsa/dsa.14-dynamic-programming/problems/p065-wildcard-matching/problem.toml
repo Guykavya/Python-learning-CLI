@@ -1,0 +1,6 @@
+id = "dsa.14.p065"
+title = "Wildcard matching"
+tier = "challenge"
+kind = "code"
+topics = ["dynamic programming", "strings", "pattern matching", "wildcard", "boolean dp"]
+minutes = 45

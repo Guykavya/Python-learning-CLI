@@ -1,0 +1,6 @@
+id = "swe.07.p031"
+title = "Stop lost updates with ETags"
+tier = "applied"
+kind = "code"
+topics = ["ETag", "If-Match", "412", "428", "optimistic concurrency", "lost update", "FastAPI"]
+minutes = 35

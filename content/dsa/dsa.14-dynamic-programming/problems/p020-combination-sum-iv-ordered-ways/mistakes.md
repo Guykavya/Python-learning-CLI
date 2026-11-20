@@ -1,0 +1,6 @@
+- **Numbers outside, amounts inside (p018's loop).** That counts combinations: `ordered_ways([1, 2, 3], 4)` gives 4 instead of 7. Here the order of the loops **is** the meaning of the DP.
+- **`f[0] = 0`.** Every sum is built on top of the empty sequence, so every answer becomes 0.
+- **Forgetting `x <= a`.** `f[a - x]` with a negative index silently reads from the end of the list and adds nonsense.
+- **Taking the answer modulo `10**9 + 7`** out of habit. The problem asks for the exact count; Python integers are big enough.
+- **A memoised recursion for `target = 10**4`.** With a number like 1 in `nums`, the recursion goes 10,000 levels deep: `RecursionError`. Fill the table bottom-up.
+- **Thinking "order matters" means a 2-D state.** No extra dimension is needed: "the last number" already separates the different orders.

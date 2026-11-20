@@ -1,0 +1,6 @@
+id = "swe.02.p022"
+title = "PUT or POST to create"
+tier = "applied"
+kind = "explain"
+topics = ["PUT", "POST", "idempotency", "REST", "explain"]
+minutes = 25

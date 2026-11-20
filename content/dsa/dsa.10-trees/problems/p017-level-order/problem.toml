@@ -1,0 +1,6 @@
+id = "dsa.10.p017"
+title = "Level order"
+tier = "drill"
+kind = "code"
+topics = ["tree", "level order", "bfs", "queue"]
+minutes = 15

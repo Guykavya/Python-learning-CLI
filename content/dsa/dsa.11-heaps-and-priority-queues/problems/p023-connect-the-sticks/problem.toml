@@ -1,0 +1,6 @@
+id = "dsa.11.p023"
+title = "Connect the sticks"
+tier = "drill"
+kind = "code"
+topics = ["heap", "greedy", "huffman"]
+minutes = 20

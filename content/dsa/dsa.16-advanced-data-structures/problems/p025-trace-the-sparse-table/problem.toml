@@ -1,0 +1,6 @@
+id = "dsa.16.p025"
+title = "Trace the sparse table"
+tier = "applied"
+kind = "trace"
+topics = ["sparse table", "range minimum query", "trace"]
+minutes = 20

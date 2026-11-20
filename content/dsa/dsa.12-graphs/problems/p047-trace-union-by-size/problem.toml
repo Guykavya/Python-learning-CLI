@@ -1,0 +1,6 @@
+id = "dsa.12.p047"
+title = "Trace union by size"
+tier = "drill"
+kind = "trace"
+topics = ["graph", "union-find", "union by size", "path compression", "trace"]
+minutes = 20

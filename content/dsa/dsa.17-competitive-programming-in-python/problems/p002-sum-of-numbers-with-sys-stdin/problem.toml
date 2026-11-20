@@ -1,0 +1,6 @@
+id = "dsa.17.p002"
+title = "Sum of numbers with sys.stdin"
+tier = "drill"
+kind = "code"
+topics = ["fast input", "sys.stdin", "input()"]
+minutes = 15

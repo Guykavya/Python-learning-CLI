@@ -1,0 +1,12 @@
+join b(1, tie 1) + d(1, tie 3) -> 2, tie 6
+join c(2, tie 2) + r(2, tie 5) -> 4, tie 7
+join bd(2, tie 6) + a(3, tie 0) -> 5, tie 8
+join e(3, tie 4) + cr(4, tie 7) -> 7, tie 9
+join bda(5, tie 8) + ecr(7, tie 9) -> 12, tie 10
+a 01
+b 000
+c 110
+d 001
+e 10
+r 111
+cost: 30

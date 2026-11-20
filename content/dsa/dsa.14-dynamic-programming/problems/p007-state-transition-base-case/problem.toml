@@ -1,0 +1,6 @@
+id = "dsa.14.p007"
+title = "State, transition, base case"
+tier = "drill"
+kind = "trace"
+topics = ["dynamic programming", "recipe", "tabulation", "counting sequences", "trace"]
+minutes = 20

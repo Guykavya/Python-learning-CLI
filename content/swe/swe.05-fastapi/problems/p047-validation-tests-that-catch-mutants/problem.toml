@@ -1,0 +1,6 @@
+id = "swe.05.p047"
+title = "Validation tests that catch mutants"
+tier = "challenge"
+kind = "code"
+topics = ["testing", "mutation testing", "boundary values", "422", "Pydantic validation", "parametrize"]
+minutes = 40

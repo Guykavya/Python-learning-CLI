@@ -1,0 +1,6 @@
+id = "dsa.16.p022"
+title = "Fenwick 2-D"
+tier = "deep"
+kind = "code"
+topics = ["fenwick tree", "2d", "inclusion-exclusion", "rectangle sum"]
+minutes = 40

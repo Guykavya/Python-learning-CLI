@@ -14,6 +14,7 @@ from rich.text import Text
 from textual.app import App, ComposeResult
 from textual.binding import Binding
 from textual.containers import Horizontal, Vertical, VerticalScroll
+from textual.css.query import NoMatches
 from textual.screen import ModalScreen
 from textual.suggester import SuggestFromList
 from textual.widgets import Footer, Header, Input, Label, OptionList, Static
@@ -187,7 +188,15 @@ class HomeApp(App[list[str] | None]):
                 self.query_one(widget).display = False
 
     def tick(self) -> None:
-        """One animation frame: the rain, the poem, the logo shimmer and the clock's blinking colon."""
+        """One animation frame, safe to call at any moment: while the screen is still being built or is being
+        torn down (quitting) the widgets do not exist, and a timer must never crash the app over that."""
+        try:
+            self.draw_frame()
+        except NoMatches:
+            pass
+
+    def draw_frame(self) -> None:
+        """The rain, the poem, the logo shimmer and the clock's blinking colon."""
         for rain, widget in ((self.rain_left, "#rain-left"), (self.rain_right, "#rain-right")):
             stage = self.query_one(widget, Static)
             rain.resize(stage.content_size.width, stage.content_size.height)

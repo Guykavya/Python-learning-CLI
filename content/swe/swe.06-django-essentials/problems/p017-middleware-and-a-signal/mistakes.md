@@ -1,0 +1,10 @@
+- **Creating the id in `__init__`.** It runs once at server start: every request gets the same id.
+- **Not returning the response**, or setting the header before `get_response` returns (there is no response yet).
+- **Trusting the incoming header** without validating it: control characters and 10,000-character values go into your logs.
+- **Forgetting `"solution.RequestIDMiddleware"` is a class, not an instance**: `MIDDLEWARE` needs the class; Django calls it with `get_response`.
+- **Alerting on every save below the threshold.** The test with saves 4, 3, 4, 0 catches it.
+- **Using `<=` instead of `<`.** At quantity 5 with threshold 5 the stock is not "below".
+- **Resetting nothing when the stock recovers.** If you remember "already alerted" in a field forever, the second crossing (5 then 4) never alerts.
+- **Reading the old value in `post_save`.** By then the row already holds the new value; read it in `pre_save`.
+- **A fixed `5`** instead of `instance.threshold`.
+- **Expecting an alert from `queryset.update()`** or `bulk_create`: signals are not sent.

@@ -1,0 +1,7 @@
+- **`f"{base}/users/{name}"`.** A name with `/`, `?` or `#` changes the structure of the URL.
+- **`quote(part)` without `safe=""`.** The slash stays and splits the segment.
+- **Encoding the whole URL.** `https://` would become `https%3A//` and the URL is broken.
+- **`urlencode` without `doseq=True`** for list values.
+- **Leaving `?` at the end** when the query is empty.
+- **Forgetting `str()`** for numbers: `quote(42)` raises `TypeError`.
+- **Double encoding** a segment that is already encoded. Pass the raw text.

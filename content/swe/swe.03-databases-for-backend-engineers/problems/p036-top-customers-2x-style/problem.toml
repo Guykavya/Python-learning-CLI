@@ -1,0 +1,6 @@
+id = "swe.03.p036"
+title = "Top customers 2x style"
+tier = "applied"
+kind = "code"
+topics = ["SQLAlchemy ORM", "select", "join", "group_by", "aggregates"]
+minutes = 35

@@ -1,0 +1,4 @@
+- `root.left = invert(root.right)` followed by `root.right = invert(root.left)`: the second line reads the new left child, so both children end up the same subtree and the old left subtree is lost.
+- Swapping only at the root: the subtrees below stay as they were. The swap must happen at every node.
+- Building a new tree (`TreeNode(root.val, ...)`): the shape is right, but it is a copy, not an in-place change.
+- Forgetting to return the root: the caller gets `None`.

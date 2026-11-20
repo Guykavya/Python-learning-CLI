@@ -1,0 +1,6 @@
+- **`r < lo or hi < l`** for "no overlap" with half-open ranges: a node that only touches the query at its border is wrongly treated as partial or inside.
+- **Returning `t[node]` on partial overlap** (no third case): sums include elements outside the query.
+- **Recomputing the parent before building the children.**
+- **`[0] * (2 * n)`** for the recursive layout: for many `n` (5, 6, 7, 9, ...) the largest index used is above `2n`: `IndexError`.
+- **Children `2i` and `2i + 1` with the root at index 0.** With root 0 the children are `2i + 1` and `2i + 2`; mixing the two layouts loses nodes.
+- **Adding up the slice in `query`** (the starter): correct but `O(r - l)`.

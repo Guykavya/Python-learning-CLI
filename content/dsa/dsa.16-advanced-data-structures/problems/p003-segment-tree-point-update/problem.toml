@@ -1,0 +1,6 @@
+id = "dsa.16.p003"
+title = "Segment tree: point update"
+tier = "drill"
+kind = "code"
+topics = ["segment tree", "point update", "range sum"]
+minutes = 25

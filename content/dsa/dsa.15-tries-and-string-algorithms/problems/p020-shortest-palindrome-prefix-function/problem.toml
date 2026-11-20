@@ -1,0 +1,6 @@
+id = "dsa.15.p020"
+title = "Shortest palindrome (prefix function)"
+tier = "deep"
+kind = "code"
+topics = ["prefix function", "palindrome", "separator"]
+minutes = 35

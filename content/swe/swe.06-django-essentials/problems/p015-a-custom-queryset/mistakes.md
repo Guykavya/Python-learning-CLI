@@ -1,0 +1,7 @@
+- **Methods on a `Manager` subclass.** `Item.objects.low_stock(5)` works, but `Item.objects.active().low_stock(5)` raises `AttributeError`: the result of `active()` is a QuerySet, which does not have your method.
+- **Forgetting `objects = ItemQuerySet.as_manager()`.** The class exists but `Item.objects` is still the plain manager.
+- **Returning a list** (`return [i for i in self if ...]`) or calling `.all()`/`list()` inside the method. It runs a query too early and the result cannot be chained.
+- **`quantity__lte`** when the rule says "below": the item with exactly the threshold shows up.
+- **`category=slug`** instead of `category__slug=slug`: Django compares the slug string with the category id.
+- **Using `get()` in `in_category`.** It raises `DoesNotExist` for an unknown slug; a filter returns an empty QuerySet.
+- **Calling the method with a hard-coded number** (`quantity__lt=5` inside `low_stock`) and ignoring the `threshold` argument.

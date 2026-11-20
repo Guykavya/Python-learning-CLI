@@ -1,0 +1,7 @@
+- **Plain `Count("suppliers"), Count("movements")`.** Both numbers become `suppliers x movements`. The bug is invisible when an item has 1 supplier or 1 movement, which is why it survives in real projects.
+- **`distinct=True` on only one of the two.** The other count is still multiplied.
+- **Two separate `annotate()` calls.** `annotate(a=Count("x")).annotate(b=Count("y"))` still builds both joins in one query and has the same problem.
+- **Fixing it with two Python queries per item** (`item.movements.count()`). The numbers are right, but you are back to N+1 queries.
+- **`.distinct()` on the QuerySet.** It removes duplicate *items*, not duplicate joined rows inside the count.
+- **Wrapping in `Coalesce` and thinking it fixes the multiplication.** `Coalesce` is for `NULL` (needed for `Sum`, not for `Count`).
+- **In the subquery version: forgetting `.order_by()`** (the model's default ordering would be added to the `GROUP BY`) or `.values("item")` (without it there is no grouping).

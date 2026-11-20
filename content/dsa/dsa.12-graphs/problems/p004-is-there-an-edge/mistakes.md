@@ -1,0 +1,5 @@
+- Answering `has_edge` with `v in self.adj[u]` on a list: `O(degree)`, which is 100,000 steps for the centre of a star.
+- Building an `n x n` matrix: `O(n^2)` memory, impossible for `n = 100,000`.
+- Returning the set from `neighbours`: the order of a set is not the edge-list order.
+- Forgetting the reverse direction for undirected graphs: `has_edge(2, 0)` must be `True` when the edge was given as `(0, 2)`.
+- Returning the internal list itself from `neighbours`: the caller could change your graph by appending to it. Return a copy.

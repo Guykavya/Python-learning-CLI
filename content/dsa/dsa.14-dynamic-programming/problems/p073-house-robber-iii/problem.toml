@@ -1,0 +1,6 @@
+id = "dsa.14.p073"
+title = "House robber III (tree)"
+tier = "applied"
+kind = "code"
+topics = ["dynamic programming", "tree dp", "binary tree", "house robber", "post-order"]
+minutes = 30

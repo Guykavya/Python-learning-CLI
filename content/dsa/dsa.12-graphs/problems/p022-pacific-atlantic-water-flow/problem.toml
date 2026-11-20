@@ -1,0 +1,6 @@
+id = "dsa.12.p022"
+title = "Pacific Atlantic water flow"
+tier = "deep"
+kind = "code"
+topics = ["graph", "grid", "multi-source search", "reverse search"]
+minutes = 40

@@ -1,0 +1,6 @@
+id = "swe.07.p007"
+title = "Reset tokens"
+tier = "applied"
+kind = "code"
+topics = ["password reset", "secrets", "SHA-256", "single use", "expiry", "injected clock"]
+minutes = 30

@@ -1,0 +1,6 @@
+- **Allowing `"0"` as a piece.** `"10"` would give 2 instead of 1.
+- **Checking only `int(two) <= 26`.** `"06"` is 6 as a number and would be accepted: `decode_ways("06")` gives 1 instead of 0. The lower limit 10 is what forbids a leading zero.
+- **`f(0) = 0`.** Nothing could be built: every answer would be 0. The empty prefix has exactly one decoding.
+- **`< 26` instead of `<= 26`.** `"26"` is Z: two ways, not one.
+- **Returning early when you see a 0.** `"10"` and `"2101"` contain zeros and still have decodings.
+- **Plain recursion** on `"1" * 60`: about `1.6**60` calls. With a memo, it is fast but 5000 levels deep for long strings.

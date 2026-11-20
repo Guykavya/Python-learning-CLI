@@ -1,0 +1,4 @@
+- **Catching `Exception`.** A syntax error would be reported as a constraint (or swallowed).
+- **Matching on lower case text.** SQLite writes the kinds in upper case.
+- **Forgetting that a duplicate primary key is `UNIQUE`.**
+- **Leaving foreign keys off.** Without `PRAGMA foreign_keys = ON` no `FOREIGN KEY` error can happen (problem 8).

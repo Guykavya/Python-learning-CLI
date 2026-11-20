@@ -1,0 +1,6 @@
+id = "dsa.10.p008"
+title = "Count nodes with one child"
+tier = "applied"
+kind = "code"
+topics = ["tree", "recursion", "children"]
+minutes = 15

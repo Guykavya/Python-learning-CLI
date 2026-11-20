@@ -1,0 +1,6 @@
+id = "swe.07.p002"
+title = "Authentication is not authorisation"
+tier = "drill"
+kind = "explain"
+topics = ["authentication", "authorisation", "identification", "accountability", "six questions", "explain"]
+minutes = 25

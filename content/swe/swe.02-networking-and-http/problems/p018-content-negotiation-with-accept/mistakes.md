@@ -1,0 +1,6 @@
+- **Taking the highest q among all matching ranges.** A more specific range must win even if its q is lower (`text/html;q=0` beats `*/*`).
+- **Treating `q=0` as the lowest preference.** It means "not acceptable at all".
+- **Choosing by the client's order.** On a tie the server's order decides; a different q is the client's way to express preference.
+- **Case-sensitive comparison** (`Text/HTML`).
+- **Crashing on `q=abc`.** Count it as 0 for that range.
+- **Returning the header's type instead of the offered one.** Return an item of `offered`, exactly as given.

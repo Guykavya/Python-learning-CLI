@@ -1,0 +1,5 @@
+- **Requiring `p` to divide `n`.** That is a **repeated block** (p019). `abcab` has period 3 although 3 does not divide 5.
+- **Listing only the multiples of the smallest period.** `aabaa` has the periods 3, 4, 5.
+- **Forgetting the period `n`.** The empty border always exists.
+- **Falling back with `pi[b]`** instead of `pi[b - 1]` when walking the border chain.
+- **Checking every `p` with `all(s[i] == s[i + p] ...)`.** Correct but `O(n**2)` for a string of `a`s with one different last letter.

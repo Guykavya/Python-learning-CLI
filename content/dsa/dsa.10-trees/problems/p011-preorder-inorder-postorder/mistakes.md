@@ -1,0 +1,5 @@
+- A list defined **outside** the function (`result = []` at the top of the file): the second call returns the values of both calls.
+- Putting `root.val` instead of `[root.val]` in the list sum: `int` and `list` cannot be added.
+- Appending the node (`out.append(node)`) instead of its value.
+- Swapping the order of `left` and `right`: you would get the mirror traversal.
+- Forgetting the `None` check: `None.left` crashes on the first leaf.

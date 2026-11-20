@@ -1,0 +1,4 @@
+- `if root.left or root.right`: that is true for nodes with one **or** two children.
+- Handling only the left-only case (`root.left and not root.right`): a right-only node is missed (and the other way round).
+- Returning from the node as soon as it is counted (`return 1`), without adding the counts of its subtrees: the nodes below are never counted.
+- Counting `None` children: only real nodes can have a child.

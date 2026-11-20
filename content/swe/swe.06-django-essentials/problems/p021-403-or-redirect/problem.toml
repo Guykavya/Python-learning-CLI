@@ -1,0 +1,6 @@
+id = "swe.06.p021"
+title = "403 or redirect?"
+tier = "drill"
+kind = "trace"
+topics = ["login_required", "permission_required", "403", "redirect", "trace"]
+minutes = 20

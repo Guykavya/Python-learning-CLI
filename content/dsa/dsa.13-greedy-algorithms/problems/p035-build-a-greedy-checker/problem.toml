@@ -1,0 +1,7 @@
+id = "dsa.13.p035"
+title = "Build a greedy checker"
+tier = "deep"
+kind = "code"
+topics = ["greedy", "stress testing", "brute force", "counterexample", "random", "testing"]
+minutes = 50
+assessment = "build"

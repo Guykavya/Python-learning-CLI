@@ -1,0 +1,5 @@
+- **Checking fast-forward first.** If `current == other`, or `other` is behind `current`, the answer is `up-to-date`, not `fast-forward`. Check the "already contains" case first.
+- **Comparing branch names or "newer" by position in a list.** History is a graph; only ancestry decides.
+- **Forgetting that a commit is its own ancestor.** Then `merge_kind(g, "c", "c")` would fall through to `merge`.
+- **Recursion** on long histories.
+- **Using only the parents of `current`.** The test needs **all** ancestors, not the direct parents.

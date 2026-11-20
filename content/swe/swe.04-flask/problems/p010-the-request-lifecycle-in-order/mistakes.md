@@ -1,0 +1,6 @@
+- **Putting `after` before `handler`.** The handler *makes* the response; `after_request` receives it.
+- **Leaving `before` out of the 404 line.** Routing errors are raised after the before-hooks.
+- **`teardown ValueError` for `/value`.** A handled exception does not reach teardown.
+- **`teardown none` for `/crash`.** The unhandled exception is passed to the teardown functions.
+- **Forgetting the status in `after 404`.** `after_request` prints the status of the response it receives.
+- **Joining with a different separator.** The line uses `", "`.

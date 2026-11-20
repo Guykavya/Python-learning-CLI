@@ -1,0 +1,6 @@
+- Starting the loop at the last item or at index `n // 2`: the loop starts at the last **parent**, `n // 2 - 1`, which is index 2 here. Leaves are not sifted.
+- Using the starting list for the values in the `sift_down from index` lines. Earlier calls have changed the list: at index 0 the value is `9`, but the children are no longer `4` and `7`.
+- Printing the `swap` line after the swap: it is printed **before**, so the values are the ones about to be exchanged. In the second line of the last call, `a[1]=9` is the sinking item, which moved to index 1 in the first swap.
+- Forgetting that the same `sift_down` call can print several `swap` lines (index 0 needs two).
+- Missing the line `total swaps: 4` or the last line, the list printed by `print(data)`.
+- Choosing a child by position instead of by value. In this input the smaller child happens to be the left one every time, so a solution that always takes the left child gets the same lines. Compare the two values anyway: in the pop trace of the previous problem the smaller child was the right one.

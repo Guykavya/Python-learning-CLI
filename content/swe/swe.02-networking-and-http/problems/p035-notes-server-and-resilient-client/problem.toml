@@ -1,0 +1,7 @@
+id = "swe.02.p035"
+title = "Notes server and resilient client"
+tier = "challenge"
+kind = "code"
+topics = ["raw-socket server", "keep-alive", "JSON API", "resilient client", "project"]
+minutes = 120
+assessment = "build"

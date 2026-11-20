@@ -1,0 +1,7 @@
+id = "swe.02.p003"
+title = "From typing a URL to seeing a page"
+tier = "applied"
+kind = "explain"
+topics = ["URL to page", "DNS", "TCP", "TLS", "HTTP", "explain"]
+minutes = 40
+assessment = "explain"

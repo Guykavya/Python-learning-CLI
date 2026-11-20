@@ -1,0 +1,6 @@
+id = "swe.05.p008"
+title = "Field constraints and aliases"
+tier = "drill"
+kind = "code"
+topics = ["Field", "constraints", "alias", "populate_by_name", "422"]
+minutes = 25

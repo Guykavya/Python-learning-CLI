@@ -1,0 +1,6 @@
+id = "dsa.10.p042"
+title = "Inorder successor"
+tier = "applied"
+kind = "code"
+topics = ["tree", "BST", "successor", "search"]
+minutes = 25

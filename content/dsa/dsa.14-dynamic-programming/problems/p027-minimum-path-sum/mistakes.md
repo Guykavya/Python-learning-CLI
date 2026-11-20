@@ -1,0 +1,5 @@
+- **Leaving out the start or the end cell.** Both are on every path: `[[9, 0], [0, 9]]` costs 18.
+- **Using `min(above, left)` on the first row.** There is no cell above; with a 0-filled table `min(0, left)` is 0 and the cost comes out too small. Treat the first row and column separately, or use an `INF` border.
+- **Greedy: always step to the cheaper neighbour.** A cheap step now can lead into an expensive region; the DP compares whole paths.
+- **Returning `f[0][0]` or the minimum of the last row.** The path must end at the bottom-right cell.
+- **Recursion without a memo:** about `C(398, 199)` paths on a 200 by 200 grid.

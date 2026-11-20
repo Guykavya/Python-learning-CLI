@@ -1,0 +1,6 @@
+- Forgetting the wrap-around: `0` down is `9`, so `"0009"` is one move away, not nine. In Python `(0 - 1) % 10` is `9`.
+- Not checking whether the start itself is dead.
+- Checking `nxt in deadends` on the list: `O(len(deadends))` per check; make it a set.
+- Using a fixed length of 4 instead of `len(target)`.
+- Returning `-1` for `target == start`: zero moves are needed.
+- Marking states when they are dequeued instead of when they are queued: the same state enters the queue many times.

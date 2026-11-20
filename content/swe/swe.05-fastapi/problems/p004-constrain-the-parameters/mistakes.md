@@ -1,0 +1,6 @@
+- **`tag: list[str] | None = None` without `Query()`.** FastAPI then expects the list in the JSON body; the query values are ignored.
+- **Putting the default inside `Query(...)` and after `=` at the same time.** With `Annotated`, the default goes after `=` only.
+- **`gt=1` instead of `ge=1`.** `gt` means "greater than", so 1 itself would be refused.
+- **A pattern without `^` and `$`.** Pydantic *searches* for the pattern anywhere in the string, so `"[a-z0-9 ]+"` finds `hoe` inside `Shoe!` and accepts it (checked with Pydantic 2.14). Anchor it: `^...$` makes the whole string match.
+- **Checking the rules with `if` inside the function.** It works, but the error is your own format, not the standard 422, and the docs do not show the rules.
+- **Using `Query` for `shop_id`.** It is in the path, so its metadata is `Path(...)`.

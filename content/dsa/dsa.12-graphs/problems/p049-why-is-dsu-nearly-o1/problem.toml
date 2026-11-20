@@ -1,0 +1,6 @@
+id = "dsa.12.p049"
+title = "Explain: why is DSU nearly O(1)?"
+tier = "deep"
+kind = "explain"
+topics = ["union-find", "union by size", "path compression", "amortised analysis", "explain"]
+minutes = 30

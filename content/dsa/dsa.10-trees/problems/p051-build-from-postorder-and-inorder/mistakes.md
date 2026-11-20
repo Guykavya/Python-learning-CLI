@@ -1,0 +1,6 @@
+- Building the left subtree first: reading the postorder from the end, the right subtree's items come first.
+- Taking the root from the **front** of the postorder: the root is the last item.
+- Swapping the two arguments: this function takes the inorder list first, then the postorder.
+- Using `postorder.pop()` to take roots: it changes the list you were given. Use an index or `reversed`.
+- Off-by-one in the ranges: an empty range returns `None`.
+- Searching the root with `inorder.index` in every call: `O(n^2)`; use a dictionary.

@@ -1,0 +1,7 @@
+- **Counting failures that are not in a row.** A success must reset the count.
+- **Running `fn` while open.** The point is not to call.
+- **Not restarting the cooldown after a failed trial.** The breaker would stay half-open and let every call through.
+- **Hiding the exception.** The breaker re-raises what `fn` raised; only the open state raises `CircuitOpen`.
+- **A background timer to move to half-open.** Compute the state from the clock.
+- **Using `>` instead of `>=` for the cooldown.** At exactly `cooldown` seconds the state is half-open.
+- **Opening at `threshold + 1` failures.** It opens on the `threshold`-th.

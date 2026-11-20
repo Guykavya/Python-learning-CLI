@@ -1,0 +1,5 @@
+- **`k = pi[k]`** instead of `pi[k - 1]`: wrong values on some strings and an endless loop on others (chapter section 10, "The two traps").
+- **Comparing `s[i]` with `s[k - 1]`.** The letter that extends a border of length `k` is `s[k]`.
+- **Starting the loop at `i = 0`.** `pi[0]` is always 0; starting at 0 compares `s[0]` with itself and sets `pi[0] = 1`.
+- **Allowing the whole string as its own border.** The border must be **proper**: `pi[i] <= i`.
+- **Resetting `k` to 0 at the start of every `i`.** Then the method is the slow one, and fallbacks do not help.

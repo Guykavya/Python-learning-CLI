@@ -1,0 +1,6 @@
+- **`SELECT`, then `UPDATE ... SET stock = ?`.** The value you write is stale as soon as someone else commits.
+- **Checking `stock > 0` in Python** and decrementing in SQL: the check is still outside the lock.
+- **Ignoring `rowcount`.** You cannot tell whether you got the item.
+- **Two transactions for the stock and the sale.** A crash between them makes the numbers disagree.
+- **No `timeout`.** Under contention you get "database is locked" instead of waiting a moment.
+- **Sharing one connection between threads.** Each thread needs its own (the test calls `buy` with the path).

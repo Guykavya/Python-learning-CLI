@@ -1,0 +1,6 @@
+- **Choosing the first balloon to burst.** After it bursts, its neighbours touch, so the left and right parts interact; a DP over "first" with the original neighbours gives wrong (usually too large or too small) totals. Choose the **last** one.
+- **Using the original neighbours `nums[k-1]` and `nums[k+1]`.** The last balloon in a range sees the range's **boundaries** `a[i]` and `a[j]`, not its original neighbours.
+- **Forgetting the padding.** Without `[1] + nums + [1]` you need special cases at both ends, and a missing neighbour easily becomes 0 instead of 1.
+- **Wrong order of filling.** `f(i, j)` needs `f(k, j)` from a later row: loop by gap (or `i` downwards). Row by row with `i` going up reads zeros.
+- **`k` including `i` or `j`.** The boundaries are never burst inside `(i, j)`: `k` runs over `range(i + 1, j)`.
+- **Recursion over "which balloon next" on the remaining list.** It is the `n!` brute force; even with a memo on the remaining tuple it has `2^n` states. The interval state `(i, j)` has only `n^2`.

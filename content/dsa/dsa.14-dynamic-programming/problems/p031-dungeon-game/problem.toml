@@ -1,0 +1,6 @@
+id = "dsa.14.p031"
+title = "Dungeon game"
+tier = "deep"
+kind = "code"
+topics = ["dynamic programming", "grid dp", "backwards dp", "state design", "dungeon game"]
+minutes = 35

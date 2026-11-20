@@ -1,0 +1,7 @@
+id = "dsa.14.p050"
+title = "Fix the knapsack"
+tier = "applied"
+kind = "code"
+topics = ["dynamic programming", "0/1 knapsack", "rolling array", "loop order", "debugging"]
+minutes = 25
+assessment = "fix"

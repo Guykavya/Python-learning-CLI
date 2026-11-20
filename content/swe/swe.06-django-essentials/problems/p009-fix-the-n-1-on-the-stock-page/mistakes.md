@@ -1,0 +1,7 @@
+- **`select_related("tags")`.** It works only for forward `ForeignKey` / `OneToOne`. For a many-to-many Django raises `FieldError: Invalid field name(s) given in select_related`; use `prefetch_related`.
+- **Only fixing one of the two.** `select_related("category")` alone still leaves N queries for the tags (41 here).
+- **`item.tags.order_by("name")` or `item.tags.filter(...)` in the loop.** That creates a new QuerySet and a new query per item, ignoring the prefetch. Order in the prefetch (`Prefetch(queryset=...)`) or in `Meta.ordering`.
+- **Using `list(Item.objects.all())` before adding the two methods.** They must be called on the QuerySet before it is evaluated.
+- **Changing the JSON** (the key names, the order of items) while "fixing" the speed. The first test compares the whole answer.
+- **Fixing it with a cache or a `LIMIT`.** The task is a constant number of queries for all items, with the same answer.
+- **Counting queries with `len(list(...))`.** Use `CaptureQueriesContext` (or `assertNumQueries` in a `TestCase`) to see what Django really sent.

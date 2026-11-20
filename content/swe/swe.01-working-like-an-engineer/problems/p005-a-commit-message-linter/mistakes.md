@@ -1,0 +1,5 @@
+- **Counting the newline as a character**, or including the blank line in the length check.
+- **Off by one**: 50 is allowed, 51 is too long; 72 is allowed, 73 is too long.
+- **Checking the blank line when there is no body.** A one-line message has no second line, so there is nothing to complain about.
+- **Reporting `empty` together with other codes.** An empty message returns only `"empty"`.
+- **Not stripping the trailing newline.** A message from `git commit` ends with `\n`; without `rstrip` you would see a second, empty line.

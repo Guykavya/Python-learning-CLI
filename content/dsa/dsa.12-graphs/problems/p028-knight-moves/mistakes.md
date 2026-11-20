@@ -1,0 +1,6 @@
+- **No board check**: moves that leave the board give too-short answers near the edges (`(0, 0) -> (1, 1)` in 2 moves instead of 4), and the search never ends when the target cannot be reached.
+- **Only 4 of the 8 moves** (forgetting the `(±1, ±2)` group): many squares look further away, some look unreachable.
+- **DFS instead of BFS**: the first path a DFS finds is usually not the shortest.
+- **Marking squares when they are popped**: still correct, but the same square is queued many times and the search is much slower.
+- **`start == target`** must give `0` without any move.
+- **Unreachable target**: return `-1` when the queue runs empty, do not loop forever or return `None`.

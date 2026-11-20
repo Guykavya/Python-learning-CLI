@@ -1,0 +1,6 @@
+id = "swe.04.p021"
+title = "Config classes and a factory"
+tier = "applied"
+kind = "code"
+topics = ["application factory", "config classes", "SECRET_KEY", "from_object", "deepcopy"]
+minutes = 40

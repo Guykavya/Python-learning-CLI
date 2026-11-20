@@ -1,0 +1,6 @@
+- **Dijkstra's key**: pushing `dist[u] + w` minimises the distance from vertex 0, not the total weight of the tree. With the path `0 -1- 1 -1- 2 -1- 3` and an extra edge `0 -2.5- 3`, the distance key picks `0-3` (2.5 is less than the distance 3 of vertex 3 along the path), and the tree costs 4.5 instead of 3.
+- **No stale check**: a vertex reached by two heap entries would be added twice and the tree gets a wrong edge.
+- **Adding each edge only to `adj[u]`**: the graph is undirected, the edge must also be usable from `v`.
+- **Returning a forest** when the graph is not connected: the heap runs empty before `n - 1` edges were added; return `None`.
+- **Writing the edge the wrong way round**: the tree edge is `(u, v, w)` with `u` already in the tree, `v` new.
+- **Returning the edges sorted by weight** (Kruskal's order): the order of adding is part of the answer.

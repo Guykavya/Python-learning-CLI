@@ -2114,7 +2114,37 @@ print(c.get("/admin/users", headers=ben).status_code, c.get("/admin/users", head
 
 The codes tell the story: **401** when the caller is unknown or the token is bad; **403** when the caller is known but not allowed. `require_role("admin")` is a *dependency factory*: a function that builds a dependency. It is also a good place for team permissions, as the project shows.
 
-> **Honest limitation.** The standard OAuth2 "password flow" sends `username` and `password` as a *form*, parsed by `OAuth2PasswordRequestForm`, which needs the `python-multipart` package (not installed here). We used a JSON login body instead. The API works the same for any client, but the **Authorize** button in `/docs` expects the form flow; to log in through `/docs` with this design, call `/auth/login` there and paste the token. With `python-multipart` installed you would replace `Login` by `Depends(OAuth2PasswordRequestForm)`.
+**The standard form login.** Our `/auth/login` takes a JSON body, which any client can send. The standard OAuth2 "password flow" sends `username` and `password` as a **form** instead, and that is what the **Authorize** button in `/docs` sends. FastAPI parses it with `OAuth2PasswordRequestForm`. Form parsing needs the separate package `python-multipart`; it is one of this course's dependencies (in `pyproject.toml`), so it works here:
+
+```python run
+from typing import Annotated
+
+from fastapi import Depends, FastAPI, HTTPException
+from fastapi.security import OAuth2PasswordRequestForm
+from fastapi.testclient import TestClient
+
+app = FastAPI()
+PASSWORDS = {"asha@example.com": "correct horse"}       # demo only: real apps store hashes (12.1)
+
+@app.post("/token")
+def token(form: Annotated[OAuth2PasswordRequestForm, Depends()]):
+    if PASSWORDS.get(form.username) != form.password:
+        raise HTTPException(401, "Incorrect email or password", headers={"WWW-Authenticate": "Bearer"})
+    return {"access_token": "token-for-" + form.username, "token_type": "bearer"}
+
+c = TestClient(app)
+print(c.post("/token", data={"username": "asha@example.com", "password": "correct horse"}).json())
+print(c.post("/token", data={"username": "asha@example.com", "password": "nope"}).status_code)
+r = c.post("/token", json={"username": "asha@example.com", "password": "correct horse"})
+print(r.status_code, [(e["loc"], e["type"]) for e in r.json()["detail"]])
+```
+```text
+{'access_token': 'token-for-asha@example.com', 'token_type': 'bearer'}
+401
+422 [(['body', 'username'], 'missing'), (['body', 'password'], 'missing')]
+```
+
+Note the field is called `username` even when it holds an e-mail (the OAuth2 standard fixes the name), the test client sends a form with `data=`, and sending **JSON** to a form endpoint is a 422: the form fields are simply missing. To use the form flow in the app above, replace the `Login` body by `Annotated[OAuth2PasswordRequestForm, Depends()]` and point `tokenUrl` at that endpoint. (In a fresh environment without `python-multipart`, FastAPI refuses to define the route: see the traps table in section 25.)
 
 ### 12.4 Ownership checks
 
@@ -2411,30 +2441,42 @@ Browsers cannot set an `Authorization` header on `new WebSocket(...)`, so a toke
 
 ## 16. File uploads and raw bodies
 
-Browser file uploads use `multipart/form-data`. FastAPI parses it with `File()`, `UploadFile` and `Form()`, which all need the separate package **python-multipart**. It is not installed here, and FastAPI tells you at the moment the route is defined. (It prints the message itself to stderr as well, which is why the text appears twice below.)
+Browser file uploads use `multipart/form-data`: one request body holding several *parts*, each a file or a plain form field. FastAPI parses it with `UploadFile`, `File()` and `Form()`, which all need the separate package **python-multipart**. It is one of this course's dependencies (in `pyproject.toml`), so the examples run. Without it, FastAPI refuses at the moment the route is defined, with `RuntimeError: Form data requires "python-multipart" to be installed` (traps table, section 25); the fix is `pip install python-multipart`.
 
-```python run error
-from fastapi import FastAPI, UploadFile
+An `UploadFile` is not the file's bytes: it is a handle to a temporary file that Starlette keeps in memory while small and moves to disk when large. `file.filename` and `file.content_type` come from the client. Read it **in chunks** with `await file.read(n)`, so that you can stop early, instead of `await file.read()`, which loads everything:
+
+```python run
+from typing import Annotated
+
+from fastapi import FastAPI, Form, HTTPException, UploadFile
+from fastapi.testclient import TestClient
 
 app = FastAPI()
+MAX_BYTES = 1000
 
-try:
-    @app.post("/upload")
-    async def upload(file: UploadFile):
-        return {"name": file.filename}
-except RuntimeError as exc:
-    print(type(exc).__name__, "->", str(exc).splitlines()[0])
+@app.post("/upload")
+async def upload(file: UploadFile, note: Annotated[str, Form()] = ""):
+    size = 0
+    while chunk := await file.read(256):                 # read piece by piece
+        size += len(chunk)
+        if size > MAX_BYTES:
+            raise HTTPException(413, f"File larger than {MAX_BYTES} bytes")
+    return {"name": file.filename, "type": file.content_type, "bytes": size, "note": note}
+
+c = TestClient(app)
+print(c.post("/upload", files={"file": ("a.txt", b"hello", "text/plain")}, data={"note": "first"}).json())
+r = c.post("/upload", files={"file": ("big.csv", b"x" * 5000, "text/csv")})
+print(r.status_code, r.json())
+r = c.post("/upload", data={"note": "no file"})
+print(r.status_code, [(e["loc"], e["type"]) for e in r.json()["detail"]])
 ```
 ```text
-RuntimeError -> Form data requires "python-multipart" to be installed.
-
-Form data requires "python-multipart" to be installed.
-You can install "python-multipart" with:
-
-pip install python-multipart
+{'name': 'a.txt', 'type': 'text/plain', 'bytes': 5, 'note': 'first'}
+413 {'detail': 'File larger than 1000 bytes'}
+422 [(['body', 'file'], 'missing')]
 ```
 
-> **Try it on your machine** (after `pip install python-multipart`): declare `async def upload(file: UploadFile)`, read it with `data = await file.read()` (in chunks for big files), and test with `client.post("/upload", files={"file": ("a.txt", b"hello", "text/plain")})`; `file.filename` and `file.content_type` come with it.
+The test client builds the multipart body from `files=` (name, bytes, content type) and `data=` (the plain fields). A missing file is an ordinary 422 at `["body", "file"]`. The 413 here stops counting early, but the server may already have received the whole body; a real deployment also caps the body size in the proxy (Nginx `client_max_body_size`, swe.09).
 
 For API clients, raw binary uploads need no extra package: the client sends the bytes as the body with `Content-Type: application/octet-stream`. Read them from the request, **and enforce a size limit yourself**, because an unbounded upload can exhaust memory:
 
@@ -3411,7 +3453,7 @@ Choose by the job: a JSON API consumed by a front end or mobile app favours Fast
 | `401` vs `403` confusion | unknown caller vs not allowed | 12.3 |
 | `MissingGreenlet` | lazy load in async code | 11.5 |
 | `no such table` in tests | lifespan not run: use `with TestClient(...)` | 20.1 |
-| `Form data requires "python-multipart"` | multipart package not installed | 16 |
+| `Form data requires "python-multipart"` | package missing in this environment | 16 |
 | CORS error in the browser, 200 in the log | origin not allowed | 13.2 |
 | `/docs` blank offline | CDN assets unreachable | 19.2 |
 | everything slow under load | blocking call inside `async def` | 10.2 |

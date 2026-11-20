@@ -1,0 +1,6 @@
+id = "swe.04.p026"
+title = "The N+1 on the home page"
+tier = "deep"
+kind = "code"
+topics = ["N+1", "joinedload", "aggregate", "query count", "Flask-SQLAlchemy"]
+minutes = 45

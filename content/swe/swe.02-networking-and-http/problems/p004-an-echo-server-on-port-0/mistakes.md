@@ -1,0 +1,6 @@
+- **A fixed port.** It fails with "address already in use" when anything else holds it, and two test runs cannot overlap.
+- **Handling the client in the accept loop.** The second client is stuck behind the first.
+- **A non-daemon thread.** The test run never exits.
+- **Crashing when the socket is closed.** `accept()` raises `OSError`; the loop must end quietly.
+- **Assuming one `recv` is one message.** Here it does not matter for upper-casing, but it is the habit that breaks real protocols (see the framing problems).
+- **Sending `str`.** Sockets send bytes: `data.upper()` on bytes is right.

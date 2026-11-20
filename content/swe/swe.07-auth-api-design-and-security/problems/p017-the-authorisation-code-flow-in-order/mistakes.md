@@ -1,0 +1,6 @@
+- **Printing message 2 after message 3.** `authorize` prints its own `GET /authorize` line first, then the redirect. A function's prints happen at the places where `send` is written.
+- **Putting `code_verifier` into messages 1 to 4.** The verifier only appears in the POST to `/token` (message 5).
+- **Adding `code_challenge` to message 3.** The redirect back carries only `code` and `state`.
+- **Reordering the field lists.** Copy the keys in the order of the dict literal, including `response_type` before `scope`.
+- **Forgetting that the assert prints nothing.** The `state` check is silent when it passes.
+- **Writing 7 lines.** The resource server's reply (message 8) is a message too.

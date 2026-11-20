@@ -1,0 +1,6 @@
+id = "dsa.12.p001"
+title = "Edge list to adjacency list"
+tier = "drill"
+kind = "code"
+topics = ["graph", "adjacency list", "representation"]
+minutes = 15

@@ -1,0 +1,6 @@
+- **Splitting like matrix chain, into `i..k` and `k+1..j`.** Then the corners `k` and `k + 1` are cut apart and the line between them is lost. Here the triangle `(i, k, j)` shares corner `k` with **both** parts: `f(i, k)` and `f(k, j)`.
+- **Base case `f(i, i + 1)` = something non-zero.** Two corners are a side, not a polygon: 0.
+- **Filling row by row with `i` going up.** `f(k, j)` is in a later row and still 0.
+- **Greedy: always cut off the triangle with the smallest product first.** Like the greedy for matrix chains, it can be wrong; the random test against all triangulations finds it.
+- **Using `max` out of habit from burst balloons.** This problem asks for the **smallest** score.
+- **Recursion without a memo.** The same pieces `(i, j)` are reached again and again: exponential.

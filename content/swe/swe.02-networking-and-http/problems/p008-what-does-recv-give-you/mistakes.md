@@ -1,0 +1,5 @@
+- **Splitting the naive output at the message boundaries.** The naive loop prints the chunks as they arrive: `b'\x05HEL'` is not a message.
+- **Printing a message as soon as its length byte arrives.** The framed loop waits until the whole body is in `buf`.
+- **Writing the length byte as a digit** (`b'5HEL'`). It is the byte value 5, shown as `\x05`.
+- **Forgetting that the order of the output lines is by loops:** all `naive:` lines first (loop A), then the `framed:` lines (loop B), then `left over`.
+- **Expecting a difference in the final `left over`.** All three messages are complete, so it is `b''`.

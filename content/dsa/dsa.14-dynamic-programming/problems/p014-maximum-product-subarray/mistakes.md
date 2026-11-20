@@ -1,0 +1,5 @@
+- **Only one running value (Kadane copied).** `[-2, 3, -4]` gives 3 instead of 24: the best block at index 2 extends the **smallest** product (-6).
+- **Updating `hi` first, then computing `lo` from the new `hi`.** Use a tuple assignment or compute the candidates once from the old values.
+- **Starting `best` at 0 or 1.** `[-3]` must give -3; there is no empty block (and no "product 1" for nothing).
+- **Restarting only when the product becomes negative.** A negative product can turn positive again later: `[-2, 3, -4]`.
+- **Tracking the largest absolute value** instead of `hi` and `lo`. The biggest `|product|` may be negative: `[-2, 3]` would report 6, but the answer is 3. Keep the sign by keeping both extremes.

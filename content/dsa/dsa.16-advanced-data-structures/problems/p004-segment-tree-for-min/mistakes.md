@@ -1,0 +1,5 @@
+- **Identity `0`** (copied from the sum tree): positive data gives 0 for partial queries; the tests use positive numbers on purpose.
+- **Identity `-math.inf`.** That is the identity for **max**; for min it always wins.
+- **Changing the combine in `_build` but not in `_update`** (or the other way round). Every place that joins two children must use `min`.
+- **`min(self.a[l:r])` in the query** (the starter): correct but `O(r - l)`.
+- **An error on the empty range.** `min([])` raises; here the empty range returns `math.inf`.

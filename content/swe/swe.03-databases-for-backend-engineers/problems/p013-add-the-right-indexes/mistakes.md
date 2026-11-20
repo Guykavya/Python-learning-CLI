@@ -1,0 +1,5 @@
+- **One index per column.** More write cost, and the planner often uses only one of them.
+- **Range column first.** `(created, status)` cannot use `status` after a range on `created`.
+- **An index on `status` alone** for B: it works, but with few distinct statuses it is a weak index; adding `created` makes it selective.
+- **Forgetting that `(customer_id, status)` already covers query A.** A separate `(customer_id)` index is wasted.
+- **Changing the queries.** The task is to fit the indexes to the queries.

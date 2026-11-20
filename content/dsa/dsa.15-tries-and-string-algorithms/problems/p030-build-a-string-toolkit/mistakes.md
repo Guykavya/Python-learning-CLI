@@ -1,0 +1,6 @@
+- **`words_with_prefix` in insertion order or with duplicates.** It must be the distinct words, sorted.
+- **A word recorded after its children** (`car` after `card`).
+- **Recursion on a 10**5-letter word.** A recursive DFS or a recursive `_walk` hits Python's recursion limit.
+- **`starts_with("")` is `True` on an empty trie** if it only checks that a node exists. Nothing is stored, so nothing starts with `""`.
+- **`kmp_search` with the empty pattern** returning `[]`. The rule (like `str.find`) is every position `0..len(text)`.
+- **`z[0] = 0`.** The convention here is `z[0] = len(s)`.

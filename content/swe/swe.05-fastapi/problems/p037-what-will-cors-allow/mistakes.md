@@ -1,0 +1,5 @@
+- **Line 2 as 403 or 400.** CORS middleware never rejects a normal request; the endpoint runs. Only the header is missing, and the *browser* hides the response.
+- **Thinking CORS stops `curl` or a server-to-server call.** They ignore CORS completely. Protect data with authentication, not CORS.
+- **Line 4 as `none`.** The origin check passed, so the header is set; the failure is the method.
+- **Line 3 as 405** because there is no `OPTIONS` route. A real preflight never reaches the router: the middleware answers it.
+- **`*` instead of the origin.** With `allow_credentials=True` the middleware echoes the exact allowed origin; `*` with credentials is refused by browsers.

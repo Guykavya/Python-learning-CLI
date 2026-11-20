@@ -1,0 +1,6 @@
+id = "dsa.10.p020"
+title = "Good nodes"
+tier = "applied"
+kind = "code"
+topics = ["tree", "preorder", "top-down", "maximum so far"]
+minutes = 20

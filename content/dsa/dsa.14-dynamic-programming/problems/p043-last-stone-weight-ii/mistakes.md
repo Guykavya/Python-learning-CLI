@@ -1,0 +1,5 @@
+- **Simulating a greedy game**, such as "always smash the two heaviest" (that is "Last stone weight I"). For `[31, 26, 33, 21, 40]` it leaves 9, but 5 is possible.
+- **Forgetting the reduction is about two groups.** The answer is not "can it be 0?" (that is partition, p041). When an even split is impossible you need the closest one.
+- **Taking the largest reachable `s` overall** instead of the largest `s <= total // 2`. A sum above half is just the other group; `total - 2s` would be negative.
+- **Looping `s` upwards**, so a stone is counted twice. `[1, 6]` would reach 3 = 1 + 1 + 1 and give 1 instead of 5.
+- **Returning the difference of the two groups' sizes**, or of counts, instead of sums.

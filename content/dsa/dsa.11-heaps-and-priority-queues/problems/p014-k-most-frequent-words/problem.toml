@@ -1,0 +1,6 @@
+id = "dsa.11.p014"
+title = "K most frequent words"
+tier = "applied"
+kind = "code"
+topics = ["heap", "top-k", "counter", "tie-break", "heapq"]
+minutes = 25

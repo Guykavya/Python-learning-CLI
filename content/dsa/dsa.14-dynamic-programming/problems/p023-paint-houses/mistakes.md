@@ -1,0 +1,5 @@
+- **Greedy house by house.** Taking the cheapest colour for house 0 can force a very expensive colour on house 1: `[[1, 2, 100], [1, 100, 100]]` costs 101 instead of 3.
+- **A state without the colour.** "Cheapest cost of the first `i` houses" cannot tell which colour house `i - 1` has, so it cannot forbid a repeat.
+- **Updating the three variables one by one.** `red = ...` followed by `green = c1 + min(red, blue)` reads the **new** red. Use one tuple assignment, or temporary names.
+- **Returning `red`** (or any single colour) instead of the minimum of the three.
+- **Crashing on `[]`.** No houses cost 0.

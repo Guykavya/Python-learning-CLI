@@ -1,0 +1,5 @@
+- **Confusing the triangular loop with a linear one.** `for j in range(i, n)` still adds up to about `n * n / 2`.
+- **Treating the sieve as quadratic.** The inner loop steps by `i`, and only primes start it; the total is close to linear.
+- **Using `n log n` for program 6 with `log2`.** The sum `1 + 1/2 + ... + 1/n` is the natural logarithm of `n`, not the base-2 logarithm: `ln n` is about 15 here, `log2 n` about 21.5. The verdict is the same, but the constant is not.
+- **Believing `10**8` is allowed.** In CPython about `10**7` per second is a realistic budget.
+- **Forgetting the outer loop** when the inner loop is fast. Program 5 pays for both.

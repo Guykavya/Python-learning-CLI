@@ -1,0 +1,6 @@
+id = "swe.01.p001"
+title = "Read git status porcelain"
+tier = "drill"
+kind = "code"
+topics = ["git status", "porcelain format", "parsing"]
+minutes = 20

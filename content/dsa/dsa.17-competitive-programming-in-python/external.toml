@@ -1,0 +1,105 @@
+# Real site problems for dsa.17 (Competitive programming in Python).
+# Verification: every Codeforces id and CSES id below was written from memory (from the problem plan) and NOT
+# re-fetched (no web access was used while writing). Fix any that fails to open.
+# Left out on purpose, because dsa.00 already lists them: Codeforces 4A, CSES 1068 Weird Algorithm,
+# 1083 Missing Number, 1069 Repetitions, 1094 Increasing Array.
+# Use them to practise fast input/output and contest habits. Read all of one contest's problems, time-box each,
+# then upsolve (chapter sections 15 and 16). Order: Div. 3 A-B problems first, then CSES.
+
+[[problem]]
+site = "codeforces"
+key = "1520A"
+title = "Do Not Be Distracted!"
+url = "https://codeforces.com/problemset/problem/1520/A"
+minutes = 15
+
+[[problem]]
+site = "codeforces"
+key = "1352A"
+title = "Sum of Round Numbers"
+url = "https://codeforces.com/problemset/problem/1352/A"
+minutes = 15
+
+[[problem]]
+site = "codeforces"
+key = "1367A"
+title = "Short Substrings"
+url = "https://codeforces.com/problemset/problem/1367/A"
+minutes = 15
+
+[[problem]]
+site = "codeforces"
+key = "1296A"
+title = "Array with Odd Sum"
+url = "https://codeforces.com/problemset/problem/1296/A"
+minutes = 15
+
+[[problem]]
+site = "codeforces"
+key = "1409A"
+title = "Yet Another Two Integers Problem"
+url = "https://codeforces.com/problemset/problem/1409/A"
+minutes = 15
+
+[[problem]]
+site = "codeforces"
+key = "1385B"
+title = "Restore the Permutation by Merger"
+url = "https://codeforces.com/problemset/problem/1385/B"
+minutes = 20
+
+[[problem]]
+site = "codeforces"
+key = "1360B"
+title = "Honest Coach"
+url = "https://codeforces.com/problemset/problem/1360/B"
+minutes = 20
+
+[[problem]]
+site = "codeforces"
+key = "1399B"
+title = "Gifts Fixing"
+url = "https://codeforces.com/problemset/problem/1399/B"
+minutes = 25
+
+[[problem]]
+site = "codeforces"
+key = "1374C"
+title = "Move Brackets"
+url = "https://codeforces.com/problemset/problem/1374/C"
+minutes = 25
+
+[[problem]]
+site = "codeforces"
+key = "1333B"
+title = "Kind Anton"
+url = "https://codeforces.com/problemset/problem/1333/B"
+minutes = 30
+
+[[problem]]
+site = "cses"
+key = "1070"
+title = "Permutations"
+url = "https://cses.fi/problemset/task/1070"
+minutes = 15
+
+[[problem]]
+site = "cses"
+key = "1071"
+title = "Number Spiral"
+url = "https://cses.fi/problemset/task/1071"
+minutes = 20
+
+[[problem]]
+site = "cses"
+key = "1072"
+title = "Two Knights"
+url = "https://cses.fi/problemset/task/1072"
+minutes = 25
+
+[[problem]]
+site = "cses"
+key = "1092"
+title = "Two Sets"
+url = "https://cses.fi/problemset/task/1092"
+minutes = 25

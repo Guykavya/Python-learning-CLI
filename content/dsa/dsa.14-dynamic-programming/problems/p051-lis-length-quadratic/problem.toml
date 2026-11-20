@@ -1,0 +1,6 @@
+id = "dsa.14.p051"
+title = "LIS length O(n^2)"
+tier = "drill"
+kind = "code"
+topics = ["dynamic programming", "longest increasing subsequence", "ends at i"]
+minutes = 20

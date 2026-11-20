@@ -1,0 +1,6 @@
+id = "dsa.10.p037"
+title = "BST delete"
+tier = "deep"
+kind = "code"
+topics = ["tree", "BST", "delete", "successor"]
+minutes = 35

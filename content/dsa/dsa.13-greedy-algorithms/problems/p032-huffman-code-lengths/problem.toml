@@ -1,0 +1,6 @@
+id = "dsa.13.p032"
+title = "Huffman code lengths"
+tier = "deep"
+kind = "code"
+topics = ["greedy", "huffman coding", "heap", "prefix codes", "tie-breaker"]
+minutes = 40

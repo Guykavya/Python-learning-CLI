@@ -1,0 +1,5 @@
+- **Adding 1 instead of the lowest bit** in the update (`11 -> 12 -> 13 ...`): the lowbit of 12 is 4, so the next cell is 16.
+- **Stopping the update at 16 exclusive.** The loop runs while `k <= n`, so 16 itself is visited.
+- **Printing binary with leading zeros.** `f"{6:b}"` is `110`, not `0110`.
+- **Counting cell 7 for position 6.** Cell 7 has lowbit 1 and covers only position 7.
+- **Mixing up the directions:** the update climbs (adds the bit), the prefix query descends (removes it).

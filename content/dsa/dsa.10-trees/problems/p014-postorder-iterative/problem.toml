@@ -1,0 +1,6 @@
+id = "dsa.10.p014"
+title = "Postorder (iterative)"
+tier = "deep"
+kind = "code"
+topics = ["tree", "traversal", "postorder", "stack", "iterative"]
+minutes = 30

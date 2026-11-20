@@ -1,0 +1,6 @@
+- **Retrying every 5xx for POST.** The reply may have been lost after the work was done.
+- **Retrying a `4xx`.** `400`, `401`, `403`, `404` and `422` repeat the same failure; only `408` and `429` are temporary among the 4xx.
+- **Treating `status is None` as "never retry".** Connection errors are the most common transient failure (for safe requests).
+- **Forgetting the idempotency key.** With a key, a `POST` can be repeated.
+- **Case-sensitive method check.** `"get"` is `GET`.
+- **Retrying `501`** (not implemented). Repeating cannot make the server implement it.

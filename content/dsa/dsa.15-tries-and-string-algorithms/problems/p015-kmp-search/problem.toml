@@ -1,0 +1,6 @@
+id = "dsa.15.p015"
+title = "KMP search"
+tier = "applied"
+kind = "code"
+topics = ["kmp", "prefix function", "string search", "overlapping matches"]
+minutes = 30

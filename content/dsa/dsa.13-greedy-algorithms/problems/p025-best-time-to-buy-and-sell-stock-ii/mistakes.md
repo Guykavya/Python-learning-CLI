@@ -1,0 +1,4 @@
+- **Solving the one-trade problem.** `max(prices) - min(prices)`, or "lowest before highest", allows only one trade: 5 for `[7, 1, 5, 3, 6, 4]` instead of 7.
+- **Adding every change, including the falls.** That gives `prices[-1] - prices[0]`, which can even be negative.
+- **Starting the loop at 0.** `prices[0 - 1]` is `prices[-1]`, the last day: the code silently compares the first day with the last one.
+- **Crashing on an empty list** (for example with `prices[0]`). No days, no profit: 0.

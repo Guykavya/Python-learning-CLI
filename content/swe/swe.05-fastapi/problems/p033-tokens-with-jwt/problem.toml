@@ -1,0 +1,6 @@
+id = "swe.05.p033"
+title = "Tokens with JWT"
+tier = "applied"
+kind = "code"
+topics = ["JWT", "PyJWT", "token expiry", "signature", "alg none", "injected clock"]
+minutes = 35

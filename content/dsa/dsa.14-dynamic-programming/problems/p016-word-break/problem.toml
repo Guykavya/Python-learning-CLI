@@ -1,0 +1,6 @@
+id = "dsa.14.p016"
+title = "Word break"
+tier = "applied"
+kind = "code"
+topics = ["dynamic programming", "1d dp", "word break", "strings", "sets"]
+minutes = 25

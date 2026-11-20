@@ -1,0 +1,6 @@
+- **Keeping the undirected rule** ("seen before = cycle"): every diamond (two modules importing the same third one) is reported as a cycle.
+- **Only the current path, no BLACK**: removing a module from the path when leaving is correct but explores finished modules again and again; on a layered project the number of paths is astronomical.
+- **Treating BLACK like GREY**: the same false alarm as the starter.
+- **Skipping the module you came from** (the undirected parent trick): in a directed graph `a -> b -> a` is a real cycle.
+- **Starting only from the first module**: a circle among modules that the first one never imports is missed. Start from every WHITE module.
+- **Forgetting self imports**: `{"x": ["x"]}` is a cycle; with the three colours it is found because `x` is GREY when its own edge is checked.

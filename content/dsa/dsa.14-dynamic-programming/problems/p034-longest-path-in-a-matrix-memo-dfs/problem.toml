@@ -1,0 +1,6 @@
+id = "dsa.14.p034"
+title = "Longest path in a matrix (memo DFS)"
+tier = "deep"
+kind = "code"
+topics = ["dynamic programming", "memoisation", "grid", "DFS", "DAG"]
+minutes = 35

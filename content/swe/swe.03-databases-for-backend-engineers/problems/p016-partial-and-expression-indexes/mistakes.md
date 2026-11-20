@@ -1,0 +1,5 @@
+- **An index on `email` for a `lower(email)` query.** The planner cannot use it.
+- **A query with a different expression.** `LOWER(email)` is fine (same function), but `email = ? COLLATE NOCASE` is not covered by `lower(email)`.
+- **A full index on `status`.** It is big and its entries are mostly closed tickets; a partial one is better.
+- **Partial index sorted by the wrong column.** To remove the `ORDER BY created` sort, `created` must be the indexed column.
+- **Expecting the partial index to serve other statuses.** It only knows the open ones.

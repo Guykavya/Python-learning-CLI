@@ -1,0 +1,12 @@
+sift_down from index 2 (value 7)
+swap a[2]=7 with a[5]=2
+-> [9, 4, 2, 1, 6, 7, 8]
+sift_down from index 1 (value 4)
+swap a[1]=4 with a[3]=1
+-> [9, 1, 2, 4, 6, 7, 8]
+sift_down from index 0 (value 9)
+swap a[0]=9 with a[1]=1
+swap a[1]=9 with a[3]=4
+-> [1, 4, 2, 9, 6, 7, 8]
+total swaps: 4
+[1, 4, 2, 9, 6, 7, 8]

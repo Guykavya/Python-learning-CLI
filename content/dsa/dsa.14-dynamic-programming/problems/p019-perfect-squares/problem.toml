@@ -1,0 +1,6 @@
+id = "dsa.14.p019"
+title = "Perfect squares"
+tier = "applied"
+kind = "code"
+topics = ["dynamic programming", "coin change", "minimum", "perfect squares", "unbounded"]
+minutes = 20

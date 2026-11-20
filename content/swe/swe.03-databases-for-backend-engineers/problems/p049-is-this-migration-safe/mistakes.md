@@ -1,0 +1,6 @@
+- **Thinking that a migration is safe because it is fast on your laptop.** Production has 50 million rows and old servers.
+- **Calling a rename safe.** It breaks every reader of the old name.
+- **Adding `NOT NULL` first.** Add it last.
+- **Dropping a column in the same deploy as the code change.** Old servers still run for a while.
+- **A plain index build on a busy PostgreSQL table.**
+- **One giant `UPDATE`.** Batch it.

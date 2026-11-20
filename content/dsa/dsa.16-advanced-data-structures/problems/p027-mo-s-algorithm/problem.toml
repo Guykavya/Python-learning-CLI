@@ -1,0 +1,6 @@
+id = "dsa.16.p027"
+title = "Mo's algorithm"
+tier = "challenge"
+kind = "code"
+topics = ["mo's algorithm", "offline queries", "sliding window", "distinct count"]
+minutes = 45

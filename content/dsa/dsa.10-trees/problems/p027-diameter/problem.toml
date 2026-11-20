@@ -1,0 +1,6 @@
+id = "dsa.10.p027"
+title = "Diameter"
+tier = "applied"
+kind = "code"
+topics = ["tree", "diameter", "height", "return and record"]
+minutes = 30

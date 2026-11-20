@@ -1,0 +1,5 @@
+- **"`/two` blocks because it uses `time.sleep`."** In a plain `def` endpoint that is fine: it blocks a worker thread, not the loop.
+- **"`/four` is safe because the sleep is inside a `def`."** Only `def` *endpoints* are moved to threads. A helper called from an `async def` runs on the loop.
+- **Writing `worker` for `/three`.** `await asyncio.sleep` never leaves the loop thread; it overlaps by taking turns, not by using threads.
+- **Thinking `async def` is always faster.** It is faster only when everything slow in it is awaited; otherwise it is the slowest of all.
+- **Expecting the exact times.** The program prints categories because the seconds vary by machine; the categories do not.

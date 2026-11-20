@@ -1,0 +1,6 @@
+- **"The token is secret because it is in a cookie."** A cookie is sent automatically, so it proves nothing about the page. The token must be sent *by the page*.
+- **"HTTPS stops CSRF."** The forged request is perfectly valid HTTPS from the victim's browser.
+- **"The attacker steals the cookie."** CSRF does not need the cookie: the browser attaches it. (Stealing cookies is XSS.)
+- **"POST is safe because attackers cannot send POST."** Any page can submit a form to any URL.
+- **"SameSite means we can drop the token."** It is a very good extra layer, not a complete replacement.
+- **Mixing up CSRF and XSS.** XSS runs the attacker's script **inside** your site and defeats CSRF tokens.

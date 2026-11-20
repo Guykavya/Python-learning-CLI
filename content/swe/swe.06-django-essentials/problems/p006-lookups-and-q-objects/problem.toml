@@ -1,0 +1,6 @@
+id = "swe.06.p006"
+title = "Lookups and Q objects"
+tier = "drill"
+kind = "code"
+topics = ["lookups", "Q objects", "exclude", "icontains", "lazy QuerySet"]
+minutes = 20

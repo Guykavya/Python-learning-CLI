@@ -1,0 +1,6 @@
+id = "swe.03.p005"
+title = "Money in paise not floats"
+tier = "drill"
+kind = "code"
+topics = ["money", "Decimal", "integers", "rounding"]
+minutes = 25

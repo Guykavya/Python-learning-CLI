@@ -1,0 +1,7 @@
+- **Testing only the happy path.** All four broken apps pass a test that only logs in, posts and deletes your own post.
+- **Testing the missing token only.** The broken `csrf_value_ignored` app lets a wrong token through: send one.
+- **Reusing the CSRF token after login.** Login clears the session; the old token is invalid (and you get 400 on the happy path).
+- **Using a single user for the ownership check.** You need a second client.
+- **Catching `AssertionError`** (or `try/except Exception`) inside a check, so a failure never reaches the grader.
+- **Asserting `r.status_code != 200`.** Say exactly which status you expect (400, 401, 403); otherwise a crash (500) looks like a pass.
+- **Checks that depend on each other.** Each must work on a fresh app.

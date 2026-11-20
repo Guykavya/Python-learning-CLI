@@ -1,0 +1,7 @@
+id = "swe.03.p038"
+title = "Fix the N+1 on the orders page"
+tier = "applied"
+kind = "code"
+topics = ["N+1", "selectinload", "joinedload", "eager loading", "SQLAlchemy ORM"]
+minutes = 40
+assessment = "fix"

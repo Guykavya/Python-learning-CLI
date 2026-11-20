@@ -1,0 +1,5 @@
+- **`default="open"` instead of `server_default`.** The default then exists only in Python, not in the table.
+- **Forgetting `nullable=False`.** Columns accept `NULL` unless told otherwise (primary keys excepted).
+- **A foreign key to `"customers"`.** The target is `"customers.id"` (table and column).
+- **Defining the tables on a different `MetaData`** than the one given: `create_all` would not see them.
+- **Wrong table names.** The tests look for `customers` and `orders`.

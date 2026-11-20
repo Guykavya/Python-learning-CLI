@@ -1,0 +1,6 @@
+- **No parent check**: the edge back to the vertex you came from is seen as a cycle, so every graph with an edge looks cyclic.
+- **Marking a vertex when it is popped** instead of when it is pushed: with the parent check, a vertex can then sit on the stack twice and the "seen" test becomes unreliable (and two parallel edges are no longer caught from the parent's side). Mark when you push.
+- **Searching only from vertex 0**: a cycle in another piece of the graph is missed. Start a search from every unseen vertex.
+- **`len(edges) >= n` as the test**: it ignores that a graph with several pieces has fewer edges than `n - 1` per tree. Use `len(edges) > n - pieces`.
+- **Ignoring self loops**: `(3, 3)` is a cycle.
+- **Recursion**: a path of 100,000 vertices goes past the recursion limit.

@@ -1,0 +1,5 @@
+- **"Downwards is faster."** Both directions do the same number of steps. The direction changes **which values are read**, not the speed.
+- **Saying the upward loop is a bug in general.** It is the correct loop for the unbounded knapsack and for coin change; it is a bug only when each item may be used once.
+- **Reversing the item loop instead.** The order of the items does not matter; it is the capacity loop that matters.
+- **Mixing up which cell is read.** `g[w]` reads `g[w - wt]`, a **smaller** index. Explain when that smaller cell is visited in each direction.
+- **Forgetting subset sum and counting.** They use the same array trick and the same rule: each number once, so high to low.

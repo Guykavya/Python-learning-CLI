@@ -1,0 +1,10 @@
+level 1: size 1
+pop 8: queue=[3, 10]
+level 2: size 2
+pop 3: queue=[10, 1, 6]
+pop 10: queue=[1, 6, 14]
+level 3: size 3
+pop 1: queue=[6, 14]
+pop 6: queue=[14]
+pop 14: queue=[]
+[[8], [3, 10], [1, 6, 14]]

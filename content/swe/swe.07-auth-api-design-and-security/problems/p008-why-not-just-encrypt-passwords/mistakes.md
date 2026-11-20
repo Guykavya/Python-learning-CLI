@@ -1,0 +1,6 @@
+- **"A hash is encrypted."** It is not: encryption can be reversed with a key, a hash cannot be reversed at all.
+- **"SHA-256 is secure, so it is fine for passwords."** It is secure as a hash, but too **fast** for passwords: the attacker's guessing speed is the problem.
+- **"The salt must be secret."** The salt is stored next to the hash. Its job is to be different for every password, not hidden.
+- **Mixing up salt and pepper.** Salt: per password, in the database. Pepper: one secret, outside the database.
+- **"Encrypt with a very strong key and it is safe."** The application must be able to use the key, so the thief of the application gets it too.
+- **Recovering the password for a forgotten-password feature.** Use a reset token.

@@ -1,0 +1,6 @@
+id = "swe.02.p028"
+title = "Backoff with jitter and Retry-After"
+tier = "applied"
+kind = "code"
+topics = ["backoff", "jitter", "Retry-After", "retries"]
+minutes = 35

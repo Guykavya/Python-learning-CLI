@@ -1,0 +1,7 @@
+- **`union` without `find`** (`parent[x] = y`): it links `x` itself, not its root. The rest of `x`'s old tree is cut off from the new group.
+- **Comparing the sizes of `x` and `y`** instead of their roots, or updating the size of a non-root: `size()` returns nonsense.
+- **Lowering the group counter in every `union`**, also when the two were already together.
+- **Neither union by size nor compression**: `union(0, 1), union(1, 2), ...` builds a chain of 100,000; every `find(0)` then walks the whole chain. The time-limit test fails.
+- **A recursive `find`** on such a chain: `RecursionError`.
+- **An attribute named `size`** next to the method `size()`: the list replaces the method, and `d.size(2)` fails with "list is not callable".
+- **`connected` comparing `parent[x] == parent[y]`**: two elements in the same group can have different parents. Compare roots.

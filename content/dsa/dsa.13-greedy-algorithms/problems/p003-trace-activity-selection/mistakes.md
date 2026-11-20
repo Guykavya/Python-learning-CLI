@@ -1,0 +1,6 @@
+- **Sorting by start time** out of habit: `(0, 6)` would come first.
+- **Breaking the tie at end 9 the wrong way.** The key is `(end, start)`, so `(5, 9)` comes before `(6, 9)`.
+- **Skipping touching events.** `4 >= 4` is `True`: `(4, 7)` is taken. The same for `(11, 12)` after `(8, 11)`.
+- **Printing the old `last_end` on a take line.** The code updates `last_end` before printing.
+- **Moving `last_end` on a skip.** Only a taken event changes it.
+- **Writing `-inf` as a number** on the first line. It never appears: the first event is taken, so its line already shows 4.

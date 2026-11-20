@@ -1,0 +1,7 @@
+- **No `Coalesce`.** Empty categories show `None`, and `None` sorts oddly (first or last depending on the database).
+- **`Coalesce(Sum(...), 0)` without `output_field`.** Django raises `FieldError: Expression contains mixed types`; tell it which type you want.
+- **`F("quantity")` instead of `F("items__quantity")`.** `Category` has no `quantity`; you follow the relation with the double underscore and its `related_name`.
+- **A Python loop** (`for c in Category.objects.all(): c.items.aggregate(...)`). It works, but costs 1 query per category.
+- **Using `.values("name").annotate(...)`** and then expecting `Category` objects: `values()` gives dictionaries.
+- **Only `order_by("-value")`.** Equal values then come in an unspecified order; add `"name"` to make the order stable.
+- **`filter(items__status="active")` before the annotation** when you meant "all items". It changes which rows are summed (and drops empty categories).

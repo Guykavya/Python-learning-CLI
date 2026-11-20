@@ -1,0 +1,5 @@
+- **Sorting the equal weights differently**: `sorted` keeps `(1, 2)`, `(3, 4)`, `(4, 5)` in their list order.
+- **Comparing parents instead of roots**: after `3-4`, `parent[5]` is 4 but `parent[3]` is 5; only following the chain shows that 3, 4 and 5 are in one group.
+- **Putting the root of `v` under the root of `u`**: the code does `parent[ru] = rv`.
+- **Printing lines for `(0, 2, 4)` and `(1, 3, 5)`**: the loop stops after `tree complete`.
+- **Forgetting the return value**: the last printed line is `12`, from the outer `print`.

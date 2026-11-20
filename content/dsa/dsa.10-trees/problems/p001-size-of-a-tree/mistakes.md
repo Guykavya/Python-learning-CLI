@@ -1,0 +1,5 @@
+- `size(None)` returns `1`: every empty child then counts as a node and the answer is `2n + 1`.
+- Counting only leaves, or returning the height: both are different questions with the same recursive shape.
+- Forgetting the `1 +` for the node itself: the answer is always 0.
+- Testing `if not root.val` or `if root.val` to detect an empty child: a node holding the value `0` is still a node. Test `root is None`.
+- Using a global counter and not resetting it between calls: the second call returns a wrong total.

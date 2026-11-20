@@ -1,0 +1,5 @@
+- Checking `visited` only at the top of `visit` but appending `u` before the check: vertices appear twice.
+- Marking all neighbours as visited before recursing into the first one: that is a mix of BFS and DFS and gives a different order.
+- Sorting the neighbours.
+- Using a queue: that is BFS.
+- Making `visited` a default argument (`def visit(u, visited=set())`): the set survives between calls of `dfs_order`.

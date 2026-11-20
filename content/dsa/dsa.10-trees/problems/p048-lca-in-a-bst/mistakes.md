@@ -1,0 +1,5 @@
+- Using the general `lca` (two recursive calls): correct but `O(n)`; the pointer counter fails it.
+- Writing the "split" case as `p.val < cur.val < q.val` only: this forgets that `p` and `q` may be in either order, and the case where one **equals** the node.
+- Using `<=` in the first two cases: if `p.val == cur.val`, the current node is the answer, so the walk must stop.
+- Comparing the nodes with `<` instead of their values.
+- Going down further after the values are split: the LCA is the **first** node where they split.

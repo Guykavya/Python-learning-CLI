@@ -1,0 +1,6 @@
+id = "dsa.10.p043"
+title = "Floor and ceiling in a BST"
+tier = "applied"
+kind = "code"
+topics = ["tree", "BST", "floor", "ceiling", "search"]
+minutes = 25

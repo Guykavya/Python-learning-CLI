@@ -1,0 +1,6 @@
+id = "swe.04.p030"
+title = "login_required, by hand"
+tier = "applied"
+kind = "code"
+topics = ["decorators", "functools.wraps", "before_request", "g", "redirect", "next"]
+minutes = 40

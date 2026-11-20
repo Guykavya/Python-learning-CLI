@@ -1,0 +1,6 @@
+id = "swe.04.p038"
+title = "What does a framework remove?"
+tier = "drill"
+kind = "explain"
+topics = ["frameworks", "WSGI", "routing", "request parsing", "testing", "explain"]
+minutes = 30

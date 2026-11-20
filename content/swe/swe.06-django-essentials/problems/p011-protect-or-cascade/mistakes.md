@@ -1,0 +1,7 @@
+- **Line 2: deleting Cable and Hub along with the category.** That is `CASCADE`. Here it is `PROTECT`, so the whole delete is refused and nothing changes.
+- **Line 2: changing a number.** A refused delete is not partly done: Django raises before it deletes anything.
+- **Line 3: deleting the items of supplier A.** `SET_NULL` keeps the rows and clears the link; `items` stays 2 and `no_supplier` becomes 2.
+- **Line 4: forgetting the cascade to movements** (movements 5 instead of 3), or forgetting that Cable's missing supplier leaves the `no_supplier` count (2 to 1).
+- **Line 5: expecting another `ProtectedError`.** By now no item points at Cables: Hub was deleted in step 1 and Cable in step 4.
+- **Counting movements of Hub twice** (once in step 1 and again at the end). Each row is deleted once.
+- **Writing the counts in a different order.** The program prints categories, suppliers, items, movements, no_supplier.

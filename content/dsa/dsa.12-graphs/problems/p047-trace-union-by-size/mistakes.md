@@ -1,0 +1,5 @@
+- **Hanging `x`'s root under `y`'s root when the sizes are equal**: the swap happens only when `rx`'s group is **strictly** smaller, so on a tie `y`'s root goes under `x`'s root.
+- **Comparing the sizes of `x` and `y`** instead of their roots (in `union(5, 1)` both elements have stale size 1, but the roots have sizes 2 and 4).
+- **Forgetting path compression**: `find(1)` in `union(5, 1)` changes `parent[1]` to 2, and `find(5)` in `union(6, 5)` changes `parent[5]` to 2.
+- **Updating `size` at the child root** or at `x`: only the new root's size grows.
+- **Writing `True` for the last call**: 0 and 6 are already in the same group, so `union` returns `False` and changes nothing.

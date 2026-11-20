@@ -1,0 +1,5 @@
+- Mixing up `(row, col)` with `(x, y)`: `(0, 1)` is row 0, column 1, the cell to the right of the start.
+- Visiting in depth-first order (following one direction as far as possible). The queue makes it wave by wave.
+- Painting `(1, 3)` because it "touches" the region: only up, down, left and right count.
+- Painting the `b` cells or the `.` cells: only cells of the old colour `a` change.
+- Writing the `visit` lines in the order cells were **queued** for the first few and then switching: the line is printed when a cell is taken out.

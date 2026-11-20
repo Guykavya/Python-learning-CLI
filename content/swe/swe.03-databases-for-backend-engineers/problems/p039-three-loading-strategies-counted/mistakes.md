@@ -1,0 +1,5 @@
+- **Counting lazy as 4 statements.** The first statement loads the orders: 1 + 4.
+- **Saying `joinedload` returns 6 rows.** Orders without lines still appear once (outer join): 7.
+- **Forgetting that `selectinload` returns the 4 orders and the 6 lines separately** (10 rows, not 6).
+- **Thinking `joinedload` is always best** because it has one statement.
+- **Mixing up statements and rows.** The question asks for both.

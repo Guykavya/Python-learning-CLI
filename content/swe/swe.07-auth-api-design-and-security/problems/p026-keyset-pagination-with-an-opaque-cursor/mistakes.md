@@ -1,0 +1,8 @@
+- **Using `created` alone** as the key. Rows with equal `created` are skipped or repeated at a page edge. Compare the pair `(created, id)`.
+- **Using `<=`.** The last row of the previous page is then returned again as the first row of the next one.
+- **Sorting with `rows.sort()`.** It changes the caller's list. Use `sorted(...)`.
+- **Always returning a `next_cursor`.** The last page then points to an empty page. Fetch `limit + 1` (or compare lengths) to know.
+- **Letting `json`, `base64` or `KeyError` escape.** A forged cursor must always end as `ValueError` (a 400), never as a 500.
+- **Accepting `true` as an id.** `isinstance(True, int)` is `True`; check the exact type.
+- **Forgetting the padding.** `urlsafe_b64decode` needs a length that is a multiple of 4; strip `=` when encoding, add it back when decoding.
+- **Using the cursor in SQL text.** It is input from the network; only ever pass the decoded values as query parameters.

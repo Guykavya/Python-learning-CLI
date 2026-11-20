@@ -1,0 +1,6 @@
+- **Adding `slug` as `NOT NULL` at once.** The database refuses (no value for the existing rows).
+- **Leaving the column nullable** after the backfill. The point is the constraint.
+- **Using `ALTER COLUMN` directly on SQLite.** It does not exist; use `batch_alter_table`.
+- **Importing the ORM models** to read the rows. Use plain SQL: the models describe today's schema, not this revision's.
+- **No data in the test of your own** and so no backfill check: always run a migration against rows.
+- **A `downgrade` that loses other data.** Batch mode copies the other columns, so they survive.

@@ -1,0 +1,6 @@
+id = "dsa.12.p044"
+title = "Redundant connection"
+tier = "applied"
+kind = "code"
+topics = ["graph", "union-find", "cycle detection", "tree"]
+minutes = 25

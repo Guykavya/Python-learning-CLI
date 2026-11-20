@@ -1,0 +1,6 @@
+id = "dsa.16.p020"
+title = "K-th smallest with a Fenwick tree"
+tier = "deep"
+kind = "code"
+topics = ["fenwick tree", "binary descent", "order statistics", "multiset"]
+minutes = 40

@@ -1,0 +1,6 @@
+id = "swe.06.p020"
+title = "CRUD with generic views"
+tier = "drill"
+kind = "code"
+topics = ["ListView", "DetailView", "CreateView", "UpdateView", "reverse_lazy", "404"]
+minutes = 20

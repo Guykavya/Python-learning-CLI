@@ -1,0 +1,6 @@
+id = "swe.01.p005"
+title = "A commit message linter"
+tier = "drill"
+kind = "code"
+topics = ["commit messages", "linting", "conventions"]
+minutes = 20

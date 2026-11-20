@@ -1,0 +1,6 @@
+- **Keeping the plain memoised recursion.** Correct, but about `n` frames deep: `RecursionError` from about `n = 1000`.
+- **`sys.setrecursionlimit(10**6)`.** The error goes away, but each Python frame also uses C stack, so a very deep recursion can crash the interpreter with a segmentation fault, which no `try` can catch. The test refuses a changed limit.
+- **Greedy.** "Divide by 3 if you can, else by 2, else subtract 1" gives 4 moves for 10; the best is 3 (`10 -> 9 -> 3 -> 1`).
+- **Allowing `i // 2` for odd `i`.** `7 // 2 = 3` is not a legal move from 7.
+- **A table of size `n`.** `f[n]` is out of range; you need indices `0..n`.
+- **Warming the cache with a step bigger than the limit** (for example every 2000). Each warm-up call then recurses too deep itself.

@@ -1,0 +1,6 @@
+id = "dsa.17.p008"
+title = "Iterative DFS on a long chain"
+tier = "applied"
+kind = "code"
+topics = ["iterative dfs", "recursion limit", "trees"]
+minutes = 25

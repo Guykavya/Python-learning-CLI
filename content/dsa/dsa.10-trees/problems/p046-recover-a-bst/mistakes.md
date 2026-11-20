@@ -1,0 +1,6 @@
+- Looking for only one descent: when the two values are far apart there are two descents, and the second wrong node is in the **second** one.
+- Taking the smaller side of the first descent as `first`: the wrong value that sits too early is the larger side.
+- Updating `second` only for the first descent: it must be updated for every descent, so the last one wins.
+- Swapping the **nodes** (pointers) instead of the values: the statement says no pointer may change.
+- Remembering only the two wrong **values**: you must still find the nodes that hold them. Keep `first` and `second` as nodes, then swap their `val` fields.
+- Setting `prev = None` after the loop and then reading it, or forgetting to move `prev` forward.

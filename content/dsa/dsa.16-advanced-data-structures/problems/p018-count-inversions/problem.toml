@@ -1,0 +1,6 @@
+id = "dsa.16.p018"
+title = "Count inversions"
+tier = "applied"
+kind = "code"
+topics = ["fenwick tree", "inversions", "coordinate compression"]
+minutes = 30

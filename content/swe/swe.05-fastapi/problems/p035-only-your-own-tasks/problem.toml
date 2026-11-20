@@ -1,0 +1,6 @@
+id = "swe.05.p035"
+title = "Only your own tasks"
+tier = "applied"
+kind = "code"
+topics = ["authorisation", "ownership checks", "404 versus 403", "dependencies", "IDOR"]
+minutes = 40
