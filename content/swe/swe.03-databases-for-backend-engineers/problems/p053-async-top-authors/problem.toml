@@ -1,0 +1,6 @@
+id = "swe.03.p053"
+title = "Async top authors"
+tier = "deep"
+kind = "code"
+topics = ["async SQLAlchemy", "AsyncSession", "aiosqlite", "selectinload", "lazy loading"]
+minutes = 40

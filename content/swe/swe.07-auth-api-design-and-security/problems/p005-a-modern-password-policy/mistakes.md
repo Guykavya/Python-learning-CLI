@@ -1,0 +1,8 @@
+- **Adding composition rules** ("needs a digit and a symbol"). Current guidance says not to; the tests reject them.
+- **`elif` chains.** Only the first problem is reported, and `"aaa"` should report two.
+- **`username.lower() in password.lower()` without checking `username` is non-empty.** `"" in text` is `True`, so every password is "contains_username".
+- **Comparing the breached list case-sensitively.** `PassWord1234` is the same bad password as `password1234`.
+- **Forgetting the upper limit.** A 10 MB password sent to a slow hash is a cheap attack on your CPU.
+- **`<= 12` for "too short".** Twelve characters is allowed.
+- **Counting bytes.** `len(password.encode())` punishes non-English passwords.
+- **`len(set(password)) == 1` on the empty string.** `set("")` has length 0, so it is safe, but `max()` or indexing tricks (`password[0] * len(password) == password`) crash on `""`.

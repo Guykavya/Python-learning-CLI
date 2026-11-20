@@ -1,0 +1,8 @@
+- **Testing only bob.** A view that is always 404 (like `/closed/`) would pass. The owner's request must also be checked: 200 and the note text.
+- **Testing only alice.** The IDOR is invisible with one user: `/leaky/` also gives alice 200.
+- **Using one user for both requests.** Then no rule about "other people" is tested at all.
+- **Asserting 403 for bob.** The correct view gives **404**, so that a guessed id does not even reveal that the note exists. (A 403 would be the answer of a different design.)
+- **Only checking the status code for bob.** Also check the text is not in the page; a view could answer 404 in a page that still prints the note.
+- **Asserts without messages.** The learner of the next project (you, later) sees `assert 200 == 404` and cannot tell who asked. Say who got which status.
+- **Forgetting to log in again.** After `force_login(alice)` the client stays alice until you call `force_login(bob)`.
+- **A different error than `AssertionError`.** A `KeyError` or `AttributeError` in your check is a bug in the check, not a detected vulnerability.

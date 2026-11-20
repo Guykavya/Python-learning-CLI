@@ -1,0 +1,6 @@
+id = "swe.03.p049"
+title = "Is this migration safe"
+tier = "deep"
+kind = "explain"
+topics = ["migrations", "zero downtime", "expand-contract", "locks", "explain"]
+minutes = 40

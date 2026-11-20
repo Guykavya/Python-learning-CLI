@@ -1,0 +1,5 @@
+- **Reading the grid with `map(int, ...)`.** The rows are text.
+- **Forgetting `+ 1`.** The statement is 1-indexed; Python is 0-indexed.
+- **A row with `\r` at the end** when you used `readline()` without `rstrip()`: the last character is `\r`, and counts or lengths are off by one.
+- **A Python double loop over every cell.** It works for small grids, but 10^6 loop iterations are much slower than one C call per row; use `count` and `find`.
+- **Assuming `n == m`.** Rows and columns are different numbers.

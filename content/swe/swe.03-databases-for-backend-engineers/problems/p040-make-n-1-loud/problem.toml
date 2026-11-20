@@ -1,0 +1,6 @@
+id = "swe.03.p040"
+title = "Make N+1 loud"
+tier = "deep"
+kind = "code"
+topics = ["lazy='raise'", "N+1", "eager loading", "InvalidRequestError"]
+minutes = 35

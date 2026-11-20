@@ -1,0 +1,6 @@
+id = "swe.02.p006"
+title = "Length-prefixed messages"
+tier = "applied"
+kind = "code"
+topics = ["framing", "struct", "UTF-8", "TCP"]
+minutes = 35

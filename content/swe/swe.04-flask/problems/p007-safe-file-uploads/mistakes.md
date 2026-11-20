@@ -1,0 +1,7 @@
+- **`os.path.join(folder, file.filename)`.** With `../../x` the file leaves the folder; with an absolute name the join **discards** the folder.
+- **Checking the extension on the original name** and saving the cleaned one, or the other way round. Check what you save.
+- **`"." in name` missing.** `"txt".rsplit(".")[-1]` is `"txt"`: a file named just `txt` would pass as a text file.
+- **Block-list instead of allow-list** (`!= "py"`). You forget `php`, `html`, `svg`... allow only what you want.
+- **Overwriting silently.** Two users uploading `photo.png` would destroy each other's files.
+- **`request.files["file"]`.** A missing field is a 400 with Flask's HTML page; `.get` plus your own JSON error is clearer.
+- **Setting no `MAX_CONTENT_LENGTH`.** The server happily reads gigabytes.

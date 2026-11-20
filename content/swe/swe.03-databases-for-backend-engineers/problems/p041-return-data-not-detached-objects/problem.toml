@@ -1,0 +1,6 @@
+id = "swe.03.p041"
+title = "Return data not detached objects"
+tier = "applied"
+kind = "code"
+topics = ["Session lifecycle", "DetachedInstanceError", "DTOs", "SQLAlchemy ORM"]
+minutes = 30

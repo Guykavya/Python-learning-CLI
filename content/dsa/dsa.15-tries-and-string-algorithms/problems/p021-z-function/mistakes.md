@@ -1,0 +1,5 @@
+- **`z[i] = z[i - l]` without the cap `r - i`.** The copy is only known up to `r`; beyond it the value can be too large. `aaab` at `i = 2`: the box is `[1, 3)`, `z[1] = 2`, but `z[2]` is 1 (`ab` against `aa`).
+- **Not extending after the copy.** When `z[i - l] >= r - i`, the match may go on past `r`; the `while` loop must run.
+- **Moving the box when `i + z[i] == r`.** Harmless, but the rule is "further right only"; moving it left loses information.
+- **`z[0] = 0`.** The convention here is `z[0] = len(s)`.
+- **Comparing from scratch at every `i`** (the starter): `O(n**2)` on `aaaa...`.

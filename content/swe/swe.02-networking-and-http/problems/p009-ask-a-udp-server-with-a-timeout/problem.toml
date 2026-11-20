@@ -1,0 +1,6 @@
+id = "swe.02.p009"
+title = "Ask a UDP server with a timeout"
+tier = "applied"
+kind = "code"
+topics = ["UDP", "timeouts", "retries", "datagrams"]
+minutes = 35

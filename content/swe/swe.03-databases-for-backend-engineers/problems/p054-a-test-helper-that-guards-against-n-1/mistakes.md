@@ -1,0 +1,6 @@
+- **Raising in `__enter__` or while recording.** Decide at the end, when the count is known.
+- **Hiding the block's own exception.** Check `exc_type is None` first.
+- **A message without the statements.** "5 queries instead of 2" does not tell where.
+- **Not removing the listener** when you raise. Remove it first, then raise.
+- **`<` instead of `<=`.** Exactly `n` queries is allowed.
+- **Returning `True` from `__exit__`.** That would swallow exceptions.

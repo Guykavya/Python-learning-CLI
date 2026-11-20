@@ -1,0 +1,6 @@
+id = "swe.02.p033"
+title = "robots txt and a polite rate limiter"
+tier = "applied"
+kind = "code"
+topics = ["robots.txt", "rate limiting", "polite scraping", "injected clock"]
+minutes = 40

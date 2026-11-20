@@ -1,0 +1,7 @@
+- **Parsing the JSON first** and signing `json.dumps(...)`. The bytes change (spaces, key order), so valid requests fail, or worse, you verify something other than what was sent.
+- **Leaving the timestamp out of the signed text.** A recorded request can then be replayed with any timestamp, forever.
+- **Checking only `now - ts > 300`.** A timestamp far in the future also needs refusing: use `abs()`.
+- **`==` to compare signatures.** The time it takes can reveal how many leading characters are right. Use `hmac.compare_digest`.
+- **`compare_digest` on a `str` with non-ASCII text.** It raises `TypeError`; the attacker controls that header. Encode first and answer `"bad signature"`.
+- **Off by one at the tolerance.** The rule is "refused above 300": exactly 300 is accepted.
+- **Forgetting the dot** between the timestamp and the body.

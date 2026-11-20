@@ -1,0 +1,6 @@
+id = "swe.03.p022"
+title = "Place an order without overselling"
+tier = "applied"
+kind = "code"
+topics = ["transactions", "BEGIN IMMEDIATE", "stock", "atomicity"]
+minutes = 35

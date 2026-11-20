@@ -1,0 +1,6 @@
+id = "swe.04.p024"
+title = "Posts with CRUD and get_or_404"
+tier = "drill"
+kind = "code"
+topics = ["Flask-SQLAlchemy", "CRUD", "get_or_404", "404", "JSON"]
+minutes = 30

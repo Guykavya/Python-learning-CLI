@@ -1,0 +1,6 @@
+id = "swe.05.p005"
+title = "Headers and cookies"
+tier = "drill"
+kind = "code"
+topics = ["Header", "Cookie", "underscore to hyphen", "optional parameters"]
+minutes = 20

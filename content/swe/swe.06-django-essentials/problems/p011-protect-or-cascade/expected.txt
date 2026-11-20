@@ -1,0 +1,5 @@
+1: deleted categories=2 suppliers=2 items=2 movements=5 no_supplier=0
+2: ProtectedError categories=2 suppliers=2 items=2 movements=5 no_supplier=0
+3: deleted categories=2 suppliers=1 items=2 movements=5 no_supplier=2
+4: deleted categories=2 suppliers=1 items=1 movements=3 no_supplier=1
+5: deleted categories=1 suppliers=1 items=1 movements=3 no_supplier=1

@@ -1,0 +1,7 @@
+- **Forgetting `await websocket.accept()`.** The handshake never finishes and the client is refused.
+- **`text == "bye"`** without `strip().lower()`: `"BYE"` and `" bye "` are echoed instead of closing.
+- **`"bye" in text`**: `"bye now"` would close the connection too.
+- **Closing without `return`.** The loop calls `receive_text()` on a closed socket and raises an error.
+- **Sending `"goodbye"` after the close.** Nothing can be sent once the socket is closed: send first, then close.
+- **No `except WebSocketDisconnect`.** Every client that leaves produces an error in the server log.
+- **Forgetting `await`** on `send_text` or `close`: the coroutine is created and never runs.

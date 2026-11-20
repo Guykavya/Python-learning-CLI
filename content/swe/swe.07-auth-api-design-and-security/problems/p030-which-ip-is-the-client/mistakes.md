@@ -1,0 +1,7 @@
+- **Taking `x_forwarded_for.split(",")[0]`** (the left-most entry). This is the value the client controls: an attacker picks a new IP for every request and is never limited.
+- **Trusting the header when `trusted_proxies=0`.** With no proxy of yours in front, the whole header is client input.
+- **Forgetting to add `remote_addr` to the chain.** Then the index is off by one: with one proxy you would return the entry left of the real client.
+- **Forgetting to `strip()`** the spaces after the commas (`" 203.0.113.7"` is not the same text).
+- **Index errors on short headers.** Test `len(chain)` before indexing; fall back to `remote_addr`.
+- **Returning text that is not an IP** (`"unknown"`, empty). Validate with `ipaddress.ip_address` and fall back.
+- **Normalising the address** (changing case or compressing IPv6). Return the entry as written.

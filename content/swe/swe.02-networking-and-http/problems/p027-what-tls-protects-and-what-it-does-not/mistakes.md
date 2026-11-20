@@ -1,0 +1,5 @@
+- **"HTTPS hides which site I visit."** The IP address and the host name remain visible.
+- **"A valid certificate means the site is trustworthy."** It means the site owns that name.
+- **"`verify=False` is fine because the data is still encrypted."** It is encrypted to an attacker who can read it.
+- **Putting tokens in query strings.** URLs are logged, stored in history and sent in `Referer`.
+- **"The padlock means the page is safe."** It means the connection to that host is private, not that the host is harmless.

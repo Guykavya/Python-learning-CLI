@@ -1,0 +1,6 @@
+id = "swe.01.p010"
+title = "Finish a real merge conflict"
+tier = "challenge"
+kind = "code"
+topics = ["merge conflict", "git", "subprocess", "MERGE_HEAD"]
+minutes = 45

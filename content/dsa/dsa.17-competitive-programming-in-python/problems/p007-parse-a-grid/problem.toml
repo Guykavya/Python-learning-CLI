@@ -1,0 +1,6 @@
+id = "dsa.17.p007"
+title = "Parse a grid"
+tier = "applied"
+kind = "code"
+topics = ["grid", "fast input", "sys.stdin"]
+minutes = 20

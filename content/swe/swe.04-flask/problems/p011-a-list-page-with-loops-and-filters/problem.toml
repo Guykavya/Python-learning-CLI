@@ -1,0 +1,6 @@
+id = "swe.04.p011"
+title = "A list page with loops and filters"
+tier = "drill"
+kind = "code"
+topics = ["Jinja", "for loop", "else", "filters", "truncate", "strftime"]
+minutes = 25

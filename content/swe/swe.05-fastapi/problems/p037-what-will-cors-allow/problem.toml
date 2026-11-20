@@ -1,0 +1,6 @@
+id = "swe.05.p037"
+title = "What will CORS allow?"
+tier = "deep"
+kind = "trace"
+topics = ["CORS", "preflight", "CORSMiddleware", "Origin header", "trace"]
+minutes = 25

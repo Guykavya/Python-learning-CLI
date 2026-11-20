@@ -1,0 +1,8 @@
+1: 200 {'user_id': -3, 'limit': 10, 'draft': False, 'tag': None}
+2: 200 {'user_id': 7, 'limit': 3, 'draft': True, 'tag': None}
+3: 200 {'user_id': 7, 'limit': 10, 'draft': False, 'tag': 'py'}
+4: 422 query.limit
+5: 422 path.user_id query.draft
+6: 404
+7: 200 {'user_id': 7, 'limit': 10, 'draft': False, 'tag': 'go'}
+8: 422 query.limit

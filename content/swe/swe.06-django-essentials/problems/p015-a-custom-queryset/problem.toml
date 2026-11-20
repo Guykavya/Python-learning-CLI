@@ -1,0 +1,6 @@
+id = "swe.06.p015"
+title = "A custom QuerySet"
+tier = "applied"
+kind = "code"
+topics = ["QuerySet", "as_manager", "chaining", "related manager"]
+minutes = 20

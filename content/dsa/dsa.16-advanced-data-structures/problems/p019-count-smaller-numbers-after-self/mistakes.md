@@ -1,0 +1,5 @@
+- **`prefix(k + 1)`**: that counts later numbers `<=`, so equal values are counted as smaller.
+- **Scanning from the left**: the tree then holds the earlier numbers, which is p018's question.
+- **Inserting the current number before querying.** It does not change `prefix(k)` (its own rank is not strictly smaller), but the habit breaks as soon as the question becomes `<=`. Query first, then insert.
+- **No coordinate compression** with negative numbers or values up to 10**9.
+- **Slicing for every element** (the starter): `O(n**2)`.

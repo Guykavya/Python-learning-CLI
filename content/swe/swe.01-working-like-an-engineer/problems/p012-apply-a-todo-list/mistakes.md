@@ -1,0 +1,6 @@
+- **Adding a new entry for `squash`/`fixup`.** They meld into the previous commit; the number of resulting commits does not grow.
+- **Forgetting that dropped commits can leave a squash without a target.** `drop A` followed by `squash B` as the first remaining step must fail.
+- **Moving the fixup to the end or beginning of the list.** It goes right after its target.
+- **Matching the target by position.** Match by subject: the target may be many commits earlier.
+- **Losing the order of several fixups** for the same target: use a list per group, appended in input order.
+- **Treating a fixup without a target as an error.** It simply stays a `pick`.

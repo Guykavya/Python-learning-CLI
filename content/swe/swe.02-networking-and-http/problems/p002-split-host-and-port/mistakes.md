@@ -1,0 +1,5 @@
+- **`text.split(":")` for everything.** IPv6 breaks it.
+- **Forgetting that port 0 is not a port you can connect to**, and 65536 is too big.
+- **`int(port_text)` without a digit check.** `int(" 80")`, `int("+80")` and `int("８０")` (full-width digits) all work, so bad ports slip through.
+- **Returning the port as a string.** `socket.create_connection` needs an int.
+- **Keeping the brackets in the host.** `create_connection(("[::1]", 80))` fails; the host is `::1`.

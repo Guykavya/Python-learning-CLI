@@ -1,0 +1,6 @@
+- **Writing 403 for line 3.** `@permission_required("...")` without `raise_exception=True` redirects to the login page even when the user is already logged in (a confusing loop for the user). With `raise_exception=True` it gives 403.
+- **Writing 403 for line 4.** An anonymous visitor is not "forbidden" yet: `PermissionRequiredMixin` first sends them to the login page. Only a logged-in user who lacks the permission gets 403.
+- **Forgetting `?next=`.** The `Location` is `/accounts/login/?next=/panel/`, not just `/accounts/login/`. The path asked for is added.
+- **Writing `/login/` as the login URL.** The default `LOGIN_URL` is `/accounts/login/`.
+- **Adding text after 403 or 302 lines.** Only 200 lines show the body; for a redirect the second part is the `Location`.
+- **Thinking `bob` can also open `/report/`.** He has `change_user`, not `view_user`; permissions are separate.

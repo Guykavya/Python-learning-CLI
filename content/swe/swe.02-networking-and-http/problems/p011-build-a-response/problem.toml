@@ -1,0 +1,6 @@
+id = "swe.02.p011"
+title = "Build a response"
+tier = "drill"
+kind = "code"
+topics = ["HTTP response", "Content-Length", "status line", "bytes vs text"]
+minutes = 25

@@ -1,0 +1,6 @@
+id = "dsa.15.p017"
+title = "Smallest period of a string"
+tier = "applied"
+kind = "code"
+topics = ["prefix function", "border", "period"]
+minutes = 25

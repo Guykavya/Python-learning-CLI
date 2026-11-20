@@ -1,0 +1,6 @@
+id = "swe.03.p006"
+title = "When is a stored total worth it"
+tier = "deep"
+kind = "explain"
+topics = ["denormalisation", "stored totals", "consistency", "explain"]
+minutes = 30

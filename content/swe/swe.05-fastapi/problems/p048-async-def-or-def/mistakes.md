@@ -1,0 +1,6 @@
+- **"`async def` is always faster."** Only when the slow parts are awaited. With a blocking call it is the slowest choice of all.
+- **"`def` endpoints block the server."** They block one worker thread, not the loop.
+- **Thinking `requests` becomes async inside `async def`.** The keyword does not change the library; only `await` on an awaitable gives control back.
+- **Forgetting that the database driver matters.** A normal `Session` blocks; only `AsyncSession` with `await` does not.
+- **Treating file reads as free.** They block too; on a network disk, badly.
+- **`await requests.get(...)`.** A `Response` is not awaitable: a `TypeError`. Use `run_in_threadpool` or an async client.

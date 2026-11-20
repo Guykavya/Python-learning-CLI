@@ -1,0 +1,6 @@
+id = "swe.03.p044"
+title = "Pool arithmetic"
+tier = "deep"
+kind = "trace"
+topics = ["connection pool", "pool_size", "max_overflow", "QueuePool", "trace"]
+minutes = 25

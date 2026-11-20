@@ -1,0 +1,7 @@
+id = "swe.04.p013"
+title = "Predict the inherited page"
+tier = "applied"
+kind = "trace"
+topics = ["template inheritance", "block", "super()", "whitespace control", "trace"]
+minutes = 35
+assessment = "trace"

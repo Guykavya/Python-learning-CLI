@@ -1,0 +1,5 @@
+- **Raw SQL strings.** They work but are not portable; use `op.create_table`.
+- **A forgotten `downgrade`.** `downgrade base` then leaves the table and the next `upgrade` fails with "table exists".
+- **`nullable=False` forgotten.** The tests insert a row with a missing name and expect an error.
+- **Importing the application's models** in a migration. A migration must describe the table **as it was at that revision**, not as the models are today.
+- **`sa.String` with no length** on databases that need one (MySQL).

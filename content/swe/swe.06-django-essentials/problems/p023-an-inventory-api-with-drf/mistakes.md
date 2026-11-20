@@ -1,0 +1,9 @@
+- **Forgetting `return value` in `validate_price`.** The field becomes `None` and the save fails.
+- **`quantity` not read-only.** A client could set stock directly; the test sends `quantity: 999` and expects 0.
+- **No `select_related("category")`.** `category_name` then costs one query per item (N+1).
+- **Forgetting the permission class.** DRF's default permission is "allow anyone", so anonymous users would read and write.
+- **Expecting 401 for the anonymous request.** With the default `SessionAuthentication` first, DRF answers 403.
+- **Router registered without `path("api/", include(router.urls))`.** The URLs are then `/items/`, not `/api/items/`.
+- **Raising a plain `ValueError` in `validate_price`.** Use `serializers.ValidationError`, otherwise the response is a 500, not a 400.
+- **Comparing a string with a number.** In `validate_price` the value is already a `Decimal`; `value <= 0` works.
+- **Checking the error text in your own tests.** Message wording changes between DRF versions; check the status code and the field name.

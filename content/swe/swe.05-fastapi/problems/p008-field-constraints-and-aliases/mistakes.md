@@ -1,0 +1,5 @@
+- **Alias without `populate_by_name`.** Then `{"user_name": ...}` is refused with `missing` at `userName`.
+- **Looking for the error at `["body", "user_name"]`.** Errors use the alias, the name the client sent (or should have sent).
+- **`gt=13` instead of `ge=13`.** A 13-year-old would be refused.
+- **`bio: str = ""` plus a separate `Field(max_length=50)`.** With `Field` as the value, the default goes inside: `Field(default="", ...)`.
+- **`max_length` on an int.** Numbers use `ge/le/gt/lt`; lengths are for strings and lists.

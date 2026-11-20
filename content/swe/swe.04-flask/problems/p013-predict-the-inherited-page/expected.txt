@@ -1,0 +1,12 @@
+--- base.html
+[base head]
+[base content]
+[base footer: demo]
+--- page.html
+[page head] [base head]
+[page content for Asha]
+[base footer: demo]
+--- special.html
+[page head] [base head]
+[special] [page content for Asha]
+DEMO

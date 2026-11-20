@@ -1,0 +1,6 @@
+id = "swe.03.p001"
+title = "Find the update anomaly"
+tier = "drill"
+kind = "code"
+topics = ["normalisation", "update anomaly", "duplicated data"]
+minutes = 15

@@ -1,0 +1,6 @@
+id = "dsa.15.p014"
+title = "Prefix function"
+tier = "applied"
+kind = "code"
+topics = ["prefix function", "border", "amortised analysis"]
+minutes = 25

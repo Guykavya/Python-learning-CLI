@@ -1,0 +1,6 @@
+id = "swe.02.p023"
+title = "Read every page of an API"
+tier = "applied"
+kind = "code"
+topics = ["pagination", "JSON API", "httpx", "loop detection"]
+minutes = 35

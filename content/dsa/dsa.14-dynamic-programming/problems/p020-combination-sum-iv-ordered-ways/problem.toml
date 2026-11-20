@@ -1,0 +1,6 @@
+id = "dsa.14.p020"
+title = "Combination sum IV (ordered ways)"
+tier = "deep"
+kind = "code"
+topics = ["dynamic programming", "coin change", "counting", "sequences", "loop order"]
+minutes = 25

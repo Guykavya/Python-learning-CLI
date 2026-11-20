@@ -1,0 +1,4 @@
+- **Reporting a deeper form first.** Check 1NF, then 2NF, then 3NF; a table with a list in a cell is a 1NF problem even if it also has others.
+- **Calling table 2 a 3NF problem.** The dependency is on part of a composite key: that is 2NF.
+- **Calling table 3 a 2NF problem.** Its key is a single column, so partial dependencies are impossible.
+- **Forgetting `ok` for table 4** or adding a column name to it.

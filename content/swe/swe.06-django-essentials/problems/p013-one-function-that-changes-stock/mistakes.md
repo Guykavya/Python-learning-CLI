@@ -1,0 +1,8 @@
+- **`item.quantity += delta; item.save()`.** Works in a demo, loses updates when two copies of the row exist (the test `two_stale_copies` fails).
+- **An `if` instead of the constraint.** `if item.quantity + delta < 0: raise ...` races with other requests, and does not protect the admin or a script. Also the tests expect `IntegrityError`, not your own exception.
+- **No `transaction.atomic()`.** The `Movement` is created, then the update fails: you have a history line for stock that never moved.
+- **Writing the Movement after the update but outside the block.** If the second write fails, the stock changed without any history.
+- **Catching `IntegrityError` inside the atomic block** and carrying on: the failed update is swallowed, the Movement stays, and on PostgreSQL the transaction is unusable.
+- **`check=` instead of `condition=`** in `CheckConstraint`: `TypeError` in Django 6.
+- **Forgetting `app_label = "shop"`** in a `Meta`: the model is not found in the app registry.
+- **Not refreshing the instance:** the function works, but the caller still sees the old quantity.

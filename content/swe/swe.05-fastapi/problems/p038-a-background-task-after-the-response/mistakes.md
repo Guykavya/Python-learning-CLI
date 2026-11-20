@@ -1,0 +1,6 @@
+- **`background.add_task(send_welcome(outbox, email))`.** The parentheses call the function now (the user waits) and schedule `None`.
+- **Calling `send_welcome` directly in the endpoint.** It works in the test, but every user waits for the mail server, and a failure becomes a 500.
+- **Using `OUTBOX` directly inside `send_welcome`** instead of the outbox passed in. The test's fake is ignored and real mail would be sent from tests.
+- **No `try`/`except` in the task.** The client never hears about it, so the failure is lost unless you log it.
+- **`logger.error(...)` instead of `logger.exception(...)`.** You lose the traceback that says *why* it failed.
+- **Expecting background tasks to survive a restart.** They live in the server's memory only.

@@ -1,0 +1,6 @@
+id = "swe.07.p005"
+title = "A modern password policy"
+tier = "drill"
+kind = "code"
+topics = ["password policy", "NIST guidance", "breached passwords", "validation"]
+minutes = 20

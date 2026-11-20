@@ -1,0 +1,6 @@
+id = "swe.05.p012"
+title = "Discriminated unions"
+tier = "deep"
+kind = "code"
+topics = ["discriminated union", "Literal", "union_tag_invalid", "nested errors", "Pydantic"]
+minutes = 45

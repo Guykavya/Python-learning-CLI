@@ -1,0 +1,10 @@
+1. parse: host=shop.test path=/go
+1. send: GET /go
+1. status: 302
+1. cookie stored: sid
+1. follow: http://shop.test/home
+2. parse: host=shop.test path=/home
+2. send: GET /home Cookie: sid=abc
+2. status: 200
+2. body: 16 bytes
+final: <h1>Welcome</h1>

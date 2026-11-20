@@ -1,0 +1,5 @@
+- **Running the target's `downgrade()` too.** The target revision stays applied.
+- **Upgrading from `0001` in case 1.** The database is already at 0002: only the later ones run.
+- **Listing the downgrades oldest first.** Undo the newest first.
+- **Forgetting `0001` in case 4.** An empty database starts with the first revision.
+- **Reading `-1` as "to 0001" in case 2 and writing `downgrade 0001`.** The function that runs belongs to the revision being removed: `0002`.

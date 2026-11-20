@@ -1,0 +1,6 @@
+id = "swe.07.p026"
+title = "Keyset pagination with an opaque cursor"
+tier = "deep"
+kind = "code"
+topics = ["pagination", "keyset", "cursor", "base64url", "input validation", "stable ordering"]
+minutes = 40

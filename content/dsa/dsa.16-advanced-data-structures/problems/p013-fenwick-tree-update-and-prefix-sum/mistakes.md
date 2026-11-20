@@ -1,0 +1,5 @@
+- **No `+ 1` in `add`.** For `i = 0`, `k & -k` is 0 and the loop never ends.
+- **A `+ 1` in `prefix` too.** Then `prefix(r)` includes `a[r]`: one element too many.
+- **`k -= k & -k` in `add` / `k += k & -k` in `prefix`.** The directions are swapped: the update climbs, the query descends.
+- **`k & k` or `k & (k - 1)` instead of `k & -k`.** `k & (k - 1)` clears the lowest bit (useful in `prefix` as `r = r & (r - 1)`), but it is not the lowbit itself.
+- **Storing plain values in `t`** (`t[k] = a[k - 1]`): `prefix` then needs `O(n)` steps.

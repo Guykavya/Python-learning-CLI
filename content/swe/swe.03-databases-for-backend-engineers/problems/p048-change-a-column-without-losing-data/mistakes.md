@@ -1,0 +1,6 @@
+- **Renaming the column and converting in one revision.** Old code breaks the moment it runs.
+- **`int(price * 100)`** truncates (`99.99 * 100` becomes `9998`); round first.
+- **One `UPDATE` for all rows** on a big table: a long lock. Batch it.
+- **Contracting before the backfill is complete.** `NOT NULL` fails, or data is lost.
+- **A `downgrade` that drops data it cannot rebuild.** Here `price` is rebuilt from `price_paise`, so the rupee values survive a full downgrade.
+- **Forgetting the row written between the steps.** The backfill must cover rows inserted after `0002`.

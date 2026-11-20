@@ -1,0 +1,6 @@
+id = "swe.07.p006"
+title = "A login that does not reveal accounts"
+tier = "applied"
+kind = "code"
+topics = ["login", "user enumeration", "timing", "dummy hash", "dependency injection"]
+minutes = 30

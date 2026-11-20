@@ -1,0 +1,6 @@
+id = "dsa.16.p006"
+title = "Iterative (bottom-up) segment tree"
+tier = "deep"
+kind = "code"
+topics = ["segment tree", "iterative", "non-commutative merge"]
+minutes = 40

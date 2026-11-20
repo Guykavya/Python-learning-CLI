@@ -1,0 +1,7 @@
+id = "swe.01.p018"
+title = "Fix the runner that always says OK"
+tier = "drill"
+kind = "code"
+topics = ["task runner", "exit codes", "CI", "debugging"]
+minutes = 25
+assessment = "fix"

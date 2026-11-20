@@ -1,0 +1,6 @@
+1: /blog/hello/
+2: /blog/archive/2024/
+3: /store/item/7/
+4: /outlet/
+5: NoReverseMatch
+6: NoReverseMatch

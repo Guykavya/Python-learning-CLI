@@ -1,0 +1,7 @@
+id = "swe.06.p008"
+title = "How many queries?"
+tier = "applied"
+kind = "trace"
+topics = ["QuerySet", "lazy evaluation", "result cache", "count", "exists", "first", "queries", "trace"]
+minutes = 25
+assessment = "trace"

@@ -1,0 +1,6 @@
+id = "dsa.15.p002"
+title = "Trie with array nodes"
+tier = "drill"
+kind = "code"
+topics = ["trie", "prefix", "array", "memory"]
+minutes = 20

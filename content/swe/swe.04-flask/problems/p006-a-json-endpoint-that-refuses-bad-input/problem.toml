@@ -1,0 +1,6 @@
+id = "swe.04.p006"
+title = "A JSON endpoint that refuses bad input"
+tier = "applied"
+kind = "code"
+topics = ["get_json", "415", "400", "422", "Location", "validation"]
+minutes = 30

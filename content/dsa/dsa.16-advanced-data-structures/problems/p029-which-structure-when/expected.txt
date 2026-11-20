@@ -1,0 +1,8 @@
+1. highest price in [l, r), prices fixed: sparse table
+2. sales total of [l, r), data fixed: prefix sums
+3. distinct items in [l, r), all questions known: Mo's algorithm
+4. stock edits one slot, total of [l, r): Fenwick tree
+5. sensor edits one reading, lowest in [l, r): segment tree
+6. bonus to a range of players, total of [l, r): two Fenwick trees
+7. discount on a range of items, cheapest in [l, r): lazy segment tree
+8. player joins or leaves, how many scores below x: Fenwick tree

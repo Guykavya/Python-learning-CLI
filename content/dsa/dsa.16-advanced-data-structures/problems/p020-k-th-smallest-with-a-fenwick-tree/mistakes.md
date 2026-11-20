@@ -1,0 +1,6 @@
+- **`t[nxt] <= k`** instead of `< k`: the descent then skips a block that contains the `k`-th item and returns a value one block too far.
+- **Forgetting `nxt <= m`** when `m` is not a power of two: `t[nxt]` is out of range.
+- **Not subtracting `t[nxt]` from `k`** when skipping a block.
+- **Returning `pos + 1`.** That is the 1-indexed position; the value (0-indexed) is `pos`.
+- **`remove` without checking the count**: the count goes negative and every later answer is wrong.
+- **A binary search over `v` with `prefix(v + 1)`** at each step: correct, `O(log**2 m)`, but not the descent the problem asks for.

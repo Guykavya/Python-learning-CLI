@@ -1,0 +1,6 @@
+id = "swe.06.p005"
+title = "Category and Item models"
+tier = "drill"
+kind = "code"
+topics = ["models", "fields", "ForeignKey", "PROTECT", "choices", "DecimalField", "__str__"]
+minutes = 20

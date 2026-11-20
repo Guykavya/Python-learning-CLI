@@ -1,0 +1,6 @@
+id = "dsa.16.p014"
+title = "Fenwick: range sum"
+tier = "drill"
+kind = "code"
+topics = ["fenwick tree", "range sum", "linear build"]
+minutes = 25

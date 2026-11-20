@@ -1,0 +1,6 @@
+id = "swe.03.p035"
+title = "What will the flush do"
+tier = "drill"
+kind = "code"
+topics = ["Session", "unit of work", "flush", "session.new", "session.dirty"]
+minutes = 25

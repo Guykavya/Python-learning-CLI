@@ -1,0 +1,6 @@
+id = "swe.07.p017"
+title = "The authorisation code flow, in order"
+tier = "drill"
+kind = "trace"
+topics = ["OAuth2", "authorization code flow", "PKCE", "state", "message order", "trace"]
+minutes = 20

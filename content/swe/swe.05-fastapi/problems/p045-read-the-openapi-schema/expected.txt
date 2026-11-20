@@ -1,0 +1,4 @@
+GET /tasks | required: - | optional: - | responses: 200
+POST /tasks | required: x-user(header), body | optional: - | responses: 201,422
+DELETE /tasks/{task_id} | required: task_id(path) | optional: force(query) | responses: 204,404,422
+schemas: HTTPValidationError, TaskIn, TaskOut, ValidationError

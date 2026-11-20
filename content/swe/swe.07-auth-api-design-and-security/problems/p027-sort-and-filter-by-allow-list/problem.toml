@@ -1,0 +1,6 @@
+id = "swe.07.p027"
+title = "Sort and filter by allow-list"
+tier = "drill"
+kind = "code"
+topics = ["allow-list", "query parameters", "sort oracle", "validation", "400 errors"]
+minutes = 20

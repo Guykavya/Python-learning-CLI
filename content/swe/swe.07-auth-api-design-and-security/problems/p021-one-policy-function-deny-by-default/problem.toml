@@ -1,0 +1,6 @@
+id = "swe.07.p021"
+title = "One policy function, deny by default"
+tier = "applied"
+kind = "code"
+topics = ["authorisation", "RBAC", "ownership", "deny by default", "policy tables"]
+minutes = 30

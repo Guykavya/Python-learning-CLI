@@ -1,0 +1,6 @@
+id = "swe.06.p013"
+title = "One function that changes stock"
+tier = "applied"
+kind = "code"
+topics = ["transaction.atomic", "F expressions", "CheckConstraint", "IntegrityError"]
+minutes = 25

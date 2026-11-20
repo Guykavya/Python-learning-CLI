@@ -1,0 +1,5 @@
+- **`<post_id>` without `int:`.** The view receives a string and `/post/abc` runs your code. Convert in the rule, not in the view.
+- **`/files/<subpath>`.** The default converter never matches a slash, so `/files/a/b` is 404. Use `<path:subpath>`.
+- **Wrong endpoint name.** `url_for` uses the **function name** (`show_post`), not the URL.
+- **Passing the wrong argument name to `url_for`.** It must be `post_id=`, the name in the rule.
+- **Catching the bad id in the view and returning 200 with an error text.** A missing page is a 404.

@@ -1,0 +1,5 @@
+- **Row `k` built from row 0 directly** (`min(a[i : i + 2**k])`): correct but `O(n * 2**k)` per row.
+- **The second block starting at `r - 2**k + 1`** (closed-range habit): with half-open ranges it starts at `r - 2**k`.
+- **`k = lg[r - l] + 1`**: the blocks are then longer than the range and read outside it, or past the end of the row.
+- **Calling `math.log2` in every query**: slower, and floating-point rounding can give `k` one too small for exact powers of two in some languages.
+- **Using a sparse table for sums**: the overlap is counted twice (p024).

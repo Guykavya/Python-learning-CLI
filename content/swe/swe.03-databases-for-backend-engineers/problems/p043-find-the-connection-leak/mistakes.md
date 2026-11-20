@@ -1,0 +1,5 @@
+- **`conn.close()` only on the happy path.** Every other exit leaks.
+- **`try/except` that logs and re-raises without closing.**
+- **Raising the pool size** to hide the leak. The leak is still there; you only wait longer.
+- **Storing the connection in a global** "to reuse it". The pool does the reusing.
+- **Confusing `close()` with disconnecting.** For a pooled connection it means "give it back".

@@ -1,0 +1,6 @@
+id = "dsa.14.p077"
+title = "Partition to k equal sum subsets (bitmask)"
+tier = "deep"
+kind = "code"
+topics = ["dynamic programming", "bitmask dp", "partition", "state design"]
+minutes = 40

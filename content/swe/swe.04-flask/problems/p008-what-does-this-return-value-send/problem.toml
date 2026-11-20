@@ -1,0 +1,6 @@
+id = "swe.04.p008"
+title = "What does this return value send?"
+tier = "drill"
+kind = "trace"
+topics = ["responses", "return values", "status", "Content-Type", "trace"]
+minutes = 20

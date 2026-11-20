@@ -1,0 +1,6 @@
+id = "swe.05.p031"
+title = "One class with SQLModel"
+tier = "applied"
+kind = "code"
+topics = ["SQLModel", "table models", "input and output schemas", "mass assignment", "StaticPool"]
+minutes = 35

@@ -1,0 +1,6 @@
+id = "swe.07.p029"
+title = "The boundary burst"
+tier = "deep"
+kind = "trace"
+topics = ["rate limiting", "fixed window", "sliding window log", "token bucket", "trace"]
+minutes = 30

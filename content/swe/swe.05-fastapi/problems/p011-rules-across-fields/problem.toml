@@ -1,0 +1,6 @@
+id = "swe.05.p011"
+title = "Rules across fields"
+tier = "applied"
+kind = "code"
+topics = ["model_validator", "cross-field rules", "Literal", "dates", "422"]
+minutes = 35

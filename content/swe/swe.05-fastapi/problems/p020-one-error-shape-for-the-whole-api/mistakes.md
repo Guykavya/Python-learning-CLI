@@ -1,0 +1,6 @@
+- **Registering the handler for `fastapi.HTTPException`.** Your own `raise HTTPException(...)` is caught, but the automatic 404 for an unknown URL and the 405 are not: they keep the old `{"detail": ...}` shape.
+- **Leaving out `details` when it is empty.** A client then has to check whether the key exists. Always send a list.
+- **Dropping the headers.** A 401 without `WWW-Authenticate` breaks clients that rely on it; the envelope must not lose what the exception carried.
+- **Turning `loc` into a string too early** (`"body.priority"`) or cutting off the first part. Here the full list is required; the chapter's example joined it for a different shape.
+- **Using `e["msg"]` in tests or client code to decide what went wrong.** The text can change between Pydantic versions; `type` is the stable part.
+- **Making `NotFound` inherit from `HTTPException`.** Then the business code depends on the web framework, and the domain handler is never needed.

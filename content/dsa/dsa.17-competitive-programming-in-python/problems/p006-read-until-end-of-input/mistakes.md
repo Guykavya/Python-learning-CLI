@@ -1,0 +1,5 @@
+- **Skipping blank lines.** The statement says every line gets an answer, so a blank line is `0`, not "nothing".
+- **`line.split(" ")`.** Splitting on one space leaves empty strings for double or trailing spaces (`int("")` crashes) and keeps `\r`. Use `split()` with no argument.
+- **`int(line)` for a line with several numbers.** Crashes with `ValueError`.
+- **Using `input()` in a `while True` without catching `EOFError`.** The program crashes at the end of the input.
+- **Counting an extra phantom line** because of the final newline. `for line in sys.stdin` and `splitlines()` do not create one; `read().split("\n")` does.

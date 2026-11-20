@@ -1,0 +1,7 @@
+- **Reading the `Authorization` header yourself** with `Header()`. It works, but you must handle "missing" and "not Bearer" yourself, and `/docs` does not learn about the login.
+- **Different messages for "no such user" and "wrong password".** An attacker can then list which usernames exist.
+- **Forgetting the `WWW-Authenticate` header** on your own 401s. `OAuth2PasswordBearer` sends it for a missing token, so your answers would be inconsistent.
+- **Returning the user dict from `/me`.** It contains the hash. Pick the fields (or use a response model, section 7.2).
+- **Calling `int(time.time())` inside `get_current_user`.** Expiry then cannot be tested without waiting 15 minutes; take `now` from `Depends(get_clock)`.
+- **Trusting the token after the user is deleted.** A token stays valid until it expires; always check the user still exists.
+- **403 for a bad token.** 403 means "I know who you are, and you may not". An unknown or broken token is 401.

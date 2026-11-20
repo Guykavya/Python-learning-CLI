@@ -1,0 +1,6 @@
+- **Hashing the hex digest** (`hexdigest()`) instead of the raw bytes, or encoding the hex text in base64. The RFC vector fails.
+- **Leaving the `=` padding.** A 32-byte digest encodes to 44 characters with one `=`; the standard wants 43 without it.
+- **Using `urlsafe_b64encode` without `rstrip`**, or plain `b64encode` (which writes `+` and `/`).
+- **`random` instead of `secrets`.** A predictable verifier lets an attacker guess it and defeats PKCE.
+- **A verifier that is too short** (`token_urlsafe(16)` gives 22 characters): below the 43-character minimum.
+- **`re.match` for validation.** Use `fullmatch`; otherwise `"a" * 43 + " "` slips through.

@@ -1,0 +1,5 @@
+- **Catching `IntegrityError` without a savepoint.** The session is then in a failed state; the next statement raises `PendingRollbackError`.
+- **Calling `session.rollback()` in the `except`.** It also undoes the good users added earlier in the same transaction.
+- **`session.add()` outside the `with begin_nested()`.** The flush at the end of the block is what raises the error.
+- **Counting `added` before the block ends.** Count only after the savepoint was released.
+- **Forgetting `commit()`.** The users vanish when the session closes.

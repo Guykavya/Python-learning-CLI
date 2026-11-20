@@ -1,0 +1,7 @@
+- **Request 5: listing the path and query errors too.** Broken JSON stops the request in step 2, before any validation, so only `json_invalid` is reported.
+- **Counting the JSON position from 1, or guessing.** The position is the number of characters read when the parser gave up; here the text simply ended, at 24.
+- **`body.tags.2` for the item `5`.** List indexes in `loc` count from 0: `["api", 5, "db"]` has `5` at index 1.
+- **Expecting `5` to become `"5"`.** Lax mode converts `"5"` to 5 for an int, but not the other way round.
+- **Request 2: also reporting `tags` or `title`.** Fields with defaults (`tags`) or valid values (`title`) give no error.
+- **Request 4 in the wrong order.** Query errors come before body errors, and body errors follow the model's field order.
+- **`less_than_equal` for priority 0.** 0 is too small: that breaks `ge=1`, so `greater_than_equal`.

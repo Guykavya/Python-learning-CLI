@@ -1,0 +1,6 @@
+id = "dsa.14.p039"
+title = "Rod cutting"
+tier = "drill"
+kind = "code"
+topics = ["dynamic programming", "unbounded knapsack", "rod cutting", "tabulation"]
+minutes = 20

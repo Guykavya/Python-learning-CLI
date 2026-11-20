@@ -1,0 +1,6 @@
+id = "swe.02.p030"
+title = "A resilient JSON client"
+tier = "challenge"
+kind = "code"
+topics = ["retries", "timeouts", "idempotency", "httpx", "backoff"]
+minutes = 70

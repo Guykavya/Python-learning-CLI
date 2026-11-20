@@ -1,0 +1,6 @@
+- **No `Header()` / `Cookie()`.** The value is then read from the query string, and the real header is silently ignored (always `None`).
+- **Naming the parameter `X_Request_ID` or `request_id`.** The Python name is the header name with `_` for `-`; `request_id` would look for a header `request-id`. (Or use `alias=`.)
+- **`x_token: str | None`** for a repeated header: only one value arrives. Use `list[str] | None`.
+- **Forgetting that `TestClient` sends `User-Agent: testclient`.** "No header" in a test needs `del client.headers["user-agent"]`.
+- **`logged_in = bool(session)`.** An empty cookie value `session=` would count as logged out; the statement asks for `session is not None`. Either is defensible, but follow the spec.
+- **Trusting these values.** Headers and cookies are written by the client; a session cookie means something only after the server checks it (section 12).

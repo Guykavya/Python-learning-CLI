@@ -1,0 +1,6 @@
+id = "dsa.17.p013"
+title = "Count the operations"
+tier = "drill"
+kind = "trace"
+topics = ["time complexity", "estimation", "trace"]
+minutes = 20

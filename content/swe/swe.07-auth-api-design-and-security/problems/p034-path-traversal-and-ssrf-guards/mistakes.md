@@ -1,0 +1,9 @@
+- **Looking for `".."` in the text.** It misses `/etc/passwd`, symlinks and encoded forms. Resolve, then compare.
+- **`str(target).startswith(str(base))`.** `/srv/uploads-evil/x` starts with `/srv/uploads`. Use `is_relative_to`.
+- **Not resolving `base`.** If `base` is a symlink or contains `..`, the resolved target never looks "inside" the unresolved base (or the other way round).
+- **Checking the URL text instead of the addresses.** `localtest.example`, `2130706433` and `0x7f000001` look harmless and resolve to loopback.
+- **Checking only the first address** the resolver returns. If one of several is private, reject the URL.
+- **Forgetting IPv6 forms:** `[::1]` and `::ffff:127.0.0.1` (unwrap with `.ipv4_mapped`).
+- **Calling `resolve` before the scheme check.** `file:///etc/passwd` must be refused without any lookup.
+- **Resolving the name a second time when connecting.** Connect to the address you approved.
+- **Raising other exceptions** (`ValueError` from `ip_address`, `OSError` from the resolver) instead of `UnsafeURL`/`PermissionError`.

@@ -1,0 +1,6 @@
+- **"Authorisation means logging in."** Logging in is authentication. Authorisation is what happens after it.
+- **Treating the two words as synonyms.** The chapter asks you to use them exactly.
+- **"HTTPS makes the API secure."** TLS protects traffic on the wire; it does not stop a logged-in user from asking for another user's object (chapter 1.5).
+- **Taking the user id for the audit log from the request body.** The id must come from the authenticated identity; a client can write anything.
+- **Describing the bug without the object.** The point is "this user, this object": the missing check is about **ownership**, not only about roles.
+- **Forgetting "deny by default".** A new endpoint with no rule should refuse, not allow.

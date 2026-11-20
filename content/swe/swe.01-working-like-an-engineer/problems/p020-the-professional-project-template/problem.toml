@@ -1,0 +1,7 @@
+id = "swe.01.p020"
+title = "The professional project template"
+tier = "challenge"
+kind = "code"
+topics = ["project template", "src layout", "pyproject.toml", "automation"]
+minutes = 75
+assessment = "build"

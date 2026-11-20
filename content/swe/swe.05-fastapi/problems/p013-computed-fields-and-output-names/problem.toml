@@ -1,0 +1,6 @@
+id = "swe.05.p013"
+title = "Computed fields and output names"
+tier = "applied"
+kind = "code"
+topics = ["computed_field", "serialization_alias", "model_dump", "by_alias", "exclude_none"]
+minutes = 35

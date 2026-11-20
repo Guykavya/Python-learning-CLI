@@ -1,0 +1,6 @@
+- **A `commit()` after every row.** Slow, and the import is no longer all-or-nothing for unexpected errors.
+- **No outer `BEGIN`.** `RELEASE` of the outermost savepoint then commits.
+- **`db.rollback()` for a bad row.** It throws away the good rows before it.
+- **Forgetting `RELEASE`.** Savepoints pile up inside the transaction.
+- **Catching `Exception`.** A missing table must not look like a bad row.
+- **Starting the line count at 0.** Lines count from 1.

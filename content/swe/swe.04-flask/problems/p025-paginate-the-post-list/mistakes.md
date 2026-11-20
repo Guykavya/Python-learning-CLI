@@ -1,0 +1,7 @@
+- **No `order_by`.** The database may return rows in any order, so pages overlap or miss rows.
+- **`Post.query.paginate(...)`.** The legacy query API; use `db.paginate(db.select(...))`.
+- **`per_page` straight from the client with no cap.**
+- **Building the links by hand** (`"/posts?page=" + str(page + 1)`): they break when the URL changes or when parameters need escaping. Use `url_for`.
+- **Showing a `next` link on the last page.** Check `has_next`.
+- **`error_out=False` everywhere.** Page 999 of 5 returns an empty list with status 200, so broken clients are never noticed.
+- **Loading everything and slicing in Python** (`posts[start:end]`): the whole table is read for every page.

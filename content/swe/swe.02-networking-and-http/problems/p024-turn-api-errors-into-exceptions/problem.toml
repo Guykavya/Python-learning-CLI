@@ -1,0 +1,6 @@
+id = "swe.02.p024"
+title = "Turn API errors into exceptions"
+tier = "drill"
+kind = "code"
+topics = ["API errors", "exceptions", "JSON", "httpx.Response"]
+minutes = 30

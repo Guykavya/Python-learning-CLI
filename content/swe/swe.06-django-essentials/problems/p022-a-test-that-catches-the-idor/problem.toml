@@ -1,0 +1,6 @@
+id = "swe.06.p022"
+title = "A test that catches the IDOR"
+tier = "challenge"
+kind = "code"
+topics = ["testing", "IDOR", "authorisation", "test client", "two actors"]
+minutes = 40

@@ -1,0 +1,6 @@
+- **Verifying only that the backup file exists.** Existence proves nothing.
+- **Restoring over the live database** for the test. Always restore into a fresh file.
+- **Letting `sqlite3.DatabaseError` escape.** A bad backup must raise `RestoreFailed`, the one error your monitoring watches.
+- **Comparing row counts only.** A changed amount keeps the count; add sums.
+- **Interpolating table names without quotes.** A table called `order` (a keyword) breaks the query.
+- **A `NULL` sum.** `SUM` of no rows is `NULL`; use `COALESCE(..., 0)`.

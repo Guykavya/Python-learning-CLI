@@ -1,0 +1,6 @@
+- **Putting "middleware: after" last for `/ok`.** `call_next` returns when the response *starts*; the body and the background tasks come after the middleware has returned.
+- **Commit and close before the background task.** With the default scope, the `yield` cleanup runs when the whole request is finished, after the background tasks (in this FastAPI version).
+- **A "background: audit /fail" line.** Tasks added by an endpoint that raises are dropped with its response.
+- **"dependency: commit" for `/fail`.** The exception is thrown in at the `yield`, so the line after `yield` is skipped and the `except` branch runs.
+- **Middleware after before the rollback for `/fail`.** The 404 response is built only after the dependency has handled the exception.
+- **Trusting an old tutorial.** The cleanup/background order differs between FastAPI versions; run it on yours.

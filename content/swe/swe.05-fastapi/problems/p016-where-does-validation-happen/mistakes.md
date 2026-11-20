@@ -1,0 +1,6 @@
+- **"Type hints do nothing, so validate by hand."** Python ignores them, FastAPI does not: it builds Pydantic validators from the signature.
+- **"A 422 means the server crashed."** The endpoint never ran; it is a client error.
+- **"Username taken is a validation error, so 422."** It needs the database: a business rule, decided in the endpoint, 409.
+- **Saying FastAPI stops at the first error.** It collects every validation error and sends them in one response.
+- **Telling clients to parse `msg`.** Its wording can change; `type` and `loc` are the stable parts.
+- **Mixing up 400 and 422.** FastAPI uses 422 for invalid data; some APIs prefer 400 and change it (section 8.2). Both are client errors.

@@ -1,0 +1,6 @@
+- **`len(text)` instead of `len(text.encode())`.** The reader then waits for bytes that never come, or cuts a multi-byte character in half.
+- **Little-endian by accident** (`"<I"` or `int.to_bytes(4, "little")`). Network byte order is big-endian.
+- **One `recv(4)` for the header.** It may return 1 to 3 bytes; finish the header with a loop.
+- **Treating any close as an error.** A close between two messages is the normal end of the conversation.
+- **No size limit.** A 4-byte header can claim 4 GB.
+- **Decoding before the whole body has arrived.**

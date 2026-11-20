@@ -1,0 +1,6 @@
+id = "dsa.15.p021"
+title = "Z-function"
+tier = "applied"
+kind = "code"
+topics = ["z-function", "z-box", "amortised analysis"]
+minutes = 30

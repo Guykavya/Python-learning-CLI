@@ -1,0 +1,5 @@
+- **`fw.add(r + 1, -v)`** (the closed-range habit): with half-open ranges the add stops **at** `r`.
+- **`fw.prefix(i)` in `get`.** That sums `d[0:i]` and leaves out `d[i]`, so a range add that starts at `i` is missed.
+- **Forgetting the original values.** The tree holds only the changes; add `base[i]`.
+- **Adding `-v` at `r = n`** without a guard: harmless with this `add` (it does nothing past `n`), but an index error with a plain list.
+- **Updating every element** (the starter): `O(r - l)` per add.

@@ -1,0 +1,6 @@
+id = "dsa.17.p005"
+title = "Multiple test cases"
+tier = "applied"
+kind = "code"
+topics = ["multiple test cases", "token reading", "input traps"]
+minutes = 20

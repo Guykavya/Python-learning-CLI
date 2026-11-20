@@ -1,0 +1,7 @@
+- **`Access-Control-Allow-Origin: *` with cookies.** Browsers refuse it, and the "fix" (echo any origin) breaks your security.
+- **`origin.startswith(...)` or `in origin`.** `https://app.example.evil.com` passes.
+- **Forgetting `Vary: Origin`.** Cache poisoning between origins.
+- **No answer to `OPTIONS`.** The router answers 405 or the default OPTIONS reply has no CORS headers, so the browser blocks every non-simple request.
+- **Thinking CORS protects the API.** It only tells browsers what pages may read. Servers still need authentication.
+- **Adding the headers to non-allowed origins "to be friendly".** Then they are allowed.
+- **Refusing the request itself for a bad origin.** Not needed: just withhold the headers.

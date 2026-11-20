@@ -1,0 +1,6 @@
+- **Retrying every exception.** A `ValueError` or a constraint error is a bug or bad data; retrying hides it.
+- **Retrying without rolling back.** The old transaction still holds its locks.
+- **Re-using the same connection after an error.** Take a new one.
+- **Retrying after a successful commit** (for example because `close()` failed). The work would be done twice.
+- **Sleeping after the last attempt**, or a fixed sleep with no growth.
+- **Matching the error by type only.** `OperationalError` also means `no such table`: look at the message.

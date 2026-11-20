@@ -1,0 +1,6 @@
+id = "dsa.15.p019"
+title = "Repeated substring pattern"
+tier = "applied"
+kind = "code"
+topics = ["prefix function", "period", "repetition"]
+minutes = 25

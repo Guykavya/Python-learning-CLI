@@ -1,0 +1,5 @@
+- **Locking in the order `src`, `dst`.** Opposite transfers then lock in opposite orders.
+- **Releasing the first lock before taking the second.** The balance check and the update are no longer atomic.
+- **Sorting the lock objects.** Sort the **ids**; locks cannot be ordered.
+- **Checking the balance before taking the locks.** The balance can change in between.
+- **Forgetting `src == dst`:** taking the same non-reentrant lock twice deadlocks a single thread.

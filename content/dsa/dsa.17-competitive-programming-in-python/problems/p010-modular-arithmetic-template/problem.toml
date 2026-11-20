@@ -1,0 +1,6 @@
+id = "dsa.17.p010"
+title = "Modular arithmetic template"
+tier = "applied"
+kind = "code"
+topics = ["modular arithmetic", "pow", "modular inverse"]
+minutes = 25

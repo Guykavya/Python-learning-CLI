@@ -1,0 +1,7 @@
+- **Different messages** ("No such user" / "Wrong password"), or the same message but a visibly faster answer for unknown users.
+- **Returning early for an unknown user** and skipping the hash: faster, so measurably different.
+- **`next.startswith("/")` only.** `//evil.example` starts with a slash.
+- **Forgetting the backslash.** `/\evil.example` is treated like `//evil.example` by browsers.
+- **Checking the host with `in` or `startswith`** (`"example.com" in next`): `https://example.com.evil.net` passes.
+- **`session.clear()` after setting the user.** It would erase the login.
+- **Clearing only some keys** (`session.pop("cart")`). Clear everything, then set what you need.

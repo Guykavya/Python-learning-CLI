@@ -1,0 +1,6 @@
+id = "swe.02.p031"
+title = "A circuit breaker"
+tier = "deep"
+kind = "code"
+topics = ["circuit breaker", "resilience", "fail fast", "state machine"]
+minutes = 45

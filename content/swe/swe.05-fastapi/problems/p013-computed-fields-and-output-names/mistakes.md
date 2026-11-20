@@ -1,0 +1,6 @@
+- **`@property` without `@computed_field`.** It works as `order.total_paise`, but it is missing from `model_dump()` and from the response.
+- **Decorators in the wrong order.** `@computed_field` goes **above** `@property`.
+- **No return type on the computed field.** Pydantic needs `-> int` to know how to write it and to document it.
+- **`alias="createdAt"` instead of `serialization_alias`.** Then clients must send `createdAt`; the spec keeps `created_at` for input.
+- **`model_dump()` without `mode="json"`.** The date stays a `datetime` object, which `json.dumps` cannot write.
+- **Forgetting `response_model_exclude_none=True`.** The response then contains `"coupon": null`.

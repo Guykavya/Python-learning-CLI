@@ -1,0 +1,6 @@
+id = "swe.03.p054"
+title = "A test helper that guards against N+1"
+tier = "challenge"
+kind = "code"
+topics = ["testing", "N+1", "context managers", "AssertionError", "event listeners"]
+minutes = 45

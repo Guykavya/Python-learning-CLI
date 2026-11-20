@@ -1,0 +1,6 @@
+id = "swe.03.p025"
+title = "Optimistic locking with a version column"
+tier = "applied"
+kind = "code"
+topics = ["optimistic locking", "version column", "lost update", "UPDATE"]
+minutes = 30

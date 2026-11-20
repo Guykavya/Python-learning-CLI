@@ -1,0 +1,5 @@
+- **Expecting `5.5` to become 5.** Pydantic never rounds or truncates silently; a lost fraction is an error.
+- **Expecting `"5"` to be a bool.** Only the boolean words (`true/false`, `yes/no`, `on/off`, `1/0` as text) are accepted; `"5"` is not one.
+- **Expecting `5.0` to be refused by lax `int`.** It has no fraction, so nothing is lost.
+- **Thinking strict `int` accepts `True` "because bool is a subclass of int".** Pydantic's strict mode refuses it on purpose.
+- **Thinking strict `bool` accepts `1`.** Strict means the exact type: only `True` and `False`.

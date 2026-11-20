@@ -1,0 +1,4 @@
+- **"The database ignored my index, so it is broken."** The planner compared costs and the scan was cheaper.
+- **Indexing booleans or columns with few distinct values** on their own.
+- **Forcing the index** (`INDEXED BY`) without measuring: it can make the query slower.
+- **Forgetting statistics.** After big data changes, `ANALYZE` (SQLite) or autovacuum/analyze (PostgreSQL) keeps the estimates honest.

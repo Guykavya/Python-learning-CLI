@@ -1,0 +1,7 @@
+- **`float` for prices.** `0.1 + 0.2` problems; use `Decimal`.
+- **`cell.text` of a missing cell.** `None.text` raises `AttributeError`; check for `None`.
+- **`int()` or `Decimal()` of `"₹1,299.00"`.** It raises `InvalidOperation`: clean the text first.
+- **`"stock" in text` for the stock flag.** `"Out of stock"` contains it; test `startswith("in stock")`.
+- **Not collapsing white space.** The name keeps newlines and the indentation of the HTML source.
+- **Including the header row.** It has no `product` class.
+- **Letting a bad row raise.** One `N/A` must not lose the whole page.

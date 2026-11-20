@@ -1,0 +1,6 @@
+id = "swe.07.p032"
+title = "A payment endpoint that is safe to call twice"
+tier = "challenge"
+kind = "code"
+topics = ["idempotency key", "payments", "retries", "409", "422", "race condition", "threading", "FastAPI"]
+minutes = 75

@@ -1,0 +1,5 @@
+1: 200 | text/html; charset=utf-8 | hello
+2: 201 | text/html; charset=utf-8 | created
+3: 418 | text/plain | teapot
+4: 200 | application/json | {"n":3,"ok":true}
+5: 204 | text/html; charset=utf-8 |

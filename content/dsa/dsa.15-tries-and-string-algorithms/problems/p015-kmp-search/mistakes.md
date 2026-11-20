@@ -1,0 +1,6 @@
+- **`k = 0` after a match.** Overlapping matches are lost: `aaaaa` / `aa` gives `[0, 2]`.
+- **No reset at all after a match.** On the next letter, `pattern[k]` with `k = m` raises `IndexError`.
+- **`start = i + len(pattern)`** in a `find` loop (the starter): that counts non-overlapping matches, like `str.count`.
+- **Building `pi` of the text** instead of the pattern.
+- **Returning `[]` for the empty pattern.** The rule here (like `str.find`) is that `""` occurs at every position, including `len(text)`.
+- **Moving `i` backwards** after a mismatch. KMP never does that; that is the naive search.

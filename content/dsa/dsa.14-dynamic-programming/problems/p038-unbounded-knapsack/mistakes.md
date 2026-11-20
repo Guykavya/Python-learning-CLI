@@ -1,0 +1,5 @@
+- **Looping `w` downwards (the 0/1 loop).** Every item is then used at most once: `unbounded_knapsack([2], [10], 7)` gives 10 instead of 30.
+- **Requiring the bag to be exactly full.** Starting with `g = [-inf] * (W + 1)` and `g[0] = 0` answers "exactly `W`", which is a different question. Here leftover space is allowed, so every cell starts at 0.
+- **Using greedy by value per weight.** `[4, 5]` / `[7, 9]` with `W = 12`: the ratio prefers the 5s (9/5 = 1.8 against 7/4 = 1.75), two of them weigh 10 for 18; three 4s weigh 12 for 21.
+- **Starting the inner loop at 0** without checking `wt[i] <= w`: `g[w - wt[i]]` with a negative index reads from the end of the list.
+- **A recursion for `W = 10**5`.** With a weight-1 item the recursion is 10**5 levels deep. Fill the list.

@@ -1,0 +1,6 @@
+- **Writing `/blog/post/hello/` for line 1.** The pattern is `<slug:slug>/`; the **name** `post` is only a label for `reverse`, it never appears in the URL.
+- **Forgetting the outer prefix.** `item/7/` alone is wrong: every URL from an include starts with the include's prefix (`store/`, `blog/`, `outlet/`).
+- **Line 3: answering `/outlet/item/7/`.** Both includes use the same app name, but the default instance is the one whose instance namespace equals the app name, `shop`, so `/store/`. To reach the other one you must write `outlet:item`.
+- **Line 5: answering `/blog/hello/`.** A name inside a namespace is never visible without it.
+- **Line 6: answering `/store/item/abc/`.** `reverse` checks the value against the converter and refuses anything that would not match.
+- **Writing the error text** (`Reverse for 'post' not found...`). The program prints only the fixed word `NoReverseMatch`.

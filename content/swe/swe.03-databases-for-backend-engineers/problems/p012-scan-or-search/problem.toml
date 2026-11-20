@@ -1,0 +1,6 @@
+id = "swe.03.p012"
+title = "Scan or search"
+tier = "drill"
+kind = "code"
+topics = ["EXPLAIN QUERY PLAN", "indexes", "SCAN", "SEARCH"]
+minutes = 20

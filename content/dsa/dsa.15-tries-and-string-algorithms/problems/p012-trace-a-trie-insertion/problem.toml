@@ -1,0 +1,7 @@
+id = "dsa.15.p012"
+title = "Trace a trie insertion"
+tier = "drill"
+kind = "trace"
+topics = ["trie", "counting", "trace"]
+minutes = 15
+assessment = "trace"

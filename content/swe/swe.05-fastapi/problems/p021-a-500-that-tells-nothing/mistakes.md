@@ -1,0 +1,6 @@
+- **`{"error": str(exc)}` in the response.** Exception messages often contain SQL, file paths, user data or, as here, a password.
+- **`logger.exception(...)` inside the handler.** There is no active exception there, so the record gets no traceback (`exc_info` is `(None, None, None)`). Pass `exc_info=exc`.
+- **Making the id once** (`rid = new_id()` outside the handler). Every crash then shares one id and the log cannot tell them apart.
+- **Using `print` instead of `logging`.** Prints are not collected, filtered or shipped like log records, and `caplog` cannot see them.
+- **A handler for `HTTPException` that returns 500.** 404s and 401s are normal answers, not crashes.
+- **Thinking the handler stops the exception.** Starlette re-raises it after sending your response; that is why `TestClient` needs `raise_server_exceptions=False` to show the 500.

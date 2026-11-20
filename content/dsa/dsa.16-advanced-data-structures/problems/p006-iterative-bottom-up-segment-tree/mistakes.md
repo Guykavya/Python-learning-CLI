@@ -1,0 +1,5 @@
+- **One accumulator** (the starter): the right-hand pieces are appended in the wrong order. Invisible for sums, wrong for strings or matrices.
+- **`resr = f(resr, t[r])`** instead of `f(t[r], resr)`: the right pieces come out reversed.
+- **Taking `t[r]` before stepping `r` back.** With half-open ranges, `r` itself is excluded; the left child to take is `r - 1`.
+- **Building from `1` up to `n - 1`.** Children must be ready first: build from `n - 1` down to `1`.
+- **Assuming `n` is a power of two.** The loop works for any `n`, but only if both pointers start at `l + n` and `r + n`.

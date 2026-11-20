@@ -1,0 +1,7 @@
+- **Leaving `{name}` in a file.** Check every generated file in a test: a forgotten placeholder breaks the install.
+- **Using `str.format` on `tasks.py`.** Its own f-strings contain braces and raise `KeyError`.
+- **A name check that is too weak.** `my-proj` is not importable (`import my-proj` is a syntax error) and uppercase names make a different file on a case-insensitive disk.
+- **Writing the project when the folder exists.** Overwriting someone's work is worse than an error.
+- **`write_text` on Windows**, which changes `\n` to `\r\n`. Write bytes.
+- **No `tests` folder or an empty `src/name`**, so the inner pytest finds nothing (exit code 5) or cannot import the package.
+- **A dependency without a lower bound** in `dev`: it is the same defect that the earlier `check_pyproject` problem reports.

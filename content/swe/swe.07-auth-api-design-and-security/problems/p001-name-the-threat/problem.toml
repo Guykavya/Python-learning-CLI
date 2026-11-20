@@ -1,0 +1,6 @@
+id = "swe.07.p001"
+title = "Name the threat"
+tier = "drill"
+kind = "trace"
+topics = ["STRIDE", "threat modelling", "spoofing", "tampering", "trace"]
+minutes = 15

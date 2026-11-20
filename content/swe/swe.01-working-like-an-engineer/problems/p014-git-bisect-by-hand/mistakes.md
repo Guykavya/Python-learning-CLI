@@ -1,0 +1,5 @@
+- **A linear scan.** It is correct but tests up to `n` commits; the tests count calls.
+- **Testing the endpoints.** You already know them; each call costs a full test run.
+- **Off-by-one at the end.** The answer is `commits[hi]`, the bad one, not `commits[lo]`.
+- **Using `mid = (lo + hi) / 2`** (a float) in Python.
+- **Infinite loop** when `mid` equals `lo` or `hi`: the loop condition `hi - lo > 1` prevents it.

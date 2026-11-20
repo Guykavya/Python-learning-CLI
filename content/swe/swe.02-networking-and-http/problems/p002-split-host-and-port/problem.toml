@@ -1,0 +1,6 @@
+id = "swe.02.p002"
+title = "Split host and port"
+tier = "drill"
+kind = "code"
+topics = ["host and port", "URLs", "IPv6", "default ports"]
+minutes = 20

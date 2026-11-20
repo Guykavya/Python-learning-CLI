@@ -1,0 +1,5 @@
+- **Pre-creating three idle connections.** The pool is empty until the first checkout.
+- **Letting F succeed.** Five connections is the maximum: the sixth waits and times out.
+- **Forgetting that a failed checkout changes nothing.** F is not counted.
+- **Writing `checked_in=1` after checkout G.** G took the idle connection.
+- **Mixing `checkedout` with `overflow`.** Use the two numbers asked for.

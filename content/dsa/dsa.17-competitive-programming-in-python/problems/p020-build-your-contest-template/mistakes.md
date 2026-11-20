@@ -1,0 +1,6 @@
+- **Reading in `__init__` of the module** (for example `data = sys.stdin.read()` at the top level): importing the file blocks waiting for input, and the tests hang.
+- **Naming a method `int` and then calling `int(...)` at class level.** Inside a method body, `int(...)` still means the built-in (class names are not visible there), so the code above is fine; but a line such as `x = int("5")` directly in the class body would find your method. Keep conversions inside methods.
+- **`Out.text()` without the final newline**, or with an empty line when there are no lines.
+- **`make_ncr` building tables for every call** instead of once per `(N, p)`: the returned function must only look values up.
+- **A recursive `tree_depths`** that fails on a path of 200 000 vertices.
+- **Unreachable vertices** must be `-1`, not `0`.

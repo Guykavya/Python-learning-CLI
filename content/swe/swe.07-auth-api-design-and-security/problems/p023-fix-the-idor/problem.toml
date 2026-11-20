@@ -1,0 +1,7 @@
+id = "swe.07.p023"
+title = "Fix the IDOR"
+tier = "applied"
+kind = "code"
+topics = ["IDOR", "BOLA", "object-level authorisation", "scoped queries", "two-actor test"]
+minutes = 30
+assessment = "fix"

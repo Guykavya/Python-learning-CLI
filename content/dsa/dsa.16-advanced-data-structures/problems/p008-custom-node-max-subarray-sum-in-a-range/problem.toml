@@ -1,0 +1,6 @@
+id = "dsa.16.p008"
+title = "Custom node: max subarray sum in a range"
+tier = "deep"
+kind = "code"
+topics = ["segment tree", "custom node", "kadane", "non-commutative merge"]
+minutes = 45

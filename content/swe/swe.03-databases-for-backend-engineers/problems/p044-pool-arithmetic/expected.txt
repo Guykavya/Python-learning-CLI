@@ -1,0 +1,10 @@
+checkout A: checked_out=1 checked_in=0
+checkout B: checked_out=2 checked_in=0
+checkout C: checked_out=3 checked_in=0
+checkout D: checked_out=4 checked_in=0
+checkout E: checked_out=5 checked_in=0
+checkout F: timeout
+return A: checked_out=4 checked_in=1
+checkout G: checked_out=5 checked_in=0
+return B and C: checked_out=3 checked_in=2
+return D: checked_out=2 checked_in=3

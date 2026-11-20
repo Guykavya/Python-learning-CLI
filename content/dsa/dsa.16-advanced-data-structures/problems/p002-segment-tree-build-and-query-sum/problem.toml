@@ -1,0 +1,6 @@
+id = "dsa.16.p002"
+title = "Segment tree: build and query sum"
+tier = "drill"
+kind = "code"
+topics = ["segment tree", "recursion", "range sum"]
+minutes = 25

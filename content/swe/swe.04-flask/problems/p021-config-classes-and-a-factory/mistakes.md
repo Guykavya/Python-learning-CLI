@@ -1,0 +1,6 @@
+- **`from_object` alone.** Mutable values are shared between apps and the class.
+- **`os.environ["SECRET_KEY"]`.** A `KeyError` is not a clear message; `.get` plus your own `RuntimeError` is.
+- **Accepting `change-me` in production.** The default value is public (it is in the source).
+- **Checking the key at the first request**, not at startup.
+- **A random key generated at startup** (`secrets.token_hex()`) in production: every worker and every restart has a different key, so sessions break.
+- **Reading `os.environ` at import time** in `Config` classes: the factory runs later and tests cannot change it.

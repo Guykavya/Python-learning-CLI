@@ -1,0 +1,5 @@
+- **Sorting by `l` only.** The key is `(l // B, r)`: q0 and q2 are in the same block and are ordered by `r`.
+- **Counting a move of the window as one step.** Every single element added or removed is one step.
+- **Forgetting to remove the element at position 0** for q2: the window must be exactly `[1, 3)`.
+- **Counting values instead of distinct values.** `[2, 7)` holds five values but three distinct ones.
+- **Format.** The order prints as a Python list; each question line is `q2 [1,3): moves 4, distinct 2`.

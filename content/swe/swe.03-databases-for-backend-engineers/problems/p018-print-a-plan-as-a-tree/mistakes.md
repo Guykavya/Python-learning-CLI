@@ -1,0 +1,5 @@
+- **Relying on the order of the rows.** A child may arrive before its parent.
+- **Pushing children in id order.** A stack gives the **last** pushed first; push in reverse.
+- **Indenting by the node id.** Indent by the depth in the tree.
+- **A trailing newline** or `\n` at the start for the first line.
+- **Recursion without a thought for deep input.**

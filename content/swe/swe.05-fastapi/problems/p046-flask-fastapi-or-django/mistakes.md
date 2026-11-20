@@ -1,0 +1,6 @@
+- **"FastAPI is the fastest, so always FastAPI."** Speed is rarely the deciding need; an admin, the team's skills or the existing systems usually are.
+- **No trade-off named.** Every choice has a price (weight, missing admin, wiring by hand). Saying it shows judgement.
+- **Ignoring the team and the company.** A two-day tool for a Flask shop is not the moment to learn Django.
+- **Choosing Django for brief 2 only "because it has everything".** The needs are async, real-time and an API contract; say how Django would meet them (Channels, DRF) if you choose it.
+- **Saying Flask cannot do async or WebSockets at all.** It can, with extensions; it is just not built around them.
+- **Forgetting what transfers.** The concepts (HTTP, validation, sessions, auth, tests) are the real skill.

@@ -1,0 +1,5 @@
+- **"Store it, it is faster", without the write cost.** The speed comes from moving work to the writes.
+- **Several places update the total.** One forgotten path and the numbers drift.
+- **No transaction.** A crash between the line change and the total update leaves them different.
+- **No check.** Without a reconciliation query you learn about the drift from a customer.
+- **Doing it before measuring.** A missing index on `order_lines(order_id)` is the usual real cause.

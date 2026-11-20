@@ -1,0 +1,5 @@
+- **Advancing the index after a successful removal.** The next element has moved into position `i`; skipping it can leave a removable element behind.
+- **Stopping after one pass.** An element that was needed earlier may become removable after other removals; repeat until a pass changes nothing.
+- **Modifying the list you were given** (for example `del case[i]`). The caller may want the original failing case.
+- **Returning a list that no longer fails.** Never accept a candidate without calling `fails` on it.
+- **Forgetting the initial check.** Shrinking a case that does not fail returns garbage.

@@ -1,0 +1,6 @@
+id = "swe.02.p019"
+title = "A caching client with ETags"
+tier = "deep"
+kind = "code"
+topics = ["HTTP caching", "ETag", "If-None-Match", "304", "max-age"]
+minutes = 55

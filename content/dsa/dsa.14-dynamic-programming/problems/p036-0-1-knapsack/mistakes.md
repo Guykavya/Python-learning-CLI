@@ -1,0 +1,6 @@
+- **Looping `w` upwards in the one-list version.** `g[w - wt]` has then already been updated for the same item, so the item is taken again and again: `knapsack([2], [10], 7)` gives 30 instead of 10. That is the unbounded knapsack (chapter section 11), a different problem.
+- **Reading the current row in the table**, `f[i][w - wt[i - 1]]` instead of `f[i - 1][...]`. Same bug as above in 2-D form: the item can be reused.
+- **Forgetting to copy `f[i - 1][w]` first.** Then a cell where the item does not fit stays 0, and every later row loses those values.
+- **Off by one between `i` and the item.** Row `i` is about item `i - 1` (row 0 means "no items"). Using `wt[i]` in row `i` skips the first item and runs past the end.
+- **`[[0] * (W + 1)] * (n + 1)`.** All rows are the same list object (chapter section 8, "The aliasing trap"): writing one row writes all of them.
+- **Greedy by value per weight.** dsa.13 showed it fails for the 0/1 knapsack: `[1, 3, 4, 5]` / `[1, 4, 5, 7]` with `W = 7` greedily takes weights 1 and 5 (value 8); the best is 9.

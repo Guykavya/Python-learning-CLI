@@ -1,0 +1,5 @@
+- **`while l % B != 0` without `l < r`**: a short query inside one block runs past `r`.
+- **`while l + B < r`** (strict): a whole block that ends exactly at `r` is added element by element; still correct, more steps.
+- **Recomputing the whole block sum in `update`**: `O(B)` instead of `O(1)`.
+- **`B = n // isqrt(n)` or a fixed `B`**: any `B` near `sqrt(n)` works; `B = 1` or `B = n` brings back the `O(n)` query.
+- **`blocks` for the last, shorter block forgotten**: elements at the end are then missing from whole-block sums.

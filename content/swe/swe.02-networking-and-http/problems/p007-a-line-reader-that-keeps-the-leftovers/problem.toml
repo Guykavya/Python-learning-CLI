@@ -1,0 +1,6 @@
+id = "swe.02.p007"
+title = "A line reader that keeps the leftovers"
+tier = "applied"
+kind = "code"
+topics = ["framing", "delimiters", "buffering", "UTF-8"]
+minutes = 35

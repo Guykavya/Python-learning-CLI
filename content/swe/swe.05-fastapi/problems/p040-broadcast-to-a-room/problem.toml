@@ -1,0 +1,6 @@
+id = "swe.05.p040"
+title = "Broadcast to a room"
+tier = "challenge"
+kind = "code"
+topics = ["WebSocket", "ConnectionManager", "broadcast", "rooms", "WebSocketDisconnect", "fakes"]
+minutes = 50

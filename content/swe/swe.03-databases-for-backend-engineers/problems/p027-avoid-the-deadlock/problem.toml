@@ -1,0 +1,6 @@
+id = "swe.03.p027"
+title = "Avoid the deadlock"
+tier = "deep"
+kind = "code"
+topics = ["deadlock", "lock ordering", "threading", "transfers"]
+minutes = 40

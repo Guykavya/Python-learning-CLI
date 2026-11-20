@@ -1,0 +1,6 @@
+id = "swe.07.p015"
+title = "PKCE by hand"
+tier = "drill"
+kind = "code"
+topics = ["OAuth2", "PKCE", "S256", "base64url", "code verifier"]
+minutes = 15

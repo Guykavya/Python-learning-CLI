@@ -1,0 +1,6 @@
+- **Filling the table row by row from the top.** `f[i][j]` reads `f[i + 1][...]`, the row **below**. Fill by length (or loop `i` from `n - 1` down to 0 and `j` upwards).
+- **`f[i + 1][j - 1] + 2` when `length == 2`.** The inside is empty, but `f[i + 1][j - 1]` is then the cell `f[i + 1][i]`, below the diagonal. It happens to hold 0 in a zero-filled table; reading it in a memoised recursion without a base case for `i > j` crashes or loops.
+- **Confusing subsequence with substring.** `"bbbab"` has the palindromic **substring** `"bbb"` (length 3), but the longest palindromic **subsequence** is `"bbbb"` (length 4), skipping the `a`.
+- **Putting both letters at the front during the walk.** The matching ends go one to the front and one to the back; build `left` and `right` and reverse `right` at the end.
+- **Adding the middle letter twice.** When `i == j` there is one letter, not a pair.
+- **Following the smaller neighbour** when the ends differ. Then the walk gives a palindrome that is too short.

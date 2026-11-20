@@ -1,0 +1,5 @@
+- **Answering `403` for request 3.** The code answers 404 for "not yours" so that ids cannot be probed (chapter 7.5, "the 403 that leaks").
+- **Answering `403` for request 2 ("bad token").** The caller is not identified at all, so it is `401`.
+- **Answering `404` for request 4.** The admin endpoint is not a secret object of another user; the role is missing, which is a `403`.
+- **Writing the status only.** The format is `N: status text`, with the real text of the program.
+- **Forgetting that the dependency runs first.** A request with no token never reaches the order lookup, even if order 1 exists.

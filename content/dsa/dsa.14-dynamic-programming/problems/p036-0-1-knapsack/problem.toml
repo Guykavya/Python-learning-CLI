@@ -1,0 +1,6 @@
+id = "dsa.14.p036"
+title = "0/1 knapsack"
+tier = "drill"
+kind = "code"
+topics = ["dynamic programming", "0/1 knapsack", "tabulation", "rolling array", "loop order"]
+minutes = 25

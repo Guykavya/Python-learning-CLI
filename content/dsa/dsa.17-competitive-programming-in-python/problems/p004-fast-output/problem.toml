@@ -1,0 +1,6 @@
+id = "dsa.17.p004"
+title = "Fast output"
+tier = "drill"
+kind = "code"
+topics = ["fast output", "print", "join"]
+minutes = 15

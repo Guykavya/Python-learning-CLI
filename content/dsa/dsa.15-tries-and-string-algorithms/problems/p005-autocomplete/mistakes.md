@@ -1,0 +1,6 @@
+- **Collecting all matches, then cutting to `k`.** Correct but slow: `suggest("a")` on 5 * 10**4 names visits most of the trie on every call.
+- **Recording the node's name after its children.** Then `mousepad` comes before `mouse`.
+- **Visiting children in insertion order** (dict order) instead of sorted order.
+- **Scanning the whole list for every query** (the starter): `O(n * L)` per call, `10**9` steps for the tests.
+- **Returning duplicates** when a name occurs twice in the input.
+- **`k = 0`**: return `[]`, not one name.

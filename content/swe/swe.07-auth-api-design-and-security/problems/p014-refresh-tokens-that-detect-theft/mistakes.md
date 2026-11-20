@@ -1,0 +1,7 @@
+- **Storing the raw token** as the dictionary key. A leaked database is then a list of working tokens.
+- **Revoking only the reused token**, not the family. The thief keeps the newest token and the attack continues.
+- **Revoking every token of the user.** A second device (another family) is logged out for no reason.
+- **Using `random` or the time** to make tokens: they can be guessed. Use `secrets`.
+- **Marking the token used after issuing the new one** and forgetting to do it at all: the same token then works twice.
+- **Off by one at expiry.** The rule is "refused when `expires < now`", so `now == expires` is still valid.
+- **Calling `time.time()`** inside the class. The tests move the injected clock, they cannot move the real one.

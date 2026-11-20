@@ -1,0 +1,6 @@
+id = "swe.01.p012"
+title = "Apply a todo list"
+tier = "deep"
+kind = "code"
+topics = ["interactive rebase", "autosquash", "todo list", "simulation"]
+minutes = 45

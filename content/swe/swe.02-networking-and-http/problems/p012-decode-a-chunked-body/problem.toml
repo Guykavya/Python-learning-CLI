@@ -1,0 +1,6 @@
+id = "swe.02.p012"
+title = "Decode a chunked body"
+tier = "applied"
+kind = "code"
+topics = ["HTTP", "chunked transfer encoding", "parsing"]
+minutes = 40

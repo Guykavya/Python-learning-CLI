@@ -1,0 +1,6 @@
+id = "swe.04.p020"
+title = "Which line needs a context?"
+tier = "deep"
+kind = "trace"
+topics = ["application context", "request context", "current_app", "url_for", "session", "g", "trace"]
+minutes = 35

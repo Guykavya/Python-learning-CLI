@@ -1,0 +1,5 @@
+- **Thinking `/a` accepts the wrapped `{"item": {...}}`.** With one model the body **is** the model; the extra `item` key is ignored and `name` is missing.
+- **Expecting one error in request 4.** Both `item` and `user` are missing, and FastAPI lists every error.
+- **Forgetting that `embed=True` changes the shape** of `/c` even though it has one model.
+- **Treating `count` in `/d` as a query parameter.** `Body()` makes it part of the JSON body.
+- **Writing the error `loc` as `body.item.name`** for a missing part. When the whole part is missing, the error is at the part (`body.item`), not inside it.

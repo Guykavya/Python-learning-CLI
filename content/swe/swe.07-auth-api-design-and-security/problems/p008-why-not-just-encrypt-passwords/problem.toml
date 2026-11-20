@@ -1,0 +1,6 @@
+id = "swe.07.p008"
+title = "Why not just encrypt passwords?"
+tier = "drill"
+kind = "explain"
+topics = ["encryption", "hashing", "salt", "pepper", "slow hash", "explain"]
+minutes = 25

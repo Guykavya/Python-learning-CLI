@@ -1,0 +1,7 @@
+id = "swe.04.p040"
+title = "A blog platform with login"
+tier = "challenge"
+kind = "code"
+topics = ["project", "Flask", "blueprints", "SQLAlchemy", "authentication", "CSRF", "testing"]
+minutes = 150
+assessment = "build"

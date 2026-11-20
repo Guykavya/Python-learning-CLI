@@ -1,0 +1,6 @@
+id = "dsa.17.p001"
+title = "Read the constraints"
+tier = "drill"
+kind = "code"
+topics = ["constraints", "complexity", "time limit"]
+minutes = 15

@@ -1,0 +1,6 @@
+id = "dsa.17.p006"
+title = "Read until end of input"
+tier = "drill"
+kind = "code"
+topics = ["EOF", "sys.stdin", "whitespace"]
+minutes = 15

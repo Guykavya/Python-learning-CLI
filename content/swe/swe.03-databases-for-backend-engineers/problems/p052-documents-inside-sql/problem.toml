@@ -1,0 +1,6 @@
+id = "swe.03.p052"
+title = "Documents inside SQL"
+tier = "applied"
+kind = "code"
+topics = ["JSON in SQL", "json_extract", "document model", "SQLite"]
+minutes = 35

@@ -1,0 +1,5 @@
+- **Speeding up the inner loop with slicing** (`text[start:start + m] == pattern`). The comparison runs in C and is much faster, but the work is still `O(n * m)`; it only moves the wall.
+- **Skipping ahead by `m` after a mismatch.** Faster, but it misses matches that start inside the skipped part.
+- **Resetting `k = 0` after a match.** Overlapping matches (`aaaa` / `aa`) are lost.
+- **Changing the behaviour** while fixing the speed: the tests compare the new function with the old one on many random inputs.
+- **Recomputing `pi` for every start.** Build it once for the pattern.

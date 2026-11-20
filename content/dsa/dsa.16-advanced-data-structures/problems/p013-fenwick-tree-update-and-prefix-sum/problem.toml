@@ -1,0 +1,6 @@
+id = "dsa.16.p013"
+title = "Fenwick tree: update and prefix sum"
+tier = "drill"
+kind = "code"
+topics = ["fenwick tree", "binary indexed tree", "lowbit", "prefix sum"]
+minutes = 25

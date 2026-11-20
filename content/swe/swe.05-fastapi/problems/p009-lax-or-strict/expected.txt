@@ -1,0 +1,7 @@
+1: lax n=5 ok=error | strict n=error ok=error
+2: lax n=5 ok=error | strict n=error ok=error
+3: lax n=error ok=error | strict n=error ok=error
+4: lax n=error ok=True | strict n=error ok=error
+5: lax n=error ok=True | strict n=error ok=error
+6: lax n=1 ok=True | strict n=1 ok=error
+7: lax n=1 ok=True | strict n=error ok=True

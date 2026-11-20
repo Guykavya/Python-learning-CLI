@@ -1,0 +1,6 @@
+id = "swe.02.p017"
+title = "What should the client do"
+tier = "applied"
+kind = "code"
+topics = ["status codes", "Retry-After", "redirects", "client behaviour"]
+minutes = 40

@@ -1,0 +1,6 @@
+id = "swe.02.p034"
+title = "The mini browser step by step"
+tier = "deep"
+kind = "trace"
+topics = ["mini browser", "redirects", "cookies", "URL parsing", "trace"]
+minutes = 30

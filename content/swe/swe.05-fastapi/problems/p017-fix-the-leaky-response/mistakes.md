@@ -1,0 +1,6 @@
+- **Adding `response_model=UserOut` but leaving `password_hash` in `UserOut`.** The filter keeps declared fields; the hash still leaks.
+- **Deleting `password_hash` from `UserDB` or `FAKE_DB`.** Then nobody can log in. Fix the output, not the storage.
+- **`response_model=UserOut` on the list endpoint.** A list is not one user: FastAPI reports a response validation error (500). Use `list[UserOut]`.
+- **Forgetting `status_code=201`.** A create answers 201.
+- **Popping the key by hand (`d = row.model_dump(); d.pop("password_hash")`).** It works today, but the next endpoint or the next secret field will forget it; a response model is a safety net that cannot be forgotten per field.
+- **Using `UserDB` as the response model.** Never use the storage class as the output class (section 7.2's rule).

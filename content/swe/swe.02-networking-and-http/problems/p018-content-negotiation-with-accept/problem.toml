@@ -1,0 +1,6 @@
+id = "swe.02.p018"
+title = "Content negotiation with Accept"
+tier = "deep"
+kind = "code"
+topics = ["Accept header", "q-values", "content negotiation", "406"]
+minutes = 45

@@ -1,0 +1,6 @@
+id = "swe.03.p051"
+title = "The restore drill"
+tier = "applied"
+kind = "code"
+topics = ["restore", "backup verification", "fingerprint", "integrity_check"]
+minutes = 45

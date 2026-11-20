@@ -1,0 +1,6 @@
+id = "swe.06.p007"
+title = "Stock value per category"
+tier = "applied"
+kind = "code"
+topics = ["annotate", "Sum", "F expressions", "Coalesce", "reverse relations", "order_by"]
+minutes = 25

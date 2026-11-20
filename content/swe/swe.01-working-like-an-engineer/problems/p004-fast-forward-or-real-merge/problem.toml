@@ -1,0 +1,6 @@
+id = "swe.01.p004"
+title = "Fast-forward or real merge"
+tier = "applied"
+kind = "code"
+topics = ["merge", "fast-forward", "ancestors"]
+minutes = 25

@@ -1,0 +1,7 @@
+- **Checking ownership only in `GET`.** `PATCH` and `DELETE` are usually where IDOR does the real damage; the shared dependency makes it impossible to forget one.
+- **403 for someone else's task.** It tells an attacker the id exists. Here both cases must be the same 404.
+- **Different texts** ("Task not found" / "Not your task") with the same 404. The body leaks the same information as a 403.
+- **Taking the owner from the body** (`TaskIn` with an `owner` field, or `data.dict()` copied into the row). Anyone could create tasks in someone else's name.
+- **Listing all tasks** and expecting the front end to hide others' tasks. Anything the API returns, a user can read.
+- **`len(tasks) + 1` or `max(tasks) + 1` for the id.** After a delete, `len + 1` can hand out an id that is still in use and overwrite a task; `max + 1` reuses the id of a deleted task, so an old link or bookmark suddenly shows someone's new task.
+- **Checking after changing.** `task["done"] = ...` before the owner check modifies someone else's task and then answers 404.

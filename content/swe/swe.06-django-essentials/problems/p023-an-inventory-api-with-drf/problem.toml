@@ -1,0 +1,6 @@
+id = "swe.06.p023"
+title = "An inventory API with DRF"
+tier = "applied"
+kind = "code"
+topics = ["DRF", "ModelSerializer", "ModelViewSet", "DefaultRouter", "permissions", "validation", "select_related"]
+minutes = 35

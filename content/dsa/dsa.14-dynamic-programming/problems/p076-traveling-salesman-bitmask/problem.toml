@@ -1,0 +1,6 @@
+id = "dsa.14.p076"
+title = "Traveling salesman (bitmask)"
+tier = "deep"
+kind = "code"
+topics = ["dynamic programming", "bitmask dp", "travelling salesman", "reconstruction"]
+minutes = 45

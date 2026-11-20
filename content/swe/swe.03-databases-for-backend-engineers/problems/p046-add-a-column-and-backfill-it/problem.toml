@@ -1,0 +1,6 @@
+id = "swe.03.p046"
+title = "Add a column and backfill it"
+tier = "applied"
+kind = "code"
+topics = ["Alembic", "data migration", "batch mode", "backfill", "NOT NULL"]
+minutes = 45

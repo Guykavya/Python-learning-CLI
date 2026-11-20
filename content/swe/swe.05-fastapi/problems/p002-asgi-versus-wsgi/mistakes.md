@@ -1,0 +1,5 @@
+- **"ASGI is faster at everything."** It is faster only when requests spend time waiting. CPU-heavy code is not sped up and even blocks other requests.
+- **"WSGI cannot handle two requests at once."** It can, with more threads or processes; the point is that each waiting request holds one of them.
+- **"async means many threads."** The event loop usually runs on **one** thread; it switches tasks at `await` points.
+- **Forgetting `await`.** Calling a blocking function (like `time.sleep` or `requests.get`) inside `async def` blocks the loop just like WSGI.
+- **"WebSockets are just fast HTTP requests."** They are long-lived connections with many messages in both directions; that needs `receive`/`send` that can be called again and again.

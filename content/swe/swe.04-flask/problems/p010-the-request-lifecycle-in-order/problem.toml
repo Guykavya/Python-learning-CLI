@@ -1,0 +1,6 @@
+id = "swe.04.p010"
+title = "The request lifecycle, in order"
+tier = "deep"
+kind = "trace"
+topics = ["lifecycle", "before_request", "after_request", "teardown_request", "error handlers", "trace"]
+minutes = 40

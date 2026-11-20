@@ -1,0 +1,4 @@
+1: body=Hello reuse=yes
+2: body=Wikipedia reuse=yes
+3: body=until the end reuse=no
+4: body=<empty> reuse=yes

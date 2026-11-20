@@ -1,0 +1,6 @@
+id = "swe.02.p014"
+title = "A GET request by hand"
+tier = "applied"
+kind = "code"
+topics = ["HTTP client", "raw sockets", "headers", "Connection: close"]
+minutes = 35

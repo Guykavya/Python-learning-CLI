@@ -1,0 +1,5 @@
+- **Saying step 2 runs a query.** The identity map answers without SQL.
+- **Saying `a is c` is `True` in step 3.** Different sessions have different objects.
+- **Thinking `expire` queries immediately.** It only marks the object; the query waits for the next access.
+- **Forgetting that `commit` expires everything** (by default), so step 5 queries.
+- **Writing `queries = 2` for step 5** because of the commit: `COMMIT` is not a cursor statement in this count.

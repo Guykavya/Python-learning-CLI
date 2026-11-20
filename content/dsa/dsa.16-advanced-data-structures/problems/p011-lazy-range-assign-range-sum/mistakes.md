@@ -1,0 +1,5 @@
+- **`0` as the "no tag" marker** (the starter). Assigning 0 is then forgotten when it should be pushed.
+- **`if tag:` instead of `if tag is not None:`.** Same bug: `0` is falsy.
+- **Adding the tag to the old sum** (copied from range add). An assignment replaces the sum.
+- **Keeping the older tag** when a newer assignment arrives. The newer one wins; the older one is simply overwritten.
+- **Forgetting to push in `query`.**

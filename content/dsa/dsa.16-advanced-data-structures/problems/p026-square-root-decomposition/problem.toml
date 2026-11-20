@@ -1,0 +1,6 @@
+id = "dsa.16.p026"
+title = "Square-root decomposition"
+tier = "applied"
+kind = "code"
+topics = ["sqrt decomposition", "blocks", "range sum"]
+minutes = 30

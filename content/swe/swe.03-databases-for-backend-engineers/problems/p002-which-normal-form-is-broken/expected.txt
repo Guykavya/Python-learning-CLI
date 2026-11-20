@@ -1,0 +1,4 @@
+1: 1NF tags
+2: 2NF product_name
+3: 3NF dept_name
+4: ok

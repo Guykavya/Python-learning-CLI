@@ -1,0 +1,6 @@
+id = "swe.01.p002"
+title = "Where does the change live"
+tier = "drill"
+kind = "trace"
+topics = ["working tree", "index", "git diff", "trace"]
+minutes = 20

@@ -1,0 +1,6 @@
+id = "swe.04.p004"
+title = "One view, two methods"
+tier = "drill"
+kind = "code"
+topics = ["methods", "GET", "POST", "405", "Allow header"]
+minutes = 20

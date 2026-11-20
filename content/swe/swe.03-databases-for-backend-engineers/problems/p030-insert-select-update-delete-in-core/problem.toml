@@ -1,0 +1,6 @@
+id = "swe.03.p030"
+title = "Insert select update delete in Core"
+tier = "drill"
+kind = "code"
+topics = ["SQLAlchemy Core", "insert", "select", "update", "delete", "transactions"]
+minutes = 30

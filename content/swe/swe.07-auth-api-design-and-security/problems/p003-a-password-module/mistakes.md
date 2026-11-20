@@ -1,0 +1,8 @@
+- **A fixed salt, or no salt.** Two equal passwords then give equal strings, and one lookup table cracks everyone. Call `os.urandom(16)` inside `hash_password`.
+- **Using `random` for the salt.** `random` is not meant for security. Use `os.urandom` or `secrets`.
+- **Verifying with the constants `N, R, P` instead of the numbers in the string.** Old hashes then stop working the day you change the cost.
+- **`==` to compare digests.** It works, but it is not constant time. Use `hmac.compare_digest`.
+- **Forgetting `maxmem`.** With `n=2**15` or more, Python raises `ValueError: memory limit exceeded`, and your `except` quietly turns every login into `False`.
+- **Letting `verify_password` raise on a bad string.** A corrupted row in the database must mean "no", not a crash that shows a stack trace to the user.
+- **Keeping the salt in a separate place from the digest.** One string with every part cannot get out of step.
+- **Printing or logging the stored string with the password.** Never log either of them (chapter 15.6).

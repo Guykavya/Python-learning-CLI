@@ -1,0 +1,6 @@
+- **Line 1: writing `0`.** `default` does not look at "missing", it looks at "false". `0` counts as false.
+- **Line 2: `HELLO WO...` or `HELLO WOR…`.** The ellipsis is part of the length: 7 letters plus the `…` character make 8. Django uses the single character `…`, not three dots.
+- **Line 3: `09/03/2026` or `2026-3-9`.** The format letters in the string decide: `Y` four digits, `m` and `d` with leading zeros, `-` copied as is.
+- **Line 5: writing `None` or an error.** A missing variable gives an empty string; the line still has its brackets.
+- **Line 6: the same text twice.** The first expression is escaped, the second is not. Both come from the same variable.
+- **Putting spaces inside the brackets that are not in the output.** Only line 4 and line 6 contain a space.

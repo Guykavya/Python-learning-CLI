@@ -1,0 +1,6 @@
+- **A leaf `(v, max(v, 0), ...)`.** That allows the empty piece; `best(1, 2)` of `[2, -5, ...]` must be -5, not 0.
+- **Identity `(0, 0, 0, 0)`.** Same problem: it pretends an empty piece with sum 0 exists.
+- **`best_prefix = max(x.prefix, y.prefix)`.** A prefix of the joined range starts at the left end; it cannot be a prefix of `y` alone, it must include all of `x`.
+- **Forgetting the crossing piece** in `best`.
+- **One accumulator in the iterative query**: pieces taken on the right are merged in the wrong order.
+- **Kadane over the range** (the starter): correct but `O(r - l)`.

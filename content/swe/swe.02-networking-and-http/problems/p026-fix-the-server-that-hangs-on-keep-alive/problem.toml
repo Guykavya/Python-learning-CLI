@@ -1,0 +1,7 @@
+id = "swe.02.p026"
+title = "Fix the server that hangs on keep-alive"
+tier = "deep"
+kind = "code"
+topics = ["keep-alive", "Content-Length", "framing", "debugging"]
+minutes = 40
+assessment = "fix"

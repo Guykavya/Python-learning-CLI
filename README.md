@@ -18,14 +18,14 @@ data structures and algorithms alongside.
 
 The syllabus has **92 modules, and every one of them has its chapter** (about 250,000 lines of
 book-style text with worked examples, common traps and summaries). **Problems** with automatic
-tests are written module by module and exist today for the first part of the path:
+tests are written module by module. They exist today for the core, shared, and DSA tracks, and for the first seven software engineer modules:
 
 | Track | Modules | Chapters | Modules with problems | Problems written / planned |
 |---|---|---|---|---|
 | Core Python | 24 | 24 | 24 | 1,075 / 1,075 |
 | Shared (SQL, data pipelines) | 2 | 2 | 2 | 105 / 105 |
-| DSA | 18 | 18 | 7 | 310 / 785 |
-| Software engineer | 11 | 11 | 0 | 0 / 375 |
+| DSA | 18 | 18 | 18 | 785 / 785 |
+| Software engineer | 11 | 11 | 7 | 260 / 375 |
 | Data analyst | 13 | 13 | 0 | 0 / 510 |
 | Data scientist | 10 | 10 | 0 | 0 / 400 |
 | AI/ML engineer (deep learning) | 7 | 7 | 0 | 0 / 220 |

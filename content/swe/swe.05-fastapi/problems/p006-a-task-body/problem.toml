@@ -1,0 +1,6 @@
+id = "swe.05.p006"
+title = "A task body"
+tier = "drill"
+kind = "code"
+topics = ["request body", "Pydantic model", "status_code 201", "422", "json_invalid"]
+minutes = 25

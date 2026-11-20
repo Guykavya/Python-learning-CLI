@@ -1,0 +1,6 @@
+id = "swe.01.p011"
+title = "Predict an interactive rebase"
+tier = "deep"
+kind = "trace"
+topics = ["interactive rebase", "squash", "fixup", "reword", "drop", "trace"]
+minutes = 30

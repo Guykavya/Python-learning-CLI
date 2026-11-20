@@ -1,0 +1,6 @@
+id = "swe.05.p048"
+title = "`async def` or `def`?"
+tier = "applied"
+kind = "explain"
+topics = ["async def", "def", "event loop", "thread pool", "blocking I/O", "explain"]
+minutes = 30

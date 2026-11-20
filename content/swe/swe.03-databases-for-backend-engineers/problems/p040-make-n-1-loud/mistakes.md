@@ -1,0 +1,5 @@
+- **Removing `lazy="raise"` from the models** to make it work. The point is to keep the strictness.
+- **Loading only one of the two relationships.** The other raises when accessed.
+- **Catching `InvalidRequestError` in the report.** That hides the bug the setting exists to reveal.
+- **`session.refresh(order, ["lines"])` per order.** That is N+1 again, written by hand.
+- **More than 2 statements** by using `selectinload` for both (3 statements); `joinedload` for the many-to-one link is cheaper.

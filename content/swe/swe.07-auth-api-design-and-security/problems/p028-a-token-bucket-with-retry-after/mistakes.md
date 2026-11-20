@@ -1,0 +1,8 @@
+- **Calling `time.time()` inside the class.** The tests use a fake clock; use the `clock` you were given.
+- **Starting empty.** A new bucket is full, so the first `capacity` requests pass.
+- **No cap.** Without `min(capacity, ...)` a long idle time stores unlimited tokens and allows a huge burst.
+- **Rounding down** (`int(...)`) for `Retry-After`: the client comes back too early. Use `math.ceil`.
+- **Returning `0` for a refusal** when less than a second is missing (`0.5` seconds becomes `0`). The ceiling makes it `1`.
+- **Taking a token even when refused** (`tokens -= 1` before the check): the bucket goes negative and the wait grows with every refused call.
+- **Forgetting to update `last`** after a refill: the same elapsed time is counted again on the next call.
+- **Header as a number.** HTTP headers are text: `str(wait)`.

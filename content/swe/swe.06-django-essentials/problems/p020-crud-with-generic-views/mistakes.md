@@ -1,0 +1,8 @@
+- **No `template_name`:** `TemplateDoesNotExist: shop/item_list.html`. The default name is built from the app label and the model; here the templates have other names.
+- **`success_url = reverse("item_list")`:** fails at import time. Use `reverse_lazy`.
+- **`success_url = "/items"`** (no final slash): the redirect works but goes through a second redirect (`APPEND_SLASH`); the test expects `/items/`.
+- **Forgetting `fields`** on `CreateView`/`UpdateView`: `ImproperlyConfigured: Using ModelFormMixin ... without the 'fields' attribute is prohibited.`
+- **`fields = "__all__"`:** every column becomes editable, including ones you add later.
+- **`pk` vs `id` in the URL:** the generic views look for a kwarg called `pk` (or `slug` with `slug_field`). `<int:id>` gives a `AttributeError ... must be called with either an object pk or a slug`.
+- **Catching `DoesNotExist` yourself** in a `get_object` override: you turn a clean 404 into a 500 or a wrong 200.
+- **Misspelling `ordering`** or giving a string with a list in mind (`ordering = "name"` works but `ordering = ["name"]` is the usual form).

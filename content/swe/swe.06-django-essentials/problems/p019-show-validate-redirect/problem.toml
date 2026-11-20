@@ -1,0 +1,6 @@
+id = "swe.06.p019"
+title = "Show, validate, redirect"
+tier = "applied"
+kind = "code"
+topics = ["forms in views", "POST/redirect/GET", "CSRF", "ModelForm", "redirect"]
+minutes = 25

@@ -1,0 +1,6 @@
+- **`self.end < self.start`.** A booking with `end == start` has zero nights and must be refused: use `<=`.
+- **Forgetting `return self`.** In "after" mode the validator must return the model.
+- **Using `mode="before"`.** Then you get the raw dict with strings, not dates, and fields may be missing.
+- **Expecting the loc `["body", "end"]`.** A model validator's error belongs to the whole object: `["body"]`.
+- **Expecting the cross-field error together with a field error.** The after-validator only runs when all fields are valid.
+- **Hard-coding `if self.room == "double" and self.guests > 4`.** It works, but the `MAX_GUESTS` table keeps the rule in one place when a new room type arrives.

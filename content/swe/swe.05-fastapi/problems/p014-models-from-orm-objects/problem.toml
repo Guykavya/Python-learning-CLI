@@ -1,0 +1,6 @@
+id = "swe.05.p014"
+title = "Models from ORM objects"
+tier = "drill"
+kind = "code"
+topics = ["from_attributes", "model_validate", "response_model", "ORM objects", "nested models"]
+minutes = 25

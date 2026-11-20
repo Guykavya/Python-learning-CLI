@@ -1,0 +1,7 @@
+id = "swe.05.p017"
+title = "Fix the leaky response"
+tier = "applied"
+kind = "code"
+topics = ["response_model", "password hash", "data leak", "status_code 201", "security fixes"]
+minutes = 35
+assessment = "fix"

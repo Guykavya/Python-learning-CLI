@@ -1,0 +1,8 @@
+- **`request_path.startswith(cookie_path)` only.** `/shopping` then receives the `/shop` cookie.
+- **Splitting the first piece with `split("=")`.** A value such as `abc==` breaks; use `partition("=")`.
+- **Sending a `Secure` cookie over `http`.**
+- **Treating `Domain` as honoured.** Here every cookie is host-only; `sub.shop.test` does not get the cookie of `shop.test`.
+- **Deleting by `Max-Age=0` only for existing cookies and then storing it anyway.** `Max-Age <= 0` must not create a cookie.
+- **Putting a replaced cookie at the end.** The statement keeps its place in creation order.
+- **Forgetting that `now >= expires` means expired.** At the exact second it is gone.
+- **Sorting by path length descending without a stable sort.** Equal paths must keep creation order.

@@ -1,0 +1,6 @@
+- **No `rollback()` in the `except` branch.** The next use of the session raises `PendingRollbackError`.
+- **Rolling back after the query.** The query is the first use: roll back first.
+- **Catching `Exception`.** A typo (`AttributeError`) would be reported as "username taken". Catch `IntegrityError` only.
+- **Checking with `SELECT` and not handling `IntegrityError`.** Two simultaneous requests can both pass the check.
+- **Returning a 500 for something a user can cause.** Duplicates are a 409 (or a form error).
+- **Assuming "the session is removed anyway".** Not inside a long app context, a shell, a worker, or a test.

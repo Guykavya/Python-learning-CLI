@@ -1,0 +1,6 @@
+id = "dsa.16.p010"
+title = "Lazy propagation: range add, range sum"
+tier = "challenge"
+kind = "code"
+topics = ["segment tree", "lazy propagation", "range update", "range sum"]
+minutes = 50

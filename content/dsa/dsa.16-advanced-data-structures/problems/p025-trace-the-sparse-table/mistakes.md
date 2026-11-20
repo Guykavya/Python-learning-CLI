@@ -1,0 +1,5 @@
+- **Row 2 built from neighbouring entries of row 1** (`min(row1[i], row1[i + 1])`): that gives blocks of length 3. The step for row `k` is `2**(k - 1)`.
+- **Wrong row lengths.** Row `k` has `n - 2**k + 1` entries: 8, 7, 5, 1.
+- **Second block at `r - 2**k + 1`.** With half-open ranges it starts at `r - 2**k`.
+- **`lg[6] = 3`.** `lg` rounds down: `2**2 = 4 <= 6 < 8`.
+- **Format.** Rows print as `k [list]`; queries as `l r k = .. blocks at .. .. -> answer`, with single spaces.

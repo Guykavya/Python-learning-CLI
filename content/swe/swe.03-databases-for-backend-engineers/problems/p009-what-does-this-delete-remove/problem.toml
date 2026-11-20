@@ -1,0 +1,6 @@
+id = "swe.03.p009"
+title = "What does this DELETE remove"
+tier = "drill"
+kind = "trace"
+topics = ["ON DELETE", "CASCADE", "SET NULL", "RESTRICT", "foreign keys", "trace"]
+minutes = 25

@@ -1,0 +1,6 @@
+id = "swe.01.p015"
+title = "reset soft mixed and hard"
+tier = "drill"
+kind = "trace"
+topics = ["git reset", "index", "working tree", "trace"]
+minutes = 25

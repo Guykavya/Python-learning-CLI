@@ -1,0 +1,6 @@
+- **Keeping one `date.today()` in an endpoint.** The override then has no effect there, and the test passes or fails depending on the real date.
+- **Overriding the wrong function.** `dependency_overrides` is keyed by the exact function object used in `Depends(...)`. A second, separate `get_clock` (or a lambda written inside `Depends`) cannot be overridden from the test.
+- **Reading the environment once at import** (`GRACE = int(os.environ[...])` at the top of the file). The value is frozen before a test can set it.
+- **`>=` instead of `>`.** On the last day of the grace period the task is not overdue yet.
+- **Adding the grace to `days_left`.** Grace changes the verdict, not how many days remain until the due date.
+- **Forgetting to clear the overrides after a test.** The next test then silently runs with the old fake date; the fixture's `finally` prevents that.

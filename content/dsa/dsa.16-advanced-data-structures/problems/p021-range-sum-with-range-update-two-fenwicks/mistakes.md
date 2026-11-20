@@ -1,0 +1,5 @@
+- **`b2.add(r, -v * l)`** (copying the `l` factor): the second tree stores `j * d[j]`, and the change at `r` has `j = r`.
+- **`(p - 1) * b1.prefix(p)`**: the count of `d[j]` in the first `p` elements is `p - j`, so the factor is `p`.
+- **Forgetting the original values** (`base`).
+- **Updating at `r + 1`** (closed-range habit) instead of `r`.
+- **A single Fenwick tree over `d`.** That answers point values (p015), not range sums.

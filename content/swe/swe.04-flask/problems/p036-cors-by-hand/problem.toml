@@ -1,0 +1,6 @@
+id = "swe.04.p036"
+title = "CORS by hand"
+tier = "deep"
+kind = "code"
+topics = ["CORS", "preflight", "Origin", "Vary", "credentials", "after_request"]
+minutes = 45

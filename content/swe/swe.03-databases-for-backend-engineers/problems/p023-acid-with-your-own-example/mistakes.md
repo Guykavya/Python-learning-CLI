@@ -1,0 +1,5 @@
+- **"Consistency means the data is the same everywhere."** That is replication. In ACID it means the rules (constraints) hold.
+- **"Isolation means one user at a time."** It means each transaction behaves as if alone, while many run.
+- **"Durability means backups."** It means a committed change survives a crash; backups protect against other losses.
+- **Forgetting the log.** Durability is achieved by writing the log first and flushing it.
+- **Giving no failure example.** Each letter exists because of a concrete failure.

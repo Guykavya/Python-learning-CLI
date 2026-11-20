@@ -1,0 +1,13 @@
+- **Fixing a test instead of the app.** The tests describe the correct behaviour; if one fails, read its message and change the app.
+- **Making the legitimate flow fail.** A server that returns `401` for everything passes the "attacker" tests and fails the "owner still works" tests. Fix the check, not the feature.
+- **Throttle by counting all attempts,** or by counting with `time.time()`. Count only failures, and use `clock()`.
+- **A `404` for unknown names but a different message or status for wrong passwords** (or a `429` only for real names): each difference tells the attacker something.
+- **Relying on PyJWT's `exp` check.** It uses the real clock, so the injected clock never expires the token. Use `verify_exp: False` and compare yourself.
+- **Using `time.time()` inside the app** anywhere in a time rule. The tests move `clock` only.
+- **A secret that is long but written in the source code** (the tests cannot see that, a review can): read it from the environment in real life.
+- **`WHERE id = ?` only,** then comparing `owner_id` in Python after the row is loaded: works, but easy to forget on the next endpoint. Put the owner in the query.
+- **Replaying a payment with a new `payment_id`,** or charging first and checking the key afterwards.
+- **Checking the redirect host with `in` or `startswith`** (`"shop.example" in next`): `https://shop.example.evil.example/` passes.
+- **Error handlers only for `HTTPException` from FastAPI.** Unknown routes raise Starlette's exception, and validation errors and crashes need their own handlers.
+- **Putting the exception text in the 500 body** (`str(exc)` can contain SQL, paths or passwords).
+- **Logging the token or the typed password** "just for debugging".

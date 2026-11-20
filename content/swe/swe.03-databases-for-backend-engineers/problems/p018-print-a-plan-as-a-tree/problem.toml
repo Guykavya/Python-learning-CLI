@@ -1,0 +1,6 @@
+id = "swe.03.p018"
+title = "Print a plan as a tree"
+tier = "drill"
+kind = "code"
+topics = ["EXPLAIN QUERY PLAN", "trees", "iteration"]
+minutes = 25

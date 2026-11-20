@@ -1,0 +1,5 @@
+- **Creating a node for `te` on the third insert.** The node exists; only counts change.
+- **Counting the root as a new node, or forgetting it in the total.** The program starts at `nodes = 1` for the root, and the root's counts are never printed.
+- **Adding to the pass count only at the last node.** Every node stepped into gets `+1`.
+- **Counting the second `tea` once.** Pass and end counts count repeats: `tea` has end count 2.
+- **Format.** The f-string prints `insert tea: new 3, nodes 4` with a colon after the word and a comma after the number of new nodes; the last lines are `prefix pass end` separated by single spaces.

@@ -1,0 +1,6 @@
+id = "dsa.16.p001"
+title = "Prefix sums and why they stop working"
+tier = "drill"
+kind = "code"
+topics = ["prefix sums", "range query", "cost of updates"]
+minutes = 20

@@ -1,0 +1,6 @@
+id = "swe.03.p032"
+title = "Close the injection hole"
+tier = "drill"
+kind = "code"
+topics = ["SQL injection", "bound parameters", "text()", "SQLAlchemy"]
+minutes = 25

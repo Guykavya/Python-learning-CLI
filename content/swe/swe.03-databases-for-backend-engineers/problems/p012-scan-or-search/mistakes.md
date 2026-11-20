@@ -1,0 +1,5 @@
+- **Comparing the whole line.** The wording changes between SQLite versions; check for the word.
+- **Looking at `row[0]`.** The text is in `row[3]`.
+- **Running the query instead of its plan.** The test would take as long as the slow query.
+- **Treating `SCAN ... COVERING INDEX` as a search.** It reads the whole index.
+- **Forgetting the parameters.** The plan needs them for `?` placeholders.

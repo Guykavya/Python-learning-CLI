@@ -1,0 +1,8 @@
+1: 308 http://localhost/about/
+2: 200 about
+3: 404
+4: 302 /new
+5: 301 /new
+6: 404
+7: 405
+8: 200 saved

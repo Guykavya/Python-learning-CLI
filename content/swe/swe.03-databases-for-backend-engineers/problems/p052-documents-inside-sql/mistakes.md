@@ -1,0 +1,5 @@
+- **Pasting the key into the SQL or into a JSON path** (`f"json_extract(attrs, '$.{key}')"`). Injection, and breakage for keys with dots or quotes.
+- **`LIKE '%"color": "red"%'` on the text.** It matches inside other fields and depends on spacing.
+- **Comparing a bool as the text `"true"`.** `json_extract` yields `1` for `true`.
+- **Treating `NULL` values as matches.** A missing key must not match.
+- **Not sorting.** The tests expect ids in ascending order.

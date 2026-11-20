@@ -1,0 +1,9 @@
+- **A CSRF token that is created only in some pages.** Every form (including login and logout) must print `csrf_token()`.
+- **Reusing the old token after login.** `session.clear()` removes it; the next page creates a new one (the tests read a fresh token from a page each time).
+- **Checking the login only.** Without `get_post_for_edit` any logged-in user can edit any post.
+- **N+1 on the home page.** `post.author.username` in the template triggers one query per post unless the authors are loaded with the posts.
+- **No `rollback()` after a duplicate username.** The next request fails or the form crashes.
+- **`|safe` or f-string HTML** for titles and bodies. Autoescape is the XSS defence.
+- **Redirecting to `request.args["next"]` unchecked.**
+- **Different messages for unknown user and wrong password.**
+- **Starting with everything at once.** Build and test one layer at a time; the order in the hints exists for a reason.

@@ -1,0 +1,6 @@
+id = "swe.03.p033"
+title = "Map the shop models"
+tier = "drill"
+kind = "code"
+topics = ["SQLAlchemy ORM", "Mapped", "relationship", "cascade", "back_populates"]
+minutes = 35

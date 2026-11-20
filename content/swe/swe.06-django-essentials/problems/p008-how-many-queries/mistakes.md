@@ -1,0 +1,7 @@
+- **Counting a query on lines 1 and 2.** Building and slicing a QuerySet never touches the database.
+- **Writing the number of queries *caused by* each line** (`0 0 1 1 0 0 1 0`) instead of the running total. The program prints `len(ctx)`, which is cumulative.
+- **Line 3: thinking `count()` loads the rows.** It runs `COUNT(*)` only, so the loop on line 4 still needs its own query.
+- **Line 5 or 6 as a new query.** After the first full evaluation, loops and `len()` use the cache.
+- **Line 7: assuming it shares the cache of `qs`.** A new QuerySet starts empty, and `exists()` always asks the database when nothing is loaded.
+- **Line 8: expecting `first()` to always query.** `first()` on an ordered, already loaded QuerySet reads its cache. On an unloaded one it runs `SELECT ... LIMIT 1`.
+- **Counting the `create()` calls.** The four inserts happen before the `with` block starts.

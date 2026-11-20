@@ -1,0 +1,6 @@
+id = "swe.05.p021"
+title = "A 500 that tells nothing"
+tier = "deep"
+kind = "code"
+topics = ["500 errors", "catch-all exception handler", "logging", "request id", "information leaks"]
+minutes = 45

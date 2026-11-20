@@ -1,0 +1,6 @@
+id = "swe.02.p016"
+title = "Safe idempotent or neither"
+tier = "drill"
+kind = "trace"
+topics = ["idempotency", "HTTP methods", "server state", "trace"]
+minutes = 25

@@ -1,0 +1,6 @@
+id = "dsa.17.p015"
+title = "Generator for random trees"
+tier = "deep"
+kind = "code"
+topics = ["random tests", "tree generator", "seed", "union-find"]
+minutes = 35

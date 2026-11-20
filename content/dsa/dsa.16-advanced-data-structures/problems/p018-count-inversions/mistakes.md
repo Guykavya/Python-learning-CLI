@@ -1,0 +1,5 @@
+- **`seen - prefix(k)`** (strictly smaller instead of `<=`): equal values are then counted as inversions; `[2, 2, 2]` gives 3.
+- **One Fenwick cell per value.** Values up to 10**9 (and negative ones) need coordinate compression.
+- **Adding `x` before querying.** Then `x` counts itself.
+- **Ranks from `sorted(a)` with duplicates** (`{v: i for i, v in enumerate(sorted(a))}`): equal values get the rank of their **last** copy; it still works for this problem, but the tree is bigger than needed and the idea is muddled. Use `sorted(set(a))`.
+- **Checking all pairs** (the starter): `O(n**2)`.

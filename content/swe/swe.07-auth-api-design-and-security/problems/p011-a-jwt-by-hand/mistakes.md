@@ -1,0 +1,9 @@
+- **Padding left in** (`=` at the end of a part). JWT uses base64url **without** padding. Re-add padding only when decoding (`"=" * (-len(text) % 4)`).
+- **Plain base64** (`+` and `/`). The URL-safe alphabet uses `-` and `_`.
+- **Trusting `alg` from the header** to choose how to verify. That is the `alg: none` attack. The algorithm is fixed in your code.
+- **Parsing the payload before checking the signature.** Not a vulnerability by itself in this exercise, but it lets garbage reach your JSON parser, and it is the habit that causes real bugs.
+- **`==` for signatures**, or comparing **decoded bytes**: the first is not constant time, the second is malleable (the last-character test).
+- **Letting `json.JSONDecodeError`, `binascii.Error` or `UnicodeEncodeError` escape.** All of them are `ValueError`s: catch that and raise `InvalidToken`.
+- **A payload that is not a dict.** `[1, 2, 3]` is valid JSON but not a set of claims.
+- **JSON with spaces** (`json.dumps` default). It still verifies with your own `verify`, but it will not match other libraries' output byte by byte.
+- **Checking `exp` here.** Claims are the next problem.

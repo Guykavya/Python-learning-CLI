@@ -1,0 +1,5 @@
+- **"A set lookup is always `O(1)`."** In the number of items, yes; in the length of the string, no: hashing reads the whole string.
+- **Forgetting that `word[:k]` copies.** Python slices of strings are new strings.
+- **"The trie always uses less memory."** Per node, a Python dict is heavy; with long shared prefixes the two can be close. The `L**2` growth is the real difference.
+- **Only comparing `search` and `starts_with`.** The point of a trie is the operations that follow the paths (listing, counting, deleting, wildcards).
+- **No case for the other side.** A sorted list with `bisect` answers prefix ranges with no extra structure at all.

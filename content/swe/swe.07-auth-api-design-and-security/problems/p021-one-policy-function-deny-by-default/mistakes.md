@@ -1,0 +1,7 @@
+- **Ending with `return True`**, or an `else: return True`. Then a new role or a typo opens everything. The last line is `return False`.
+- **`if user.role != "customer": return True`.** "Not a customer" is not the same as "staff"; an unknown role would be allowed.
+- **Forgetting the ownership check** on `read`: any customer reads any order.
+- **Forgetting the status check** on `cancel`: customers cancel paid orders.
+- **`amount < LIMIT`** instead of `<=`. Exactly 100.00 is allowed for support.
+- **Crashing on `order=None`** (`order.owner_id` on `None`). `list_all` has no order; anonymous and unknown roles must not crash either.
+- **Returning a truthy non-bool** such as `order.owner_id == user.id and order` (returns the order). Tests need `True` or `False`.

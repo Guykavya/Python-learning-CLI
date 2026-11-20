@@ -1,0 +1,5 @@
+- **Counting each word once** (a set, or `is_end = True` instead of `end_count += 1`). Duplicates must count: `car` was searched twice.
+- **Adding to `pass_count` only at the last node.** Then `count_prefix` counts only the words that end at the prefix, which is `count_equal`.
+- **Not counting the root.** Then `count_prefix("")` is 0 instead of the number of logged words.
+- **Counting the subtree at query time.** Correct, but `O(size of the subtree)` per query; the test with 10**5 queries for short prefixes times out.
+- **Crashing on a missing prefix.** Return 0 when the path breaks.

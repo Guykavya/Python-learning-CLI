@@ -1,0 +1,7 @@
+id = "dsa.17.p020"
+title = "Build your contest template"
+tier = "deep"
+kind = "code"
+topics = ["template", "library", "fast io", "testing"]
+minutes = 75
+assessment = "build"

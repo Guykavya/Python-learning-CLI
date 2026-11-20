@@ -1,0 +1,6 @@
+- **`@login_required` above `@app.get(...)`.** The route registers the *unprotected* function; the decorator wraps something Flask never calls.
+- **No `functools.wraps`.** Duplicate endpoint `wrapped` errors, and lost names in logs.
+- **Not passing `*args, **kwargs`.** Views with URL parameters crash with `TypeError`.
+- **Checking `"user_id" in session` only.** The id may belong to a deleted user.
+- **`next=request.url`** (a full URL): it invites open redirects. Use the path.
+- **Doing the check in some views by hand.** One forgotten view is a public page; use the decorator.

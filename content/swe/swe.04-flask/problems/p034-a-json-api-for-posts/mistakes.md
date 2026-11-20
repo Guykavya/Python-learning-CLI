@@ -1,0 +1,8 @@
+- **A redirect to the login page for API calls.** An API client gets an HTML page with status 200 after following it. Answer 401 with JSON.
+- **`PUT` semantics in `PATCH`.** Missing fields must stay unchanged, not become `None`.
+- **403 and 404 swapped** or the ownership check before the existence check (`g.user.id` of `None`).
+- **Different error shapes per route.** Clients cannot handle them generally.
+- **Using 400 for everything.** 415, 422, 401, 403 and 404 each mean something different.
+- **A body with a 204.** `"", 204` only.
+- **Forgetting `Location` after creating.** The client has to guess the new URL.
+- **Trusting `author_id` from the body.** The author is always the logged-in user.

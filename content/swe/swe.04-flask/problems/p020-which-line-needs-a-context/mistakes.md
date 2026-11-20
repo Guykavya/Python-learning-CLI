@@ -1,0 +1,5 @@
+- **Saying `app.config` needs a context (line 1).** It is a plain attribute of the app object.
+- **Saying line 7 works.** The app context has no request, hence no host for the URL.
+- **Saying `request` works in an app context (line 4).** Only the request context has it.
+- **Saying `g` needs a request (line 8).** `g` lives in the app context.
+- **Mixing up lines 6 and 10.** Same call, different contexts around it.

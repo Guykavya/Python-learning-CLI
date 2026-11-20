@@ -1,0 +1,6 @@
+id = "swe.05.p022"
+title = "A pagination dependency"
+tier = "drill"
+kind = "code"
+topics = ["Depends", "Annotated alias", "pagination", "Query constraints", "dependency_overrides"]
+minutes = 20

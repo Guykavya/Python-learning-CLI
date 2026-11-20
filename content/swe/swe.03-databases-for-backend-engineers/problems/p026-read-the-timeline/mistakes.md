@@ -1,0 +1,5 @@
+- **B = 150.** That would be a dirty read; PostgreSQL never shows uncommitted data.
+- **`final=110` at READ COMMITTED.** The `UPDATE` uses the current committed value (150), not the value T1 read earlier.
+- **`final=160` at REPEATABLE READ.** The concurrent change makes this update fail instead.
+- **Calling the anomaly a "lost update" or "phantom".** One row read twice with two values is a non-repeatable read; phantoms are about **sets of rows**.
+- **Thinking SQLite does this.** SQLite serialises writers; this is a PostgreSQL timeline.

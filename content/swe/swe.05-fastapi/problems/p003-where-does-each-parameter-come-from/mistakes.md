@@ -1,0 +1,6 @@
+- **Expecting a 422 for `-3`.** `int` checks the type only. Ranges need `Path(ge=1)` (section 3.3).
+- **Stopping at the first error in request 5.** FastAPI collects **all** errors and returns them in one 422.
+- **Writing `422 path.user_id` for request 6.** An empty segment does not match `{user_id}`: no route, so 404 before any validation.
+- **Thinking a repeated query key gives a list.** Only a parameter declared as a list with `Query()` collects all values; a plain `str` keeps the last one.
+- **Rounding `2.5` to 2.** Text is not converted to float and then truncated; `"2.5"` is simply not an integer.
+- **Writing `draft: 'yes'`.** The value was converted: the dict shows `True`.

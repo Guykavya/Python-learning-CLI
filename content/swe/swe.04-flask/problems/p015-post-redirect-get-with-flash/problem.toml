@@ -1,0 +1,6 @@
+id = "swe.04.p015"
+title = "Post/Redirect/Get with flash"
+tier = "applied"
+kind = "code"
+topics = ["PRG", "flash", "redirect", "form handling", "session"]
+minutes = 35

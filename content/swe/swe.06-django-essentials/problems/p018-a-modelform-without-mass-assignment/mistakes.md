@@ -1,0 +1,8 @@
+- **`fields = "__all__"`** (the starter's default) or `exclude = ["quantity"]`: quantity is editable by anyone who adds it to the POST.
+- **Forgetting to `return`** in `clean_sku`: the cleaned value becomes `None`.
+- **Upper-casing in the view** or in `save()`: the uniqueness check has already looked at the raw value, so `ab-123` slips past it and the database raises `IntegrityError`.
+- **Using `self.data["sku"]`** instead of `self.cleaned_data["sku"]`: you get the raw text, and a missing key crashes.
+- **`re.match` with a pattern without `^...$`** or with `search`: `xxAB-123yy` passes.
+- **Raising `ValueError`** instead of `forms.ValidationError`: the form crashes instead of reporting an error.
+- **Putting the field order in `Meta.fields` wrongly**: the form shows fields in that order.
+- **Trusting the HTML page**: a hidden or missing input does not stop a hand-made POST. Only the form class decides.

@@ -1,0 +1,5 @@
+- **Trusting a hash match without comparing the strings.** A collision could then return a string that does not repeat.
+- **A modulus near `10**9`** with 10**5 windows per length: by the birthday effect, `n` windows give about `n**2 / (2M)` colliding pairs, here about 5 per test. Verification keeps the answer correct, but it costs work and can hide a real repeat behind a colliding first window. Use `2**61 - 1`, or two moduli.
+- **Starting the binary search at `L = 0`.** The empty string "repeats" everywhere, so the test is meaningless there. Search `L` from 1 to `n - 1`, and return `""` if no length works.
+- **Requiring non-overlapping occurrences.** Here overlaps count: `banana` → `ana` (positions 1 and 3).
+- **Building `s[i:i + L]` for every window and storing the strings.** Correct, but each test then copies `O(n * L)` characters.

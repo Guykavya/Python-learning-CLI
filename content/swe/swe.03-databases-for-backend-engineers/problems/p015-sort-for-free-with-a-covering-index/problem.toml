@@ -1,0 +1,6 @@
+id = "swe.03.p015"
+title = "Sort for free with a covering index"
+tier = "deep"
+kind = "code"
+topics = ["covering index", "ORDER BY", "temp b-tree", "query plans"]
+minutes = 40

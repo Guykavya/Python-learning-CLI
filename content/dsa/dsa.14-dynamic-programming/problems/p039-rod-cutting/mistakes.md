@@ -1,0 +1,5 @@
+- **Forgetting the "no cut" option** (`k` only up to `m - 1`). Then a rod whose whole price is best, like length 6 here (17), is never sold whole.
+- **`price[k]` instead of `price[k - 1]`.** The list starts at length 1. The off-by-one reads the next length's price, or runs past the end for `k = n`.
+- **Assuming one cut is enough** (`max(price[k-1] + price[m-k-1])`). Many rods are best split into three or more pieces: with `price = [3, 5, 6]` and `n = 3`, the best is `1 + 1 + 1` = 9, while the best single cut gives `1 + 2` = 8.
+- **Greedy by price per length.** Take the piece with the best ratio that fits, as often as possible: for `n = 4` that is length 3 (8/3 = 2.67), and greedy sells 3 + 1 = 9; the best is 2 + 2 = 10.
+- **Recursion without a memo.** `2**(n - 1)` cuttings: the tests' `n = 3000` would never finish.

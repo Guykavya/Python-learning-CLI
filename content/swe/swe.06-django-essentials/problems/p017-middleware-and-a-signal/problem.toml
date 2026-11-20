@@ -1,0 +1,6 @@
+id = "swe.06.p017"
+title = "Middleware and a signal"
+tier = "applied"
+kind = "code"
+topics = ["middleware", "request id", "post_save", "pre_save", "signals"]
+minutes = 30

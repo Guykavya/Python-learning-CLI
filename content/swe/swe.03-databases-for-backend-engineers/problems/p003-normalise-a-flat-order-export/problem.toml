@@ -1,0 +1,6 @@
+id = "swe.03.p003"
+title = "Normalise a flat order export"
+tier = "applied"
+kind = "code"
+topics = ["normalisation", "keys", "decomposition", "join back"]
+minutes = 35

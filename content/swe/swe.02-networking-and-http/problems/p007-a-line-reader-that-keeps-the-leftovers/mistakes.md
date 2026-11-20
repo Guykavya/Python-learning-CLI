@@ -1,0 +1,6 @@
+- **`chunk.split(b"\n")` on each chunk alone.** A line cut in two pieces is reported as two lines.
+- **Decoding every chunk.** A split multi-byte character raises `UnicodeDecodeError` (or turns into garbage with `errors="replace"`).
+- **Forgetting `\r\n`.** The `\r` stays at the end of every line.
+- **Dropping the leftover.** The unfinished line must be completed by the next chunk.
+- **No limit on the buffer.** Memory grows without end with a hostile peer.
+- **Checking the limit on the total length of a feed instead of the pending line.** A long list of short lines is not an attack.

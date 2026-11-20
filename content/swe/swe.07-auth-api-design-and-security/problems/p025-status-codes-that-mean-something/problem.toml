@@ -1,0 +1,6 @@
+id = "swe.07.p025"
+title = "Status codes that mean something"
+tier = "drill"
+kind = "trace"
+topics = ["HTTP status codes", "201", "202", "409", "410", "412", "422", "429", "500", "trace"]
+minutes = 20

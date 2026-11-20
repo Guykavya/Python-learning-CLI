@@ -1,0 +1,5 @@
+- **`prefix(r) - prefix(l - 1)`** (the closed-range formula): with half-open ranges it also counts `a[l - 1]`, one element too many, and for `l = 0` it calls `prefix(-1)`.
+- **`set` that adds `v`** instead of `v - get(i)`.
+- **Building with `n` calls to `add`**: correct, but `O(n log n)`; the timed build of 10**6 elements is meant to be `O(n)`.
+- **Pushing a cell into its parent before the cell is complete** (going from `n` down to 1).
+- **A parent beyond `n`.** Check `parent <= n` before adding.

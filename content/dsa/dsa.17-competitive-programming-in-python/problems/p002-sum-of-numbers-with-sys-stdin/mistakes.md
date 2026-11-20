@@ -1,0 +1,4 @@
+- **Leaving the `input()` loop.** It gives the right answer on small tests and is flagged here because on big inputs it is the slowest way to read.
+- **Reading all the data and then slicing wrongly.** `data[1:1 + n]` takes `n` numbers after the count; `data[1:]` also works here, but if the file had extra tokens you would add them.
+- **Forgetting `int`.** `sum` of strings raises a `TypeError`.
+- **Calling `sys.stdin.read()` twice.** The second call returns an empty string, because the input is already consumed.

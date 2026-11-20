@@ -1,0 +1,6 @@
+id = "swe.05.p002"
+title = "ASGI versus WSGI"
+tier = "drill"
+kind = "explain"
+topics = ["ASGI", "WSGI", "event loop", "WebSocket", "explain"]
+minutes = 20

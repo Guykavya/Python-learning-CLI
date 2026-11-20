@@ -1,0 +1,6 @@
+id = "swe.04.p005"
+title = "Query strings are strings"
+tier = "drill"
+kind = "code"
+topics = ["request.args", "type=int", "clamping", "defaults"]
+minutes = 20

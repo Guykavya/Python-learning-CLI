@@ -1,0 +1,6 @@
+id = "dsa.14.p060"
+title = "Longest palindromic substring"
+tier = "applied"
+kind = "code"
+topics = ["dynamic programming", "palindromes", "substring", "expand around centre", "interval dp"]
+minutes = 25

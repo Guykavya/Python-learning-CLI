@@ -1,0 +1,6 @@
+id = "swe.04.p018"
+title = "Why CSRF tokens work"
+tier = "applied"
+kind = "explain"
+topics = ["CSRF", "same-origin policy", "SameSite", "cookies", "explain"]
+minutes = 30

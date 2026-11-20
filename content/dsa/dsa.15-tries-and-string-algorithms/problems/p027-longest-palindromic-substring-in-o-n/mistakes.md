@@ -1,0 +1,5 @@
+- **Using `max(range(len(p)), key=p.__getitem__)` and assuming the tie rule.** `max` returns the first maximum, which happens to be the leftmost here; but writing the loop with `>=` would return the last one.
+- **Wrong start index.** The palindrome of length `p[i]` centred at `i` of `t` starts at `(i - p[i]) // 2` in `s`, not at `i // 2`.
+- **Wrong centre for a query.** The centre of `s[l:r]` in `t` is `l + r` (with `r` exclusive). Using `l + r - 1` or `(l + r) // 2` mixes up `t` and `s` indices.
+- **`p[l + r] == r - l`.** A longer palindrome around the same centre also proves that `s[l:r]` is one: use `>=`.
+- **Slicing for every query** (the starter): correct, but `O(r - l)` each, `4 * 10**10` characters for the long test.

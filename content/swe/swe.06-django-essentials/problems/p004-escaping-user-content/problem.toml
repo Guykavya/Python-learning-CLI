@@ -1,0 +1,6 @@
+id = "swe.06.p004"
+title = "Escaping user content"
+tier = "drill"
+kind = "code"
+topics = ["templates", "auto-escaping", "XSS", "linebreaksbr", "safe"]
+minutes = 15

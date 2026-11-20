@@ -1,0 +1,7 @@
+- **Two messages** ("no such user" / "wrong password"). It tells attackers which accounts exist.
+- **Returning early for an unknown user.** It is fast, so timing reveals the answer even with one message.
+- **Calling `verify` twice for known users** (once to check, once "to be sure") or zero times for unknown ones. The test counts calls.
+- **Success decided by `ok` alone.** The dummy hash must never log anyone in.
+- **A different exception class for the second case.** Callers (and status codes) then differ; keep one.
+- **Letting a missing user raise `KeyError`** from `users[username]`. Use `.get`.
+- **Putting the password or the username into the error message.** Use the fixed text only.

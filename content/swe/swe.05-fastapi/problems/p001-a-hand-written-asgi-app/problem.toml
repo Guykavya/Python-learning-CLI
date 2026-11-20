@@ -1,0 +1,6 @@
+id = "swe.05.p001"
+title = "A hand-written ASGI app"
+tier = "drill"
+kind = "code"
+topics = ["ASGI", "scope", "receive", "send", "async"]
+minutes = 25

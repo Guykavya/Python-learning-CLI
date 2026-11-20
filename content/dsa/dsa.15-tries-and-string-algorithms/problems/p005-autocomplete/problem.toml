@@ -1,0 +1,6 @@
+id = "dsa.15.p005"
+title = "Autocomplete"
+tier = "applied"
+kind = "code"
+topics = ["trie", "autocomplete", "dfs", "prefix"]
+minutes = 30

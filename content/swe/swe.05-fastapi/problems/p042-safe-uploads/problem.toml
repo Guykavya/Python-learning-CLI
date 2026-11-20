@@ -1,0 +1,6 @@
+id = "swe.05.p042"
+title = "Safe uploads"
+tier = "applied"
+kind = "code"
+topics = ["UploadFile", "multipart", "size limit", "413", "415", "csv", "chunks"]
+minutes = 35

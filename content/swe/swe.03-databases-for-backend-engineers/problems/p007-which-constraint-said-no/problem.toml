@@ -1,0 +1,6 @@
+id = "swe.03.p007"
+title = "Which constraint said no"
+tier = "drill"
+kind = "code"
+topics = ["constraints", "IntegrityError", "error messages"]
+minutes = 20

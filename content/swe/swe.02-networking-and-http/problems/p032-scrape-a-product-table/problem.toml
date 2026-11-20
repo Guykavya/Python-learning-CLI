@@ -1,0 +1,6 @@
+id = "swe.02.p032"
+title = "Scrape a product table"
+tier = "applied"
+kind = "code"
+topics = ["web scraping", "BeautifulSoup", "Decimal", "cleaning data"]
+minutes = 40

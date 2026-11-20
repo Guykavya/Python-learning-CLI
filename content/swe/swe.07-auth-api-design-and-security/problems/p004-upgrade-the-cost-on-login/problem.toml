@@ -1,0 +1,6 @@
+id = "swe.07.p004"
+title = "Upgrade the cost on login"
+tier = "applied"
+kind = "code"
+topics = ["passwords", "scrypt", "rehash", "migration", "cost parameters"]
+minutes = 30

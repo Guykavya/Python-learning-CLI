@@ -1,0 +1,8 @@
+- **Returning a list** (`list(qs)`, a list comprehension). The caller can then not chain `.filter()` or call `.count()`, and the query runs too early.
+- **`if max_price:`** treats `0` as "no filter", so "free items only" returns everything.
+- **`if in_stock:`** treats `False` as "no filter", so "out of stock" returns everything.
+- **Two `filter()` calls for the OR.** `.filter(name__icontains=t).filter(sku__iexact=t)` is an AND: an item would need both.
+- **`filter(name__icontains=t, sku__iexact=t)`** is also an AND. Use `Q(...) | Q(...)`.
+- **`price__lt`** instead of `price__lte`: an item that costs exactly `max_price` disappears.
+- **Putting `Q` or `|` between plain keyword arguments** (`filter(name__icontains=t | sku=t)`): that is a Python error. Only `Q` objects can be joined with `|`.
+- **Forgetting the exclusion when no filters are given.** Discontinued items must be hidden by default.

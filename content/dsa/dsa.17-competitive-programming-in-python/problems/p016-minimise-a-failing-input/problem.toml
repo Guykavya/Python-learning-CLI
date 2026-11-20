@@ -1,0 +1,6 @@
+id = "dsa.17.p016"
+title = "Minimise a failing input"
+tier = "deep"
+kind = "code"
+topics = ["stress testing", "shrinking", "delta debugging"]
+minutes = 35

@@ -1,0 +1,5 @@
+- **Showing `b` the uncommitted value** on line 3. Other connections see only committed data.
+- **Thinking `rollback()` leaves 3 in the table.** It removes the uncommitted change.
+- **Forgetting that `b`'s `INSERT` opened a transaction** that `b` never committed before line 7: it holds the lock.
+- **Writing a different error text.** The message is exactly `database is locked`.
+- **Expecting `[(2,), (10,), (9,)]`.** The last query has `ORDER BY x`.

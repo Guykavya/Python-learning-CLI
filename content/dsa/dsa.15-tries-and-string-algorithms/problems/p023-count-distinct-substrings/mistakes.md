@@ -1,0 +1,5 @@
+- **`n * (n + 1) // 2`.** That counts every substring, repeated ones included: `aaa` gives 6 instead of 3.
+- **A set of all substrings.** Correct, but for `n = 2000` it stores about 1.3 * 10**9 characters.
+- **Counting the empty string.** The question asks for non-empty substrings: `""` gives 0.
+- **Taking `max(z)` including `z[0]`.** `z[0]` is the whole string; the occurrence must be at a later position.
+- **Subtracting the number of earlier-occurring suffixes one by one with `in` checks** (`u[-k:] in u[:-1]` for every `k`): `O(n**3)` in the worst case.

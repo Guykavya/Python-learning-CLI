@@ -1,0 +1,6 @@
+id = "swe.03.p048"
+title = "Change a column without losing data"
+tier = "challenge"
+kind = "code"
+topics = ["Alembic", "expand-contract", "backfill", "batch mode", "zero downtime"]
+minutes = 80

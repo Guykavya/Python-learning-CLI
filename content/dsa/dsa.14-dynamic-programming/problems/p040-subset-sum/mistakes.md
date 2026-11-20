@@ -1,0 +1,6 @@
+- **Looping `s` upwards.** Then `f[s - x]` may already include `x`, so `x` is used twice: `subset_sum([2], 4)` becomes True.
+- **`f[0] = False`.** Nothing is ever reachable; every answer is False, even `subset_sum([5], 5)`.
+- **`f[s] = f[s - x]`** instead of `f[s] or f[s - x]`. That forgets the sums that were reachable without `x`.
+- **Stopping the loop one too early.** `for s in range(target, x, -1)` never updates `f[x]` itself, so `subset_sum([7], 7)` is False. The stop value must be `x - 1`. (A zero in `nums` is harmless: `f[s] or f[s - 0]` changes nothing.)
+- **Trying all `2**n` subsets.** Fine for 15 numbers, impossible for 300.
+- **Bonus: forgetting that `<<` makes the integer longer.** Without the mask, `bits` grows to `sum(nums)` bits. It is still correct, just slower.

@@ -1,0 +1,6 @@
+id = "swe.01.p009"
+title = "Resolve conflict markers"
+tier = "applied"
+kind = "code"
+topics = ["merge conflicts", "conflict markers", "parsing"]
+minutes = 35

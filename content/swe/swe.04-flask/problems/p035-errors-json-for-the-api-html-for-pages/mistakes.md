@@ -1,0 +1,7 @@
+- **Only a 404 handler.** A 405, a 403 or an `abort(400)` still shows Flask's default HTML page to API clients.
+- **`return jsonify(...)` without the status.** The client sees 200 with an error body.
+- **Putting `str(error)` in the answer.** For unexpected exceptions this leaks internals; only HTTP errors have safe messages.
+- **Swallowing the exception silently.** No log, no way to find the bug: always log in the `Exception` handler.
+- **Forgetting `Allow` on 405.** Clients (and the HTTP rules) expect it.
+- **Handling the error only in some views** with `try/except`. Central handlers cover routing errors and forgotten cases too.
+- **Debug mode in production**: the interactive debugger replaces your handlers with a page that can run code (problem 39).

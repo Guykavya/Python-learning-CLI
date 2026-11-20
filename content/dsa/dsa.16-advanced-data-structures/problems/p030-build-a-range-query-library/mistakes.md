@@ -1,0 +1,5 @@
+- **Different range conventions in different classes.** Pick half-open everywhere; the harness compares all three with `a[l:r]`.
+- **One accumulator in `SegmentTree.query`**: the string test catches it.
+- **A `FenwickTree(list)` constructor that calls `add` n times**: correct, but `O(n log n)`.
+- **A sparse table that loops in `query`** (disjoint blocks): correct, but the class promises `O(1)`.
+- **Using the sparse table with `+`**: it is only for idempotent `f`.

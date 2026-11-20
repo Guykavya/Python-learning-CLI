@@ -1,0 +1,6 @@
+id = "dsa.17.p009"
+title = "Trace the template"
+tier = "applied"
+kind = "trace"
+topics = ["template", "output buffering", "print order", "trace"]
+minutes = 20

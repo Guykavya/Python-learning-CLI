@@ -1,0 +1,7 @@
+- **Sleeping a fixed `min_interval` before every request.** It wastes time when your own work already took long.
+- **Sleeping for a negative number** when the interval has already passed (`time.sleep` raises `ValueError`).
+- **Making the first call wait.** There is no previous request.
+- **Using `time.time()` and `time.sleep()` directly.** The tests cannot control them: inject both.
+- **Calling `rp.read()`** in tests. It needs the network; use `parse()` with the text.
+- **Reading the `Crawl-delay` as a string.** Return a float.
+- **Ignoring the agent name.** A group for `badbot` must not apply to `mybot`.

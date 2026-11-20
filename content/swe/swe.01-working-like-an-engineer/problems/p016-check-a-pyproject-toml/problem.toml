@@ -1,0 +1,6 @@
+id = "swe.01.p016"
+title = "Check a pyproject toml"
+tier = "applied"
+kind = "code"
+topics = ["pyproject.toml", "tomllib", "project structure", "linting"]
+minutes = 35

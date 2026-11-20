@@ -1,0 +1,5 @@
+- **Fixing the symptom in the test**, not the runner. The behaviour is right in the statement; the code is wrong.
+- **Adding `if not run(cmd)`.** `run` returns an exit code, where 0 means success; a non-zero code is truthy.
+- **Returning `1` always.** Return the code you got.
+- **Keeping `"python"` "because it works on my machine".** On CI or in another virtual environment it runs the wrong interpreter, and the error shows up far from the cause.
+- **Changing the order of `lint` and `types` inside `check` but leaving `test` first.** The tests are the slow part: they go last.

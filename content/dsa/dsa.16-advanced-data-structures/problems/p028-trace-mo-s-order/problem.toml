@@ -1,0 +1,6 @@
+id = "dsa.16.p028"
+title = "Trace Mo's order"
+tier = "deep"
+kind = "trace"
+topics = ["mo's algorithm", "offline queries", "trace"]
+minutes = 25

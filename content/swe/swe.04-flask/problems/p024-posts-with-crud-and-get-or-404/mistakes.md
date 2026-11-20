@@ -1,0 +1,6 @@
+- **`db.session.get(...)` and using the result without a check.** `None` becomes a 500.
+- **Returning the `Post` object from the view.** Flask cannot make JSON of a model: build a dict.
+- **Forgetting `commit()`.** The change is lost when the session is removed at the end of the request.
+- **A 200 with an error text for a missing item.** Use the real status code.
+- **Returning `jsonify(...)` for a 204.** A 204 has no body: `return "", 204`.
+- **Sharing one `sqlite://` URL between threads/connections by hand.** Flask-SQLAlchemy keeps one in-memory database per app for you; do not add your own engine.

@@ -1,0 +1,6 @@
+id = "dsa.17.p017"
+title = "Reading a verdict"
+tier = "drill"
+kind = "trace"
+topics = ["verdicts", "debugging", "judge messages", "trace"]
+minutes = 20

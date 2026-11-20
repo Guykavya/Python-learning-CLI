@@ -1,0 +1,4 @@
+/ok: 200 -> before, view ok, after 200, teardown none
+/missing: 404 -> before, handler 404, after 404, teardown none
+/value: 400 -> before, view value, handler ValueError, after 400, teardown none
+/crash: 500 -> before, view crash, after 500, teardown RuntimeError

@@ -1,0 +1,6 @@
+id = "swe.01.p007"
+title = "What makes a good commit"
+tier = "drill"
+kind = "explain"
+topics = ["commits", "history", "git revert", "git bisect", "explain"]
+minutes = 20

@@ -1,0 +1,4 @@
+- **Refusing the second `NULL`.** `NULL` means "unknown": two unknowns are not known to be equal.
+- **Treating `''` like `NULL`.** The empty string is an ordinary value.
+- **Assuming `UNIQUE` ignores case.** It does not, unless the column's collation does.
+- **Believing a refused insert stops the later ones.** Each statement is independent here.

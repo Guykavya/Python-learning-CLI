@@ -1,0 +1,6 @@
+- **Constraints on only one endpoint.** Writing `Query(ge=1)` in `list_tasks` but not in the others is exactly the drift a shared dependency prevents.
+- **Checking with `if limit < 1: raise HTTPException(400)`.** It works, but gives a different error shape from every other validation error, and the docs do not show the rule. Let `Query` do it.
+- **`lt=100` instead of `le=100`.** "From 1 to 100" includes 100.
+- **`total = len(items)`.** That is the page size; the client needs the full count to show "page 2 of 3".
+- **Reading `limit` and `offset` in the endpoint as well.** Then overriding the dependency changes nothing, and there are two sources of truth again.
+- **Raising an error for an offset past the end.** An empty page is the normal answer.

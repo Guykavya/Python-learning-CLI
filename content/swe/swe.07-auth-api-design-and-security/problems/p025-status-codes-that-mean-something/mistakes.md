@@ -1,0 +1,7 @@
+- **`400` for request 3.** FastAPI answers `422` for a body that is valid JSON but fails validation; `400` is for broken JSON syntax.
+- **`422` for request 4.** The values are valid; the clash is with existing state: `409`.
+- **`404` for request 5.** The route exists and answers `410` on purpose.
+- **`200` for request 7 and 8 "because they are logins".** The counter only exceeds 2 on the third call.
+- **Forgetting the header values.** Lines 1 and 9 carry `Location` and `Retry-After`; the others print nothing after the code.
+- **`403` or `401` for request 6.** The caller is allowed to try; it is the precondition that failed.
+- **Thinking request 10 crashes the program.** With `raise_server_exceptions=False` the test client shows a normal `500` response.

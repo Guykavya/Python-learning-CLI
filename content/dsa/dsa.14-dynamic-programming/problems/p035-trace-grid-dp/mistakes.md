@@ -1,0 +1,5 @@
+- **Giving an obstacle a value from its neighbours.** The first `if` sets it to 0 and nothing else is added.
+- **Treating the first row and column as "all 1s".** That is true only without obstacles. `(3, 0)` is an obstacle, so it is 0, and `(1, 3)` is 1 because the obstacle is its left neighbour.
+- **Reading a missing neighbour as 1.** Outside the grid counts as 0; only the start cell gets its 1 from the `elif`.
+- **Adding the diagonal cell too.** The moves are right and down only: up + left, nothing else.
+- **Format.** The f-string writes `row 0:`, then `print` adds a space and the list: `row 0: [1, 1, 1, 1]`. The last line is `paths: 10`.

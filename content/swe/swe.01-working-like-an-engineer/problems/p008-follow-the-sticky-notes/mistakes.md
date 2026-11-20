@@ -1,0 +1,5 @@
+- **Moving the other flag.** When you commit on `feature`, `main` stays where it was.
+- **Thinking `switch` changes commits.** It only moves `HEAD`.
+- **Expecting a merge commit at command 5.** `main` is an ancestor of `feature`, so git fast-forwards.
+- **Forgetting that `--no-ff` creates a commit even when a fast-forward is possible.** At command 9 `main` (on C) is an ancestor of `feature` (on D), so a plain merge would fast-forward; `--no-ff` makes the new commit `E` anyway.
+- **Thinking `branch -d` deletes commits.** Only the label disappears; the commits stay as long as another flag or commit points to them.

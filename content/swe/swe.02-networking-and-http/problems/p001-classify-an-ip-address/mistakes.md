@@ -1,0 +1,5 @@
+- **Checking `is_private` first.** Then every loopback address is reported as private.
+- **Parsing with a regular expression.** `999.1.1.1` and IPv6 forms (`::1`, `fe80::1%eth0`, `::ffff:1.2.3.4`) make this fail; use `ipaddress`.
+- **Letting the exception out.** Invalid text must give `"invalid"`, not a traceback.
+- **Treating `0.0.0.0` as global.** It is the "unspecified" address; the module flags it private.
+- **Forgetting IPv6.** The same flags exist on IPv6 addresses.

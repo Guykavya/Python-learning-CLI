@@ -1,0 +1,6 @@
+- **Reconstructing from the one-list version.** After the last item, the list holds only the final row; comparing `g[w]` with "the row above" is impossible.
+- **Forgetting to subtract the weight** after taking an item. The walk then stays at capacity `W` and may "take" items that do not fit together.
+- **Comparing with the cell to the left** (`f[i][w - 1]`) instead of the cell above. The left cell is about a smaller bag, not about leaving the item out.
+- **Recording `i` instead of `i - 1`.** Row `i` is about item `i - 1`; recording `i` shifts every index by one (and can produce the index `n`, which does not exist).
+- **Returning the items in walk order.** The walk goes from the last item to the first; reverse (or sort) the list.
+- **Taking items greedily by value per weight** and then reporting their total. That is often not the best (`[1, 3, 4, 5]` / `[1, 4, 5, 7]`, `W = 7`: greedy gets 8, the best is 9).

@@ -1,0 +1,6 @@
+id = "dsa.15.p004"
+title = "Delete a word from a trie"
+tier = "applied"
+kind = "code"
+topics = ["trie", "deletion", "pruning"]
+minutes = 30

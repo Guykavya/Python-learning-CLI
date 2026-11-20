@@ -1,0 +1,7 @@
+- **Treating `304` as an error.** It means "your cached copy is still good": use it.
+- **Retrying `4xx`.** `404` and `422` mean the request is wrong; fix it, do not repeat it.
+- **Case-sensitive header lookup.** `retry-after` and `Retry-After` are the same.
+- **Rounding a date wait down.** The client then wakes up a fraction too early and is told to wait again.
+- **Crashing on a garbage `Retry-After`.** Fall back to `"retry"`.
+- **Following a redirect without a `Location`.** There is nowhere to go: `"give-up"`.
+- **Negative waits.** A date in the past is `0`.

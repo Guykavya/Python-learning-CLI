@@ -1,0 +1,5 @@
+- **`shutil.copyfile` of a live database.** It may produce a corrupt or half-written copy.
+- **Copying only the `.db` file** and forgetting `-wal` and `-shm` in WAL mode. The backup API takes care of it.
+- **Overwriting an existing backup file.** Refuse it.
+- **Not closing the connections.** On Windows the file stays locked.
+- **Never opening the backup.** At least run `PRAGMA integrity_check` on it.

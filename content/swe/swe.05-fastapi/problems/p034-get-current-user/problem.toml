@@ -1,0 +1,6 @@
+id = "swe.05.p034"
+title = "`get_current_user`"
+tier = "applied"
+kind = "code"
+topics = ["OAuth2PasswordBearer", "OAuth2PasswordRequestForm", "get_current_user", "401 WWW-Authenticate", "JWT", "dependencies"]
+minutes = 45

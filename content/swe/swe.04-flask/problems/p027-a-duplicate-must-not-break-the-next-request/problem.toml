@@ -1,0 +1,6 @@
+id = "swe.04.p027"
+title = "A duplicate must not break the next request"
+tier = "deep"
+kind = "code"
+topics = ["IntegrityError", "rollback", "409", "app context", "Flask-SQLAlchemy session"]
+minutes = 45

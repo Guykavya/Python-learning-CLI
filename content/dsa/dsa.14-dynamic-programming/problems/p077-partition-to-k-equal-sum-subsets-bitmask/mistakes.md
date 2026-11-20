@@ -1,0 +1,6 @@
+- **Only checking `sum(nums) % k == 0`.** Necessary, not enough: `[2, 2, 2, 2, 3, 4, 5]` sums to 20 and still cannot be split into 4 groups of 5.
+- **Allowing a number that overflows the current group.** The condition is `fill + nums[i] <= target`; without it a group can exceed `target`, and the `% target` hides the error.
+- **Forgetting `% target` when a group becomes full.** The next number must start a new group at 0, not keep adding to `target`.
+- **Adding `(mask, group)` or `(mask, fill)` to the state.** Both can be computed from `mask`. They make the table `k` or `target` times larger for nothing.
+- **Greedy: fill each group with the largest numbers that fit, never undo.** `[3, 3, 2, 2, 2, 2]` with `k = 2` (target 7): greedy puts 3 + 3 = 6 in the first group, no 2 fits any more, and it answers `False`. But 3 + 2 + 2 and 3 + 2 + 2 works.
+- **Testing `k = 1` and single numbers.** `k = 1` is always `True`; `can_split([7], 1)` must not crash on `target = 7`.

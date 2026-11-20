@@ -1,0 +1,6 @@
+id = "dsa.16.p019"
+title = "Count smaller numbers after self"
+tier = "applied"
+kind = "code"
+topics = ["fenwick tree", "coordinate compression", "counting"]
+minutes = 30

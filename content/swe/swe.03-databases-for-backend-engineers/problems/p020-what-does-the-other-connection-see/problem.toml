@@ -1,0 +1,6 @@
+id = "swe.03.p020"
+title = "What does the other connection see"
+tier = "applied"
+kind = "trace"
+topics = ["transactions", "isolation", "commit", "rollback", "sqlite3", "trace"]
+minutes = 30

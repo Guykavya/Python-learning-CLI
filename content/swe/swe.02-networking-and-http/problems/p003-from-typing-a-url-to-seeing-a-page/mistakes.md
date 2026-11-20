@@ -1,0 +1,5 @@
+- **Skipping DNS and TLS.** "The browser sends the request to the server" hides two or three round trips.
+- **Sending the fragment to the server.** It stays in the browser.
+- **Saying HTTPS hides everything.** The IP, the host name and the traffic sizes remain visible.
+- **Mixing up TCP and TLS.** TCP gives a reliable byte stream; TLS adds secrecy and proof of identity on top of it.
+- **Listing no failures.** "It can fail" is not an answer: name the layer and what the user sees.

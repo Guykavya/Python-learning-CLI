@@ -1,0 +1,106 @@
+# Real site problems for dsa.15 (Tries and string algorithms).
+# Verification: every LeetCode slug and CSES id below was written from memory (from the problem plan) and NOT
+# re-fetched (no web access was used while writing). Fix any slug or id that fails to open.
+# Only free LeetCode problems. Left out on purpose, because earlier modules already list them:
+# shortest-palindrome and longest-duplicate-substring (dsa.04), longest-palindromic-substring and
+# palindromic-substrings (dsa.14). implement-strstr is the old slug of
+# find-the-index-of-the-first-occurrence-in-a-string, so it is listed once.
+# Order follows the chapter: tries (2-9), prefix function and KMP (10-11); then the CSES string problems.
+
+[[problem]]
+site = "leetcode"
+key = "implement-trie-prefix-tree"
+title = "Implement Trie (Prefix Tree)"
+url = "https://leetcode.com/problems/implement-trie-prefix-tree/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "design-add-and-search-words-data-structure"
+title = "Design Add and Search Words Data Structure"
+url = "https://leetcode.com/problems/design-add-and-search-words-data-structure/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "map-sum-pairs"
+title = "Map Sum Pairs"
+url = "https://leetcode.com/problems/map-sum-pairs/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "search-suggestions-system"
+title = "Search Suggestions System"
+url = "https://leetcode.com/problems/search-suggestions-system/"
+minutes = 30
+
+[[problem]]
+site = "leetcode"
+key = "longest-common-prefix"
+title = "Longest Common Prefix"
+url = "https://leetcode.com/problems/longest-common-prefix/"
+minutes = 15
+
+[[problem]]
+site = "leetcode"
+key = "replace-words"
+title = "Replace Words"
+url = "https://leetcode.com/problems/replace-words/"
+minutes = 25
+
+[[problem]]
+site = "leetcode"
+key = "word-search-ii"
+title = "Word Search II"
+url = "https://leetcode.com/problems/word-search-ii/"
+minutes = 50
+
+[[problem]]
+site = "leetcode"
+key = "maximum-xor-of-two-numbers-in-an-array"
+title = "Maximum XOR of Two Numbers in an Array"
+url = "https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/"
+minutes = 40
+
+[[problem]]
+site = "leetcode"
+key = "find-the-index-of-the-first-occurrence-in-a-string"
+title = "Find the Index of the First Occurrence in a String"
+url = "https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/"
+minutes = 20
+
+[[problem]]
+site = "leetcode"
+key = "repeated-substring-pattern"
+title = "Repeated Substring Pattern"
+url = "https://leetcode.com/problems/repeated-substring-pattern/"
+minutes = 20
+
+[[problem]]
+site = "cses"
+key = "1753"
+title = "String Matching"
+url = "https://cses.fi/problemset/task/1753"
+minutes = 20
+
+[[problem]]
+site = "cses"
+key = "1732"
+title = "Finding Borders"
+url = "https://cses.fi/problemset/task/1732"
+minutes = 25
+
+[[problem]]
+site = "cses"
+key = "1733"
+title = "Finding Periods"
+url = "https://cses.fi/problemset/task/1733"
+minutes = 30
+
+[[problem]]
+site = "cses"
+key = "1111"
+title = "Longest Palindrome"
+url = "https://cses.fi/problemset/task/1111"
+minutes = 35

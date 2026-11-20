@@ -1,0 +1,5 @@
+- **Using `reset --hard` for a pushed commit.** Teammates still have it; your next push is rejected or you force-push over their work.
+- **Believing `reflog` saves uncommitted edits.** It only knows commits.
+- **Using `restore --staged` when you mean to discard the edit.** It keeps the file content, only the index changes.
+- **Copying files by hand to move commits to another branch.** A branch label is free; use it.
+- **Ignoring that a committed secret is public forever.** Revoke the key; ignoring it in `.gitignore` is not enough.

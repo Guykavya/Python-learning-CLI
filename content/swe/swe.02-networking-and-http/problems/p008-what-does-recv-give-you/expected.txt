@@ -1,0 +1,8 @@
+naive: b'\x05HEL'
+naive: b'LO\x07WORLD!'
+naive: b'!\x03BY'
+naive: b'E'
+framed: b'HELLO'
+framed: b'WORLD!!'
+framed: b'BYE'
+left over: b''

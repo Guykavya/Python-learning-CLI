@@ -1,0 +1,8 @@
+solving 3
+solving 1
+two done
+solving 4
+Case 1: 9 1
+Case 2: 7 0
+Case 3: 8 2
+end

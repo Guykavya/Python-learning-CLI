@@ -1,0 +1,6 @@
+id = "swe.05.p004"
+title = "Constrain the parameters"
+tier = "drill"
+kind = "code"
+topics = ["Annotated", "Path", "Query", "constraints", "list query", "422"]
+minutes = 25

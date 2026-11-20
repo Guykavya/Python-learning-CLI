@@ -1,0 +1,5 @@
+- **Writing `/about/` for line 1 instead of the full `http://localhost/about/`.** Redirects produced by the routing system itself (the trailing-slash 308) carry the absolute URL in the test client; your own `redirect(url_for(...))` is a path.
+- **Mixing up the codes.** Trailing-slash redirect: 308. `redirect()` default: 302. 301 only when asked.
+- **404 for line 7.** The path is known, the method is not: 405.
+- **Expecting `/contact/` to work.** A rule without a slash is strict.
+- **Forgetting that the 404/405 lines have no extra text.** The program prints nothing after the status.

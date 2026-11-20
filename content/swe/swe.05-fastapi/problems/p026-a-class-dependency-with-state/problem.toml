@@ -1,0 +1,6 @@
+id = "swe.05.p026"
+title = "A class dependency with state"
+tier = "deep"
+kind = "code"
+topics = ["class dependencies", "callable instances", "rate limiting", "sliding window", "429 Retry-After", "injected clock"]
+minutes = 50

@@ -1,0 +1,5 @@
+- **`rng.randint(1, i)` with off-by-one.** The parent of position `i` must be earlier than `i`; `randrange(i)` gives `0..i-1`.
+- **Using the global `random` module** instead of `rng`. The same seed then no longer gives the same tree.
+- **Forgetting the permutation.** The tree is valid, but vertex 1 is always the root and every edge is `(smaller, larger)`.
+- **Creating a cycle** by choosing both ends at random: `n - 1` random edges are rarely a tree.
+- **`n = 1`.** `randrange(0)` raises an error; return the empty list before the loop.

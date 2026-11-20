@@ -1,0 +1,9 @@
+- **Checking and inserting in two steps without a lock** (`if key not in records:` then `records[key] = ...`). Two simultaneous requests both see "not found" and both charge.
+- **Holding the lock during `provider.charge`.** The second request waits instead of answering `409`, and the whole service stops while one payment is slow.
+- **Keying on `key` alone.** One customer could read or block another customer's payment. Use `(user, key)`.
+- **Not comparing the body.** A reused key with a different amount must be `422`, not a silent replay of the old payment.
+- **Re-running the provider on a repeat.** The repeat returns the stored response; the provider is called exactly once per `(user, key)`.
+- **Storing the failure.** After a `ProviderError` the key must be released, otherwise the client can never complete the payment with that key.
+- **Forgetting to release the key when another exception goes up**, which leaves an "in progress" record forever (every retry then gets `409`).
+- **Mutating the stored response** that you return (return a copy), or returning `replayed=True` for the first call.
+- **`409` without `Retry-After`**, or the replay without `Idempotent-Replayed: true`.

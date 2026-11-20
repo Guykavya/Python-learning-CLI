@@ -1,0 +1,6 @@
+id = "dsa.15.p006"
+title = "Longest common prefix"
+tier = "drill"
+kind = "code"
+topics = ["trie", "prefix", "strings"]
+minutes = 15

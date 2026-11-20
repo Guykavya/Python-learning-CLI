@@ -1,0 +1,7 @@
+id = "dsa.17.p012"
+title = "Fix the TLE"
+tier = "applied"
+kind = "code"
+topics = ["time limit exceeded", "list.pop(0)", "deque", "fast io"]
+minutes = 30
+assessment = "fix"

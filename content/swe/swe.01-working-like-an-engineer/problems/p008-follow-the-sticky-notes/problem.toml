@@ -1,0 +1,7 @@
+id = "swe.01.p008"
+title = "Follow the sticky notes"
+tier = "applied"
+kind = "trace"
+topics = ["branches", "HEAD", "merge", "fast-forward", "trace"]
+minutes = 25
+assessment = "trace"

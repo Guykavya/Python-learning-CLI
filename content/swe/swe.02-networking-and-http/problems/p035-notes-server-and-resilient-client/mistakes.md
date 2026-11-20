@@ -1,0 +1,9 @@
+- **Reading the body "until the client closes".** It hangs every keep-alive client (problem 26).
+- **`len(text)` for `Content-Length`.** Count the bytes: `héllo 😀` is more bytes than characters.
+- **A shared id counter without a lock.** Two clients can get the same id.
+- **Answering `404` for a wrong method.** It is `405` with `Allow`.
+- **Closing the connection after every answer.** Then `server.connections` grows with every request.
+- **Letting an exception in a handler kill the connection thread** silently: answer `500`.
+- **A client that retries a `POST` after a `503` without a key.** It may create the note twice.
+- **A new idempotency key on every attempt.**
+- **A listening socket without a timeout:** `__exit__` hangs waiting for the accept loop.

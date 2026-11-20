@@ -1,0 +1,6 @@
+id = "swe.03.p021"
+title = "Import with savepoints"
+tier = "applied"
+kind = "code"
+topics = ["savepoints", "transactions", "bulk import", "IntegrityError"]
+minutes = 35

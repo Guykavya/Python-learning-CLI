@@ -1,0 +1,5 @@
+- **Recursive DFS.** `RecursionError` on a path of 10^5 vertices. Raising the limit may crash the interpreter instead.
+- **Forgetting that edges are undirected.** Add both `adj[u].append(v)` and `adj[v].append(u)`.
+- **Walking back to the parent.** Without the `depth[v] == -1` check (or a `parent` check), the loop never ends.
+- **Using `list.pop(0)` for a queue** if you do BFS: it is `O(n)` per pop. Use `collections.deque`, or a stack, which does not need it.
+- **Printing `max(depth)` including index 0.** `depth[0]` is the dummy entry (-1); slice from 1.

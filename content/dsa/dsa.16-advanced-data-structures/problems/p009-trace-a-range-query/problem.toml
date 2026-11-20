@@ -1,0 +1,7 @@
+id = "dsa.16.p009"
+title = "Trace a range query"
+tier = "drill"
+kind = "trace"
+topics = ["segment tree", "range query", "trace"]
+minutes = 20
+assessment = "trace"

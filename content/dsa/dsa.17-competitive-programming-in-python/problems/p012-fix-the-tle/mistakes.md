@@ -1,0 +1,5 @@
+- **Keeping the list but only fixing the input.** `pop(0)` alone makes the program too slow on 2·10^5 pops.
+- **`deque.pop()` instead of `popleft()`.** `pop()` removes from the **right**: the wrong end for a queue.
+- **Printing an empty `out`.** `print("\n".join([]))` prints an empty line; the tests allow it, but be careful in general.
+- **Consuming the wrong number of tokens.** Only `push` has an argument.
+- **Changing the answers.** The task is a pure speed fix: the output must stay identical.

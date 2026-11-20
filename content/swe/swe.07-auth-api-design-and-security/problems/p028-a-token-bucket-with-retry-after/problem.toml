@@ -1,0 +1,6 @@
+id = "swe.07.p028"
+title = "A token bucket with Retry-After"
+tier = "applied"
+kind = "code"
+topics = ["rate limiting", "token bucket", "429", "Retry-After", "injected clock", "FastAPI dependency"]
+minutes = 35

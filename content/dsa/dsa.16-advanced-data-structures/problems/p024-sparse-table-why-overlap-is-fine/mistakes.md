@@ -1,0 +1,5 @@
+- **"Overlap is fine because min is commutative."** Commutativity is not enough: `+` is commutative too. The property is idempotence.
+- **Calling `xor` idempotent.** `x ^ x = 0`: the overlap cancels.
+- **Thinking the blocks never overlap.** They overlap whenever the length is not a power of two.
+- **"Use a bigger table" as the fix for sums.** The fix is disjoint blocks, or prefix sums.
+- **Forgetting `gcd`, `and`, `or`** in the list of idempotent operations.

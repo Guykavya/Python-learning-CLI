@@ -1,0 +1,6 @@
+id = "swe.06.p003"
+title = "A filter chain"
+tier = "drill"
+kind = "trace"
+topics = ["template filters", "default", "truncatechars", "date", "auto-escaping", "safe", "trace"]
+minutes = 15

@@ -1,0 +1,7 @@
+- **`x_user(header)`.** The spec uses the real header name `x-user`; `Header()` converts underscores.
+- **Adding 422 to `GET /tasks`.** No inputs, nothing to validate, no 422.
+- **Thinking `responses={404: ...}` makes the endpoint return 404.** It only documents the code.
+- **200 for POST or DELETE.** `status_code=` changes the documented (and real) success code.
+- **`force` as required.** It has a default, so it is optional.
+- **Listing the methods in source order.** The program sorts them: `get`, `post`; then `delete` on the other path.
+- **Forgetting the two validation schemas.** FastAPI adds them for the 422 response.

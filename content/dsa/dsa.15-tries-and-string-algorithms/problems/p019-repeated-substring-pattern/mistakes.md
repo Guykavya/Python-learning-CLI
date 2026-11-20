@@ -1,0 +1,4 @@
+- **Forgetting the divisibility test.** `abcab` has period 3 but is not `abc` repeated.
+- **Returning the longest border instead of the block.** The block has length `n - pi[n - 1]`, not `pi[n - 1]`.
+- **Trying every divisor `d` of `n` with `s[:d] * (n // d) == s`.** Correct, and fast for most inputs (it builds a string per divisor), but it needs the divisors and costs `O(n * number of divisors)`.
+- **Returning `(s, 1)` for `"aa"`.** Two copies count: `('a', 2)`.

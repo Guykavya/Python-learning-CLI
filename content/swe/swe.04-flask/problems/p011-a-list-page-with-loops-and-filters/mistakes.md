@@ -1,0 +1,5 @@
+- **`{% if not posts %}` after the loop** instead of `{% else %}`: it works, but it is longer and easy to get out of sync.
+- **`|safe` to "make the HTML work".** That removes the escaping and creates XSS.
+- **Calling the filter as a function** (`{{ truncate(post.body, 40) }}`). Filters use the pipe.
+- **`strftime` pattern typos** (`%m` is the month number; `%b` is `Mar`; `%B` is `March`).
+- **`<p class="summary">` outside the loop**, or the `<li>` outside: the tests count items.

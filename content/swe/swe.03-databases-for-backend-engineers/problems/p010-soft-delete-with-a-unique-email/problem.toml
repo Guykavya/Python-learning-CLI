@@ -1,0 +1,6 @@
+id = "swe.03.p010"
+title = "Soft delete with a unique email"
+tier = "deep"
+kind = "code"
+topics = ["soft delete", "partial unique index", "views", "SQLite"]
+minutes = 35

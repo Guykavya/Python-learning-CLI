@@ -1,0 +1,5 @@
+- **Using `#` as a separator** with arbitrary characters: `z_search("a#a#a", "#a")` then sees borders across the separator.
+- **No separator and no cap.** Values above `m` appear in `match_lengths`, and a test `== m` for positions misses matches whose `z` is larger.
+- **Reading `z[i]` instead of `z[m + i]`.** The text starts at index `m` of the combined string.
+- **The empty pattern.** `match_lengths` is all zeros; `z_search` gives every position including `len(text)`.
+- **Returning lengths for positions where the pattern runs past the end of the text** as `m`: the Z-function stops at the end of `u`, so those are correctly shorter.

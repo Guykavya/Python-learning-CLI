@@ -1,0 +1,6 @@
+id = "swe.07.p019"
+title = "TOTP with replay protection"
+tier = "applied"
+kind = "code"
+topics = ["TOTP", "HOTP", "RFC 6238", "RFC 4226", "replay protection", "clock drift"]
+minutes = 35

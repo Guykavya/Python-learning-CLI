@@ -1,0 +1,6 @@
+id = "swe.01.p019"
+title = "Review a pull request"
+tier = "deep"
+kind = "explain"
+topics = ["code review", "pull requests", "communication", "explain"]
+minutes = 35

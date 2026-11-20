@@ -1,0 +1,6 @@
+- **Only `@login_required`.** Any logged-in user can edit any post: authentication is not authorisation.
+- **Checking in the template only** (hide the "Edit" button). The URL still works.
+- **Copying the check into each route.** One of them gets forgotten.
+- **403 before 404** for a missing post: you would say "forbidden" about a thing that does not exist.
+- **Comparing the user's *name* or a client-supplied id.** Use the id of `g.user`, which comes from the signed session, never an id from the form or URL.
+- **`g.user["id"]` when `g.user` is `None`** (a `TypeError`).

@@ -1,0 +1,6 @@
+- **Forgetting `status_code=201`.** The default is 200; a create answers 201.
+- **Taking `task: dict`.** Then nothing is validated: a missing title or `"tags": "home"` reaches your code.
+- **Writing `if not task.title: ...` checks for the type.** Pydantic already did it; checks in the function are only for business rules.
+- **Expecting a 400 for broken JSON.** FastAPI answers 422 with type `json_invalid` (section 4.3).
+- **Thinking form data works because Flask accepted it.** A Pydantic-model body is JSON only; forms need `Form()` parameters.
+- **Afraid of `tags: list[str] = []`.** In a plain function default that list would be shared (core.07); Pydantic copies it for each object.

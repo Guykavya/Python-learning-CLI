@@ -1,0 +1,6 @@
+id = "swe.07.p018"
+title = "API keys done right"
+tier = "applied"
+kind = "code"
+topics = ["API keys", "hashing secrets", "prefix lookup", "constant-time compare", "revocation"]
+minutes = 30

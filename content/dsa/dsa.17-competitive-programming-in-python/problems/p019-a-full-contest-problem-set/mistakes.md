@@ -1,0 +1,6 @@
+- **A: counting changes instead of equal neighbours**, or deleting characters from a Python string in a loop (strings are immutable; each deletion is `O(n)`).
+- **B: a double loop.** Correct on the samples, `2 * 10**10` steps on the big test.
+- **B: adding `x` to the counter before counting.** Then a number pairs with itself when `2x = k`.
+- **C: recursive DFS.** `RecursionError` on a snake-shaped island.
+- **C: neighbours outside the grid.** Without a border, `u - 1` at the start of a row jumps to the end of the previous row. The padding of `0` cells fixes this.
+- **Reading with `input()` in a loop** for 10^5 test cases.

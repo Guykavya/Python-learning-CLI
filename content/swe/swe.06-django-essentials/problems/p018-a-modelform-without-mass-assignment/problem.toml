@@ -1,0 +1,6 @@
+id = "swe.06.p018"
+title = "A ModelForm without mass assignment"
+tier = "applied"
+kind = "code"
+topics = ["ModelForm", "mass assignment", "clean_<field>", "fields allow-list", "unique validation"]
+minutes = 20

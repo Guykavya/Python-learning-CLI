@@ -1,0 +1,7 @@
+- **Starting the fixed window at the first request.** The slot is `int(t // 10)`, taken from the clock, so a request at 9.9 and one at 10.1 are in different windows.
+- **Forgetting that the sliding log removes with `<=`.** The entry exactly 10 seconds old has already left: at `t=12.0` the time `2.0` is gone.
+- **Removing too much from the sliding log.** At `t=10.1` only `0.0` leaves, not `2.0` or `4.0`.
+- **Refilling the bucket above capacity.** At `t=2.0` the bucket has 4 + 1 = 5, not more; at `t=9.0` the sum 6.5 is cut to 5.
+- **Using `>` instead of `>= 1`** for the token check, or taking the token before refilling.
+- **Adding tokens for a refused request.** A refusal keeps the tokens (0.75 at `t=10.5`); only time adds more.
+- **Counting only `yes` in the totals but forgetting the last line.** The answer has 12 lines.

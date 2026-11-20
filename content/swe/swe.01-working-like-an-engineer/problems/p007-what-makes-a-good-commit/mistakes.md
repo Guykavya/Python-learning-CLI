@@ -1,0 +1,4 @@
+- **"History A is fine because the final code is the same."** The final snapshot is the same; the history is a tool for people and for git commands.
+- **"Small commits are always better."** A commit that does not build, or splits one idea in two halves that cannot work alone, is too small.
+- **"A short message is enough."** `fix` tells nobody what was fixed or why.
+- **Forgetting the junk file.** A `.DS_Store` or `.env` in a commit is permanent; a secret in history must be revoked, not just deleted.

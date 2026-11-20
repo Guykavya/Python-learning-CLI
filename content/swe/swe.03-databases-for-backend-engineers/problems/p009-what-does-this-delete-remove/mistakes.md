@@ -1,0 +1,5 @@
+- **Stopping the cascade after one level.** Deleting the orders also deletes their lines.
+- **Deleting the tickets.** `SET NULL` keeps the rows and only empties the link.
+- **Thinking statement 2 deletes the order and fails on the invoice.** A refused statement changes nothing at all.
+- **Counting invoices as 0 after statement 1.** Order 12 is not touched by deleting customer 1.
+- **Forgetting that every rule only works with `PRAGMA foreign_keys = ON`.**

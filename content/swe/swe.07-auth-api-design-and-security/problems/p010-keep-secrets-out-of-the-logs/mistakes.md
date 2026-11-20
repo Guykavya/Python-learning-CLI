@@ -1,0 +1,8 @@
+- **Returning `False` from `filter`.** That *drops* the record. Return `True`.
+- **Changing the caller's dictionary.** `args["password"] = "[REDACTED]"` edits the caller's data; build a copy.
+- **Only looking at `record.msg`.** Secrets in `%`-arguments never appear in `record.msg`: use `getMessage()` and clean the arguments.
+- **Forgetting that a single dict argument sits directly in `record.args`.** `log.info("%(a)s", {"a": 1})` gives `args == {"a": 1}`, not a tuple.
+- **An unanchored regex.** `token=` also matches inside `mytoken=5`. Put `(?<!\w)` before the name.
+- **Masking only the word `Bearer`.** The token is the second word.
+- **Leaving `record.args` set** after you made the final text: `%` formatting then runs twice and may crash on a `%` in a value.
+- **Believing the filter is enough.** Do not log secrets in the first place (chapter 15.6).

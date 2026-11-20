@@ -1,0 +1,6 @@
+id = "swe.02.p008"
+title = "What does recv give you"
+tier = "drill"
+kind = "trace"
+topics = ["TCP", "framing", "recv", "trace"]
+minutes = 20

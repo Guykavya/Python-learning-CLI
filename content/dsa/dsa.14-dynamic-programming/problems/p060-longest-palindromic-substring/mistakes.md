@@ -1,0 +1,6 @@
+- **Only odd centres.** Expanding from each letter finds `"aba"` but never `"bb"`: `longest_pal_expand("cbbd")` returns `"c"`. Also expand from each gap `(c, c + 1)`.
+- **Filling `is_pal` row by row.** `is_pal[i][j]` reads `is_pal[i + 1][j - 1]`, a row below that is not filled yet. Loop over the length first.
+- **`>=` when comparing with the best.** Then a later palindrome of the same length replaces the earlier one: `"babad"` gives `"aba"` instead of `"bab"`.
+- **Off by one after the expansion.** When the `while` loop stops, `lo` and `hi` are one step **past** the palindrome: it is `s[lo + 1:hi]`, of length `hi - lo - 1`.
+- **Confusing it with the subsequence (p059).** `"bbbab"`: the longest palindromic substring is `"bbb"`; the longest palindromic subsequence is `"bbbb"`.
+- **Checking every substring with `t == t[::-1]`.** That is `O(n**3)`: about 4.5 * 10**9 character comparisons for `n = 3000`.

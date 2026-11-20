@@ -1,0 +1,7 @@
+id = "swe.07.p013"
+title = "What is wrong with this token?"
+tier = "deep"
+kind = "trace"
+assessment = "trace"
+topics = ["JWT", "alg none", "expiry", "audience", "algorithm confusion", "kid", "trace"]
+minutes = 25

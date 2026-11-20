@@ -1,0 +1,5 @@
+- **Returning `True` when the pattern ends, without checking `is_end`.** Then `b.` matches, because the node `ba` exists.
+- **Treating `.` as "any number of letters"** (like `*`). Here `.` is exactly one letter.
+- **Returning the result of the first child only** at a `.`: `return match(first_child, i + 1)`. Every child must be tried until one succeeds.
+- **Trying all children even after a success.** Correct, but wasteful: stop at the first `True` (`any` does this).
+- **Comparing with `zip`** (the starter): `zip` stops at the shorter string, so `b.` "matches" `bad`. And it scans every word for every query.

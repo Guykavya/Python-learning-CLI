@@ -1,0 +1,5 @@
+- **Stopping only at a branch.** Then `["abc", "ab"]` gives `"abc"`: the word `ab` has ended, so the prefix cannot include `c`.
+- **Reading past the end of a short word** in the vertical scan: check `i < len(w)` before `w[i]`.
+- **Comparing only the first two words.** All words must agree.
+- **Crashing on an empty list** (`words[0]`), or on a list that contains `""`.
+- **Building `prefix + ch` in a loop for long answers.** Repeated string concatenation can be slow for 1000-letter prefixes; collect letters in a list and join once, or slice at the end.

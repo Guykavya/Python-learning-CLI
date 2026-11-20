@@ -1,0 +1,6 @@
+- **Moving to the next text letter after a fallback.** The same letter is compared again with `pattern[k]` for the new `k`.
+- **Falling back only once.** At `i = 6` the first fallback (to 2) still mismatches; fall back again to 1.
+- **Restarting at `k = 0`** on a mismatch: that is the naive search, and at `i = 6` it would give `k = 1`, not 2.
+- **Using `pi[k]` instead of `pi[k - 1]`.**
+- **Inventing a match.** `k` must reach `m = 6`; here the best is 5.
+- **Format.** Without a fallback, the line is `i=0 a: k 0 => 1`; with fallbacks every value is joined by ` -> `: `i=6 a: k 5 -> 2 -> 1 => 2`.

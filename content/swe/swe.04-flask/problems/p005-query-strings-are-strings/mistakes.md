@@ -1,0 +1,5 @@
+- **Using the raw string.** `"3" + 1` is a `TypeError` and `"10" < "9"` is `True`. Convert with `type=int`.
+- **`int(request.args["page"])`.** A missing or bad value is a 400/500. `get(..., type=int)` is safe.
+- **No upper limit.** The client controls the size of your query.
+- **Clamping only one end.** `page=0` gives a negative offset; `per_page=0` gives a page of nothing.
+- **Computing the offset before clamping.** Use the final values.

@@ -1,0 +1,6 @@
+- **Returning the ORM object.** It works for the columns loaded and fails for anything lazy.
+- **Reading `customer.orders` after the `with` block.** The session is gone.
+- **`expire_on_commit=False` as the fix.** It hides the symptom for columns but not for relationships.
+- **Leaving the loop outside the session.** Build the dictionaries inside.
+- **Not sorting the orders.** The order of a collection is not guaranteed.
+- **Returning a `Row` or an `InstanceState`.** Plain `dict`, `list`, `str`, `int` only.

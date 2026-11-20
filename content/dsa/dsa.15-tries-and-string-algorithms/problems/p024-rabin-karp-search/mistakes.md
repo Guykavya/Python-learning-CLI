@@ -1,0 +1,6 @@
+- **Recomputing every window from scratch** (the starter): `O(n * m)`.
+- **Using `B**m` instead of `B**(m-1)`** for the front letter's weight, or computing the power inside the loop.
+- **Letter values starting at 0** (`ord(ch) - 97`): then `a`, `aa`, `aaa` all hash to 0. `ord(ch)` is never 0 for printable text.
+- **Trusting one small modulus.** With `M = 101` false alarms are common; verify or add a second pair.
+- **Reporting a candidate when only one of several pairs matches.** All pairs must agree.
+- **Porting the code to C or Java without fixing negative remainders** (`((x % M) + M) % M`). Python's `%` is already safe.

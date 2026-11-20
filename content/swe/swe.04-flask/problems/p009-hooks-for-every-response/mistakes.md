@@ -1,0 +1,6 @@
+- **Forgetting `return response`.** The client receives an empty or broken answer (Flask raises a `TypeError` for `None`).
+- **`re.match`** or `.search` instead of `fullmatch`: `good!` or `ok\nX-Evil: 1` would pass.
+- **Trusting the header.** No length limit, no character check.
+- **Setting the headers in the view.** Error pages and other views would not have them.
+- **Reading `g.request_id` in `after_request` without `g.get`.** If an earlier hook ended the request, the id may not exist.
+- **Using `before_first_request`** (removed in Flask 2.3) or putting per-request data in module globals: use `g`.

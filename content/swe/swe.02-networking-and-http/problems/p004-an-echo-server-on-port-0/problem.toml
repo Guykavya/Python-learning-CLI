@@ -1,0 +1,6 @@
+id = "swe.02.p004"
+title = "An echo server on port 0"
+tier = "drill"
+kind = "code"
+topics = ["TCP", "sockets", "port 0", "threads"]
+minutes = 25

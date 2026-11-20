@@ -1,0 +1,6 @@
+id = "swe.04.p012"
+title = "Stop the XSS"
+tier = "drill"
+kind = "code"
+topics = ["XSS", "autoescape", "Markup", "escape", "|safe", "filters"]
+minutes = 30

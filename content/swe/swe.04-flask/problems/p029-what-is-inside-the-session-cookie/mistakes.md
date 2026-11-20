@@ -1,0 +1,6 @@
+- **"The cookie is encrypted."** Flask's default session is only signed: the payload is plain Base64 JSON.
+- **"Users can edit their session."** They can edit the text, but the signature then fails and the session is discarded.
+- **Storing a role, a price or a balance in the session.** Readable, can go stale, and wrong if the key leaks.
+- **"A strong SECRET_KEY makes the cookie unreadable."** It protects against forging, not against reading.
+- **Forgetting the replay.** A stolen valid cookie works until it expires; that is why `HttpOnly`, `Secure` and HTTPS matter.
+- **Mixing up fixation and CSRF.** Fixation: the attacker *chooses* your session before login. CSRF: the attacker *uses* your session without knowing it.

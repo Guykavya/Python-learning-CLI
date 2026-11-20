@@ -1,0 +1,6 @@
+id = "swe.07.p022"
+title = "401, 403 or 404?"
+tier = "drill"
+kind = "trace"
+topics = ["401", "403", "404", "authorisation", "information leak", "trace"]
+minutes = 15

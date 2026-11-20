@@ -1,0 +1,6 @@
+id = "swe.03.p019"
+title = "An atomic transfer"
+tier = "drill"
+kind = "code"
+topics = ["transactions", "atomicity", "rollback", "sqlite3"]
+minutes = 25

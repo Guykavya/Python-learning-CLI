@@ -1,0 +1,6 @@
+- **Fixing only `GET`.** The write endpoints are the dangerous ones: PATCH and DELETE change data.
+- **Answering `403`** for "not yours". It tells Ravi that the note exists. Use the same `404` as for a missing note.
+- **Fetching first, then comparing owners, then updating by id only.** Easy to get wrong; put `owner_id` in the `UPDATE` itself.
+- **Checking `rowcount` but not scoping.** A `rowcount` of 1 for somebody else's row is the bug.
+- **Returning `404` after the update has happened.** The status looks right and the data is still damaged. The tests read Asha's note afterwards.
+- **Breaking the owner's path** (for example by comparing `owner_id` with a string). Run the owner tests too.

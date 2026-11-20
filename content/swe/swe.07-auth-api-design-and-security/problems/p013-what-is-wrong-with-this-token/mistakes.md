@@ -1,0 +1,6 @@
+- **Answering `signature` for token 2.** The algorithm check comes **first**; PyJWT never gets to the signature of an `alg: none` token.
+- **Answering `accepted` for token 4** because "the header says HS256". The signature is computed with a different secret, so it cannot match.
+- **Answering `accepted` for token 6** because the signature is good. The `kid` is checked before any decoding, and `../../etc/passwd` is not one of our keys.
+- **Answering `exp` or `signature` for token 5.** The signature and the expiry are fine; the only defect is the audience.
+- **Mixing the order of the checks.** The program says kid, then algorithm, then signature, then claims. A token with several defects would be reported by the first check it fails; these tokens have one each.
+- **Writing words that are not in the table** (`expired`, `bad signature`). Use the closed list.

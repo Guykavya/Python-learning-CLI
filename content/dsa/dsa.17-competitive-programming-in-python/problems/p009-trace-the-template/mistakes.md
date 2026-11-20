@@ -1,0 +1,5 @@
+- **Interleaving the `Case` lines with the `solving` lines.** `Case` lines are written all at once after the loop.
+- **Putting `two done` after the three `solving` lines** or before `solving 1`. It is printed right after case 2 has been appended, before case 3 starts.
+- **`index` of the last maximum.** `list.index` returns the first occurrence: `[5, 5, 8, 8]` gives `2`, not `3`.
+- **Forgetting `end`.** It is printed after the big write.
+- **Expecting `solving` to appear in the `Case` text.** `solve` prints it, it does not return it.

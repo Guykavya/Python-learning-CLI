@@ -1,0 +1,7 @@
+id = "dsa.15.p008"
+title = "Why a trie and not a set of prefixes?"
+tier = "drill"
+kind = "explain"
+topics = ["trie", "hashing", "memory", "explain"]
+minutes = 20
+assessment = "explain"

@@ -1,0 +1,5 @@
+1: upgrade 0003, upgrade 0004
+2: downgrade 0002
+3: downgrade 0004, downgrade 0003
+4: upgrade 0001, upgrade 0002, upgrade 0003
+5: downgrade 0003, downgrade 0002, downgrade 0001

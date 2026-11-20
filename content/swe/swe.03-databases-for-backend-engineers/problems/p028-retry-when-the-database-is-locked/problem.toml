@@ -1,0 +1,6 @@
+id = "swe.03.p028"
+title = "Retry when the database is locked"
+tier = "challenge"
+kind = "code"
+topics = ["retries", "database is locked", "backoff", "transactions", "SQLite"]
+minutes = 45

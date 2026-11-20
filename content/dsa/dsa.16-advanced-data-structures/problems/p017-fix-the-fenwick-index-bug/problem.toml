@@ -1,0 +1,7 @@
+id = "dsa.16.p017"
+title = "Fix the Fenwick index bug"
+tier = "applied"
+kind = "code"
+topics = ["fenwick tree", "debugging", "lowbit", "1-indexing"]
+minutes = 25
+assessment = "fix"

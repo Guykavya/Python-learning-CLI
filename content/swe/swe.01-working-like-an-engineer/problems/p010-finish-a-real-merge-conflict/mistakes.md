@@ -1,0 +1,6 @@
+- **Committing before checking for other unmerged files.** `git commit` fails with a confusing message.
+- **Writing the file with `write_text`.** On Windows the line endings change.
+- **Checking the markers after writing.** The function must leave everything untouched when it raises `ValueError`.
+- **Using `git merge --continue` without checks** (it also works), but then your function says nothing useful about unresolved files.
+- **Not passing `cwd=repo`.** The commands then run in the folder of the test, possibly the course repository.
+- **Forgetting `--no-edit`.** Git would wait for an editor and hang.

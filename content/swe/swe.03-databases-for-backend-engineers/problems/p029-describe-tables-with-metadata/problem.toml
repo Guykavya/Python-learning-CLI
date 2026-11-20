@@ -1,0 +1,6 @@
+id = "swe.03.p029"
+title = "Describe tables with MetaData"
+tier = "drill"
+kind = "code"
+topics = ["SQLAlchemy Core", "MetaData", "Table", "Column", "create_all"]
+minutes = 25

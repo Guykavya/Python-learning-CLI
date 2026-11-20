@@ -1,0 +1,7 @@
+id = "swe.06.p024"
+title = "Choose a framework and defend it"
+tier = "deep"
+kind = "explain"
+topics = ["Django", "Flask", "FastAPI", "framework choice", "trade-offs", "explain"]
+minutes = 40
+assessment = "explain"

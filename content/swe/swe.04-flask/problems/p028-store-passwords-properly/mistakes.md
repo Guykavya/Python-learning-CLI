@@ -1,0 +1,6 @@
+- **Storing the password** (the starter's bug), or "encrypting" it: encryption can be reversed, a hash cannot.
+- **A fast hash** (`md5`, `sha256`) **without salt.** Billions of guesses per second.
+- **Comparing hashes with `==` yourself.** Use `check_password_hash`; it handles the format and compares safely.
+- **Returning `password_hash` in JSON or logs.** Hashes can still be attacked offline.
+- **Raising an exception for a wrong password.** A wrong password is a normal `False`.
+- **Truncating or stripping the password** before hashing: login would fail for passwords with spaces.

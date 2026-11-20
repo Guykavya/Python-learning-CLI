@@ -1,0 +1,7 @@
+id = "swe.03.p039"
+title = "Three loading strategies counted"
+tier = "deep"
+kind = "trace"
+topics = ["lazy loading", "joinedload", "selectinload", "N+1", "trace"]
+minutes = 30
+assessment = "trace"

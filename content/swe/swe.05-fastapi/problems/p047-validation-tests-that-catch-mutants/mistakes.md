@@ -1,0 +1,5 @@
+- **Testing far from the limits** (`"x" * 500`, `priority: 99`). Correct and off-by-one apps both refuse them, so the mutant survives.
+- **Only invalid cases.** An app that refuses everything passes them; also test the valid edges.
+- **Breaking two rules in one payload** (`{"title": "", "priority": 9}`). If a mutant loosens one rule, the other still refuses, and the case catches nothing.
+- **A wrong expectation**, such as `({"title": "x" * 100}, 422)`. 100 is allowed (`max_length` is inclusive), and the first test reports it.
+- **Forgetting unknown fields.** "Extra fields are refused" is a rule too, and a common one to lose in a refactor.
