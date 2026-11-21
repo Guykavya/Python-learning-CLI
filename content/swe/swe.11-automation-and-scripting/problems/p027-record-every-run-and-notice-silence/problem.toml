@@ -1,0 +1,6 @@
+id = "swe.11.p027"
+title = "Record every run, and notice silence"
+tier = "deep"
+kind = "code"
+topics = ["job runner", "status file", "atomic write", "exit codes", "dead-man's switch", "injected clock", "monitoring"]
+minutes = 40

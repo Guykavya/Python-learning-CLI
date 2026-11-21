@@ -1,0 +1,6 @@
+id = "swe.10.p011"
+title = "Rules that live with the data"
+tier = "drill"
+kind = "code"
+topics = ["domain model", "rules with the data", "pure code", "RuleViolation", "no set-up tests", "dataclass methods"]
+minutes = 30

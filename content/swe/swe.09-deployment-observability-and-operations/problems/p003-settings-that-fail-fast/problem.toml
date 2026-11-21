@@ -1,0 +1,6 @@
+id = "swe.09.p003"
+title = "Settings that fail fast"
+tier = "drill"
+kind = "code"
+topics = ["configuration", "environment variables", "twelve-factor", "validation", "secrets", "dataclass"]
+minutes = 30

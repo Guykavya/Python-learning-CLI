@@ -1,0 +1,5 @@
+- **Forgetting maintenance.** A script that "takes 3 hours" but breaks once a year costs more than 3 hours over its life.
+- **Forgetting the years in one of the two sides.** Savings over 3 years compared with a cost of 1 year makes almost everything look worth it.
+- **Using `>=`.** The task says a tie is not worth it; the factor 2 is already the safety margin, so there is no reason to round up.
+- **Returning the net saving.** The function returns the gross minutes saved; the cost is only used for the decision.
+- **Computing with negative inputs.** A negative time is a bug upstream; raising `ValueError` makes it visible instead of producing a nonsense "yes".

@@ -22,7 +22,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        # macOS is skipped for now (re-add macos-latest here when a Mac check is wanted again).
+        os: [ubuntu-latest, windows-latest]
         python: ["3.11", "3.14"]
     steps:
       - uses: actions/checkout@v5

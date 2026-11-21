@@ -1,0 +1,6 @@
+id = "swe.09.p006"
+title = "A Dockerfile linter"
+tier = "applied"
+kind = "code"
+topics = ["Dockerfile", "linting", "layer cache", "PID 1", "non-root user", "secrets in images"]
+minutes = 50

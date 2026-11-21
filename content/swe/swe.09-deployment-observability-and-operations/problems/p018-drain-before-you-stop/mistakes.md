@@ -1,0 +1,6 @@
+- **Refusing requests while draining.** Readiness tells the load balancer to stop; requests already on their way must still be answered or users see errors during every deploy.
+- **Decrementing without `finally`.** One failing request leaves the count at 1 for ever, and `wait_idle` always times out.
+- **An unprotected counter.** `+=` on a shared attribute is not atomic; hold a lock (the test switches threads very often to show it).
+- **`time.sleep(poll)` for the full poll at the end.** The last sleep must be shortened to the remaining time, or the wait overshoots the timeout.
+- **Using the real clock in the loop.** Then the tests (and your own unit tests) would have to wait for real seconds.
+- **Exiting right after `on_sigterm`.** Draining is not stopping: wait for the in-flight requests first.

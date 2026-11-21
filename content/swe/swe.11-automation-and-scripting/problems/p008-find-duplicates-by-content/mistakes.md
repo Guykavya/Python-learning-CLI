@@ -1,0 +1,6 @@
+- **Hashing every file.** Correct, but on a large folder it reads every byte; the test counts calls and expects only shared sizes to be hashed.
+- **`path.read_bytes()` for the hash.** Loads the whole file into memory; read in chunks.
+- **Grouping by name.** `notes.txt` and `copy/notes.bak` are duplicates; two files called `notes.txt` with different bytes are not.
+- **Following symlinks.** A link to a file is not a second copy, and links to folders can make the walk escape the tree or loop.
+- **Counting empty files by default.** Every empty file would "duplicate" every other one; `min_size=1` skips them.
+- **Returning groups of one,** or unsorted groups, so the answer changes from run to run.

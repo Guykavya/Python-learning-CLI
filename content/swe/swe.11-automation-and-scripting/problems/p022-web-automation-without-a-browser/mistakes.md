@@ -1,0 +1,7 @@
+- **No timeout.** `urlopen(url)` without one can wait for ever.
+- **Returning `[]` when nothing was found.** It looks like a valid answer; raise so the change of layout is noticed.
+- **Following "next" without remembering where you have been.** One wrong link and the job never ends.
+- **Joining URLs with `+`.** `base + "/page/2"` breaks with a trailing slash or a relative link like `page/2`; use `urljoin` with the **current** page's URL.
+- **Catching `URLError` before `HTTPError`.** `HTTPError` is a subclass, so the status code would be lost in a generic message.
+- **The default User-Agent** (`Python-urllib/3.x`). Say who you are; some sites block the default.
+- **Storing the price as a string.** Convert with `float()` so totals and comparisons work.

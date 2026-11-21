@@ -1,0 +1,6 @@
+- **Crashing on the first non-JSON line.** Container logs contain plain text; skip it.
+- **Sorting by position in the file.** Lines from different services interleave; sort by `ts`.
+- **Taking the first `ERROR` in the file.** After sorting it may be a different line; the cause is often in an earlier service.
+- **Matching a prefix or ignoring case.** An id is an exact string.
+- **Forgetting `TypeError` from `json.loads(None)`.** A stream can contain anything; the function must not crash.
+- **Counting a service twice in `services`.** Order of first event, no duplicates.

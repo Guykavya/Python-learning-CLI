@@ -1,0 +1,4 @@
+- **Calling speculation a pain.** "We might switch databases" has no evidence today; "three routes check membership and I fixed a bug in two of them" has.
+- **Matching the symptom instead of the cause.** "Testing is hard" can be a repository pain (needs a database) or a domain pain (rules scattered); read what exactly makes it hard.
+- **Jumping to the biggest remedy.** The ladder is read from the top and you stop as soon as the pain is gone: a service layer, not services, for a duplicated rule.
+- **Treating "does not look like the book" as a pain.** Style is not pain.

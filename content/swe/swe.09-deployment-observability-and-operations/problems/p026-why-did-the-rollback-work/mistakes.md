@@ -1,0 +1,5 @@
+- **Believing "rolled back" means "fixed".** The pointer is back, but the schema is not; always check the old version against the *current* schema.
+- **Undoing the migration in your head.** In this model (and in most real deployments) a rollback never reverses a migration.
+- **Treating an additive migration as dangerous.** Adding a nullable column is exactly what makes a rollback safe (step 2 and step 5).
+- **Forgetting that step 4 starts from the broken state.** The fix is deployed on the schema as it is now, not on the original one.
+- **Dropping the summary line.** The output has six lines; the last one lists the steps where rolling back was not enough.

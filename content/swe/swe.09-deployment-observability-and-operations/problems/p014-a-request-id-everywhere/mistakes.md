@@ -1,0 +1,7 @@
+- **Trusting `X-Request-ID` blindly.** A client can send spaces, newlines or megabytes; validate, otherwise replace.
+- **Putting the exception text in the response.** The client gets the id only; the traceback goes to the log (swe.07 9.4).
+- **Resetting the variable before logging.** The "request finished" line then shows `-` instead of the id, and the whole point is lost.
+- **Not resetting at all.** In a long-lived task the next request would see the previous id.
+- **Adding the header only on success.** An error response needs the id the most: the user quotes it to support.
+- **Logging health probes.** One probe every 5 seconds from every container drowns the real events.
+- **Forgetting `nonlocal status`.** The logged status stays 500 for every request.

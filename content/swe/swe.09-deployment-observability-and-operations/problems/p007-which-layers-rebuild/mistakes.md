@@ -1,0 +1,5 @@
+- **Counting only the step that changed.** Every step after the first miss is rebuilt too.
+- **Counting the `FROM` step as always cached.** Changing the tag changes step 1 itself.
+- **Thinking `README.md` matters.** Only the files a `COPY` copies are part of its cache key.
+- **Thinking `USER`/`CMD` are free.** They are steps too: editing `CMD` rebuilds that step (cheap, but not zero), and an edit before them rebuilds them.
+- **Off-by-one on the count.** "Steps rebuilt" counts from the first miss to step 9 inclusive.

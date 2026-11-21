@@ -1,0 +1,5 @@
+- **A chain of `if`/`elif` for the rules.** It cannot be walked by a test and drifts when someone adds a case.
+- **Raising `ValueError` for a refused move.** A legal word in an illegal combination is a business outcome (`RuleViolation`, HTTP 409 in the web layer).
+- **A message that names only one of the two.** "invalid move" tells the user nothing; name the status and the action.
+- **Forgetting `pause`.** The chapter's rule 4 also allows `doing -> todo`.
+- **Being case-lenient.** `"Start"` is not an action here; unknown words are programmer mistakes.

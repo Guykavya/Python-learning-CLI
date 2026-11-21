@@ -1,0 +1,6 @@
+id = "swe.09.p019"
+title = "Metrics with route templates"
+tier = "applied"
+kind = "code"
+topics = ["Prometheus", "metrics", "counter", "histogram", "gauge", "label cardinality", "route template"]
+minutes = 50

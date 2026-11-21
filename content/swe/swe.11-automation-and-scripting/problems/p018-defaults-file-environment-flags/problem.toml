@@ -1,0 +1,6 @@
+id = "swe.11.p018"
+title = "Defaults, file, environment, flags"
+tier = "applied"
+kind = "code"
+topics = ["configuration", "precedence", "tomllib", "environment variables", "type conversion", "secrets", "dataclass"]
+minutes = 40

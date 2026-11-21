@@ -1,0 +1,5 @@
+- **Fixing only the rollback.** The other two bugs (switching first, deleting the old release) still cause outages on other paths.
+- **Rolling back to "nothing".** With no previous version the pointer must be removed, not left naming the broken release.
+- **Letting the health check's exception escape.** The pointer stays on the broken release and the caller sees a traceback instead of `False`.
+- **Deleting the previous release "after success".** It is the rollback target for the *next* surprise; prune by age instead.
+- **A temporary folder inside the release name space without cleanup.** After a write error, `.<version>.tmp` must be removed.

@@ -18,6 +18,7 @@ import os
 import subprocess
 import sys
 import tempfile
+import tomllib
 
 ENGINE = "learn-engine"  # the name in pyproject.toml; installed last, from the folder itself
 
@@ -25,6 +26,20 @@ ENGINE = "learn-engine"  # the name in pyproject.toml; installed last, from the 
 def _norm(name):
     """Package names compare case-insensitively, with '_' and '.' the same as '-'."""
     return name.lower().replace("_", "-").replace(".", "-")
+
+
+def install_target(project):
+    """The folder to install, plus the [tui] extra when config.toml asks for full-screen mode.
+
+    Textual is optional (never a base dependency), so a fresh install would miss it. Reading
+    ui.mode here means `learn.cmd` installs it on setup, or after a git pull, when the setting says tui.
+    """
+    try:
+        with open(os.path.join(project, "config.toml"), "rb") as f:
+            mode = tomllib.load(f).get("ui", {}).get("mode", "plain")
+    except (OSError, tomllib.TOMLDecodeError):
+        mode = "plain"
+    return project + "[tui]" if mode == "tui" else project
 
 
 def _pip(*args, capture=False):
@@ -48,13 +63,14 @@ def main(argv):
         print("Usage: install_with_progress.py <folder that holds pyproject.toml>", file=sys.stderr)
         return 2
     project = os.path.abspath(argv[1])
+    target = install_target(project)
 
     print("Checking which packages the engine needs and downloading them.", flush=True)
     print("pip's progress bars are below; this is the large part of the wait.", flush=True)
     with tempfile.TemporaryDirectory() as tmp:
         report = os.path.join(tmp, "report.json")
         # A dry run: pip resolves everything, downloads it into its cache, and writes what it would install.
-        result = _pip("--dry-run", "--progress-bar", "on", "--report", report, "-e", project)
+        result = _pip("--dry-run", "--progress-bar", "on", "--report", report, "-e", target)
         if result.returncode != 0:
             return result.returncode
         with open(report, encoding="utf-8") as f:
@@ -76,7 +92,7 @@ def main(argv):
             return _failed(result, pin)
         print(f"  {done} of {total} installed: {pin.replace('==', ' ')}", flush=True)
 
-    result = _pip("--no-deps", "--progress-bar", "off", "-e", project, capture=True)
+    result = _pip("--no-deps", "--progress-bar", "off", "-e", target, capture=True)
     if result.returncode != 0:
         return _failed(result, "the engine")
     print(f"  {total} of {total} installed: the engine ({ENGINE})", flush=True)

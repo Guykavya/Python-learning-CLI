@@ -79,6 +79,9 @@ exit /b 1
 set "PYYAML_FORCE_LIBYAML="
 <nul set /p "=%DIR%" >"%STAMP%"
 copy /y "%DIR%pyproject.toml" "%DEPS%" >nul
+rem First setup only: make the Desktop icon and the folder icon, and say so.
+"%VPY%" -m learn shortcut
+if errorlevel 1 echo Could not make the icons now. Later run: .\learn.cmd shortcut
 
 :run
 rem After a git pull, pyproject.toml may list new packages (hypothesis, httpx, ...): install them once.

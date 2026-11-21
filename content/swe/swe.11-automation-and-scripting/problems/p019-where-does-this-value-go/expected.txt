@@ -1,0 +1,5 @@
+folder = /data/inbox (file)
+keep_days = 7 (env)
+dry_run = True (flag)
+log_level = INFO (file)
+api_token = None (default)

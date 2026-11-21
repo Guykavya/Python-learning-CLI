@@ -1,0 +1,5 @@
+fan-out on write: inbox rows written per day     = 5002200
+fan-out on write: inbox rows written per second  = 58
+fan-out on read : source lookups per second      = 46296
+hybrid          : inbox rows written per day     = 2200
+hybrid          : merged at read time            = ['star']

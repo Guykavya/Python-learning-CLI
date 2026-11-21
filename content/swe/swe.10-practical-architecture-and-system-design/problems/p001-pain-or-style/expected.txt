@@ -1,0 +1,8 @@
+1: style
+2: pain service-layer
+3: pain repository
+4: pain unit-of-work
+5: style
+6: pain events-outbox
+7: pain separate-services
+8: pain domain-model

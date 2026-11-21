@@ -1,0 +1,6 @@
+- **Letting a bad line crash the summary.** Container logs mix JSON with warnings; skip and count.
+- **Counting blank lines as skipped.** They carry no information; the spec ignores them.
+- **`upstream_status.split(",")` on `"-"`.** It gives one part, so a connection failure would look like one try; handle the dash first.
+- **Computing the share with the skipped lines in the denominator.** Only valid access lines are requests.
+- **Sorting the slowest ascending.** The slowest request comes first.
+- **Treating 4xx as errors in `share_5xx`.** A 404 is the client's mistake, and the chapter's alert counts only 5xx.

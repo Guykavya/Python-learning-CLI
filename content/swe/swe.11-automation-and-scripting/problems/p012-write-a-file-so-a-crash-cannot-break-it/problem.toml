@@ -1,0 +1,6 @@
+id = "swe.11.p012"
+title = "Write a file so a crash cannot break it"
+tier = "drill"
+kind = "code"
+topics = ["atomic write", "tempfile", "os.replace", "fsync", "crash safety", "files"]
+minutes = 25

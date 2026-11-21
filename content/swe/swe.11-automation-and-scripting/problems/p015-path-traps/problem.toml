@@ -1,0 +1,6 @@
+id = "swe.11.p015"
+title = "Path traps"
+tier = "drill"
+kind = "trace"
+topics = ["pathlib", "suffix", "stem", "glob", "hidden files", "resolve", "trace"]
+minutes = 15

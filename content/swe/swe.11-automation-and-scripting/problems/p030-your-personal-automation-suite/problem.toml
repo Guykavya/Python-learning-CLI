@@ -1,0 +1,7 @@
+id = "swe.11.p030"
+title = "Your personal automation suite"
+tier = "challenge"
+kind = "code"
+topics = ["automation suite", "argparse", "settings precedence", "logging", "single instance", "status files", "dry run", "fake transport"]
+minutes = 120
+assessment = "build"

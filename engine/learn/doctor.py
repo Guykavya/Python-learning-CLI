@@ -16,7 +16,7 @@ import tomllib
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from learn import chapters, paths
+from learn import chapters, config, paths
 
 # import name -> name of the package you pip install (only where they differ)
 ALIASES = {"sklearn": "scikit-learn", "PIL": "pillow", "yaml": "pyyaml", "bs4": "beautifulsoup4", "cv2": "opencv-python", "jwt": "pyjwt",
@@ -129,6 +129,14 @@ def environment_report() -> list[tuple[str, str, str]]:
     else:
         rows.append(("UTF-8 mode", "ok", "on" if utf8 else "off (fine on this system)"))
     rows.append(("git", "ok" if shutil.which("git") else "warn", "found" if shutil.which("git") else "not found (optional: progress history and downloads)"))
+    tui_wanted = config.load().get("ui", {}).get("mode", "plain") == "tui"
+    has_textual = importlib.util.find_spec("textual") is not None
+    if has_textual:
+        rows.append(("Full-screen mode", "ok", "Textual installed" + ("" if tui_wanted else " (mode is plain: learn config set ui.mode tui)")))
+    elif tui_wanted:
+        rows.append(("Full-screen mode", "warn", 'ui.mode is "tui" but Textual is missing, so learn stays plain. Fix: learn config set ui.mode tui'))
+    else:
+        rows.append(("Full-screen mode", "ok", "optional, not installed. Turn on with: learn config set ui.mode tui"))
     try:
         con = sqlite3.connect(":memory:")
         con.execute("CREATE VIRTUAL TABLE t USING fts5(x)")

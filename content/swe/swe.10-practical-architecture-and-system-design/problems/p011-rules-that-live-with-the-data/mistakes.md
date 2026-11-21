@@ -1,0 +1,6 @@
+- **Changing the fields before checking the rule.** A refused move must leave the task unchanged; check first, change after.
+- **Asking the database from inside the task.** The domain stays pure: facts arrive as arguments.
+- **Checking capacity for a done task or for the same person.** Assigning those adds no load and must be allowed.
+- **Checking the limit before the status in `reopen`.** The status error is the more basic one and must come first.
+- **Forgetting to clear `completed_at` on reopen** (or to set it on finish).
+- **Hard-coding `3` in the message.** The limit is a parameter; the message must use it.

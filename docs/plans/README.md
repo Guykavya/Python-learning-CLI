@@ -41,9 +41,9 @@ Written = problem folders on disk. Plan = file in this folder.
 | swe.06 | Django essentials | 25 | 25 | done 2026-11-20, all validated |
 | swe.07 | Auth, API design and security | 35 | 35 | done 2026-11-20, all validated |
 | swe.08 | Caching, queues and background work | 30 | 30 | done 2026-11-20, all validated |
-| swe.09 | Deployment, observability and operations | 30 | 0 | yes |
-| swe.10 | Practical architecture and system design | 25 | 0 | yes |
-| swe.11 | Automation and scripting | 30 | 0 | yes |
+| swe.09 | Deployment, observability and operations | 30 | 30 | done 2026-11-20, all validated |
+| swe.10 | Practical architecture and system design | 25 | 25 | done 2026-11-20, all validated |
+| swe.11 | Automation and scripting | 30 | 30 | done 2026-11-21, all validated |
 | da.01 | Analysis environment and descriptive statistics | 30 | 0 | yes |
 | da.02 | NumPy | 50 | 0 | yes |
 | da.03 | pandas core | 60 | 0 | yes |

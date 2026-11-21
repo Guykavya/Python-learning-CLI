@@ -1,0 +1,7 @@
+- **Running only "today".** Every day the machine was off is lost for ever.
+- **Saving the state once at the end.** A failure on day 3 of 5 would lose the record of days 1 and 2, and they would be redone.
+- **Continuing after a failed day.** The state can then only say "last success = day 5" and day 3 is silently skipped.
+- **Saving the failed day as done.** The next run would never retry it.
+- **Off-by-one at either end.** `last_success` itself was done already; today must be included.
+- **Inventing a backlog for a new job.** With no state, start from today (or from an explicit start date), not from 1970.
+- **Comparing a `datetime` with a `date`.** Use `now.date()` for "today".

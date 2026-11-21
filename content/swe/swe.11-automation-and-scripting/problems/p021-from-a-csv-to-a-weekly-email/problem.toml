@@ -1,0 +1,6 @@
+id = "swe.11.p021"
+title = "From a CSV to a weekly e-mail"
+tier = "applied"
+kind = "code"
+topics = ["csv", "data automation", "email.message", "fake transport", "bad rows", "pure functions"]
+minutes = 35

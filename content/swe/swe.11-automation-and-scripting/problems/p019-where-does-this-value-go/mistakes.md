@@ -1,0 +1,6 @@
+- **Letting `TIDY_FOLDER=` win.** An empty value counts as not set; otherwise the folder would be the current directory.
+- **Letting the file win over the environment** for `keep_days`. The environment is stronger.
+- **Treating `keep_days: None` as "set to nothing".** `None` from argparse means the flag was not typed.
+- **Reading `TIDY_LOGLEVEL`.** The name must match exactly: `TIDY_LOG_LEVEL`.
+- **Writing `info`.** `log_level` is upper-cased.
+- **Taking the token from the file.** Secrets come from the environment only.

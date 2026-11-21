@@ -1,0 +1,6 @@
+- **A database ping in `/healthz`.** A database outage then restarts every healthy container at once (a restart storm) and makes the recovery slower.
+- **Stopping at the first failing check.** The operator fixes one problem, redeploys, and meets the next one; list all of them.
+- **Returning `200` with `{"status": "not ready"}`.** Platforms look at the status code; readiness failure is `503`.
+- **No `draining` flag.** During a deploy the load balancer keeps sending traffic to an instance that is shutting down.
+- **Checks with side effects or heavy queries.** A health check runs every few seconds on every instance.
+- **Putting optional dependencies in readiness.** A down recommendation service should degrade one page, not remove the instance from rotation.

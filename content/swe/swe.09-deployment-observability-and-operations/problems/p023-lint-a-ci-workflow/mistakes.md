@@ -1,0 +1,7 @@
+- **Reading `workflow["on"]` only.** PyYAML makes that key `True`; the check then reports "no trigger" for every valid workflow.
+- **`uses.split("@")[1]` on a local action.** `./.github/actions/setup` has no `@`; skip local actions first.
+- **Flagging official actions for not being pinned to a SHA.** The rule excludes `actions/` and `docker/`; a major tag is accepted for them.
+- **Regex for secrets that misses `${{secrets.X}}`.** Allow optional spaces after `${{`.
+- **Assuming `needs` is always a list.** A single `needs: build` is a string.
+- **Crashing on a job that is `null`.** Real files have half-written jobs; a linter must report, not crash.
+- **A `make test` warning on a workflow with no jobs.** That case already has its own, clearer error.

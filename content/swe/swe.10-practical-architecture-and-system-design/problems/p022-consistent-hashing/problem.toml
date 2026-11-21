@@ -1,0 +1,6 @@
+id = "swe.10.p022"
+title = "Consistent hashing"
+tier = "deep"
+kind = "code"
+topics = ["consistent hashing", "hash ring", "virtual nodes", "md5", "sharding", "caching", "bisect"]
+minutes = 50

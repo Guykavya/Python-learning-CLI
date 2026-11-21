@@ -1,0 +1,7 @@
+id = "swe.11.p009"
+title = "What does argparse make of it?"
+tier = "drill"
+kind = "trace"
+topics = ["argparse", "subcommands", "global options", "type conversion", "exit code 2", "trace"]
+minutes = 20
+assessment = "trace"

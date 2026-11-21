@@ -1,0 +1,6 @@
+- **Fixing only the path the customer reported.** `PATCH` and reopen are two different paths: test both.
+- **Checking capacity after the e-mail or the audit line.** A refused request must leave no trace, so check first, write after.
+- **Applying the check to a done task or to the same person.** The result is false refusals: a person with 3 open tasks could no longer be re-assigned their own task, or take a closed one.
+- **Forgetting the assignment inside the same request.** `PATCH {"assignee_id": 2, "status": "todo"}` on a done task reopens it for the **new** assignee.
+- **Counting `done` as open.** The query is `status != 'done'`.
+- **Copying the SQL into a second helper.** The test counts how often the "open tasks" query appears: one place means one query.

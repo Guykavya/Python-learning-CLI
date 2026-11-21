@@ -1,0 +1,7 @@
+id = "swe.09.p030"
+title = "Operate the API"
+tier = "challenge"
+kind = "code"
+topics = ["operations", "Docker", "Compose", "CI", "JSON logs", "request id", "health checks", "metrics", "graceful shutdown", "project"]
+minutes = 120
+assessment = "build"

@@ -1,0 +1,6 @@
+- **Checking line by line.** `ENV A=1 \` and the next line form one instruction; a secret on the second line is on the first line's instruction.
+- **Calling `localhost:5000/app` tagged.** The colon belongs to the registry address; look for the tag in the last path component only.
+- **Reporting `USER` from any stage.** An earlier build stage running as `app` says nothing about the final image.
+- **Flagging `COPY --from=build . /srv`.** It copies from another stage, not from the build context.
+- **Treating `ENV APP_SECRET_KEY=${APP_SECRET_KEY}` as a leak.** A value that starts with `$` is a reference, not a literal secret.
+- **Forgetting the old `ENV NAME value` form.** It has no `=`.

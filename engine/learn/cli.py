@@ -1116,6 +1116,21 @@ def cmd_config(args: argparse.Namespace) -> None:
             raise UserError("Usage: learn config set section.name value")
         config.set_value(args.key, config.parse_cli_value(args.value))
         print(f"{args.key} = {config.get(args.key)}")
+        if args.key == "ui.mode" and config.get(args.key) == "tui" and importlib.util.find_spec("textual") is None:
+            _install_textual()
+
+
+def _install_textual() -> None:
+    """Install the optional [tui] extra now (needs internet once). Same installer the launcher uses."""
+    print(ui.dim("  Full-screen mode needs the Textual package. Installing it now (needs internet once)..."))
+    script = paths.root() / "scripts" / "install_with_progress.py"
+    result = subprocess.run([sys.executable, str(script), str(paths.root())]) if script.exists() else None
+    if result is None or result.returncode != 0:
+        print(ui.warn("  Could not install Textual. Later, with internet, run:"))
+        print('    .venv\\Scripts\\python.exe -m pip install -e ".[tui]"   (Windows)')
+        print('    .venv/bin/python -m pip install -e ".[tui]"            (Linux, macOS)')
+    else:
+        print(ui.ok("  Textual installed. Run `learn` to open the full-screen home."))
 
 
 def cmd_scan(args: argparse.Namespace) -> None:
@@ -1455,6 +1470,7 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("value", nargs="?")
     add("scan", cmd_scan, "Scan the playground for self-practice")
     add("completion", cmd_completion, "Show how to turn on Tab completion in bash")
+    add("shortcut", cmd_shortcut, "Put a Python Learning icon on the Desktop: it opens a terminal in this folder")
 
     sp = add("new", cmd_new, "Create a new problem from the template (authoring)")
     sp.add_argument("module")
@@ -1665,6 +1681,14 @@ def cmd_menu(parser: argparse.ArgumentParser) -> None:
         finally:
             if erasing:
                 conn = db.connect()
+
+
+def cmd_shortcut(args: argparse.Namespace) -> None:
+    from learn import shortcut
+    try:
+        print(ui.ok(shortcut.create()))
+    except RuntimeError as exc:
+        raise UserError(str(exc)) from None
 
 
 def cmd_completion(args: argparse.Namespace) -> None:

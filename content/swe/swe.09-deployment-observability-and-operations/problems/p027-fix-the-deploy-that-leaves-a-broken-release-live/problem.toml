@@ -1,0 +1,7 @@
+id = "swe.09.p027"
+title = "Fix the deploy that leaves a broken release live"
+tier = "applied"
+kind = "code"
+topics = ["deployment", "rollback", "atomic switch", "health check", "fix", "os.replace"]
+minutes = 40
+assessment = "fix"

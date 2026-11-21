@@ -1,0 +1,5 @@
+v1: task_saved=no emails_sent=0 half_saved=no outbox_pending=0
+v2: task_saved=yes emails_sent=0 half_saved=no outbox_pending=0
+v3: task_saved=no emails_sent=1 half_saved=no outbox_pending=0
+v4: task_saved=yes emails_sent=0 half_saved=yes outbox_pending=0
+v5: task_saved=yes emails_sent=0 half_saved=no outbox_pending=1

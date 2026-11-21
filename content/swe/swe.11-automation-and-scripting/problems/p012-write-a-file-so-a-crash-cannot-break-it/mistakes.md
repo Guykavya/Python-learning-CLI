@@ -1,0 +1,6 @@
+- **Writing the temp file in the system temp folder.** It may be on another file system, where `os.replace` fails or is not atomic.
+- **Swallowing the error.** The caller must learn that the write failed; clean up, then `raise`.
+- **Leaving the temp file behind** after a failure. A folder slowly fills with `state.json.abc123.tmp` files.
+- **Forgetting `fsync`.** After a power cut the rename can survive while the data does not, giving an empty file.
+- **`Path.rename` instead of `os.replace`.** On Windows `rename` fails if the target exists; `os.replace` overwrites on every system.
+- **Opening the target with `"w"` first "to be sure".** That truncates it, which is exactly the half-file problem.

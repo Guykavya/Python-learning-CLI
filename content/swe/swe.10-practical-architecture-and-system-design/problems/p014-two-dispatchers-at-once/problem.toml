@@ -1,0 +1,6 @@
+id = "swe.10.p014"
+title = "Two dispatchers at once"
+tier = "deep"
+kind = "trace"
+topics = ["outbox", "dispatcher", "claim", "at-least-once", "concurrency", "lease", "trace"]
+minutes = 35

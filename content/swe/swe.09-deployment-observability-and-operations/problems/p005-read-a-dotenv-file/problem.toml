@@ -1,0 +1,6 @@
+id = "swe.09.p005"
+title = "Read a .env file"
+tier = "drill"
+kind = "code"
+topics = ["dotenv", "parsing", "configuration", "quotes", "error messages", "secrets"]
+minutes = 30

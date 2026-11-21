@@ -1,0 +1,7 @@
+id = "swe.10.p008"
+title = "What did the repository buy you?"
+tier = "applied"
+kind = "explain"
+topics = ["repository", "pain log", "honest trade-offs", "fakes", "when not to build it", "explain"]
+minutes = 35
+assessment = "explain"

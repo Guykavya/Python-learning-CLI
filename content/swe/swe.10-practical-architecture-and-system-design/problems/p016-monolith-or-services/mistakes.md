@@ -1,0 +1,6 @@
+- **Choosing services for "scale".** One database server and a few app servers carry far more than most products need; measure first (chapter 13).
+- **Ignoring the availability tax.** Every service in a request path multiplies the chance of failure.
+- **Splitting by table.** Services should follow business capabilities and teams, not the schema.
+- **A rewrite instead of a strangler.** It delivers nothing for a year and often fails.
+- **Treating the event format as an internal detail.** Renaming a field breaks consumers you do not control.
+- **Calling a shared database "microservices".** That is a distributed monolith.

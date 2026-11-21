@@ -1,0 +1,6 @@
+1: command=organize dry_run=False folder=x verbose=2
+2: exit 2
+3: exit 2
+4: command=dupes folder=x min_size=0 verbose=0
+5: exit 2
+6: command=organize dry_run=True folder=old photos verbose=0

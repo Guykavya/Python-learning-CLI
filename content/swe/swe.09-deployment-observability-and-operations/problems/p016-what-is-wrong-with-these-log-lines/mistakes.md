@@ -1,0 +1,5 @@
+- **Fixing (a) by masking the password.** The password should not reach the log call at all; mask only what you must show (like a URL's password in `repr`).
+- **Fixing (c) with a better f-string.** The message must be constant; the facts go into fields.
+- **Calling a card decline ERROR.** A normal business outcome is `WARNING` or `INFO` with a reason field; `ERROR` is for failures that need a human.
+- **Splitting a traceback "for readability".** JSON logs are read by machines first; one record keeps the request id and the context together.
+- **Answering with only the problem.** The task asks for the problem and the replacement line.

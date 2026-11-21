@@ -1,0 +1,6 @@
+id = "swe.09.p021"
+title = "Which metric type?"
+tier = "drill"
+kind = "trace"
+topics = ["Prometheus", "counter", "gauge", "histogram", "metric types", "RED", "trace"]
+minutes = 15

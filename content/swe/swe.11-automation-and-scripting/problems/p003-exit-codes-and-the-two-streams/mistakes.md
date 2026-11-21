@@ -1,0 +1,6 @@
+- **Printing the summary or the error to stdout.** Then `listfiles docs | wc -l` counts one line too many, and `> out.txt` hides the error from the human.
+- **Returning 0 after an error**, or calling `print("error")` and carrying on. Cron and `&&` see success.
+- **Catching `SystemExit` from argparse** and returning 0 or 1. Usage errors are code 2 by convention; let argparse do it.
+- **Calling `sys.exit()` inside `main`.** `main` returns the code; only the `__main__` block calls `sys.exit(main())`, so tests can call `main` without catching anything.
+- **Comparing the suffix with case.** `b.PDF` has suffix `.PDF`; lower-case both sides.
+- **Listing folders or hidden files** as if they were files.

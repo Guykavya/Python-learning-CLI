@@ -1,0 +1,6 @@
+- **Raising `HTTPException` from the service.** It then needs FastAPI to be importable, a CLI cannot use it, and the architecture test of p015 fails.
+- **Calling `conn.commit()` inside the service.** The use case may be one step of a bigger transaction; the caller commits (p009 makes this an object).
+- **Checking the project before the title.** The order is part of the behaviour the HTTP tests describe: a blank title is `422` even for an unknown project.
+- **Counting `done` tasks as open.** Rule 3 counts every status except `done`.
+- **Sending the e-mail before the checks pass.** Rules first, then writes, then the side effect.
+- **Changing the route to "help".** It must keep only translation; if you edit it, a rule has leaked into the web layer.

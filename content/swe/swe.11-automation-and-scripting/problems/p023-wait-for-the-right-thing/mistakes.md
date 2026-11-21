@@ -1,0 +1,6 @@
+- **"Increase the sleep to 10 seconds."** Slower every week, and still wrong on the slowest day.
+- **Thinking `count()` waits.** It reports the present; use `expect` or `wait_for_selector` first.
+- **Copying the generated CSS selector from `codegen` unchanged.** Clean it up to a role, label or text locator.
+- **Reading the downloads folder by name.** You get whatever file has that name, not the one you just requested.
+- **No timeout and no evidence.** A hung page blocks the job for ever, and a failure leaves nothing to debug.
+- **Forgetting the API option.** The most robust browser script is the one you did not need to write.

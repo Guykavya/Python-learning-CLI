@@ -1,0 +1,5 @@
+- **"Raise `timeout` and the problem goes away."** The worker is then stuck for a minute per slow request; move the work to a queue instead.
+- **Using `docker kill` (or `kill -9`) in deploy scripts.** `SIGKILL` skips every cleanup and cuts requests in flight.
+- **A grace period shorter than `graceful_timeout`.** Docker's `SIGKILL` arrives while workers are still finishing.
+- **Shell-form `CMD`.** Every `docker stop` takes the full 10 seconds and kills without notice.
+- **Thinking `SIGINT` and `SIGTERM` are the same.** For Gunicorn, Ctrl+C is a fast shutdown; the graceful one is `SIGTERM`.

@@ -1,0 +1,7 @@
+- **Writing the release straight into `releases/<version>`.** A crash or a write error leaves a half-written folder that a later deploy or a reader may take for a real release.
+- **Rewriting the pointer with `write_text` directly.** A reader can see an empty or partial file; write a temporary file and `os.replace`.
+- **Deleting the previous release "to save space" before the health check.** Then there is nothing to roll back to (this is the bug of problem p027).
+- **Rolling back to "the previous deploy" instead of the previous *good* one.** After two failures in a row the last attempt was bad too; remember what was live *before* this deploy.
+- **Pruning by folder name.** `1.10.0` sorts before `1.9.0` as text; use the deploy order.
+- **Pruning the live release.** It can be the oldest folder after several failed deploys.
+- **Letting the health check's exception escape.** The deploy must report a failure and roll back, not crash and leave the pointer on the broken release.

@@ -1,0 +1,3 @@
+no claim:                         ana=1 ben=2 cy=2
+with a claim:                     ana=1 ben=1 cy=1
+claim, D1 dies after claiming 2:  ana=1 ben=0 cy=1

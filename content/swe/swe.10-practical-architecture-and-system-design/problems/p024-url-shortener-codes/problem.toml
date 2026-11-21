@@ -1,0 +1,6 @@
+id = "swe.10.p024"
+title = "URL shortener codes"
+tier = "applied"
+kind = "code"
+topics = ["URL shortener", "base62", "counter", "custom aliases", "validation", "reserved words", "system design"]
+minutes = 45

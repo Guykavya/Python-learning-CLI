@@ -1,0 +1,6 @@
+- **Naming the command function `undo`.** It replaces the library function `undo` in the module, and the command ends up calling itself (a Click command object), not the library.
+- **Copying the move logic into the command.** Two copies drift apart; the test replaces `plan_moves`/`apply_moves` with spies and expects the command to call them.
+- **Checking the folder by hand** (`if not folder.is_dir()`) instead of `click.Path(exists=True, file_okay=False)`. Click gives the right exit code (2) and message.
+- **Forgetting `path_type=Path`.** You get a `str`, and `relative_to` fails.
+- **`print` instead of `click.echo`.** It mostly works, but `click.echo` handles encodings, pipes and the test runner reliably.
+- **Undo without confirmation.** It is the command that changes many files at once; ask, and allow `--yes` for scripts.

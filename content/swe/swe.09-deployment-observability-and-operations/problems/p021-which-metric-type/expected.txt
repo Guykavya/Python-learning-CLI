@@ -1,0 +1,8 @@
+1: counter
+2: gauge
+3: histogram
+4: gauge
+5: counter
+6: gauge
+7: counter
+8: histogram

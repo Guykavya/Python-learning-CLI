@@ -1,0 +1,6 @@
+id = "swe.11.p006"
+title = "Plan, then move, with a dry run"
+tier = "applied"
+kind = "code"
+topics = ["dry run", "plan and apply", "journal", "shutil.move", "json", "tidy"]
+minutes = 35

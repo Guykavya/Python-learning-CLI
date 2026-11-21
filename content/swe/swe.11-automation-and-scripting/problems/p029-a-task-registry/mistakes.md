@@ -1,0 +1,6 @@
+- **`register` returning nothing.** The decorated name becomes `None`, and calling `hello(...)` directly (in a test) crashes.
+- **Silently overwriting a task name.** Two modules both registering `report` means one of them never runs, and nobody knows which.
+- **`choices=sorted(TASKS)` on `name`.** argparse then exits with its own message and the list is built when the parser is created, before late registrations.
+- **`nargs="*"` for the extra words.** Then `run echo -x` fails: argparse thinks `-x` is an option of `run`.
+- **Calling the task directly instead of through `run_job`.** No status file, and an exception becomes a traceback instead of exit code 1.
+- **Printing the error to stdout,** where `auto list | ...` style pipes would read it.

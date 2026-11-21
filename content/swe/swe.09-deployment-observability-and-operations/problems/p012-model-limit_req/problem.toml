@@ -1,0 +1,6 @@
+id = "swe.09.p012"
+title = "Model limit_req"
+tier = "deep"
+kind = "code"
+topics = ["Nginx", "rate limiting", "leaky bucket", "burst", "nodelay", "503"]
+minutes = 45

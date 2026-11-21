@@ -1,0 +1,6 @@
+- **Creating the category folder in a dry run.** `mkdir` is a change too; the snapshot test notices the new empty folder.
+- **Writing the journal in a dry run, or when nothing moved.** An empty journal would make the next `undo` do nothing and, worse, overwrite the journal of the real previous run.
+- **Using `rglob` instead of `iterdir`.** Then the files already inside `documents/` are planned again on every run, and run two is not harmless.
+- **Not skipping hidden files.** The journal `.tidy-journal.json` would be moved into `data/` by the next run.
+- **Calling `unique_destination` in `apply_moves`.** Then the dry run and the real run can disagree; decide destinations once, in the plan.
+- **Storing `Path` objects in JSON.** `json.dumps` cannot serialise them: convert with `str()`.

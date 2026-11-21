@@ -1,0 +1,6 @@
+id = "swe.09.p017"
+title = "Liveness and readiness"
+tier = "applied"
+kind = "code"
+topics = ["health checks", "liveness", "readiness", "FastAPI", "503", "restart storm", "dependencies"]
+minutes = 35

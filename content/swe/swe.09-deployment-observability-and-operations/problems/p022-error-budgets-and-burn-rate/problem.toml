@@ -1,0 +1,6 @@
+id = "swe.09.p022"
+title = "Error budgets and burn rate"
+tier = "deep"
+kind = "code"
+topics = ["SLO", "error budget", "burn rate", "alerting", "multi-window alerts", "reliability"]
+minutes = 45

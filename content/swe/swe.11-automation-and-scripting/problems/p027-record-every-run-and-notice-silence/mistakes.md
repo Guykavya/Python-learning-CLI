@@ -1,0 +1,7 @@
+- **Writing the status only on success.** A failed run must be recorded too; that is when you need it most.
+- **Re-raising, or letting the exception escape.** The scheduler would see a traceback instead of a clean exit code, and the status file might not be written.
+- **Catching `BaseException`.** Ctrl+C (`KeyboardInterrupt`) should stop the job, not be recorded as a normal failure.
+- **Reading the clock directly.** Tests then cannot check "stale after 24 hours" without waiting a day.
+- **Only checking for failures.** The scariest failure is silence: no new status file at all. Check the age.
+- **`>=` at the limit.** "More than 24 hours" means a run exactly 24 hours ago is still fine.
+- **Writing the file with plain `write_text`.** A crash mid-write leaves invalid JSON, and the checker crashes instead of reporting.

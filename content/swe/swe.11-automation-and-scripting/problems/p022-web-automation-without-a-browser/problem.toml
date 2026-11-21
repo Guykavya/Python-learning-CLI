@@ -1,0 +1,6 @@
+id = "swe.11.p022"
+title = "Web automation without a browser"
+tier = "applied"
+kind = "code"
+topics = ["urllib", "html.parser", "scraping", "pagination", "timeouts", "User-Agent", "http.server"]
+minutes = 45

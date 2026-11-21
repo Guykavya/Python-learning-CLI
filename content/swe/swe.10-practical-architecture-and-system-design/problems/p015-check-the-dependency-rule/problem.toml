@@ -1,0 +1,6 @@
+id = "swe.10.p015"
+title = "Check the dependency rule"
+tier = "deep"
+kind = "code"
+topics = ["dependency rule", "layers", "ast", "architecture test", "imports", "enforcing design"]
+minutes = 50

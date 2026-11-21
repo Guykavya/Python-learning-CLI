@@ -1,0 +1,4 @@
+- **Using `2 x cores + 1` for I/O-bound code.** With 90% of each request spent waiting on the database, 9 sync workers keep the CPU idle while requests queue. Threads or async fix that.
+- **Ignoring memory.** Each worker loads the whole app; 17 workers of 300 MB do not fit in 1 GB, and the kernel's out-of-memory killer ends them (exit code 137, problem p008).
+- **`memory_mb / mb_per_worker` with a float result.** Use integer division: you cannot run 3.4 workers.
+- **Counting async concurrency as `workers`.** One Uvicorn process handles many requests at once; the number depends on what the app awaits, so the plan reports `None`.

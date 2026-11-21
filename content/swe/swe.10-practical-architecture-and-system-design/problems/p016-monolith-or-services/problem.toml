@@ -1,0 +1,6 @@
+id = "swe.10.p016"
+title = "Monolith or services?"
+tier = "deep"
+kind = "explain"
+topics = ["monolith", "modular monolith", "microservices", "availability tax", "Conway's law", "strangler fig", "explain"]
+minutes = 45

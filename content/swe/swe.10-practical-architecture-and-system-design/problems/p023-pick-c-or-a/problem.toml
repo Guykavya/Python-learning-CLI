@@ -1,0 +1,6 @@
+id = "swe.10.p023"
+title = "Pick C or A"
+tier = "deep"
+kind = "explain"
+topics = ["CAP theorem", "consistency", "availability", "partition", "PACELC", "trade-offs", "explain"]
+minutes = 40

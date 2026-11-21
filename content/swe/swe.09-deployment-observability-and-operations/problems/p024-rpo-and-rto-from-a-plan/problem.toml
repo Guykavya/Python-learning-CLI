@@ -1,0 +1,6 @@
+id = "swe.09.p024"
+title = "RPO and RTO from a plan"
+tier = "drill"
+kind = "code"
+topics = ["backups", "RPO", "RTO", "restore", "disaster recovery", "datetime"]
+minutes = 30

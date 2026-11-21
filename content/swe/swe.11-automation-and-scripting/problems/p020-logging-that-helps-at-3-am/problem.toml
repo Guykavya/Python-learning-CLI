@@ -1,0 +1,6 @@
+id = "swe.11.p020"
+title = "Logging that helps at 3 a.m."
+tier = "drill"
+kind = "code"
+topics = ["logging", "handlers", "levels", "verbose flag", "RotatingFileHandler", "formatters"]
+minutes = 30

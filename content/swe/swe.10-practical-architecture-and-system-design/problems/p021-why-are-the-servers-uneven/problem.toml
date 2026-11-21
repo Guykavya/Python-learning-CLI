@@ -1,0 +1,6 @@
+id = "swe.10.p021"
+title = "Why are the servers uneven?"
+tier = "applied"
+kind = "code"
+topics = ["load balancing", "round robin", "least connections", "simulation", "tail latency", "uneven load"]
+minutes = 40

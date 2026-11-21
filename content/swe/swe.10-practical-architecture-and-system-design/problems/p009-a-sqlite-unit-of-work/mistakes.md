@@ -1,0 +1,6 @@
+- **Opening the connection in `__init__`.** The same object could not be used for a second use case, and a failed first one would poison it; open in `__enter__`.
+- **Rolling back only in an `except`.** A forgotten commit then keeps the work pending on a connection that is about to be closed; roll back in `__exit__` always.
+- **Returning `True` from `__exit__`.** That swallows the exception: the caller thinks the use case worked.
+- **One connection per repository.** Then the task and its audit line are in different transactions and "all or nothing" is gone.
+- **Committing inside a repository method** ("so nobody forgets"). The transaction can no longer span more than one write (chapter "Try it: where does the commit belong?").
+- **Not closing the connection.** Open connections pile up under load.

@@ -1,0 +1,6 @@
+id = "swe.11.p001"
+title = "Is it worth it?"
+tier = "drill"
+kind = "code"
+topics = ["automation", "payoff formula", "cost of scripts", "maintenance"]
+minutes = 15

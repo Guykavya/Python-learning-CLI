@@ -1,0 +1,4 @@
+- **Thinking the `.env` file sets container variables.** It fills `${...}` in `compose.yaml`; `env_file:` and `environment:` set variables inside the container.
+- **Letting `env_file` beat `environment:`.** The order is the other way round: explicit `environment:` entries win over a file.
+- **Forgetting the shell comes before `.env` for substitution.** An exported variable in your terminal silently overrides the file next to `compose.yaml`.
+- **Replacing the whole `REDIS_URL` with the fallback.** Only the `${...}` part is replaced.

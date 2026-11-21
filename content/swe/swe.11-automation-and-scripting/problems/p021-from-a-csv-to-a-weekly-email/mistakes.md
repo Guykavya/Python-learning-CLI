@@ -1,0 +1,6 @@
+- **Skipping bad rows silently.** The total is then wrong and nobody knows.
+- **Adding before converting** (`totals[region] += 0` or creating the key first): a bad row leaves an empty region behind.
+- **Counting lines from 0 or 1 for the first data row.** The header is line 1, so the first data row is line 2: the number must match what the person sees in a text editor.
+- **Catching every exception.** `except Exception` would also hide a bug in your own code; catch the conversion errors only.
+- **Forgetting `TypeError`.** A short row gives `None`, and `float(None)` raises `TypeError`, not `ValueError`.
+- **Sending real mail from tests.** Pass a transport; a test must never depend on (or spam) a mail server.

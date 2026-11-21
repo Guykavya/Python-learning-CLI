@@ -1,0 +1,4 @@
+- **"Backend down = 502" always.** A stopped container whose address Nginx still remembers gives 504, because connecting to an address nobody owns hangs until the timeout.
+- **Forgetting the retry on a second backend (situation 6).** Idempotent requests are retried by default; the client sees 200.
+- **Calling a slow answer a 502.** A backend that accepts and then does not answer in time is a 504.
+- **Reading `upstream_status` `-` as "the backend returned nothing useful".** It means Nginx never got a status: it could not connect.

@@ -1,0 +1,7 @@
+id = "swe.10.p010"
+title = "Where does the commit belong?"
+tier = "applied"
+kind = "trace"
+topics = ["commit placement", "transactions", "e-mail after commit", "half-saved data", "outbox", "trace"]
+minutes = 30
+assessment = "trace"

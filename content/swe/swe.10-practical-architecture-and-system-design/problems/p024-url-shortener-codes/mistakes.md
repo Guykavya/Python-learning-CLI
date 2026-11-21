@@ -1,0 +1,6 @@
+- **A `dict` keyed by the exact case.** `Admin` and `admin` would be different aliases and the reserved-word check would be bypassed.
+- **Burning a counter value on a failed create.** Validate first; touch the counter only for a code you will really issue.
+- **Reusing a skipped counter value.** The counter only moves forward.
+- **Forgetting that aliases and generated codes share one namespace.** An alias like `0000002` can collide with a future generated code.
+- **Checking uniqueness with read-then-insert in a real system.** Two requests can pass the check together; use a `UNIQUE` constraint.
+- **Using `str(n)` or `hex()` for codes.** Base62 gives the shortest URLs; the alphabet order is part of the contract.

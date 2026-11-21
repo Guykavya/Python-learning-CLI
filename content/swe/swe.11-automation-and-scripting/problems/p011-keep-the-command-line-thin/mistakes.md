@@ -1,0 +1,5 @@
+- **"Because it is cleaner."** That is style; name the concrete pain (tests that need a CLI runner, fixes made twice, a job that cannot call it).
+- **Saying the fat version cannot be tested.** It can (with `CliRunner`); it is just harder, slower to write, and checks text instead of values.
+- **Forgetting the dry-run argument.** Plan-then-apply is what makes "what you see is what will happen" true.
+- **Putting `print` in the library "for convenience".** Then a scheduled job prints into nowhere and cannot record a result.
+- **A checklist of vague words** ("clean", "simple"). Write rules a reviewer can check: "the library never imports click".

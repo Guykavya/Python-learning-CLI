@@ -1,0 +1,4 @@
+- **Adding the attempts (3 + 3 + 3 = 9) instead of multiplying them.** Retries are nested: every attempt of the upper layer repeats all the attempts below.
+- **Forgetting that the deadline is checked at every level.** The upper layers also stop starting new attempts once the budget is spent.
+- **Counting time for retries that never start.** The clock moves only when the database is called.
+- **Thinking jitter fixes the multiplication.** Jitter spreads retries in time; it does not reduce their number.

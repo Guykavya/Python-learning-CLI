@@ -1,0 +1,6 @@
+id = "swe.10.p005"
+title = "A repository in business words"
+tier = "applied"
+kind = "code"
+topics = ["repository", "business words", "dataclass", "SQL in one place", "NotFound", "no commit"]
+minutes = 40

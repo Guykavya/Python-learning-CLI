@@ -1,0 +1,6 @@
+id = "swe.09.p001"
+title = "How many workers?"
+tier = "drill"
+kind = "code"
+topics = ["Gunicorn", "Uvicorn", "workers", "threads", "memory", "capacity"]
+minutes = 25

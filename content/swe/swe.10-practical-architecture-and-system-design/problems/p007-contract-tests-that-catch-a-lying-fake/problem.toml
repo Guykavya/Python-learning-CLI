@@ -1,0 +1,6 @@
+id = "swe.10.p007"
+title = "Contract tests that catch a lying fake"
+tier = "deep"
+kind = "code"
+topics = ["contract tests", "fake repository", "test design", "mutation thinking", "repository interface"]
+minutes = 50

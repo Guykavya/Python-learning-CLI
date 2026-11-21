@@ -1,0 +1,6 @@
+id = "swe.11.p028"
+title = "Catch up after downtime"
+tier = "challenge"
+kind = "code"
+topics = ["idempotent jobs", "catch up", "state file", "dates", "resume after failure", "scheduling"]
+minutes = 45

@@ -1,0 +1,7 @@
+id = "swe.10.p004"
+title = "Fix the rule that was copied and forgotten"
+tier = "applied"
+kind = "code"
+topics = ["service layer", "duplicated rule", "work-in-progress limit", "refactoring", "fix", "single source of truth"]
+minutes = 40
+assessment = "fix"

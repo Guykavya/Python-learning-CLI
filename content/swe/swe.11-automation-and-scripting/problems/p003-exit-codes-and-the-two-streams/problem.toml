@@ -1,0 +1,6 @@
+id = "swe.11.p003"
+title = "Exit codes and the two streams"
+tier = "drill"
+kind = "code"
+topics = ["exit codes", "stdout", "stderr", "argparse", "main(argv)", "pipes"]
+minutes = 25

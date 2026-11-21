@@ -1,0 +1,4 @@
+every layer retries 3 times        database calls = 27, time spent = 27.0 s
+retries only at the edge           database calls =  3, time spent =  3.0 s
+A and B retry, C does not          database calls =  9, time spent =  9.0 s
+every layer retries, 10 s budget   database calls = 10, time spent = 10.0 s

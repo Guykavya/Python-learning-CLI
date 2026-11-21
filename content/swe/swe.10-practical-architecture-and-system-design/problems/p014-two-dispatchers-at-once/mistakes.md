@@ -1,0 +1,4 @@
+- **Reading all dispatchers' lists at the start.** D2 reads **after** D1's first send, so item 1 is not in D2's list.
+- **Thinking the claim guarantees delivery.** It guarantees *at most one claimer*; if that claimer dies, nobody delivers (run 3) until a lease expires.
+- **Forgetting that an item skipped by D2 is simply gone from its list.** It does not retry later in this script.
+- **Counting item 1 twice in run 1.** It was marked sent before D2 read.
