@@ -1,0 +1,6 @@
+id = "swe.09.p013"
+title = "One JSON object per line"
+tier = "drill"
+kind = "code"
+topics = ["structured logging", "JSON", "logging.Formatter", "contextvars", "request id", "exceptions"]
+minutes = 35

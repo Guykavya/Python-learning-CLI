@@ -1,0 +1,6 @@
+id = "swe.11.p024"
+title = "Read a crontab line"
+tier = "drill"
+kind = "trace"
+topics = ["cron", "crontab", "scheduling", "@reboot", "percent sign", "trace"]
+minutes = 20

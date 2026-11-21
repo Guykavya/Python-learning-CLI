@@ -1,0 +1,6 @@
+id = "swe.11.p019"
+title = "Where does this value go?"
+tier = "drill"
+kind = "trace"
+topics = ["configuration", "precedence", "environment variables", "flags", "secrets", "trace"]
+minutes = 15

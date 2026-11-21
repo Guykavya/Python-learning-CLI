@@ -1,0 +1,6 @@
+id = "swe.10.p018"
+title = "Degrade gracefully"
+tier = "applied"
+kind = "code"
+topics = ["graceful degradation", "circuit breaker", "fallback", "stale cache", "timeouts", "resilience"]
+minutes = 40

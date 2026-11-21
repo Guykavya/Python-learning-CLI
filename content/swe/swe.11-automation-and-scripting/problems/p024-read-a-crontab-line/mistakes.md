@@ -1,0 +1,5 @@
+- **Counting from 23:50 itself.** The next run is strictly after now; 23:45 has passed and 00:00 is next.
+- **Running weekday jobs on Saturday.** `1-5` is Monday to Friday (`0` and `7` are Sunday).
+- **Reading `30 2 1 * *` as "every day at 02:30 and 1".** Field three is the day of the month.
+- **Thinking `@reboot` is a time of day.** It runs when cron starts, which usually means at boot.
+- **Blaming `$(...)`.** Command substitution works (cron runs the line with `/bin/sh`); the `%` is the problem.

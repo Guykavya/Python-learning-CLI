@@ -1,0 +1,5 @@
+- **Saying "CAP: pick two of three".** Partitions are not optional; the real choice is C or A *during* a partition.
+- **Choosing A for the WIP limit "because users hate errors".** A silent 4th task breaks the rule the product is built on.
+- **Forgetting to say what the user sees.** "C" alone is not an answer; "an error, try again" is.
+- **Believing last write wins is safe.** It silently discards one of two valid writes.
+- **Treating CAP as a property of a product.** Settings move products along the line (chapter 15.5); the choice is per feature.

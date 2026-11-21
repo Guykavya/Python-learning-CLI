@@ -1,0 +1,7 @@
+- **Undoing in forward order.** It works for simple cases but breaks when one move depended on an earlier one; the safe habit is "undo in reverse".
+- **Moving back over a new file.** If someone created `a.pdf` since, moving back would destroy it. Check `not s.exists()` first.
+- **Deleting the category folder with `shutil.rmtree`.** It would also delete files the user put there. `rmdir` removes only empty folders.
+- **Keeping the journal after undo.** A second undo would then try again; delete it so undo twice is harmless too.
+- **Printing the summary to stdout.** The tests (and pipes) expect only the move lines there.
+- **Printing `documents\a.pdf` on Windows.** Use `.as_posix()` for output that must look the same everywhere.
+- **Returning 0 for a missing folder.**

@@ -1,0 +1,6 @@
+id = "swe.11.p029"
+title = "A task registry"
+tier = "applied"
+kind = "code"
+topics = ["decorators", "registry", "subcommands", "argparse REMAINDER", "job runner", "automation suite"]
+minutes = 35

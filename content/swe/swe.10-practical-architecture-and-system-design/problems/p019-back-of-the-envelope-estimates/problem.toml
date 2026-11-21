@@ -1,0 +1,6 @@
+id = "swe.10.p019"
+title = "Back-of-the-envelope estimates"
+tier = "drill"
+kind = "code"
+topics = ["system design", "estimation", "QPS", "peak factor", "storage", "requirements", "units"]
+minutes = 30

@@ -1,0 +1,7 @@
+- **`shutil.copy` of the database file.** A write in progress, or rows still in the write-ahead log, make the copy inconsistent or incomplete.
+- **Keeping a backup that failed its check.** A bad backup is worse than none: someone will trust it at 3 a.m.
+- **Rotation with `[:-keep]` and `keep=0`.** `[:-0]` is `[:0]`, an empty slice, so nothing is deleted; require `keep >= 1`.
+- **Deleting other databases' backups.** Match `stem-*.db`, not `*.db`.
+- **Opening connections without closing them.** Deleting or reading the file afterwards fails on Windows.
+- **Counting the drill as passed because the file restored.** Check the checksum, the integrity, the table **and the data**.
+- **A drill that raises on a damaged backup.** Its job is to *report* damage as failed steps.

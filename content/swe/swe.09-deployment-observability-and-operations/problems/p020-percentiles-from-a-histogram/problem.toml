@@ -1,0 +1,6 @@
+id = "swe.09.p020"
+title = "Percentiles from a histogram"
+tier = "deep"
+kind = "code"
+topics = ["histogram_quantile", "percentiles", "p95", "p99", "interpolation", "mean vs tail", "Prometheus"]
+minutes = 45

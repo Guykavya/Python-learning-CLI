@@ -1,0 +1,6 @@
+- **Averaging the bucket bounds.** The estimate interpolates by **rank**, not by the middle of the bucket.
+- **Using the non-cumulative count inside the bucket.** The counts are cumulative: the number of requests *in* the bucket is `count - before`.
+- **Forgetting that the first bucket starts at 0.** There is no previous bucket to take a lower bound from.
+- **Returning infinity for the `+Inf` bucket.** The honest answer is the highest finite bound: "at least this slow".
+- **Dividing by zero for empty buckets.** The first bucket with `count >= rank` has `count > before` because `rank > 0`; validation of the counts keeps it that way.
+- **Alerting on the mean.** 80 ms average, one request in a hundred takes a second.

@@ -1,0 +1,5 @@
+- **Letting `excess` go negative.** A long pause must not earn credit for a huge burst; clamp at 0.
+- **Updating the state for a refused request.** A client hammering the limit would then keep itself locked out for ever.
+- **Using `>=` against `burst`.** The bucket may hold exactly `burst` requests.
+- **Counting the first request as excess.** The very first request always passes and leaves the bucket empty.
+- **Mixing up `delayed` and `pass`.** Without `nodelay`, every accepted request that finds the bucket non-empty is delayed.

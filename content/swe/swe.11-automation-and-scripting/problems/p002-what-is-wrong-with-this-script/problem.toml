@@ -1,0 +1,6 @@
+id = "swe.11.p002"
+title = "What is wrong with this script?"
+tier = "drill"
+kind = "explain"
+topics = ["script anatomy", "hard-coded paths", "dry run", "exit codes", "stderr", "working directory", "explain"]
+minutes = 20

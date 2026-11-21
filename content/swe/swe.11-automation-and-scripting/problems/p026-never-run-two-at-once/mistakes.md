@@ -1,0 +1,6 @@
+- **`if path.exists(): ... else: path.write_text(pid)`.** Two steps: two copies can both see "no file" and both start.
+- **Deleting the lock in the second copy's `finally`.** The refused copy must not remove the running copy's lock; raise before entering the `try/finally`.
+- **No `finally`.** A job that raises leaves the lock behind, and every later run is refused until someone deletes it by hand.
+- **Treating every existing lock as "running".** A crash would block the job for ever; check whether the pid is alive.
+- **Crashing on an empty or garbled lock file.** `int("")` raises `ValueError`; treat it as stale.
+- **Reading the pid as a string** and passing `"4242"` to `is_alive`.

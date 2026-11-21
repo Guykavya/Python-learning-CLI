@@ -1,0 +1,6 @@
+id = "swe.11.p026"
+title = "Never run two at once"
+tier = "deep"
+kind = "code"
+topics = ["lock file", "O_EXCL", "context manager", "stale lock", "pid", "scheduling", "dependency injection"]
+minutes = 40

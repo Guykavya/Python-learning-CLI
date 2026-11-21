@@ -1,0 +1,6 @@
+id = "swe.11.p005"
+title = "Where does each file go?"
+tier = "drill"
+kind = "code"
+topics = ["pathlib", "suffix", "never overwrite", "unique names", "tidy"]
+minutes = 20

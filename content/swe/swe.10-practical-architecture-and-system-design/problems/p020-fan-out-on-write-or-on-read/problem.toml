@@ -1,0 +1,6 @@
+id = "swe.10.p020"
+title = "Fan-out on write or on read?"
+tier = "applied"
+kind = "trace"
+topics = ["fan-out", "activity feed", "hybrid", "write amplification", "system design", "estimation", "trace"]
+minutes = 35

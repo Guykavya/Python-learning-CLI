@@ -1,0 +1,6 @@
+- **Starting with the logs.** Reading tracebacks while 30% of users get errors is the wrong order; undo the likely cause first.
+- **Rolling back without asking about the migration.** If it was destructive, the rollback can corrupt data.
+- **"We rolled back, so it is fixed."** Verify with the dashboards; if the rate did not move, the cause is elsewhere.
+- **Several people changing several things.** One leader, one change at a time, a written timeline.
+- **A postmortem that names who did it.** The system let one mistake take it down; the actions fix the system.
+- **No communication.** Silence is read as "nobody noticed"; update at regular intervals even with no news.

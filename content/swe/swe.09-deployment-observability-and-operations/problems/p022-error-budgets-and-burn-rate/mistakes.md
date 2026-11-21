@@ -1,0 +1,6 @@
+- **Paging on every error.** Within the budget, errors are normal; a ticket or a dashboard is enough.
+- **Dividing by `slo` instead of `1 - slo`.** The budget is the *failure* allowance.
+- **Comparing floats exactly.** `0.0144 / 0.001` is not 14.4; round the burn rate before comparing with a threshold.
+- **Confusing burn rate with error ratio.** A 1% error ratio is a burn rate of 10 for a 99.9% SLO, but only 1 for a 99% SLO.
+- **Dividing by zero with no traffic.** A quiet night has no requests and no burn.
+- **One window only.** A single long window reacts slowly to outages; a single short one pages for blips.

@@ -1,0 +1,6 @@
+- **Setting the logger's level from `verbose`.** Then DEBUG records are dropped before the file handler sees them, and the 3 a.m. log is missing exactly the detail you need.
+- **Adding handlers on every call.** Each message then appears twice, three times... Remove the old ones first.
+- **Not closing removed handlers.** File handles leak; on Windows the log file stays locked.
+- **Leaving `propagate` on** when the root logger also has a handler: every line is printed twice.
+- **No timestamp in the file.** "ERROR backup failed" without a time cannot be matched to anything.
+- **`print` for diagnostics.** It ignores `-v`, has no levels and does not reach the log file.

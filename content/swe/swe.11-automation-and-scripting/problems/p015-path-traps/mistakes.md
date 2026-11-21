@@ -1,0 +1,5 @@
+- **Expecting `data/etc/passwd` on line 1.** An absolute right-hand side replaces the left side.
+- **Expecting `.tar.gz` and `backup`.** `suffix` and `stem` work on the last dot only.
+- **Thinking `Path.glob` skips hidden files** like the shell and `glob.glob` do. It does not.
+- **Expecting `b.txt` in line 4.** `*` matches one level; subfolder contents need `rglob`.
+- **Expecting `True True` on line 6.** Pure path comparison is textual (part by part); only `resolve()` interprets `..`.

@@ -1,0 +1,5 @@
+- **Comparing the suffix with case.** `.JPG` is not in the table, so holiday photos end up in `other`.
+- **`CATEGORIES[suffix]`** raises `KeyError` for unknown types; use `.get(..., "other")`.
+- **Splitting on the first dot** (`name.split(".")[1]`): `backup.tar.gz` would give `tar`, and `README` would crash. `Path.suffix` is the last suffix.
+- **Returning `a (1).txt` without checking it.** If `a (1).txt` also exists, you overwrite it. Loop until a free name is found.
+- **Building the new name with string slicing** and losing the folder. `with_name` keeps the parent.

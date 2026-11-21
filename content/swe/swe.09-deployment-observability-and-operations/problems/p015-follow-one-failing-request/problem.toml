@@ -1,0 +1,6 @@
+id = "swe.09.p015"
+title = "Follow one failing request"
+tier = "applied"
+kind = "code"
+topics = ["request id", "log tracing", "JSON logs", "jq", "workers", "incident"]
+minutes = 40

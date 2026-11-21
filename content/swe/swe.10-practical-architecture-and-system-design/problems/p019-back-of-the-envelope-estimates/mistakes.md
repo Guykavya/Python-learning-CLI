@@ -1,0 +1,6 @@
+- **Rounding the average before computing the peak.** The error is multiplied; round only the final numbers.
+- **Mixing "per day" and "per second".** Divide by 86,400 once, for the writes, and derive the reads from the writes.
+- **Treating `reads_per_write` as a share.** 9 means nine reads for every write, not 90%.
+- **Forgetting years in the storage formula** (or using 12 months instead of 365 days).
+- **Accepting a peak factor below 1.** The peak cannot be lower than the average.
+- **Reading the answer as the design.** The numbers say how big the problem is; the design is the next step (section 13.5).

@@ -1,0 +1,5 @@
+- **Counting the audit row of `v4` as saved.** The `IOError` comes before the second `db.insert("audit")`; only the first commit happened.
+- **Thinking `v3` rolls back the e-mail.** A sent e-mail cannot be rolled back; only the database work is dropped.
+- **Forgetting that the rollback drops uncommitted work in `v1`.** The task never reached `saved`.
+- **Reading `half_saved` as "anything is missing".** It is `yes` only when `tasks` and `audit` disagree.
+- **Believing the outbox row removes the delay.** It is delivered later, and with the provider down it stays pending.

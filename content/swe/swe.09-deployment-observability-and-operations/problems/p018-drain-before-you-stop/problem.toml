@@ -1,0 +1,6 @@
+id = "swe.09.p018"
+title = "Drain before you stop"
+tier = "deep"
+kind = "code"
+topics = ["graceful shutdown", "SIGTERM", "draining", "in-flight requests", "readiness", "threads", "timeouts"]
+minutes = 45

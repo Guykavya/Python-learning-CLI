@@ -1,0 +1,6 @@
+id = "swe.11.p013"
+title = "Delete old files, safely"
+tier = "deep"
+kind = "code"
+topics = ["deleting safely", "dry run by default", "is_inside", "symlinks", "os.walk", "mtime", "injected time"]
+minutes = 40

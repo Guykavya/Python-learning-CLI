@@ -1,0 +1,5 @@
+- **Quoting the name yourself** (`'"' + name + '"'`). A name containing a quote breaks out again; there is always another special character. Do not build shell strings at all.
+- **Keeping `shell=True` with a list.** On Linux the list's first item becomes the whole shell script and the rest become the shell's own arguments: it does not do what you think.
+- **`shlex.quote` as the fix.** It is correct on POSIX shells, but not for Windows `cmd.exe`, and still more fragile than not using a shell.
+- **No `check=True`.** A missing file gives empty output and a confusing `ValueError` or `IndexError` instead of a clear `CalledProcessError`.
+- **Running `"python"` instead of `sys.executable`.** Under cron or in a virtual environment, `python` can be another interpreter or missing.

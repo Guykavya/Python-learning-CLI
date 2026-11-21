@@ -1,0 +1,6 @@
+- **No timeout.** A hung child freezes the whole job, and every later scheduled run piles up behind it.
+- **Catching `Exception` and raising a generic message.** The exit code and stderr are exactly what the person reading the log needs.
+- **The first lines of stderr instead of the last.** Tools print the reason at the end.
+- **Assuming `TimeoutExpired.stderr` is text.** It can be bytes or `None`; `"".splitlines` on bytes crashes inside your error handler, which hides the real failure.
+- **Forgetting `FileNotFoundError`.** A missing program does not produce an exit code at all.
+- **Dropping the cause.** Without `from e` the traceback no longer shows where it really failed.

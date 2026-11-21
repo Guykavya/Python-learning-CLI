@@ -1,0 +1,6 @@
+- **Using `int(st_mtime)` (whole seconds).** Two edits within the same second with the same size look identical.
+- **Keys with backslashes on Windows** (`str(p.relative_to(root))`): a snapshot from Windows would not match one from Linux. Use `.as_posix()`.
+- **Absolute paths as keys.** Move or rename the folder and every file looks removed and added.
+- **Listing folders.** Their mtime changes whenever a file inside is added, which reports noise.
+- **Unsorted lists.** The order of a set is arbitrary; tests and humans want a stable answer.
+- **Calling `snapshot` inside `changes`.** Then you cannot compare with a snapshot saved earlier.

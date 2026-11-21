@@ -1,0 +1,6 @@
+id = "swe.10.p006"
+title = "A fake that keeps the contract"
+tier = "applied"
+kind = "code"
+topics = ["fake repository", "contract tests", "test doubles", "copies in and out", "unit tests without a database"]
+minutes = 40

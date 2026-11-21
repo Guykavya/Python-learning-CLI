@@ -1,0 +1,6 @@
+- **Returning `sqlite3.Row` or tuples.** Then the SQL column order leaks into every caller; return `Task` objects.
+- **`get` returning `None`.** The service must then remember to check; here "no such task" is the `NotFound` error of the domain.
+- **Committing inside `add` or `save`.** The use case may write the task, an audit line and an outbox row and needs them to succeed together (p009); only the use case knows where it ends.
+- **Counting `done` tasks or the unassigned ones.** The query is by assignee, status other than `done`.
+- **Forgetting `ORDER BY id`.** The order of a `SELECT` without it is not guaranteed.
+- **Storing `None` as the text `'None'`.** Pass `None` as a parameter and SQLite stores NULL.

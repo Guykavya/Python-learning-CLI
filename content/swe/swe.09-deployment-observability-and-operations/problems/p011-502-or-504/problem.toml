@@ -1,0 +1,6 @@
+id = "swe.09.p011"
+title = "502 or 504?"
+tier = "drill"
+kind = "trace"
+topics = ["Nginx", "502", "504", "proxy_read_timeout", "proxy_next_upstream", "stale DNS", "trace"]
+minutes = 20

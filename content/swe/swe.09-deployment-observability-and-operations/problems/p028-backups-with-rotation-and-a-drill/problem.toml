@@ -1,0 +1,6 @@
+id = "swe.09.p028"
+title = "Backups with rotation and a drill"
+tier = "applied"
+kind = "code"
+topics = ["backup", "SQLite", "restore drill", "retention", "checksum", "integrity_check"]
+minutes = 55

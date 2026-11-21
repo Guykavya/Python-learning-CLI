@@ -1,0 +1,6 @@
+id = "swe.10.p001"
+title = "Pain or style?"
+tier = "drill"
+kind = "trace"
+topics = ["architecture", "pain first", "ladder of remedies", "service layer", "repository", "unit of work", "trace"]
+minutes = 20

@@ -1,0 +1,8 @@
+- **Logic inside `main`.** If `main` moves files or parses CSV rows, the tasks cannot be tested or scheduled on their own; keep `main` to parse, configure, lock, run.
+- **Writing a status file for a refused second run.** It would overwrite the real run's status with a misleading one; refuse before `run_job`.
+- **Releasing (deleting) the other run's lock** in the refused run's clean-up.
+- **"Sending" when there is no transport.** Returning success without sending is the silent failure rule 4 forbids.
+- **Reading settings before logging is set up.** The warning about `kep_days` disappears.
+- **A flag default that is not `None`** (`--days` with `default=30`): it would always beat the environment and the file.
+- **Reading the clock inside a task** instead of the `now` given to `main`: the cleanup tests cannot be exact.
+- **Printing errors to stdout or exiting with 0 after a failure.** Cron and monitoring read the exit code.

@@ -1,0 +1,6 @@
+id = "swe.09.p025"
+title = "Deploy with automatic rollback"
+tier = "challenge"
+kind = "code"
+topics = ["deployment", "rollback", "atomic switch", "releases", "health check", "os.replace", "immutable releases"]
+minutes = 75

@@ -1,0 +1,7 @@
+id = "swe.09.p029"
+title = "Roll back or forward, and the first five minutes"
+tier = "deep"
+kind = "explain"
+topics = ["incident response", "rollback", "roll forward", "runbook", "postmortem", "mitigate first", "explain"]
+minutes = 40
+assessment = "explain"

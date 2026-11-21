@@ -1,0 +1,6 @@
+id = "swe.10.p013"
+title = "Events and an outbox"
+tier = "challenge"
+kind = "code"
+topics = ["domain events", "outbox pattern", "dispatcher", "at-least-once delivery", "idempotency key", "unit of work"]
+minutes = 70

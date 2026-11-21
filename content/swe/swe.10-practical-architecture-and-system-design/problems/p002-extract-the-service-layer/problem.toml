@@ -1,0 +1,6 @@
+id = "swe.10.p002"
+title = "Extract the service layer"
+tier = "applied"
+kind = "code"
+topics = ["service layer", "use case", "domain errors", "thin route", "refactoring", "FastAPI"]
+minutes = 40

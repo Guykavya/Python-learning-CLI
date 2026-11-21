@@ -1,0 +1,6 @@
+- **`str(entry)` or an f-string instead of `json.dumps`.** Single quotes, `None` and `True` are not JSON.
+- **Logging the traceback with `log.error(traceback.format_exc())` as free text.** It becomes many lines; keep it in the `exception` field of one record.
+- **Letting extra fields overwrite `level`, `msg` or `request_id`.** Anything a user can influence must not be able to forge those.
+- **Local time without a zone.** Logs from several machines must line up: UTC with a `Z`.
+- **Forgetting `default=str`.** One `Path` or `datetime` in a field then raises inside the logging call.
+- **Adding handlers on every call.** `configure_logging` called twice must not print every line twice: replace the handlers.

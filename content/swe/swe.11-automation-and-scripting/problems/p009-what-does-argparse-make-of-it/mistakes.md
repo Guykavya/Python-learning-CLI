@@ -1,0 +1,6 @@
+- **Thinking `-v` works anywhere.** Global options must come before the subcommand.
+- **Expecting `min_size="abc"`.** `type=int` converts at parse time and refuses what it cannot convert, with exit 2.
+- **Forgetting the defaults.** `dry_run=False` and `verbose=0` are in the `Namespace` even though they were not typed.
+- **Listing attributes of other subcommands.** `organize` has no `min_size`.
+- **Splitting `"old photos"` into two words.** The shell's quotes make it one argument.
+- **Writing `PosixPath('x')`.** The format asks for what `str()` prints: `x`.

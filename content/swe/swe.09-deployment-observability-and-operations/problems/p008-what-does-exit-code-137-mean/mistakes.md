@@ -1,0 +1,5 @@
+- **Subtracting 127 or 129.** The rule is `code - 128`.
+- **Treating every code above 128 as a signal.** Only 129 to 192 map to signals 1 to 64 in this problem; 128 itself and 193+ are the application's own codes.
+- **Hiding the unknown signal.** An unknown number is still worth reporting; say so instead of raising.
+- **Forgetting the range check.** Exit codes are one byte: 0 to 255.
+- **Concluding "out of memory" from 137 alone.** The hint says *often*; `OOMKilled` in `docker inspect` is the proof.

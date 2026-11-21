@@ -1,0 +1,5 @@
+LOG_LEVEL=ERROR
+APP_ENV=staging
+PORT=9000
+WORKERS=8
+REDIS_URL=redis://redis:6379/0

@@ -1,0 +1,6 @@
+- **`python3` or `python` without a path.** Under cron it may be another interpreter or not found at all.
+- **No `cd`.** The script's relative paths (`config.toml`, `data/`) are then resolved in your home folder.
+- **`> log` instead of `>> log`.** Each run erases the history of the previous ones.
+- **`2>&1 >> log`.** The order matters: stderr is pointed at the terminal (none) before stdout moves to the file.
+- **Leaving `%` alone.** Cron cuts the command at the first `%`.
+- **`Path(p).is_absolute()` on Windows.** `/usr/bin/python3` has no drive letter, so Windows says "not absolute"; judge cron paths as POSIX paths.

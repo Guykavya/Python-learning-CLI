@@ -1,0 +1,7 @@
+id = "swe.09.p026"
+title = "Why did the rollback work?"
+tier = "deep"
+kind = "trace"
+topics = ["rollback", "roll forward", "expand and contract", "database migrations", "deployment", "trace"]
+minutes = 35
+assessment = "trace"

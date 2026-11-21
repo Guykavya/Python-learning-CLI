@@ -1,0 +1,7 @@
+- **Checking the root after walking it.** A walk of `/` takes minutes and a bug in the dry-run flag would be a disaster; refuse first.
+- **`dry_run=False` as the default.** Forgetting a flag must be the safe mistake.
+- **`rglob("*")` plus `is_file()`.** `is_file()` follows symlinks, so a link to a precious file looks like a normal old file; check `is_symlink()` first.
+- **Reading the clock inside the function** (`datetime.now()`). The tests cannot hit the 30-day boundary exactly, and a job that runs at 23:59:59 behaves differently from one at 00:00:01.
+- **Using `<=` at the boundary.** "Older than 30 days" means strictly older; a file exactly 30 days old stays.
+- **Deleting folders.** The task deletes files only; empty folders can belong to other tools.
+- **Comparing unresolved paths.** `/tmp/sandbox/../etc` is not inside `/tmp/sandbox`, but a plain string check says it is.

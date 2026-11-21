@@ -1,0 +1,6 @@
+id = "swe.09.p007"
+title = "Which layers rebuild?"
+tier = "applied"
+kind = "trace"
+topics = ["Docker", "layer cache", "Dockerfile order", "build time", "trace"]
+minutes = 30

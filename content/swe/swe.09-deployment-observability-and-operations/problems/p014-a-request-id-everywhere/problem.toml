@@ -1,0 +1,6 @@
+id = "swe.09.p014"
+title = "A request id everywhere"
+tier = "applied"
+kind = "code"
+topics = ["request id", "ASGI middleware", "contextvars", "logging", "error handling", "X-Request-ID"]
+minutes = 50

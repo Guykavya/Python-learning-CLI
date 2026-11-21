@@ -1,0 +1,6 @@
+id = "swe.10.p012"
+title = "The status flow"
+tier = "drill"
+kind = "code"
+topics = ["domain model", "state machine", "transitions table", "RuleViolation", "exhaustive tests"]
+minutes = 25

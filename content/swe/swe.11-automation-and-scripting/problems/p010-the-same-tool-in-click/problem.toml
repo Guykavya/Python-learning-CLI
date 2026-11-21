@@ -1,0 +1,6 @@
+id = "swe.11.p010"
+title = "The same tool in Click"
+tier = "applied"
+kind = "code"
+topics = ["click", "CliRunner", "click.Path", "confirmation_option", "thin CLI layer", "tidy"]
+minutes = 35

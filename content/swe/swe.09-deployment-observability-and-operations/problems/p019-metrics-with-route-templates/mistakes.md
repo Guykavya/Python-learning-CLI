@@ -1,0 +1,6 @@
+- **Using `request.url.path` as the `route` label.** One series per order id: the monitoring system's memory grows without bound. Use the template.
+- **Non-cumulative buckets.** Counting a request only in the first bucket that fits makes `histogram_quantile` return nonsense; every bucket with `le >= value` increases.
+- **`+Inf` not equal to the count.** It is the total number of observations.
+- **Forgetting to count failed requests.** A request that raised counts as status 500; the middleware must record it in a `finally`.
+- **Putting the status or user ids into histogram labels.** The histogram has two labels (`method`, `route`); more labels multiply the series.
+- **Rendering without a lock.** A dictionary that changes during iteration raises `RuntimeError` on a busy service.

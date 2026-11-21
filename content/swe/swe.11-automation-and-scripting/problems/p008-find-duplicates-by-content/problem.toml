@@ -1,0 +1,6 @@
+id = "swe.11.p008"
+title = "Find duplicates by content"
+tier = "deep"
+kind = "code"
+topics = ["hashlib", "sha256", "reading in chunks", "group by size", "rglob", "symlinks", "tidy"]
+minutes = 35

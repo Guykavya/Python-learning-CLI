@@ -1,0 +1,22 @@
+## Model answer
+
+**The choices.**
+- **A: a modular monolith with one exception.** Four people, modest traffic and one database do not justify seven services. Transcoding is the textbook exception: very different load (CPU-heavy, spiky) and it can already be asynchronous, so run it as a **separate worker process** that consumes jobs from a queue (swe.08), possibly on its own machines. That is "a service" in the useful sense (independent scaling) without turning the rest of the application into a network. If payments later need a compliance boundary, that is the next candidate.
+- **B: a monolith (modular).** "Everybody does it" and "one service per table" are poor reasons. Three developers have no independent teams, and the 12 tables are one domain. Splitting would give network failures, distributed transactions and 12 pipelines to run, for no benefit. Build modules with clear boundaries instead.
+- **C: split along the real pains, step by step.** Here there are real reasons: **independent deployment** for 14 teams that block each other, **failure isolation** (one bug took the site down twice) and a **security/compliance boundary** for card data. Start by making the big application a **modular monolith** with enforced boundaries, then extract the first slice (payments) with the **strangler fig**, not a rewrite.
+
+**The availability tax.** If each of N services in the chain is up 99.9% and a request needs all of them, it succeeds only 0.999^N of the time: for N = 5 about **99.5%**, roughly **216 minutes of downtime a month** (a single service: 43 minutes; twenty services: about 98%, 14 hours). Microservices do not remove this arithmetic; good design (caches, async events, fallbacks, a short critical path) only reduces how many services one request depends on. For B it means splitting makes the product **less** available than the monolith it replaces.
+
+**Reasons to split** are about **people and load**: independent deployment by independent teams; very different scaling (50 machines for image resizing, 2 for the rest); different failure tolerance (the recommendation widget may fail, checkout must not); a different technology need; a security or compliance boundary. **Poor reasons:** everyone does it; "the monolith is messy" (a messy monolith becomes a messy **network**); "it will scale" (one PostgreSQL server and five app servers carry a surprising amount); a line on the CV. Remember **Conway's law**: a system copies the communication structure of the organisation that builds it; three developers do not need nine services. The failure to fear is the **distributed monolith**: services that must be deployed together, call each other in long chains and share one database, with the costs of both designs and the benefits of neither.
+
+**A modular monolith:** modules with a small public interface; each module owns its tables (nobody else runs SQL against them); communication across modules by events where the reaction is separate (the **outbox**) and by direct calls where the answer is needed now; boundaries enforced by tests (the `ast` test of p015). It gives most design benefits without the network tax, and the **seams** already exist if a real reason to split ever appears.
+
+**Splitting safely.** The **strangler fig**: put a router in front, build the new service for one slice of behaviour, send a fraction of the traffic to it, compare, grow until the old code for that slice is unused and delete it. Each step is reversible; the "big rewrite" is the classic way to lose a year. The **event format** (the outbox payload) is a contract between independent deployments: add optional fields only, never rename or remove one without a version, because a renamed field silently breaks every consumer you do not control. An event format is an API.
+
+**Checklist: your answer should mention**
+- [ ] A: modular monolith plus a separate worker for transcoding; B: a (modular) monolith; C: modular monolith first, then strangler fig, starting with payments
+- [ ] availability tax: 0.999^5 is about 99.5% (about 216 minutes a month); more services in the request path means less availability
+- [ ] good reasons (independent deployment, different scaling, failure tolerance, compliance boundary) versus poor ones (fashion, mess, "it will scale")
+- [ ] Conway's law, and the distributed monolith as the failure to fear
+- [ ] modular monolith: modules with small interfaces, owned tables, events plus enforced boundaries
+- [ ] strangler fig instead of a rewrite; the event format is an API (add fields, never rename)

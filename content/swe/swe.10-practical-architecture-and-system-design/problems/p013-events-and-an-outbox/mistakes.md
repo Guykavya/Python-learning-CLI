@@ -1,0 +1,7 @@
+- **Sending the e-mail inside `assign_task`.** That is the original bug: a rolled-back change still e-mails, or a failing provider fails a request that already saved.
+- **Committing twice** (after the task, then after the outbox row). A crash between them leaves a task with no event: one commit, at the end.
+- **One unit of work for the whole dispatch loop.** One bad item then rolls back the deliveries of the good ones; use one transaction per item.
+- **Letting an exception from one item escape `dispatch`.** The others would never be delivered in that run.
+- **Marking an item sent before the handler succeeded.** If the handler then fails, the event is lost.
+- **Forgetting that `drain_events` empties the task's list.** Publish what it returns; do not call it twice.
+- **Handlers that are not idempotent.** At-least-once delivery means the same item can arrive twice.

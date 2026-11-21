@@ -1,0 +1,6 @@
+id = "swe.11.p004"
+title = "The tidy parser"
+tier = "drill"
+kind = "code"
+topics = ["argparse", "subcommands", "counted flag", "store_true", "type conversion", "exit codes"]
+minutes = 25

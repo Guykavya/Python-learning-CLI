@@ -1,0 +1,6 @@
+id = "swe.11.p025"
+title = "A crontab line that works under cron"
+tier = "drill"
+kind = "code"
+topics = ["cron", "absolute paths", "working directory", "redirection", "percent sign", "PurePosixPath", "validation"]
+minutes = 25

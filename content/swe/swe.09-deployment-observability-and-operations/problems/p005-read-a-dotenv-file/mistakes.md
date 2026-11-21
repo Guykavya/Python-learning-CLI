@@ -1,0 +1,5 @@
+- **`line.split("=")`.** A URL with `?a=b` has several `=`; use `partition` or `split("=", 1)`.
+- **Stripping quotes with `.strip('"\'')`.** It removes quotes from the ends of `say "hi"` and breaks `'it"s'`; check that the quote at the start matches the one at the end, then cut one character from each side.
+- **Treating `#` after a value as a comment.** Passwords and URLs contain `#`; this format has no inline comments.
+- **Expanding `$HOME`.** A secret that happens to contain `$` would change silently.
+- **Reporting the wrong line.** Count from 1 and count blank and comment lines too.

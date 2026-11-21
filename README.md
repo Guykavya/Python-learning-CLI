@@ -18,14 +18,14 @@ data structures and algorithms alongside.
 
 The syllabus has **92 modules, and every one of them has its chapter** (about 250,000 lines of
 book-style text with worked examples, common traps and summaries). **Problems** with automatic
-tests are written module by module. They exist today for the core, shared, and DSA tracks, and for the first seven software engineer modules:
+tests are written module by module. They exist today for the core, shared, and DSA tracks, and for the first ten software engineer modules:
 
 | Track | Modules | Chapters | Modules with problems | Problems written / planned |
 |---|---|---|---|---|
 | Core Python | 24 | 24 | 24 | 1,075 / 1,075 |
 | Shared (SQL, data pipelines) | 2 | 2 | 2 | 105 / 105 |
 | DSA | 18 | 18 | 18 | 785 / 785 |
-| Software engineer | 11 | 11 | 7 | 260 / 375 |
+| Software engineer | 11 | 11 | 10 | 345 / 375 |
 | Data analyst | 13 | 13 | 0 | 0 / 510 |
 | Data scientist | 10 | 10 | 0 | 0 / 400 |
 | AI/ML engineer (deep learning) | 7 | 7 | 0 | 0 / 220 |
@@ -63,6 +63,18 @@ extract it, and open a terminal in the extracted folder.
 
 Then, on Windows, type `.\learn.cmd` (PowerShell) or `learn.cmd` (CMD) wherever this page
 says `./learn`.
+
+**Desktop icon.** The first setup makes a **Python Learning** icon on the Desktop and another one inside the course
+folder (next to the files, like a game's icon). Setup says where they are. Double-click either one: a terminal opens in
+the course folder and starts `learn`. Later, or if you delete them, run this from the course folder:
+
+| Where | Command |
+|---|---|
+| Windows PowerShell | `.\learn.cmd shortcut` |
+| Linux / macOS | `./learn shortcut` |
+
+Plain terminals do not know `learn` unless you are in that window: use the icon, or type `./learn today`
+(Windows: `.\learn.cmd today`). On GNOME, Linux may ask once to "Allow Launching".
 
 **No Python yet, or too old?** The launcher tells you. To install it:
 
@@ -195,8 +207,9 @@ back to a simpler line-by-line style; `.venv/bin/python -m pip install -e .` (Wi
 ./learn config set ui.mode tui
 ```
 
-Install the extra package once (Windows: `.venv\Scripts\python.exe` instead of `.venv/bin/python`):
-`.venv/bin/python -m pip install -e ".[tui]"`. With `ui.mode = tui`, the same commands open full-screen screens:
+That command also installs the Textual package the screens need (about a minute, needs internet once). If you
+copied the course with `config.toml` already set to `tui`, the launcher installs Textual on its own. Otherwise
+`learn doctor` tells you whether Textual is missing. With `ui.mode = tui`, the same commands open full-screen screens:
 
 | You type | You get |
 |---|---|

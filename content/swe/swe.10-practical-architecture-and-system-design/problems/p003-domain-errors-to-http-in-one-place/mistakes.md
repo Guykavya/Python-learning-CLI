@@ -1,0 +1,5 @@
+- **`STATUS_FOR.get(type(exc), 400)`.** A subclass is not found in the dictionary and becomes a 400.
+- **One handler per subclass.** Three handlers to keep in step is the duplication you are removing.
+- **Catching everything in the handler.** Registering a handler for `Exception` hides real bugs behind a "domain" answer; handle `DomainError` only.
+- **Putting the translation in the service.** The service must not know status codes, or a CLI cannot reuse it.
+- **Swallowing a non-domain exception in `domain_error_to_http`.** Re-raise it, so the framework reports a 500.

@@ -1,0 +1,5 @@
+app/main.py edited: first miss at step 6, steps rebuilt: 4
+requirements.txt edited: first miss at step 4, steps rebuilt: 6
+base image tag changed: first miss at step 1, steps rebuilt: 9
+CMD line edited: first miss at step 9, steps rebuilt: 1
+README.md edited: every step is cached

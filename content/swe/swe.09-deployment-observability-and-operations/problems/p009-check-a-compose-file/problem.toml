@@ -1,0 +1,6 @@
+id = "swe.09.p009"
+title = "Check a compose file"
+tier = "applied"
+kind = "code"
+topics = ["Docker Compose", "YAML", "healthcheck", "depends_on", "named volumes", "secrets", "published ports"]
+minutes = 50

@@ -1,0 +1,6 @@
+id = "swe.11.p017"
+title = "Run with a timeout and a useful error"
+tier = "deep"
+kind = "code"
+topics = ["subprocess", "timeout", "check=True", "CalledProcessError", "TimeoutExpired", "error messages", "custom exceptions"]
+minutes = 35

@@ -21,3 +21,8 @@ playground/*
 !playground/README.md
 library/*
 !library/README.md
+
+# Icons made by `learn shortcut` (a copy of the course folder, per machine)
+Python Learning.lnk
+Python Learning.desktop
+Python Learning.command

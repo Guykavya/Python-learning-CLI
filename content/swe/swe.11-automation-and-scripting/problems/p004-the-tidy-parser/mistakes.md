@@ -1,0 +1,5 @@
+- **Adding `-v` to a sub-parser instead of the main parser.** Then `tidy -vv organize x` fails, and only `tidy organize -v x` works. A global flag lives on the main parser and comes before the subcommand.
+- **`action="store_true"` for `-v`.** `-vv` must count to 2: `action="count", default=0` (without the default it is `None`, and `None >= 1` crashes later).
+- **Forgetting `required=True`.** Then `tidy` with no subcommand gives `command=None` and your `main` has to guess.
+- **No `type=int` on `--min-size`.** You get the string `"10"`, and `size >= "10"` raises `TypeError` far away from the cause.
+- **Expecting `args.dry-run`.** argparse turns dashes into underscores: `args.dry_run`, `args.min_size`.

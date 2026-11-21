@@ -1,0 +1,8 @@
+- **Logging with `print` or to a file.** The platform collects stdout; one JSON object per line.
+- **Resetting the request-id variable before the access line.** The line that matters most would carry `-`.
+- **A database ping in `/healthz`.** A database outage would restart every container (restart storm); only `/readyz` checks dependencies.
+- **Forgetting `app.state.draining = True` in the lifespan shutdown.** The load balancer keeps sending traffic to an instance that is leaving.
+- **Raw paths as the `route` label.** One time series per order id.
+- **A Dockerfile without `HEALTHCHECK` while Compose says `service_healthy`.** The condition can never become true.
+- **Publishing the API and the proxy.** Clients bypass the proxy (and its limits); only the proxy has ports.
+- **A compose bind mount that is writable, or an inline secret.** Both are findings of p009.

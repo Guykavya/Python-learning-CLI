@@ -1,0 +1,7 @@
+id = "swe.11.p011"
+title = "Keep the command line thin"
+tier = "applied"
+kind = "explain"
+topics = ["thin CLI layer", "separation of concerns", "testing", "argparse", "click", "scheduled jobs", "explain"]
+minutes = 30
+assessment = "explain"

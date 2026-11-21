@@ -1,0 +1,6 @@
+- **Forgetting the list form of `depends_on`.** `depends_on: [db]` is common and cannot say `service_healthy`.
+- **Flagging every bind mount.** A read-only config mount (`./nginx/default.conf:...:ro`) is fine; a writable bind of a data directory is the risk.
+- **Reporting `no-healthcheck` on the dependent service.** It belongs on the dependency, the service that must answer its health check.
+- **Treating `${APP_SECRET_KEY:?...}` as a literal secret.** A value starting with `${` is a substitution from the `.env` file or the shell.
+- **Treating `environment:` as only a mapping.** The list form `- NAME=value` is just as common.
+- **Raising on `depends_on` of an unknown service.** Compose itself will complain; this checker simply skips what it cannot find.

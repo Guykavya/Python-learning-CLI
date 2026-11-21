@@ -1,0 +1,6 @@
+- **Raising at the first problem.** Fixing a deployment one error at a time costs one failed deploy per mistake.
+- **`int(env["PORT"])` without a `try`.** A `ValueError` traceback is not a configuration error message; name the variable.
+- **Treating `""` as set.** `export SECRET_KEY=` produces an empty string, which passes `"SECRET_KEY" in env`.
+- **Printing the settings in a log line and forgetting the URL.** Database URLs carry passwords; mask them too.
+- **Defaults for dangerous settings.** `get("SECRET_KEY", "dev-secret")` in code means production runs with a known secret when someone forgets to set it.
+- **Not stripping case from `LOG_LEVEL`.** `info` is a reasonable thing to type.

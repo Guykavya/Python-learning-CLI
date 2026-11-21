@@ -1,0 +1,5 @@
+- **Adding the followers instead of multiplying by posts.** Each post is copied to every follower.
+- **Forgetting that the per-second number rounds.** 57.9 prints as `58`, and 46,296.3 as `46296`.
+- **Including `star` in the hybrid rows.** Accounts above the threshold are not fanned out.
+- **Thinking the hybrid removes the celebrity's cost.** It moves it to read time, for the readers who follow that account.
+- **Applying the 100 accounts per read to the write side.** That number belongs to the read side only.

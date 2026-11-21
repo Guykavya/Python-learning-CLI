@@ -1,0 +1,6 @@
+id = "swe.09.p008"
+title = "What does exit code 137 mean?"
+tier = "drill"
+kind = "code"
+topics = ["exit codes", "signals", "SIGKILL", "OOM", "docker", "128 + n"]
+minutes = 25

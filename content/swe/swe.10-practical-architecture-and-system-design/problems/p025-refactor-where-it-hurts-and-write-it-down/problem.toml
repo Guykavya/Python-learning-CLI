@@ -1,0 +1,7 @@
+id = "swe.10.p025"
+title = "Refactor where it hurts, and write it down"
+tier = "challenge"
+kind = "code"
+topics = ["refactoring", "service layer", "repository", "unit of work", "ADR", "pain log", "safety net", "architecture"]
+minutes = 150
+assessment = "build"

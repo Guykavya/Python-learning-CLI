@@ -1,0 +1,6 @@
+id = "swe.09.p004"
+title = "Who wins?"
+tier = "drill"
+kind = "trace"
+topics = ["configuration", "precedence", "Docker", "Compose", ".env", "env_file", "trace"]
+minutes = 25

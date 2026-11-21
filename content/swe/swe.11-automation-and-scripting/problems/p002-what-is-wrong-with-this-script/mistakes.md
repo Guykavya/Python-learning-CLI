@@ -1,0 +1,5 @@
+- **Naming the problem without the consequence.** "Hard-coded path is bad" says nothing; say what breaks and where.
+- **Thinking `try/except` makes the script safe.** Catching everything and printing hides failures; the exit code is the script's real answer.
+- **Confusing the script's folder with the working directory.** Relative paths are resolved against where the script was *started*, not where the file lives.
+- **Fixing only with comments.** "Be careful which folder you run it in" is not a fix; building paths from the input folder is.
+- **Forgetting that cron reads only the exit code** (and maybe mails stdout to a mailbox nobody reads).

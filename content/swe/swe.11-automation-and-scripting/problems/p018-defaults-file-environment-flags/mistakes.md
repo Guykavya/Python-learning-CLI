@@ -1,0 +1,7 @@
+- **Applying layers in the wrong order.** If the file is read after the environment, a value exported for one cron job is silently ignored.
+- **`if flags["keep_days"]:`** A flag value of `0` or `False` is a real choice; only `None` means "not given". Same for `dry_run=False`.
+- **`bool("false")`.** Any non-empty string is `True` in Python; that is why `to_bool` exists.
+- **Treating `TIDY_FOLDER=""` as a folder.** An empty path becomes the current directory: the cleanup runs where cron started, usually your home.
+- **Ignoring unknown keys silently.** A typo then quietly uses the default.
+- **Reading the token from the config file.** Config files get committed; secrets come from the environment (or a keyring).
+- **Error messages without the source.** "invalid literal for int()" does not tell you whether to fix the file, the crontab or the command line.

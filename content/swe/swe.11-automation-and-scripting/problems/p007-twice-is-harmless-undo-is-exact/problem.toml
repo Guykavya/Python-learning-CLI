@@ -1,0 +1,6 @@
+id = "swe.11.p007"
+title = "Twice is harmless, undo is exact"
+tier = "applied"
+kind = "code"
+topics = ["undo", "journal", "idempotent", "main(argv)", "testing a CLI", "tidy"]
+minutes = 40

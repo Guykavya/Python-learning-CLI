@@ -1,0 +1,5 @@
+- **Storing and returning the same object.** A service that forgets `save` then "works" in tests and loses data in production: copy in and out.
+- **A fake that raises `KeyError` or returns `None` for a missing task.** The contract says `NotFound`.
+- **A fake without ordering.** `list_for_project` must be ordered by id, as `ORDER BY id` is in SQL.
+- **Counting `done` tasks in `open_count_for`.** The contract test fails for both implementations in the same way: that is the point of running it on both.
+- **Putting behaviour into the fake that the real repository does not have.** A fake is not a place for extra rules.

@@ -1,0 +1,6 @@
+1 /etc/passwd
+2 .gz
+3 backup.tar
+4 ['.env', 'a.txt', 'sub']
+5 notes.backup
+6 False True

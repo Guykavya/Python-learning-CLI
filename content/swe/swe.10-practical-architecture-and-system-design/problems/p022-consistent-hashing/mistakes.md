@@ -1,0 +1,6 @@
+- **Using `hash()`.** It is randomised per process (`PYTHONHASHSEED`): two servers would disagree about who owns a key, and a restart would move every key.
+- **`hash(key) % number_of_nodes`.** About 80% of the keys move when a fifth node arrives.
+- **One point per node.** The shares are lumpy; use many virtual points.
+- **Forgetting the wrap-around.** A key beyond the last point belongs to the first point: `% len(points)`.
+- **`bisect_left` instead of `bisect`.** The two only differ for a key that lands *exactly* on a point (practically never with md5), but the rule is "the first point with a position greater than the key's", which is `bisect`.
+- **Making the ring depend on the order of `add` calls.** Sort all the points, so that only the set of nodes matters.

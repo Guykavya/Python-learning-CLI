@@ -1,0 +1,6 @@
+id = "swe.09.p023"
+title = "Lint a CI workflow"
+tier = "applied"
+kind = "code"
+topics = ["GitHub Actions", "CI", "YAML", "supply chain security", "least privilege", "Makefile"]
+minutes = 50

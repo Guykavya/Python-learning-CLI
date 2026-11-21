@@ -1,0 +1,6 @@
+id = "swe.09.p010"
+title = "Read the proxy's access log"
+tier = "applied"
+kind = "code"
+topics = ["Nginx", "access log", "JSON logs", "502", "504", "upstream_status", "request id"]
+minutes = 40

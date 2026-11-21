@@ -1,0 +1,6 @@
+id = "swe.09.p016"
+title = "What is wrong with these log lines?"
+tier = "applied"
+kind = "explain"
+topics = ["logging", "secrets in logs", "structured logs", "log levels", "tracebacks", "explain"]
+minutes = 30

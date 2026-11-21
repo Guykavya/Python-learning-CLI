@@ -1,0 +1,6 @@
+- **Using a regex on the source text.** It misses `from . import repo`, aliases and imports inside functions, and it matches comments and strings; parse with `ast`.
+- **Forgetting the relative form without a module.** `from . import repo` has `node.module == None`; the imported names are the modules.
+- **Treating `import taskboard` as importing a module.** It imports the package only; there is nothing to judge.
+- **Judging external libraries by their full dotted name.** `fastapi.responses` must be recognised as `fastapi`.
+- **Reporting duplicates or an unstable order.** Return a sorted list of unique pairs so that a test can compare it.
+- **Letting the same layer import itself be a violation.** Importing a module of your own layer is fine.

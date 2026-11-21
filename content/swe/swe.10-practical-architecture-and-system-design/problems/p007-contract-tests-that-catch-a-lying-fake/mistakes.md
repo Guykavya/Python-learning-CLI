@@ -1,0 +1,6 @@
+- **Testing only the happy path.** A fake that "works" for a single add and a single lookup passes; the lies live in repeated adds, mixed case and other projects.
+- **Peeking at the implementation** (`repo.rows`, `repo.conn`). The check then passes on one implementation only; use the interface.
+- **A rule that is not in the contract.** If the real repository does not do it, the check fails on SQLite: the test tells you which check is wrong.
+- **An `assert` without a message.** When it fails you only know that something is off; name the rule.
+- **One huge check.** If it fails you do not know which lie it found; small checks give precise failures.
+- **Forgetting that every check gets a fresh repository.** Do not rely on state left by another check.

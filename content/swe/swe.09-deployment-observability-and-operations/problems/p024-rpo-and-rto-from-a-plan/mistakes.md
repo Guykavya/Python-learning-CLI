@@ -1,0 +1,5 @@
+- **Taking the first or last element of the list.** The list may be unsorted and may contain backups after the failure; use the latest one that is not after it.
+- **Using `.seconds` of a `timedelta`.** It ignores whole days; use `.total_seconds()`.
+- **Counting the data copy only.** The RTO includes the fixed work: finding the backup, starting the service, checking it.
+- **`MB` versus `GB`.** 1 GB is 1024 MB here; and speed is in MB per second.
+- **Calling a replica a backup.** A replica copies a deletion within a second; a backup is a separate, older copy (chapter 13.1).

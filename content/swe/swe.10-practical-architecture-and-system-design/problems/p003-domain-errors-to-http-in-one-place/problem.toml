@@ -1,0 +1,6 @@
+id = "swe.10.p003"
+title = "Domain errors to HTTP, in one place"
+tier = "drill"
+kind = "code"
+topics = ["domain errors", "exception handler", "FastAPI", "translation layer", "isinstance"]
+minutes = 25

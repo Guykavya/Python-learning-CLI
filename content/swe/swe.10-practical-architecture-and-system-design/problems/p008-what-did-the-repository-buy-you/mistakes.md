@@ -1,0 +1,5 @@
+- **"It is the correct architecture."** That is style, not evidence; the answer must name a pain.
+- **Claiming the repository makes switching databases easy.** It localises the SQL; it does not remove the work or the dialect differences.
+- **Forgetting the costs.** A layer that has only benefits in the answer is a sales pitch, not an analysis.
+- **Forgetting that fakes can lie.** Without contract tests, fast tests can be fast and wrong.
+- **Saying "always".** The honest answer to "should a one-table app have a repository?" is no.

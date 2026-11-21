@@ -1,0 +1,6 @@
+id = "swe.10.p009"
+title = "A SQLite unit of work"
+tier = "applied"
+kind = "code"
+topics = ["unit of work", "transaction", "context manager", "rollback", "one connection per use case", "SQLite"]
+minutes = 40

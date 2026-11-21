@@ -1,0 +1,4 @@
+- **Calling "errors" a gauge.** It is a running total; you graph its rate or its share of all requests.
+- **Calling "queue length" a counter.** It goes down when workers take jobs.
+- **Using an average of durations instead of a histogram.** The average hides the tail (problem p020).
+- **Calling the size of uploads a counter because bytes only add up.** Total bytes is a counter; the *distribution* of sizes is a histogram.

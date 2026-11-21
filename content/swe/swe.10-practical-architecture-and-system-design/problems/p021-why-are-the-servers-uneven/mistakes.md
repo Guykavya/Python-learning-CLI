@@ -1,0 +1,5 @@
+- **Counting a request that ends exactly now as in flight.** In flight means `end > now`.
+- **Choosing by total work instead of by requests in flight.** Least connections counts connections, not seconds.
+- **Starting a request at its arrival time on a busy server.** It starts when the server is free: `max(arrival, free_at)`.
+- **Breaking ties arbitrarily.** The tie goes to the lowest-numbered server so that results are repeatable.
+- **Forgetting that the total work does not change.** The policies redistribute work; they do not remove it.

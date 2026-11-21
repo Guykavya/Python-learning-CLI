@@ -1,0 +1,6 @@
+id = "swe.10.p017"
+title = "Spot the retry storm"
+tier = "drill"
+kind = "trace"
+topics = ["retries", "retry storm", "timeouts", "deadline", "resilience", "overload", "trace"]
+minutes = 25

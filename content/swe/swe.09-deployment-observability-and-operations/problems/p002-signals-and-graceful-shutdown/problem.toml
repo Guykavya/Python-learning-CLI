@@ -1,0 +1,6 @@
+id = "swe.09.p002"
+title = "Signals and graceful shutdown"
+tier = "drill"
+kind = "explain"
+topics = ["SIGTERM", "SIGKILL", "SIGHUP", "graceful_timeout", "Gunicorn", "explain"]
+minutes = 25

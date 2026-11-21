@@ -1,0 +1,6 @@
+- **Catching only `TimeoutError`.** The dependency can fail in many ways (connection refused, bad payload); the page must survive all of them.
+- **Catching `BaseException` (a bare `except:`).** It swallows `KeyboardInterrupt` and shutdowns.
+- **Calling the primary outside the breaker.** Then the circuit never counts failures and never opens.
+- **Treating an empty list as a failure.** "Nothing to recommend" is a valid answer and must replace the cached list.
+- **Returning the cached list itself.** A caller that appends to it corrupts the cache; return copies.
+- **Updating the cache on failure.** Only a real answer is a "last good" answer.

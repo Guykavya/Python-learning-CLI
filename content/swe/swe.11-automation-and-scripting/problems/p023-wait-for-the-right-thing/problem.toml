@@ -1,0 +1,6 @@
+id = "swe.11.p023"
+title = "Wait for the right thing"
+tier = "deep"
+kind = "explain"
+topics = ["Playwright", "browser automation", "auto-wait", "locators", "flaky scripts", "explain"]
+minutes = 30

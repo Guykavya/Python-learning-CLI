@@ -82,4 +82,8 @@ fi
 
 echo "$DIR" > "$STAMP"
 cp "$DIR/pyproject.toml" "$DEPS"
+# First setup only: make the Desktop icon and the folder icon, and say so. Never during Tab completion.
+if [ "$1" != "_complete" ]; then
+  "$VENV/bin/python" -m learn shortcut || echo "Could not make the icons now. Later run: ./learn shortcut" >&2
+fi
 exec "$VENV/bin/python" -m learn "$@"

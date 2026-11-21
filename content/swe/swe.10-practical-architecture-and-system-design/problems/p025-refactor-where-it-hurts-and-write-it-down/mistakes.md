@@ -1,0 +1,7 @@
+- **Changing the safety-net tests to make them pass.** They describe the outside; if one fails after your change, you broke behaviour (chapter 2.3).
+- **Mixing a refactor and a behaviour change in one step.** Do one remedy at a time and run all tests after each.
+- **Keeping one shared connection "for now".** The orphan task of pain 2 comes back the first time a request fails after an insert.
+- **Calling `uow.commit()` inside a repository or more than once in a use case.** One use case, one commit, at the very end.
+- **Sending the e-mail before the rules are checked, or after `commit()`.** Before the commit it can fail the whole request and roll back (as the test expects); after the commit it can fail a request whose data was saved.
+- **Leaving SQL in `create_app` "just for the list route".** The test counts it: all SQL lives in the repositories and `connect()`.
+- **An ADR that only says "we used layers".** Write the pain, the evidence, the cost and what you did **not** do.

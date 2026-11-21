@@ -1,0 +1,7 @@
+id = "swe.11.p016"
+title = "Fix the injection"
+tier = "applied"
+kind = "code"
+topics = ["subprocess", "shell injection", "argument list", "shell=True", "sys.executable", "fix"]
+minutes = 25
+assessment = "fix"
