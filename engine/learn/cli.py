@@ -755,47 +755,54 @@ def _read_module(conn, m, restart: bool = False, tui: bool = False) -> None:
         else:
             tui_reader.read_chapter(f"{m.id}  {m.title}", m.chapter_path.read_text(encoding="utf-8"), start, save)
             return
-    if sys.stdout.isatty() and ui.color_enabled():
-        print("\033[2J\033[H", end="")  # leave the shelf behind: the screen is now the chapter
     reader.read_chapter(f"{m.id}  {m.title}", m.chapter_path.read_text(encoding="utf-8"), start, save)
 
 
-def _bookshelf(conn, syl, tui: bool = False) -> None:
-    """Every written chapter in a compact grid. Pick any, any time: nothing is locked."""
-    while True:
-        print("\033[2J\033[H" if sys.stdout.isatty() and ui.color_enabled() else "", end="")
-        ui.heading("Bookshelf: pick a chapter to read")
-        numbered = []
-        for t in syl.tracks:
-            cells, coming = [], []
-            for m in t.modules:
-                if not m.chapter_path.exists():
-                    coming.append(m)
-                    continue
-                numbered.append(m)
-                total = len(reader.split_sections(m.chapter_path.read_text(encoding="utf-8")))
-                pos = int(db.get_meta(conn, f"read_pos:{m.id}", "-1")) + 1
-                where = ui.dim(f"{pos}/{total}") if pos > 0 else ui.dim("new")
-                cells.append((len(numbered), m, where))
-            if not cells:
+def _draw_shelf(conn, syl) -> list:
+    """Print the shelf (clears the screen first in a terminal). Returns the readable chapters in number order."""
+    print("\033[2J\033[H" if sys.stdout.isatty() and ui.color_enabled() else "", end="")
+    ui.heading("Bookshelf: pick a chapter to read")
+    numbered = []
+    for t in syl.tracks:
+        cells, coming = [], []
+        for m in t.modules:
+            if not m.chapter_path.exists():
+                coming.append(m)
                 continue
-            print(ui.bold(f"\n  {t.title}"))
-            cols = 2 if ui.terminal_width() >= 100 else 1
-            width = (ui.terminal_width() - 4) // cols
-            for i in range(0, len(cells), cols):
-                line = ""
-                for n, m, where in cells[i:i + cols]:
-                    title_room = width - 20
-                    title = m.title if len(m.title) <= title_room else m.title[: title_room - 1] + "…"
-                    text = f"{ui.accent(f'{n:>3}')}  {m.id:8} {title}  {where}"
-                    line += text + " " * max(2, width - ui.vis_len(text))
-                print("  " + line.rstrip())
-            if coming:
-                print(ui.dim(f"       + {len(coming)} more coming ({coming[0].id} … {coming[-1].id})"))
-        if not numbered:
-            print("  No chapters are written yet.")
-            return
-        print(ui.dim("\n  progress shows section read/total  ·  new = not opened yet"))
+            numbered.append(m)
+            total = len(reader.split_sections(m.chapter_path.read_text(encoding="utf-8")))
+            pos = int(db.get_meta(conn, f"read_pos:{m.id}", "-1")) + 1
+            where = ui.dim(f"{pos}/{total}") if pos > 0 else ui.dim("new")
+            cells.append((len(numbered), m, where))
+        if not cells:
+            continue
+        print(ui.bold(f"\n  {t.title}"))
+        cols = 2 if ui.terminal_width() >= 100 else 1
+        width = (ui.terminal_width() - 4) // cols
+        for i in range(0, len(cells), cols):
+            line = ""
+            for n, m, where in cells[i:i + cols]:
+                title_room = width - 20
+                title = m.title if len(m.title) <= title_room else m.title[: title_room - 1] + "…"
+                text = f"{ui.accent(f'{n:>3}')}  {m.id:8} {title}  {where}"
+                line += text + " " * max(2, width - ui.vis_len(text))
+            print("  " + line.rstrip())
+        if coming:
+            print(ui.dim(f"       + {len(coming)} more coming ({coming[0].id} … {coming[-1].id})"))
+    if not numbered:
+        print("  No chapters are written yet.")
+        return numbered
+    print(ui.dim("\n  progress shows section read/total  ·  new = not opened yet"))
+    return numbered
+
+
+def _bookshelf(conn, syl, tui: bool = False) -> None:
+    """Every written chapter in a compact grid. Pick any, any time: nothing is locked.
+
+    The list is drawn once and stays on screen. Reading a chapter prints below it, so coming back
+    shows only a short line and the prompt (the progress numbers refresh the next time you open the shelf)."""
+    numbered = _draw_shelf(conn, syl)
+    while numbered:
         choice = ui.ask("  Chapter number or id (Enter to leave)").lower()
         if choice in ("", "q", "quit"):
             return
@@ -807,6 +814,7 @@ def _bookshelf(conn, syl, tui: bool = False) -> None:
             print(ui.warn("  Type a number from the list, a module id such as core.02, or Enter to leave."))
             continue
         _read_module(conn, m, tui=tui)
+        print(ui.dim(f"\n  Back on the shelf. Type a number to read another chapter, Enter to leave."))
 
 
 def cmd_read(args: argparse.Namespace) -> None:
