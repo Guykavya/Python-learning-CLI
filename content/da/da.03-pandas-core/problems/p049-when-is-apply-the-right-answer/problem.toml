@@ -1,0 +1,7 @@
+id = "da.03.p049"
+title = "When is apply the right answer?"
+tier = "deep"
+kind = "explain"
+topics = ["apply", "map", "vectorisation", "iterrows", "performance", "explain"]
+minutes = 30
+assessment = "explain"

@@ -1,0 +1,5 @@
+- Calling `.fetchone()`: DuckDB 2.0 relations have no such method, and `con.execute(...).fetchone()` leaves the connection busy for the next query.
+- Opening a new connection inside the function: the caller's connection (and its settings) is ignored, and too many open connections can crash the process.
+- Forgetting `ORDER BY`: the result order is not guaranteed.
+- Returning `fetchall()` (a list of tuples) when a DataFrame is required.
+- Using a variable-name replacement scan (`FROM orders` with no `register`): works by accident in a script and breaks inside functions or other modules.

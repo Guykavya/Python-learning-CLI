@@ -1,0 +1,3 @@
+- Using `train_test_split`, which splits rows, not groups.
+- Expecting exactly `test_frac` of the **rows** in the test set: `test_size` is a fraction of the **groups**, so the row share varies when groups have different sizes.
+- Returning index labels instead of positions.

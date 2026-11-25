@@ -1,0 +1,6 @@
+id = "da.03.p014"
+title = "Read from SQL with parameters"
+tier = "applied"
+kind = "code"
+topics = ["read_sql_query", "params", "sqlite3", "parse_dates", "SQL injection"]
+minutes = 25

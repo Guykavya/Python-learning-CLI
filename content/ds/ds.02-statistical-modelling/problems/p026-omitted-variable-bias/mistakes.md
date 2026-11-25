@@ -1,0 +1,4 @@
+- Dividing by the variance of `ability` instead of `hours` in `delta`. The slope of ability **on hours** has `var(hours)` underneath.
+- Mixing `np.cov` (divides by `n - 1`) with `np.var` (divides by `n`). Use `.var()` of pandas or `ddof=1` so both use `n - 1`.
+- Drawing the random numbers in another order, so your numbers differ from the expected ones.
+- Believing a bigger sample will fix the bias.

@@ -1,0 +1,6 @@
+id = "da.05.p037"
+title = "Quarantine instead of crashing"
+tier = "deep"
+kind = "code"
+topics = ["pandera", "lazy validation", "quarantine", "failure_cases", "reasons", "pipeline"]
+minutes = 40

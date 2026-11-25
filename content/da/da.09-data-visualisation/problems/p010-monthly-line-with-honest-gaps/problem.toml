@@ -1,0 +1,6 @@
+id = "da.09.p010"
+title = "Monthly line with honest gaps"
+tier = "applied"
+kind = "code"
+topics = ["line chart", "missing data", "NaN", "resample", "reindex"]
+minutes = 25

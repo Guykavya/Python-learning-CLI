@@ -1,0 +1,6 @@
+- **Thinking `small.sum()` wraps to 44.** Reductions of small integer types use a 64-bit accumulator; only the forced `dtype=np.uint8` wraps.
+- **Writing `int64` for the uint8 sum.** Unsigned input gets an unsigned accumulator: `uint64`.
+- **Thinking `small + small` is widened like a sum.** Element-wise arithmetic keeps `uint8` and wraps: `[144, 200]`.
+- **`2.3333333333333333` or `2.33`.** `float()` prints Python's shortest repr of the nearest float: `2.3333333333333335`.
+- **`float64` for the float32 sum.** Floats keep their precision in a reduction; only integer types are widened.
+- **Printing `np.int64(3)`.** The program converts with `int()` before printing, so only the number appears.

@@ -1,0 +1,7 @@
+id = "ds.04.p024"
+title = "Read the baseline table"
+tier = "applied"
+kind = "trace"
+topics = ["paired comparison", "standard error", "cross-validation folds", "baseline", "trace"]
+minutes = 25
+assessment = "trace"

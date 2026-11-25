@@ -1,0 +1,6 @@
+- **Half-open bins drop the max.** Without the special case for the last bin, the largest value has index `bins` and is lost (or crashes).
+- **Counts that do not add up to `n`.** When no range is given, every value must be counted.
+- **Counting values outside the range in the first or last bin.** They are not in any bin; report them in `outside`.
+- **Returning widths instead of `(left, right, count)` rows.**
+- **Division by zero when all values are equal.** Width 0 puts everything in the first bin.
+- **Integer division (`//`) on floats** returns a float index; use `int(...)`.

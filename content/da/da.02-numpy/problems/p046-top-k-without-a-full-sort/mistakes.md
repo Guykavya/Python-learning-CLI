@@ -1,0 +1,7 @@
+- **`k = 0` returns everything:** `argpartition(x, -0)[-0:]` is `[0:]`. Handle `k = 0` first.
+- **Forgetting the final sort.** `argpartition` gives the `k` best in *no particular order*.
+- **Reordering `x[idx]` instead of `idx`.** You need positions, so apply the order to `idx`.
+- **`argpartition(x, k)[:k]`** gives the `k` *smallest*.
+- **`k > len(x)`** makes `argpartition` raise; cap `k` with `min`.
+- **`x.partition(...)` or `x.sort()`** reorder the caller's array in place.
+- **A full sort** (`np.argsort(x)[::-1][:k]`): correct, but O(n log n); the test switches it off for big arrays.

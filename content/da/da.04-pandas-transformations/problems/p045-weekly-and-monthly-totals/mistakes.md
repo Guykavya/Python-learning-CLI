@@ -1,0 +1,5 @@
+- **`"M"` for months.** pandas 3 raises `ValueError: Invalid frequency: M`; the month-end alias is `"ME"` (month start: `"MS"`).
+- **`"W"` for the Monday weeks.** Plain `"W"` is `"W-SUN"`: weeks ending on Sunday, so every bin moves by a day.
+- **Expecting the label to be the first day of the week.** With `"W-MON"` the label is the Monday that **ends** the bin.
+- **Dividing a month by 30.** Months have 28 to 31 days; sum the real days.
+- **Translating `"M"` to `"ME"` inside the function.** It hides an outdated call from the caller; let the error through.

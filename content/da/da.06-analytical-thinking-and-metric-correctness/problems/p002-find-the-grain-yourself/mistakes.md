@@ -1,0 +1,5 @@
+- **Listing supersets.** `("payment_id", "job_id")` is unique but contains a smaller key; the answer should stay short.
+- **Ignoring missing values.** A column with a missing cell looks unique but a missing key identifies nothing.
+- **Testing each column alone only.** Composite keys such as `(job_id, line_no)` are common; the pair is the key.
+- **Returning lists or sets.** The contract is a list of **tuples** so that results compare and sort predictably.
+- **Trusting the result as a rule.** A key that is unique today is only a candidate; the business rule decides.

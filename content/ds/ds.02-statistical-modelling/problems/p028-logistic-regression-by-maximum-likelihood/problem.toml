@@ -1,0 +1,6 @@
+id = "ds.02.p028"
+title = "Logistic regression by maximum likelihood"
+tier = "applied"
+kind = "code"
+topics = ["logistic regression", "maximum likelihood", "Newton-Raphson", "sigmoid"]
+minutes = 40

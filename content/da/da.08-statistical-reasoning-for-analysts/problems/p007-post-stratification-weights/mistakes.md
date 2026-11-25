@@ -1,0 +1,4 @@
+- Using the sample shares: that is the plain mean again.
+- Dropping a population stratum that has no respondents: the result is then the mean of a different population.
+- Not checking that shares add to 1.
+- Using the median or a sum instead of the mean per stratum.

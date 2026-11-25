@@ -1,0 +1,5 @@
+- Shuffling `a` and `b` separately: the groups never mix.
+- A one-sided test (`diff >= obs`).
+- `p = count / reps`, which can be exactly 0.
+- Comparing floats without a small tolerance, so ties at the observed value are missed.
+- Shuffling the caller's array in place.

@@ -1,0 +1,8 @@
+- **Hard-coding the QuickFix metrics inside `definition_doc`.** It must work for any list of specs; the test uses others too.
+- **Forgetting the empty line that ends each section.** The text must end with a newline after the last `Excludes` line.
+- **A bridge that does not close, printed anyway.** An unexplained remainder must raise (problem 38), not hide in the text.
+- **`<=` at the end of the month.** The data contain jobs created or started exactly on `1 Mar 00:00`, and a payment at `23:59:59` on 28 February.
+- **Dropping zero lines from the cash bridge.** All seven lines are always shown (the empty ones are information: "nobody is unpaid"); the volume bridge leaves zero lines out.
+- **Listing ids unsorted, or for steps that have none.** Sorted ids, only steps with jobs, `- none` when there are no ids at all.
+- **Counting payments on jobs completed in the period as "other cash".** Those payments are already inside the work value.
+- **Printing instead of returning text.** Both functions return the text; the caller prints or saves it.

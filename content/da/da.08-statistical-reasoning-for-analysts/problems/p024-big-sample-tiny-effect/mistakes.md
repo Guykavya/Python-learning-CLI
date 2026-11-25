@@ -1,0 +1,3 @@
+- Repeating "it is significant" as if it settled the decision.
+- Saying the result is wrong because the p-value is small: it is right, and unhelpful on its own.
+- Ignoring the cost side.

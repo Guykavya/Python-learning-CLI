@@ -1,0 +1,6 @@
+id = "da.10.p012"
+title = "Mix-rate decomposition"
+tier = "deep"
+kind = "code"
+topics = ["mix effect", "rate effect", "decomposition", "Simpson paradox", "groupby"]
+minutes = 35

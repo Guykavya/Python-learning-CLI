@@ -1,0 +1,4 @@
+- Saying the test is bad: it is a good test applied to a rare condition.
+- Mixing up `P(positive | sick)` and `P(sick | positive)`.
+- Forgetting to count the false positives among the **healthy** majority.
+- Concluding that testing is useless: a second, independent test would help (problem 43).

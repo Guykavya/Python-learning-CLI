@@ -1,0 +1,4 @@
+- Appending `w` without `.copy()` (or updating in place with `-=`) so the history shows the final point `steps + 1` times.
+- Plus instead of minus: that is gradient *ascent*.
+- Forgetting the starting point in `history`.
+- Changing the caller's `w0` by updating in place.

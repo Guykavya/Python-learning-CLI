@@ -1,0 +1,6 @@
+- **Mixing the bases.** Inclusive is 0-based (`n - 1`), exclusive is 1-based (`n + 1`).
+- **`ceil(p / 100 * n)`** in floating point can overshoot by one rank (70 with n = 10).
+- **Not clamping `hi`** at the last index: p=100 then reads past the end.
+- **Interpolating nearest-rank.** It returns an actual data value.
+- **Clamping the exclusive method silently** (as the library does) instead of raising.
+- **Sorting the caller's list in place.**

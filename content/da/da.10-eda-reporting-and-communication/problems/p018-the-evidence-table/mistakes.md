@@ -1,0 +1,4 @@
+- Using the p-value or the estimate alone: a large estimate with a wide interval is inconclusive.
+- Calling every interval that contains the null "not supported": absence of evidence is not evidence of absence, unless the interval is narrow (the margin rule).
+- Treating an interval that touches the null (`ci_low == null`) as supported: the rule is strict.
+- Formatting the interval as `(2.71, 3.09)`: the text must read `2.71 to 3.09`.

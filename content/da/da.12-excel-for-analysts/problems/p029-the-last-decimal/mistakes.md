@@ -1,0 +1,4 @@
+- Expecting Python's `round(1.005, 2)` to be 1.01.
+- Printing `3` for `xl_round(2.5)`: it returns a float, so `3.0`.
+- Mixing up the last two lines: rounding each line first loses 0.016.
+- Believing the difference is a bug: both follow their rules.

@@ -1,0 +1,4 @@
+- Averaging precision and recall over classes first and then computing F1: that is a different number.
+- Giving every class the same weight when asked for the weighted mean (the weight is the number of **true** rows).
+- Leaving out classes that appear only in the predictions.
+- Dividing by zero for a class that was never predicted and has no true rows.

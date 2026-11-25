@@ -1,0 +1,4 @@
+- Dividing the gap by the training error: it is near 0 for a memorising model and the ratio explodes.
+- Forgetting to flip the sign of the `neg_` scorer.
+- Declaring "more data helps" for every model with a gap. The fully grown tree has a gap that does not shrink with n.
+- Returning NumPy booleans (`np.bool_`) instead of `bool`.

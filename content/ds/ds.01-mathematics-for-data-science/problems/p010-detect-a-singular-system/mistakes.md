@@ -1,0 +1,4 @@
+- Comparing the pivot with exactly `0`: rounding leaves `1e-16`, not 0.
+- Using an absolute tolerance only: the test scales the matrix by 1e6.
+- Raising the error after the division, when you already got `inf`.
+- Raising `ZeroDivisionError` or returning `nan` instead of `ValueError`.

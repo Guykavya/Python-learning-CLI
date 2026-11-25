@@ -1,0 +1,4 @@
+closed: 4 of 10
+survivors: 10.0
+all shops: -1.0
+gap: 11.0

@@ -1,0 +1,4 @@
+- Leaving out `Treatment(reference='school')`: the baseline becomes `degree` (alphabetical), so the coefficients answer a different question.
+- Using `wage` instead of `np.log(wage)`: the coefficients are then rupees, not log points, and the education effects are nowhere near 0.18 and 0.40.
+- Not importing NumPy in `solution.py`: the formula's `np.log` is looked up in your file's namespace, and the error is `NameError: name 'np' is not defined`.
+- Typing `city` only instead of `C(city)` (a string column works, but be explicit).

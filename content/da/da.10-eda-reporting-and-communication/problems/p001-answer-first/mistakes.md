@@ -1,0 +1,4 @@
+- Comparing the raw numbers: 4.04 against 4.01 would say "fell from 4.0% to 4.0%".
+- Writing `{before}` without `:.1f`: the reader sees `4.04` in one place and `4.0` in another.
+- Adding ", mainly because " when the cause is empty.
+- Counting characters instead of words for the 40-word limit.

@@ -1,0 +1,5 @@
+- **`<=` / `>=` against the fences.** Values exactly on a fence are not outliers.
+- **`x[outside] = median` on the input.** Changes the caller's data; and for an int array the median 11.5 is cut to 11.
+- **Median of the values without the outliers.** The task asks for the median of all values (it barely moves anyway, which is why the median is a safe replacement).
+- **`np.percentile(x, 0.25)`.** `np.percentile` takes 0..100; `np.quantile` takes 0..1.
+- **A different percentile method** (`method="weibull"`): it is da.01's exclusive method and moves the fences.

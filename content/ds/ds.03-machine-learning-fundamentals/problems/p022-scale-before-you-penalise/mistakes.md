@@ -1,0 +1,4 @@
+- Scaling `X` outside the pipeline using all rows, then splitting: the test rows leak into the scaler.
+- Putting `Ridge` first and the scaler second.
+- Returning a **fitted** pipeline or a pipeline without the scaler.
+- Believing that scaling is unnecessary for ordinary least squares: that is true, but not for any penalised model.

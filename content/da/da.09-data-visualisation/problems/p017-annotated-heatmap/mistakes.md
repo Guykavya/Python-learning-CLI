@@ -1,0 +1,4 @@
+- `ax.text(i, j, ...)`: the x coordinate is the **column**, the y coordinate is the **row**.
+- Writing `"nan"` in missing cells.
+- Calling `plt.colorbar` without the image (`im`): there is nothing to attach it to.
+- Passing the DataFrame straight to `imshow` without `to_numpy`: labels do not come along.

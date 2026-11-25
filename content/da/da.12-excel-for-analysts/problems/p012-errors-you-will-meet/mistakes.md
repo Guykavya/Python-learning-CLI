@@ -1,0 +1,4 @@
+- Thinking IFNA catches every error.
+- Answering 0 for F1: dividing by an empty cell is a division by zero, not 0.
+- Answering `1` for F5 (`SUM` ignoring the error): `SUM` propagates it.
+- Writing `0.0` instead of `0`.

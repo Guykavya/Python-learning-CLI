@@ -1,0 +1,6 @@
+- **Checking the row count for every `how`.** An inner join can legitimately shrink the table; only the left join must keep every left row.
+- **Catching `MergeError` and hiding it.** The error is the protection: let it reach the caller.
+- **Using `assert` statements.** They disappear under `python -O`, and they cannot carry the label in the way the test wants; use `raise AssertionError(...)`.
+- **Comparing against `len(right)`.** The reference for a left join is the **left** table.
+- **Merging first on a modified copy of `left`.** The inputs must stay unchanged.
+- **Forgetting the default label.** `join on job_id` is what a log reader sees when nobody gave a name.

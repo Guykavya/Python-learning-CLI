@@ -1,0 +1,6 @@
+- **Using `<=` for "completed before it started".** A job completed at the very second it started is allowed.
+- **Treating `failed` as broken because it has no `completed_at`.** Only `completed` jobs must have one; the chapter notes that failed jobs have no failure timestamp at all, a gap, not a contradiction.
+- **Reporting a comparison rule when a time is missing.** `NaT < x` is `False` in pandas, so the plain comparison is already right; do not fill the `NaT` with a date.
+- **Stopping at the first problem of a job.** A job can break several rules; the test lists job 10 three times.
+- **Sorting only by label.** Sort by `job_id` first, and inside a job by the order of the rules.
+- **Returning numpy integers or a DataFrame.** The contract is a plain list of `(int, str)` tuples.

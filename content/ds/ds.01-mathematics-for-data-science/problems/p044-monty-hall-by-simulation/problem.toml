@@ -1,0 +1,6 @@
+id = "ds.01.p044"
+title = "Monty Hall by simulation"
+tier = "applied"
+kind = "code"
+topics = ["Monty Hall", "simulation", "conditional probability", "seed"]
+minutes = 30

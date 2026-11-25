@@ -1,0 +1,6 @@
+id = "ds.03.p009"
+title = "Polynomial models of growing degree"
+tier = "drill"
+kind = "code"
+topics = ["polynomial regression", "training error", "validation error", "RMSE"]
+minutes = 20

@@ -1,0 +1,9 @@
+101 in progress
+102 cancelled
+103 waiting
+104 not yet created
+105 done
+106 waiting
+{'cancelled': 1, 'done': 1, 'in progress': 1, 'not yet created': 1, 'waiting': 2}
+[101, 103, 106]
+2 3

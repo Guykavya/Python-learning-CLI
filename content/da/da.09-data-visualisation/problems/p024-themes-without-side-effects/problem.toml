@@ -1,0 +1,6 @@
+id = "da.09.p024"
+title = "Themes without side effects"
+tier = "deep"
+kind = "code"
+topics = ["seaborn themes", "context manager", "rcParams", "side effects", "axes_style"]
+minutes = 25

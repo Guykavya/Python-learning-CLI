@@ -1,0 +1,6 @@
+id = "da.04.p007"
+title = "Aggregate a computed value"
+tier = "applied"
+kind = "code"
+topics = ["groupby", "assign", "merge", "computed column", "validate"]
+minutes = 25

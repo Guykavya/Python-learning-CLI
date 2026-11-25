@@ -1,0 +1,8 @@
+1: supervised
+2: unsupervised
+3: supervised
+4: unclear
+5: supervised
+6: unsupervised
+7: supervised
+8: unsupervised

@@ -1,0 +1,4 @@
+- Passing the response instead of the residuals to `het_breuschpagan`.
+- Reading the F-test p-value (4th value) when the task says the LM test p-value (2nd).
+- Expecting robust errors to be *always* larger. On clean data they are about equal.
+- Forgetting that robust errors fix the standard errors only; a curved relationship still needs a better model.

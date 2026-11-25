@@ -1,0 +1,6 @@
+id = "da.12.p016"
+title = "A lookup is a left join"
+tier = "deep"
+kind = "explain"
+topics = ["lookup", "left join", "duplicate keys", "fan-out", "explain"]
+minutes = 30

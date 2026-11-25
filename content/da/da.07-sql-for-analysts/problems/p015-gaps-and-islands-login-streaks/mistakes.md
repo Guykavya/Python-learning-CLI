@@ -1,0 +1,5 @@
+- Skipping `DISTINCT`: two logins on 2 January are two rows, so the numbers drift and user 1's streak looks broken (or too long).
+- Including other event types: user 1's `view_course` on 4 January would join the runs.
+- Using `rank()` or `dense_rank()` over timestamps instead of dates: one day with two logins gets two numbers.
+- Subtracting the row number from a timestamp that has a time of day: the "constant" is not constant. Cast to `DATE` first.
+- Taking `count(*)` per user instead of the longest run per user.

@@ -1,0 +1,7 @@
+id = "da.13.p020"
+title = "From specification to a tested model"
+tier = "challenge"
+kind = "code"
+topics = ["model specification", "JSON", "Parquet", "report specification", "project"]
+minutes = 70
+assessment = "build"

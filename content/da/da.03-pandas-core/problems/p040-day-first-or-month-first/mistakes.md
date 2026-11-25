@@ -1,0 +1,5 @@
+- **"pandas will work it out"**: it cannot; it either raises (impossible value) or picks one order without telling you.
+- **Using `dayfirst=True` as a guess** without checking: it only decides the ambiguous cases; it does not make a month-first file day-first.
+- **Using `errors="coerce"` and not counting**: the failures turn into `NaT` and vanish from the next steps.
+- **Checking a few rows by eye** when the first 20 rows are all below 13: the bad rows may be further down.
+- **Never checking the range**: a month-first file read day-first shifts dates into the wrong months but often still looks plausible.

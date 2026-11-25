@@ -1,0 +1,4 @@
+- **`kept.loc[0, "n"]` prints 6.** That is position 0. Label 0 was filtered out, so it raises `KeyError`.
+- **Shape `(4, 2)`.** The filter dropped the row with `n = 5`.
+- **Forgetting the `index` column.** `reset_index()` without `drop=True` keeps the old labels as a column.
+- **Printing the error text.** Only `type(exc).__name__` is printed: `KeyError`.

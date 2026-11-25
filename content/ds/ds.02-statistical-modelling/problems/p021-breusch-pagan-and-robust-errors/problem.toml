@@ -1,0 +1,6 @@
+id = "ds.02.p021"
+title = "Breusch-Pagan and robust errors"
+tier = "deep"
+kind = "code"
+topics = ["Breusch-Pagan", "robust standard errors", "HC3", "heteroscedasticity"]
+minutes = 30

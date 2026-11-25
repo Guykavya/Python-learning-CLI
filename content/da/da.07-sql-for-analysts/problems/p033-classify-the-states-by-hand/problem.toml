@@ -1,0 +1,6 @@
+id = "da.07.p033"
+title = "Classify the states by hand"
+tier = "deep"
+kind = "trace"
+topics = ["user states", "new retained resurrected churned", "MAU", "identities", "trace"]
+minutes = 30

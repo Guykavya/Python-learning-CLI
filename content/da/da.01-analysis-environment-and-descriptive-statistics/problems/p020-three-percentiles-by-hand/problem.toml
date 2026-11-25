@@ -1,0 +1,6 @@
+id = "da.01.p020"
+title = "Three percentiles by hand"
+tier = "deep"
+kind = "trace"
+topics = ["percentiles", "nearest-rank", "inclusive", "exclusive", "interpolation", "trace"]
+minutes = 35

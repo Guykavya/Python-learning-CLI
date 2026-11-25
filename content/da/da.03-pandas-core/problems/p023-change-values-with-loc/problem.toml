@@ -1,0 +1,6 @@
+id = "da.03.p023"
+title = "Change values with loc"
+tier = "drill"
+kind = "code"
+topics = ["loc", "assignment", "copy", "Copy-on-Write", "boolean mask"]
+minutes = 20

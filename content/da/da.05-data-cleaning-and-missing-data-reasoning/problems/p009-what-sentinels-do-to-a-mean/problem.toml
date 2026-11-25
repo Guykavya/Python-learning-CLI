@@ -1,0 +1,6 @@
+id = "da.05.p009"
+title = "What sentinels do to a mean"
+tier = "drill"
+kind = "trace"
+topics = ["sentinel values", "mean", "median", "mask", "isin", "trace"]
+minutes = 15

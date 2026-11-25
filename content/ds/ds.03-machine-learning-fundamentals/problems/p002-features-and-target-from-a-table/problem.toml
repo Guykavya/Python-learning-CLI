@@ -1,0 +1,6 @@
+id = "ds.03.p002"
+title = "Features and target from a table"
+tier = "drill"
+kind = "code"
+topics = ["features", "target", "DataFrame", "KeyError"]
+minutes = 15

@@ -1,0 +1,4 @@
+- Typing "45%" into the headline: the second data set in the tests must change the page.
+- Formatting the same number two ways (`5.0%` in the finding and `5.04%` in the table): the check cannot match them.
+- Computing the repeat rate of all customers for every channel: each channel uses only its own customers and orders.
+- A finding that the linter rejects (no date, no range, a vague phrase).

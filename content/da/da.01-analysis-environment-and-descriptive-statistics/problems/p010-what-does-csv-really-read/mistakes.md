@@ -1,0 +1,6 @@
+- **Splitting on every comma.** The comma inside quotes does not split.
+- **Leaving the doubled quote as two quotes**, or keeping the outer quotes in the field.
+- **Stripping the spaces.** `csv` keeps `'Chen '` and `' 70'`.
+- **Skipping the empty line** and numbering the last row 5: `csv.reader` returns `[]` for it, so the numbers go to 6.
+- **Expecting an error for the short row.** It is just a list of 2 strings.
+- **Writing the list without `repr` quotes** (`[Asha, Pune]`): the output has quotes.

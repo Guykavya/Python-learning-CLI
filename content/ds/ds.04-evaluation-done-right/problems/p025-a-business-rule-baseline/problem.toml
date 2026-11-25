@@ -1,0 +1,6 @@
+id = "ds.04.p025"
+title = "A business-rule baseline"
+tier = "drill"
+kind = "code"
+topics = ["baseline", "business rule", "ROC-AUC", "scoring"]
+minutes = 20

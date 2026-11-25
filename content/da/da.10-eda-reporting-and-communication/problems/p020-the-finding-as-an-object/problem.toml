@@ -1,0 +1,6 @@
+id = "da.10.p020"
+title = "The finding as an object"
+tier = "drill"
+kind = "code"
+topics = ["Finding", "dataclass", "numbers from code", "finding linter"]
+minutes = 30

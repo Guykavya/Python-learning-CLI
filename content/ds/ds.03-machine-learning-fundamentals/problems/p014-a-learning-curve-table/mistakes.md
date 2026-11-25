@@ -1,0 +1,4 @@
+- Creating `default_rng(seed)` inside the loops: every repeat draws the same rows.
+- Evaluating the "training error" on all of `X` instead of the `n` rows the model was fitted on.
+- Using a growing validation set: the validation set must stay the same across sizes, or the curves are not comparable.
+- Averaging RMSEs by taking the RMSE of the averaged errors; take the mean of the RMSE values.

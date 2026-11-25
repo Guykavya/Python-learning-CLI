@@ -1,0 +1,6 @@
+id = "da.04.p055"
+title = "Lazy join in Polars"
+tier = "deep"
+kind = "code"
+topics = ["Polars", "LazyFrame", "join", "validate", "group_by", "top-N", "collect"]
+minutes = 30

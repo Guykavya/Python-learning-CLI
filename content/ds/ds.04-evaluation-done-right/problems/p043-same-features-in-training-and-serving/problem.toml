@@ -1,0 +1,6 @@
+id = "ds.04.p043"
+title = "Same features in training and serving"
+tier = "deep"
+kind = "code"
+topics = ["training-serving skew", "feature function", "one-hot encoding", "consistency"]
+minutes = 35

@@ -1,0 +1,6 @@
+id = "ds.02.p003"
+title = "The normal equations"
+tier = "drill"
+kind = "code"
+topics = ["normal equations", "OLS", "matrix", "np.linalg.solve"]
+minutes = 20

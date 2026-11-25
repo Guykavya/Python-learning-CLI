@@ -1,0 +1,6 @@
+id = "da.02.p020"
+title = "Grades with np.select"
+tier = "applied"
+kind = "code"
+topics = ["np.select", "np.where", "nan", "boolean masks", "strings"]
+minutes = 20

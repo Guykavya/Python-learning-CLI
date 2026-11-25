@@ -1,0 +1,6 @@
+id = "da.01.p027"
+title = "Simpson's paradox detector"
+tier = "challenge"
+kind = "code"
+topics = ["Simpson's paradox", "group rates", "weighted averages", "confounding", "dicts"]
+minutes = 50

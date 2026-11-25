@@ -1,0 +1,6 @@
+id = "ds.04.p026"
+title = "Better is a difference with an error bar"
+tier = "challenge"
+kind = "code"
+topics = ["bootstrap", "paired comparison", "ROC-AUC", "confidence interval"]
+minutes = 45

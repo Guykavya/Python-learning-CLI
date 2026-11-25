@@ -1,0 +1,5 @@
+- Saying "causes" instead of "is associated with" (the data are observational).
+- Forgetting "holding the other variables fixed".
+- Reading a log-level coefficient of 0.18 as "18 units"; it is about 18-20 percent.
+- Reading a log-log coefficient as "0.8 percent per unit"; it is 0.8 percent per **one percent** of the predictor.
+- Describing the dummy coefficient as a slope, or not naming the baseline.

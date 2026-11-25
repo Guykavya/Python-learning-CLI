@@ -1,0 +1,5 @@
+- **Comparing the month start with the cut.** A month is partial when its *end* (start of the next month) is after the cut.
+- **Counting jobs created at or after the cut.** The extraction does not hold them.
+- **Using `<=` for the end.** With the cut exactly on the 1st, March is complete; `next_start >= cut` would call it partial.
+- **Returning the month as a `Period` or the index.** The contract is a text column `month` and a fresh index.
+- **Dropping the flag and silently leaving April out.** The task is to *label* the partial month, not to hide it.

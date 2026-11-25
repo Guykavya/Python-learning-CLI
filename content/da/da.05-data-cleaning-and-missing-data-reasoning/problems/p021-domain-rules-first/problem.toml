@@ -1,0 +1,6 @@
+id = "da.05.p021"
+title = "Domain rules first"
+tier = "drill"
+kind = "code"
+topics = ["outliers", "domain rules", "impossible values", "boolean mask"]
+minutes = 15

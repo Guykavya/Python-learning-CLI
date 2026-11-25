@@ -1,0 +1,4 @@
+- **`df.dtypes.to_dict()` as is.** The values are dtype objects, not strings; the test compares text.
+- **`df.isnull().count()`.** `count()` counts rows, not missing values: use `.sum()`.
+- **`df.duplicated(keep=False).sum()`.** That counts *every* copy including the first (3 for a triple), not the number of surplus rows.
+- **Counting duplicates after `dropna()`.** The question is about the table as it is.

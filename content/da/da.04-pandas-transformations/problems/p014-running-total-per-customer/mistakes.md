@@ -1,0 +1,4 @@
+- **`out["amount"].cumsum()` without groupby.** The total never restarts: B continues from A's last value.
+- **Cumsum before sorting.** The running total then follows the input order, not the dates.
+- **Sorting only by date.** Customers get mixed; the groupby still works, but the rows are not in the required order.
+- **`sort_values(..., inplace=True)` on the input.** It reorders the caller's frame.

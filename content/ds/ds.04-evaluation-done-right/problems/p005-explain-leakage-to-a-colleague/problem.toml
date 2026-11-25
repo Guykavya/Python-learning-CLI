@@ -1,0 +1,7 @@
+id = "ds.04.p005"
+title = "Explain leakage to a colleague"
+tier = "deep"
+kind = "explain"
+topics = ["leakage", "golden rule", "communication", "explain"]
+minutes = 30
+assessment = "explain"

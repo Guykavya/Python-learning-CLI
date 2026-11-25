@@ -1,0 +1,5 @@
+- **Flagging the bound itself.** `age >= 120` would flag a person of exactly 120. The rule says the bounds are allowed.
+- **Using `between` and getting every missing value flagged.** `~s.between(0, 120)` is `True` for `NaN`. Missing is not impossible.
+- **Comparing with `None`.** `s < None` raises a `TypeError`. Check `if lo is not None` first.
+- **Returning the count as a numpy integer or a Series.** The test compares with plain `int` values in a dict.
+- **Dropping the index.** `flags` must share the index of `df`, or you cannot use it as a mask later (`df[flags["age"]]`).

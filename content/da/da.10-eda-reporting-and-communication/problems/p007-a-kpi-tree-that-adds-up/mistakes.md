@@ -1,0 +1,4 @@
+- Counting rows instead of distinct customers for `active`.
+- Averaging the order amounts per customer first: the factors then no longer multiply to the revenue.
+- Leaving the months unsorted.
+- Returning the helper column `n_orders`: the problem asks for four columns.

@@ -1,0 +1,5 @@
+- **Dropping before renaming**: `"TMP_note"` does not start with `tmp_` until it is lower-cased.
+- **`inplace=True`** or assigning `df.columns = ...`: that changes the caller's frame.
+- **Replacing only the first space** or collapsing double spaces: the rule is one `_` per space (`"Ship  City"` becomes `ship__city`).
+- **`revenue = df["qty"] * df["unit_price"]` with the old names**: after renaming, the columns are `qty` and `unit_price`; inside `assign` use a lambda.
+- **Forgetting that `assign` returns a new frame**: write `return`.

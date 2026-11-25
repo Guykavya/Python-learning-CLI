@@ -1,0 +1,7 @@
+id = "da.03.p025"
+title = "Fix the cleaning function that does nothing"
+tier = "deep"
+kind = "code"
+topics = ["debugging", "chained assignment", "ChainedAssignmentError", "loc", "Copy-on-Write", "fix"]
+minutes = 30
+assessment = "fix"

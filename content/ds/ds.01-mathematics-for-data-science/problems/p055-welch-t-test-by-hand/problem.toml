@@ -1,0 +1,6 @@
+id = "ds.01.p055"
+title = "Welch t-test by hand"
+tier = "applied"
+kind = "code"
+topics = ["Welch t-test", "degrees of freedom", "p-value", "two samples"]
+minutes = 35

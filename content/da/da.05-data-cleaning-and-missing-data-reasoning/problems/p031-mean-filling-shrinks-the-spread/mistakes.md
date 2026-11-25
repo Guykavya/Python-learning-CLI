@@ -1,0 +1,5 @@
+- **Computing `sd_before` after filling.** Then both numbers are the same.
+- **`s.fillna(s.mean(), inplace=True)`.** It changes the caller's Series. The task says return a new one.
+- **Dividing the sum by the number of rows to get the mean.** Missing values are not part of the mean: use `s.mean()`.
+- **Using the population standard deviation (`ddof=0`) for one value and the sample one for the other.** Use `.std()` for both.
+- **Expecting `sd_after < sd_before` when nothing is missing.** Then the two are equal.

@@ -1,0 +1,5 @@
+- Calling every user with a previous active month `retained`: users who came back after a gap are `resurrected`.
+- Using `date_diff('day', prev, month) = 30`: months have 28 to 31 days.
+- Giving `churned` to a user in every month of absence: churn is the *first* month without activity.
+- Forgetting the upper cut: after the last active month of June, July is not complete and must not produce churn rows.
+- No `DISTINCT` on the active months: several logins in a month produce `retained` rows pointing at the same month (`prev = month`).

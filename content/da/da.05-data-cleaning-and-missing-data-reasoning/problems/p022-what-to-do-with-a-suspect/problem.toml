@@ -1,0 +1,6 @@
+id = "da.05.p022"
+title = "What to do with a suspect"
+tier = "applied"
+kind = "code"
+topics = ["outliers", "winsorise", "cap", "mean vs median", "strategies"]
+minutes = 25

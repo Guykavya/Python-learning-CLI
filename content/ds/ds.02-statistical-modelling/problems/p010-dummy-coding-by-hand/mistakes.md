@@ -1,0 +1,4 @@
+- Listing the columns in the order the levels first appear (masters before degree). The code sorts the levels.
+- Marking the baseline rows with a 1 somewhere.
+- Counting the baseline rows as 3 or 1: re-read the list, positions 0 and 4.
+- Forgetting the last line.

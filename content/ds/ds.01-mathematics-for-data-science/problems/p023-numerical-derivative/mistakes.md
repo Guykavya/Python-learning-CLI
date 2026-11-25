@@ -1,0 +1,4 @@
+- Dividing by `h` instead of `2 * h` in the central formula.
+- Using the forward difference `(f(x + h) - f(x)) / h`: its error is about `h`, too large for the test.
+- Making `h` tiny (1e-12): rounding error then dominates (see the next trace problem).
+- Ignoring the `h` argument.

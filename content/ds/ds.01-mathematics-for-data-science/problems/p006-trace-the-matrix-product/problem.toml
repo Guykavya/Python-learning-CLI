@@ -1,0 +1,6 @@
+id = "ds.01.p006"
+title = "Trace the matrix product"
+tier = "drill"
+kind = "trace"
+topics = ["matrix product", "dot product", "trace"]
+minutes = 15

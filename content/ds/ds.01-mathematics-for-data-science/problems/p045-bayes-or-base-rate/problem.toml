@@ -1,0 +1,6 @@
+id = "ds.01.p045"
+title = "Bayes or base rate?"
+tier = "deep"
+kind = "explain"
+topics = ["base rate", "false positives", "prior", "explain"]
+minutes = 25

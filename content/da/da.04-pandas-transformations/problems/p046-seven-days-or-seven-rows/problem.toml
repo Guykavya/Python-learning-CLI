@@ -1,0 +1,6 @@
+id = "da.04.p046"
+title = "Seven days or seven rows?"
+tier = "deep"
+kind = "code"
+topics = ["rolling", "time-based window", "7D", "gaps", "DatetimeIndex", "time series"]
+minutes = 25

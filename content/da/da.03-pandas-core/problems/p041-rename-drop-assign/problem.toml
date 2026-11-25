@@ -1,0 +1,6 @@
+id = "da.03.p041"
+title = "Rename, drop, assign"
+tier = "drill"
+kind = "code"
+topics = ["rename", "drop", "assign", "method chain", "snake_case"]
+minutes = 20

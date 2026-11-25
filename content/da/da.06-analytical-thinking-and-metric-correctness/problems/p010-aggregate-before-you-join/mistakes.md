@@ -1,0 +1,5 @@
+- **Joining first and summing after.** `quoted` is multiplied by the number of payments of each job.
+- **Summing `payments.amount` straight.** It includes the unknown job's payment, which belongs to no customer.
+- **No `fillna(0)`.** A customer without payments gets a missing value (and a float column).
+- **`validate` left out.** The check is what turns a silent fan-out into an error the day the payments are not unique per job.
+- **Index lost.** The result is indexed by `customer_id` (do not call `reset_index`).

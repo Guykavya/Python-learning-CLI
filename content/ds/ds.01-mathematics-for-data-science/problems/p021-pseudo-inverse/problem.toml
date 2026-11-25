@@ -1,0 +1,6 @@
+id = "ds.01.p021"
+title = "Pseudo-inverse"
+tier = "deep"
+kind = "code"
+topics = ["pseudo-inverse", "SVD", "minimum-norm solution", "cutoff"]
+minutes = 35

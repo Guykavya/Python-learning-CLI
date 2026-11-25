@@ -1,0 +1,6 @@
+id = "da.09.p020"
+title = "What does barplot draw?"
+tier = "drill"
+kind = "trace"
+topics = ["seaborn barplot", "aggregation", "mean", "category order", "trace"]
+minutes = 15

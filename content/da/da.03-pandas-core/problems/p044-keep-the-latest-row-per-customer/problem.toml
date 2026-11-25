@@ -1,0 +1,6 @@
+id = "da.03.p044"
+title = "Keep the latest row per customer"
+tier = "applied"
+kind = "code"
+topics = ["drop_duplicates", "sort_values", "keep=last", "ties", "audit"]
+minutes = 30

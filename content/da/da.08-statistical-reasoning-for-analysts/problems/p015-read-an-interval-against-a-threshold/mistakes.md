@@ -1,0 +1,3 @@
+- Calling `[0.50, 0.90]` "worth it": `lo > mei` is false when `lo == mei`.
+- Dropping the leading spaces from `[ 0.60,  1.20]`.
+- Forgetting that the printed label is the part before the colon.

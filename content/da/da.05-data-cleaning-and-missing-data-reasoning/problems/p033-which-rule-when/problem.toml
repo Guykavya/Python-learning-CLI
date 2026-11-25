@@ -1,0 +1,6 @@
+id = "da.05.p033"
+title = "Which rule when?"
+tier = "applied"
+kind = "explain"
+topics = ["missing data", "dropna", "fillna", "interpolate", "mechanism", "explain"]
+minutes = 30

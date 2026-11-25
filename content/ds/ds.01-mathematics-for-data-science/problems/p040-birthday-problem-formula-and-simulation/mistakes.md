@@ -1,0 +1,4 @@
+- Computing the chance of a match with a specific person (that needs `k = 253` for 50%).
+- Using `1/365 * k` as the probability.
+- Duplicate detection with `len(set(row))` in a Python loop that is too slow: vectorise.
+- Not using the given seed.

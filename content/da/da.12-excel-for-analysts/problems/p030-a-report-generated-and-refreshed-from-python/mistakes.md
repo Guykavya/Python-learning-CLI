@@ -1,0 +1,4 @@
+- Writing numbers (computed in pandas) instead of formulas: the workbook is then a picture of the analysis, not a model.
+- Defining the names once for the first data set: after a refresh with more rows they are stale and the totals silently miss the new rows.
+- Typing a constant such as the target margin inside a formula: put it in `Inputs` and name it.
+- Forgetting `fullCalcOnLoad`: Excel may show empty cells until the file is recalculated.

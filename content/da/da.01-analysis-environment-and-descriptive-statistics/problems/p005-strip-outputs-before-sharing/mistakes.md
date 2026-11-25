@@ -1,0 +1,5 @@
+- **Cleaning the input in place.** The test keeps a deep copy and fails if the original changed: "you changed the caller's notebook".
+- **Shallow copy (`dict(nb)`, `nb.copy()`).** The `cells` list is shared, so the original still changes.
+- **Adding `outputs` to markdown cells.** The schema rejects it; only code cells have outputs.
+- **Removing all metadata.** Only the `execution` key goes; tags and other keys stay.
+- **`execution_count = 0`.** Use `None`.

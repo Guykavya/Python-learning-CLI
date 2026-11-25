@@ -1,0 +1,5 @@
+- Computing `lag` on the grouped table without a calendar: April's "previous month" becomes February and the empty March disappears.
+- Writing the percent as a fraction (0.5) when the statement asks for 50.0.
+- Dividing by `prev_revenue` directly: `600 / 0` is `inf` in DuckDB, not an error, and it travels into the report.
+- Replacing the first month's `NULL` with 0: there is no previous month, so the change is unknown.
+- Using `ORDER BY revenue` in the window: the previous row must be the previous *month*.

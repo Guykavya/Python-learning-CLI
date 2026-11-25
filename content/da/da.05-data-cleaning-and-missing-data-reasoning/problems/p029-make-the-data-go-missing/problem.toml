@@ -1,0 +1,6 @@
+id = "da.05.p029"
+title = "Make the data go missing"
+tier = "deep"
+kind = "code"
+topics = ["simulation", "MCAR", "MAR", "MNAR", "missing data", "numpy random"]
+minutes = 40

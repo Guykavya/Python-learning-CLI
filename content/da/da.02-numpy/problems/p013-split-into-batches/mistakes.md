@@ -1,0 +1,5 @@
+- **`np.split(x, len(x) // size)`.** Demands equal pieces and raises when the length is not divisible.
+- **`np.array_split(x, n_batches)`.** Spreads the remainder over the first batches (4, 3, 3 instead of 4, 4, 2).
+- **An empty batch at the end.** Looping to `len(x) + size` or `range(n_batches + 1)` adds `[]` when the length is divisible.
+- **Copying each batch** with `x[start:start + size].copy()` or `np.array(...)`: doubles the memory, and the task asks for views.
+- **Forgetting `size <= 0`.** `range(0, n, 0)` raises `ValueError` anyway, but `size < 0` silently gives `[]`.

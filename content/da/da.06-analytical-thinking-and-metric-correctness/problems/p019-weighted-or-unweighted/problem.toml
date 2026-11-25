@@ -1,0 +1,6 @@
+id = "da.06.p019"
+title = "Weighted or unweighted"
+tier = "applied"
+kind = "trace"
+topics = ["average", "weighted mean", "np.average", "groupby", "trace"]
+minutes = 20

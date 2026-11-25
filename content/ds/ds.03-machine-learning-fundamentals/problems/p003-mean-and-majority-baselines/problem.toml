@@ -1,0 +1,6 @@
+id = "ds.03.p003"
+title = "Mean and majority baselines"
+tier = "drill"
+kind = "code"
+topics = ["baseline", "mean", "most frequent class", "DummyRegressor"]
+minutes = 20

@@ -1,0 +1,4 @@
+- Using all customers of the month as the denominator: customers who joined later in the month were not active at the start.
+- Comparing `last_week` with the month as a timestamp: compare periods (`.dt.to_period("M")`).
+- Averaging `price` over all rows instead of summing per week and averaging the weeks.
+- `NaT` in `last_week` compared with a period: it gives `False`, which is right (still active), so do not drop those rows.

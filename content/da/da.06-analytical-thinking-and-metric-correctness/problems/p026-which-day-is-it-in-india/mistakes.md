@@ -1,0 +1,5 @@
+- **Taking the date from UTC.** `created_at.dt.date` gives UTC days; jobs created from 18:30 UTC on move to the next day in India.
+- **Shifting by 5 hours.** The offset is 5 hours **30 minutes**; a shift of 5 h puts the boundary at 19:00 UTC and misplaces the jobs between 18:30 and 19:00.
+- **Shifting the caller's column** (`jobs["created_at"] += IST`). The next call would shift it again.
+- **Returning a Series or numpy integers.** The contract is a plain dict with `int` counts.
+- **Listing empty days.** Only days with at least one job appear.

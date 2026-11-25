@@ -1,0 +1,4 @@
+- **`how="inner"`** (the default). The two orphan orders vanish without a warning.
+- **`customers.merge(orders, ...)` with `how="left"`.** That keeps every customer instead: C4 appears with no order.
+- **Counting unknown customers instead of orders.** C9 is one customer but two orders.
+- **Leaving the `_merge` column in the result.**

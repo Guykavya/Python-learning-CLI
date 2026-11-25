@@ -1,0 +1,5 @@
+[44, 94] uint8
+OverflowError
+[300, 350] int64
+[202.5, 252.5] float64
+[2.5, 3.5] float32

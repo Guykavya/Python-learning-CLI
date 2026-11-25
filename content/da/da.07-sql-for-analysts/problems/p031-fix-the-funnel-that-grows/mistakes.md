@@ -1,0 +1,5 @@
+- Replacing `count(*)` with `count(DISTINCT user_id)` but keeping the join: it works, but the join still doubles the work and hides the real cause; remove what you do not need.
+- Counting `count(DISTINCT order_id)` for the purchase step: that counts orders (3), not purchasers (2).
+- Using `INNER JOIN orders`: users without orders disappear from the first steps.
+- Filtering `WHERE event_type = ...` once in the outer query: all four steps would show the same number.
+- Counting only the first step correctly and leaving the others: the test checks all four.

@@ -1,0 +1,7 @@
+id = "da.09.p040"
+title = "A tested visual report"
+tier = "challenge"
+kind = "code"
+topics = ["visual report", "project", "chart testing", "alt text", "titles from data"]
+minutes = 60
+assessment = "build"

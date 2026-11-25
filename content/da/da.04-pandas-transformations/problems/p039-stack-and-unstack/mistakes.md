@@ -1,0 +1,5 @@
+- **Thinking `unstack()` moves the outer level.** It moves the *innermost* one by default; `unstack(0)` moves the outer one.
+- **Swapping rows and columns of `u0`.** After `unstack(0)` the stores are the columns.
+- **Printing a `FrozenList`.** `list(u.index.names)` is a plain list: `['store']`.
+- **Expecting `stack` to drop missing cells.** In pandas 3 `stack` keeps them; here there are none anyway, so the 6 values come back.
+- **Counting 0 missing cells for `gap`.** Unstacking needs a cell for every row × column pair; the absent pair becomes `NaN`.

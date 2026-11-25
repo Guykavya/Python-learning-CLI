@@ -1,0 +1,4 @@
+- Averaging the cohort rates: a cohort of 10 counts as much as one of 100.
+- Dividing by the total of all cohort sizes: the immature cohorts are in the denominator but not in the numerator.
+- Treating `NaN` as 0 (`fillna(0)`): that is the trap of problem 17 again.
+- Returning a DataFrame or a list instead of a Series indexed by `ks`.

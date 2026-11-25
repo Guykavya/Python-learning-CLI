@@ -1,0 +1,5 @@
+- **Writing the cities in table order.** `groupby` returns them alphabetically.
+- **Weighting by the quote instead of the job count.** The weights are the group sizes.
+- **Rounding too early.** Print the rounded value only at the end; 333.33 and 271.43 come from the exact fractions.
+- **Expecting the simple mean to be close.** It is wrong whenever groups differ in size and in mean.
+- **Forgetting `float(...)`.** The code prints plain floats, never `np.float64(...)`.

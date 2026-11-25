@@ -1,0 +1,4 @@
+- Using 1900-01-01 as the epoch: every serial is then off by two days.
+- Dropping the time of day with `.days`: noon becomes midnight.
+- Returning a `date` from `from_serial` when the number has a fraction.
+- Returning an int: the serial of a date with a time is a float.

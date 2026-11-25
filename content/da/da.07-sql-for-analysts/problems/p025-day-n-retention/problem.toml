@@ -1,0 +1,6 @@
+id = "da.07.p025"
+title = "Day-N retention"
+tier = "applied"
+kind = "code"
+topics = ["day N retention", "eligibility", "extraction date", "date arithmetic", "VALUES"]
+minutes = 40

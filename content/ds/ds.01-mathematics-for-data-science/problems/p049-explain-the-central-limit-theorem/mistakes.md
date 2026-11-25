@@ -1,0 +1,4 @@
+- Saying the data become normal when `n` is large: only the distribution of the **mean** does.
+- Saying the theorem needs normal data: it works for almost any distribution with a finite variance.
+- Forgetting `sqrt(n)`: four times the data halve the error, not just double the precision.
+- Stating the standard error with the sample size in the numerator.

@@ -1,0 +1,7 @@
+id = "da.12.p002"
+title = "A formula has no value until Excel runs it"
+tier = "drill"
+kind = "trace"
+topics = ["openpyxl", "formulas", "cached values", "data_only", "trace"]
+minutes = 20
+assessment = "trace"

@@ -1,0 +1,6 @@
+id = "ds.03.p004"
+title = "Beat the baseline?"
+tier = "applied"
+kind = "code"
+topics = ["baseline", "RMSE", "accuracy", "model comparison"]
+minutes = 30

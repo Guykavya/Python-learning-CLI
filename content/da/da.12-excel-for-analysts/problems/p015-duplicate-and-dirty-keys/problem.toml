@@ -1,0 +1,6 @@
+id = "da.12.p015"
+title = "Duplicate and dirty keys"
+tier = "applied"
+kind = "code"
+topics = ["lookup keys", "duplicates", "whitespace", "case variants", "data quality"]
+minutes = 35

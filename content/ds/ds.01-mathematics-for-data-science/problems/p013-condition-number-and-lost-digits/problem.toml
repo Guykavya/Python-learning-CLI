@@ -1,0 +1,6 @@
+id = "ds.01.p013"
+title = "Condition number and lost digits"
+tier = "deep"
+kind = "explain"
+topics = ["condition number", "numerical stability", "normal equations", "explain"]
+minutes = 30

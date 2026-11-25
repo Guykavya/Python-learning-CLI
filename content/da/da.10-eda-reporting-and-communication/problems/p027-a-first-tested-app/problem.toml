@@ -1,0 +1,6 @@
+id = "da.10.p027"
+title = "A first tested app"
+tier = "drill"
+kind = "code"
+topics = ["Streamlit", "AppTest", "multiselect", "metric", "empty state"]
+minutes = 30

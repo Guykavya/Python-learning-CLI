@@ -1,0 +1,6 @@
+id = "da.03.p021"
+title = "Filters as text with query"
+tier = "applied"
+kind = "code"
+topics = ["query", "@ variables", "backticks", "filtering"]
+minutes = 20

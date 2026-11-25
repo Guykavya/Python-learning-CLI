@@ -1,0 +1,6 @@
+id = "da.03.p030"
+title = "Missing values in sums and means"
+tier = "deep"
+kind = "trace"
+topics = ["NaN", "sum", "mean", "count", "min_count", "skipna", "isna", "trace"]
+minutes = 25

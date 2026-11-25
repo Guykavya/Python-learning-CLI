@@ -1,0 +1,6 @@
+id = "da.02.p011"
+title = "Reshape into rows"
+tier = "drill"
+kind = "code"
+topics = ["reshape", "-1", "views", "shares_memory", "ValueError"]
+minutes = 15

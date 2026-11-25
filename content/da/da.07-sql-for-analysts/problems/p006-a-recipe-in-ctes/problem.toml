@@ -1,0 +1,6 @@
+id = "da.07.p006"
+title = "A recipe in CTEs"
+tier = "applied"
+kind = "code"
+topics = ["CTE", "WITH", "first purchase", "grain", "revenue by channel"]
+minutes = 25

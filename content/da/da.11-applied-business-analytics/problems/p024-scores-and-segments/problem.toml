@@ -1,0 +1,6 @@
+id = "da.11.p024"
+title = "Scores and segments"
+tier = "applied"
+kind = "code"
+topics = ["RFM scores", "qcut", "ties", "customer segments"]
+minutes = 35

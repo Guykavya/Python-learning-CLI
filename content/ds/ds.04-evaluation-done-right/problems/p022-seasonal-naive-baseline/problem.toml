@@ -1,0 +1,6 @@
+id = "ds.04.p022"
+title = "Seasonal-naive baseline"
+tier = "drill"
+kind = "code"
+topics = ["baseline", "seasonal naive", "forecasting", "MAE"]
+minutes = 20

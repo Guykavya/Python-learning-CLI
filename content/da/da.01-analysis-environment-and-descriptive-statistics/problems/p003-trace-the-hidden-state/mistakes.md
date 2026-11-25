@@ -1,0 +1,5 @@
+- **Reading the cells top to bottom.** The program runs the indexes `0, 1, 2, 3, 4, 2, 1, 2`, not `0..4`.
+- **Updating `total` when `price` changes.** Python does not recompute: `total` is a number, not a formula.
+- **Forgetting the counter reset.** After `restart()` the next header is `[1]`, not `[9]`.
+- **Printing a traceback.** The `NameError` is caught; only the `NameError: ...` line appears, with the exact message `name 'total' is not defined`.
+- **Skipping the header line of the cell that fails.** The header is printed before `exec`, so `[1] >>> print('total is', total)` still appears.

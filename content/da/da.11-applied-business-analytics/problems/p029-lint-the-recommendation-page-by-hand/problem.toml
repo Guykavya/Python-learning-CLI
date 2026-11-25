@@ -1,0 +1,6 @@
+id = "da.11.p029"
+title = "Lint the recommendation page by hand"
+tier = "challenge"
+kind = "trace"
+topics = ["finding linter", "regular expressions", "recommendation page", "trace"]
+minutes = 30

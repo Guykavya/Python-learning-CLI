@@ -1,0 +1,4 @@
+- Forgetting to centre the data: you get raw second moments, not covariances.
+- Dividing by `n` instead of `n - 1` (the sample covariance uses `n - 1`).
+- Writing `Xc @ Xc.T`: that is `n x n`, not `d x d`.
+- Centring over the wrong axis (`axis=1`).

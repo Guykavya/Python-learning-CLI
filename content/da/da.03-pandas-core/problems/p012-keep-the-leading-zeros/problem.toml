@@ -1,0 +1,6 @@
+id = "da.03.p012"
+title = "Keep the leading zeros"
+tier = "drill"
+kind = "code"
+topics = ["read_csv", "dtype", "identifiers", "leading zeros", "text columns"]
+minutes = 15

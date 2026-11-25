@@ -1,0 +1,6 @@
+- **Passing texts to `fn`.** The functions compare with timestamps; convert with `pd.Timestamp(...)` before the call.
+- **Months in the outer loop.** The result must be grouped by metric (all months of one metric together), in the order of `specs`.
+- **Keeping only the value.** The numerator and denominator are the point: a rate without its counts hides how many jobs stand behind it.
+- **Writing `0` for a missing denominator.** A count has no denominator; `0` would be a division by zero waiting to happen. Use `NaN`.
+- **Calling `fn` twice** (once for the value, once for the counts). Call it once per cell.
+- **Special cases per metric name** (`if spec.name == "completion_rate"`). The whole design is that the table needs none.

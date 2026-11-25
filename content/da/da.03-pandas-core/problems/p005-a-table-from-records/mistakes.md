@@ -1,0 +1,4 @@
+- **`pd.DataFrame(records)` and stop.** The column order follows the first dictionary; a key missing from the first record may even land last or disappear.
+- **`qty` as `int64` with `astype`.** A missing value makes this raise (`cannot convert NA to integer`); `float64` silently turns 2 into 2.0. Use `Int64`.
+- **Leaving `order_date` as text.** The dates look right when printed but cannot be compared or used with `.dt`.
+- **Filling the gaps with 0.** "No quantity" is not 0 units: keep it missing.

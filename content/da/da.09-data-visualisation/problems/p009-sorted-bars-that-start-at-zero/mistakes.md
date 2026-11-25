@@ -1,0 +1,4 @@
+- Sorting descending without inverting the axis: the largest ends up at the **bottom**.
+- Plotting the raw rows: several bars for the same category.
+- Letting the x axis start at the smallest bar (`set_xlim(min, ...)`): bar lengths no longer compare.
+- Using a vertical `bar` chart for long category names (labels overlap).

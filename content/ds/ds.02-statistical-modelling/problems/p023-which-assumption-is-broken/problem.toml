@@ -1,0 +1,6 @@
+id = "ds.02.p023"
+title = "Which assumption is broken?"
+tier = "deep"
+kind = "trace"
+topics = ["diagnostics", "decision rules", "assumptions", "trace"]
+minutes = 25

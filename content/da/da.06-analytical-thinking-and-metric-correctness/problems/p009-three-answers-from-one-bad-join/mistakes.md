@@ -1,0 +1,5 @@
+- **`len(joined)` for the job count.** It counts lines (and one empty row per job without lines).
+- **`joined["quote_total"].sum()`.** Every line repeats the quote: the sum is multiplied.
+- **`len(joined)` for the item count.** The empty row of a job without lines is not an item; `count()` of `line_no` skips it.
+- **`drop_duplicates()` with no `subset`.** Rows differ by `line_no`, so nothing is dropped.
+- **Returning numpy numbers.** Use `int(...)`.

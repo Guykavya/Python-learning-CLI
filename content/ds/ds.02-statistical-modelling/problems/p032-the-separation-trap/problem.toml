@@ -1,0 +1,6 @@
+id = "ds.02.p032"
+title = "The separation trap"
+tier = "deep"
+kind = "code"
+topics = ["perfect separation", "logistic regression", "warnings", "robustness"]
+minutes = 35

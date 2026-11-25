@@ -1,0 +1,6 @@
+id = "ds.03.p029"
+title = "The optimism of the best of many"
+tier = "deep"
+kind = "code"
+topics = ["selection bias", "validation set", "winner's curse", "simulation"]
+minutes = 35

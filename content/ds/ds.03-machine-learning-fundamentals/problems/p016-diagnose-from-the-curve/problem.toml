@@ -1,0 +1,6 @@
+id = "ds.03.p016"
+title = "Diagnose from the curve"
+tier = "applied"
+kind = "code"
+topics = ["learning curve", "diagnosis", "high bias", "high variance"]
+minutes = 30

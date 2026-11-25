@@ -1,0 +1,4 @@
+- Never rescaling: the vector grows to `inf` after enough steps.
+- Returning `|A v|` instead of the Rayleigh quotient: it gives the absolute value of the eigenvalue and can be wrong for negative eigenvalues.
+- Starting from the zero vector or from a vector made of zeros in the eigen-direction.
+- Not using the given seed, so results change between runs.

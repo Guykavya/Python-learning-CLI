@@ -1,0 +1,4 @@
+- Saying bidirectional filters are always wrong: they have narrow, deliberate uses (a many-to-many bridge, a slicer list limited to values that have data) when understood.
+- Describing the arrow without an example.
+- Not naming the alternative (a measure such as "customers who bought" instead of changing the model).
+- Forgetting the ambiguity: with several both-way relationships there are two paths and the engine must choose.

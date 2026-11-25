@@ -1,0 +1,5 @@
+- **`np.clip(img + delta, 0, 255)`.** `img + delta` has already wrapped (250 + 10 → 4) before `clip` sees it.
+- **`img + 300`-style deltas on `uint8`.** In NumPy 2 a Python number that does not fit raises `OverflowError`.
+- **Forgetting `.astype(np.uint8)` at the end.** The values are right but the image is now `int16`; image code and file writers expect `uint8`.
+- **`img += delta`.** Changes the caller's image, and still wraps.
+- **Widening to `int8`.** `int8` stops at 127: worse than `uint8`.

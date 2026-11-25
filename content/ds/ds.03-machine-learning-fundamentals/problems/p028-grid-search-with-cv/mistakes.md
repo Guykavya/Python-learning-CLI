@@ -1,0 +1,4 @@
+- Writing `alpha` instead of `ridge__alpha` for a pipeline: `GridSearchCV` then raises an error about an invalid parameter.
+- Calling `tune` with the test data: only the training data belong in the search.
+- Reading `best_score_` as an error (it is negated for `neg_` scorers).
+- Forgetting that the best score is itself optimistic (it was selected as the best of the grid).

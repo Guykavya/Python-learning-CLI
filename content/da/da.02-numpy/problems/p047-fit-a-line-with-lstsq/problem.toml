@@ -1,0 +1,6 @@
+id = "da.02.p047"
+title = "Fit a line with lstsq"
+tier = "applied"
+kind = "code"
+topics = ["linear algebra", "lstsq", "least squares", "column_stack", "design matrix", "rank"]
+minutes = 25

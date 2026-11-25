@@ -1,0 +1,6 @@
+id = "da.08.p011"
+title = "What 95 percent means: coverage"
+tier = "applied"
+kind = "code"
+topics = ["coverage", "confidence interval", "simulation", "interpretation"]
+minutes = 30

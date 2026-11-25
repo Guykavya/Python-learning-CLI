@@ -1,0 +1,6 @@
+id = "da.09.p039"
+title = "A chart linter"
+tier = "challenge"
+kind = "code"
+topics = ["chart linting", "figure inspection", "lie factor", "automatic checks"]
+minutes = 40

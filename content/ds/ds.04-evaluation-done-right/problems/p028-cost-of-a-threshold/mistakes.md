@@ -1,0 +1,3 @@
+- Using `>` instead of `>=` for row 8 (p = 0.3 at threshold 0.3).
+- Counting true positives as costly.
+- Printing the dictionary instead of the cheapest key.

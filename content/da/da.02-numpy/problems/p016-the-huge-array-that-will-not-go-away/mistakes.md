@@ -1,0 +1,5 @@
+- **"Python has a memory leak."** Nothing leaks: the memory is still in use by the view's base, exactly as designed.
+- **"`del data` fixes it."** `del` removes one name; the view still refers to the block.
+- **`np.array(data[:10])` explained as "a view".** `np.array` copies, so it would actually be a fix; know which calls copy (Ch. 6.2).
+- **"Use a list instead."** `list(data[:10])` does copy, but you lose the array; `.copy()` keeps it.
+- **Saying "always copy".** Copies of large pieces cost time and memory; copy when you keep a small part of something big.

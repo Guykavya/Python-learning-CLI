@@ -1,0 +1,4 @@
+- Relying on pandas' default order: capital letters sort before lower-case ones.
+- Leaving `NaN` where a region has no sales in a category.
+- Rounding before adding up (the margins would then be sums of rounded numbers): round only the final table.
+- Misspelling the margin label: it must be exactly `Grand Total`.

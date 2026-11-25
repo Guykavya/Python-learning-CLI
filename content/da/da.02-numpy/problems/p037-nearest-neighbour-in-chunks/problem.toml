@@ -1,0 +1,6 @@
+id = "da.02.p037"
+title = "Nearest neighbour in chunks"
+tier = "challenge"
+kind = "code"
+topics = ["chunking", "memory", "broadcasting", "pairwise distances", "performance"]
+minutes = 45

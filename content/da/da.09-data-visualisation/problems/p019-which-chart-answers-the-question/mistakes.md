@@ -1,0 +1,4 @@
+- Choosing the chart by habit (always a bar chart, always a pie).
+- Using a pie chart for six stores with similar values: the eye cannot rank angles.
+- A dual-axis line chart for "does A go with B": a scatter plot is the honest picture.
+- Showing only a bar of means for question 8: the reader cannot tell if the difference is noise.

@@ -1,0 +1,5 @@
+- **Mean `(1 + 3) / 3 = 1.33`.** The mean divides by the count of real values (2), not the length.
+- **`nan` for `s.sum()`.** The default skips missing values; only `skipna=False` poisons the sum.
+- **`nan` for `e.sum()`.** The sum of nothing is `0.0`; `min_count=1` is what makes it `nan`.
+- **`True` for `np.nan == np.nan`.** `nan` is not equal to anything, itself included; use `isna()`.
+- **`[False, True, False]` for `s == np.nan`.** That is `isna()`'s answer. A comparison with `nan` is False in every position.

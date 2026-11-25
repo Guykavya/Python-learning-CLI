@@ -1,0 +1,5 @@
+- Fitting the final model on the development data **plus** the test rows before predicting them.
+- Setting the "opened" flag **after** the work: if the fit fails halfway the set would stay "unopened" although it has been looked at. Set it first.
+- Letting `tune` or `learning_curve` see the test set "just to check".
+- Sorting classification results ascending: accuracy is better when higher.
+- Forgetting `stratify=y` for classification: with a rare class the test set may lack it.

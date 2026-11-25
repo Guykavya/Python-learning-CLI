@@ -1,0 +1,3 @@
+- Treating the shortcut as exact for large coefficients: +0.40 means +49%, not +40%.
+- Believing that +0.40 and -0.40 give a rise and a fall of the same size. They are +49.18% and -32.97%: the changes are multiplicative.
+- Dropping the `+` sign in positive lines.

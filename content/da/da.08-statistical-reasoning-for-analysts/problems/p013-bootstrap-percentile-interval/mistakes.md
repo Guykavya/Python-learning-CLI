@@ -1,0 +1,4 @@
+- `replace=False`: every resample is just a permutation of the data, so the statistic never varies for the mean.
+- Resampling fewer or more than `len(x)` values: the spread of the statistic then belongs to another sample size.
+- Using the global `np.random`: the same seed does not reproduce the interval.
+- Using the standard deviation of the replicates times 1.96 and calling it a percentile interval: that is another method.

@@ -1,0 +1,6 @@
+id = "da.08.p021"
+title = "Power by simulation"
+tier = "challenge"
+kind = "code"
+topics = ["power", "simulation", "type II error", "sample size", "A/B test"]
+minutes = 45

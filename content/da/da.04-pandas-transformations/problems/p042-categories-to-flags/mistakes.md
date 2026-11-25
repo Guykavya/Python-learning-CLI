@@ -1,0 +1,4 @@
+- **Leaving the flags as `bool`.** pandas 3 makes `True`/`False` columns unless you pass `dtype=int`.
+- **Encoding the whole frame.** `pd.get_dummies(orders)` also encodes every other text column (store ids, customer ids).
+- **Hard-coding `online` and `store`.** A third channel (`app`) then gets no column and its rows have flags summing to 0.
+- **Keeping the `channel` column.** `get_dummies(columns=...)` replaces it; a hand-made version must drop it.

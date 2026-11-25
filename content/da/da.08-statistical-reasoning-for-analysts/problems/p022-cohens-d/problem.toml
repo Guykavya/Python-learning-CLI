@@ -1,0 +1,6 @@
+id = "da.08.p022"
+title = "Cohen's d"
+tier = "drill"
+kind = "code"
+topics = ["effect size", "Cohen's d", "pooled standard deviation", "ddof"]
+minutes = 15

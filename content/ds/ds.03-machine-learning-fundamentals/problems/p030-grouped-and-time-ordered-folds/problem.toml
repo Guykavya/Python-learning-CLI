@@ -1,0 +1,6 @@
+id = "ds.03.p030"
+title = "Grouped and time-ordered folds"
+tier = "applied"
+kind = "code"
+topics = ["GroupKFold", "TimeSeriesSplit", "StratifiedKFold", "leakage"]
+minutes = 25

@@ -1,0 +1,6 @@
+id = "da.01.p019"
+title = "Spread that resists outliers"
+tier = "applied"
+kind = "code"
+topics = ["range", "standard deviation", "IQR", "MAD", "coefficient of variation", "robust spread"]
+minutes = 35

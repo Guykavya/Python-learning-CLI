@@ -1,0 +1,4 @@
+- Saying "more data always helps". It does not help a model that is too simple.
+- Saying that the training error of the flexible model falls with more data: with more rows it **rises** a little (it can no longer fit all of them), while validation error falls; the gap shrinks.
+- Confusing noise with bias: noise is the floor for every model.
+- Advising the second team to "regularise": regularising makes a model **simpler**, which increases bias.

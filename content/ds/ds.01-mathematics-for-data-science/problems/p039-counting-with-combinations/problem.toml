@@ -1,0 +1,6 @@
+id = "ds.01.p039"
+title = "Counting with combinations"
+tier = "drill"
+kind = "code"
+topics = ["combinations", "binomial", "probability", "math.comb"]
+minutes = 10

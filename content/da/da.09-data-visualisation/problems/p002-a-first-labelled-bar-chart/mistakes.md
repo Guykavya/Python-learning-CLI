@@ -1,0 +1,4 @@
+- Returning nothing (the function ends after drawing) or calling `plt.show()`.
+- `plt.title(...)` after another figure was created: it labels the *current* Axes, which may not be this one.
+- Passing the values first: `ax.bar(values, categories)` draws bars at numeric positions with text heights, and fails.
+- Sorting the categories: the problem asks for the given order.

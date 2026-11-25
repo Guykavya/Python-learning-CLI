@@ -1,0 +1,6 @@
+id = "da.09.p025"
+title = "Detect a truncated axis"
+tier = "applied"
+kind = "code"
+topics = ["truncated axis", "lie factor", "visual change", "chart linting"]
+minutes = 25

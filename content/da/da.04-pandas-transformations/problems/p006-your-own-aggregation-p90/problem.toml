@@ -1,0 +1,6 @@
+id = "da.04.p006"
+title = "Your own aggregation: p90"
+tier = "applied"
+kind = "code"
+topics = ["groupby", "agg", "custom function", "quantile", "missing values"]
+minutes = 25

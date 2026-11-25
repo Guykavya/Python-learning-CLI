@@ -1,0 +1,4 @@
+- **`out["order_date"].diff()` without groupby.** The first order of B gets the gap to A's last order.
+- **Filling the first orders with 0.** "No previous order" is not "ordered again the same day".
+- **Forgetting `.dt.days`.** The column stays `Timedelta` (`30 days`), not a number.
+- **Diffing before sorting.** The gaps then follow the input order and can be negative.

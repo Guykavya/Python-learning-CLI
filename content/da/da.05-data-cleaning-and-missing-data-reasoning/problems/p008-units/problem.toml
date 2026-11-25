@@ -1,0 +1,6 @@
+id = "da.05.p008"
+title = "Units"
+tier = "drill"
+kind = "code"
+topics = ["units", "conversion", "ValueError", "lookup table", "column names with units"]
+minutes = 15

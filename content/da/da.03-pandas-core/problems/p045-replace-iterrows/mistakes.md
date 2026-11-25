@@ -1,0 +1,5 @@
+- **Ordering the conditions widest first**: `qty >= 5` is also true for 10 and above, so everyone would get 5%.
+- **`df.apply(f, axis=1)`**: still a Python call per row; it is slower than a plain loop.
+- **Using `>` instead of `>=`**: a quantity of exactly 5 or 10 belongs to the higher tier.
+- **Returning a numpy array** or a Series without the index: the loop version returned a Series with the input's index.
+- **Rounding inside the function**: the reference does not round; the totals must match to many decimals.

@@ -1,0 +1,5 @@
+- Standardising rows (`axis=1`) instead of columns.
+- Using `ddof=1`: the test uses the population std (`np.std` default).
+- Dividing by zero on a constant column and returning `nan`.
+- Including the distance of row 0 to itself (a leading 0) in the result.
+- Changing `X` in place: return a new array.

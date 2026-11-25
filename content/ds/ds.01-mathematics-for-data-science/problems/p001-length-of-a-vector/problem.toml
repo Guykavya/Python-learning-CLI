@@ -1,0 +1,6 @@
+id = "ds.01.p001"
+title = "Length of a vector"
+tier = "drill"
+kind = "code"
+topics = ["vector", "norm", "loop", "sqrt"]
+minutes = 10

@@ -1,0 +1,5 @@
+- **Counting keys instead of rows.** C1 matches two orders, so it gives two rows in every join.
+- **`left` = 5 rows "because cust has 5 rows".** That holds only when the right keys are unique; here C1 is repeated.
+- **Forgetting the orphan C9 in `right` and `outer`.** It has no customer, so its `city` is missing, but the row is kept.
+- **Expecting `int64` after the left join.** Missing values force integer columns to `float64`.
+- **Thinking the left join's total is the order total.** A left join from customers drops orders of unknown customers.

@@ -1,0 +1,4 @@
+- Letting the host open the car door or your own door.
+- Re-drawing the car after the host opens a door.
+- Believing the remaining two doors are 50/50: your first pick keeps its 1/3.
+- Not using the given seed.

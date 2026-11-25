@@ -1,0 +1,3 @@
+- Putting `p = 1.0` into an eleventh bin (forgetting the `min`).
+- Keeping empty bins with `NaN`.
+- Comparing `predicted` and `observed` on the wrong rows after sorting one of them.

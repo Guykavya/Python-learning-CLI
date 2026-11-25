@@ -1,0 +1,6 @@
+id = "da.06.p006"
+title = "Orphans"
+tier = "drill"
+kind = "code"
+topics = ["foreign key", "orphans", "isin", "keys"]
+minutes = 12

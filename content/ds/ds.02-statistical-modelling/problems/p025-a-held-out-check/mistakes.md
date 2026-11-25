@@ -1,0 +1,4 @@
+- Computing the test error with `res.fittedvalues`: those are the training rows' fits.
+- Splitting without shuffling: if the rows are ordered, the test set is a different kind of data.
+- Using the whole data for the fit and then "testing" on a part of it. The test rows must stay out of `fit`.
+- Reading one split as the truth. With 15 test rows the error is noisy; the gap for the junk model is large on purpose.

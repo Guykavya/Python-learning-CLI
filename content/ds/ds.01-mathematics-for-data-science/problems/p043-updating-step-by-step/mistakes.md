@@ -1,0 +1,4 @@
+- Starting again from the original prior after each test.
+- Using the positive-test formula for a negative result.
+- Treating `[True, False]` as no information: a negative result lowers the probability.
+- Hard-coding the sensitivity instead of using the arguments.

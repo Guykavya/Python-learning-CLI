@@ -1,0 +1,6 @@
+id = "da.02.p049"
+title = "Save and load a dataset"
+tier = "applied"
+kind = "code"
+topics = ["npz", "savez", "load", "allow_pickle", "files", "dtype"]
+minutes = 25

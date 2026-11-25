@@ -1,0 +1,4 @@
+- Forgetting `+ 1`: the header is row 1, so the last data row is `n_rows + 1`.
+- Using relative references (`B2:B6`) in the name: use `$B$2:$B$6`.
+- Adding a second name instead of replacing: use item assignment on `defined_names`.
+- Naming a range `Rev` for the wrong column.

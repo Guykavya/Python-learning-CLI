@@ -1,0 +1,3 @@
+y = x squared: r = 0.000
+line plus one far point: Pearson 0.800, Spearman 1.000
+doubling curve: Pearson 0.933, Spearman 1.000

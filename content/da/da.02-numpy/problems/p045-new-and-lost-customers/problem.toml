@@ -1,0 +1,6 @@
+id = "da.02.p045"
+title = "New and lost customers"
+tier = "drill"
+kind = "code"
+topics = ["set operations", "setdiff1d", "intersect1d", "unique", "isin"]
+minutes = 15

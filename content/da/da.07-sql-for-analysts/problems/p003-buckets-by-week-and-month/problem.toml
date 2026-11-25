@@ -1,0 +1,6 @@
+id = "da.07.p003"
+title = "Buckets by week and month"
+tier = "drill"
+kind = "code"
+topics = ["date_trunc", "UNION ALL", "week start", "buckets"]
+minutes = 15

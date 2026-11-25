@@ -1,0 +1,6 @@
+id = "ds.03.p021"
+title = "Ridge in closed form"
+tier = "drill"
+kind = "code"
+topics = ["ridge regression", "closed form", "intercept", "regularisation"]
+minutes = 25

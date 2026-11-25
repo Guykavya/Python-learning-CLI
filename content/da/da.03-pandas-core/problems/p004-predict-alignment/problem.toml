@@ -1,0 +1,6 @@
+id = "da.03.p004"
+title = "Predict alignment"
+tier = "applied"
+kind = "trace"
+topics = ["Series", "alignment", "fill_value", "NaN", "trace"]
+minutes = 20

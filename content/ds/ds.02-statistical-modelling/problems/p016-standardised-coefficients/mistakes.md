@@ -1,0 +1,4 @@
+- Standardising the predictors but not the response: the coefficients are then "marks per sd of x", not comparable across responses.
+- Using `ddof=0` for some columns and `ddof=1` for others. The ratio of standard deviations then changes slightly.
+- Leaving the `const` row in the result.
+- Reading a bigger standardised coefficient as "more important". It means "moves y more per realistic step", which is a different claim.

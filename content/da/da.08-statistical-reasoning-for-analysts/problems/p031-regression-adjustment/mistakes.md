@@ -1,0 +1,4 @@
+- Passing the Boolean column to the formula: statsmodels turns it into a categorical `app[T.True]` and the name `app_i` does not exist.
+- Leaving out `income`: the estimate stays biased upwards.
+- Reading `ci_low`/`ci_high` from the wrong coefficient (the intercept is first).
+- Using `fit.bse` times 2 instead of `conf_int()`: close, but not exactly 95%.

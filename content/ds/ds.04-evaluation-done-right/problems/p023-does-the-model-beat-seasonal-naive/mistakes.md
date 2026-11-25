@@ -1,0 +1,4 @@
+- Passing the future sales to the model (it would then "forecast" perfectly).
+- Using one origin only: the verdict depends on that month.
+- Comparing on different windows for the model and the baseline.
+- Calling a model "better" for an MAE difference of a few tenths; check the size against the spread across origins.

@@ -1,0 +1,5 @@
+- **`.dt.days`**: drops the fraction (2 days 12 hours becomes 2) and gives `NaN` for `NaT`, so a delivery 12 hours late may look on time.
+- **`>=` instead of `>`**: delivering exactly on the promised day is not late.
+- **Filling undelivered orders with today's date** or with zero days: that invents data.
+- **Looping with `iterrows`**: slow, and `NaT` handling gets messy.
+- **Editing the input** instead of `df.copy()`.

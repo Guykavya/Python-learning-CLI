@@ -1,0 +1,4 @@
+- `ALL(Product)`: the denominator becomes the revenue of all categories: the shares add up to 1 over **all** products, not within each category.
+- `ALL(Product[Product])` only: other product-level filters (a brand slicer, say) stay and the denominator is wrong.
+- `ALLEXCEPT` on the wrong table (it must name the table and the column to keep).
+- Dividing with `/`: use `DIVIDE`.

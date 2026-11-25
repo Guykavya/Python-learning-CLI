@@ -1,0 +1,4 @@
+- Saying one tool is "wrong": each follows documented rules.
+- Forgetting that pandas rounds half to **even** (`round(2.5)` is 2, `round(3.5)` is 4).
+- Assuming `==` in pandas ignores case.
+- Mixing up a blank cell and a cell with 0 in the average.

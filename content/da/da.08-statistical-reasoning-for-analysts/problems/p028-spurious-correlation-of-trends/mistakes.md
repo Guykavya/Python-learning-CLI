@@ -1,0 +1,3 @@
+- Correlating the raw levels: the number looks impressive and means nothing.
+- Differencing only one series.
+- Returning `nan` for a straight-line series instead of raising.

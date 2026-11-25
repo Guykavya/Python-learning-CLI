@@ -1,0 +1,6 @@
+id = "da.05.p004"
+title = "One city, five spellings"
+tier = "drill"
+kind = "code"
+topics = ["str.strip", "casefold", "mapping table", "map", "typos", "check after cleaning"]
+minutes = 20

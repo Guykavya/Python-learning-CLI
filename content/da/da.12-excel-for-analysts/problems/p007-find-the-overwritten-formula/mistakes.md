@@ -1,0 +1,4 @@
+- Comparing with the first formula as text: row 3 would never match row 2.
+- Skipping the check that the first row is a formula: a typed first cell makes the pattern meaningless.
+- Returning only the rows without the content: the reviewer needs to see what is there.
+- Treating blank cells as consistent: an empty cell below a formula is also a fault.

@@ -1,0 +1,4 @@
+- Calling `(4, 3)` "New / promising": rule 2 comes first and already matches.
+- Calling `(3, 2)` Hibernating: recency 3 is not low enough.
+- Forgetting the quotes or spaces in the label `New / promising`.
+- Printing the pair without parentheses.

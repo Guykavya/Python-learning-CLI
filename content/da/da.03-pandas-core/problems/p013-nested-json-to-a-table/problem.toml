@@ -1,0 +1,6 @@
+id = "da.03.p013"
+title = "Nested JSON to a table"
+tier = "deep"
+kind = "code"
+topics = ["json_normalize", "record_path", "meta", "nested data", "missing values"]
+minutes = 30

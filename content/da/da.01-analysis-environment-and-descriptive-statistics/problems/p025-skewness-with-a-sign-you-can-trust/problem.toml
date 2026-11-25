@@ -1,0 +1,6 @@
+id = "da.01.p025"
+title = "Skewness with a sign you can trust"
+tier = "deep"
+kind = "code"
+topics = ["skewness", "shape of a distribution", "z-scores", "symmetry"]
+minutes = 35

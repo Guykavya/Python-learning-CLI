@@ -1,0 +1,6 @@
+id = "da.01.p007"
+title = "Frequency table for a category"
+tier = "drill"
+kind = "code"
+topics = ["categorical data", "frequency table", "missing values", "Counter"]
+minutes = 15

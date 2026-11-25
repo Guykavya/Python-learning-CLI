@@ -1,0 +1,4 @@
+- Answering 15 for the second line: nobody has calculated the formula.
+- Answering `(3, 2)`: the formula column has no values, so pandas ignores it.
+- Printing the formula without the equals sign.
+- Believing that `openpyxl` evaluates formulas: it only stores them.

@@ -1,0 +1,4 @@
+- Comparing raw labels: "Grand Total" against "Total", or "North " against "North", would report false differences.
+- `abs(e - g) >= tol`: a difference of exactly `tol` is fine.
+- Skipping the check for missing rows and columns: a forgotten filter often shows up as a missing label.
+- `NaN` cells: `abs(nan - x) > tol` is False, so a missing value would pass; the expected table has no NaN here.

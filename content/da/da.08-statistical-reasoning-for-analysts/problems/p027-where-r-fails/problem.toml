@@ -1,0 +1,6 @@
+id = "da.08.p027"
+title = "Where r fails"
+tier = "deep"
+kind = "trace"
+topics = ["correlation", "Pearson", "Spearman", "outlier", "non-linear relationship", "trace"]
+minutes = 30

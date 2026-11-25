@@ -1,0 +1,6 @@
+id = "da.13.p004"
+title = "A proper date table"
+tier = "applied"
+kind = "code"
+topics = ["date table", "calendar", "DateKey", "month names", "time intelligence"]
+minutes = 30

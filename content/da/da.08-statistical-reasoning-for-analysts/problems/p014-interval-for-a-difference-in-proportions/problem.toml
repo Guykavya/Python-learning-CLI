@@ -1,0 +1,6 @@
+id = "da.08.p014"
+title = "Interval for a difference in proportions"
+tier = "drill"
+kind = "code"
+topics = ["difference in proportions", "confidence interval", "A/B test", "standard error"]
+minutes = 20

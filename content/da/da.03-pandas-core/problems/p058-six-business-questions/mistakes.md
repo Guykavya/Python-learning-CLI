@@ -1,0 +1,6 @@
+- **Dropping returned rows** before `revenue_by_month`: a month with only returned orders disappears instead of showing `0.0`.
+- **Using all rows for the average order value** or for the channel shares.
+- **Using all rows as the base of the repeat-customer share** (a customer with only a returned order is not a customer with a sale).
+- **Using only the sales as the base of `returns_rate`**: the denominator is every order.
+- **Relying on the order of `value_counts`** for ties: sort by count and name.
+- **Returning numpy types** (`np.float64`, `np.int64`): convert to plain Python values.

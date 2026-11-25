@@ -1,0 +1,6 @@
+id = "da.06.p002"
+title = "Find the grain yourself"
+tier = "deep"
+kind = "code"
+topics = ["grain", "composite key", "minimal key", "itertools.combinations"]
+minutes = 25

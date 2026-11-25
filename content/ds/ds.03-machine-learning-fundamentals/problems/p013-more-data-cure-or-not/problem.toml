@@ -1,0 +1,6 @@
+id = "ds.03.p013"
+title = "More data: cure or not?"
+tier = "deep"
+kind = "explain"
+topics = ["variance", "bias", "learning curve", "more data", "explain"]
+minutes = 25

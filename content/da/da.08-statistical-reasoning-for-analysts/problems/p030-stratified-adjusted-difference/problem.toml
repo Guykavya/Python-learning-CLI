@@ -1,0 +1,6 @@
+id = "da.08.p030"
+title = "Stratified (adjusted) difference"
+tier = "deep"
+kind = "code"
+topics = ["Simpson's paradox", "stratification", "adjusted difference", "confounding", "pandas"]
+minutes = 40

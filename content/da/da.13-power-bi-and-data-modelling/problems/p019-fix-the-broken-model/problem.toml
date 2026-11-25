@@ -1,0 +1,7 @@
+id = "da.13.p019"
+title = "Fix the broken model"
+tier = "deep"
+kind = "code"
+topics = ["model testing", "reachability", "grid of contexts", "relationships", "debugging DAX"]
+minutes = 50
+assessment = "fix"

@@ -1,0 +1,4 @@
+- Computing the dispersion with the deviance or with `n` instead of `df_resid`.
+- Comparing AIC values from fits with different likelihood definitions (a GLM and a discrete model may differ by a constant). That is why the task takes both from the discrete models.
+- Choosing the negative binomial just because it has the lower AIC by a tiny amount on data that are not overdispersed.
+- Using `big.df_model + small.df_model` in the likelihood-ratio test: the degrees of freedom are the **difference** in parameters.

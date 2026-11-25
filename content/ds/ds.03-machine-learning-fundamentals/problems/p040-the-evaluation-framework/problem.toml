@@ -1,0 +1,7 @@
+id = "ds.03.p040"
+title = "The evaluation framework"
+tier = "challenge"
+kind = "code"
+topics = ["project", "evaluation", "test set", "cross-validation", "learning curve", "tuning"]
+minutes = 120
+assessment = "build"

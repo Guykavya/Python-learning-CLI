@@ -1,0 +1,4 @@
+- Adding `alpha` to the intercept too (putting a column of ones in `X` and using `alpha * I`).
+- Forgetting to centre `y`: the intercept comes out wrong.
+- Using `np.linalg.inv(...)` instead of `solve`: works here but is slower and less accurate.
+- Returning `beta` as a column matrix.

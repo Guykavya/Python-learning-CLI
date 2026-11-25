@@ -1,0 +1,4 @@
+- **Fixing it afterwards with `.astype(str).str.zfill(3)`.** The zeros are guessed, not recovered: `007` and `0007` both become the same. Read as text from the start.
+- **`dtype=str` for the whole file.** Then `qty` is text, and sums and comparisons fail.
+- **`converters={"pin": str}`** also works but runs a Python function per cell; `dtype` is simpler and faster.
+- **Treating the codes as numbers "because they look like numbers".** You never add two postal codes; identifiers are text.

@@ -1,0 +1,5 @@
+- **Using the sample standard deviation** (`n - 1`): the program calls `pstdev`, so divide by 5.
+- **Mixing up the sign for the left tail.** Mean below median gives a negative gap.
+- **Reading the verdict from the gap.** The verdict uses 10% of the median, not the gap.
+- **Printing `-0.00`-style surprises.** A gap of exactly 0 prints `0.00`.
+- **Rounding too early.** Round only when you print with two decimals.

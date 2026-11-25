@@ -1,0 +1,6 @@
+id = "ds.04.p019"
+title = "Time split by a cutoff date"
+tier = "drill"
+kind = "code"
+topics = ["time split", "cutoff", "temporal leakage", "pandas"]
+minutes = 15

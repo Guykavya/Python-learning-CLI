@@ -1,0 +1,6 @@
+id = "da.09.p022"
+title = "Facets with relplot"
+tier = "drill"
+kind = "code"
+topics = ["relplot", "FacetGrid", "small multiples", "shared y axis", "set_titles"]
+minutes = 20

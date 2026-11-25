@@ -1,0 +1,6 @@
+id = "ds.01.p014"
+title = "Why not inv(A) @ b?"
+tier = "deep"
+kind = "explain"
+topics = ["inverse", "solve", "LU factorisation", "timing", "explain"]
+minutes = 25

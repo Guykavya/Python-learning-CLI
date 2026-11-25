@@ -1,0 +1,6 @@
+id = "da.01.p012"
+title = "Mean, median and mode from scratch"
+tier = "drill"
+kind = "code"
+topics = ["mean", "median", "mode", "sorting", "ValueError"]
+minutes = 20

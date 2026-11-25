@@ -1,0 +1,7 @@
+id = "da.06.p041"
+title = "Classify jobs into the sets"
+tier = "deep"
+kind = "trace"
+topics = ["reconciliation", "sets", "reason labels", "date basis", "trace"]
+minutes = 40
+assessment = "trace"

@@ -1,0 +1,6 @@
+- **`SUM(DISTINCT j.quote_total)`.** Two jobs with the same quote (jobs 1 and 2) become one. `DISTINCT` hides the fan-out and creates a new bug.
+- **Removing only the `items` join.** Job 1 still has two payments, so its quote is counted twice.
+- **Keeping the inner join to `payments`.** Jobs with no payment vanish; February disappears.
+- **No `COALESCE`.** A month with only unpaid jobs gets `paid = NULL` instead of `0`.
+- **Joining first and dividing later** (`SUM(...) / COUNT(*)`). The count is also inflated; fix the grain, not the symptom.
+- **Grouping by the raw timestamp.** `substr(created_at, 1, 7)` gives the `YYYY-MM` text the test expects.

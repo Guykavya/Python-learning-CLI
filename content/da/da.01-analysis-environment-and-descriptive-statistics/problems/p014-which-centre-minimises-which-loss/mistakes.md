@@ -1,0 +1,6 @@
+- **Returning the loss instead of the centre** from `best_centre`.
+- **Searching only the data points for the squared loss.** The mean is usually not a data value, so the data alone cannot find it.
+- **Dividing the loss by `n`.** The tests compare the plain sums.
+- **Using `(x - c) ** 2` for the absolute loss** (or `abs` for the squared one).
+- **Expecting a unique median for an even count.** Any point between the middle two has the same absolute loss.
+- **Not raising `ValueError`** for an unknown `kind` (a silent `None` hides a typo).

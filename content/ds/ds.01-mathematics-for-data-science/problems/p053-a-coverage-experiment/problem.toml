@@ -1,0 +1,6 @@
+id = "ds.01.p053"
+title = "A coverage experiment"
+tier = "challenge"
+kind = "code"
+topics = ["coverage", "confidence interval", "simulation", "t versus z"]
+minutes = 40

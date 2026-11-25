@@ -1,0 +1,3 @@
+- Reading the naive difference as the effect of the app.
+- Taking `others - users`: the sign flips.
+- Comparing `spend` only: without the gaps in the other variables you cannot see *why* the groups differ.

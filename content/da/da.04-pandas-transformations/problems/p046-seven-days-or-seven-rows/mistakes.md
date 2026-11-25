@@ -1,0 +1,5 @@
+- **`rolling(7)`.** Seven rows, not seven days: on a table with gaps the window reaches back weeks, and the first six rows are `NaN`.
+- **`rolling(7, min_periods=1)`.** No `NaN` any more, but still seven *rows*: wrong as soon as there is a gap.
+- **Not sorting.** A time window needs a sorted index (pandas raises `ValueError: index values must be monotonic`).
+- **An 8-day window.** `"7D"` already includes the current day; the window is `date - 6` to `date`.
+- **Assigning the rolling Series back by label.** After `set_index("date")` the labels are dates; use `.to_numpy()` or keep the same index.

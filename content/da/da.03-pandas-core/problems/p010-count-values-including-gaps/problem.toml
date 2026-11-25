@@ -1,0 +1,6 @@
+id = "da.03.p010"
+title = "Count values, including gaps"
+tier = "drill"
+kind = "code"
+topics = ["value_counts", "dropna", "missing values", "shares", "sort_values"]
+minutes = 20

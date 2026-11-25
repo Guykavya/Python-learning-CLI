@@ -1,0 +1,3 @@
+- Oversampling, then calling `train_test_split`: the same leak with a single split.
+- Oversampling the validation fold as well (its score then measures a different class balance).
+- Using a linear model to "check" for the leak: it can barely memorise copies, so the gap is small; trees show it clearly.

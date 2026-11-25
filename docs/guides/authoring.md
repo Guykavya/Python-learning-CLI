@@ -65,6 +65,17 @@ assert run("0\n") == ["0"], "0 has one digit, 0. Make sure your loop does not pr
 
 Data files the tests need go in a `fixtures/` folder inside the problem.
 
+## Library tracks (swe, da, ds, ml, llm) and larger batches
+
+Problems that use pandas, scikit-learn, torch, web frameworks or LLM fakes have extra rules (what the runner copies,
+the 60 s / 1 GiB limits, seeds, version traps). Read these first:
+
+- [problem-writing-library-tracks.md](problem-writing-library-tracks.md): the loop, skeletons and the pre-tick checklist
+- [fixtures-and-data.md](fixtures-and-data.md): where a problem's data comes from
+- [validation-triage.md](validation-triage.md): what to do when `learn validate` fails
+- [../plans/README.md](../plans/README.md): rules R1-R5, status table, and the plan for every unwritten module
+- Capstones: `capstone-<track>.md` in this folder
+
 ## DSA site problems
 
 To map LeetCode, Codeforces or CSES problems into a DSA module, create

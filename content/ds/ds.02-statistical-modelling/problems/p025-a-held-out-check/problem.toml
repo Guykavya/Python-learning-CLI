@@ -1,0 +1,6 @@
+id = "ds.02.p025"
+title = "A held-out check"
+tier = "applied"
+kind = "code"
+topics = ["train/test split", "RMSE", "overfitting", "formula"]
+minutes = 30

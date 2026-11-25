@@ -1,0 +1,6 @@
+id = "da.09.p014"
+title = "Scatter that survives overplotting"
+tier = "applied"
+kind = "code"
+topics = ["scatter", "overplotting", "alpha", "marker size", "axis labels"]
+minutes = 20

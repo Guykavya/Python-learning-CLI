@@ -1,0 +1,4 @@
+- Using the first row or the mean of all rows instead of the last.
+- Treating a classification `validation` accuracy as an error: `1 - accuracy` is the error.
+- Checking for high bias before high variance: a big gap wins.
+- Saying "high bias" without a floor: without knowing what is achievable you cannot tell a hard problem from a rigid model.

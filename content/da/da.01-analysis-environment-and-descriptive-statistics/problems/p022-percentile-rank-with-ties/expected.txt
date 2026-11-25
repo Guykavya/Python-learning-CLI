@@ -1,0 +1,4 @@
+score 60: percentile rank 25.0
+score 70: percentile rank 56.2
+score 55: percentile rank 12.5
+score 90: percentile rank 93.8

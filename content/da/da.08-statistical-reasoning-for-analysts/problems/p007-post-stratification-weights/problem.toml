@@ -1,0 +1,6 @@
+id = "da.08.p007"
+title = "Post-stratification weights"
+tier = "applied"
+kind = "code"
+topics = ["weighting", "stratification", "sampling bias", "ValueError", "pandas"]
+minutes = 30

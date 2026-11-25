@@ -1,0 +1,3 @@
+- Shuffling the features instead of the labels.
+- Shuffling once outside the loop: all repeats then see the same permutation.
+- Passing a model instead of the whole procedure: a selection step done before the model would escape the check.

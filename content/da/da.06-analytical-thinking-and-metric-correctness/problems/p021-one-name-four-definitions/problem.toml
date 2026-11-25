@@ -1,0 +1,6 @@
+id = "da.06.p021"
+title = "One name, four definitions"
+tier = "applied"
+kind = "code"
+topics = ["metric definition", "date basis", "time zone", "half-open period", "status"]
+minutes = 25

@@ -1,0 +1,3 @@
+- Writing the starting value `1.0000` as the first number of each line.
+- Showing `-0.0000` for `lr=0.5`: the value is exactly `0.0`.
+- Assuming a bigger learning rate is always faster.

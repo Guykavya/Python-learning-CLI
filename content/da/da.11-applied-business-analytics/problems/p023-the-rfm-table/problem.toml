@@ -1,0 +1,6 @@
+id = "da.11.p023"
+title = "The RFM table"
+tier = "drill"
+kind = "code"
+topics = ["RFM", "recency frequency monetary", "as-of date", "groupby"]
+minutes = 25

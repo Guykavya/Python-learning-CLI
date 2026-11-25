@@ -1,0 +1,7 @@
+id = "ds.02.p012"
+title = "Explain a coefficient in words"
+tier = "deep"
+kind = "explain"
+topics = ["interpretation", "log-level", "log-log", "dummy", "elasticity", "explain"]
+minutes = 25
+assessment = "explain"

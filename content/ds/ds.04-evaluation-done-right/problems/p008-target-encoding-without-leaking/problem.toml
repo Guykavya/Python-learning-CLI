@@ -1,0 +1,6 @@
+id = "ds.04.p008"
+title = "Target encoding without leaking"
+tier = "deep"
+kind = "code"
+topics = ["target encoding", "out-of-fold", "categorical features", "leakage"]
+minutes = 45

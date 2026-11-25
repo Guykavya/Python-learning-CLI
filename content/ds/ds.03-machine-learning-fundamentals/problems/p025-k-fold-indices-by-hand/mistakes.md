@@ -1,0 +1,4 @@
+- Using `np.split`, which fails when `n` is not divisible by `k`.
+- Not shuffling when the rows are ordered by class or time.
+- Creating the generator again for every fold, so the folds overlap.
+- Using `n // k` as the size of each fold and dropping the leftover rows.

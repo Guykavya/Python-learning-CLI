@@ -1,0 +1,4 @@
+- `A8` instead of `$A8`: filling to the right makes the region reference move to column B.
+- `B7` instead of `B$7`: filling down moves the header reference to row 8.
+- Writing values instead of formulas.
+- Forgetting the corner label or placing the categories in the wrong row.

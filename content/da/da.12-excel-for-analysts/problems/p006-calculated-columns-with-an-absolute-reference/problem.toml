@@ -1,0 +1,6 @@
+id = "da.12.p006"
+title = "Calculated columns with an absolute reference"
+tier = "applied"
+kind = "code"
+topics = ["absolute references", "calculated column", "openpyxl formulas", "fill down"]
+minutes = 30

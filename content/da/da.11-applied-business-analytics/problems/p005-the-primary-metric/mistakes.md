@@ -1,0 +1,4 @@
+- Using the pooled standard error for the interval (or the unpooled one for the p-value).
+- `A - B` instead of `B - A`: the lift of the new variant is B minus A.
+- One-sided p-value: the chapter tests "different", two-sided.
+- Dividing the relative lift by B.

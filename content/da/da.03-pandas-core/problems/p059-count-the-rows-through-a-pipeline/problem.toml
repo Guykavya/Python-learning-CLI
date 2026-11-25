@@ -1,0 +1,6 @@
+id = "da.03.p059"
+title = "Count the rows through a pipeline"
+tier = "deep"
+kind = "trace"
+topics = ["dropna", "drop_duplicates", "filter", "row counts", "index", "pipeline", "trace"]
+minutes = 25

@@ -1,0 +1,5 @@
+- **`ascending=False`** for the whole sort: the names would then run Z to A.
+- **Sorting revenue descending by negating it**: a missing value stays missing, but `-NaN` hides the point that the NaN rule is separate. Use `na_position`.
+- **Expecting missing values first** because the sort is descending: they stay last.
+- **`reset_index(drop=True)`**: the expected result keeps the original labels.
+- **`sort_values(..., inplace=True)`** on the caller's frame.

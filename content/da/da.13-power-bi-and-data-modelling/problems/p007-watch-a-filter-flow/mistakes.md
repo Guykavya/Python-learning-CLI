@@ -1,0 +1,4 @@
+- Answering 2 for the third value: a store filter does not reach the product table in a single-direction model.
+- Using the number of sales rows (6) instead of their amounts.
+- Forgetting that two filters on different tables are both applied (an AND).
+- Answering 3 for the fourth value: with the both-way relationship the product list is trimmed.

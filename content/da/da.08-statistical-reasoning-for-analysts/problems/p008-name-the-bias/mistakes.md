@@ -1,0 +1,3 @@
+- Calling everything "selection bias": name the mechanism.
+- Saying 5 is a sampling problem: the sample is fine, the instrument is wrong.
+- Believing a bigger sample fixes any of these: bias does not shrink with n.

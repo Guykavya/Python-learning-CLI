@@ -1,0 +1,6 @@
+id = "da.02.p023"
+title = "The duplicate-index trap"
+tier = "deep"
+kind = "code"
+topics = ["fancy indexing", "np.add.at", "bincount", "duplicates", "counting"]
+minutes = 25

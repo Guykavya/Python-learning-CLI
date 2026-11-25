@@ -1,0 +1,5 @@
+- **`x / x.sum(axis=1)`.** Shape `(rows,)` against `(rows, cols)`: wrong broadcasting (an error, or for a square table silently dividing by the wrong totals).
+- **`x / x.sum(axis=0, keepdims=True)`.** Column shares, not row shares.
+- **`np.where(totals == 0, 0, x / totals)`.** Correct values, but the division by 0 happens anyway and warns.
+- **`np.divide(..., where=...)` without `out=`.** The skipped places hold whatever was in memory before: garbage.
+- **`np.nan_to_num(x / totals)`.** Repairs the `nan`s after the warning.

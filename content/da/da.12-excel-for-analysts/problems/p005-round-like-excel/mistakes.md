@@ -1,0 +1,4 @@
+- `round(x, n)`: half to even, and it rounds the binary value (1.005 gives 1.0).
+- `Decimal(x)` straight from the float: it keeps the full binary expansion (1.00499999999999989...).
+- `ROUND_HALF_EVEN` (the `decimal` default) instead of `ROUND_HALF_UP`.
+- Using floor division for negative `n`.

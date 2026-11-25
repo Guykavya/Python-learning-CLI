@@ -1,0 +1,5 @@
+- **Treating an event at exactly `AT` as "not yet".** The rule is `<= AT`: job 101's start and job 102's cancellation have happened.
+- **Calling job 103 `not yet created`.** It was created exactly at `AT`; only a creation *after* `AT` is "not yet created".
+- **Applying the rules in another order.** Cancellation is checked before completion, completion before start.
+- **Counting a missing completion time as "after AT".** `NaT > AT` is `False`, so jobs with no `completed_at` never add to the count in the last line.
+- **Writing the dictionary unsorted.** `sort_index()` puts the states in alphabetical order.

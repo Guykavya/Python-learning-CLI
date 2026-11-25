@@ -1,0 +1,6 @@
+id = "ds.02.p017"
+title = "Coverage when an assumption breaks"
+tier = "challenge"
+kind = "code"
+topics = ["coverage", "simulation", "heteroscedasticity", "autocorrelation", "confidence interval"]
+minutes = 40

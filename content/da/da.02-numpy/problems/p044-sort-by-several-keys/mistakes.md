@@ -1,0 +1,6 @@
+- **Keys in reading order** `lexsort((-scores, ages, names))`: that sorts by name first. The last key is the primary one.
+- **Forgetting to negate the score:** lowest scores come first.
+- **Negating in place** (`scores *= -1`) changes the caller's array; `-scores` makes a new one.
+- **Trying to sort descending with `[::-1]` at the end:** that also reverses the age and name order and the original order of full ties.
+- **Returning the sorted names** instead of the positions; the order is what lets you rearrange every column.
+- **A plain `argsort` on the score only:** ties come out in an unspecified (or merely stable) order, not by age and name.

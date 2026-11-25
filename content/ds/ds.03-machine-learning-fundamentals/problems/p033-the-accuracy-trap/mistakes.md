@@ -1,0 +1,4 @@
+- Writing `precision 0.000` for the alarm model by dividing TP by 1000.
+- Computing F1 as the mean of 0.375 and 0.75 (0.5625).
+- Forgetting the guard: for "always no" there is no `ZeroDivisionError` because of the `if ... else 0.0`.
+- Choosing a model by its accuracy.

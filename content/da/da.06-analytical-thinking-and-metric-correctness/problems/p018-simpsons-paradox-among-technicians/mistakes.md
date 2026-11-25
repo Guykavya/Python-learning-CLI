@@ -1,0 +1,5 @@
+- **Reporting only the overall rate.** It rewards the technician who picked the easy jobs.
+- **Averaging the per-type rates for the overall rate.** The overall rate counts each job once: completed jobs over all jobs.
+- **Requiring both technicians in every job type.** Types with only one technician cannot be compared and are skipped.
+- **Using `>=`.** A tie in a job type is not a win; the paradox needs a strict win everywhere.
+- **Returning a numpy bool.** Use `bool(...)`; the contract is a plain `bool`.

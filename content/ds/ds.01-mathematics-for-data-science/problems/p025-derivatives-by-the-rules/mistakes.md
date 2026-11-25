@@ -1,0 +1,5 @@
+- `exp(2x)` differentiated as `exp(2x)` (the factor 2 of the inner function is missing).
+- `sin(x^2)` differentiated as `cos(x^2)` (the factor `2x` is missing).
+- The product rule written as `f' g'`.
+- The sigmoid derivative written as `s'(x) = s(x)` or `1 - s(x)`.
+- Not raising `KeyError` for an unknown name.

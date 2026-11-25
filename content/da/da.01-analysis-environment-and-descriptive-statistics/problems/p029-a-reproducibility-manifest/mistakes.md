@@ -1,0 +1,6 @@
+- **Hashing `str(values)` or `repr`.** It is not canonical (dict order, float formatting, version differences).
+- **Forgetting `sort_keys=True`.** Two records with the same content but a different key order would get different hashes.
+- **Optional spaces** (`", "` and `": "`) in the JSON text: use `separators=(",", ":")`.
+- **Storing `params` by reference.** The caller can change it later and silently change the record.
+- **Hashing the Python object's id or using `hash()`.** Python's `hash` of strings changes between runs.
+- **Letting NaN through.** `json.dumps` writes `NaN`, which is not JSON.

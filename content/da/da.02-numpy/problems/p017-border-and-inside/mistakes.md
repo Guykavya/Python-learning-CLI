@@ -1,0 +1,5 @@
+- **`a[-1, ::-1]` for the bottom row.** Starts at the bottom-right corner, which the right column already gave: repeated corner.
+- **`a[::-1, 0]` for the left column.** Includes both corners again.
+- **`a[-2:0:-1, 0]` read as "rows -2 to 0".** The stop is excluded: it ends at row 1, which is what we want.
+- **No special case for one row.** Top gives the row, then the "bottom row backwards" gives it again in reverse.
+- **Building a Python list and `np.array(...)` of it.** Works, but loses the dtype in the empty edge cases and is a loop over cells.

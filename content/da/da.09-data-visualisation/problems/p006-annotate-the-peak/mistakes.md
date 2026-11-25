@@ -1,0 +1,4 @@
+- Using `ax.text` for the label without the `xy` of the peak: the test cannot find where it points.
+- Calling `ax.axhline` once per point (many lines instead of one).
+- Using the median or the last value instead of the mean.
+- Writing `Peak: 4210.0`: the maximum must read `4,210`.

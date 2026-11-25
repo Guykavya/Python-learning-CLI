@@ -1,0 +1,5 @@
+- Writing `8` for the distinct count of users: it is the sum of daily counts.
+- Counting user 2 twice on day 2 (the duplicate row): `count(DISTINCT user_id)` ignores repeats.
+- Forgetting that `count(*)` counts rows, including the repeated ones (10).
+- For the last line, writing `5 5` or `4 4`: one number is a sum of daily counts and the other is a distinct count.
+- Printing the list without brackets or commas.

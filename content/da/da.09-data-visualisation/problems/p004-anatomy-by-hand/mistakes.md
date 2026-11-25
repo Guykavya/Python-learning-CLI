@@ -1,0 +1,4 @@
+- Answering 4 for `len(fig.axes)`: `twinx` adds an Axes.
+- Giving `c` three lines: the two lines drawn on `c2` are on the twin, not on `c`.
+- Writing `'twin'` for `c2`: a twin does not inherit the title.
+- Counting the 4 bars as 1 patch, or the lines of `a` as patches.

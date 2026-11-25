@@ -1,0 +1,5 @@
+- **Treating the two `id` 5 rows as duplicates in the first `drop_duplicates()`**: with no `subset` all columns must match, and `qty` differs.
+- **Thinking `NaN > 2` is `True`, or an error**: it is `False`, so the filter silently drops the row with the missing quantity.
+- **Renumbering the index**: the labels stay `0..9`; only `reset_index` would renumber them.
+- **Mixing up `keep="first"` and `keep="last"`**: `last` keeps the later row, here the one with `qty` 6.
+- **Writing ints for `qty`**: a column with a missing value is `float64`, so the list shows `3.0`.

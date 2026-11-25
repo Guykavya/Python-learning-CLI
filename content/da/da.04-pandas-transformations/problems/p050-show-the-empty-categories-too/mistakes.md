@@ -1,0 +1,4 @@
+- **The default `observed=True`.** Unused sizes disappear; the report silently has fewer rows.
+- **`value_counts()` with the default sorting.** It sorts by count, not by size order.
+- **`dropna=False`.** It adds a row for the missing sizes, which the task does not count.
+- **Counting `order_id` with `count`.** It works here, but `size()` counts rows, which is the question.

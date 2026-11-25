@@ -1,0 +1,3 @@
+- Using `X[col]` (1-D) where scikit-learn wants a 2-D input: `X[[col]]`.
+- Scoring on the training rows (no cross-validation): every column with many values then looks strong.
+- Treating a strong single column as proof of a leak. It is a reason to ask *when* the column is filled in; some strong features are honest.

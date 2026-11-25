@@ -1,0 +1,5 @@
+- **`old.update(...)` on the input.** `update` works in place: it changes the caller's table. Call it on a new frame.
+- **Forgetting `set_index`.** With the default index `0, 1, 2`, `update` patches *row positions*, so C2's fix lands on whichever customer is in row 0.
+- **`combine_first` with the tables the wrong way round.** `old.combine_first(fixes)` keeps the *old* value and only fills gaps: the fix for C3's segment would be lost.
+- **Plain `combine_first` without trimming.** It adds the unknown customer C9 and sorts the ids.
+- **`fixes.fillna(old)` or a merge followed by `where`.** It can work, but the rule "a missing fix never erases" is easy to get backwards.

@@ -1,0 +1,6 @@
+id = "da.07.p019"
+title = "Month over month"
+tier = "applied"
+kind = "code"
+topics = ["lag", "period over period", "growth", "calendar of months", "NULLIF"]
+minutes = 30

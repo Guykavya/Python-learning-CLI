@@ -1,0 +1,4 @@
+- Calling `ax.legend().remove()` when no legend exists: `ax.legend()` creates one.
+- Labelling the reference line too (its label starts with `_`).
+- Writing the text at the first point instead of the last.
+- Using the label's own default colour: the text colour must follow the line colour.

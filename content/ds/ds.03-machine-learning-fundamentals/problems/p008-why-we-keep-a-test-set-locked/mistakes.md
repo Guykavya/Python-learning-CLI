@@ -1,0 +1,3 @@
+- Saying the 92% is "wrong". It is a correct description of the models on **that** set; it is a poor promise for new data.
+- Saying "use more models to be safe". More models make the winner's curse bigger.
+- Believing a random split alone fixes the problem. It is the **reuse** of the set for choosing that spoils it.

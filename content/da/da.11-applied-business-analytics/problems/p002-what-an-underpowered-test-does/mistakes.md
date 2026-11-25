@@ -1,0 +1,4 @@
+- Saying the test is "wrong" or "biased": each run is an honest estimate; the **selection** of the significant ones creates the exaggeration.
+- Forgetting the sign errors: with a wide spread, some runs fall below zero.
+- Suggesting "run it longer until it is significant": that is peeking (section 2.8).
+- Not naming the plan: sample size from the minimum effect, before the test.

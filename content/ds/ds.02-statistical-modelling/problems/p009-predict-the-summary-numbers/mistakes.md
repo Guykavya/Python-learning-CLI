@@ -1,0 +1,3 @@
+- Dividing by `n` where the formula needs the sum of squares (not a mean).
+- Reporting residual df as 5 (all rows) or 4 (n - 1). Two parameters are estimated, so it is `n - 2 = 3`.
+- Forgetting the intercept is `mean_y - slope * mean_x`, not `mean_y`.

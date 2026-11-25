@@ -1,0 +1,5 @@
+- **Adding 30 days for "a month"**: 31 Jan + 30 days is 1 March in 2024, not the end of February.
+- **Assuming `MonthEnd(1)` leaves a month end alone**: it moves to the *next* month end; `MonthEnd(0)` is the one that stays.
+- **Expecting an error on 31 Feb**: `DateOffset` clips to the last valid day; it does not raise.
+- **Forgetting the leap-year rule**: 2024 has 29 days in February, 2023 has 28, 2100 has 28 (centuries are leap years only when divisible by 400).
+- **Writing `"M"` as an offset alias**: in pandas 3 the month-end alias is `"ME"`; use the offset objects, as here, so the code survives renames.

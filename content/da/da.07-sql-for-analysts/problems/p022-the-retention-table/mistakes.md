@@ -1,0 +1,5 @@
+- Counting logins instead of users: user 1's two logins in February give 2 and retention above 1.
+- Dividing by the number of active users in month 0 instead of the size of the cohort.
+- Forgetting the cut at `2025-07-01`: July is not complete (the extraction is on 15 July), so its counts look like a collapse.
+- Using the event month instead of the month difference: the table needs the *number of months since sign-up*.
+- `JOIN` to a table with several rows per user (without `DISTINCT`): the active counts inflate.

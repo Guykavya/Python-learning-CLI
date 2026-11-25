@@ -1,0 +1,4 @@
+- Using the first row (n = 10) instead of the last.
+- Dividing the gap by `train` instead of `val`.
+- Testing the high-bias condition first for curve D (its validation error is below the floor so it would say `fine`).
+- Forgetting the format `(n = ...)` with the last row's n.

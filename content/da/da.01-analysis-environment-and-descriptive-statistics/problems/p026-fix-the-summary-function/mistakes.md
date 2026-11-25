@@ -1,0 +1,5 @@
+- **Fixing only the visible symptom.** The odd-length median was right, the even branch was wrong: both branches need a test.
+- **Copying the list with `values[:]` but still sorting `values`.** Use the copy for every later line.
+- **Changing the divisor of the mean too.** Only the variance uses `n - 1`; the mean still divides by `n`.
+- **`sd = 0.0` for one value.** With one value the sample spread is undefined: `None`.
+- **Index `n // 2 - 1` for odd counts too.** Only the even branch changes.

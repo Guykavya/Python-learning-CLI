@@ -1,0 +1,5 @@
+- Using `ROWS` logic for `range_sum`: ids 2 and 3 are peers, so they see the same rows.
+- Forgetting that the default frame includes the **peers** of the current row: id 2's `default_sum` is 60, not 30.
+- Treating day 3 and day 5 as neighbours for the range: there is no day 4, so id 5's range contains only itself.
+- Adding the tie-break `id` to the `ORDER BY` of `range_sum`: it is not there, which is why peers exist.
+- Writing the rows in another order than `ORDER BY id`.

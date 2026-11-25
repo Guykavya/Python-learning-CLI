@@ -1,0 +1,4 @@
+- `col.isin(dim)` on a column with blanks: the blanks count as orphans and the same row is reported twice.
+- Forgetting that a duplicate key in a dimension makes Power BI refuse the relationship.
+- Checking only one fact table.
+- Returning a boolean: the list of messages tells you where to look.

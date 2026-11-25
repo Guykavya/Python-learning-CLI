@@ -1,0 +1,4 @@
+- `1 / (1 + np.exp(-z))` for every `z`: overflows (a warning, then `inf`) for `z = -800`.
+- Forgetting the division by `n`.
+- Using `y - p` and getting the opposite sign.
+- Writing `X @ (p - y)` instead of `X.T @ (p - y)`.

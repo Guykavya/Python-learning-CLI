@@ -1,0 +1,4 @@
+- "DuckDB is always faster": on a small DataFrame in memory the two are close, and the file-reading advantage disappears if you load the file with pandas first.
+- "pandas is for small data, SQL for big data": the real question is where the data live and what the query looks like.
+- Comparing the timings of different machines or a single run: use the same machine, several runs, best of them.
+- Copying the same metric logic into a notebook and a SQL file: when one changes, the report disagrees with itself.

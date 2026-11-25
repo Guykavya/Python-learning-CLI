@@ -1,0 +1,7 @@
+id = "da.08.p017"
+title = "A narrow interval around the wrong value"
+tier = "deep"
+kind = "explain"
+topics = ["bias vs variance", "confidence interval", "opt-in survey", "sampling error", "explain"]
+minutes = 25
+assessment = "explain"

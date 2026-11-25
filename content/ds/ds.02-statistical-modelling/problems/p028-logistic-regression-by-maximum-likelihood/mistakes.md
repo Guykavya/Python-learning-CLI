@@ -1,0 +1,4 @@
+- Using `X.T @ (y - p)` with the wrong sign: you then move away from the maximum.
+- Forgetting the weights `p * (1 - p)` in the Hessian (that is plain least squares, not logistic).
+- Starting a loop with `while True` and no iteration limit: with perfectly separated data it never converges.
+- Using `y` as a column matrix: keep it 1-D.

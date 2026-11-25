@@ -1,0 +1,7 @@
+id = "da.05.p039"
+title = "Fix the pipeline that changes on every run"
+tier = "deep"
+kind = "code"
+topics = ["pipeline", "idempotence", "side effects", "copy", "global state", "debugging", "fix"]
+minutes = 35
+assessment = "fix"

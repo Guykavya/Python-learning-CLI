@@ -1,0 +1,3 @@
+- Writing the odds as `0.2` (the probability) or `4` instead of the three-decimal format `4.000`.
+- Using `log10` instead of the natural logarithm: `math.log` is natural.
+- Printing `-0.000` for p = 0.5: the log of exactly 1 is `0.000`.

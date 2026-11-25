@@ -1,0 +1,4 @@
+- Writing `0.00` in the lower-right cells: those months have not happened.
+- Counting a customer in the cohort of their first **active** month rather than their `signup`.
+- Dividing by the number of customers of all cohorts.
+- Missing the `0.00` of cohort 0 in month 2: that month has happened and nobody ordered.

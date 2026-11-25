@@ -1,0 +1,4 @@
+- Saying `inv` is wrong: it gives the right answer on small, well-conditioned problems, it is just wasteful and less accurate.
+- Timing one run: use the best of several repeats to cut noise.
+- Forgetting that `inv(A) @ b` rounds twice (once for the inverse, once for the product).
+- Claiming you never need an inverse: sometimes the inverse itself is the quantity you want (a covariance matrix).

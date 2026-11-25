@@ -1,0 +1,6 @@
+id = "da.11.p009"
+title = "Segments: look, do not decide"
+tier = "drill"
+kind = "explain"
+topics = ["subgroup analysis", "multiple comparisons", "pre-registration", "A/B test", "explain"]
+minutes = 25

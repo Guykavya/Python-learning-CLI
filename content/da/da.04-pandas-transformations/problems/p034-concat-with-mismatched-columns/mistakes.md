@@ -1,0 +1,5 @@
+- **Expecting an error.** `concat` never complains about different columns; it fills the gaps with `NaN`.
+- **Counting 2 missing cells.** Row 2 also misses `qty`, not only rows 0 and 1 missing `price`: 3 in total.
+- **`(3, 3)` for the inner concat.** `join="inner"` keeps only shared columns; only `id` is in both.
+- **Matching `axis=1` by position.** It matches by index label, so `x`'s `2` (label `q`) sits next to `y`'s `10` (also `q`), and the result has 3 rows, not 2.
+- **Writing `[1, 2, nan]`.** A column that holds `NaN` is float, so the numbers print as `1.0` and `2.0`.

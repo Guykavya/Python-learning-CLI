@@ -1,0 +1,5 @@
+- Keeping three IN rows for the first query: `row_number` never ties, so it keeps exactly two.
+- Keeping only two IN rows for `rank`: the three 500s all have rank 1.
+- Forgetting the tie-break: order 4 or order 10 could appear instead of 2 and 4 in a real database; here `order_id` decides.
+- Listing the ids of the second query in table order or by country instead of sorted by `order_id`.
+- Forgetting the last line (`6 7`).

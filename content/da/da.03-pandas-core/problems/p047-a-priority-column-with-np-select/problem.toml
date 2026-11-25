@@ -1,0 +1,6 @@
+id = "da.03.p047"
+title = "A priority column with np.select"
+tier = "drill"
+kind = "code"
+topics = ["np.select", "ordered conditions", "default", "boolean columns"]
+minutes = 20

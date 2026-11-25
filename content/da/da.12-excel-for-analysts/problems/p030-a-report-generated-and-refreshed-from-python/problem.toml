@@ -1,0 +1,7 @@
+id = "da.12.p030"
+title = "A report generated and refreshed from Python"
+tier = "challenge"
+kind = "code"
+topics = ["Excel report", "openpyxl", "named ranges", "SUMIFS grid", "verification", "project"]
+minutes = 90
+assessment = "build"

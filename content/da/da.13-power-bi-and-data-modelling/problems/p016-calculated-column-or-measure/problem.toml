@@ -1,0 +1,6 @@
+id = "da.13.p016"
+title = "Calculated column or measure?"
+tier = "drill"
+kind = "explain"
+topics = ["calculated column", "measure", "row context", "filter context", "explain"]
+minutes = 30

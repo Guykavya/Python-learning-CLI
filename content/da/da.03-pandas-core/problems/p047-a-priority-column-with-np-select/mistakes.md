@@ -1,0 +1,5 @@
+- **Putting the rules in the wrong order**: a VIP who is 40 days overdue would get "high" if rule 2 came first.
+- **`and` / `or`** between columns: use `&` and `|`, with brackets.
+- **Forgetting `default`**: `np.select` then returns `0` for rows that match nothing.
+- **Using `>=` for the 30 days**: the rule says more than 30.
+- **Returning a bare array**: the result needs the index and the name.

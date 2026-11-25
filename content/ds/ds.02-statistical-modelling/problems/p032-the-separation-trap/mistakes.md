@@ -1,0 +1,5 @@
+- Catching only the exception: current statsmodels versions **warn** and return a huge coefficient.
+- Waiting for an error on a singular matrix: none comes. Compare the matrix rank with the number of columns first.
+- Letting the warning print to the user and still returning the garbage fit.
+- Declaring "separation" for every `ConvergenceWarning`: convergence problems have other causes.
+- Treating a huge coefficient as a discovery ("x predicts y perfectly!"): it usually means the sample is too small or a leak.

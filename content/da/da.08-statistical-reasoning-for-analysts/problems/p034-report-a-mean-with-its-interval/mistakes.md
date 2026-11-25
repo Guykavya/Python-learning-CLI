@@ -1,0 +1,4 @@
+- Counting the `NaN` rows in `n`.
+- `level * 100` printed as `95.0` or `90.00000000000001`: round to a whole percent.
+- Rounding each number with a fixed number of decimals.
+- Putting a space (or not) before the unit: the unit string is appended as given.

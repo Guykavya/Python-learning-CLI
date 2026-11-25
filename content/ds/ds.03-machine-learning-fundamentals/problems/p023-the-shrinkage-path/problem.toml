@@ -1,0 +1,6 @@
+id = "ds.03.p023"
+title = "The shrinkage path"
+tier = "deep"
+kind = "explain"
+topics = ["ridge", "lasso", "shrinkage", "sparsity", "regularisation path", "explain"]
+minutes = 30

@@ -1,0 +1,6 @@
+id = "ds.01.p058"
+title = "Percentile bootstrap interval"
+tier = "applied"
+kind = "code"
+topics = ["bootstrap", "percentile interval", "resampling", "seed"]
+minutes = 35

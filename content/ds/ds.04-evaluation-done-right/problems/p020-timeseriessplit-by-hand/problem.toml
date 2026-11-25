@@ -1,0 +1,6 @@
+id = "ds.04.p020"
+title = "TimeSeriesSplit by hand"
+tier = "drill"
+kind = "trace"
+topics = ["TimeSeriesSplit", "rolling origin", "gap", "trace"]
+minutes = 20

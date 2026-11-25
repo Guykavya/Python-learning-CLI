@@ -1,0 +1,5 @@
+- `<` instead of `<=` at the 7-day end: user 1 (exactly 7 days) would not convert.
+- Forgetting the lower bound: user 6's purchase before the first view would count.
+- Leaving ineligible users in the denominator: user 4's window is not over.
+- `date_diff('day', ...) <= 7`: counts day boundaries, so a purchase at 23:59 on day 8 can still pass.
+- Joining purchases to views and counting rows: a user with two purchases in the window counts twice.

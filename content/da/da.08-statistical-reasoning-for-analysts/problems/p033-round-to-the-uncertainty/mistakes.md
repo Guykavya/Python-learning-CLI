@@ -1,0 +1,4 @@
+- Always printing 2 decimals: false precision for a big SE.
+- Forgetting the thousands separator.
+- Crashing on `ref = 0` (log of zero) or `nan`.
+- Using `ceil` instead of `floor`, which changes the decimals at exact powers of ten.

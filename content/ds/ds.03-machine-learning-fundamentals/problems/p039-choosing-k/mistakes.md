@@ -1,0 +1,4 @@
+- Choosing `k` by the smallest inertia: it always picks the largest `k`.
+- Not passing `n_init` explicitly: its default has changed between scikit-learn versions.
+- Computing the silhouette with `k = 1` (undefined).
+- Reading the best silhouette as proof that the clusters are real: on uniform data you still get a "best" `k`.

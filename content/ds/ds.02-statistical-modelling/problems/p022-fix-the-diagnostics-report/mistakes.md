@@ -1,0 +1,4 @@
+- Fixing only the first failing message and stopping. Three keys are wrong.
+- "Fixing" the test or the key names instead of the code.
+- Skipping `"const"` but not `"Intercept"` (the name statsmodels gives with formulas).
+- Changing the cooks threshold: `4/n` is already right in the starter; the leverage threshold is the one that is wrong.

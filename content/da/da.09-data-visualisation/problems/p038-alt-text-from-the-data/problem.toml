@@ -1,0 +1,6 @@
+id = "da.09.p038"
+title = "Alt text from the data"
+tier = "challenge"
+kind = "code"
+topics = ["alt text", "accessibility", "bar_values", "describing a chart"]
+minutes = 30

@@ -1,0 +1,6 @@
+id = "da.11.p010"
+title = "The decision"
+tier = "applied"
+kind = "code"
+topics = ["decision rule", "guardrail metrics", "minimum effect", "A/B test"]
+minutes = 30

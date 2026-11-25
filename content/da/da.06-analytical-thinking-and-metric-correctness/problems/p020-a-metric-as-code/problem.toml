@@ -1,0 +1,6 @@
+id = "da.06.p020"
+title = "A metric as code"
+tier = "applied"
+kind = "code"
+topics = ["metric definition", "dataclass", "date basis", "exclusions", "registry"]
+minutes = 30

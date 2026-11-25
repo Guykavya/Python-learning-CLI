@@ -1,0 +1,4 @@
+SchemaError
+SchemaErrors 5
+[('age', 'in_range(18, 75)'), ('city', "isin(['Pune', 'Delhi'])"), ('id', 'field_uniqueness')]
+{'age': [1, 3], 'city': [1], 'id': [1, 2]}

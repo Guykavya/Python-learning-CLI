@@ -1,0 +1,6 @@
+id = "da.05.p001"
+title = "A change log"
+tier = "drill"
+kind = "code"
+topics = ["cleaning", "change log", "audit trail", "rows dropped"]
+minutes = 15

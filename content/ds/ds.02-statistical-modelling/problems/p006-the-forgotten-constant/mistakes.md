@@ -1,0 +1,3 @@
+- Fitting `sm.OLS(df[y], df[xs])` and wondering why the slope is huge or tiny: the line is forced through (0, 0).
+- Calling `sm.add_constant` on a DataFrame that already has a constant column: nothing is added and a warning may be hidden. Not an issue here, but watch for it with dummy variables.
+- Returning `.params` instead of the results object. Callers also need `bse`, `conf_int()` and so on.

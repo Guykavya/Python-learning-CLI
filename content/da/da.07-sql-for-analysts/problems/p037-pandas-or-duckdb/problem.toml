@@ -1,0 +1,6 @@
+id = "da.07.p037"
+title = "pandas or DuckDB?"
+tier = "drill"
+kind = "explain"
+topics = ["pandas vs DuckDB", "tool choice", "Parquet", "benchmarking", "explain"]
+minutes = 20

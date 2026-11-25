@@ -1,0 +1,4 @@
+- Using `Date[Year] - 1` as a filter: it works for whole years, not for a single month or a custom period.
+- A date table with gaps: the shifted dates fall on missing days and the numbers are wrong (problem 4).
+- Dividing by `[Revenue PY]` with `/`: when last year is blank the result is infinite or an error.
+- Calling `DATESYTD` on a column that is not the date column of a proper date table.

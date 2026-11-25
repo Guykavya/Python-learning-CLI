@@ -1,0 +1,6 @@
+axes in figure: 5
+a 3 0 'lines'
+b 0 4 'bars'
+c 1 0 'twin'
+c2 2 0 ''
+d 0 0 ''

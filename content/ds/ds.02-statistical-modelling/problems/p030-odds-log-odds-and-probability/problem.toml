@@ -1,0 +1,6 @@
+id = "ds.02.p030"
+title = "Odds, log-odds and probability"
+tier = "drill"
+kind = "trace"
+topics = ["odds", "log-odds", "sigmoid", "probability", "trace"]
+minutes = 15

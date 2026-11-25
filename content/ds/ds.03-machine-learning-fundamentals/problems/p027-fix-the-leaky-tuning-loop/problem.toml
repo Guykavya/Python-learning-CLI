@@ -1,0 +1,7 @@
+id = "ds.03.p027"
+title = "Fix the leaky tuning loop"
+tier = "applied"
+kind = "code"
+topics = ["data leakage", "hyperparameter tuning", "cross-validation", "test set", "debugging"]
+minutes = 35
+assessment = "fix"

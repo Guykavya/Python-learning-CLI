@@ -1,0 +1,5 @@
+- **Writing ranks in sorted order** instead of the original row order: the list printed is aligned with the Series, not with the sorted data.
+- **Forgetting the default is `average`**: tied values get halves such as 3.5.
+- **Mixing up `min` and `dense`**: they agree until something comes *after* the tie. In `t`, `min` gives 4 to the lowest values when sorted descending, while `dense` would give 3.
+- **Writing integers**: `rank` returns floats, so the lines show `3.0`.
+- **Thinking `first` depends on the value**: it depends only on the order of rows in the Series.

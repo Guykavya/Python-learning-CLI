@@ -1,0 +1,3 @@
+- Using `<=` for the training part, which sends cutoff-day rows to training.
+- Shuffling before splitting: then it is a random split again.
+- Comparing a datetime column with a string without converting (works in recent pandas, but be explicit).

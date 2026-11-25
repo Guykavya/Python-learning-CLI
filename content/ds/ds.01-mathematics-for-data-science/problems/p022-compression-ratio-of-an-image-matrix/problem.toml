@@ -1,0 +1,6 @@
+id = "ds.01.p022"
+title = "Compression ratio of an image matrix"
+tier = "challenge"
+kind = "code"
+topics = ["SVD", "compression", "low-rank", "storage count"]
+minutes = 40

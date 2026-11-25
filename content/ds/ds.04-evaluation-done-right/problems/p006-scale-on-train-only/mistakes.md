@@ -1,0 +1,3 @@
+- `fit_transform` on the concatenation of train and test (the classic leak).
+- Fitting a second scaler on the test set: the test rows are then scaled by their own mean and the model sees different units.
+- Scaling the test set with `fit_transform(X_test)` for the same reason.

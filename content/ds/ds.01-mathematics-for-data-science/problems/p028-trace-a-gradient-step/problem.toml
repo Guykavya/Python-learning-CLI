@@ -1,0 +1,7 @@
+id = "ds.01.p028"
+title = "Trace a gradient step"
+tier = "drill"
+kind = "trace"
+topics = ["gradient descent", "learning rate", "trace"]
+minutes = 15
+assessment = "trace"

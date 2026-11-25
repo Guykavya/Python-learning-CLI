@@ -1,0 +1,6 @@
+id = "da.01.p008"
+title = "A median for an ordinal scale"
+tier = "applied"
+kind = "code"
+topics = ["ordinal data", "median", "survey scales", "ValueError"]
+minutes = 25

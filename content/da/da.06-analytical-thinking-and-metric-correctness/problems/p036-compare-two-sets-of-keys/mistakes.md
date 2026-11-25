@@ -1,0 +1,5 @@
+- **Comparing only `len(a)` and `len(b)`.** The totals can be equal while 3 keys leave and 3 enter.
+- **Counting repeated keys.** A job with two payments appears twice in a list of payments; count distinct keys.
+- **Forgetting to sort.** A set has no order; the same input could print differently on another run.
+- **Returning numpy integers.** `np.int64(3) == 3` is true but the lists then print as `np.int64(3)` in a report.
+- **Changing the inputs** (`a.sort()`, `a.drop_duplicates(inplace=True)`).

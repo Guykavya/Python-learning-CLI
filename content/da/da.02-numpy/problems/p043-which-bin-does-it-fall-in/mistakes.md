@@ -1,0 +1,5 @@
+- **Thinking `right=True` means "go to the right bin".** It means the bin includes its *right* edge, so a value on an edge stays in the *lower* bin.
+- **Pairing `right=False` with `side="left"`.** The names are crossed: `digitize(right=False)` equals `searchsorted(side="right")`.
+- **Using 1-based bins.** Values below the first edge get bin `0`; values at or above the last edge (default setting) get `len(edges)` = 3.
+- **Forgetting that 30 is an edge too.** With the default it goes to bin 3 ("top"), with `right=True` to bin 2.
+- **`bincount` without thinking about `minlength`.** Here every bin is used, but `minlength=4` guarantees the four slots anyway.

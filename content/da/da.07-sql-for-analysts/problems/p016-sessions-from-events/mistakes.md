@@ -1,0 +1,5 @@
+- `>=` instead of `>`: a gap of exactly 30 minutes (event 3 of user 1) would start a new session.
+- No `PARTITION BY user_id` in the running sum: the session numbers continue from one user to the next.
+- Forgetting that the first event of a user has no previous time: `prev_time IS NULL` must give a flag of 1 (otherwise the first session is session 0 and not counted).
+- A default `RANGE` frame in the running sum with events at the same time: use `ROWS UNBOUNDED PRECEDING` and a tie-break.
+- Counting events instead of sessions, or averaging the gaps instead of the session lengths.

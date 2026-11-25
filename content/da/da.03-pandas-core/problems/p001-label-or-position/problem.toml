@@ -1,0 +1,6 @@
+id = "da.03.p001"
+title = "Label or position?"
+tier = "drill"
+kind = "code"
+topics = ["Series", "index", "loc", "iloc", "label vs position"]
+minutes = 15

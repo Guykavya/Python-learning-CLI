@@ -1,0 +1,6 @@
+id = "ds.01.p008"
+title = "Which matrices are symmetric, diagonal, identity?"
+tier = "drill"
+kind = "trace"
+topics = ["symmetric", "diagonal", "identity", "trace"]
+minutes = 15

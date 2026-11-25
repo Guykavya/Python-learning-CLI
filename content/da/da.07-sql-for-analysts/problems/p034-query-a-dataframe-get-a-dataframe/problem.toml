@@ -1,0 +1,6 @@
+id = "da.07.p034"
+title = "Query a DataFrame, get a DataFrame"
+tier = "drill"
+kind = "code"
+topics = ["DuckDB", "register", "df()", "pandas", "connection"]
+minutes = 20

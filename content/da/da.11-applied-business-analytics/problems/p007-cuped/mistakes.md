@@ -1,0 +1,4 @@
+- Subtracting `theta * x` without centring: the mean of the outcome shifts and the lift is biased.
+- Using a covariate measured **after** the test started: it can itself be changed by the banner.
+- `np.var(xv)` (ddof 0) with `np.cov` (ddof 1): theta is off by a factor n/(n-1).
+- Computing theta separately in each group: use the whole sample so both groups are adjusted the same way.

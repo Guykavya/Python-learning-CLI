@@ -1,0 +1,7 @@
+id = "da.06.p033"
+title = "Fix the query that doubles revenue"
+tier = "deep"
+kind = "code"
+topics = ["SQL", "join fan-out", "aggregate before join", "LEFT JOIN", "debugging queries"]
+minutes = 30
+assessment = "fix"

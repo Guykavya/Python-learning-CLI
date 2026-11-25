@@ -1,0 +1,4 @@
+- Returning the sensitivity (0.99): confusing `P(+ | sick)` with `P(sick | +)`.
+- Forgetting the `(1 - prior)` factor in the false positives.
+- Not guarding the zero denominator.
+- Using percentages (`1`, `99`) in a formula meant for fractions.

@@ -1,0 +1,4 @@
+- Checking whether the interval contains the sample statistic instead of the **true** value.
+- Drawing the bootstrap indices with `replace=False`.
+- A different generator for the data and the resampling, with the same seed (the streams then repeat each other).
+- Using `reps * boot_reps` huge loops: the test keeps them small (300 x 400).

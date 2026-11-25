@@ -1,0 +1,6 @@
+id = "da.05.p036"
+title = "Rules across columns"
+tier = "deep"
+kind = "code"
+topics = ["pandera", "dataframe-level checks", "cross-column rules", "failure_cases", "implication"]
+minutes = 35

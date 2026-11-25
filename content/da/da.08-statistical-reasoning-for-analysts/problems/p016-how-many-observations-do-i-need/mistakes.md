@@ -1,0 +1,4 @@
+- `round` or `int` instead of `math.ceil`: rounding down gives a margin slightly too wide.
+- Forgetting the square: `n = z * sd / margin` is the square root of the answer.
+- Using 1.96 for every level: 90% and 99% need other quantiles.
+- Using `p = 0.5` for a known tiny proportion: it is the safe worst case, not always the cheapest.

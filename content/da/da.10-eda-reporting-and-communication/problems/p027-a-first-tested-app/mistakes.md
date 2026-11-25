@@ -1,0 +1,4 @@
+- Showing a metric of `0` for an empty selection: zero revenue is a claim, "nothing selected" is not.
+- Computing `DATA` again inside `main` instead of using the argument the test passes.
+- Leaving out the `if __name__ == "__main__":` block: `streamlit run` then shows an empty page.
+- Formatting the metric as `3350.0`.

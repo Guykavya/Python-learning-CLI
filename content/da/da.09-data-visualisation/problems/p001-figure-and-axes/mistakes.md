@@ -1,0 +1,4 @@
+- Forgetting `return fig` (the function returns `None`).
+- Calling `plt.show()` inside the function: a test or a script then has nothing to inspect or save.
+- Passing `figsize` as `(height, width)`: it is `(width, height)`.
+- Using `sharey=True` only for one row: it shares across the whole grid.

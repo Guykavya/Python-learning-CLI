@@ -1,0 +1,4 @@
+- **`revenue.mean()` on the lines.** That is the average *line*, not the average *order*.
+- **`by_store["aov"].mean()` as the overall AOV.** An average of averages ignores how many orders each store has.
+- **`size()` or `count()` for orders.** Both count lines; an order with three lines would count three times.
+- **Returning a numpy float.** The task asks for a plain `float`; wrap it in `float(...)`.

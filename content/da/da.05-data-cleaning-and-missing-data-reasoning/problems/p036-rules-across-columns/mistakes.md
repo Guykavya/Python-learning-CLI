@@ -1,0 +1,6 @@
+- **Putting the relation inside a column check.** A column check only sees one column; `last_seen >= signup` needs both.
+- **Writing the implication as `d["student"] & (d["age"] < 30)`.** That fails every non-student. "If A then B" is `~A | B`.
+- **`>` instead of `>=`.** Seen on the day of signup is fine.
+- **Forgetting `coerce=True`** and failing on the dtype of the datetime columns (pandas 3 may give `datetime64[us]`).
+- **Reading positions instead of labels.** The tests use a non-default index; `failure_cases["index"]` already gives labels.
+- **A check that returns one number** (`all()`): then no row is blamed. Return the Boolean Series.

@@ -1,0 +1,3 @@
+- Counting only one extreme split (forgetting the mirror image that a two-sided test counts).
+- Printing `p = 0.03` instead of `0.029`.
+- Reading `p` as the probability that the null hypothesis is true.

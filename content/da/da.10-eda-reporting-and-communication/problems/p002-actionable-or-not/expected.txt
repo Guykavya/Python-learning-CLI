@@ -1,0 +1,4 @@
+1 []
+2 ['no number', 'no comparison', 'no owner', 'no date', 'fewer than two limitations']
+3 ['no comparison', 'no date', 'fewer than two limitations']
+4 ['no number']

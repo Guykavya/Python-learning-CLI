@@ -1,0 +1,6 @@
+id = "da.02.p040"
+title = "One seed, many streams"
+tier = "applied"
+kind = "explain"
+topics = ["random", "SeedSequence", "spawn", "parallel simulation", "reproducibility", "explain"]
+minutes = 25

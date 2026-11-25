@@ -1,0 +1,6 @@
+id = "ds.03.p019"
+title = "Fix with regularisation or data?"
+tier = "deep"
+kind = "trace"
+topics = ["decision table", "learning curve", "regularisation", "trace"]
+minutes = 25

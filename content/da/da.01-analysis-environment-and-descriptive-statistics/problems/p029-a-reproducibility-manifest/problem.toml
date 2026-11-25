@@ -1,0 +1,6 @@
+id = "da.01.p029"
+title = "A reproducibility manifest"
+tier = "challenge"
+kind = "code"
+topics = ["reproducibility", "hashing", "canonical JSON", "seeds", "manifest"]
+minutes = 40

@@ -1,0 +1,6 @@
+id = "da.05.p006"
+title = "Sentinel codes"
+tier = "drill"
+kind = "code"
+topics = ["sentinel values", "mask", "isin", "missing values", "count what changed"]
+minutes = 20

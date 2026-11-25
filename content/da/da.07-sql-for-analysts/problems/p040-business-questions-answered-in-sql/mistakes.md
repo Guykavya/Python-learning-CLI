@@ -1,0 +1,6 @@
+- Writing a query that returns plausible numbers but has the wrong grain (duplicates in the key): the grain check catches it.
+- Using `COALESCE(..., 0)` over the whole retention grid: the immature cells become 0%.
+- Counting rows instead of distinct users in the funnel or in active users.
+- Letting July (an incomplete month) into revenue, retention or states.
+- Leaving out the definition comment: the numbers cannot be reviewed without it.
+- Using `lag(mau)` over months with a gap (a missing month would shift the comparison); here every month has users, but check it.

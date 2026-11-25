@@ -1,0 +1,6 @@
+- **`method="nearest"` for nearest rank.** It rounds the *linear* position `(n - 1)·p/100`, a different rule: for `[10, 20, 30, 40]` at `p = 50` it gives 30 while nearest rank gives 20, and at `p = 25` it gives 20 while nearest rank gives 10.
+- **`method="lower"`.** Also built on the linear position; for `[10, 20, 30, 40]` at `p = 30`, `lower` gives 10 and nearest rank gives 20.
+- **Trusting `weibull` at the extremes.** It clamps instead of raising, so `p = 10` of five values silently returns the minimum.
+- **Returning a NumPy scalar** (`np.float64`) instead of a `float`.
+- **Sorting the input list in place** (`x.sort()` on the caller's list).
+- **Checking the method name after computing**, so a typo crashes inside NumPy with a message about NumPy's names, not yours.

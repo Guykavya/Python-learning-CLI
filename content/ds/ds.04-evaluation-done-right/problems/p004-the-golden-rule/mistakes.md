@@ -1,0 +1,3 @@
+- Marking step 5 as a leak because it touches the test set: applying is not learning.
+- Marking step 1 as a leak: splitting itself learns nothing.
+- Forgetting that oversampling counts as learning from data (it uses the labels to choose which rows to copy).

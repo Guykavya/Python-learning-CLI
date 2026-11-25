@@ -1,0 +1,3 @@
+- `ddof=0` variances: d comes out slightly too large.
+- Averaging the two standard deviations without weights.
+- Dividing by the standard error: d is in units of spread, not of standard error.

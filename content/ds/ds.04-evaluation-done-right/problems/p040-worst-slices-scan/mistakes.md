@@ -1,0 +1,4 @@
+- Forgetting `min_rows`: a group of 5 rows with an unlucky outcome tops the list.
+- Comparing slices of different sizes without showing the size.
+- Using `frame.index` labels as positions.
+- Treating every slice in the top list as a real problem: with many slices, some look bad by chance.

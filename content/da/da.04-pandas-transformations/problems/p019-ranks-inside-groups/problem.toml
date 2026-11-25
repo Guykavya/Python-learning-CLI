@@ -1,0 +1,6 @@
+id = "da.04.p019"
+title = "Ranks inside groups"
+tier = "applied"
+kind = "trace"
+topics = ["groupby", "rank", "ties", "dense", "min", "first", "trace"]
+minutes = 20

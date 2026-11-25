@@ -1,0 +1,7 @@
+id = "da.08.p020"
+title = "Many tests, many false alarms"
+tier = "applied"
+kind = "trace"
+topics = ["multiple testing", "false positives", "Bonferroni", "family-wise error", "trace"]
+minutes = 15
+assessment = "trace"

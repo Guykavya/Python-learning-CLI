@@ -1,0 +1,6 @@
+id = "da.10.p013"
+title = "Season and the base year"
+tier = "applied"
+kind = "code"
+topics = ["seasonality", "year over year", "PeriodIndex", "alignment"]
+minutes = 20

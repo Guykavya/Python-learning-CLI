@@ -1,0 +1,7 @@
+created_at: usable
+last_login: usable
+support_calls_30d: usable
+plan_change: usable
+refund_issued: future
+cancelled_at: future
+4 usable of 6

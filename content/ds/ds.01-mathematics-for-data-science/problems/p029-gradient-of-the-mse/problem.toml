@@ -1,0 +1,6 @@
+id = "ds.01.p029"
+title = "Gradient of the MSE"
+tier = "applied"
+kind = "code"
+topics = ["mean squared error", "gradient", "linear regression", "matrix form"]
+minutes = 25

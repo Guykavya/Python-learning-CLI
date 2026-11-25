@@ -1,0 +1,6 @@
+id = "ds.02.p004"
+title = "Standard errors by hand"
+tier = "applied"
+kind = "code"
+topics = ["standard error", "residual variance", "degrees of freedom", "OLS"]
+minutes = 25

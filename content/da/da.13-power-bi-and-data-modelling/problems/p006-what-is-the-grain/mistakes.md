@@ -1,0 +1,4 @@
+- Answering `3` for `len(flat)`: the merge keeps the grain of `lines`, six rows.
+- Adding the freight once per order in the flat table: it is added once per **line**.
+- Printing `1.7` or `1.667`: the round is to 2 decimals.
+- Treating 100 as correct because "the merge is right": the merge is right, the sum of an order-level column over line-level rows is wrong.

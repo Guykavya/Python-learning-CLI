@@ -1,0 +1,6 @@
+id = "ds.01.p035"
+title = "Fit a regression by descent"
+tier = "applied"
+kind = "code"
+topics = ["linear regression", "gradient descent", "intercept", "least squares"]
+minutes = 35

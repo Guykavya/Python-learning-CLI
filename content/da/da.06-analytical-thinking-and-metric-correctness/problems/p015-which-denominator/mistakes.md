@@ -1,0 +1,5 @@
+- **`<= end`.** A job created exactly at the end belongs to the next period; the half-open end excludes it.
+- **Dividing by `len(jobs)`.** The denominator is the cohort, not the whole table.
+- **Treating `pending` as decided.** A pending job has no outcome yet.
+- **Dividing by zero.** An empty cohort must give `None`, not a crash or `nan`.
+- **Calling "started" the best denominator because it is highest.** It hides every cancellation; a high number is not a better one.

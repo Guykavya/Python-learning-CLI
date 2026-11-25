@@ -1,0 +1,4 @@
+- Writing NumPy scalars: openpyxl may reject them; convert with `.item()`.
+- Writing `NaN` as a value: use an empty cell.
+- Formatting the header cells with the number format of the column.
+- Setting `freeze_panes = "A1"`: that freezes nothing; the header is row 1, so freeze at `A2`.

@@ -1,0 +1,6 @@
+id = "da.01.p014"
+title = "Which centre minimises which loss?"
+tier = "deep"
+kind = "code"
+topics = ["loss functions", "mean", "median", "squared error", "absolute error", "optimisation"]
+minutes = 40

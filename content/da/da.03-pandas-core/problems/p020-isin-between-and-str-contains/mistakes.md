@@ -1,0 +1,4 @@
+- **`price > lo & price < hi`.** Wrong parentheses, and it excludes the ends. `between` includes them.
+- **`str.contains(word)` alone.** It is case-sensitive, a missing name gives a missing value (filter error or `ValueError`), and `c++` is read as a regex.
+- **`df["name"] == word`.** That is equality, not "contains".
+- **`na=True`.** It would let the rows with a missing name through.

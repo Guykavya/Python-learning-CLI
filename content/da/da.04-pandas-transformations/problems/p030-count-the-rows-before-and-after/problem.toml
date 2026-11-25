@@ -1,0 +1,7 @@
+id = "da.04.p030"
+title = "Count the rows before and after"
+tier = "deep"
+kind = "explain"
+topics = ["merge", "row count", "grain", "validate", "indicator", "fan-out", "explain"]
+minutes = 35
+assessment = "explain"

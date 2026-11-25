@@ -1,0 +1,5 @@
+- **A denominator that does not contain the numerator.** A rate of "completed in February" over "created in February" mixes two groups of jobs.
+- **Leaving the time zone out.** The month changes for jobs created in the last hours of UTC; the sets differ even when the sizes agree.
+- **`<= end of month` instead of half-open.** A closed end loses or double counts the boundary timestamp.
+- **Counting pending jobs as not completed.** The newest cohort looks bad only because it is not finished.
+- **No owner or version.** When the definition changes the old and new series are different metrics.

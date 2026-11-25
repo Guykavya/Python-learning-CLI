@@ -1,0 +1,3 @@
+- Averaging the bin gaps without weights.
+- Using the squared gap (that is a different measure).
+- Counting empty bins as gaps of 0 with weight 0 is fine, but dividing by the number of bins is not.

@@ -1,0 +1,5 @@
+- **Reading `"2025-02-28"` as "the whole day".** In a comparison it is midnight at the start of the day.
+- **Thinking `between` excludes its end.** It includes both ends (pass `inclusive="left"` for a half-open period).
+- **Forgetting the seconds in the `strftime` line.** `%S` prints `59`, not `59.5`.
+- **Counting the first instant of March as February in the last line.** With a closed interval it is counted.
+- **Writing `True`/`False` without brackets or spaces.** `tolist()` prints `[True, True, ...]` with `, ` between items.

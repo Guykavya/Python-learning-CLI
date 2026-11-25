@@ -1,0 +1,6 @@
+id = "ds.01.p046"
+title = "Binomial and Poisson pmfs"
+tier = "drill"
+kind = "code"
+topics = ["binomial", "Poisson", "pmf", "log-space", "overflow"]
+minutes = 25

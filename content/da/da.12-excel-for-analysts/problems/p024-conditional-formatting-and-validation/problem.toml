@@ -1,0 +1,6 @@
+id = "da.12.p024"
+title = "Conditional formatting and validation"
+tier = "applied"
+kind = "code"
+topics = ["conditional formatting", "data validation", "CellIsRule", "dropdown list"]
+minutes = 40

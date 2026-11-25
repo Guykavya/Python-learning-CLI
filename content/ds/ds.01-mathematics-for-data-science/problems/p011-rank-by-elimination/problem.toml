@@ -1,0 +1,6 @@
+id = "ds.01.p011"
+title = "Rank by elimination"
+tier = "challenge"
+kind = "code"
+topics = ["rank", "elimination", "tolerance", "linear independence"]
+minutes = 35

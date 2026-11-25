@@ -1,0 +1,6 @@
+id = "ds.03.p008"
+title = "Why we keep a test set locked"
+tier = "drill"
+kind = "explain"
+topics = ["test set", "optimistic bias", "model selection", "explain"]
+minutes = 20

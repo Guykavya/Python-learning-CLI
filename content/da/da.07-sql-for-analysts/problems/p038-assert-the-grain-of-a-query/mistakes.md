@@ -1,0 +1,5 @@
+- `df.duplicated(subset=key)` without `keep=False`: the first row of each repeated key is not marked, so you under-report.
+- Checking each key column separately: a two-column key can be unique while each column repeats.
+- Checking duplicates before NULLs: two rows with a NULL key look like duplicates and the message is misleading.
+- Printing the whole duplicated table into the message: name only a few keys.
+- Returning `None` on success: the caller then cannot continue with the checked result.

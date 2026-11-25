@@ -1,0 +1,4 @@
+- Reading every file with `read_csv`: Parquet keeps the types (dates stay dates), CSV does not.
+- Swapping the sides of `from` and `to`: the many side comes first.
+- Letting the engine's error through unexplained: name the relationship.
+- Checking the measure names against the model instead of the spec (the spec is what the report was written against).

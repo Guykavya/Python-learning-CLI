@@ -1,0 +1,7 @@
+id = "da.12.p026"
+title = "Generate, do not edit"
+tier = "deep"
+kind = "explain"
+topics = ["openpyxl", "reproducibility", "cached values", "round trip", "explain"]
+minutes = 30
+assessment = "explain"

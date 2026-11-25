@@ -1,0 +1,5 @@
+- **`len(payments["method"])` for "with a method".** `len` counts the missing rows too.
+- **`len(payments["customer_id"].unique())` for distinct customers.** `unique()` keeps the missing value as one entry.
+- **`payments["method"].value_counts().sum()`.** Right number, but a much heavier way to say `count()`.
+- **Returning numpy ints.** The contract is plain `int`.
+- **Calling `nunique` with `dropna=False`.** A missing customer would then count as a customer.

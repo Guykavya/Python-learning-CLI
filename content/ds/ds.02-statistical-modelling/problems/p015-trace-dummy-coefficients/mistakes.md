@@ -1,0 +1,3 @@
+- Adding `0.12` and `-0.10` to Delhi as well: the baseline has no city coefficient.
+- Computing Mumbai minus Pune as `0.12 - 0.10 = 0.02`: subtracting a negative number adds.
+- Printing two decimals where the format asks three (10.450, not 10.45).

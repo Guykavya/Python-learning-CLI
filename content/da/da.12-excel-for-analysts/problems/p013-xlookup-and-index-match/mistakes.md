@@ -1,0 +1,4 @@
+- `MATCH(..., 1)` or leaving the third argument out: approximate match (problem 14).
+- Relative table ranges (`Products!A2:A31`): they slide down when the formula is filled.
+- No "not found" handling: a missing code shows `#N/A` and every SUM below it fails.
+- Using the last row of `Products` from a hard-coded number.

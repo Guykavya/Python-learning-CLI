@@ -1,0 +1,5 @@
+- Grouping the orders by day and applying the window directly: days without orders are missing, so 7 rows can span 12 days.
+- Using `INNER JOIN` between the calendar and the revenue: the empty days vanish again.
+- Forgetting `COALESCE(revenue, 0)`: `NULL` days are skipped by `avg`, which inflates the average.
+- A running total with a `ROWS` frame of 6: the running total has no frame limit.
+- `RANGE` or default frame with the same dates twice: after the calendar each day appears once, so the choice is safe, but write `ROWS` to be explicit.

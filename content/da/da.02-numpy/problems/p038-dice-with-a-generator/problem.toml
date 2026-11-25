@@ -1,0 +1,6 @@
+id = "da.02.p038"
+title = "Dice with a Generator"
+tier = "drill"
+kind = "code"
+topics = ["random", "Generator", "default_rng", "reproducibility", "bincount"]
+minutes = 15

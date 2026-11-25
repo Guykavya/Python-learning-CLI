@@ -1,0 +1,6 @@
+id = "da.09.p037"
+title = "Direct labels instead of a legend"
+tier = "applied"
+kind = "code"
+topics = ["direct labels", "legend", "Line2D", "text", "readability"]
+minutes = 25

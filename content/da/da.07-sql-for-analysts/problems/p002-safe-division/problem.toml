@@ -1,0 +1,6 @@
+id = "da.07.p002"
+title = "Safe division"
+tier = "drill"
+kind = "code"
+topics = ["NULLIF", "division by zero", "rates", "NULL"]
+minutes = 15

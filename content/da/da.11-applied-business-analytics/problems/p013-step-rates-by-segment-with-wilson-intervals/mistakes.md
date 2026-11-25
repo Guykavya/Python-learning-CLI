@@ -1,0 +1,4 @@
+- The normal approximation `p +/- 1.96 se`: it gives limits below 0 or above 100 for small counts.
+- Calling `binomtest(k, 0)`: it raises; handle the empty previous step first.
+- Dividing every step by all sessions of the segment (that is "% of all sessions", not the step rate).
+- Leaving the limits as proportions while the rate is in percent.

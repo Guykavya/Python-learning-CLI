@@ -1,0 +1,6 @@
+id = "ds.01.p033"
+title = "Gradient descent loop"
+tier = "drill"
+kind = "code"
+topics = ["gradient descent", "learning rate", "history", "loop"]
+minutes = 20

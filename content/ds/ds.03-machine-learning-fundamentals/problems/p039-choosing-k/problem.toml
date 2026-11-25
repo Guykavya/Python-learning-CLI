@@ -1,0 +1,6 @@
+id = "ds.03.p039"
+title = "Choosing k"
+tier = "challenge"
+kind = "code"
+topics = ["elbow method", "silhouette score", "k-means", "model selection"]
+minutes = 35

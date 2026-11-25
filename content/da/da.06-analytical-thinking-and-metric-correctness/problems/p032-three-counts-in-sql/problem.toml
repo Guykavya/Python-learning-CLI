@@ -1,0 +1,6 @@
+id = "da.06.p032"
+title = "Three counts in SQL"
+tier = "applied"
+kind = "code"
+topics = ["SQL", "COUNT", "COUNT DISTINCT", "NULL", "sqlite"]
+minutes = 20

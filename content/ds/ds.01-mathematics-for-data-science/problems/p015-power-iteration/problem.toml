@@ -1,0 +1,6 @@
+id = "ds.01.p015"
+title = "Power iteration"
+tier = "drill"
+kind = "code"
+topics = ["eigenvector", "power iteration", "dominant eigenvalue", "seed"]
+minutes = 25

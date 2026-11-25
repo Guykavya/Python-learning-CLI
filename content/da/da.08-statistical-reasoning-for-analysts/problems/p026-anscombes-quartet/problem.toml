@@ -1,0 +1,6 @@
+id = "da.08.p026"
+title = "Anscombe's quartet"
+tier = "applied"
+kind = "code"
+topics = ["Anscombe's quartet", "summary statistics", "residuals", "visual check", "linear fit"]
+minutes = 40

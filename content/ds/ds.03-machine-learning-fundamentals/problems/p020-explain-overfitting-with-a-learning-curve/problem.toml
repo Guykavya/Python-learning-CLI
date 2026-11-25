@@ -1,0 +1,7 @@
+id = "ds.03.p020"
+title = "Explain overfitting with a learning curve"
+tier = "deep"
+kind = "explain"
+topics = ["overfitting", "learning curve", "gap", "diagnosis", "explain"]
+minutes = 30
+assessment = "explain"

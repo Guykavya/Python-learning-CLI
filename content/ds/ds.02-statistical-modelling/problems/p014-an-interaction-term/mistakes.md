@@ -1,0 +1,4 @@
+- Reporting the interaction coefficient alone (0.01) as the slope for masters. It is the *extra* slope; the slope is 0.025 + 0.01.
+- Reading `experience` as the average slope over all groups. With an interaction it is the baseline group's slope.
+- Hard-coding level names: `school` is the baseline, but the other keys should come from the model.
+- Forgetting `import numpy as np` in `solution.py` (the formula's `np.log` fails with a `NameError`).

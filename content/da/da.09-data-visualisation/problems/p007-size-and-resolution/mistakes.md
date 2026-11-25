@@ -1,0 +1,4 @@
+- `bbox_inches="tight"`: crops the whitespace, so the pixel size no longer equals figsize x dpi.
+- Returning the string that came in instead of a `Path`.
+- Writing the file first and raising afterwards (a stray file is left behind).
+- Using `dpi=figsize`: `dpi` is dots per inch, an integer such as 50 or 100.

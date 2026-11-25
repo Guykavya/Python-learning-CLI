@@ -1,0 +1,4 @@
+- Dividing every step by 12 in the second percentage column.
+- Mis-aligning the lines: the format pads the name to 9 characters and the count to 3.
+- Counting the two all-zero sessions as views.
+- Printing 83.3 as 83.33: the format has one decimal.

@@ -1,0 +1,4 @@
+S1: collect more data
+S2: regularise or simplify
+S3: add capacity or features
+S4: stop: near the noise floor

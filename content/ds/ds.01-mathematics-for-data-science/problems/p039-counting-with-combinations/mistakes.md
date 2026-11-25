@@ -1,0 +1,4 @@
+- `math.factorial(n) / math.factorial(k)` and forgetting the `(n - k)!`.
+- `math.comb` raises for `k > n`: check the range first.
+- Dividing by `n` or by `2 * n`.
+- Floating-point `2.0 ** n` for very large `n`: `2 ** n` stays an exact int.

@@ -1,0 +1,4 @@
+- Looping `sims` times in Python with 4,000-row experiments: it works but is slow; vectorise.
+- Using the global `np.random`: not reproducible.
+- Dividing by zero when no successes appear in either group.
+- Reading the power as the p-value: it is a property of the design, not of one result.

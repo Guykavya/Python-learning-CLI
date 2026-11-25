@@ -1,0 +1,4 @@
+- Leaving the formula and sorting the Products table: it works until someone adds a row at the bottom.
+- `IFERROR(VLOOKUP(...), 0)`: a missing code then looks like a free product.
+- Writing `TRUE` or no fourth argument "because it is faster".
+- Checking only the first few rows: the wrong rows are the ones the sort order skipped.

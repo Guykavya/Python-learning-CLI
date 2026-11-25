@@ -1,0 +1,6 @@
+- **`astype("float32")` on every float column**: `315.76` becomes `315.760009765625`; values must stay equal.
+- **Making every text column a category**: an id column with one value per row gets *bigger*.
+- **`downcast="unsigned"`**: the statement asks for the smallest *signed* type (negative values would fail otherwise).
+- **Comparing with `==` and missing values**: `NaN == NaN` is `False`; use `equals`.
+- **Changing `df` in place** instead of a copy.
+- **Touching booleans**: `bool` is already one byte; converting them to integers makes them numbers.

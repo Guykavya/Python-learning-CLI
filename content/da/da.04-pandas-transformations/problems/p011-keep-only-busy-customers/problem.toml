@@ -1,0 +1,6 @@
+id = "da.04.p011"
+title = "Keep only busy customers"
+tier = "drill"
+kind = "code"
+topics = ["groupby", "filter", "transform", "size", "empty result"]
+minutes = 15

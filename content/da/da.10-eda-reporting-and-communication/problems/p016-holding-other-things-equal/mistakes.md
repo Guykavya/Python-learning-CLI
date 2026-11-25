@@ -1,0 +1,4 @@
+- Fitting `churn ~ late` alone: that is the naive estimate with a longer name.
+- Reporting the coefficient (a log odds ratio) instead of `exp(coefficient)`.
+- Exponentiating the standard error instead of the interval limits.
+- Thinking the adjusted estimate is "the causal effect" in general: it only removes the confounders that are in the model.

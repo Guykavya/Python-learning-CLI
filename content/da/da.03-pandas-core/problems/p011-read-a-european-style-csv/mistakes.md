@@ -1,0 +1,5 @@
+- **Default separator.** Without `sep=";"` the whole line becomes one column.
+- **`decimal=","` alone.** `1.250,50` then has a thousands dot and stays text. Both `decimal` and `thousands` are needed.
+- **Forgetting `na_values`.** The `-` makes `qty` and `price` text columns.
+- **`dayfirst` omitted.** `05.03.2024` may be read as 3 May. State the format.
+- **Converting afterwards with `.str.replace`.** It works but is slower and easy to get wrong; the arguments exist for this.

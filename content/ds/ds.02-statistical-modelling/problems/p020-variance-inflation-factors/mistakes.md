@@ -1,0 +1,4 @@
+- Regressing without an intercept in the auxiliary fits: the VIF is then wrong when columns have non-zero means.
+- Including the response variable among the "other" predictors.
+- Forgetting the single-predictor case (division by an empty regression).
+- Returning the table in input order instead of largest first.

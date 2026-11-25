@@ -1,0 +1,6 @@
+id = "ds.02.p008"
+title = "What does each summary line mean?"
+tier = "drill"
+kind = "explain"
+topics = ["summary", "R-squared", "F-statistic", "Durbin-Watson", "Jarque-Bera", "explain"]
+minutes = 25

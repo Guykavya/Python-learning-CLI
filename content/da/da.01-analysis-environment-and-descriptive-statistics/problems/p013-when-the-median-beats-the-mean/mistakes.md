@@ -1,0 +1,5 @@
+- **"The mean is wrong."** It is correct for total divided by headcount; it is the wrong answer to "what does a typical household have?".
+- **Removing the outlier as if it were an error.** The business owner is real; the median simply does not let one value decide.
+- **Giving the numbers without the reason.** The question asks *why*, so name skew and the pull of the outlier.
+- **Forgetting the even-count rule** (ten values: average the 5th and 6th) and giving 24,000 or 25,000.
+- **Saying the median is always better.** For totals (tax revenue, a payroll budget) the mean is the number you need.

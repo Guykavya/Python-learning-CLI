@@ -1,0 +1,4 @@
+- Passing the shares as `f_exp`: chi-square needs expected **counts**.
+- A threshold of 0.05: with many tests running, you would stop far too often.
+- Ignoring the check because "the difference is only 7%": that is exactly what a broken assignment looks like.
+- Returning NumPy floats.

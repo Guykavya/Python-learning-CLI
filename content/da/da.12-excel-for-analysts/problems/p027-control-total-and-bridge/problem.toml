@@ -1,0 +1,6 @@
+id = "da.12.p027"
+title = "Control total and bridge"
+tier = "challenge"
+kind = "code"
+topics = ["reconciliation", "control total", "bridge", "data cleaning", "SUMIFS"]
+minutes = 50

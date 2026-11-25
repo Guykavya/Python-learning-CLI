@@ -1,0 +1,6 @@
+id = "ds.04.p004"
+title = "The golden rule"
+tier = "drill"
+kind = "trace"
+topics = ["golden rule", "fit on train only", "preprocessing leakage", "trace"]
+minutes = 15

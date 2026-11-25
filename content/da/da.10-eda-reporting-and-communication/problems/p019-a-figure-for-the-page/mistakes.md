@@ -1,0 +1,4 @@
+- Keeping "observed rise (model)" as a bar: it is the total, not a cause.
+- Passing the interval limits as `xerr`: `xerr` takes distances from the estimate.
+- Sorting descending: the largest cause ends up at the bottom.
+- Typing "late deliveries" into the title: take the name from the data.

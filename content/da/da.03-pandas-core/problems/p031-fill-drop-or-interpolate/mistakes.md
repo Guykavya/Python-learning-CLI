@@ -1,0 +1,5 @@
+- **`fillna(method="ffill")`**: the `method` argument was removed in pandas 3; call `ffill()`.
+- **Filling with the mean of the filled column**: use the median of the *known* values; `s.median()` already skips gaps.
+- **`inplace=True`** (or assigning into `s`): the caller's Series must stay unchanged.
+- **Resetting the index after `dropna`**: the surviving rows keep their labels, so the result can be matched to the original.
+- **Returning `None`** for an unknown word instead of raising `ValueError`.

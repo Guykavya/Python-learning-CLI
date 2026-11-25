@@ -1,0 +1,4 @@
+- Using `X.T * X`: that is element-wise and shape-wrong. Use `@`.
+- Computing `np.linalg.inv(X.T @ X) @ X.T @ y`. It gives the same answer on easy data but is slower and less accurate.
+- Adding a column of ones again inside the function: the problem says `X` already has it.
+- Returning a column matrix instead of a 1-D array.

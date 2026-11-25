@@ -1,0 +1,3 @@
+- Writing SE = 5.00 for n = 25 (dividing by `n` instead of `sqrt(n)`).
+- Losing the padding: `n =   25` has two extra spaces before 25 because of `:4d`.
+- Forgetting the last line, or writing 4.0 (integer division prints `4`).

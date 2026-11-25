@@ -1,0 +1,6 @@
+id = "da.02.p013"
+title = "Split into batches"
+tier = "applied"
+kind = "code"
+topics = ["slicing", "views", "splitting", "batches", "ValueError"]
+minutes = 20

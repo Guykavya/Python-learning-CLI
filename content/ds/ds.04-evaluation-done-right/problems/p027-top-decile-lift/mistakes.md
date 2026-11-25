@@ -1,0 +1,3 @@
+- Taking the top 10% of the **sorted labels** instead of the labels of the top scores.
+- Using `k = 10` (10 rows) instead of 10% of 20 rows.
+- Printing the lift with three decimals (the format asks two).

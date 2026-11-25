@@ -1,0 +1,5 @@
+- Adding the daily counts to get WAU/MAU: users active on several days are counted several times.
+- Off-by-one windows: "7 days ending on D" is `D - 6 ... D`, not `D - 7 ... D`.
+- Counting `view_course` events as activity: only logins count.
+- An inner join to the logins: a day with an empty 30-day window disappears instead of showing zeros.
+- Not de-duplicating to (user, day) first: it does not change a distinct count, but it makes the join much bigger.

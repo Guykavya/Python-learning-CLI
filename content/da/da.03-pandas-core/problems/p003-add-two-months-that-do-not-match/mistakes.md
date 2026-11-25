@@ -1,0 +1,5 @@
+- **`a + b`.** Labels present in one month only become `NaN`, which is wrong for "units sold" (it was 0 units).
+- **`a.add(b, fill_value=0)` and stop.** The sum is correct but the dtype is `float64` (5.0, not 5).
+- **`.fillna(0)` after `a + b`.** Also loses the number: a product sold 5 units in January only would come out as 0.
+- **`a.values + b.values`.** Adds by position and ignores the labels; wrong unless the labels happen to match and the lengths agree.
+- **Forgetting `sort_index()`.** The union of labels is in an order you did not choose.

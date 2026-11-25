@@ -1,0 +1,6 @@
+id = "da.11.p006"
+title = "Revenue per visitor with a bootstrap"
+tier = "applied"
+kind = "code"
+topics = ["bootstrap", "revenue per visitor", "zero-inflated data", "confidence interval"]
+minutes = 30

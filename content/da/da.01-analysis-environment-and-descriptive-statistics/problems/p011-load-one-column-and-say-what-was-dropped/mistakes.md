@@ -1,0 +1,6 @@
+- **Parsing before the duplicate check.** A duplicate of a bad row should be counted once as a duplicate, not as a second bad row.
+- **Dropping rows without counting them.** The report is the point of the function.
+- **Returning only the keys that occurred.** The report always has all four keys.
+- **`KeyError` raised late** (after reading rows) or with a message other than the column name.
+- **Opening the file without `newline=""`** (quoted fields that contain line breaks break) or without `encoding="utf-8"` (the result then depends on the machine).
+- **Treating missing as `0`.** That moves the mean.

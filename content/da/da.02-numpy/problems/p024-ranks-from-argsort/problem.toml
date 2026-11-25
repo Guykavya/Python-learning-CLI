@@ -1,0 +1,6 @@
+id = "da.02.p024"
+title = "Ranks from argsort"
+tier = "drill"
+kind = "code"
+topics = ["argsort", "ranking", "stable sort", "ties", "fancy indexing"]
+minutes = 20

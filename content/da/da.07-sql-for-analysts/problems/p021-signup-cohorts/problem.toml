@@ -1,0 +1,6 @@
+id = "da.07.p021"
+title = "Signup cohorts"
+tier = "drill"
+kind = "code"
+topics = ["cohort", "date_trunc", "cohort size", "grain"]
+minutes = 15

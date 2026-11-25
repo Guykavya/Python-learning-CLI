@@ -1,0 +1,4 @@
+- Saying "R-squared 0.866 means the model is 86.6% accurate". It means 86.6% of the variance of the scores is explained by hours, which is not accuracy.
+- Reading the p-value as "the probability that the slope is zero". It is the probability of data this extreme if the true slope were zero.
+- Treating Durbin-Watson as meaningful when the rows have no natural order.
+- Reading "P>|t| 0.000" as exactly zero; it is smaller than 0.0005.

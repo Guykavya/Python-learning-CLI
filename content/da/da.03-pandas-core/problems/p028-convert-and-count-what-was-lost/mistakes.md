@@ -1,0 +1,5 @@
+- **`errors="coerce"` and nothing else.** The bad texts vanish without a trace.
+- **Reporting every `NaN`.** The empty and missing inputs would be listed as bad values.
+- **Not stripping.** `" 3.5 "` is a number; reporting it as bad would send the data owner to fix nothing.
+- **Returning a sorted list with repeats.** Use `unique()`: a value that appears 100 times is listed once.
+- **`numbers` as `object`.** Convert to `float64` so later arithmetic works.

@@ -1,0 +1,5 @@
+- **Strides in elements instead of bytes.** NumPy counts bytes: `(3, 1)` is wrong for `a`, `(24, 8)` is right.
+- **Recomputing `t`'s strides with the C rule.** The transpose is a view; its strides are `a`'s strides reversed, `(8, 24)`, not `(16, 8)`.
+- **Giving `s` the strides `(16, 8)`.** `s` is a view that skips every other column: the column stride doubles to 16 and the row stride stays 24.
+- **`size` of `c` as 9 (2 + 3 + 4).** Size is the product: 2 × 3 × 4 = 24.
+- **Writing `(5)` for a 1-tuple, or brackets for a shape.** Shapes and strides print as tuples: `(2, 3)`.

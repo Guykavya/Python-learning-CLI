@@ -1,0 +1,4 @@
+- Changing `df` in place: the caller's table must stay as it was.
+- `astype(int)` on a column with `NaN`: it raises; keep a float column when a value failed to convert.
+- Forgetting that `filter_blanks` also drops empty strings, not only `NaN`.
+- Using `regex=True` in `replace`: a `.` or `$` in the text would be a pattern.

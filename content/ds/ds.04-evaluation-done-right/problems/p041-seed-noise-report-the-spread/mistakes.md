@@ -1,0 +1,3 @@
+- Using `ddof=0` (population std) for a small number of runs.
+- Reporting only the best seed.
+- Accepting a single seed, which has no spread to report.

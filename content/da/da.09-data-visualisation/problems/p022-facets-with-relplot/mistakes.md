@@ -1,0 +1,4 @@
+- Returning `g.fig` (a Figure) instead of the `FacetGrid`.
+- `sharey=False`: each panel gets its own scale, so a small store looks as big as a large one.
+- Leaving the default titles `store = A`.
+- Using `hue="store"` instead of `col="store"`: all lines land in one panel.

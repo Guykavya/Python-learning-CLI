@@ -1,0 +1,6 @@
+id = "da.03.p040"
+title = "Day first or month first?"
+tier = "drill"
+kind = "explain"
+topics = ["dates", "ambiguous formats", "to_datetime", "dayfirst", "explain"]
+minutes = 20

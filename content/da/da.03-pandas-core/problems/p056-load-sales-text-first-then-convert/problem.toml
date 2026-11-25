@@ -1,0 +1,6 @@
+id = "da.03.p056"
+title = "load_sales: text first, then convert"
+tier = "challenge"
+kind = "code"
+topics = ["read_csv dtype=str", "to_numeric", "to_datetime", "boolean", "Int64", "audit", "toolkit"]
+minutes = 60

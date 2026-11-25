@@ -1,0 +1,6 @@
+id = "da.02.p017"
+title = "Border and inside"
+tier = "drill"
+kind = "code"
+topics = ["slicing", "negative steps", "concatenate", "2-D indexing", "edge cases"]
+minutes = 25

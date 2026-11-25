@@ -1,0 +1,6 @@
+id = "da.04.p015"
+title = "Days since the previous order"
+tier = "applied"
+kind = "code"
+topics = ["groupby", "diff", "shift", "timedelta", "dt.days"]
+minutes = 25

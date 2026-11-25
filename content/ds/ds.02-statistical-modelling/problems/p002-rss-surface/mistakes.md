@@ -1,0 +1,3 @@
+- Forgetting to square the gaps, so negative and positive gaps cancel.
+- Writing `6` instead of `6.00`: the format asks for two decimals.
+- Printing the best line as `b0=0.5, b1=1.4` with the wrong tuple order; the tuple is `(r, b0, b1)`.

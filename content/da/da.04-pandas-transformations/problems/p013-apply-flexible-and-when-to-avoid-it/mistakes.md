@@ -1,0 +1,4 @@
+- **"`apply` is vectorised because it is a pandas method."** It is a Python loop over groups in disguise.
+- **Blaming the number of rows.** The extra cost comes from the number of **groups**; a few big groups are cheap.
+- **Replacing the z-score lambda with `agg`.** `agg` returns one row per group; the z-score needs `transform`.
+- **Rewriting code for speed without measuring or comparing results.** Faster and wrong is worse than slow and right.

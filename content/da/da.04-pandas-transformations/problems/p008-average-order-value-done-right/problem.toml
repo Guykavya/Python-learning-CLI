@@ -1,0 +1,6 @@
+id = "da.04.p008"
+title = "Average order value done right"
+tier = "deep"
+kind = "code"
+topics = ["groupby", "named aggregation", "nunique", "average of averages", "weights"]
+minutes = 30

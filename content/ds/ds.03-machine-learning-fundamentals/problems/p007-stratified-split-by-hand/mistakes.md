@@ -1,0 +1,4 @@
+- Splitting the whole array at random and hoping the classes balance: with 3 rows of a class the test set can easily get 0.
+- Using a new `default_rng(seed)` for each class: every class then picks the same relative positions.
+- Returning unsorted index arrays.
+- Putting a class with 3 rows entirely in training (test share 0) because `round(0.6) = 1` was not clamped, or entirely in test.

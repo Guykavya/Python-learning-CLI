@@ -1,0 +1,6 @@
+id = "da.12.p020"
+title = "Power Query steps in pandas"
+tier = "applied"
+kind = "code"
+topics = ["Power Query", "data cleaning steps", "melt", "groupby", "pipeline"]
+minutes = 45

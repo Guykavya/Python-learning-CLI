@@ -1,0 +1,6 @@
+id = "ds.01.p026"
+title = "Gradient of a two-input function"
+tier = "drill"
+kind = "code"
+topics = ["partial derivatives", "gradient", "numerical check"]
+minutes = 15

@@ -1,0 +1,6 @@
+id = "da.12.p009"
+title = "One SUMIFS formula for the whole grid"
+tier = "applied"
+kind = "code"
+topics = ["SUMIFS", "mixed references", "report grid", "pivot comparison"]
+minutes = 40

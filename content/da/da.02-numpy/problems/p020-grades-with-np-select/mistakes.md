@@ -1,0 +1,5 @@
+- **Conditions in the wrong order** (`s >= 40` first): every score of 40 or more becomes `"D"`.
+- **`>` instead of `>=`.** Exactly 90 becomes a B.
+- **Forgetting `nan`.** It fails every comparison and silently becomes `"F"`: an absent student fails.
+- **`grades = np.full(shape, "F")` and then `grades[np.isnan(s)] = "missing"`.** The array is `<U1`, so it stores `"m"` (Ch. 4.7).
+- **`scores == np.nan`.** Always `False`; use `np.isnan`.

@@ -1,0 +1,5 @@
+- **`pct_change()` on the whole column.** S2's first month is compared with S1's last month.
+- **Leaving `inf` in the column.** Any mean or chart of the growth becomes `inf` or breaks.
+- **Filling missing growth with 0.** "No previous month" is not "no change".
+- **Forgetting `× 100`.** `pct_change` returns a fraction (0.5), not a percentage (50).
+- **Not sorting.** The input comes in any order; growth then compares random months.

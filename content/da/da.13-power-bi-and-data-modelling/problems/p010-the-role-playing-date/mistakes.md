@@ -1,0 +1,4 @@
+- Writing `USERELATIONSHIP` outside `CALCULATE`: it only works as a filter argument.
+- Swapping or misspelling the columns: the relationship must exist in the model.
+- Making the ship-date relationship active in the model: then `[Revenue]` would change too.
+- Comparing with pandas by order year: the measure follows the ship date.

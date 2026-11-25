@@ -1,0 +1,5 @@
+- Computing the grand total with a separate subquery over `orders` without the join to `users`: if some orders have no user the total differs.
+- Dividing integers in an engine that truncates: keep `* 1.0`.
+- Using `sum(share) OVER (ORDER BY revenue DESC)` without `ROWS`: tied rows get the same cumulative value.
+- Sorting ascending: the cumulative share then starts with the smallest groups, which is not a Pareto view.
+- Putting `ORDER BY` only in the window and not at the end of the query: the rows are not guaranteed to come back sorted.

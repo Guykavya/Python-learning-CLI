@@ -1,0 +1,6 @@
+id = "ds.01.p010"
+title = "Detect a singular system"
+tier = "deep"
+kind = "code"
+topics = ["singular matrix", "pivot tolerance", "error handling", "rank deficiency"]
+minutes = 25

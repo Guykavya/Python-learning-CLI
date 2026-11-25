@@ -1,0 +1,6 @@
+- **`values.sort()` instead of `sorted(values)`.** It reorders the caller's list.
+- **Using `len(s) / 2` as an index.** It is a float; use `//`.
+- **Even length: averaging the wrong pair** (`s[mid]` and `s[mid + 1]`).
+- **Returning only the first mode** when several tie.
+- **Returning the count instead of the value** (`max(counts)` is the largest *value*, not the most frequent).
+- **Letting an empty list give `ZeroDivisionError` or `IndexError`.** Raise the clear `ValueError`.

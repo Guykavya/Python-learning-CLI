@@ -1,0 +1,5 @@
+- Using `signup_at + INTERVAL N DAY` as a timestamp and comparing it with the login time: day N is a whole **date**, not a moment.
+- Counting all users in the denominator: users whose day 30 is in the future cannot have retained yet.
+- Joining `events` to `users` and counting rows: a user with two logins on day N counts twice.
+- Dropping the N with no eligible users instead of returning `NULL` (the left join from the list of N keeps them).
+- Counting a login on day 0 or day N+1: the date must be exactly `signup date + N`.

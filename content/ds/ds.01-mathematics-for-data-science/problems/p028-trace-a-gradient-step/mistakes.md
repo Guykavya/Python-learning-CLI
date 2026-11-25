@@ -1,0 +1,3 @@
+- Adding `lr * grad` instead of subtracting it (that climbs the hill).
+- Using the old `w` for the printed `f`.
+- Printing 1.0800 as 1.08: the format has four decimals.

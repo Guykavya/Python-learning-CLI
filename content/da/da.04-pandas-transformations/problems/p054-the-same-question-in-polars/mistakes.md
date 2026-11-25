@@ -1,0 +1,5 @@
+- **Writing pandas inside Polars.** `items.groupby(...)` and `agg(revenue=("revenue", "sum"))` do not exist in Polars; use `group_by` and expressions.
+- **`pl.len()` or `count()` for orders.** They count lines; an order with two lines would count twice.
+- **No sort.** Polars returns groups in no fixed order; the test may pass once and fail the next run.
+- **Sorting by revenue only.** Ties then come out in any order.
+- **Converting to pandas inside the function.** It works, but it is not the exercise, and on big data the conversion is the slow part.

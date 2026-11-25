@@ -1,0 +1,4 @@
+- **`loc["b":"d"]` with 2 rows.** The label slice includes `d`.
+- **`iloc[1:3]` with 3 rows.** The position slice stops before 3.
+- **Mixing up the comma.** In `df.loc[:, "x":"z"]` the first part is rows, the second is columns.
+- **Printing the columns for a row slice** (or the other way round): rows slices print `r.index`, column slices print `r.columns` in this program.

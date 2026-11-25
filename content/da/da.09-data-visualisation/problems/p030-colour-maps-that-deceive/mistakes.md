@@ -1,0 +1,4 @@
+- Including the alpha column in the dot product: the colour map returns RGBA, use `[:, :3]`.
+- Checking only that the end is lighter than the start: `jet` also ends dark.
+- Counting every wiggle of the differences as a direction change when the profile is flat: use the signs, and the maps here have none.
+- Returning a NumPy `bool_` instead of a Python bool.

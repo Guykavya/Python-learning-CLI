@@ -1,0 +1,4 @@
+- Calling `np.random.choice` (global state): two runs with the same seed give different results.
+- Sampling with replacement by accident: the spread then matches `sigma / sqrt(n)` slightly differently for small populations.
+- Returning the samples instead of their means.
+- Creating a new `default_rng()` inside the function: the caller's seed is ignored.

@@ -1,0 +1,5 @@
+- Shuffling only once, before the loop.
+- Dividing by `batch` for the last, smaller chunk instead of its real size.
+- Creating the random generator inside the epoch loop (every epoch then shuffles the same way).
+- Sampling with replacement by accident (`rng.integers`) instead of a permutation.
+- Using the global `np.random` so the result is not reproducible.

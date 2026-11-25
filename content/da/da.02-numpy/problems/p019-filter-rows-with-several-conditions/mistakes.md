@@ -1,0 +1,6 @@
+- **`values >= lo & values <= hi`.** `&` binds tighter than comparisons; Python reads it as a chained comparison and raises "truth value ... is ambiguous" (on a float table, `lo & values` fails first with a `TypeError` about `bitwise_and`). Bracket each comparison.
+- **`and` / `or` / `not`.** They ask for one truth value of a whole array; use `&`, `|`, `~`.
+- **`>` and `<` for "between".** The bounds are included: `>=` and `<=`.
+- **`table[:, keep]`.** That selects columns; the mask has one entry per row, so it goes first: `table[keep]`.
+- **`np.array([row for row in table if ...])`.** An empty result becomes shape `(0,)`, losing the columns, and it loops in Python.
+- **`== 1` for the flag.** The task says "not 0"; a flag of 2 or −1 is set too.

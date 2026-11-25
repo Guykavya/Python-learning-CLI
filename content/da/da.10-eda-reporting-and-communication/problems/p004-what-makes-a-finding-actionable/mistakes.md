@@ -1,0 +1,4 @@
+- Explaining the template as a matter of style ("it looks professional") instead of decisions.
+- Saying limitations weaken a finding: stating them yourself is what makes it trusted.
+- Giving the impact in odds ratios or p-values: a manager needs customers, money, time.
+- Forgetting the success measure: without it nobody can tell whether the action worked.

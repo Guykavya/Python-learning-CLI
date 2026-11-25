@@ -1,0 +1,5 @@
+- Giving the tied rows different `rank` values: `rank` gives equal values to ties.
+- Forgetting the gap: after two rows of rank 1 the next `rank` is 3, not 2 (that is `dense_rank`).
+- Splitting `ntile(2)` by the amount value instead of by position: it cuts the ordered rows into two groups by count.
+- Writing the rows in the original table order instead of the printed order (the outer `ORDER BY`).
+- Forgetting the last line.

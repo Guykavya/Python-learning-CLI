@@ -1,0 +1,5 @@
+- **Saying `job_id` is still a key after the merge.** It was the key of `jobs`; the merged table has the grain of `items`.
+- **Believing `(city, item)` is unique** because it looks like a description. Two jobs in one city can both have a labour line.
+- **Reading the Pune quote as 1,400.** The `groupby` sums the repeated `quote_total` once per line.
+- **Printing `np.bool_` as `True`/`False` in a different case.** Python prints `True` and `False` with capital letters.
+- **Forgetting that `[1, 5]` is in `city` order.** `groupby` sorts the groups: Delhi before Pune.

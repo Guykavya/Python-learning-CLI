@@ -1,0 +1,6 @@
+id = "ds.03.p017"
+title = "Read four learning curves"
+tier = "drill"
+kind = "trace"
+topics = ["learning curve", "diagnosis", "decision rule", "trace"]
+minutes = 20

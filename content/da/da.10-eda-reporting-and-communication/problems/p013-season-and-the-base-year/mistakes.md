@@ -1,0 +1,4 @@
+- `series.diff(1)`: month on month, the season is still in it.
+- `series.shift(12)` without `freq`: a missing month shifts every later comparison by one.
+- Dividing instead of subtracting: the problem asks for the difference in points.
+- Filling the first year with 0: there is no comparison, so `NaN`.

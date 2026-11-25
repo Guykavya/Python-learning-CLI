@@ -1,0 +1,6 @@
+id = "da.07.p017"
+title = "A complete calendar"
+tier = "drill"
+kind = "code"
+topics = ["generate_series", "calendar", "date spine", "LEFT JOIN", "zero rows"]
+minutes = 20

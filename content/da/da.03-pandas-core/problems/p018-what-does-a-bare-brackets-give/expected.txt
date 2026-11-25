@@ -1,0 +1,4 @@
+Series (4,)
+DataFrame (4, 1)
+DataFrame (2, 2)
+DataFrame (3, 2)

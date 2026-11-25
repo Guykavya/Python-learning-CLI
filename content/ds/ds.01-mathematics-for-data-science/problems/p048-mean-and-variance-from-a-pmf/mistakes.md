@@ -1,0 +1,4 @@
+- Averaging the values without the weights.
+- Dividing the variance by `n` or `n - 1`: a pmf already holds the weights.
+- Not validating the probabilities, so wrong inputs give silent nonsense.
+- Using `E[X^2] - mean^2` with rounding trouble when the mean is large (the direct formula is fine).

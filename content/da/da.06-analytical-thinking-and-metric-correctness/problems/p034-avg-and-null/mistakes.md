@@ -1,0 +1,6 @@
+- **`AVG(COALESCE(rating, 0))`.** A missing rating becomes a 0 and drags the average down (Asha: 5.0 becomes 1.67).
+- **`SUM(rating) / COUNT(*)`.** The denominator counts the unrated visits too: the same mistake in disguise.
+- **`COALESCE(AVG(rating), 0)` for the nobody-rated technician.** "Nobody rated" is not "everyone gave 0".
+- **Forgetting the `rated` column.** Without it a reader cannot tell Asha's one rating from a hundred.
+- **Integer division.** `SUM(rating) / COUNT(rating)` is an integer in SQLite; `AVG` already returns a real number.
+- **Not sorting.** The test compares rows in order; add `ORDER BY technician`.

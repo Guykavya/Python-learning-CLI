@@ -1,0 +1,6 @@
+id = "da.13.p002"
+title = "Split a flat export into a star"
+tier = "applied"
+kind = "code"
+topics = ["star schema", "surrogate keys", "fact table", "dimension tables"]
+minutes = 40

@@ -1,0 +1,4 @@
+- Taking the test rows from the front of the rotated list instead of the last three.
+- Applying the rule `x > 3` instead of `x >= 3`: the row `(3, 1)` changes.
+- Forgetting the last line (`range of accuracy`).
+- Reading `0.667` as `0.666`: `:.3f` rounds `2/3` to `0.667`.

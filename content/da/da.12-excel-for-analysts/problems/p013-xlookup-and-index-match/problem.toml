@@ -1,0 +1,6 @@
+id = "da.12.p013"
+title = "XLOOKUP and INDEX/MATCH"
+tier = "drill"
+kind = "code"
+topics = ["XLOOKUP", "INDEX MATCH", "exact match lookup", "left join"]
+minutes = 30

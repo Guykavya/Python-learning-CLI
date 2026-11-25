@@ -1,0 +1,7 @@
+id = "da.11.p030"
+title = "Customer analytics case study"
+tier = "challenge"
+kind = "code"
+topics = ["case study", "A/B test", "funnel", "retention", "RFM", "recommendation page", "project"]
+minutes = 90
+assessment = "build"

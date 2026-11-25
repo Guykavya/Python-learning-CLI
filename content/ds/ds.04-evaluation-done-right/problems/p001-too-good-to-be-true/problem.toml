@@ -1,0 +1,6 @@
+id = "ds.04.p001"
+title = "Too good to be true"
+tier = "drill"
+kind = "explain"
+topics = ["leakage", "suspicious scores", "sanity checks", "explain"]
+minutes = 20

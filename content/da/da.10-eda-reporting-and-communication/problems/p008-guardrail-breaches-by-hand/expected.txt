@@ -1,0 +1,4 @@
+2024-09 on_time_pct 80.5
+2024-10 churn_rate_pct 6.1
+2024-11 on_time_pct 89.9
+3

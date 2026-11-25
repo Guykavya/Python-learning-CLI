@@ -1,0 +1,4 @@
+- Using 1.96 (the normal quantile): with n = 5 the interval is far too narrow.
+- Using `level` instead of `(1 + level) / 2` in `ppf`: that gives a one-sided quantile.
+- `ddof=0` for the SE: slightly too narrow.
+- Using the standard deviation instead of the standard error: the interval is about sqrt(n) times too wide.

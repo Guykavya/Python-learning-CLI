@@ -1,0 +1,6 @@
+id = "da.10.p015"
+title = "Rate ratio with an interval"
+tier = "applied"
+kind = "code"
+topics = ["rate ratio", "confidence interval", "log scale", "relative risk"]
+minutes = 25

@@ -1,0 +1,4 @@
+- `pd.get_dummies(raw["contract"])`: one customer with "year" produces only a `year` column.
+- Clipping in one place and not in the other (the chapter's example of skew).
+- Relying on column order from a dict or a set: fix the order explicitly.
+- Statistics of the batch (a mean, a rank) inside the feature function: a single row has no batch.

@@ -1,0 +1,6 @@
+id = "da.04.p044"
+title = "A full calendar"
+tier = "applied"
+kind = "code"
+topics = ["date_range", "reindex", "fill_value", "groupby", "time series", "gaps"]
+minutes = 20

@@ -1,0 +1,6 @@
+id = "da.03.p011"
+title = "Read a European-style CSV"
+tier = "applied"
+kind = "code"
+topics = ["read_csv", "sep", "decimal", "thousands", "na_values", "parse_dates"]
+minutes = 25

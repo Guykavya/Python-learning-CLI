@@ -1,0 +1,7 @@
+- **Counting the refund by the job's completion date.** Refunds are cash-basis, by `refunded_at`, like payments by `paid_at`.
+- **`<= end` for a payment or completion.** A payment exactly at `end` belongs to the next month (job 3's payment, job 9's completion).
+- **Starting from the cash and forgetting the unpaid work.** Job 4 is worth 800 and has no payment: no cash line shows it, so it needs its own step.
+- **Putting a payment inside the period on a job completed inside it into "other".** Those payments are already inside the work value; they appear in no step.
+- **Treating a pending job as "other".** Its deposit is a payment for work not yet done: "later or pending".
+- **Joining `payments` to `jobs` without `validate`.** One duplicated job id would double every payment of that job (the fan-out of this whole module).
+- **Letting a missing line disappear.** The seven lines are always returned, with `0` where nothing happened.

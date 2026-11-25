@@ -1,0 +1,5 @@
+- Returning the naive difference as the effect.
+- Forgetting `cov_type="HC3"`: the interval is slightly different from the specified one.
+- Rounding the numbers in the report with a fixed number of decimals instead of `sig_round(value, SE)`.
+- Leaving out the words "observational" and "confounder": the reader must be told the limits.
+- Concluding "causal effect proven": adjusted observational estimates depend on the confounders you measured.

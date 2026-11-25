@@ -1,0 +1,6 @@
+id = "ds.03.p037"
+title = "Macro, micro and weighted"
+tier = "challenge"
+kind = "code"
+topics = ["multiclass F1", "macro average", "micro average", "weighted average", "imbalanced classes"]
+minutes = 40

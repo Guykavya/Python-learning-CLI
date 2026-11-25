@@ -1,0 +1,6 @@
+id = "da.02.p034"
+title = "Replace the loops"
+tier = "challenge"
+kind = "code"
+topics = ["vectorisation", "where", "clip", "diff", "argmin", "broadcasting", "performance"]
+minutes = 45

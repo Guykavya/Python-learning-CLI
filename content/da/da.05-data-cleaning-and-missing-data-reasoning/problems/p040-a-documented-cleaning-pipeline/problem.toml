@@ -1,0 +1,7 @@
+id = "da.05.p040"
+title = "A documented cleaning pipeline"
+tier = "challenge"
+kind = "code"
+topics = ["project", "pipeline", "log", "pandera", "quarantine", "missing data", "report", "air quality"]
+minutes = 90
+assessment = "build"

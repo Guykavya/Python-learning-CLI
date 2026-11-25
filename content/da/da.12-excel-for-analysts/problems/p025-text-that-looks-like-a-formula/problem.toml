@@ -1,0 +1,6 @@
+id = "da.12.p025"
+title = "Text that looks like a formula"
+tier = "deep"
+kind = "code"
+topics = ["formula injection", "openpyxl data_type", "safe export", "security"]
+minutes = 35

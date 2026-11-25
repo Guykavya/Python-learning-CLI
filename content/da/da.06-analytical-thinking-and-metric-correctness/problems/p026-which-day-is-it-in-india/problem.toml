@@ -1,0 +1,6 @@
+id = "da.06.p026"
+title = "Which day is it in India?"
+tier = "applied"
+kind = "code"
+topics = ["time zones", "IST", "UTC", "dates", "groupby"]
+minutes = 20

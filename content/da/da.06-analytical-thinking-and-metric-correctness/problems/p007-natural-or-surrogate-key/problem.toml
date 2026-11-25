@@ -1,0 +1,6 @@
+id = "da.06.p007"
+title = "Natural or surrogate key?"
+tier = "drill"
+kind = "explain"
+topics = ["natural key", "surrogate key", "uniqueness", "merge from two systems", "explain"]
+minutes = 20

@@ -1,0 +1,6 @@
+id = "da.02.p012"
+title = "Stack or concatenate?"
+tier = "drill"
+kind = "trace"
+topics = ["concatenate", "stack", "vstack", "hstack", "column_stack", "shape", "trace"]
+minutes = 20

@@ -1,0 +1,5 @@
+identity
+diagonal
+symmetric
+general
+diagonal

@@ -1,0 +1,4 @@
+- Using `"owner" not in defn`: a key that exists with value `""` is still missing.
+- Reporting "unknown type: None" when the type is missing (it is already reported as a missing field).
+- Requiring a denominator for counts: only a percentage needs one.
+- Returning `None` or `True` for a good definition instead of `[]`.

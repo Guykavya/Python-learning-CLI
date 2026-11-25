@@ -1,0 +1,4 @@
+- Using `separation(a, b, simulated=False)`: it measures normal vision and keeps the red/green pair.
+- Returning both `(a, b)` and `(b, a)`, or pairs `(a, a)`.
+- Using `>` instead of `>=` for the limit.
+- Returning indices instead of the original hex strings.

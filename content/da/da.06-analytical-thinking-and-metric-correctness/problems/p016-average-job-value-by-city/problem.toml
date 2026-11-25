@@ -1,0 +1,6 @@
+id = "da.06.p016"
+title = "Average job value by city"
+tier = "drill"
+kind = "code"
+topics = ["average", "weighted mean", "average of averages", "merge", "groupby"]
+minutes = 15

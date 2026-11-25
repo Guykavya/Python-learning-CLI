@@ -1,0 +1,6 @@
+id = "da.02.p039"
+title = "Sample without replacement"
+tier = "applied"
+kind = "code"
+topics = ["random", "Generator", "choice", "permutation", "fancy indexing", "sampling"]
+minutes = 20

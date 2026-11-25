@@ -1,0 +1,4 @@
+- Answering `0` for the second expression: a sum over an empty context is blank.
+- Thinking `DIVIDE(x, 0)` raises an error: it returns blank.
+- Writing `-1` for the third (that is the fourth).
+- Answering `30.0`: write plain numbers (`30`).

@@ -1,0 +1,5 @@
+- `SELECT *` from the file: reads the wide `note` column for nothing, and the test refuses it.
+- `order_time <= '2025-06-30'`: orders on 30 June after midnight are lost (the 23:59:59 order).
+- `order_time BETWEEN ... AND '2025-07-01'`: includes the order at exactly midnight on 1 July.
+- Returning `None` for an empty month: wrap `sum` in `COALESCE(..., 0)`.
+- Reading the file with pandas first: it works but defeats the purpose of the exercise.

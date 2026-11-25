@@ -1,0 +1,6 @@
+- **Using `df.groupby(by)[col].count()`.** `count` counts the values that are **present**, the opposite of what you need.
+- **Leaving the key in the index.** The test expects `by` as a column and a `0, 1, 2, ...` index.
+- **Sorting ascending.** The groups with the most missing data come first.
+- **Dropping groups without missing values** (for example with `df[df[col].isna()].groupby(...)`). They must appear with rate 0.
+- **Forgetting the tie-break.** Equal rates are ordered by the key, smallest first, so the result is the same every time.
+- **Changing `df`** by adding a helper column to it. Use `assign`, which returns a copy.

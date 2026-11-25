@@ -1,0 +1,6 @@
+id = "ds.01.p003"
+title = "Distance needs scale"
+tier = "applied"
+kind = "code"
+topics = ["standardise", "distance", "feature scale", "nearest neighbour"]
+minutes = 25

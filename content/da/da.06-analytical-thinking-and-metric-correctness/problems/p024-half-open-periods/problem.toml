@@ -1,0 +1,6 @@
+id = "da.06.p024"
+title = "Half-open periods"
+tier = "drill"
+kind = "code"
+topics = ["dates", "half-open interval", "boundaries", "NaT"]
+minutes = 15

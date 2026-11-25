@@ -1,0 +1,3 @@
+- Retraining automatically whenever PSI > 0.25: if the cause is a data bug, retraining learns the bug.
+- Ignoring a moderate input shift because the model's AUC was fine last month: labels arrive late.
+- Treating the thresholds 0.1 and 0.25 as laws.

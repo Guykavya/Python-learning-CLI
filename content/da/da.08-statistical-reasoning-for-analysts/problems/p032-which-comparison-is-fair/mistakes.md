@@ -1,0 +1,3 @@
+- Printing `small` before `big`.
+- Writing the weighted result as 9 (the format is `:.1f`).
+- Believing the treatment hurts: the naive number answers a different question.

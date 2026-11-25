@@ -1,0 +1,4 @@
+- Dividing the RSS by `n` (the maximum-likelihood estimate) instead of `n - p`. The standard errors come out too small, most visibly with small `n`.
+- Taking the square root of the whole matrix instead of the diagonal.
+- Forgetting to multiply by `sigma2`.
+- Counting `p` as the number of predictors without the constant.

@@ -1,0 +1,4 @@
+- Calibrating on the training rows: the model is overconfident there, so the calibrator learns the wrong map.
+- Calibrating on the test set, then reporting the test ECE (a leak).
+- Using `cv="prefit"`, which raises an error in scikit-learn 1.9.
+- Expecting calibration to improve AUC: sigmoid calibration is monotone, so the ranking barely changes.

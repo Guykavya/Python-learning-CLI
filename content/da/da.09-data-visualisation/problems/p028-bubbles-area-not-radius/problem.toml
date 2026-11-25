@@ -1,0 +1,6 @@
+id = "da.09.p028"
+title = "Bubbles: area, not radius"
+tier = "applied"
+kind = "code"
+topics = ["bubble chart", "marker area", "scatter size", "proportional encoding"]
+minutes = 20

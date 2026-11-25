@@ -1,0 +1,6 @@
+id = "da.11.p017"
+title = "The retention matrix"
+tier = "applied"
+kind = "code"
+topics = ["cohort analysis", "retention matrix", "mature cohorts", "NaN vs 0"]
+minutes = 40

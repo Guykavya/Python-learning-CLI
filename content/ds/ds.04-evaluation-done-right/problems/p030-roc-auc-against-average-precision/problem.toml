@@ -1,0 +1,6 @@
+id = "ds.04.p030"
+title = "ROC-AUC against average precision"
+tier = "applied"
+kind = "trace"
+topics = ["ROC-AUC", "average precision", "ranking metrics", "trace"]
+minutes = 25

@@ -1,0 +1,7 @@
+A: non-constant variance
+B: correlated errors
+C: influential point
+D: non-normal errors
+E: correlated errors
+F: non-constant variance
+G: no problem found

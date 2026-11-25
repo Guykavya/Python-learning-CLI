@@ -1,0 +1,6 @@
+id = "da.04.p045"
+title = "Weekly and monthly totals"
+tier = "applied"
+kind = "code"
+topics = ["resample", "frequency aliases", "W-MON", "ME", "time series"]
+minutes = 20

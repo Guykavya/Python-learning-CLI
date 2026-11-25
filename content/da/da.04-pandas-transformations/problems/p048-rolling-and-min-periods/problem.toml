@@ -1,0 +1,6 @@
+id = "da.04.p048"
+title = "Rolling and min_periods"
+tier = "drill"
+kind = "trace"
+topics = ["rolling", "min_periods", "center", "window", "trace"]
+minutes = 15

@@ -1,0 +1,6 @@
+id = "ds.03.p035"
+title = "Log-loss by hand"
+tier = "applied"
+kind = "trace"
+topics = ["log loss", "cross-entropy", "clipping", "probabilities", "trace"]
+minutes = 25

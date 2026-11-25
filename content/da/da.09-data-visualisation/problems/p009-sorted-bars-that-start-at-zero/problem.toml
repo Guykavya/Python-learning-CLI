@@ -1,0 +1,6 @@
+id = "da.09.p009"
+title = "Sorted bars that start at zero"
+tier = "applied"
+kind = "code"
+topics = ["bar chart", "barh", "sorting", "zero baseline"]
+minutes = 20

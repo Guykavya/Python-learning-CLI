@@ -1,0 +1,3 @@
+- Using `n // n_splits` (= 4) as the test size.
+- Starting the first test block at row 0: the first block is always training.
+- Forgetting the header lines `gap = 0` and `gap = 1` and the two leading spaces of the fold lines.

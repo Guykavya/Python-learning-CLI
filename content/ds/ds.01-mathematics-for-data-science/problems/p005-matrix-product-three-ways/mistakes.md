@@ -1,0 +1,4 @@
+- Multiplying element by element (`A * B`): that is the Hadamard product.
+- Swapping the shape check: the inner dimensions `A.shape[1]` and `B.shape[0]` must match.
+- Returning an integer array and losing decimals when the inputs are floats: start from `zeros(..., dtype=float)`.
+- Assuming `AB = BA`: the order matters.

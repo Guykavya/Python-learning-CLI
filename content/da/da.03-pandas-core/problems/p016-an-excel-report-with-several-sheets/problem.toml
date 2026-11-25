@@ -1,0 +1,6 @@
+id = "da.03.p016"
+title = "An Excel report with several sheets"
+tier = "applied"
+kind = "code"
+topics = ["to_excel", "ExcelWriter", "read_excel", "sheets", "openpyxl"]
+minutes = 25

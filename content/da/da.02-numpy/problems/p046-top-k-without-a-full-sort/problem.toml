@@ -1,0 +1,6 @@
+id = "da.02.p046"
+title = "Top k without a full sort"
+tier = "applied"
+kind = "code"
+topics = ["argpartition", "argsort", "top-k", "fancy indexing", "performance"]
+minutes = 25

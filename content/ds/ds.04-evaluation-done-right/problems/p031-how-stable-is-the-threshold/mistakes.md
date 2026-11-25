@@ -1,0 +1,3 @@
+- Resampling `y` and `p` with different indices.
+- Reporting the threshold of the full validation set as if it were exact.
+- Using the test set for the bootstrap.

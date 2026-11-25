@@ -1,0 +1,6 @@
+id = "da.04.p029"
+title = "Every store, every month"
+tier = "applied"
+kind = "code"
+topics = ["merge", "cross join", "left join", "fillna", "full grid", "row count"]
+minutes = 25

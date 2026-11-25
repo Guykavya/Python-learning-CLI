@@ -1,0 +1,4 @@
+- Reporting the month that contains `as_of`: it is incomplete.
+- Filtering the panel but not `last_week`: a departure recorded later is not yet known.
+- `last_week < as_of` (strict) for a departure in the week of `as_of` itself: that week is known.
+- Returning NumPy types: the dict should hold plain Python values.

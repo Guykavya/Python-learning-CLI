@@ -1,0 +1,3 @@
+- Applying the second rule to line 7 because "cluster" is also there. The first matching `if` returns immediately.
+- Reading "unusual" as matching "anomal". It does not: the rule compares letters, not meaning.
+- Forgetting that numbering starts at 1 (`start=1`).

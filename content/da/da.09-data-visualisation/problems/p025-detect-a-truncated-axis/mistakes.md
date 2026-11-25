@@ -1,0 +1,5 @@
+- Comparing heights without subtracting the axis bottom: `visual_change` then always equals the data change.
+- Treating any `ylim[0] != 0` as truncated: an axis that starts below 0 is fine.
+- Flagging line charts: they have no bars, so there is nothing to cut off.
+- Using `get_height()` for horizontal bars (it is the thickness, 0.8): use the x axis and the widths.
+- Returning a NumPy `bool_` (the result of comparing a NumPy float): wrap it with `bool(...)`; the test checks `is True` / `is False`.

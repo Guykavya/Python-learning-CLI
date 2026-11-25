@@ -1,0 +1,6 @@
+- **Appending to the ledger after the checks.** A failed merge then leaves no record, which is exactly when you need one.
+- **Counting unmatched keys from `right`.** The question is which *left* rows found no partner (`left_only`).
+- **Listing missing keys as unmatched keys.** They are counted separately in `null_keys_left`.
+- **Leaving `_merge` in the result.** It is a helper; the next `indicator=True` merge would fail with a duplicate column.
+- **Checking the row count for every `how`.** An inner join may lose rows on purpose; the measure guard is the net there.
+- **Comparing floats with `==`.** Sums of money carry float noise; compare the rounded totals with a tolerance.

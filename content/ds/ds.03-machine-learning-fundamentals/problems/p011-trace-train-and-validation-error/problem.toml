@@ -1,0 +1,6 @@
+id = "ds.03.p011"
+title = "Trace train and validation error"
+tier = "drill"
+kind = "trace"
+topics = ["underfitting", "overfitting", "decision rule", "trace"]
+minutes = 15

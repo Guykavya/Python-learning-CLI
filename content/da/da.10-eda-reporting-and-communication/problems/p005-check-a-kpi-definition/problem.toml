@@ -1,0 +1,6 @@
+id = "da.10.p005"
+title = "Check a KPI definition"
+tier = "drill"
+kind = "code"
+topics = ["KPI", "metric definition", "validation", "guardrail", "vanity metric"]
+minutes = 20

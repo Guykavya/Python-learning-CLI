@@ -1,0 +1,6 @@
+id = "ds.01.p012"
+title = "Least squares with the normal equations"
+tier = "drill"
+kind = "code"
+topics = ["least squares", "normal equations", "regression", "lstsq"]
+minutes = 20

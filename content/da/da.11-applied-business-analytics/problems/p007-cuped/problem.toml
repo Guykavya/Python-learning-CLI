@@ -1,0 +1,6 @@
+id = "da.11.p007"
+title = "CUPED"
+tier = "deep"
+kind = "code"
+topics = ["CUPED", "variance reduction", "covariate adjustment", "A/B test"]
+minutes = 35

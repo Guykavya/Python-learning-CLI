@@ -1,0 +1,5 @@
+- **`concat` without `ignore_index=True`.** Every file starts at row 0, so labels repeat: `[0, 1, 0]`.
+- **`concat` inside the loop.** It works on three files, but the work grows with the square of the number of files.
+- **`join="inner"`.** It silently drops `coupon` because the January file does not have it.
+- **Filling the missing cells with 0 or "".** January had no coupon column at all: unknown, not "no coupon".
+- **Changing the input frames** with `frame["month"] = key`. Use `assign`, which returns a new frame.

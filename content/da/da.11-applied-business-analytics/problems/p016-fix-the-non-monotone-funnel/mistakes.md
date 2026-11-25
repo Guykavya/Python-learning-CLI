@@ -1,0 +1,4 @@
+- Dropping the inconsistent rows: they are real sessions that did at least the first steps.
+- Counting a session at a step if the **previous** flag is True: the whole chain must hold (a session `True, False, True, True` is out from the third step on).
+- Returning only the table: the caller needs the number of inconsistent sessions.
+- `cumsum` instead of `cummin`/`cumprod`: it does not give a yes/no chain.

@@ -1,0 +1,4 @@
+- One alpha and size for every sample size: a 100-point scatter becomes nearly invisible.
+- Using `markersize` (a `plot` argument) instead of `s` (the `scatter` argument, in points squared).
+- Sampling the data "to make it faster" without saying so: every row must be drawn.
+- Leaving out the unit in the axis labels.

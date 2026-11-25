@@ -1,0 +1,6 @@
+id = "da.06.p036"
+title = "Compare two sets of keys"
+tier = "drill"
+kind = "code"
+topics = ["reconciliation", "sets", "keys", "only in A", "only in B"]
+minutes = 15

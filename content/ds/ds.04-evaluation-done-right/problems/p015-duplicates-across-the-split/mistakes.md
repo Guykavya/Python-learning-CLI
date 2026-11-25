@@ -1,0 +1,4 @@
+- Counting a test row twice because its training copy appears twice.
+- Returning positions instead of index labels.
+- Merging without `drop_duplicates()`, so the count is too high.
+- Forgetting the fix: after finding the overlap, the split must be redone by group, not by deleting the test copies only.

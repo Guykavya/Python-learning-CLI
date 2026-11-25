@@ -1,0 +1,6 @@
+id = "da.12.p023"
+title = "A formatted table"
+tier = "drill"
+kind = "code"
+topics = ["openpyxl formatting", "number formats", "freeze panes", "column width"]
+minutes = 35

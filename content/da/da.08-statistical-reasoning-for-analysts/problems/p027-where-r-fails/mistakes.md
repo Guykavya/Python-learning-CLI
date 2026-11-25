@@ -1,0 +1,3 @@
+- Writing -0.000 or 0.0 instead of `0.000` for the first line (three decimals).
+- Believing Spearman is also 0 in case 1: it is not asked there, only Pearson is printed.
+- Writing Pearson 1.000 for the doubling curve: it is not a straight line.

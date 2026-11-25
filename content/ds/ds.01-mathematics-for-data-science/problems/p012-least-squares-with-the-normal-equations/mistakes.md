@@ -1,0 +1,4 @@
+- Solving `A x = b` directly when `A` is not square.
+- Writing `A @ A.T`: that is `m x m`, not `n x n`.
+- Using `np.linalg.inv(A.T @ A) @ ...`: it works here but loses accuracy (see the next problems).
+- Forgetting the column of ones when you want an intercept.

@@ -1,0 +1,5 @@
+- `INNER JOIN` or `WHERE event_type IN (...)`: users without funnel events disappear, and the first step looks like 100%.
+- `COALESCE(t, ...)` with a fake date: a missing step must stay `NULL`.
+- `GROUP BY user_id, event_type`: you get one row per user and step instead of one row per user.
+- Using `max` or `any_value`: that returns the last (or an arbitrary) time, not the first.
+- Selecting `signup_at` or `channel` without grouping by it (or aggregating it): not valid in a grouped query.

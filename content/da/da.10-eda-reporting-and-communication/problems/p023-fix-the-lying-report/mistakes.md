@@ -1,0 +1,4 @@
+- Fixing only the headline: the impact still says 65 customers.
+- Rounding the estimate to two decimals as well: the rule is one decimal for both.
+- "Fixing" the limitations by raising the limit from 3 to 5: any cut still hides doubts.
+- Changing the `Finding` class instead of the report.

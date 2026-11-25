@@ -1,0 +1,6 @@
+id = "ds.02.p007"
+title = "Read the coefficient table"
+tier = "drill"
+kind = "code"
+topics = ["coefficients", "confidence interval", "p-value", "odds ratio"]
+minutes = 20

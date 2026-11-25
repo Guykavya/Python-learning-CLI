@@ -1,0 +1,6 @@
+id = "da.01.p021"
+title = "Three percentile functions"
+tier = "applied"
+kind = "code"
+topics = ["percentiles", "nearest-rank", "interpolation", "inclusive", "exclusive", "statistics.quantiles"]
+minutes = 45

@@ -1,0 +1,6 @@
+id = "da.01.p011"
+title = "Load one column, and say what was dropped"
+tier = "applied"
+kind = "code"
+topics = ["csv.DictReader", "cleaning report", "deduplication", "range checks", "files"]
+minutes = 40

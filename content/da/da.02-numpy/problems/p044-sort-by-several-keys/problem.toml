@@ -1,0 +1,6 @@
+id = "da.02.p044"
+title = "Sort by several keys"
+tier = "applied"
+kind = "code"
+topics = ["lexsort", "argsort", "sorting", "multiple keys", "stable sort"]
+minutes = 25

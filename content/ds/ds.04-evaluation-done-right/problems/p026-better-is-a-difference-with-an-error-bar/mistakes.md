@@ -1,0 +1,4 @@
+- Bootstrapping the two models with different row samples: the shared noise no longer cancels and the interval is too wide.
+- Reporting "0.78 vs 0.76" without an interval.
+- Crashing on a resample with one class.
+- Reading an interval that just touches 0 as "proof of no difference": it means the data cannot tell.

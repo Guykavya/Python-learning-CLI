@@ -1,0 +1,6 @@
+id = "da.03.p005"
+title = "A table from records"
+tier = "drill"
+kind = "code"
+topics = ["DataFrame", "records", "dtypes", "to_datetime", "Int64", "missing values"]
+minutes = 20

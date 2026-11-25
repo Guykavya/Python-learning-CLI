@@ -1,0 +1,5 @@
+n =   25  SE = 4.00
+n =  100  SE = 2.00
+n =  400  SE = 1.00
+n = 1600  SE = 0.50
+to halve the SE, multiply n by 4

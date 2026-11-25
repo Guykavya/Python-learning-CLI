@@ -1,0 +1,6 @@
+id = "ds.02.p016"
+title = "Standardised coefficients"
+tier = "applied"
+kind = "code"
+topics = ["standardised coefficients", "z-score", "units", "OLS"]
+minutes = 25

@@ -1,0 +1,6 @@
+id = "ds.04.p029"
+title = "Best threshold from a cost curve"
+tier = "applied"
+kind = "code"
+topics = ["threshold", "cost", "validation set", "decision theory"]
+minutes = 30

@@ -1,0 +1,4 @@
+- Updating the region in place (that is type 1): the history of the old region is lost.
+- Reusing the old surrogate key for the new row: facts could not tell the versions apart.
+- Closing the old row on `as_of` instead of the day before: two versions would be valid on the same day.
+- Adding a row when the region did not change: the history fills with identical versions.

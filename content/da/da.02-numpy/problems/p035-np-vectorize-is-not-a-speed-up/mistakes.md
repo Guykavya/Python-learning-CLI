@@ -1,0 +1,6 @@
+- **"`np.vectorize` compiles the function."** It does not; it loops in Python and calls your function per element.
+- **Saying only "it is slow".** Explain *why*: a Python call, Python float objects and interpreted `if`s for every element.
+- **Using `and`/`or` in the rewrite** (`(w > 1.0) and (w <= 5.0)`): on arrays use `&` and parentheses, or let `np.select` take the conditions in order.
+- **Forgetting the order in `np.select`.** The first true condition wins, so `w <= 1.0` must come before `w <= 5.0`.
+- **Claiming a speed-up without measuring**, or measuring once with a cold start. Time several runs and compare results with `np.allclose`.
+- **Saying `np.vectorize` is useless.** It is a fine convenience for small data and logic that has no array form.

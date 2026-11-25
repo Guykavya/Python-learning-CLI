@@ -1,0 +1,6 @@
+id = "ds.04.p038"
+title = "Calibration moves the best threshold"
+tier = "deep"
+kind = "trace"
+topics = ["calibration", "threshold", "expected cost", "trace"]
+minutes = 25

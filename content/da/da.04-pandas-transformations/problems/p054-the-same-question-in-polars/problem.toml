@@ -1,0 +1,6 @@
+id = "da.04.p054"
+title = "The same question in Polars"
+tier = "applied"
+kind = "code"
+topics = ["Polars", "group_by", "agg", "expressions", "n_unique", "sort"]
+minutes = 20

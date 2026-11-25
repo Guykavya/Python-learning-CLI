@@ -1,0 +1,4 @@
+- Comparing the pooled treated and untreated means: that is the naive difference, which can have the wrong sign.
+- Weighting by the number of treated rows (or equally): the weights should be the stratum sizes.
+- Including skipped strata in the weights: they would pull the average towards zero.
+- Returning an unsorted `skipped` list.

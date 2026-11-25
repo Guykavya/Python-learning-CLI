@@ -1,0 +1,6 @@
+id = "da.03.p015"
+title = "Which file format when?"
+tier = "applied"
+kind = "explain"
+topics = ["CSV", "Parquet", "Excel", "JSON", "SQL", "file formats", "explain"]
+minutes = 20

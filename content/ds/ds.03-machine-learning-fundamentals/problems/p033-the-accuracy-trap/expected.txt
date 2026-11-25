@@ -1,0 +1,2 @@
+always no: accuracy 0.980, precision 0.000, recall 0.000, F1 0.000
+alarm model: accuracy 0.970, precision 0.375, recall 0.750, F1 0.500

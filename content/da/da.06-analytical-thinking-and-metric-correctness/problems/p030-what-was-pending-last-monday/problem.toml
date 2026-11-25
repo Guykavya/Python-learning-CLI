@@ -1,0 +1,6 @@
+id = "da.06.p030"
+title = "What was pending last Monday?"
+tier = "deep"
+kind = "code"
+topics = ["snapshot", "history", "status", "timestamps", "backlog"]
+minutes = 30

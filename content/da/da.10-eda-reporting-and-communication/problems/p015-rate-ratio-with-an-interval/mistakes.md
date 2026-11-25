@@ -1,0 +1,4 @@
+- `rr - 1.96 * se` to `rr + 1.96 * se`: a symmetric interval on the wrong scale (it can even go below 0).
+- Forgetting the `- 1/n` terms in the standard error.
+- Dividing by zero (or taking `1/0`) instead of raising a clear error when a group has no events.
+- Swapping the groups: `rr` is exposed over comparison.

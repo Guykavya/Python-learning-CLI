@@ -1,0 +1,6 @@
+- **`s[k:-k]` with `k = 0`.** It gives an empty list; use `len(s) - k`.
+- **Cutting `k` values in total** instead of `k` from each end.
+- **Rounding instead of flooring** `n * proportion` (the rule is `floor`).
+- **Forgetting to sort** before trimming: you then drop the first and last *entries*, not the extremes.
+- **Sorting in place.** The test checks the caller's list afterwards.
+- **Accepting `0.5`.** Cutting half from each side leaves nothing.

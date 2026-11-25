@@ -18,16 +18,16 @@ data structures and algorithms alongside.
 
 The syllabus has **92 modules, and every one of them has its chapter** (about 250,000 lines of
 book-style text with worked examples, common traps and summaries). **Problems** with automatic
-tests are written module by module. They exist today for the core, shared, and DSA tracks, and for the first ten software engineer modules:
+tests are written module by module. They exist today for the core, shared, DSA, software engineer and data analyst tracks, and for the first four data scientist modules (ds.01 to ds.04):
 
 | Track | Modules | Chapters | Modules with problems | Problems written / planned |
 |---|---|---|---|---|
 | Core Python | 24 | 24 | 24 | 1,075 / 1,075 |
 | Shared (SQL, data pipelines) | 2 | 2 | 2 | 105 / 105 |
 | DSA | 18 | 18 | 18 | 785 / 785 |
-| Software engineer | 11 | 11 | 10 | 345 / 375 |
-| Data analyst | 13 | 13 | 0 | 0 / 510 |
-| Data scientist | 10 | 10 | 0 | 0 / 400 |
+| Software engineer | 11 | 11 | 11 | 375 / 375 |
+| Data analyst | 13 | 13 | 13 | 510 / 510 |
+| Data scientist | 10 | 10 | 4 | 180 / 400 |
 | AI/ML engineer (deep learning) | 7 | 7 | 0 | 0 / 220 |
 | AI/ML engineer (LLM applications) | 7 | 7 | 0 | 0 / 185 |
 
@@ -93,7 +93,7 @@ The base install covers most modules. Install an extra only when you reach it, t
 
 | Extra | Command | Needed by |
 |---|---|---|
-| `ml` | `.venv/bin/python -m pip install -e ".[ml]"` | ds.04, ml.01 to ml.07 (torch, transformers, xgboost, mlflow, dvc, onnx; several GB) |
+| `ml` | `.venv/bin/python -m pip install -e ".[ml]"` | ml.01 to ml.07 (torch, transformers, xgboost, mlflow, dvc, onnx; several GB) |
 | `llm` | `.venv/bin/python -m pip install -e ".[llm]"` | llm.03 (PDF reading) |
 | `providers` | `.venv/bin/python -m pip install -e ".[providers]"` | Optional: only if you later connect a real Anthropic or OpenAI key. The llm chapters run offline without it. |
 
@@ -252,7 +252,8 @@ Notes:
 | `playground/` | Your free zone. Nothing is graded; `learn` notices what you practise *(private)* |
 | `library/` | Your books and notes *(private)* |
 | `data/progress.db` | The tracker (SQLite). Open it with the SQLite Viewer extension *(private)* |
-| `docs/guides/` | How-to guides: DSA syncing, writing problems |
+| `docs/guides/` | How-to guides: DSA syncing, writing problems (`authoring.md`, `problem-writing-library-tracks.md`, `validation-triage.md`, `fixtures-and-data.md`), capstone guides |
+| `docs/plans/` | Problem plans for modules still to be written, and the status table |
 | `engine/` | The `learn` program itself, with its own tests (`.venv/bin/python -m pytest`) |
 
 ## Mastery

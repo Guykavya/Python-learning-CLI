@@ -1,0 +1,6 @@
+id = "da.12.p022"
+title = "A folder of files"
+tier = "applied"
+kind = "code"
+topics = ["combine files", "glob", "repeated headers", "source column"]
+minutes = 40

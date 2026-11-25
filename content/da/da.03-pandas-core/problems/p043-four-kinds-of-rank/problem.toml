@@ -1,0 +1,6 @@
+id = "da.03.p043"
+title = "Four kinds of rank"
+tier = "drill"
+kind = "trace"
+topics = ["rank", "ties", "average", "min", "dense", "first", "trace"]
+minutes = 15

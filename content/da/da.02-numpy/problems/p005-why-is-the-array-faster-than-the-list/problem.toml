@@ -1,0 +1,6 @@
+id = "da.02.p005"
+title = "Why is the array faster than the list?"
+tier = "drill"
+kind = "explain"
+topics = ["memory layout", "pointers", "vectorisation", "speed", "explain"]
+minutes = 20

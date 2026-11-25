@@ -1,0 +1,6 @@
+id = "ds.02.p005"
+title = "R-squared and adjusted R-squared by hand"
+tier = "drill"
+kind = "code"
+topics = ["R-squared", "adjusted R-squared", "overfitting"]
+minutes = 20

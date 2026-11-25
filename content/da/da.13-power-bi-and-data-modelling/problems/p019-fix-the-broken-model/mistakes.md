@@ -1,0 +1,4 @@
+- Fixing the measure and leaving the relationship out: the grid still fails in the contexts with a region.
+- Making the Sales-Store relationship bidirectional "to be safe": the lint flags it and slicers start leaking.
+- Changing the name of a measure: the report and the tests refer to it.
+- Wrapping `Revenue` in `CALCULATE` for no reason: it hides the faults the tests look for.

@@ -1,0 +1,5 @@
+- **Writing `SchemaErrors` for the first line.** Eager validation (no `lazy=True`) raises `SchemaError`.
+- **Counting 4 or 3 for the number of failure cases.** It counts failing **cells** (one row per failure): 2 + 2 + 1.
+- **Listing the missing age.** With `nullable=True` a missing value is not a failure.
+- **Reporting only one row of the duplicated id.** Uniqueness reports every row that shares the value (1 and 2).
+- **Using double quotes everywhere.** Python prints a string that contains single quotes with double quotes: `"isin(['Pune', 'Delhi'])"`.

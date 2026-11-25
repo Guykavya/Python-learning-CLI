@@ -1,0 +1,6 @@
+- **Using the global `np.random` instead of `rng`.** The same seed would not give the same result.
+- **Forgetting to divide by `w.mean()`.** The share deleted would be `rate` times the mean weight, not `rate`.
+- **Deleting rows instead of setting `income` to `NaN`.** The row stays; only the value disappears.
+- **Computing the MNAR median after the deletion.** Use the median of the complete population (`pop`).
+- **Changing `pop` in place.** The test compares it with a copy afterwards.
+- **Returning the same share for MNAR by hiding exactly the top incomes.** The rule is probabilistic: high earners hide five times as often, not always.

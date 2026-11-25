@@ -1,0 +1,6 @@
+id = "ds.01.p050"
+title = "Sampling distribution of the mean"
+tier = "applied"
+kind = "code"
+topics = ["sampling distribution", "standard error", "simulation", "central limit theorem"]
+minutes = 30

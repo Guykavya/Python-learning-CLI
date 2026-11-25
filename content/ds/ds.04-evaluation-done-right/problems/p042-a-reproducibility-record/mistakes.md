@@ -1,0 +1,4 @@
+- Using Python's built-in `hash()` for the fingerprint: it changes between runs for strings.
+- Forgetting `random_state` somewhere, so two runs differ.
+- Storing the dataclass object itself instead of `asdict(cfg)` (not JSON-serialisable).
+- Hashing with the index included: the same data reindexed would get a different fingerprint.

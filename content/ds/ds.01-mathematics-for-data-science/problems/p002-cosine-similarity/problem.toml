@@ -1,0 +1,6 @@
+id = "ds.01.p002"
+title = "Cosine similarity"
+tier = "drill"
+kind = "code"
+topics = ["cosine", "dot product", "norm", "ValueError"]
+minutes = 15

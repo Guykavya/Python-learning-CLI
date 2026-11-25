@@ -1,0 +1,7 @@
+- **Reporting only one of the two answers.** The task is the pair, and the gap.
+- **Filling with the overall median.** The claim behind way B is "unknown people are like their age band".
+- **Computing the band median after filling.** It must use only the observed incomes.
+- **`right=True` in `cut`.** Then age 30 would fall into the first band. The bands are `[0, 30)`, `[30, 45)`, `[45, ...)`.
+- **Using the fill for way A.** Complete cases means the missing rows are simply not in the mean (pandas already skips them).
+- **A signed difference.** `max_diff` is the largest **absolute** difference.
+- **Forgetting the Series names or the sorted index.** Both Series are named `"income"` and indexed by sorted city names.

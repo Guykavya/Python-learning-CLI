@@ -1,0 +1,3 @@
+- Selecting on all rows "just once to save time".
+- Selecting on the training set of a single split and then cross-validating on the training set (the folds share the selection).
+- Thinking the effect is small: with many columns and few rows the leaky score can reach 0.8 or more on pure noise.

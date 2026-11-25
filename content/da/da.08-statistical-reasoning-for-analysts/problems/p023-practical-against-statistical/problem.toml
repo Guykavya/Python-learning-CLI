@@ -1,0 +1,6 @@
+id = "da.08.p023"
+title = "Practical against statistical"
+tier = "applied"
+kind = "code"
+topics = ["practical significance", "minimum effect of interest", "confidence interval", "decision rule"]
+minutes = 25

@@ -1,0 +1,5 @@
+- **Comparing with the previous cell only.** `5, 3, 4` hides the last cell.
+- **Counting indexes among code cells only.** The test wants indexes into `nb["cells"]`.
+- **Letting a `None` cell reset the maximum.** Never-run cells add nothing.
+- **Reporting markdown cells** (their count is missing).
+- **Using `<` instead of `<=`.** Two cells cannot share a count; equal counts are suspicious.

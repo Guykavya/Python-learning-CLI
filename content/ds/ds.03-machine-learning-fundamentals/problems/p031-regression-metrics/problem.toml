@@ -1,0 +1,6 @@
+id = "ds.03.p031"
+title = "Regression metrics"
+tier = "drill"
+kind = "code"
+topics = ["MAE", "RMSE", "R-squared", "MAPE", "metrics"]
+minutes = 20

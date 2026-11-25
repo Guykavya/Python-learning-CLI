@@ -1,0 +1,6 @@
+id = "da.02.p042"
+title = "da.01 percentiles in NumPy"
+tier = "drill"
+kind = "code"
+topics = ["percentile", "method", "statistics", "da.01 revisited", "dict mapping"]
+minutes = 20

@@ -1,0 +1,6 @@
+id = "da.13.p011"
+title = "The first measures"
+tier = "drill"
+kind = "code"
+topics = ["DAX measures", "SUMX", "DISTINCTCOUNT", "DIVIDE", "filter context"]
+minutes = 40

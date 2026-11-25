@@ -1,0 +1,4 @@
+- Saying the matrix is singular: it is only close to singular.
+- Saying the answer is wrong because of a bug: the algorithm is fine, the problem is ill-conditioned.
+- Quoting the rule of thumb without saying 16 digits is the starting budget.
+- Not mentioning that `lstsq` / QR avoid `A^T A`.

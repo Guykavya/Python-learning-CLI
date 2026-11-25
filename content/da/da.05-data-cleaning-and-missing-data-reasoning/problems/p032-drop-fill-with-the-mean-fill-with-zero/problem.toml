@@ -1,0 +1,7 @@
+id = "da.05.p032"
+title = "Drop, fill with the mean, fill with zero"
+tier = "applied"
+kind = "trace"
+topics = ["missing data", "dropna", "fillna", "mean", "std", "trace"]
+minutes = 25
+assessment = "trace"

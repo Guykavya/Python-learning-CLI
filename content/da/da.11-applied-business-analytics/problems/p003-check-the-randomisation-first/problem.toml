@@ -1,0 +1,6 @@
+id = "da.11.p003"
+title = "Check the randomisation first"
+tier = "drill"
+kind = "code"
+topics = ["sample ratio mismatch", "chi-square", "randomisation check", "A/B test"]
+minutes = 20

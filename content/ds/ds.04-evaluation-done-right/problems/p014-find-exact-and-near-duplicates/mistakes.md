@@ -1,0 +1,4 @@
+- Rounding the caller's DataFrame in place.
+- Using `sort=True` (the default), which numbers groups by value instead of by first appearance.
+- Comparing on all columns including an id column that is always different.
+- Rounding text columns (an error).

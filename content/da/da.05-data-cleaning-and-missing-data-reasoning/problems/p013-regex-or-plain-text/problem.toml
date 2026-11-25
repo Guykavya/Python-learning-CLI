@@ -1,0 +1,6 @@
+id = "da.05.p013"
+title = "Regex or plain text?"
+tier = "deep"
+kind = "trace"
+topics = ["str.replace", "regex=False", "str.contains", "special characters", "str.count", "trace"]
+minutes = 20

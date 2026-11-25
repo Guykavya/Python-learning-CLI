@@ -1,0 +1,6 @@
+id = "ds.04.p035"
+title = "Reliability table"
+tier = "drill"
+kind = "code"
+topics = ["calibration", "reliability diagram", "binning", "pandas"]
+minutes = 25

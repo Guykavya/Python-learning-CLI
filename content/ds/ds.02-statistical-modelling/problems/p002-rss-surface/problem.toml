@@ -1,0 +1,6 @@
+id = "ds.02.p002"
+title = "Residual sum of squares for three lines"
+tier = "drill"
+kind = "trace"
+topics = ["RSS", "least squares", "trace"]
+minutes = 15

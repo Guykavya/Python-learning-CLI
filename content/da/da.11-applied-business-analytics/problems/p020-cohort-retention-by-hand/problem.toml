@@ -1,0 +1,6 @@
+id = "da.11.p020"
+title = "Cohort retention by hand"
+tier = "drill"
+kind = "trace"
+topics = ["cohort analysis", "retention matrix", "mature cells", "trace"]
+minutes = 25

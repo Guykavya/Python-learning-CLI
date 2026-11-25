@@ -1,0 +1,6 @@
+id = "da.06.p005"
+title = "What relationship do two tables have?"
+tier = "applied"
+kind = "code"
+topics = ["keys", "relationship", "one-to-many", "orphans", "is_unique"]
+minutes = 20

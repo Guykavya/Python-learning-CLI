@@ -1,0 +1,6 @@
+id = "da.06.p042"
+title = "safe_join"
+tier = "applied"
+kind = "code"
+topics = ["toolkit", "merge", "validate", "row count", "fan-out"]
+minutes = 25

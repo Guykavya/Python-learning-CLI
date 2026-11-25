@@ -1,0 +1,6 @@
+id = "da.01.p022"
+title = "Percentile rank with ties"
+tier = "drill"
+kind = "trace"
+topics = ["percentile rank", "ties", "mid-rank", "trace"]
+minutes = 20

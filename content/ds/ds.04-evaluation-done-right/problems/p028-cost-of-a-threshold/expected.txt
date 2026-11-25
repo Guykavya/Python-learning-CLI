@@ -1,0 +1,4 @@
+threshold 0.3: cost 25
+threshold 0.5: cost 115
+threshold 0.7: cost 205
+cheapest: 0.3

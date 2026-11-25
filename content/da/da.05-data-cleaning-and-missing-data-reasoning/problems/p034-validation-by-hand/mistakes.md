@@ -1,0 +1,6 @@
+- **Reporting positions instead of labels.** The test uses index labels such as 101 and 102.
+- **Listing passing rules.** Only rules with at least one failing row appear.
+- **Counting `True` instead of `False`.** The rule returns `True` for fine rows.
+- **Letting a missing answer fail the rule.** `~Series` on a Series with `NaN` raises or misbehaves; fill it with `True` first.
+- **More than three ids.** `first_ids` has at most three labels.
+- **Changing `df`.** A validator only reads.

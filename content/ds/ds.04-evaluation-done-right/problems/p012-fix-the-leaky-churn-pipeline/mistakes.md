@@ -1,0 +1,4 @@
+- Fixing only the column and keeping the scale-then-split order: the score then drops less than it should and the shuffled-label check still fails.
+- Splitting `Xs` (already scaled) instead of the raw `X`.
+- Replacing `scaler_cls()` by `StandardScaler()`: the tests can then no longer see which rows were used.
+- Dropping `retention_offer_sent` with a hard-coded `drop(columns=[...])` that fails when the column is absent.

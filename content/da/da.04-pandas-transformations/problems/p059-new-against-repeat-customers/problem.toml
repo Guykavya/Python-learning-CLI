@@ -1,0 +1,6 @@
+id = "da.04.p059"
+title = "New against repeat customers"
+tier = "challenge"
+kind = "code"
+topics = ["transform", "groupby", "to_period", "unstack", "cohorts", "property test"]
+minutes = 40

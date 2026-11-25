@@ -1,0 +1,6 @@
+id = "da.11.p013"
+title = "Step rates by segment with Wilson intervals"
+tier = "applied"
+kind = "code"
+topics = ["funnel analysis", "Wilson interval", "segments", "NaN handling"]
+minutes = 30

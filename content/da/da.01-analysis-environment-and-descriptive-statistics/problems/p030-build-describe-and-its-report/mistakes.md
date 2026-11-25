@@ -1,0 +1,7 @@
+- **Counting `None` in `n`** or forgetting to report how many were missing.
+- **Passing `None` to `statistics`** (`TypeError`): filter first.
+- **Sample vs population mix-up:** `sd` is the sample sd, but `skew_hint` divides by the population sd.
+- **Quartiles from the default (exclusive) method:** use `method="inclusive"`.
+- **`statistics.quantiles` on one value** raises on older Python versions: handle `n == 1` yourself.
+- **Dividing by zero** in `skew_hint` when all values are equal.
+- **A format that is almost right** (one space too many): the tests compare the lines exactly.

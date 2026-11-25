@@ -1,0 +1,4 @@
+- **"A surrogate key never causes problems."** It does not cause the natural-key problems, but it hides duplicates of one real person.
+- **Only one failure given.** The point is the list: change, reuse, sharing, formats.
+- **Dropping the phone number from the warehouse.** It is the best way to find duplicate customers; keep it, with a rule.
+- **Saying "use the email, then".** An email is also a natural key, with the same four problems.

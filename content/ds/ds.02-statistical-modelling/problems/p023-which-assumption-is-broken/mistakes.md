@@ -1,0 +1,3 @@
+- Printing the last matching rule instead of the first (F would become `non-normal errors`).
+- Treating dw = 2.6 as fine: the rule says above 2.5 is also a problem.
+- Writing the label without the exact spelling and hyphens (`non-constant variance`).

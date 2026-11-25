@@ -1,0 +1,5 @@
+- **`overall = mean(by_city.values())`.** It gives a tiny Delhi the same vote as a big Pune.
+- **Averaging per customer first.** That answers "per customer", a different question (next problem).
+- **A merge without `validate`.** If `customers` had a repeated id, the jobs would be multiplied and the means skewed.
+- **Dividing by `len(joined)` when the join could add rows.** Divide by the number of jobs.
+- **Keeping cities without jobs.** They have no mean; they should not be in the dict.

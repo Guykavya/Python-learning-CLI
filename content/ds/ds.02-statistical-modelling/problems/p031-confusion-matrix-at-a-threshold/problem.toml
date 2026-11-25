@@ -1,0 +1,6 @@
+id = "ds.02.p031"
+title = "Confusion matrix at a threshold"
+tier = "drill"
+kind = "code"
+topics = ["confusion matrix", "threshold", "classification", "TP FP FN TN"]
+minutes = 20

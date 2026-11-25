@@ -1,0 +1,4 @@
+- Reading tick labels before `canvas.draw()`: the list is empty or has blank labels.
+- Using `get_height()` for horizontal bars: it returns the bar thickness (0.8), not the value.
+- Returning NumPy scalars where the test compares with plain floats: wrap with `float(...)`.
+- Returning `ln.get_ydata()` with integers when the line was built from ints: the helper promises floats.

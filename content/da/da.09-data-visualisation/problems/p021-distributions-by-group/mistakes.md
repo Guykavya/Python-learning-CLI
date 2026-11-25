@@ -1,0 +1,4 @@
+- `stat="count"` (the default): the larger group looks taller although the shapes may be equal.
+- Leaving `common_norm=True`: the areas of all groups together add to 1, so each group's area is its share of the rows.
+- Plotting two separate figures: the groups cannot be compared on one axis.
+- Forgetting `ax=ax` when you created the axes yourself (a second, empty figure appears).

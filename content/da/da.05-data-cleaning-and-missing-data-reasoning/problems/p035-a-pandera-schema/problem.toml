@@ -1,0 +1,6 @@
+id = "da.05.p035"
+title = "A pandera schema"
+tier = "applied"
+kind = "code"
+topics = ["pandera", "DataFrameSchema", "Column", "Check", "nullable", "validation"]
+minutes = 30

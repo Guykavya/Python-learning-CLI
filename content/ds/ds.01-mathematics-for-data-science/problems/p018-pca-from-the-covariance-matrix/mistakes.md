@@ -1,0 +1,5 @@
+- Forgetting to centre the data.
+- Taking the smallest eigenvalues: `eigh` is ascending, so reverse the order.
+- Returning the columns of `V` as rows without transposing (`components` must be `k x d`).
+- Dividing the ratio by the sum of only the `k` chosen eigenvalues instead of all of them.
+- Comparing eigenvectors without allowing a sign flip.

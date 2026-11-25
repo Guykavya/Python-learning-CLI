@@ -1,0 +1,7 @@
+id = "da.12.p014"
+title = "The approximate-match trap"
+tier = "deep"
+kind = "code"
+topics = ["VLOOKUP", "approximate match", "exact match", "silent errors"]
+minutes = 35
+assessment = "fix"

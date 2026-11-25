@@ -1,0 +1,5 @@
+- **Keeping the loop but using `df.loc[i, "price"] = ...`.** It works, but is slow and still modifies the input.
+- **`out = df` instead of `df.copy()`.** A second name is not a copy; the caller's frame changes.
+- **`df.qty[df.qty < 0] = 0`.** Chained assignment again (attribute access, then `[]`).
+- **Setting `warnings.simplefilter("ignore")` inside `clean`.** The warning is the symptom; the data is still not changed.
+- **`round(df["price"], 2)`.** Python's `round` on a Series works, but the explicit `Series.round(2)` is the documented form.

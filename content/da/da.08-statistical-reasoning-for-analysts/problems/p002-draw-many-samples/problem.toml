@@ -1,0 +1,6 @@
+id = "da.08.p002"
+title = "Draw many samples"
+tier = "applied"
+kind = "code"
+topics = ["sampling distribution", "reproducible randomness", "Generator", "standard error"]
+minutes = 25

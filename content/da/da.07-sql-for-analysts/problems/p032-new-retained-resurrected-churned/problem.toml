@@ -1,0 +1,6 @@
+id = "da.07.p032"
+title = "New, retained, resurrected, churned"
+tier = "challenge"
+kind = "code"
+topics = ["user states", "lag", "MAU decomposition", "NOT EXISTS", "month arithmetic"]
+minutes = 50

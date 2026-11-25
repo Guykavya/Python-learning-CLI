@@ -1,0 +1,3 @@
+- Believing the smaller `h` is always better.
+- Labelling `h = 1e-15` as small because `h` is small.
+- Forgetting `label` looks at the *error*, not at `h`.

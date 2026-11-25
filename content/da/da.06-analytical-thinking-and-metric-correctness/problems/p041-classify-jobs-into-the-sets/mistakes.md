@@ -1,0 +1,7 @@
+- **Using `<=` for the end of February.** Job 204 started exactly on `1 Mar 00:00`: the end is excluded, so it is not in `C`.
+- **Treating the start as excluded.** Job 203 started exactly on `1 Feb 00:00`: the start is included.
+- **Putting job 203 in `T` because it was "almost" February.** `created_at` is one second before the period.
+- **Putting job 205 in `P`.** A pending job has no start date; a comparison with `NaT` is false.
+- **Giving job 207 a reason.** It is in neither `T` nor `C`; the reasons only exist for jobs in exactly one of those two.
+- **Trailing space after `201 T,C`.** The line has no reason, so nothing follows the sets.
+- **Reading the last line as 5 - 2.** It is only-`T` minus only-`C` (4 - 1), which happens to equal the net gap.

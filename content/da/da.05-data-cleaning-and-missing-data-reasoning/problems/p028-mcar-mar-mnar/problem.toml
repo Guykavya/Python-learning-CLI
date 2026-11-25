@@ -1,0 +1,7 @@
+id = "da.05.p028"
+title = "MCAR, MAR, MNAR"
+tier = "deep"
+kind = "explain"
+topics = ["missing data", "MCAR", "MAR", "MNAR", "bias", "complete-case", "explain"]
+minutes = 35
+assessment = "explain"

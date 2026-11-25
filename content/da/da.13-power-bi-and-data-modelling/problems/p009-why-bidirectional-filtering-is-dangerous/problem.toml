@@ -1,0 +1,7 @@
+id = "da.13.p009"
+title = "Why bidirectional filtering is dangerous"
+tier = "deep"
+kind = "explain"
+topics = ["bidirectional filter", "ambiguity", "filter propagation", "star schema", "explain"]
+minutes = 30
+assessment = "explain"

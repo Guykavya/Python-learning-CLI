@@ -1,0 +1,6 @@
+- **`raw.isna().sum() - clean.isna().sum()`**: the blanks that were already empty are counted as losses.
+- **Counting blank texts (`" "`) as lost**: they were empty before the conversion.
+- **Examples that repeat** (`"free", "free", "free"`): take distinct values, or the three slots fill with one text.
+- **Stripping the examples**: report the text as it was in the file.
+- **Failing when a column exists in only one frame**: use the intersection, in `raw` order.
+- **Iterating over rows with `iterrows`**: the audit must work on big tables.

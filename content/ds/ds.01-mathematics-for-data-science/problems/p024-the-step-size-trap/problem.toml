@@ -1,0 +1,6 @@
+id = "ds.01.p024"
+title = "The step-size trap"
+tier = "deep"
+kind = "trace"
+topics = ["numerical derivative", "step size", "rounding error", "trace"]
+minutes = 20

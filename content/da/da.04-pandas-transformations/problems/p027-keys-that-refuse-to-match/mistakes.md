@@ -1,0 +1,5 @@
+- **`.str.strip()` before `astype(str)`.** An integer column has no `.str` accessor: `AttributeError`.
+- **Cleaning only one side.** `"p001"` on the right still does not match `"P001"` on the left.
+- **Measuring on distinct keys instead of rows.** The task counts left **rows**; a key used twice counts twice.
+- **Computing `match_before` after cleaning.** Then before and after are equal and the report hides the problem.
+- **`left[key] = ...`.** That changes the caller's frame. Work on copies (`assign`).

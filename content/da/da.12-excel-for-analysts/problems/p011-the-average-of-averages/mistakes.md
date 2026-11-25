@@ -1,0 +1,4 @@
+- Averaging the line prices when the question is revenue per unit.
+- Taking an average of regional averages for "all regions": it is not the overall average.
+- Forgetting the quotes around the region text inside the formula.
+- Using the revenue after discount in one formula and the list price in the other.

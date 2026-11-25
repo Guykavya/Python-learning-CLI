@@ -1,0 +1,5 @@
+- **Dividing by 8 for the first line.** `dropna` leaves 5 values, so the mean divides by 5 and the std by 4.
+- **Using the population formula (divide by n).** `Series.std()` divides by `n - 1`.
+- **Thinking the mean fill changes the mean.** It cannot: the new values equal the mean. It only shrinks the spread.
+- **Expecting the zero fill to shrink the spread.** The zeros are far below the others, so the spread grows and the mean falls.
+- **Writing `len(t)` as 8 for `dropna`.** `dropna` removes the rows: 5 values remain.

@@ -1,0 +1,4 @@
+- Using each group's own proportion in the SE (that is the interval, not the test).
+- One-sided p-value: forgetting the factor 2.
+- A p-value from `1 - cdf(z)` for negative z: use `abs(z)`.
+- Dividing by `n` instead of using `1 / nA + 1 / nB`.

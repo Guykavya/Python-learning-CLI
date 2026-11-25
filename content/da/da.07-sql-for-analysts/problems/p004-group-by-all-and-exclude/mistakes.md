@@ -1,0 +1,5 @@
+- Writing `GROUP BY ALL` and putting an aggregate-free expression such as `date_trunc(...)` in the `SELECT` without an alias: it works, but the column name is ugly. Give names.
+- Using `SELECT * EXCLUDE event_id` without parentheses: the list must be `EXCLUDE (event_id)`.
+- Joining the other way round and getting duplicated users in the key: the grain of the result is (channel, country, event_type), so the join must not repeat events.
+- Counting `count(user_id)` or `count(DISTINCT user_id)` instead of rows: the question asks for **events**.
+- Passing the test with a spelled-out `GROUP BY`: the point of the exercise is the two features.

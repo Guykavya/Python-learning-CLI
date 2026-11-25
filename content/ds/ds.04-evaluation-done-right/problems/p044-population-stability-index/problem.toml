@@ -1,0 +1,6 @@
+id = "ds.04.p044"
+title = "Population stability index"
+tier = "challenge"
+kind = "explain"
+topics = ["drift", "PSI", "monitoring", "production", "explain"]
+minutes = 30

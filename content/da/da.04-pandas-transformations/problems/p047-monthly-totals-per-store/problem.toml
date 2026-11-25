@@ -1,0 +1,6 @@
+id = "da.04.p047"
+title = "Monthly totals per store"
+tier = "applied"
+kind = "code"
+topics = ["groupby", "pd.Grouper", "freq='ME'", "time series", "multi-key groupby"]
+minutes = 20

@@ -1,0 +1,6 @@
+- **"Different seeds, so different streams, so A is fine."** Different *runs* share streams: 100 + 1 is 101 + 0.
+- **Thinking B gives 8 different streams.** Each process starts from the same copied state and draws identical numbers.
+- **Calling C "random each time".** It is reproducible: same parent seed, same children.
+- **Creating `default_rng(seed)` inside the worker loop**, once per task: every task then repeats the same numbers.
+- **Using `np.random.seed` in each worker**: the hidden global generator (Ch. 13.6) is per process and gives the same problems as A or B.
+- **Not recording the seed and NumPy version**: without them the run cannot be repeated exactly (Ch. 13.2's version caution).

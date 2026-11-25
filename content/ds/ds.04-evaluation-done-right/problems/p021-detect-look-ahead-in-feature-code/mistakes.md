@@ -1,0 +1,4 @@
+- Cutting at `series.iloc[:t]`, which drops position `t` itself.
+- Comparing whole arrays instead of the value at `t`.
+- Treating `NaN != NaN` as "changed": the first rows of a rolling mean are `NaN` in both versions.
+- Believing the check is complete: a feature can look ahead only at some positions.

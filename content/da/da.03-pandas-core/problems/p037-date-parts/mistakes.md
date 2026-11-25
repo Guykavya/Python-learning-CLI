@@ -1,0 +1,5 @@
+- **`dayofweek` or `weekday`** as an attribute name: use `day_of_week` (the old alias warns in pandas 3).
+- **Thinking Monday is 1**: `day_of_week` starts at 0 for Monday, so weekend is `>= 5`.
+- **`strftime("%A")`** works too but returns text for NaT as missing; `day_name()` is the direct tool.
+- **Using `.dt` on text**: the column must be datetime first.
+- **Editing `df` instead of a copy**: the input frame must not change.

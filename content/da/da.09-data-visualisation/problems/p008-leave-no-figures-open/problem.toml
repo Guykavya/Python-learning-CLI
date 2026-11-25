@@ -1,0 +1,6 @@
+id = "da.09.p008"
+title = "Leave no figures open"
+tier = "deep"
+kind = "code"
+topics = ["plt.close", "memory", "try/finally", "figure lifecycle"]
+minutes = 25

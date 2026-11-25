@@ -1,0 +1,6 @@
+id = "da.01.p009"
+title = "A forgiving number parser"
+tier = "applied"
+kind = "code"
+topics = ["parsing", "cleaning", "missing values", "ValueError", "text to float"]
+minutes = 30

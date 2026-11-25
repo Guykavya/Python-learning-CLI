@@ -1,0 +1,6 @@
+id = "ds.01.p048"
+title = "Mean and variance from a pmf"
+tier = "drill"
+kind = "code"
+topics = ["expected value", "variance", "pmf", "validation"]
+minutes = 15

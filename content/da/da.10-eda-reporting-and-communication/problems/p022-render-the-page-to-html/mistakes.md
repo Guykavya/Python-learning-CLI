@@ -1,0 +1,4 @@
+- Inserting text without `html.escape`: a `<` in a sentence breaks the page.
+- Linking the image by file name (`<img src='overview.png'>`): the page breaks as soon as it is emailed without the folder.
+- Catching the missing-file error and leaving the figure out silently.
+- Using `<h2>` for the sections: the test looks for six `<h3>` headings in order.

@@ -1,0 +1,3 @@
+- Using `> 3` instead of `>= 3`.
+- Returning a pandas Series with an index that does not match the labels later (an array avoids that).
+- Comparing a model with "random" (0.5) only: the rule is the baseline that matters to the team.

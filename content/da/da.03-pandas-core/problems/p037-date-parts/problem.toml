@@ -1,0 +1,6 @@
+id = "da.03.p037"
+title = "Date parts"
+tier = "drill"
+kind = "code"
+topics = ["dt accessor", "year", "month", "quarter", "day_name", "weekend"]
+minutes = 15

@@ -1,0 +1,6 @@
+id = "da.12.p007"
+title = "Find the overwritten formula"
+tier = "applied"
+kind = "code"
+topics = ["formula audit", "consistency check", "relative references", "openpyxl Translator"]
+minutes = 35

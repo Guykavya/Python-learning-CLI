@@ -1,0 +1,6 @@
+id = "da.03.p039"
+title = "Periods and month ends"
+tier = "applied"
+kind = "trace"
+topics = ["to_period", "DateOffset", "MonthEnd", "days_in_month", "month arithmetic", "trace"]
+minutes = 25

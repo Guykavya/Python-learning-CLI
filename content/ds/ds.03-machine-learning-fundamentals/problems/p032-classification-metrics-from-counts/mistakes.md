@@ -1,0 +1,4 @@
+- Computing F1 as the average of precision and recall: it is the harmonic mean, which is low when either is low.
+- Letting `ZeroDivisionError` or `nan` escape for a model that never predicts positive.
+- Confusing precision and recall: precision divides by what you flagged (`TP + FP`), recall by what was real (`TP + FN`).
+- Reading 98% accuracy as good when recall is 0.

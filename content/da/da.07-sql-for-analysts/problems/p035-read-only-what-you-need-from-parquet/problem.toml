@@ -1,0 +1,6 @@
+id = "da.07.p035"
+title = "Read only what you need from Parquet"
+tier = "applied"
+kind = "code"
+topics = ["Parquet", "read_parquet", "column pruning", "filter pushdown", "DuckDB"]
+minutes = 30

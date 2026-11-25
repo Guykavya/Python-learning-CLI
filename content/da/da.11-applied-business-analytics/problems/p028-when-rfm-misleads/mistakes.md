@@ -1,0 +1,4 @@
+- Using the same recency cut-offs for a seasonal and a non-seasonal business.
+- Scoring frequency for a subscription: every active customer has the same number.
+- Letting one huge order set the top quantile of M for everybody else.
+- Describing the problem without proposing an alternative.

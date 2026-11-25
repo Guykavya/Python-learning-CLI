@@ -1,0 +1,5 @@
+- Comparing the absolute error with `tol` instead of the relative one.
+- Using `<=` where the problem says *below*.
+- Counting `k * (m + n)` and forgetting the `k` singular values.
+- Returning the largest rank that works instead of the smallest.
+- Building all `r` approximations and measuring each one: correct but slow; use the singular values.

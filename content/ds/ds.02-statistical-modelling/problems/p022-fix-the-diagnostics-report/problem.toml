@@ -1,0 +1,7 @@
+id = "ds.02.p022"
+title = "Fix the diagnostics report"
+tier = "applied"
+kind = "code"
+topics = ["debugging", "diagnostics", "Cook's distance", "VIF", "Durbin-Watson", "leverage"]
+minutes = 35
+assessment = "fix"

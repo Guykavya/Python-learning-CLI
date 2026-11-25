@@ -1,0 +1,6 @@
+id = "da.11.p025"
+title = "Which segment?"
+tier = "drill"
+kind = "trace"
+topics = ["RFM segments", "rule order", "if/elif", "trace"]
+minutes = 15

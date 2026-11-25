@@ -1,0 +1,6 @@
+id = "ds.04.p033"
+title = "Budget as a count: precision at k"
+tier = "drill"
+kind = "code"
+topics = ["precision at k", "recall at k", "ranking", "capacity"]
+minutes = 20

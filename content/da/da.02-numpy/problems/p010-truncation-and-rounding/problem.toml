@@ -1,0 +1,6 @@
+id = "da.02.p010"
+title = "Truncation and rounding"
+tier = "deep"
+kind = "trace"
+topics = ["astype", "round", "half to even", "floor", "ceil", "trace"]
+minutes = 20

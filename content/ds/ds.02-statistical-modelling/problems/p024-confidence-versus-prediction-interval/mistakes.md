@@ -1,0 +1,4 @@
+- Quoting the narrow confidence interval as the range of a single flat's price. That interval covers the **average**, so it claims too much certainty about one flat.
+- Saying the prediction interval is wider "because it is less accurate". It is wider because it includes the residual variance of one new observation.
+- Believing that more data will eventually make the prediction interval tiny. It converges to about +-1.96 residual sd.
+- Mixing up the column names: `mean_ci_*` is the confidence interval for the mean, `obs_ci_*` the prediction interval.

@@ -1,0 +1,3 @@
+- Using `np.argsort(score)[::-1]`: on ties this puts the **later** row first.
+- Dividing recall by `k` instead of the number of positives.
+- Allowing `k = 0` (precision would divide by zero).

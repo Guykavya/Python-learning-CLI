@@ -1,0 +1,6 @@
+id = "da.10.p017"
+title = "A natural experiment"
+tier = "deep"
+kind = "code"
+topics = ["difference in differences", "natural experiment", "comparison group", "parallel trends"]
+minutes = 30

@@ -1,0 +1,5 @@
+- **Changing `df` in line 1.** Nothing changes in `df`: the assignment went to a temporary.
+- **Forgetting the warning line.** `catch_warnings(record=True)` collects one warning; its class is `ChainedAssignmentError`.
+- **`[99, 2, 3]` for `df["a"]`.** Under Copy-on-Write `s` is detached from `df` when written to. (Old pandas sometimes changed both: the reason people memorised "SettingWithCopy".)
+- **Treating `y = x` as a copy.** It is a second name for the same object.
+- **Changing `x` in the last line.** `z` is a real copy; its change does not reach `x`.

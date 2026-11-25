@@ -1,0 +1,5 @@
+- **Ranking lines instead of products.** A product with many small lines loses to a product with one big line.
+- **Sorting by revenue only.** Ties then follow the input order, which can change from one data load to the next.
+- **`rank(method="min")` and `rank <= 3`.** With ties that can return more than 3 rows, or skip rank 2.
+- **`rank` as float.** `rank()` returns `1.0, 2.0`; the task asks for integers.
+- **Padding small categories or adding unsold products.** Only sold products, as many as exist up to `n`.

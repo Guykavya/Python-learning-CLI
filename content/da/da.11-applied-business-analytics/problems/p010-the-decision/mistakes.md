@@ -1,0 +1,4 @@
+- Deciding on the point estimate: a lift of +0.9 with an interval from -0.3 to +2.1 is not "above 0.5".
+- Checking the primary metric first: a harmed guardrail must stop the launch even when the primary metric wins.
+- Treating "not significant" as "no effect": an interval that contains the minimum effect says extend.
+- Returning only the decision without the reason string.

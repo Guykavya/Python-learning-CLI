@@ -1,0 +1,5 @@
+- **Keeping the `NaN` rows in `to_long`.** The round trip then *adds* rows that were never in the data.
+- **Forgetting the cast back.** `sales` comes back as `float64` (`10.0`), so the round trip changes the dtype.
+- **`fillna(0)` in `to_wide`.** It invents zero sales, and `to_long` cannot tell them from real zeros any more (a real `0` must survive the round trip).
+- **`dropna()` without `subset`.** It works here, but on a wider table it would drop rows for a missing value in an unrelated column.
+- **Not sorting.** `melt` produces month-major order; the comparison expects store, then month.

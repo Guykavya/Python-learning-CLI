@@ -1,0 +1,3 @@
+- Saying the CLT makes the data normal: it concerns the sampling distribution of the mean.
+- Mixing up n (sample size) with the population size.
+- Believing the CLT works instantly for any data: very skewed data need a larger n.

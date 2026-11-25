@@ -1,0 +1,6 @@
+id = "da.02.p002"
+title = "Coordinates of a grid"
+tier = "drill"
+kind = "code"
+topics = ["arange", "meshgrid", "broadcasting", "shape", "grids"]
+minutes = 15

@@ -1,0 +1,6 @@
+id = "ds.02.p020"
+title = "Variance inflation factors"
+tier = "drill"
+kind = "code"
+topics = ["VIF", "multicollinearity", "R-squared", "auxiliary regression"]
+minutes = 25

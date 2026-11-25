@@ -1,0 +1,6 @@
+id = "da.08.p005"
+title = "Precision is not accuracy"
+tier = "applied"
+kind = "code"
+topics = ["bias", "variance", "RMSE", "accuracy vs precision", "ddof"]
+minutes = 20

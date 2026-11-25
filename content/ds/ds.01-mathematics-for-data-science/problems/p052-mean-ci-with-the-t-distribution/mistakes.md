@@ -1,0 +1,5 @@
+- `ddof=0` for the standard deviation.
+- `df = n` instead of `n - 1`.
+- Using `q = level` (0.95) instead of `0.975` for a two-sided interval.
+- Using 1.96: the normal value is too narrow for a small `n`.
+- Ignoring the `t_ppf` argument.
