@@ -37,6 +37,29 @@ def test_solve_flow_records_progress(home, capsys):
     assert db.day_count(conn) == 1
 
 
+def test_check_next_starts_the_next_plan_item(home, capsys):
+    assert run("init") == 0
+    assert run("start", "core.02.p001") == 0
+    assert run("check") == 0          # starter fails
+    prob = content.get("core.02.p001")
+    shutil.copy(prob.file("reference.py"), prob.work_path() / "solution.py")
+    assert run("check", "--next") == 0
+    conn = db.connect()
+    assert db.problem_state(conn, "core.02.p001")["status"] == "solved", "the pass should still be recorded first"
+    started = [r[0] for r in conn.execute("SELECT problem_id FROM problem_state WHERE status = 'started'")]
+    assert len(started) == 1, f"--next should start exactly one new item, found {started}"
+    assert started[0] != "core.02.p001", "--next must move on, not stay on the problem just solved"
+
+
+def test_check_next_does_nothing_after_a_failure(home):
+    assert run("init") == 0
+    assert run("start", "core.02.p001") == 0
+    assert run("check", "--next") == 0          # starter fails, so no move
+    conn = db.connect()
+    started = [r[0] for r in conn.execute("SELECT problem_id FROM problem_state WHERE status = 'started'")]
+    assert started == ["core.02.p001"], f"a failed check must keep you on the same problem, found {started}"
+
+
 def test_trace_empty_answer_is_not_an_attempt(home):
     run("init")
     run("start", "core.02.p003")

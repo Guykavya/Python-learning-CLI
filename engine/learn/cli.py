@@ -392,6 +392,8 @@ def cmd_check(args: argparse.Namespace) -> None:
             print(result.output.rstrip())
         print(f"{mark} {prob.id}. It was already solved, so progress is unchanged. "
               f"To practise it for credit: learn start {prob.id} --review")
+        if result.passed and getattr(args, "next", False):
+            cmd_next(args)
         return
     seconds = _touch_session(conn, st)
     st = db.problem_state(conn, prob.id)
@@ -441,6 +443,9 @@ def cmd_check(args: argparse.Namespace) -> None:
             ], color="yellow")
         print(ui.dim("  Compare with the walkthrough: learn solution   ·   next: learn next"))
         gitsnap.snapshot(f"learn: solved {prob.id}" + (" (review)" if st["is_review"] else ""))
+        if getattr(args, "next", False):
+            print()
+            cmd_next(args)
     else:
         print(result.output.rstrip())
         print()
@@ -1430,6 +1435,8 @@ def build_parser() -> argparse.ArgumentParser:
     sp = add("check", cmd_check, "Check your current problem")
     sp.add_argument("problem", nargs="?")
     sp.add_argument("--rate", type=int, choices=[1, 2, 3], help="self-rating for explain problems")
+    sp.add_argument("--next", action="store_true",
+                    help="after a pass, start the next item in today's plan (review or new problem)")
     sp = add("hint", cmd_hint, "Reveal the next hint")
     sp.add_argument("problem", nargs="?")
     sp = add("solution", cmd_solution, "Show the walkthrough and common mistakes")
