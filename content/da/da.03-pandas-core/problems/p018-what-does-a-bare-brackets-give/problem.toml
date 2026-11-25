@@ -1,0 +1,6 @@
+id = "da.03.p018"
+title = "What does a bare [] give?"
+tier = "drill"
+kind = "trace"
+topics = ["indexing", "Series vs DataFrame", "shape", "boolean filter", "trace"]
+minutes = 15

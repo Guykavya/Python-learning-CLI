@@ -1,0 +1,5 @@
+- **The default `aggfunc`.** `pivot_table` averages by default (`"mean"`); a revenue report needs `"sum"`.
+- **`pivot` instead of `pivot_table`.** Two lines for north in January make `pivot` raise.
+- **No `fill_value=0`.** Empty pairs stay `NaN`, and a reader cannot tell "no sales" from "unknown".
+- **The default margin name `All`.** The task asks for `Total`.
+- **Totals made by hand from rounded cells.** Add from the raw data, then round for display.

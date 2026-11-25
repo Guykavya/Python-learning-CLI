@@ -1,0 +1,5 @@
+- **`sum(parts) == total`.** Float noise makes correct data fail: `0.1 * 10` is not exactly `1.0`.
+- **Returning `-0.0`.** It compares equal to `0.0`, but prints as `-0.0` in a report and confuses readers.
+- **Returning NumPy types.** `np.bool_` and `np.float64` print differently (`np.True_`); return `bool` and `float`.
+- **`sum(parts)` on a dict.** Python's `sum` over a dict adds the *keys*; `pd.Series(parts).sum()` adds the values.
+- **Raising without `strict`.** The default only reports; the caller decides whether a mismatch is fatal.

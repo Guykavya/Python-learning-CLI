@@ -1,0 +1,7 @@
+id = "da.03.p060"
+title = "Explore a messy sales file"
+tier = "challenge"
+kind = "code"
+topics = ["project", "load_sales", "profile", "flags", "parquet", "business questions", "audit"]
+minutes = 90
+assessment = "build"

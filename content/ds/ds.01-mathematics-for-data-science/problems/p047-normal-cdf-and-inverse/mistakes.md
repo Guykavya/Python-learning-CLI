@@ -1,0 +1,4 @@
+- Forgetting the `sqrt(2)` inside `erf`.
+- Standardising with `sigma**2` instead of `sigma`.
+- Bisecting with too few iterations: the round trip needs about 60 halvings for `1e-12`.
+- Not checking `0 < q < 1`: the quantile of 0 or 1 is infinite.

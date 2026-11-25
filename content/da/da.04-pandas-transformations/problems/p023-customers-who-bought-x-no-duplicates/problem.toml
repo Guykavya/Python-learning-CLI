@@ -1,0 +1,6 @@
+id = "da.04.p023"
+title = "Customers who bought X (no duplicates)"
+tier = "applied"
+kind = "code"
+topics = ["semi-join", "isin", "merge", "fan-out", "drop_duplicates"]
+minutes = 20

@@ -1,0 +1,6 @@
+id = "ds.01.p041"
+title = "Bayes for a medical test"
+tier = "drill"
+kind = "code"
+topics = ["Bayes theorem", "posterior", "sensitivity", "false positive rate"]
+minutes = 15

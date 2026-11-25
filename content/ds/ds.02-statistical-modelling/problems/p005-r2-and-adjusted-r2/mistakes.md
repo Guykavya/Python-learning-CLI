@@ -1,0 +1,4 @@
+- Counting the intercept in `p`. With one predictor `p = 1`, and the denominator is `n - 2`.
+- Using `n` instead of `n - 1` in the numerator of the adjustment.
+- Computing TSS around zero instead of around the mean of `y`.
+- Returning NumPy scalars; the test accepts them, but plain floats are tidier.

@@ -1,0 +1,6 @@
+id = "da.03.p038"
+title = "Delivery times"
+tier = "applied"
+kind = "code"
+topics = ["timedelta", "datetime subtraction", "boolean flag", "missing dates", "total_seconds"]
+minutes = 25

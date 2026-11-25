@@ -1,0 +1,4 @@
+- Forgetting `bottom=`: the segments are drawn on top of each other from 0.
+- Dividing by the column total instead of the row total: the bars no longer add to 100.
+- `unstack()` without `fill_value=0`: a missing part gives `NaN` and a broken bar.
+- Letting `groupby` sort the groups or parts: the order must follow the data.

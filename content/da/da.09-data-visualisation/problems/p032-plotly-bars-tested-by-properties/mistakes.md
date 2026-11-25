@@ -1,0 +1,4 @@
+- Not aggregating: one bar per row.
+- Sorting descending: the largest bar ends up at the **bottom**.
+- Forgetting `orientation="h"`: the bars are vertical and x/y are swapped.
+- Reading `fig.to_dict()["data"][0]["x"]` in a test: it may be a binary dict, not a list.

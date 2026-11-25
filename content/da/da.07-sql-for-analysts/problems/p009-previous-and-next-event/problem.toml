@@ -1,0 +1,6 @@
+id = "da.07.p009"
+title = "Previous and next event"
+tier = "drill"
+kind = "code"
+topics = ["lag", "window functions", "PARTITION BY", "dates", "NULL"]
+minutes = 20

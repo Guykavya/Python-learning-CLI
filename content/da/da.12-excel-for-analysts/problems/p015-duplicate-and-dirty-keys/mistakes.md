@@ -1,0 +1,4 @@
+- Checking duplicates on the raw text: `"P05"` and `"p05 "` are the same key for Excel after trimming.
+- Listing real numbers as "numbers as text".
+- Reporting `None` as a duplicate.
+- Forgetting that `str(105)` and `"105"` normalise to the same key: that is a duplicate.

@@ -1,0 +1,4 @@
+- Choosing by the test score and then also computing the CV on the train data "for show". The choice must come from the CV only.
+- Calling `.score` on the test set inside the loop (even without using the value for choosing, it is a habit that leads to leaks).
+- Refitting on train **and** test before reporting the test score.
+- Using `>=` and so returning the last of tied alphas instead of the first.

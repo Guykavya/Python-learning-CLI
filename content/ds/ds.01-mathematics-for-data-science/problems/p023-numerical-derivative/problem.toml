@@ -1,0 +1,6 @@
+id = "ds.01.p023"
+title = "Numerical derivative"
+tier = "drill"
+kind = "code"
+topics = ["derivative", "central difference", "step size", "numerical differentiation"]
+minutes = 15

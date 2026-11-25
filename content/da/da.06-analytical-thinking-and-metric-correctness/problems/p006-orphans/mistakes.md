@@ -1,0 +1,5 @@
+- **Returning counts only.** "3 orphans" cannot be fixed; the ids can be traced to a source system.
+- **Listing customer ids for the orphan jobs.** The unknown customer 9 is not in the customer table; return the job ids.
+- **Forgetting the missing customer.** A job with no customer at all is the worst orphan; `isin` finds it, `==` does not.
+- **Returning a `Series` or numpy ints.** Use `.tolist()` and `sorted`.
+- **Checking one direction.** Customers without jobs are a different (usually harmless) finding; the task wants both.

@@ -1,0 +1,2 @@
+logistic vs rule: mean difference +0.056, standard error 0.0024, better
+boosting vs logistic: mean difference -0.002, standard error 0.0049, no clear difference

@@ -1,0 +1,6 @@
+id = "da.04.p012"
+title = "Same groups, three shapes"
+tier = "drill"
+kind = "trace"
+topics = ["groupby", "agg", "transform", "filter", "head", "shape", "trace"]
+minutes = 20

@@ -1,0 +1,6 @@
+id = "da.04.p004"
+title = "What does iterating a groupby give?"
+tier = "drill"
+kind = "trace"
+topics = ["groupby", "iteration", "get_group", "ngroups", "sort=False", "trace"]
+minutes = 15

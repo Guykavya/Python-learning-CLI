@@ -1,0 +1,5 @@
+- `ddof=0` for the variances.
+- Pooling the variances (that is Student's test, not Welch's).
+- `df = na + nb - 2`: that is the pooled version.
+- A one-sided p-value: forget the factor 2.
+- Using `t` instead of `abs(t)` in the survival function.

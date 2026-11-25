@@ -1,0 +1,6 @@
+id = "da.07.p036"
+title = "Partitioned files"
+tier = "applied"
+kind = "code"
+topics = ["hive partitioning", "Parquet dataset", "read_parquet", "partition column", "DuckDB"]
+minutes = 30

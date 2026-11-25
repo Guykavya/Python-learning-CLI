@@ -1,0 +1,6 @@
+id = "da.10.p001"
+title = "Answer first"
+tier = "drill"
+kind = "code"
+topics = ["headline", "answer first", "pyramid principle", "f-strings"]
+minutes = 15

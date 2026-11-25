@@ -1,0 +1,6 @@
+id = "ds.04.p032"
+title = "The oversampling leak"
+tier = "challenge"
+kind = "code"
+topics = ["oversampling", "class imbalance", "cross-validation", "leakage"]
+minutes = 45

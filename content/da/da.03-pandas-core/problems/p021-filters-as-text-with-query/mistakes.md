@@ -1,0 +1,4 @@
+- **Pasting values into the text** (`f"qty >= {min_qty}"`). Works for numbers, breaks for strings with quotes, and mixes data into code. Use `@`.
+- **No `@`.** `min_qty` is looked up as a column and raises `UndefinedVariableError`.
+- **`unit price > 0` without backticks.** The space makes it a syntax error.
+- **`region == region`.** Both sides are the column: always true. Write `region == @region`.

@@ -1,0 +1,6 @@
+id = "ds.03.p038"
+title = "k-means by hand"
+tier = "deep"
+kind = "code"
+topics = ["k-means", "clustering", "inertia", "Lloyd's algorithm"]
+minutes = 45

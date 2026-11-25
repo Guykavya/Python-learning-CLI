@@ -1,0 +1,5 @@
+- **`tap` returning nothing.** A function without `return d` returns `None`, and the next step fails with `AttributeError: 'NoneType'...`.
+- **Logging `len(d)` instead of `d.shape`.** The task records `(rows, columns)`, which also shows the new `revenue` column.
+- **Dropping duplicates before filtering.** The final table is the same here, but the logged shapes are not; the steps have a fixed order.
+- **`qty >= 0`.** A line with quantity 0 is not a sale.
+- **`groupby("order_id")["revenue"].sum()` without `as_index=False`.** You get a Series with `order_id` as the index, shape `(3,)`, not a two-column table.

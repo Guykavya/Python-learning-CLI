@@ -1,0 +1,5 @@
+- **Leaving `include_lowest=True` out**: age 0 becomes missing, because the first bin is `(0, 18]`.
+- **Using `right=False`** to "fix" the boundary: it moves 18 into "adult"; the problem asks for 18 to be "youth".
+- **Using `cut` with the number 4** when the edges are known (`pd.cut(s, 4)` makes four equal-width bins from the data range).
+- **Expecting equal counts from `cut`** or equal widths from `qcut`: they answer different questions.
+- **`qcut` on data with heavy ties**: it raises `ValueError: Bin edges must be unique`; this problem assumes no ties.

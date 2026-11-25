@@ -1,0 +1,6 @@
+id = "da.07.p010"
+title = "Frames: rows or range?"
+tier = "deep"
+kind = "trace"
+topics = ["window frame", "ROWS", "RANGE", "default frame", "peers", "trace"]
+minutes = 25

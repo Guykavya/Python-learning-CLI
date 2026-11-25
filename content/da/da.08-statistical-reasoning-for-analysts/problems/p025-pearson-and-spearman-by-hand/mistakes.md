@@ -1,0 +1,4 @@
+- Ranking without averaging ties (`argsort().argsort()`): the result differs from SciPy with ties.
+- Dividing by `n` or by standard deviations with different `ddof`: the factors cancel only if you are consistent; use the formula above.
+- Returning `nan` for a constant column instead of raising.
+- Rounding inside the function.

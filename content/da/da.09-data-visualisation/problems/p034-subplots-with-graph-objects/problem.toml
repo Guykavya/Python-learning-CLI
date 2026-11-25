@@ -1,0 +1,6 @@
+id = "da.09.p034"
+title = "Subplots with graph objects"
+tier = "challenge"
+kind = "code"
+topics = ["plotly graph_objects", "make_subplots", "go.Bar", "go.Scatter", "shared axis"]
+minutes = 35

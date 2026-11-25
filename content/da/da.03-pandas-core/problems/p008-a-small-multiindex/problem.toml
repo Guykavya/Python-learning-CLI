@@ -1,0 +1,6 @@
+id = "da.03.p008"
+title = "A small MultiIndex"
+tier = "applied"
+kind = "code"
+topics = ["MultiIndex", "set_index", "loc", "KeyError", "levels"]
+minutes = 25

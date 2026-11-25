@@ -1,0 +1,6 @@
+id = "ds.04.p006"
+title = "Scale on train only"
+tier = "drill"
+kind = "code"
+topics = ["StandardScaler", "preprocessing leakage", "fit/transform"]
+minutes = 15

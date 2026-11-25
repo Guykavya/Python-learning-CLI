@@ -1,0 +1,6 @@
+id = "ds.01.p043"
+title = "Updating step by step"
+tier = "applied"
+kind = "code"
+topics = ["Bayesian updating", "sequential", "prior", "likelihood"]
+minutes = 30

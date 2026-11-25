@@ -1,0 +1,6 @@
+id = "da.04.p036"
+title = "Pivot table with totals"
+tier = "applied"
+kind = "code"
+topics = ["pivot_table", "aggfunc", "fill_value", "margins", "reconcile"]
+minutes = 20

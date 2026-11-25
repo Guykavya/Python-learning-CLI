@@ -1,0 +1,7 @@
+id = "da.02.p015"
+title = "Fix the normaliser that edits your data"
+tier = "deep"
+kind = "code"
+topics = ["debugging", "in-place operations", "views", "dtype", "UFuncTypeError", "fix"]
+minutes = 30
+assessment = "fix"

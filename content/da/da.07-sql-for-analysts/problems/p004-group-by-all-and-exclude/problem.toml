@@ -1,0 +1,6 @@
+id = "da.07.p004"
+title = "GROUP BY ALL and EXCLUDE"
+tier = "drill"
+kind = "code"
+topics = ["GROUP BY ALL", "SELECT * EXCLUDE", "DuckDB dialect", "joins"]
+minutes = 15

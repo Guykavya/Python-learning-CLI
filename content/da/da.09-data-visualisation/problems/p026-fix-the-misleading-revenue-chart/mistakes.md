@@ -1,0 +1,4 @@
+- Fixing the axis and the unit but keeping `df.tail(3)`: the window still hides two years.
+- Typing the percentage into the title: it will be wrong for the next dataset.
+- `ax.set_ylim(0, df["revenue"].min())`: the bars are cut off at the top instead.
+- Writing "grew" for a falling series.

@@ -1,0 +1,4 @@
+- Counting blank keys as orphans: they are a different problem (a missing key, not a key that is not found).
+- Reading the one side from the wrong table (the many side holds the foreign key).
+- Returning only the problems: the table must have one row per relationship, including the healthy ones.
+- Forgetting the inactive relationship: it is still a relationship that must be valid.

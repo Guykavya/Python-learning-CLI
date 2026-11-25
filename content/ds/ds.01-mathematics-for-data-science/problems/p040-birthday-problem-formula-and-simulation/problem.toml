@@ -1,0 +1,6 @@
+id = "ds.01.p040"
+title = "Birthday problem: formula and simulation"
+tier = "applied"
+kind = "code"
+topics = ["birthday problem", "complement", "simulation", "seed"]
+minutes = 30

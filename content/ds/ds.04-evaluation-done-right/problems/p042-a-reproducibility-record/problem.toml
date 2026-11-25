@@ -1,0 +1,6 @@
+id = "ds.04.p042"
+title = "A reproducibility record"
+tier = "deep"
+kind = "code"
+topics = ["reproducibility", "experiment record", "data fingerprint", "dataclasses"]
+minutes = 40

@@ -1,0 +1,5 @@
+- Using `avg`: one user who waits ten days drags the mean far from the typical value.
+- Computing the gap per event instead of per user's first times: a user with two purchases would count twice.
+- Not excluding purchase-before-cart users: they give negative hours.
+- `date_diff('hour', ...)`: counts hour boundaries (10:59 to 11:01 is 1 hour); it gives whole numbers, not exact hours.
+- Reporting the figure as "time to purchase for a typical user": users who never converted are not in it (survivorship).

@@ -1,0 +1,6 @@
+id = "ds.02.p011"
+title = "The formula interface"
+tier = "applied"
+kind = "code"
+topics = ["formula", "C()", "Treatment", "log transform", "statsmodels"]
+minutes = 25

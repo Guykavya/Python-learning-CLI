@@ -1,0 +1,6 @@
+id = "da.05.p031"
+title = "Mean filling shrinks the spread"
+tier = "drill"
+kind = "code"
+topics = ["missing data", "fillna", "mean imputation", "variance shrinkage", "std"]
+minutes = 15

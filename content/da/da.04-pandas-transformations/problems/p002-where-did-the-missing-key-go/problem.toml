@@ -1,0 +1,6 @@
+id = "da.04.p002"
+title = "Where did the missing key go?"
+tier = "drill"
+kind = "trace"
+topics = ["groupby", "dropna", "missing keys", "size", "count", "trace"]
+minutes = 15

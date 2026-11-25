@@ -1,0 +1,6 @@
+- **`[300, 350] uint8` on the first line.** A `uint8` cannot hold 300; the result stays `uint8` and wraps to 44 and 94.
+- **`[44, 94] uint8` on the second line too.** NumPy 2 checks the Python integer first: 300 is out of range for `uint8`, so `OverflowError`.
+- **`uint8` for `r3`.** A NumPy scalar is not weak: `np.int64(100)` brings its own type and the result is `int64`.
+- **`float32` for `r4`.** The array is integer, so nothing to "keep": the weak float becomes the default `float64`.
+- **`float64` for `r5`.** The weak Python float adapts to the `float32` array.
+- **Printing the full traceback.** The program catches the exception and prints only `type(exc).__name__`.

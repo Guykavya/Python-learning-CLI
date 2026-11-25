@@ -1,0 +1,6 @@
+id = "da.12.p008"
+title = "Named ranges"
+tier = "applied"
+kind = "code"
+topics = ["defined names", "named ranges", "auditable workbooks", "openpyxl"]
+minutes = 30

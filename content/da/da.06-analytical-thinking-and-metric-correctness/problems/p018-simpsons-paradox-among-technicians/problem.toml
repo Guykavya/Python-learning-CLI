@@ -1,0 +1,6 @@
+id = "da.06.p018"
+title = "Simpson's paradox among technicians"
+tier = "deep"
+kind = "code"
+topics = ["Simpson's paradox", "groupby", "weighted rate", "confounder", "job mix"]
+minutes = 30

@@ -1,0 +1,3 @@
+- Counting the negatives **above** a positive.
+- Dividing AP by the number of rows instead of the number of positives.
+- Writing `0.67` instead of `0.667` in the list (`round(x, 3)`).

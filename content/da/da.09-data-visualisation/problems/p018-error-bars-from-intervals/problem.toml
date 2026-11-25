@@ -1,0 +1,6 @@
+id = "da.09.p018"
+title = "Error bars from intervals"
+tier = "deep"
+kind = "code"
+topics = ["confidence interval", "error bars", "errorbar", "t distribution", "uncertainty"]
+minutes = 30

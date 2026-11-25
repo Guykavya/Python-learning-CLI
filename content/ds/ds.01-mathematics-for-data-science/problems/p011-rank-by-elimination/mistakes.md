@@ -1,0 +1,4 @@
+- Assuming the matrix is square, so a tall or wide matrix crashes.
+- Advancing the row counter even when a column has no pivot.
+- Comparing with `0` instead of a tolerance: rounding noise adds fake rank.
+- Counting non-zero rows of the original matrix instead of after elimination.

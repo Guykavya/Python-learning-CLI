@@ -1,0 +1,6 @@
+id = "ds.02.p029"
+title = "Odds ratios with intervals"
+tier = "applied"
+kind = "code"
+topics = ["odds ratio", "logistic regression", "confidence interval", "exp"]
+minutes = 25

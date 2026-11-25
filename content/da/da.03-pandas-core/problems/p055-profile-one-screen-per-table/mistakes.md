@@ -1,0 +1,6 @@
+- **Counting missing values in `unique`**: use `nunique()` (it skips them) and check the example with the missing city.
+- **Relying on the order of `value_counts` ties**: it is not specified; sort by count and then by value.
+- **Giving booleans a min and max**: `True` and `False` are not numbers for this report; use `is_bool_dtype`.
+- **Returning `numpy` ints in `top`**: convert counts with `int(...)`.
+- **Using `df.describe()`** and renaming: it leaves text columns out and counts differently.
+- **Index not set to the column names**: the profile is a table *about* columns, one row each.

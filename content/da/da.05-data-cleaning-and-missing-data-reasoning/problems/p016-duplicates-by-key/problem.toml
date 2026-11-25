@@ -1,0 +1,6 @@
+id = "da.05.p016"
+title = "Duplicates by key"
+tier = "applied"
+kind = "code"
+topics = ["drop_duplicates", "subset", "sort_values", "re-submissions", "keep latest", "removed rows"]
+minutes = 30

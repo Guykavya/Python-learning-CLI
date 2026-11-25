@@ -1,0 +1,7 @@
+id = "da.10.p023"
+title = "Fix the lying report"
+tier = "deep"
+kind = "code"
+topics = ["reports as code", "hard-coded numbers", "rounding", "limitations", "finding linter"]
+minutes = 35
+assessment = "fix"

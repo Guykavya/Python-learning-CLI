@@ -1,0 +1,4 @@
+- Testing the first character of every value: `-5` (a number) would be turned into the text `-5`.
+- Escaping only `=`: `+`, `-` and `@` are also formula starters in Excel.
+- Stripping the characters: the customer's text must come back unchanged.
+- Checking only in memory: the test reloads the saved file, where a formula would show `data_type == "f"`.

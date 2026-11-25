@@ -1,0 +1,6 @@
+id = "da.08.p013"
+title = "Bootstrap percentile interval"
+tier = "deep"
+kind = "code"
+topics = ["bootstrap", "resampling", "percentile interval", "reproducibility", "Generator"]
+minutes = 35

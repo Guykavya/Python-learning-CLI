@@ -1,0 +1,6 @@
+id = "da.02.p007"
+title = "Brighten an image safely"
+tier = "applied"
+kind = "code"
+topics = ["uint8", "overflow", "astype", "clip", "images"]
+minutes = 20

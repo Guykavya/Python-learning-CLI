@@ -1,0 +1,6 @@
+id = "ds.01.p034"
+title = "The learning rate decides"
+tier = "applied"
+kind = "trace"
+topics = ["learning rate", "gradient descent", "divergence", "trace"]
+minutes = 20

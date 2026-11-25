@@ -1,0 +1,4 @@
+- Counting the week of 2 September as before.
+- Writing `+1.15` as `1.15`: the format `:+.2f` always shows the sign.
+- Thinking `wrong` has 4 weeks: `>` excludes the split week, and the series ends on 23 September.
+- Averaging all eight weeks for one of the means.

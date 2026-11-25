@@ -1,0 +1,4 @@
+- **`s[n]` for the position.** With the integer index `[102, 7, 0, 55]`, `s[0]` is the row labelled 0 (30.0) and `s[1]` raises `KeyError`: a bare integer is a label lookup.
+- **`s.loc[n]` for the position.** `.loc` also means labels. Positions need `.iloc`.
+- **`s.iloc[label]` for the label.** `s.iloc[7]` would be the eighth row, which does not exist here (`IndexError`).
+- **Returning a numpy scalar.** `float(...)` gives a plain Python number, which prints and compares simply.

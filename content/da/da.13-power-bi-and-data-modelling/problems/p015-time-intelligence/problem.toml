@@ -1,0 +1,6 @@
+id = "da.13.p015"
+title = "Time intelligence"
+tier = "challenge"
+kind = "code"
+topics = ["time intelligence", "SAMEPERIODLASTYEAR", "DATESYTD", "year over year", "DAX"]
+minutes = 50

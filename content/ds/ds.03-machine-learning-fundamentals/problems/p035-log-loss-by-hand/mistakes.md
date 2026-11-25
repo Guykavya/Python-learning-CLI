@@ -1,0 +1,4 @@
+- Printing `p=0` instead of `p=0.0` (the loop variable is a float).
+- Computing the loss of `p = 0.0` as infinity, or as `ln(0)`: it is clipped first.
+- Using `log10` instead of the natural logarithm.
+- Averaging over three values instead of four.

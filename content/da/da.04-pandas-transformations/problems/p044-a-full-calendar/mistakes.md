@@ -1,0 +1,5 @@
+- **Stopping after `groupby`.** Days without orders are missing, so the row count is not the number of days.
+- **`asfreq("D")`.** It only fills between the first and last order, and leaves `NaN` unless you pass `fill_value`.
+- **Leaving `NaN`.** For an open shop, no orders means 0 revenue; `NaN` would be skipped by sums and averages.
+- **Off by one at the end.** `date_range(start, end)` includes `end`; a hand-made loop with `<` misses the last day.
+- **Keeping orders outside the period.** They are not part of the report.

@@ -1,0 +1,7 @@
+- **Checking before cleaning.** `ASHA@MAIL.EXAMPLE` fails a lower-case pattern; lower-case first.
+- **`contains` or `match` instead of `fullmatch`.** `a@x.com extra` would pass because it *contains* an address.
+- **`[a-z]+` for the local part.** Digits (`meera1002`), dots, `+` and `_` are normal in addresses.
+- **`(\.[a-z0-9-]+)*` with a star.** Then `a@b` passes: the domain needs at least one dot, so the group is `+`.
+- **Returning `e` instead of `e.where(ok)`.** Bad addresses must become missing, not stay as junk.
+- **Forgetting `na=False`.** With missing text the Boolean mask has missing entries and `where` may fail.
+- **Trying to prove the address exists.** A regex only checks the shape.

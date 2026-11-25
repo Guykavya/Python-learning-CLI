@@ -1,0 +1,5 @@
+- **Joining a string with `"".join`.** `"".join("y = 2")` gives `"y = 2"` by luck, but `"\n".join(lines)` on a list that already has `\n` doubles every newline.
+- **Joining with `"\n"`.** Lines in the file already end in `\n`; the last line has none.
+- **Returning the list of lines.** The result must be one string per cell.
+- **Including markdown cells** whose source looks like code.
+- **Mutating `nb`** (for example popping cells while looping).

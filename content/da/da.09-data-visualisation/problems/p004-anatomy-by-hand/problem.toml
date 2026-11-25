@@ -1,0 +1,7 @@
+id = "da.09.p004"
+title = "Anatomy by hand"
+tier = "drill"
+kind = "trace"
+topics = ["Figure", "Axes", "twinx", "artists", "trace"]
+minutes = 15
+assessment = "trace"

@@ -1,0 +1,3 @@
+- Averaging the six survivors only and calling it "the mall".
+- Writing the gap as -11.0: survivors minus all is positive.
+- Forgetting the first line (`closed: 4 of 10`).

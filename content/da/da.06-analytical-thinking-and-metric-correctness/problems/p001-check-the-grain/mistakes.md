@@ -1,0 +1,5 @@
+- **Counting repeated keys instead of extra rows.** Key 1 three times is 2 extra rows, not 1 key and not 3 rows.
+- **`keep=False` for the count.** It marks all copies, including the first, so you report 2 for one repeated pair.
+- **Printing instead of raising.** A pipeline that only prints a warning goes on and produces a wrong number.
+- **Testing each column of a composite key alone.** `job_id` alone fails on `items`; the pair is the key.
+- **Forgetting missing keys.** A missing key is not an identity, so a table with a missing key is not "one row per key".

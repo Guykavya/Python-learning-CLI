@@ -1,0 +1,6 @@
+id = "da.12.p011"
+title = "The average of averages"
+tier = "deep"
+kind = "code"
+topics = ["AVERAGEIFS", "weighted average", "revenue per unit", "SUMIFS ratio"]
+minutes = 35

@@ -1,0 +1,6 @@
+- **`astype(int)` as rounding.** It truncates: `2.5 → 2` and `3.5 → 3`, and `-1.7 → -1` (not −2).
+- **Half up: `0.5 → 1`, `2.5 → 3`.** NumPy (and Python's `round`) use half to even.
+- **Writing `0.0` for `-0.5`.** Rounding `-0.5` to even gives a zero that keeps the sign: Python prints `-0.0`.
+- **`[0, 2, 2, 0]` on line 2.** `np.round` keeps the float dtype; `.tolist()` gives floats like `2.0`.
+- **`1e10` on line 1.** After `astype(int)` it is an integer and prints as `10000000000`.
+- **The same number twice on the last line.** NumPy scales by 100 first (2.675 × 100 is exactly 267.5 in float64, a half that goes to even 268 → `2.68`); Python's `round` uses the exact stored value, slightly below 2.675 → `2.67`.

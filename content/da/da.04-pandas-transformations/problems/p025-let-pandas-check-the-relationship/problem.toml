@@ -1,0 +1,6 @@
+id = "da.04.p025"
+title = "Let pandas check the relationship"
+tier = "applied"
+kind = "code"
+topics = ["merge", "validate", "MergeError", "duplicated", "exceptions", "row count"]
+minutes = 25

@@ -1,0 +1,6 @@
+id = "da.08.p031"
+title = "Regression adjustment"
+tier = "challenge"
+kind = "code"
+topics = ["regression adjustment", "statsmodels", "OLS", "confidence interval", "confounding"]
+minutes = 45

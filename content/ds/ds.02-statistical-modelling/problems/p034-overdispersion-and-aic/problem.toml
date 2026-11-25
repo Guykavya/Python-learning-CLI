@@ -1,0 +1,6 @@
+id = "ds.02.p034"
+title = "Overdispersion and AIC"
+tier = "challenge"
+kind = "code"
+topics = ["overdispersion", "negative binomial", "AIC", "likelihood-ratio test", "Pearson chi-squared"]
+minutes = 45

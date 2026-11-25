@@ -1,0 +1,4 @@
+- Saying openpyxl "calculates" formulas: it never does.
+- Forgetting that a round trip can drop features (slicers, pivot caches, some chart settings) without any message.
+- Arguing from taste ("code is cleaner") instead of from the three concrete risks.
+- Not naming the legitimate use of opening an existing file (reading a number out of someone else's workbook, or filling a simple, tested template).

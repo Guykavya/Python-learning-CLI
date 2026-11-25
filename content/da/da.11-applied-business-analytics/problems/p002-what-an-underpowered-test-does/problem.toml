@@ -1,0 +1,6 @@
+id = "da.11.p002"
+title = "What an underpowered test does"
+tier = "drill"
+kind = "explain"
+topics = ["power", "winner's curse", "sign error", "sample size", "explain"]
+minutes = 25

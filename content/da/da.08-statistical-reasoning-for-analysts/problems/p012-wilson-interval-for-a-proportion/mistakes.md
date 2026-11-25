@@ -1,0 +1,4 @@
+- Wald formula: for k = 0 the width is zero, and for small p the lower end is negative.
+- Using `level` instead of `(1 + level) / 2` for z.
+- Forgetting the `z * z / (4 * n * n)` term under the square root.
+- Not validating `k` and `n`: `k > n` gives nonsense.

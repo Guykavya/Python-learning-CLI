@@ -1,0 +1,6 @@
+id = "da.09.p001"
+title = "Figure and Axes"
+tier = "drill"
+kind = "code"
+topics = ["Figure", "Axes", "subplots", "sharey"]
+minutes = 10

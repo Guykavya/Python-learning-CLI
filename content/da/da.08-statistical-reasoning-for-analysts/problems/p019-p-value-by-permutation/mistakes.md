@@ -1,0 +1,5 @@
+- Without the `+1` correction a very clear difference gives p = 0, which is never true.
+- One-sided counting (`d >= d_obs`) when the test should be two-sided.
+- Shuffling `a` and `b` separately: the labels stay the same and nothing changes.
+- Sampling with replacement (a bootstrap) instead of permuting.
+- Using the global `np.random`: the same seed gives different p-values.

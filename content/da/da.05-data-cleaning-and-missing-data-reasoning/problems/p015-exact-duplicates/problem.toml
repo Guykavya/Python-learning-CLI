@@ -1,0 +1,6 @@
+id = "da.05.p015"
+title = "Exact duplicates"
+tier = "drill"
+kind = "code"
+topics = ["duplicated", "drop_duplicates", "exact duplicates", "keep=first", "missing values in duplicates"]
+minutes = 15

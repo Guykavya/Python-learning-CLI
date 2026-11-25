@@ -1,0 +1,6 @@
+id = "ds.01.p004"
+title = "Project a onto d"
+tier = "drill"
+kind = "code"
+topics = ["projection", "dot product", "orthogonal", "residual"]
+minutes = 15

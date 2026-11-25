@@ -1,0 +1,6 @@
+id = "da.03.p033"
+title = "Tidy a name column"
+tier = "drill"
+kind = "code"
+topics = ["str.strip", "str.replace", "str.title", "text cleaning", "missing values"]
+minutes = 15

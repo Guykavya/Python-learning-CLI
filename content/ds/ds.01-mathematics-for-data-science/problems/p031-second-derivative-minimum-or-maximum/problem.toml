@@ -1,0 +1,6 @@
+id = "ds.01.p031"
+title = "Second derivative: minimum or maximum?"
+tier = "deep"
+kind = "trace"
+topics = ["second derivative", "stationary point", "minimum", "trace"]
+minutes = 20

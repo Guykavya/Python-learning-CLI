@@ -1,0 +1,6 @@
+id = "da.02.p021"
+title = "Replace outliers with the median"
+tier = "applied"
+kind = "code"
+topics = ["percentile", "IQR", "outliers", "boolean masks", "median"]
+minutes = 25

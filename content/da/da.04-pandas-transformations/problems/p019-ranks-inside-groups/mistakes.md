@@ -1,0 +1,4 @@
+- **Ranking the whole column.** The ranks restart in each store; S2's 90 is rank 1 even though it is the largest overall.
+- **Ranking from the smallest.** `ascending=False` gives rank 1 to the largest revenue.
+- **`min` and `dense` mixed up.** After a tie for first, `min` jumps to 3, `dense` continues with 2.
+- **Printing `2` instead of `2.0`.** `rank` returns floats unless you convert them.

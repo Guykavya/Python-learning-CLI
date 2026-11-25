@@ -1,0 +1,4 @@
+- **`reshape(k, -1)`.** That makes `k` rows, not `k` columns.
+- **Returning `x.reshape(-1, k).copy()`.** Correct numbers, but a copy: twice the memory for big logs, and the test asks for a view.
+- **A message that only says "bad k".** The person reading the error needs both numbers to see what is wrong.
+- **Forgetting `k = 0`.** `len(x) % 0` raises `ZeroDivisionError`, not `ValueError`: check `k < 1` first.

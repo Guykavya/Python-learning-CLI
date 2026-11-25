@@ -1,0 +1,6 @@
+id = "ds.02.p010"
+title = "Dummy coding by hand"
+tier = "drill"
+kind = "trace"
+topics = ["dummy variables", "baseline", "categorical", "trace"]
+minutes = 15

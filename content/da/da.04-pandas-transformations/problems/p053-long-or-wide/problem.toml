@@ -1,0 +1,6 @@
+id = "da.04.p053"
+title = "Long or wide?"
+tier = "applied"
+kind = "explain"
+topics = ["tidy data", "long", "wide", "melt", "pivot", "explain"]
+minutes = 20

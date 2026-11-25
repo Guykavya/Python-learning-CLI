@@ -1,0 +1,4 @@
+- Skipping the linearisation and using the plain RGB values: the ratios come out wrong.
+- Dividing the smaller luminance by the larger: the ratio must be at least 1.
+- Forgetting the `0.05` in numerator and denominator (black on white would divide by zero).
+- Using `>` instead of `>=`: exactly 4.5 passes.

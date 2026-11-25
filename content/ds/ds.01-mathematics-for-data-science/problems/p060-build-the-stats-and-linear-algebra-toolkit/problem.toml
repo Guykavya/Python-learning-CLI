@@ -1,0 +1,7 @@
+id = "ds.01.p060"
+title = "Build the stats and linear-algebra toolkit"
+tier = "challenge"
+kind = "code"
+topics = ["project", "toolkit", "NumPy only", "testing", "mutation checks"]
+minutes = 120
+assessment = "build"

@@ -1,0 +1,4 @@
+- Not scaling: the selection then depends on the units of the columns.
+- Testing `abs(c) > 1e-3` instead of exactly zero: the task asks for non-zero (lasso gives exact zeros).
+- Returning positions instead of names.
+- Taking the names from the wrong DataFrame after scaling (which returns a NumPy array without names).

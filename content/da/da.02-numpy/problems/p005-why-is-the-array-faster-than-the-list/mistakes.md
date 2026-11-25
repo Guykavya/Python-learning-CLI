@@ -1,0 +1,4 @@
+- **"NumPy uses several cores."** The basic operations here run on one core; the speed comes from memory layout and compiled loops.
+- **"NumPy is written in C, so it is faster" and nothing else.** The point is *why* C can be fast here: one type and one block, so no per-element checks.
+- **Forgetting the pointers.** The list does not store the integers; it stores addresses of integer objects.
+- **Claiming NumPy is always faster.** For tiny arrays, or with a Python `for` loop over an array, it is slower.

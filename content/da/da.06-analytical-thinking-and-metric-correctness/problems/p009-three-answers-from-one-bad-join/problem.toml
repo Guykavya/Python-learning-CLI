@@ -1,0 +1,6 @@
+id = "da.06.p009"
+title = "Three answers from one bad join"
+tier = "applied"
+kind = "code"
+topics = ["fan-out", "nunique", "drop_duplicates", "grain", "sum"]
+minutes = 20

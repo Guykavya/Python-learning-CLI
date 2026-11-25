@@ -1,0 +1,5 @@
+- **Counting the April row.** `<=` or a quarter that ends on `04-01` 23:59 would keep it; the half-open end excludes it.
+- **Adding the months and calling it customers.** It counts customer-months.
+- **Forgetting that the March 1 00:00 row belongs to March.** The start of a period is included.
+- **Printing 5 as the number of customers who returned.** It is the double counting, not a count of customers.
+- **Using `size()` instead of `nunique()`.** That counts jobs, not customers.

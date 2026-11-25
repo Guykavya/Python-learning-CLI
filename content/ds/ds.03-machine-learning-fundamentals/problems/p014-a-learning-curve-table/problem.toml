@@ -1,0 +1,6 @@
+id = "ds.03.p014"
+title = "A learning-curve table"
+tier = "applied"
+kind = "code"
+topics = ["learning curve", "training size", "repeated sampling", "RMSE"]
+minutes = 35

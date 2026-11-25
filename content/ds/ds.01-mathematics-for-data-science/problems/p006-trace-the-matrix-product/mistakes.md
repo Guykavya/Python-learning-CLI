@@ -1,0 +1,3 @@
+- Taking a row of `B` instead of a column.
+- Printing the 2 x 3 shape instead of the six lines.
+- Multiplying `A[i][j] * B[i][j]` (element-wise) instead of `A[i][k] * B[k][j]`.

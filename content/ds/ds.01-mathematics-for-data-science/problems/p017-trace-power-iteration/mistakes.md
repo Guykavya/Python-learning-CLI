@@ -1,0 +1,3 @@
+- Forgetting to divide by the length after each step.
+- Rounding too early: keep full numbers until printing.
+- Printing the eigenvalue as exactly `3.000`: after three steps it is a little less.

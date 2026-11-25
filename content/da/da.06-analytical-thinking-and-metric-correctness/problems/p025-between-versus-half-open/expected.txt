@@ -1,0 +1,6 @@
+[True, True, True, False, False, False]
+[True, True, True, True, True, False]
+3 5
+['28 15:30:00', '28 23:59:59']
+3 1
+6

@@ -1,0 +1,6 @@
+credit card fraud: recall
+spam filter: precision
+interview shortlist: AUC
+quality check: accuracy
+rare disease screening: recall
+production line stop alarm: precision

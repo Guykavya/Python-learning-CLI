@@ -1,0 +1,6 @@
+id = "da.08.p004"
+title = "Law of large numbers or CLT?"
+tier = "drill"
+kind = "explain"
+topics = ["law of large numbers", "central limit theorem", "sampling distribution", "explain"]
+minutes = 20

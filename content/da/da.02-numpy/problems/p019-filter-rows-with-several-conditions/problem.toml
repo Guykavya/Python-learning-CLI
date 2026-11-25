@@ -1,0 +1,6 @@
+id = "da.02.p019"
+title = "Filter rows with several conditions"
+tier = "drill"
+kind = "code"
+topics = ["boolean masks", "&", "|", "~", "operator precedence", "row filtering"]
+minutes = 20

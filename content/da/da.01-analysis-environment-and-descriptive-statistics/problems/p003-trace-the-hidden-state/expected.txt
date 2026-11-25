@@ -1,0 +1,19 @@
+[1] >>> price = 50
+[2] >>> total = price * 3
+[3] >>> print('total is', total)
+total is 150
+[4] >>> price = 80
+[5] >>> print('price', price, 'total', total)
+price 80 total 150
+[6] >>> print('total is', total)
+total is 150
+[7] >>> total = price * 3
+[8] >>> print('total is', total)
+total is 240
+--- kernel restarted: all variables forgotten ---
+[1] >>> print('total is', total)
+NameError: name 'total' is not defined
+[2] >>> price = 50
+[3] >>> total = price * 3
+[4] >>> print('total is', total)
+total is 150

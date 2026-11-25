@@ -1,0 +1,7 @@
+id = "da.10.p011"
+title = "Mix against rate by hand"
+tier = "deep"
+kind = "trace"
+topics = ["mix effect", "rate effect", "decomposition", "Simpson paradox", "trace"]
+minutes = 25
+assessment = "trace"

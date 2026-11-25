@@ -1,0 +1,6 @@
+id = "ds.03.p022"
+title = "Scale before you penalise"
+tier = "applied"
+kind = "code"
+topics = ["ridge", "StandardScaler", "pipeline", "feature scaling"]
+minutes = 25

@@ -1,0 +1,5 @@
+- **"They are all the same."** Same two numbers is not same data.
+- **Only describing the pictures.** The question also asks which extra numbers expose each case.
+- **Calling C's far value an error without checking.** It may be real; the right move is to look at it, not to delete it.
+- **Saying the median helps in every case.** For B (two clusters) the median is 50, exactly the empty middle.
+- **Forgetting to say "plot first".** The whole lesson is a habit.

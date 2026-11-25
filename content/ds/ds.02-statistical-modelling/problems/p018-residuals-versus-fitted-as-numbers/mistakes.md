@@ -1,0 +1,4 @@
+- Splitting by row order. Rows are not sorted by fitted value unless you sort them.
+- Dividing bottom by top, which gives 0.14 on funnel data and looks like "no problem".
+- Using raw residual differences (range) instead of the standard deviation.
+- Reading a ratio of 1.3 as a funnel: with a few hundred rows random ratios between 0.7 and 1.4 are normal.

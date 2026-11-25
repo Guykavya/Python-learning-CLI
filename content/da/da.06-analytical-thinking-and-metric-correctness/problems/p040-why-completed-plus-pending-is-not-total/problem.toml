@@ -1,0 +1,6 @@
+id = "da.06.p040"
+title = "Why completed plus pending is not total"
+tier = "deep"
+kind = "explain"
+topics = ["reconciliation", "date basis", "status", "bridge", "explain"]
+minutes = 30

@@ -1,0 +1,5 @@
+- **"`apply` is vectorised"**: it calls your function row by row.
+- **Using `apply(axis=1)` for arithmetic** (`row["a"] * row["b"]`): write `df["a"] * df["b"]`.
+- **Using `map` with a dict and not counting the unknown keys**: they become `NaN` quietly.
+- **"Never use `apply`"**: there are real cases without a column-wise form; the rule is *vectorise first*.
+- **Optimising without measuring**: on 100 rows the difference does not matter, on 10 million it does.

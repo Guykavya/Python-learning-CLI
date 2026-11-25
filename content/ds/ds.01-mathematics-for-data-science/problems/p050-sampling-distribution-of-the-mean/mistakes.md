@@ -1,0 +1,4 @@
+- Averaging over `axis=0`: that gives `n` numbers, one per column.
+- Calling `draw` in a Python loop `reps` times (slow, and harder to reproduce).
+- Creating the generator inside `draw`.
+- Using `np.random.seed`: the global state is not reproducible across tests.

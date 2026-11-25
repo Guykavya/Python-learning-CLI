@@ -1,0 +1,5 @@
+- **"Remove all three, they are outliers."** The first one may be your best customer. A rule gives a suspect, not a verdict.
+- **"Replace the age 140 with the mean age."** That invents data and hides the change. Set it to missing and flag it.
+- **Judging the stuck value by its size.** 24.3 is a normal temperature. What is wrong is the **run** of eight identical readings.
+- **Forgetting the source.** The cheapest check (ask the data owner, look at the invoice) is often the best one.
+- **Not reporting the effect.** "I kept it" is incomplete. Say how much the mean moves with and without it.

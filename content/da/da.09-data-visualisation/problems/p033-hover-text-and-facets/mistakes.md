@@ -1,0 +1,4 @@
+- `color="store"` instead of `facet_col="store"`: the stores share one panel.
+- Using `hover_name="units"`: it becomes the bold title of the tooltip, not an extra line in `customdata`.
+- Forgetting the label rename: the tooltip then says `revenue` with no unit.
+- Reading the tooltip from `to_dict()` in a test: use `fig.data[i].customdata` and `.hovertemplate`.

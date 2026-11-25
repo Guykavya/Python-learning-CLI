@@ -1,0 +1,6 @@
+id = "da.06.p004"
+title = "The grain of a result"
+tier = "drill"
+kind = "trace"
+topics = ["grain", "groupby", "merge", "drop_duplicates", "duplicated", "trace"]
+minutes = 15

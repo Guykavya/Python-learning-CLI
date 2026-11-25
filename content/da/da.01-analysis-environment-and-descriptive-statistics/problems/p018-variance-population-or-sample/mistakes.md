@@ -1,0 +1,5 @@
+- **Dividing by `n` when the data are a sample** (or the reverse): the spread is then biased.
+- **`mean(x**2) - mean(x)**2`** looks right on small numbers and is badly wrong when the values are large and close together (catastrophic cancellation).
+- **Forgetting that one value has no sample spread:** `ddof=1` with `n=1` would divide by zero.
+- **A default `ddof`** hides which one you meant, so there is none.
+- **Taking the square root of the sample variance with `n`** when you wanted the sample stdev.

@@ -1,0 +1,7 @@
+id = "ds.03.p006"
+title = "One split is one draw"
+tier = "applied"
+kind = "trace"
+topics = ["train/test split", "variance of the score", "trace"]
+minutes = 25
+assessment = "trace"

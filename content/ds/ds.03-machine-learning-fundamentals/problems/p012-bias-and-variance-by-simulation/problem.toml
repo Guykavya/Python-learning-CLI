@@ -1,0 +1,6 @@
+id = "ds.03.p012"
+title = "Bias and variance by simulation"
+tier = "deep"
+kind = "code"
+topics = ["bias", "variance", "simulation", "polynomial regression"]
+minutes = 40

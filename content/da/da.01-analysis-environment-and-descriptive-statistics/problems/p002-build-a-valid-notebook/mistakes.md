@@ -1,0 +1,6 @@
+- **Forgetting the cell `id`.** It validates today but warns; the test treats the warning as a failure.
+- **Using the same id twice** (for example a constant `"cell"`): ids must be unique.
+- **`execution_count: 0` instead of `None`.** `None` (JSON `null`) means never run.
+- **Putting `outputs` on markdown cells.** The schema rejects it.
+- **A string `execution_count` or a missing `metadata`.** The validator names the missing key.
+- **Silently accepting `"raw"` or a typo like `"Code"`.** Raise `ValueError` so the mistake shows early.

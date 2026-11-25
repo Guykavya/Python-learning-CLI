@@ -1,0 +1,5 @@
+- **Judging by row counts.** "customers has fewer rows than jobs, so 1:m" is a guess; only `is_unique` tests the key.
+- **Counting distinct orphan keys instead of rows.** Three job rows pointing at customer 9 are three orphans.
+- **Merging to find orphans.** An outer merge on a repeated key multiplies the rows and the counts are wrong.
+- **Mixing up left and right.** `left_orphans` are rows of `left` that nothing in `right` points to.
+- **Forgetting that a missing key is an orphan.** `NaN` matches nothing.

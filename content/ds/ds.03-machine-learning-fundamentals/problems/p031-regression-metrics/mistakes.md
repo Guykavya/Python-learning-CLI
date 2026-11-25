@@ -1,0 +1,4 @@
+- Using `mean(e ** 2)` and calling it RMSE (forgetting the square root).
+- Computing the total sum of squares around 0 instead of around the mean of `y`.
+- Dividing by `p` instead of `y` in MAPE.
+- Letting a zero target produce `inf` or `nan` silently.

@@ -1,0 +1,3 @@
+- Using `frame.index` labels as positions after the frame was filtered (indexes no longer match `y`): use `groupby(...).indices` positions.
+- Crashing on a slice with only one class.
+- Comparing slice AUCs without their sizes.

@@ -1,0 +1,6 @@
+id = "ds.04.p014"
+title = "Find exact and near duplicates"
+tier = "deep"
+kind = "code"
+topics = ["duplicates", "near-duplicates", "rounding", "groupby ngroup"]
+minutes = 30

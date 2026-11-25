@@ -1,0 +1,4 @@
+- **Answering `10` for `s[0]`.** Bare integers on an integer index are labels. Position 0 is `s.iloc[0]`.
+- **Answering `20` for `s.loc[1]`.** That is the value at *position* 1. `.loc[1]` is the row named 1: 30.
+- **Writing `[30, 20]` for `s.loc[[0, 1]]`.** The list asks for label 0 first (20), then label 1 (30).
+- **Writing the error message.** The program prints only `type(exc).__name__`, which is `KeyError`.

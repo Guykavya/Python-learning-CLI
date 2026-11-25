@@ -1,0 +1,6 @@
+id = "da.02.p014"
+title = "View or copy?"
+tier = "applied"
+kind = "trace"
+topics = ["views", "copies", "slicing", "fancy indexing", "boolean masks", "reshape", "trace"]
+minutes = 25

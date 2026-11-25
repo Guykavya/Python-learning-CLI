@@ -1,0 +1,6 @@
+id = "da.04.p039"
+title = "stack and unstack"
+tier = "deep"
+kind = "trace"
+topics = ["stack", "unstack", "MultiIndex", "index levels", "reshape", "trace"]
+minutes = 20

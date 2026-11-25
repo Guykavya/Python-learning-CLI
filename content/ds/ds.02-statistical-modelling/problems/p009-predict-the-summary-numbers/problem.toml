@@ -1,0 +1,7 @@
+id = "ds.02.p009"
+title = "Predict the summary numbers"
+tier = "applied"
+kind = "trace"
+topics = ["OLS", "slope", "R-squared", "degrees of freedom", "trace"]
+minutes = 25
+assessment = "trace"

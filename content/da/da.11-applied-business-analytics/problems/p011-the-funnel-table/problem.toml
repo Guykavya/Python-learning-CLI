@@ -1,0 +1,6 @@
+id = "da.11.p011"
+title = "The funnel table"
+tier = "drill"
+kind = "code"
+topics = ["funnel analysis", "conversion steps", "drop-off", "groupby"]
+minutes = 25

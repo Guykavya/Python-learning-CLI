@@ -1,0 +1,6 @@
+id = "da.06.p031"
+title = "Status on a date"
+tier = "deep"
+kind = "trace"
+topics = ["lifecycle", "status", "history", "timestamps", "trace"]
+minutes = 25

@@ -1,0 +1,6 @@
+id = "da.06.p012"
+title = "Guard the row count"
+tier = "drill"
+kind = "code"
+topics = ["fan-out", "assertion", "row count", "toolkit", "merge"]
+minutes = 12

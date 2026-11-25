@@ -1,0 +1,3 @@
+- Labelling the identity as `diagonal`: the identity test comes first.
+- Calling `[[1, 2], [3, 4]]` symmetric: the off-diagonal entries 2 and 3 differ.
+- Labelling the zero matrix `general`.

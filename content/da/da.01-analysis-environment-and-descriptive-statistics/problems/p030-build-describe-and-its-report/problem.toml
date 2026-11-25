@@ -1,0 +1,7 @@
+id = "da.01.p030"
+title = "Build describe() and its report"
+tier = "challenge"
+kind = "code"
+topics = ["describe", "report", "missing values", "summary statistics", "text report", "project"]
+minutes = 60
+assessment = "build"

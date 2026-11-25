@@ -1,0 +1,3 @@
+- Treating `<=` as `<`: day 100 is included here.
+- Changing the order of the lines.
+- Forgetting the final count line.

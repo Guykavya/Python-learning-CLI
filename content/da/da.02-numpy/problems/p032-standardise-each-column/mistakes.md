@@ -1,0 +1,6 @@
+- **No `keepdims`.** For `axis=1` the means have shape `(n,)` and broadcast along the wrong axis (or fail): the rows get the column treatment.
+- **Dividing by a std of 0.** A constant column gives `nan` and a RuntimeWarning; replace 0 by 1 in the divisor.
+- **Ignoring `ddof`.** `x.std()` uses `ddof=0`; pass the argument through.
+- **In-place `x -= mean`** on the caller's array (and it fails for integer arrays).
+- **Integer output.** Convert with `dtype=float` first, so integer tables give `float64` and integer division never happens.
+- **Using `np.nan_to_num` after dividing:** the result is right but the warning has already been raised.

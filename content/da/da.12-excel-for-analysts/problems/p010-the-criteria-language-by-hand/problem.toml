@@ -1,0 +1,6 @@
+id = "da.12.p010"
+title = "The criteria language by hand"
+tier = "drill"
+kind = "trace"
+topics = ["COUNTIFS", "criteria", "wildcards", "blank cells", "trace"]
+minutes = 20

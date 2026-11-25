@@ -1,0 +1,6 @@
+id = "ds.01.p054"
+title = "Wald against Wilson"
+tier = "deep"
+kind = "trace"
+topics = ["proportion interval", "Wald interval", "Wilson interval", "trace"]
+minutes = 25

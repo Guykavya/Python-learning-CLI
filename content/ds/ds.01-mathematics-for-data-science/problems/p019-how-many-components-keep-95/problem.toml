@@ -1,0 +1,6 @@
+id = "ds.01.p019"
+title = "How many components keep 95%?"
+tier = "applied"
+kind = "code"
+topics = ["PCA", "explained variance", "cumulative sum", "dimension reduction"]
+minutes = 25

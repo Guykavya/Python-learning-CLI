@@ -1,0 +1,6 @@
+id = "da.02.p022"
+title = "Pick pairs"
+tier = "applied"
+kind = "code"
+topics = ["fancy indexing", "index arrays", "IndexError", "copies"]
+minutes = 20

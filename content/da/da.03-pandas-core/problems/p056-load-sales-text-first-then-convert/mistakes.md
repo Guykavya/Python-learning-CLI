@@ -1,0 +1,6 @@
+- **Reading with default types** (`pd.read_csv(path)`): `id` becomes numbers, `paid` text, dates text, and pandas may guess differently per file.
+- **`astype("Int64")` on `2.5`**: it raises. Keep whole numbers first.
+- **Counting the empty cells as lost**: they were missing when the file was read, so nothing was lost.
+- **Counting the converted missing values without `raw.notna()`**: the baseline gaps are included.
+- **Stripping or lower-casing the untouched columns**: they must stay exactly as read.
+- **Trying one date format on the whole column**: only the first style converts; use `fillna` to combine the formats in order.

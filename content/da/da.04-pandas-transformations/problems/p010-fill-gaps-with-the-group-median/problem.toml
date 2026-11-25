@@ -1,0 +1,6 @@
+id = "da.04.p010"
+title = "Fill gaps with the group median"
+tier = "applied"
+kind = "code"
+topics = ["groupby", "transform", "fillna", "median", "missing values"]
+minutes = 25

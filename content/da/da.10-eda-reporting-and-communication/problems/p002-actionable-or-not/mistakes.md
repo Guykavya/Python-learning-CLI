@@ -1,0 +1,4 @@
+- Treating "by" as a comparison word: it is not in the pattern.
+- Reading "more often than before" as having a number.
+- Accepting "31 January 2025" as a date: the pattern only matches `dddd-dd-dd`.
+- Printing the issues of finding 2 in a different order: the order is the order of the checks.

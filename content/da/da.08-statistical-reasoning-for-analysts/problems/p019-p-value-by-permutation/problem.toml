@@ -1,0 +1,6 @@
+id = "da.08.p019"
+title = "p-value by permutation"
+tier = "deep"
+kind = "code"
+topics = ["permutation test", "p-value", "resampling", "Monte Carlo correction", "Generator"]
+minutes = 40

@@ -1,0 +1,5 @@
+- **Averaging growth percentages** (`(10 + -10) / 2 = 0`): the money did not stay the same, it lost 1%. Use factors and the geometric mean.
+- **Averaging speeds with the arithmetic mean** (`(60 + 40) / 2 = 50`): you spend more time at 40, so the true average is 48.
+- **Dividing by `len(weights)`** instead of `sum(weights)`.
+- **Allowing zero**: `log(0)` and `1 / 0` crash with the wrong kind of error; check first and raise `ValueError`.
+- **Silently truncating with `zip`** when the lists differ in length.

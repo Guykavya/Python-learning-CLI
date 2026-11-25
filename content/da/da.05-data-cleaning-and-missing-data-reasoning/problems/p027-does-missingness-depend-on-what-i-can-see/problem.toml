@@ -1,0 +1,6 @@
+id = "da.05.p027"
+title = "Does missingness depend on what I can see?"
+tier = "deep"
+kind = "code"
+topics = ["missing data", "MAR", "MCAR", "diagnosis", "group comparison", "simulation"]
+minutes = 30

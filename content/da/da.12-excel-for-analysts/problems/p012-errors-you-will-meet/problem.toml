@@ -1,0 +1,6 @@
+id = "da.12.p012"
+title = "Errors you will meet"
+tier = "drill"
+kind = "trace"
+topics = ["Excel errors", "IFERROR", "IFNA", "error propagation", "trace"]
+minutes = 20

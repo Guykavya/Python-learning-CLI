@@ -1,0 +1,4 @@
+- Removing duplicates **after** splitting: copies of a loan can still sit on both sides.
+- Target-encoding `postcode` on all rows before the split: postcode carries borrower identity and leaks across a group split.
+- Choosing the group by a name you know (`customer_id`) without checking that values repeat.
+- Reporting the honest AUC without saying which split it used.

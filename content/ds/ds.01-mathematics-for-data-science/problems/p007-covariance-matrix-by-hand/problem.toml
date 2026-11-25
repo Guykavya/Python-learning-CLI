@@ -1,0 +1,6 @@
+id = "ds.01.p007"
+title = "Covariance matrix by hand"
+tier = "applied"
+kind = "code"
+topics = ["covariance", "centring", "matrix product", "symmetric"]
+minutes = 25

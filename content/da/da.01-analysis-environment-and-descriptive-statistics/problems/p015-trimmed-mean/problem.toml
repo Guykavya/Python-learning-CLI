@@ -1,0 +1,6 @@
+id = "da.01.p015"
+title = "Trimmed mean"
+tier = "drill"
+kind = "code"
+topics = ["trimmed mean", "outliers", "robust statistics", "sorting"]
+minutes = 20

@@ -1,0 +1,6 @@
+id = "da.07.p022"
+title = "The retention table"
+tier = "applied"
+kind = "code"
+topics = ["cohort retention", "month number", "DISTINCT", "date_diff", "long form"]
+minutes = 40

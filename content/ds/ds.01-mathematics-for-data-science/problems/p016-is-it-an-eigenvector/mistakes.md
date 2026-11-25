@@ -1,0 +1,4 @@
+- Accepting the zero vector: `A 0 = lam 0` for every `lam`.
+- Comparing with `==` instead of a tolerance.
+- Returning `lam` even when the answer is `False` (return `None`).
+- Checking only one component of `A v` against `lam v`.

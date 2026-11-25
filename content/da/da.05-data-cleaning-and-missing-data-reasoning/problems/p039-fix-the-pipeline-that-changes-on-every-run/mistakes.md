@@ -1,0 +1,6 @@
+- **Fixing only the unit conversion.** The fill and the log are separate defects; the tests check all three.
+- **Copying after the first assignment.** `df.copy()` must come before any assignment to a column.
+- **Keeping the module-level `LOG` "just in case".** The test requires that the function writes nowhere but the passed list.
+- **Computing `n_missing` after the fill.** It would always be 0; count before filling.
+- **Using `inplace=True` or `df.fillna(..., inplace=True)`.** That changes the caller's frame again.
+- **Returning the columns in another order.** The contract is `item`, `weight_kg`, `price`.

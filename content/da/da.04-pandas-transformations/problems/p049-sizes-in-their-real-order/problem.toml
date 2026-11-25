@@ -1,0 +1,6 @@
+id = "da.04.p049"
+title = "Sizes in their real order"
+tier = "drill"
+kind = "code"
+topics = ["categorical", "CategoricalDtype", "ordered", "sort_values", "unknown values"]
+minutes = 20

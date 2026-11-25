@@ -1,0 +1,6 @@
+id = "da.08.p025"
+title = "Pearson and Spearman by hand"
+tier = "drill"
+kind = "code"
+topics = ["correlation", "Pearson", "Spearman", "ranks", "ties"]
+minutes = 30

@@ -1,0 +1,4 @@
+- Exponentiating the p-value.
+- Rounding the log-odds before `exp`.
+- Saying "the odds ratio is 3.3, so the probability is 3.3 times higher". It is the **odds** that are multiplied, not the probability.
+- Reading an interval that includes 1 as "no effect proven". It means the data are compatible with no effect.

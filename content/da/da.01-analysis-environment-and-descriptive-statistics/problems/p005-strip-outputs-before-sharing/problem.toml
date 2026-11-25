@@ -1,0 +1,6 @@
+id = "da.01.p005"
+title = "Strip outputs before sharing"
+tier = "applied"
+kind = "code"
+topics = ["notebook JSON", "outputs", "execution_count", "mutation trap", "deepcopy"]
+minutes = 25

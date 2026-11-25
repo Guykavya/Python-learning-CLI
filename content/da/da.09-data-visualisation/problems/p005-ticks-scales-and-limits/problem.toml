@@ -1,0 +1,6 @@
+id = "da.09.p005"
+title = "Ticks, scales and limits"
+tier = "applied"
+kind = "code"
+topics = ["axis limits", "log scale", "tick formatter", "FuncFormatter"]
+minutes = 20

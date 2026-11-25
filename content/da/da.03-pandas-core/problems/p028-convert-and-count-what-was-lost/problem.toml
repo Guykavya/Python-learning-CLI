@@ -1,0 +1,6 @@
+id = "da.03.p028"
+title = "Convert, and count what was lost"
+tier = "applied"
+kind = "code"
+topics = ["to_numeric", "errors=coerce", "missing values", "data quality", "str.strip"]
+minutes = 25

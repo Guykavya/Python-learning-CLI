@@ -1,0 +1,5 @@
+- **Using `pivot_table` everywhere.** It silently sums repeated pairs (or averages them, with the default `aggfunc="mean"`), hiding a duplicate that may be a data error.
+- **Letting pandas raise its own error.** `Index contains duplicate entries` does not say which pair or what to do; the task asks for a message that does.
+- **`fillna(0)`.** A missing pair is unknown, not zero sales.
+- **Leaving `columns.name = "month"`.** The table prints with an extra header line and `rename`/`melt` later see a name you did not ask for.
+- **Forgetting `reset_index`.** The stores stay as the index instead of the first column.

@@ -1,0 +1,6 @@
+- **`created_at < cut - age`.** A job exactly `min_age_days` old is mature; use `<=`.
+- **Keeping jobs created after the cut.** They cannot exist in an extract made at the cut. Filter first.
+- **Dividing by `len(jobs)`.** The denominator is the jobs of the group (all seen jobs, or the mature ones), not the whole table.
+- **Returning 0.0 for an empty mature group.** "Nobody is old enough" is not "nobody completed". Return `None`.
+- **Concluding that quality fell** because the naive rate is lower. The newest jobs are pending, not failed.
+- **Filtering the caller's `jobs` in place.**

@@ -1,0 +1,4 @@
+- Using `np.random.random` (global state): the same `seed` must give the same answer.
+- Counting the last look only for `peeking_rate`: peeking means **any** look.
+- Testing different true rates in A and B: then "significant" is not a false alarm.
+- Dividing by zero when no one converted in either group (z = 0 then).

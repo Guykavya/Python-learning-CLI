@@ -1,0 +1,6 @@
+id = "da.03.p007"
+title = "Old labels stay after a filter"
+tier = "drill"
+kind = "trace"
+topics = ["index", "filter", "loc", "iloc", "reset_index", "KeyError", "trace"]
+minutes = 20

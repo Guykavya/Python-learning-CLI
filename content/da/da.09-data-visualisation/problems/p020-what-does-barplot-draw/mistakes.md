@@ -1,0 +1,4 @@
+- Drawing six bars (one per row): `barplot` aggregates.
+- Sorting the categories alphabetically (espresso, pastry, tea): the order is first appearance.
+- Answering 1 for `len(ax.lines)`: with `errorbar=None` no interval lines are drawn.
+- Reading the mean of the bars (8.00) as the mean of the data (6.67).

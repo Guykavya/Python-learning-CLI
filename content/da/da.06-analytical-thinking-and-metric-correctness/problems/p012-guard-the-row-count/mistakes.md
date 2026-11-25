@@ -1,0 +1,5 @@
+- **Only checking `after > before`.** A lost key (fewer rows) is just as wrong.
+- **Forgetting `return after`.** The next line of the pipeline receives `None`.
+- **Leaving the label out of the message.** In a script with ten joins you cannot tell which one failed.
+- **Writing `->` instead of `→`.** The message format is part of the contract.
+- **Using `assert`.** It can be switched off with `python -O`; an explicit `raise` cannot.

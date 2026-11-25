@@ -1,0 +1,6 @@
+id = "da.05.p014"
+title = "A regex that never finishes"
+tier = "deep"
+kind = "code"
+topics = ["regex", "catastrophic backtracking", "nested quantifiers", "fullmatch", "safety"]
+minutes = 30

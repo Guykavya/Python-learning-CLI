@@ -1,0 +1,6 @@
+id = "ds.01.p009"
+title = "Gaussian elimination"
+tier = "applied"
+kind = "code"
+topics = ["linear system", "Gaussian elimination", "partial pivoting", "back substitution"]
+minutes = 35

@@ -1,0 +1,4 @@
+- Using the **same** training set in every repetition: then the variance is exactly 0.
+- Comparing the mean prediction with the noisy `y` instead of the noise-free truth `sin(2*pi*x)`.
+- Squaring the bias after averaging over points instead of before (`mean(bias)**2` is not `mean(bias**2)`).
+- Using `ddof=1` for the variance: it changes the value slightly; the task says population variance.

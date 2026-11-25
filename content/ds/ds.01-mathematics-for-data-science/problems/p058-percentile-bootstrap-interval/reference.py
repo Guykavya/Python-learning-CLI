@@ -1,0 +1,10 @@
+import numpy as np
+
+
+def bootstrap_ci(x, stat=np.mean, level=0.95, reps=2000, seed=0):
+    x = np.asarray(x, dtype=float)
+    n = len(x)
+    rng = np.random.default_rng(seed)
+    values = np.array([stat(x[rng.integers(0, n, n)]) for _ in range(reps)])
+    a = (1 - level) / 2
+    return float(np.quantile(values, a)), float(np.quantile(values, 1 - a))

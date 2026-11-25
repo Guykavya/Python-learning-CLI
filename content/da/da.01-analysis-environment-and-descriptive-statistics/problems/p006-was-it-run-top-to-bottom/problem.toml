@@ -1,0 +1,6 @@
+id = "da.01.p006"
+title = "Was it run top to bottom?"
+tier = "applied"
+kind = "code"
+topics = ["execution_count", "hidden state", "run order", "notebook audit"]
+minutes = 25

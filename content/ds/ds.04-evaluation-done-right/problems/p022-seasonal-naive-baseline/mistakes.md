@@ -1,0 +1,3 @@
+- Using `train[-season + i]` without `% season`: for `i >= season` it runs into the future (or wraps the wrong way).
+- Using the first season of the history instead of the last one.
+- Returning integers when the series is float.

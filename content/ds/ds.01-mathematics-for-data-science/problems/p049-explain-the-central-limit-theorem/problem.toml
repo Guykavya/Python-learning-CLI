@@ -1,0 +1,7 @@
+id = "ds.01.p049"
+title = "Explain the central limit theorem"
+tier = "deep"
+kind = "explain"
+topics = ["central limit theorem", "sampling distribution", "standard error", "explain"]
+minutes = 30
+assessment = "explain"

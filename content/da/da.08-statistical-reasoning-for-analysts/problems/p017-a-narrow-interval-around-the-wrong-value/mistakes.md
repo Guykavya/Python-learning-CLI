@@ -1,0 +1,4 @@
+- "The larger sample is better": size cannot repair a biased sampling method.
+- "The random sample interval is wide, so it is unreliable": it is wide because n is small, and honest.
+- Saying the 95% interval gives a 95% chance that the opt-in mean is right.
+- Proposing to collect even more opt-in responses.

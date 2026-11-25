@@ -1,0 +1,6 @@
+id = "da.03.p019"
+title = "Filter with brackets"
+tier = "drill"
+kind = "code"
+topics = ["boolean mask", "&", "|", "~", "operator precedence", "filtering"]
+minutes = 20

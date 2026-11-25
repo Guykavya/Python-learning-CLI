@@ -1,0 +1,6 @@
+id = "da.11.p008"
+title = "Peeking inflates false alarms"
+tier = "deep"
+kind = "code"
+topics = ["peeking", "false positive rate", "simulation", "sequential testing", "A/B test"]
+minutes = 35

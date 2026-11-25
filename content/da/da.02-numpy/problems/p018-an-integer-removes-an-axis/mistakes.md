@@ -1,0 +1,5 @@
+- **`(1, 4, 5)` for `a[1]`.** An integer removes the axis; only a slice keeps it.
+- **`(3, 5)` for `a[:, [1]]`.** A list of positions keeps the axis, with the length of the list (1).
+- **`(4, 5)` for `a[..., 0]`.** `...` fills in all the axes *before* the explicit index, so the 0 applies to the last axis.
+- **`(1,)` or `None` for `a[1, 2, 3]`.** A single element has no axes: `()`.
+- **`(3, 4, 1)` for `a[:, None, :, 0]`.** `None` inserts its axis where it is written, at position 1.

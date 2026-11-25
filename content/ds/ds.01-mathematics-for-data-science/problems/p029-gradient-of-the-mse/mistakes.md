@@ -1,0 +1,4 @@
+- Writing `X @ r` (wrong shape) instead of `X.T @ r`.
+- Forgetting the factor `2`, or dividing by `d` instead of `n`.
+- Using `(y - X w)` and getting the opposite sign.
+- Returning a number instead of a vector.

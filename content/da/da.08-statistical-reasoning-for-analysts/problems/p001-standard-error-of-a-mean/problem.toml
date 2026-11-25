@@ -1,0 +1,6 @@
+id = "da.08.p001"
+title = "Standard error of a mean"
+tier = "drill"
+kind = "code"
+topics = ["standard error", "sampling variation", "ddof", "ValueError"]
+minutes = 15

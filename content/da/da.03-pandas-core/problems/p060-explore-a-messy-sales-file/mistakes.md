@@ -1,0 +1,8 @@
+- **Converting before dropping duplicates**, or dropping duplicates by `order_id` only: that deletes one row of each clashing pair, which hides the problem instead of flagging it.
+- **`~df["qty"].between(1, 50)` without `fillna(False)`**: on a nullable column a missing quantity gives `<NA>`, which is not flagged.
+- **Flagging only one row of a clashing id** (`duplicated()` instead of `duplicated(keep=False)`).
+- **Computing the answers on all rows**: revenue, best month and shares are for **usable** rows only.
+- **Treating unknown payments as paid** (or leaving them out): `unpaid_share` counts everything that is not `paid == True`.
+- **Dividing the two absurd prices by 100**: flagged, not repaired; repairing is inventing data.
+- **Writing the Parquet with the index** or the register with different line names: the test checks the exact columns and lines.
+- **Forgetting `out_dir.mkdir(parents=True, exist_ok=True)`**: the folder may not exist yet.

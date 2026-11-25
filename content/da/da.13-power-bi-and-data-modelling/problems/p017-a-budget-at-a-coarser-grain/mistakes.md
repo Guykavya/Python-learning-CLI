@@ -1,0 +1,4 @@
+- Relating the budget straight to `Date[MonthStart]`: it is not unique on the date side, so the relationship cannot be built (`DaxError`).
+- Showing the category budget against every product: the budget is repeated and the products add up to many times the budget.
+- Using the `Date` table as the one side for months: use a month table.
+- Forgetting the reverse chain: `Product -> DimCategory` needs `Product` as the many side.

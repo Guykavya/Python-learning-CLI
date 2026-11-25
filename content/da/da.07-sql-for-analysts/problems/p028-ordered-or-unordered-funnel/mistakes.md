@@ -1,0 +1,5 @@
+- Counting `count(t_checkout)` for step 3: that is the unordered funnel; direct-link buyers and "purchase before view" users sneak in.
+- Using only the previous condition for step 4 (`t_purchase >= t_checkout`): a user with a checkout but no view would pass if you forgot the earlier links.
+- Using `>` instead of `>=`: users whose events share the same timestamp would be dropped (user 3).
+- `COALESCE`-ing missing times to a date: the comparison then succeeds with an invented time.
+- Forgetting the `LEFT JOIN` from users: users with no events are not part of the funnel, but the step-1 count would still be right, which hides the mistake.

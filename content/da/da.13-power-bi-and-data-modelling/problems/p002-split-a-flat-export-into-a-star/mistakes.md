@@ -1,0 +1,4 @@
+- Using the product name as the key in the fact table: the fact then repeats text and breaks when a name changes.
+- Assigning keys in the order of first appearance: the test expects sorted order, so the keys do not depend on the file order.
+- A merge without `validate="m:1"`: duplicate dimension rows would silently multiply fact rows.
+- Putting `unit_price` in the product dimension: the price on a sale belongs to the line (it can differ from the list price).

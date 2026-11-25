@@ -1,0 +1,6 @@
+id = "ds.04.p041"
+title = "Seed noise: report the spread"
+tier = "applied"
+kind = "code"
+topics = ["reproducibility", "random seed", "variance", "reporting"]
+minutes = 20

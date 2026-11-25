@@ -1,0 +1,4 @@
+- Keeping "appears to be somewhat down": hedging words with no number.
+- A recommendation with no owner or date ("the team should fix crashes").
+- A single number for the impact ("we will regain 21,000 users").
+- Claiming the crash *proves* the drop: the data are observational.

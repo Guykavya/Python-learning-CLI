@@ -1,0 +1,6 @@
+id = "ds.01.p030"
+title = "Gradient of the log-loss"
+tier = "deep"
+kind = "code"
+topics = ["logistic regression", "log-loss", "chain rule", "numerical stability"]
+minutes = 40

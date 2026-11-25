@@ -1,0 +1,6 @@
+id = "da.06.p011"
+title = "Predict the explosion"
+tier = "deep"
+kind = "code"
+topics = ["many-to-many", "join", "row count", "Counter", "fan-out"]
+minutes = 25

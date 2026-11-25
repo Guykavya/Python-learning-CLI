@@ -1,0 +1,6 @@
+id = "da.08.p034"
+title = "Report a mean with its interval"
+tier = "applied"
+kind = "code"
+topics = ["reporting uncertainty", "t interval", "formatting", "missing values", "false precision"]
+minutes = 35

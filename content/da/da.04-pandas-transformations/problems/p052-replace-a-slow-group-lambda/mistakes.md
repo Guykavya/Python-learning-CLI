@@ -1,0 +1,5 @@
+- **`transform(lambda ...)` with a different body, or `apply`.** Any Python function per group keeps the slowness.
+- **`np.std` or `ddof=0`.** NumPy's default is the population standard deviation; pandas' `std` uses `ddof=1`. The numbers differ.
+- **`groupby(...).agg(...)` without mapping back.** It gives one value per *group*; z-scores need one per *row*.
+- **Losing the index.** `reset_index` or `.to_numpy()` drops the labels; the result must line up with `df`.
+- **Filling the `NaN` of one-row groups.** The slow line gives `NaN` there, and so must yours.

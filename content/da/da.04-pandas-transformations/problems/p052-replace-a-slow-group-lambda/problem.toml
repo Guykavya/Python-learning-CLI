@@ -1,0 +1,6 @@
+id = "da.04.p052"
+title = "Replace a slow group lambda"
+tier = "deep"
+kind = "code"
+topics = ["transform", "performance", "vectorisation", "z-score", "groupby", "measure"]
+minutes = 25

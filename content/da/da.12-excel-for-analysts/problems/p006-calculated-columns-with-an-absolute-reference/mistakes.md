@@ -1,0 +1,4 @@
+- Writing `M1` instead of `$M$1`: when Excel fills the formula down, the reference moves to an empty cell and the margin silently ignores the handling cost.
+- Calculating the margin in Python and writing numbers: the workbook then has no formulas to audit.
+- Starting the loop at row 1 (the header) or ending one row early.
+- Putting the header in a different column: the checker reads `E`.

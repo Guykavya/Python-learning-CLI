@@ -1,0 +1,6 @@
+id = "da.04.p018"
+title = "Order number per customer"
+tier = "drill"
+kind = "code"
+topics = ["groupby", "cumcount", "sort_values", "index alignment", "first order"]
+minutes = 20

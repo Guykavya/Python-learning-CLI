@@ -1,0 +1,6 @@
+id = "da.01.p028"
+title = "Same summary, different data"
+tier = "deep"
+kind = "explain"
+topics = ["Anscombe", "shape", "bimodal", "outliers", "plot first", "summary statistics"]
+minutes = 35

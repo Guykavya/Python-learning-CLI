@@ -1,0 +1,6 @@
+id = "da.06.p013"
+title = "Rows, values, distinct values"
+tier = "drill"
+kind = "code"
+topics = ["count", "nunique", "len", "missing values"]
+minutes = 12

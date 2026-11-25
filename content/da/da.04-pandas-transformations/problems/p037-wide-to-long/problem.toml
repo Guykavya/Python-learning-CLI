@@ -1,0 +1,6 @@
+id = "da.04.p037"
+title = "Wide to long"
+tier = "drill"
+kind = "code"
+topics = ["melt", "id_vars", "var_name", "value_name", "long", "tidy"]
+minutes = 15

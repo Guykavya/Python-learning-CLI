@@ -1,0 +1,5 @@
+- A tiny table in which every user logs in once: all three broken queries still give the right answer, so the test cannot catch them.
+- Counting `cohort_size` as the number of active users in `retention_on`: the never-active user disappears.
+- Writing `expected_rows` from the broken query's output instead of counting by hand: the test then agrees with the bug.
+- Forgetting `cutoff`: a login after the cutoff changes the table.
+- Returning a DataFrame from `retention_on`: the function must return a list of tuples.

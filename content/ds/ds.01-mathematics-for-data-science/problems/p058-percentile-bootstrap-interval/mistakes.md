@@ -1,0 +1,5 @@
+- Sampling **without** replacement (`rng.choice(..., replace=False)`): you get the same sample every time.
+- Drawing a smaller resample than `n`: the interval becomes too wide.
+- Using the standard deviation of the bootstrap values instead of quantiles when the percentile method is asked.
+- Using `np.percentile` with fractions (0.025) instead of percents (2.5).
+- Re-creating the generator in the loop.

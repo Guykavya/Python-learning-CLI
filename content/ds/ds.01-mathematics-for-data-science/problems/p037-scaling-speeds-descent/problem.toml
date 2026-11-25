@@ -1,0 +1,6 @@
+id = "ds.01.p037"
+title = "Scaling speeds descent"
+tier = "deep"
+kind = "code"
+topics = ["feature scaling", "conditioning", "convergence", "gradient descent"]
+minutes = 30

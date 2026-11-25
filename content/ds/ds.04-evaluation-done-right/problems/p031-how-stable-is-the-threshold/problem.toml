@@ -1,0 +1,6 @@
+id = "ds.04.p031"
+title = "How stable is the threshold?"
+tier = "deep"
+kind = "code"
+topics = ["threshold", "bootstrap", "uncertainty", "cost"]
+minutes = 35

@@ -1,0 +1,6 @@
+id = "da.03.p034"
+title = "Split into two columns"
+tier = "applied"
+kind = "code"
+topics = ["str.split", "expand", "n=1", "assign", "missing values"]
+minutes = 25

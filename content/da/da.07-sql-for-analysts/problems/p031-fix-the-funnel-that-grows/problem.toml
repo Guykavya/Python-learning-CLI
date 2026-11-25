@@ -1,0 +1,7 @@
+id = "da.07.p031"
+title = "Fix the funnel that grows"
+tier = "deep"
+kind = "code"
+topics = ["fan-out", "funnel", "count distinct", "debugging SQL", "grain"]
+minutes = 35
+assessment = "fix"

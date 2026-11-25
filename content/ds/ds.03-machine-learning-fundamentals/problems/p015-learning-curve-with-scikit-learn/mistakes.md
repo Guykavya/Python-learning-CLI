@@ -1,0 +1,4 @@
+- Leaving the scores negative: an error of `-54.5` looks like a score going up as the model improves.
+- Computing the gap as `train - validation` for an error: it comes out negative.
+- Averaging over the wrong axis (`axis=0` averages over sizes, not folds).
+- Forgetting `shuffle=True` with a fixed `random_state`: the folds then depend on the row order.

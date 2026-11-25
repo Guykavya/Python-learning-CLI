@@ -1,0 +1,6 @@
+- **Checking the sum of the changes instead of the running total.** The condition is `start + sum(changes) == end`; compute it from the same running total you print.
+- **Gap with the wrong sign.** The statement says `running total - end value`.
+- **Writing `20` instead of `-20`, or `29` instead of `+29`.** Use `f"{change:+d}"`.
+- **Trailing spaces.** An empty last cell leaves a space after the final bar; `.rstrip()` each line.
+- **Returning the table even when it does not close.** An unexplained gap must be loud.
+- **Using `print` instead of returning the text.** The caller decides where the table goes.

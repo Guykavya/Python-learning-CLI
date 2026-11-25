@@ -1,0 +1,6 @@
+id = "da.03.p036"
+title = "Dates in three formats"
+tier = "challenge"
+kind = "code"
+topics = ["to_datetime", "format", "errors=coerce", "fillna", "ambiguous dates", "audit"]
+minutes = 40

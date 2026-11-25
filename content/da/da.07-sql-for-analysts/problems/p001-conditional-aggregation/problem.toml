@@ -1,0 +1,6 @@
+id = "da.07.p001"
+title = "Conditional aggregation"
+tier = "drill"
+kind = "code"
+topics = ["conditional aggregation", "FILTER", "count distinct", "left join"]
+minutes = 15

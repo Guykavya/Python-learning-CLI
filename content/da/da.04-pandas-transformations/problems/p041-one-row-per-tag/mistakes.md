@@ -1,0 +1,5 @@
+- **Not stripping.** `" gift"` and `"gift"` count as two different tags.
+- **Counting the empty string.** `""` and `"toys,"` produce `""` items; they are not a tag.
+- **`split(", ")` with a space.** `"eco,kids"` (no space) is then not split at all.
+- **Relying on `value_counts` order for ties.** Its order among equal counts is not a rule; sort explicitly.
+- **Forgetting the missing `tags`.** `explode` keeps a missing value as one row; drop it before counting.

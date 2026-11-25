@@ -1,0 +1,6 @@
+id = "da.07.p018"
+title = "DAU, WAU, MAU"
+tier = "applied"
+kind = "code"
+topics = ["DAU", "WAU", "MAU", "distinct count", "rolling windows", "calendar"]
+minutes = 35

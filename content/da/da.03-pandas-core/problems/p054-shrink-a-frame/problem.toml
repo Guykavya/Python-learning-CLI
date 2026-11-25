@@ -1,0 +1,6 @@
+id = "da.03.p054"
+title = "Shrink a frame"
+tier = "deep"
+kind = "code"
+topics = ["memory", "downcast", "category", "float32", "dtypes", "memory_usage"]
+minutes = 35

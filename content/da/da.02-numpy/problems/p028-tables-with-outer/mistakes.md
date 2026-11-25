@@ -1,0 +1,5 @@
+- **Starting at 0.** `np.arange(n)` gives `0 … n-1` and a first row of zeros; the table is of `1 … n`.
+- **Swapping the operands.** `np.subtract.outer(b, a)` is `b[j] - a[i]` and has shape `(m, n)`.
+- **`a - b` without reshaping.** Two vectors of different lengths do not broadcast (`(4,)` vs `(3,)`), and of equal length they subtract element by element, not pair by pair.
+- **`np.outer(a, b)` for the difference.** `np.outer` is only the *product*; it is `np.multiply.outer` flattened to 2-D.
+- **Nested Python loops or list comprehensions.** Correct, but the point is the one-line table.

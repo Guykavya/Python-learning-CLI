@@ -1,0 +1,4 @@
+- Passing `exposure` instead of `np.log(exposure)` as the offset.
+- Adding `exposure` as a normal predictor. That estimates a free slope instead of fixing it at 1.
+- Comparing raw counts between groups that were watched for different lengths of time.
+- Reporting `exp(coefficient)` as "% more events". It is a ratio of rates; a ratio of 1.5 is 50% more events per unit exposure.

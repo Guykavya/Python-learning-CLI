@@ -1,0 +1,6 @@
+id = "da.06.p034"
+title = "AVG and NULL"
+tier = "applied"
+kind = "code"
+topics = ["SQL", "AVG", "NULL", "COALESCE", "ratings"]
+minutes = 20

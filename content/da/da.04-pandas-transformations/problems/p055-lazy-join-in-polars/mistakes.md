@@ -1,0 +1,5 @@
+- **Calling `collect()` inside the function.** It returns a `DataFrame`; the task asks for the plan (a `LazyFrame`).
+- **`how="left"`.** A line with an unknown product would get a `null` category and form its own group.
+- **Sorting by revenue only.** The order of tied products is then not defined, and so is which one is kept.
+- **`group_by("category").head(n)` without `maintain_order=True`.** The groups may come out in any order; sort again at the end if you leave it out.
+- **Forgetting `validate=`.** A duplicated product row would silently double that product's revenue (fan-out).

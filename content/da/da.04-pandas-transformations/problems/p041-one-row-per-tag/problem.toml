@@ -1,0 +1,6 @@
+id = "da.04.p041"
+title = "One row per tag"
+tier = "drill"
+kind = "code"
+topics = ["explode", "str.split", "str.strip", "value_counts", "fan-out"]
+minutes = 15

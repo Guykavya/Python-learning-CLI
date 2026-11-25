@@ -1,0 +1,5 @@
+- **`matrix[rows][:, cols]`.** First selects whole rows, then columns: a block, not pairs.
+- **`np.diagonal(matrix)[:k]`.** Too short instead of an `IndexError` when `k` is too large, and read-only.
+- **Catching `IndexError` and returning something.** The task wants the error to reach the caller: a bad index is a bug to see, not hide.
+- **Clipping the indexes with `np.clip` or `mode="clip"`.** Hides out-of-range bugs.
+- **A loop over `zip(rows, cols)`.** Correct, but Python speed and loses the index shape.

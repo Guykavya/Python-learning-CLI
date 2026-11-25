@@ -1,0 +1,6 @@
+id = "da.01.p004"
+title = "Notebook or script?"
+tier = "drill"
+kind = "explain"
+topics = ["notebook vs script", "hidden state", "reproducibility", "version control", "explain"]
+minutes = 25

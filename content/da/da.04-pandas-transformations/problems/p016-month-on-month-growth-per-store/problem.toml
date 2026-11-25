@@ -1,0 +1,6 @@
+id = "da.04.p016"
+title = "Month-on-month growth per store"
+tier = "applied"
+kind = "code"
+topics = ["groupby", "pct_change", "shift", "division by zero", "inf"]
+minutes = 25

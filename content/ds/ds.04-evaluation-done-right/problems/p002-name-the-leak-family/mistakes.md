@@ -1,0 +1,3 @@
+- Applying the fourth rule to story 7 because of "written by": the first rule wins.
+- Missing the word "next" in story 4.
+- Writing `duplicates` instead of the exact label `duplicates/groups`.

@@ -1,0 +1,6 @@
+id = "ds.04.p009"
+title = "Single-feature scores"
+tier = "drill"
+kind = "code"
+topics = ["target leakage", "single-feature AUC", "detective tools"]
+minutes = 25

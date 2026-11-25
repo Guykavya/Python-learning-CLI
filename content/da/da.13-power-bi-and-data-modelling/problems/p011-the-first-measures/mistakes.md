@@ -1,0 +1,4 @@
+- `SUM(Sales[Quantity]) * SUM(Sales[UnitPrice])`: it multiplies two totals, not line by line (and ignores the discount).
+- `COUNT(Sales[OrderID])` instead of `DISTINCTCOUNT`: it counts order lines.
+- `[Revenue] / [Orders]`: dividing by a blank or zero gives an error or infinity; `DIVIDE` returns blank.
+- Calling a measure inside an iterator (`SUMX(Product, [Revenue])`): this engine has no context transition.

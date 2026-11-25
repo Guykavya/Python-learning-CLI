@@ -1,0 +1,6 @@
+id = "da.03.p057"
+title = "Where did the values go?"
+tier = "deep"
+kind = "code"
+topics = ["audit", "to_numeric coerce", "conversion losses", "isna", "problem register", "examples"]
+minutes = 35

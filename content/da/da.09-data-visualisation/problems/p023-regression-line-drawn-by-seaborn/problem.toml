@@ -1,0 +1,6 @@
+id = "da.09.p023"
+title = "Regression line drawn by seaborn"
+tier = "deep"
+kind = "code"
+topics = ["regplot", "regression line", "polyfit", "reading drawn data"]
+minutes = 25

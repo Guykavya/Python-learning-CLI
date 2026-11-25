@@ -1,0 +1,7 @@
+id = "da.07.p013"
+title = "Top N per group"
+tier = "drill"
+kind = "trace"
+topics = ["QUALIFY", "row_number", "rank", "top N per group", "ties", "trace"]
+minutes = 25
+assessment = "trace"

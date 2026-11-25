@@ -1,0 +1,4 @@
+- Differentiating `3 y` with respect to `x` as `3` (it is a constant for `x`, so 0).
+- Writing `df/dy = x^2` and losing the `+ 3`.
+- Returning a list instead of an array: use `np.array`.
+- Swapping the order of the two components.

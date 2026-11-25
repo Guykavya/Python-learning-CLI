@@ -1,0 +1,6 @@
+id = "da.02.p043"
+title = "Which bin does it fall in?"
+tier = "applied"
+kind = "trace"
+topics = ["digitize", "searchsorted", "bins", "edges", "bincount", "trace"]
+minutes = 20

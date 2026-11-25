@@ -1,0 +1,4 @@
+- Reading `1.3 * FLOOR` as 1.3 instead of 0.39.
+- Checking the overfit rule first for degrees 1 and 2: the underfit rule is tested first.
+- Writing `degree 1:` instead of `degree  1:` (two spaces): the format `:2d` pads.
+- Choosing the degree with the lowest *training* error for the last line.

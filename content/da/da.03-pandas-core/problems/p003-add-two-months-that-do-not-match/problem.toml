@@ -1,0 +1,6 @@
+id = "da.03.p003"
+title = "Add two months that do not match"
+tier = "drill"
+kind = "code"
+topics = ["Series", "alignment", "fill_value", "index", "dtype"]
+minutes = 20

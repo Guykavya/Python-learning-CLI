@@ -1,0 +1,4 @@
+- Checking whether the interval contains the sample mean (always true).
+- Re-creating the generator in the loop.
+- Drawing from `rng.normal(5, 1)` while still testing for 0.
+- Returning the count instead of the fraction.

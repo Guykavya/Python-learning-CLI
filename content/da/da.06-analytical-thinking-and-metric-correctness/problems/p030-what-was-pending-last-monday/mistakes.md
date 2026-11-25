@@ -1,0 +1,6 @@
+- **Filtering `status == "pending"`.** That is today's picture. A job completed last Friday was pending last Monday.
+- **`completed_at < when` for "done".** An event at exactly `when` has already happened; use `<=`.
+- **Counting a job created after `when`.** It did not exist yet.
+- **Dropping failed jobs.** They have no ending time, so by the rule they stay open. The honest result is an upper bound, and you say so.
+- **Forgetting the `NaT` rows.** `completed_at <= when` is `False` for `NaT`; make sure "missing" means "not done yet", not "error".
+- **Returning a mask or a DataFrame.** Return the sorted list of plain `int` ids.

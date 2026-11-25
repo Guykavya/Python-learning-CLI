@@ -1,0 +1,4 @@
+- Saying the chart on the left "is wrong": both are accurate, only the impression differs.
+- Calling the slope a fact about the data.
+- Choosing the shape that makes the trend look best for your message.
+- Comparing two panels drawn with different shapes and scales and drawing conclusions from the steepness.

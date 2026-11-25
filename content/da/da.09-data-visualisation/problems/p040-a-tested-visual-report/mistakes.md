@@ -1,0 +1,4 @@
+- Typing a title (`"Revenue grew 11%"`): it must be computed from the data.
+- Sorting the weekdays by revenue: the bars follow Monday to Sunday.
+- Forgetting to close the figures when `savefig` fails (use `try/finally`).
+- Averaging the revenue **rows** by weekday instead of the daily **totals**.

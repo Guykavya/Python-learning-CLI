@@ -1,0 +1,6 @@
+- **No `0` in front of the running totals.** Then `c[k:] - c[:-k]` misses the first window and the result is one element short.
+- **Off by one in the length.** There are `n - k + 1` windows, not `n - k` and not `n`.
+- **Recomputing every window** (a loop with `x[i:i+k].sum()`, `np.convolve`, `sliding_window_view`): correct, but O(n × k) and too slow for a big window.
+- **Accepting `k = 0`.** It would divide by zero; and `k > len(x)` would give an empty or negative-length result. Raise `ValueError`.
+- **Integer division or an integer result.** Convert to float first.
+- **`np.cumsum(x, out=x)`** changes the caller's array.

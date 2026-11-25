@@ -1,0 +1,4 @@
+- Different rounding in the two versions (65 in one, 65.2 in the other).
+- Odds ratios or "counterfactual" in the CEO message.
+- An operations list with no date or no measure of success.
+- Leaving the decision for the last sentence of the CEO message.

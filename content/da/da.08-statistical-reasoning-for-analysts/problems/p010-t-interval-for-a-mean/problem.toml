@@ -1,0 +1,6 @@
+id = "da.08.p010"
+title = "t interval for a mean"
+tier = "drill"
+kind = "code"
+topics = ["confidence interval", "t distribution", "standard error", "scipy.stats"]
+minutes = 20

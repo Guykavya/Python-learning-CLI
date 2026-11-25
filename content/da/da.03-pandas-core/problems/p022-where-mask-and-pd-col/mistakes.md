@@ -1,0 +1,4 @@
+- **`df[df["discount"] <= cap]`.** This drops the rows with large discounts instead of capping them.
+- **`where` with the wrong condition.** `where(cond, x)` replaces where `cond` is **False**; `mask` replaces where it is True.
+- **Replacing the missing values too.** `NaN <= cap` is False, so a careless `where` turns the gaps into the cap.
+- **Editing `df` and returning it.** The input would change.

@@ -1,0 +1,5 @@
+- **"MAR means missing at random, so it is harmless."** The name is misleading: MAR has a pattern, explained by visible columns, and the complete-case mean is biased.
+- **"Missing data always lowers the average."** MAR (low-education people skip) raises it, MNAR (high earners hide) lowers it.
+- **"I tested for MNAR."** MNAR depends on the missing value, which is not in the data. You can only reason about how it was collected.
+- **Giving only definitions.** Question 3 asks about the effect on the mean, and question 4 asks about what the data can show.
+- **"Large share missing means MNAR."** The share says nothing about the mechanism: all three variants lost 23 percent.

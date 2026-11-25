@@ -1,0 +1,6 @@
+observed difference 4.0
+2 of 70 splits are at least this extreme
+p = 0.029
+reject at 0.05: True
+reject at 0.01: False
+3 against 3: smallest possible p = 0.100

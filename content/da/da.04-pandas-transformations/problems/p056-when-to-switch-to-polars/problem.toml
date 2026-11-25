@@ -1,0 +1,6 @@
+id = "da.04.p056"
+title = "When to switch to Polars"
+tier = "deep"
+kind = "explain"
+topics = ["Polars", "pandas", "lazy execution", "expressions", "performance", "explain"]
+minutes = 25

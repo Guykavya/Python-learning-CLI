@@ -1,0 +1,11 @@
+201 T,C
+202 T cancelled (never started)
+203 C created in January, started in February
+204 T started in March or later
+205 T pending (no start date yet)
+206 T failed
+207 P
+[201, 202, 204, 205, 206]
+[201, 203]
+5 2 1 1
+3

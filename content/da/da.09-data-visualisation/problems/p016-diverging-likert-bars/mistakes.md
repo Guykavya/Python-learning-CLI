@@ -1,0 +1,4 @@
+- Drawing the neutral bar on the right side instead of centring it on 0.
+- Skipping categories whose percentage is 0: the structure (and the legend) changes from question to question.
+- Using percentages that do not add to 100 (dividing by the column total).
+- Forgetting `left=`: all bars start at 0 and overlap.

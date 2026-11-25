@@ -1,0 +1,4 @@
+- Expecting the category filter to be added: a column filter inside `CALCULATE` replaces the visual's filter on that column.
+- `ALL(Product[Category])`: it removes only the category filter, not a subcategory or product filter.
+- `[Revenue] / CALCULATE(...)`: a blank denominator gives an error or infinity; use `DIVIDE`.
+- Forgetting that year and region filters must be kept: they are not touched by `ALL(Product)`.

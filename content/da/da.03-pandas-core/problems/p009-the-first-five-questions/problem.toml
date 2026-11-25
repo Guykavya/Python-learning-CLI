@@ -1,0 +1,6 @@
+id = "da.03.p009"
+title = "The first five questions"
+tier = "drill"
+kind = "code"
+topics = ["shape", "dtypes", "isna", "duplicated", "first look"]
+minutes = 20

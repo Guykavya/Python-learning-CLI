@@ -1,0 +1,4 @@
+- Forgetting the `/ 2` in the average weights.
+- Using the before shares as the weights of the rate effect: the formula averages before and after.
+- Printing `-0.850`: the format is `.2f`.
+- Concluding "churn rose by only 1.6 points, so nothing much happened inside the segments": the rate effect is 2.45.

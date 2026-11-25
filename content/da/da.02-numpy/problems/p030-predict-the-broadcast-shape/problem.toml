@@ -1,0 +1,7 @@
+id = "da.02.p030"
+title = "Predict the broadcast shape"
+tier = "deep"
+kind = "trace"
+topics = ["broadcasting", "shapes", "broadcasting rules", "trace"]
+minutes = 20
+assessment = "trace"

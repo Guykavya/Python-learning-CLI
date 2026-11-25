@@ -1,0 +1,6 @@
+id = "ds.03.p024"
+title = "Lasso zeros out junk"
+tier = "applied"
+kind = "code"
+topics = ["lasso", "feature selection", "sparsity", "StandardScaler"]
+minutes = 30

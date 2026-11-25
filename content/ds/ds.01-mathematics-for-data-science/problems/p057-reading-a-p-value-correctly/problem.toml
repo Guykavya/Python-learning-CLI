@@ -1,0 +1,6 @@
+id = "ds.01.p057"
+title = "Reading a p-value correctly"
+tier = "deep"
+kind = "trace"
+topics = ["p-value", "exact permutation test", "significance level", "trace"]
+minutes = 25

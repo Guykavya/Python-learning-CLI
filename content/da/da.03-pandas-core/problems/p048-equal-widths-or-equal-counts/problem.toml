@@ -1,0 +1,6 @@
+id = "da.03.p048"
+title = "Equal widths or equal counts?"
+tier = "applied"
+kind = "code"
+topics = ["cut", "qcut", "bins", "right-closed", "labels", "include_lowest"]
+minutes = 30

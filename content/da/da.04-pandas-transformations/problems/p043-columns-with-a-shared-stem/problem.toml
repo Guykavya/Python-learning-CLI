@@ -1,0 +1,6 @@
+id = "da.04.p043"
+title = "Columns with a shared stem"
+tier = "challenge"
+kind = "code"
+topics = ["wide_to_long", "melt", "str.split", "pivot", "reshape", "property test"]
+minutes = 30

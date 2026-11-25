@@ -1,0 +1,6 @@
+id = "ds.04.p015"
+title = "Duplicates across the split"
+tier = "applied"
+kind = "code"
+topics = ["duplicates", "train/test overlap", "leakage", "merge"]
+minutes = 25

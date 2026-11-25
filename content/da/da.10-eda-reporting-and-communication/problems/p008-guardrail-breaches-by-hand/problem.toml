@@ -1,0 +1,6 @@
+id = "da.10.p008"
+title = "Guardrail breaches by hand"
+tier = "drill"
+kind = "trace"
+topics = ["guardrail", "limits", "inclusive boundary", "iterrows", "trace"]
+minutes = 15

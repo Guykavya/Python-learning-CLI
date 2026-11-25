@@ -1,0 +1,4 @@
+- Counting the blank cell as matching `"North"`-like text criteria: it does not.
+- Counting 12 and 8 for `"<>North"` as non-matching: they are not equal to North, so they match `"<>North"`.
+- Treating `"N*"` as case-sensitive (it also matches `north`... and `N/A` starts with N).
+- Confusing `"<>"` (not empty) with `"<>North"`.

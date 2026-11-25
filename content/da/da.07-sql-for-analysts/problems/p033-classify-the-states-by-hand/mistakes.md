@@ -1,0 +1,5 @@
+- Calling user 2's month 3 `retained` because the user was active before: retained needs activity in **m - 1**.
+- Counting `churned` for user 3 in month 4: user 3 is active in month 4 (resurrected), not absent.
+- Putting `churned` users into the MAU of their month: they are not active in it.
+- Forgetting that the last line lists MAU per month (`new + retained + resurrected`), not the sum of everything.
+- Writing the month number of the previous month in the first column: the churn row is counted in the month of the absence.

@@ -1,0 +1,6 @@
+id = "da.10.p006"
+title = "Monthly KPIs"
+tier = "applied"
+kind = "code"
+topics = ["KPI definitions", "churn rate", "opening actives", "groupby", "period"]
+minutes = 30

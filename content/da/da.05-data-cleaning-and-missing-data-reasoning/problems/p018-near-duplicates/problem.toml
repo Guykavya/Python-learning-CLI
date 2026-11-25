@@ -1,0 +1,6 @@
+id = "da.05.p018"
+title = "Near duplicates"
+tier = "challenge"
+kind = "code"
+topics = ["difflib", "SequenceMatcher", "fuzzy matching", "normalising names", "pairs", "threshold"]
+minutes = 40

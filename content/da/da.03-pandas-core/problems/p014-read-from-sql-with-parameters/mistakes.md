@@ -1,0 +1,5 @@
+- **f-string SQL.** `O'Brien` ends the string early (a syntax error), and `x' OR '1'='1` returns every row. This is SQL injection.
+- **`params=since`** (a bare string) is treated as a sequence of characters. Pass a list or tuple.
+- **Filtering in pandas after `SELECT *`.** Correct but moves the whole table; let SQL do the `WHERE`.
+- **Forgetting `parse_dates`.** `order_date` stays text.
+- **No `ORDER BY`.** The row order of a SQL result is not guaranteed.

@@ -1,0 +1,4 @@
+- Fixing only the sign: the unscaled features still make the weights explode.
+- Standardising `X_new` with its own mean and std instead of the training numbers.
+- Lowering the learning rate until it 'works': 500 steps are then far from enough for the small column.
+- Dividing by a column std of 0 (a constant column).

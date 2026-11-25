@@ -1,0 +1,5 @@
+- **Swapping the arguments of `setdiff1d`.** `setdiff1d(jan, feb)` is the *lost* customers, not the new ones.
+- **`feb[~np.isin(feb, jan)]` without `unique`:** repeated purchases appear several times and the order is the input order.
+- **Python `set` and `sorted`:** correct, but leaves NumPy, turns `int64` into Python ints and is slower on large data.
+- **`np.union1d` for "kept":** that is everyone who bought in either month.
+- **Sorting the inputs in place** (`jan.sort()`): the caller's arrays change.

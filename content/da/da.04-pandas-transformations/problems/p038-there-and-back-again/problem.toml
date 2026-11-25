@@ -1,0 +1,6 @@
+id = "da.04.p038"
+title = "There and back again"
+tier = "challenge"
+kind = "code"
+topics = ["pivot", "melt", "round trip", "dtypes", "dropna", "property test"]
+minutes = 35

@@ -1,0 +1,7 @@
+id = "da.04.p060"
+title = "Multi-table retail analysis"
+tier = "challenge"
+kind = "code"
+topics = ["project", "safe_merge", "reconcile", "groupby", "top-N", "anti-join", "time series", "audit"]
+minutes = 90
+assessment = "build"

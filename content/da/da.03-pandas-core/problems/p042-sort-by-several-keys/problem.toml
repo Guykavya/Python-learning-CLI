@@ -1,0 +1,6 @@
+id = "da.03.p042"
+title = "Sort sellers by several keys"
+tier = "applied"
+kind = "code"
+topics = ["sort_values", "multiple keys", "na_position", "stable sort", "ties"]
+minutes = 25

@@ -1,0 +1,4 @@
+- Choosing by training error: that always picks the largest degree.
+- Using `<=` so that a tie picks the **larger** degree.
+- Including degree 0 (a constant) in the search when the task starts at 1.
+- Treating the selected validation error as an honest estimate for new data: it is optimistic after selection (see problem 8).

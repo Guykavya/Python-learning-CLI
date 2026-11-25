@@ -1,0 +1,3 @@
+- `np.std(x)` without `ddof=1`: the SE comes out too small, most of all for small n.
+- Dividing by `n` instead of `sqrt(n)`.
+- Letting n = 1 return `nan` with a warning: raise `ValueError` instead.

@@ -1,0 +1,6 @@
+id = "da.06.p023"
+title = "Lint a metric definition"
+tier = "deep"
+kind = "code"
+topics = ["metric definitions", "lint", "validation", "date basis", "half-open"]
+minutes = 30

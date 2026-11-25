@@ -1,0 +1,4 @@
+- Counting 5.0 or 90.0 as a breach: the comparison is strict.
+- Printing on-time before churn inside a month: the dict order puts churn first.
+- Missing 89.9: it is only 0.1 below the limit but still a breach.
+- Printing the values as `80.50`: Python prints the float as `80.5`.

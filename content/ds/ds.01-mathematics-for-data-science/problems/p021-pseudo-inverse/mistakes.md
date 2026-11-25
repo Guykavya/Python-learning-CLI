@@ -1,0 +1,4 @@
+- Inverting every singular value: a zero gives `inf`, a tiny one explodes.
+- Writing `U @ diag(1/s) @ Vt` (the order of the factors is `V ... U^T`).
+- Using `full_matrices=True`: the shapes do not fit.
+- Using an absolute cutoff only: a matrix scaled by 1e8 then keeps noise.

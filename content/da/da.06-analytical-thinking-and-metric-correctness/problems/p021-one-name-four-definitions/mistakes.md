@@ -1,0 +1,5 @@
+- **`<= "2025-02-28"` or `<= Mar 1`.** The first loses the last day; the second adds a boundary timestamp from March. Use `< Mar 1`.
+- **Forgetting the status filter on the two completed definitions.** A cancelled job has no `completed_at`, but a pending one could carry stray data: filter on the status.
+- **Adding the 5:30 to the column.** `jobs["completed_at"] += IST` changes the caller's table; shift a temporary Series.
+- **Shifting the boundaries the wrong way.** On the IST clock the timestamp moves forward (+5:30), the month limits stay.
+- **Silent fallback for an unknown name.** A typo should raise, not return 0.

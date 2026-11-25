@@ -1,0 +1,4 @@
+- **CSV for everything.** It is readable everywhere, but dates, ids with zeros and missing values must be re-declared on every read.
+- **Excel as a data pipeline format.** It is slow, limited in rows and changes values (dates, codes like `1-2`) on opening.
+- **Giving no reason.** "Parquet" alone is not an answer; say what it keeps or saves.
+- **Exporting the database to CSV and filtering in pandas** when a `WHERE` could have fetched only what you need.

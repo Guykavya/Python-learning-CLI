@@ -1,0 +1,4 @@
+threshold: 0.2
+call with model probabilities: C, D
+call with calibrated probabilities: B, C, D
+bin B expected cost per customer: skip 30.0, call 20.0

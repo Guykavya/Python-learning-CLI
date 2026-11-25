@@ -1,0 +1,6 @@
+- **Forgetting `nullable=True`.** The good table has missing ages, incomes and emails and would fail.
+- **Allowing missing values everywhere.** `city`, `resp_id` and `satisfaction` must reject missing values (the default).
+- **`Check.str_matches("@")`.** It matches from the start of the text, so `"a@x.com"` fails. Use `str_contains`.
+- **Using `Check.in_range(18, 75)` with `include_max=False`** or a strict `gt`/`lt` pair: the bounds themselves are valid.
+- **Putting the rules in `validate` calls instead of in the schema.** The test imports `SCHEMA` and calls `validate` itself.
+- **`strict=True`.** The tests add extra columns; they must be allowed.

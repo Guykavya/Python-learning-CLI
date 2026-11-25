@@ -1,0 +1,6 @@
+id = "da.02.p003"
+title = "Shape, size, dtype, strides"
+tier = "deep"
+kind = "trace"
+topics = ["shape", "ndim", "size", "strides", "transpose", "views", "trace"]
+minutes = 20

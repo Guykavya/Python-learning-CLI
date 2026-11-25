@@ -1,0 +1,4 @@
+- `s = values * k` is area-proportional; `s = (values * k) ** 2` or a radius proportional to the value is not.
+- Dividing by zero when every value is 0.
+- Allowing negative values: a negative area has no meaning.
+- Passing the radius to `s`: it expects an area in points squared.

@@ -1,0 +1,6 @@
+id = "da.09.p003"
+title = "Read data back from a figure"
+tier = "drill"
+kind = "code"
+topics = ["artists", "patches", "lines", "testing charts"]
+minutes = 15

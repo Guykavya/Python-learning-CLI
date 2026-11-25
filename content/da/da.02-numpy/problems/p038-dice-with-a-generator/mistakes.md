@@ -1,0 +1,5 @@
+- **`rng.integers(1, 6)`.** The upper bound is excluded: you never roll a 6. Use `integers(1, 7)` (or `endpoint=True`).
+- **`np.random.seed(...)` / `np.random.randint`.** The hidden global generator (Ch. 13.6) ignores the `rng` argument and makes the result depend on code elsewhere.
+- **`rng = np.random.default_rng(42)` inside the function.** Every call repeats the same rolls, and the caller's seed is ignored.
+- **`bincount` without `minlength`** gives fewer than 7 slots when the largest faces never appear (always for `n = 0`).
+- **Returning the 0 slot** (length 7), or counting with a Python loop over the rolls.

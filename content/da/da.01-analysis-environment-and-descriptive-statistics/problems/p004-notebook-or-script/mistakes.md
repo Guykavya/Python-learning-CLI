@@ -1,0 +1,5 @@
+- **"Notebooks for everything".** A nightly job in a notebook depends on hidden state and on someone pressing Run.
+- **"Scripts for everything".** Exploration in a script means re-running the whole file to see one number.
+- **Not giving a reason.** "Notebook" alone is not an answer; name the property (feedback, repeatability, tests, diff).
+- **Forgetting the diff.** A notebook's JSON, with outputs and execution counts, makes a noisy `git diff`; a `.py` file does not.
+- **Burying a tested function in a cell.** `pytest` cannot import a cell: put it in a module.

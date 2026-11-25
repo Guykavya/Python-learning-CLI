@@ -1,0 +1,6 @@
+id = "da.06.p014"
+title = "Distinct counts do not add up"
+tier = "drill"
+kind = "trace"
+topics = ["distinct count", "nunique", "additivity", "half-open period", "trace"]
+minutes = 15

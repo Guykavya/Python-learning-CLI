@@ -1,0 +1,6 @@
+id = "da.09.p032"
+title = "plotly bars, tested by properties"
+tier = "drill"
+kind = "code"
+topics = ["plotly express", "px.bar", "figure properties", "testing plotly"]
+minutes = 20

@@ -1,0 +1,6 @@
+- **Padding on the right.** `(4,)` meets the *last* axis; pad with `1`s on the left.
+- **`max(lengths)` as the result.** It gives `1` for `(0,)` with `(1,)`, but the answer is `0`; and it hides clashes like 3 vs 4.
+- **Comparing only the first two shapes.** All shapes take part: `(2, 1), (1, 3), (4, 1, 1)` gives `(4, 2, 3)`.
+- **Counting the axis from the right in the message** (`axis -2` or `axis 0` for the last). The statement asks for the position in the padded result, from the left.
+- **Returning a list, or `None` on failure.** Return a tuple; raise `ValueError`.
+- **`max()` of an empty sequence** when called with no shapes: handle `broadcast_shape()` first.

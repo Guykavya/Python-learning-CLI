@@ -1,0 +1,6 @@
+id = "da.09.p017"
+title = "Annotated heatmap"
+tier = "applied"
+kind = "code"
+topics = ["heatmap", "imshow", "colorbar", "cell labels", "NaN"]
+minutes = 25

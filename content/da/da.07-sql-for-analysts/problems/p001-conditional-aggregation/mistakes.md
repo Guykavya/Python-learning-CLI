@@ -1,0 +1,5 @@
+- Using `count(*)` after the join: a user with 3 events is counted 3 times (the fan-out of da.06).
+- An `INNER JOIN`: users with no events disappear from `users`, and the rate looks better than it is.
+- `buyers / users` with two integers: in DuckDB `/` gives a decimal, but in some engines it truncates to 0. Multiplying by `1.0` makes the intent clear.
+- Filtering in `WHERE event_type = 'purchase'`: that removes every non-buyer, so `users` and `buyers` become equal.
+- Forgetting `DISTINCT` inside the filtered count: a user who bought twice becomes two buyers.

@@ -1,0 +1,6 @@
+id = "ds.03.p026"
+title = "Cross-validation by hand"
+tier = "applied"
+kind = "code"
+topics = ["cross-validation", "k-fold", "scoring", "fresh model per fold"]
+minutes = 30

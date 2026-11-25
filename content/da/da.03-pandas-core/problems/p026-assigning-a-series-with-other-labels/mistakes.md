@@ -1,0 +1,5 @@
+- **`df["target"] = targets`.** Aligns on row labels, not customer ids.
+- **`df["target"] = targets.values`.** Positional, and fails unless the lengths happen to match; it ignores the customer ids.
+- **Counting `isna()` on the new column.** A customer that exists but has a missing target would be counted as absent.
+- **Counting absent customers instead of rows.** The statement asks for rows.
+- **Changing `targets` or `df` in place.** Both stay as given.

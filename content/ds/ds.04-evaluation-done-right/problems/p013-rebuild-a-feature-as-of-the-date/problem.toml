@@ -1,0 +1,6 @@
+id = "ds.04.p013"
+title = "Rebuild a feature as of the date"
+tier = "deep"
+kind = "code"
+topics = ["point-in-time features", "as-of join", "time leakage", "pandas"]
+minutes = 35

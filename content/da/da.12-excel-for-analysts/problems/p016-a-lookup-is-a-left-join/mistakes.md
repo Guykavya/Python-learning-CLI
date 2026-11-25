@@ -1,0 +1,4 @@
+- Saying XLOOKUP "picks the best match": it picks the first.
+- Forgetting that the merge duplicates the **order lines**, which inflates every sum over the orders.
+- Declaring one total right without asking which cost was valid on the order date.
+- Fixing the totals by dropping duplicates without checking which row to keep.

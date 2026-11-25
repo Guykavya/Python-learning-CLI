@@ -1,0 +1,4 @@
+- Reading with default types: a code like `007` becomes the number 7.
+- Not sorting the files: `glob` order depends on the system.
+- Stacking files with different column names: pandas happily fills `NaN` and the problem moves downstream.
+- Putting `source` first: the statement says last.

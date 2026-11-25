@@ -1,0 +1,5 @@
+- `GROUP BY user_id` with `max(event_time)` and then joining back on time: the tied events both return, so the grain is wrong.
+- Leaving out the tie-break: with equal times the result depends on how the engine happens to sort, and may change between runs.
+- Sorting ascending (`ORDER BY event_time`): that returns each user's *first* event.
+- Using `rank()` instead of `row_number()`: ties would keep two rows.
+- Ordering by `event_id` only: ids are not guaranteed to follow time (user 3).

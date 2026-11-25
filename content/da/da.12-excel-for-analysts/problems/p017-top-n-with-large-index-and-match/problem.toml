@@ -1,0 +1,6 @@
+id = "da.12.p017"
+title = "Top-N with LARGE, INDEX and MATCH"
+tier = "challenge"
+kind = "code"
+topics = ["LARGE", "INDEX MATCH", "ties", "top N", "helper column"]
+minutes = 45

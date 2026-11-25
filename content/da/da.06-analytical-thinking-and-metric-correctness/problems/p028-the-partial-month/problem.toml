@@ -1,0 +1,6 @@
+id = "da.06.p028"
+title = "The partial month"
+tier = "drill"
+kind = "code"
+topics = ["dates", "partial period", "monthly counts", "extraction date"]
+minutes = 20

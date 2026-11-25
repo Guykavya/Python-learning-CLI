@@ -1,0 +1,6 @@
+id = "da.02.p018"
+title = "An integer removes an axis"
+tier = "drill"
+kind = "trace"
+topics = ["indexing", "shape", "ellipsis", "newaxis", "fancy indexing", "trace"]
+minutes = 15

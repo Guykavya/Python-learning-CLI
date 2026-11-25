@@ -1,0 +1,6 @@
+id = "da.03.p058"
+title = "Six business questions"
+tier = "challenge"
+kind = "code"
+topics = ["resample", "value_counts", "boolean masks", "shares", "revenue", "business questions"]
+minutes = 50

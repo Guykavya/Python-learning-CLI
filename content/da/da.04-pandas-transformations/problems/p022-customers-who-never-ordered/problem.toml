@@ -1,0 +1,6 @@
+id = "da.04.p022"
+title = "Customers who never ordered"
+tier = "drill"
+kind = "code"
+topics = ["anti-join", "isin", "indicator", "merge"]
+minutes = 15

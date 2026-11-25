@@ -1,0 +1,6 @@
+id = "da.09.p033"
+title = "Hover text and facets"
+tier = "applied"
+kind = "code"
+topics = ["plotly express", "px.line", "hover_data", "facet_col", "customdata", "hovertemplate"]
+minutes = 30

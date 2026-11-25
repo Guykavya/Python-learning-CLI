@@ -1,0 +1,6 @@
+id = "da.06.p035"
+title = "Two engines, one answer"
+tier = "applied"
+kind = "code"
+topics = ["SQL", "pandas", "cross-check", "tolerance", "sqlite3"]
+minutes = 25

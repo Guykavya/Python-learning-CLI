@@ -1,0 +1,6 @@
+id = "ds.01.p025"
+title = "Derivatives by the rules"
+tier = "drill"
+kind = "code"
+topics = ["derivative rules", "product rule", "chain rule", "sigmoid"]
+minutes = 25

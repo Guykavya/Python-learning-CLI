@@ -1,0 +1,4 @@
+positives: 4 of 10
+ROC-AUC: 0.792
+precision at each hit: [1.0, 0.667, 0.75, 0.571]
+average precision: 0.747

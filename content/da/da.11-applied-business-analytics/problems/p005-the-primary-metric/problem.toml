@@ -1,0 +1,6 @@
+id = "da.11.p005"
+title = "The primary metric"
+tier = "applied"
+kind = "code"
+topics = ["two-proportion test", "confidence interval", "lift", "p-value", "A/B test"]
+minutes = 25

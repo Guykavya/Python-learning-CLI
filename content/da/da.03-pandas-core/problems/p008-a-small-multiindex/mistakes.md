@@ -1,0 +1,4 @@
+- **No `try/except`.** A missing pair raises `KeyError`, but the statement asks for 0.
+- **`multi.loc[region, month]`** (two arguments) is read as row `region`, column `month`; the pair must be a tuple: `multi.loc[(region, month), "sales"]`.
+- **Summing all rows.** `multi["sales"].sum()` adds every region together; the totals are per region.
+- **Returning numpy integers or a Series.** The tests compare with plain `int` and a `dict`.

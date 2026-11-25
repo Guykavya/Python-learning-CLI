@@ -1,0 +1,7 @@
+- **`spec[field]` instead of `spec.get(field)`.** An absent key must be reported as missing, not crash with `KeyError`.
+- **Forgetting that `None` and `"   "` are also empty.** `if not spec.get(field)` misses the blank text; strip first.
+- **Searching for `"<="` in the period.** The correct half-open text `start <= t < end` contains it. Look for `<=` followed by a date or number.
+- **Case-sensitive word search.** `"Active customers"` is just as vague as `"active customers"`; compare in lower case.
+- **Reporting vague words even when a rule is present.** `active = created in the last 90 days` is a definition, not a vague phrase.
+- **Wrong order of messages.** The test compares whole lists; the order is part of the contract.
+- **Changing `spec`** (for example `spec.pop(...)`) while checking it.

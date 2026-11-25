@@ -1,0 +1,7 @@
+id = "da.04.p020"
+title = "Four joins, four row counts"
+tier = "drill"
+kind = "trace"
+topics = ["merge", "inner", "left", "right", "outer", "indicator", "row count", "trace"]
+minutes = 25
+assessment = "trace"

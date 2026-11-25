@@ -1,0 +1,4 @@
+- **`np.meshgrid(np.arange(h), np.arange(w))`.** The first argument is the x (column) axis: the result then has shape `(w, h)`, which only looks right for square grids.
+- **Returning `(xs, ys)`.** The task asks for rows first, like NumPy's own `(row, col)` order.
+- **Using `np.linspace`.** It gives floats; coordinates must be integers so they can be used as indexes.
+- **A double `for` loop filling the arrays.** Works, but is slow for real images and is exactly what this module teaches you to avoid.

@@ -1,0 +1,4 @@
+- Weighting with the before values only: the parts no longer add up to the total.
+- Forgetting the `* 100`: the result is in proportions, not points.
+- Comparing Series with different segment orders by position (`.to_numpy()`): let pandas align by index.
+- Silently ignoring a segment that exists in only one period.

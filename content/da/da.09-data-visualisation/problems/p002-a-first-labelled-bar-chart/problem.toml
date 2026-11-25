@@ -1,0 +1,6 @@
+id = "da.09.p002"
+title = "A first labelled bar chart"
+tier = "drill"
+kind = "code"
+topics = ["bar chart", "title", "axis label", "return the figure"]
+minutes = 10

@@ -1,0 +1,4 @@
+- Saying the A slope is "wrong" in general. It is the right answer to a different question (how do scores differ between students who coach different hours?).
+- Writing that randomisation makes `ability` irrelevant. It remains a source of noise; controlling for it only tightens the interval.
+- Treating "p < 0.05" in C as evidence of a relationship. The independence assumption fails, the test is invalid.
+- Adding "all the variables you have" as a rule. Controls must be chosen by how the world works, not by availability.

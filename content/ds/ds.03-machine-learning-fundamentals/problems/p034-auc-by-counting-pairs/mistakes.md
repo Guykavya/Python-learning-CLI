@@ -1,0 +1,4 @@
+- Building the `n_pos x n_neg` comparison matrix: fine for 1,000 rows, a `MemoryError` for 60,000.
+- Ranking tied scores 1, 2 instead of 1.5, 1.5: ties then change the AUC.
+- Starting the ranks at 0 instead of 1 (the formula assumes 1).
+- Forgetting the single-class check: `0 / 0`.

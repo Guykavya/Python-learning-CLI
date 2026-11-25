@@ -1,0 +1,5 @@
+- **Sorting the labels alphabetically** ("agree" < "disagree" < "neutral") instead of by `order`.
+- **Averaging the two middle ranks** and rounding: it invents a label the respondents never chose.
+- **Returning a label for an even split of two different labels.** Report both.
+- **Letting a typo pass** (`KeyError` is not the requested `ValueError` naming the label).
+- **Checking labels only in the middle**: validate every response first.

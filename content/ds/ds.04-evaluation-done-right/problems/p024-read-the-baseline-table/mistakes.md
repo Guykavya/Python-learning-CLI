@@ -1,0 +1,4 @@
+- Comparing the means of the two lists separately and ignoring that the folds are paired.
+- Dividing by 5 instead of 4 in the standard deviation.
+- Printing `0.056` without the `+` sign.
+- Rounding the standard error to three decimals (the format asks for four).

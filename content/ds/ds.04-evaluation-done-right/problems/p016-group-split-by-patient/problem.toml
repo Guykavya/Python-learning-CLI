@@ -1,0 +1,6 @@
+id = "ds.04.p016"
+title = "Group split by patient"
+tier = "drill"
+kind = "code"
+topics = ["group split", "GroupShuffleSplit", "patients", "leakage"]
+minutes = 20

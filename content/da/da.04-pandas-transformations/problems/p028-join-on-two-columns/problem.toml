@@ -1,0 +1,6 @@
+id = "da.04.p028"
+title = "Join on two columns"
+tier = "applied"
+kind = "code"
+topics = ["merge", "several keys", "fan-out", "validate", "row count"]
+minutes = 20

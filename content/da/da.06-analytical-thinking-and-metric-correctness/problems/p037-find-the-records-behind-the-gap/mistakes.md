@@ -1,0 +1,7 @@
+- **Stopping at the totals.** "The gap is 1,500" is not an explanation. The answer is a list of jobs and a reason for each.
+- **`d_sum - s_sum` without `fill_value=0`.** A job on one side only becomes `NaN` and silently falls out of the sum.
+- **Comparing row by row** (`dashboard == sql_result`). The two tables have different numbers of rows; compare per job.
+- **Keeping zero contributions** (job 3). They are not part of the gap; leave them out.
+- **Forgetting that a contribution can be negative.** Job 4 is in the ledger only: the dashboard is *too low* there.
+- **Labelling `amount differs` for every job.** Check the row counts first: job 1 has the right amount per row, but too many rows.
+- **Returning numpy integers or a Series.** Convert to plain ints.

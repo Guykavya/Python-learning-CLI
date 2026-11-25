@@ -1,0 +1,4 @@
+b=+0.02: shortcut +2.00%  exact +2.02%
+b=+0.10: shortcut +10.00%  exact +10.52%
+b=+0.40: shortcut +40.00%  exact +49.18%
+b=-0.40: shortcut -40.00%  exact -32.97%

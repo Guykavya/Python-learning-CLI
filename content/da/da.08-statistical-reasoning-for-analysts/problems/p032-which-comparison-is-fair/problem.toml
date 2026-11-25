@@ -1,0 +1,6 @@
+id = "da.08.p032"
+title = "Which comparison is fair?"
+tier = "drill"
+kind = "trace"
+topics = ["Simpson's paradox", "stratification", "confounding", "naive comparison", "trace"]
+minutes = 15

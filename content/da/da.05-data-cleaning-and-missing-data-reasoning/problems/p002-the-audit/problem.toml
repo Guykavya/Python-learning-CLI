@@ -1,0 +1,6 @@
+id = "da.05.p002"
+title = "The audit"
+tier = "applied"
+kind = "code"
+topics = ["audit", "dtypes", "missing", "nunique", "value_counts", "text that looks like numbers"]
+minutes = 30

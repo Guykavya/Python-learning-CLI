@@ -1,0 +1,6 @@
+- **Comparing without `strip()`.** `" "` and `" - "` would stay text. The whitespace is the whole problem.
+- **Forgetting case.** `"na"`, `"N/A"` and `"NA"` are the same word for a human.
+- **Counting what was already missing.** `s.isna()` before the change must not be part of the count.
+- **Touching numbers.** `astype(str)` on a numeric column turns `NaN` into `"nan"` strings and could change dtypes. Skip numeric columns.
+- **Changing `df`.** Work on `df.copy()`.
+- **Leaving `""` out of the words.** The token `""` is what catches blank and whitespace-only cells after the strip.

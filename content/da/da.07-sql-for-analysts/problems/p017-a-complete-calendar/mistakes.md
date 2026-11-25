@@ -1,0 +1,5 @@
+- Grouping `events` by day without a calendar: days with no login are absent (28 rows, not 30).
+- Putting `event_type = 'login'` in `WHERE`: the LEFT JOIN turns into an INNER JOIN and empty days vanish.
+- `count(*)`: the empty day then counts as 1 (the calendar row itself).
+- Comparing a timestamp with a date: `e.event_time = d` only matches midnight. Cast with `::DATE`.
+- Forgetting that `generate_series` includes the end date: June has 30 days, so the end is `2025-06-30`.

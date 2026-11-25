@@ -1,0 +1,4 @@
+- Exponentiating the p-value too.
+- Rounding before exponentiating.
+- Forgetting that `conf_int()` may be an array: indexing it with `ci[0]` then gives a row, not a column.
+- Putting the columns in a different order. Callers and tests rely on `estimate, ci_low, ci_high, p`.

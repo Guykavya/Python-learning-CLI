@@ -1,0 +1,4 @@
+- `math.comb(n, k) * p**k * ...` with `n = 5000`: the float conversion overflows or `p**k` underflows to 0.
+- Calling `math.factorial` on large numbers (slow and overflowing).
+- Not returning 0.0 for `k > n`.
+- `log(0)` for `p = 0`: a `ValueError`.

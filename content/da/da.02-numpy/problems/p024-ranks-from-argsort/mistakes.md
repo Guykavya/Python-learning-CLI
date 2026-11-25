@@ -1,0 +1,5 @@
+- **Returning `argsort(x)`.** That is the order of positions, not the ranks: `[40, 10, 30, 10]` gives `[1, 3, 2, 0]` instead of `[3, 0, 2, 1]`.
+- **`argsort(x)[::-1]` for descending.** Reverses the tie order too: the later 10 then gets the better rank.
+- **Default `kind` with ties.** The default quicksort-style sort does not promise to keep equal values in position order.
+- **`x.sort()`.** Sorts the caller's array in place and returns `None`.
+- **1-based ranks.** The task asks for rank 0 for the first place.

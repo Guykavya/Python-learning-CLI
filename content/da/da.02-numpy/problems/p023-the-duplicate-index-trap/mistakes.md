@@ -1,0 +1,5 @@
+- **`counts[idx] += 1`.** Duplicate positions are counted once: `[0, 0, 1]` gives `[1, 1, 0]`.
+- **`np.bincount(idx)` without `minlength`.** The array stops at the largest product that was sold; unsold products at the end are missing.
+- **`np.add.at(totals, ...)`.** Works, but changes the caller's array: copy first.
+- **`np.unique(idx, return_counts=True)` used directly.** Gives counts only for the products that appear, not one per product.
+- **A Python loop.** Correct, but this is a vectorisation module and real logs have millions of sales.

@@ -1,0 +1,6 @@
+id = "da.06.p010"
+title = "Aggregate before you join"
+tier = "drill"
+kind = "code"
+topics = ["fan-out", "groupby", "merge", "validate", "habit 1"]
+minutes = 20

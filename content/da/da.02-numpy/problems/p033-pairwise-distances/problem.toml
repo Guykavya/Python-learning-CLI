@@ -1,0 +1,6 @@
+id = "da.02.p033"
+title = "Pairwise distances"
+tier = "deep"
+kind = "code"
+topics = ["broadcasting", "pairwise distances", "newaxis", "vectorisation", "performance"]
+minutes = 30

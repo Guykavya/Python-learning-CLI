@@ -1,0 +1,5 @@
+- **`agg("median")` instead of `transform`.** A Series indexed by category cannot fill a column indexed by product row.
+- **Filling with the overall median.** It ignores that toys and home goods have very different prices.
+- **Using the mean.** One very expensive product pulls a mean up; the median resists outliers.
+- **Filling the leftovers with 0 to "finish the job".** A price of 0 is a lie; report the category instead.
+- **`products["list_price"].fillna(..., inplace=True)`.** It changes the caller's frame (and is chained assignment).

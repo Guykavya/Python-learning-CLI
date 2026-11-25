@@ -1,0 +1,7 @@
+id = "da.11.p012"
+title = "Why a funnel can mislead"
+tier = "applied"
+kind = "explain"
+topics = ["funnel analysis", "mix effect", "Simpson's paradox", "segment comparison", "explain"]
+minutes = 30
+assessment = "explain"

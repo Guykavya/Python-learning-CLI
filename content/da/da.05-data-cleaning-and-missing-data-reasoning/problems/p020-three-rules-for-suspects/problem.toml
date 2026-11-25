@@ -1,0 +1,6 @@
+id = "da.05.p020"
+title = "Three rules for suspects"
+tier = "applied"
+kind = "code"
+topics = ["outliers", "IQR", "z-score", "MAD", "masking", "flag before you delete"]
+minutes = 35

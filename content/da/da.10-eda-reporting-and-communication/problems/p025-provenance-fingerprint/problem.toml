@@ -1,0 +1,6 @@
+id = "da.10.p025"
+title = "Provenance fingerprint"
+tier = "applied"
+kind = "code"
+topics = ["provenance", "fingerprint", "hashing", "reproducibility"]
+minutes = 25

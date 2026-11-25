@@ -1,0 +1,7 @@
+degree  1: underfit
+degree  2: underfit
+degree  3: good
+degree  6: good
+degree  9: overfit
+degree 12: overfit
+lowest validation error: degree 3

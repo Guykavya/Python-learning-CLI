@@ -1,0 +1,6 @@
+id = "ds.01.p027"
+title = "The gradient check"
+tier = "applied"
+kind = "code"
+topics = ["gradient check", "relative error", "numerical gradient", "debugging"]
+minutes = 25

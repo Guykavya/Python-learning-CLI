@@ -1,0 +1,6 @@
+id = "ds.02.p014"
+title = "An interaction term"
+tier = "applied"
+kind = "code"
+topics = ["interaction", "formula", "slope by group", "statsmodels"]
+minutes = 30

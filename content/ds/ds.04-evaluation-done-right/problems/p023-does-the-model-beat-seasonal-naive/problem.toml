@@ -1,0 +1,6 @@
+id = "ds.04.p023"
+title = "Does the model beat seasonal naive?"
+tier = "applied"
+kind = "code"
+topics = ["rolling origin", "backtest", "baseline", "MAE", "forecasting"]
+minutes = 35

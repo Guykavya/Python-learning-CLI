@@ -1,0 +1,4 @@
+- `ax.set_ylim(0, None)` before the data are plotted: the later `plot` call can reset the limit.
+- Setting `bottom=0` on a log axis.
+- Formatting with `f"{v:.0f}"`: no thousands separator.
+- Passing a function straight to `set_major_formatter` in an old style that does not accept `(value, position)`.

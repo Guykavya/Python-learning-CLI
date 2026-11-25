@@ -1,0 +1,6 @@
+id = "da.05.p011"
+title = "Emails: clean, then check"
+tier = "drill"
+kind = "code"
+topics = ["regex", "str.strip", "str.lower", "str.fullmatch", "validate after cleaning"]
+minutes = 20

@@ -1,0 +1,4 @@
+- **A new `to_excel(path)` per frame.** Each call writes a fresh file; only the last sheet survives.
+- **Forgetting `index=False`.** The sheet gets an extra first column (read back as `Unnamed: 0`).
+- **Not closing the writer.** Without the `with` block (or `writer.close()`) the file is incomplete.
+- **Expecting formulas or styles.** `to_excel` writes values; formatting needs the openpyxl objects.

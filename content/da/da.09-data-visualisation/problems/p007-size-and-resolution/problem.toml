@@ -1,0 +1,6 @@
+id = "da.09.p007"
+title = "Size and resolution"
+tier = "drill"
+kind = "code"
+topics = ["savefig", "dpi", "figsize", "PNG", "SVG"]
+minutes = 15

@@ -1,0 +1,4 @@
+- **Expecting the order of first appearance by default.** `groupby` sorts the keys unless you say `sort=False`.
+- **Renumbering the sub-table.** Each part keeps its original labels; `get_group("b")` has labels `[0, 4]`, not `[0, 1]`.
+- **Printing `a` instead of `('a',)` on the last line.** A list of keys, even a list of one, gives tuple keys.
+- **Forgetting the `break`.** Only the first group is printed in the last loop.

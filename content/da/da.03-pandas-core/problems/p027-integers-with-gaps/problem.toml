@@ -1,0 +1,6 @@
+id = "da.03.p027"
+title = "Integers with gaps"
+tier = "drill"
+kind = "code"
+topics = ["Int64", "nullable integers", "astype", "missing values", "ValueError"]
+minutes = 20

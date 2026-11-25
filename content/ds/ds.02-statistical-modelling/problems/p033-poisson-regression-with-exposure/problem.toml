@@ -1,0 +1,6 @@
+id = "ds.02.p033"
+title = "Poisson regression with exposure"
+tier = "applied"
+kind = "code"
+topics = ["Poisson regression", "offset", "exposure", "rate ratio", "GLM"]
+minutes = 35

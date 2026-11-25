@@ -1,0 +1,4 @@
+- Putting 20 in `[10, 20]`: the right edge belongs to the next bin.
+- Dropping 40 (counting only 11 values): the last bin is closed on the right, so 40 is counted.
+- Printing floats (`[2.0, 3.0, ...]`): the program converts with `.astype(int)`.
+- Forgetting that the sum must equal the number of values (12).

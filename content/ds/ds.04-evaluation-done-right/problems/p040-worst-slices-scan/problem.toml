@@ -1,0 +1,6 @@
+id = "ds.04.p040"
+title = "Worst slices scan"
+tier = "applied"
+kind = "code"
+topics = ["error analysis", "slices", "log loss", "itertools"]
+minutes = 35

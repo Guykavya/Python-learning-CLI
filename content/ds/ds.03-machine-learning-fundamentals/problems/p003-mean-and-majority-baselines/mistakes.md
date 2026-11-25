@@ -1,0 +1,4 @@
+- Using the mean of the **test** targets (a leak): the baseline must come from the training targets only.
+- Predicting the mean for a classification problem (a class number like 0.4).
+- Using `statistics.mode` or `max(set(y), key=y.count)` without a tie rule: the answer then depends on the order of the data.
+- Forgetting that `n` is the number of predictions wanted, not the size of `y_train`.

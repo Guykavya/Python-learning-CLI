@@ -1,0 +1,6 @@
+id = "da.01.p010"
+title = "What does csv really read?"
+tier = "applied"
+kind = "trace"
+topics = ["csv module", "quoting", "empty lines", "short rows", "trace"]
+minutes = 25

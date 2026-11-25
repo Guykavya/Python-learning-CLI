@@ -1,0 +1,6 @@
+id = "ds.04.p010"
+title = "Shuffled-label sanity check"
+tier = "applied"
+kind = "code"
+topics = ["permutation test", "shuffled labels", "pipeline leakage"]
+minutes = 30

@@ -1,0 +1,6 @@
+id = "da.02.p006"
+title = "Overflow and promotion"
+tier = "deep"
+kind = "trace"
+topics = ["uint8", "overflow", "promotion", "NEP 50", "dtype", "trace"]
+minutes = 20

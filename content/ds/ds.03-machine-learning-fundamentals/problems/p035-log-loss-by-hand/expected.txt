@@ -1,0 +1,5 @@
+y=1, p=0.9: loss 0.105
+y=1, p=0.5: loss 0.693
+y=1, p=0.1: loss 2.303
+y=1, p=0.0: loss 34.539
+mean log-loss: 9.410

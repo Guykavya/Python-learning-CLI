@@ -1,0 +1,6 @@
+id = "da.07.p038"
+title = "Assert the grain of a query"
+tier = "applied"
+kind = "code"
+topics = ["grain", "assertions", "duplicates", "NULL keys", "data checks"]
+minutes = 30

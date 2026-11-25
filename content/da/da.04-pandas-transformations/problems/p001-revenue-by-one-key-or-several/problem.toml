@@ -1,0 +1,6 @@
+id = "da.04.p001"
+title = "Revenue by one key or several"
+tier = "drill"
+kind = "code"
+topics = ["groupby", "sum", "as_index", "reset_index", "several keys"]
+minutes = 15

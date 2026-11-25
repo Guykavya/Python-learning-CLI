@@ -1,0 +1,6 @@
+id = "ds.01.p017"
+title = "Trace power iteration"
+tier = "applied"
+kind = "trace"
+topics = ["power iteration", "eigenvector", "normalisation", "trace"]
+minutes = 20

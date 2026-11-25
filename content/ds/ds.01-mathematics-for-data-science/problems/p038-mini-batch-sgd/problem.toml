@@ -1,0 +1,6 @@
+id = "ds.01.p038"
+title = "Mini-batch SGD"
+tier = "challenge"
+kind = "code"
+topics = ["stochastic gradient descent", "mini-batch", "shuffling", "reproducibility"]
+minutes = 45

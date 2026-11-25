@@ -1,0 +1,4 @@
+- Sorting the pairs: `sorted` is not needed and `sorted(...)[0]` picks the first **in sorted order**, which can differ for ties.
+- Formatting with `{value:.2f}` or no separator: `4210.00` instead of `4,210`.
+- Using `fig.axes[-1]` when a colour bar or twin axis exists: the first Axes holds the bars.
+- Hard-coding "revenue" and "store" in the text.

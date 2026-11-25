@@ -1,0 +1,4 @@
+- **Adding by position.** Writing `[11, 22, 33]` for `a + b`: pandas matches labels first.
+- **Integers in the answer.** The result contains `nan`, so it is `float64` and prints `12.0`, not `12`.
+- **Only three labels.** The result has the union of all labels, four of them.
+- **Forgetting that `fill_value` fills the missing side, not the result.** `1 + 0` is `1.0`, not `nan` and not `0`.

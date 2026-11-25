@@ -1,0 +1,4 @@
+- Printing `2 0.6` only once: the loop prints one line per value, so a tie gives two lines.
+- Reading the share at 2 as 0.4: the ECDF at x counts **all** values at or below x, including the second 2.
+- Forgetting to sort `values` first.
+- Writing `0.4` for the share at 2 and `0.2` for the jump.

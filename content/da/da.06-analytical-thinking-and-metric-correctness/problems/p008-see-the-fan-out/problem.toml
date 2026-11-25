@@ -1,0 +1,6 @@
+id = "da.06.p008"
+title = "See the fan-out"
+tier = "drill"
+kind = "trace"
+topics = ["fan-out", "merge", "nunique", "sum", "trace"]
+minutes = 15

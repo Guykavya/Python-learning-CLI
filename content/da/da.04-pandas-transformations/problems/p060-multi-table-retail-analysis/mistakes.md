@@ -1,0 +1,7 @@
+- **An inner join anywhere in the build.** The orphan order (customer `C9`) or a line of an unknown product silently disappears; the revenue guard of `safe_merge` should stop you.
+- **Merging all of `returns`.** Only the refund is needed; the extra `reason` column is harmless, but a returns table with a duplicated line must fail `validate="1:1"`, not double a refund.
+- **`count` instead of `nunique` for orders.** A two-line order counts twice.
+- **Top 3 without a tie rule.** P2 and P3 both have 190.0; without `product_id` as the second sort key the choice is arbitrary.
+- **Unsold products from the working table.** They are, by definition, not in it: use the products table and `isin`.
+- **`pct_change` over a month with no orders.** The months are compared by position, so the gap is skipped without any warning; check the calendar first.
+- **Checks that only print.** A mismatch should stop the analysis (raise), not scroll past.

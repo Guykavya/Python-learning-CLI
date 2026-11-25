@@ -1,0 +1,6 @@
+id = "da.03.p022"
+title = "where, mask and pd.col"
+tier = "applied"
+kind = "code"
+topics = ["where", "mask", "pd.col", "assign", "clip"]
+minutes = 25

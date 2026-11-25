@@ -1,0 +1,6 @@
+- **Crashing on every failure.** A bad row is not a reason to stop the pipeline; a missing column is.
+- **Dropping the bad rows without a reason.** `quarantine` must carry `reasons`.
+- **Reporting a column twice** (a row failing two checks of the same column): the reasons are sorted and **without repeats**.
+- **Using positions with `iloc`.** `failure_cases["index"]` holds labels; use `df.index.isin(...)` and `loc`.
+- **Resetting the index.** The tests check the original labels of both parts.
+- **Swallowing the schema-level failure.** A missing column has no row label; re-raise it.

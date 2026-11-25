@@ -1,0 +1,6 @@
+id = "ds.01.p052"
+title = "Mean CI with the t-distribution"
+tier = "drill"
+kind = "code"
+topics = ["confidence interval", "t-distribution", "standard error", "degrees of freedom"]
+minutes = 20

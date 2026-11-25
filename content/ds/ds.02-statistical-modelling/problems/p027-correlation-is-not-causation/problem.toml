@@ -1,0 +1,6 @@
+id = "ds.02.p027"
+title = "Correlation is not causation"
+tier = "deep"
+kind = "explain"
+topics = ["confounding", "mediator", "collider", "causation", "randomisation", "explain"]
+minutes = 30

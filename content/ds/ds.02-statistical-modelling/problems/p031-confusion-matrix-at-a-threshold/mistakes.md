@@ -1,0 +1,4 @@
+- Using `>` instead of `>=`: a probability exactly at the threshold is then negative.
+- Swapping FP and FN. FP: predicted positive, actually negative.
+- Returning NumPy integers or floats; return plain `int`s.
+- Thinking threshold 0.5 is always right. The right threshold depends on the cost of each kind of error.

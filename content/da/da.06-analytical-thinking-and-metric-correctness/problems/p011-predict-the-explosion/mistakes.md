@@ -1,0 +1,5 @@
+- **Adding the counts instead of multiplying.** 2 payments and 3 lines give 6 rows, not 5.
+- **Counting keys that exist on one side only.** They have a partner count of 0 and add nothing in an inner join.
+- **Dropping missing keys.** `groupby` drops them by default, but `merge` joins them with each other.
+- **Actually calling `merge` to count.** That is the memory cost you wanted to avoid (the test forbids it).
+- **Comparing `nan` values in tuples.** `nan != nan`, so turn missing values into one marker such as `None` first.

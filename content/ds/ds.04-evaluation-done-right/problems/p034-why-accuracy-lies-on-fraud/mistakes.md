@@ -1,0 +1,3 @@
+- Recommending accuracy "with a higher threshold": the problem is the metric, not the threshold.
+- Reporting ROC-AUC only: on very rare events it can look excellent while precision is poor; add precision-recall numbers.
+- Ignoring the review capacity, which turns the question into precision at k.

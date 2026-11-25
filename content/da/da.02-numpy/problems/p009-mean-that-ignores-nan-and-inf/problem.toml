@@ -1,0 +1,6 @@
+id = "da.02.p009"
+title = "Mean that ignores nan and inf"
+tier = "drill"
+kind = "code"
+topics = ["nan", "inf", "isfinite", "masks", "warnings"]
+minutes = 20

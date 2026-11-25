@@ -1,0 +1,6 @@
+id = "da.04.p021"
+title = "Every order, with its customer"
+tier = "drill"
+kind = "code"
+topics = ["merge", "left join", "row count", "orphan keys", "validate"]
+minutes = 20

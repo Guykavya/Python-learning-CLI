@@ -1,0 +1,6 @@
+id = "da.13.p014"
+title = "DIVIDE, blanks and COALESCE"
+tier = "drill"
+kind = "trace"
+topics = ["BLANK", "DIVIDE", "COALESCE", "ISBLANK", "VAR", "trace"]
+minutes = 25

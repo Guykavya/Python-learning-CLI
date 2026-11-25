@@ -1,0 +1,6 @@
+id = "da.07.p016"
+title = "Sessions from events"
+tier = "deep"
+kind = "code"
+topics = ["sessions", "lag", "running sum", "flag cumulative sum group", "intervals"]
+minutes = 40

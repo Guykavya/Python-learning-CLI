@@ -1,0 +1,6 @@
+id = "da.02.p041"
+title = "The law of large numbers"
+tier = "drill"
+kind = "code"
+topics = ["random", "Generator", "cumsum", "running mean", "simulation", "law of large numbers"]
+minutes = 15

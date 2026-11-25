@@ -1,0 +1,4 @@
+- Filling the unobservable cells with 0: the newest cohort then "retains" nobody.
+- Counting orders, not distinct customers: a customer with two orders in a month counts once.
+- Dividing by the number of customers active in month 0 of the whole company instead of the cohort size.
+- Forgetting that a customer's first order is month 0 of their own cohort, so k = 0 is 1.0 by definition.

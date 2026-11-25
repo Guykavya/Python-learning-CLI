@@ -1,0 +1,4 @@
+- **`astype("int64")` (lowercase).** It raises on a missing value (`cannot convert float NaN to integer`).
+- **`astype(int)` after `dropna`/`fillna(0)`.** It changes the data: a missing quantity is not 0.
+- **`round()` or `astype(int)` first.** That truncates `2.5` to 2 silently, which the statement forbids.
+- **An error message without the column name.** The learner would have to guess which of ten columns is bad.

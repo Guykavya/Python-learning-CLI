@@ -1,0 +1,7 @@
+id = "da.01.p026"
+title = "Fix the summary function"
+tier = "deep"
+kind = "code"
+topics = ["debugging", "mutation trap", "sample sd", "median", "off-by-one", "fix"]
+minutes = 40
+assessment = "fix"

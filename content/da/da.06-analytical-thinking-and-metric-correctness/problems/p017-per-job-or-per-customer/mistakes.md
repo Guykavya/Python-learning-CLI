@@ -1,0 +1,5 @@
+- **`len(items) / len(jobs)`.** It counts the line of the unknown job 99.
+- **Dividing by `items["job_id"].nunique()`.** Jobs without lines vanish from the denominator and the average rises.
+- **Merging jobs and items, then dividing by `len(merged)`.** After a fan-out the denominator is the number of lines: the answer is always about 1.
+- **Using `len(jobs)` as the number of customers.** A customer with three jobs is one customer.
+- **Not naming the unit.** "Average items" is ambiguous; "items per job" and "items per customer" are not.

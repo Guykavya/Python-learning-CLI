@@ -1,0 +1,7 @@
+id = "da.11.p004"
+title = "Read an experiment by hand"
+tier = "applied"
+kind = "trace"
+topics = ["A/B test", "conversion", "lift", "sample ratio mismatch", "trace"]
+minutes = 20
+assessment = "trace"

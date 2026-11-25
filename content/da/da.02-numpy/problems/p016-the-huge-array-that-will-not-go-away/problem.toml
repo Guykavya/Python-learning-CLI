@@ -1,0 +1,6 @@
+id = "da.02.p016"
+title = "The huge array that will not go away"
+tier = "deep"
+kind = "explain"
+topics = ["views", "base", "memory", "copy", "explain"]
+minutes = 20

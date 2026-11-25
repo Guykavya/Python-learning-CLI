@@ -1,0 +1,6 @@
+id = "da.12.p019"
+title = "The pivot's numbers in pandas"
+tier = "drill"
+kind = "code"
+topics = ["pivot_table", "margins", "sorting", "reconciliation"]
+minutes = 25

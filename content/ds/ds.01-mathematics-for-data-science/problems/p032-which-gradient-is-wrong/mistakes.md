@@ -1,0 +1,4 @@
+- Saying A or C is wrong because the formulas look complicated.
+- Saying the gradient check 'proves' a gradient correct: it only gives evidence at the points you tried.
+- Not naming the missing factor (`2 w1`) or the rule (chain rule).
+- Explaining the check with absolute errors only: relative error does not depend on the scale.

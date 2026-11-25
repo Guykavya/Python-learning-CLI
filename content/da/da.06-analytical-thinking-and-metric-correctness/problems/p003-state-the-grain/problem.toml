@@ -1,0 +1,6 @@
+id = "da.06.p003"
+title = "State the grain"
+tier = "drill"
+kind = "explain"
+topics = ["grain", "entity", "event", "snapshot", "aggregate", "explain"]
+minutes = 20

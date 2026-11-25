@@ -1,0 +1,4 @@
+- `AVERAGE(Sales[MarginPct])` of a calculated column: every line counts the same, and the number differs from the true margin.
+- `[Revenue] - SUM(Product[UnitCost])`: the cost must be multiplied by the quantity, line by line.
+- Showing a ratio in a total row by adding the ratios of the rows.
+- `SUMX(Product, [Cost])`: this engine has no context transition (and it is not needed).

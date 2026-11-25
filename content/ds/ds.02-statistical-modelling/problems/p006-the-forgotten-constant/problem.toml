@@ -1,0 +1,6 @@
+id = "ds.02.p006"
+title = "The forgotten constant"
+tier = "drill"
+kind = "code"
+topics = ["statsmodels", "add_constant", "intercept", "exog_names"]
+minutes = 15

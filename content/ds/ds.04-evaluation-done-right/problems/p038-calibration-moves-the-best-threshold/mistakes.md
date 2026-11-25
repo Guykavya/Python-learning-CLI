@@ -1,0 +1,3 @@
+- Printing `0.2` as `0.20`: the f-string prints the float as it is.
+- Using the model probability for the last line instead of the observed rate.
+- Comparing with `>` instead of `>=` (no bin sits exactly at 0.2 here, so either works, but read the code).

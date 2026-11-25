@@ -1,0 +1,4 @@
+- Dividing by only one length, so scaling one vector changes the answer.
+- Not checking for the zero vector: you get `nan` and a warning instead of an error.
+- Using the sum of the entries instead of the dot product.
+- Returning a value like `1.0000000000000002`: that is fine, the test allows rounding error.

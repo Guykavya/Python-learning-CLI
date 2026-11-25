@@ -1,0 +1,7 @@
+id = "da.13.p007"
+title = "Watch a filter flow"
+tier = "drill"
+kind = "trace"
+topics = ["filter context", "relationship direction", "bidirectional filter", "COUNTROWS", "trace"]
+minutes = 25
+assessment = "trace"

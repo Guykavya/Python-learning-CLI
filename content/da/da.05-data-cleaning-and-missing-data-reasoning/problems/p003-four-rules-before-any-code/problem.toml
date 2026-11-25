@@ -1,0 +1,6 @@
+id = "da.05.p003"
+title = "Four rules before any code"
+tier = "drill"
+kind = "explain"
+topics = ["cleaning", "raw data", "change log", "known truth", "explain"]
+minutes = 20

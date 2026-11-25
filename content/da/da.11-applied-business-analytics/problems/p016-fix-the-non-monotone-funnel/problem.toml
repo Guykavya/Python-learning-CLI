@@ -1,0 +1,7 @@
+id = "da.11.p016"
+title = "Fix the non-monotone funnel"
+tier = "deep"
+kind = "code"
+topics = ["funnel analysis", "data quality", "logging bugs", "monotone funnel"]
+minutes = 35
+assessment = "fix"

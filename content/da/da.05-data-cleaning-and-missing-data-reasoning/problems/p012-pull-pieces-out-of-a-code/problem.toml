@@ -1,0 +1,6 @@
+id = "da.05.p012"
+title = "Pull pieces out of a code"
+tier = "applied"
+kind = "code"
+topics = ["str.extract", "named groups", "Int64", "regex", "text to columns"]
+minutes = 25

@@ -1,0 +1,6 @@
+id = "da.01.p024"
+title = "Histogram counts"
+tier = "applied"
+kind = "code"
+topics = ["histogram", "binning", "half-open intervals", "edge cases"]
+minutes = 40

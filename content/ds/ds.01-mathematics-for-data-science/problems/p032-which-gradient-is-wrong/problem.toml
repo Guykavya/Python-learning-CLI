@@ -1,0 +1,6 @@
+id = "ds.01.p032"
+title = "Which gradient is wrong?"
+tier = "applied"
+kind = "explain"
+topics = ["gradient check", "chain rule", "relative error", "explain"]
+minutes = 25

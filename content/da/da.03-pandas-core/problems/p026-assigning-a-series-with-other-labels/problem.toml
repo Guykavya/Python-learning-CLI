@@ -1,0 +1,6 @@
+id = "da.03.p026"
+title = "Assigning a Series with other labels"
+tier = "deep"
+kind = "code"
+topics = ["alignment", "assignment", "map", "index", "missing values"]
+minutes = 30

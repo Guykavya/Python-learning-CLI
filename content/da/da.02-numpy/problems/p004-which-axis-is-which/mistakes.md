@@ -1,0 +1,5 @@
+- **`axis=1` for column means.** "Per column" does not mean "along axis 1": the axis you name disappears, and to get one value per column the rows must disappear.
+- **Testing only on square arrays.** A swapped axis gives the right shape on a 3 × 3 table and wrong numbers you may not notice.
+- **`stack.mean(axis=0)` for images.** That averages the images pixel by pixel, giving one `(h, w)` "average image".
+- **`stack.mean(axis=1).mean(axis=1)`.** Correct here (all rows have the same length), but two passes; `axis=(1, 2)` says what you mean.
+- **Summing `uint8` pixels by hand and dividing.** `mean` already uses a wide float accumulator; a hand-made `uint8` sum can wrap round.

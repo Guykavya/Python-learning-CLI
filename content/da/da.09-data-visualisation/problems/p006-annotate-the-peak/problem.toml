@@ -1,0 +1,6 @@
+id = "da.09.p006"
+title = "Annotate the peak"
+tier = "applied"
+kind = "code"
+topics = ["annotate", "axhline", "artists", "texts"]
+minutes = 20

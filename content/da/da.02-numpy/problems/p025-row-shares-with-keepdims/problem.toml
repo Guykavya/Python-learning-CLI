@@ -1,0 +1,6 @@
+id = "da.02.p025"
+title = "Row shares with keepdims"
+tier = "drill"
+kind = "code"
+topics = ["keepdims", "broadcasting", "sum", "division by zero", "where="]
+minutes = 20

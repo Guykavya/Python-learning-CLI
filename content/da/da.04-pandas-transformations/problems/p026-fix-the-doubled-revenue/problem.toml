@@ -1,0 +1,7 @@
+id = "da.04.p026"
+title = "Fix the doubled revenue"
+tier = "deep"
+kind = "code"
+topics = ["debugging", "merge", "fan-out", "grain", "aggregate before merge", "validate", "fix"]
+minutes = 35
+assessment = "fix"

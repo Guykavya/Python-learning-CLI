@@ -1,0 +1,6 @@
+id = "da.11.p026"
+title = "Do the segments mean anything?"
+tier = "deep"
+kind = "code"
+topics = ["segment validation", "future value", "holdout", "RFM"]
+minutes = 35

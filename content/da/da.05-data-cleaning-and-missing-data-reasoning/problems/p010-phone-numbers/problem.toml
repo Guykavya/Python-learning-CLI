@@ -1,0 +1,6 @@
+id = "da.05.p010"
+title = "Phone numbers"
+tier = "applied"
+kind = "code"
+topics = ["regex", "str.replace", "str.fullmatch", "lookahead", "normalise then validate"]
+minutes = 30

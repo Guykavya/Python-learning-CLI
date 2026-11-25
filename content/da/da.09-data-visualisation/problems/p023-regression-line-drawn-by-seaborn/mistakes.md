@@ -1,0 +1,4 @@
+- Leaving the default `ci=95`: the band is drawn by bootstrap (random, and slower) and the test machine may run out of patience.
+- Calling `sns.lmplot` instead: it returns a `FacetGrid` and creates its own figure.
+- Using `order=2` or `lowess=True`: the line is then not a straight least-squares line.
+- Reading the slope from `ax.collections`: the scatter points are there, the line is in `ax.lines`.

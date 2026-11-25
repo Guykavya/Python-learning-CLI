@@ -1,0 +1,6 @@
+id = "da.02.p008"
+title = "Comparing floats"
+tier = "drill"
+kind = "code"
+topics = ["floating point", "isclose", "tolerance", "nan", "masks"]
+minutes = 15

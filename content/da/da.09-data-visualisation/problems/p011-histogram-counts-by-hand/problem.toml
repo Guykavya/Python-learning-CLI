@@ -1,0 +1,6 @@
+id = "da.09.p011"
+title = "Histogram counts by hand"
+tier = "drill"
+kind = "trace"
+topics = ["histogram", "bins", "bin edges", "right-closed last bin", "trace"]
+minutes = 15

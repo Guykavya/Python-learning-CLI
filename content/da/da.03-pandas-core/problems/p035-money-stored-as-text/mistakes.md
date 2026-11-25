@@ -1,0 +1,5 @@
+- **Removing everything that is not a digit or a dot**: `"-5"` loses its sign and `"-"` turns into an empty string.
+- **Removing `Rs` after the commas, or only `"Rs"`**: the dot of `Rs.` survives and gives `.1250.50`.
+- **Forgetting upper case**: `"INR"`, `"rs."` and `"Rs."` all occur; use `(?i)`.
+- **`astype(float)` instead of `to_numeric(errors="coerce")`**: one bad entry raises and loses the whole column.
+- **Turning a dash into `0`**: a dash means "no value", not zero money.

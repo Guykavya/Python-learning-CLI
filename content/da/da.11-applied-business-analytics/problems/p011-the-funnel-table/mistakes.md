@@ -1,0 +1,4 @@
+- Dividing every step by all sessions in the "% of previous step" column.
+- Putting 0 instead of `NaN` in the first row of the derived columns.
+- A `dropped` column with the opposite sign (this row minus the previous one).
+- Sorting the steps by size: the order of `steps` is the order of the funnel.

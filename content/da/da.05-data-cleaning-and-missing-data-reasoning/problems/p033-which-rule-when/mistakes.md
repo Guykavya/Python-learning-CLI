@@ -1,0 +1,5 @@
+- **"Fill everything with the mean."** The mean is a claim that every unknown value is average. It is right for almost none of these four cases.
+- **Filling the absent student's score with 0.** 0 says "the student failed", not "the student was absent".
+- **Interpolating a gap of days.** Interpolation is for short gaps; a long gap should stay visible.
+- **Filling the product's missing weeks without checking the shop was open and the product stocked.** Zero is only true if nothing could have been sold.
+- **Dropping the skipped incomes without saying how many and who.** The report must say that the dropped rows are mostly young.

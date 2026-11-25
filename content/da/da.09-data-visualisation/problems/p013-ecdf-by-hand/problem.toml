@@ -1,0 +1,6 @@
+id = "da.09.p013"
+title = "ECDF by hand"
+tier = "drill"
+kind = "trace"
+topics = ["ECDF", "cumulative share", "ties", "step function", "trace"]
+minutes = 15

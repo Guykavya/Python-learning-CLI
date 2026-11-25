@@ -1,0 +1,5 @@
+- **`np.nanmean(x)`.** Skips `nan` but keeps `inf`, so the mean becomes `inf`; and it warns on an all-`nan` array.
+- **`x[x != np.nan]`.** `nan != nan` is `True`, so nothing is removed (Ch. 4.6). Use `np.isnan` / `np.isfinite`.
+- **`~np.isnan(x)` only.** `inf` survives and wins the mean.
+- **Silencing the warning with `np.errstate` or `warnings.filterwarnings`.** Hides the problem instead of handling the empty case.
+- **Returning `None` for "no data".** The task asks for `nan`, which flows through later arithmetic as "unknown".

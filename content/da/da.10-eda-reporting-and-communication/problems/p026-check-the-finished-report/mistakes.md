@@ -1,0 +1,4 @@
+- Searching for the number without its format ("5.7" also matches "15.7%").
+- Reporting a missing figure once per check instead of once per reference.
+- Comparing dates as text in another format (`30/12/2024`): ISO dates compare correctly as strings, others do not.
+- Listing unused figures in directory order (it differs between systems): sort them.

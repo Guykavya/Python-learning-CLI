@@ -1,0 +1,6 @@
+id = "da.08.p012"
+title = "Wilson interval for a proportion"
+tier = "applied"
+kind = "code"
+topics = ["proportion", "Wilson interval", "Wald interval", "edge cases"]
+minutes = 30

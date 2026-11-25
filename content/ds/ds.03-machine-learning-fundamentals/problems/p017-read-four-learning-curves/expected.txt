@@ -1,0 +1,4 @@
+curve A (n = 320): high variance
+curve B (n = 320): high bias
+curve C (n = 320): fine
+curve D (n = 320): high variance

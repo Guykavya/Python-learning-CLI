@@ -1,0 +1,4 @@
+- Caching `main` instead of `load_data`: widgets inside a cached function are not redrawn as expected.
+- Making the result depend on something that is not an argument (a global, a file that changes): the cache returns stale data.
+- Removing the counter line: the test then cannot see the calls.
+- Caching personal data in a shared app: the cache is shared by all users.

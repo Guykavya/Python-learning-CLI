@@ -1,0 +1,4 @@
+- **`DataFrame (4, 1)` for `df["a"]`.** One name gives a Series; its shape is `(4,)`, one number.
+- **`Series` for `df[["a"]]`.** The inner list makes the result two-dimensional.
+- **Thinking `df[1:3]` selects columns.** A slice in brackets selects rows by position.
+- **Shape `(2, 2)` for the filter.** `a > 1` keeps three rows (2, 3, 4), not two.

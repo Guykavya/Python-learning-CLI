@@ -1,0 +1,6 @@
+1. split rows into train and test on all rows: ok
+2. fit scaler on all rows: leak
+3. fit imputer on train rows: ok
+4. select features on all rows: leak
+5. transform test with the fitted scaler on test rows: ok
+6. oversample on all rows: leak

@@ -1,0 +1,4 @@
+- **Expecting `transform` to return 3 values.** It returns one per original row, 8 here.
+- **Renumbering the filtered rows.** `filter` keeps the original labels `[0, 1, 2, 4, 5, 7]`.
+- **`>= 90` read as `> 90`.** S2's total is exactly 90, so it passes.
+- **Listing the stores in row order on line 1.** `agg` sorts by key: S1, S2, S3.

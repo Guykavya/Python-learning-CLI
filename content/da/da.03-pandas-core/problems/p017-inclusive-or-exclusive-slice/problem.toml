@@ -1,0 +1,6 @@
+id = "da.03.p017"
+title = "Inclusive or exclusive slice?"
+tier = "drill"
+kind = "trace"
+topics = ["loc", "iloc", "slicing", "labels vs positions", "trace"]
+minutes = 15

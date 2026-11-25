@@ -1,0 +1,6 @@
+id = "da.04.p057"
+title = "safe_merge"
+tier = "challenge"
+kind = "code"
+topics = ["merge", "validate", "indicator", "row count", "fan-out", "ledger", "toolkit"]
+minutes = 40

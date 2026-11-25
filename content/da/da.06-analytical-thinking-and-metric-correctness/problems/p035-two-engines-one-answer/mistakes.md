@@ -1,0 +1,6 @@
+- **Comparing with `==`.** Rounded or summed floats differ in the last digits; use a tolerance.
+- **Using `<` instead of `>` for the failure.** A difference of exactly the tolerance is still a match; raise only above it.
+- **`row[0]` when `row` is `None`.** A query with no row crashes with `TypeError` instead of giving a MISMATCH.
+- **Treating `NULL` as 0.** `SUM` of nothing is `NULL`: report it as `sql=None`, do not hide it.
+- **Printing instead of returning/raising.** The caller decides what to do with the result; a pipeline needs the exception.
+- **Different number formats for the two sides.** Both use `f"{x:,.2f}"` so that `3.00` and `3.00` are visibly equal.

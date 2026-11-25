@@ -1,0 +1,6 @@
+id = "da.10.p010"
+title = "Cut by segment"
+tier = "applied"
+kind = "code"
+topics = ["segment analysis", "churn rate", "share of base", "groupby", "periods"]
+minutes = 30

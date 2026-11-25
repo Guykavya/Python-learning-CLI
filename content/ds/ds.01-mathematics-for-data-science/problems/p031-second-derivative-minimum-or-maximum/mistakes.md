@@ -1,0 +1,3 @@
+- Labelling `x^4` a minimum from its shape: the *program* sees a tiny second derivative.
+- Labelling `x^3` a maximum or a minimum: it is an inflection point, neither.
+- Forgetting the sign of `-x^2`.

@@ -1,0 +1,4 @@
+- Computing recency from `today()` instead of the as-of date: the same report would give different numbers every day.
+- Keeping orders after `asof`: the future leaks into the past.
+- `F` as the number of distinct dates when two orders on one day are two orders.
+- Including customers with no order by `asof` as rows with `NaN`.

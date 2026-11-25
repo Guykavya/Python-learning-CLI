@@ -1,0 +1,6 @@
+id = "da.04.p003"
+title = "size, count and nunique"
+tier = "drill"
+kind = "code"
+topics = ["groupby", "size", "count", "nunique", "named aggregation"]
+minutes = 20

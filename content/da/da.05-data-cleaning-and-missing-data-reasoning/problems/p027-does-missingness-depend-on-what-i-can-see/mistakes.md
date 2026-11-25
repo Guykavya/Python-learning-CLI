@@ -1,0 +1,5 @@
+- **Swapping the groups.** `gap = missing_mean - present_mean`. Check the sign with the example (-13.67).
+- **Using `df[df[col].isna()][other].mean()` on the wrong column** (comparing `col` with itself gives nothing useful: it is all `NaN` in the missing group).
+- **Concluding "MCAR" from a small gap.** A gap near zero for one column says nothing about the other columns, and nothing about MNAR.
+- **Concluding "MAR" and stopping.** A big gap shows a link; it does not say which method repairs the data.
+- **Returning numpy floats or a Series.** The test compares with a plain dict of floats.

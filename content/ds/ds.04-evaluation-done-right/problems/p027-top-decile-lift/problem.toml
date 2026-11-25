@@ -1,0 +1,6 @@
+id = "ds.04.p027"
+title = "Top-decile lift"
+tier = "drill"
+kind = "trace"
+topics = ["lift", "ranking", "top decile", "trace"]
+minutes = 15

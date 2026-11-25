@@ -1,0 +1,6 @@
+- **`np.savez(path, ...)` with a path like `survey.data`:** NumPy writes `survey.data.npz`, and later code looks for the wrong file.
+- **Returning the `NpzFile` itself.** It is lazy and keeps the file open; after the `with` block ends it cannot be read any more.
+- **`allow_pickle=True` "to make the error go away".** That turns a data file into something that can run code on your machine.
+- **Converting before saving** (`np.asarray(a, dtype=float)`): the `float32`, `int16` and `bool` dtypes would be lost.
+- **`np.save`** for several arrays: it stores one array per `.npy` file.
+- **Forgetting to close the file:** on Windows an open file cannot be deleted or overwritten.

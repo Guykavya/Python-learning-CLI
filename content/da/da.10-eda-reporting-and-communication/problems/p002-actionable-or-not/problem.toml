@@ -1,0 +1,6 @@
+id = "da.10.p002"
+title = "Actionable or not?"
+tier = "drill"
+kind = "trace"
+topics = ["finding linter", "regular expressions", "actionable findings", "trace"]
+minutes = 20

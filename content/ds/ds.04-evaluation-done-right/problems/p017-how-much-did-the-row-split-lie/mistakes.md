@@ -1,0 +1,3 @@
+- Forgetting `groups=` with `GroupKFold` (it raises an error).
+- Reading the row-split score as "the model's skill": for new patients only the group score counts.
+- Using the patient id as a feature: that makes the leak explicit.

@@ -1,0 +1,6 @@
+id = "ds.01.p020"
+title = "Low-rank approximation"
+tier = "applied"
+kind = "code"
+topics = ["SVD", "low-rank approximation", "Eckart-Young", "Frobenius norm"]
+minutes = 30

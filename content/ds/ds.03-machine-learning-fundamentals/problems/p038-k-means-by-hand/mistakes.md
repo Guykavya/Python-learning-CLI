@@ -1,0 +1,4 @@
+- Computing the inertia with the centres from *before* the last update.
+- Letting a centre with no points become `nan` (the mean of an empty set).
+- Updating the centres inside the assignment loop instead of after all points are assigned.
+- Starting two centres at the same point: the two clusters then stay identical.

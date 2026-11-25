@@ -1,0 +1,4 @@
+- Applying the rare-class rule to the interview story: `ranking_only` is checked first.
+- Reading a `cost_fn` of 20 as larger than a `cost_fp` of 500.
+- Choosing `accuracy` for the rare-disease story because it is the "default".
+- Writing the story names with different spelling (copy them from the code).

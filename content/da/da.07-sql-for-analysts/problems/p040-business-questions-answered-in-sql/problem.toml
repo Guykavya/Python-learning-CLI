@@ -1,0 +1,7 @@
+id = "da.07.p040"
+title = "Business questions answered in SQL"
+tier = "challenge"
+kind = "code"
+topics = ["project", "SQL", "cohort retention", "funnel", "window functions", "grain checks"]
+minutes = 90
+assessment = "build"

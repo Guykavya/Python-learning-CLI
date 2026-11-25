@@ -1,0 +1,6 @@
+id = "da.02.p001"
+title = "Sum of squares without a loop"
+tier = "drill"
+kind = "code"
+topics = ["vectorisation", "arange", "sum", "int64", "speed"]
+minutes = 15

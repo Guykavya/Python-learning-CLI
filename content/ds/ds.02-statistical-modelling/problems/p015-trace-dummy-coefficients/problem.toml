@@ -1,0 +1,6 @@
+id = "ds.02.p015"
+title = "Trace dummy coefficients"
+tier = "drill"
+kind = "trace"
+topics = ["dummy coefficients", "prediction", "baseline", "trace"]
+minutes = 15

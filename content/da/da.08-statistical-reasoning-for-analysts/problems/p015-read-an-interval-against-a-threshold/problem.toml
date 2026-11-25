@@ -1,0 +1,6 @@
+id = "da.08.p015"
+title = "Read an interval against a threshold"
+tier = "drill"
+kind = "trace"
+topics = ["minimum effect of interest", "confidence interval", "practical significance", "boundaries", "trace"]
+minutes = 15

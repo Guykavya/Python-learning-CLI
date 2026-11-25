@@ -1,0 +1,6 @@
+id = "da.11.p028"
+title = "When RFM misleads"
+tier = "deep"
+kind = "explain"
+topics = ["RFM limits", "seasonality", "subscriptions", "outliers", "explain"]
+minutes = 30

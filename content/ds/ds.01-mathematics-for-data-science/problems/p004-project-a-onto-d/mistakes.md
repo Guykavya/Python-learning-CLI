@@ -1,0 +1,4 @@
+- Using `(a . d) * d` without dividing by `d . d`: right only when `|d| = 1`.
+- Dividing by `|d|` instead of `|d|**2`.
+- Returning the scale (a number) instead of the vector `scale * d`.
+- Not guarding the zero vector, which gives `nan`.

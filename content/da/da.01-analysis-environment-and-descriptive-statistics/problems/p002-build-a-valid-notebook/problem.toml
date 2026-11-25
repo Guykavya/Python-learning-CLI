@@ -1,0 +1,6 @@
+id = "da.01.p002"
+title = "Build a valid notebook"
+tier = "drill"
+kind = "code"
+topics = ["nbformat 4.5", "cell ids", "notebook JSON", "validation"]
+minutes = 15

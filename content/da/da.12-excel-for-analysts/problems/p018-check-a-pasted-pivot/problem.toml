@@ -1,0 +1,6 @@
+id = "da.12.p018"
+title = "Check a pasted pivot"
+tier = "applied"
+kind = "code"
+topics = ["PivotTable", "reconciliation", "label normalisation", "tolerance"]
+minutes = 40

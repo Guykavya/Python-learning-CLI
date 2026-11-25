@@ -1,0 +1,6 @@
+id = "da.03.p053"
+title = "One recipe instead of six variables"
+tier = "deep"
+kind = "code"
+topics = ["method chain", "assign", "query", "pipe", "readability", "refactoring"]
+minutes = 35

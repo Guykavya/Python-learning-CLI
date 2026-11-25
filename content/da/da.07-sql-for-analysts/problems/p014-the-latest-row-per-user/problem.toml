@@ -1,0 +1,6 @@
+id = "da.07.p014"
+title = "The latest row per user"
+tier = "applied"
+kind = "code"
+topics = ["QUALIFY", "arg_max", "latest row", "ties", "deduplication"]
+minutes = 20

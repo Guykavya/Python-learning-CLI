@@ -1,0 +1,7 @@
+id = "da.02.p050"
+title = "Image pipeline"
+tier = "challenge"
+kind = "code"
+topics = ["images", "uint8", "clip", "slicing", "convolution", "lookup table", "pipeline", "project"]
+minutes = 75
+assessment = "build"

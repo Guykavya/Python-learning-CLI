@@ -1,0 +1,6 @@
+id = "da.01.p023"
+title = "When the z-score hides the outlier"
+tier = "deep"
+kind = "code"
+topics = ["outliers", "IQR fences", "z-score", "masking", "robust methods"]
+minutes = 45

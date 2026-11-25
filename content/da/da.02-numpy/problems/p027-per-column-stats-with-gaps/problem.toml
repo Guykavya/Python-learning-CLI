@@ -1,0 +1,6 @@
+id = "da.02.p027"
+title = "Per-column stats with gaps"
+tier = "deep"
+kind = "code"
+topics = ["nan", "aggregations", "axis", "warnings", "where", "missing values"]
+minutes = 35

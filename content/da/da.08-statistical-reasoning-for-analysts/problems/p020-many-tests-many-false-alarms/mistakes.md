@@ -1,0 +1,3 @@
+- Writing 0.05 for every row: the risk compounds with k.
+- Losing the padding in `k =   1`.
+- Printing 0.0500 with 3 decimals or 0.226 with 4.

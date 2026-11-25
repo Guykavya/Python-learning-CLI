@@ -1,0 +1,6 @@
+id = "da.13.p001"
+title = "Five problems of one big table"
+tier = "drill"
+kind = "explain"
+topics = ["flat table", "data model", "update anomaly", "grain", "double counting", "explain"]
+minutes = 30

@@ -1,0 +1,6 @@
+id = "da.08.p033"
+title = "Round to the uncertainty"
+tier = "drill"
+kind = "code"
+topics = ["false precision", "rounding", "standard error", "formatting"]
+minutes = 20

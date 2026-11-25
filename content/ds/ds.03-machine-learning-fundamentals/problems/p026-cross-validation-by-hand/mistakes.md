@@ -1,0 +1,4 @@
+- Reusing one model object for every fold: some estimators carry state or warm starts from the previous fit.
+- Training on all rows (including the validation fold): the score is then too good.
+- Passing `y_val` and the predictions to the scorer in the wrong order (`r2_score(y_true, y_pred)`).
+- Returning a list or the mean instead of the array of scores.

@@ -1,0 +1,6 @@
+- **`<` instead of `<=` at the band edges.** The loop puts exactly 25,000 in the bottom band and 75,000 in the middle band.
+- **Python's `and` / `or` / `if` on arrays.** They raise "truth value of an array is ambiguous"; use masks with `&`, `|` and `np.where`.
+- **`np.diff` with the sign the wrong way.** It computes `p[i+1] - p[i]`, which is what the loop does.
+- **`argmin` over `axis=0`.** That gives, for each centre, the closest value: the wrong question and the wrong shape.
+- **`np.vectorize(tax_loop_for_one_value)`.** It is still a Python loop (Ch. 12.3) and fails the time budget.
+- **Integer output from `change_vec`** for integer prices; convert to float first.

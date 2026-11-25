@@ -1,0 +1,4 @@
+- Not calling `fig.canvas.draw()`: tick labels and some sizes do not exist yet.
+- Flagging the colour-bar Axes as "no title".
+- Reporting the font problem once per text instead of once per figure.
+- Forgetting horizontal bars: their value axis is x.

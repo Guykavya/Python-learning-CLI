@@ -1,0 +1,5 @@
+- **`.str.replace("  ", " ")`** only squeezes pairs, and does not touch tabs; use the regex `\s+`.
+- **Forgetting `regex=True`**: in pandas 3 the default is a plain-text replace, so the pattern would never match.
+- **`s.astype(str)`** first: missing values become the text `"nan"`, which then survives all the later steps.
+- **A Python loop or `apply`**: it works but is slow and needs its own missing-value check.
+- **`.str.capitalize()`** only capitalises the first letter of the whole string: "asha rao" would become "Asha rao".

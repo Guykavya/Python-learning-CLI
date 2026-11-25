@@ -1,0 +1,5 @@
+- **Capping every value outside the fences, flagged or not.** An honest high value that the rule did not flag must keep its value. Use `where(~flags, ...)`.
+- **Computing the fences from the unflagged values only.** The task says all non-missing values of `s`.
+- **`s[~flags].mean()` for `"cap"`.** That is the `"remove"` strategy. Capping keeps the row, with a smaller value.
+- **Returning numpy floats.** Use `float(...)`; the test compares with plain floats.
+- **Changing `s` in place** (`s[flags] = hi`). Work on copies; `where` and `clip` return new Series.

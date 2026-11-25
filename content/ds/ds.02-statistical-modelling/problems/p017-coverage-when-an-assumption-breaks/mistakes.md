@@ -1,0 +1,5 @@
+- Creating `default_rng` inside the loop: every repetition then draws the same data.
+- Reading `conf_int()[0]` (the intercept row) instead of the slope row `[1]`.
+- Using the wrong `x` for the autocorrelated world: the time index, not random numbers.
+- Expecting robust standard errors to fix autocorrelation. HC3 only repairs non-constant variance.
+- Getting a fraction like `0.9467` and worrying: 300 repetitions give about +-0.013 of noise.

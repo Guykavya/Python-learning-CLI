@@ -1,0 +1,6 @@
+id = "ds.01.p047"
+title = "Normal cdf and inverse"
+tier = "applied"
+kind = "code"
+topics = ["normal distribution", "cdf", "quantile", "bisection", "erf"]
+minutes = 30

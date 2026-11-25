@@ -1,0 +1,4 @@
+- Dividing the moments by `n - 1`.
+- Forgetting `- 3`: the normal then has kurtosis 3, not 0.
+- `m2 ** 3 / 2` instead of `m2 ** 1.5`.
+- Dividing by zero on a constant sample.

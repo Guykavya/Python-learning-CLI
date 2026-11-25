@@ -1,0 +1,6 @@
+id = "da.10.p024"
+title = "Re-run for any date"
+tier = "deep"
+kind = "code"
+topics = ["reports as code", "as-of date", "data leakage", "complete months"]
+minutes = 30

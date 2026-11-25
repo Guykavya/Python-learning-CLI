@@ -1,0 +1,4 @@
+- Typing "4.0%" into the headline: the test changes `R` and the text must follow.
+- Formatting the interval with a different number of decimals than the estimate.
+- A date such as "end of January": the linter needs `31 January 2025` or `2025-01-31`.
+- "Further analysis" in the next steps: a vague phrase.

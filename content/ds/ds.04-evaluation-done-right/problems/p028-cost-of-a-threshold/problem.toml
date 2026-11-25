@@ -1,0 +1,6 @@
+id = "ds.04.p028"
+title = "Cost of a threshold"
+tier = "drill"
+kind = "trace"
+topics = ["threshold", "cost matrix", "false positives", "false negatives", "trace"]
+minutes = 20

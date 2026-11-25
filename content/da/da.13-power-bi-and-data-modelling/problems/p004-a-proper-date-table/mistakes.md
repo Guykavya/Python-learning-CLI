@@ -1,0 +1,4 @@
+- Building the calendar from the distinct dates of the fact table: days without sales are missing.
+- `DateKey` as text: it must be an integer so that it joins with the integer keys of the facts.
+- A calendar that stops at the last sale: later facts become orphans.
+- Month names without a month number: they sort alphabetically (Apr, Aug, Dec ...) unless "sort by column" is set.

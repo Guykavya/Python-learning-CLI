@@ -1,0 +1,5 @@
+- **"pandas made a mistake"**: it did not; floats are the only plain NumPy type that can hold a gap.
+- **Saying `NaN` is an integer or a string**: `NaN` is a float value.
+- **Saying `Int64` and `int64` are the same**: the capital `I` is the nullable dtype with a mask; they behave differently on gaps.
+- **Converting to `Int64` first, cleaning later**: you can hide bad values (`"abc"` becoming a gap) before you looked at them.
+- **Filling the gaps with 0 to get integers back** without asking what a missing id means: a fake id 0 is worse than a visible gap.

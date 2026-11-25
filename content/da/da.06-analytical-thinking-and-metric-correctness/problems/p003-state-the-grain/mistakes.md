@@ -1,0 +1,5 @@
+- **Describing columns instead of rows.** "It has job_id and status" is not a grain; "one row per job" is.
+- **Giving `job_id` as the key of the line table.** A job has several lines; the key is the pair.
+- **Treating a snapshot like an entity table.** Ten snapshots of one open job are ten rows.
+- **Calling a daily total an event table.** It is an aggregate: the individual payments are gone.
+- **Writing a trap that is not about counting or summing.** The point of the grain is what `len`, `sum`, `nunique` mean.

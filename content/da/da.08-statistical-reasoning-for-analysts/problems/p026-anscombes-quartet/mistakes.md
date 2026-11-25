@@ -1,0 +1,4 @@
+- Concluding "same summary, same data": the whole point is that they are not.
+- `ddof=0` for the variance: the summary shows 10.0 instead of 11.0.
+- Testing only the correlation in `looks_linear`: r is 0.816 for all four.
+- Dividing by a zero (or rounding-noise) median residual on a perfect line: return `True` when all residuals are essentially zero.

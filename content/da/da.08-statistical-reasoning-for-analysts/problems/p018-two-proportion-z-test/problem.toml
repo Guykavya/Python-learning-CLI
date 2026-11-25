@@ -1,0 +1,6 @@
+id = "da.08.p018"
+title = "Two-proportion z-test"
+tier = "applied"
+kind = "code"
+topics = ["hypothesis test", "z-test", "pooled proportion", "p-value", "A/B test"]
+minutes = 30

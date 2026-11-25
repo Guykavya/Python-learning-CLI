@@ -1,0 +1,6 @@
+id = "da.03.p002"
+title = "Predict label versus position"
+tier = "drill"
+kind = "trace"
+topics = ["Series", "index", "loc", "iloc", "KeyError", "trace"]
+minutes = 15

@@ -1,0 +1,4 @@
+- Averaging only over customers who bought again: that is spend per **buyer**, not per customer.
+- `merge` with the default inner join: customers with no later orders disappear.
+- Using orders **before** `T` as the outcome: the test is about the future.
+- Sorting ascending: the best segment should come first.

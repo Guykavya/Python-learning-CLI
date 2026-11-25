@@ -1,0 +1,6 @@
+id = "da.10.p029"
+title = "Cache the expensive step"
+tier = "deep"
+kind = "code"
+topics = ["Streamlit", "st.cache_data", "reruns", "session_state", "performance"]
+minutes = 30

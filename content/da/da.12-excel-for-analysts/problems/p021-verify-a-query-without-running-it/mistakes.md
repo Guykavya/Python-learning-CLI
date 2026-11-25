@@ -1,0 +1,4 @@
+- Summing a column of text or a boolean as "numeric": use `select_dtypes("number")`.
+- Not rounding the sums: tiny float differences make equal tables look different.
+- Comparing the dicts with `==` and reporting only "different": the point is to say **what** differs.
+- Counting blanks only for numeric columns.

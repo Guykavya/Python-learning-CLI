@@ -1,0 +1,4 @@
+- **Changing `df` and returning it.** The caller's table is modified behind their back.
+- **`df[df["category"] == category]["price"] = ...`.** Chained assignment: it changes a temporary and nothing else (pandas 3 warns).
+- **`df.loc[mask]["price"] = ...`.** The same trap with `loc` followed by `[]`.
+- **Computing the new price from the whole column** (`df["price"] * factor`) on a `loc` with only the matching rows works by label alignment, but it is easy to mix up; compute from the same selection.

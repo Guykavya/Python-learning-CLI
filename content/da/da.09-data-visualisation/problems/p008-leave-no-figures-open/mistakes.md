@@ -1,0 +1,4 @@
+- `plt.close(fig)` after the `savefig` but outside `try/finally`: an error in between leaks the figure.
+- `plt.close()` (no argument) closes only the *current* figure, which may be a different one.
+- Closing before saving: the saved file is empty or the call raises.
+- Collecting the figures in a list "to close later": they all stay open until then.

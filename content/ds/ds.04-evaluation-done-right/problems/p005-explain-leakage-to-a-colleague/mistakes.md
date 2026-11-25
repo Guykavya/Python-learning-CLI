@@ -1,0 +1,3 @@
+- Explaining leakage as "overfitting": the model is not too flexible, it is given the answer.
+- Saying the leaky model's AUC on the future (0.778) proves it is fine: the ranking survived only because the column became constant; its probabilities are useless (mean 0.024 against a true rate of 0.235, recall 0).
+- Giving only the fix ("drop the column") without the rule that finds the next leak.

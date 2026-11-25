@@ -1,0 +1,4 @@
+- Computing the KPIs inside the app with different code from the report: the two will drift apart.
+- An empty filter list treated as "all": the reader cleared it on purpose.
+- Metric values with a different rounding than the finding text.
+- A dashboard that crashes on an empty selection instead of showing a message.

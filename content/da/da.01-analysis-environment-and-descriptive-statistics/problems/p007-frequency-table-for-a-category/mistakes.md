@@ -1,0 +1,5 @@
+- **Dropping the missing values.** The percent of "(missing)" is a finding; hiding it overstates the other categories.
+- **Counting `None` and `""` as two separate labels.** They mean the same thing here.
+- **Dividing by the number of distinct values** instead of the number of rows.
+- **Sorting only by count.** Ties then come out in input order and the test (and the reader) cannot rely on them.
+- **Rounding before sorting or summing counts.** Round only the final percent.

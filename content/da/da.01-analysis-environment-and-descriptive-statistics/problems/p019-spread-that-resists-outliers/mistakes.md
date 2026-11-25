@@ -1,0 +1,6 @@
+- **Population sd instead of sample sd** (dividing by `n`).
+- **Using a different quartile method.** The numbers for `iqr` change with the method; the statement fixes inclusive.
+- **MAD around the mean** instead of the median, or the *mean* absolute deviation.
+- **`cv` with a zero mean** raises `ZeroDivisionError` instead of returning `None`.
+- **Sorting the caller's list in place.**
+- **Believing `sd` is robust.** The property test adds one huge value to show it is not.

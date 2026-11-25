@@ -1,0 +1,5 @@
+- **`s.map(mapping).fillna("Other")`**: a code that was missing becomes "Other", and you cannot report the unknown codes afterwards.
+- **Listing missing values as unknown codes** (`nan` in the list).
+- **An unsorted or repeated list**: the list is sorted and distinct.
+- **Looping over the Series** and using `dict.get`: it works, but the exercise is about `map`.
+- **`s.replace(mapping)`**: unknown codes stay as they are, so nothing says "Other".

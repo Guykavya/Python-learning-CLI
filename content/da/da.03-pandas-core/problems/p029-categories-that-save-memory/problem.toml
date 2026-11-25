@@ -1,0 +1,6 @@
+id = "da.03.p029"
+title = "Categories that save memory"
+tier = "deep"
+kind = "code"
+topics = ["category", "memory_usage", "dtypes", "cardinality", "nunique"]
+minutes = 30

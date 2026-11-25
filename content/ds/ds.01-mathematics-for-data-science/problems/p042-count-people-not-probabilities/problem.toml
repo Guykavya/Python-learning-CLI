@@ -1,0 +1,6 @@
+id = "ds.01.p042"
+title = "Count people, not probabilities"
+tier = "drill"
+kind = "trace"
+topics = ["natural frequencies", "Bayes theorem", "base rate", "trace"]
+minutes = 15

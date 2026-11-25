@@ -1,0 +1,6 @@
+- **Treating `"-"` and `"-5"` the same.** `"-"` alone is missing; `"-5"` is minus five.
+- **Cleaning before the missing check.** After removing junk, `"N/A"` would be `"n/a"` and still fine, but `"ms"` would become `""` and be silently "missing".
+- **Returning `0.0` for bad text.** A zero is a value; a missing number is `None`.
+- **Accepting `"inf"`.** `float("inf")` works; the rules say it is an error.
+- **A message without the text.** The test checks that the offending text is in the message.
+- **Removing commas only, not inner spaces**: `"1 204"` must give `1204.0`.

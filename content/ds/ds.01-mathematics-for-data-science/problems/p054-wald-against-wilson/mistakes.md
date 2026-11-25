@@ -1,0 +1,3 @@
+- Giving the Wald interval a positive width.
+- Forgetting the `max(0.0, ...)` that clips the lower end at 0.
+- Believing Wilson is a bug-fix for small `k` only: it is better for all small samples.

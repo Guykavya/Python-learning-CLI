@@ -1,0 +1,6 @@
+id = "da.02.p029"
+title = "What type does a sum have?"
+tier = "applied"
+kind = "trace"
+topics = ["dtype", "aggregations", "overflow", "uint8", "cumsum", "trace"]
+minutes = 20

@@ -1,0 +1,5 @@
+intercept = 2.20
+slope     = 0.60
+R-squared = 0.60
+residual df = 3
+largest residual = 1.00

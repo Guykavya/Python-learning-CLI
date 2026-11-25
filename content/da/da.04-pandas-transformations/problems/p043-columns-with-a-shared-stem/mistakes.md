@@ -1,0 +1,5 @@
+- **Forgetting `sep="_"`.** `wide_to_long` then looks for `sales2023` and finds no columns: an empty result.
+- **`melt` alone.** It gives one row per store and *column* (`sales_2023`, ...), with sales and units in the same column.
+- **Leaving `year` as text.** A text year sorts fine for four digits but breaks arithmetic such as `year - 1`.
+- **Forgetting `reset_index`.** `store_id` and `year` stay in the index, not in columns.
+- **Hard-coding 2023 and 2024.** The years change from file to file.

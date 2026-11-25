@@ -1,0 +1,5 @@
+- **`np.arange(1, n)` or `np.arange(n + 1)`.** The sum starts at 0² and stops at (n − 1)²: `np.arange(n)` is exactly that.
+- **Using `sum(values * values)`.** Python's built-in `sum` walks the array one element at a time: a loop in disguise. Use `.sum()` or `np.sum`.
+- **A list comprehension `[i * i for i in range(n)]`.** Still one Python step per number.
+- **`np.arange(n, dtype=float)` or `np.linspace`.** Floats hold about 16 digits; the answer for a million has 18, so the last digits are wrong.
+- **Returning the array of squares instead of their sum.**

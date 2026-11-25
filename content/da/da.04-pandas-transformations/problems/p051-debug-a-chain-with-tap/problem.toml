@@ -1,0 +1,6 @@
+id = "da.04.p051"
+title = "Debug a chain with tap"
+tier = "applied"
+kind = "code"
+topics = ["method chaining", "pipe", "tap", "query", "assign", "debugging"]
+minutes = 25

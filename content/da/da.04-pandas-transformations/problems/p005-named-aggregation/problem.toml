@@ -1,0 +1,6 @@
+id = "da.04.p005"
+title = "Named aggregation"
+tier = "drill"
+kind = "code"
+topics = ["groupby", "agg", "named aggregation", "nunique", "assign"]
+minutes = 20

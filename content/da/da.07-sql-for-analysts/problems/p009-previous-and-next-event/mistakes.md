@@ -1,0 +1,5 @@
+- Missing `PARTITION BY user_id`: the "previous" order may belong to another user.
+- Ordering by `order_id` instead of `order_time`: order 9004 (13 Jan) has a lower time than 9002's id order suggests; ids are not time.
+- Subtracting timestamps and rounding: 23:30 to 00:10 is 40 minutes, i.e. 0 full days, but 1 calendar day.
+- Turning `NULL` into 0 with `COALESCE`: "no previous order" is not "0 days".
+- Using an alias from the same `SELECT` list inside another expression: it is not visible there.

@@ -1,0 +1,4 @@
+- Using all customers as the denominator: recent customers cannot have repeated yet.
+- Counting any later order instead of the **second** order within 90 days.
+- `<` instead of `<=` at the boundary: exactly 90 days belongs to the window.
+- Dividing by zero when nobody is eligible.

@@ -1,0 +1,4 @@
+- Keeping `sort_values`: the order of the table decides who is picked.
+- `replace=True` or sampling with `rng.integers`: duplicates reappear.
+- Creating `np.random.default_rng()` inside the function: the caller's seed is ignored.
+- Sampling the `customer_id` values and forgetting to return the rows.

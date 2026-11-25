@@ -1,0 +1,4 @@
+- Counting `True` as a number.
+- Treating `"12 "` as other text: strip first.
+- Counting the header row.
+- Calling `float("")` and crashing: handle the empty string first.

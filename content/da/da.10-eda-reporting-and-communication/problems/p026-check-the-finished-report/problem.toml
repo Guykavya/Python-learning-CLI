@@ -1,0 +1,6 @@
+id = "da.10.p026"
+title = "Check the finished report"
+tier = "challenge"
+kind = "code"
+topics = ["report checks", "regular expressions", "placeholders", "figures", "stale data"]
+minutes = 40

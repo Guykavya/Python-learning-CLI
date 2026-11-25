@@ -1,0 +1,6 @@
+- **One `to_datetime` with `format="mixed"` or no format**: pandas guesses per row (or raises on mixed rows), so the order of your formats no longer decides.
+- **`errors="raise"`** (the default): the first non-matching row raises `ValueError` and nothing is parsed.
+- **Overwriting instead of filling**: assigning each attempt over the result makes the *last* format win. Use `fillna`.
+- **Counting `NaT` as unparsed**: rows that were already missing are not failures; compare with `s.notna()`.
+- **Reporting stripped or parsed text** instead of the original text.
+- **Reading `31/02/2025` as a different date**: it matches no format and must be reported.

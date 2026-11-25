@@ -1,0 +1,6 @@
+id = "da.12.p003"
+title = "Types that look alike"
+tier = "applied"
+kind = "code"
+topics = ["cell types", "numbers stored as text", "blank vs empty string", "data audit"]
+minutes = 30

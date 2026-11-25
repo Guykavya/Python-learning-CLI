@@ -1,0 +1,7 @@
+id = "da.02.p035"
+title = "np.vectorize is not a speed-up"
+tier = "deep"
+kind = "explain"
+topics = ["np.vectorize", "vectorisation", "ufuncs", "select", "performance", "explain"]
+minutes = 25
+assessment = "explain"

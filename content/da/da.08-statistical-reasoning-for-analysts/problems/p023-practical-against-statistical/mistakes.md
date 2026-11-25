@@ -1,0 +1,3 @@
+- Returning the p-value logic only: "significant" is not the verdict.
+- `>=` instead of `>` at the boundary: an interval touching the MEI is inconclusive.
+- Calling `(-1.53, 4.53)` "no effect": the interval contains both zero and useful effects.

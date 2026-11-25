@@ -1,0 +1,4 @@
+- Using the plain group mean for the training rows: a category with one row then encodes its own label exactly.
+- Encoding the test rows out-of-fold too (there is no leak for them; use all the training data).
+- Dropping categories unseen in training instead of giving them the overall mean.
+- Including the test rows' labels anywhere.

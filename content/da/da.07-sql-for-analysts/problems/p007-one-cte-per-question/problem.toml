@@ -1,0 +1,6 @@
+id = "da.07.p007"
+title = "One CTE per question"
+tier = "deep"
+kind = "explain"
+topics = ["CTE style", "readability", "grain", "review", "explain"]
+minutes = 20

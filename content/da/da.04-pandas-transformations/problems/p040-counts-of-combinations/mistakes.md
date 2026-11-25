@@ -1,0 +1,4 @@
+- **`normalize="columns"` or `True`.** Columns summing to 1, or the whole table summing to 1, answer other questions.
+- **`value_counts` on one column.** It counts channels overall, not per region.
+- **Leaving `NaN` for a missing pair.** `crosstab` already gives 0 there; a hand-made `unstack()` without `fill_value=0` does not.
+- **Dividing by the grand total.** Shares per region must be divided by that region's row total.

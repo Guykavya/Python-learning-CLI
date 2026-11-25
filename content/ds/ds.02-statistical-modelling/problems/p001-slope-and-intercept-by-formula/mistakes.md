@@ -1,0 +1,4 @@
+- Returning `(slope, intercept)` in the wrong order. The task asks for `(intercept, slope)`.
+- Dividing by zero silently: with constant `x` NumPy gives `nan` and a warning, not an error.
+- Using `np.cov(x, y)[0, 1] / np.var(x)`: `np.cov` divides by `n - 1` and `np.var` by `n`, so the slope is wrong by a factor `n/(n-1)`.
+- Forgetting that the intercept uses the *slope*, so it must be computed second.

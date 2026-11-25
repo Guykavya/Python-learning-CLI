@@ -1,0 +1,5 @@
+- **`x = x.copy()` only.** Fixes bug 1 but not bug 2: the copy is still an int array, and `x /= ...` still crashes.
+- **`x = np.asarray(x, dtype=float)` only.** For a float input this returns the *same* array (no copy), so the in-place lines still change the caller's data.
+- **`np.errstate(invalid="ignore")` for bug 3.** Hides the warning and still returns `nan`s.
+- **`np.nan_to_num(result)`.** Repairs the symptom after a warning has already been raised.
+- **Per-column min and max (`axis=0`).** The task asks for one min and max over all values.

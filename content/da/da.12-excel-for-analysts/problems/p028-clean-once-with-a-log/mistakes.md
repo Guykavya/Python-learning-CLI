@@ -1,0 +1,5 @@
+- Deciding "bad" before cleaning: `p7` is repairable and must not be quarantined.
+- Returning the cleaned version of the bad rows in the quarantine: keep them as they were.
+- Logging unchanged values: the log must show only real changes.
+- Cleaning in place: the caller's frame must stay untouched.
+- Logging `3` -> `3.0` for a units value that was already a number: converting the dtype is not a change of the data.

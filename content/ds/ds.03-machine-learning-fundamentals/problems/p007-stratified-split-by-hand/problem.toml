@@ -1,0 +1,6 @@
+id = "ds.03.p007"
+title = "Stratified split by hand"
+tier = "applied"
+kind = "code"
+topics = ["stratified split", "class balance", "indices", "imbalanced data"]
+minutes = 35

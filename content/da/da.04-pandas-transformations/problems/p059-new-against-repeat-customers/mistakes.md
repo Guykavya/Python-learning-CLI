@@ -1,0 +1,6 @@
+- **Only the first *order* is new.** The definition is the first *month*: C1's second January order is still new.
+- **`count` or `size` instead of `nunique`.** A customer with two orders in a month would count twice.
+- **`agg("min")` instead of `transform("min")`.** `agg` gives one row per customer, which no longer lines up with the orders.
+- **Comparing dates instead of months.** `order_date == first_date` marks a second order in the first month as repeat.
+- **Missing column after `unstack`.** If no customer repeats, there is no `repeat` column at all unless you `reindex`.
+- **`NaN` for empty groups.** A month with no new customer has 0 of them, not an unknown number.

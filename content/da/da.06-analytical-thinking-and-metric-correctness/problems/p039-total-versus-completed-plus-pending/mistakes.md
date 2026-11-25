@@ -1,0 +1,7 @@
+- **Counting `completed + pending` and expecting the total.** They use another date basis and leave out cancelled and failed jobs; that is the whole point.
+- **`<=` at the end of the period.** Job 5 started exactly at the end of February: it belongs to March. Job 8 was created exactly then.
+- **Forgetting that `pending` jobs have no start date.** `P` by start date misses every waiting job; job 6 is in `T` only.
+- **Labelling a job from today's status only.** A completed job in `T` but not in `C` is there because it started after the period, not because of its status.
+- **Looking only at the net number.** 6 to 3 is -3, which hides four jobs leaving and one entering.
+- **Reasons for jobs in both sets or in neither.** Only the jobs in exactly one of `T` and `C` get a reason (jobs 1 and 9 are in both, 7 and 8 in neither).
+- **Unsorted or mislabeled steps.** The test compares the exact list: sorted T-only labels first, the `+` line last.

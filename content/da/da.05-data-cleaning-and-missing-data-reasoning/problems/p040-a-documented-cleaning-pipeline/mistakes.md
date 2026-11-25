@@ -1,0 +1,8 @@
+- **Parsing `ts` with one format.** Half of the table silently becomes `NaT` (or day and month are swapped: `01/03` is 1 March, not 3 January).
+- **Removing the stuck values without the reason.** The pipeline must keep `pm25_flag`; a plain `NaN` loses the story.
+- **Comparing against the global mean for spikes.** A relative rule (the neighbours) is what separates a spike from a polluted day.
+- **Dropping duplicates before cleaning the station names and times.** `"Airport"` and `"airport "` would look different.
+- **Computing A and B from different tables.** Both start from the same `clean`.
+- **Interpolating across a three-day outage.** `limit=3` and `limit_area="inside"` keep long gaps missing; the humidity line fills them.
+- **Letting a bad row crash the pipeline.** A humidity of 150 is quarantined and logged, not a reason to stop.
+- **A report typed by hand.** Generate it from the log and the numbers, as the chapter does.

@@ -1,0 +1,5 @@
+- **Reading 7 as the number of jobs.** Seven is the number of lines; `nunique` gives the 4 jobs.
+- **Computing the mean as 5100 / 4.** The mean divides by the rows that are there, 7, which is exactly why it is biased.
+- **Forgetting that the biggest job carries the most weight.** Job 1 (1000) is counted three times.
+- **Expecting `groupby(...).size()` in a different order.** Groups come out sorted by `job_id`.
+- **Thinking `drop_duplicates()` without `subset` helps.** Here whole rows differ by `line_no`, so nothing would be dropped.

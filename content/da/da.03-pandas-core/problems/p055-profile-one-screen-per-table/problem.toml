@@ -1,0 +1,6 @@
+id = "da.03.p055"
+title = "profile: one screen per table"
+tier = "challenge"
+kind = "code"
+topics = ["profile", "value_counts", "nunique", "isna", "dtypes", "toolkit", "report table"]
+minutes = 45

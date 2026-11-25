@@ -1,0 +1,3 @@
+- Applying the second rule to S2 because its `val_err` is above `1.25 * floor` as well: the first rule already returned.
+- Mixing up the two messages of the first rule.
+- Forgetting that `still_falling` is only used when the gap is large.

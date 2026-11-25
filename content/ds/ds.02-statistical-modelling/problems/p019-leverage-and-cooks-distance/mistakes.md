@@ -1,0 +1,4 @@
+- Using `cooks_distance[1]` (the p-values) instead of `[0]` (the distances).
+- Using the threshold `p/n` or `1/n` by mistake: the list becomes far too long.
+- Returning the positions in row order, not sorted by Cook's distance.
+- Returning NumPy integers in the list (the tests accept them, but `int(i)` keeps output tidy).

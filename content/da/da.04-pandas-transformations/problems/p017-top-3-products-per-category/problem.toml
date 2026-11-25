@@ -1,0 +1,6 @@
+id = "da.04.p017"
+title = "Top 3 products per category"
+tier = "deep"
+kind = "code"
+topics = ["top-N per group", "sort_values", "head", "cumcount", "ties", "merge"]
+minutes = 35

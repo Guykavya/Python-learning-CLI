@@ -1,0 +1,6 @@
+id = "ds.03.p018"
+title = "Overfitting, measured"
+tier = "challenge"
+kind = "code"
+topics = ["overfitting", "learning curve", "gap", "diabetes data"]
+minutes = 45

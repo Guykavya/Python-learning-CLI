@@ -1,0 +1,6 @@
+id = "ds.04.p036"
+title = "Expected calibration error"
+tier = "applied"
+kind = "code"
+topics = ["calibration", "ECE", "binning", "probabilities"]
+minutes = 25

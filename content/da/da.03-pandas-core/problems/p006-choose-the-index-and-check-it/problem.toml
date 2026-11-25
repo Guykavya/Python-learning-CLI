@@ -1,0 +1,6 @@
+id = "da.03.p006"
+title = "Choose the index, and check it"
+tier = "applied"
+kind = "code"
+topics = ["set_index", "index", "unique", "duplicated", "ValueError"]
+minutes = 20

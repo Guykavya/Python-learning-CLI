@@ -1,0 +1,6 @@
+id = "ds.01.p059"
+title = "When the bootstrap fails"
+tier = "challenge"
+kind = "code"
+topics = ["bootstrap", "coverage", "extreme statistics", "simulation"]
+minutes = 45

@@ -1,0 +1,6 @@
+id = "da.02.p032"
+title = "Standardise each column"
+tier = "applied"
+kind = "code"
+topics = ["broadcasting", "keepdims", "z-score", "axis", "ddof", "where"]
+minutes = 25

@@ -1,0 +1,5 @@
+- Measuring June sign-ups: their month 1 (July) is not complete, so they would look like churn.
+- Filtering small channels out in `WHERE`: the row disappears instead of showing the counts with a `NULL` rate.
+- Joining to `events` and counting rows: a user with several logins in month 1 counts several times.
+- Testing "month 1" as "within 30 days of signup": the chapter's definition is the next **calendar month**.
+- Using `date_trunc` on the login but not on the signup: the difference of the two timestamps is not a month number.

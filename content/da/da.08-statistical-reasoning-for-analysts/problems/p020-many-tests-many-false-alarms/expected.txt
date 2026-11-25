@@ -1,0 +1,4 @@
+k =   1  P(at least one false alarm) = 0.050  Bonferroni threshold = 0.0500
+k =   5  P(at least one false alarm) = 0.226  Bonferroni threshold = 0.0100
+k =  20  P(at least one false alarm) = 0.642  Bonferroni threshold = 0.0025
+k = 100  P(at least one false alarm) = 0.994  Bonferroni threshold = 0.0005

@@ -1,0 +1,4 @@
+- **`value_counts()` without `dropna=False`.** The missing row vanishes, and the shares of the rest add up to more than the truth.
+- **Dividing by the number of non-missing values.** The question is "what share of all rows"; use `len(s)`.
+- **Trusting the order of ties.** Two labels with the same count may come in any order; sort on `["count", "label"]`.
+- **Keeping the old index.** After sorting, the index is scrambled; `reset_index(drop=True)`.

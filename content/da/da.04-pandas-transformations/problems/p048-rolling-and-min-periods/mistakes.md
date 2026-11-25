@@ -1,0 +1,4 @@
+- **Integers in the output.** Rolling results are floats: `60.0`, not `60`.
+- **`NaN` only at the end for `center=True`.** A centred window of 3 lacks a row at *both* ends.
+- **Thinking `min_periods=1` changes full windows.** It only changes the rows whose window is not full.
+- **Dividing the partial sum by 3.** A partial mean divides by the number of values present (`[1]` gives `1.0`).

@@ -1,0 +1,4 @@
+- Listing "the table is big" as the only problem: the wrong totals are worse than the size.
+- Forgetting freight: it is the clearest example of an order-level number on a line-level table.
+- Explaining the anomaly without a concrete update ("rename Kitchen to Cookware: 40,000 rows").
+- Saying a flat table is "wrong": it is fine as an export, not as a model.

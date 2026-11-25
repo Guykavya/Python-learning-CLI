@@ -1,0 +1,6 @@
+- Importing SciPy or `np.linalg.solve` inside the solution (the test rejects it).
+- Forgetting a docstring.
+- `pca` returning the earlier two-value form.
+- A `t_cdf` that is only accurate for small `x`: the integration grid must scale with `|x|`.
+- `gradient_descent` returning the history: here it returns `w` only.
+- `permutation_test` ignoring the `stat` argument.

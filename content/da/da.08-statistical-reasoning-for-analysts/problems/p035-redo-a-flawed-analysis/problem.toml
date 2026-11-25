@@ -1,0 +1,7 @@
+id = "da.08.p035"
+title = "Redo a flawed analysis"
+tier = "challenge"
+kind = "code"
+topics = ["observational data", "confounding", "regression adjustment", "reporting uncertainty", "project"]
+minutes = 90
+assessment = "build"

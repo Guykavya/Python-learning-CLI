@@ -1,0 +1,6 @@
+id = "ds.02.p001"
+title = "Slope and intercept by formula"
+tier = "drill"
+kind = "code"
+topics = ["simple regression", "covariance", "variance", "ValueError"]
+minutes = 15

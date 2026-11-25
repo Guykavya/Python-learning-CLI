@@ -1,0 +1,3 @@
+- Taking 5% of the whole 10,000 for the false positives (500) instead of 5% of the healthy (495).
+- Printing the fraction as a decimal on line 4.
+- Forgetting `sick_neg = 1`.

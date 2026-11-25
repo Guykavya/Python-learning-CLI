@@ -1,0 +1,6 @@
+id = "da.05.p005"
+title = "Incomes stored as text"
+tier = "applied"
+kind = "code"
+topics = ["to_numeric", "str.replace", "regex", "text to number", "codes mean missing"]
+minutes = 30

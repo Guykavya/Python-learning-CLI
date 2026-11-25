@@ -1,0 +1,4 @@
+- Calling `sns.set_theme("whitegrid")`: it works for this chart and changes every later chart.
+- Creating the figure **before** the `with` block: it keeps the default style.
+- Leaving the `with` block before setting the title: the title keeps the right size only if it is created inside (so keep the drawing code inside).
+- Restoring `rcParams` by hand with a copy: easy to forget on an error. The context manager restores it for you.

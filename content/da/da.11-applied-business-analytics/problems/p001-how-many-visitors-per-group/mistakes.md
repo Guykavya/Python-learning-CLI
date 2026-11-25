@@ -1,0 +1,4 @@
+- `round(n)` or `int(n)`: a plan of 36791.2 visitors is 36792 (rounding down leaves the test underpowered).
+- Using `alpha` instead of `alpha / 2` for a two-sided test.
+- Forgetting that `mde` is in **absolute** points: 0.005, not 0.5 or 8%.
+- Returning a NumPy float: the test checks for an `int`.

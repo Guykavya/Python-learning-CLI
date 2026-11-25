@@ -1,0 +1,5 @@
+- **Sorting the text.** Alphabetical order puts `L` before `M` before `S`.
+- **An unordered categorical.** `astype("category")` uses alphabetical categories and no order.
+- **Converting first.** `astype(CategoricalDtype(...))` on values like `"XS"` makes them `NaN` but raises a `Pandas4Warning` (and will raise an error in a future pandas).
+- **Counting all missing sizes.** A size that was already missing is not an *invalid* size.
+- **The default sort.** `sort_values` is not guaranteed to keep the original order of equal values; pass `kind="stable"`.

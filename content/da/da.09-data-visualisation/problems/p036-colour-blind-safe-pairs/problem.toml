@@ -1,0 +1,6 @@
+id = "da.09.p036"
+title = "Colour-blind safe pairs"
+tier = "deep"
+kind = "code"
+topics = ["colour blindness", "deuteranopia", "colour distance", "palette"]
+minutes = 30

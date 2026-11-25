@@ -1,0 +1,5 @@
+- **`a - b` directly.** `(n, d)` minus `(m, d)` fails unless `n == m`, and then it pairs point i with point i only.
+- **Summing over the wrong axis.** `.sum(axis=1)` of the `(n, m, d)` difference adds over the points of `b`; the coordinates are the last axis.
+- **The `|a|² + |b|² - 2ab` trick.** Fast, but rounding gives `nan` (negative squared distances) or a non-zero distance between identical points. Subtract the points instead.
+- **Double loop over the pairs.** For 2,000 × 2,000 that is 4 million Python steps; the broadcast version does them in C.
+- **Forgetting the dimension check.** Points with 2 and 3 coordinates cannot be compared; say so with a `ValueError` instead of a confusing broadcast error.

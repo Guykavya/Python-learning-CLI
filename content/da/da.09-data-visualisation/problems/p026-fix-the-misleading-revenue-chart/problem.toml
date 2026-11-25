@@ -1,0 +1,7 @@
+id = "da.09.p026"
+title = "Fix the misleading revenue chart"
+tier = "deep"
+kind = "code"
+topics = ["misleading chart", "baseline", "cherry-picked window", "units", "honest title"]
+minutes = 35
+assessment = "fix"

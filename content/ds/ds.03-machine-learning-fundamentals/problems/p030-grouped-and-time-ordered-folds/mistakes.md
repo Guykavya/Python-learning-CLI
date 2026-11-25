@@ -1,0 +1,4 @@
+- Using plain `KFold(shuffle=True)` on time-ordered data: the model then trains on the future.
+- Using plain `KFold` on grouped rows: the same person appears in train and validation and the score is inflated.
+- Shuffling a `TimeSeriesSplit` (not supported, and it would break the order).
+- Returning the list of splits instead of the splitter object.

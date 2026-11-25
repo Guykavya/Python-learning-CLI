@@ -1,0 +1,4 @@
+- **Counting `<=` as "below".** The ties are counted half, not fully.
+- **Dividing by 100 instead of by the number of marks.**
+- **Rounding halves upward by hand.** `56.25` and `93.75` are exactly representable, so the format rounds to the even digit.
+- **Treating 55 as "not in the data, so no answer".** The rule works for any number.

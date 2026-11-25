@@ -1,0 +1,4 @@
+- Saying "the chart is ugly" instead of naming what the reader will believe.
+- Fixing the colours of the pie chart and keeping nine slices.
+- Keeping the dual axis and only changing its limits.
+- Leaving the title "Sales exploded" and only extending the window.

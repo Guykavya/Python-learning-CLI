@@ -1,0 +1,5 @@
+- **Default names.** Without `var_name` and `value_name` the columns are `variable` and `value`.
+- **Forgetting to sort.** `melt` gives all stores for the first month column, then the next column, in the wide table's column order.
+- **Sorting months like `"Jan"`, `"Feb"`.** Text month names sort alphabetically (Apr, Aug, Dec ...); `"YYYY-MM"` is safe, names are not.
+- **`dropna()` after melting.** Here a missing cell must stay a row; deciding what it means is a later step.
+- **Forgetting `reset_index(drop=True)`.** The sorted rows keep their melt labels `[3, 1, ...]`.

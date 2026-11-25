@@ -1,0 +1,6 @@
+id = "ds.01.p056"
+title = "Permutation test"
+tier = "deep"
+kind = "code"
+topics = ["permutation test", "p-value", "null hypothesis", "simulation"]
+minutes = 40

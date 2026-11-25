@@ -1,0 +1,6 @@
+id = "da.07.p005"
+title = "Dates in DuckDB"
+tier = "drill"
+kind = "trace"
+topics = ["date_trunc", "date_diff", "intervals", "division", "trace"]
+minutes = 15

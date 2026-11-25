@@ -1,0 +1,5 @@
+- **A closed end (`<= end`).** A job completed exactly at the end of February belongs to March.
+- **Dividing by all jobs of the period.** The denominator of `completion_rate` is the decided statuses only; pending jobs are out.
+- **Hard-coding `"created_at"` in `compute`.** The date basis is a field of the metric, so the same code serves both.
+- **Forgetting the exclusion.** The test account would inflate the counts (the test removes it).
+- **A mutable default for `exclusions`.** `()` is safe; a list default would be shared between metrics (and a frozen dataclass rejects it).

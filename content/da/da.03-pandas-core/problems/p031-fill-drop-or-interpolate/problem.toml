@@ -1,0 +1,6 @@
+id = "da.03.p031"
+title = "Fill, interpolate or drop"
+tier = "applied"
+kind = "code"
+topics = ["fillna", "ffill", "interpolate", "dropna", "median", "missing data"]
+minutes = 25

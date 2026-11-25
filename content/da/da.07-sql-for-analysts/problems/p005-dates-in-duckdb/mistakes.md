@@ -1,0 +1,5 @@
+- Expecting `date_trunc('week', ...)` to give a Sunday, or to stay in the same year.
+- Expecting `2025-04-31` (an invalid date) or `2025-05-01` for March 31 plus a month. DuckDB clips to `2025-04-30`.
+- Reading `date_diff('month', 31 Jan, 1 Feb)` as "0 months because one day passed". It counts boundaries.
+- Printing `3` for `7 / 2`: the `/` operator is true division here; the integer division is `//`.
+- Writing `error` or `NULL` for `1 / 0`. It prints `inf`; the lesson is that no warning appears.

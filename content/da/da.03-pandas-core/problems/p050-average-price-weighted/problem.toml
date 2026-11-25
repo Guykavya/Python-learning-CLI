@@ -1,0 +1,6 @@
+id = "da.03.p050"
+title = "Average price, weighted"
+tier = "applied"
+kind = "code"
+topics = ["weighted average", "revenue", "sum", "mean", "summaries"]
+minutes = 25

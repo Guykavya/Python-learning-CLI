@@ -1,0 +1,6 @@
+id = "da.02.p028"
+title = "Tables with outer"
+tier = "drill"
+kind = "code"
+topics = ["ufunc methods", "outer", "broadcasting", "shapes"]
+minutes = 15

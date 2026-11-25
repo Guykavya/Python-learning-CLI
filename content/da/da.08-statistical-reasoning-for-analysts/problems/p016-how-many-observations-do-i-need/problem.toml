@@ -1,0 +1,6 @@
+id = "da.08.p016"
+title = "How many observations do I need?"
+tier = "applied"
+kind = "code"
+topics = ["sample size", "margin of error", "math.ceil", "planning"]
+minutes = 25

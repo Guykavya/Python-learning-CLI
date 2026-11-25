@@ -1,0 +1,5 @@
+- `JOIN events` (or `WHERE event_type = 'login'`): users with no events disappear and the cohort looks smaller than it is.
+- Counting `count(*)` after a join that repeats users: the cohort looks larger.
+- Grouping by the raw sign-up date: every day is a cohort.
+- Using `strftime('%m')` (month number only): January 2025 and January 2026 would merge.
+- Returning the month as text without making it a date: fine for reading, but later joins to a date column fail.

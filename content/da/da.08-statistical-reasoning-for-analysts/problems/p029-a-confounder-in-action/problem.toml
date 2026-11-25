@@ -1,0 +1,6 @@
+id = "da.08.p029"
+title = "A confounder in action"
+tier = "applied"
+kind = "code"
+topics = ["confounding", "naive comparison", "observational data", "group means", "pandas"]
+minutes = 30

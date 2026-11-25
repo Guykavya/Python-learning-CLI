@@ -1,0 +1,6 @@
+id = "ds.03.p032"
+title = "Classification metrics from counts"
+tier = "drill"
+kind = "code"
+topics = ["accuracy", "precision", "recall", "F1", "zero division"]
+minutes = 25

@@ -1,0 +1,5 @@
+- **Mixing the position formulas.** Inclusive uses `(n - 1) * p / 100` counted from 0; exclusive uses `(n + 1) * p / 100` counted from 1.
+- **Reading the 1-based exclusive position as a 0-based index.**
+- **Expecting nearest-rank to interpolate.** It always returns a value from the data.
+- **Forgetting the error line.** The `except` prints the message, which starts with `p=90`.
+- **Rounding mid-way.** 46.0 prints as `46.00`; the library number `45.0` at p=75 is not asked here.

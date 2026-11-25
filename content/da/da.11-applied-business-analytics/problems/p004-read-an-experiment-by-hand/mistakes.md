@@ -1,0 +1,4 @@
+- Mixing up absolute and relative lift: +1.00 points against +20.0%.
+- Forgetting the plus signs: the formats `:+.2f` and `:+.1%` always print the sign.
+- Writing 0.05 where the format prints `5.00%`.
+- Calling the 200-visitor difference a mismatch: chi-square 4.00 is below the 10.83 threshold.

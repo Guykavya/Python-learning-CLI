@@ -1,0 +1,5 @@
+- **`drop_duplicates(keep="last")` without sorting**: it keeps the last row *in the file*, which is not necessarily the newest.
+- **Sorting by `ts` only**: the winner among equal timestamps is then left to chance (the original order); the problem says the larger `row_id` wins.
+- **Sorting `ts` descending and keeping `first`**: this works for `ts`, but then the tie must be broken with `row_id` descending too; mixing directions is a common slip.
+- **Forgetting `reset_index(drop=True)`**: the labels would be the old, gappy ones.
+- **Counting `removed` as distinct customers** or as `df.duplicated().sum()`: it is rows in minus rows out.

@@ -1,0 +1,4 @@
+- Answering "4 of 4" for every line because `a` is higher in the data: the program measures the **drawn** position.
+- Forgetting that the divisor is `high - low` (20 in the third case, not 40).
+- Printing `[0, 50]` instead of the tuple `(0, 50)`.
+- Counting `r = 1.05` as "above the top": the line is simply drawn off the axis, but the comparison is still `l > r`.

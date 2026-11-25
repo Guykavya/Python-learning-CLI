@@ -1,0 +1,4 @@
+- Forgetting the intercept column, so the line is forced through the origin.
+- Putting the ones column last: the test expects the intercept first.
+- Starting from random weights without a seed.
+- A learning rate that is too big for unscaled data (here the features are standardised).

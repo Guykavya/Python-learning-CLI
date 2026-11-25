@@ -1,0 +1,6 @@
+- **"`solve` is just a shortcut for `inv`."** It never forms the inverse; that is why it is faster and more accurate.
+- **Treating a small residual as proof.** For an ill-conditioned matrix many very different `x` give tiny residuals.
+- **Confusing the condition number with the determinant.** A tiny determinant does not by itself mean ill-conditioning (scale the matrix by 0.001 and the determinant shrinks, the condition number does not).
+- **Saying `inv` gives wrong answers always.** For small, well-conditioned matrices both agree closely; the point is cost and the bad cases.
+- **Forgetting the digits rule.** About `log10(cond)` digits can be lost out of about 16.
+- **Using the normal equations with `inv`** for regression: `inv(X.T @ X)` squares the condition number; use `lstsq`.

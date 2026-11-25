@@ -1,0 +1,6 @@
+id = "da.12.p004"
+title = "Excel rules a pandas user must know"
+tier = "drill"
+kind = "explain"
+topics = ["Excel rules", "SUM and text", "AVERAGE and blanks", "ROUND", "criteria", "explain"]
+minutes = 30

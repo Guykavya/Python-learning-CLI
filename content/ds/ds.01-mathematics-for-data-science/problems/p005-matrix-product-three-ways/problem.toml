@@ -1,0 +1,6 @@
+id = "ds.01.p005"
+title = "Matrix product three ways"
+tier = "drill"
+kind = "code"
+topics = ["matrix product", "loops", "shape check", "ValueError"]
+minutes = 20

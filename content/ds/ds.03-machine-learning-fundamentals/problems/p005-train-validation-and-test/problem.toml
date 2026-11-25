@@ -1,0 +1,6 @@
+id = "ds.03.p005"
+title = "Train, validation and test"
+tier = "drill"
+kind = "code"
+topics = ["train/validation/test split", "reproducibility", "disjoint sets"]
+minutes = 20

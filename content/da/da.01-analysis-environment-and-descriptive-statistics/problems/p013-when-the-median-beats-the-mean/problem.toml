@@ -1,0 +1,7 @@
+id = "da.01.p013"
+title = "When the median beats the mean"
+tier = "applied"
+kind = "explain"
+topics = ["mean vs median", "skew", "outliers", "income data", "explain"]
+minutes = 25
+assessment = "explain"

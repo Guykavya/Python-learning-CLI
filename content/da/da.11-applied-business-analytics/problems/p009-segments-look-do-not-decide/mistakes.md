@@ -1,0 +1,4 @@
+- Calling the segment a "hidden winner" because p = 0.03.
+- Forgetting the sample size: a segment has a fraction of the visitors, so its interval is wide and its estimates exaggerated.
+- Suggesting "just test more segments to be sure": that adds more chances for luck.
+- Rolling out to the segment and "watching" it: without a control group, nobody can tell if it worked.

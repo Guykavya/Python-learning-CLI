@@ -1,0 +1,7 @@
+id = "da.06.p045"
+title = "Metric document and reconciliation report"
+tier = "challenge"
+kind = "code"
+topics = ["project", "metric definitions", "reconciliation", "bridge", "report", "QuickFix"]
+minutes = 90
+assessment = "build"

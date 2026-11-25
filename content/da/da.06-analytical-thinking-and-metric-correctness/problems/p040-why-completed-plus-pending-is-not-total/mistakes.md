@@ -1,0 +1,6 @@
+- **"Some jobs are missing from the database."** No job is missing. The groups differ; check the sets before blaming the data.
+- **Giving one reason only.** There are three effects, two of them making the parts smaller and one making them bigger.
+- **"Pending is zero because no job is pending."** There are pending jobs (30 in March); they have no `started_at`, so the filter cannot find them.
+- **Treating 86 as the size of the problem.** It is the net of four flows of 87, 84, 13 and 98.
+- **"Add the cancelled jobs to the dashboard."** That repairs the statuses but not the date basis: the January jobs started in February are still in the parts only.
+- **Describing a bridge without saying that it must close to zero.** An unexplained remainder is a statement of what you do not yet understand.

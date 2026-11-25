@@ -1,0 +1,6 @@
+id = "ds.03.p010"
+title = "Find the sweet spot"
+tier = "applied"
+kind = "code"
+topics = ["model selection", "validation error", "polynomial degree", "argmin"]
+minutes = 25

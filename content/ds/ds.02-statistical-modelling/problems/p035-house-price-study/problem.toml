@@ -1,0 +1,7 @@
+id = "ds.02.p035"
+title = "House-price study"
+tier = "challenge"
+kind = "code"
+topics = ["project", "regression", "diagnostics", "data cleaning", "elasticity", "holdout"]
+minutes = 90
+assessment = "build"

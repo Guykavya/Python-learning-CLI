@@ -1,0 +1,6 @@
+id = "da.13.p003"
+title = "The checks every model needs"
+tier = "drill"
+kind = "code"
+topics = ["referential integrity", "orphan keys", "duplicate keys", "model checks"]
+minutes = 30

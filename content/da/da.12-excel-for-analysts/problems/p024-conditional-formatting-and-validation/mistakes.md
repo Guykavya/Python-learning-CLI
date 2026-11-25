@@ -1,0 +1,4 @@
+- Forgetting `ws.add_data_validation(dv)`: the validation is never attached to the sheet.
+- No quotes around the list text: `formula1='North,South'` is read as a cell reference.
+- Highlighting the header or the wrong range.
+- Putting the target inside the rule as a formula string with a comma decimal.

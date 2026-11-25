@@ -1,0 +1,4 @@
+- Drawing the random numbers in a different order, so your numbers differ from the expected ones (the test checks properties, but the example above depends on the order).
+- Evaluating the winner on the validation data again and calling that the "test accuracy".
+- Using `>=` so the **last** best candidate is kept instead of the first.
+- Believing that 64% means the model has skill: 300 tries on 100 rows can produce that from nothing.

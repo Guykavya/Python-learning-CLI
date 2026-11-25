@@ -1,0 +1,4 @@
+- `pd.qcut(s, 5)` on tied data: "Bin edges must be unique".
+- Forgetting that a **small** recency is good: with `higher_is_better=True` the most recent customers would score 1.
+- Reordering the segment rules: `(4, 4)` must be Champions before it can be Loyal.
+- Returning labels as strings instead of ints.

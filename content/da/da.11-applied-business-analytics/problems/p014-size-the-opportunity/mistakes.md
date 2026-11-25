@@ -1,0 +1,4 @@
+- Clipping only the final quantiles: a bootstrap draw above the target would already be negative and drag the quantiles down.
+- Using all sessions (not only mobile) for the carts.
+- Letting a target below the current rate give a negative "opportunity": the answer is 0.
+- Multiplying by `purchased` of all sessions instead of the payment rate among checkout starters.

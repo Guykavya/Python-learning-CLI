@@ -1,0 +1,6 @@
+id = "da.05.p030"
+title = "Two reasonable choices, two answers"
+tier = "challenge"
+kind = "code"
+topics = ["missing data", "complete cases", "median fill", "groupby", "transform", "sensitivity", "report both"]
+minutes = 45

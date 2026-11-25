@@ -1,0 +1,5 @@
+- Using `strftime('%W', ...)` or `week(...)` (a week *number*): different years collide, and the first days of January may belong to week 52.
+- Assuming weeks start on Sunday. The chapter's rule is Monday, and the test checks `2024-12-30`.
+- `UNION` instead of `UNION ALL`.
+- Grouping by the raw `signup_at`: every user lands in their own bucket.
+- Forgetting the label column: the rows of the two parts cannot be told apart.

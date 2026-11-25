@@ -1,0 +1,12 @@
+p=25
+  nearest-rank: 20.00
+  inclusive:    20.00
+  exclusive:    17.50
+p=50
+  nearest-rank: 35.00
+  inclusive:    35.00
+  exclusive:    35.00
+p=90
+  nearest-rank: 50.00
+  inclusive:    46.00
+  exclusive:    p=90 is too extreme for 5 values with the exclusive method

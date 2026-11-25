@@ -1,0 +1,4 @@
+- Computing the shares only over the kept segments: the statement asks for shares of **all** rows of the period.
+- Using `between` with strings against a Period column (it does not compare): convert to `pd.Period`.
+- Sorting ascending, or by the after rate instead of the change.
+- Leaving a segment that exists only in one period (its row is NaN).

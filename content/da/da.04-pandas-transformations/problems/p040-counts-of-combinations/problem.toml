@@ -1,0 +1,6 @@
+id = "da.04.p040"
+title = "Counts of combinations"
+tier = "applied"
+kind = "code"
+topics = ["crosstab", "normalize", "shares", "frequency table"]
+minutes = 15

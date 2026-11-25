@@ -1,0 +1,6 @@
+id = "ds.04.p007"
+title = "Feature selection inside the pipeline"
+tier = "applied"
+kind = "code"
+topics = ["feature selection", "Pipeline", "cross-validation", "selection leakage"]
+minutes = 30

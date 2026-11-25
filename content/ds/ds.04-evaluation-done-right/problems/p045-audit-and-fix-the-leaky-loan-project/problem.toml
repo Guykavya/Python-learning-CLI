@@ -1,0 +1,7 @@
+id = "ds.04.p045"
+title = "Audit and fix the leaky loan project"
+tier = "challenge"
+kind = "code"
+topics = ["project", "audit", "leakage", "duplicates", "group split", "target encoding"]
+minutes = 120
+assessment = "build"

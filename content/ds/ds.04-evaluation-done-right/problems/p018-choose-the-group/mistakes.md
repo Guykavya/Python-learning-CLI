@@ -1,0 +1,3 @@
+- Grouping by the row id (a receipt line, a visit): each group is one row, the same as no grouping.
+- Grouping by hospital in dataset 1 when the model will be used at the same hospitals: too pessimistic, and it throws away the question you care about.
+- Forgetting time: future receipts need a time split even with the right groups.

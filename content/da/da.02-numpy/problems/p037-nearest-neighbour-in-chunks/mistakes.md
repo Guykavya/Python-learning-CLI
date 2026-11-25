@@ -1,0 +1,6 @@
+- **Building the full `(n, n)` table.** It works for 500 points and fails at 12,000 with `MemoryError` (or swaps on a machine without a cap).
+- **Ignoring the `chunk` argument** and using a fixed block size: the peak-memory test passes `chunk=50`.
+- **Putting `inf` on the block's own diagonal `d[rows, rows]`** instead of `d[rows, start + rows]`: correct for the first block only.
+- **`np.fill_diagonal` on a non-square block:** it fills `d[i, i]`, the same mistake as above.
+- **Not ignoring the point itself:** every answer becomes `0`.
+- **Assuming the last block is full.** With `n = 4` and `chunk = 3` the last block has 1 row; use `len(block)`, not `chunk`.

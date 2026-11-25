@@ -1,0 +1,4 @@
+- Dividing by something other than `reps`.
+- Calling `sampler()` without the `rng`: the result is not reproducible.
+- Checking the width of the intervals instead of whether they contain the truth.
+- Reading "95%" as "the probability that this one interval contains the truth is 95%": after you compute it, it either contains it or not. The 95% belongs to the procedure.

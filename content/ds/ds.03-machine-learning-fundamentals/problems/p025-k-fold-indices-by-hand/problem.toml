@@ -1,0 +1,6 @@
+id = "ds.03.p025"
+title = "K-fold indices by hand"
+tier = "drill"
+kind = "code"
+topics = ["cross-validation", "k-fold", "indices", "shuffling"]
+minutes = 20

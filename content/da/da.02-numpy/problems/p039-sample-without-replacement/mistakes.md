@@ -1,0 +1,6 @@
+- **`rng.shuffle(x)` then `x[:k]`.** `shuffle` works in place and returns `None`: the caller's table is reordered.
+- **`replace=True` (the default of `choice`).** Then a row can appear twice.
+- **Sampling values instead of rows** (`rng.choice(x.ravel(), ...)`): you get single numbers, not rows.
+- **Returning a slice** like `x[start:start + k]` after picking a random start: not random rows, and a view of `x`.
+- **No check of `k`:** `choice` raises its own error for `k > n`, but the message does not name your arguments, and a negative `k` gives a confusing error.
+- **Making a new `default_rng(seed)` inside the function**: the caller's generator is ignored.

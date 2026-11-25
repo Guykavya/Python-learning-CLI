@@ -1,0 +1,6 @@
+id = "da.04.p050"
+title = "Show the empty categories too"
+tier = "applied"
+kind = "code"
+topics = ["categorical", "groupby", "observed", "reindex", "reports"]
+minutes = 15

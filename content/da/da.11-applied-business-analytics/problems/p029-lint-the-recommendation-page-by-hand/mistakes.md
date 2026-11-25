@@ -1,0 +1,4 @@
+- Reporting a "headline has no number" fault: the headline has 120 and 340.
+- Reporting "no evidence item carries its uncertainty": the first item contains "CI".
+- Putting the issues in a different order: they follow the order of the checks in the function.
+- Printing the vague phrase without the quotes: the message uses `{phrase!r}`, which adds single quotes.

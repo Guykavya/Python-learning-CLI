@@ -1,0 +1,5 @@
+- **`str.split(" ")`** (a space) instead of `split()` / `n=1`: repeated and leading spaces create empty words.
+- **Forgetting `n=1`**: `"Meera Iyer Nair"` gives three columns and the last name is only `"Iyer"`.
+- **Not handling the one-column case**: `parts[1]` raises `KeyError` when no name has a space.
+- **`fillna("")` on the whole result**: a missing name then gets an empty `first` and `last` instead of staying missing.
+- **Assigning into the input frame** (`df["first"] = ...`): the caller's table must not change.

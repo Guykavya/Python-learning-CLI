@@ -1,0 +1,5 @@
+- **`a == b`.** Fails for `0.1 + 0.2` vs `0.3` and almost every computed float.
+- **`round(a, 2) == round(b, 2)`.** Values on both sides of a rounding boundary (0.12499999 and 0.125) differ after rounding though they are close.
+- **Only an absolute tolerance.** For big values like a million, an absolute `1e-8` is far smaller than the float spacing.
+- **`np.isnan` checks with `or`.** Not needed, and `or` on arrays raises "truth value ... is ambiguous" (Ch. 8.2).
+- **Ignoring the `rtol`/`atol` arguments.** Hard-coding the defaults passes the example but not the tests that pass other tolerances.

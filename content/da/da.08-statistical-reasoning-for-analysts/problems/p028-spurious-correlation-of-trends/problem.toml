@@ -1,0 +1,6 @@
+id = "da.08.p028"
+title = "Spurious correlation of trends"
+tier = "deep"
+kind = "code"
+topics = ["spurious correlation", "random walk", "first differences", "trends", "time series"]
+minutes = 30

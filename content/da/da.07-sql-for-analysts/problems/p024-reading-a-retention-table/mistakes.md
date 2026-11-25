@@ -1,0 +1,5 @@
+- Reading the columns as calendar months: M1 of the January cohort is February, M1 of the February cohort is March.
+- Saying the empty cells are 0 or that April "lost everyone": those months have not happened.
+- Averaging the percentages of each column without weights: a cohort of 90 and a cohort of 150 would count the same.
+- Comparing the number of active users of different cohorts: cohorts have different sizes.
+- Drawing a conclusion about the April cohort's month 3 from a table that has not observed it.

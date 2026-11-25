@@ -1,0 +1,6 @@
+1 3 ['name', 'city', 'score']
+2 3 ['Asha', 'Pune, MH', '90']
+3 3 ['Ben', 'say "hi"', '85']
+4 3 ['Chen ', 'Delhi', ' 70']
+5 0 []
+6 2 ['Dev', 'Goa']

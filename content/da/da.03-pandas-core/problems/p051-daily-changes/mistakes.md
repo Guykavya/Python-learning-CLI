@@ -1,0 +1,5 @@
+- **Leaving `inf` in the column**: later means and plots break (`inf` is not a gap).
+- **Replacing `inf` by `0`**: "grew from zero" is not "no change".
+- **`fillna(0)` on the first row**: the first day has no change; it is missing, not zero.
+- **Using `s.pct_change(fill_method=...)`** from old tutorials: pandas 3 does not fill gaps by default and the argument is gone.
+- **Computing the running total with a loop** or with `sum` on slices.

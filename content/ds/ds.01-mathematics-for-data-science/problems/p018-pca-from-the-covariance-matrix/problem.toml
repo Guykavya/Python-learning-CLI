@@ -1,0 +1,6 @@
+id = "ds.01.p018"
+title = "PCA from the covariance matrix"
+tier = "applied"
+kind = "code"
+topics = ["PCA", "covariance", "eigendecomposition", "explained variance"]
+minutes = 40

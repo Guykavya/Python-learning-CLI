@@ -1,0 +1,3 @@
+- Choosing the threshold on the test set and then reporting the test cost (the same mistake as tuning any hyperparameter on test).
+- Using 0.5 by habit.
+- Forgetting that true positives can have a cost (the call is made for them too).

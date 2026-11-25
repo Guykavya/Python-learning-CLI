@@ -1,0 +1,4 @@
+- Counting a line in both causes: the bridge then over-explains the gap.
+- Using `strip()` when judging "found": the Excel lookup does not strip, so the line is lost.
+- Treating text units as 0: Excel coerces `"7"` to 7 inside a multiplication, so the control total includes them.
+- Stopping when the first big cause is found: keep going until `unexplained` is 0.

@@ -1,0 +1,5 @@
+- Reading a single file instead of the glob: only one partition is counted.
+- Forgetting `hive_partitioning`: the files have no `country` column, so the query fails with a missing-column error.
+- A glob such as `/*/*.parquet` is fine for this layout, but breaks for deeper partitions; `/**/*.parquet` is safer.
+- Not sorting: the order of the result is not guaranteed.
+- Returning a DataFrame when a list of tuples is asked (or the opposite): follow the stated return type.

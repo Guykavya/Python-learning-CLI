@@ -1,0 +1,5 @@
+- Writing `buyers / viewers` directly: DuckDB returns `inf` for the UK row, not an error and not `NULL`.
+- Using `COALESCE(rate, 0)` to hide the problem: 0 means "nobody bought", but here nobody viewed at all, so the rate is undefined.
+- Counting rows instead of distinct users: user 1 has two events.
+- Computing `viewers` with `WHERE event_type = 'view_course'`: that removes the UK user entirely, so the country disappears instead of showing `NULL`.
+- Dividing two integers and getting an integer result in another engine: keep `* 1.0`.

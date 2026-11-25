@@ -1,0 +1,4 @@
+- Comparing only the treated plan before and after: the delivery problem raised churn for everyone.
+- Counting the change week as "before" (`>` instead of `>=`).
+- Reporting a share instead of percentage points (forgetting `* 100`).
+- Choosing the control by position in the data instead of "the plan that is not treated".

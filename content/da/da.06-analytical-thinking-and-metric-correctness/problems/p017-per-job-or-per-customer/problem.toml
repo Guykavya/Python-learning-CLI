@@ -1,0 +1,6 @@
+id = "da.06.p017"
+title = "Per job or per customer?"
+tier = "applied"
+kind = "code"
+topics = ["unit of analysis", "average", "denominator", "nunique", "grain"]
+minutes = 20

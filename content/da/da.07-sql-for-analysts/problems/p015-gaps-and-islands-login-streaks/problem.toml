@@ -1,0 +1,6 @@
+id = "da.07.p015"
+title = "Gaps and islands: login streaks"
+tier = "deep"
+kind = "code"
+topics = ["gaps and islands", "row_number", "streak", "DISTINCT", "date arithmetic"]
+minutes = 35

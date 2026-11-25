@@ -1,0 +1,4 @@
+- **Trusting `set_index`.** It happily builds an index with repeats; `.loc["A1"]` then returns several rows instead of one.
+- **`duplicated(keep=False)` and then listing all rows.** The message would repeat `A1` three times; use `.unique()`.
+- **Listing the *positions* or the whole rows** instead of the key values.
+- **Sorting or dropping the duplicates yourself.** The function must raise, not guess which row to keep.

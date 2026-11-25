@@ -1,0 +1,6 @@
+id = "ds.03.p034"
+title = "AUC by counting pairs"
+tier = "deep"
+kind = "code"
+topics = ["AUC", "ROC", "ranking", "ranks", "efficiency"]
+minutes = 40

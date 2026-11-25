@@ -1,0 +1,4 @@
+- Ending the whiskers at the **fences** instead of at the last data value inside them.
+- Using `>=` for the outlier test: a value exactly on a fence is **not** an outlier.
+- Different quartile definitions (`method="lower"`): use the default linear interpolation.
+- Returning NumPy arrays instead of a sorted list of plain floats.

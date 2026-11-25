@@ -1,0 +1,6 @@
+id = "da.05.p023"
+title = "Outlier or best customer?"
+tier = "applied"
+kind = "explain"
+topics = ["outliers", "domain knowledge", "judgement", "explain"]
+minutes = 25

@@ -1,0 +1,6 @@
+id = "da.10.p028"
+title = "Filters as a pure function"
+tier = "applied"
+kind = "trace"
+topics = ["filters", "empty selection", "isin", "dashboard logic", "trace"]
+minutes = 20

@@ -1,0 +1,6 @@
+id = "ds.02.p019"
+title = "Leverage and Cook's distance"
+tier = "applied"
+kind = "code"
+topics = ["Cook's distance", "leverage", "influence", "outliers"]
+minutes = 25

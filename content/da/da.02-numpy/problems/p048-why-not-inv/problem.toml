@@ -1,0 +1,6 @@
+id = "da.02.p048"
+title = "Why not inv?"
+tier = "deep"
+kind = "explain"
+topics = ["linear algebra", "solve", "inv", "condition number", "residual", "explain"]
+minutes = 25

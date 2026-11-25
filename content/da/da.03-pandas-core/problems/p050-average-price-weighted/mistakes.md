@@ -1,0 +1,5 @@
+- **`df["unit_price"].mean()`**: the unweighted average; it ignores how many units each price covers.
+- **Averaging the line totals** (`(qty * price).mean()`): that is the average *order value*, not a price.
+- **Dividing by `len(df)` instead of the units**.
+- **Division by zero on an empty table**: return `None`.
+- **Returning numpy scalars** that print as `np.float64(...)`: convert with `float(...)` and `int(...)`.

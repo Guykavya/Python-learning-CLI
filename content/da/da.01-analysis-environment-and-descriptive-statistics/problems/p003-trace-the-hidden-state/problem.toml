@@ -1,0 +1,7 @@
+id = "da.01.p003"
+title = "Trace the hidden state"
+tier = "drill"
+kind = "trace"
+topics = ["hidden state", "kernel", "execution order", "restart", "trace"]
+minutes = 20
+assessment = "trace"

@@ -1,0 +1,7 @@
+- **Calling `np.nanmean(x, axis=0)` on the whole table.** It warns "Mean of empty slice" for the all-`nan` column; with warnings as errors, that is a failure.
+- **Silencing with `np.errstate`.** `errstate` controls floating-point errors such as division by zero in arithmetic, but the empty-slice message is a Python `RuntimeWarning` from `warnings`; it is not silenced that way.
+- **`x[np.isnan(x)] = 0` on the input.** That changes the caller's table. Use `np.where`, which builds a new array.
+- **Returning `0` for an empty column.** No data means "unknown": `nan`, with count 0 to explain why.
+- **Sample std (`ddof=1`).** The statement asks for the population std, like `np.nanstd`'s default.
+- **Aggregating over `axis=1`:** that gives one value per row, the wrong shape.
+- **`np.divide(..., where=...)` without `out=`.** The skipped slots then hold whatever was in memory; always give an initialised `out`.

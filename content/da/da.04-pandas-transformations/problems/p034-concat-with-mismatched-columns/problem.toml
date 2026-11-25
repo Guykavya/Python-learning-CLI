@@ -1,0 +1,6 @@
+id = "da.04.p034"
+title = "concat with mismatched columns"
+tier = "deep"
+kind = "trace"
+topics = ["concat", "join='inner'", "axis=1", "alignment", "missing values", "trace"]
+minutes = 20

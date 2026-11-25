@@ -1,0 +1,5 @@
+- Grouping by the month of each **order** instead of the month of the first order: renewals then land in later months.
+- Joining `orders` to the buyer table at the end and then counting rows: a buyer with two orders counts twice in `buyers`.
+- Using `users.signup_at` for the month: the question is about the first purchase.
+- Summing revenue before restricting to first-purchase groups (or summing only the first order): the question asks for **all** orders of the buyers.
+- Writing one giant `SELECT` with subqueries: the query may pass, but the test requires three named steps.

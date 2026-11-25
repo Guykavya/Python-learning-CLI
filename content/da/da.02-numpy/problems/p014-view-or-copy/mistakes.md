@@ -1,0 +1,5 @@
+- **Thinking `f[0] = -1` changes `a[0]`.** Fancy indexing copies; `a` stays the same.
+- **Writing `30` into box 1 or 2.** `r[1, 0]` is row 1, column 0 of a 2 × 3 grid: box 3.
+- **Thinking `m[:] = 0` zeroes `a`'s large values.** `m` is a copy made by the mask; `m[:] = 0` fills the copy.
+- **Thinking `a[a > 4] = 7` does nothing because masks copy.** On the left of `=` a mask selects where to write in `a` itself.
+- **Printing the old `s` (`[100, 2, 3]`).** `s` is a view: it always shows the current contents of boxes 1..3.

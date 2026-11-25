@@ -1,0 +1,5 @@
+- Skipping the swap: a zero on the diagonal divides by zero.
+- Swapping the rows of `A` but not the entries of `b`.
+- Modifying the caller's `A` in place (copy first, with `dtype=float`).
+- Subtracting from the pivot row instead of the rows below it.
+- Back-substituting from the top instead of from the last row.

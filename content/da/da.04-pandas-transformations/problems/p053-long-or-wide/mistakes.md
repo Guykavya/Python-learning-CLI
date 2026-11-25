@@ -1,0 +1,5 @@
+- **"Wide is more compact, so it is better."** It is shorter to look at, but code needs to know every column name, and new periods change the shape.
+- **"Long repeats the store name, which wastes space."** Repetition is cheap (and a `category` dtype stores it once); clarity matters more.
+- **Plotting from the wide table by looping over columns.** The plotting library can do the grouping when the data are long.
+- **Storing the printed report.** A table with a `Total` row and column mixes facts and sums; adding it up again counts everything twice.
+- **Forgetting the check after `melt`/`pivot`.** A silently lost or duplicated row changes every total.

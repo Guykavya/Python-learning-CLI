@@ -1,0 +1,4 @@
+- Saying "the training error is low, so the model is good". The training error says nothing about new data.
+- Explaining the rising training error as "the model gets worse". It rises because it can no longer memorise a bigger data set; that is healthy.
+- Suggesting more data for the straight-line model.
+- Quoting only the validation error and ignoring the gap.

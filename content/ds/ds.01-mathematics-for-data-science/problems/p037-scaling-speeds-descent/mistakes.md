@@ -1,0 +1,4 @@
+- Counting the starting check as a step.
+- Testing the loss instead of the gradient norm.
+- Running a fixed number of steps and returning that number.
+- Not capping the loop: a too-large learning rate never converges.

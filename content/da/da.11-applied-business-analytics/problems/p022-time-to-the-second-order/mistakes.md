@@ -1,0 +1,4 @@
+- Including one-order customers with a `NaN` or a huge number of days.
+- Taking the first and last order instead of the first and **second**.
+- Reporting the median as "the typical time to reorder" without saying that one-time buyers are excluded.
+- Dropping the same-day second order: it is a 0-day reorder.

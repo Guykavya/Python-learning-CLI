@@ -1,0 +1,6 @@
+id = "da.11.p027"
+title = "k-means as an alternative"
+tier = "challenge"
+kind = "code"
+topics = ["k-means", "feature scaling", "log transform", "silhouette", "customer clustering"]
+minutes = 40

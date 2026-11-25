@@ -1,0 +1,6 @@
+id = "da.04.p009"
+title = "Share of the group total"
+tier = "drill"
+kind = "code"
+topics = ["groupby", "transform", "percent of total", "index alignment"]
+minutes = 15

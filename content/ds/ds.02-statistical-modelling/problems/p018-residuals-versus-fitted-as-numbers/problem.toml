@@ -1,0 +1,6 @@
+id = "ds.02.p018"
+title = "Residuals versus fitted, as numbers"
+tier = "deep"
+kind = "code"
+topics = ["residuals", "heteroscedasticity", "funnel", "diagnostics"]
+minutes = 25

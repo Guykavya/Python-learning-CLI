@@ -1,0 +1,6 @@
+id = "da.07.p011"
+title = "Running total and 7-day average"
+tier = "applied"
+kind = "code"
+topics = ["running total", "moving average", "calendar", "generate_series", "window frame"]
+minutes = 30

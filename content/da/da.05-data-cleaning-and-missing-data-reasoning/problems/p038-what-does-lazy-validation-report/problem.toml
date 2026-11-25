@@ -1,0 +1,6 @@
+id = "da.05.p038"
+title = "What does lazy validation report?"
+tier = "deep"
+kind = "trace"
+topics = ["pandera", "SchemaError", "SchemaErrors", "failure_cases", "lazy validation", "trace"]
+minutes = 30

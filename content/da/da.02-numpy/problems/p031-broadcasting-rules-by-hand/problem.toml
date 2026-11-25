@@ -1,0 +1,6 @@
+id = "da.02.p031"
+title = "Broadcasting rules by hand"
+tier = "challenge"
+kind = "code"
+topics = ["broadcasting", "broadcasting rules", "shapes", "tuples", "errors"]
+minutes = 35

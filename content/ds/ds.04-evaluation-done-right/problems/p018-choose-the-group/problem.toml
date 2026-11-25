@@ -1,0 +1,6 @@
+id = "ds.04.p018"
+title = "Choose the group"
+tier = "deep"
+kind = "explain"
+topics = ["group split", "entities", "deployment", "explain"]
+minutes = 25

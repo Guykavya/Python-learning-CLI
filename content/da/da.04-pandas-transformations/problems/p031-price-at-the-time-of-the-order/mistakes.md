@@ -1,0 +1,6 @@
+- **Forgetting `by="product_id"`.** The order then takes the latest price of *any* product, for example `P1`'s price for a `P2` order.
+- **Not sorting.** `merge_asof` raises `ValueError: left keys must be sorted` when the time keys are not in order.
+- **Sorting by `product_id` first.** The time key must be sorted over the whole table; `by=` takes care of the products.
+- **`direction="forward"` or `"nearest"`.** They can pick a price that only started *after* the order.
+- **Forgetting to restore the order.** The result comes out in date order; the task asks for `order_id` order and a fresh index.
+- **Filling the missing price.** An order before the first price really has no known price; leave it `NaN`.

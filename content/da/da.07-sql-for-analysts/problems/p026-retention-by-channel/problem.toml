@@ -1,0 +1,6 @@
+id = "da.07.p026"
+title = "Retention by channel"
+tier = "challenge"
+kind = "code"
+topics = ["retention by segment", "cohort", "minimum sample size", "NULL", "month 1"]
+minutes = 45

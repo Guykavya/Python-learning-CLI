@@ -1,0 +1,6 @@
+id = "ds.01.p051"
+title = "Skewness and kurtosis"
+tier = "deep"
+kind = "code"
+topics = ["skewness", "kurtosis", "moments", "shape of a distribution"]
+minutes = 25

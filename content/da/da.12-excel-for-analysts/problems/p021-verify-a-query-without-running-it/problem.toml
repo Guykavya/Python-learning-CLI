@@ -1,0 +1,6 @@
+id = "da.12.p021"
+title = "Verify a query without running it"
+tier = "deep"
+kind = "code"
+topics = ["table fingerprint", "reconciliation", "control totals", "Power Query"]
+minutes = 40

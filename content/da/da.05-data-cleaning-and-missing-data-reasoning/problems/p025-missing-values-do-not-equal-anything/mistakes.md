@@ -1,0 +1,5 @@
+- **Expecting `f == np.nan` to mark the missing value.** `NaN != NaN`, so it is all `False`. Use `isna()`.
+- **Dividing the sum by 6.** `mean` divides by the number of non-missing values (5): `16 / 5 = 3.2`.
+- **Writing `False` for `g > 2` at the missing position.** In a nullable `Int64` column the answer is `<NA>`.
+- **Expecting the last count lines to agree.** `count()` skips missing values, `len` does not: `5 6`.
+- **Writing the exception message instead of its class name.** The program prints `type(e).__name__`.

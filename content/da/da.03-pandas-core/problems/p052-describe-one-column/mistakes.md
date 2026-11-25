@@ -1,0 +1,5 @@
+- **Dividing by n instead of n - 1** (`std(ddof=0)`): that is the population sd; da.01 used the sample sd.
+- **`n = len(s)`**: that counts the missing values too.
+- **Returning `NaN`** instead of `None` where a statistic does not exist.
+- **`np.mean` on the raw array**: it returns `nan` when there is a gap; pandas skips missing values.
+- **Returning numpy scalars**: they print as `np.float64(...)`; use `float(...)`.

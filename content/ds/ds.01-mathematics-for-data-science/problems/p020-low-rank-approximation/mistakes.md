@@ -1,0 +1,4 @@
+- Using `full_matrices=True`: the shapes no longer match.
+- Keeping the *last* `k` singular values (they are the smallest).
+- Forgetting to multiply by `s`: you get a projection matrix, not an approximation.
+- Returning `U[:, :k] @ Vt[:k]` without the singular values.

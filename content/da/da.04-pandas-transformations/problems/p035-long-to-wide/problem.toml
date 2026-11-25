@@ -1,0 +1,6 @@
+id = "da.04.p035"
+title = "Long to wide"
+tier = "drill"
+kind = "code"
+topics = ["pivot", "wide", "long", "duplicates", "reset_index", "columns.name"]
+minutes = 15

@@ -1,0 +1,3 @@
+- Adding the two standard errors instead of adding the variances.
+- Using the pooled proportion here: pooling belongs to the hypothesis test (problem 18), not to the interval.
+- Returning percentages (3.0) instead of fractions (0.03).

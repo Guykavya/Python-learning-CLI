@@ -1,0 +1,7 @@
+id = "da.10.p030"
+title = "A dashboard with a findings page"
+tier = "challenge"
+kind = "code"
+topics = ["Streamlit", "dashboard", "AppTest", "KPIs", "logic module", "project"]
+minutes = 90
+assessment = "build"

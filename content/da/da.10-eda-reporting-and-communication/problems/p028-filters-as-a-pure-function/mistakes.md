@@ -1,0 +1,4 @@
+- Counting customer 4 in combination 3: customer 4 is organic and 3-meal but in **Large**.
+- Printing `1 0` for combination 2: the function returns `None` when there are no panel rows.
+- Treating the empty list as "all channels".
+- Counting customers 5 and 6 as paid: only 1, 2 and 6 are paid.

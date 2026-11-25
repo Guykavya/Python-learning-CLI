@@ -1,0 +1,6 @@
+- **Forgetting the empty case in `argmax`.** `np.argmax(np.array([False, False]))` is `0`, so an account that is never overdrawn would be reported as overdrawn on day 0. Check `.any()` first.
+- **`<= 0` instead of `< 0`.** A balance of exactly zero is not an overdraft.
+- **Integer output.** `opening + np.cumsum([1, 2, 3])` is `int64`. Convert the transactions to float first.
+- **Including the opening balance as an extra first value** (length `n + 1`). The statement asks for one value per transaction.
+- **Changing the input**, for example `np.cumsum(txns, out=txns)` or `txns += opening`. Return a new array.
+- **Returning a NumPy bool or a 0-d array** instead of an `int` position.

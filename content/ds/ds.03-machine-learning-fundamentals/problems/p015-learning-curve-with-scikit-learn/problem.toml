@@ -1,0 +1,6 @@
+id = "ds.03.p015"
+title = "Learning curve with scikit-learn"
+tier = "drill"
+kind = "code"
+topics = ["learning_curve", "cross-validation", "scoring sign", "gap"]
+minutes = 25

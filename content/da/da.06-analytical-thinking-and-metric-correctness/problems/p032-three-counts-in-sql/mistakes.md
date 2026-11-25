@@ -1,0 +1,6 @@
+- **`COUNT(customer_id)` for distinct customers.** It counts payments with a customer, not different customers (10 pays twice).
+- **`COUNT(DISTINCT *)`.** Not valid SQL; name the column.
+- **`COUNT(*)` for the payments with a method.** It counts NULL rows too.
+- **Thinking `''` is NULL.** An empty text is a value: `COUNT(method)` counts it. If you want to treat it as "not recorded", clean it first (da.05).
+- **Forgetting `AS`.** Without names the columns are `COUNT(*)` and so on; the test looks for `rows`, `with_method`, `distinct_customers`.
+- **Two statements.** `sqlite3` runs one statement per `execute`; do not end with a second one.

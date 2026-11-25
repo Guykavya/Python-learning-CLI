@@ -1,0 +1,4 @@
+- Shuffling `X` and `y` separately: the pairs break and the model learns nothing.
+- Cutting without shuffling when the data are ordered (by date or by class): the test set is then a different kind of data.
+- Using `val` as a fraction of what is left after the test split without converting it.
+- Returning the arrays in another order than the one asked for.

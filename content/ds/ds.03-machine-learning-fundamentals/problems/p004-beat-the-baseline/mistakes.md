@@ -1,0 +1,4 @@
+- Computing the baseline from the test targets' mean (a leak).
+- Scoring the model on the training rows: a model that memorises always "beats" the baseline there.
+- Using `>=` for accuracy: a model that only matches the majority class has learned nothing.
+- Comparing RMSE with accuracy direction: for RMSE lower is better.

@@ -1,0 +1,6 @@
+- **Using `>=` for the fences.** A value exactly on a fence is not flagged.
+- **Dividing by zero sd** for a constant list.
+- **Using the population sd** when the statement says sample (it changes borderline cases).
+- **Returning the values instead of the indexes.**
+- **Trusting a 3-sigma rule on a very small list.** It cannot fire at all when `n` is below about 11, whatever the data.
+- **Computing the z-score fences after removing the first flagged value** (iterating: that changes the question).

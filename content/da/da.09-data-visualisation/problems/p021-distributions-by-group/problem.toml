@@ -1,0 +1,6 @@
+id = "da.09.p021"
+title = "Distributions by group"
+tier = "applied"
+kind = "code"
+topics = ["seaborn histplot", "hue", "density", "common_norm", "comparing groups"]
+minutes = 25

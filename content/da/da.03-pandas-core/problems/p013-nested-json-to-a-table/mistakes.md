@@ -1,0 +1,6 @@
+- **`json_normalize(records)` alone.** One row per order; the `items` list stays inside a single cell.
+- **Forgetting `errors="ignore"`.** Order 4 has no `customer`, and `meta` raises `KeyError`.
+- **`meta=["id", "customer.name"]`.** The dot notation is for the output column name; a nested path in `meta` is a list of keys.
+- **Dropping orders with an empty `items`.** They give no rows because there is no line to show; but do not crash on them.
+- **Leaving `id` as `object`.** `meta` columns arrive without a numeric dtype.
+- **Selecting columns with `flat[[...]]`.** If no item has a `qty` (or no order a customer name), that column does not exist and the selection raises `KeyError`; `reindex(columns=...)` creates it as missing.

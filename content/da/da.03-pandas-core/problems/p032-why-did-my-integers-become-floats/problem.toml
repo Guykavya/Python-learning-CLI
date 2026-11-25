@@ -1,0 +1,6 @@
+id = "da.03.p032"
+title = "Why did my integers become floats?"
+tier = "drill"
+kind = "explain"
+topics = ["nullable dtypes", "Int64", "NaN", "pd.NA", "float64", "explain"]
+minutes = 20

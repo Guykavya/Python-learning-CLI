@@ -1,0 +1,4 @@
+- Fitting a second time on the validation rows to compute `val_rmse`.
+- Reporting MSE instead of RMSE (the square of the number you want).
+- Comparing the training error of different degrees as if it measured quality: it only falls.
+- Forgetting the scaler: high powers of `x` have wildly different sizes.

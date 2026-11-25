@@ -1,0 +1,4 @@
+- Concluding the checkout got worse because the overall number fell.
+- Looking only at the overall funnel when the traffic mix may have changed (a new ad campaign sends more mobile visitors).
+- Comparing the two months without checking that the step was logged the same way.
+- Calling Simpson's paradox an error: every number is right; the question is which comparison is fair.

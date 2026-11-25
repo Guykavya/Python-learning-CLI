@@ -1,0 +1,6 @@
+id = "da.06.p029"
+title = "Does the status agree with the timestamps?"
+tier = "applied"
+kind = "code"
+topics = ["lifecycle", "status", "data defects", "NaT", "consistency checks"]
+minutes = 30

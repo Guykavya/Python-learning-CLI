@@ -1,0 +1,7 @@
+id = "ds.04.p012"
+title = "Fix the leaky churn pipeline"
+tier = "applied"
+kind = "code"
+topics = ["leakage", "Pipeline", "train/test split", "target leakage", "debugging"]
+minutes = 40
+assessment = "fix"

@@ -1,0 +1,5 @@
+- Dropping the luxury flat (row 940) as well. It is genuine, so keep it in and report it instead.
+- Using the raw `area_sqft` instead of `np.log(area_sqft / 1000)`: the coefficient is then not an elasticity.
+- Evaluating the hold-out error on the log scale for the training rows only, or on the price scale.
+- Including the intercept in the VIF maximum.
+- Returning positions instead of index labels for the outliers (they are equal here because rows were removed after position 17: check the labels).

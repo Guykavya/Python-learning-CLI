@@ -1,0 +1,4 @@
+- Saying "ridge removes features". It shrinks them but keeps all.
+- Saying lasso is always better because it gives a sparser model. With correlated features it picks one of them somewhat arbitrarily, and the choice changes between samples.
+- Forgetting scaling: the penalty depends on the size of the coefficients, which depends on the units.
+- Reading `alpha` as comparable between ridge and lasso: the two scales are different.

@@ -1,0 +1,6 @@
+id = "ds.04.p011"
+title = "Which column is from the future?"
+tier = "applied"
+kind = "trace"
+topics = ["timeline", "feature availability", "target leakage", "trace"]
+minutes = 15

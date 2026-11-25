@@ -1,0 +1,6 @@
+id = "ds.04.p003"
+title = "Two evaluations of one model"
+tier = "deep"
+kind = "code"
+topics = ["leakage", "cross-validation", "ROC-AUC", "suspicious column"]
+minutes = 30

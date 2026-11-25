@@ -1,0 +1,6 @@
+id = "da.06.p025"
+title = "between versus half-open"
+tier = "drill"
+kind = "trace"
+topics = ["dates", "between", "half-open interval", "boundaries", "trace"]
+minutes = 20

@@ -1,0 +1,6 @@
+id = "da.10.p003"
+title = "Rewrite the vague finding"
+tier = "drill"
+kind = "explain"
+topics = ["writing findings", "headline", "recommendation", "impact range", "explain"]
+minutes = 20

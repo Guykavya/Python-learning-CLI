@@ -1,0 +1,6 @@
+id = "da.02.p026"
+title = "Running balance"
+tier = "applied"
+kind = "code"
+topics = ["cumsum", "running totals", "boolean mask", "argmax", "vectorisation"]
+minutes = 20

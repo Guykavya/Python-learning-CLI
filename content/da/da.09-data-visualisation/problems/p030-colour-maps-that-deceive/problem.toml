@@ -1,0 +1,6 @@
+id = "da.09.p030"
+title = "Colour maps that deceive"
+tier = "deep"
+kind = "code"
+topics = ["colour maps", "luminance", "perceptual order", "viridis vs jet", "monotone"]
+minutes = 25

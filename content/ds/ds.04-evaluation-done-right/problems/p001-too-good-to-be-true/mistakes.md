@@ -1,0 +1,3 @@
+- Celebrating a score that beats experts by a mile without asking how.
+- Checking only the code for bugs: leakage is usually in the data or the split, and the code runs fine.
+- Thinking a leak only makes the score "a bit high": it can make the deployed model useless or worse.

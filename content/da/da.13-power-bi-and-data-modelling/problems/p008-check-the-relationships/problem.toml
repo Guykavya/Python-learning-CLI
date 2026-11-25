@@ -1,0 +1,6 @@
+id = "da.13.p008"
+title = "Check the relationships"
+tier = "applied"
+kind = "code"
+topics = ["relationships", "model validation", "orphan keys", "filter direction"]
+minutes = 40

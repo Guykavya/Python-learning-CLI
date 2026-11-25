@@ -1,0 +1,6 @@
+id = "da.10.p022"
+title = "Render the page to HTML"
+tier = "challenge"
+kind = "code"
+topics = ["HTML", "html.escape", "base64", "rendering a report", "Finding"]
+minutes = 40

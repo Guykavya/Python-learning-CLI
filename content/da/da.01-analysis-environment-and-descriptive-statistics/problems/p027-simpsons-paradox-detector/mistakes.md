@@ -1,0 +1,6 @@
+- **Averaging the group rates** to get the overall rate: the overall rate weights each group by its patients.
+- **Using counts instead of rates** (`successes`) when comparing treatments with different numbers of patients.
+- **Calling a tie a preference.** Strictly higher only.
+- **Flagging a paradox when the groups disagree among themselves.** The definition needs every group to agree.
+- **Only handling "A wins groups, B wins overall".** The mirrored case (B wins groups, A overall) is also the paradox.
+- **Dividing by zero** for a group with no rows of one treatment: raise `ValueError` first.

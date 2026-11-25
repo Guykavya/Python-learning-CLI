@@ -1,0 +1,4 @@
+Delhi: predicted log wage 10.450
+Mumbai: predicted log wage 10.570
+Pune: predicted log wage 10.350
+Mumbai minus Pune: 0.22

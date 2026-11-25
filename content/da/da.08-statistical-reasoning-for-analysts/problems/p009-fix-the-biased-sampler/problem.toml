@@ -1,0 +1,7 @@
+id = "da.08.p009"
+title = "Fix the biased sampler"
+tier = "deep"
+kind = "code"
+topics = ["random sampling", "sampling bias", "debugging", "rng.choice", "duplicates"]
+minutes = 30
+assessment = "fix"

@@ -1,0 +1,6 @@
+id = "da.09.p012"
+title = "Box-plot statistics"
+tier = "applied"
+kind = "code"
+topics = ["box plot", "quartiles", "IQR", "whiskers", "outliers"]
+minutes = 25

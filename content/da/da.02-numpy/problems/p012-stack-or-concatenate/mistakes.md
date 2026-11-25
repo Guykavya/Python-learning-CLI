@@ -1,0 +1,5 @@
+- **`(2, 3)` for `concatenate([u, v])`.** Concatenate never adds an axis: two 1-D arrays give one longer 1-D array, `(6,)`.
+- **`(6,)` for `vstack([u, v])`.** `vstack` turns each 1-D vector into a row first.
+- **`(2, 6)` for `column_stack([u, v])`.** 1-D inputs become columns: three rows of two, `(3, 2)`.
+- **`(4, 3)` for `stack([P, Q], axis=1)`.** Stack adds a new axis; the shape keeps both 2 and 3 and inserts the new 2 at position 1.
+- **`(6,)` printed as `(6)`.** A 1-tuple prints with a comma.

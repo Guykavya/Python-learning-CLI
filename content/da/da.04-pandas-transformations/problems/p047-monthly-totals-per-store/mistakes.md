@@ -1,0 +1,5 @@
+- **`freq="M"`.** pandas 3 removed it; months end with `"ME"`.
+- **Grouping by `order_date` itself.** That is one group per *day*, not per month.
+- **`dt.month` as the key.** January 2024 and January 2025 fall into the same group.
+- **`resample` per store in a loop.** It works but fills months without orders with 0 rows, and the loop is slow for many stores.
+- **Keeping the column name `order_date`.** The task asks for `month`.

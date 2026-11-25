@@ -1,0 +1,6 @@
+id = "ds.03.p001"
+title = "Supervised or unsupervised?"
+tier = "drill"
+kind = "trace"
+topics = ["supervised", "unsupervised", "labels", "trace"]
+minutes = 15

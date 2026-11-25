@@ -1,0 +1,4 @@
+- Counting all events (the leaky "total so far").
+- Using `<=`: an event on the prediction day may not be known yet when the model runs.
+- Losing customers without events (they must appear with 0).
+- Returning floats because `reindex` introduced NaN before filling.

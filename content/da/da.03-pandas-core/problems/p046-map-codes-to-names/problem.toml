@@ -1,0 +1,6 @@
+id = "da.03.p046"
+title = "Map codes to names"
+tier = "drill"
+kind = "code"
+topics = ["map", "dict lookup", "unknown values", "missing values", "audit"]
+minutes = 15

@@ -1,0 +1,4 @@
+- Dividing by the customers who ordered in the bucket instead of all eligible customers.
+- Including recent customers: their missing months make the curve too low.
+- Using calendar months: buckets here are 30-day windows from each customer's own first order.
+- A curve that is not cumulative: the value at month 2 is the revenue of months 0 to 2.

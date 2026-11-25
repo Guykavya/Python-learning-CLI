@@ -1,0 +1,4 @@
+- Clustering the raw R, F, M: the column with the largest numbers decides everything.
+- Scaling without the log: a few huge spenders still stretch the scale.
+- Comparing clusterings by label number instead of with the adjusted Rand index.
+- Computing the silhouette on the raw data: it must use the same space the clusters were found in.

@@ -1,0 +1,5 @@
+- `COALESCE(n.active, 0)` on every cell: the June cohort shows 0% in months 1 to 5. The chapter calls this the cliff along the diagonal.
+- Filtering the grid with `WHERE` instead of producing `NULL` cells: the grid then has fewer than `cohorts x 6` rows.
+- Using the extraction date (15 July) as the cut: July is incomplete, so the cell for July is not observed.
+- Counting the 3 July login of user 4 in month 1: events at or after 1 July are ignored.
+- Dividing by the number of active users instead of the cohort size.

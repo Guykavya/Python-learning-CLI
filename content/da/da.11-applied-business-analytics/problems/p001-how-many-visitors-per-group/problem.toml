@@ -1,0 +1,6 @@
+id = "da.11.p001"
+title = "How many visitors per group?"
+tier = "drill"
+kind = "code"
+topics = ["sample size", "power", "minimum detectable effect", "A/B test"]
+minutes = 20

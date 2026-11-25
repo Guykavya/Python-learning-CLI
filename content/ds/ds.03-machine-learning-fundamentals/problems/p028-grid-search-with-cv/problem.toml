@@ -1,0 +1,6 @@
+id = "ds.03.p028"
+title = "Grid search with CV"
+tier = "applied"
+kind = "code"
+topics = ["GridSearchCV", "hyperparameter tuning", "pipeline", "cross-validation"]
+minutes = 25

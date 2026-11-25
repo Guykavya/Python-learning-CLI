@@ -1,0 +1,6 @@
+id = "da.07.p039"
+title = "A test with a tiny table"
+tier = "deep"
+kind = "code"
+topics = ["testing SQL", "tiny fixture", "mutation", "retention", "functions"]
+minutes = 50

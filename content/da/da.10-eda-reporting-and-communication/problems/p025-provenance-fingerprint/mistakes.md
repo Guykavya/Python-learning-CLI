@@ -1,0 +1,4 @@
+- `index=True`: resetting the index (same data) would change the fingerprint.
+- Hashing `str(df)`: it shows only part of a big table.
+- Computing the dates over a frame that has no date column (KeyError).
+- Returning NumPy integers in `rows` (they do not convert to JSON).

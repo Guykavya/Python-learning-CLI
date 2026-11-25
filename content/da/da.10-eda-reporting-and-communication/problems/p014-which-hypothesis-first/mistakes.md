@@ -1,0 +1,4 @@
+- Starting with the most interesting hypothesis instead of the cheapest decisive check.
+- Forgetting last year as the comparison for season.
+- Treating a two-day crash as a candidate for a whole month's drop without checking its size.
+- Naming a hypothesis without saying what would refute it.

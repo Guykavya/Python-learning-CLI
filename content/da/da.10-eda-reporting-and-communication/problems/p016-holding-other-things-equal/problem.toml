@@ -1,0 +1,6 @@
+id = "da.10.p016"
+title = "Holding other things equal"
+tier = "deep"
+kind = "code"
+topics = ["logistic regression", "confounding", "odds ratio", "statsmodels", "adjustment"]
+minutes = 40

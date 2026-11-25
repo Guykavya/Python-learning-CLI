@@ -1,0 +1,4 @@
+- Making margin % a calculated column and averaging it: it does not respond to slicers and the average of per-row ratios is wrong.
+- Using a measure for something you want on a slicer or an axis: only columns can be used there.
+- Storing a distinct count per row.
+- Forgetting that a column grows the model (it is stored); a measure does not.

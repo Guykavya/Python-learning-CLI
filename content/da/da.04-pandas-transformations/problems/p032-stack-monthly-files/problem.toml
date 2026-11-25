@@ -1,0 +1,6 @@
+id = "da.04.p032"
+title = "Stack monthly files"
+tier = "drill"
+kind = "code"
+topics = ["concat", "ignore_index", "stacking", "mismatched columns"]
+minutes = 15

@@ -1,0 +1,4 @@
+- Saying "put it in a view and it will be clean": a view hides the same nested mess; the point is the separation of steps.
+- Renaming only the aliases (`x`, `y`, `f`) and leaving the structure: the nesting is the problem.
+- Rewriting without a check: if the result changes you cannot tell whether the old or the new query was wrong.
+- Moving the filter to the very end of the query, where all the rows already went through every step.

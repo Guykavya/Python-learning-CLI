@@ -1,0 +1,6 @@
+id = "da.12.p029"
+title = "The last decimal"
+tier = "drill"
+kind = "trace"
+topics = ["rounding", "Excel ROUND", "Decimal", "sum of rounded values", "trace"]
+minutes = 25

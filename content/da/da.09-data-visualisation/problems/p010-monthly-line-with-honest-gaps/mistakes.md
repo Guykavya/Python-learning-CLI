@@ -1,0 +1,4 @@
+- `resample("MS").sum()` without `min_count=1`: empty months become 0 and the chart shows a drop to zero.
+- `interpolate()`: draws a smooth line through sales that did not exist.
+- Plotting the daily rows: thousands of points that are not one value per month.
+- Using month *end* timestamps: the problem fixes month **start**.

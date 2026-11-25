@@ -1,0 +1,6 @@
+id = "da.05.p017"
+title = "Which copy survives?"
+tier = "deep"
+kind = "code"
+topics = ["duplicates", "most complete row", "notna", "sort_values", "tie-breaking", "survivorship rule"]
+minutes = 35

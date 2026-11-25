@@ -1,0 +1,6 @@
+id = "ds.02.p024"
+title = "Confidence versus prediction interval"
+tier = "applied"
+kind = "explain"
+topics = ["prediction interval", "confidence interval", "get_prediction", "residual variance", "explain"]
+minutes = 25

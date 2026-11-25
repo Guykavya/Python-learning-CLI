@@ -1,0 +1,4 @@
+- Resampling the two groups together: each group is resampled on its own.
+- Sampling without replacement: every resample would be identical to the original.
+- Using the standard deviation of the bootstrap differences times 1.96 instead of the quantiles (fine for bell shapes, not the definition).
+- Seeding with the global random state: the same `seed` argument must reproduce the result.

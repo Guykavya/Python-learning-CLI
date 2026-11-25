@@ -1,0 +1,5 @@
+- **Aligning on the left.** `(4, 3) + (4,)` fails because `(4,)` meets the last axis (3). Aligning on the left would wrongly give `(4, 3)`.
+- **`(6,) + (6, 1)` → `(6,)` or `(6, 1)`.** The 1-D array becomes a row `(1, 6)`, the other is a column `(6, 1)`: together a full `(6, 6)` table. This is the classic bug when `y_pred` has shape `(n, 1)` and `y` has shape `(n,)`.
+- **Taking the shorter shape's length.** The result takes the larger length on each axis; a 1 never wins against another number.
+- **Stopping at the last axis.** In `(3, 4) + (3, 4, 1)` the last axis is fine; the error is one axis further left.
+- **Printing `(4)` instead of `(4,)`.** Python prints one-element tuples with a comma.

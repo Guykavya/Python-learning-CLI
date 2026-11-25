@@ -1,0 +1,4 @@
+- Forgetting `row=` and `col=`: every trace lands in the first panel.
+- Setting the y title on both panels: the shared axis is labelled twice.
+- Leaving the legend on: one-trace panels do not need it and it repeats the titles.
+- Passing a pandas Series straight to the trace and then comparing with a list in a test: use `list(...)`.

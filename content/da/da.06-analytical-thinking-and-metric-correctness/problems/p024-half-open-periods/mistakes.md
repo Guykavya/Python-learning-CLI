@@ -1,0 +1,5 @@
+- **`s <= end`.** A timestamp exactly at `end` belongs to the next period, so it would be counted twice (once in each month).
+- **`s > start`.** A job created at exactly midnight on the 1st would fall into no month at all.
+- **`end = "2025-02-28"` for February.** `2025-02-28 15:30` is greater than `2025-02-28 00:00`, so the last day silently loses its afternoon. The end is the **first instant of the next period**.
+- **Using `and` instead of `&`.** `and` on two Series raises "truth value is ambiguous"; use `&` with the comparisons in brackets.
+- **Filling `NaT` with a date first.** A made-up date can land inside the period. Leave `NaT` alone: its comparison is already `False`.

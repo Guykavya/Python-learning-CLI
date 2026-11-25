@@ -1,0 +1,6 @@
+id = "ds.01.p016"
+title = "Is it an eigenvector?"
+tier = "drill"
+kind = "code"
+topics = ["eigenvector", "eigenvalue", "tolerance", "zero vector"]
+minutes = 15

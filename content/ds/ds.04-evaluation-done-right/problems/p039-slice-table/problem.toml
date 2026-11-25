@@ -1,0 +1,6 @@
+id = "ds.04.p039"
+title = "Slice table"
+tier = "deep"
+kind = "code"
+topics = ["error analysis", "slices", "subgroups", "ROC-AUC"]
+minutes = 30

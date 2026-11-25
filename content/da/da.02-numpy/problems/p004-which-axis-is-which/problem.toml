@@ -1,0 +1,6 @@
+id = "da.02.p004"
+title = "Which axis is which?"
+tier = "drill"
+kind = "code"
+topics = ["axis", "mean", "max", "3-D arrays", "reductions"]
+minutes = 15

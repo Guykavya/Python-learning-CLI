@@ -1,0 +1,6 @@
+id = "ds.04.p021"
+title = "Detect look-ahead in feature code"
+tier = "applied"
+kind = "code"
+topics = ["look-ahead bias", "rolling features", "time leakage", "testing"]
+minutes = 25

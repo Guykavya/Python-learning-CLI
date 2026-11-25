@@ -1,0 +1,4 @@
+rows in the top decile: 2
+base rate: 0.250
+top-decile rate: 0.500
+lift: 2.00

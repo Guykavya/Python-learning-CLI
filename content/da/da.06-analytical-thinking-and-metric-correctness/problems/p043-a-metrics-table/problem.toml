@@ -1,0 +1,6 @@
+id = "da.06.p043"
+title = "A metrics table"
+tier = "challenge"
+kind = "code"
+topics = ["metric definitions", "MetricSpec", "metrics table", "numerator and denominator", "months"]
+minutes = 45

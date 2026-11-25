@@ -1,0 +1,4 @@
+- Using `s` instead of `s**2` (variance is the square of the singular value).
+- Off by one: the index of the first `cum >= share` is `k - 1`.
+- Not centring the data before the SVD.
+- Using `>` instead of `>=`, or comparing `cum` with `1.0` exactly.

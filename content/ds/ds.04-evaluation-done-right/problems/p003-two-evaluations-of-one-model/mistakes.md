@@ -1,0 +1,3 @@
+- Using different folds for the two runs: part of the difference is then noise.
+- Dropping the column in place (`X.drop(..., inplace=True)`), which changes the caller's table.
+- Concluding the column is "very predictive, keep it". The question is whether it exists at prediction time.

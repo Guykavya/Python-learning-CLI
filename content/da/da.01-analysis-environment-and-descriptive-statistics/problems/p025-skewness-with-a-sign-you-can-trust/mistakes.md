@@ -1,0 +1,5 @@
+- **Using the sample sd** (`n - 1`): the formula in this problem uses the population sd, and the result differs.
+- **Using `abs` or an even power** (z squared): the sign, the whole point, disappears.
+- **Dividing by `n - 1` or `sd`** at the end instead of `n`.
+- **Not raising for constant data**: `0 / 0` becomes `ZeroDivisionError` instead of `ValueError`.
+- **Believing a skewness of 0 proves symmetry.** It only says the cubes cancel.

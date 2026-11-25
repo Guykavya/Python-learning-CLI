@@ -1,0 +1,6 @@
+- **Column order `[1, x]`:** then the coefficients come back as `(intercept, slope)`.
+- **Forgetting the column of ones:** the line is forced through the origin (`intercept = 0`).
+- **Ignoring the rank.** For constant `x`, `lstsq` quietly returns *some* answer; it is not "the" best line.
+- **Using `np.linalg.solve(X, y)`:** `X` is `n × 2`, not square; `solve` needs a square system.
+- **Returning NumPy floats or the whole `coef` array** instead of a tuple of two `float`s.
+- **Forgetting `rcond=None`:** older NumPy versions warned about the default; passing it keeps the behaviour explicit.

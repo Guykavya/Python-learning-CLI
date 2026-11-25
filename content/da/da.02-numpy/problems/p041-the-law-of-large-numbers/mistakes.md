@@ -1,0 +1,6 @@
+- **`rng.integers(0, 1, size=n)`** is always 0: the upper bound is excluded.
+- **`rng.integers(1, 3)`** gives 1 and 2: the "proportion" ends near 1.5.
+- **Dividing by `np.arange(n)`** (starting at 0): division by zero for the first element and every value off by one flip.
+- **Returning only the final mean.** The task asks for the whole running sequence.
+- **A Python loop that appends `sum(flips[:i + 1]) / (i + 1)`:** correct but O(n²).
+- **Using `np.random.randint` or a new `default_rng(seed)`** instead of the `rng` passed in.

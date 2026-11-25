@@ -1,0 +1,6 @@
+id = "da.07.p023"
+title = "The immature cell is NULL, not 0"
+tier = "deep"
+kind = "code"
+topics = ["retention", "NULL vs 0", "immature cohort", "grid", "LEFT JOIN", "cross join"]
+minutes = 45

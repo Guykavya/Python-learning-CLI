@@ -1,0 +1,6 @@
+id = "da.13.p005"
+title = "Slowly changing dimension, type 2"
+tier = "deep"
+kind = "code"
+topics = ["slowly changing dimension", "type 2", "history", "surrogate key"]
+minutes = 45

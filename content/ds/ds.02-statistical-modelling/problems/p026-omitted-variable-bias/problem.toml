@@ -1,0 +1,6 @@
+id = "ds.02.p026"
+title = "Omitted-variable bias"
+tier = "deep"
+kind = "code"
+topics = ["omitted variable bias", "confounder", "simulation", "OLS"]
+minutes = 35

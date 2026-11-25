@@ -1,0 +1,4 @@
+- Forgetting the square root and returning `25` for `[3, 4]`.
+- Adding the entries first and squaring the sum: `(3 + 4)**2`.
+- Taking the absolute value instead of squaring (that is the L1 norm, a different length).
+- Returning a NumPy scalar or an int: the test wants a float.

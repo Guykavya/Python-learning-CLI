@@ -1,0 +1,7 @@
+id = "da.03.p024"
+title = "Chained assignment in pandas 3"
+tier = "deep"
+kind = "trace"
+topics = ["Copy-on-Write", "chained assignment", "ChainedAssignmentError", "views", "copy", "trace"]
+minutes = 30
+assessment = "trace"

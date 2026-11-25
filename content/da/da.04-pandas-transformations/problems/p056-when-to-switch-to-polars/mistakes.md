@@ -1,0 +1,5 @@
+- **Turning one benchmark into a rule.** One query on one machine says nothing about your workload.
+- **Comparing timings without comparing answers.** A fast wrong result (unsorted groups, a lost row) is worth nothing.
+- **Ignoring the ecosystem.** If every model and chart needs pandas, converting back and forth may cost more than it saves.
+- **Converting a huge table to pandas.** Reduce in Polars first, then convert the small result.
+- **Thinking the habits are pandas-specific.** Row counts, `validate=` and reconciliation matter in every library and in SQL.

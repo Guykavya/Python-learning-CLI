@@ -1,0 +1,9 @@
+- **Adding to `uint8` directly** (`img + 10`): values wrap around (250 + 10 = 4). Widen, compute, clip, narrow.
+- **`astype(np.uint8)` without `np.round`** truncates: 76.9 becomes 76, and the formulas no longer match.
+- **Weights in the wrong order** (B, G, R): pure red then comes out as 29 instead of 76.
+- **Summing the blur in `uint8`**: nine pixels of 255 overflow. Convert to float before padding.
+- **Padding with zeros** (`np.pad` default `mode="constant"`): the border gets darker; the statement asks for repeated edge pixels.
+- **`equalise` on a constant image** divides by `cdf[255] - first = 0`: return a copy instead.
+- **`flip` returning a view**: editing the flipped image would change the original.
+- **`pipeline(img, [])` returning `img` itself**: the caller then shares the array with the "result".
+- **Applying the steps in reverse order**, or each step to the original instead of the previous result.

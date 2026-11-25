@@ -1,0 +1,5 @@
+- **Using `df[...]` inside the chain** instead of `lambda d: d[...]`: it refers to the original frame, not the filtered one (the lengths no longer match).
+- **`inplace=True`** inside a chain: those methods return `None`, and the chain breaks.
+- **A different order of steps**: de-duplicating before the `qty > 0` filter keeps different rows; the order is part of the recipe.
+- **Forgetting the brackets** around the chain: a line break then ends the statement.
+- **Keeping one temporary "for readability"**: the test checks that the body is a single `return`.

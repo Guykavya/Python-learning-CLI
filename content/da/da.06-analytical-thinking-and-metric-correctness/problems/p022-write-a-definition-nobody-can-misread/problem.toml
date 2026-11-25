@@ -1,0 +1,7 @@
+id = "da.06.p022"
+title = "Write a definition nobody can misread"
+tier = "applied"
+kind = "explain"
+assessment = "explain"
+topics = ["metric definition", "numerator", "denominator", "date basis", "time zone", "half-open", "immature cohort", "explain"]
+minutes = 30

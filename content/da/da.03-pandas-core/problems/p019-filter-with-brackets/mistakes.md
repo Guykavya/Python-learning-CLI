@@ -1,0 +1,4 @@
+- **Missing parentheses.** `df["a"] > 1 & df["b"] < 2` binds `&` first and fails (or silently means something else).
+- **`and` / `or` / `not`.** They need one True or False; a Series has many: `ValueError: truth value is ambiguous`.
+- **`~df["status"] == "cancelled"`.** The `~` applies to the column of text before the comparison; write `~(df["status"] == "cancelled")` or use `!=`.
+- **Forgetting the outer parentheses.** `local_big | df["rush"] & ~cancelled` lets a cancelled rush order through, because `&` binds tighter than `|`.

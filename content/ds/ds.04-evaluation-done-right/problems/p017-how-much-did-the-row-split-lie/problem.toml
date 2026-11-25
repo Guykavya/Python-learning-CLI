@@ -1,0 +1,6 @@
+id = "ds.04.p017"
+title = "How much did the row split lie?"
+tier = "applied"
+kind = "code"
+topics = ["GroupKFold", "KFold", "patients", "optimistic evaluation"]
+minutes = 30

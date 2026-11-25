@@ -1,0 +1,6 @@
+id = "da.05.p025"
+title = "Missing values do not equal anything"
+tier = "drill"
+kind = "trace"
+topics = ["missing values", "NaN", "pd.NA", "comparison", "sum", "mean", "value_counts", "trace"]
+minutes = 20

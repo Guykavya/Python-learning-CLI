@@ -1,0 +1,6 @@
+id = "da.03.p045"
+title = "Replace iterrows"
+tier = "deep"
+kind = "code"
+topics = ["vectorisation", "iterrows", "np.select", "tiered discount", "performance"]
+minutes = 35

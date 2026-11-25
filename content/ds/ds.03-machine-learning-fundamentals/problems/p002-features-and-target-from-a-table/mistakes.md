@@ -1,0 +1,4 @@
+- Using `df.pop(target)`: it removes the column from the caller's table.
+- Writing `del df[target]` for the same reason.
+- Letting pandas raise its own `KeyError` with only the bare name; the message should list the columns so a typo is easy to spot.
+- Returning `df[[target]]` (a one-column DataFrame) instead of a Series.

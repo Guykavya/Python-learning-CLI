@@ -1,0 +1,6 @@
+id = "da.03.p052"
+title = "Describe one column"
+tier = "applied"
+kind = "code"
+topics = ["mean", "median", "std", "quantile", "skew", "missing values", "da.01 revisited"]
+minutes = 30

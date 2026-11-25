@@ -1,0 +1,4 @@
+- Changing all coordinates at once instead of one at a time.
+- Modifying `p` in place and not restoring it.
+- Returning the *absolute* error: it depends on the size of the gradient.
+- Dividing by zero when both gradients are 0.

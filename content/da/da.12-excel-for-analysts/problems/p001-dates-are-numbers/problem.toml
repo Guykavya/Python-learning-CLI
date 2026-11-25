@@ -1,0 +1,6 @@
+id = "da.12.p001"
+title = "Dates are numbers"
+tier = "drill"
+kind = "code"
+topics = ["Excel dates", "serial numbers", "datetime", "openpyxl"]
+minutes = 20

@@ -1,0 +1,6 @@
+id = "da.13.p006"
+title = "What is the grain?"
+tier = "drill"
+kind = "trace"
+topics = ["grain", "double counting", "order header", "merge", "trace"]
+minutes = 20

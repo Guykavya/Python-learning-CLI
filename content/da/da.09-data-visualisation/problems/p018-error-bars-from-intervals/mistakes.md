@@ -1,0 +1,4 @@
+- Using the standard deviation as the whisker: that is the spread of the data, not the uncertainty of the mean.
+- Passing `yerr=[low, high]` positions instead of **half-lengths**.
+- Not saying in the title what the whiskers are.
+- Letting the y axis start at the lowest interval: the dots then look much farther apart than they are.

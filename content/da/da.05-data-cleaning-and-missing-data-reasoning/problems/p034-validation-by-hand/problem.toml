@@ -1,0 +1,6 @@
+id = "da.05.p034"
+title = "Validation by hand"
+tier = "applied"
+kind = "code"
+topics = ["validation", "rules", "boolean mask", "report", "data quality"]
+minutes = 25

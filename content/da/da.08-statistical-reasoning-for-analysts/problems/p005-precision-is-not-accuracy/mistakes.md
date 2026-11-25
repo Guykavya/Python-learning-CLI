@@ -1,0 +1,3 @@
+- `ddof=1` for `sd`: the identity `rmse^2 = bias^2 + sd^2` no longer holds exactly.
+- `abs(bias)` or a squared bias: the sign tells the direction of the error.
+- Using the spread as the total error: a biased estimator can have a tiny `sd` and a huge `rmse`.

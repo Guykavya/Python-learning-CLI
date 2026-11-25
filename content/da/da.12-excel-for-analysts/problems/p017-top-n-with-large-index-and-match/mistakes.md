@@ -1,0 +1,4 @@
+- `MATCH(LARGE(revenue, k), revenue, 0)` without a helper: the second tied product is never found, the first appears twice.
+- Adding `ROW()/1e6`: it makes later rows larger, so the **last** of a tie wins, not the first.
+- A helper that changes the revenue shown: the revenue column of `Top3` must come from column `B`, not from the helper.
+- Relative ranges in `LARGE`/`MATCH`.

@@ -1,0 +1,4 @@
+- **`on="store_id"`.** `stores` has no `store_id` column: `KeyError`.
+- **Keeping `city_x` and `city_y`.** Nobody remembers which is which a week later.
+- **Forgetting to drop `sid`.** The table then has two store id columns that can disagree (missing for unknown stores).
+- **`how="inner"`.** Order 104 from the unknown store S7 disappears.

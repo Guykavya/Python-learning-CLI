@@ -1,0 +1,6 @@
+id = "ds.04.p037"
+title = "Calibrate on held-out data"
+tier = "applied"
+kind = "code"
+topics = ["calibration", "CalibratedClassifierCV", "FrozenEstimator", "held-out data"]
+minutes = 35

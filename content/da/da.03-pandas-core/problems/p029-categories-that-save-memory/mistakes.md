@@ -1,0 +1,5 @@
+- **Converting every column.** Numbers do not need categories, and unique-per-row text gets bigger.
+- **`<` instead of `<=`.** The limit is "at most `max_unique`".
+- **Counting missing values as a distinct value.** `nunique(dropna=False)` would make a column with gaps look more varied.
+- **`memory_usage()` without `deep=True`.** It does not look inside the text and understates the saving.
+- **Changing the input.** Work on `df.copy()`.
