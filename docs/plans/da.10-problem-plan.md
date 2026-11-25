@@ -32,66 +32,66 @@ Function style (`from solution import f`). Ids `da.10.p001`…`p030`, folder `pN
 
 | # | Title | Tier | Kind | Idea / what the tests check |
 |---|---|---|---|---|
-| 1 | Answer first | drill | code | `answer_first(question, number, comparison, unit)` → one headline sentence with the number and a comparison word ("from 4.1% to 6.3%"); the chapter's headline checks (number present, comparison word, ≤ 40 words) |
-| 2 | Actionable or not? | drill | trace | `⚠ HAND-TRACE` run `lint_finding` on four small `Finding` objects (given code); predict the printed issue lists |
-| 3 | Rewrite the vague finding | drill | explain | a vague paragraph ("engagement appears to be somewhat down") → rewrite as headline + recommendation + impact range; answer.md: model rewrite + checklist (number, comparison, owner, date, range in business units, limitation) |
-| 4 | What makes a finding actionable? | applied | explain | `assessment = "explain"`; explain to a new analyst why "answer first, with owner, date, range and limitations" is the template (§1.2–1.4). Checklist: decision it changes, who acts, by when, how big (range), how sure, what could make it wrong |
+| 1 | Answer first ✅ | drill | code | `answer_first(question, number, comparison, unit)` → one headline sentence with the number and a comparison word ("from 4.1% to 6.3%"); the chapter's headline checks (number present, comparison word, ≤ 40 words) |
+| 2 | Actionable or not? ✅ | drill | trace | `⚠ HAND-TRACE` run `lint_finding` on four small `Finding` objects (given code); predict the printed issue lists |
+| 3 | Rewrite the vague finding ✅ | drill | explain | a vague paragraph ("engagement appears to be somewhat down") → rewrite as headline + recommendation + impact range; answer.md: model rewrite + checklist (number, comparison, owner, date, range in business units, limitation) |
+| 4 | What makes a finding actionable? ✅ | applied | explain | `assessment = "explain"`; explain to a new analyst why "answer first, with owner, date, range and limitations" is the template (§1.2–1.4). Checklist: decision it changes, who acts, by when, how big (range), how sure, what could make it wrong |
 
 ## B. KPIs and metrics (Ch. 3)
 
 | # | Title | Tier | Kind | Idea / what the tests check |
 |---|---|---|---|---|
-| 5 | Check a KPI definition | drill | code | `check_kpi(defn)` → list of messages for a KPI definition dict (name, numerator, denominator, grain, owner, direction, type in leading/lagging/vanity/guardrail): missing field, unknown type, a ratio with no denominator; a complete definition → `[]` |
-| 6 | Monthly KPIs | applied | code | `monthly_kpis(customers, panel)` (§3.4): active customers, orders per active, churn rate per month; tiny inline data with hand answers; months with no customers → NaN, not 0 |
-| 7 | A KPI tree that adds up | applied | code | `revenue_tree(df)` → revenue = active × orders per active × average order value per month; the product equals revenue within 1e-9 for every month (message names the month that fails) |
-| 8 | Guardrail breaches by hand | drill | trace | `⚠ HAND-TRACE` the given `guardrail_breaches(kpis, limits)` on a 4-month KPI table with one value exactly on a limit (inclusive rule in the code); predict the printed `(month, kpi, value)` lines |
+| 5 | Check a KPI definition ✅ | drill | code | `check_kpi(defn)` → list of messages for a KPI definition dict (name, numerator, denominator, grain, owner, direction, type in leading/lagging/vanity/guardrail): missing field, unknown type, a ratio with no denominator; a complete definition → `[]` |
+| 6 | Monthly KPIs ✅ | applied | code | `monthly_kpis(customers, panel)` (§3.4): active customers, orders per active, churn rate per month; tiny inline data with hand answers; months with no customers → NaN, not 0 |
+| 7 | A KPI tree that adds up ✅ | applied | code | `revenue_tree(df)` → revenue = active × orders per active × average order value per month; the product equals revenue within 1e-9 for every month (message names the month that fails) |
+| 8 | Guardrail breaches by hand ✅ | drill | trace | `⚠ HAND-TRACE` the given `guardrail_breaches(kpis, limits)` on a 4-month KPI table with one value exactly on a limit (inclusive rule in the code); predict the printed `(month, kpi, value)` lines |
 
 ## C. Hypothesis-driven EDA (Ch. 4)
 
 | # | Title | Tier | Kind | Idea / what the tests check |
 |---|---|---|---|---|
-| 9 | Before and after by hand | drill | trace | `⚠ HAND-TRACE` given code splits an 8-week churn table at a date (the split week counts as "after") and prints both means `:.2f`; predict them |
-| 10 | Cut by segment | applied | code | `segment_table(o, dim)` (§4.4): churn rate before/after per segment, change in points, share of customers; sorted by change; NaN-free |
-| 11 | Mix against rate by hand | deep | trace | `assessment = "trace"`; `⚠ HAND-TRACE` two segments, before/after shares and rates in a 4-row table; the chapter's `mix_rate_decomposition` printed (`:.2f` points): mix, rate, total, and `mix + rate == total` |
-| 12 | Mix–rate decomposition | deep | code | `mix_rate_decomposition(o, dim)` (§4.5, symmetric weights); the two effects add up to the total within 1e-9; a pure mix change → rate effect 0; a pure rate change → mix effect 0 |
-| 13 | Season and the base year | applied | code | `yoy_change(series)` compares each month with the same month a year earlier, not the previous month; first year → NaN; a seasonal series with no trend gives ≈ 0 change |
-| 14 | Which hypothesis first? | drill | explain | given 5 hypotheses for a churn rise, order them by (cheap to test, size of possible effect) and say which data each needs (§4.3) |
+| 9 | Before and after by hand ✅ | drill | trace | `⚠ HAND-TRACE` given code splits an 8-week churn table at a date (the split week counts as "after") and prints both means `:.2f`; predict them |
+| 10 | Cut by segment ✅ | applied | code | `segment_table(o, dim)` (§4.4): churn rate before/after per segment, change in points, share of customers; sorted by change; NaN-free |
+| 11 | Mix against rate by hand ✅ | deep | trace | `assessment = "trace"`; `⚠ HAND-TRACE` two segments, before/after shares and rates in a 4-row table; the chapter's `mix_rate_decomposition` printed (`:.2f` points): mix, rate, total, and `mix + rate == total` |
+| 12 | Mix–rate decomposition ✅ | deep | code | `mix_rate_decomposition(o, dim)` (§4.5, symmetric weights); the two effects add up to the total within 1e-9; a pure mix change → rate effect 0; a pure rate change → mix effect 0 |
+| 13 | Season and the base year ✅ | applied | code | `yoy_change(series)` compares each month with the same month a year earlier, not the previous month; first year → NaN; a seasonal series with no trend gives ≈ 0 change |
+| 14 | Which hypothesis first? ✅ | drill | explain | given 5 hypotheses for a churn rise, order them by (cheap to test, size of possible effect) and say which data each needs (§4.3) |
 
 ## D. Testing the hypotheses (Ch. 5)
 
 | # | Title | Tier | Kind | Idea / what the tests check |
 |---|---|---|---|---|
-| 15 | Rate ratio with an interval | applied | code | `rate_ratio(e1, n1, e0, n0)` (§5.2) → ratio and 95% CI on the log scale; hand example to 3 decimals; zero events → `ValueError` with a message |
-| 16 | Holding other things equal | deep | code | `late_effect(df)` with a logistic model (`smf.logit`) or the chapter's `design()` + statsmodels: the adjusted odds ratio for `late` with CI; on the conftest world (true effect known) the CI contains it; the naive ratio is further away |
-| 17 | A natural experiment | deep | code | `price_change_effect(panel, change_date, window_weeks)`: difference-in-differences between affected and unaffected plans; hand data with a known +2 point effect |
-| 18 | The evidence table | applied | code | `evidence_table(results)` → DataFrame with hypothesis, estimate, CI, verdict ("supported", "not supported", "inconclusive" by the CI rule); exact labels |
-| 19 | A figure for the page | applied | code | `fig_contributions(summary)` (§6.5): horizontal bars sorted, one bar per cause, title states the largest contributor, x label in points; tested by figure properties |
+| 15 | Rate ratio with an interval ✅ | applied | code | `rate_ratio(e1, n1, e0, n0)` (§5.2) → ratio and 95% CI on the log scale; hand example to 3 decimals; zero events → `ValueError` with a message |
+| 16 | Holding other things equal ✅ | deep | code | `late_effect(df)` with a logistic model (`smf.logit`) or the chapter's `design()` + statsmodels: the adjusted odds ratio for `late` with CI; on the conftest world (true effect known) the CI contains it; the naive ratio is further away |
+| 17 | A natural experiment ✅ | deep | code | `price_change_effect(panel, change_date, window_weeks)`: difference-in-differences between affected and unaffected plans; hand data with a known +2 point effect |
+| 18 | The evidence table ✅ | applied | code | `evidence_table(results)` → DataFrame with hypothesis, estimate, CI, verdict ("supported", "not supported", "inconclusive" by the CI rule); exact labels |
+| 19 | A figure for the page ✅ | applied | code | `fig_contributions(summary)` (§6.5): horizontal bars sorted, one bar per cause, title states the largest contributor, x label in points; tested by figure properties |
 
 ## E. Writing and rendering the finding (Ch. 6)
 
 | # | Title | Tier | Kind | Idea / what the tests check |
 |---|---|---|---|---|
-| 20 | The finding as an object | drill | code | build a `Finding` from a results dict (`make_finding(R)`, §6.3) so that `lint_finding(f) == []`; the numbers in the text come from `R`, not typed by hand (test changes `R` and expects the text to change) |
-| 21 | Different readers, same numbers | drill | explain | rewrite one long finding (given) as a 3-sentence message for the CEO and a bullet list for the operations lead, with the **same rounded numbers** (§6.7); answer.md shows both and the checklist: same numbers, decision first, no method detail for the CEO, owner and date for operations |
-| 22 | Render the page to HTML | challenge | code | `render_html(f, source_note)` (§6.6): escapes `<` and `&` in text (`html.escape`), one `<h3>` per section, figures embedded as base64 `<img>` read from `tmp_path` |
-| 23 | Fix the lying report | deep | code | `assessment = "fix"`; given a `build_report(R)` that hard-codes two numbers, rounds the CI differently from the estimate and drops limitations when the list is long; fix it. Tests: numbers follow `R`, same rounding rule everywhere, all limitations present, `lint_finding` clean |
+| 20 | The finding as an object ✅ | drill | code | build a `Finding` from a results dict (`make_finding(R)`, §6.3) so that `lint_finding(f) == []`; the numbers in the text come from `R`, not typed by hand (test changes `R` and expects the text to change) |
+| 21 | Different readers, same numbers ✅ | drill | explain | rewrite one long finding (given) as a 3-sentence message for the CEO and a bullet list for the operations lead, with the **same rounded numbers** (§6.7); answer.md shows both and the checklist: same numbers, decision first, no method detail for the CEO, owner and date for operations |
+| 22 | Render the page to HTML ✅ | challenge | code | `render_html(f, source_note)` (§6.6): escapes `<` and `&` in text (`html.escape`), one `<h3>` per section, figures embedded as base64 `<img>` read from `tmp_path` |
+| 23 | Fix the lying report ✅ | deep | code | `assessment = "fix"`; given a `build_report(R)` that hard-codes two numbers, rounds the CI differently from the estimate and drops limitations when the list is long; fix it. Tests: numbers follow `R`, same rounding rule everywhere, all limitations present, `lint_finding` clean |
 
 ## F. Reports as code (Ch. 7)
 
 | # | Title | Tier | Kind | Idea / what the tests check |
 |---|---|---|---|---|
-| 24 | Re-run for any date | deep | code | `quick_summary(customers, panel, as_of)` (§7.2) uses only data up to `as_of` (test adds future rows: result must not change, message "future data leaked into the report") |
-| 25 | Provenance fingerprint | applied | code | `provenance(frames, analysis_date)` → dict of row counts, date range, fingerprints; properties only (same → same, changed cell → different, R3) |
-| 26 | Check the finished report | challenge | code | `check_report(md_text, R, figures_dir)` (§7.4) → list of problems: number in text not in `R`, missing figure file, figure referenced but absent, stale date |
+| 24 | Re-run for any date ✅ | deep | code | `quick_summary(customers, panel, as_of)` (§7.2) uses only data up to `as_of` (test adds future rows: result must not change, message "future data leaked into the report") |
+| 25 | Provenance fingerprint ✅ | applied | code | `provenance(frames, analysis_date)` → dict of row counts, date range, fingerprints; properties only (same → same, changed cell → different, R3) |
+| 26 | Check the finished report ✅ | challenge | code | `check_report(md_text, R, figures_dir)` (§7.4) → list of problems: number in text not in `R`, missing figure file, figure referenced but absent, stale date |
 
 ## G. Streamlit dashboards and the project (Ch. 8–9)
 
 | # | Title | Tier | Kind | Idea / what the tests check |
 |---|---|---|---|---|
-| 27 | A first tested app | drill | code | `solution.py` is a Streamlit app: title, a city multiselect, a revenue `st.metric`; AppTest checks default metric, the value after selecting one city, and the empty-selection message (`st.info`), and that `at.exception` is empty |
-| 28 | Filters as a pure function | applied | trace | `⚠ HAND-TRACE` the chapter's `filter_data` (§9.2) on an 8-row table with three filter combinations, including an empty list (meaning "no rows", not "all rows"); predict printed row counts |
-| 29 | Cache the expensive step | deep | code | app uses `@st.cache_data` for loading; test counts calls of the loader across two reruns with AppTest (a counter in `st.session_state` or a module global the reference documents) → called once |
-| 30 | A dashboard with a findings page | challenge | code | `assessment = "build"`; logic functions (`filter_data`, `monthly_kpis`, `baseline`) + `main(customers, panel)` app with sidebar filters, KPI metrics against the baseline, a chart and a findings tab rendered from `Finding`. Tests: logic unit tests on tiny data; AppTest via `from_function` with test data: default metrics equal the logic's numbers, changing a filter changes them, empty selection shows a message, no exception on a 3×3 smoke grid of filters (keep under 20 s) |
+| 27 | A first tested app ✅ | drill | code | `solution.py` is a Streamlit app: title, a city multiselect, a revenue `st.metric`; AppTest checks default metric, the value after selecting one city, and the empty-selection message (`st.info`), and that `at.exception` is empty |
+| 28 | Filters as a pure function ✅ | applied | trace | `⚠ HAND-TRACE` the chapter's `filter_data` (§9.2) on an 8-row table with three filter combinations, including an empty list (meaning "no rows", not "all rows"); predict printed row counts |
+| 29 | Cache the expensive step ✅ | deep | code | app uses `@st.cache_data` for loading; test counts calls of the loader across two reruns with AppTest (a counter in `st.session_state` or a module global the reference documents) → called once |
+| 30 | A dashboard with a findings page ✅ | challenge | code | `assessment = "build"`; logic functions (`filter_data`, `monthly_kpis`, `baseline`) + `main(customers, panel)` app with sidebar filters, KPI metrics against the baseline, a chart and a findings tab rendered from `Finding`. Tests: logic unit tests on tiny data; AppTest via `from_function` with test data: default metrics equal the logic's numbers, changing a filter changes them, empty selection shows a message, no exception on a 3×3 smoke grid of filters (keep under 20 s) |
 
 ## Counts check
 

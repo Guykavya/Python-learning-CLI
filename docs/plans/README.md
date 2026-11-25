@@ -8,6 +8,8 @@ problems can be written later **one small batch at a time**, by Claude Code or b
 The format of every plan follows [dsa.07-problem-plan.md](dsa.07-problem-plan.md). The rules below
 apply to all plans; the rules in a single plan win when they are more specific.
 
+Companion guides: [problem-writing-library-tracks.md](../guides/problem-writing-library-tracks.md) (playbook and skeletons), [validation-triage.md](../guides/validation-triage.md), [fixtures-and-data.md](../guides/fixtures-and-data.md).
+
 ## How to write a module from its plan
 
 1. Read this file (once), then the module's plan. Do not re-read the whole chapter: the plan names the
@@ -20,13 +22,13 @@ apply to all plans; the rules in a single plan win when they are more specific.
 5. Tick the plan: add `✅` after the title of every validated problem, so the next session knows where to start.
 6. When a module is finished, change its row in the status table below.
 
-## Status (2026-11-20)
+## Status (2026-11-25)
 
 Written = problem folders on disk. Plan = file in this folder.
 
 | Module | Title | Problems | Written | Plan |
 |---|---|---|---|---|
-| core.01–core.24 | all core modules | 1,050 | 1,050 | not needed |
+| core.01–core.24 | all core modules | 1,075 | 1,075 | not needed |
 | shared.01–02 | SQL, pipelines | 105 | 105 | not needed |
 | dsa.00–dsa.13 | | 610 | 610 | dsa.07–13 kept for reference |
 | dsa.14 | Dynamic programming | 80 | 80 | done 2026-11-19, all validated |
@@ -44,23 +46,23 @@ Written = problem folders on disk. Plan = file in this folder.
 | swe.09 | Deployment, observability and operations | 30 | 30 | done 2026-11-20, all validated |
 | swe.10 | Practical architecture and system design | 25 | 25 | done 2026-11-20, all validated |
 | swe.11 | Automation and scripting | 30 | 30 | done 2026-11-21, all validated |
-| da.01 | Analysis environment and descriptive statistics | 30 | 0 | yes |
-| da.02 | NumPy | 50 | 0 | yes |
-| da.03 | pandas core | 60 | 0 | yes |
-| da.04 | pandas transformations | 60 | 0 | yes |
-| da.05 | Data cleaning and missing-data reasoning | 40 | 0 | yes |
-| da.06 | Analytical thinking and metric correctness | 45 | 0 | yes |
-| da.07 | SQL for analysts | 40 | 0 | yes |
-| da.08 | Statistical reasoning for analysts | 35 | 0 | yes |
-| da.09 | Data visualisation | 40 | 0 | yes |
-| da.10 | EDA, reporting and communication | 30 | 0 | yes |
-| da.11 | Applied business analytics | 30 | 0 | yes |
-| da.12 | Excel for analysts | 30 | 0 | yes |
-| da.13 | Power BI and data modelling (companion) | 20 | 0 | yes |
-| ds.01 | Mathematics for data science | 60 | 0 | yes |
-| ds.02 | Statistical modelling | 35 | 0 | yes |
-| ds.03 | Machine learning fundamentals | 40 | 0 | yes |
-| ds.04 | Evaluation done right | 45 | 0 | yes |
+| da.01 | Analysis environment and descriptive statistics | 30 | 30 | done 2026-11-21, all validated |
+| da.02 | NumPy | 50 | 50 | done 2026-11-21, all validated |
+| da.03 | pandas core | 60 | 60 | done 2026-11-21, all validated |
+| da.04 | pandas transformations | 60 | 60 | done 2026-11-22, all validated |
+| da.05 | Data cleaning and missing-data reasoning | 40 | 40 | done 2026-11-22, all validated |
+| da.06 | Analytical thinking and metric correctness | 45 | 45 | done 2026-11-22, all validated |
+| da.07 | SQL for analysts | 40 | 40 | done 2026-11-23, all validated |
+| da.08 | Statistical reasoning for analysts | 35 | 35 | done 2026-11-23, all validated |
+| da.09 | Data visualisation | 40 | 40 | done 2026-11-24, all validated |
+| da.10 | EDA, reporting and communication | 30 | 30 | done 2026-11-24, all validated |
+| da.11 | Applied business analytics | 30 | 30 | done 2026-11-24, all validated |
+| da.12 | Excel for analysts | 30 | 30 | done 2026-11-24, all validated |
+| da.13 | Power BI and data modelling (companion) | 20 | 20 | done 2026-11-24, all validated |
+| ds.01 | Mathematics for data science | 60 | 60 | done 2026-11-24, all validated |
+| ds.02 | Statistical modelling | 35 | 35 | done 2026-11-25, all validated |
+| ds.03 | Machine learning fundamentals | 40 | 40 | done 2026-11-25, all validated |
+| ds.04 | Evaluation done right | 45 | 45 | done 2026-11-25, all validated |
 | ds.05 | scikit-learn in depth | 45 | 0 | yes |
 | ds.06 | ML algorithms (from scratch and with libraries) | 60 | 0 | yes |
 | ds.07 | Time-series forecasting | 35 | 0 | yes |
@@ -82,7 +84,7 @@ Written = problem folders on disk. Plan = file in this folder.
 | llm.06 | Security for LLM applications | 25 | 0 | yes |
 | llm.07 | Shipping LLM applications | 20 | 0 | yes |
 
-Still to write: about 1,780 problems. **You do not have to write them all.** A module is usable as soon as
+Still to write: about 625 problems. **You do not have to write them all.** A module is usable as soon as
 some problems validate. If time runs short, write the problems marked **★ core set** in each plan first
 (about 40% of the module: the problems that cover every learning outcome once), then lower `problems:` in
 `syllabus.yaml` to the number actually written. 20 good problems beat 50 shaky ones.
